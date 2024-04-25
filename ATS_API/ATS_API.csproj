@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>API</AssemblyName>
+        <Description>Mod that adds helper methods for other mods and fixes/QOL changes for the game</Description>
+        <Version>1.0.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <StormPath>C:\Program Files (x86)\Steam\steamapps\common\Against the Storm</StormPath>
+        <BepInExPath>%appdata%/Thunderstore Mod Manager/DataFolder/AgainstTheStorm/profiles/Default/BepInEx</BepInExPath>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" >
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="BepInEx.Core" Version="5.*" >
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" >
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="UnityEngine.Modules" Version="2021.3.15" IncludeAssets="compile" >
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Assembly-CSharp.dll" Publicize="true" private="false"/>
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Newtonsoft.Json.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Sirenix.Serialization.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UniTask.dll" Publicize="false" private="false"/>
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.TextMeshPro.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UnityEngine.UI.dll" Publicize="false" private="false" />
+    </ItemGroup>
+      
+    <ItemGroup>
+        <None Include="assets\*.*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="WIKI\*.*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+      
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+    </ItemGroup>
+      
+    <ItemGroup>
+        <Folder Include="Scripts\Effects\EffectFactory\" />
+    </ItemGroup>
+    
+    <Target Name="Deploy" AfterTargets="Build">
+        <ItemGroup>
+            <Assembly Include="$(OutputPath)\$(AssemblyName).dll" />
+            <Assets Include="$(OutputPath)\Assets\*.*" />
+            <WIKI Include="$(OutputPath)\WIKI\*.*" />
+            <_CopyItems Include="$(OutputPath)\ThunderStore\plugins\**\*.*" />
+        </ItemGroup>
+         
+        <!-- Create a folder with all the .dlls and files to easily uplaod to thunderstore -->
+        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\" />
+        <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\Assets" />
+        <Copy SourceFiles="@(WIKI)" DestinationFolder="$(OutputPath)\ThunderStore\WIKI" />
+        <Copy SourceFiles="CHANGELOG.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
+        <Copy SourceFiles="README.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
+        <Copy SourceFiles="manifest.json" DestinationFolder="$(OutputPath)\ThunderStore\" />
+        <Copy SourceFiles="icon.png" DestinationFolder="$(OutputPath)\ThunderStore\" />
+
+        <!-- Create a thunderstore folders to AgainstTheStorm game folder -->
+        <Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\%(RecursiveDir)" />
+
+        <!-- Run Against The Storm -->
+        <!-- <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
+    </Target>
+</Project>
