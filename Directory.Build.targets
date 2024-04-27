@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <!-- Other settings and configurations -->
+
+    <Target Name="PostBuild" AfterTargets="AfterBuild">
+<!--        <Exec Condition="'$(MSBuildProjectName)'=='ExampleMod'" Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
+    </Target>
+</Project>
