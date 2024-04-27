@@ -1,4 +1,4 @@
-# Goods
+# Custom Goods
 
 Goods are items that can be traded / sold traders, used as food or fuel or crafting. They can also be used as rewards for completing orders or as rewards for keeping relics.
 
@@ -17,7 +17,7 @@ builder.AddRelicKeepRewardChance(5, 2);
 
 ### Make a new Good
 
-This creates a new Good that is registered to the game. We provide the GUID of the mod, a name that never changes and an icon.
+This creates a new Good that is registered to the game. We provide the GUID of the mod, a name that never changes and an icon (128x128).
 NOTE: Once the name has be defined it should never be changed or it will break peoples games.
 
 ```csharp
@@ -68,11 +68,11 @@ builder.AddRelicKeepRewardChance(10, 4);
 ```
 
 
-# Cornerstones
+# Custom Cornerstones
 
 Cornerstones are effects/perks that are rewarded periodically throughout Against the Storm to provide the player positive and negative buffs.
 
-To create a new Cornerstone here is an example of how you would do it.
+To create a new Cornerstone here is an example of how you would do it with a 128x128 icon.
 
 ```csharp
 HookedEffectBuilder builder = new HookedEffectBuilder(PluginInfo.PLUGIN_GUID, "Modders Unite", "TestCornerstone.png");
@@ -88,4 +88,26 @@ builder.SetDescription("Modders have united the kingdom and raised everyone's sp
 builder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount), (SourceType.HookedEffect, TextArgType.Amount)); // Optional: Sets what the {x} will be poplated with
 builder.SetPreviewDescription("+{0} Global Resolve"); // Shows the progression of the effect once acquired (eg: +5 Global Resolve)
 builder.SetPreviewDescriptionArgs(HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked); // Sets what the {x} will be poplated with
+```
+
+# Custom Traders
+
+Traders are NPCs that regularly arrive at the Trading post or appear in some glades. Players can purchase items from them or sell items to them.
+
+To create a new Trader here is an example of how you would do it.
+
+TraderIcon is the large detailed icon that appears in the Trading menu (256x256). TraderIconSmall is the icon that apepars in the world in the UI and above the trading post. (63x63)
+
+```csharp
+TraderBuilder builder = new TraderBuilder(PluginInfo.PLUGIN_GUID, "ExampleTrader", "TraderIcon.png", "TraderIconSmall.png");
+builder.SetDisplayName("Example Trader");
+builder.SetDescription("This is an example trader.");
+builder.SetDialogue("Hello, I am an example trader.");
+builder.SetStayingTime(10);
+builder.SetArrivalTime(10);
+builder.SetAssaultData(3,5,0.5f,0.4f, true);
+builder.AddGuaranteedOfferedGoods((2, "[Valuable] Ancient Tablet"));
+builder.AddDesiredGoods("[Mat Raw] Wood");
+builder.SetAmountOfGoods(20,30);
+builder.SetAvailableInAllBiomes();
 ```
