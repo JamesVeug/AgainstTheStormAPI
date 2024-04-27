@@ -15,7 +15,7 @@ public class EffectBuilder<T> where T : EffectModel
 {
     public T EffectModel => m_effectModel;
     
-    protected readonly EffectManager.NewEffectData m_newData;
+    protected readonly NewEffectData m_newData;
     protected readonly T m_effectModel;
     protected readonly string m_guid;
     protected readonly string m_name;

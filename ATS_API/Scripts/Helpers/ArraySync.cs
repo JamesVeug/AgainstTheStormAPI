@@ -5,7 +5,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-public class ArraySync<ATS, API> where ATS : SO
+public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
 {
     private int m_baseLength = -1;
     private string m_Name;
@@ -42,7 +42,10 @@ public class ArraySync<ATS, API> where ATS : SO
         Array.Resize(ref array, startingIndex + pending.Count);
         for (int i = 0; i < pending.Count; i++)
         {
-            array[startingIndex + i] = getter(pending[i]);
+            API syncable = pending[i];
+            ATS ats = getter(syncable);
+            syncable.Sync(ats);
+            array[startingIndex + i] = ats;
         }
         
         // string result = "";

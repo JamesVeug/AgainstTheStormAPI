@@ -1,36 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using ATS_API.Biomes;
 using ATS_API.Helpers;
-using ATS_API.Localization;
 using Eremite;
 using Eremite.Model;
-using Eremite.Model.Effects;
 using UnityEngine;
 
 namespace ATS_API.Effects;
 
 public static partial class EffectManager
 {
-    public class NewEffectData
-    {
-        public string Guid;
-        public string Name;
-        public EffectModel EffectModel;
-        public Availability Availability = new Availability();
-        public bool IsCornerstone = false;
-        public int Chance = 10; // 1-100
-    }
-    
     public static IReadOnlyList<NewEffectData> NewEffects => new ReadOnlyCollection<NewEffectData>(s_newEffects);
-    public static IReadOnlyList<ResolveEffectModel> NewResolveEffects => new ReadOnlyCollection<ResolveEffectModel>(s_newResolveEffects);
+    public static IReadOnlyList<NewResolveEffectData> NewResolveEffects => new ReadOnlyCollection<NewResolveEffectData>(s_newResolveEffects);
     
     private static List<NewEffectData> s_newEffects = new List<NewEffectData>();
-    private static List<ResolveEffectModel> s_newResolveEffects = new List<ResolveEffectModel>();
+    private static List<NewResolveEffectData> s_newResolveEffects = new List<NewResolveEffectData>();
     
     private static ArraySync<EffectModel, NewEffectData> s_effects = new("New Effects");
-    private static ArraySync<ResolveEffectModel, ResolveEffectModel> s_resolveEffects = new("new Resolve Effectgs");
+    private static ArraySync<ResolveEffectModel, NewResolveEffectData> s_resolveEffects = new("new Resolve Effectgs");
     
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
@@ -94,7 +81,10 @@ public static partial class EffectManager
     public static void AddResolveEffect(ResolveEffectModel model)
     {
         s_dirty = true;
-        s_newResolveEffects.Add(model);
+        s_newResolveEffects.Add(new NewResolveEffectData()
+        {
+            Model = model
+        });
     }
 
     private static void SyncEffect()
@@ -109,13 +99,13 @@ public static partial class EffectManager
 
         Settings settings = SO.Settings;
         s_effects.Sync(ref settings.effects, settings.effectsCache, s_newEffects, a=>a.EffectModel);
-        s_resolveEffects.Sync(ref SO.Settings.resolveEffects, settings.resolveEffectsCache, s_newResolveEffects, a=>a);
+        s_resolveEffects.Sync(ref SO.Settings.resolveEffects, settings.resolveEffectsCache, s_newResolveEffects, a=>a.Model);
         
         // s_allEffects = s_baseEffects.Concat(s_newEffects.Select(a=>a.EffectModel)).ToList();
         // settings.effects = s_allEffects.ToArray();
         // settings.effectsCache.cache = null; // Force refresh then next time it's accessed
-
-        BiomeManager.SyncBiomes();
+        
+        BiomeManager.SetDirty();
     }
 
     internal static void Instantiate()

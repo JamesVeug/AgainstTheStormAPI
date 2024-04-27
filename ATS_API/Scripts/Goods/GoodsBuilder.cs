@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ATS_API.Effects;
+﻿using ATS_API.Effects;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Model;
@@ -13,7 +12,7 @@ public class GoodsBuilder
     private readonly string guid;
     private readonly string name;
     
-    private readonly GoodsManager.NewGood newModel;
+    private readonly NewGood newModel;
 
     public GoodsBuilder(string guid, string name, string iconImage)
     {
@@ -83,7 +82,7 @@ public class GoodsBuilder
     /// <param name="weight">Chance which this item is offered to the player. (0 = never, 100 = always)</param>
     public void CanBeSoldToPlayer(int amount, float tradingBuyValue = 1.5f, int weight = 100)
     {
-        newModel.SoldByTrader = new GoodsManager.NewGood.TraderDetails();
+        newModel.SoldByTrader = new NewGood.TraderDetails();
         newModel.SoldByTrader.Amount = amount;
         newModel.SoldByTrader.Weight = weight;
         newModel.goodModel.tradingBuyValue = tradingBuyValue;
@@ -106,14 +105,14 @@ public class GoodsBuilder
         EffectsTableEntity tableEntity = new EffectsTableEntity();
         tableEntity.effect = effect;
         tableEntity.chance = chance;
-        newModel.RelicRewards.Add(new GoodsManager.NewGood.RelicDetails()
+        newModel.RelicRewards.Add(new NewGood.RelicDetails()
         {
             RelicGoodEffect = tableEntity,
         });
         Plugin.Log.LogInfo($"Effect {effectName} created");
     }
 
-    public static T CreateGoodEffect<T>(string guid, string name, GoodModel goodModel, int gainAmount, out EffectManager.NewEffectData effect) where T : GoodsEffectModel
+    public static T CreateGoodEffect<T>(string guid, string name, GoodModel goodModel, int gainAmount, out NewEffectData effect) where T : GoodsEffectModel
     {
         effect = EffectManager.CreateEffect<T>(guid, name);
         GoodsEffectModel goodsEffectModel = (GoodsEffectModel)effect.EffectModel;

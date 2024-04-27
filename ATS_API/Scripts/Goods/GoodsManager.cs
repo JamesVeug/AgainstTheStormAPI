@@ -11,25 +11,6 @@ namespace ATS_API.Goods;
 
 public static class GoodsManager
 {
-    public class NewGood
-    {
-        public class TraderDetails
-        {
-            public int Amount = 30;
-            public int Weight = 100;
-        }
-        
-        public class RelicDetails
-        {
-            public EffectsTableEntity RelicGoodEffect;
-        }
-        
-        public GoodModel goodModel;
-        public bool SoldToTrader;
-        public TraderDetails SoldByTrader;
-        public List<RelicDetails> RelicRewards = new List<RelicDetails>();
-    }
-    
     public static IReadOnlyList<NewGood> NewEffects => new ReadOnlyCollection<NewGood>(s_newGoods);
     
     private static List<NewGood> s_newGoods = new List<NewGood>();
@@ -103,13 +84,6 @@ public static class GoodsManager
 
         
         Settings settings = SO.Settings;
-        foreach (NewGood model in s_newGoods)
-        {
-            // Dunno what categories are for but we need them due to the lookupByCategory
-            model.goodModel.category = settings.Goods[0].category;
-            Plugin.Log.LogInfo($"Assigning new good {model.goodModel.name} category {model.goodModel.category.name}");
-        }
-        
         var added = s_goods.Sync(ref settings.Goods, settings.goodsCache, s_newGoods, a => a.goodModel);
         Plugin.Log.LogInfo($"Syncing {added.Count} with the trader");
         foreach (NewGood model in added)

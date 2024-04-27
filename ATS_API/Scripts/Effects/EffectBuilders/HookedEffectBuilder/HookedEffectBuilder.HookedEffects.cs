@@ -1,8 +1,5 @@
 ﻿using System;
-using ATS_API.Helpers;
-using ATS_API.Localization;
 using Eremite.Model;
-using Eremite.Model.Effects;
 using UnityEngine;
 
 namespace ATS_API.Effects;

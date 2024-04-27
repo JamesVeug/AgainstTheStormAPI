@@ -1,7 +1,4 @@
-﻿using ATS_API;
-using ATS_API.Effects;
-using ATS_API.Helpers;
-using ATS_API.Localization;
+﻿using ATS_API.Effects;
 using Eremite.Model;
 using Eremite.Model.Effects;
 using UnityEngine;

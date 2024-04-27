@@ -1,13 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ATS_API;
-using ATS_API.Helpers;
-using Cysharp.Threading.Tasks;
-using Eremite.Services;
-using Eremite.View.HUD;
-using HarmonyLib;
-using TMPro;
-using UnityEngine;
+﻿using HarmonyLib;
 
 [HarmonyPatch]
 public static partial class TextMeshProManager

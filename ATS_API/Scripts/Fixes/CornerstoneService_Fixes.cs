@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using Eremite;
 using Eremite.Model;
-using Eremite.Model.State;
 using Eremite.Services;
 using HarmonyLib;
 

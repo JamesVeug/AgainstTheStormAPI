@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Eremite;
-using Eremite.Model.Trade;
 using Eremite.Services;
 using HarmonyLib;
 

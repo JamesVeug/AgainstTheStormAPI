@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using ATS_API.Biomes;
+﻿using ATS_API.Biomes;
 using ATS_API.Effects;
 using ATS_API.Goods;
 using ATS_API.Helpers;
+using ATS_API.Orders;
 using ATS_API.Traders;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 using Eremite;
 using Eremite.Controller;
-using Eremite.Model;
-using Eremite.Model.Effects;
-using Eremite.Model.Effects.Hooked;
-using Eremite.Model.Trade;
+using Eremite.Services;
 using UnityEngine;
-using TextArgType = Eremite.Model.Effects.Hooked.TextArgType;
 
 namespace ATS_API;
 
@@ -55,6 +47,7 @@ public class Plugin : BaseUnityPlugin
         GoodsManager.Tick();
         TraderManager.Tick();
         OrdersManager.Tick();
+        BiomeManager.Tick();
         TextMeshProManager.Tick();
     }
         
@@ -64,29 +57,15 @@ public class Plugin : BaseUnityPlugin
     {
         Log.LogInfo($"PostSetupMainController");
         EffectManager.Instantiate();
-        BiomeManager.Instantiate();
         GoodsManager.Instantiate();
         TraderManager.Instantiate();
         OrdersManager.Instantiate();
+        BiomeManager.Instantiate();
         TextMeshProManager.Instantiate();
             
         // DumpPerksToJSON(MB.Settings.Relics, "Relics");
         // DumpPerksToJSON(MB.Settings.orders, "Orders");
         // DumpGoodsToJSON(MB.Settings.Goods, "Goods");
-    }
-
-    [Serializable]
-    public class GoodsExport
-    {
-        [Serializable]
-        public class TraderDetails
-        {
-            public string Name;
-            public int Amount;
-            public int Weight;
-        }
-        public GoodModel Good;
-        public List<TraderDetails> TradersAvailable = new List<TraderDetails>();
     }
 
         

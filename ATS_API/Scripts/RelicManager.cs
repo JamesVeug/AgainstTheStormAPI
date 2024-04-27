@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Linq;
 using ATS_API.Goods;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
-using Eremite.Model.Effects;
-using Eremite.Model.Orders;
-using UnityEngine;
 
 
 namespace ATS_API.Relics;
@@ -71,7 +66,7 @@ public static class RelicManager
         // s_orders.Sync(ref settings.orders, settings.ordersCache, s_OrderModels, a => a);
     }
 
-    public static void SyncNewGood(GoodsManager.NewGood model)
+    public static void SyncNewGood(NewGood model)
     {
         if (model.RelicRewards.Count == 0)
             return;
