@@ -8,7 +8,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <StormPath>C:\Program Files (x86)\Steam\steamapps\common\Against the Storm</StormPath>
-        <BepInExPath>%appdata%/Thunderstore Mod Manager/DataFolder/AgainstTheStorm/profiles/Default/BepInEx</BepInExPath>
+        <BepInExPath>$([System.Environment]::GetFolderPath(SpecialFolder.ApplicationData))/Thunderstore Mod Manager/DataFolder/AgainstTheStorm/profiles/Default/BepInEx</BepInExPath>
     </PropertyGroup>
     
     <ItemGroup>
@@ -37,6 +37,7 @@
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UniTask.dll" Publicize="false" private="false"/>
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.TextMeshPro.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UnityEngine.UI.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.InputSystem.dll" Publicize="false" private="false" />
     </ItemGroup>
       
     <ItemGroup>
@@ -77,6 +78,6 @@
         <Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\%(RecursiveDir)" />
 
         <!-- Run Against The Storm -->
-        <!-- <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
+<!--         <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
     </Target>
 </Project>

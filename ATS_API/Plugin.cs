@@ -44,29 +44,6 @@ public class Plugin : BaseUnityPlugin
         string expectedUnityVersion = "2021.3.27f1";
         Assert.IsEqual(Application.unityVersion, expectedUnityVersion, $"The Unity Version has changed!");
 
-        // GoodsBuilder builder = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Diamonds", "Diamonds.png");
-        // builder.SetDisplayName("Diamonds", SystemLanguage.Korean);
-        // builder.SetDescription("Shiny and worth a lot of money. but not strong enough to be used as Armor.");
-        // builder.CanBeSoldToAllTraders(40);
-        // builder.CanBeSoldToPlayer(10, 35);
-        // builder.AddRelicKeepRewardChance(10, 4);
-        // builder.AddRelicKeepRewardChance(5, 2);
-        //
-        // HookedEffectBuilder builder2 = new HookedEffectBuilder(PluginInfo.PLUGIN_GUID, "Modders Unite", "TestCornerstone.png");
-        // builder2.SetObtainedAsCornerstone();
-        // builder2.SetAvailableInAllBiomesAndSeasons();
-        // builder2.SetDrawLimit(1);
-        // builder2.AddHook(HookFactory.AfterXNewVillagers(8));
-        // builder2.AddHookedEffect(EffectFactory.AddHookedEffect_IncreaseResolve(PluginInfo.PLUGIN_GUID, "UniteResolve", 1, ResolveEffectType.Global));
-        //
-        // builder2.SetDisplayName("Modders Unite");
-        // builder2.SetDescription("Modders have united the kingdom and raised everyone's spirits. " +
-        //                         "Every {0} new Villagers gain +{1} Global Resolve.");
-        // builder2.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount), (SourceType.HookedEffect, TextArgType.Amount));
-        // builder2.SetPreviewDescription("+{0} Global Resolve");
-        // builder2.SetPreviewDescriptionArgs(HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked);
-
-        DontDestroyOnLoad(gameObject);
         // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
         gameObject.hideFlags = HideFlags.HideAndDontSave;
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
@@ -127,7 +104,6 @@ public class Plugin : BaseUnityPlugin
         // ExportWikiInformation();
     }
 
-    //
     [HarmonyPatch(typeof(GameController), nameof(GameController.StartGame))]
     [HarmonyPostfix]
     private static void HookEveryGameStart()
@@ -137,38 +113,5 @@ public class Plugin : BaseUnityPlugin
         var isNewGame = MB.GameSaveService.IsNewGame();
         Instance.Logger.LogInfo($"Entered a game. Is this a new game: {isNewGame}.");
         // TextMeshProManager.Instantiate();
-    }
-
-    private static void ExportWikiInformation()
-    {
-        Assembly assembly = typeof(HookLogic).Assembly;
-
-        // string effectTemplate =
-        //     File.ReadAllText(
-        //         "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Effects\\EffectFactory\\EffectFactory_Template.txt");
-        
-        string s = "|Effect Name|Is Perk";
-        s += "\n|---|---|\n";
-        foreach (Type type in assembly.GetTypes().Where(a => a.IsSubclassOf(typeof(EffectModel))).OrderBy(a=>a.Name))
-        {
-            if (type.IsAbstract) 
-                continue;
-            
-            ScriptableObject scriptableObject = ScriptableObject.CreateInstance(type);
-            PropertyInfo property = scriptableObject.GetType().GetProperty("IsPerk");
-            bool isPerk = (bool)property.GetMethod.Invoke(scriptableObject, null);
-            s += "|" + type.Name + "|" + isPerk + "|\n";
-        }
-        // Instance.Logger.LogInfo($"EffectModels: {s}");
-        File.WriteAllText("C:\\GitProjects\\ATS_API\\ATS_API\\WIKI\\EFFECTS.md", s);
-        
-        s = "|Hook Name|";
-        s += "\n|---|\n";
-        foreach (Type type in assembly.GetTypes().Where(a => a.IsSubclassOf(typeof(HookLogic))).OrderBy(a=>a.Name))
-        {
-            s += "|" + type.Name + "|\n";
-        }
-        // Instance.Logger.LogInfo($"HookLogics: {s}");
-        File.WriteAllText("C:\\GitProjects\\ATS_API\\ATS_API\\WIKI\\HOOKS.md", s);
     }
 }
