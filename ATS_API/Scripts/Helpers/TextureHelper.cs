@@ -23,6 +23,8 @@ public static class TextureHelper
         /// An icon for a cornerstone/perk/effect
         /// </summary>
         EffectIcon = 0,
+        TraderIconLarge = 1,
+        TraderIconSmall = 2,
     };
 
     private static Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
@@ -32,11 +34,15 @@ public static class TextureHelper
     private static readonly Dictionary<SpriteType, Rect> SPRITE_RECTS = new()
     {
         { SpriteType.EffectIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
+        { SpriteType.TraderIconLarge, new Rect(0.0f, 0.0f, 256.0f, 256.0f) },
+        { SpriteType.TraderIconSmall, new Rect(0.0f, 0.0f, 63.0f, 63.0f) },
     };
 
     private static readonly Dictionary<SpriteType, Vector2> SPRITE_PIVOTS = new()
     {
         { SpriteType.EffectIcon, DEFAULT_PIVOT },
+        { SpriteType.TraderIconLarge, DEFAULT_PIVOT },
+        { SpriteType.TraderIconSmall, DEFAULT_PIVOT },
     };
 
     /// <summary>
