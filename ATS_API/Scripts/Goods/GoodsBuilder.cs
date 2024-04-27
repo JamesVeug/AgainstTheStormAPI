@@ -32,6 +32,22 @@ public class GoodsBuilder
     public GoodsBuilder SetDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
         newModel.goodModel.description = LocalizationManager.ToLocaText(guid, name, "description", description, language);
+        if (newModel.goodModel.shortDescription == null)
+        {
+            newModel.goodModel.shortDescription = newModel.goodModel.description;
+        }
+
+        return this;
+    }
+    
+    public GoodsBuilder SetShortDescription(string description, SystemLanguage language = SystemLanguage.English)
+    {
+        newModel.goodModel.shortDescription = LocalizationManager.ToLocaText(guid, name, "shortDescription", description, language);
+        if (newModel.goodModel.description == null)
+        {
+            newModel.goodModel.description = newModel.goodModel.shortDescription;
+        }
+
         return this;
     }
 
