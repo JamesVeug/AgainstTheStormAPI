@@ -67,6 +67,8 @@ public class Plugin : BaseUnityPlugin
         // builder2.SetPreviewDescriptionArgs(HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked);
 
         DontDestroyOnLoad(gameObject);
+        // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
+        gameObject.hideFlags = HideFlags.HideAndDontSave;
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }
 
