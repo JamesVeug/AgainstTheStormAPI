@@ -53,6 +53,11 @@ public class TraderBuilder
     {
         m_traderModel.dialogue = LocalizationManager.ToLocaText(m_guid, m_name, "dialogue", description);
     }
+    
+    public void SetLabel(string label)
+    {
+        m_traderModel.label = LocalizationManager.ToLabelModel(m_guid, m_name, "label", label);
+    }
 
     public void SetStayingTime(float time)
     {
