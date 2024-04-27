@@ -14,7 +14,7 @@ public static class EffectHookedTextArg_Extensions
             hookedTextArgs[i] = new HookedTextArg()
             {
                 source = args[i].source,
-                sourceIndex = i,
+                sourceIndex = 0,
                 type = args[i].type,
             };
         }
