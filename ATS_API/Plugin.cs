@@ -77,6 +77,7 @@ public class Plugin : BaseUnityPlugin
         EffectManager.Tick();
         GoodsManager.Tick();
         TraderManager.Tick();
+        OrdersManager.Tick();
         TextMeshProManager.Tick();
     }
         
@@ -89,6 +90,7 @@ public class Plugin : BaseUnityPlugin
         BiomeManager.Instantiate();
         GoodsManager.Instantiate();
         TraderManager.Instantiate();
+        OrdersManager.Instantiate();
         TextMeshProManager.Instantiate();
             
         // DumpPerksToJSON(MB.Settings.Relics, "Relics");
