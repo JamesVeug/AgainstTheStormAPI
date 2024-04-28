@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using ATS_API.Traders;
 using Eremite.Model;
+using Eremite.Model.Sound;
 using Eremite.Model.Trade;
 using UnityEngine;
 
@@ -36,7 +38,15 @@ public class TraderBuilder
         m_traderModel.newsIcon = TextureHelper.GetImageAsSprite(newsIconPath, TextureHelper.SpriteType.TraderIconSmall);
         m_traderModel.isActive = true;
         m_traderModel.isInWiki = true;
+        m_traderModel.stayingTime = 80;
+        m_traderModel.arrivalTime = 720;
         m_traderModel.assaultEffects = Array.Empty<EffectModel>();
+
+        m_traderModel.panelOpenedSound = ScriptableObject.CreateInstance<SoundRef>();
+        m_traderModel.panelClosedSound = ScriptableObject.CreateInstance<SoundRef>();
+        m_traderModel.transactionSound = ScriptableObject.CreateInstance<SoundRef>();
+        m_traderModel.arrivalSound = ScriptableObject.CreateInstance<SoundRef>();
+        m_traderModel.departureSound = ScriptableObject.CreateInstance<SoundRef>();
     }
 
     public void SetDisplayName(string displayName, SystemLanguage systemLanguage = SystemLanguage.English)
@@ -135,5 +145,40 @@ public class TraderBuilder
     {
         // NOTE: All biomes use the same TraderConfig which has all the Traders in it... so that's nothing unique
         // m_newData.Availability.AddAllSeasons();
+    }
+    
+    public SoundRef AddOpenedSounds(params AudioClip[] sClip)
+    {
+        var soundModels = sClip.Select(a=>a.ToSoundModel());
+        ArrayExtensions.AddElements(ref m_traderModel.panelOpenedSound.sounds, soundModels);
+        return m_traderModel.panelOpenedSound;
+    }
+    
+    public SoundRef AddClosedSounds(params AudioClip[] sClip)
+    {
+        var soundModels = sClip.Select(a=>a.ToSoundModel());
+        ArrayExtensions.AddElements(ref m_traderModel.panelClosedSound.sounds, soundModels);
+        return m_traderModel.panelClosedSound;
+    }
+    
+    public SoundRef AddTransactionSounds(params AudioClip[] sClip)
+    {
+        var soundModels = sClip.Select(a=>a.ToSoundModel());
+        ArrayExtensions.AddElements(ref m_traderModel.transactionSound.sounds, soundModels);
+        return m_traderModel.transactionSound;
+    }
+    
+    public SoundRef AddArrivalSounds(params AudioClip[] sClip)
+    {
+        var soundModels = sClip.Select(a=>a.ToSoundModel());
+        ArrayExtensions.AddElements(ref m_traderModel.arrivalSound.sounds, soundModels);
+        return m_traderModel.arrivalSound;
+    }
+    
+    public SoundRef AddDepartureSounds(params AudioClip[] sClip)
+    {
+        var soundModels = sClip.Select(a=>a.ToSoundModel());
+        ArrayExtensions.AddElements(ref m_traderModel.departureSound.sounds, soundModels);
+        return m_traderModel.departureSound;
     }
 }

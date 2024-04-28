@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine.Pool;
 
 namespace ATS_API.Helpers;
 
@@ -23,6 +24,14 @@ public static class ArrayExtensions
         {
             array[startingIndex + i] = elements[i];
         }
+    }
+    
+    public static void AddElements<T>(ref T[] array, IEnumerable<T> elements)
+    {
+        List<T> list1 = ListPool<T>.Get();
+        list1.AddRange(elements);
+        AddElements(ref array, list1);
+        ListPool<T>.Release(list1);
     }
 
     public static void AddElement<T>(ref T[] array, T element)

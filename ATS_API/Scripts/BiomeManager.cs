@@ -79,7 +79,6 @@ public static partial class BiomeManager
                     trader = customTrader.TraderModel,
                     weight = 100
                 };
-                range.weights = new[] { traderWeight };
                 ArrayExtensions.AddElement(ref range.weights, traderWeight);
                 Plugin.Log.LogInfo($"{biome.trade.name} added {modelName}!");
             }
