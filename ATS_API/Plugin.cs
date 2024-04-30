@@ -57,6 +57,8 @@ public class Plugin : BaseUnityPlugin
         OrdersManager.Tick();
         BiomeManager.Tick();
         TextMeshProManager.Tick();
+        
+        // TODO: PostTick to set up links between objects since we can't guarantee they will be loaded in roder.
     }
         
     [HarmonyPatch(typeof(MainController), nameof(MainController.InitReferences))]

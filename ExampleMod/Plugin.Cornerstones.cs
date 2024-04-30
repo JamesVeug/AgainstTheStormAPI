@@ -8,7 +8,7 @@ namespace ExampleMod;
 
 public partial class Plugin
 {
-    private static void CreateCornerstones()
+    private void CreateCornerstones()
     {
         HookedEffectBuilder builder2 =
             new HookedEffectBuilder(PluginInfo.PLUGIN_GUID, "Modders Unite", "TestCornerstone.png");
