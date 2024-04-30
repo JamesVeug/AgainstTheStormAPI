@@ -26,6 +26,22 @@ public static class GoodsExtensions
         return list;
     }
     
+    public static GoodRef GetGoodRef(this NameToAmount goodName)
+    {
+        if (SO.Settings.ContainsGood(goodName.Name))
+        {
+            GoodModel goodModel = SO.Settings.GetGood(goodName.Name);
+            GoodRef goodRef = new GoodRef();
+            goodRef.good = goodModel;
+            goodRef.amount = goodName.Amount;
+            return goodRef;
+        }
+
+        // TODO: Find similar names goods to log out
+        Plugin.Log.LogWarning("Can't find good " + goodName);
+        return null;
+    }
+    
     public static List<GoodRef> GetGoodRefs(this IEnumerable<NameToAmount> collection)
     {
         List<GoodRef> list = new List<GoodRef>();

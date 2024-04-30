@@ -13,6 +13,7 @@ namespace ATS_API.Effects;
 /// <typeparam name="T">The type you want to create</typeparam>
 public class EffectBuilder<T> where T : EffectModel
 {
+    public string Name => m_effectModel.name;
     public T EffectModel => m_effectModel;
     
     protected readonly NewEffectData m_newData;
@@ -41,26 +42,44 @@ public class EffectBuilder<T> where T : EffectModel
         m_effectModel.frameColorByPositive = false;
         m_effectModel.usabilityTags = [];
         m_effectModel.blockedBy = [];
-        
-        
-        Texture2D texture = TextureHelper.GetImageAsTexture(iconPath);
-        TextMeshProManager.Add(texture, m_newData.EffectModel.name);
-        m_effectModel.overrideIcon = texture.ConvertTexture(TextureHelper.SpriteType.EffectIcon);
+
+
+        if (!string.IsNullOrEmpty(iconPath))
+        {
+            Texture2D texture = TextureHelper.GetImageAsTexture(iconPath);
+            TextMeshProManager.Add(texture, m_newData.EffectModel.name);
+            m_effectModel.overrideIcon = texture.ConvertTexture(TextureHelper.SpriteType.EffectIcon);
+        }
     }
     
     public void SetRarity(EffectRarity rarity)
     {
         m_effectModel.rarity = rarity;
     }
+    
+    public void SetPositive(bool positive)
+    {
+        m_effectModel.isPositive = positive;
+    }
 
     public void SetDisplayName(string displayName, SystemLanguage systemLanguage = SystemLanguage.English)
     {
         m_effectModel.displayName = LocalizationManager.ToLocaText(m_guid, m_name, "displayName", displayName, systemLanguage);
     }
+    
+    public void SetDisplayNameKey(string key)
+    {
+        m_effectModel.displayName = new LocaText() { key = key };
+    }
 
-    public void SetDescription(string description)
+    public virtual void SetDescription(string description)
     {
         m_effectModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description);
+    }
+    
+    public virtual void SetDescriptionKey(string key)
+    {
+        m_effectModel.description = new LocaText() { key = key };
     }
 
     public void SetObtainedAsCornerstone(int chance = 100)
@@ -83,5 +102,10 @@ public class EffectBuilder<T> where T : EffectModel
     public void SetAvailableInAllBiomesAndSeasons()
     {
         m_newData.Availability.AddAllSeasons();
+    }
+    
+    public void SetTradingBuyValue(int value)
+    {
+        m_effectModel.tradingBuyValue = value;
     }
 }

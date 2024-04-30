@@ -9,8 +9,6 @@ namespace ATS_API.Effects;
 /// </summary>
 public partial class HookedEffectBuilder : EffectBuilder<HookedEffectModel>
 {
-    public string Name => m_effectModel.name;
-    
     public HookedEffectBuilder(string guid, string name, string iconPath) : base(guid,name,iconPath)
     {
         m_effectModel.instantEffects = [];
