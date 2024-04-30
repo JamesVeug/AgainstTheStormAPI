@@ -10,8 +10,12 @@ public partial class Plugin
 {
     private void CreateCornerstones()
     {
-        HookedEffectBuilder builder2 =
-            new HookedEffectBuilder(PluginInfo.PLUGIN_GUID, "Modders Unite", "TestCornerstone.png");
+        CreateModdingToolsCornerstone();
+    }
+
+    private static void CreateModdingToolsCornerstone()
+    {
+        HookedEffectBuilder builder2 = new (PluginInfo.PLUGIN_GUID, "Modding Tools", "ModdingTools.png");
         builder2.SetObtainedAsCornerstone();
         builder2.SetAvailableInAllBiomesAndSeasons();
         builder2.SetDrawLimit(1);
@@ -19,14 +23,14 @@ public partial class Plugin
         builder2.AddHookedEffect(EffectFactory.AddHookedEffect_IncreaseResolve(PluginInfo.PLUGIN_GUID, "UniteResolve",
             1, ResolveEffectType.Global));
  
-        builder2.SetDisplayName("Modders Unite");
-        builder2.SetDescription("Modders have united the kingdom and raised everyone's spirits. " +
+        builder2.SetDisplayName("Modding Tools");
+        builder2.SetDescription("Modders have assembled new tools that bring in new talent. " +
                                 "Every {0} new Villagers gain +{1} Global Resolve.");
-        builder2.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount), (SourceType.HookedEffect, TextArgType.Amount));
+        builder2.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), (SourceType.HookedEffect, TextArgType.Amount, 0));
         builder2.SetPreviewDescription("+{0} Global Resolve");
-        builder2.SetPreviewDescriptionArgs(HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked);
+        builder2.SetPreviewDescriptionArgs((HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked, 0));
 
         ATS_API.Plugin.Log.LogInfo(
-            $"Cornerstone Modders Unite created {builder2.EffectModel.dynamicDescriptionArgs.Length}");
+            $"Cornerstone {builder2.Name} created {builder2.EffectModel.dynamicDescriptionArgs.Length}");
     }
 }

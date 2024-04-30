@@ -20,7 +20,7 @@ public partial class HookedEffectBuilder
             LocalizationManager.ToLocaText(m_guid, m_name, "retroactive", description);
     }
 
-    public void SetRetroactiveDescriptionArgs(params HookedStateTextArg.HookedStateTextSource[] args)
+    public void SetRetroactiveDescriptionArgs(params (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
     {
         m_effectModel.hasRetroactivePreview = true;
         m_effectModel.retroactivePreviewArgs = args.ToHookedStateTextArgArray();
@@ -43,7 +43,7 @@ public partial class HookedEffectBuilder
         m_effectModel.dynamicPreviewText = LocalizationManager.ToLocaText(m_guid, m_name, "preview", description);
     }
 
-    public void SetPreviewDescriptionArgs(params HookedStateTextArg.HookedStateTextSource[] args)
+    public void SetPreviewDescriptionArgs(params (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
     {
         m_effectModel.hasDynamicStatePreview = true;
         m_effectModel.statePreviewArgs = args.ToHookedStateTextArgArray();
@@ -55,7 +55,10 @@ public partial class HookedEffectBuilder
         m_effectModel.statePreviewArgs = args;
     }
 
-    public void SetDescriptionArgs(params (SourceType source, TextArgType type)[] args)
+    /// <summary>
+    /// Source Index is the index of the hook/hookedEffect
+    /// </summary>
+    public void SetDescriptionArgs(params (SourceType source, TextArgType type, int sourceIndex)[] args)
     {
         m_effectModel.formatDescription = true;
         m_effectModel.dynamicDescriptionArgs = args.ToHookedTextArgArray();

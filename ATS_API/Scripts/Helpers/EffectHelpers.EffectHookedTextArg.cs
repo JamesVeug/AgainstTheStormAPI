@@ -6,7 +6,7 @@ namespace ATS_API.Helpers;
 
 public static class EffectHookedTextArg_Extensions
 {
-    public static HookedTextArg[] ToHookedTextArgArray(this (SourceType source, TextArgType type)[] args)
+    public static HookedTextArg[] ToHookedTextArgArray(this (SourceType source, TextArgType type, int sourceIndex)[] args)
     {
         HookedTextArg[] hookedTextArgs = new HookedTextArg[args.Length];
         for (int i = 0; i < args.Length; i++)
@@ -14,7 +14,7 @@ public static class EffectHookedTextArg_Extensions
             hookedTextArgs[i] = new HookedTextArg()
             {
                 source = args[i].source,
-                sourceIndex = 0,
+                sourceIndex = args[i].sourceIndex,
                 type = args[i].type,
             };
         }
@@ -22,15 +22,15 @@ public static class EffectHookedTextArg_Extensions
         return hookedTextArgs;
     }
     
-    public static HookedStateTextArg[] ToHookedStateTextArgArray(this HookedStateTextArg.HookedStateTextSource[] args)
+    public static HookedStateTextArg[] ToHookedStateTextArgArray(this (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
     {
         HookedStateTextArg[] hookedStateTextArgs = new HookedStateTextArg[args.Length];
         for (int i = 0; i < args.Length; i++)
         {
             hookedStateTextArgs[i] = new HookedStateTextArg()
             {
-                source = args[i],
-                sourceIndex = i,
+                source = args[i].source,
+                sourceIndex = args[i].sourceIndex,
             };
         }
 
