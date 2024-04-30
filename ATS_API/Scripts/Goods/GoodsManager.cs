@@ -11,7 +11,7 @@ namespace ATS_API.Goods;
 
 public static class GoodsManager
 {
-    public static IReadOnlyList<NewGood> NewEffects => new ReadOnlyCollection<NewGood>(s_newGoods);
+    public static IReadOnlyList<NewGood> NewGoods => new ReadOnlyCollection<NewGood>(s_newGoods);
     
     private static List<NewGood> s_newGoods = new List<NewGood>();
     

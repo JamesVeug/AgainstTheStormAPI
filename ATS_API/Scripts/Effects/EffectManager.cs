@@ -73,7 +73,7 @@ public static partial class EffectManager
             Availability = availability ?? new Availability()
         };
         s_newEffects.Add(item);
-        Plugin.Log.LogInfo($"Added new effect {name} with guid {guid} name: {model.name}");
+        // Plugin.Log.LogInfo($"Added new effect {name} with guid {guid} name: {model.name}");
         
         return item;
     }
@@ -94,7 +94,7 @@ public static partial class EffectManager
             return;
         }
         
-        Plugin.Log.LogInfo("EffectManager.SyncEffect: base effects, " + s_newEffects.Count + " new effects");
+        // Plugin.Log.LogInfo("EffectManager.SyncEffect: base effects, " + s_newEffects.Count + " new effects");
 
 
         Settings settings = SO.Settings;

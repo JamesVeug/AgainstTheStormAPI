@@ -21,7 +21,7 @@ public static partial class TextMeshProManager
         s_dirty = true;
         texture.name = imageName;
         customImages.Add(texture);
-        Plugin.Log.LogInfo($"Adding {imageName} images to TMP");
+        // Plugin.Log.LogInfo($"Adding {imageName} images to TMP");
     }
 
     public static void Instantiate()

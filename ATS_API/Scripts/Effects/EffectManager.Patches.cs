@@ -7,22 +7,22 @@ namespace ATS_API.Effects;
 [HarmonyPatch]
 public static partial class EffectManager
 {
-    [HarmonyPatch(typeof(EffectsTable), nameof(EffectsTable.GetRandomNames))]
-    [HarmonyPostfix]
-    private static void EffectsTable_GetRandomNames_Postfix(EffectsTable __instance, ref List<string> __result)
-    {
-        Plugin.Log.LogInfo("Patching EffectsTable effects " + __instance.effects.Length);
-        foreach (EffectsTableEntity e in __instance.effects)
-        {
-            Plugin.Log.LogInfo($"- {e.chance}% {e.effect.name}");
-        }
-        
-        Plugin.Log.LogInfo("Patching EffectsTable result " + __result.Count);
-        foreach (string s in __result)
-        {
-            Plugin.Log.LogInfo("- " + s);
-        }
-    }
+    // [HarmonyPatch(typeof(EffectsTable), nameof(EffectsTable.GetRandomNames))]
+    // [HarmonyPostfix]
+    // private static void EffectsTable_GetRandomNames_Postfix(EffectsTable __instance, ref List<string> __result)
+    // {
+    //     Plugin.Log.LogInfo("Patching EffectsTable effects " + __instance.effects.Length);
+    //     foreach (EffectsTableEntity e in __instance.effects)
+    //     {
+    //         Plugin.Log.LogInfo($"- {e.chance}% {e.effect.name}");
+    //     }
+    //     
+    //     Plugin.Log.LogInfo("Patching EffectsTable result " + __result.Count);
+    //     foreach (string s in __result)
+    //     {
+    //         Plugin.Log.LogInfo("- " + s);
+    //     }
+    // }
     
     // [HarmonyPatch(typeof(CornerstonesService), nameof(CornerstonesService.GenerateRewards))]
     // [HarmonyPostfix]

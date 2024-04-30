@@ -119,11 +119,7 @@ public static partial class BiomeManager
         {
             seasonRewardModel.effectsTable.effects = seasonEffects.ToArray();
             // string allRewards = string.Join(", ", seasonEffects.Select(e => $"{e.effect.name} {e.chance}%"));
-            Plugin.Log.LogInfo($"{biome.name}.{seasonRewardModel} rewards from {baseEffects.Length} to {seasonEffects.Count}");
-        }
-        else
-        {
-            Plugin.Log.LogInfo($"{biome.name}.{seasonRewardModel} rewards unchanged");
+            // Plugin.Log.LogInfo($"{biome.name}.{seasonRewardModel} rewards from {baseEffects.Length} to {seasonEffects.Count}");
         }
     }
 }
