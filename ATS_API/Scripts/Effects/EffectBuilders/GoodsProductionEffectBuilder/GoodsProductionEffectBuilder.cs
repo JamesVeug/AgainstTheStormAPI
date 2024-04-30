@@ -21,6 +21,7 @@ public class GoodsProductionEffectBuilder : EffectBuilder<GoodsRawProductionEffe
         m_metaData = new GoodProductionEffectBuildMetaData();
         m_newData.MetaData = m_metaData;
         m_effectModel.description = new LocaText() { key = "Reward_Generic_GoodsRawProduction_Description" };
+        EffectModel.formatDescription = true;
     }
     
     public void SetGoodsPerYield(int amount, string goodName)
