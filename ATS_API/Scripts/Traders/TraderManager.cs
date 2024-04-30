@@ -73,21 +73,21 @@ public static partial class TraderManager
         BiomeManager.SetDirty(); // Add trader to biomes
     }
 
-    public static void SyncNewGood(NewGood model)
+    public static void SyncNewGood(NewGood newGood)
     {
-        if (model.SoldByTrader != null || model.SoldToTrader)
+        if (newGood.SoldByTraderDetails != null || newGood.TraderDesiredAvailability != null)
         {
             // TODO: Add filter by trader name
             foreach (TraderModel traderModel in MB.Settings.traders)
             {
-                if (model.SoldByTrader != null)
+                if (newGood.SoldByTraderDetails != null && newGood.SoldByTraderDetails.TraderAvailability.ContainsTrader(traderModel))
                 {
-                    if (model.SoldByTrader.Weight >= 100)
+                    if (newGood.SoldByTraderDetails.Weight >= 100)
                     {
                         GoodRef goodRef = new GoodRef()
                         {
-                            good = model.goodModel,
-                            amount = model.SoldByTrader.Amount
+                            good = newGood.goodModel,
+                            amount = newGood.SoldByTraderDetails.Amount
                         };
                         ArrayExtensions.AddElement(ref traderModel.guaranteedOfferedGoods, goodRef);
                     }
@@ -95,20 +95,23 @@ public static partial class TraderManager
                     {
                         GoodRefWeight goodRef = new GoodRefWeight()
                         {
-                            good = model.goodModel,
-                            amount = model.SoldByTrader.Amount,
-                            weight = model.SoldByTrader.Weight
+                            good = newGood.goodModel,
+                            amount = newGood.SoldByTraderDetails.Amount,
+                            weight = newGood.SoldByTraderDetails.Weight
                         };
                         ArrayExtensions.AddElement(ref traderModel.offeredGoods, goodRef);
                     }
 
-                    Plugin.Log.LogInfo($"{model.goodModel.name} is offered by {traderModel.name}!");
+                    Plugin.Log.LogInfo($"{newGood.goodModel.name} is offered by {traderModel.name}!");
                 }
 
-                if (model.SoldToTrader)
+                if (newGood.TraderDesiredAvailability != null)
                 {
-                    ArrayExtensions.AddElement(ref traderModel.desiredGoods, model.goodModel);
-                    Plugin.Log.LogInfo($"{model.goodModel.name} is desired by {traderModel.name}!");
+                    if (newGood.TraderDesiredAvailability.ContainsTrader(traderModel))
+                    {
+                        ArrayExtensions.AddElement(ref traderModel.desiredGoods, newGood.goodModel);
+                        Plugin.Log.LogInfo($"{newGood.goodModel.name} is desired by {traderModel.name}!");
+                    }
                 }
             }
         }

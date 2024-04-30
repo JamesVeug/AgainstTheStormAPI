@@ -12,7 +12,7 @@ using UnityEngine;
 namespace ATS_API.Effects;
 
 
-public class TraderBuilder
+public partial class TraderBuilder
 {
     public TraderModel TraderModel => m_traderModel;
     
@@ -27,10 +27,6 @@ public class TraderBuilder
         m_name = name;
 
         m_newData = TraderManager.New(guid, name);
-        m_newData.GuaranteedOfferedGoods.AddRange(TraderHelpers.DefaultGuaranteedOfferedGoods);
-        m_newData.DesiredGoods.AddRange(TraderHelpers.DefaultDesiredGoods);
-        m_newData.OfferedGoods.AddRange(TraderHelpers.DefaultOfferedGoods);
-        m_newData.Merchandise.AddRange(TraderHelpers.DefaultMerchandise);
         
         m_traderModel = m_newData.TraderModel;
         m_traderModel.label =  LocalizationManager.ToLabelModel(guid, name, "label", "Modded");
@@ -41,7 +37,8 @@ public class TraderBuilder
         m_traderModel.stayingTime = 80;
         m_traderModel.arrivalTime = 720;
         m_traderModel.assaultEffects = Array.Empty<EffectModel>();
-
+        m_traderModel.assaultLockedTooltipText = new LocaText();
+        
         m_traderModel.panelOpenedSound = ScriptableObject.CreateInstance<SoundRef>();
         m_traderModel.panelClosedSound = ScriptableObject.CreateInstance<SoundRef>();
         m_traderModel.transactionSound = ScriptableObject.CreateInstance<SoundRef>();
@@ -80,7 +77,7 @@ public class TraderBuilder
     }
 
     /// <summary>
-    /// Optional
+    /// Optional. Most Traders are blank by default
     /// </summary>
     /// <param name="description"></param>
     public void SetAssaultLockedText(string description)
@@ -100,85 +97,9 @@ public class TraderBuilder
     {
         m_traderModel.assaultEffects = effects;
     }
-    
-    public void SetGuaranteedOfferedGoods(params NameToAmount[] goods)
-    {
-        m_newData.GuaranteedOfferedGoods = new List<NameToAmount>(goods);
-    }
-    
-    public void AddGuaranteedOfferedGoods(params NameToAmount[] goods)
-    {
-        m_newData.GuaranteedOfferedGoods.AddRange(goods);
-    }
-    
-    public void SetOfferedGoods(params NameToAmount[] goods)
-    {
-        m_newData.OfferedGoods = new List<NameToAmount>(goods);
-    }
-    
-    public void AddOfferedGoods(params NameToAmount[] goods)
-    {
-        m_newData.OfferedGoods.AddRange(goods);
-    }
-    
-    public void SetDesiredGoods(params string[] goods)
-    {
-        m_newData.DesiredGoods = new List<string>(goods);
-    }
-    
-    public void AddDesiredGoods(params string[] goods)
-    {
-        m_newData.DesiredGoods.AddRange(goods);
-    }
-    
-    public void SetMerchandise(params EffectDrop[] names)
-    {
-        m_traderModel.merchandise = names;
-    }
-    
+
     public void SetAmountOfGoods(int minAmount, int maxAmount)
     {
         m_traderModel.goodsAmount = new Vector2Int(minAmount, maxAmount);
-    }
-
-    public void SetAvailableInAllBiomes()
-    {
-        // NOTE: All biomes use the same TraderConfig which has all the Traders in it... so that's nothing unique
-        // m_newData.Availability.AddAllSeasons();
-    }
-    
-    public SoundRef AddOpenedSounds(params AudioClip[] sClip)
-    {
-        var soundModels = sClip.Select(a=>a.ToSoundModel());
-        ArrayExtensions.AddElements(ref m_traderModel.panelOpenedSound.sounds, soundModels);
-        return m_traderModel.panelOpenedSound;
-    }
-    
-    public SoundRef AddClosedSounds(params AudioClip[] sClip)
-    {
-        var soundModels = sClip.Select(a=>a.ToSoundModel());
-        ArrayExtensions.AddElements(ref m_traderModel.panelClosedSound.sounds, soundModels);
-        return m_traderModel.panelClosedSound;
-    }
-    
-    public SoundRef AddTransactionSounds(params AudioClip[] sClip)
-    {
-        var soundModels = sClip.Select(a=>a.ToSoundModel());
-        ArrayExtensions.AddElements(ref m_traderModel.transactionSound.sounds, soundModels);
-        return m_traderModel.transactionSound;
-    }
-    
-    public SoundRef AddArrivalSounds(params AudioClip[] sClip)
-    {
-        var soundModels = sClip.Select(a=>a.ToSoundModel());
-        ArrayExtensions.AddElements(ref m_traderModel.arrivalSound.sounds, soundModels);
-        return m_traderModel.arrivalSound;
-    }
-    
-    public SoundRef AddDepartureSounds(params AudioClip[] sClip)
-    {
-        var soundModels = sClip.Select(a=>a.ToSoundModel());
-        ArrayExtensions.AddElements(ref m_traderModel.departureSound.sounds, soundModels);
-        return m_traderModel.departureSound;
     }
 }
