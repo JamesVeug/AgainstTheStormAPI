@@ -9,8 +9,10 @@ namespace ATS_API.Goods;
 
 public class GoodsBuilder
 {
-    private readonly string guid;
-    private readonly string name;
+    public string Name => newModel.goodModel.name; // myguid_itemName
+    
+    private readonly string guid; // myGuid
+    private readonly string name; // itemName
     
     private readonly NewGood newModel;
 
@@ -19,6 +21,7 @@ public class GoodsBuilder
         this.guid = guid;
         this.name = name;
         newModel = GoodsManager.New(guid, name, iconImage);
+        newModel.Category = "Modded";
         TextMeshProManager.Add(newModel.goodModel.icon.texture, newModel.goodModel.name);
     }
 
@@ -49,6 +52,17 @@ public class GoodsBuilder
 
         return this;
     }
+    
+    /// <summary>
+    /// Sets the category of the Good. Used for filtering when searching in the trends menu
+    /// example: Food, Building Materials, Consumable Items, Crafting, Fuel, Others, Trade Goods
+    /// Default is Modded.
+    /// </summary>
+    public GoodsBuilder SetCategory(string category)
+    {
+        newModel.Category = category;
+        return this;
+    }
 
     public GoodsBuilder SetEatable(float fullnessValue=1.0f)
     {
@@ -67,12 +81,24 @@ public class GoodsBuilder
     /// <summary>
     /// Method to set whether the goods can be sold to traders and the value at which they are sold.
     /// </summary>
-    /// <param name="sellAmount">The rate at which the goods are sold to traders.</param>
-    public void CanBeSoldToAllTraders(float sellAmount)
+    /// <param name="sellValue">The rate at which the goods are sold to traders.</param>
+    public void SetTraderSellValue(float sellValue)
     {
-        newModel.SoldToTrader = true;
-        newModel.goodModel.tradingSellValue = sellAmount;
+        newModel.goodModel.tradingSellValue = sellValue;
     }
+
+    public void CanbeSoldToAllTraders()
+    {
+        newModel.TraderDesiredAvailability ??= new TraderAvailability();
+        newModel.TraderDesiredAvailability.SetAllTraders();
+    }
+    
+    public void SetCanBeSoldToTrader(string traderName)
+    {
+        newModel.TraderDesiredAvailability ??= new TraderAvailability();
+        newModel.TraderDesiredAvailability.AddTrader(traderName);
+    }
+    
 
     /// <summary>
     /// Method to set the details for selling goods by traders to players.
@@ -82,10 +108,30 @@ public class GoodsBuilder
     /// <param name="weight">Chance which this item is offered to the player. (0 = never, 100 = always)</param>
     public void CanBeSoldToPlayer(int amount, float tradingBuyValue = 1.5f, int weight = 100)
     {
-        newModel.SoldByTrader = new NewGood.TraderDetails();
-        newModel.SoldByTrader.Amount = amount;
-        newModel.SoldByTrader.Weight = weight;
+        newModel.SoldByTraderDetails ??= new NewGood.GoodSoldByTraderDetails();
+        newModel.SoldByTraderDetails.Amount = amount;
+        newModel.SoldByTraderDetails.Weight = weight;
         newModel.goodModel.tradingBuyValue = tradingBuyValue;
+    }
+
+    /// <summary>
+    /// Makes the Good available at all traders to be purchased by player.
+    /// Use CanBeSoldToPlayer() to define amount, chance for it to be solve and how much it costs.
+    /// </summary>
+    public void SetSoldByAllTraders()
+    {
+        newModel.SoldByTraderDetails ??= new NewGood.GoodSoldByTraderDetails();
+        newModel.SoldByTraderDetails.TraderAvailability.SetAllTraders();
+    }
+    
+    /// <summary>
+    /// Makes the Good available at a specific trader to be purchased by player.
+    /// Use CanBeSoldToPlayer() to define amount, chance for it to be solve and how much it costs.
+    /// </summary>
+    public void AddTraderSellingGood(string traderName)
+    {
+        newModel.SoldByTraderDetails ??= new NewGood.GoodSoldByTraderDetails();
+        newModel.SoldByTraderDetails.TraderAvailability.AddTrader(traderName);
     }
 
     /// <summary>

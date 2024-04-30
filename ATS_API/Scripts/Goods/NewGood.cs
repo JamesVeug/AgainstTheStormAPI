@@ -1,15 +1,20 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
+using UnityEngine;
 
 namespace ATS_API.Goods;
 
 public class NewGood : ASyncable<GoodModel>
 {
-    public class TraderDetails
+    public class GoodSoldByTraderDetails
     {
         public int Amount = 30;
         public int Weight = 100;
+        public TraderAvailability TraderAvailability = new TraderAvailability();
     }
         
     public class RelicDetails
@@ -18,18 +23,24 @@ public class NewGood : ASyncable<GoodModel>
     }
         
     public GoodModel goodModel;
-    public bool SoldToTrader;
-    public TraderDetails SoldByTrader;
+    public TraderAvailability TraderDesiredAvailability;
+    public string Category = "Modded";
+    public GoodSoldByTraderDetails SoldByTraderDetails;
     public List<RelicDetails> RelicRewards = new List<RelicDetails>();
 
     public override void Sync(GoodModel model)
     {
         Settings settings = SO.Settings;
-        if (model.category == null)
+        if (model.category == null && Category != null)
         {
-            model.category = settings.Goods[0].category;
+            GoodCategoryModel modelCategory = settings.GoodsCategories.FirstOrDefault(x => x.name.Equals(Category, StringComparison.InvariantCultureIgnoreCase));
+            if (modelCategory == null)
+            {
+                Plugin.Log.LogError($"Good Category {Category} not found for good {model.name}. Custom Good Categories not supported yet!");
+                modelCategory = settings.Goods[0].category;
+            }
+            model.category = modelCategory;
+            Plugin.Log.LogInfo($"Assigning new good {model.name} category {model.category.name}");
         }
-
-        Plugin.Log.LogInfo($"Assigning new good {model.name} category {model.category.name}");
     }
 }
