@@ -4,7 +4,7 @@ This mod is to be used an an example for those that wish to make their own mods.
 
 ## Includes
 - 3 New Goods
-- 1 New Cornerstone
+- 2 New Cornerstones
 - 1 New Trader
 
 ## Contributors
