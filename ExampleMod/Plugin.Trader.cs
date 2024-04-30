@@ -6,13 +6,14 @@ public partial class Plugin
 {
     private void CreateTrader()
     {
-        TraderBuilder builder = new TraderBuilder(PluginInfo.PLUGIN_GUID, "ExampleTrader", "TraderIcon.png", "TraderIconSmall.png");
-        builder.SetDisplayName("Example Trader");
-        builder.SetDescription("This is an example trader.");
-        builder.SetDialogue("Hello, I am an example trader.");
+        TraderBuilder builder = new TraderBuilder(PluginInfo.PLUGIN_GUID, "Wild Bill", "TraderIcon.png", "TraderIconSmall.png");
+        builder.SetDisplayName("Wild Bill");
+        builder.SetDescription("He sells common western goods, and a small number of basic blueprints and perks. Trade carefully!");
+        builder.SetDialogue("Howdy, partner! I'm Wild Bill, the best trader in the west. I've got everything you need, and more!");
         builder.SetAssaultData(3,5,0.5f,0.4f, true);
         builder.SetAmountOfGoods(15,20);
         builder.AddDefaultMerchandise();
+        builder.SetDesiredGoods();
         builder.AddGuaranteedOfferedGoods((40, "[Valuable] Amber"));
         builder.AddOfferedGoods((2, "[Valuable] Ancient Tablet", 50));
         builder.AddOfferedGoods((100, "[Mat Raw] Wood", 100));

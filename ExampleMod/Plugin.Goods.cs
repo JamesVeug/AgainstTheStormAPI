@@ -20,7 +20,7 @@ public partial class Plugin
         
         lpg = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "LPG", "LPG.png");
         lpg.SetDisplayName("LPG");
-        lpg.SetDescription("Liquefied Petroleum Gas, a clean and efficient fuel.");
+        lpg.SetDescription("A clean and efficient fuel.");
         lpg.SetCategory("Fuel");
         lpg.SetTraderSellValue(17f);
         lpg.CanBeSoldToPlayer(10, 29f);
