@@ -39,12 +39,12 @@ public class Plugin : BaseUnityPlugin
         // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
         gameObject.hideFlags = HideFlags.HideAndDontSave;
         
-        Hotkeys.RegisterKey("Reset Tradder", KeyCode.F1, () =>
-        {
-            Logger.LogInfo($"Resetting trader!");
-            TradeService tradeService = (TradeService)GameMB.TradeService;
-            tradeService.Leave();
-        });
+        // Hotkeys.RegisterKey("Reset Tradder", KeyCode.F1, () =>
+        // {
+        //     Logger.LogInfo($"Resetting trader!");
+        //     TradeService tradeService = (TradeService)GameMB.TradeService;
+        //     tradeService.Leave();
+        // });
         
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }
