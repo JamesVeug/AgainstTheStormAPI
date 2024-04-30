@@ -50,7 +50,7 @@ public class GoodsBuilder
         return this;
     }
 
-    public GoodsBuilder SetEatable(float fullnessValue)
+    public GoodsBuilder SetEatable(float fullnessValue=1.0f)
     {
         newModel.goodModel.eatable = true;
         newModel.goodModel.eatingFullness = fullnessValue;
