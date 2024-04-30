@@ -4,7 +4,7 @@ This mod is designed to be used in conjunction with other mods that wish to add 
 
 Against the Storm is a deeply complex game with tricky to navigate code for the average person. Also with the game being regulary updated it's impossible to know what the devs will change in code which can result in your mod breaking and requiring you to manually fix and reupload it.
 
-The API works as an inbetween of your mod and the game by supplying helper methods that create new content and insert it into the game accordingly. This means that if the game updates and breaks your mod, the API will be updated to fix it and require little to no support from your end. (fingers crossed)
+The API works as an in-between of your mod and the game by supplying helper methods that create new content and insert it into the game accordingly. This means that if the game updates and breaks your mod, the API will be updated to fix it and require little to no support from your end. (fingers crossed)
 
 
 ## Help
@@ -24,6 +24,7 @@ https://thunderstore.io/c/againstthestorm/p/JamesGames/api/wiki/
 ## What's added
 - New Goods (items that can be traded/sold, food & fuel)
 - New Cornerstones
+- New Traders
 
 
 ## Contributors
