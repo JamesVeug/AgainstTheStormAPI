@@ -24,9 +24,6 @@ public class Hotkeys
     [HarmonyPostfix]
     private static void HookMainControllerSetup(InputConfig __instance)
     {
-        Plugin.Log.LogInfo($"Performing game initialization on behalf of {PluginInfo.PLUGIN_GUID}.");
-        Plugin.Log.LogInfo($"The game has loaded {__instance.asset.actionMaps.Count} action maps.");
-
         InputAsset = __instance.asset;
         
         // Create an action map containing a single action with a gamepad binding.
