@@ -66,6 +66,11 @@ public class EffectBuilder<T> : IEffectBuilder where T : EffectModel
         m_effectModel.isPositive = positive;
     }
 
+    public void SetLabel(string labelModel, SystemLanguage systemLanguage = SystemLanguage.English)
+    {
+        m_effectModel.label = LocalizationManager.ToLabelModel(m_guid, m_name, "label", labelModel, systemLanguage);
+    }
+
     public void SetDisplayName(string displayName, SystemLanguage systemLanguage = SystemLanguage.English)
     {
         m_effectModel.displayName = LocalizationManager.ToLocaText(m_guid, m_name, "displayName", displayName, systemLanguage);
