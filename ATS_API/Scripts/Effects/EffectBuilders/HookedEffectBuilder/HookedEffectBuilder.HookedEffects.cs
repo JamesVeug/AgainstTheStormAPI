@@ -18,6 +18,8 @@ public partial class HookedEffectBuilder
     public void AddHookedEffect(EffectModel effect)
     {
         effect.name = m_effectModel.name + "_hookedEffect_" + (m_effectModel.instantEffects.Length + 1);
+        SetMissingFields(effect);
+        
         if (m_effectModel.hookedEffects == null)
         {
             m_effectModel.hookedEffects = [effect];

@@ -1,4 +1,6 @@
-﻿using Eremite.Model.Effects;
+﻿using ATS_API.Helpers;
+using Eremite.Model;
+using Eremite.Model.Effects;
 
 namespace ATS_API.Effects;
 
@@ -13,5 +15,26 @@ public partial class HookedEffectBuilder : EffectBuilder<HookedEffectModel>
     {
         m_effectModel.instantEffects = [];
         m_effectModel.hookedEffects = [];
+    }
+
+    private void SetMissingFields(EffectModel effect)
+    {
+        if (effect.description == null || effect.description.key == Placeholders.DescriptionKey)
+        {
+            effect.description = m_effectModel.description;
+            effect.formatDescription = m_effectModel.formatDescription;
+        }
+        if (effect.displayName == null || effect.displayName.key == Placeholders.DisplayNameKey)
+        {
+            effect.displayName = m_effectModel.displayName;
+        }
+        if (effect.label == null || effect.label.displayName.key == Placeholders.DisplayNameKey)
+        {
+            effect.label = m_effectModel.label;
+        }
+        if (effect.GetIcon() == null)
+        {
+            effect.overrideIcon = m_effectModel.GetIcon();
+        }
     }
 }

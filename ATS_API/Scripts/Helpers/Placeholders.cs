@@ -11,8 +11,8 @@ public static class Placeholders
     private static Sprite EffectIconCache = TextureHelper.GetWhiteTexture(TextureHelper.SpriteType.EffectIcon).ConvertTexture(TextureHelper.SpriteType.EffectIcon);
     
     // Create new object but not new key in case someone tries changing it
-    public static LocaText DisplayName => DisplayKey.ToLocaText();
-    public static readonly string DisplayKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "displayName", "Missing DisplayName");
+    public static LocaText DisplayName => DisplayNameKey.ToLocaText();
+    public static readonly string DisplayNameKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "displayName", "Missing DisplayName");
     
     // Create new object but not new key in case someone tries changing it
     public static LocaText Description => DescriptionKey.ToLocaText();

@@ -11,10 +11,12 @@ namespace ATS_API.Effects;
 /// See helper methods to see how to acquire them in-game
 /// </summary>
 /// <typeparam name="T">The type you want to create</typeparam>
-public class EffectBuilder<T> where T : EffectModel
+public class EffectBuilder<T> : IEffectBuilder where T : EffectModel 
 {
-    public string Name => m_effectModel.name;
+    public string Name => m_name;
+    public string GUID => m_guid;
     public T EffectModel => m_effectModel;
+    public EffectModel Model => m_effectModel;
     
     protected readonly NewEffectData m_newData;
     protected readonly T m_effectModel;

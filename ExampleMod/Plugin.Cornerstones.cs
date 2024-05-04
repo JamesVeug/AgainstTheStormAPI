@@ -22,9 +22,6 @@ public partial class Plugin
         builder.SetObtainedAsCornerstone();
         builder.SetAvailableInAllBiomesAndSeasons();
         builder.SetDrawLimit(1);
-        builder.AddHook(HookFactory.AfterXNewVillagers(8));
-        builder.AddHookedEffect(EffectFactory.AddHookedEffect_IncreaseResolve(PluginInfo.PLUGIN_GUID, "UniteResolve",
-            1, ResolveEffectType.Global));
  
         builder.SetDisplayName("Modding Tools");
         builder.SetDescription("Modders have assembled new tools that bring in new talent. " +
@@ -33,6 +30,14 @@ public partial class Plugin
         builder.SetPreviewDescription("+{0} Global Resolve");
         builder.SetPreviewDescriptionArgs((HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked, 0));
 
+        // Add last so if anything is missing it uses the main effects description/name/icon
+        builder.AddHook(HookFactory.AfterXNewVillagers(8));
+        builder.AddHookedEffect(EffectFactory.AddHookedEffect_IncreaseResolve(builder, 1, ResolveEffectType.Global));
+
+        // Example if you had to rename something and it broke your save. This corrects your save data to use the right name. 
+        GlobalResolveEffectEffectModel model = (GlobalResolveEffectEffectModel)builder.EffectModel.hookedEffects[builder.EffectModel.hookedEffects.Length - 1];
+        EffectManager.AddPreviouslyNamedEffect("API_ExampleMod_UniteResolve_resolve_effect_model", model.effect.name);
+        
         ATS_API.Plugin.Log.LogInfo($"Cornerstone {builder.Name} created {builder.EffectModel.dynamicDescriptionArgs.Length}");
     }
     

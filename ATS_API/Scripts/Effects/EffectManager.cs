@@ -12,9 +12,11 @@ public static partial class EffectManager
 {
     public static IReadOnlyList<NewEffectData> NewEffects => new ReadOnlyCollection<NewEffectData>(s_newEffects);
     public static IReadOnlyList<NewResolveEffectData> NewResolveEffects => new ReadOnlyCollection<NewResolveEffectData>(s_newResolveEffects);
+    public static IReadOnlyDictionary<string, string> PreviouslyNamedAs => new ReadOnlyDictionary<string, string>(s_previouslyNamedAs);
     
     private static List<NewEffectData> s_newEffects = new List<NewEffectData>();
     private static List<NewResolveEffectData> s_newResolveEffects = new List<NewResolveEffectData>();
+    private static Dictionary<string, string> s_previouslyNamedAs = new Dictionary<string, string>();
     
     private static ArraySync<EffectModel, NewEffectData> s_effects = new("New Effects");
     private static ArraySync<ResolveEffectModel, NewResolveEffectData> s_resolveEffects = new("new Resolve Effectgs");
@@ -85,6 +87,11 @@ public static partial class EffectManager
         {
             Model = model
         });
+    }
+
+    public static void AddPreviouslyNamedEffect(string oldName, string newName)
+    {
+        s_previouslyNamedAs[oldName] = newName;
     }
 
     private static void SyncEffect()
