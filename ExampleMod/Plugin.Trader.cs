@@ -13,7 +13,7 @@ public partial class Plugin
         builder.SetAssaultData(3,5,0.5f,0.4f, true);
         builder.SetAmountOfGoods(15,20);
         builder.AddDefaultMerchandise();
-        builder.SetDesiredGoods();
+        builder.AddDefaultDesiredGoods();
         builder.AddGuaranteedOfferedGoods((40, "[Valuable] Amber"));
         builder.AddOfferedGoods((2, "[Valuable] Ancient Tablet", 50));
         builder.AddOfferedGoods((100, "[Mat Raw] Wood", 100));
