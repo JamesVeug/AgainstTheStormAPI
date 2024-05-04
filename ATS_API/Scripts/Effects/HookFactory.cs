@@ -23,4 +23,17 @@ public static class HookFactory
         hook.ignoreRemovedVillagers = ignoreRemovedVillagers;
         return hook;
     }
+    
+    public static SeasonChangeHook AfterSeasonChanges(Seasons seasons, int yearlyInterval = 1, bool removeAfterSeasonEnds = false)
+    {
+        SeasonChangeHook effectModel = CreateHook<SeasonChangeHook>();
+        effectModel.season = seasons > Seasons.All ? seasons.ToSeason() : Season.Drizzle;
+        if (seasons == Seasons.All)
+        {
+            effectModel.anySeason = true;
+        }
+        effectModel.yearsInterval = yearlyInterval;
+        effectModel.removeAfterSeasonEnds = removeAfterSeasonEnds;
+        return effectModel;
+    }
 }
