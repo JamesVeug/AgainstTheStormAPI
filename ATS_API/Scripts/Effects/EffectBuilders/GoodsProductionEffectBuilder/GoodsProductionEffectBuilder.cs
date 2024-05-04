@@ -5,6 +5,12 @@ using Eremite.Model;
 using Eremite.Model.Effects;
 using UnityEngine;
 
+namespace ATS_API.Effects;
+
+/// <summary>
+/// +1 to Stone production. Gain addition 1 every yield (from gathering, farming, or production).
+/// {1} to {0} production. Gain additional {0} every yield (from gathering, farming, or production).
+/// </summary>
 public class GoodsProductionEffectBuilder : EffectBuilder<GoodsRawProductionEffectModel>
 {
     public class GoodProductionEffectBuildMetaData
