@@ -28,7 +28,9 @@ public class EffectBuilder<T> where T : EffectModel
 
         m_newData = EffectManager.CreateEffect<T>(guid, name);
         m_effectModel = (T)m_newData.EffectModel;
-        m_effectModel.label =  LocalizationManager.ToLabelModel(guid, name, "label", "Modded");
+        m_effectModel.label = Placeholders.Label;
+        m_effectModel.displayName = Placeholders.DisplayName;
+        m_effectModel.description = Placeholders.Description;
         m_effectModel.rarity = EffectRarity.Common;
         m_effectModel.tradingBuyValue = 100;
         m_effectModel.formatDescription = false;

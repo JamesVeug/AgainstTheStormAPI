@@ -1,4 +1,5 @@
 ﻿using System;
+using Eremite.Model;
 using Eremite.Model.Effects;
 
 namespace ATS_API.Effects;
@@ -11,6 +12,7 @@ public static class HookFactory
     private static T CreateHook<T>() where T : HookLogic
     {
         T instance = Activator.CreateInstance<T>();
+        instance.description = Placeholders.Description;
         return instance;
     }
     

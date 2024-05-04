@@ -44,6 +44,21 @@ public static class TextureHelper
         { SpriteType.TraderIconLarge, DEFAULT_PIVOT },
         { SpriteType.TraderIconSmall, DEFAULT_PIVOT },
     };
+    
+    public static Texture2D GetWhiteTexture(SpriteType spriteType)
+    {
+        SPRITE_RECTS.TryGetValue(spriteType, out Rect rect);
+        Texture2D texture = new((int)rect.width, (int)rect.height, TextureFormat.RGBA32, false);
+        Color[] pixels = new Color[texture.width * texture.height];
+        for (int i = 0; i < pixels.Length; i++)
+        {
+            pixels[i] = Color.white;
+        }
+
+        texture.SetPixels(pixels);
+        texture.Apply();
+        return texture;
+    }
 
     /// <summary>
     /// Reads the contents of an image file on disk and returns it as a byte array.
