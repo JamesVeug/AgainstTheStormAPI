@@ -16,7 +16,7 @@ public partial class HookedEffectBuilder
 
     public void AddInstantEffect(EffectModel effect)
     {
-        effect.name = m_effectModel.name = "_instantEffect_" + (m_effectModel.instantEffects.Length + 1);
+        effect.name = m_effectModel.name + "_instantEffect_" + (m_effectModel.instantEffects.Length + 1);
         if (m_effectModel.instantEffects == null)
         {
             m_effectModel.instantEffects = [effect];
