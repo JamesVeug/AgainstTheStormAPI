@@ -17,15 +17,26 @@ public class NewEffectData : ASyncable<EffectModel>
 
     public override void Sync(EffectModel model)
     {
-        if (EffectModel is GoodsRawProductionEffectModel goodsRawProductionEffectModel)
+        if (model is GoodsRawProductionEffectModel goodsRawProductionEffectModel)
         {
             if (MetaData is GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData metaData)
             {
                 goodsRawProductionEffectModel.good = metaData.Good.GetGoodRef();
             }
-            else
+            else if(MetaData != null)
             {
-                Plugin.Log.LogError($"{EffectModel.name} MetaData is not GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData");
+                Plugin.Log.LogError($"{model.name} MetaData is not GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData");
+            }
+        }
+        if (model is GoodsEffectModel goodsEffectModel)
+        {
+            if (MetaData is GoodsEffectBuilder.GoodEffectBuildMetaData metaData)
+            {
+                goodsEffectModel.good = metaData.GoodsToGive.GetGoodRef();
+            }
+            else if(MetaData != null)
+            {
+                Plugin.Log.LogError($"{model.name} MetaData is not GoodsEffectBuilder.GoodEffectBuildMetaData");
             }
         }
     }

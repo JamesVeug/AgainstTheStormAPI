@@ -51,8 +51,8 @@ public class Plugin : BaseUnityPlugin
 
     private void LateUpdate()
     {
-        EffectManager.Tick();
         GoodsManager.Tick();
+        EffectManager.Tick();
         TraderManager.Tick();
         OrdersManager.Tick();
         BiomeManager.Tick();
@@ -66,8 +66,8 @@ public class Plugin : BaseUnityPlugin
     private static void PostSetupMainController()
     {
         Log.LogInfo($"PostSetupMainController");
-        EffectManager.Instantiate();
         GoodsManager.Instantiate();
+        EffectManager.Instantiate();
         TraderManager.Instantiate();
         OrdersManager.Instantiate();
         BiomeManager.Instantiate();
