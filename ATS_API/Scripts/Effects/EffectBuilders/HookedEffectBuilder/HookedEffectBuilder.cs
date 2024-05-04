@@ -17,7 +17,7 @@ public partial class HookedEffectBuilder : EffectBuilder<HookedEffectModel>
         m_effectModel.hookedEffects = [];
     }
 
-    private void SetMissingFields(EffectModel effect)
+    private void AssignMissingFieldsToEffect(EffectModel effect)
     {
         if (effect.description == null || effect.description.key == Placeholders.DescriptionKey)
         {
