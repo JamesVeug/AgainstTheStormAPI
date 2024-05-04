@@ -97,7 +97,7 @@ public static partial class BiomeManager
             }
                     
             if (effectData.Availability?.SeasonsAvailable == null ||
-                !effectData.Availability.SeasonsAvailable.Contains(seasonRewardModel.season))
+                !effectData.Availability.SeasonsAvailable.ContainsSeason(seasonRewardModel.season))
             {
                 continue;
             }

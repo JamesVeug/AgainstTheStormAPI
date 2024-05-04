@@ -24,14 +24,11 @@ public static class HookFactory
         return hook;
     }
     
-    public static SeasonChangeHook AfterSeasonChanges(Seasons seasons, int yearlyInterval = 1, bool removeAfterSeasonEnds = false)
+    public static SeasonChangeHook OnNewSeason(SeasonTypes seasonTypes, int yearlyInterval, bool removeAfterSeasonEnds = false)
     {
         SeasonChangeHook effectModel = CreateHook<SeasonChangeHook>();
-        effectModel.season = seasons > Seasons.All ? seasons.ToSeason() : Season.Drizzle;
-        if (seasons == Seasons.All)
-        {
-            effectModel.anySeason = true;
-        }
+        effectModel.season = seasonTypes > SeasonTypes.All ? seasonTypes.ToSeason() : Season.Drizzle;
+        effectModel.anySeason = seasonTypes == SeasonTypes.All;
         effectModel.yearsInterval = yearlyInterval;
         effectModel.removeAfterSeasonEnds = removeAfterSeasonEnds;
         return effectModel;
