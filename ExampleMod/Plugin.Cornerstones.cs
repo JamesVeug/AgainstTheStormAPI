@@ -22,6 +22,7 @@ public partial class Plugin
         builder.SetObtainedAsCornerstone();
         builder.SetAvailableInAllBiomesAndSeasons();
         builder.SetDrawLimit(1);
+        builder.SetLabel("API");
  
         builder.SetDisplayName("Modding Tools");
         builder.SetDescription("Modders have assembled new tools that bring in new talent. " +
@@ -45,6 +46,7 @@ public partial class Plugin
     {
         // {1} to {0} production. Gain additional {0} every yield (from gathering, farming, or production).
         var builder = new GoodsProductionEffectBuilder(PluginInfo.PLUGIN_GUID, "Omega Sewing Technique");
+        builder.SetLabel("API");
         builder.SetPositive(true);
         builder.SetRarity(EffectRarity.Legendary);
         builder.SetObtainedAsCornerstone();
