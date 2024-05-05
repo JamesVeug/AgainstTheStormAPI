@@ -22,6 +22,9 @@ public class GoodsBuilder
         this.name = name;
         newModel = GoodsManager.New(guid, name, iconImage);
         newModel.Category = "Modded";
+        newModel.goodModel.displayName = Placeholders.DisplayName;
+        newModel.goodModel.description = Placeholders.Description;
+        newModel.goodModel.shortDescription = Placeholders.Description;
         TextMeshProManager.Add(newModel.goodModel.icon.texture, newModel.goodModel.name);
     }
 
@@ -34,7 +37,7 @@ public class GoodsBuilder
     public GoodsBuilder SetDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
         newModel.goodModel.description = LocalizationManager.ToLocaText(guid, name, "description", description, language);
-        if (newModel.goodModel.shortDescription == null)
+        if (newModel.goodModel.shortDescription == null || newModel.goodModel.shortDescription.key == Placeholders.Description.key)
         {
             newModel.goodModel.shortDescription = newModel.goodModel.description;
         }
@@ -45,7 +48,7 @@ public class GoodsBuilder
     public GoodsBuilder SetShortDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
         newModel.goodModel.shortDescription = LocalizationManager.ToLocaText(guid, name, "shortDescription", description, language);
-        if (newModel.goodModel.description == null)
+        if (newModel.goodModel.description == null || newModel.goodModel.description.key == Placeholders.Description.key)
         {
             newModel.goodModel.description = newModel.goodModel.shortDescription;
         }
