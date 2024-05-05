@@ -1,9 +1,15 @@
-# 1.x.x
-- Added defaults to effects to avoid errors when making a new perk/cornerstone
+# 1.1.1 - Possible mod breaking changes.
+- Added defaults to new goods and effects to avoid errors when making a new perk/cornerstone
 - Added light support for devs to specify a renaming of an effect to avoid breaking saves.
 - Added AfterSeasonChanges Hook (Thanks Shush!)
+- Added SetLabel for EffectBuilders
+- Added GoodsTypes enum for easier referencing types. Can still use string if preferred
 - Fixed missing resolve effects breaking existing save files
-- Possible mod breaking changes. Please check your mods and update them accordingly.
+- Fixed HookedEffectBuilder.AddInstantEffect changing the name of the main effect
+- Fixed error message when trying to get a Good that does not exist
+- Renamed SetMissingFields to AssignMissingFieldsToEffect
+- Renamed CanbeSoldToAllTraders to CanBeSoldToAllTraders
+- Changed a lot of namespaces to be more precise
 
 # 1.1.0
 - Added Custom Trader support
