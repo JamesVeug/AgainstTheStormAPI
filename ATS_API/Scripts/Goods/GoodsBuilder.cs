@@ -90,7 +90,7 @@ public class GoodsBuilder
         newModel.goodModel.tradingSellValue = sellValue;
     }
 
-    public void CanbeSoldToAllTraders()
+    public void CanBeSoldToAllTraders()
     {
         newModel.TraderDesiredAvailability ??= new TraderAvailability();
         newModel.TraderDesiredAvailability.SetAllTraders();
