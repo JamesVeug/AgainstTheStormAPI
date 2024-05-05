@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ATS_API;
-using ATS_API.Traders;
+using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
 
