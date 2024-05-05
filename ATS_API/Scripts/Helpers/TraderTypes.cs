@@ -4,6 +4,9 @@ namespace ATS_API.Helpers;
 
 public enum TraderTypes
 {
+    Unknown = -1,
+    None,
+    All,
     Sahilda,              // Trader 0 - General
     Aline_Soulgaser,      // Trader - Glade 01
     Gex_Runescale,        // Trader - Glade 02

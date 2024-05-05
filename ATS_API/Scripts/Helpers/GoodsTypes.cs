@@ -4,6 +4,9 @@ namespace ATS_API.Helpers;
 
 public enum GoodsTypes
 {
+    Unknown = -1,
+    None,
+    All,
     Ale,
     Amber,
     AncientTablet,
