@@ -19,7 +19,7 @@ public static class GoodsExtensions
             }
             else
             {
-                // TODO: Find similar names goods to log out
+                // TODO: Find similar names goods to log out what they MIGHT want
                 Plugin.Log.LogWarning("Can't find good " + goodName);
             }
         }
@@ -37,8 +37,8 @@ public static class GoodsExtensions
             return goodRef;
         }
 
-        // TODO: Find similar names goods to log out
-        Plugin.Log.LogWarning("Can't find good " + goodName);
+        // TODO: Find similar names goods to log out what they MIGHT want
+        Plugin.Log.LogWarning("Can't find good " + goodName.Name);
         return null;
     }
     
