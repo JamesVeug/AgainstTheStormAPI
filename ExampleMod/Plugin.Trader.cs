@@ -1,4 +1,5 @@
 ﻿using ATS_API.Effects;
+using ATS_API.Helpers;
 
 namespace ExampleMod;
 
@@ -14,28 +15,28 @@ public partial class Plugin
         builder.SetAmountOfGoods(15,20);
         builder.AddDefaultMerchandise();
         builder.AddDefaultDesiredGoods();
-        builder.AddGuaranteedOfferedGoods((40, "[Valuable] Amber"));
-        builder.AddOfferedGoods((2, "[Valuable] Ancient Tablet", 50));
-        builder.AddOfferedGoods((100, "[Mat Raw] Wood", 100));
+        builder.AddGuaranteedOfferedGoods((40, GoodsTypes.Amber));
+        builder.AddOfferedGoods((2, GoodsTypes.AncientTablet, 50));
+        builder.AddOfferedGoods((100, GoodsTypes.Wood, 100));
         builder.AddOfferedGoods((5, diamonds.Name, 100));
         builder.AddOfferedGoods((20, lpg.Name, 100));
         builder.AddOfferedGoods((50, kiwiFruit.Name, 100));
-        builder.AddOfferedGoods((40, "[Food Raw] Meat", 100));
-        builder.AddOfferedGoods((30, "[Food Raw] Eggs", 100));
-        builder.AddOfferedGoods((50, "[Mat Raw] Stone", 100));
-        builder.AddOfferedGoods((50, "[Mat Raw] Leather", 100));
-        builder.AddOfferedGoods((40, "[Metal] Copper Ore", 100));
-        builder.AddOfferedGoods((50, "[Food Raw] Mushrooms", 100));
-        builder.AddOfferedGoods((50, "[Mat Raw] Resin", 100));
-        builder.AddOfferedGoods((50, "[Crafting] Oil", 100));
-        builder.AddOfferedGoods((50, "[Crafting] Coal", 100));
-        builder.AddOfferedGoods((50, "[Vessel] Barrels", 100));
-        builder.AddOfferedGoods((50, "[Vessel] Waterskin", 100));
-        builder.AddOfferedGoods((50, "[Food Raw] Grain", 100));
-        builder.AddOfferedGoods((50, "[Metal] Crystalized Dew", 100));
-        builder.AddOfferedGoods((50, "[Metal] Copper Bar", 100));
-        builder.AddOfferedGoods((50, "[Food Processed] Biscuits", 100));
-        builder.AddOfferedGoods((50, "[Needs] Ale", 100));
-        builder.AddOfferedGoods((50, "[Needs] Wine", 100));
+        builder.AddOfferedGoods((40, GoodsTypes.Meat, 100));
+        builder.AddOfferedGoods((30, GoodsTypes.Eggs, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Stone, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Leather, 100));
+        builder.AddOfferedGoods((40, GoodsTypes.CopperOre, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Mushrooms, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Resin, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Oil, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Coal, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Barrels, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Waterskin, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Grain, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.CrystalizedDew, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.CopperBar, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Biscuits, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Ale, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.Wine, 100));
     }
 }

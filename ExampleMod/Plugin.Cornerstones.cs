@@ -1,4 +1,5 @@
 ﻿using ATS_API.Effects;
+using ATS_API.Helpers;
 using Eremite.Model;
 using Eremite.Model.Effects;
 using Eremite.Model.Effects.Hooked;
@@ -52,7 +53,7 @@ public partial class Plugin
         builder.SetAvailableInAllBiomesAndSeasons();
  
         builder.SetDisplayName("Omega Sewing Technique");
-        builder.SetGoodsPerYield(10, "[Needs] Coats");
+        builder.SetGoodsPerYield(10, GoodsTypes.Coats);
         builder.SetTradingBuyValue(300);
     }
     

@@ -12,8 +12,10 @@ namespace ATS_API.Goods;
 public static class GoodsManager
 {
     public static IReadOnlyList<NewGood> NewGoods => new ReadOnlyCollection<NewGood>(s_newGoods);
+    public static IReadOnlyDictionary<GoodsTypes, NewGood> NewGoodsLookup => new ReadOnlyDictionary<GoodsTypes, NewGood>(s_newGoodsLookup);
     
     private static List<NewGood> s_newGoods = new List<NewGood>();
+    private static Dictionary<GoodsTypes, NewGood> s_newGoodsLookup = new Dictionary<GoodsTypes, NewGood>();
     
     private static ArraySync<GoodModel, NewGood> s_goods = new("New Goods");
     
@@ -47,11 +49,16 @@ public static class GoodsManager
     private static NewGood Add(string guid, string name, GoodModel goodModel)
     {
         goodModel.name = guid + "_" + name;
+        
+        GoodsTypes id = GUIDManager.Get<GoodsTypes>(guid, name);
         NewGood newGood = new NewGood
         {
             goodModel = goodModel,
+            id = id
         };
         s_newGoods.Add(newGood);
+        s_newGoodsLookup.Add(id, newGood);
+        GoodsTypesExtensions.TypeToInternalName.Add(id, guid + "_" + name);
         s_dirty = true;
 
         return newGood;

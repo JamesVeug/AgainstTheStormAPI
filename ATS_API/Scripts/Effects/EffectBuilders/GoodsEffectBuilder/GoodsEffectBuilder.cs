@@ -27,4 +27,9 @@ public class GoodsEffectBuilder : EffectBuilder<GoodsEffectModel>
     {
         m_metaData.GoodsToGive = new NameToAmount(amount, goodName);
     }
+    
+    public void SetGood(int amount, GoodsTypes goodsTypes)
+    {
+        m_metaData.GoodsToGive = new NameToAmount(amount, goodsTypes.ToName());
+    }
 }

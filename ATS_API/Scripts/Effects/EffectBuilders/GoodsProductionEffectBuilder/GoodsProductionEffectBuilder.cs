@@ -31,4 +31,9 @@ public class GoodsProductionEffectBuilder : EffectBuilder<GoodsRawProductionEffe
     {
         m_metaData.Good = new NameToAmount(amount, goodName);
     }
+    
+    public void SetGoodsPerYield(int amount, GoodsTypes goodsTypes)
+    {
+        m_metaData.Good = new NameToAmount(amount, goodsTypes.ToName());
+    }
 }

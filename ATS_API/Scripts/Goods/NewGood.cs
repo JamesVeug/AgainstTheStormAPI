@@ -21,6 +21,7 @@ public class NewGood : ASyncable<GoodModel>
         public EffectsTableEntity RelicGoodEffect;
     }
         
+    public GoodsTypes id;
     public GoodModel goodModel;
     public TraderAvailability TraderDesiredAvailability;
     public string Category = "Modded";
