@@ -13,8 +13,10 @@ namespace ATS_API.Traders;
 public static partial class TraderManager
 {
     public static IReadOnlyList<CustomTrader> NewTraders => new ReadOnlyCollection<CustomTrader>(s_newTraders);
+    public static IReadOnlyDictionary<TraderTypes, CustomTrader> NewTraderLookup => new ReadOnlyDictionary<TraderTypes, CustomTrader>(s_newTraderLookup);
     
     private static List<CustomTrader> s_newTraders = new List<CustomTrader>();
+    private static Dictionary<TraderTypes, CustomTrader> s_newTraderLookup = new Dictionary<TraderTypes, CustomTrader>();
 
     private static ArraySync<TraderModel, CustomTrader> s_traders = new("New Traders");
 
@@ -31,12 +33,15 @@ public static partial class TraderManager
     private static CustomTrader Add(string guid, string name, TraderModel model)
     {
         model.name = guid + "_" + name;
+        TraderTypes id = GUIDManager.Get<TraderTypes>(guid, name);
         CustomTrader customTrader = new CustomTrader()
         {
+            id = id,
             TraderModel = model
         };
         
         s_newTraders.Add(customTrader);
+        s_newTraderLookup[id] = customTrader;
         s_dirty = true;
         return customTrader;
     }
@@ -77,7 +82,6 @@ public static partial class TraderManager
     {
         if (newGood.SoldByTraderDetails != null || newGood.TraderDesiredAvailability != null)
         {
-            // TODO: Add filter by trader name
             foreach (TraderModel traderModel in MB.Settings.traders)
             {
                 if (newGood.SoldByTraderDetails != null && newGood.SoldByTraderDetails.TraderAvailability.ContainsTrader(traderModel))

@@ -102,6 +102,12 @@ public class GoodsBuilder
         newModel.TraderDesiredAvailability.AddTrader(traderName);
     }
     
+    public void SetCanBeSoldToTrader(TraderTypes traderType)
+    {
+        newModel.TraderDesiredAvailability ??= new TraderAvailability();
+        newModel.TraderDesiredAvailability.AddTrader(traderType.ToName());
+    }
+    
 
     /// <summary>
     /// Method to set the details for selling goods by traders to players.
@@ -135,6 +141,16 @@ public class GoodsBuilder
     {
         newModel.SoldByTraderDetails ??= new NewGood.GoodSoldByTraderDetails();
         newModel.SoldByTraderDetails.TraderAvailability.AddTrader(traderName);
+    }
+    
+    /// <summary>
+    /// Makes the Good available at a specific trader to be purchased by player.
+    /// Use CanBeSoldToPlayer() to define amount, chance for it to be solve and how much it costs.
+    /// </summary>
+    public void AddTraderSellingGood(TraderTypes traderType)
+    {
+        newModel.SoldByTraderDetails ??= new NewGood.GoodSoldByTraderDetails();
+        newModel.SoldByTraderDetails.TraderAvailability.AddTrader(traderType.ToName());
     }
 
     /// <summary>

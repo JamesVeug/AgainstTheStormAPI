@@ -79,7 +79,7 @@ public static class GoodsTypesExtensions
             return name;
         }
         
-        Plugin.Log.LogError($"Cannot find name of type: " + type);
+        Plugin.Log.LogError($"Cannot find name of good type: " + type);
         return GoodsTypes.Coats.ToString();
     }
 

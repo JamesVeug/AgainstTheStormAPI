@@ -7,6 +7,7 @@ namespace ATS_API.Traders;
 
 public class CustomTrader : ASyncable<TraderModel>
 {
+    public TraderTypes id;
     public TraderModel TraderModel;
     public List<string> DesiredGoods = new List<string>();
     public List<NameToAmount> GuaranteedOfferedGoods = new List<NameToAmount>();
