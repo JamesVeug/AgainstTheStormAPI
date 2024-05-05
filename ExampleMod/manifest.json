@@ -1,8 +1,8 @@
 ﻿{
   "name": "ExampleMod",
-  "version_number": "1.0.0",
+  "version_number": "1.1.0",
   "website_url": "https://github.com/JamesVeug/AgainstTheStormAPI",
   "description": "Adds a new Trader, new Goods and new Cornerstones",
-  "dependencies": ["BepInEx-BepInExPack-5.4.2100", "ATS_API_Devs-API-1.1.0"]
+  "dependencies": ["BepInEx-BepInExPack-5.4.2100", "ATS_API_Devs-API-1.1.1"]
 }
 

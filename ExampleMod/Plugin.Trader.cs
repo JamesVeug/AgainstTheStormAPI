@@ -31,7 +31,7 @@ public partial class Plugin
         builder.AddOfferedGoods((50, GoodsTypes.Oil, 100));
         builder.AddOfferedGoods((50, GoodsTypes.Coal, 100));
         builder.AddOfferedGoods((50, GoodsTypes.Barrels, 100));
-        builder.AddOfferedGoods((50, GoodsTypes.Waterskin, 100));
+        builder.AddOfferedGoods((50, GoodsTypes.WaterSkin, 100));
         builder.AddOfferedGoods((50, GoodsTypes.Grain, 100));
         builder.AddOfferedGoods((50, GoodsTypes.CrystalizedDew, 100));
         builder.AddOfferedGoods((50, GoodsTypes.CopperBar, 100));
