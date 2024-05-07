@@ -15,6 +15,7 @@ public partial class HookedEffectBuilder : EffectBuilder<HookedEffectModel>
     {
         m_effectModel.instantEffects = [];
         m_effectModel.hookedEffects = [];
+        m_effectModel.hooks = [];
     }
 
     private void AssignMissingFieldsToEffect(EffectModel effect)
