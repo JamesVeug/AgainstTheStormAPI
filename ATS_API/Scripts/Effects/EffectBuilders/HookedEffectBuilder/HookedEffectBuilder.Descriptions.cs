@@ -11,7 +11,7 @@ public partial class HookedEffectBuilder
     /// <summary>
     /// Cornerstones show a basic description of what it does
     /// This shows the resulting effect when its picked from the rewardPopup
-    /// (Extra for cornerstone)
+    /// Set 'startWithCurrentValue' on the hookLogic to make it work retroactively. 
     /// </summary>
     /// <param name="description"></param>
     public void SetRetroactiveDescription(string description)
