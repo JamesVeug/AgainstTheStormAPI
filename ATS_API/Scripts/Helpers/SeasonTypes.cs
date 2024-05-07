@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Eremite.Model;
+
+namespace ATS_API.Helpers;
 
 public enum SeasonTypes
 {
