@@ -25,7 +25,7 @@ public static class HookFactory
         return hook;
     }
     
-    public static SeasonChangeHook OnNewSeason(SeasonTypes seasonTypes, int yearlyInterval, bool removeAfterSeasonEnds = false)
+    public static SeasonChangeHook OnNewSeason(SeasonTypes seasonTypes, int yearlyInterval = 1, bool removeAfterSeasonEnds = false)
     {
         SeasonChangeHook effectModel = CreateHook<SeasonChangeHook>();
         effectModel.season = seasonTypes > SeasonTypes.All ? seasonTypes.ToSeason() : Season.Drizzle;
