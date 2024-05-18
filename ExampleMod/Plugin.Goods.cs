@@ -7,6 +7,7 @@ public partial class Plugin
     private GoodsBuilder diamonds;
     private GoodsBuilder lpg;
     private GoodsBuilder kiwiFruit;
+    private GoodsBuilder burger;
     private void CreateGoods()
     {
         diamonds = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Diamonds", "Diamonds.png");
@@ -35,5 +36,13 @@ public partial class Plugin
         kiwiFruit.AddRelicKeepRewardChance(10, 4);
         kiwiFruit.AddRelicKeepRewardChance(5, 2);
         kiwiFruit.SetEatable(1);
+        
+        burger = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Borgor", "Burger.png");
+        burger.SetDisplayName("Borgor");
+        burger.SetDescription("Juicy and delicious.");
+        burger.SetCategory("Food");
+        burger.SetTraderSellValue(2.5f);
+        burger.CanBeSoldToPlayer(30, 5.0f);
+        burger.SetEatable(3);
     }
 }

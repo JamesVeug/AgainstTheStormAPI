@@ -27,6 +27,7 @@ public partial class Plugin : BaseUnityPlugin
         CreateGoods();
         CreateCornerstones();
         CreateTrader();
+        CreateBuildings();
         
         Log.LogInfo($"{PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} Plugin loaded");
     }

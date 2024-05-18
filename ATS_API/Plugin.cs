@@ -1,4 +1,6 @@
-﻿using ATS_API.Biomes;
+﻿using System.Linq;
+using ATS_API.Biomes;
+using ATS_API.Buildings;
 using ATS_API.Effects;
 using ATS_API.Goods;
 using ATS_API.Helpers;
@@ -8,7 +10,9 @@ using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 using Eremite;
+using Eremite.Buildings;
 using Eremite.Controller;
+using Eremite.Model.Trade;
 using Eremite.Services;
 using UnityEngine;
 
@@ -57,6 +61,7 @@ public class Plugin : BaseUnityPlugin
         OrdersManager.Tick();
         BiomeManager.Tick();
         TextMeshProManager.Tick();
+        BuildingManager.Tick();
         
         // TODO: PostTick to set up links between objects since we can't guarantee they will be loaded in roder.
     }
@@ -72,6 +77,7 @@ public class Plugin : BaseUnityPlugin
         OrdersManager.Instantiate();
         BiomeManager.Instantiate();
         TextMeshProManager.Instantiate();
+        BuildingManager.Instantiate();
             
         // DumpPerksToJSON(MB.Settings.Relics, "Relics");
         // DumpPerksToJSON(MB.Settings.orders, "Orders");
@@ -89,7 +95,15 @@ public class Plugin : BaseUnityPlugin
         Instance.Logger.LogInfo($"Performing game initialization on behalf of {PluginInfo.PLUGIN_GUID}.");
         Instance.Logger.LogInfo($"The game has loaded {MainController.Instance.Settings.effects.Length} effects.");
 
+        // ID, Script
+
+        string s = "";
+        foreach (BuildingModel buildingModel in SO.Settings.Buildings.OrderBy(a=>a.name))
+        {
+            s += buildingModel.name + ", " + buildingModel.GetType().FullName + "\n";
+        }
         
+        Instance.Logger.LogInfo(s);
         // ExportWikiInformation();
     }
 
@@ -102,5 +116,6 @@ public class Plugin : BaseUnityPlugin
         var isNewGame = MB.GameSaveService.IsNewGame();
         Instance.Logger.LogInfo($"Entered a game. Is this a new game: {isNewGame}.");
         // TextMeshProManager.Instantiate();
+        // WIKI.DumpEffectsJSON();
     }
 }
