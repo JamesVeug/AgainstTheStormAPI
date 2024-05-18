@@ -69,4 +69,36 @@ public partial class HookedEffectBuilder
         m_effectModel.formatDescription = true;
         m_effectModel.dynamicDescriptionArgs = args;
     }
+    
+    public void SetRemovalPreviewDescription(string description)
+    {
+        m_effectModel.removalDynamicPreviewText = LocalizationManager.ToLocaText(m_guid, m_name, "removalDescription", description);
+    }
+
+    public void SetRemovalPreviewDescriptionArgs(params (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
+    {
+        m_effectModel.hasRemovalDynamicStatePreview = true;
+        m_effectModel.removalStatePreviewArgs = args.ToHookedStateTextArgArray();
+    }
+
+    public void SetRemovalPreviewDescriptionArgs(params HookedStateTextArg[] args)
+    {
+        m_effectModel.hasRemovalDynamicStatePreview = true;
+        m_effectModel.removalStatePreviewArgs = args;
+    }
+
+    /// <summary>
+    /// NOTE - when this is set, the amountText field is completely ignored, it doesn't matter what you put in there, it will not do anything.
+    /// The system prefers the nestedAmount value first, for use as text in the bottom part of the effect's icon, and only uses amountText as a fallback.
+    /// </summary>
+    public void SetNestedAmount(SourceType source, TextArgType type, int sourceIndex)
+    {
+        m_effectModel.hasNestedAmount = true;
+        m_effectModel.nestedAmount = new HookedTextArg()
+        {
+            source = source,
+            sourceIndex = sourceIndex,
+            type = type,
+        };
+    }
 }
