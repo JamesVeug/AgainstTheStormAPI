@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Eremite;
+using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
@@ -84,6 +86,17 @@ public static class GoodsTypesExtensions
         
         Plugin.Log.LogError($"Cannot find name of good type: " + type);
         return GoodsTypes.Coats.ToString();
+    }
+    
+    public static GoodModel ToGoodsModel(this string goodName)
+    {
+        if (SO.Settings.ContainsGood(goodName))
+        {
+            return SO.Settings.GetGood(goodName);
+        }
+        
+        Plugin.Log.LogError($"Cannot find name of good: " + goodName);
+        return null;
     }
 
     internal static readonly Dictionary<GoodsTypes, string> TypeToInternalName = new Dictionary<GoodsTypes, string>()
