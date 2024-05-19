@@ -22,6 +22,16 @@ public static class EffectHookedTextArg_Extensions
         return hookedTextArgs;
     }
     
+    public static HookedTextArg ToHookedTextArg(this (SourceType source, TextArgType type, int sourceIndex) arg)
+    {
+        return new HookedTextArg()
+        {
+            source = arg.source,
+            sourceIndex = arg.sourceIndex,
+            type = arg.type,
+        };
+    }
+    
     public static HookedStateTextArg[] ToHookedStateTextArgArray(this (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
     {
         HookedStateTextArg[] hookedStateTextArgs = new HookedStateTextArg[args.Length];
@@ -35,5 +45,14 @@ public static class EffectHookedTextArg_Extensions
         }
 
         return hookedStateTextArgs;
+    }
+    
+    public static HookedStateTextArg ToHookedStateTextArg(this (HookedStateTextArg.HookedStateTextSource source, int sourceIndex) arg)
+    {
+        return new HookedStateTextArg()
+        {
+            source = arg.source,
+            sourceIndex = arg.sourceIndex,
+        };
     }
 }

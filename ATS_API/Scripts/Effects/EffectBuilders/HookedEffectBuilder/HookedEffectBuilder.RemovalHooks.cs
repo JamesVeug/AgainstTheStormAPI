@@ -17,6 +17,7 @@ public partial class HookedEffectBuilder
         if (m_effectModel.removalHooks == null)
         {
             m_effectModel.removalHooks = [effect];
+            m_effectModel.hasRemovalHooks = true;
             return;
         }
 

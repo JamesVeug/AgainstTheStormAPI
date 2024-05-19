@@ -67,6 +67,11 @@ public class GoodsBuilder
         return this;
     }
 
+    /// <summary>
+    /// Meat = 1
+    /// Jerky = 2
+    /// Kebab = 3
+    /// </summary>
     public GoodsBuilder SetEatable(float fullnessValue=1.0f)
     {
         newModel.goodModel.eatable = true;

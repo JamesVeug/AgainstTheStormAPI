@@ -18,6 +18,14 @@ public partial class HookedEffectBuilder : EffectBuilder<HookedEffectModel>
         m_effectModel.hooks = [];
     }
 
+    /// <summary>
+    /// If you have an hooked effect which grants another hooked effect, and you want that second hooked effect to show up on the HUD, set this to true
+    /// </summary>
+    public void SetShowHookedRewardsAsPerks(bool showHookedRewardsAsPerks = true)
+    {
+        m_effectModel.showHookedRewardsAsPerks = showHookedRewardsAsPerks;
+    }
+
     private void AssignMissingFieldsToEffect(EffectModel effect)
     {
         if (effect.description == null || effect.description.key == Placeholders.DescriptionKey)

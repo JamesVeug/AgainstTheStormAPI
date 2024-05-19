@@ -44,6 +44,7 @@ public partial class Plugin
     
     private void CreateGoodsRawProductionCornerstone()
     {
+        // TODO: Make this appear less... need to find out how the base game organzies legendary and sort accordingly.
         // {1} to {0} production. Gain additional {0} every yield (from gathering, farming, or production).
         var builder = new GoodsProductionEffectBuilder(PluginInfo.PLUGIN_GUID, "Omega Sewing Technique");
         builder.SetLabel("API");

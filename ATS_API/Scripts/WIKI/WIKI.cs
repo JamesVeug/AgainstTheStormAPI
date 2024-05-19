@@ -10,6 +10,7 @@ using Eremite.Model.Effects;
 using Eremite.Model.Trade;
 using HarmonyLib;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace ATS_API;
 
@@ -29,8 +30,8 @@ public class WIKI
         public GoodModel Good;
         public List<TraderDetails> TradersAvailable = new List<TraderDetails>();
     }
-    
-    private static void ExportWikiInformation()
+
+    public static void ExportWikiInformation()
     {
         Assembly assembly = typeof(HookLogic).Assembly;
 
@@ -135,5 +136,59 @@ public class WIKI
                 Plugin.Log.LogError(e);
             }
         }
+    }
+    
+    public static void DumpEffectsJSON<T>(T[] effectModels, string key, Func<T, string> nameGetter) where T : Object
+    {
+        Plugin.Log.LogInfo($"Exporting {effectModels.Length} goods to JSON.");
+        foreach (var model in effectModels)
+        {
+            string modelName = nameGetter.Invoke(model);
+            try
+            {
+                JSONSerializer.Result json = JSONSerializer.ToJson(model);
+                string path = Path.Combine(Plugin.PluginDirectory, "Exports", key, modelName) + ".json";
+
+                // Create directory if it doesn't exist
+                string directory = Path.GetDirectoryName(path);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                // Write to file
+                File.WriteAllText(path, json.JSON);
+                    
+                Plugin.Log.LogInfo($"Exported {modelName}'s SubObjects {json.SubObjects.Count} to JSON.");
+                foreach (JSONSerializer.UnityObjectConverter.SubObjects subObject in json.SubObjects)
+                {
+                    string subPath = Path.Combine(Plugin.PluginDirectory, "Exports", "Assets", modelName + "_" + subObject.Path);
+                    Plugin.Log.LogInfo($"- {subPath}");
+                        
+                    // Create directory if it doesn't exist
+                    string subDirectory = Path.GetDirectoryName(subPath);
+                    if (!Directory.Exists(subDirectory))
+                    {
+                        Directory.CreateDirectory(subDirectory);
+                    }
+                        
+                    if (!File.Exists(subPath))
+                    {
+                        File.WriteAllBytes(subPath, subObject.Bytes);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError("Failed to dump good to JSON: " + model.name + " " + modelName);
+                Plugin.Log.LogError(e);
+            }
+        }
+    }
+    
+    public static void DumpEffectsJSON()
+    {
+        DumpEffectsJSON(MB.Settings.effects, "Effects", a=>a.DisplayName);
+        DumpEffectsJSON(MB.Settings.resolveEffects, "Effects", a=>a.displayName.GetText());
     }
 }
