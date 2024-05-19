@@ -95,15 +95,6 @@ public class Plugin : BaseUnityPlugin
         Instance.Logger.LogInfo($"Performing game initialization on behalf of {PluginInfo.PLUGIN_GUID}.");
         Instance.Logger.LogInfo($"The game has loaded {MainController.Instance.Settings.effects.Length} effects.");
 
-        // ID, Script
-
-        string s = "";
-        foreach (BuildingModel buildingModel in SO.Settings.Buildings.OrderBy(a=>a.name))
-        {
-            s += buildingModel.name + ", " + buildingModel.GetType().FullName + "\n";
-        }
-        
-        Instance.Logger.LogInfo(s);
         // ExportWikiInformation();
     }
 
