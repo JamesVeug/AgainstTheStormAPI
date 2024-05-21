@@ -8,6 +8,9 @@ public partial class Plugin
     private GoodsBuilder lpg;
     private GoodsBuilder kiwiFruit;
     private GoodsBuilder burger;
+    private GoodsBuilder fries;
+    private GoodsBuilder cola;
+    
     private void CreateGoods()
     {
         diamonds = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Diamonds", "Diamonds.png");
@@ -44,5 +47,21 @@ public partial class Plugin
         burger.SetTraderSellValue(2.5f);
         burger.CanBeSoldToPlayer(30, 5.0f);
         burger.SetEatable(3);
+        
+        fries = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Fries", "Fries.png");
+        fries.SetDisplayName("Fries");
+        fries.SetDescription("Hot and Crispy.");
+        fries.SetCategory("Food");
+        fries.SetTraderSellValue(0.5f);
+        fries.CanBeSoldToPlayer(100, 1f);
+        fries.SetEatable(1);
+        
+        cola = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Cola", "Cola.png");
+        cola.SetDisplayName("Cola");
+        cola.SetDescription("Refreshing and bubbly.");
+        cola.SetCategory("Food");
+        cola.SetTraderSellValue(0.5f);
+        cola.CanBeSoldToPlayer(100, 1f);
+        cola.SetEatable(2);
     }
 }

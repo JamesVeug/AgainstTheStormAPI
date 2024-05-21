@@ -25,6 +25,8 @@ public static class TextureHelper
         EffectIcon = 0,
         TraderIconLarge = 1,
         TraderIconSmall = 2,
+        BuildingIcon = 3,
+        BuildingDefaultModelDisplayIcon = 4,
     };
 
     private static Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
@@ -36,6 +38,8 @@ public static class TextureHelper
         { SpriteType.EffectIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
         { SpriteType.TraderIconLarge, new Rect(0.0f, 0.0f, 256.0f, 256.0f) },
         { SpriteType.TraderIconSmall, new Rect(0.0f, 0.0f, 63.0f, 63.0f) },
+        { SpriteType.BuildingIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
+        { SpriteType.BuildingDefaultModelDisplayIcon, new Rect(0.0f, 0.0f, 512.0f, 512.0f) },
     };
 
     private static readonly Dictionary<SpriteType, Vector2> SPRITE_PIVOTS = new()
@@ -43,6 +47,8 @@ public static class TextureHelper
         { SpriteType.EffectIcon, DEFAULT_PIVOT },
         { SpriteType.TraderIconLarge, DEFAULT_PIVOT },
         { SpriteType.TraderIconSmall, DEFAULT_PIVOT },
+        { SpriteType.BuildingIcon, DEFAULT_PIVOT },
+        { SpriteType.BuildingDefaultModelDisplayIcon, DEFAULT_PIVOT },
     };
     
     public static Texture2D GetWhiteTexture(SpriteType spriteType)

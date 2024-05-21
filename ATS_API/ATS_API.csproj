@@ -38,6 +38,7 @@
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.TextMeshPro.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UnityEngine.UI.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.InputSystem.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UniRx.dll" Publicize="false" private="false" />
     </ItemGroup>
       
     <ItemGroup>
@@ -55,6 +56,13 @@
       
     <ItemGroup>
         <Folder Include="Scripts\Effects\EffectFactory\" />
+    </ItemGroup>
+      
+    <ItemGroup>
+      <None Remove="Assets\ats_api" />
+      <EmbeddedResource Include="Assets\ats_api" />
+      <None Remove="Assets\ats_api.manifest" />
+      <EmbeddedResource Include="Assets\ats_api.manifest" />
     </ItemGroup>
     
     <Target Name="Deploy" AfterTargets="Build">

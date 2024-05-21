@@ -26,6 +26,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         foreach (API t in newElements)
         {
             ATS so = getter(t);
+            t.Sync(so);
             if (Array.IndexOf(array, so, m_baseLength) == -1)
             {
                 pending.Add(t);
@@ -34,7 +35,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         
         if (pending.Count == 0)
         {
-            Plugin.Log.LogInfo($"{m_Name} has all new elements!");
+            // Plugin.Log.LogInfo($"{m_Name} has all new elements!");
             return pending;
         }
         
@@ -44,8 +45,8 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         {
             API syncable = pending[i];
             ATS ats = getter(syncable);
-            syncable.Sync(ats);
             array[startingIndex + i] = ats;
+            // Plugin.Log.LogInfo($"{m_Name} {i} {ats}");
         }
         
         // string result = "";
@@ -53,7 +54,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         // {
         //     result += so.name + ", ";
         // }
-        // Plugin.Log.LogInfo($"{m_Name} now has {array.Length} effects: {result}");
+        // Plugin.Log.LogInfo($"{m_Name} now has {array.Length} elements: {result}");
 
         settingsEffectsCache.cache = null;
         return pending;

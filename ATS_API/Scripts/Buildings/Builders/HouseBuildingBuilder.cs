@@ -9,7 +9,7 @@ namespace ATS_API.Buildings;
 
 public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
 {
-    public HouseBuildingBuilder(string guid, string name, BuildingBehaviourTypes behaviour) : base(guid, name, behaviour)
+    public HouseBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, BuildingBehaviourTypes.House, iconPath)
     {
         // Set Category to Housing
         // Set label to Housing

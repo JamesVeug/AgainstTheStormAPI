@@ -1,18 +1,24 @@
 ﻿
 using System.Collections.Generic;
+using ATS_API.Helpers;
 using Eremite.Buildings;
 using UnityEngine;
 
-namespace ATS_API.Helpers;
+namespace ATS_API.Recipes.Builders;
 
 public class RecipeBuilder<T> where T : RecipeModel
 {
     private readonly Grade Grade;
     private readonly List<TagTypes> Tags = new List<TagTypes>();
 
-    public RecipeBuilder(Grade grade)
+    public RecipeModel RecipeModel = null;
+    private INewRecipeData m_newData;
+    
+    public RecipeBuilder(string guid, string name, Grade grade)
     {
         Grade = grade;
+        m_newData = RecipeManager.CreateRecipe<T>(guid, name);
+        RecipeModel = m_newData.RecipeModel;
     }
 
     public void AddTags(List<TagTypes> tags)
@@ -42,10 +48,9 @@ public class RecipeBuilder<T> where T : RecipeModel
     /// </summary>
     public virtual T Build()
     {
-        T t = ScriptableObject.CreateInstance<T>();
-        t.grade = Grade.ToModel();
-        t.tags = Tags.ToTagArray();
+        RecipeModel.grade = Grade.ToModel();
+        RecipeModel.tags = Tags.ToTagArray();
 
-        return t;
+        return RecipeModel as T;
     }
 }

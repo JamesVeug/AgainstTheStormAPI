@@ -516,6 +516,11 @@ public static class BuildingTypesExtensions
         return BuildingTypes.Altar.ToString();
     }
     
+    public static BuildingModel ToBuildingModel(this BuildingTypes types)
+    {
+        return types.ToName().ToBuildingModel();
+    }
+    
     public static BuildingModel ToBuildingModel(this string name)
     {
         if (SO.Settings.ContainsBuilding(name))

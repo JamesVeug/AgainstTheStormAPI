@@ -1,9 +1,10 @@
 ﻿
 using System.Collections.Generic;
+using ATS_API.Helpers;
 using Eremite.Buildings;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
+namespace ATS_API.Recipes.Builders;
 
 public class WorkshopRecipeBuilder : RecipeBuilder<WorkshopRecipeModel>
 {
@@ -12,14 +13,14 @@ public class WorkshopRecipeBuilder : RecipeBuilder<WorkshopRecipeModel>
     private readonly List<List<NameToAmount>> RequiredGoods = new List<List<NameToAmount>>();
     private readonly int ProductionTime;
     
-    public WorkshopRecipeBuilder(GoodsTypes good, int amount, int productionTime, Grade grade) : base(grade)
+    public WorkshopRecipeBuilder(string guid, string name, GoodsTypes good, int amount, int productionTime, Grade grade) : base(guid, name, grade)
     {
         Good = good.ToName();
         Amount = amount;
         ProductionTime = productionTime;
     }
 
-    public WorkshopRecipeBuilder(string good, int amount, int productionTime, Grade grade) : base(grade)
+    public WorkshopRecipeBuilder(string guid, string name, string good, int amount, int productionTime, Grade grade) : base(guid, name, grade)
     {
         Good = good;
         Amount = amount;
@@ -62,7 +63,7 @@ public class WorkshopRecipeBuilder : RecipeBuilder<WorkshopRecipeModel>
             amount = Amount
         };
         model.productionTime = ProductionTime;
-        model.requiredGoods = new GoodsSet[model.requiredGoods.Length];
+        model.requiredGoods = new GoodsSet[RequiredGoods.Count];
         for (int i = 0; i < RequiredGoods.Count; i++)
         {
             GoodsSet goodsSet = new GoodsSet();

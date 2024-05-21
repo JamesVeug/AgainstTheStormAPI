@@ -20,7 +20,7 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
     protected readonly string m_guid;
     protected readonly string m_name;
     
-    public BuildingBuilder(string guid, string name, BuildingBehaviourTypes behaviour)
+    public BuildingBuilder(string guid, string name, BuildingBehaviourTypes behaviour, string iconPath)
     {
         m_guid = guid;
         m_name = name;
@@ -30,6 +30,7 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.displayName = Placeholders.DisplayName;
         m_buildingModel.description = Placeholders.Description;
         m_buildingModel.displayLabel = Placeholders.Label;
+        m_buildingModel.icon = TextureHelper.GetImageAsSprite(iconPath, TextureHelper.SpriteType.BuildingIcon);
 
 
         m_buildingModel.category = null; // TODO:
@@ -67,7 +68,7 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.progressScore = 3;
         m_buildingModel.canRotate = true;
         m_buildingModel.traversable = false;
-        m_buildingModel.repeatable = true;
+        m_buildingModel.repeatable = false;
         m_buildingModel.destroyable = true;
         m_buildingModel.showPopupToDestroy = true;
         m_buildingModel.destroyableByEffects = true;
@@ -88,10 +89,18 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.showFinishedEffect = true;
         m_buildingModel.skipOnExport = false;
         m_buildingModel.skipIconGeneration = false;
-        m_buildingModel.tags = [];
+        m_buildingModel.tags = []; // TODO: Fill out more
+        // m_buildingModel.tags[0].name = m_buildingModel.name;
+        // m_buildingModel.tags[0].workerSlotAnim = "Pulsate";
+        // m_buildingModel.tags[0].visible = true;
+        // m_buildingModel.tags[0].workerSlotPositon = BuildingTagIconPosition.Right;
+        // m_buildingModel.tags[0].icon = null;
+        // m_buildingModel.tags[0].name = m_buildingModel.name;
+        // m_buildingModel.tags[0].name = m_buildingModel.name;
+        
         m_buildingModel.usabilityTags = [];
-        m_buildingModel.initiallyEssential = false;
-        m_buildingModel.canBePicked = false;
+        m_buildingModel.initiallyEssential = true;
+        m_buildingModel.canBePicked = true;
         m_buildingModel.costRange = new Vector2Int(1, 2);
         // m_buildingModel.Levels = new Vector2Int(1, 2);
         // m_buildingModel.cysts = new Vector2Int(1, 2);
@@ -126,9 +135,68 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
     {
         m_buildingModel.description = new LocaText() { key = key };
     }
-
-    public void SetDefaultVisualIcon(Sprite sprite)
+    
+    public void SetLabel(string label)
     {
-        m_newData.Icon = sprite;
+        m_buildingModel.displayLabel = LocalizationManager.ToLabelModel(m_guid, m_name, "displayLabel", label);
+    }
+
+    /// <summary>
+    /// 512x512
+    /// </summary>
+    public void SetDefaultVisualIcon(string spritePath)
+    {
+        var visualData = new BuildingVisualData();
+        visualData.Icon = TextureHelper.GetImageAsSprite(spritePath, TextureHelper.SpriteType.BuildingDefaultModelDisplayIcon);
+        
+        m_newData.VisualData = visualData;
+    }
+    
+    public void SetRequiredGoods(params NameToAmount [] goods)
+    {
+        m_newData.RequiredGoods = new List<NameToAmount>(goods);
+    }
+    
+    public void SetRequiredGoods(List<NameToAmount> goods)
+    {
+        m_newData.RequiredGoods = goods;
+    }
+    
+    public void AddRequiredGoods(params NameToAmount[] goods)
+    {
+        m_newData.RequiredGoods.AddRange(goods);
+    }
+    
+    public void AddRequiredGoods(List<NameToAmount> goods)
+    {
+        m_newData.RequiredGoods.AddRange(goods);
+    }
+    
+    public void SetMoveCost(int amount, GoodsTypes good)
+    {
+        m_newData.MoveCost = new NameToAmount(amount, good.ToName());
+    }
+    
+    public void SetProfession(ProfessionTypes profession)
+    {
+        m_newData.Profession = profession;
+    }
+    
+    public void SetCategory(BuildingCategoriesTypes category)
+    {
+        m_newData.Category = category;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

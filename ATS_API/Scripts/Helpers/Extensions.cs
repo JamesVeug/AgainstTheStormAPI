@@ -1,10 +1,10 @@
-﻿public static class Extensions
+﻿namespace ATS_API.Helpers;
+
+public static class Extensions
 {
     /// <summary>
     /// Strips out all the bad characters that enums use to make a string into a valid enum string
     /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
     public static string ToEnumString(this string name)
     {
         string id = name;

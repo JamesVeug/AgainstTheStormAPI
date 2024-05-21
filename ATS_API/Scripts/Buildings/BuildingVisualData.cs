@@ -3,5 +3,6 @@ using UnityEngine;
 
 public class BuildingVisualData
 {
-    public Building prefab;
+    public Building Prefab;
+    public Sprite Icon;
 }
