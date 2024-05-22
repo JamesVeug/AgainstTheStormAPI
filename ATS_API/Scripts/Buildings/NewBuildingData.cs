@@ -22,6 +22,8 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public NameToAmount MoveCost;
     public ProfessionTypes Profession;
     public BuildingCategoriesTypes Category = BuildingCategoriesTypes.Industry;
+    public List<TagTypes> UsabilityTags = new List<TagTypes>();
+    public List<BuildingTagTypes> Tags = new List<BuildingTagTypes>();
 
     public override void Sync(BuildingModel model)
     {
@@ -53,6 +55,16 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 good = a.Name.ToGoodsModel(),
                 amount = a.Amount
             }).ToArray();
+        }
+        
+        if (UsabilityTags.Count > 0)
+        {
+            BuildingModel.usabilityTags = UsabilityTags.Select(a => a.ToTagModel()).ToArray();
+        }
+        
+        if (Tags.Count > 0)
+        {
+            BuildingModel.tags = Tags.Select(a => a.ToBuildingTagModel()).ToArray();
         }
         
         BuildingModel.category = Category.ToBuildingCategoryModel();

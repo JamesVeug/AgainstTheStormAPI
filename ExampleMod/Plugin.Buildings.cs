@@ -15,23 +15,24 @@ public partial class Plugin
         burgerJoint.SetMoveCost(1, GoodsTypes.Amber); // optional
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
+        burgerJoint.AddTags(BuildingTagTypes.Animals);
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         
         var burgerRecipes = burgerJoint.CreateRecipe(burger.Name, 2, 126, Grade.One);
-        burgerRecipes.AddTags(TagTypes.Food);
+        burgerRecipes.AddTags(TagTypes.FoodTag);
         burgerRecipes.AddRequiredIngredients((2, GoodsTypes.Jerky), (1, GoodsTypes.Skewers), (4, GoodsTypes.Insects));
         burgerRecipes.AddRequiredIngredients((1, GoodsTypes.Vegetables), (1, GoodsTypes.Mushrooms), (2, GoodsTypes.Eggs));
         burgerRecipes.AddRequiredIngredients((5, GoodsTypes.ClearanceWater), (5, GoodsTypes.DrizzleWater), (5, GoodsTypes.StormWater));
         
         var friesRecipe = burgerJoint.CreateRecipe(fries.Name, 10, 60, Grade.One);
-        friesRecipe.AddTags(TagTypes.Food);
+        friesRecipe.AddTags(TagTypes.FoodTag);
         friesRecipe.AddRequiredIngredients((1, GoodsTypes.PackOfCrops));
         
         var colaRecipe = burgerJoint.CreateRecipe(cola.Name, 1, 30, Grade.One);
-        colaRecipe.AddTags(TagTypes.Food);
+        colaRecipe.AddTags(TagTypes.FoodTag);
         colaRecipe.AddRequiredIngredients((1, GoodsTypes.DrizzleWater));
         colaRecipe.AddRequiredIngredients((1, GoodsTypes.StormWater));
     }

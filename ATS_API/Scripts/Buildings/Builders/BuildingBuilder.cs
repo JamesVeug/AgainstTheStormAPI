@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using ATS_API.Buildings;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Buildings;
@@ -185,6 +184,42 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
     public void SetCategory(BuildingCategoriesTypes category)
     {
         m_newData.Category = category;
+    }
+    
+    /// <summary>
+    /// Filters for how this building is selected in various parts of the game such as orders, map generation... etc 
+    /// </summary>
+    public void AddUsabilityTags(params TagTypes[] tag)
+    {
+        m_newData.UsabilityTags.AddRange(tag);
+    }
+    
+    /// <summary>
+    /// Filters for how this building is selected in various parts of the game such as orders, map generation... etc 
+    /// </summary>
+    public void SetUsabilityTags(params TagTypes[] tag)
+    {
+        m_newData.UsabilityTags.Clear();
+        m_newData.UsabilityTags.AddRange(tag);
+    }
+    
+    /// <summary>
+    /// Tags for the building that add benefits.
+    /// Eg: Adding the Animal tags buffs Lizards when they are in the building 
+    /// </summary>
+    public void AddTags(params BuildingTagTypes[] tag)
+    {
+        m_newData.Tags.AddRange(tag);
+    }
+    
+    /// <summary>
+    /// Tags for the building that add benefits.
+    /// Eg: Adding the Animal tags buffs Lizards when they are in the building 
+    /// </summary>
+    public void SetTags(params BuildingTagTypes[] tag)
+    {
+        m_newData.Tags.Clear();
+        m_newData.Tags.AddRange(tag);
     }
 }
 

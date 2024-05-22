@@ -31,6 +31,14 @@ public class WIKI
         public List<TraderDetails> TradersAvailable = new List<TraderDetails>();
     }
 
+    public static void LogEnumForTypesCSScript<T>(IEnumerable<T> list, Func<T, string> nameGetter, string DictionaryPrefix)
+    {
+        List<T> sortedList = list.OrderBy(a => nameGetter(a).ToEnumString()).ToList();
+        Debug.Log($"{typeof(T)}: " + string.Join("\n", sortedList.Select(a => nameGetter(a).ToEnumString() + ",")));
+        
+        Debug.Log($"{typeof(T)}: " + string.Join(",\n", sortedList.Select(a => "{ " + DictionaryPrefix + "." + nameGetter(a).ToEnumString() + ", \"" + nameGetter(a) + "\" }")));
+    }
+    
     public static void ExportWikiInformation()
     {
         Assembly assembly = typeof(HookLogic).Assembly;

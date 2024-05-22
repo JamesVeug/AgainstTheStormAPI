@@ -19,9 +19,13 @@ public static class Extensions
             
             
         id = id.Replace(" ", "_")
-            .Replace("'","")
+            .Replace("-","_")
             .Replace("(","")
-            .Replace(")", "");
+            .Replace(")","_")
+            .Replace("[","")
+            .Replace("]","_")
+            .Replace("'","");
+        
 
         return id;
     }

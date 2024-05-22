@@ -82,7 +82,9 @@ public class Plugin : BaseUnityPlugin
         Log.LogInfo($"PostSetupMainController");
         
         
-        // Debug.Log("BuildingCategories: " + string.Join("\n", SO.Settings.BuildingCategories.Select(a => a.Name.ToEnumString() + ",\"" + a.Name + "\"")));
+        // Debug.Log("Tags: " + string.Join("\n", SO.Settings.tags.Select(a => a.Name.ToEnumString() + ",")));
+        // Debug.Log("Tags: " + string.Join("\n", SO.Settings.tags.Select(a => a.Name.ToEnumString() + ",\"" + a.Name + "\"")));
+        WIKI.LogEnumForTypesCSScript(SO.Settings.buildingsTags, a=>a.Name, "BuildingTagTypes");
         
         RecipeManager.Instantiate();
         GoodsManager.Instantiate();
@@ -141,11 +143,11 @@ public class Plugin : BaseUnityPlugin
         }
         
         
-        string b = string.Join(",", Serviceable.MetaStateService.Content.essentialBuildings.Select(a => a));
-        Log.LogInfo($"MetaStateService.essentialBuildings: {b}");
-        
-        string s = string.Join(",", Serviceable.Settings.Buildings.Select(a => a.name));
-        Log.LogInfo($"Settings.Buildings: {s}");
+        // string b = string.Join(",", Serviceable.MetaStateService.Content.essentialBuildings.Select(a => a));
+        // Log.LogInfo($"MetaStateService.essentialBuildings: {b}");
+        //
+        // string s = string.Join(",", Serviceable.Settings.Buildings.Select(a => a.name));
+        // Log.LogInfo($"Settings.Buildings: {s}");
     }
 
     [HarmonyPatch(typeof(GameController), nameof(GameController.StartGame))]
