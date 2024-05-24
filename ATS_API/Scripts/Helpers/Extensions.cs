@@ -1,4 +1,6 @@
-﻿namespace ATS_API.Helpers;
+﻿using System;
+
+namespace ATS_API.Helpers;
 
 public static class Extensions
 {
@@ -13,19 +15,27 @@ public static class Extensions
         int i = id.IndexOf(" ");
         while (i != -1)
         {
-            id = id.Substring(0, i) + id[i + 1].ToString().ToUpper() + id.Substring(i + 2);
+            id = id.Substring(0, i) + "_" + id[i + 1].ToString().ToUpper() + id.Substring(i + 2);
             i = id.IndexOf(" ", i + 1);
         }
             
             
         id = id.Replace(" ", "_")
             .Replace("-","_")
+            .Replace("&","And")
+            .Replace("+","Plus")
             .Replace("(","")
             .Replace(")","_")
             .Replace("[","")
-            .Replace("]","_")
+            .Replace("]","")
             .Replace("'","");
-        
+
+
+        // Replace digits at the start with the actual words
+        if(id.Length > 0 && char.IsDigit(id[0]))
+        {
+            id = "_" + id;
+        }
 
         return id;
     }

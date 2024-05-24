@@ -22,18 +22,18 @@ public partial class Plugin
         burgerJoint.AddWorkPlaceWithAllRaces();
         
         var burgerRecipes = burgerJoint.CreateRecipe(burger.Name, 2, 126, Grade.One);
-        burgerRecipes.AddTags(TagTypes.FoodTag);
-        burgerRecipes.AddRequiredIngredients((2, GoodsTypes.FoodProcessed_Jerky), (1, GoodsTypes.FoodProcessed_Skewers), (4, GoodsTypes.FoodRaw_Insects));
-        burgerRecipes.AddRequiredIngredients((1, GoodsTypes.FoodRaw_Vegetables), (1, GoodsTypes.FoodRaw_Mushrooms), (2, GoodsTypes.FoodRaw_Eggs));
-        burgerRecipes.AddRequiredIngredients((5, GoodsTypes.Water_ClearanceWater), (5, GoodsTypes.Water_DrizzleWater), (5, GoodsTypes.Water_StormWater));
+        burgerRecipes.AddTags(TagTypes.Food_Tag);
+        burgerRecipes.AddRequiredIngredients((2, GoodsTypes.Food_Processed_Jerky), (1, GoodsTypes.Food_Processed_Skewers), (4, GoodsTypes.Food_Raw_Insects));
+        burgerRecipes.AddRequiredIngredients((1, GoodsTypes.Food_Raw_Vegetables), (1, GoodsTypes.Food_Raw_Mushrooms), (2, GoodsTypes.Food_Raw_Eggs));
+        burgerRecipes.AddRequiredIngredients((5, GoodsTypes.Water_Clearance_Water), (5, GoodsTypes.Water_Drizzle_Water), (5, GoodsTypes.Water_Storm_Water));
         
         var friesRecipe = burgerJoint.CreateRecipe(fries.Name, 10, 60, Grade.One);
-        friesRecipe.AddTags(TagTypes.FoodTag);
-        friesRecipe.AddRequiredIngredients((1, GoodsTypes.Packs_PackOfCrops));
+        friesRecipe.AddTags(TagTypes.Food_Tag);
+        friesRecipe.AddRequiredIngredients((1, GoodsTypes.Packs_Pack_Of_Crops));
         
         var colaRecipe = burgerJoint.CreateRecipe(cola.Name, 1, 30, Grade.One);
-        colaRecipe.AddTags(TagTypes.FoodTag);
-        colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_DrizzleWater));
-        colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_StormWater));
+        colaRecipe.AddTags(TagTypes.Food_Tag);
+        colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_Drizzle_Water));
+        colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_Storm_Water));
     }
 }

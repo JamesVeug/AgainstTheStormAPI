@@ -16,7 +16,7 @@ public enum RaceTypes
 	Human,  // Human
 	Lizard, // Lizard
 
-    MAX
+    MAX = 5
 }
 
 public static class RaceTypesExtensions

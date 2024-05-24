@@ -16,17 +16,17 @@ public enum BuildingTagTypes
 	Cloth,          // Tailoring (<sprite name="cloth">)
 	Farming,        // Farming (<sprite name="farming">)
 	Forest,         // Forest (<sprite name="foxforest">)
-	Hearth_Beavers, // >Missing key<
-	Hearth_Foxes,   // >Missing key<
-	Hearth_Harpies, // >Missing key<
-	Hearth_Humans,  // >Missing key<
-	Hearth_Lizards, // >Missing key<
+	Hearth_Beavers, 
+	Hearth_Foxes, 
+	Hearth_Harpies, 
+	Hearth_Humans, 
+	Hearth_Lizards, 
 	Rainwater,      // Rainwater (<sprite name="rainwater">)
 	Tech,           // Engineering (<sprite name="tech">)
 	Warmth,         // Warmth (<sprite name="fire">)
 	Wood,           // Woodworking (<sprite name="wood">)
 
-    MAX
+    MAX = 15
 }
 
 public static class BuildingTagTypesExtensions
@@ -81,11 +81,11 @@ public static class BuildingTagTypesExtensions
 		{ BuildingTagTypes.Cloth, "Cloth" },                   // Tailoring (<sprite name="cloth">)
 		{ BuildingTagTypes.Farming, "Farming" },               // Farming (<sprite name="farming">)
 		{ BuildingTagTypes.Forest, "Forest" },                 // Forest (<sprite name="foxforest">)
-		{ BuildingTagTypes.Hearth_Beavers, "Hearth_Beavers" }, // >Missing key<
-		{ BuildingTagTypes.Hearth_Foxes, "Hearth_Foxes" },     // >Missing key<
-		{ BuildingTagTypes.Hearth_Harpies, "Hearth_Harpies" }, // >Missing key<
-		{ BuildingTagTypes.Hearth_Humans, "Hearth_Humans" },   // >Missing key<
-		{ BuildingTagTypes.Hearth_Lizards, "Hearth_Lizards" }, // >Missing key<
+		{ BuildingTagTypes.Hearth_Beavers, "Hearth_Beavers" }, 
+		{ BuildingTagTypes.Hearth_Foxes, "Hearth_Foxes" }, 
+		{ BuildingTagTypes.Hearth_Harpies, "Hearth_Harpies" }, 
+		{ BuildingTagTypes.Hearth_Humans, "Hearth_Humans" }, 
+		{ BuildingTagTypes.Hearth_Lizards, "Hearth_Lizards" }, 
 		{ BuildingTagTypes.Rainwater, "Rainwater" },           // Rainwater (<sprite name="rainwater">)
 		{ BuildingTagTypes.Tech, "Tech" },                     // Engineering (<sprite name="tech">)
 		{ BuildingTagTypes.Warmth, "Warmth" },                 // Warmth (<sprite name="fire">)

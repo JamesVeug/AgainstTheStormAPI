@@ -11,7 +11,7 @@ public enum {CLASSNAME}
     None,
 {ENUMS}
 
-    MAX
+    MAX = {TOTAL_ENUMS}
 }
 
 public static class {CLASSNAME}Extensions

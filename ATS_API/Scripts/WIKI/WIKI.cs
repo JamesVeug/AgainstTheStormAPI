@@ -64,7 +64,24 @@ public class WIKI
         List<(string name, string enu, string locale)> sortedList = list.Select(a =>
         {
             string getter = nameGetter(a);
-            return (getter, getter.ToEnumString(), localize != null ? localize(a) : null);
+            string locale = null;
+            if (localize != null)
+            {
+                try
+                {
+                    string l = localize(a);
+                    if (!string.IsNullOrEmpty(l) && l != ">Missing key<")
+                    {
+                        locale = l;
+                    }
+                }
+                catch (Exception)
+                {
+                    // ignored
+                }
+            }
+            
+            return (getter, getter.ToEnumString(), locale);
         }).Distinct(new NameComparer()).OrderBy((a) => a.Item2).ToList();
 
         string ModelName = typeof(T).Name;
@@ -105,18 +122,18 @@ public class WIKI
         }
 
         var template = Util.ReadEmbeddedResource(typeof(WIKI).Assembly, "EnumTemplate.txt");
-        Plugin.Log.LogInfo(template);
         string cs = template
             .Replace("{USINGS}", usings)
             .Replace("{CLASS_HEADER}", header)
             .Replace("{CLASSNAME}", EnumName)
             .Replace("{ENUMS}", string.Join("\n", sortedList.Select(GetEnumLine)))
+            .Replace("{TOTAL_ENUMS}", sortedList.Count.ToString())
             .Replace("{FIRST_ENUM}", firstEnum)
             .Replace("{MODELNAME}", ModelName)
             .Replace("{COLLECTION}", modelGetter)
             .Replace("{ENUM_TO_NAME}", string.Join("\n", sortedList.Select(ToDictionaryRow)));
         
-        string pathToFile = "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\";
+        string pathToFile = "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\Enums\\";
         File.WriteAllText(pathToFile + EnumName + ".cs", cs);
     }
 
@@ -131,6 +148,15 @@ public class WIKI
         CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("TagTypes", "SO.Settings.tags", SO.Settings.tags, a=>a.Name, null, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("TraderTypes", "SO.Settings.traders", SO.Settings.traders, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model.Trade"]);
+        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, a=>a.DisplayName, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("ResolveEffectTypes", "SO.Settings.resolveEffects", SO.Settings.resolveEffects, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("OrderTypes", "SO.Settings.orders", SO.Settings.orders, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model.Orders"]);
+        CreateEnumTypesCSharpScript("BiomeTypes", "SO.Settings.biomes", SO.Settings.biomes, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.WorldMap"]);
+        CreateEnumTypesCSharpScript("DifficultyTypes", "SO.Settings.difficulties", SO.Settings.difficulties, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("GoalTypes", "SO.Settings.goals", SO.Settings.goals, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model.Goals"]);
+        CreateEnumTypesCSharpScript("RelicTypes", "SO.Settings.Relics", SO.Settings.Relics, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("MetaRewardTypes", "SO.Settings.metaRewards", SO.Settings.metaRewards, a=>a.Name, a=>a.DisplayName, ["Eremite.Model.Meta"]);
+        CreateEnumTypesCSharpScript("OreTypes", "SO.Settings.Ore", SO.Settings.Ore, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
     }
     
     public static void ExportWikiInformation()
