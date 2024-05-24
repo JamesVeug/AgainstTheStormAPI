@@ -59,7 +59,7 @@ public class WorkshopRecipeBuilder : RecipeBuilder<WorkshopRecipeModel>
         WorkshopRecipeModel model = base.Build();
         model.producedGood = new GoodRef
         {
-            good = Good.ToGoodsModel(),
+            good = Good.ToGoodModel(),
             amount = Amount
         };
         model.productionTime = ProductionTime;
@@ -73,7 +73,7 @@ public class WorkshopRecipeBuilder : RecipeBuilder<WorkshopRecipeModel>
             {
                 goodsSet.goods[j] = new GoodRef
                 {
-                    good = RequiredGoods[i][j].Name.ToGoodsModel(),
+                    good = RequiredGoods[i][j].Name.ToGoodModel(),
                     amount = RequiredGoods[i][j].Amount
                 };
             }

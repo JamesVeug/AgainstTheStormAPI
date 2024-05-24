@@ -43,7 +43,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
         {
             BuildingModel.movingCost = new GoodRef()
             {
-                good = MoveCost.Name.ToGoodsModel(),
+                good = MoveCost.Name.ToGoodModel(),
                 amount = MoveCost.Amount
             };
         }
@@ -52,14 +52,14 @@ public class NewBuildingData : ASyncable<BuildingModel>
         {
             BuildingModel.requiredGoods = RequiredGoods.Select(a => new GoodRef()
             {
-                good = a.Name.ToGoodsModel(),
+                good = a.Name.ToGoodModel(),
                 amount = a.Amount
             }).ToArray();
         }
         
         if (UsabilityTags.Count > 0)
         {
-            BuildingModel.usabilityTags = UsabilityTags.Select(a => a.ToTagModel()).ToArray();
+            BuildingModel.usabilityTags = UsabilityTags.Select(a => a.ToModelTag()).ToArray();
         }
         
         if (Tags.Count > 0)

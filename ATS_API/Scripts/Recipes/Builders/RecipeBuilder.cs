@@ -49,7 +49,7 @@ public class RecipeBuilder<T> where T : RecipeModel
     public virtual T Build()
     {
         RecipeModel.grade = Grade.ToModel();
-        RecipeModel.tags = Tags.ToTagArray();
+        RecipeModel.tags = Tags.ToModelTagArray();
 
         return RecipeModel as T;
     }

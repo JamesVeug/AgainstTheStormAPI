@@ -54,7 +54,7 @@ public partial class Plugin
         builder.SetAvailableInAllBiomesAndSeasons();
  
         builder.SetDisplayName("Omega Sewing Technique");
-        builder.SetGoodsPerYield(10, GoodsTypes.Coats);
+        builder.SetGoodsPerYield(10, GoodsTypes.Needs_Coats);
         builder.SetTradingBuyValue(300);
     }
     
