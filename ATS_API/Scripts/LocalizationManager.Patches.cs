@@ -9,7 +9,7 @@ namespace ATS_API.Localization;
 [HarmonyPatch]
 public static partial class LocalizationManager
 {
-    [HarmonyPatch(typeof(TextsService), nameof(TextsService.LoadTextsAsync))]
+    [HarmonyPatch(typeof(TextsService), nameof(TextsService.OnLoading))]
     [HarmonyPostfix]
     private static async UniTask PostLoadLocalisation(UniTask enumerator, TextsService __instance)
     {
