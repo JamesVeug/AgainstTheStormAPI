@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -31,12 +32,141 @@ public class WIKI
         public List<TraderDetails> TradersAvailable = new List<TraderDetails>();
     }
 
-    public static void LogEnumForTypesCSScript<T>(IEnumerable<T> list, Func<T, string> nameGetter, string DictionaryPrefix)
+    public static void LogEnumForTypesCSScript<T>(IEnumerable<T> list, Func<T, string> nameGetter, string DictionaryPrefix, Func<T, string> localizedStuff)
     {
-        List<T> sortedList = list.OrderBy(a => nameGetter(a).ToEnumString()).ToList();
-        Debug.Log($"{typeof(T)}: " + string.Join("\n", sortedList.Select(a => nameGetter(a).ToEnumString() + ",")));
+        List<Tuple<string, string, string>> sortedList = list.Select(a =>
+        {
+            string getter = nameGetter(a);
+            return new Tuple<string, string, string>(getter, getter.ToEnumString(), localizedStuff(a));
+        }).OrderBy((a)=>a.Item2).ToList();
         
-        Debug.Log($"{typeof(T)}: " + string.Join(",\n", sortedList.Select(a => "{ " + DictionaryPrefix + "." + nameGetter(a).ToEnumString() + ", \"" + nameGetter(a) + "\" }")));
+        Debug.Log($"{typeof(T)}: " + string.Join("\n", sortedList.Select(a => a.Item2 + ", // " + a.Item3)));
+        
+        Debug.Log($"{typeof(T)}: " + string.Join("\n", sortedList.Select(a => "{ " + DictionaryPrefix + "." + a.Item2 + ", \"" + a.Item1 + "\" }, // " + a.Item3)));
+    }
+
+    public static void CreateEnumTypesCSharpScript2<T>(IEnumerable<T> list, Func<T, string> nameGetter, string EnumName,
+        Func<T, string> localizedStuff, string pathToFile, string modelGetter)
+    {
+        List<(string name, string enu, string locale)> sortedList = list.Select(a =>
+        {
+            string getter = nameGetter(a);
+            return (getter, getter.ToEnumString(), localizedStuff(a));
+        }).OrderBy((a) => a.Item2).ToList();
+
+        string ModelName = typeof(T).Name;
+        string version = Application.version;
+        string date = DateTime.Now.Day + " " + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Year;
+        string usings = ""; // end with \n IF we have any usings
+        string header = "// Generated using Version " + version;
+        string firstEnum = sortedList[0].enu;
+
+        int EnumCharacterCount = sortedList.Max(a => a.enu.Length);
+        int DictionaryCharacterCount = sortedList.Max(a => a.enu.Length + a.name.Length);
+
+        string GetEnumLine((string name, string enu, string locale) a)
+        {
+            int extraCharactersBeforeLocale = EnumCharacterCount - a.enu.Length;
+            return "\t" + a.enu + ", " + new string(' ', extraCharactersBeforeLocale) + "// " + a.locale;
+        }
+
+        string ToDictionaryRow((string name, string enu, string locale) a)
+        {
+            int extraCharactersBeforeLocale = DictionaryCharacterCount - (a.enu.Length + a.name.Length);
+            return "\t\t{ " + EnumName + "." + a.Item2 + ", \"" + a.Item1 + "\" }, " +
+                   new string(' ', extraCharactersBeforeLocale) + "// " + a.Item3;
+        }
+
+        var template = Util.ReadEmbeddedResource(typeof(WIKI).Assembly, "EnumTemplate.txt");
+        Plugin.Log.LogInfo(template);
+        string cs = template
+            .Replace("{USINGS}", usings)
+            .Replace("{CLASS_HEADER}", header)
+            .Replace("{CLASSNAME}", EnumName)
+            .Replace("{ENUMS}", string.Join("\n", sortedList.Select(GetEnumLine)))
+            .Replace("{FIRST_ENUM}", firstEnum)
+            .Replace("{MODELNAME}", ModelName)
+            .Replace("{COLLECTION}", modelGetter)
+            .Replace("{ENUM_TO_NAME}", string.Join("\n", sortedList.Select(ToDictionaryRow)));
+        
+        File.WriteAllText(pathToFile, cs);
+    }
+
+    public static void CreateEnumTypesCSharpScript<T>(IEnumerable<T> list, Func<T, string> nameGetter, string EnumName, Func<T, string> localizedStuff, string pathToFile, string modelGetter)
+    {
+        List<(string name, string enu, string locale)> sortedList = list.Select(a =>
+        {
+            string getter = nameGetter(a);
+            return (getter, getter.ToEnumString(), localizedStuff(a));
+        }).OrderBy((a)=>a.Item2).ToList();
+
+        string ModelName = typeof(T).Name;
+        string version = Application.version;
+        string date = DateTime.Now.Day + " " + DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Year;
+
+        int EnumCharacterCount = sortedList.Max(a => a.enu.Length);
+        int DictionaryCharacterCount = sortedList.Max(a => a.enu.Length + a.name.Length);
+        
+        string GetEnumLine((string name, string enu, string locale) a)
+        {
+            int extraCharactersBeforeLocale = EnumCharacterCount - a.enu.Length;
+            return "\t" + a.enu + ", " + new string(' ', extraCharactersBeforeLocale) + "// " + a.locale;
+        }
+
+        string ToDictionaryRow((string name, string enu, string locale) a)
+        {
+            int extraCharactersBeforeLocale = DictionaryCharacterCount - (a.enu.Length + a.name.Length);
+            return "\t\t{ " + EnumName + "." + a.Item2 + ", \"" + a.Item1 + "\" }, " + new string(' ', extraCharactersBeforeLocale) + "// " + a.Item3;
+        }
+
+        string cs =
+        "using System.Collections.Generic;\n" +
+        "using System.Linq;\n" +
+        "using Eremite;\n" +
+        "using Eremite.Model;\n" +
+        "\n" +
+        "namespace ATS_API.Helpers;\n" +
+        "\n" +
+        $"// Generated using Version {version}\n" +
+        $"public enum {EnumName}\n" +
+        "{\n" +
+        "" + string.Join("\n", sortedList.Select(GetEnumLine)) + "\n" +
+        "}\n" +
+        "\n" +
+        $"public static class {EnumName}Extensions\n"+
+        "{\n" +
+        $"\tpublic static string ToName(this {EnumName} type)\n" +
+            "\t{\n" +
+                "\t\tif (TypeToInternalName.TryGetValue(type, out var name))\n" +
+                "\t\t{\n" +
+                "\t\t\treturn name;\n" +
+                "\t\t}\n" +
+                "\n" +
+                $"\t\tPlugin.Log.LogError($\"Cannot find name of {EnumName}: \" + type);\n" +
+                $"\t\treturn TypeToInternalName[{EnumName}.{sortedList[0].enu}];\n" +
+                "\t}\n" +
+                "\n" +
+            $"\tpublic static {ModelName} To{ModelName}(this {EnumName} type)\n" +
+            "\t{\n" +
+                "\t\tstring name = type.ToName();\n" +
+                $"\t\t{ModelName} model = {modelGetter}.FirstOrDefault(a=>a.name == name);\n" +
+                "\t\tif (model != null)\n" +
+                "\t\t{\n" +
+                    "\t\t\treturn model;\n" +
+                "\t\t}\n" +
+                "\n" +
+                $"\t\tPlugin.Log.LogError(\"Cannot find {ModelName} for {EnumName}: \" + type + \" with name: \" + name);\n" +
+                "\t\treturn null;\n" +
+            "\t}\n" +
+            "\n" +
+            "\tinternal static readonly Dictionary<NeedTypes, string> TypeToInternalName = new()\n" +
+            "\t{\n" +
+            string.Join("\n", sortedList.Select(ToDictionaryRow)) + "\n" +
+           "\t};\n" +
+        "}\n";
+        
+        
+        File.WriteAllText(pathToFile, cs);
     }
     
     public static void ExportWikiInformation()

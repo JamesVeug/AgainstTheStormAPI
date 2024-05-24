@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using ATS_API.Biomes;
 using ATS_API.Buildings;
 using ATS_API.Effects;
@@ -10,14 +9,11 @@ using ATS_API.Recipes;
 using ATS_API.Traders;
 using BepInEx;
 using BepInEx.Logging;
-using Cysharp.Threading.Tasks;
 using HarmonyLib;
 using Eremite;
 using Eremite.Buildings;
 using Eremite.Controller;
-using Eremite.Model.Trade;
 using Eremite.Services;
-using Eremite.View.HUD.Construction;
 using UnityEngine;
 
 namespace ATS_API;
@@ -81,11 +77,6 @@ public class Plugin : BaseUnityPlugin
     {
         Log.LogInfo($"PostSetupMainController");
         
-        
-        // Debug.Log("Tags: " + string.Join("\n", SO.Settings.tags.Select(a => a.Name.ToEnumString() + ",")));
-        // Debug.Log("Tags: " + string.Join("\n", SO.Settings.tags.Select(a => a.Name.ToEnumString() + ",\"" + a.Name + "\"")));
-        WIKI.LogEnumForTypesCSScript(SO.Settings.buildingsTags, a=>a.Name, "BuildingTagTypes");
-        
         RecipeManager.Instantiate();
         GoodsManager.Instantiate();
         EffectManager.Instantiate();
@@ -111,6 +102,7 @@ public class Plugin : BaseUnityPlugin
         Instance.Logger.LogInfo($"Performing game initialization on behalf of {PluginInfo.PLUGIN_GUID}.");
         Instance.Logger.LogInfo($"The game has loaded {MainController.Instance.Settings.effects.Length} effects.");
 
+        
         // ExportWikiInformation();
     }
 
@@ -135,19 +127,7 @@ public class Plugin : BaseUnityPlugin
             {
                 __instance.Content.essentialBuildings.Add(BuildingModel.BuildingModel.name);
             }
-
-            // if (!GameMB.GameContentService.Buildings.Value.Contains(BuildingModel.BuildingModel))
-            // {
-            //     GameMB.GameContentService.Buildings.Value.Add(BuildingModel.BuildingModel);
-            // }
         }
-        
-        
-        // string b = string.Join(",", Serviceable.MetaStateService.Content.essentialBuildings.Select(a => a));
-        // Log.LogInfo($"MetaStateService.essentialBuildings: {b}");
-        //
-        // string s = string.Join(",", Serviceable.Settings.Buildings.Select(a => a.name));
-        // Log.LogInfo($"Settings.Buildings: {s}");
     }
 
     [HarmonyPatch(typeof(GameController), nameof(GameController.StartGame))]
@@ -162,31 +142,10 @@ public class Plugin : BaseUnityPlugin
         // WIKI.DumpEffectsJSON();
     }
 
-    [HarmonyPatch(typeof(BuildingsSmallListTooltip), nameof(BuildingsSmallListTooltip.SetUpBuildingsSlots))]
-    [HarmonyPostfix]
-    private static void SetUpBuildingsSlots(BuildingsSmallListTooltip __instance)
-    {
-        Log.LogInfo($"BuildingsSmallListTooltip.SetUpBuildingsSlots.");
-        
-        string e = string.Join(",", Serviceable.MetaStateService.Content.essentialBuildings.Select(a => a));
-        Log.LogInfo($"MetaStateService.essentialBuildings: {e}");
-        
-        string sb = string.Join(",", Serviceable.Settings.Buildings.Select(a => a.name));
-        Log.LogInfo($"Settings.Buildings: {sb}");
-        
-        string b = string.Join(",", GameMB.GameContentService.Buildings.Value.Select(a => a.Name));
-        Log.LogInfo($"GameContentService.Buildings: {b}");
-        
-        string s = string.Join(",", __instance.slots.Select(a => a.model != null ? a.model.name : "null"));
-        Log.LogInfo($"Slots: {s}");
-    }
-
     [HarmonyPatch(typeof(GameContentService), nameof(GameContentService.GetOptionalBuildings))]
     [HarmonyPostfix]
     private static void GetOptionalBuildings(GameContentService __instance, ref IEnumerable<BuildingModel> __result)
     {
-        Log.LogInfo($"GameContentService.GetOptionalBuildings.");
-        
         List<BuildingModel> list = new List<BuildingModel>(__result);
         foreach (NewBuildingData BuildingModel in BuildingManager.NewBuildings)
         {
@@ -196,18 +155,5 @@ public class Plugin : BaseUnityPlugin
             }
         }
         __result = list;
-    }
-
-    [HarmonyPatch(typeof(GameContentService), nameof(GameContentService.EnsureBuildings))]
-    [HarmonyPostfix]
-    private static void EnsureBuildings(GameContentService __instance)
-    {
-        Log.LogInfo($"GameContentService.GameContentServiceEnsureBuildings.");
-        
-        string b = string.Join(",", Serviceable.MetaStateService.Content.essentialBuildings.Select(a => a));
-        Log.LogInfo($"essentialBuildings: {b}");
-        
-        string s = string.Join(",", Serviceable.Settings.Buildings.Select(a => a.name));
-        Log.LogInfo($"Buildings: {s}");
     }
 }

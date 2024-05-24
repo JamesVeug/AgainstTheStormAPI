@@ -63,6 +63,8 @@
       <EmbeddedResource Include="Assets\ats_api" />
       <None Remove="Assets\ats_api.manifest" />
       <EmbeddedResource Include="Assets\ats_api.manifest" />
+      <None Remove="Scripts\WIKI\EnumTemplate.txt" />
+      <EmbeddedResource Include="Scripts\WIKI\EnumTemplate.txt" />
     </ItemGroup>
     
     <Target Name="Deploy" AfterTargets="Build">

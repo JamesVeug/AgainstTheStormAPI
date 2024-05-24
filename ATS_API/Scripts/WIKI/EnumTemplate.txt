@@ -1,0 +1,66 @@
+using System.Collections.Generic;
+using System.Linq;
+using Eremite;
+using Eremite.Model;
+{USINGS}
+namespace ATS_API.Helpers;
+
+{CLASS_HEADER}
+public enum {CLASSNAME}
+{
+    Unknown = -1,
+    None,
+{ENUMS}
+
+    MAX
+}
+
+public static class {CLASSNAME}Extensions
+{
+	public static string ToName(this {CLASSNAME} type)
+	{
+		if (TypeToInternalName.TryGetValue(type, out var name))
+		{
+			return name;
+		}
+
+		Plugin.Log.LogError($"Cannot find name of {CLASSNAME}: " + type);
+		return TypeToInternalName[{CLASSNAME}.{FIRST_ENUM}];
+	}
+	
+	public static {MODELNAME} To{MODELNAME}(this string name)
+    {
+        {MODELNAME} model = {COLLECTION}.FirstOrDefault(a=>a.name == name);
+        if (model != null)
+        {
+            return model;
+        }
+    
+        Plugin.Log.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name);
+        return null;
+    }
+
+	public static {MODELNAME} To{MODELNAME}(this {CLASSNAME} types)
+	{
+		return types.ToName().To{MODELNAME}();
+	}
+	
+	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<{CLASSNAME}> collection)
+    {
+        int count = collection.Count();
+        {MODELNAME}[] array = new {MODELNAME}[count];
+        int i = 0;
+        foreach ({CLASSNAME} element in collection)
+        {
+            string elementName = element.ToName();
+            array[i++] = {COLLECTION}.FirstOrDefault(a=>a.name == elementName);
+        }
+
+        return array;
+    }
+
+	internal static readonly Dictionary<{CLASSNAME}, string> TypeToInternalName = new()
+	{
+{ENUM_TO_NAME}
+	};
+}
