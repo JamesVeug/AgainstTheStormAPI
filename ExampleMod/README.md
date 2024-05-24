@@ -10,3 +10,4 @@ This mod is to be used an an example for those that wish to make their own mods.
 ## Contributors
 - JamesGames
 - ElenaRoan
+- [Chaos]
