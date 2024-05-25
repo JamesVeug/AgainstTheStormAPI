@@ -59,7 +59,7 @@ public class WIKI
         }
     }
     
-    public static void CreateEnumTypesCSharpScript<T>(string EnumName, string modelGetter, IEnumerable<T> list, Func<T, string> nameGetter, Func<T, string> localize, List<string> extraUsings = null)
+    public static void CreateEnumTypesCSharpScript<T>(string EnumName, string modelGetter, IEnumerable<T> list, Func<T, string> nameGetter, Func<T, string> comment, List<string> extraUsings = null, Func<string ,string> enumParser=null, Func<T, string> groupEnumsBy=null)
     {
         string pathToFile = "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\Enums\\";
         // Quit if the directory does not exist
@@ -68,34 +68,61 @@ public class WIKI
             Plugin.Log.LogError("Directory does not exist: " + pathToFile);
             return;
         }
-        
-        List<(string name, string enu, string locale)> sortedList = list.Select(a =>
+
+        HashSet<T> set = new(list);
+        Dictionary<string, List<T>> groups = new();
+        if (groupEnumsBy != null)
         {
-            string getter = nameGetter(a);
-            string locale = null;
-            if (localize != null)
+            foreach (T t in set)
             {
-                try
+                string group = groupEnumsBy(t);
+                if (!groups.ContainsKey(group))
                 {
-                    string l = localize(a);
-                    if (!string.IsNullOrEmpty(l) && l != ">Missing key<")
+                    groups[group] = new List<T>();
+                }
+                groups[group].Add(t);
+            }
+        }
+        else
+        {
+            groups["__default"] = set.ToList();
+        }
+
+        Dictionary<string, List<(string name, string enu, string locale)>> sorted = new();
+        foreach (KeyValuePair<string,List<T>> pair in groups)
+        {
+            List<(string name, string enu, string locale)> sortedList = pair.Value.Select(a =>
+            {
+                string getter = nameGetter(a);
+                string locale = null;
+                if (comment != null)
+                {
+                    try
                     {
-                        locale = l;
+                        string l = comment(a);
+                        if (!string.IsNullOrEmpty(l) && l != ">Missing key<")
+                        {
+                            locale = l.Replace("\n", "");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // ignored
                     }
                 }
-                catch (Exception)
-                {
-                    // ignored
-                }
-            }
             
-            return (getter, getter.ToEnumString(), locale);
-        }).Distinct(new NameComparer()).OrderBy((a) => a.Item2).ToList();
+                string enu = enumParser != null ? enumParser.Invoke(getter) : getter.ToEnumString();
+                return (getter, enu, locale);
+            }).OrderBy((a) => a.Item2).ToList();
+            sorted[pair.Key] = sortedList;
+        }
+
+        List<string> sortedGroups = groups.Keys.OrderBy(a => a).ToList();
 
         string ModelName = typeof(T).Name;
         string version = Application.version;
         string header = "// Generated using Version " + version;
-        string firstEnum = sortedList[0].enu;
+        string firstEnum = sorted[sortedGroups[0]][0].enu;
         
         string usings = ""; // end with \n IF we have any usings
         if (extraUsings != null && extraUsings.Count > 0)
@@ -103,8 +130,8 @@ public class WIKI
             usings = string.Join("\n", extraUsings.Select(a=>"using " + a + ";")) + "\n";
         }
 
-        int EnumCharacterCount = sortedList.Max(a => a.enu.Length);
-        int DictionaryCharacterCount = sortedList.Max(a => a.enu.Length + a.name.Length);
+        int EnumCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length));
+        int DictionaryCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length + b.name.Length));
 
         string GetEnumLine((string name, string enu, string locale) a)
         {
@@ -129,43 +156,127 @@ public class WIKI
             return s;
         }
 
+        string enumLines = "";
+        string dictionaryLines = "";
+        foreach (string group in sortedGroups)
+        {
+            List<(string name, string enu, string locale)> groupList = sorted[group];
+            if (group != "__default")
+            {
+                enumLines += $"\n\t// {group}\n";
+                dictionaryLines += $"\n\t\t// {group}\n";
+            }
+            enumLines += string.Join("\n", groupList.Select(GetEnumLine)) + "\n";
+            dictionaryLines += string.Join("\n", groupList.Select(ToDictionaryRow)) + "\n";
+        }
+
         var template = Util.ReadEmbeddedResource(typeof(WIKI).Assembly, "EnumTemplate.txt");
         string cs = template
             .Replace("{USINGS}", usings)
             .Replace("{CLASS_HEADER}", header)
             .Replace("{CLASSNAME}", EnumName)
-            .Replace("{ENUMS}", string.Join("\n", sortedList.Select(GetEnumLine)))
-            .Replace("{TOTAL_ENUMS}", sortedList.Count.ToString())
+            .Replace("{ENUMS}", enumLines)
+            .Replace("{TOTAL_ENUMS}", set.Count.ToString())
             .Replace("{FIRST_ENUM}", firstEnum)
             .Replace("{MODELNAME}", ModelName)
             .Replace("{COLLECTION}", modelGetter)
-            .Replace("{ENUM_TO_NAME}", string.Join("\n", sortedList.Select(ToDictionaryRow)));
+            .Replace("{ENUM_TO_NAME}", dictionaryLines);
         
         File.WriteAllText(pathToFile + EnumName + ".cs", cs);
     }
 
     public static void CreateAllEnumTypes()
     {
-        CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, a=>a.displayName.GetText(), ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Buildings"]);
+        Func<string, string> noStartingNumbersEnum = (a) => a.ToEnumString(true);
+        
+        CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("NeedTypes", "SO.Settings.Needs", SO.Settings.Needs, a=>a.Name, a=>a.DisplayName, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("ProfessionTypes", "SO.Settings.Professions", SO.Settings.Professions, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("ProfessionTypes", "SO.Settings.Professions", SO.Settings.Professions, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("TagTypes", "SO.Settings.tags", SO.Settings.tags, a=>a.Name, null, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("TraderTypes", "SO.Settings.traders", SO.Settings.traders, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model.Trade"]);
-        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, a=>a.DisplayName, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("ResolveEffectTypes", "SO.Settings.resolveEffects", SO.Settings.resolveEffects, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("OrderTypes", "SO.Settings.orders", SO.Settings.orders, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model.Orders"]);
-        CreateEnumTypesCSharpScript("BiomeTypes", "SO.Settings.biomes", SO.Settings.biomes, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.WorldMap"]);
-        CreateEnumTypesCSharpScript("DifficultyTypes", "SO.Settings.difficulties", SO.Settings.difficulties, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("GoalTypes", "SO.Settings.goals", SO.Settings.goals, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model.Goals"]);
-        CreateEnumTypesCSharpScript("RelicTypes", "SO.Settings.Relics", SO.Settings.Relics, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("TraderTypes", "SO.Settings.traders", SO.Settings.traders, a=>a.Name, NameAndDescription, ["Eremite.Model.Trade"]);
+
+        Func<EffectModel, string> effectGroup = EffectGroup;
+        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, NameAndDescription, ["Eremite.Model"], groupEnumsBy:effectGroup);
+        CreateEnumTypesCSharpScript("ResolveEffectTypes", "SO.Settings.resolveEffects", SO.Settings.resolveEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("OrderTypes", "SO.Settings.orders", SO.Settings.orders, a=>a.Name, NameAndDescription, ["Eremite.Model.Orders"]);
+        CreateEnumTypesCSharpScript("BiomeTypes", "SO.Settings.biomes", SO.Settings.biomes, a=>a.Name, NameAndDescription, ["Eremite.WorldMap"]);
+
+        Func<DifficultyModel, string> difficultyComment = DifficultyComment;
+        CreateEnumTypesCSharpScript("DifficultyTypes", "SO.Settings.difficulties", SO.Settings.difficulties, a=>a.Name, difficultyComment, ["Eremite.Model"], noStartingNumbersEnum);
+        CreateEnumTypesCSharpScript("GoalTypes", "SO.Settings.goals", SO.Settings.goals, a=>a.Name, NameAndDescription, ["Eremite.Model.Goals"]);
+        CreateEnumTypesCSharpScript("RelicTypes", "SO.Settings.Relics", SO.Settings.Relics, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("MetaRewardTypes", "SO.Settings.metaRewards", SO.Settings.metaRewards, a=>a.Name, a=>a.DisplayName, ["Eremite.Model.Meta"]);
-        CreateEnumTypesCSharpScript("OreTypes", "SO.Settings.Ore", SO.Settings.Ore, a=>a.Name, a=>a.displayName.GetText(), ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("OreTypes", "SO.Settings.Ore", SO.Settings.Ore, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
     }
-    
+
+    private static string EffectGroup(EffectModel arg)
+    {
+        return arg.GetType().Name;
+    }
+
+    private static string NameAndDescription(object a)
+    {
+        Type type = a.GetType();
+
+
+        // Display Name
+        string displayName = (string)type.GetProperty("DisplayName",
+                BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetProperty)
+            ?.GetMethod
+            ?.Invoke(a, null);
+
+        if (string.IsNullOrEmpty(displayName))
+        {
+            var locaTextField = type.GetField("displayName", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
+            object dnValue = locaTextField?.GetValue(a);
+            displayName = (string)locaTextField?.FieldType.GetMethod("GetText", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
+                ?.Invoke(dnValue, null);
+        }
+        if(displayName == ">Missing key<")
+            displayName = "";
+        
+        
+        // Description
+        string description = (string)type.GetProperty("Description",
+                BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetProperty)
+            ?.GetMethod
+            ?.Invoke(a, null);
+        
+        if (string.IsNullOrEmpty(description))
+        {
+            var desc = type.GetField("description", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
+            object descValue = desc?.GetValue(a);
+            description = (string)desc?.FieldType.GetMethod("GetText", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
+                ?.Invoke(descValue, null);
+        }
+
+        if(description == ">Missing key<")
+            description = "";
+        
+        if(!string.IsNullOrEmpty(displayName) && !string.IsNullOrEmpty(description))
+            return displayName + " - " + description;
+        
+        if(string.IsNullOrEmpty(displayName) && string.IsNullOrEmpty(description))
+            return "";
+        
+        if(string.IsNullOrEmpty(displayName))
+            return description;
+        
+        return displayName;
+    }
+
+    private static string DifficultyComment(DifficultyModel a)
+    {
+        string ascensionText = a.isAscension ? (a.ascensionIndex + 1) + " " : "";
+        return a.displayName.GetText() + " " + ascensionText + "- " + ((a.modifiers.Length == 0)
+            ? a.GetText("WorldUI_FieldPanel_Difficulty_NoModifiers")
+            : a.modifiers.Last().shortDesc.Text);
+    }
+
     public static void ExportWikiInformation()
     {
         Assembly assembly = typeof(HookLogic).Assembly;

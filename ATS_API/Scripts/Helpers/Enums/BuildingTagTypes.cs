@@ -26,6 +26,7 @@ public enum BuildingTagTypes
 	Warmth,         // Warmth (<sprite name="fire">)
 	Wood,           // Woodworking (<sprite name="wood">)
 
+
     MAX = 15
 }
 
@@ -90,5 +91,6 @@ public static class BuildingTagTypesExtensions
 		{ BuildingTagTypes.Tech, "Tech" },                     // Engineering (<sprite name="tech">)
 		{ BuildingTagTypes.Warmth, "Warmth" },                 // Warmth (<sprite name="fire">)
 		{ BuildingTagTypes.Wood, "Wood" },                     // Woodworking (<sprite name="wood">)
+
 	};
 }

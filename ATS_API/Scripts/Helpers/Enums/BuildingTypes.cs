@@ -10,503 +10,503 @@ public enum BuildingTypes
 {
     Unknown = -1,
     None,
-	Advanced_Rain_Catcher,                      // Advanced Rain Collector
-	Aestherics_2x2___Garden,                    // Garden
-	Aestherics_2x2___Groundwater_Extractor,     // Makeshift Extractor
-	Alchemist_Hut,                              // Alchemist's Hut
-	Altar,                                      // Forsaken Altar
-	Ancient_Gravestone,                         // Ancient Tombstone
-	AncientBurrialGrounds,                      // Ancient Burial Site
-	AncientGate,                                // Dark Gate
-	AncientShrine_T1,                           // Ancient Shrine
-	AncientTemple,                              // Forgotten Temple of the Sun
-	Angry_Ghost_1,                              // Ghost of a Blight Fighter Captain
-	Angry_Ghost_10,                             // Ghost of a Suppressed Rebel
-	Angry_Ghost_14,                             // Ghost of a Resentful Human
-	Angry_Ghost_15,                             // Ghost of the Queen's Lickspittle
-	Angry_Ghost_16,                             // Ghost of a Lizard Leader
-	Angry_Ghost_17,                             // Ghost of a Tortured Harpy
-	Angry_Ghost_18,                             // Ghost of a Beaver Engineer
-	Angry_Ghost_19,                             // Ghost of a Poisoned Human
-	Angry_Ghost_2,                              // Ghost of a Mad Alchemist
-	Angry_Ghost_20,                             // Ghost of a Lizard Worker
-	Angry_Ghost_21,                             // Ghost of a Starved Harpy
-	Angry_Ghost_24,                             // Ghost of an Innkeeper
-	Angry_Ghost_31,                             // Ghost of a Lizard Elder
-	Angry_Ghost_32,                             // Ghost of a Lost Scout
-	Angry_Ghost_34,                             // Ghost of a Murdered Trader
-	Angry_Ghost_4,                              // Ghost of a Deranged Scout
-	Angry_Ghost_5,                              // Ghost of a Furious Villager
-	Angry_Ghost_6,                              // Ghost of a Scared Firekeeper
-	Angry_Ghost_9,                              // Ghost of a Loyal Servant
-	AngryGhostChest_T1,                         // Ghost Chest
-	Anvil,                                      // Anvil
-	API_ExampleMod_BurgerJoint,                 // Borgor King
-	Apothecary,                                 // Apothecary
-	Arch,                                       // Ancient Arch
-	Archaeology_Scorpion_Positive,              // Smoldering Scorpion
-	Archaeology_Snake_Positive,                 // Sea Serpent
-	Archaeology_Spider_Positive,                // Sealed Spider
-	Archeology_Office,                          // Archaeologist's Office
-	Artisan,                                    // Artisan
-	Bakery,                                     // Bakery
-	Bank,                                       // Bench
-	Barrels,                                    // Barrels
-	Bath_House,                                 // Bath House
-	Beanery,                                    // Beanery
-	Beaver_House,                               // Beaver House
-	BeaverBattleground_T1,                      // Fallen Beaver Traders
-	Big_Shelter,                                // Big Shelter
-	Black_Stag,                                 // Black Treasure Stag
-	Black_Treasure_Stag,                        // Black Treasure Stag
-	Blight_Post,                                // Blight Post
-	Blightrot,                                  // Blood Flower
-	Blightrot___Clone,                          // Blood Flower (Clone)
-	Blightrot_Cauldron,                         // Blightrot Cauldron
-	Bonfire,                                    // Bonfire
-	Brewery,                                    // Brewery
-	Brick_Oven,                                 // Brick Oven
-	Brickyard,                                  // Brickyard
-	Bush,                                       // Bush
-	Butcher,                                    // Butcher
-	Cages,                                      // Cages
-	Calm_Ghost_11,                              // Ghost of a Defeated Viceroy
-	Calm_Ghost_12,                              // Ghost of a Druid
-	Calm_Ghost_13,                              // Ghost of a Royal Gardener
-	Calm_Ghost_22,                              // Ghost of a Hooded Knight
-	Calm_Ghost_23,                              // Ghost of a Fire Priest
-	Calm_Ghost_25,                              // Ghost of a Treasure Hunter
-	Calm_Ghost_26,                              // Ghost of a Royal Architect
-	Calm_Ghost_27,                              // Ghost of a Worried Carter
-	Calm_Ghost_28,                              // Ghost of a Storm Victim
-	Calm_Ghost_29,                              // Ghost of a Mourning Harpy
-	Calm_Ghost_3,                               // Ghost of a Terrified Woodcutter
-	Calm_Ghost_30,                              // Ghost of a Lizard General
-	Calm_Ghost_33,                              // Ghost of an Old Merchant
-	Calm_Ghost_35,                              // Ghost of a Fox Elder
-	Calm_Ghost_36,                              // Ghost of a Teadoctor
-	Calm_Ghost_7,                               // Ghost of a Troublemaker
-	Calm_Ghost_8,                               // Ghost of a Fallen Newcomer
-	CalmGhostChest_T1,                          // Ghost Chest
-	Camp_T1,                                    // Small Encampment
-	Camp_T2,                                    // Large Encampment
-	Caravan_T1,                                 // Small Destroyed Caravan
-	Caravan_T2,                                 // Large Destroyed Caravan
-	Carpenter,                                  // Carpenter
-	Cellar,                                     // Cellar
-	Chest,                                      // Chest
-	Clan_Hall,                                  // Clan Hall
-	Clay_Pit_Workshop,                          // Clay Pit
-	Clothier,                                   // Clothier
-	Comfort_2x2___Park,                         // Park
-	Cookhouse,                                  // Cookhouse
-	Cooperage,                                  // Cooperage
-	Coral_Decor,                                // Coral Growth
-	CornerFence,                                // Fence Corner
-	Corrupted_Caravan,                          // Corrupted Caravan
-	Crates,                                     // Crates
-	Crude_Workstation,                          // Crude Workstation
-	DebugNode_ClayBig,                          // Clay Deposit (Large)
-	DebugNode_ClaySmall,                        // Clay Deposit (Small)
-	DebugNode_DewberryBushBig,                  // Dewberry Bush (Large)
-	DebugNode_DewberryBushSmall,                // Dewberry Bush (Small)
-	DebugNode_FlaxBig,                          // Flax Field (Large)
-	DebugNode_FlaxSmall,                        // Flax Field (Small)
-	DebugNode_HerbsBig,                         // Herb Node (Large)
-	DebugNode_HerbsSmall,                       // Herb Node (Small)
-	DebugNode_LeechBroodmotherBig,              // Leech Broodmother (Large)
-	DebugNode_LeechBroodmotherSmall,            // Leech Broodmother (Small)
-	DebugNode_Marshlands_InfiniteGrain,         // Ancient Proto Wheat
-	DebugNode_Marshlands_InfiniteMeat,          // Dead Leviathan
-	DebugNode_Marshlands_InfiniteMushroom,      // Giant Proto Fungus
-	DebugNode_MarshlandsMushroomBig,            // Grasscap Mushrooms (Large)
-	DebugNode_MarshlandsMushroomSmall,          // Grasscap Mushrooms (Small)
-	DebugNode_MossBroccoliBig,                  // Moss Broccoli Patch (Large)
-	DebugNode_MossBroccoliSmall,                // Moss Broccoli Patch (Small)
-	DebugNode_MushroomBig,                      // Grasscap Mushrooms (Large)
-	DebugNode_MushroomSmall,                    // Grasscap Mushrooms (Small)
-	DebugNode_ReedBig,                          // Reed Field (Large)
-	DebugNode_ReedSmall,                        // Reed Field (Small)
-	DebugNode_RootsBig,                         // Root Deposit (Large)
-	DebugNode_RootsSmall,                       // Root Deposit (Small)
-	DebugNode_SeaMarrowBig,                     // Sea Marrow Deposit (Large)
-	DebugNode_SeaMarrowSmall,                   // Sea Marrow Deposit (Small)
-	DebugNode_SnailBroodmotherBig,              // Slickshell Broodmother (Large)
-	DebugNode_SnailBroodmotherSmall,            // Slickshell Broodmother (Small)
-	DebugNode_SnakeNestBig,                     // Snake Nest (Large)
-	DebugNode_SnakeNestSmall,                   // Snake Nest (Small)
-	DebugNode_StoneBig,                         // Stone Deposit (Large)
-	DebugNode_StoneSmall,                       // Stone Deposit (Small)
-	DebugNode_StormbirdNestBig,                 // Drizzlewing Nest (Large)
-	DebugNode_StormbirdNestSmall,               // Drizzlewing Nest (Small)
-	DebugNode_SwampWheatBig,                    // Swamp Wheat Field (Large)
-	DebugNode_SwampWheatSmall,                  // Swamp Wheat Field (Small)
-	DebugNode_WormtongueNestBig,                // Wormtongue Nest (Large)
-	DebugNode_WormtongueNestSmall,              // Wormtongue Nest (Small)
-	Decay_Altar,                                // Altar of Decay
-	Decay_Altar_Positive,                       // Converted Altar of Decay
-	Distillery,                                 // Distillery
-	Druid,                                      // Druid's Hut
-	Escaped_Convicts,                           // Escaped Convicts
-	Explorers_Lodge,                            // Explorers' Lodge
-	Farmfield,                                  // Farm Field
-	Fence,                                      // Fence
-	Field_Kitchen,                              // Field Kitchen
-	Finesmith,                                  // Finesmith
-	Fire_Shrine,                                // Fire Shrine
-	Fishmen_Cave,                               // Fishmen Cave
-	Fishmen_Lighthouse,                         // Fishmen Lighthouse
-	Fishmen_Lighthouse_Positive,                // Converted Fishmen Lighthouse
-	Fishmen_Outpost,                            // Fishmen Outpost
-	Fishmen_Soothsayer,                         // Fishman Soothsayer
-	Fishmen_Totem,                              // Fishmen Totem
-	Flawless_Brewery,                           // Flawless Brewery
-	Flawless_Cellar,                            // Flawless Cellar
-	Flawless_Cooperage,                         // Flawless Cooperage
-	Flawless_Druid,                             // Flawless Druid's Hut
-	Flawless_Leatherworks,                      // Flawless Leatherworker
-	Flawless_Rain_Mill,                         // Flawless Rain Mill
-	Flawless_Smelter,                           // Flawless Smelter
-	Flower_Bed,                                 // Flower Bed
-	Foragers_Camp,                              // Foragers' Camp
-	ForsakenCrypt,                              // Forsaken Crypt
-	Forum,                                      // Forum
-	Fountain,                                   // Marble Fountain
-	Fox_Fence,                                  // Overgrown Fence
-	Fox_Fence_Corner,                           // Overgrown Fence Corner
-	Fox_House,                                  // Fox House
-	FoxBattleground_T1,                         // Fallen Fox Scouts
-	Fuming_Machinery,                           // Fuming Machinery
-	Furnace,                                    // Furnace
-	Gate,                                       // Gate
-	Giant_Stormbird,                            // Giant Stormbird's Nest
-	Glade_Trader___The_Hermit,                  // Wandering Merchant - Hermit
-	Glade_Trader___The_Seer,                    // Wandering Merchant - Seer
-	Glade_Trader___The_Shaman,                  // Wandering Merchant - Shaman
-	Gold_Stag,                                  // Golden Treasure Stag
-	Gold_Treasure_Stag,                         // Golden Treasure Stag
-	Golden_Leaf,                                // Golden Leaf Plant
-	Granary,                                    // Granary
-	Greenhouse_Workshop,                        // Greenhouse
-	Grill,                                      // Grill
-	Grove,                                      // Forester's Hut
-	Guild_House,                                // Guild House
-	Hallowed_Herb_Garden,                       // Hallowed Herb Garden
-	Hallowed_SmallFarm,                         // Hallowed Small Farm
-	Harmony_Spirit_Altar,                       // Harmony Spirit Altar
-	Harmony_Spirit_Altar_Positive,              // Converted Harmony Spirit Altar
-	Harpy_House,                                // Harpy House
-	HarpyBattleground_T1,                       // Fallen Harpy Scientists
-	Harvester_Camp,                             // Harvesters' Camp
-	Haunted_Ruined_Beaver_House,                // Haunted Beaver House
-	Haunted_Ruined_Brewery,                     // Haunted Brewery
-	Haunted_Ruined_Cellar,                      // Haunted Cellar
-	Haunted_Ruined_Cooperage,                   // Haunted Cooperage
-	Haunted_Ruined_Druid,                       // Haunted Druid's Hut
-	Haunted_Ruined_Fox_House,                   // Haunted Fox House
-	Haunted_Ruined_Harpy_House,                 // Haunted Harpy House
-	Haunted_Ruined_Herb_Garden,                 // Haunted Herb Garden
-	Haunted_Ruined_Human_House,                 // Haunted Human House
-	Haunted_Ruined_Leatherworks,                // Haunted Leatherworker
-	Haunted_Ruined_Lizard_House,                // Haunted Lizard House
-	Haunted_Ruined_Market,                      // Haunted Market
-	Haunted_Ruined_Rainmill,                    // Haunted Rain Mill
-	Haunted_Ruined_SmallFarm,                   // Haunted Small Farm
-	Haunted_Ruined_Smelter,                     // Haunted Smelter
-	Haunted_Ruined_Temple,                      // Haunted Temple
-	Herb_Garden,                                // Herb Garden
-	Herbalists_Camp,                            // Herbalists' Camp
-	Holy_Market,                                // Holy Market
-	Holy_Temple,                                // Holy Temple
-	Homestead,                                  // Homestead
-	Human_House,                                // Human House
-	HumanBattleground_T1,                       // Fallen Human Explorers
-	Hydrant,                                    // Hydrant
-	Infected_Mole,                              // Infected Drainage Mole
-	Infected_Tree,                              // Withered Tree
-	Kelpie,                                     // River Kelpie
-	Kiln,                                       // Kiln
-	Lamp,                                       // Lamp
-	Leaking_Cauldron,                           // Leaking Cauldron
-	Leatherworks,                               // Leatherworker
-	Lightning_Catcher,                          // Lightning Catcher
-	Lizard_House,                               // Lizard House
-	Lizard_Post,                                // Lizard Post
-	LizardBattleground_T1,                      // Fallen Lizard Hunters
-	Lore_Tablet_1,                              // Inscribed Monolith
-	Lore_Tablet_2,                              // Inscribed Monolith
-	Lore_Tablet_3,                              // Inscribed Monolith
-	Lore_Tablet_4,                              // Inscribed Monolith
-	Lore_Tablet_5,                              // Inscribed Monolith
-	Lore_Tablet_6,                              // Inscribed Monolith
-	Lore_Tablet_7,                              // Inscribed Monolith
-	Lumbermill,                                 // Lumber Mill
-	Main_Storage_not_buildable_,                // Main Warehouse
-	Makeshift_Post,                             // Makeshift Post
-	Manufactory,                                // Manufactory
-	Market,                                     // Market
-	Merchant_Ship_Wreck,                        // Merchant Shipwreck
-	Mine,                                       // Mine
-	Mistworm_T1,                                // Hungry Mistworm
-	Mole,                                       // Drainage Mole
-	Monastery,                                  // Monastery
-	Monolith,                                   // Obelisk
-	Monolith_Positive,                          // Obelisk
-	Mushroom_Decor,                             // Decorative Fungus
-	Nightfern,                                  // Nightfern
-	Noxious_Machinery,                          // Noxious Machinery
-	Path,                                       // Path
-	Paved_Road,                                 // Paved Road
-	PetrifiedTree_T1,                           // Petrified Tree
-	Pipe,                                       // Pipe
-	Pipe_Cross,                                 // Pipe Cross
-	Pipe_Elbow,                                 // Pipe Elbow
-	Pipe_End,                                   // Pipe Ending
-	Pipe_T_Cross,                               // Pipe T-Connector
-	Pipe_Valve,                                 // Valve
-	Plantation,                                 // Plantation
-	Press,                                      // Press
-	Primitive_Foragers_Camp,                    // Small Foragers' Camp
-	Primitive_Herbalists_Camp,                  // Small Herbalists' Camp
-	Primitive_Trappers_Camp,                    // Small Trappers' Camp
-	Provisioner,                                // Provisioner
-	Purged_Beaver_House,                        // Purified Beaver House
-	Purged_Fox_House,                           // Purified Fox House
-	Purged_Harpy_House,                         // Purified Harpy House
-	Purged_Human_House,                         // Purified Human House
-	Purged_Lizard_House,                        // Purified Lizard House
-	Rain_Catcher,                               // Rain Collector
-	Rain_Mill,                                  // Rain Mill
-	Rain_Totem,                                 // Rain Spirit Totem
-	Rain_Totem_Positive,                        // Converted Rain Totem
-	Rainpunk_Barrels,                           // Rainpunk Barrels
-	Rainpunk_Drill___Coal,                      // Rainpunk Drill
-	Rainpunk_Drill___Copper,                    // Rainpunk Drill
-	Rainpunk_Foundry,                           // Rainpunk Foundry
-	RainpunkFactory,                            // Destroyed Rainpunk Foundry
-	Ranch,                                      // Ranch
-	Reinforced_Road,                            // Reinforced Road
-	RewardChest_T1,                             // Small Abandoned Cache
-	RewardChest_T2,                             // Medium Abandoned Cache
-	RewardChest_T3,                             // Large Abandoned Cache
-	Road_Sign,                                  // Road Sign
-	Ruined_Advanced_Rain_Catcher,               // Advanced Rain Collector
-	Ruined_Advanced_Rain_Catcher_no_Reward_,    // Advanced Rain Collector
-	Ruined_Alchemist,                           // Alchemist's Hut
-	Ruined_Alchemist_no_Reward_,                // Alchemist's Hut
-	Ruined_Apothecary,                          // Apothecary
-	Ruined_Apothecary_no_Reward_,               // Apothecary
-	Ruined_Artisan,                             // Artisan
-	Ruined_Artisan_no_Reward_,                  // Artisan
-	Ruined_Bakery,                              // Bakery
-	Ruined_Bakery_no_Reward_,                   // Bakery
-	Ruined_Bath_House,                          // Bath House
-	Ruined_Bath_House_no_Reward_,               // Bath House
-	Ruined_Beanery,                             // Beanery
-	Ruined_Beanery_no_Reward_,                  // Beanery
-	Ruined_Beaver_House,                        // Beaver House
-	Ruined_Beaver_House_no_Reward_,             // Beaver House
-	Ruined_Big_Shelter,                         // Big Shelter
-	Ruined_Big_Shelter_no_Reward_,              // Big Shelter
-	Ruined_Brewery,                             // Brewery
-	Ruined_Brewery_no_Reward_,                  // Brewery
-	Ruined_Brick_Oven,                          // Brick Oven
-	Ruined_Brick_Oven_no_Reward_,               // Brick Oven
-	Ruined_Brickyard,                           // Brickyard
-	Ruined_Brickyard_no_Reward_,                // Brickyard
-	Ruined_Butcher,                             // Butcher
-	Ruined_Butcher_no_Reward_,                  // Butcher
-	Ruined_Carpenter,                           // Carpenter
-	Ruined_Carpenter_no_Reward_,                // Carpenter
-	Ruined_Cellar,                              // Cellar
-	Ruined_Cellar_no_Reward_,                   // Cellar
-	Ruined_Clan_Hall,                           // Clan Hall
-	Ruined_Clan_Hall_no_Reward_,                // Clan Hall
-	Ruined_Clay_Pit,                            // Clay Pit
-	Ruined_Clay_Pit_no_Reward_,                 // Clay Pit
-	Ruined_Cookhouse,                           // Cookhouse
-	Ruined_Cookhouse_no_Reward_,                // Cookhouse
-	Ruined_Cooperage,                           // Cooperage
-	Ruined_Cooperage_no_Reward_,                // Cooperage
-	Ruined_Crude_Workstation_no_Reward_,        // Crude Workstation
-	Ruined_Distillery,                          // Distillery
-	Ruined_Distillery_no_Reward_,               // Distillery
-	Ruined_Druid,                               // Druid's Hut
-	Ruined_Druid_no_Reward_,                    // Druid's Hut
-	Ruined_Explorers_Lodge,                     // Explorers' Lodge
-	Ruined_Explorers_Lodge_no_Reward_,          // Explorers' Lodge
-	Ruined_Farm,                                // Homestead
-	Ruined_Farm_no_Reward_,                     // Homestead
-	Ruined_Field_Kitchen_no_Reward_,            // Field Kitchen
-	Ruined_Finesmith,                           // Finesmith
-	Ruined_Finesmith_no_Reward_,                // Finesmith
-	Ruined_Foragers_Camp,                       // Foragers' Camp
-	Ruined_Foragers_Camp_no_Reward_,            // Foragers' Camp
-	Ruined_Foragers_Camp_Primitive_no_Reward_,  // Foragers' Camp
-	Ruined_Forum,                               // Forum
-	Ruined_Forum_no_Reward_,                    // Forum
-	Ruined_Fox_House,                           // Fox House
-	Ruined_Fox_House_no_Reward_,                // Fox House
-	Ruined_Furnace,                             // Furnace
-	Ruined_Furnace_no_Reward_,                  // Furnace
-	Ruined_Granary,                             // Granary
-	Ruined_Granary_no_Reward_,                  // Granary
-	Ruined_Greenhouse,                          // Greenhouse
-	Ruined_Greenhouse_no_Reward_,               // Greenhouse
-	Ruined_Grill,                               // Grill
-	Ruined_Grill_no_Reward_,                    // Grill
-	Ruined_Grove,                               // Forester's Hut
-	Ruined_Grove_no_Reward_,                    // Forester's Hut
-	Ruined_Guild_House,                         // Guild House
-	Ruined_Guild_House_no_Reward_,              // Guild House
-	Ruined_Harpy_House,                         // Harpy House
-	Ruined_Harpy_House_no_Reward_,              // Harpy House
-	Ruined_Harvester_Camp,                      // Harvesters' Camp
-	Ruined_Harvester_Camp_no_Reward_,           // Harvesters' Camp
-	Ruined_Hearth,                              // Ancient Hearth
-	Ruined_Hearth_no_Reward_,                   // Ancient Hearth
-	Ruined_Herb_Garden,                         // Herb Garden
-	Ruined_Herb_Garden_no_Reward_,              // Herb Garden
-	Ruined_Herbalist_Camp,                      // Herbalists' Camp
-	Ruined_Herbalist_Camp_no_Reward_,           // Herbalists' Camp
-	Ruined_Herbalist_Camp_Primitive_no_Reward_, // Herbalists' Camp
-	Ruined_Human_House,                         // Human House
-	Ruined_Human_House_no_Reward_,              // Human House
-	Ruined_Kiln,                                // Kiln
-	Ruined_Kiln_no_Reward_,                     // Kiln
-	Ruined_Leatherworks,                        // Leatherworker
-	Ruined_Leatherworks_no_Reward_,             // Leatherworker
-	Ruined_Lizard_House,                        // Lizard House
-	Ruined_Lizard_House_no_Reward_,             // Lizard House
-	Ruined_Lumbermill,                          // Lumber Mill
-	Ruined_Lumbermill_no_Reward_,               // Lumber Mill
-	Ruined_Makeshift_Post_no_Reward_,           // Makeshift Post
-	Ruined_Manufatory,                          // Manufactory
-	Ruined_Manufatory_no_Reward_,               // Manufactory
-	Ruined_Market,                              // Market
-	Ruined_Market_no_Reward_,                   // Market
-	Ruined_Mine_no_Reward_,                     // Mine
-	Ruined_Monastery,                           // Monastery
-	Ruined_Monastery_no_Reward_,                // Monastery
-	Ruined_Plantation,                          // Plantation
-	Ruined_Plantation_no_Reward_,               // Plantation
-	Ruined_Press,                               // Press
-	Ruined_Press_no_Reward_,                    // Press
-	Ruined_Provisioner,                         // Provisioner
-	Ruined_Provisioner_no_Reward_,              // Provisioner
-	Ruined_Rain_Catcher_no_Reward_,             // Rain Collector
-	Ruined_Rainmill,                            // Rain Mill
-	Ruined_Rainmill_no_Reward_,                 // Rain Mill
-	Ruined_Ranch,                               // Ranch
-	Ruined_Ranch_no_Reward_,                    // Ranch
-	Ruined_Scribe,                              // Scribe
-	Ruined_Scribe_no_Reward_,                   // Scribe
-	Ruined_Sewer,                               // Clothier
-	Ruined_Sewer_no_Reward_,                    // Clothier
-	Ruined_Shelter,                             // Shelter
-	Ruined_Shelter_no_Reward_,                  // Shelter
-	Ruined_SmallFarm,                           // Small Farm
-	Ruined_SmallFarm_no_Reward_,                // Small Farm
-	Ruined_Smelter,                             // Smelter
-	Ruined_Smelter_no_Reward_,                  // Smelter
-	Ruined_Smithy,                              // Smithy
-	Ruined_Smithy_no_Reward_,                   // Smithy
-	Ruined_Smokehouse,                          // Smokehouse
-	Ruined_Smokehouse_no_Reward_,               // Smokehouse
-	Ruined_Stamping_Mill,                       // Stamping Mill
-	Ruined_Stamping_Mill_no_Reward_,            // Stamping Mill
-	Ruined_Stonecutter_Camp,                    // Stonecutters' Camp
-	Ruined_Stonecutter_Camp_no_Reward_,         // Stonecutters' Camp
-	Ruined_Storage,                             // Small Warehouse
-	Ruined_Storage_no_Reward_,                  // Small Warehouse
-	Ruined_Supplier,                            // Supplier
-	Ruined_Supplier_no_Reward_,                 // Supplier
-	Ruined_Tavern,                              // Tavern
-	Ruined_Tavern_no_Reward_,                   // Tavern
-	Ruined_Tea_Doctor,                          // Tea Doctor
-	Ruined_Tea_Doctor_no_Reward_,               // Tea Doctor
-	Ruined_Tea_House,                           // Teahouse
-	Ruined_Tea_House_no_Reward_,                // Teahouse
-	Ruined_Temple,                              // Temple
-	Ruined_Temple_no_Reward_,                   // Temple
-	Ruined_Tinctury,                            // Tinctury
-	Ruined_Tinctury_no_Reward_,                 // Tinctury
-	Ruined_Tinkerer,                            // Tinkerer
-	Ruined_Tinkerer_no_Reward_,                 // Tinkerer
-	Ruined_Toolshop,                            // Toolshop
-	Ruined_Toolshop_no_Reward_,                 // Toolshop
-	Ruined_Trading_Post_no_Reward_,             // Trading Post
-	Ruined_Trappers_Camp,                       // Trappers' Camp
-	Ruined_Trappers_Camp_no_Reward_,            // Trappers' Camp
-	Ruined_Trappers_Camp_Primitive_no_Reward_,  // Trappers' Camp
-	Ruined_Weaver,                              // Weaver
-	Ruined_Weaver_no_Reward_,                   // Weaver
-	Ruined_Woodcutters_Camp,                    // Woodcutters' Camp
-	Ruined_Woodcutters_Camp_no_Reward_,         // Woodcutters' Camp
-	Ruined_Workshop,                            // Workshop
-	Ruined_Workshop_no_Reward_,                 // Workshop
-	Sacrifice_Totem,                            // Totem of Denial
-	Sacrifice_Totem_Positive,                   // Converted Totem of Denial
-	Scarlet_Decor,                              // Thorny Reed
-	Scorpion_1,                                 // Archaeological Discovery
-	Scorpion_2,                                 // Archaeological Excavation
-	Scorpion_3,                                 // Archaeological Reconstruction
-	Scribe,                                     // Scribe
-	Seal,                                       // Ancient Seal
-	Seal_Guidepost,                             // Guidance Stone
-	Seal_Low_Diff,                              // Ancient Seal
-	Sealed_Biome_Shrine,                        // Beacon Tower
-	SealedTomb_T1,                              // Open Vault
-	Shelter,                                    // Shelter
-	Signboard,                                  // Signboard
-	Small_Hearth,                               // Ancient Hearth
-	SmallFarm,                                  // Small Farm
-	Smelter,                                    // Smelter
-	Smithy,                                     // Smithy
-	Smokehouse,                                 // Smokehouse
-	Snake_1,                                    // Archaeological Discovery
-	Snake_2,                                    // Archaeological Excavation
-	Snake_3,                                    // Archaeological Reconstruction
-	Spider_1,                                   // Archaeological Discovery
-	Spider_2,                                   // Archaeological Excavation
-	Spider_3,                                   // Archaeological Reconstruction
-	Stamping_Mill,                              // Stamping Mill
-	Stonecutters_Camp,                          // Stonecutters' Camp
-	Storage_buildable_,                         // Small Warehouse
-	Stormbird_Positive,                         // Tamed Stormbird
-	Supplier,                                   // Supplier
-	Tavern,                                     // Tavern
-	Tea_Doctor,                                 // Tea Doctor
-	Tea_House,                                  // Teahouse
-	Temple,                                     // Temple
-	Temporary_Hearth_buildable_,                // Small Hearth
-	Temporary_Hearth_not_buildable_,            // Small Hearth
-	Termite_Burrow,                             // Stonetooth Termite Burrow
-	Termite_Burrow_Positive,                    // Termite Nest
-	TI_AncientShrine_T1,                        // Ancient Shrine
-	Tinctury,                                   // Tinctury
-	Tinkerer,                                   // Tinkerer
-	Toolshop,                                   // Toolshop
-	Tower,                                      // Wall Crossing
-	Town_Board,                                 // Town Board
-	Traders_Cemetery,                           // Hidden Trader Cemetery
-	Trading_Post,                               // Trading Post
-	Trappers_Camp,                              // Trappers' Camp
-	Umbrella,                                   // Umbrella
-	Wall,                                       // Wall
-	Wall_Corner,                                // Wall Corner
-	War_Beast_Cage,                             // Destroyed Cage of the Warbeast
-	Water_Barrels,                              // Water Barrels
-	Water_Extractor,                            // Geyser Pump
-	Weaver,                                     // Weaver
-	Well,                                       // Overgrown Well
-	White_Stag,                                 // Royal Treasure Stag
-	White_Treasure_Stag,                        // Royal Treasure Stag
-	Wildfire,                                   // Wildfire
-	Woodcutters_Camp,                           // Woodcutters' Camp
-	Workshop,                                   // Workshop
+	Advanced_Rain_Catcher,                     // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+	Aestherics_2x2_Garden,                     // Garden - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+	Aestherics_2x2_Groundwater_Extractor,      // Makeshift Extractor - <color=#8AAFFD>Aesthetics.</color> A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 <sprite name="[water] clearance water"> Clearance Water per minute. Counts as 4 decorations of its type.
+	Alchemist_Hut,                             // Alchemist's Hut - Can produce:  <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade2>), <sprite name=[needs] tea> Tea (<sprite name=grade2>), <sprite name=[needs] wine> Wine (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Altar,                                     // Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
+	Ancient_Gravestone,                        // Ancient Tombstone - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+	AncientBurrialGrounds,                     // Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
+	AncientGate,                               // Dark Gate - A strange monument of cyclopean proportions. Heavy storm clouds seem to be gathering around the settlement.
+	AncientShrine_T1,                          // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+	AncientTemple,                             // Forgotten Temple of the Sun - Who would worship the sun in a world with so little sunlight?
+	Angry_Ghost_1,                             // Ghost of a Blight Fighter Captain - I let us down and was defeated by the Blightrot... but you can avenge me! Kill it with fire!!!
+	Angry_Ghost_10,                            // Ghost of a Suppressed Rebel - I was leading a rebellion against the Queen's tyrannical rule, but the Royal Guard found us. Carry on my legacy!
+	Angry_Ghost_14,                            // Ghost of a Resentful Human - Humans deserve to be treated better than the others! Without us, you’d never achieve anything. If you don’t meet our basic needs, we’ll take our revenge!
+	Angry_Ghost_15,                            // Ghost of the Queen's Lickspittle - I challenge you, viceroy! Do you consider yourself worthy of the Queen's glance? Prove it. Time is ticking.
+	Angry_Ghost_16,                            // Ghost of a Lizard Leader - I'm so sick of these Beavers! They’re the bane of this kingdom! They deserve nothing but condemnation for what they did to us. I order you to torment them - or I'll do it myself!
+	Angry_Ghost_17,                            // Ghost of a Tortured Harpy - They took our homes and our crops. They desecrated our culture, and in the end, they took our lives. The time of contempt has come.
+	Angry_Ghost_18,                            // Ghost of a Beaver Engineer - These fanatics should pay for their heresies! They are dangerous, wild, and unpredictable creatures. Teach these savages, once and for all.
+	Angry_Ghost_19,                            // Ghost of a Poisoned Human - We will no longer tolerate those upturned beaks roaming the settlement freely. Everyone must learn the truth about how the Harpy alchemists poisoned us to seize power!
+	Angry_Ghost_2,                             // Ghost of a Mad Alchemist - I have studied the Blightrot all my life. Nobody believes me, but the cysts are essential for the ecosystem! Grow them and find out yourself!
+	Angry_Ghost_20,                            // Ghost of a Lizard Worker - Self-righteous Beavers only want to bask in the luxuries we’ve worked so hard for. Time to end this injustice!
+	Angry_Ghost_21,                            // Ghost of a Starved Harpy - Greedy Human farmers always want to keep all the crops for themselves. Those traitors hid everything from us, and pretended the crops were rotten!
+	Angry_Ghost_24,                            // Ghost of an Innkeeper - We worked so hard, and put our lives in danger every day. If you don't let your villagers rest, I will make sure your soul never finds peace.
+	Angry_Ghost_31,                            // Ghost of a Lizard Elder - It was them! I'm sure of it! I remember their blank, blight-tainted gaze! They ambushed me in the forest! Please, avenge me!
+	Angry_Ghost_32,                            // Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
+	Angry_Ghost_34,                            // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
+	Angry_Ghost_4,                             // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
+	Angry_Ghost_5,                             // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
+	Angry_Ghost_6,                             // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
+	Angry_Ghost_9,                             // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
+	AngryGhostChest_T1,                        // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
+	Anvil,                                     // Anvil - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Apothecary,                                // Apothecary - Can produce:  <sprite name=[needs] tea> Tea (<sprite name=grade2>), <sprite name=[needs] incense> Incense (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Arch,                                      // Ancient Arch - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
+	Archaeology_Scorpion_Positive,             // Smoldering Scorpion - <color=#D6E54A>Harmony.</color> Legend has it that they once inhabited the top of the mountain on which the Smoldering City now stands. The Queen banished them, but it is said that some of them still hibernate somewhere on the outskirts of the kingdom.  Counts as 9 decorations of its type.
+	Archaeology_Snake_Positive,                // Sea Serpent - <color=#D6E54A>Harmony.</color> The anatomical features of this beast indicate an adaptation to life in water, as well as on land. Due to this, sea serpents are excellent hunters, preying on lonely caravans and lost settlers. The preserved remains show traces of Blightrot. Could it be that these creatures have brought this plague to the surface when emerging from the depths of the ocean? Counts as 9 decorations of its type.
+	Archaeology_Spider_Positive,               // Sealed Spider - <color=#D6E54A>Harmony.</color> It is said that these creatures were once the faithful servants of the Sealed Ones, and like their masters, they were trapped underground for eternity. But even to this day, miners tell tales of giant spiders crawling up from deep caverns, preying on unsuspecting victims. Legend has it that these vile beasts fear only one thing - the Holy Flame. Counts as 9 decorations of its type.
+	Archeology_Office,                         // Archaeologist's Office - A building designed to help you study the past. Can be upgraded to locate archaeological discoveries or improve the settlement's exploration capabilities. 
+	Artisan,                                   // Artisan - Can produce:  <sprite name=[needs] coats> Coats (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade2>), <sprite name=[packs] pack of luxury goods> Pack of Luxury Goods (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Bakery,                                    // Bakery - Can produce:  <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>), <sprite name=[food processed] pie> Pie (<sprite name=grade2>), <sprite name=[vessel] pottery> Pottery (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Bank,                                      // Bench - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Barrels,                                   // Barrels - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Bath_House,                                // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
+	Beanery,                                   // Beanery - Can produce:  <sprite name=[food processed] porridge> Porridge (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade1>), <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Beaver_House,                              // Beaver House - Building specifically made for Beavers. Has to be built near a Hearth. Can house 2 residents.
+	BeaverBattleground_T1,                     // Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
+	Big_Shelter,                               // Big Shelter - Can accommodate any villager, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 6 residents.
+	Black_Stag,                                // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+	Black_Treasure_Stag,                       // Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+	Blight_Post,                               // Blight Post - A specialized building dedicated to fighting Blightrot. Blight Fighters will prepare <sprite name="blight fuel"> Purging Fire during drizzle and clearance seasons, and use it to burn Blightrot Cysts during the storm.
+	Blightrot,                                 // Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
+	Blightrot_Cauldron,                        // Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
+	Blightrot_Clone,                           // Blood Flower (Clone) - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
+	Bonfire,                                   // Bonfire - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+	Brewery,                                   // Brewery - Can produce:  <sprite name=[needs] ale> Ale (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade1>), <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Brick_Oven,                                // Brick Oven - Can produce:  <sprite name=[food processed] pie> Pie (<sprite name=grade3>), <sprite name=[crafting] coal> Coal (<sprite name=grade1>), <sprite name=[needs] incense> Incense (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Brickyard,                                 // Brickyard - Can produce:  <sprite name=[mat processed] bricks> Bricks (<sprite name=grade3>), <sprite name=[vessel] pottery> Pottery (<sprite name=grade2>), <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Bush,                                      // Bush - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Butcher,                                   // Butcher - Can produce:  <sprite name=[food processed] skewers> Skewers (<sprite name=grade2>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade2>), <sprite name=[crafting] oil> Oil (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Cages,                                     // Cages - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Calm_Ghost_11,                             // Ghost of a Defeated Viceroy - A long time ago, I founded a prosperous settlement. Everything was fine, until one of our scouts discovered something terrifying in the forest. Please, help restore at least a scrap of my legacy.
+	Calm_Ghost_12,                             // Ghost of a Druid - Many viceroys disregard nature. Don't make the same mistake. Be a good example to your people.
+	Calm_Ghost_13,                             // Ghost of a Royal Gardener - In these difficult times, beauty helps us forget our troubles. Decorate your village, and your villagers will thank you.
+	Calm_Ghost_22,                             // Ghost of a Hooded Knight - I promised my Queen that I would cleanse this forest of all the horrors that lived here. One night, my mount got frightened by the storm, and we fell into the Fishmen's nets. My mission must be completed!
+	Calm_Ghost_23,                             // Ghost of a Fire Priest - Spread the word about the power of the Holy Fire! Only it can save us from the storm's wrath. Gather the villagers in the chapel and pray!
+	Calm_Ghost_25,                             // Ghost of a Treasure Hunter - If your eyes sparkle at the sight of gold, I have an offer for you. All you have to do is prove that you are one of us, and I will give you my treasure.
+	Calm_Ghost_26,                             // Ghost of a Royal Architect - The foundation of success is a thriving settlement. Without solid walls, you won't survive here. Create something you can be proud of.
+	Calm_Ghost_27,                             // Ghost of a Worried Carter - The last thing I remember is lightning hitting my caravan. The settlements are still waiting for the goods they ordered. If you deliver them, I’ll see that you’re rewarded.
+	Calm_Ghost_28,                             // Ghost of a Storm Victim - Let the fire burn in the Hearth and grow in all its strength. Sacrifice your goods, and help the villagers weather the storm!
+	Calm_Ghost_29,                             // Ghost of a Mourning Harpy - Our flock has been in mourning for many years. We will never forget the war. Please, rekindle the hope in the Harpies' hearts.
+	Calm_Ghost_3,                              // Ghost of a Terrified Woodcutter - I lived in a very prosperous settlement, but our viceroy was greedy and didn't care about the forest at all! In the end, it brought doom upon us. Refrain from greed, and calm the forest.
+	Calm_Ghost_30,                             // Ghost of a Lizard General - My army fought bravely against all odds. Many of us paid the ultimate price. Please, show your respect to those who survived. I'll take care of the fallen.
+	Calm_Ghost_33,                             // Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
+	Calm_Ghost_35,                             // Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
+	Calm_Ghost_36,                             // Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
+	Calm_Ghost_7,                              // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
+	Calm_Ghost_8,                              // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
+	CalmGhostChest_T1,                         // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
+	Camp_T1,                                   // Small Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
+	Camp_T2,                                   // Large Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
+	Caravan_T1,                                // Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
+	Caravan_T2,                                // Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
+	Carpenter,                                 // Carpenter - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[tools] simple tools> Tools (<sprite name=grade2>), <sprite name=[packs] pack of luxury goods> Pack of Luxury Goods (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Cellar,                                    // Cellar - Can produce:  <sprite name=[needs] wine> Wine (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade1>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Chest,                                     // Chest - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Clan_Hall,                                 // Clan Hall - A place where villagers can fulfill their need for: Brawling,  Religion. Passive effects: Ancient Ways.
+	Clay_Pit_Workshop,                         // Clay Pit - Uses Clearance Water to produce  <sprite name=[mat raw] clay> Clay (<sprite name=grade2>), <sprite name=[mat raw] reeds> Reed (<sprite name=grade2>), regardless of the season. Must be placed on fertile soil.
+	Clothier,                                  // Clothier - Can produce:  <sprite name=[needs] coats> Coats (<sprite name=grade3>), <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade1>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Comfort_2x2_Park,                          // Park - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+	Cookhouse,                                 // Cookhouse - Can produce:  <sprite name=[food processed] skewers> Skewers (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Cooperage,                                 // Cooperage - Can produce:  <sprite name=[vessel] barrels> Barrels (<sprite name=grade3>), <sprite name=[needs] coats> Coats (<sprite name=grade2>), <sprite name=[needs] tea> Tea (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Coral_Decor,                               // Coral Growth - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	CornerFence,                               // Fence Corner - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Corrupted_Caravan,                         // Corrupted Caravan - A large caravan abandoned in the woods, overgrown with Blightrot Cysts. They must have fed on the transported goods... or people.
+	Crates,                                    // Crates - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Crude_Workstation,                         // Crude Workstation - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade0>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade0>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade0>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade0>). Can use: <sprite name="[water] storm water"> Storm Water.
+	DebugNode_ClayBig,                         // Clay Deposit (Large) - Soil infused with the essence of the rain.
+	DebugNode_ClaySmall,                       // Clay Deposit (Small) - Soil infused with the essence of the rain.
+	DebugNode_DewberryBushBig,                 // Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain.
+	DebugNode_DewberryBushSmall,               // Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain.
+	DebugNode_FlaxBig,                         // Flax Field (Large) - Resilient plants that are perfect for cloth-making.
+	DebugNode_FlaxSmall,                       // Flax Field (Small) - Resilient plants that are perfect for cloth-making.
+	DebugNode_HerbsBig,                        // Herb Node (Large) - A dense shrub, full of many useful plant species.
+	DebugNode_HerbsSmall,                      // Herb Node (Small) - A dense shrub, full of many useful plant species.
+	DebugNode_LeechBroodmotherBig,             // Leech Broodmother (Large) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
+	DebugNode_LeechBroodmotherSmall,           // Leech Broodmother (Small) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
+	DebugNode_Marshlands_InfiniteGrain,        // Ancient Proto Wheat - A wild type of grain, mutated by an invasive species of fungi.
+	DebugNode_Marshlands_InfiniteMeat,         // Dead Leviathan - A giant, dead beast. How did it get here?
+	DebugNode_Marshlands_InfiniteMushroom,     // Giant Proto Fungus - An ancient and mysterious organism. Proto fungi are sometimes referred to as the living and breathing hearts of the Marshlands.
+	DebugNode_MarshlandsMushroomBig,           // Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
+	DebugNode_MarshlandsMushroomSmall,         // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
+	DebugNode_MossBroccoliBig,                 // Moss Broccoli Patch (Large) - An edible and tasty type of moss.
+	DebugNode_MossBroccoliSmall,               // Moss Broccoli Patch (Small) - An edible and tasty type of moss.
+	DebugNode_MushroomBig,                     // Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
+	DebugNode_MushroomSmall,                   // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
+	DebugNode_ReedBig,                         // Reed Field (Large) - A very common plant, it thrives thanks to the magical rain.
+	DebugNode_ReedSmall,                       // Reed Field (Small) - A very common plant, it thrives thanks to the magical rain.
+	DebugNode_RootsBig,                        // Root Deposit (Large) - A tangled net of living vines.
+	DebugNode_RootsSmall,                      // Root Deposit (Small) - A tangled net of living vines.
+	DebugNode_SeaMarrowBig,                    // Sea Marrow Deposit (Large) - Ancient fossils, rich in resources.
+	DebugNode_SeaMarrowSmall,                  // Sea Marrow Deposit (Small) - Ancient fossils, rich in resources.
+	DebugNode_SnailBroodmotherBig,             // Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
+	DebugNode_SnailBroodmotherSmall,           // Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
+	DebugNode_SnakeNestBig,                    // Snake Nest (Large) - A dangerous, but rich source of food and leather.
+	DebugNode_SnakeNestSmall,                  // Snake Nest (Small) - A dangerous, but rich source of food and leather.
+	DebugNode_StoneBig,                        // Stone Deposit (Large) - Stones, weathered by the everlasting rain.
+	DebugNode_StoneSmall,                      // Stone Deposit (Small) - Stones, weathered by the everlasting rain.
+	DebugNode_StormbirdNestBig,                // Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
+	DebugNode_StormbirdNestSmall,              // Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
+	DebugNode_SwampWheatBig,                   // Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp.
+	DebugNode_SwampWheatSmall,                 // Swamp Wheat Field (Small) - A plant species that’s right at home in the swamp.
+	DebugNode_WormtongueNestBig,               // Wormtongue Nest (Large) - A nest full of tasty wormtongues.
+	DebugNode_WormtongueNestSmall,             // Wormtongue Nest (Small) - A nest full of tasty wormtongues.
+	Decay_Altar,                               // Altar of Decay - A sinister stone structure created to worship the Blightrot. Cultists have engraved the inscription: "Nothing escapes death".
+	Decay_Altar_Positive,                      // Converted Altar of Decay - <color=#D6E54A>Harmony.</color> Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves. Counts as 9 decorations of its type.
+	Distillery,                                // Distillery - Can produce:  <sprite name=[needs] wine> Wine (<sprite name=grade2>), <sprite name=[food processed] porridge> Porridge (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Druid,                                     // Druid's Hut - Can produce:  <sprite name=[crafting] oil> Oil (<sprite name=grade3>), <sprite name=[needs] incense> Incense (<sprite name=grade1>), <sprite name=[needs] coats> Coats (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Escaped_Convicts,                          // Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
+	Explorers_Lodge,                           // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
+	Farmfield,                                 // Farm Field - Can only be placed on fertile soil. Requires a Small Farm, Plantation, Herb Garden, Forester's Hut, or Homestead nearby to produce crops.
+	Fence,                                     // Fence - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Field_Kitchen,                             // Field Kitchen - Can produce:  <sprite name=[food processed] jerky> Jerky (<sprite name=grade0>), <sprite name=[food processed] porridge> Porridge (<sprite name=grade0>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade0>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade0>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Finesmith,                                 // Finesmith - Can produce:  <sprite name=[valuable] amber> Amber (<sprite name=grade3>), <sprite name=[tools] simple tools> Tools (<sprite name=grade3>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Fire_Shrine,                               // Fire Shrine - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
+	Fishmen_Cave,                              // Fishmen Cave - It looks abandoned, but what if it's not? A terrible fishy smell comes from within.
+	Fishmen_Lighthouse,                        // Fishmen Lighthouse - Once upon a time, there must have been a coast and a harbor here. Now this place is haunted by Fishmen and the waters have withdrawn. An ominous light is coming from the top of the lighthouse.
+	Fishmen_Lighthouse_Positive,               // Converted Fishmen Lighthouse - <color=#D6E54A>Harmony.</color> A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 <sprite name="[crafting] sea marrow"> Sea Marrow per minute. Counts as 16 decorations of its type.
+	Fishmen_Outpost,                           // Fishmen Outpost - Fishmen aren't usually a threat, but they can be a real nuisance after a while.
+	Fishmen_Soothsayer,                        // Fishman Soothsayer - An old wandering soothsayer, teeming with magic. He does not speak, though you can hear his voice. His eyes are blank, yet you can feel his gaze. He is not afraid of death, he stands by its side.
+	Fishmen_Totem,                             // Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
+	Flawless_Brewery,                          // Flawless Brewery - Can produce:  <sprite name=[needs] ale> Ale (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade3>), <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Flawless_Cellar,                           // Flawless Cellar - Can produce:  <sprite name=[needs] wine> Wine (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade3>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Flawless_Cooperage,                        // Flawless Cooperage - Can produce:  <sprite name=[vessel] barrels> Barrels (<sprite name=grade3>), <sprite name=[needs] coats> Coats (<sprite name=grade3>), <sprite name=[needs] tea> Tea (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Flawless_Druid,                            // Flawless Druid's Hut - Can produce:  <sprite name=[crafting] oil> Oil (<sprite name=grade3>), <sprite name=[needs] incense> Incense (<sprite name=grade3>), <sprite name=[needs] coats> Coats (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Flawless_Leatherworks,                     // Flawless Leatherworker - Can produce:  <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade3>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade3>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Flawless_Rain_Mill,                        // Flawless Rain Mill - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade3>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade3>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Flawless_Smelter,                          // Flawless Smelter - Can produce:  <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade3>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade3>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade3>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Flower_Bed,                                // Flower Bed - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Foragers_Camp,                             // Foragers' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[food raw] grain> Grain (<sprite name=grade2>), <sprite name=[food raw] roots> Roots (<sprite name=grade2>), <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade2>).
+	ForsakenCrypt,                             // Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
+	Forum,                                     // Forum - A place where villagers can fulfill their need for: Leisure,  Education. Passive effects: Public Lectures.
+	Fountain,                                  // Marble Fountain - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+	Fox_Fence,                                 // Overgrown Fence - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Fox_Fence_Corner,                          // Overgrown Fence Corner - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Fox_House,                                 // Fox House - Building specifically made for Foxes. Has to be built near a Hearth. Can house 2 residents.
+	FoxBattleground_T1,                        // Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
+	Fuming_Machinery,                          // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
+	Furnace,                                   // Furnace - Can produce:  <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade2>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade2>), <sprite name=[food processed] pie> Pie (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Gate,                                      // Gate - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
+	Giant_Stormbird,                           // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
+	Glade_Trader_The_Hermit,                   // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
+	Glade_Trader_The_Seer,                     // Wandering Merchant - Seer - A strange woman is observing the settlement from afar.
+	Glade_Trader_The_Shaman,                   // Wandering Merchant - Shaman - A mysterious and imposing figure has been spotted near the settlement. He is pulling a wagon full of herbs and ointments.
+	Gold_Stag,                                 // Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+	Gold_Treasure_Stag,                        // Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+	Golden_Leaf,                               // Golden Leaf Plant - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Granary,                                   // Granary - Can produce:  <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade2>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade2>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Greenhouse_Workshop,                       // Greenhouse - Uses Drizzle Water to produce  <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade2>), <sprite name=[food raw] herbs> Herbs (<sprite name=grade2>), regardless of the season. Must be placed on fertile soil.
+	Grill,                                     // Grill - Can produce:  <sprite name=[food processed] skewers> Skewers (<sprite name=grade3>), <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade1>), <sprite name=[needs] ale> Ale (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Grove,                                     // Forester's Hut - Uses nearby farm fields to grow  <sprite name=[mat raw] resin> Resin (<sprite name=grade2>), <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade2>).
+	Guild_House,                               // Guild House - A place where villagers can fulfill their need for: Luxury. Passive effects: Guild House, The Guild's Welfare.
+	Hallowed_Herb_Garden,                      // Hallowed Herb Garden - Uses nearby farm fields to grow  <sprite name=[food raw] roots> Roots (<sprite name=grade3>), <sprite name=[food raw] herbs> Herbs (<sprite name=grade3>). Has improved efficiency and more worker slots.
+	Hallowed_SmallFarm,                        // Hallowed Small Farm - Uses nearby farm fields to grow  <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade3>), <sprite name=[food raw] grain> Grain (<sprite name=grade3>). Has improved efficiency and more worker slots.
+	Harmony_Spirit_Altar,                      // Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
+	Harmony_Spirit_Altar_Positive,             // Converted Harmony Spirit Altar - <color=#D6E54A>Harmony.</color> When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
+	Harpy_House,                               // Harpy House - Building specifically made for Harpies. Has to be built near a Hearth. Can house 2 residents.
+	HarpyBattleground_T1,                      // Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
+	Harvester_Camp,                            // Harvesters' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[mat raw] plant fibre> Plant Fiber (<sprite name=grade2>), <sprite name=[mat raw] reeds> Reed (<sprite name=grade2>).
+	Haunted_Ruined_Beaver_House,               // Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Brewery,                    // Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Cellar,                     // Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Cooperage,                  // Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Druid,                      // Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Fox_House,                  // Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Harpy_House,                // Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Herb_Garden,                // Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Human_House,                // Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Leatherworks,               // Haunted Leatherworker - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Lizard_House,               // Haunted Lizard House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Market,                     // Haunted Market - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Rainmill,                   // Haunted Rain Mill - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_SmallFarm,                  // Haunted Small Farm - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Smelter,                    // Haunted Smelter - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Temple,                     // Haunted Temple - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Herb_Garden,                               // Herb Garden - Uses nearby farm fields to grow  <sprite name=[food raw] roots> Roots (<sprite name=grade1>), <sprite name=[food raw] herbs> Herbs (<sprite name=grade2>).
+	Herbalists_Camp,                           // Herbalists' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[food raw] herbs> Herbs (<sprite name=grade2>), <sprite name=[food raw] berries> Berries (<sprite name=grade2>), <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade2>).
+	Holy_Market,                               // Holy Market - A place where villagers can fulfill their need for:  Luxury,  Treatment. Has an additional effect. Passive effects: Land of Luxury, Market Carts.
+	Holy_Temple,                               // Holy Temple - A place where villagers can fulfill their need for:  Religion,  Education. Has an additional effect. Passive effects: Sacrament of the Flame, Consecrated Scrolls.
+	Homestead,                                 // Homestead - Uses a large area of nearby farm fields to grow  <sprite name=[food raw] grain> Grain (<sprite name=grade3>), <sprite name=[mat raw] plant fibre> Plant Fiber (<sprite name=grade3>), <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade2>), <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade2>).
+	Human_House,                               // Human House - Building specifically made for Humans. Has to be built near a Hearth. Can house 2 residents.
+	HumanBattleground_T1,                      // Fallen Human Explorers - A group of fallen Human explorers. They were probably looking for a place to settle, far from the Queen's watchful eyes... The sight causes uneasiness amongst the Human population.
+	Hydrant,                                   // Hydrant - A small storage for <sprite name="blight fuel"> Purging Fire. Blight Fighters will use it to restock their fuel when fighting Blightrot in the storm.
+	Infected_Mole,                             // Infected Drainage Mole - One of the mythical guardians of the forest - still alive, but plagued by a mysterious disease. The Blightrot has taken over his mind, causing an unstoppable rage. You can try to heal him... or whisper prayers to its new masters.
+	Infected_Tree,                             // Withered Tree - The once mighty tree has been deformed by the Blightrot living in its root system. The Blightrot poisons the tree's tissues, leading to its long-lasting degradation.
+	Kelpie,                                    // River Kelpie - A legendary, shape-shifting aquatic spirit that lurks near water and mesmerizes travelers. It is said that whoever acquires the kelpie's bridle will be able to control it.
+	Kiln,                                      // Kiln - Can produce:  <sprite name=[crafting] coal> Coal (<sprite name=grade3>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade1>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Lamp,                                      // Lamp - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Leaking_Cauldron,                          // Leaking Cauldron - An old, broken piece of Rainpunk technology. It's contaminating the soil around it.
+	Leatherworks,                              // Leatherworker - Can produce:  <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade3>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Lightning_Catcher,                         // Lightning Catcher - A weird contraption that attracts lightning. Its proximity to the settlement might have grave consequences.
+	Lizard_House,                              // Lizard House - Building specifically made for Lizards. Has to be built near a Hearth. Can house 2 residents.
+	Lizard_Post,                               // Lizard Post - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
+	LizardBattleground_T1,                     // Fallen Lizard Hunters - A group of fallen Lizard hunters... The sight causes unrest amongst the Lizard population.
+	Lore_Tablet_1,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Born in the Blightstorm, she will climb the Red Mountain. The fires beneath her feet shall hiss her name. Counts as 2 decorations of its type.
+	Lore_Tablet_2,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Though sealed beneath the muddy ground, their voices ring loud and clear. Maddening, alluring. Counts as 2 decorations of its type.
+	Lore_Tablet_3,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> The true rulers of this world shall rise again and break the seals that bind them. Counts as 2 decorations of its type.
+	Lore_Tablet_4,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Envy the lesser species, for they do not yet know what lies beneath. But in time, they will understand. Counts as 2 decorations of its type.
+	Lore_Tablet_5,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> It pours, yet it does not flood. As if the earth itself greedily drinks every last drop of this eternal curse. Counts as 2 decorations of its type.
+	Lore_Tablet_6,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Embrace the Eternal Rain, for it powers the engine of progress. Counts as 2 decorations of its type.
+	Lore_Tablet_7,                             // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Don't let the pleasant sparking of the raindrops fool you. This is just the first sign of your flesh rotting. Counts as 2 decorations of its type.
+	Lumbermill,                                // Lumber Mill - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade3>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade1>), <sprite name=[packs] pack of trade goods> Pack of Trade Goods (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Main_Storage_not_buildable,                // Main Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
+	Makeshift_Post,                            // Makeshift Post - Can produce:  <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade0>), <sprite name=[packs] pack of provisions> Pack of Provisions (<sprite name=grade0>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade0>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Manufactory,                               // Manufactory - Can produce:  <sprite name=[needs] training gear> Training Gear (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>), <sprite name=[packs] pack of provisions> Pack of Provisions (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Market,                                    // Market - A place where villagers can fulfill their need for: Luxury,  Treatment. Passive effects: Market Carts.
+	Merchant_Ship_Wreck,                       // Merchant Shipwreck - How powerful must the storm surge have been to carry this shattered wreck all the way here? Perhaps in the distant past, there was a sea here? It looks as if it’s been lying here for centuries. Strange voices can be heard coming from below deck...
+	Mine,                                      // Mine - Can only be placed on coal and ore veins. Digs up <sprite name="[metal] copper ore"> copper ore and <sprite name="[crafting] coal"> coal.
+	Mistworm_T1,                               // Hungry Mistworm - A small, yet dangerous creature. It normally lives underground or hides in the mist, but this one seems to be more courageous than its kin.
+	Mole,                                      // Drainage Mole - A wild beast that usually lives underground. It was forced to the surface for some reason.
+	Monastery,                                 // Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
+	Monolith,                                  // Obelisk - A mystical stone monument. Unknown runes are carved all over its surface.
+	Monolith_Positive,                         // Obelisk - <color=#8AAFFD>Aesthetics.</color> The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
+	Mushroom_Decor,                            // Decorative Fungus - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Nightfern,                                 // Nightfern - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Noxious_Machinery,                         // Noxious Machinery - A damaged and abandoned rainpunk contraption. The area was probably deserted because of a significant explosion risk. The machine's valves emit a distinct Blightrot odor.
+	Path,                                      // Path - A simple path, doesn't cost any resources. Grants a 5% speed increase to villagers.
+	Paved_Road,                                // Paved Road - A road made out of stone. Grants a 15% speed increase to villagers. Road construction cost is not affected by effects, modifiers, or perks.
+	PetrifiedTree_T1,                          // Petrified Tree - A strange tree that’s been turned to stone by the rain. It's radiating its sickness to the other trees around it.
+	Pipe,                                      // Pipe - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Pipe_Cross,                                // Pipe Cross - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Pipe_Elbow,                                // Pipe Elbow - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Pipe_End,                                  // Pipe Ending - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Pipe_T_Cross,                              // Pipe T-Connector - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Pipe_Valve,                                // Valve - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Plantation,                                // Plantation - Uses nearby farm fields to grow  <sprite name=[food raw] berries> Berries (<sprite name=grade2>), <sprite name=[mat raw] plant fibre> Plant Fiber (<sprite name=grade2>).
+	Press,                                     // Press - Can produce:  <sprite name=[crafting] oil> Oil (<sprite name=grade3>), <sprite name=[crafting] flour> Flour (<sprite name=grade1>), <sprite name=[packs] pack of luxury goods> Pack of Luxury Goods (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Primitive_Foragers_Camp,                   // Small Foragers' Camp - A small, crude version of a specialized camp. It's slower, and can only gather from small nodes. Can collect:  <sprite name=[food raw] grain> Grain (<sprite name=grade1>), <sprite name=[food raw] roots> Roots (<sprite name=grade1>), <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade1>).
+	Primitive_Herbalists_Camp,                 // Small Herbalists' Camp - A small, crude version of a specialized camp. It's slower, and can only gather from small nodes. Can collect:  <sprite name=[food raw] herbs> Herbs (<sprite name=grade1>), <sprite name=[food raw] berries> Berries (<sprite name=grade1>), <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade1>).
+	Primitive_Trappers_Camp,                   // Small Trappers' Camp - A small, crude version of a specialized camp. It's slower, and can only gather from small nodes. Can collect:  <sprite name=[food raw] meat> Meat (<sprite name=grade1>), <sprite name=[food raw] insects> Insects (<sprite name=grade1>), <sprite name=[food raw] eggs> Eggs (<sprite name=grade1>).
+	Provisioner,                               // Provisioner - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade2>), <sprite name=[packs] pack of provisions> Pack of Provisions (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Purged_Beaver_House,                       // Purified Beaver House - Building specifically made for Beavers. Has to be built near a Hearth. Can house 6 residents.
+	Purged_Fox_House,                          // Purified Fox House - Building specifically made for Foxes. Has to be built near a Hearth. Can house 6 residents.
+	Purged_Harpy_House,                        // Purified Harpy House - Building specifically made for Harpies. Has to be built near a Hearth. Can house 6 residents.
+	Purged_Human_House,                        // Purified Human House - Building specifically made for Humans. Has to be built near a Hearth. Can house 6 residents.
+	Purged_Lizard_House,                       // Purified Lizard House - Building specifically made for Lizards. Has to be built near a Hearth. Can house 6 residents.
+	Rain_Catcher,                              // Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+	Rain_Mill,                                 // Rain Mill - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade3>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade1>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Rain_Totem,                                // Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
+	Rain_Totem_Positive,                       // Converted Rain Totem - <color=#D6E54A>Harmony.</color> The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
+	Rainpunk_Barrels,                          // Rainpunk Barrels - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Rainpunk_Drill_Coal,                       // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+	Rainpunk_Drill_Copper,                     // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+	Rainpunk_Foundry,                          // Rainpunk Foundry - A very advanced piece of technology. Can produce  <sprite name=[mat processed] parts> Parts (<sprite name=grade3>), <sprite name=hearth parts> Wildfire Essence (<sprite name=grade3>). Can use: <sprite name="[water] storm water"> Storm Water.
+	RainpunkFactory,                           // Destroyed Rainpunk Foundry - An old, abandoned piece of advanced Rainpunk technology. It seems extremely unstable - but maybe it can be rebuilt...
+	Ranch,                                     // Ranch - Can produce:  <sprite name=[food raw] meat> Meat (<sprite name=grade1>), <sprite name=[mat raw] leather> Leather (<sprite name=grade1>), <sprite name=[food raw] eggs> Eggs (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Reinforced_Road,                           // Reinforced Road - A road reinforced with copper. Grants a 25% speed increase to villagers. Road construction cost is not affected by effects, modifiers, or perks.
+	RewardChest_T1,                            // Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+	RewardChest_T2,                            // Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+	RewardChest_T3,                            // Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+	Road_Sign,                                 // Road Sign - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Ruined_Advanced_Rain_Catcher,              // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Advanced_Rain_Catcher_no_Reward,    // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Alchemist,                          // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Alchemist_no_Reward,                // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Apothecary,                         // Apothecary - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Apothecary_no_Reward,               // Apothecary - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Artisan,                            // Artisan - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Artisan_no_Reward,                  // Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Bakery,                             // Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Bakery_no_Reward,                   // Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Bath_House,                         // Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Bath_House_no_Reward,               // Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Beanery,                            // Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Beanery_no_Reward,                  // Beanery - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Beaver_House,                       // Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Beaver_House_no_Reward,             // Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Big_Shelter,                        // Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Big_Shelter_no_Reward,              // Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Brewery,                            // Brewery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Brewery_no_Reward,                  // Brewery - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Brick_Oven,                         // Brick Oven - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Brick_Oven_no_Reward,               // Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Brickyard,                          // Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Brickyard_no_Reward,                // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Butcher,                            // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Butcher_no_Reward,                  // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Carpenter,                          // Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Carpenter_no_Reward,                // Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Cellar,                             // Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Cellar_no_Reward,                   // Cellar - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Clan_Hall,                          // Clan Hall - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Clan_Hall_no_Reward,                // Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Clay_Pit,                           // Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Clay_Pit_no_Reward,                 // Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Cookhouse,                          // Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Cookhouse_no_Reward,                // Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Cooperage,                          // Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Cooperage_no_Reward,                // Cooperage - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Crude_Workstation_no_Reward,        // Crude Workstation - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Distillery,                         // Distillery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Distillery_no_Reward,               // Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Druid,                              // Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Druid_no_Reward,                    // Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Explorers_Lodge,                    // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Explorers_Lodge_no_Reward,          // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Farm,                               // Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Farm_no_Reward,                     // Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Field_Kitchen_no_Reward,            // Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Finesmith,                          // Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Finesmith_no_Reward,                // Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Foragers_Camp,                      // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Foragers_Camp_no_Reward,            // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Foragers_Camp_Primitive_no_Reward,  // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Forum,                              // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Forum_no_Reward,                    // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Fox_House,                          // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Fox_House_no_Reward,                // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Furnace,                            // Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Furnace_no_Reward,                  // Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Granary,                            // Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Granary_no_Reward,                  // Granary - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Greenhouse,                         // Greenhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Greenhouse_no_Reward,               // Greenhouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Grill,                              // Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Grill_no_Reward,                    // Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Grove,                              // Forester's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Grove_no_Reward,                    // Forester's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Guild_House,                        // Guild House - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Guild_House_no_Reward,              // Guild House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Harpy_House,                        // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Harpy_House_no_Reward,              // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Harvester_Camp,                     // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Harvester_Camp_no_Reward,           // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Hearth,                             // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Hearth_no_Reward,                   // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Herb_Garden,                        // Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Herb_Garden_no_Reward,              // Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Herbalist_Camp,                     // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Herbalist_Camp_no_Reward,           // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Herbalist_Camp_Primitive_no_Reward, // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Human_House,                        // Human House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Human_House_no_Reward,              // Human House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Kiln,                               // Kiln - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Kiln_no_Reward,                     // Kiln - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Leatherworks,                       // Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Leatherworks_no_Reward,             // Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Lizard_House,                       // Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Lizard_House_no_Reward,             // Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Lumbermill,                         // Lumber Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Lumbermill_no_Reward,               // Lumber Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Makeshift_Post_no_Reward,           // Makeshift Post - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Manufatory,                         // Manufactory - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Manufatory_no_Reward,               // Manufactory - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Market,                             // Market - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Market_no_Reward,                   // Market - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Mine_no_Reward,                     // Mine - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Monastery,                          // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Monastery_no_Reward,                // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Plantation,                         // Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Plantation_no_Reward,               // Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Press,                              // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Press_no_Reward,                    // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Provisioner,                        // Provisioner - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Provisioner_no_Reward,              // Provisioner - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Rain_Catcher_no_Reward,             // Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Rainmill,                           // Rain Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Rainmill_no_Reward,                 // Rain Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Ranch,                              // Ranch - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Ranch_no_Reward,                    // Ranch - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Scribe,                             // Scribe - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Scribe_no_Reward,                   // Scribe - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Sewer,                              // Clothier - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Sewer_no_Reward,                    // Clothier - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Shelter,                            // Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Shelter_no_Reward,                  // Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_SmallFarm,                          // Small Farm - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_SmallFarm_no_Reward,                // Small Farm - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Smelter,                            // Smelter - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Smelter_no_Reward,                  // Smelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Smithy,                             // Smithy - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Smithy_no_Reward,                   // Smithy - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Smokehouse,                         // Smokehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Smokehouse_no_Reward,               // Smokehouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Stamping_Mill,                      // Stamping Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Stamping_Mill_no_Reward,            // Stamping Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Stonecutter_Camp,                   // Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Stonecutter_Camp_no_Reward,         // Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Storage,                            // Small Warehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Storage_no_Reward,                  // Small Warehouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Supplier,                           // Supplier - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Supplier_no_Reward,                 // Supplier - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Tavern,                             // Tavern - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Tavern_no_Reward,                   // Tavern - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Tea_Doctor,                         // Tea Doctor - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Tea_Doctor_no_Reward,               // Tea Doctor - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Tea_House,                          // Teahouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Tea_House_no_Reward,                // Teahouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Temple,                             // Temple - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Temple_no_Reward,                   // Temple - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Tinctury,                           // Tinctury - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Tinctury_no_Reward,                 // Tinctury - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Tinkerer,                           // Tinkerer - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Tinkerer_no_Reward,                 // Tinkerer - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Toolshop,                           // Toolshop - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Toolshop_no_Reward,                 // Toolshop - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Trading_Post_no_Reward,             // Trading Post - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Trappers_Camp,                      // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Trappers_Camp_no_Reward,            // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Trappers_Camp_Primitive_no_Reward,  // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Weaver,                             // Weaver - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Weaver_no_Reward,                   // Weaver - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Woodcutters_Camp,                   // Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Woodcutters_Camp_no_Reward,         // Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Workshop,                           // Workshop - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Workshop_no_Reward,                 // Workshop - A building destroyed by the storm. It can be rebuilt or demolished.
+	Sacrifice_Totem,                           // Totem of Denial - A religious structure built by the Fishmen. It interferes with the Hearth in the center of the settlement.
+	Sacrifice_Totem_Positive,                  // Converted Totem of Denial - <color=#D6E54A>Harmony.</color> Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
+	Scarlet_Decor,                             // Thorny Reed - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Scorpion_1,                                // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+	Scorpion_2,                                // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+	Scorpion_3,                                // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+	Scribe,                                    // Scribe - Can produce:  <sprite name=[needs] scrolls> Scrolls (<sprite name=grade3>), <sprite name=[needs] ale> Ale (<sprite name=grade2>), <sprite name=[tools] simple tools> Tools (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Seal,                                      // Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
+	Seal_Guidepost,                            // Guidance Stone - It is not known where the guidance stones came from or what their original purpose was, but they are imbued with magic and always point in the direction of a nearby seal.
+	Seal_Low_Diff,                             // Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
+	Sealed_Biome_Shrine,                       // Beacon Tower - A powerful, ancient structure that allows you to summon aid directly from the Citadel. Grants access to three types of temporary support abilities.
+	SealedTomb_T1,                             // Open Vault - An open entrance to an ancient dungeon. Strange sounds can be heard coming from inside.
+	Shelter,                                   // Shelter - Can accommodate any villager, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 3 residents.
+	Signboard,                                 // Signboard - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	Small_Hearth,                              // Ancient Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
+	SmallFarm,                                 // Small Farm - Uses nearby farm fields to grow  <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade1>), <sprite name=[food raw] grain> Grain (<sprite name=grade2>).
+	Smelter,                                   // Smelter - Can produce:  <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade3>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Smithy,                                    // Smithy - Can produce:  <sprite name=[tools] simple tools> Tools (<sprite name=grade2>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade2>), <sprite name=[packs] pack of trade goods> Pack of Trade Goods (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Smokehouse,                                // Smokehouse - Can produce:  <sprite name=[food processed] jerky> Jerky (<sprite name=grade3>), <sprite name=[vessel] pottery> Pottery (<sprite name=grade1>), <sprite name=[needs] incense> Incense (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Snake_1,                                   // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+	Snake_2,                                   // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+	Snake_3,                                   // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+	Spider_1,                                  // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+	Spider_2,                                  // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+	Spider_3,                                  // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+	Stamping_Mill,                             // Stamping Mill - Can produce:  <sprite name=[vessel] pottery> Pottery (<sprite name=grade3>), <sprite name=[crafting] flour> Flour (<sprite name=grade2>), <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Stonecutters_Camp,                         // Stonecutters' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[mat raw] stone> Stone (<sprite name=grade2>), <sprite name=[mat raw] clay> Clay (<sprite name=grade2>), <sprite name=[crafting] sea marrow> Sea Marrow (<sprite name=grade2>).
+	Storage_buildable,                         // Small Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
+	Stormbird_Positive,                        // Tamed Stormbird - <color=#D6E54A>Harmony.</color> The nest of a tamed Stormbird. It provides 5 <sprite name="[food raw] eggs"> Eggs per minute and increases Harpy Resolve by +3. Counts as 16 decorations of its type.
+	Supplier,                                  // Supplier - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade2>), <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Tavern,                                    // Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
+	Tea_Doctor,                                // Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Vitality.
+	Tea_House,                                 // Teahouse - Can produce:  <sprite name=[needs] tea> Tea (<sprite name=grade3>), <sprite name=[food processed] porridge> Porridge (<sprite name=grade2>), <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Temple,                                    // Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
+	Temporary_Hearth_buildable,                // Small Hearth - Reduces Hostility and serves as a meeting place. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will use another Hearth instead. Can't be built too close to other Hearths.
+	Temporary_Hearth_not_buildable,            // Small Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
+	Termite_Burrow,                            // Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
+	Termite_Burrow_Positive,                   // Termite Nest - <color=#D6E54A>Harmony.</color> A contained stonetooth termite burrow. Provides 5 <sprite name="[food raw] insects"> Insects per minute. Counts as 4 decorations of its type.
+	TI_AncientShrine_T1,                       // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+	Tinctury,                                  // Tinctury - Can produce:  <sprite name=[needs] ale> Ale (<sprite name=grade2>), <sprite name=[needs] wine> Wine (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+	Tinkerer,                                  // Tinkerer - Can produce:  <sprite name=[tools] simple tools> Tools (<sprite name=grade2>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade2>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Toolshop,                                  // Toolshop - Can produce:  <sprite name=[tools] simple tools> Tools (<sprite name=grade3>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+	Tower,                                     // Wall Crossing - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Town_Board,                                // Town Board - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+	Traders_Cemetery,                          // Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
+	Trading_Post,                              // Trading Post - Traders from the Smoldering City can station here and offer their wares.
+	Trappers_Camp,                             // Trappers' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[food raw] meat> Meat (<sprite name=grade2>), <sprite name=[food raw] insects> Insects (<sprite name=grade2>), <sprite name=[food raw] eggs> Eggs (<sprite name=grade2>).
+	Umbrella,                                  // Umbrella - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
+	Wall,                                      // Wall - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Wall_Corner,                               // Wall Corner - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	War_Beast_Cage,                            // Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
+	Water_Barrels,                             // Water Barrels - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+	Water_Extractor,                           // Geyser Pump - Used to extract and pump infused rainwater through underground pipes to production buildings, where it can be used to increase productivity. Must be placed on an active geyser. Has a tank capacity of 50.
+	Weaver,                                    // Weaver - Can produce:  <sprite name=[mat processed] fabric> Fabric (<sprite name=grade3>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade1>), <sprite name=[packs] pack of trade goods> Pack of Trade Goods (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+	Well,                                      // Overgrown Well - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+	White_Stag,                                // Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+	White_Treasure_Stag,                       // Royal Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+	Wildfire,                                  // Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
+	Woodcutters_Camp,                          // Woodcutters' Camp - Starting point for woodcutters going out into the wild to cut down trees.
+	Workshop,                                  // Workshop - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade2>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade0>). Can use: <sprite name="[water] storm water"> Storm Water.
 
-    MAX = 495
+
+    MAX = 494
 }
 
 public static class BuildingTypesExtensions
@@ -555,500 +555,500 @@ public static class BuildingTypesExtensions
 
 	internal static readonly Dictionary<BuildingTypes, string> TypeToInternalName = new()
 	{
-		{ BuildingTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" },                                            // Advanced Rain Collector
-		{ BuildingTypes.Aestherics_2x2___Garden, "Aestherics 2x2 - Garden" },                                        // Garden
-		{ BuildingTypes.Aestherics_2x2___Groundwater_Extractor, "Aestherics 2x2 - Groundwater Extractor" },          // Makeshift Extractor
-		{ BuildingTypes.Alchemist_Hut, "Alchemist Hut" },                                                            // Alchemist's Hut
-		{ BuildingTypes.Altar, "Altar" },                                                                            // Forsaken Altar
-		{ BuildingTypes.Ancient_Gravestone, "Ancient Gravestone" },                                                  // Ancient Tombstone
-		{ BuildingTypes.AncientBurrialGrounds, "AncientBurrialGrounds" },                                            // Ancient Burial Site
-		{ BuildingTypes.AncientGate, "AncientGate" },                                                                // Dark Gate
-		{ BuildingTypes.AncientShrine_T1, "AncientShrine_T1" },                                                      // Ancient Shrine
-		{ BuildingTypes.AncientTemple, "AncientTemple" },                                                            // Forgotten Temple of the Sun
-		{ BuildingTypes.Angry_Ghost_1, "Angry Ghost 1" },                                                            // Ghost of a Blight Fighter Captain
-		{ BuildingTypes.Angry_Ghost_10, "Angry Ghost 10" },                                                          // Ghost of a Suppressed Rebel
-		{ BuildingTypes.Angry_Ghost_14, "Angry Ghost 14" },                                                          // Ghost of a Resentful Human
-		{ BuildingTypes.Angry_Ghost_15, "Angry Ghost 15" },                                                          // Ghost of the Queen's Lickspittle
-		{ BuildingTypes.Angry_Ghost_16, "Angry Ghost 16" },                                                          // Ghost of a Lizard Leader
-		{ BuildingTypes.Angry_Ghost_17, "Angry Ghost 17" },                                                          // Ghost of a Tortured Harpy
-		{ BuildingTypes.Angry_Ghost_18, "Angry Ghost 18" },                                                          // Ghost of a Beaver Engineer
-		{ BuildingTypes.Angry_Ghost_19, "Angry Ghost 19" },                                                          // Ghost of a Poisoned Human
-		{ BuildingTypes.Angry_Ghost_2, "Angry Ghost 2" },                                                            // Ghost of a Mad Alchemist
-		{ BuildingTypes.Angry_Ghost_20, "Angry Ghost 20" },                                                          // Ghost of a Lizard Worker
-		{ BuildingTypes.Angry_Ghost_21, "Angry Ghost 21" },                                                          // Ghost of a Starved Harpy
-		{ BuildingTypes.Angry_Ghost_24, "Angry Ghost 24" },                                                          // Ghost of an Innkeeper
-		{ BuildingTypes.Angry_Ghost_31, "Angry Ghost 31" },                                                          // Ghost of a Lizard Elder
-		{ BuildingTypes.Angry_Ghost_32, "Angry Ghost 32" },                                                          // Ghost of a Lost Scout
-		{ BuildingTypes.Angry_Ghost_34, "Angry Ghost 34" },                                                          // Ghost of a Murdered Trader
-		{ BuildingTypes.Angry_Ghost_4, "Angry Ghost 4" },                                                            // Ghost of a Deranged Scout
-		{ BuildingTypes.Angry_Ghost_5, "Angry Ghost 5" },                                                            // Ghost of a Furious Villager
-		{ BuildingTypes.Angry_Ghost_6, "Angry Ghost 6" },                                                            // Ghost of a Scared Firekeeper
-		{ BuildingTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                            // Ghost of a Loyal Servant
-		{ BuildingTypes.AngryGhostChest_T1, "AngryGhostChest_T1" },                                                  // Ghost Chest
-		{ BuildingTypes.Anvil, "Anvil" },                                                                            // Anvil
-		{ BuildingTypes.API_ExampleMod_BurgerJoint, "API_ExampleMod_BurgerJoint" },                                  // Borgor King
-		{ BuildingTypes.Apothecary, "Apothecary" },                                                                  // Apothecary
-		{ BuildingTypes.Arch, "Arch" },                                                                              // Ancient Arch
-		{ BuildingTypes.Archaeology_Scorpion_Positive, "Archaeology Scorpion Positive" },                            // Smoldering Scorpion
-		{ BuildingTypes.Archaeology_Snake_Positive, "Archaeology Snake Positive" },                                  // Sea Serpent
-		{ BuildingTypes.Archaeology_Spider_Positive, "Archaeology Spider Positive" },                                // Sealed Spider
-		{ BuildingTypes.Archeology_Office, "Archeology office" },                                                    // Archaeologist's Office
-		{ BuildingTypes.Artisan, "Artisan" },                                                                        // Artisan
-		{ BuildingTypes.Bakery, "Bakery" },                                                                          // Bakery
-		{ BuildingTypes.Bank, "Bank" },                                                                              // Bench
-		{ BuildingTypes.Barrels, "Barrels" },                                                                        // Barrels
-		{ BuildingTypes.Bath_House, "Bath House" },                                                                  // Bath House
-		{ BuildingTypes.Beanery, "Beanery" },                                                                        // Beanery
-		{ BuildingTypes.Beaver_House, "Beaver House" },                                                              // Beaver House
-		{ BuildingTypes.BeaverBattleground_T1, "BeaverBattleground_T1" },                                            // Fallen Beaver Traders
-		{ BuildingTypes.Big_Shelter, "Big Shelter" },                                                                // Big Shelter
-		{ BuildingTypes.Black_Stag, "Black Stag" },                                                                  // Black Treasure Stag
-		{ BuildingTypes.Black_Treasure_Stag, "Black Treasure Stag" },                                                // Black Treasure Stag
-		{ BuildingTypes.Blight_Post, "Blight Post" },                                                                // Blight Post
-		{ BuildingTypes.Blightrot, "Blightrot" },                                                                    // Blood Flower
-		{ BuildingTypes.Blightrot___Clone, "Blightrot - Clone" },                                                    // Blood Flower (Clone)
-		{ BuildingTypes.Blightrot_Cauldron, "Blightrot Cauldron" },                                                  // Blightrot Cauldron
-		{ BuildingTypes.Bonfire, "Bonfire" },                                                                        // Bonfire
-		{ BuildingTypes.Brewery, "Brewery" },                                                                        // Brewery
-		{ BuildingTypes.Brick_Oven, "Brick Oven" },                                                                  // Brick Oven
-		{ BuildingTypes.Brickyard, "Brickyard" },                                                                    // Brickyard
-		{ BuildingTypes.Bush, "Bush" },                                                                              // Bush
-		{ BuildingTypes.Butcher, "Butcher" },                                                                        // Butcher
-		{ BuildingTypes.Cages, "Cages" },                                                                            // Cages
-		{ BuildingTypes.Calm_Ghost_11, "Calm Ghost 11" },                                                            // Ghost of a Defeated Viceroy
-		{ BuildingTypes.Calm_Ghost_12, "Calm Ghost 12" },                                                            // Ghost of a Druid
-		{ BuildingTypes.Calm_Ghost_13, "Calm Ghost 13" },                                                            // Ghost of a Royal Gardener
-		{ BuildingTypes.Calm_Ghost_22, "Calm Ghost 22" },                                                            // Ghost of a Hooded Knight
-		{ BuildingTypes.Calm_Ghost_23, "Calm Ghost 23" },                                                            // Ghost of a Fire Priest
-		{ BuildingTypes.Calm_Ghost_25, "Calm Ghost 25" },                                                            // Ghost of a Treasure Hunter
-		{ BuildingTypes.Calm_Ghost_26, "Calm Ghost 26" },                                                            // Ghost of a Royal Architect
-		{ BuildingTypes.Calm_Ghost_27, "Calm Ghost 27" },                                                            // Ghost of a Worried Carter
-		{ BuildingTypes.Calm_Ghost_28, "Calm Ghost 28" },                                                            // Ghost of a Storm Victim
-		{ BuildingTypes.Calm_Ghost_29, "Calm Ghost 29" },                                                            // Ghost of a Mourning Harpy
-		{ BuildingTypes.Calm_Ghost_3, "Calm Ghost 3" },                                                              // Ghost of a Terrified Woodcutter
-		{ BuildingTypes.Calm_Ghost_30, "Calm Ghost 30" },                                                            // Ghost of a Lizard General
-		{ BuildingTypes.Calm_Ghost_33, "Calm Ghost 33" },                                                            // Ghost of an Old Merchant
-		{ BuildingTypes.Calm_Ghost_35, "Calm Ghost 35" },                                                            // Ghost of a Fox Elder
-		{ BuildingTypes.Calm_Ghost_36, "Calm Ghost 36" },                                                            // Ghost of a Teadoctor
-		{ BuildingTypes.Calm_Ghost_7, "Calm Ghost 7" },                                                              // Ghost of a Troublemaker
-		{ BuildingTypes.Calm_Ghost_8, "Calm Ghost 8" },                                                              // Ghost of a Fallen Newcomer
-		{ BuildingTypes.CalmGhostChest_T1, "CalmGhostChest_T1" },                                                    // Ghost Chest
-		{ BuildingTypes.Camp_T1, "Camp_T1" },                                                                        // Small Encampment
-		{ BuildingTypes.Camp_T2, "Camp_T2" },                                                                        // Large Encampment
-		{ BuildingTypes.Caravan_T1, "Caravan_T1" },                                                                  // Small Destroyed Caravan
-		{ BuildingTypes.Caravan_T2, "Caravan_T2" },                                                                  // Large Destroyed Caravan
-		{ BuildingTypes.Carpenter, "Carpenter" },                                                                    // Carpenter
-		{ BuildingTypes.Cellar, "Cellar" },                                                                          // Cellar
-		{ BuildingTypes.Chest, "Chest" },                                                                            // Chest
-		{ BuildingTypes.Clan_Hall, "Clan Hall" },                                                                    // Clan Hall
-		{ BuildingTypes.Clay_Pit_Workshop, "Clay Pit Workshop" },                                                    // Clay Pit
-		{ BuildingTypes.Clothier, "Clothier" },                                                                      // Clothier
-		{ BuildingTypes.Comfort_2x2___Park, "Comfort 2x2 - Park" },                                                  // Park
-		{ BuildingTypes.Cookhouse, "Cookhouse" },                                                                    // Cookhouse
-		{ BuildingTypes.Cooperage, "Cooperage" },                                                                    // Cooperage
-		{ BuildingTypes.Coral_Decor, "Coral Decor" },                                                                // Coral Growth
-		{ BuildingTypes.CornerFence, "CornerFence" },                                                                // Fence Corner
-		{ BuildingTypes.Corrupted_Caravan, "Corrupted Caravan" },                                                    // Corrupted Caravan
-		{ BuildingTypes.Crates, "Crates" },                                                                          // Crates
-		{ BuildingTypes.Crude_Workstation, "Crude Workstation" },                                                    // Crude Workstation
-		{ BuildingTypes.DebugNode_ClayBig, "DebugNode_ClayBig" },                                                    // Clay Deposit (Large)
-		{ BuildingTypes.DebugNode_ClaySmall, "DebugNode_ClaySmall" },                                                // Clay Deposit (Small)
-		{ BuildingTypes.DebugNode_DewberryBushBig, "DebugNode_DewberryBushBig" },                                    // Dewberry Bush (Large)
-		{ BuildingTypes.DebugNode_DewberryBushSmall, "DebugNode_DewberryBushSmall" },                                // Dewberry Bush (Small)
-		{ BuildingTypes.DebugNode_FlaxBig, "DebugNode_FlaxBig" },                                                    // Flax Field (Large)
-		{ BuildingTypes.DebugNode_FlaxSmall, "DebugNode_FlaxSmall" },                                                // Flax Field (Small)
-		{ BuildingTypes.DebugNode_HerbsBig, "DebugNode_HerbsBig" },                                                  // Herb Node (Large)
-		{ BuildingTypes.DebugNode_HerbsSmall, "DebugNode_HerbsSmall" },                                              // Herb Node (Small)
-		{ BuildingTypes.DebugNode_LeechBroodmotherBig, "DebugNode_LeechBroodmotherBig" },                            // Leech Broodmother (Large)
-		{ BuildingTypes.DebugNode_LeechBroodmotherSmall, "DebugNode_LeechBroodmotherSmall" },                        // Leech Broodmother (Small)
-		{ BuildingTypes.DebugNode_Marshlands_InfiniteGrain, "DebugNode_Marshlands_InfiniteGrain" },                  // Ancient Proto Wheat
-		{ BuildingTypes.DebugNode_Marshlands_InfiniteMeat, "DebugNode_Marshlands_InfiniteMeat" },                    // Dead Leviathan
-		{ BuildingTypes.DebugNode_Marshlands_InfiniteMushroom, "DebugNode_Marshlands_InfiniteMushroom" },            // Giant Proto Fungus
-		{ BuildingTypes.DebugNode_MarshlandsMushroomBig, "DebugNode_MarshlandsMushroomBig" },                        // Grasscap Mushrooms (Large)
-		{ BuildingTypes.DebugNode_MarshlandsMushroomSmall, "DebugNode_MarshlandsMushroomSmall" },                    // Grasscap Mushrooms (Small)
-		{ BuildingTypes.DebugNode_MossBroccoliBig, "DebugNode_MossBroccoliBig" },                                    // Moss Broccoli Patch (Large)
-		{ BuildingTypes.DebugNode_MossBroccoliSmall, "DebugNode_MossBroccoliSmall" },                                // Moss Broccoli Patch (Small)
-		{ BuildingTypes.DebugNode_MushroomBig, "DebugNode_MushroomBig" },                                            // Grasscap Mushrooms (Large)
-		{ BuildingTypes.DebugNode_MushroomSmall, "DebugNode_MushroomSmall" },                                        // Grasscap Mushrooms (Small)
-		{ BuildingTypes.DebugNode_ReedBig, "DebugNode_ReedBig" },                                                    // Reed Field (Large)
-		{ BuildingTypes.DebugNode_ReedSmall, "DebugNode_ReedSmall" },                                                // Reed Field (Small)
-		{ BuildingTypes.DebugNode_RootsBig, "DebugNode_RootsBig" },                                                  // Root Deposit (Large)
-		{ BuildingTypes.DebugNode_RootsSmall, "DebugNode_RootsSmall" },                                              // Root Deposit (Small)
-		{ BuildingTypes.DebugNode_SeaMarrowBig, "DebugNode_SeaMarrowBig" },                                          // Sea Marrow Deposit (Large)
-		{ BuildingTypes.DebugNode_SeaMarrowSmall, "DebugNode_SeaMarrowSmall" },                                      // Sea Marrow Deposit (Small)
-		{ BuildingTypes.DebugNode_SnailBroodmotherBig, "DebugNode_SnailBroodmotherBig" },                            // Slickshell Broodmother (Large)
-		{ BuildingTypes.DebugNode_SnailBroodmotherSmall, "DebugNode_SnailBroodmotherSmall" },                        // Slickshell Broodmother (Small)
-		{ BuildingTypes.DebugNode_SnakeNestBig, "DebugNode_SnakeNestBig" },                                          // Snake Nest (Large)
-		{ BuildingTypes.DebugNode_SnakeNestSmall, "DebugNode_SnakeNestSmall" },                                      // Snake Nest (Small)
-		{ BuildingTypes.DebugNode_StoneBig, "DebugNode_StoneBig" },                                                  // Stone Deposit (Large)
-		{ BuildingTypes.DebugNode_StoneSmall, "DebugNode_StoneSmall" },                                              // Stone Deposit (Small)
-		{ BuildingTypes.DebugNode_StormbirdNestBig, "DebugNode_StormbirdNestBig" },                                  // Drizzlewing Nest (Large)
-		{ BuildingTypes.DebugNode_StormbirdNestSmall, "DebugNode_StormbirdNestSmall" },                              // Drizzlewing Nest (Small)
-		{ BuildingTypes.DebugNode_SwampWheatBig, "DebugNode_SwampWheatBig" },                                        // Swamp Wheat Field (Large)
-		{ BuildingTypes.DebugNode_SwampWheatSmall, "DebugNode_SwampWheatSmall" },                                    // Swamp Wheat Field (Small)
-		{ BuildingTypes.DebugNode_WormtongueNestBig, "DebugNode_WormtongueNestBig" },                                // Wormtongue Nest (Large)
-		{ BuildingTypes.DebugNode_WormtongueNestSmall, "DebugNode_WormtongueNestSmall" },                            // Wormtongue Nest (Small)
-		{ BuildingTypes.Decay_Altar, "Decay Altar" },                                                                // Altar of Decay
-		{ BuildingTypes.Decay_Altar_Positive, "Decay Altar Positive" },                                              // Converted Altar of Decay
-		{ BuildingTypes.Distillery, "Distillery" },                                                                  // Distillery
-		{ BuildingTypes.Druid, "Druid" },                                                                            // Druid's Hut
-		{ BuildingTypes.Escaped_Convicts, "Escaped Convicts" },                                                      // Escaped Convicts
-		{ BuildingTypes.Explorers_Lodge, "Explorers Lodge" },                                                        // Explorers' Lodge
-		{ BuildingTypes.Farmfield, "Farmfield" },                                                                    // Farm Field
-		{ BuildingTypes.Fence, "Fence" },                                                                            // Fence
-		{ BuildingTypes.Field_Kitchen, "Field Kitchen" },                                                            // Field Kitchen
-		{ BuildingTypes.Finesmith, "Finesmith" },                                                                    // Finesmith
-		{ BuildingTypes.Fire_Shrine, "Fire Shrine" },                                                                // Fire Shrine
-		{ BuildingTypes.Fishmen_Cave, "Fishmen Cave" },                                                              // Fishmen Cave
-		{ BuildingTypes.Fishmen_Lighthouse, "Fishmen Lighthouse" },                                                  // Fishmen Lighthouse
-		{ BuildingTypes.Fishmen_Lighthouse_Positive, "Fishmen Lighthouse Positive" },                                // Converted Fishmen Lighthouse
-		{ BuildingTypes.Fishmen_Outpost, "Fishmen Outpost" },                                                        // Fishmen Outpost
-		{ BuildingTypes.Fishmen_Soothsayer, "Fishmen Soothsayer" },                                                  // Fishman Soothsayer
-		{ BuildingTypes.Fishmen_Totem, "Fishmen Totem" },                                                            // Fishmen Totem
-		{ BuildingTypes.Flawless_Brewery, "Flawless Brewery" },                                                      // Flawless Brewery
-		{ BuildingTypes.Flawless_Cellar, "Flawless Cellar" },                                                        // Flawless Cellar
-		{ BuildingTypes.Flawless_Cooperage, "Flawless Cooperage" },                                                  // Flawless Cooperage
-		{ BuildingTypes.Flawless_Druid, "Flawless Druid" },                                                          // Flawless Druid's Hut
-		{ BuildingTypes.Flawless_Leatherworks, "Flawless Leatherworks" },                                            // Flawless Leatherworker
-		{ BuildingTypes.Flawless_Rain_Mill, "Flawless Rain Mill" },                                                  // Flawless Rain Mill
-		{ BuildingTypes.Flawless_Smelter, "Flawless Smelter" },                                                      // Flawless Smelter
-		{ BuildingTypes.Flower_Bed, "Flower Bed" },                                                                  // Flower Bed
-		{ BuildingTypes.Foragers_Camp, "Forager's Camp" },                                                           // Foragers' Camp
-		{ BuildingTypes.ForsakenCrypt, "ForsakenCrypt" },                                                            // Forsaken Crypt
-		{ BuildingTypes.Forum, "Forum" },                                                                            // Forum
-		{ BuildingTypes.Fountain, "Fountain" },                                                                      // Marble Fountain
-		{ BuildingTypes.Fox_Fence, "Fox Fence" },                                                                    // Overgrown Fence
-		{ BuildingTypes.Fox_Fence_Corner, "Fox Fence Corner" },                                                      // Overgrown Fence Corner
-		{ BuildingTypes.Fox_House, "Fox House" },                                                                    // Fox House
-		{ BuildingTypes.FoxBattleground_T1, "FoxBattleground_T1" },                                                  // Fallen Fox Scouts
-		{ BuildingTypes.Fuming_Machinery, "Fuming Machinery" },                                                      // Fuming Machinery
-		{ BuildingTypes.Furnace, "Furnace" },                                                                        // Furnace
-		{ BuildingTypes.Gate, "Gate" },                                                                              // Gate
-		{ BuildingTypes.Giant_Stormbird, "Giant Stormbird" },                                                        // Giant Stormbird's Nest
-		{ BuildingTypes.Glade_Trader___The_Hermit, "Glade Trader - The Hermit" },                                    // Wandering Merchant - Hermit
-		{ BuildingTypes.Glade_Trader___The_Seer, "Glade Trader - The Seer" },                                        // Wandering Merchant - Seer
-		{ BuildingTypes.Glade_Trader___The_Shaman, "Glade Trader - The Shaman" },                                    // Wandering Merchant - Shaman
-		{ BuildingTypes.Gold_Stag, "Gold Stag" },                                                                    // Golden Treasure Stag
-		{ BuildingTypes.Gold_Treasure_Stag, "Gold Treasure Stag" },                                                  // Golden Treasure Stag
-		{ BuildingTypes.Golden_Leaf, "Golden Leaf" },                                                                // Golden Leaf Plant
-		{ BuildingTypes.Granary, "Granary" },                                                                        // Granary
-		{ BuildingTypes.Greenhouse_Workshop, "Greenhouse Workshop" },                                                // Greenhouse
-		{ BuildingTypes.Grill, "Grill" },                                                                            // Grill
-		{ BuildingTypes.Grove, "Grove" },                                                                            // Forester's Hut
-		{ BuildingTypes.Guild_House, "Guild House" },                                                                // Guild House
-		{ BuildingTypes.Hallowed_Herb_Garden, "Hallowed Herb Garden" },                                              // Hallowed Herb Garden
-		{ BuildingTypes.Hallowed_SmallFarm, "Hallowed SmallFarm" },                                                  // Hallowed Small Farm
-		{ BuildingTypes.Harmony_Spirit_Altar, "Harmony Spirit Altar" },                                              // Harmony Spirit Altar
-		{ BuildingTypes.Harmony_Spirit_Altar_Positive, "Harmony Spirit Altar Positive" },                            // Converted Harmony Spirit Altar
-		{ BuildingTypes.Harpy_House, "Harpy House" },                                                                // Harpy House
-		{ BuildingTypes.HarpyBattleground_T1, "HarpyBattleground_T1" },                                              // Fallen Harpy Scientists
-		{ BuildingTypes.Harvester_Camp, "Harvester Camp" },                                                          // Harvesters' Camp
-		{ BuildingTypes.Haunted_Ruined_Beaver_House, "Haunted Ruined Beaver House" },                                // Haunted Beaver House
-		{ BuildingTypes.Haunted_Ruined_Brewery, "Haunted Ruined Brewery" },                                          // Haunted Brewery
-		{ BuildingTypes.Haunted_Ruined_Cellar, "Haunted Ruined Cellar" },                                            // Haunted Cellar
-		{ BuildingTypes.Haunted_Ruined_Cooperage, "Haunted Ruined Cooperage" },                                      // Haunted Cooperage
-		{ BuildingTypes.Haunted_Ruined_Druid, "Haunted Ruined Druid" },                                              // Haunted Druid's Hut
-		{ BuildingTypes.Haunted_Ruined_Fox_House, "Haunted Ruined Fox House" },                                      // Haunted Fox House
-		{ BuildingTypes.Haunted_Ruined_Harpy_House, "Haunted Ruined Harpy House" },                                  // Haunted Harpy House
-		{ BuildingTypes.Haunted_Ruined_Herb_Garden, "Haunted Ruined Herb Garden" },                                  // Haunted Herb Garden
-		{ BuildingTypes.Haunted_Ruined_Human_House, "Haunted Ruined Human House" },                                  // Haunted Human House
-		{ BuildingTypes.Haunted_Ruined_Leatherworks, "Haunted Ruined Leatherworks" },                                // Haunted Leatherworker
-		{ BuildingTypes.Haunted_Ruined_Lizard_House, "Haunted Ruined Lizard House" },                                // Haunted Lizard House
-		{ BuildingTypes.Haunted_Ruined_Market, "Haunted Ruined Market" },                                            // Haunted Market
-		{ BuildingTypes.Haunted_Ruined_Rainmill, "Haunted Ruined Rainmill" },                                        // Haunted Rain Mill
-		{ BuildingTypes.Haunted_Ruined_SmallFarm, "Haunted Ruined SmallFarm" },                                      // Haunted Small Farm
-		{ BuildingTypes.Haunted_Ruined_Smelter, "Haunted Ruined Smelter" },                                          // Haunted Smelter
-		{ BuildingTypes.Haunted_Ruined_Temple, "Haunted Ruined Temple" },                                            // Haunted Temple
-		{ BuildingTypes.Herb_Garden, "Herb Garden" },                                                                // Herb Garden
-		{ BuildingTypes.Herbalists_Camp, "Herbalist's Camp" },                                                       // Herbalists' Camp
-		{ BuildingTypes.Holy_Market, "Holy Market" },                                                                // Holy Market
-		{ BuildingTypes.Holy_Temple, "Holy Temple" },                                                                // Holy Temple
-		{ BuildingTypes.Homestead, "Homestead" },                                                                    // Homestead
-		{ BuildingTypes.Human_House, "Human House" },                                                                // Human House
-		{ BuildingTypes.HumanBattleground_T1, "HumanBattleground_T1" },                                              // Fallen Human Explorers
-		{ BuildingTypes.Hydrant, "Hydrant" },                                                                        // Hydrant
-		{ BuildingTypes.Infected_Mole, "Infected Mole" },                                                            // Infected Drainage Mole
-		{ BuildingTypes.Infected_Tree, "Infected Tree" },                                                            // Withered Tree
-		{ BuildingTypes.Kelpie, "Kelpie" },                                                                          // River Kelpie
-		{ BuildingTypes.Kiln, "Kiln" },                                                                              // Kiln
-		{ BuildingTypes.Lamp, "Lamp" },                                                                              // Lamp
-		{ BuildingTypes.Leaking_Cauldron, "Leaking Cauldron" },                                                      // Leaking Cauldron
-		{ BuildingTypes.Leatherworks, "Leatherworks" },                                                              // Leatherworker
-		{ BuildingTypes.Lightning_Catcher, "Lightning Catcher" },                                                    // Lightning Catcher
-		{ BuildingTypes.Lizard_House, "Lizard House" },                                                              // Lizard House
-		{ BuildingTypes.Lizard_Post, "Lizard Post" },                                                                // Lizard Post
-		{ BuildingTypes.LizardBattleground_T1, "LizardBattleground_T1" },                                            // Fallen Lizard Hunters
-		{ BuildingTypes.Lore_Tablet_1, "Lore Tablet 1" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lore_Tablet_2, "Lore Tablet 2" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lore_Tablet_3, "Lore Tablet 3" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lore_Tablet_4, "Lore Tablet 4" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lore_Tablet_5, "Lore Tablet 5" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lore_Tablet_6, "Lore Tablet 6" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lore_Tablet_7, "Lore Tablet 7" },                                                            // Inscribed Monolith
-		{ BuildingTypes.Lumbermill, "Lumbermill" },                                                                  // Lumber Mill
-		{ BuildingTypes.Main_Storage_not_buildable_, "Main Storage (not-buildable)" },                               // Main Warehouse
-		{ BuildingTypes.Makeshift_Post, "Makeshift Post" },                                                          // Makeshift Post
-		{ BuildingTypes.Manufactory, "Manufactory" },                                                                // Manufactory
-		{ BuildingTypes.Market, "Market" },                                                                          // Market
-		{ BuildingTypes.Merchant_Ship_Wreck, "Merchant Ship Wreck" },                                                // Merchant Shipwreck
-		{ BuildingTypes.Mine, "Mine" },                                                                              // Mine
-		{ BuildingTypes.Mistworm_T1, "Mistworm_T1" },                                                                // Hungry Mistworm
-		{ BuildingTypes.Mole, "Mole" },                                                                              // Drainage Mole
-		{ BuildingTypes.Monastery, "Monastery" },                                                                    // Monastery
-		{ BuildingTypes.Monolith, "Monolith" },                                                                      // Obelisk
-		{ BuildingTypes.Monolith_Positive, "Monolith Positive" },                                                    // Obelisk
-		{ BuildingTypes.Mushroom_Decor, "Mushroom Decor" },                                                          // Decorative Fungus
-		{ BuildingTypes.Nightfern, "Nightfern" },                                                                    // Nightfern
-		{ BuildingTypes.Noxious_Machinery, "Noxious Machinery" },                                                    // Noxious Machinery
-		{ BuildingTypes.Path, "Path" },                                                                              // Path
-		{ BuildingTypes.Paved_Road, "Paved Road" },                                                                  // Paved Road
-		{ BuildingTypes.PetrifiedTree_T1, "PetrifiedTree_T1" },                                                      // Petrified Tree
-		{ BuildingTypes.Pipe, "Pipe" },                                                                              // Pipe
-		{ BuildingTypes.Pipe_Cross, "Pipe Cross" },                                                                  // Pipe Cross
-		{ BuildingTypes.Pipe_Elbow, "Pipe Elbow" },                                                                  // Pipe Elbow
-		{ BuildingTypes.Pipe_End, "Pipe End" },                                                                      // Pipe Ending
-		{ BuildingTypes.Pipe_T_Cross, "Pipe T Cross" },                                                              // Pipe T-Connector
-		{ BuildingTypes.Pipe_Valve, "Pipe Valve" },                                                                  // Valve
-		{ BuildingTypes.Plantation, "Plantation" },                                                                  // Plantation
-		{ BuildingTypes.Press, "Press" },                                                                            // Press
-		{ BuildingTypes.Primitive_Foragers_Camp, "Primitive Forager's Camp" },                                       // Small Foragers' Camp
-		{ BuildingTypes.Primitive_Herbalists_Camp, "Primitive Herbalist's Camp" },                                   // Small Herbalists' Camp
-		{ BuildingTypes.Primitive_Trappers_Camp, "Primitive Trapper's Camp" },                                       // Small Trappers' Camp
-		{ BuildingTypes.Provisioner, "Provisioner" },                                                                // Provisioner
-		{ BuildingTypes.Purged_Beaver_House, "Purged Beaver House" },                                                // Purified Beaver House
-		{ BuildingTypes.Purged_Fox_House, "Purged Fox House" },                                                      // Purified Fox House
-		{ BuildingTypes.Purged_Harpy_House, "Purged Harpy House" },                                                  // Purified Harpy House
-		{ BuildingTypes.Purged_Human_House, "Purged Human House" },                                                  // Purified Human House
-		{ BuildingTypes.Purged_Lizard_House, "Purged Lizard House" },                                                // Purified Lizard House
-		{ BuildingTypes.Rain_Catcher, "Rain Catcher" },                                                              // Rain Collector
-		{ BuildingTypes.Rain_Mill, "Rain Mill" },                                                                    // Rain Mill
-		{ BuildingTypes.Rain_Totem, "Rain Totem" },                                                                  // Rain Spirit Totem
-		{ BuildingTypes.Rain_Totem_Positive, "Rain Totem Positive" },                                                // Converted Rain Totem
-		{ BuildingTypes.Rainpunk_Barrels, "Rainpunk Barrels" },                                                      // Rainpunk Barrels
-		{ BuildingTypes.Rainpunk_Drill___Coal, "Rainpunk Drill - Coal" },                                            // Rainpunk Drill
-		{ BuildingTypes.Rainpunk_Drill___Copper, "Rainpunk Drill - Copper" },                                        // Rainpunk Drill
-		{ BuildingTypes.Rainpunk_Foundry, "Rainpunk Foundry" },                                                      // Rainpunk Foundry
-		{ BuildingTypes.RainpunkFactory, "RainpunkFactory" },                                                        // Destroyed Rainpunk Foundry
-		{ BuildingTypes.Ranch, "Ranch" },                                                                            // Ranch
-		{ BuildingTypes.Reinforced_Road, "Reinforced Road" },                                                        // Reinforced Road
-		{ BuildingTypes.RewardChest_T1, "RewardChest_T1" },                                                          // Small Abandoned Cache
-		{ BuildingTypes.RewardChest_T2, "RewardChest_T2" },                                                          // Medium Abandoned Cache
-		{ BuildingTypes.RewardChest_T3, "RewardChest_T3" },                                                          // Large Abandoned Cache
-		{ BuildingTypes.Road_Sign, "Road Sign" },                                                                    // Road Sign
-		{ BuildingTypes.Ruined_Advanced_Rain_Catcher, "Ruined Advanced Rain Catcher" },                              // Advanced Rain Collector
-		{ BuildingTypes.Ruined_Advanced_Rain_Catcher_no_Reward_, "Ruined Advanced Rain Catcher (no reward)" },       // Advanced Rain Collector
-		{ BuildingTypes.Ruined_Alchemist, "Ruined Alchemist" },                                                      // Alchemist's Hut
-		{ BuildingTypes.Ruined_Alchemist_no_Reward_, "Ruined Alchemist (no reward)" },                               // Alchemist's Hut
-		{ BuildingTypes.Ruined_Apothecary, "Ruined Apothecary" },                                                    // Apothecary
-		{ BuildingTypes.Ruined_Apothecary_no_Reward_, "Ruined Apothecary (no reward)" },                             // Apothecary
-		{ BuildingTypes.Ruined_Artisan, "Ruined Artisan" },                                                          // Artisan
-		{ BuildingTypes.Ruined_Artisan_no_Reward_, "Ruined Artisan (no reward)" },                                   // Artisan
-		{ BuildingTypes.Ruined_Bakery, "Ruined Bakery" },                                                            // Bakery
-		{ BuildingTypes.Ruined_Bakery_no_Reward_, "Ruined Bakery (no reward)" },                                     // Bakery
-		{ BuildingTypes.Ruined_Bath_House, "Ruined Bath House" },                                                    // Bath House
-		{ BuildingTypes.Ruined_Bath_House_no_Reward_, "Ruined Bath House (no reward)" },                             // Bath House
-		{ BuildingTypes.Ruined_Beanery, "Ruined Beanery" },                                                          // Beanery
-		{ BuildingTypes.Ruined_Beanery_no_Reward_, "Ruined Beanery (no reward)" },                                   // Beanery
-		{ BuildingTypes.Ruined_Beaver_House, "Ruined Beaver House" },                                                // Beaver House
-		{ BuildingTypes.Ruined_Beaver_House_no_Reward_, "Ruined Beaver House (no reward)" },                         // Beaver House
-		{ BuildingTypes.Ruined_Big_Shelter, "Ruined Big Shelter" },                                                  // Big Shelter
-		{ BuildingTypes.Ruined_Big_Shelter_no_Reward_, "Ruined Big Shelter (no reward)" },                           // Big Shelter
-		{ BuildingTypes.Ruined_Brewery, "Ruined Brewery" },                                                          // Brewery
-		{ BuildingTypes.Ruined_Brewery_no_Reward_, "Ruined Brewery (no reward)" },                                   // Brewery
-		{ BuildingTypes.Ruined_Brick_Oven, "Ruined Brick Oven" },                                                    // Brick Oven
-		{ BuildingTypes.Ruined_Brick_Oven_no_Reward_, "Ruined Brick Oven (no reward)" },                             // Brick Oven
-		{ BuildingTypes.Ruined_Brickyard, "Ruined Brickyard" },                                                      // Brickyard
-		{ BuildingTypes.Ruined_Brickyard_no_Reward_, "Ruined Brickyard (no reward)" },                               // Brickyard
-		{ BuildingTypes.Ruined_Butcher, "Ruined Butcher" },                                                          // Butcher
-		{ BuildingTypes.Ruined_Butcher_no_Reward_, "Ruined Butcher (no reward)" },                                   // Butcher
-		{ BuildingTypes.Ruined_Carpenter, "Ruined Carpenter" },                                                      // Carpenter
-		{ BuildingTypes.Ruined_Carpenter_no_Reward_, "Ruined Carpenter (no reward)" },                               // Carpenter
-		{ BuildingTypes.Ruined_Cellar, "Ruined Cellar" },                                                            // Cellar
-		{ BuildingTypes.Ruined_Cellar_no_Reward_, "Ruined Cellar (no reward)" },                                     // Cellar
-		{ BuildingTypes.Ruined_Clan_Hall, "Ruined Clan Hall" },                                                      // Clan Hall
-		{ BuildingTypes.Ruined_Clan_Hall_no_Reward_, "Ruined Clan Hall (no reward)" },                               // Clan Hall
-		{ BuildingTypes.Ruined_Clay_Pit, "Ruined Clay Pit" },                                                        // Clay Pit
-		{ BuildingTypes.Ruined_Clay_Pit_no_Reward_, "Ruined Clay Pit (no reward)" },                                 // Clay Pit
-		{ BuildingTypes.Ruined_Cookhouse, "Ruined Cookhouse" },                                                      // Cookhouse
-		{ BuildingTypes.Ruined_Cookhouse_no_Reward_, "Ruined Cookhouse (no reward)" },                               // Cookhouse
-		{ BuildingTypes.Ruined_Cooperage, "Ruined Cooperage" },                                                      // Cooperage
-		{ BuildingTypes.Ruined_Cooperage_no_Reward_, "Ruined Cooperage (no reward)" },                               // Cooperage
-		{ BuildingTypes.Ruined_Crude_Workstation_no_Reward_, "Ruined Crude Workstation (no reward)" },               // Crude Workstation
-		{ BuildingTypes.Ruined_Distillery, "Ruined Distillery" },                                                    // Distillery
-		{ BuildingTypes.Ruined_Distillery_no_Reward_, "Ruined Distillery (no reward)" },                             // Distillery
-		{ BuildingTypes.Ruined_Druid, "Ruined Druid" },                                                              // Druid's Hut
-		{ BuildingTypes.Ruined_Druid_no_Reward_, "Ruined Druid (no reward)" },                                       // Druid's Hut
-		{ BuildingTypes.Ruined_Explorers_Lodge, "Ruined Explorers Lodge" },                                          // Explorers' Lodge
-		{ BuildingTypes.Ruined_Explorers_Lodge_no_Reward_, "Ruined Explorers Lodge (no reward)" },                   // Explorers' Lodge
-		{ BuildingTypes.Ruined_Farm, "Ruined Farm" },                                                                // Homestead
-		{ BuildingTypes.Ruined_Farm_no_Reward_, "Ruined Farm (no reward)" },                                         // Homestead
-		{ BuildingTypes.Ruined_Field_Kitchen_no_Reward_, "Ruined Field Kitchen (no reward)" },                       // Field Kitchen
-		{ BuildingTypes.Ruined_Finesmith, "Ruined Finesmith" },                                                      // Finesmith
-		{ BuildingTypes.Ruined_Finesmith_no_Reward_, "Ruined Finesmith (no reward)" },                               // Finesmith
-		{ BuildingTypes.Ruined_Foragers_Camp, "Ruined Foragers Camp" },                                              // Foragers' Camp
-		{ BuildingTypes.Ruined_Foragers_Camp_no_Reward_, "Ruined Foragers Camp (no reward)" },                       // Foragers' Camp
-		{ BuildingTypes.Ruined_Foragers_Camp_Primitive_no_Reward_, "Ruined Foragers Camp Primitive (no reward)" },   // Foragers' Camp
-		{ BuildingTypes.Ruined_Forum, "Ruined Forum" },                                                              // Forum
-		{ BuildingTypes.Ruined_Forum_no_Reward_, "Ruined Forum (no reward)" },                                       // Forum
-		{ BuildingTypes.Ruined_Fox_House, "Ruined Fox House" },                                                      // Fox House
-		{ BuildingTypes.Ruined_Fox_House_no_Reward_, "Ruined Fox House (no reward)" },                               // Fox House
-		{ BuildingTypes.Ruined_Furnace, "Ruined Furnace" },                                                          // Furnace
-		{ BuildingTypes.Ruined_Furnace_no_Reward_, "Ruined Furnace (no reward)" },                                   // Furnace
-		{ BuildingTypes.Ruined_Granary, "Ruined Granary" },                                                          // Granary
-		{ BuildingTypes.Ruined_Granary_no_Reward_, "Ruined Granary (no reward)" },                                   // Granary
-		{ BuildingTypes.Ruined_Greenhouse, "Ruined Greenhouse" },                                                    // Greenhouse
-		{ BuildingTypes.Ruined_Greenhouse_no_Reward_, "Ruined Greenhouse (no reward)" },                             // Greenhouse
-		{ BuildingTypes.Ruined_Grill, "Ruined Grill" },                                                              // Grill
-		{ BuildingTypes.Ruined_Grill_no_Reward_, "Ruined Grill (no reward)" },                                       // Grill
-		{ BuildingTypes.Ruined_Grove, "Ruined Grove" },                                                              // Forester's Hut
-		{ BuildingTypes.Ruined_Grove_no_Reward_, "Ruined Grove (no reward)" },                                       // Forester's Hut
-		{ BuildingTypes.Ruined_Guild_House, "Ruined Guild House" },                                                  // Guild House
-		{ BuildingTypes.Ruined_Guild_House_no_Reward_, "Ruined Guild House (no reward)" },                           // Guild House
-		{ BuildingTypes.Ruined_Harpy_House, "Ruined Harpy House" },                                                  // Harpy House
-		{ BuildingTypes.Ruined_Harpy_House_no_Reward_, "Ruined Harpy House (no reward)" },                           // Harpy House
-		{ BuildingTypes.Ruined_Harvester_Camp, "Ruined Harvester Camp" },                                            // Harvesters' Camp
-		{ BuildingTypes.Ruined_Harvester_Camp_no_Reward_, "Ruined Harvester Camp (no reward)" },                     // Harvesters' Camp
-		{ BuildingTypes.Ruined_Hearth, "Ruined Hearth" },                                                            // Ancient Hearth
-		{ BuildingTypes.Ruined_Hearth_no_Reward_, "Ruined Hearth (no reward)" },                                     // Ancient Hearth
-		{ BuildingTypes.Ruined_Herb_Garden, "Ruined Herb Garden" },                                                  // Herb Garden
-		{ BuildingTypes.Ruined_Herb_Garden_no_Reward_, "Ruined Herb Garden (no reward)" },                           // Herb Garden
-		{ BuildingTypes.Ruined_Herbalist_Camp, "Ruined Herbalist Camp" },                                            // Herbalists' Camp
-		{ BuildingTypes.Ruined_Herbalist_Camp_no_Reward_, "Ruined Herbalist Camp (no reward)" },                     // Herbalists' Camp
-		{ BuildingTypes.Ruined_Herbalist_Camp_Primitive_no_Reward_, "Ruined Herbalist Camp primitive (no reward)" }, // Herbalists' Camp
-		{ BuildingTypes.Ruined_Human_House, "Ruined Human House" },                                                  // Human House
-		{ BuildingTypes.Ruined_Human_House_no_Reward_, "Ruined Human House (no reward)" },                           // Human House
-		{ BuildingTypes.Ruined_Kiln, "Ruined Kiln" },                                                                // Kiln
-		{ BuildingTypes.Ruined_Kiln_no_Reward_, "Ruined Kiln (no reward)" },                                         // Kiln
-		{ BuildingTypes.Ruined_Leatherworks, "Ruined Leatherworks" },                                                // Leatherworker
-		{ BuildingTypes.Ruined_Leatherworks_no_Reward_, "Ruined Leatherworks (no reward)" },                         // Leatherworker
-		{ BuildingTypes.Ruined_Lizard_House, "Ruined Lizard House" },                                                // Lizard House
-		{ BuildingTypes.Ruined_Lizard_House_no_Reward_, "Ruined Lizard House (no reward)" },                         // Lizard House
-		{ BuildingTypes.Ruined_Lumbermill, "Ruined Lumbermill" },                                                    // Lumber Mill
-		{ BuildingTypes.Ruined_Lumbermill_no_Reward_, "Ruined Lumbermill (no reward)" },                             // Lumber Mill
-		{ BuildingTypes.Ruined_Makeshift_Post_no_Reward_, "Ruined Makeshift Post (no reward)" },                     // Makeshift Post
-		{ BuildingTypes.Ruined_Manufatory, "Ruined Manufatory" },                                                    // Manufactory
-		{ BuildingTypes.Ruined_Manufatory_no_Reward_, "Ruined Manufatory (no reward)" },                             // Manufactory
-		{ BuildingTypes.Ruined_Market, "Ruined Market" },                                                            // Market
-		{ BuildingTypes.Ruined_Market_no_Reward_, "Ruined Market (no reward)" },                                     // Market
-		{ BuildingTypes.Ruined_Mine_no_Reward_, "Ruined Mine (no reward)" },                                         // Mine
-		{ BuildingTypes.Ruined_Monastery, "Ruined Monastery" },                                                      // Monastery
-		{ BuildingTypes.Ruined_Monastery_no_Reward_, "Ruined Monastery (no reward)" },                               // Monastery
-		{ BuildingTypes.Ruined_Plantation, "Ruined Plantation" },                                                    // Plantation
-		{ BuildingTypes.Ruined_Plantation_no_Reward_, "Ruined Plantation (no reward)" },                             // Plantation
-		{ BuildingTypes.Ruined_Press, "Ruined Press" },                                                              // Press
-		{ BuildingTypes.Ruined_Press_no_Reward_, "Ruined Press (no reward)" },                                       // Press
-		{ BuildingTypes.Ruined_Provisioner, "Ruined Provisioner" },                                                  // Provisioner
-		{ BuildingTypes.Ruined_Provisioner_no_Reward_, "Ruined Provisioner (no reward)" },                           // Provisioner
-		{ BuildingTypes.Ruined_Rain_Catcher_no_Reward_, "Ruined Rain Catcher (no reward)" },                         // Rain Collector
-		{ BuildingTypes.Ruined_Rainmill, "Ruined Rainmill" },                                                        // Rain Mill
-		{ BuildingTypes.Ruined_Rainmill_no_Reward_, "Ruined Rainmill (no reward)" },                                 // Rain Mill
-		{ BuildingTypes.Ruined_Ranch, "Ruined Ranch" },                                                              // Ranch
-		{ BuildingTypes.Ruined_Ranch_no_Reward_, "Ruined Ranch (no reward)" },                                       // Ranch
-		{ BuildingTypes.Ruined_Scribe, "Ruined Scribe" },                                                            // Scribe
-		{ BuildingTypes.Ruined_Scribe_no_Reward_, "Ruined Scribe (no reward)" },                                     // Scribe
-		{ BuildingTypes.Ruined_Sewer, "Ruined Sewer" },                                                              // Clothier
-		{ BuildingTypes.Ruined_Sewer_no_Reward_, "Ruined Sewer (no reward)" },                                       // Clothier
-		{ BuildingTypes.Ruined_Shelter, "Ruined Shelter" },                                                          // Shelter
-		{ BuildingTypes.Ruined_Shelter_no_Reward_, "Ruined Shelter (no reward)" },                                   // Shelter
-		{ BuildingTypes.Ruined_SmallFarm, "Ruined SmallFarm" },                                                      // Small Farm
-		{ BuildingTypes.Ruined_SmallFarm_no_Reward_, "Ruined SmallFarm (no reward)" },                               // Small Farm
-		{ BuildingTypes.Ruined_Smelter, "Ruined Smelter" },                                                          // Smelter
-		{ BuildingTypes.Ruined_Smelter_no_Reward_, "Ruined Smelter (no reward)" },                                   // Smelter
-		{ BuildingTypes.Ruined_Smithy, "Ruined Smithy" },                                                            // Smithy
-		{ BuildingTypes.Ruined_Smithy_no_Reward_, "Ruined Smithy (no reward)" },                                     // Smithy
-		{ BuildingTypes.Ruined_Smokehouse, "Ruined Smokehouse" },                                                    // Smokehouse
-		{ BuildingTypes.Ruined_Smokehouse_no_Reward_, "Ruined Smokehouse (no reward)" },                             // Smokehouse
-		{ BuildingTypes.Ruined_Stamping_Mill, "Ruined Stamping Mill" },                                              // Stamping Mill
-		{ BuildingTypes.Ruined_Stamping_Mill_no_Reward_, "Ruined Stamping Mill (no reward)" },                       // Stamping Mill
-		{ BuildingTypes.Ruined_Stonecutter_Camp, "Ruined Stonecutter Camp" },                                        // Stonecutters' Camp
-		{ BuildingTypes.Ruined_Stonecutter_Camp_no_Reward_, "Ruined Stonecutter Camp (no reward)" },                 // Stonecutters' Camp
-		{ BuildingTypes.Ruined_Storage, "Ruined Storage" },                                                          // Small Warehouse
-		{ BuildingTypes.Ruined_Storage_no_Reward_, "Ruined Storage (no reward)" },                                   // Small Warehouse
-		{ BuildingTypes.Ruined_Supplier, "Ruined Supplier" },                                                        // Supplier
-		{ BuildingTypes.Ruined_Supplier_no_Reward_, "Ruined Supplier (no reward)" },                                 // Supplier
-		{ BuildingTypes.Ruined_Tavern, "Ruined Tavern" },                                                            // Tavern
-		{ BuildingTypes.Ruined_Tavern_no_Reward_, "Ruined Tavern (no reward)" },                                     // Tavern
-		{ BuildingTypes.Ruined_Tea_Doctor, "Ruined Tea Doctor" },                                                    // Tea Doctor
-		{ BuildingTypes.Ruined_Tea_Doctor_no_Reward_, "Ruined Tea Doctor (no reward)" },                             // Tea Doctor
-		{ BuildingTypes.Ruined_Tea_House, "Ruined Tea House" },                                                      // Teahouse
-		{ BuildingTypes.Ruined_Tea_House_no_Reward_, "Ruined Tea House (no reward)" },                               // Teahouse
-		{ BuildingTypes.Ruined_Temple, "Ruined Temple" },                                                            // Temple
-		{ BuildingTypes.Ruined_Temple_no_Reward_, "Ruined Temple (no reward)" },                                     // Temple
-		{ BuildingTypes.Ruined_Tinctury, "Ruined Tinctury" },                                                        // Tinctury
-		{ BuildingTypes.Ruined_Tinctury_no_Reward_, "Ruined Tinctury (no reward)" },                                 // Tinctury
-		{ BuildingTypes.Ruined_Tinkerer, "Ruined Tinkerer" },                                                        // Tinkerer
-		{ BuildingTypes.Ruined_Tinkerer_no_Reward_, "Ruined Tinkerer (no reward)" },                                 // Tinkerer
-		{ BuildingTypes.Ruined_Toolshop, "Ruined Toolshop" },                                                        // Toolshop
-		{ BuildingTypes.Ruined_Toolshop_no_Reward_, "Ruined Toolshop (no reward)" },                                 // Toolshop
-		{ BuildingTypes.Ruined_Trading_Post_no_Reward_, "Ruined Trading Post (no reward)" },                         // Trading Post
-		{ BuildingTypes.Ruined_Trappers_Camp, "Ruined Trappers Camp" },                                              // Trappers' Camp
-		{ BuildingTypes.Ruined_Trappers_Camp_no_Reward_, "Ruined Trappers Camp (no reward)" },                       // Trappers' Camp
-		{ BuildingTypes.Ruined_Trappers_Camp_Primitive_no_Reward_, "Ruined Trappers Camp Primitive (no reward)" },   // Trappers' Camp
-		{ BuildingTypes.Ruined_Weaver, "Ruined Weaver" },                                                            // Weaver
-		{ BuildingTypes.Ruined_Weaver_no_Reward_, "Ruined Weaver (no reward)" },                                     // Weaver
-		{ BuildingTypes.Ruined_Woodcutters_Camp, "Ruined Woodcutters Camp" },                                        // Woodcutters' Camp
-		{ BuildingTypes.Ruined_Woodcutters_Camp_no_Reward_, "Ruined Woodcutters Camp (no reward)" },                 // Woodcutters' Camp
-		{ BuildingTypes.Ruined_Workshop, "Ruined Workshop" },                                                        // Workshop
-		{ BuildingTypes.Ruined_Workshop_no_Reward_, "Ruined Workshop (no reward)" },                                 // Workshop
-		{ BuildingTypes.Sacrifice_Totem, "Sacrifice Totem" },                                                        // Totem of Denial
-		{ BuildingTypes.Sacrifice_Totem_Positive, "Sacrifice Totem Positive" },                                      // Converted Totem of Denial
-		{ BuildingTypes.Scarlet_Decor, "Scarlet Decor" },                                                            // Thorny Reed
-		{ BuildingTypes.Scorpion_1, "Scorpion 1" },                                                                  // Archaeological Discovery
-		{ BuildingTypes.Scorpion_2, "Scorpion 2" },                                                                  // Archaeological Excavation
-		{ BuildingTypes.Scorpion_3, "Scorpion 3" },                                                                  // Archaeological Reconstruction
-		{ BuildingTypes.Scribe, "Scribe" },                                                                          // Scribe
-		{ BuildingTypes.Seal, "Seal" },                                                                              // Ancient Seal
-		{ BuildingTypes.Seal_Guidepost, "Seal Guidepost" },                                                          // Guidance Stone
-		{ BuildingTypes.Seal_Low_Diff, "Seal Low Diff" },                                                            // Ancient Seal
-		{ BuildingTypes.Sealed_Biome_Shrine, "Sealed Biome Shrine" },                                                // Beacon Tower
-		{ BuildingTypes.SealedTomb_T1, "SealedTomb_T1" },                                                            // Open Vault
-		{ BuildingTypes.Shelter, "Shelter" },                                                                        // Shelter
-		{ BuildingTypes.Signboard, "Signboard" },                                                                    // Signboard
-		{ BuildingTypes.Small_Hearth, "Small Hearth" },                                                              // Ancient Hearth
-		{ BuildingTypes.SmallFarm, "SmallFarm" },                                                                    // Small Farm
-		{ BuildingTypes.Smelter, "Smelter" },                                                                        // Smelter
-		{ BuildingTypes.Smithy, "Smithy" },                                                                          // Smithy
-		{ BuildingTypes.Smokehouse, "Smokehouse" },                                                                  // Smokehouse
-		{ BuildingTypes.Snake_1, "Snake 1" },                                                                        // Archaeological Discovery
-		{ BuildingTypes.Snake_2, "Snake 2" },                                                                        // Archaeological Excavation
-		{ BuildingTypes.Snake_3, "Snake 3" },                                                                        // Archaeological Reconstruction
-		{ BuildingTypes.Spider_1, "Spider 1" },                                                                      // Archaeological Discovery
-		{ BuildingTypes.Spider_2, "Spider 2" },                                                                      // Archaeological Excavation
-		{ BuildingTypes.Spider_3, "Spider 3" },                                                                      // Archaeological Reconstruction
-		{ BuildingTypes.Stamping_Mill, "Stamping Mill" },                                                            // Stamping Mill
-		{ BuildingTypes.Stonecutters_Camp, "Stonecutter's Camp" },                                                   // Stonecutters' Camp
-		{ BuildingTypes.Storage_buildable_, "Storage (buildable)" },                                                 // Small Warehouse
-		{ BuildingTypes.Stormbird_Positive, "Stormbird Positive" },                                                  // Tamed Stormbird
-		{ BuildingTypes.Supplier, "Supplier" },                                                                      // Supplier
-		{ BuildingTypes.Tavern, "Tavern" },                                                                          // Tavern
-		{ BuildingTypes.Tea_Doctor, "Tea Doctor" },                                                                  // Tea Doctor
-		{ BuildingTypes.Tea_House, "Tea House" },                                                                    // Teahouse
-		{ BuildingTypes.Temple, "Temple" },                                                                          // Temple
-		{ BuildingTypes.Temporary_Hearth_buildable_, "Temporary Hearth (buildable)" },                               // Small Hearth
-		{ BuildingTypes.Temporary_Hearth_not_buildable_, "Temporary Hearth (not-buildable)" },                       // Small Hearth
-		{ BuildingTypes.Termite_Burrow, "Termite Burrow" },                                                          // Stonetooth Termite Burrow
-		{ BuildingTypes.Termite_Burrow_Positive, "Termite Burrow Positive" },                                        // Termite Nest
-		{ BuildingTypes.TI_AncientShrine_T1, "TI AncientShrine_T1" },                                                // Ancient Shrine
-		{ BuildingTypes.Tinctury, "Tinctury" },                                                                      // Tinctury
-		{ BuildingTypes.Tinkerer, "Tinkerer" },                                                                      // Tinkerer
-		{ BuildingTypes.Toolshop, "Toolshop" },                                                                      // Toolshop
-		{ BuildingTypes.Tower, "Tower" },                                                                            // Wall Crossing
-		{ BuildingTypes.Town_Board, "Town Board" },                                                                  // Town Board
-		{ BuildingTypes.Traders_Cemetery, "Traders Cemetery" },                                                      // Hidden Trader Cemetery
-		{ BuildingTypes.Trading_Post, "Trading Post" },                                                              // Trading Post
-		{ BuildingTypes.Trappers_Camp, "Trapper's Camp" },                                                           // Trappers' Camp
-		{ BuildingTypes.Umbrella, "Umbrella" },                                                                      // Umbrella
-		{ BuildingTypes.Wall, "Wall" },                                                                              // Wall
-		{ BuildingTypes.Wall_Corner, "Wall Corner" },                                                                // Wall Corner
-		{ BuildingTypes.War_Beast_Cage, "War Beast Cage" },                                                          // Destroyed Cage of the Warbeast
-		{ BuildingTypes.Water_Barrels, "Water Barrels" },                                                            // Water Barrels
-		{ BuildingTypes.Water_Extractor, "Water Extractor" },                                                        // Geyser Pump
-		{ BuildingTypes.Weaver, "Weaver" },                                                                          // Weaver
-		{ BuildingTypes.Well, "Well" },                                                                              // Overgrown Well
-		{ BuildingTypes.White_Stag, "White Stag" },                                                                  // Royal Treasure Stag
-		{ BuildingTypes.White_Treasure_Stag, "White Treasure Stag" },                                                // Royal Treasure Stag
-		{ BuildingTypes.Wildfire, "Wildfire" },                                                                      // Wildfire
-		{ BuildingTypes.Woodcutters_Camp, "Woodcutters Camp" },                                                      // Woodcutters' Camp
-		{ BuildingTypes.Workshop, "Workshop" },                                                                      // Workshop
+		{ BuildingTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" },                                           // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+		{ BuildingTypes.Aestherics_2x2_Garden, "Aestherics 2x2 - Garden" },                                         // Garden - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+		{ BuildingTypes.Aestherics_2x2_Groundwater_Extractor, "Aestherics 2x2 - Groundwater Extractor" },           // Makeshift Extractor - <color=#8AAFFD>Aesthetics.</color> A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 <sprite name="[water] clearance water"> Clearance Water per minute. Counts as 4 decorations of its type.
+		{ BuildingTypes.Alchemist_Hut, "Alchemist Hut" },                                                           // Alchemist's Hut - Can produce:  <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade2>), <sprite name=[needs] tea> Tea (<sprite name=grade2>), <sprite name=[needs] wine> Wine (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Altar, "Altar" },                                                                           // Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
+		{ BuildingTypes.Ancient_Gravestone, "Ancient Gravestone" },                                                 // Ancient Tombstone - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+		{ BuildingTypes.AncientBurrialGrounds, "AncientBurrialGrounds" },                                           // Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
+		{ BuildingTypes.AncientGate, "AncientGate" },                                                               // Dark Gate - A strange monument of cyclopean proportions. Heavy storm clouds seem to be gathering around the settlement.
+		{ BuildingTypes.AncientShrine_T1, "AncientShrine_T1" },                                                     // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+		{ BuildingTypes.AncientTemple, "AncientTemple" },                                                           // Forgotten Temple of the Sun - Who would worship the sun in a world with so little sunlight?
+		{ BuildingTypes.Angry_Ghost_1, "Angry Ghost 1" },                                                           // Ghost of a Blight Fighter Captain - I let us down and was defeated by the Blightrot... but you can avenge me! Kill it with fire!!!
+		{ BuildingTypes.Angry_Ghost_10, "Angry Ghost 10" },                                                         // Ghost of a Suppressed Rebel - I was leading a rebellion against the Queen's tyrannical rule, but the Royal Guard found us. Carry on my legacy!
+		{ BuildingTypes.Angry_Ghost_14, "Angry Ghost 14" },                                                         // Ghost of a Resentful Human - Humans deserve to be treated better than the others! Without us, you’d never achieve anything. If you don’t meet our basic needs, we’ll take our revenge!
+		{ BuildingTypes.Angry_Ghost_15, "Angry Ghost 15" },                                                         // Ghost of the Queen's Lickspittle - I challenge you, viceroy! Do you consider yourself worthy of the Queen's glance? Prove it. Time is ticking.
+		{ BuildingTypes.Angry_Ghost_16, "Angry Ghost 16" },                                                         // Ghost of a Lizard Leader - I'm so sick of these Beavers! They’re the bane of this kingdom! They deserve nothing but condemnation for what they did to us. I order you to torment them - or I'll do it myself!
+		{ BuildingTypes.Angry_Ghost_17, "Angry Ghost 17" },                                                         // Ghost of a Tortured Harpy - They took our homes and our crops. They desecrated our culture, and in the end, they took our lives. The time of contempt has come.
+		{ BuildingTypes.Angry_Ghost_18, "Angry Ghost 18" },                                                         // Ghost of a Beaver Engineer - These fanatics should pay for their heresies! They are dangerous, wild, and unpredictable creatures. Teach these savages, once and for all.
+		{ BuildingTypes.Angry_Ghost_19, "Angry Ghost 19" },                                                         // Ghost of a Poisoned Human - We will no longer tolerate those upturned beaks roaming the settlement freely. Everyone must learn the truth about how the Harpy alchemists poisoned us to seize power!
+		{ BuildingTypes.Angry_Ghost_2, "Angry Ghost 2" },                                                           // Ghost of a Mad Alchemist - I have studied the Blightrot all my life. Nobody believes me, but the cysts are essential for the ecosystem! Grow them and find out yourself!
+		{ BuildingTypes.Angry_Ghost_20, "Angry Ghost 20" },                                                         // Ghost of a Lizard Worker - Self-righteous Beavers only want to bask in the luxuries we’ve worked so hard for. Time to end this injustice!
+		{ BuildingTypes.Angry_Ghost_21, "Angry Ghost 21" },                                                         // Ghost of a Starved Harpy - Greedy Human farmers always want to keep all the crops for themselves. Those traitors hid everything from us, and pretended the crops were rotten!
+		{ BuildingTypes.Angry_Ghost_24, "Angry Ghost 24" },                                                         // Ghost of an Innkeeper - We worked so hard, and put our lives in danger every day. If you don't let your villagers rest, I will make sure your soul never finds peace.
+		{ BuildingTypes.Angry_Ghost_31, "Angry Ghost 31" },                                                         // Ghost of a Lizard Elder - It was them! I'm sure of it! I remember their blank, blight-tainted gaze! They ambushed me in the forest! Please, avenge me!
+		{ BuildingTypes.Angry_Ghost_32, "Angry Ghost 32" },                                                         // Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
+		{ BuildingTypes.Angry_Ghost_34, "Angry Ghost 34" },                                                         // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
+		{ BuildingTypes.Angry_Ghost_4, "Angry Ghost 4" },                                                           // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
+		{ BuildingTypes.Angry_Ghost_5, "Angry Ghost 5" },                                                           // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
+		{ BuildingTypes.Angry_Ghost_6, "Angry Ghost 6" },                                                           // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
+		{ BuildingTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                           // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
+		{ BuildingTypes.AngryGhostChest_T1, "AngryGhostChest_T1" },                                                 // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
+		{ BuildingTypes.Anvil, "Anvil" },                                                                           // Anvil - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Apothecary, "Apothecary" },                                                                 // Apothecary - Can produce:  <sprite name=[needs] tea> Tea (<sprite name=grade2>), <sprite name=[needs] incense> Incense (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Arch, "Arch" },                                                                             // Ancient Arch - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
+		{ BuildingTypes.Archaeology_Scorpion_Positive, "Archaeology Scorpion Positive" },                           // Smoldering Scorpion - <color=#D6E54A>Harmony.</color> Legend has it that they once inhabited the top of the mountain on which the Smoldering City now stands. The Queen banished them, but it is said that some of them still hibernate somewhere on the outskirts of the kingdom.  Counts as 9 decorations of its type.
+		{ BuildingTypes.Archaeology_Snake_Positive, "Archaeology Snake Positive" },                                 // Sea Serpent - <color=#D6E54A>Harmony.</color> The anatomical features of this beast indicate an adaptation to life in water, as well as on land. Due to this, sea serpents are excellent hunters, preying on lonely caravans and lost settlers. The preserved remains show traces of Blightrot. Could it be that these creatures have brought this plague to the surface when emerging from the depths of the ocean? Counts as 9 decorations of its type.
+		{ BuildingTypes.Archaeology_Spider_Positive, "Archaeology Spider Positive" },                               // Sealed Spider - <color=#D6E54A>Harmony.</color> It is said that these creatures were once the faithful servants of the Sealed Ones, and like their masters, they were trapped underground for eternity. But even to this day, miners tell tales of giant spiders crawling up from deep caverns, preying on unsuspecting victims. Legend has it that these vile beasts fear only one thing - the Holy Flame. Counts as 9 decorations of its type.
+		{ BuildingTypes.Archeology_Office, "Archeology office" },                                                   // Archaeologist's Office - A building designed to help you study the past. Can be upgraded to locate archaeological discoveries or improve the settlement's exploration capabilities. 
+		{ BuildingTypes.Artisan, "Artisan" },                                                                       // Artisan - Can produce:  <sprite name=[needs] coats> Coats (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade2>), <sprite name=[packs] pack of luxury goods> Pack of Luxury Goods (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Bakery, "Bakery" },                                                                         // Bakery - Can produce:  <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>), <sprite name=[food processed] pie> Pie (<sprite name=grade2>), <sprite name=[vessel] pottery> Pottery (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Bank, "Bank" },                                                                             // Bench - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Barrels, "Barrels" },                                                                       // Barrels - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Bath_House, "Bath House" },                                                                 // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
+		{ BuildingTypes.Beanery, "Beanery" },                                                                       // Beanery - Can produce:  <sprite name=[food processed] porridge> Porridge (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade1>), <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Beaver_House, "Beaver House" },                                                             // Beaver House - Building specifically made for Beavers. Has to be built near a Hearth. Can house 2 residents.
+		{ BuildingTypes.BeaverBattleground_T1, "BeaverBattleground_T1" },                                           // Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
+		{ BuildingTypes.Big_Shelter, "Big Shelter" },                                                               // Big Shelter - Can accommodate any villager, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 6 residents.
+		{ BuildingTypes.Black_Stag, "Black Stag" },                                                                 // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+		{ BuildingTypes.Black_Treasure_Stag, "Black Treasure Stag" },                                               // Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+		{ BuildingTypes.Blight_Post, "Blight Post" },                                                               // Blight Post - A specialized building dedicated to fighting Blightrot. Blight Fighters will prepare <sprite name="blight fuel"> Purging Fire during drizzle and clearance seasons, and use it to burn Blightrot Cysts during the storm.
+		{ BuildingTypes.Blightrot, "Blightrot" },                                                                   // Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
+		{ BuildingTypes.Blightrot_Cauldron, "Blightrot Cauldron" },                                                 // Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
+		{ BuildingTypes.Blightrot_Clone, "Blightrot - Clone" },                                                     // Blood Flower (Clone) - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
+		{ BuildingTypes.Bonfire, "Bonfire" },                                                                       // Bonfire - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+		{ BuildingTypes.Brewery, "Brewery" },                                                                       // Brewery - Can produce:  <sprite name=[needs] ale> Ale (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade1>), <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Brick_Oven, "Brick Oven" },                                                                 // Brick Oven - Can produce:  <sprite name=[food processed] pie> Pie (<sprite name=grade3>), <sprite name=[crafting] coal> Coal (<sprite name=grade1>), <sprite name=[needs] incense> Incense (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Brickyard, "Brickyard" },                                                                   // Brickyard - Can produce:  <sprite name=[mat processed] bricks> Bricks (<sprite name=grade3>), <sprite name=[vessel] pottery> Pottery (<sprite name=grade2>), <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Bush, "Bush" },                                                                             // Bush - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Butcher, "Butcher" },                                                                       // Butcher - Can produce:  <sprite name=[food processed] skewers> Skewers (<sprite name=grade2>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade2>), <sprite name=[crafting] oil> Oil (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Cages, "Cages" },                                                                           // Cages - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Calm_Ghost_11, "Calm Ghost 11" },                                                           // Ghost of a Defeated Viceroy - A long time ago, I founded a prosperous settlement. Everything was fine, until one of our scouts discovered something terrifying in the forest. Please, help restore at least a scrap of my legacy.
+		{ BuildingTypes.Calm_Ghost_12, "Calm Ghost 12" },                                                           // Ghost of a Druid - Many viceroys disregard nature. Don't make the same mistake. Be a good example to your people.
+		{ BuildingTypes.Calm_Ghost_13, "Calm Ghost 13" },                                                           // Ghost of a Royal Gardener - In these difficult times, beauty helps us forget our troubles. Decorate your village, and your villagers will thank you.
+		{ BuildingTypes.Calm_Ghost_22, "Calm Ghost 22" },                                                           // Ghost of a Hooded Knight - I promised my Queen that I would cleanse this forest of all the horrors that lived here. One night, my mount got frightened by the storm, and we fell into the Fishmen's nets. My mission must be completed!
+		{ BuildingTypes.Calm_Ghost_23, "Calm Ghost 23" },                                                           // Ghost of a Fire Priest - Spread the word about the power of the Holy Fire! Only it can save us from the storm's wrath. Gather the villagers in the chapel and pray!
+		{ BuildingTypes.Calm_Ghost_25, "Calm Ghost 25" },                                                           // Ghost of a Treasure Hunter - If your eyes sparkle at the sight of gold, I have an offer for you. All you have to do is prove that you are one of us, and I will give you my treasure.
+		{ BuildingTypes.Calm_Ghost_26, "Calm Ghost 26" },                                                           // Ghost of a Royal Architect - The foundation of success is a thriving settlement. Without solid walls, you won't survive here. Create something you can be proud of.
+		{ BuildingTypes.Calm_Ghost_27, "Calm Ghost 27" },                                                           // Ghost of a Worried Carter - The last thing I remember is lightning hitting my caravan. The settlements are still waiting for the goods they ordered. If you deliver them, I’ll see that you’re rewarded.
+		{ BuildingTypes.Calm_Ghost_28, "Calm Ghost 28" },                                                           // Ghost of a Storm Victim - Let the fire burn in the Hearth and grow in all its strength. Sacrifice your goods, and help the villagers weather the storm!
+		{ BuildingTypes.Calm_Ghost_29, "Calm Ghost 29" },                                                           // Ghost of a Mourning Harpy - Our flock has been in mourning for many years. We will never forget the war. Please, rekindle the hope in the Harpies' hearts.
+		{ BuildingTypes.Calm_Ghost_3, "Calm Ghost 3" },                                                             // Ghost of a Terrified Woodcutter - I lived in a very prosperous settlement, but our viceroy was greedy and didn't care about the forest at all! In the end, it brought doom upon us. Refrain from greed, and calm the forest.
+		{ BuildingTypes.Calm_Ghost_30, "Calm Ghost 30" },                                                           // Ghost of a Lizard General - My army fought bravely against all odds. Many of us paid the ultimate price. Please, show your respect to those who survived. I'll take care of the fallen.
+		{ BuildingTypes.Calm_Ghost_33, "Calm Ghost 33" },                                                           // Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
+		{ BuildingTypes.Calm_Ghost_35, "Calm Ghost 35" },                                                           // Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
+		{ BuildingTypes.Calm_Ghost_36, "Calm Ghost 36" },                                                           // Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
+		{ BuildingTypes.Calm_Ghost_7, "Calm Ghost 7" },                                                             // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
+		{ BuildingTypes.Calm_Ghost_8, "Calm Ghost 8" },                                                             // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
+		{ BuildingTypes.CalmGhostChest_T1, "CalmGhostChest_T1" },                                                   // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
+		{ BuildingTypes.Camp_T1, "Camp_T1" },                                                                       // Small Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
+		{ BuildingTypes.Camp_T2, "Camp_T2" },                                                                       // Large Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
+		{ BuildingTypes.Caravan_T1, "Caravan_T1" },                                                                 // Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
+		{ BuildingTypes.Caravan_T2, "Caravan_T2" },                                                                 // Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
+		{ BuildingTypes.Carpenter, "Carpenter" },                                                                   // Carpenter - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[tools] simple tools> Tools (<sprite name=grade2>), <sprite name=[packs] pack of luxury goods> Pack of Luxury Goods (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Cellar, "Cellar" },                                                                         // Cellar - Can produce:  <sprite name=[needs] wine> Wine (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade1>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Chest, "Chest" },                                                                           // Chest - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Clan_Hall, "Clan Hall" },                                                                   // Clan Hall - A place where villagers can fulfill their need for: Brawling,  Religion. Passive effects: Ancient Ways.
+		{ BuildingTypes.Clay_Pit_Workshop, "Clay Pit Workshop" },                                                   // Clay Pit - Uses Clearance Water to produce  <sprite name=[mat raw] clay> Clay (<sprite name=grade2>), <sprite name=[mat raw] reeds> Reed (<sprite name=grade2>), regardless of the season. Must be placed on fertile soil.
+		{ BuildingTypes.Clothier, "Clothier" },                                                                     // Clothier - Can produce:  <sprite name=[needs] coats> Coats (<sprite name=grade3>), <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade1>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Comfort_2x2_Park, "Comfort 2x2 - Park" },                                                   // Park - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+		{ BuildingTypes.Cookhouse, "Cookhouse" },                                                                   // Cookhouse - Can produce:  <sprite name=[food processed] skewers> Skewers (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Cooperage, "Cooperage" },                                                                   // Cooperage - Can produce:  <sprite name=[vessel] barrels> Barrels (<sprite name=grade3>), <sprite name=[needs] coats> Coats (<sprite name=grade2>), <sprite name=[needs] tea> Tea (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Coral_Decor, "Coral Decor" },                                                               // Coral Growth - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.CornerFence, "CornerFence" },                                                               // Fence Corner - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Corrupted_Caravan, "Corrupted Caravan" },                                                   // Corrupted Caravan - A large caravan abandoned in the woods, overgrown with Blightrot Cysts. They must have fed on the transported goods... or people.
+		{ BuildingTypes.Crates, "Crates" },                                                                         // Crates - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Crude_Workstation, "Crude Workstation" },                                                   // Crude Workstation - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade0>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade0>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade0>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade0>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.DebugNode_ClayBig, "DebugNode_ClayBig" },                                                   // Clay Deposit (Large) - Soil infused with the essence of the rain.
+		{ BuildingTypes.DebugNode_ClaySmall, "DebugNode_ClaySmall" },                                               // Clay Deposit (Small) - Soil infused with the essence of the rain.
+		{ BuildingTypes.DebugNode_DewberryBushBig, "DebugNode_DewberryBushBig" },                                   // Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain.
+		{ BuildingTypes.DebugNode_DewberryBushSmall, "DebugNode_DewberryBushSmall" },                               // Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain.
+		{ BuildingTypes.DebugNode_FlaxBig, "DebugNode_FlaxBig" },                                                   // Flax Field (Large) - Resilient plants that are perfect for cloth-making.
+		{ BuildingTypes.DebugNode_FlaxSmall, "DebugNode_FlaxSmall" },                                               // Flax Field (Small) - Resilient plants that are perfect for cloth-making.
+		{ BuildingTypes.DebugNode_HerbsBig, "DebugNode_HerbsBig" },                                                 // Herb Node (Large) - A dense shrub, full of many useful plant species.
+		{ BuildingTypes.DebugNode_HerbsSmall, "DebugNode_HerbsSmall" },                                             // Herb Node (Small) - A dense shrub, full of many useful plant species.
+		{ BuildingTypes.DebugNode_LeechBroodmotherBig, "DebugNode_LeechBroodmotherBig" },                           // Leech Broodmother (Large) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
+		{ BuildingTypes.DebugNode_LeechBroodmotherSmall, "DebugNode_LeechBroodmotherSmall" },                       // Leech Broodmother (Small) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
+		{ BuildingTypes.DebugNode_Marshlands_InfiniteGrain, "DebugNode_Marshlands_InfiniteGrain" },                 // Ancient Proto Wheat - A wild type of grain, mutated by an invasive species of fungi.
+		{ BuildingTypes.DebugNode_Marshlands_InfiniteMeat, "DebugNode_Marshlands_InfiniteMeat" },                   // Dead Leviathan - A giant, dead beast. How did it get here?
+		{ BuildingTypes.DebugNode_Marshlands_InfiniteMushroom, "DebugNode_Marshlands_InfiniteMushroom" },           // Giant Proto Fungus - An ancient and mysterious organism. Proto fungi are sometimes referred to as the living and breathing hearts of the Marshlands.
+		{ BuildingTypes.DebugNode_MarshlandsMushroomBig, "DebugNode_MarshlandsMushroomBig" },                       // Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
+		{ BuildingTypes.DebugNode_MarshlandsMushroomSmall, "DebugNode_MarshlandsMushroomSmall" },                   // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
+		{ BuildingTypes.DebugNode_MossBroccoliBig, "DebugNode_MossBroccoliBig" },                                   // Moss Broccoli Patch (Large) - An edible and tasty type of moss.
+		{ BuildingTypes.DebugNode_MossBroccoliSmall, "DebugNode_MossBroccoliSmall" },                               // Moss Broccoli Patch (Small) - An edible and tasty type of moss.
+		{ BuildingTypes.DebugNode_MushroomBig, "DebugNode_MushroomBig" },                                           // Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
+		{ BuildingTypes.DebugNode_MushroomSmall, "DebugNode_MushroomSmall" },                                       // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
+		{ BuildingTypes.DebugNode_ReedBig, "DebugNode_ReedBig" },                                                   // Reed Field (Large) - A very common plant, it thrives thanks to the magical rain.
+		{ BuildingTypes.DebugNode_ReedSmall, "DebugNode_ReedSmall" },                                               // Reed Field (Small) - A very common plant, it thrives thanks to the magical rain.
+		{ BuildingTypes.DebugNode_RootsBig, "DebugNode_RootsBig" },                                                 // Root Deposit (Large) - A tangled net of living vines.
+		{ BuildingTypes.DebugNode_RootsSmall, "DebugNode_RootsSmall" },                                             // Root Deposit (Small) - A tangled net of living vines.
+		{ BuildingTypes.DebugNode_SeaMarrowBig, "DebugNode_SeaMarrowBig" },                                         // Sea Marrow Deposit (Large) - Ancient fossils, rich in resources.
+		{ BuildingTypes.DebugNode_SeaMarrowSmall, "DebugNode_SeaMarrowSmall" },                                     // Sea Marrow Deposit (Small) - Ancient fossils, rich in resources.
+		{ BuildingTypes.DebugNode_SnailBroodmotherBig, "DebugNode_SnailBroodmotherBig" },                           // Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
+		{ BuildingTypes.DebugNode_SnailBroodmotherSmall, "DebugNode_SnailBroodmotherSmall" },                       // Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
+		{ BuildingTypes.DebugNode_SnakeNestBig, "DebugNode_SnakeNestBig" },                                         // Snake Nest (Large) - A dangerous, but rich source of food and leather.
+		{ BuildingTypes.DebugNode_SnakeNestSmall, "DebugNode_SnakeNestSmall" },                                     // Snake Nest (Small) - A dangerous, but rich source of food and leather.
+		{ BuildingTypes.DebugNode_StoneBig, "DebugNode_StoneBig" },                                                 // Stone Deposit (Large) - Stones, weathered by the everlasting rain.
+		{ BuildingTypes.DebugNode_StoneSmall, "DebugNode_StoneSmall" },                                             // Stone Deposit (Small) - Stones, weathered by the everlasting rain.
+		{ BuildingTypes.DebugNode_StormbirdNestBig, "DebugNode_StormbirdNestBig" },                                 // Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
+		{ BuildingTypes.DebugNode_StormbirdNestSmall, "DebugNode_StormbirdNestSmall" },                             // Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
+		{ BuildingTypes.DebugNode_SwampWheatBig, "DebugNode_SwampWheatBig" },                                       // Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp.
+		{ BuildingTypes.DebugNode_SwampWheatSmall, "DebugNode_SwampWheatSmall" },                                   // Swamp Wheat Field (Small) - A plant species that’s right at home in the swamp.
+		{ BuildingTypes.DebugNode_WormtongueNestBig, "DebugNode_WormtongueNestBig" },                               // Wormtongue Nest (Large) - A nest full of tasty wormtongues.
+		{ BuildingTypes.DebugNode_WormtongueNestSmall, "DebugNode_WormtongueNestSmall" },                           // Wormtongue Nest (Small) - A nest full of tasty wormtongues.
+		{ BuildingTypes.Decay_Altar, "Decay Altar" },                                                               // Altar of Decay - A sinister stone structure created to worship the Blightrot. Cultists have engraved the inscription: "Nothing escapes death".
+		{ BuildingTypes.Decay_Altar_Positive, "Decay Altar Positive" },                                             // Converted Altar of Decay - <color=#D6E54A>Harmony.</color> Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves. Counts as 9 decorations of its type.
+		{ BuildingTypes.Distillery, "Distillery" },                                                                 // Distillery - Can produce:  <sprite name=[needs] wine> Wine (<sprite name=grade2>), <sprite name=[food processed] porridge> Porridge (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Druid, "Druid" },                                                                           // Druid's Hut - Can produce:  <sprite name=[crafting] oil> Oil (<sprite name=grade3>), <sprite name=[needs] incense> Incense (<sprite name=grade1>), <sprite name=[needs] coats> Coats (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Escaped_Convicts, "Escaped Convicts" },                                                     // Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
+		{ BuildingTypes.Explorers_Lodge, "Explorers Lodge" },                                                       // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
+		{ BuildingTypes.Farmfield, "Farmfield" },                                                                   // Farm Field - Can only be placed on fertile soil. Requires a Small Farm, Plantation, Herb Garden, Forester's Hut, or Homestead nearby to produce crops.
+		{ BuildingTypes.Fence, "Fence" },                                                                           // Fence - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Field_Kitchen, "Field Kitchen" },                                                           // Field Kitchen - Can produce:  <sprite name=[food processed] jerky> Jerky (<sprite name=grade0>), <sprite name=[food processed] porridge> Porridge (<sprite name=grade0>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade0>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade0>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Finesmith, "Finesmith" },                                                                   // Finesmith - Can produce:  <sprite name=[valuable] amber> Amber (<sprite name=grade3>), <sprite name=[tools] simple tools> Tools (<sprite name=grade3>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Fire_Shrine, "Fire Shrine" },                                                               // Fire Shrine - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
+		{ BuildingTypes.Fishmen_Cave, "Fishmen Cave" },                                                             // Fishmen Cave - It looks abandoned, but what if it's not? A terrible fishy smell comes from within.
+		{ BuildingTypes.Fishmen_Lighthouse, "Fishmen Lighthouse" },                                                 // Fishmen Lighthouse - Once upon a time, there must have been a coast and a harbor here. Now this place is haunted by Fishmen and the waters have withdrawn. An ominous light is coming from the top of the lighthouse.
+		{ BuildingTypes.Fishmen_Lighthouse_Positive, "Fishmen Lighthouse Positive" },                               // Converted Fishmen Lighthouse - <color=#D6E54A>Harmony.</color> A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 <sprite name="[crafting] sea marrow"> Sea Marrow per minute. Counts as 16 decorations of its type.
+		{ BuildingTypes.Fishmen_Outpost, "Fishmen Outpost" },                                                       // Fishmen Outpost - Fishmen aren't usually a threat, but they can be a real nuisance after a while.
+		{ BuildingTypes.Fishmen_Soothsayer, "Fishmen Soothsayer" },                                                 // Fishman Soothsayer - An old wandering soothsayer, teeming with magic. He does not speak, though you can hear his voice. His eyes are blank, yet you can feel his gaze. He is not afraid of death, he stands by its side.
+		{ BuildingTypes.Fishmen_Totem, "Fishmen Totem" },                                                           // Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
+		{ BuildingTypes.Flawless_Brewery, "Flawless Brewery" },                                                     // Flawless Brewery - Can produce:  <sprite name=[needs] ale> Ale (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade3>), <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Flawless_Cellar, "Flawless Cellar" },                                                       // Flawless Cellar - Can produce:  <sprite name=[needs] wine> Wine (<sprite name=grade3>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade3>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Flawless_Cooperage, "Flawless Cooperage" },                                                 // Flawless Cooperage - Can produce:  <sprite name=[vessel] barrels> Barrels (<sprite name=grade3>), <sprite name=[needs] coats> Coats (<sprite name=grade3>), <sprite name=[needs] tea> Tea (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Flawless_Druid, "Flawless Druid" },                                                         // Flawless Druid's Hut - Can produce:  <sprite name=[crafting] oil> Oil (<sprite name=grade3>), <sprite name=[needs] incense> Incense (<sprite name=grade3>), <sprite name=[needs] coats> Coats (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Flawless_Leatherworks, "Flawless Leatherworks" },                                           // Flawless Leatherworker - Can produce:  <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade3>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade3>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Flawless_Rain_Mill, "Flawless Rain Mill" },                                                 // Flawless Rain Mill - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade3>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade3>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade3>). Has improved production.Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Flawless_Smelter, "Flawless Smelter" },                                                     // Flawless Smelter - Can produce:  <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade3>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade3>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade3>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Flower_Bed, "Flower Bed" },                                                                 // Flower Bed - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Foragers_Camp, "Forager's Camp" },                                                          // Foragers' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[food raw] grain> Grain (<sprite name=grade2>), <sprite name=[food raw] roots> Roots (<sprite name=grade2>), <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade2>).
+		{ BuildingTypes.ForsakenCrypt, "ForsakenCrypt" },                                                           // Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
+		{ BuildingTypes.Forum, "Forum" },                                                                           // Forum - A place where villagers can fulfill their need for: Leisure,  Education. Passive effects: Public Lectures.
+		{ BuildingTypes.Fountain, "Fountain" },                                                                     // Marble Fountain - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+		{ BuildingTypes.Fox_Fence, "Fox Fence" },                                                                   // Overgrown Fence - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Fox_Fence_Corner, "Fox Fence Corner" },                                                     // Overgrown Fence Corner - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Fox_House, "Fox House" },                                                                   // Fox House - Building specifically made for Foxes. Has to be built near a Hearth. Can house 2 residents.
+		{ BuildingTypes.FoxBattleground_T1, "FoxBattleground_T1" },                                                 // Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
+		{ BuildingTypes.Fuming_Machinery, "Fuming Machinery" },                                                     // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
+		{ BuildingTypes.Furnace, "Furnace" },                                                                       // Furnace - Can produce:  <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade2>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade2>), <sprite name=[food processed] pie> Pie (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Gate, "Gate" },                                                                             // Gate - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
+		{ BuildingTypes.Giant_Stormbird, "Giant Stormbird" },                                                       // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
+		{ BuildingTypes.Glade_Trader_The_Hermit, "Glade Trader - The Hermit" },                                     // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
+		{ BuildingTypes.Glade_Trader_The_Seer, "Glade Trader - The Seer" },                                         // Wandering Merchant - Seer - A strange woman is observing the settlement from afar.
+		{ BuildingTypes.Glade_Trader_The_Shaman, "Glade Trader - The Shaman" },                                     // Wandering Merchant - Shaman - A mysterious and imposing figure has been spotted near the settlement. He is pulling a wagon full of herbs and ointments.
+		{ BuildingTypes.Gold_Stag, "Gold Stag" },                                                                   // Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+		{ BuildingTypes.Gold_Treasure_Stag, "Gold Treasure Stag" },                                                 // Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+		{ BuildingTypes.Golden_Leaf, "Golden Leaf" },                                                               // Golden Leaf Plant - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Granary, "Granary" },                                                                       // Granary - Can produce:  <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade2>), <sprite name=[food processed] pickled goods> Pickled Goods (<sprite name=grade2>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Greenhouse_Workshop, "Greenhouse Workshop" },                                               // Greenhouse - Uses Drizzle Water to produce  <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade2>), <sprite name=[food raw] herbs> Herbs (<sprite name=grade2>), regardless of the season. Must be placed on fertile soil.
+		{ BuildingTypes.Grill, "Grill" },                                                                           // Grill - Can produce:  <sprite name=[food processed] skewers> Skewers (<sprite name=grade3>), <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade1>), <sprite name=[needs] ale> Ale (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Grove, "Grove" },                                                                           // Forester's Hut - Uses nearby farm fields to grow  <sprite name=[mat raw] resin> Resin (<sprite name=grade2>), <sprite name=[metal] crystalized dew> Crystalized Dew (<sprite name=grade2>).
+		{ BuildingTypes.Guild_House, "Guild House" },                                                               // Guild House - A place where villagers can fulfill their need for: Luxury. Passive effects: Guild House, The Guild's Welfare.
+		{ BuildingTypes.Hallowed_Herb_Garden, "Hallowed Herb Garden" },                                             // Hallowed Herb Garden - Uses nearby farm fields to grow  <sprite name=[food raw] roots> Roots (<sprite name=grade3>), <sprite name=[food raw] herbs> Herbs (<sprite name=grade3>). Has improved efficiency and more worker slots.
+		{ BuildingTypes.Hallowed_SmallFarm, "Hallowed SmallFarm" },                                                 // Hallowed Small Farm - Uses nearby farm fields to grow  <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade3>), <sprite name=[food raw] grain> Grain (<sprite name=grade3>). Has improved efficiency and more worker slots.
+		{ BuildingTypes.Harmony_Spirit_Altar, "Harmony Spirit Altar" },                                             // Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
+		{ BuildingTypes.Harmony_Spirit_Altar_Positive, "Harmony Spirit Altar Positive" },                           // Converted Harmony Spirit Altar - <color=#D6E54A>Harmony.</color> When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
+		{ BuildingTypes.Harpy_House, "Harpy House" },                                                               // Harpy House - Building specifically made for Harpies. Has to be built near a Hearth. Can house 2 residents.
+		{ BuildingTypes.HarpyBattleground_T1, "HarpyBattleground_T1" },                                             // Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
+		{ BuildingTypes.Harvester_Camp, "Harvester Camp" },                                                         // Harvesters' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[mat raw] plant fibre> Plant Fiber (<sprite name=grade2>), <sprite name=[mat raw] reeds> Reed (<sprite name=grade2>).
+		{ BuildingTypes.Haunted_Ruined_Beaver_House, "Haunted Ruined Beaver House" },                               // Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Brewery, "Haunted Ruined Brewery" },                                         // Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Cellar, "Haunted Ruined Cellar" },                                           // Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Cooperage, "Haunted Ruined Cooperage" },                                     // Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Druid, "Haunted Ruined Druid" },                                             // Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Fox_House, "Haunted Ruined Fox House" },                                     // Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Harpy_House, "Haunted Ruined Harpy House" },                                 // Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Herb_Garden, "Haunted Ruined Herb Garden" },                                 // Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Human_House, "Haunted Ruined Human House" },                                 // Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Leatherworks, "Haunted Ruined Leatherworks" },                               // Haunted Leatherworker - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Lizard_House, "Haunted Ruined Lizard House" },                               // Haunted Lizard House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Market, "Haunted Ruined Market" },                                           // Haunted Market - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Rainmill, "Haunted Ruined Rainmill" },                                       // Haunted Rain Mill - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_SmallFarm, "Haunted Ruined SmallFarm" },                                     // Haunted Small Farm - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Smelter, "Haunted Ruined Smelter" },                                         // Haunted Smelter - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Haunted_Ruined_Temple, "Haunted Ruined Temple" },                                           // Haunted Temple - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ BuildingTypes.Herb_Garden, "Herb Garden" },                                                               // Herb Garden - Uses nearby farm fields to grow  <sprite name=[food raw] roots> Roots (<sprite name=grade1>), <sprite name=[food raw] herbs> Herbs (<sprite name=grade2>).
+		{ BuildingTypes.Herbalists_Camp, "Herbalist's Camp" },                                                      // Herbalists' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[food raw] herbs> Herbs (<sprite name=grade2>), <sprite name=[food raw] berries> Berries (<sprite name=grade2>), <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade2>).
+		{ BuildingTypes.Holy_Market, "Holy Market" },                                                               // Holy Market - A place where villagers can fulfill their need for:  Luxury,  Treatment. Has an additional effect. Passive effects: Land of Luxury, Market Carts.
+		{ BuildingTypes.Holy_Temple, "Holy Temple" },                                                               // Holy Temple - A place where villagers can fulfill their need for:  Religion,  Education. Has an additional effect. Passive effects: Sacrament of the Flame, Consecrated Scrolls.
+		{ BuildingTypes.Homestead, "Homestead" },                                                                   // Homestead - Uses a large area of nearby farm fields to grow  <sprite name=[food raw] grain> Grain (<sprite name=grade3>), <sprite name=[mat raw] plant fibre> Plant Fiber (<sprite name=grade3>), <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade2>), <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade2>).
+		{ BuildingTypes.Human_House, "Human House" },                                                               // Human House - Building specifically made for Humans. Has to be built near a Hearth. Can house 2 residents.
+		{ BuildingTypes.HumanBattleground_T1, "HumanBattleground_T1" },                                             // Fallen Human Explorers - A group of fallen Human explorers. They were probably looking for a place to settle, far from the Queen's watchful eyes... The sight causes uneasiness amongst the Human population.
+		{ BuildingTypes.Hydrant, "Hydrant" },                                                                       // Hydrant - A small storage for <sprite name="blight fuel"> Purging Fire. Blight Fighters will use it to restock their fuel when fighting Blightrot in the storm.
+		{ BuildingTypes.Infected_Mole, "Infected Mole" },                                                           // Infected Drainage Mole - One of the mythical guardians of the forest - still alive, but plagued by a mysterious disease. The Blightrot has taken over his mind, causing an unstoppable rage. You can try to heal him... or whisper prayers to its new masters.
+		{ BuildingTypes.Infected_Tree, "Infected Tree" },                                                           // Withered Tree - The once mighty tree has been deformed by the Blightrot living in its root system. The Blightrot poisons the tree's tissues, leading to its long-lasting degradation.
+		{ BuildingTypes.Kelpie, "Kelpie" },                                                                         // River Kelpie - A legendary, shape-shifting aquatic spirit that lurks near water and mesmerizes travelers. It is said that whoever acquires the kelpie's bridle will be able to control it.
+		{ BuildingTypes.Kiln, "Kiln" },                                                                             // Kiln - Can produce:  <sprite name=[crafting] coal> Coal (<sprite name=grade3>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade1>), <sprite name=[food processed] jerky> Jerky (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Lamp, "Lamp" },                                                                             // Lamp - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Leaking_Cauldron, "Leaking Cauldron" },                                                     // Leaking Cauldron - An old, broken piece of Rainpunk technology. It's contaminating the soil around it.
+		{ BuildingTypes.Leatherworks, "Leatherworks" },                                                             // Leatherworker - Can produce:  <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade3>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Lightning_Catcher, "Lightning Catcher" },                                                   // Lightning Catcher - A weird contraption that attracts lightning. Its proximity to the settlement might have grave consequences.
+		{ BuildingTypes.Lizard_House, "Lizard House" },                                                             // Lizard House - Building specifically made for Lizards. Has to be built near a Hearth. Can house 2 residents.
+		{ BuildingTypes.Lizard_Post, "Lizard Post" },                                                               // Lizard Post - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
+		{ BuildingTypes.LizardBattleground_T1, "LizardBattleground_T1" },                                           // Fallen Lizard Hunters - A group of fallen Lizard hunters... The sight causes unrest amongst the Lizard population.
+		{ BuildingTypes.Lore_Tablet_1, "Lore Tablet 1" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Born in the Blightstorm, she will climb the Red Mountain. The fires beneath her feet shall hiss her name. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lore_Tablet_2, "Lore Tablet 2" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Though sealed beneath the muddy ground, their voices ring loud and clear. Maddening, alluring. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lore_Tablet_3, "Lore Tablet 3" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> The true rulers of this world shall rise again and break the seals that bind them. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lore_Tablet_4, "Lore Tablet 4" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Envy the lesser species, for they do not yet know what lies beneath. But in time, they will understand. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lore_Tablet_5, "Lore Tablet 5" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> It pours, yet it does not flood. As if the earth itself greedily drinks every last drop of this eternal curse. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lore_Tablet_6, "Lore Tablet 6" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Embrace the Eternal Rain, for it powers the engine of progress. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lore_Tablet_7, "Lore Tablet 7" },                                                           // Inscribed Monolith - <color=#D6E54A>Harmony.</color> Don't let the pleasant sparking of the raindrops fool you. This is just the first sign of your flesh rotting. Counts as 2 decorations of its type.
+		{ BuildingTypes.Lumbermill, "Lumbermill" },                                                                 // Lumber Mill - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade3>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade1>), <sprite name=[packs] pack of trade goods> Pack of Trade Goods (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Main_Storage_not_buildable, "Main Storage (not-buildable)" },                               // Main Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
+		{ BuildingTypes.Makeshift_Post, "Makeshift Post" },                                                         // Makeshift Post - Can produce:  <sprite name=[packs] pack of crops> Pack of Crops (<sprite name=grade0>), <sprite name=[packs] pack of provisions> Pack of Provisions (<sprite name=grade0>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade0>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Manufactory, "Manufactory" },                                                               // Manufactory - Can produce:  <sprite name=[needs] training gear> Training Gear (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>), <sprite name=[packs] pack of provisions> Pack of Provisions (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Market, "Market" },                                                                         // Market - A place where villagers can fulfill their need for: Luxury,  Treatment. Passive effects: Market Carts.
+		{ BuildingTypes.Merchant_Ship_Wreck, "Merchant Ship Wreck" },                                               // Merchant Shipwreck - How powerful must the storm surge have been to carry this shattered wreck all the way here? Perhaps in the distant past, there was a sea here? It looks as if it’s been lying here for centuries. Strange voices can be heard coming from below deck...
+		{ BuildingTypes.Mine, "Mine" },                                                                             // Mine - Can only be placed on coal and ore veins. Digs up <sprite name="[metal] copper ore"> copper ore and <sprite name="[crafting] coal"> coal.
+		{ BuildingTypes.Mistworm_T1, "Mistworm_T1" },                                                               // Hungry Mistworm - A small, yet dangerous creature. It normally lives underground or hides in the mist, but this one seems to be more courageous than its kin.
+		{ BuildingTypes.Mole, "Mole" },                                                                             // Drainage Mole - A wild beast that usually lives underground. It was forced to the surface for some reason.
+		{ BuildingTypes.Monastery, "Monastery" },                                                                   // Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
+		{ BuildingTypes.Monolith, "Monolith" },                                                                     // Obelisk - A mystical stone monument. Unknown runes are carved all over its surface.
+		{ BuildingTypes.Monolith_Positive, "Monolith Positive" },                                                   // Obelisk - <color=#8AAFFD>Aesthetics.</color> The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
+		{ BuildingTypes.Mushroom_Decor, "Mushroom Decor" },                                                         // Decorative Fungus - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Nightfern, "Nightfern" },                                                                   // Nightfern - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Noxious_Machinery, "Noxious Machinery" },                                                   // Noxious Machinery - A damaged and abandoned rainpunk contraption. The area was probably deserted because of a significant explosion risk. The machine's valves emit a distinct Blightrot odor.
+		{ BuildingTypes.Path, "Path" },                                                                             // Path - A simple path, doesn't cost any resources. Grants a 5% speed increase to villagers.
+		{ BuildingTypes.Paved_Road, "Paved Road" },                                                                 // Paved Road - A road made out of stone. Grants a 15% speed increase to villagers. Road construction cost is not affected by effects, modifiers, or perks.
+		{ BuildingTypes.PetrifiedTree_T1, "PetrifiedTree_T1" },                                                     // Petrified Tree - A strange tree that’s been turned to stone by the rain. It's radiating its sickness to the other trees around it.
+		{ BuildingTypes.Pipe, "Pipe" },                                                                             // Pipe - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Pipe_Cross, "Pipe Cross" },                                                                 // Pipe Cross - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Pipe_Elbow, "Pipe Elbow" },                                                                 // Pipe Elbow - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Pipe_End, "Pipe End" },                                                                     // Pipe Ending - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Pipe_T_Cross, "Pipe T Cross" },                                                             // Pipe T-Connector - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Pipe_Valve, "Pipe Valve" },                                                                 // Valve - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Plantation, "Plantation" },                                                                 // Plantation - Uses nearby farm fields to grow  <sprite name=[food raw] berries> Berries (<sprite name=grade2>), <sprite name=[mat raw] plant fibre> Plant Fiber (<sprite name=grade2>).
+		{ BuildingTypes.Press, "Press" },                                                                           // Press - Can produce:  <sprite name=[crafting] oil> Oil (<sprite name=grade3>), <sprite name=[crafting] flour> Flour (<sprite name=grade1>), <sprite name=[packs] pack of luxury goods> Pack of Luxury Goods (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Primitive_Foragers_Camp, "Primitive Forager's Camp" },                                      // Small Foragers' Camp - A small, crude version of a specialized camp. It's slower, and can only gather from small nodes. Can collect:  <sprite name=[food raw] grain> Grain (<sprite name=grade1>), <sprite name=[food raw] roots> Roots (<sprite name=grade1>), <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade1>).
+		{ BuildingTypes.Primitive_Herbalists_Camp, "Primitive Herbalist's Camp" },                                  // Small Herbalists' Camp - A small, crude version of a specialized camp. It's slower, and can only gather from small nodes. Can collect:  <sprite name=[food raw] herbs> Herbs (<sprite name=grade1>), <sprite name=[food raw] berries> Berries (<sprite name=grade1>), <sprite name=[food raw] mushrooms> Mushrooms (<sprite name=grade1>).
+		{ BuildingTypes.Primitive_Trappers_Camp, "Primitive Trapper's Camp" },                                      // Small Trappers' Camp - A small, crude version of a specialized camp. It's slower, and can only gather from small nodes. Can collect:  <sprite name=[food raw] meat> Meat (<sprite name=grade1>), <sprite name=[food raw] insects> Insects (<sprite name=grade1>), <sprite name=[food raw] eggs> Eggs (<sprite name=grade1>).
+		{ BuildingTypes.Provisioner, "Provisioner" },                                                               // Provisioner - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade2>), <sprite name=[packs] pack of provisions> Pack of Provisions (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Purged_Beaver_House, "Purged Beaver House" },                                               // Purified Beaver House - Building specifically made for Beavers. Has to be built near a Hearth. Can house 6 residents.
+		{ BuildingTypes.Purged_Fox_House, "Purged Fox House" },                                                     // Purified Fox House - Building specifically made for Foxes. Has to be built near a Hearth. Can house 6 residents.
+		{ BuildingTypes.Purged_Harpy_House, "Purged Harpy House" },                                                 // Purified Harpy House - Building specifically made for Harpies. Has to be built near a Hearth. Can house 6 residents.
+		{ BuildingTypes.Purged_Human_House, "Purged Human House" },                                                 // Purified Human House - Building specifically made for Humans. Has to be built near a Hearth. Can house 6 residents.
+		{ BuildingTypes.Purged_Lizard_House, "Purged Lizard House" },                                               // Purified Lizard House - Building specifically made for Lizards. Has to be built near a Hearth. Can house 6 residents.
+		{ BuildingTypes.Rain_Catcher, "Rain Catcher" },                                                             // Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+		{ BuildingTypes.Rain_Mill, "Rain Mill" },                                                                   // Rain Mill - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade3>), <sprite name=[needs] scrolls> Scrolls (<sprite name=grade1>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Rain_Totem, "Rain Totem" },                                                                 // Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
+		{ BuildingTypes.Rain_Totem_Positive, "Rain Totem Positive" },                                               // Converted Rain Totem - <color=#D6E54A>Harmony.</color> The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
+		{ BuildingTypes.Rainpunk_Barrels, "Rainpunk Barrels" },                                                     // Rainpunk Barrels - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Rainpunk_Drill_Coal, "Rainpunk Drill - Coal" },                                             // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+		{ BuildingTypes.Rainpunk_Drill_Copper, "Rainpunk Drill - Copper" },                                         // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+		{ BuildingTypes.Rainpunk_Foundry, "Rainpunk Foundry" },                                                     // Rainpunk Foundry - A very advanced piece of technology. Can produce  <sprite name=[mat processed] parts> Parts (<sprite name=grade3>), <sprite name=hearth parts> Wildfire Essence (<sprite name=grade3>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.RainpunkFactory, "RainpunkFactory" },                                                       // Destroyed Rainpunk Foundry - An old, abandoned piece of advanced Rainpunk technology. It seems extremely unstable - but maybe it can be rebuilt...
+		{ BuildingTypes.Ranch, "Ranch" },                                                                           // Ranch - Can produce:  <sprite name=[food raw] meat> Meat (<sprite name=grade1>), <sprite name=[mat raw] leather> Leather (<sprite name=grade1>), <sprite name=[food raw] eggs> Eggs (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Reinforced_Road, "Reinforced Road" },                                                       // Reinforced Road - A road reinforced with copper. Grants a 25% speed increase to villagers. Road construction cost is not affected by effects, modifiers, or perks.
+		{ BuildingTypes.RewardChest_T1, "RewardChest_T1" },                                                         // Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+		{ BuildingTypes.RewardChest_T2, "RewardChest_T2" },                                                         // Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+		{ BuildingTypes.RewardChest_T3, "RewardChest_T3" },                                                         // Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+		{ BuildingTypes.Road_Sign, "Road Sign" },                                                                   // Road Sign - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Ruined_Advanced_Rain_Catcher, "Ruined Advanced Rain Catcher" },                             // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Advanced_Rain_Catcher_no_Reward, "Ruined Advanced Rain Catcher (no reward)" },       // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Alchemist, "Ruined Alchemist" },                                                     // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Alchemist_no_Reward, "Ruined Alchemist (no reward)" },                               // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Apothecary, "Ruined Apothecary" },                                                   // Apothecary - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Apothecary_no_Reward, "Ruined Apothecary (no reward)" },                             // Apothecary - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Artisan, "Ruined Artisan" },                                                         // Artisan - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Artisan_no_Reward, "Ruined Artisan (no reward)" },                                   // Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Bakery, "Ruined Bakery" },                                                           // Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Bakery_no_Reward, "Ruined Bakery (no reward)" },                                     // Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Bath_House, "Ruined Bath House" },                                                   // Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Bath_House_no_Reward, "Ruined Bath House (no reward)" },                             // Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Beanery, "Ruined Beanery" },                                                         // Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Beanery_no_Reward, "Ruined Beanery (no reward)" },                                   // Beanery - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Beaver_House, "Ruined Beaver House" },                                               // Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Beaver_House_no_Reward, "Ruined Beaver House (no reward)" },                         // Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Big_Shelter, "Ruined Big Shelter" },                                                 // Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Big_Shelter_no_Reward, "Ruined Big Shelter (no reward)" },                           // Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Brewery, "Ruined Brewery" },                                                         // Brewery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Brewery_no_Reward, "Ruined Brewery (no reward)" },                                   // Brewery - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Brick_Oven, "Ruined Brick Oven" },                                                   // Brick Oven - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Brick_Oven_no_Reward, "Ruined Brick Oven (no reward)" },                             // Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Brickyard, "Ruined Brickyard" },                                                     // Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Brickyard_no_Reward, "Ruined Brickyard (no reward)" },                               // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Butcher, "Ruined Butcher" },                                                         // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Butcher_no_Reward, "Ruined Butcher (no reward)" },                                   // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Carpenter, "Ruined Carpenter" },                                                     // Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Carpenter_no_Reward, "Ruined Carpenter (no reward)" },                               // Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Cellar, "Ruined Cellar" },                                                           // Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Cellar_no_Reward, "Ruined Cellar (no reward)" },                                     // Cellar - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Clan_Hall, "Ruined Clan Hall" },                                                     // Clan Hall - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Clan_Hall_no_Reward, "Ruined Clan Hall (no reward)" },                               // Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Clay_Pit, "Ruined Clay Pit" },                                                       // Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Clay_Pit_no_Reward, "Ruined Clay Pit (no reward)" },                                 // Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Cookhouse, "Ruined Cookhouse" },                                                     // Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Cookhouse_no_Reward, "Ruined Cookhouse (no reward)" },                               // Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Cooperage, "Ruined Cooperage" },                                                     // Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Cooperage_no_Reward, "Ruined Cooperage (no reward)" },                               // Cooperage - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Crude_Workstation_no_Reward, "Ruined Crude Workstation (no reward)" },               // Crude Workstation - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Distillery, "Ruined Distillery" },                                                   // Distillery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Distillery_no_Reward, "Ruined Distillery (no reward)" },                             // Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Druid, "Ruined Druid" },                                                             // Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Druid_no_Reward, "Ruined Druid (no reward)" },                                       // Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Explorers_Lodge, "Ruined Explorers Lodge" },                                         // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Explorers_Lodge_no_Reward, "Ruined Explorers Lodge (no reward)" },                   // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Farm, "Ruined Farm" },                                                               // Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Farm_no_Reward, "Ruined Farm (no reward)" },                                         // Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Field_Kitchen_no_Reward, "Ruined Field Kitchen (no reward)" },                       // Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Finesmith, "Ruined Finesmith" },                                                     // Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Finesmith_no_Reward, "Ruined Finesmith (no reward)" },                               // Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Foragers_Camp, "Ruined Foragers Camp" },                                             // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Foragers_Camp_no_Reward, "Ruined Foragers Camp (no reward)" },                       // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Foragers_Camp_Primitive_no_Reward, "Ruined Foragers Camp Primitive (no reward)" },   // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Forum, "Ruined Forum" },                                                             // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Forum_no_Reward, "Ruined Forum (no reward)" },                                       // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Fox_House, "Ruined Fox House" },                                                     // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Fox_House_no_Reward, "Ruined Fox House (no reward)" },                               // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Furnace, "Ruined Furnace" },                                                         // Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Furnace_no_Reward, "Ruined Furnace (no reward)" },                                   // Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Granary, "Ruined Granary" },                                                         // Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Granary_no_Reward, "Ruined Granary (no reward)" },                                   // Granary - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Greenhouse, "Ruined Greenhouse" },                                                   // Greenhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Greenhouse_no_Reward, "Ruined Greenhouse (no reward)" },                             // Greenhouse - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Grill, "Ruined Grill" },                                                             // Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Grill_no_Reward, "Ruined Grill (no reward)" },                                       // Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Grove, "Ruined Grove" },                                                             // Forester's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Grove_no_Reward, "Ruined Grove (no reward)" },                                       // Forester's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Guild_House, "Ruined Guild House" },                                                 // Guild House - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Guild_House_no_Reward, "Ruined Guild House (no reward)" },                           // Guild House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Harpy_House, "Ruined Harpy House" },                                                 // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Harpy_House_no_Reward, "Ruined Harpy House (no reward)" },                           // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Harvester_Camp, "Ruined Harvester Camp" },                                           // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Harvester_Camp_no_Reward, "Ruined Harvester Camp (no reward)" },                     // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Hearth, "Ruined Hearth" },                                                           // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Hearth_no_Reward, "Ruined Hearth (no reward)" },                                     // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Herb_Garden, "Ruined Herb Garden" },                                                 // Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Herb_Garden_no_Reward, "Ruined Herb Garden (no reward)" },                           // Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Herbalist_Camp, "Ruined Herbalist Camp" },                                           // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Herbalist_Camp_no_Reward, "Ruined Herbalist Camp (no reward)" },                     // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Herbalist_Camp_Primitive_no_Reward, "Ruined Herbalist Camp primitive (no reward)" }, // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Human_House, "Ruined Human House" },                                                 // Human House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Human_House_no_Reward, "Ruined Human House (no reward)" },                           // Human House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Kiln, "Ruined Kiln" },                                                               // Kiln - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Kiln_no_Reward, "Ruined Kiln (no reward)" },                                         // Kiln - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Leatherworks, "Ruined Leatherworks" },                                               // Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Leatherworks_no_Reward, "Ruined Leatherworks (no reward)" },                         // Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Lizard_House, "Ruined Lizard House" },                                               // Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Lizard_House_no_Reward, "Ruined Lizard House (no reward)" },                         // Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Lumbermill, "Ruined Lumbermill" },                                                   // Lumber Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Lumbermill_no_Reward, "Ruined Lumbermill (no reward)" },                             // Lumber Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Makeshift_Post_no_Reward, "Ruined Makeshift Post (no reward)" },                     // Makeshift Post - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Manufatory, "Ruined Manufatory" },                                                   // Manufactory - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Manufatory_no_Reward, "Ruined Manufatory (no reward)" },                             // Manufactory - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Market, "Ruined Market" },                                                           // Market - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Market_no_Reward, "Ruined Market (no reward)" },                                     // Market - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Mine_no_Reward, "Ruined Mine (no reward)" },                                         // Mine - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Monastery, "Ruined Monastery" },                                                     // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Monastery_no_Reward, "Ruined Monastery (no reward)" },                               // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Plantation, "Ruined Plantation" },                                                   // Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Plantation_no_Reward, "Ruined Plantation (no reward)" },                             // Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Press, "Ruined Press" },                                                             // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Press_no_Reward, "Ruined Press (no reward)" },                                       // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Provisioner, "Ruined Provisioner" },                                                 // Provisioner - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Provisioner_no_Reward, "Ruined Provisioner (no reward)" },                           // Provisioner - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Rain_Catcher_no_Reward, "Ruined Rain Catcher (no reward)" },                         // Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Rainmill, "Ruined Rainmill" },                                                       // Rain Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Rainmill_no_Reward, "Ruined Rainmill (no reward)" },                                 // Rain Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Ranch, "Ruined Ranch" },                                                             // Ranch - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Ranch_no_Reward, "Ruined Ranch (no reward)" },                                       // Ranch - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Scribe, "Ruined Scribe" },                                                           // Scribe - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Scribe_no_Reward, "Ruined Scribe (no reward)" },                                     // Scribe - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Sewer, "Ruined Sewer" },                                                             // Clothier - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Sewer_no_Reward, "Ruined Sewer (no reward)" },                                       // Clothier - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Shelter, "Ruined Shelter" },                                                         // Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Shelter_no_Reward, "Ruined Shelter (no reward)" },                                   // Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_SmallFarm, "Ruined SmallFarm" },                                                     // Small Farm - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_SmallFarm_no_Reward, "Ruined SmallFarm (no reward)" },                               // Small Farm - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Smelter, "Ruined Smelter" },                                                         // Smelter - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Smelter_no_Reward, "Ruined Smelter (no reward)" },                                   // Smelter - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Smithy, "Ruined Smithy" },                                                           // Smithy - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Smithy_no_Reward, "Ruined Smithy (no reward)" },                                     // Smithy - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Smokehouse, "Ruined Smokehouse" },                                                   // Smokehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Smokehouse_no_Reward, "Ruined Smokehouse (no reward)" },                             // Smokehouse - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Stamping_Mill, "Ruined Stamping Mill" },                                             // Stamping Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Stamping_Mill_no_Reward, "Ruined Stamping Mill (no reward)" },                       // Stamping Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Stonecutter_Camp, "Ruined Stonecutter Camp" },                                       // Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Stonecutter_Camp_no_Reward, "Ruined Stonecutter Camp (no reward)" },                 // Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Storage, "Ruined Storage" },                                                         // Small Warehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Storage_no_Reward, "Ruined Storage (no reward)" },                                   // Small Warehouse - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Supplier, "Ruined Supplier" },                                                       // Supplier - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Supplier_no_Reward, "Ruined Supplier (no reward)" },                                 // Supplier - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Tavern, "Ruined Tavern" },                                                           // Tavern - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Tavern_no_Reward, "Ruined Tavern (no reward)" },                                     // Tavern - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Tea_Doctor, "Ruined Tea Doctor" },                                                   // Tea Doctor - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Tea_Doctor_no_Reward, "Ruined Tea Doctor (no reward)" },                             // Tea Doctor - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Tea_House, "Ruined Tea House" },                                                     // Teahouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Tea_House_no_Reward, "Ruined Tea House (no reward)" },                               // Teahouse - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Temple, "Ruined Temple" },                                                           // Temple - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Temple_no_Reward, "Ruined Temple (no reward)" },                                     // Temple - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Tinctury, "Ruined Tinctury" },                                                       // Tinctury - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Tinctury_no_Reward, "Ruined Tinctury (no reward)" },                                 // Tinctury - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Tinkerer, "Ruined Tinkerer" },                                                       // Tinkerer - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Tinkerer_no_Reward, "Ruined Tinkerer (no reward)" },                                 // Tinkerer - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Toolshop, "Ruined Toolshop" },                                                       // Toolshop - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Toolshop_no_Reward, "Ruined Toolshop (no reward)" },                                 // Toolshop - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Trading_Post_no_Reward, "Ruined Trading Post (no reward)" },                         // Trading Post - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Trappers_Camp, "Ruined Trappers Camp" },                                             // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Trappers_Camp_no_Reward, "Ruined Trappers Camp (no reward)" },                       // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Trappers_Camp_Primitive_no_Reward, "Ruined Trappers Camp Primitive (no reward)" },   // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Weaver, "Ruined Weaver" },                                                           // Weaver - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Weaver_no_Reward, "Ruined Weaver (no reward)" },                                     // Weaver - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Woodcutters_Camp, "Ruined Woodcutters Camp" },                                       // Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Woodcutters_Camp_no_Reward, "Ruined Woodcutters Camp (no reward)" },                 // Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Workshop, "Ruined Workshop" },                                                       // Workshop - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Workshop_no_Reward, "Ruined Workshop (no reward)" },                                 // Workshop - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Sacrifice_Totem, "Sacrifice Totem" },                                                       // Totem of Denial - A religious structure built by the Fishmen. It interferes with the Hearth in the center of the settlement.
+		{ BuildingTypes.Sacrifice_Totem_Positive, "Sacrifice Totem Positive" },                                     // Converted Totem of Denial - <color=#D6E54A>Harmony.</color> Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
+		{ BuildingTypes.Scarlet_Decor, "Scarlet Decor" },                                                           // Thorny Reed - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Scorpion_1, "Scorpion 1" },                                                                 // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+		{ BuildingTypes.Scorpion_2, "Scorpion 2" },                                                                 // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+		{ BuildingTypes.Scorpion_3, "Scorpion 3" },                                                                 // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+		{ BuildingTypes.Scribe, "Scribe" },                                                                         // Scribe - Can produce:  <sprite name=[needs] scrolls> Scrolls (<sprite name=grade3>), <sprite name=[needs] ale> Ale (<sprite name=grade2>), <sprite name=[tools] simple tools> Tools (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Seal, "Seal" },                                                                             // Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
+		{ BuildingTypes.Seal_Guidepost, "Seal Guidepost" },                                                         // Guidance Stone - It is not known where the guidance stones came from or what their original purpose was, but they are imbued with magic and always point in the direction of a nearby seal.
+		{ BuildingTypes.Seal_Low_Diff, "Seal Low Diff" },                                                           // Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
+		{ BuildingTypes.Sealed_Biome_Shrine, "Sealed Biome Shrine" },                                               // Beacon Tower - A powerful, ancient structure that allows you to summon aid directly from the Citadel. Grants access to three types of temporary support abilities.
+		{ BuildingTypes.SealedTomb_T1, "SealedTomb_T1" },                                                           // Open Vault - An open entrance to an ancient dungeon. Strange sounds can be heard coming from inside.
+		{ BuildingTypes.Shelter, "Shelter" },                                                                       // Shelter - Can accommodate any villager, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 3 residents.
+		{ BuildingTypes.Signboard, "Signboard" },                                                                   // Signboard - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.Small_Hearth, "Small Hearth" },                                                             // Ancient Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
+		{ BuildingTypes.SmallFarm, "SmallFarm" },                                                                   // Small Farm - Uses nearby farm fields to grow  <sprite name=[food raw] vegetables> Vegetables (<sprite name=grade1>), <sprite name=[food raw] grain> Grain (<sprite name=grade2>).
+		{ BuildingTypes.Smelter, "Smelter" },                                                                       // Smelter - Can produce:  <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade3>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Smithy, "Smithy" },                                                                         // Smithy - Can produce:  <sprite name=[tools] simple tools> Tools (<sprite name=grade2>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade2>), <sprite name=[packs] pack of trade goods> Pack of Trade Goods (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Smokehouse, "Smokehouse" },                                                                 // Smokehouse - Can produce:  <sprite name=[food processed] jerky> Jerky (<sprite name=grade3>), <sprite name=[vessel] pottery> Pottery (<sprite name=grade1>), <sprite name=[needs] incense> Incense (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Snake_1, "Snake 1" },                                                                       // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+		{ BuildingTypes.Snake_2, "Snake 2" },                                                                       // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+		{ BuildingTypes.Snake_3, "Snake 3" },                                                                       // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+		{ BuildingTypes.Spider_1, "Spider 1" },                                                                     // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+		{ BuildingTypes.Spider_2, "Spider 2" },                                                                     // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+		{ BuildingTypes.Spider_3, "Spider 3" },                                                                     // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+		{ BuildingTypes.Stamping_Mill, "Stamping Mill" },                                                           // Stamping Mill - Can produce:  <sprite name=[vessel] pottery> Pottery (<sprite name=grade3>), <sprite name=[crafting] flour> Flour (<sprite name=grade2>), <sprite name=[metal] copper bar> Copper Bars (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Stonecutters_Camp, "Stonecutter's Camp" },                                                  // Stonecutters' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[mat raw] stone> Stone (<sprite name=grade2>), <sprite name=[mat raw] clay> Clay (<sprite name=grade2>), <sprite name=[crafting] sea marrow> Sea Marrow (<sprite name=grade2>).
+		{ BuildingTypes.Storage_buildable, "Storage (buildable)" },                                                 // Small Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
+		{ BuildingTypes.Stormbird_Positive, "Stormbird Positive" },                                                 // Tamed Stormbird - <color=#D6E54A>Harmony.</color> The nest of a tamed Stormbird. It provides 5 <sprite name="[food raw] eggs"> Eggs per minute and increases Harpy Resolve by +3. Counts as 16 decorations of its type.
+		{ BuildingTypes.Supplier, "Supplier" },                                                                     // Supplier - Can produce:  <sprite name=[crafting] flour> Flour (<sprite name=grade2>), <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Tavern, "Tavern" },                                                                         // Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
+		{ BuildingTypes.Tea_Doctor, "Tea Doctor" },                                                                 // Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Vitality.
+		{ BuildingTypes.Tea_House, "Tea House" },                                                                   // Teahouse - Can produce:  <sprite name=[needs] tea> Tea (<sprite name=grade3>), <sprite name=[food processed] porridge> Porridge (<sprite name=grade2>), <sprite name=[vessel] waterskin> Waterskins (<sprite name=grade1>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Temple, "Temple" },                                                                         // Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
+		{ BuildingTypes.Temporary_Hearth_buildable, "Temporary Hearth (buildable)" },                               // Small Hearth - Reduces Hostility and serves as a meeting place. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will use another Hearth instead. Can't be built too close to other Hearths.
+		{ BuildingTypes.Temporary_Hearth_not_buildable, "Temporary Hearth (not-buildable)" },                       // Small Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
+		{ BuildingTypes.Termite_Burrow, "Termite Burrow" },                                                         // Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
+		{ BuildingTypes.Termite_Burrow_Positive, "Termite Burrow Positive" },                                       // Termite Nest - <color=#D6E54A>Harmony.</color> A contained stonetooth termite burrow. Provides 5 <sprite name="[food raw] insects"> Insects per minute. Counts as 4 decorations of its type.
+		{ BuildingTypes.TI_AncientShrine_T1, "TI AncientShrine_T1" },                                               // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+		{ BuildingTypes.Tinctury, "Tinctury" },                                                                     // Tinctury - Can produce:  <sprite name=[needs] ale> Ale (<sprite name=grade2>), <sprite name=[needs] wine> Wine (<sprite name=grade2>), <sprite name=[crafting] pigment> Pigment (<sprite name=grade2>). Can use: <sprite name="[water] drizzle water"> Drizzle Water.
+		{ BuildingTypes.Tinkerer, "Tinkerer" },                                                                     // Tinkerer - Can produce:  <sprite name=[tools] simple tools> Tools (<sprite name=grade2>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade2>), <sprite name=[packs] pack of building materials> Pack of Building Materials (<sprite name=grade2>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Toolshop, "Toolshop" },                                                                     // Toolshop - Can produce:  <sprite name=[tools] simple tools> Tools (<sprite name=grade3>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade2>), <sprite name=[vessel] barrels> Barrels (<sprite name=grade1>). Can use: <sprite name="[water] storm water"> Storm Water.
+		{ BuildingTypes.Tower, "Tower" },                                                                           // Wall Crossing - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Town_Board, "Town Board" },                                                                 // Town Board - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+		{ BuildingTypes.Traders_Cemetery, "Traders Cemetery" },                                                     // Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
+		{ BuildingTypes.Trading_Post, "Trading Post" },                                                             // Trading Post - Traders from the Smoldering City can station here and offer their wares.
+		{ BuildingTypes.Trappers_Camp, "Trapper's Camp" },                                                          // Trappers' Camp - An advanced camp. Can gather large and giant resource nodes in addition to small ones. Can collect:  <sprite name=[food raw] meat> Meat (<sprite name=grade2>), <sprite name=[food raw] insects> Insects (<sprite name=grade2>), <sprite name=[food raw] eggs> Eggs (<sprite name=grade2>).
+		{ BuildingTypes.Umbrella, "Umbrella" },                                                                     // Umbrella - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
+		{ BuildingTypes.Wall, "Wall" },                                                                             // Wall - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Wall_Corner, "Wall Corner" },                                                               // Wall Corner - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.War_Beast_Cage, "War Beast Cage" },                                                         // Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
+		{ BuildingTypes.Water_Barrels, "Water Barrels" },                                                           // Water Barrels - <color=#49E058>Comfort.</color> Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
+		{ BuildingTypes.Water_Extractor, "Water Extractor" },                                                       // Geyser Pump - Used to extract and pump infused rainwater through underground pipes to production buildings, where it can be used to increase productivity. Must be placed on an active geyser. Has a tank capacity of 50.
+		{ BuildingTypes.Weaver, "Weaver" },                                                                         // Weaver - Can produce:  <sprite name=[mat processed] fabric> Fabric (<sprite name=grade3>), <sprite name=[needs] training gear> Training Gear (<sprite name=grade1>), <sprite name=[packs] pack of trade goods> Pack of Trade Goods (<sprite name=grade1>). Can use: <sprite name="[water] clearance water"> Clearance Water.
+		{ BuildingTypes.Well, "Well" },                                                                             // Overgrown Well - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
+		{ BuildingTypes.White_Stag, "White Stag" },                                                                 // Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+		{ BuildingTypes.White_Treasure_Stag, "White Treasure Stag" },                                               // Royal Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+		{ BuildingTypes.Wildfire, "Wildfire" },                                                                     // Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
+		{ BuildingTypes.Woodcutters_Camp, "Woodcutters Camp" },                                                     // Woodcutters' Camp - Starting point for woodcutters going out into the wild to cut down trees.
+		{ BuildingTypes.Workshop, "Workshop" },                                                                     // Workshop - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade2>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade0>). Can use: <sprite name="[water] storm water"> Storm Water.
+
 	};
 }

@@ -10,8 +10,9 @@ public enum OreTypes
 {
     Unknown = -1,
     None,
-	Coal_Ore,   // Coal Vein
-	Copper_Ore, // Copper Vein
+	Coal_Ore,   // Coal Vein - An effective source of fuel.
+	Copper_Ore, // Copper Vein - A soft and malleable metal, resistant to rain.
+
 
     MAX = 2
 }
@@ -62,7 +63,8 @@ public static class OreTypesExtensions
 
 	internal static readonly Dictionary<OreTypes, string> TypeToInternalName = new()
 	{
-		{ OreTypes.Coal_Ore, "Coal Ore" },     // Coal Vein
-		{ OreTypes.Copper_Ore, "Copper Ore" }, // Copper Vein
+		{ OreTypes.Coal_Ore, "Coal Ore" },     // Coal Vein - An effective source of fuel.
+		{ OreTypes.Copper_Ore, "Copper Ore" }, // Copper Vein - A soft and malleable metal, resistant to rain.
+
 	};
 }

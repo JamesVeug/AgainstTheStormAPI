@@ -10,34 +10,35 @@ public enum DifficultyTypes
 {
     Unknown = -1,
     None,
-	_0_Normal,               // Settler
-	_1_Hard,                 // Pioneer
-	_10_Ascension_VII,       // Prestige
-	_11_Ascension_VIII,      // Prestige
-	_12_Ascension_IX,        // Prestige
-	_13_Ascension_X,         // Prestige
-	_14_Ascension_XI,        // Prestige
-	_15_Ascension_XII,       // Prestige
-	_16_Ascension_XIII,      // Prestige
-	_17_Ascension_XIV,       // Prestige
-	_18_Ascension_XV,        // Prestige
-	_19_Ascension_XVI,       // Prestige
-	_2_Very_Hard,            // Veteran
-	_20_Ascension_XVII,      // Prestige
-	_21_Ascension_XVIII,     // Prestige
-	_22_Ascension_XIX,       // Prestige
-	_23_Ascension_XX,        // Prestige
-	_3_Impossible,           // Viceroy
-	_4_Ascension_I,          // Prestige
-	_5_Ascension_II,         // Prestige
-	_6_Ascension_III,        // Prestige
-	_7_Ascension_IV,         // Prestige
-	_8_Ascension_V,          // Prestige
-	_9_Ascension_VI,         // Prestige
-	Tutorial_I_Difficulty,   // Tutorial
-	Tutorial_II_Difficulty,  // Tutorial
-	Tutorial_III_Difficulty, // Tutorial
-	Tutorial_IV_Difficulty,  // Tutorial
+	Ascension_I,             // Prestige 1 - More Reputation required and harder Orders.
+	Ascension_II,            // Prestige 2 - The storm lasts longer.
+	Ascension_III,           // Prestige 3 - Blightrot appears every third Clearance season.
+	Ascension_IV,            // Prestige 4 - Blueprint rerolls cost more.
+	Ascension_IX,            // Prestige 9 - Villagers work slower on Events.
+	Ascension_V,             // Prestige 5 - Villagers with low Resolve leave faster.
+	Ascension_VI,            // Prestige 6 - Buildings cost more.
+	Ascension_VII,           // Prestige 7 - Higher food consumption.
+	Ascension_VIII,          // Prestige 8 - Villagers consume more luxury goods.
+	Ascension_X,             // Prestige 10 - Goods are worth less to traders.
+	Ascension_XI,            // Prestige 11 - Blightrot has a stronger impact.
+	Ascension_XII,           // Prestige 12 - Fewer blueprints to choose from.
+	Ascension_XIII,          // Prestige 13 - Fewer cornerstone choices.
+	Ascension_XIV,           // Prestige 14 - Impatience falls less on gaining Reputation.
+	Ascension_XIX,           // Prestige 19 - Fee for each discovered glade.
+	Ascension_XV,            // Prestige 15 - More Resolve needed to gain Reputation.
+	Ascension_XVI,           // Prestige 16 - One fewer blueprint to begin with.
+	Ascension_XVII,          // Prestige 17 - Stronger hunger penalty.
+	Ascension_XVIII,         // Prestige 18 - Sacrifices in the Hearth cost more.
+	Ascension_XX,            // Prestige 20 - Higher penalty for losing villagers.
+	Hard,                    // Pioneer - More Reputation required to win.
+	Impossible,              // Viceroy - Blightrot & Corruption
+	Normal,                  // Settler - Villagers eat less food.
+	Tutorial_I_Difficulty,   // Tutorial - No additional modifiers
+	Tutorial_II_Difficulty,  // Tutorial - No additional modifiers
+	Tutorial_III_Difficulty, // Tutorial - Villagers eat less food.
+	Tutorial_IV_Difficulty,  // Tutorial - Blightrot & Corruption
+	Very_Hard,               // Veteran - Blightrot & Corruption
+
 
     MAX = 28
 }
@@ -52,7 +53,7 @@ public static class DifficultyTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of DifficultyTypes: " + type);
-		return TypeToInternalName[DifficultyTypes._0_Normal];
+		return TypeToInternalName[DifficultyTypes.Ascension_I];
 	}
 	
 	public static DifficultyModel ToDifficultyModel(this string name)
@@ -88,33 +89,34 @@ public static class DifficultyTypesExtensions
 
 	internal static readonly Dictionary<DifficultyTypes, string> TypeToInternalName = new()
 	{
-		{ DifficultyTypes._0_Normal, "0 Normal" },                              // Settler
-		{ DifficultyTypes._1_Hard, "1 Hard" },                                  // Pioneer
-		{ DifficultyTypes._10_Ascension_VII, "10 Ascension VII" },              // Prestige
-		{ DifficultyTypes._11_Ascension_VIII, "11 Ascension VIII" },            // Prestige
-		{ DifficultyTypes._12_Ascension_IX, "12 Ascension IX" },                // Prestige
-		{ DifficultyTypes._13_Ascension_X, "13 Ascension X" },                  // Prestige
-		{ DifficultyTypes._14_Ascension_XI, "14 Ascension XI" },                // Prestige
-		{ DifficultyTypes._15_Ascension_XII, "15 Ascension XII" },              // Prestige
-		{ DifficultyTypes._16_Ascension_XIII, "16 Ascension XIII" },            // Prestige
-		{ DifficultyTypes._17_Ascension_XIV, "17 Ascension XIV" },              // Prestige
-		{ DifficultyTypes._18_Ascension_XV, "18 Ascension XV" },                // Prestige
-		{ DifficultyTypes._19_Ascension_XVI, "19 Ascension XVI" },              // Prestige
-		{ DifficultyTypes._2_Very_Hard, "2 Very Hard" },                        // Veteran
-		{ DifficultyTypes._20_Ascension_XVII, "20 Ascension XVII" },            // Prestige
-		{ DifficultyTypes._21_Ascension_XVIII, "21 Ascension XVIII" },          // Prestige
-		{ DifficultyTypes._22_Ascension_XIX, "22 Ascension XIX" },              // Prestige
-		{ DifficultyTypes._23_Ascension_XX, "23 Ascension XX" },                // Prestige
-		{ DifficultyTypes._3_Impossible, "3 Impossible" },                      // Viceroy
-		{ DifficultyTypes._4_Ascension_I, "4 Ascension I" },                    // Prestige
-		{ DifficultyTypes._5_Ascension_II, "5 Ascension II" },                  // Prestige
-		{ DifficultyTypes._6_Ascension_III, "6 Ascension III" },                // Prestige
-		{ DifficultyTypes._7_Ascension_IV, "7 Ascension IV" },                  // Prestige
-		{ DifficultyTypes._8_Ascension_V, "8 Ascension V" },                    // Prestige
-		{ DifficultyTypes._9_Ascension_VI, "9 Ascension VI" },                  // Prestige
-		{ DifficultyTypes.Tutorial_I_Difficulty, "Tutorial I Difficulty" },     // Tutorial
-		{ DifficultyTypes.Tutorial_II_Difficulty, "Tutorial II Difficulty" },   // Tutorial
-		{ DifficultyTypes.Tutorial_III_Difficulty, "Tutorial III Difficulty" }, // Tutorial
-		{ DifficultyTypes.Tutorial_IV_Difficulty, "Tutorial IV Difficulty" },   // Tutorial
+		{ DifficultyTypes.Ascension_I, "4 Ascension I" },                       // Prestige 1 - More Reputation required and harder Orders.
+		{ DifficultyTypes.Ascension_II, "5 Ascension II" },                     // Prestige 2 - The storm lasts longer.
+		{ DifficultyTypes.Ascension_III, "6 Ascension III" },                   // Prestige 3 - Blightrot appears every third Clearance season.
+		{ DifficultyTypes.Ascension_IV, "7 Ascension IV" },                     // Prestige 4 - Blueprint rerolls cost more.
+		{ DifficultyTypes.Ascension_IX, "12 Ascension IX" },                    // Prestige 9 - Villagers work slower on Events.
+		{ DifficultyTypes.Ascension_V, "8 Ascension V" },                       // Prestige 5 - Villagers with low Resolve leave faster.
+		{ DifficultyTypes.Ascension_VI, "9 Ascension VI" },                     // Prestige 6 - Buildings cost more.
+		{ DifficultyTypes.Ascension_VII, "10 Ascension VII" },                  // Prestige 7 - Higher food consumption.
+		{ DifficultyTypes.Ascension_VIII, "11 Ascension VIII" },                // Prestige 8 - Villagers consume more luxury goods.
+		{ DifficultyTypes.Ascension_X, "13 Ascension X" },                      // Prestige 10 - Goods are worth less to traders.
+		{ DifficultyTypes.Ascension_XI, "14 Ascension XI" },                    // Prestige 11 - Blightrot has a stronger impact.
+		{ DifficultyTypes.Ascension_XII, "15 Ascension XII" },                  // Prestige 12 - Fewer blueprints to choose from.
+		{ DifficultyTypes.Ascension_XIII, "16 Ascension XIII" },                // Prestige 13 - Fewer cornerstone choices.
+		{ DifficultyTypes.Ascension_XIV, "17 Ascension XIV" },                  // Prestige 14 - Impatience falls less on gaining Reputation.
+		{ DifficultyTypes.Ascension_XIX, "22 Ascension XIX" },                  // Prestige 19 - Fee for each discovered glade.
+		{ DifficultyTypes.Ascension_XV, "18 Ascension XV" },                    // Prestige 15 - More Resolve needed to gain Reputation.
+		{ DifficultyTypes.Ascension_XVI, "19 Ascension XVI" },                  // Prestige 16 - One fewer blueprint to begin with.
+		{ DifficultyTypes.Ascension_XVII, "20 Ascension XVII" },                // Prestige 17 - Stronger hunger penalty.
+		{ DifficultyTypes.Ascension_XVIII, "21 Ascension XVIII" },              // Prestige 18 - Sacrifices in the Hearth cost more.
+		{ DifficultyTypes.Ascension_XX, "23 Ascension XX" },                    // Prestige 20 - Higher penalty for losing villagers.
+		{ DifficultyTypes.Hard, "1 Hard" },                                     // Pioneer - More Reputation required to win.
+		{ DifficultyTypes.Impossible, "3 Impossible" },                         // Viceroy - Blightrot & Corruption
+		{ DifficultyTypes.Normal, "0 Normal" },                                 // Settler - Villagers eat less food.
+		{ DifficultyTypes.Tutorial_I_Difficulty, "Tutorial I Difficulty" },     // Tutorial - No additional modifiers
+		{ DifficultyTypes.Tutorial_II_Difficulty, "Tutorial II Difficulty" },   // Tutorial - No additional modifiers
+		{ DifficultyTypes.Tutorial_III_Difficulty, "Tutorial III Difficulty" }, // Tutorial - Villagers eat less food.
+		{ DifficultyTypes.Tutorial_IV_Difficulty, "Tutorial IV Difficulty" },   // Tutorial - Blightrot & Corruption
+		{ DifficultyTypes.Very_Hard, "2 Very Hard" },                           // Veteran - Blightrot & Corruption
+
 	};
 }

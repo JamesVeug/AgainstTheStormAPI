@@ -11,16 +11,17 @@ public enum BiomeTypes
     Unknown = -1,
     None,
 	Capital,                // Citadel
-	Coral_Forest,           // Coral Forest
-	Cursed_Royal_Woodlands, // Cursed Royal Woodlands
-	Moorlands,              // Scarlet Orchard
-	Royal_Woodlands,        // Royal Woodlands
-	Sealed_Biome,           // Sealed Forest
-	The_Marshlands,         // The Marshlands
-	Tutorial_I,             // Tutorial
-	Tutorial_II,            // Tutorial
-	Tutorial_III,           // Tutorial
-	Tutorial_IV,            // Tutorial
+	Coral_Forest,           // Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
+	Cursed_Royal_Woodlands, // Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
+	Moorlands,              // Scarlet Orchard - A beautiful yet dangerous land that is colored a strange shade of crimson. It's called the Herb Garden of the Kingdom due to its abundance of herbs, berries, and roots.
+	Royal_Woodlands,        // Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
+	Sealed_Biome,           // Sealed Forest - Somewhere in this thick and dark forest, an ancient seal is hidden. Even the Ancients, in all their might and glory, couldn't defeat the creatures slumbering below - so they just imprisoned them. Over millennia, their sinister power gradually seeped to the surface, infecting the fauna and flora of this region. Viceroys don't embark here to establish settlements or gain reputation - their main goal is simply to find and close the seal.
+	The_Marshlands,         // The Marshlands - A harsh and cold land that has been claimed by many different, and extremely resilient species of fungi. The ground here is extremely hard and rocky, making it difficult to farm. This region is most famous for the giant organisms that can be found in its forests.
+	Tutorial_I,             // Tutorial - Tutorial
+	Tutorial_II,            // Tutorial - Tutorial
+	Tutorial_III,           // Tutorial - Tutorial
+	Tutorial_IV,            // Tutorial - Tutorial
+
 
     MAX = 11
 }
@@ -72,15 +73,16 @@ public static class BiomeTypesExtensions
 	internal static readonly Dictionary<BiomeTypes, string> TypeToInternalName = new()
 	{
 		{ BiomeTypes.Capital, "Capital" },                               // Citadel
-		{ BiomeTypes.Coral_Forest, "Coral Forest" },                     // Coral Forest
-		{ BiomeTypes.Cursed_Royal_Woodlands, "Cursed Royal Woodlands" }, // Cursed Royal Woodlands
-		{ BiomeTypes.Moorlands, "Moorlands" },                           // Scarlet Orchard
-		{ BiomeTypes.Royal_Woodlands, "Royal Woodlands" },               // Royal Woodlands
-		{ BiomeTypes.Sealed_Biome, "Sealed Biome" },                     // Sealed Forest
-		{ BiomeTypes.The_Marshlands, "The Marshlands" },                 // The Marshlands
-		{ BiomeTypes.Tutorial_I, "Tutorial I" },                         // Tutorial
-		{ BiomeTypes.Tutorial_II, "Tutorial II" },                       // Tutorial
-		{ BiomeTypes.Tutorial_III, "Tutorial III" },                     // Tutorial
-		{ BiomeTypes.Tutorial_IV, "Tutorial IV" },                       // Tutorial
+		{ BiomeTypes.Coral_Forest, "Coral Forest" },                     // Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
+		{ BiomeTypes.Cursed_Royal_Woodlands, "Cursed Royal Woodlands" }, // Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
+		{ BiomeTypes.Moorlands, "Moorlands" },                           // Scarlet Orchard - A beautiful yet dangerous land that is colored a strange shade of crimson. It's called the Herb Garden of the Kingdom due to its abundance of herbs, berries, and roots.
+		{ BiomeTypes.Royal_Woodlands, "Royal Woodlands" },               // Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
+		{ BiomeTypes.Sealed_Biome, "Sealed Biome" },                     // Sealed Forest - Somewhere in this thick and dark forest, an ancient seal is hidden. Even the Ancients, in all their might and glory, couldn't defeat the creatures slumbering below - so they just imprisoned them. Over millennia, their sinister power gradually seeped to the surface, infecting the fauna and flora of this region. Viceroys don't embark here to establish settlements or gain reputation - their main goal is simply to find and close the seal.
+		{ BiomeTypes.The_Marshlands, "The Marshlands" },                 // The Marshlands - A harsh and cold land that has been claimed by many different, and extremely resilient species of fungi. The ground here is extremely hard and rocky, making it difficult to farm. This region is most famous for the giant organisms that can be found in its forests.
+		{ BiomeTypes.Tutorial_I, "Tutorial I" },                         // Tutorial - Tutorial
+		{ BiomeTypes.Tutorial_II, "Tutorial II" },                       // Tutorial - Tutorial
+		{ BiomeTypes.Tutorial_III, "Tutorial III" },                     // Tutorial - Tutorial
+		{ BiomeTypes.Tutorial_IV, "Tutorial IV" },                       // Tutorial - Tutorial
+
 	};
 }

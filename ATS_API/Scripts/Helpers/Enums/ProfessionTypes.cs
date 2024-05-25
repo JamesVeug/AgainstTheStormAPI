@@ -86,6 +86,7 @@ public enum ProfessionTypes
 	Weaver,                     // Weaver
 	Woodcutter,                 // Woodcutter
 
+
     MAX = 75
 }
 
@@ -210,5 +211,6 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Waiter, "Waiter" },                                         // Waiter
 		{ ProfessionTypes.Weaver, "Weaver" },                                         // Weaver
 		{ ProfessionTypes.Woodcutter, "Woodcutter" },                                 // Woodcutter
+
 	};
 }

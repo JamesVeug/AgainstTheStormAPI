@@ -30,6 +30,7 @@ public enum NeedTypes
 	Skewer,         // Skewers
 	Treatment,      // Treatment
 
+
     MAX = 19
 }
 
@@ -98,5 +99,6 @@ public static class NeedTypesExtensions
 		{ NeedTypes.Religion, "Religion" },             // Religion
 		{ NeedTypes.Skewer, "Skewer" },                 // Skewers
 		{ NeedTypes.Treatment, "Treatment" },           // Treatment
+
 	};
 }

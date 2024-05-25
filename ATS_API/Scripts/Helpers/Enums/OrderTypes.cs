@@ -149,14 +149,14 @@ public enum OrderTypes
 	II_TO_Cut_NOTrees,                    // Work Break
 	II_TO_Cut_Trees,                      // Need for Timber
 	II_TO_Discover_Dangerous_Glades,      // Adventurous Viceroy
-	II_TO_Forager_Trial___CRW,            // Forager's Trial
-	II_TO_Forager_Trial___RW,             // Forager's Trial
-	II_TO_Forager_Trial___SO,             // Forager's Trial
+	II_TO_Forager_Trial_CRW,              // Forager's Trial
+	II_TO_Forager_Trial_RW,               // Forager's Trial
+	II_TO_Forager_Trial_SO,               // Forager's Trial
 	II_TO_Gathering_Stone,                // Stonecutter's Trial
 	II_TO_Glades_Discovery,               // Venturesome Leader
-	II_TO_Herbalist_Trial___CRW,          // Herbalist's Trial
-	II_TO_Herbalist_Trial___RW_SF,        // Herbalist's Trial
-	II_TO_Herbalist_Trial___SO,           // Herbalist's Trial
+	II_TO_Herbalist_Trial_CRW,            // Herbalist's Trial
+	II_TO_Herbalist_Trial_RW_SF,          // Herbalist's Trial
+	II_TO_Herbalist_Trial_SO,             // Herbalist's Trial
 	II_TO_Homes_For_Beavers,              // Beaver Colony
 	II_TO_Homes_For_Foxes,                // Homes For Foxes
 	II_TO_Homes_For_Harpies,              // Harpy Colony
@@ -165,8 +165,8 @@ public enum OrderTypes
 	II_TO_HUBs,                           // Outpost
 	II_TO_Lumbermill,                     // Efficiency Test
 	II_TO_Sacrificies,                    // Sacrificial Ceremony
-	II_TO_Trappers_Trial___CF_SF,         // Trapper's Trial
-	II_TO_Trappers_Trial___RW_M,          // Trapper's Trial
+	II_TO_Trappers_Trial_CF_SF,           // Trapper's Trial
+	II_TO_Trappers_Trial_RW_M,            // Trapper's Trial
 	II_Trade_Connections,                 // Trade Connections
 	II_Use_Water,                         // Rainpunk Engineer
 	II_Workshop,                          // Workshop
@@ -372,6 +372,7 @@ public enum OrderTypes
 	Trade_Packs_And_Perks_LOW,            // Golden Blood
 	WaterUsed,                            // Essence of Corruption
 
+
     MAX = 361
 }
 
@@ -560,14 +561,14 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_Cut_NOTrees, "II TO Cut NOTrees" },                                         // Work Break
 		{ OrderTypes.II_TO_Cut_Trees, "II TO Cut Trees" },                                             // Need for Timber
 		{ OrderTypes.II_TO_Discover_Dangerous_Glades, "II TO Discover Dangerous Glades" },             // Adventurous Viceroy
-		{ OrderTypes.II_TO_Forager_Trial___CRW, "II TO Forager Trial - CRW" },                         // Forager's Trial
-		{ OrderTypes.II_TO_Forager_Trial___RW, "II TO Forager Trial - RW" },                           // Forager's Trial
-		{ OrderTypes.II_TO_Forager_Trial___SO, "II TO Forager Trial - SO" },                           // Forager's Trial
+		{ OrderTypes.II_TO_Forager_Trial_CRW, "II TO Forager Trial - CRW" },                           // Forager's Trial
+		{ OrderTypes.II_TO_Forager_Trial_RW, "II TO Forager Trial - RW" },                             // Forager's Trial
+		{ OrderTypes.II_TO_Forager_Trial_SO, "II TO Forager Trial - SO" },                             // Forager's Trial
 		{ OrderTypes.II_TO_Gathering_Stone, "II TO Gathering Stone" },                                 // Stonecutter's Trial
 		{ OrderTypes.II_TO_Glades_Discovery, "II TO Glades Discovery" },                               // Venturesome Leader
-		{ OrderTypes.II_TO_Herbalist_Trial___CRW, "II TO Herbalist Trial - CRW" },                     // Herbalist's Trial
-		{ OrderTypes.II_TO_Herbalist_Trial___RW_SF, "II TO Herbalist Trial - RW SF" },                 // Herbalist's Trial
-		{ OrderTypes.II_TO_Herbalist_Trial___SO, "II TO Herbalist Trial - SO" },                       // Herbalist's Trial
+		{ OrderTypes.II_TO_Herbalist_Trial_CRW, "II TO Herbalist Trial - CRW" },                       // Herbalist's Trial
+		{ OrderTypes.II_TO_Herbalist_Trial_RW_SF, "II TO Herbalist Trial - RW SF" },                   // Herbalist's Trial
+		{ OrderTypes.II_TO_Herbalist_Trial_SO, "II TO Herbalist Trial - SO" },                         // Herbalist's Trial
 		{ OrderTypes.II_TO_Homes_For_Beavers, "II TO Homes for Beavers" },                             // Beaver Colony
 		{ OrderTypes.II_TO_Homes_For_Foxes, "II TO Homes for Foxes" },                                 // Homes For Foxes
 		{ OrderTypes.II_TO_Homes_For_Harpies, "II TO Homes for Harpies" },                             // Harpy Colony
@@ -576,8 +577,8 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_HUBs, "II TO HUBs" },                                                       // Outpost
 		{ OrderTypes.II_TO_Lumbermill, "II TO Lumbermill" },                                           // Efficiency Test
 		{ OrderTypes.II_TO_Sacrificies, "II TO Sacrificies" },                                         // Sacrificial Ceremony
-		{ OrderTypes.II_TO_Trappers_Trial___CF_SF, "II TO Trappers Trial - CF SF" },                   // Trapper's Trial
-		{ OrderTypes.II_TO_Trappers_Trial___RW_M, "II TO Trappers Trial - RW M" },                     // Trapper's Trial
+		{ OrderTypes.II_TO_Trappers_Trial_CF_SF, "II TO Trappers Trial - CF SF" },                     // Trapper's Trial
+		{ OrderTypes.II_TO_Trappers_Trial_RW_M, "II TO Trappers Trial - RW M" },                       // Trapper's Trial
 		{ OrderTypes.II_Trade_Connections, "II Trade Connections" },                                   // Trade Connections
 		{ OrderTypes.II_Use_Water, "II Use Water" },                                                   // Rainpunk Engineer
 		{ OrderTypes.II_Workshop, "II Workshop" },                                                     // Workshop
@@ -782,5 +783,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.TI_Woodcutters_Camp, "TI Woodcutters Camp" },                                     // Woodcutters' Camps
 		{ OrderTypes.Trade_Packs_And_Perks_LOW, "Trade Packs and Perks LOW" },                         // Golden Blood
 		{ OrderTypes.WaterUsed, "WaterUsed" },                                                         // Essence of Corruption
+
 	};
 }
