@@ -61,6 +61,14 @@ public class WIKI
     
     public static void CreateEnumTypesCSharpScript<T>(string EnumName, string modelGetter, IEnumerable<T> list, Func<T, string> nameGetter, Func<T, string> localize, List<string> extraUsings = null)
     {
+        string pathToFile = "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\Enums\\";
+        // Quit if the directory does not exist
+        if (!Directory.Exists(pathToFile))
+        {
+            Plugin.Log.LogError("Directory does not exist: " + pathToFile);
+            return;
+        }
+        
         List<(string name, string enu, string locale)> sortedList = list.Select(a =>
         {
             string getter = nameGetter(a);
@@ -133,7 +141,6 @@ public class WIKI
             .Replace("{COLLECTION}", modelGetter)
             .Replace("{ENUM_TO_NAME}", string.Join("\n", sortedList.Select(ToDictionaryRow)));
         
-        string pathToFile = "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\Enums\\";
         File.WriteAllText(pathToFile + EnumName + ".cs", cs);
     }
 
