@@ -27,10 +27,6 @@ public static partial class LocalizationManager
         }
 
 
-
-        // foreach (TraderModel trader in MB.Settings.traders)
-        // {
-        //     Plugin.Log.LogInfo("Trader: " + trader.name + ": " + trader.displayName.Text);
-        // }
+        WIKI.CreateAllEnumTypes();
     }
 }

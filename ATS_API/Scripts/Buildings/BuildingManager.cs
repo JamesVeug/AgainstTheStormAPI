@@ -72,7 +72,7 @@ public partial class BuildingManager
                 Plugin.Log.LogError($"Could not find prefab {prefabName} for behaviour {behaviourTypes}");
                 return null;
             }
-            
+
             m_visualData.Add(behaviourTypes, data);
         }
 

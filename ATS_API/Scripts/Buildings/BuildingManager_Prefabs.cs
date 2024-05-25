@@ -28,7 +28,7 @@ public partial class BuildingManager
 
         // Plugin.Log.LogInfo($"Starting Building");
         B building = prefab.AddComponent<B>();
-        building.entrance = Find(prefab.transform, "Entrance");
+        building.entrance = Util.Find(prefab.transform, "Entrance");
 
         // Plugin.Log.LogInfo($"Starting View");
         V view = prefab.AddComponent<V>();
@@ -36,7 +36,7 @@ public partial class BuildingManager
         // Plugin.Log.LogInfo($"Starting Scaffolding");
         var constructionAnimator = prefab.AddComponent<ScaffoldingConstructionAnimator>();
         view.constructionAnimator = constructionAnimator;
-        constructionAnimator.scaffoldingParent = Find(prefab.transform, "ToRotate");
+        constructionAnimator.scaffoldingParent = Util.Find(prefab.transform, "ToRotate");
         constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer");
         constructionAnimator.unconstructedPosition = new Vector3(0, -3, 0);
         constructionAnimator.constructedPosition = new Vector3(0, 0, 0);
@@ -50,7 +50,7 @@ public partial class BuildingManager
         constructionAnimator.scaffoldingRising = new Vector2(0.01f, 0.8f);
 
         // Plugin.Log.LogInfo($"Starting AnimationsHooks");
-        Transform animationsHooks = Find(prefab.transform, "AnimationsHooks");
+        Transform animationsHooks = Util.Find(prefab.transform, "AnimationsHooks");
         // Plugin.Log.LogInfo($"Starting AnimationsHooks 2");
         building.villagersPositioner = animationsHooks.gameObject.AddComponent<VillagersPositioner>();
         
@@ -87,7 +87,7 @@ public partial class BuildingManager
                 {
                     BlightCyst cyst = transform.gameObject.AddComponent<BlightCyst>();
                     cyst.animator = transform.GetComponentInChildren<Animator>();
-                    cyst.animHook = Find(transform, "Cyst Hook");
+                    cyst.animHook = Util.Find(transform, "Cyst Hook");
                     cyst.meshes = cyst.animator.GetComponentsInChildren<Renderer>();
                     cysts.Add(cyst);
                 }
@@ -139,10 +139,10 @@ public partial class BuildingManager
         // }
 
         // Plugin.Log.LogInfo($"Starting icons");
-        view.entranceIcon = Find(view.rotationParent, "Entrance", "Icon").gameObject;
-        view.noBuildersIcon = Find(view.uiParent, "NoBuildersIcon").gameObject;
-        view.sleepingIcon = Find(view.uiParent, "SleepingIcon").gameObject;
-        view.noGoodsIcon = Find(view.uiParent, "NoGoodsIcon").gameObject;
+        view.entranceIcon = Util.Find(view.rotationParent, "Entrance").gameObject;
+        view.noBuildersIcon = Util.Find(view.uiParent, "NoBuildersIcon").gameObject;
+        view.sleepingIcon = Util.Find(view.uiParent, "SleepingIcon").gameObject;
+        view.noGoodsIcon = Util.Find(view.uiParent, "NoGoodsIcon").gameObject;
         view.iconsLayout = layout;
 
         // Plugin.Log.LogInfo($"Starting panelBackgroundSound");
@@ -150,25 +150,27 @@ public partial class BuildingManager
 
         // Plugin.Log.LogInfo($"Starting upgradeParts");
         view.upgradeParts = new BuildingUpgradePart[2]; // TODO: Not everything will have tiers
-        view.upgradeParts[0] = Find(prefab.transform, "Tier 1").gameObject.AddComponent<BuildingUpgradePart>();
+        view.upgradeParts[0] = Util.Find(prefab.transform, "Tier 1").gameObject.AddComponent<BuildingUpgradePart>();
         view.upgradeParts[0].level = 1;
         view.upgradeParts[0].reverseActivation = false;
         view.upgradeParts[0].specificUpgrade = false;
         view.upgradeParts[0].upgradeIndex = 0;
+        view.upgradeParts[0].gameObject.SetActive(false);
         
-        view.upgradeParts[1] = Find(prefab.transform, "Tier 2").gameObject.AddComponent<BuildingUpgradePart>();
+        view.upgradeParts[1] = Util.Find(prefab.transform, "Tier 2").gameObject.AddComponent<BuildingUpgradePart>();
         view.upgradeParts[1].level = 2;
         view.upgradeParts[1].reverseActivation = false;
         view.upgradeParts[1].specificUpgrade = false;
         view.upgradeParts[1].upgradeIndex = 0;
+        view.upgradeParts[1].gameObject.SetActive(false);
         
 
         if (view is ProductionBuildingView productionView)
         {
             // Plugin.Log.LogInfo($"Starting productionView");
             productionView.productonLoopSound = null;
-            productionView.noWorkersIcon = Find(view.uiParent, "NoWorkersIcon").gameObject;
-            productionView.idleIcon = Find(view.uiParent, "IdleIcon").gameObject;
+            productionView.noWorkersIcon = Util.Find(view.uiParent, "NoWorkersIcon").gameObject;
+            productionView.idleIcon = Util.Find(view.uiParent, "IdleIcon").gameObject;
             productionView.animator = prefab.GetComponent<Animator>();
         }
 
@@ -176,7 +178,7 @@ public partial class BuildingManager
         {
             campView.planOverlay = prefab.AddComponent<SimplePlanOverlay>();
 
-            Transform area = Find(view.rotationParent, "Area");
+            Transform area = Util.Find(view.rotationParent, "Area");
             campView.area = area.gameObject.AddComponent<GridArea>();
 
             var mainGenerator = area.Find("MainArea").gameObject.AddComponent<MeshGridShapeWithEdgesGenerator>();
@@ -218,9 +220,9 @@ public partial class BuildingManager
             // Plugin.Log.LogInfo($"Starting workshopView 2");
             workshopView.productonLoopSound = workshopTemplate.view.productonLoopSound;
             // Plugin.Log.LogInfo($"Starting workshopView 3");
-            workshopView.noWorkersIcon = Find(view.uiParent, "NoWorkersIcon").gameObject;
+            workshopView.noWorkersIcon = Util.Find(view.uiParent, "NoWorkersIcon").gameObject;
             // Plugin.Log.LogInfo($"Starting workshopView 4");
-            workshopView.idleIcon = Find(view.uiParent, "IdleIcon").gameObject;
+            workshopView.idleIcon = Util.Find(view.uiParent, "IdleIcon").gameObject;
             // Plugin.Log.LogInfo($"Starting workshopView 5");
             workshopView.animator = prefab.GetComponent<Animator>();
             // Plugin.Log.LogInfo($"Starting workshopView 6");
@@ -235,54 +237,9 @@ public partial class BuildingManager
         }
 
 
-        Find(prefab.transform, "BuildingDisplayIcon").GetComponent<SpriteRenderer>().sprite = displayIcon;
+        Util.Find(prefab.transform, "BuildingDisplayIcon").GetComponent<SpriteRenderer>().sprite = displayIcon;
         
         Plugin.Log.LogInfo($"Done!");
-    }
-    
-    private static Transform Find(Transform t, string name)
-    {
-        Transform found = FindInternal(t, name);
-        if (found != null)
-        {
-            return found;
-        }
-
-        // Plugin.Log.LogError($"Could not find {name} in {t.name}!");
-        return null;
-    }
-    
-    private static Transform FindInternal(Transform t, string name)
-    {
-        foreach (Transform child in t)
-        {
-            if(child.name == name)
-            {
-                return child;
-            }
-        }
-        
-        foreach (Transform child in t)
-        {
-            Transform found = FindInternal(child, name);
-            if (found != null)
-            {
-                return found;
-            }
-        }
-
-        return null;
-    }
-    
-    private static Transform Find(Transform t, string name, string secondName)
-    {
-        Transform find = Find(t, name);
-        if (find == null)
-        {
-            return null;
-        }
-        
-        return find.Find(secondName);
     }
 }
 
