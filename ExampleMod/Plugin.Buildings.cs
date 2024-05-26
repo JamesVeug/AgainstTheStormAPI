@@ -7,6 +7,24 @@ public partial class Plugin
 {
     private void CreateBuildings()
     {
+        CreateWorkshop();
+        CreateHouse();
+    }
+
+    private void CreateHouse()
+    {
+        var house = new HouseBuildingBuilder(PluginInfo.PLUGIN_GUID, "House", "TestBuildingIcon.png", 8);
+        house.SetDefaultVisualIcon("TestBuildingDisplayIcon.png");
+        house.SetDisplayName("Sky Scraper");
+        house.SetDescription("A tall building to house many people!");
+        house.SetLabel("Housing");
+        house.SetMoveCost(1, GoodsTypes.Food_Raw_Meat); // optional
+        house.SetAllHousingRaces();
+        house.AddServedNeeds(NeedTypes.Any_Housing);
+    }
+
+    private void CreateWorkshop()
+    {
         var burgerJoint = new WorkshopBuildingBuilder(PluginInfo.PLUGIN_GUID, "BurgerJoint", "BurgerJoint.png");
         burgerJoint.SetDefaultVisualIcon("BurgerJointDisplayIcon.png");
         burgerJoint.SetDisplayName("Borgor King");

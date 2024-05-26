@@ -21,6 +21,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
     {
         metaData = new MetaData();
         m_newData.MetaData = metaData;
+        m_newData.Category = BuildingCategoriesTypes.Industry;
         
         // Set Category to Housing
         // Set label to Housing
@@ -71,5 +72,10 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
     public void AddWorkPlace(params RaceTypes[] races)
     {
         metaData.WorkPlaces.Add(races);
+    }
+    
+    public void SetProfession(ProfessionTypes profession)
+    {
+        m_newData.Profession = profession;
     }
 }

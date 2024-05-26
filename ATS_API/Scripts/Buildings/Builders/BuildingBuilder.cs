@@ -176,11 +176,6 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_newData.MoveCost = new NameToAmount(amount, good.ToName());
     }
     
-    public void SetProfession(ProfessionTypes profession)
-    {
-        m_newData.Profession = profession;
-    }
-    
     public void SetCategory(BuildingCategoriesTypes category)
     {
         m_newData.Category = category;

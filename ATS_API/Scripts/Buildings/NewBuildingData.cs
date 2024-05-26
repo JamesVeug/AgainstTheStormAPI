@@ -59,25 +59,26 @@ public class NewBuildingData : ASyncable<BuildingModel>
         
         if (UsabilityTags.Count > 0)
         {
-            BuildingModel.usabilityTags = UsabilityTags.Select(a => a.ToModelTag()).ToArray();
+            BuildingModel.usabilityTags = UsabilityTags.ToModelTagArray();
         }
         
         if (Tags.Count > 0)
         {
-            BuildingModel.tags = Tags.Select(a => a.ToBuildingTagModel()).ToArray();
+            BuildingModel.tags = Tags.ToBuildingTagModelArray();
         }
         
         BuildingModel.category = Category.ToBuildingCategoryModel();
   
         if (Behaviour == BuildingBehaviourTypes.Workshop)
         {
+            WorkshopModel workshopModel = BuildingModel as WorkshopModel;
             WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             GameObject prefab = BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon);
             try
             {
-                BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(prefab, BuildingModel as WorkshopModel, VisualData.Icon, AnimHookType.Construction);
+                BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(prefab, workshopModel, VisualData.Icon, AnimHookType.Construction);
             }catch (Exception e)
             {
                 Debug.LogError(e);
@@ -87,7 +88,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
             VisualData.Prefab = workshop;
         
             // Data
-            WorkshopModel workshopModel = BuildingModel as WorkshopModel;
             workshopModel.prefab = workshop;
             workshopModel.recipes = metaData.Recipes.Concat(metaData.Builders.Select(a=>a.Build())).ToArray();
             workshopModel.profession = Profession.ToProfessionModel();
@@ -105,6 +105,30 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 }
                 workshopModel.workplaces[i] = workplace;
             }
+        }
+        else if (Behaviour == BuildingBehaviourTypes.House)
+        {
+            HouseModel houseModel = BuildingModel as HouseModel;
+            HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
+            
+            // Visuals
+            GameObject prefab = BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon);
+            try
+            {
+                BuildingManager.InitializePrefab<House, HouseView, HouseModel>(prefab, houseModel, VisualData.Icon, AnimHookType.Construction);
+            }catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+
+            House workshop = prefab.GetComponent<House>();
+            VisualData.Prefab = workshop;
+        
+            // Data
+            houseModel.prefab = workshop;
+
+            houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
+            houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
         }
         else
         {

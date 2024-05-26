@@ -20,7 +20,7 @@ public partial class BuildingManager
         where V : BuildingView
         where M : BuildingModel
     {
-        Plugin.Log.LogInfo($"Initializing prefab {prefab.name}");
+        // Plugin.Log.LogInfo($"Initializing prefab {prefab.name} as {typeof(B).Name} with {typeof(V).Name} and {typeof(M).Name}");
         BuildingModel buildingModelTemplate = BuildingTypes.Workshop.ToBuildingModel();
         Building buildingTemplate = buildingModelTemplate.Prefab;
         Workshop workshopTemplate = buildingModelTemplate.Prefab.GetComponent<Workshop>();
@@ -75,25 +75,12 @@ public partial class BuildingManager
         }
         else if (building is House house)
         {
+            // Plugin.Log.LogInfo($"Start house");
             house.state = new HouseState();
-            house.model = null;
+            house.model = buildingModel as HouseModel;
             house.view = view as HouseView;
-            house.blight = prefab.AddComponent<BuildingBlight>();
-
-            List<BlightCyst> cysts = new List<BlightCyst>();
-            foreach (Transform transform in constructionAnimator.buildingParent)
-            {
-                if (transform.name.Contains("Blight Cyst"))
-                {
-                    BlightCyst cyst = transform.gameObject.AddComponent<BlightCyst>();
-                    cyst.animator = transform.GetComponentInChildren<Animator>();
-                    cyst.animHook = Util.Find(transform, "Cyst Hook");
-                    cyst.meshes = cyst.animator.GetComponentsInChildren<Renderer>();
-                    cysts.Add(cyst);
-                }
-            }
-
-            house.blight.cysts = cysts.ToArray();
+            house.blight = SetupBlight(prefab, constructionAnimator, blightCyst);
+            Plugin.Log.LogInfo($"Done house");
         }
         else if (building is Workshop workshop)
         {
@@ -103,25 +90,7 @@ public partial class BuildingManager
             workshop.model = buildingModel as WorkshopModel;
             workshop.state = new WorkshopState();
             workshop.view = view as WorkshopView;
-            workshop.blight = prefab.AddComponent<BuildingBlight>();
-
-            List<BlightCyst> cysts = new List<BlightCyst>();
-            int children = constructionAnimator.buildingParent.childCount;
-            for (int j = 0; j < children; j++)
-            {
-                Transform transform = constructionAnimator.buildingParent.GetChild(j);
-                if (transform.name.Contains("Blight Cyst"))
-                {
-                    BlightCyst clone = GameObject.Instantiate(blightCyst, constructionAnimator.buildingParent);
-                    clone.transform.position = transform.position;
-                    clone.transform.rotation = transform.rotation;
-                    cysts.Add(clone);
-
-                    GameObject.Destroy(transform.gameObject); // Shouldn't break during runtime
-                }
-            }
-
-            workshop.blight.cysts = cysts.ToArray();
+            workshop.blight = SetupBlight(prefab, constructionAnimator, blightCyst);
         }
 
         // Plugin.Log.LogInfo($"Starting SpritesLayout");
@@ -208,38 +177,54 @@ public partial class BuildingManager
 
         if (view is HouseView houseView)
         {
-            // TODO:
-            // houseView.blight = prefab.AddComponent<BuildingBlight>();
-            // houseView.blight.cysts = new BlightCyst[0];
+            // Plugin.Log.LogInfo($"Starting houseView");
+            houseView.constructionAnimator = constructionAnimator;
+            houseView.animator = prefab.GetComponent<Animator>();
+            houseView.planOverlay = prefab.AddComponent<HousePlanOverlay>();
+            // Plugin.Log.LogInfo($"Done houseView");
         }
         
         if (view is WorkshopView workshopView)
         {
-            // Plugin.Log.LogInfo($"Starting workshopView 1");
             workshopView.constructionAnimator = constructionAnimator;
-            // Plugin.Log.LogInfo($"Starting workshopView 2");
             workshopView.productonLoopSound = workshopTemplate.view.productonLoopSound;
-            // Plugin.Log.LogInfo($"Starting workshopView 3");
             workshopView.noWorkersIcon = Util.Find(view.uiParent, "NoWorkersIcon").gameObject;
-            // Plugin.Log.LogInfo($"Starting workshopView 4");
             workshopView.idleIcon = Util.Find(view.uiParent, "IdleIcon").gameObject;
-            // Plugin.Log.LogInfo($"Starting workshopView 5");
             workshopView.animator = prefab.GetComponent<Animator>();
-            // Plugin.Log.LogInfo($"Starting workshopView 6");
             workshopView.planOverlay = prefab.AddComponent<SimplePlanOverlay>();
-            // Plugin.Log.LogInfo($"Starting workshopView 7");
             workshopView.pressureIcon = GameObject.Instantiate(workshopTemplate.view.pressureIcon, view.uiParent);
-            // Plugin.Log.LogInfo($"Starting workshopView 8");
             workshopView.pressureIcon.transform.position = Vector3.zero;
-            // Plugin.Log.LogInfo($"Starting workshopView 9");
             workshopView.pressureIcon.transform.rotation = Quaternion.identity;
-            // Plugin.Log.LogInfo($"Starting workshopView 10");
         }
 
 
         Util.Find(prefab.transform, "BuildingDisplayIcon").GetComponent<SpriteRenderer>().sprite = displayIcon;
         
         Plugin.Log.LogInfo($"Done!");
+    }
+
+    private static BuildingBlight SetupBlight(GameObject prefab, ScaffoldingConstructionAnimator constructionAnimator, BlightCyst cystTemplate)
+    {
+        BuildingBlight blightCyst = prefab.AddComponent<BuildingBlight>();
+
+        List<BlightCyst> cysts = new List<BlightCyst>();
+        int children = constructionAnimator.buildingParent.childCount;
+        for (int j = 0; j < children; j++)
+        {
+            Transform transform = constructionAnimator.buildingParent.GetChild(j);
+            if (transform.name.Contains("Blight Cyst"))
+            {
+                BlightCyst clone = GameObject.Instantiate(cystTemplate, constructionAnimator.buildingParent);
+                clone.transform.position = transform.position;
+                clone.transform.rotation = transform.rotation;
+                cysts.Add(clone);
+
+                GameObject.Destroy(transform.gameObject); // Shouldn't break during runtime
+            }
+        }
+
+        blightCyst.cysts = cysts.ToArray();
+        return blightCyst;
     }
 }
 
