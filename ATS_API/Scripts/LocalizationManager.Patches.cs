@@ -27,6 +27,7 @@ public static partial class LocalizationManager
         }
 
 
-        WIKI.CreateAllEnumTypes();
+        // Uncomment to generate all the enums
+        // WIKI.CreateAllEnumTypes("C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\Enums\\");
     }
 }

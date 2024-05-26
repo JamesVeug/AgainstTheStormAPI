@@ -32,6 +32,8 @@ public class WIKI
         public GoodModel Good;
         public List<TraderDetails> TradersAvailable = new List<TraderDetails>();
     }
+    
+    private static string exportCSScriptsPath = "";
 
     public static void LogEnumForTypesCSScript<T>(IEnumerable<T> list, Func<T, string> nameGetter, string DictionaryPrefix, Func<T, string> localizedStuff)
     {
@@ -61,11 +63,10 @@ public class WIKI
     
     public static void CreateEnumTypesCSharpScript<T>(string EnumName, string modelGetter, IEnumerable<T> list, Func<T, string> nameGetter, Func<T, string> comment, List<string> extraUsings = null, Func<string ,string> enumParser=null, Func<T, string> groupEnumsBy=null)
     {
-        string pathToFile = "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Helpers\\Enums\\";
         // Quit if the directory does not exist
-        if (!Directory.Exists(pathToFile))
+        if (!Directory.Exists(exportCSScriptsPath))
         {
-            Plugin.Log.LogError("Directory does not exist: " + pathToFile);
+            Plugin.Log.LogError("Directory does not exist: " + exportCSScriptsPath);
             return;
         }
 
@@ -182,11 +183,12 @@ public class WIKI
             .Replace("{COLLECTION}", modelGetter)
             .Replace("{ENUM_TO_NAME}", dictionaryLines);
         
-        File.WriteAllText(pathToFile + EnumName + ".cs", cs);
+        File.WriteAllText(exportCSScriptsPath + EnumName + ".cs", cs);
     }
 
-    public static void CreateAllEnumTypes()
+    public static void CreateAllEnumTypes(string csExportPath)
     {
+        exportCSScriptsPath = csExportPath;
         Func<string, string> noStartingNumbersEnum = (a) => a.ToEnumString(true);
         
         CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameAndDescription, ["Eremite.Buildings"]);
