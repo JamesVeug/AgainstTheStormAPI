@@ -180,6 +180,20 @@ public enum ResolveEffectTypes
 
 public static class ResolveEffectTypesExtensions
 {
+    private static ResolveEffectTypes[] s_All = null;
+	public static ResolveEffectTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new ResolveEffectTypes[163];
+            for (int i = 0; i < 163; i++)
+            {
+                s_All[i] = (ResolveEffectTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this ResolveEffectTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

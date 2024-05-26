@@ -225,10 +225,10 @@ public class WIKI
 
         static void Log(object o, string s)
         {
-            if (o is GoodModel effectModel)
-            {
-                Plugin.Log.LogInfo("WIKI: " + effectModel.name + " " + s);
-            }
+            // if (o is GoodModel effectModel)
+            // {
+            //     Plugin.Log.LogInfo("WIKI: " + effectModel.name + " " + s);
+            // }
         }
         
         static string GetFieldResults(object instance, string[] properties, string[] fields)

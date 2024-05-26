@@ -334,6 +334,20 @@ public enum RelicTypes
 
 public static class RelicTypesExtensions
 {
+    private static RelicTypes[] s_All = null;
+	public static RelicTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new RelicTypes[317];
+            for (int i = 0; i < 317; i++)
+            {
+                s_All[i] = (RelicTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this RelicTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

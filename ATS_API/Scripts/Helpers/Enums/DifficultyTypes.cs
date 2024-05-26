@@ -45,6 +45,20 @@ public enum DifficultyTypes
 
 public static class DifficultyTypesExtensions
 {
+    private static DifficultyTypes[] s_All = null;
+	public static DifficultyTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new DifficultyTypes[28];
+            for (int i = 0; i < 28; i++)
+            {
+                s_All[i] = (DifficultyTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this DifficultyTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

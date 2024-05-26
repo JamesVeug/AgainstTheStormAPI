@@ -28,6 +28,20 @@ public enum TraderTypes
 
 public static class TraderTypesExtensions
 {
+    private static TraderTypes[] s_All = null;
+	public static TraderTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new TraderTypes[11];
+            for (int i = 0; i < 11; i++)
+            {
+                s_All[i] = (TraderTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this TraderTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

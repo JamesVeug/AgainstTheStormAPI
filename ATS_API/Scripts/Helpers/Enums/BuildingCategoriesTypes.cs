@@ -37,6 +37,20 @@ public enum BuildingCategoriesTypes
 
 public static class BuildingCategoriesTypesExtensions
 {
+    private static BuildingCategoriesTypes[] s_All = null;
+	public static BuildingCategoriesTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new BuildingCategoriesTypes[20];
+            for (int i = 0; i < 20; i++)
+            {
+                s_All[i] = (BuildingCategoriesTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this BuildingCategoriesTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

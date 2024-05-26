@@ -2670,6 +2670,20 @@ public enum EffectTypes
 
 public static class EffectTypesExtensions
 {
+    private static EffectTypes[] s_All = null;
+	public static EffectTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new EffectTypes[2357];
+            for (int i = 0; i < 2357; i++)
+            {
+                s_All[i] = (EffectTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this EffectTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

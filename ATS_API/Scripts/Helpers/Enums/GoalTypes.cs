@@ -224,6 +224,20 @@ public enum GoalTypes
 
 public static class GoalTypesExtensions
 {
+    private static GoalTypes[] s_All = null;
+	public static GoalTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new GoalTypes[207];
+            for (int i = 0; i < 207; i++)
+            {
+                s_All[i] = (GoalTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this GoalTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

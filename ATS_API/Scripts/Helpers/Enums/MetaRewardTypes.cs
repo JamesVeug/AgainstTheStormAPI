@@ -377,6 +377,20 @@ public enum MetaRewardTypes
 
 public static class MetaRewardTypesExtensions
 {
+    private static MetaRewardTypes[] s_All = null;
+	public static MetaRewardTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new MetaRewardTypes[360];
+            for (int i = 0; i < 360; i++)
+            {
+                s_All[i] = (MetaRewardTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this MetaRewardTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

@@ -19,6 +19,20 @@ public enum OreTypes
 
 public static class OreTypesExtensions
 {
+    private static OreTypes[] s_All = null;
+	public static OreTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new OreTypes[2];
+            for (int i = 0; i < 2; i++)
+            {
+                s_All[i] = (OreTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this OreTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

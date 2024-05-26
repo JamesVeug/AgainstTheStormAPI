@@ -378,6 +378,20 @@ public enum OrderTypes
 
 public static class OrderTypesExtensions
 {
+    private static OrderTypes[] s_All = null;
+	public static OrderTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new OrderTypes[361];
+            for (int i = 0; i < 361; i++)
+            {
+                s_All[i] = (OrderTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this OrderTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

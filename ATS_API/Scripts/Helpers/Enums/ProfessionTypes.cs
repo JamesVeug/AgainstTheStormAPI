@@ -92,6 +92,20 @@ public enum ProfessionTypes
 
 public static class ProfessionTypesExtensions
 {
+    private static ProfessionTypes[] s_All = null;
+	public static ProfessionTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new ProfessionTypes[75];
+            for (int i = 0; i < 75; i++)
+            {
+                s_All[i] = (ProfessionTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this ProfessionTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

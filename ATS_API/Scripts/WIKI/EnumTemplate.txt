@@ -16,6 +16,20 @@ public enum {CLASSNAME}
 
 public static class {CLASSNAME}Extensions
 {
+    private static {CLASSNAME}[] s_All = null;
+	public static {CLASSNAME}[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new {CLASSNAME}[{TOTAL_ENUMS}];
+            for (int i = 0; i < {TOTAL_ENUMS}; i++)
+            {
+                s_All[i] = ({CLASSNAME})(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this {CLASSNAME} type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

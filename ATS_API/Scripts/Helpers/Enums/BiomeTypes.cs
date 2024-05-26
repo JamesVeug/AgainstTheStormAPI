@@ -28,6 +28,20 @@ public enum BiomeTypes
 
 public static class BiomeTypesExtensions
 {
+    private static BiomeTypes[] s_All = null;
+	public static BiomeTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new BiomeTypes[11];
+            for (int i = 0; i < 11; i++)
+            {
+                s_All[i] = (BiomeTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this BiomeTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

@@ -81,6 +81,20 @@ public enum GoodsTypes
 
 public static class GoodsTypesExtensions
 {
+    private static GoodsTypes[] s_All = null;
+	public static GoodsTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new GoodsTypes[64];
+            for (int i = 0; i < 64; i++)
+            {
+                s_All[i] = (GoodsTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this GoodsTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

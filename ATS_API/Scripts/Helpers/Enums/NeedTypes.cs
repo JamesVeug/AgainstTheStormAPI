@@ -36,6 +36,20 @@ public enum NeedTypes
 
 public static class NeedTypesExtensions
 {
+    private static NeedTypes[] s_All = null;
+	public static NeedTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new NeedTypes[19];
+            for (int i = 0; i < 19; i++)
+            {
+                s_All[i] = (NeedTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this NeedTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

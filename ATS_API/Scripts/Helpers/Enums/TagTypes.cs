@@ -75,6 +75,20 @@ public enum TagTypes
 
 public static class TagTypesExtensions
 {
+    private static TagTypes[] s_All = null;
+	public static TagTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new TagTypes[58];
+            for (int i = 0; i < 58; i++)
+            {
+                s_All[i] = (TagTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this TagTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

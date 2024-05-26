@@ -32,6 +32,20 @@ public enum BuildingTagTypes
 
 public static class BuildingTagTypesExtensions
 {
+    private static BuildingTagTypes[] s_All = null;
+	public static BuildingTagTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new BuildingTagTypes[15];
+            for (int i = 0; i < 15; i++)
+            {
+                s_All[i] = (BuildingTagTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this BuildingTagTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))

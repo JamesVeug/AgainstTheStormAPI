@@ -22,6 +22,20 @@ public enum RaceTypes
 
 public static class RaceTypesExtensions
 {
+    private static RaceTypes[] s_All = null;
+	public static RaceTypes[] All()
+	{
+		if (s_All == null)
+        {
+            s_All = new RaceTypes[5];
+            for (int i = 0; i < 5; i++)
+            {
+                s_All[i] = (RaceTypes)(i+1);
+            }
+        }
+        return s_All;
+	}
+	
 	public static string ToName(this RaceTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
