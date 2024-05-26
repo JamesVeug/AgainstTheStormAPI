@@ -220,53 +220,145 @@ public class WIKI
 
     private static string NameAndDescription(object a)
     {
-        Type type = a.GetType();
+
+        static void Log(object o, string s)
+        {
+            if (o is GoodModel effectModel)
+            {
+                Plugin.Log.LogInfo("WIKI: " + effectModel.name + " " + s);
+            }
+        }
+        
+        static string GetFieldResults(object instance, string[] properties, string[] fields)
+        {
+            Type type = instance.GetType();
+            Log(instance, "Properties: " + string.Join(", ", properties));
+
+            object result = null;
+            List<PropertyInfo> propertiesInfos = Util.AllProperties(type, properties);
+            foreach (string name in properties)
+            { 
+                Log(instance, "Checking property " + name);
+                PropertyInfo propertyInfo = propertiesInfos.FirstOrDefault(a=>a.Name == name);
+                if (propertyInfo != null)
+                {
+                    MethodInfo getMethod = propertyInfo.GetMethod;
+                    if (getMethod != null)
+                    {
+                        Log(instance, "Property " + name + " has get method");
+                        Log(instance, "... Test");
+                        try
+                        {
+                            result = propertyInfo.GetValue(instance);
+                            if (result != null)
+                            {
+                                Log(instance, "Property Result is not null!");
+                                break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Log(instance, "Property " + name + " failed to get value");
+                        }
+                        
+                        Log(instance, "Property Result IS null...");
+                    }
+                    else
+                    {
+                        Log(instance, "Property " + name + " has no get method");
+                    }
+                }
+                else
+                {
+                    Log(instance, "Property " + name + " not found");
+                }
+            }
+
+            if (result == null)
+            {
+                List<FieldInfo> fieldInfos = Util.AllFields(type, fields);
+                foreach (string name in fields)
+                {
+                    FieldInfo fieldInfo = fieldInfos.FirstOrDefault(a => a.Name == name);
+                    if (fieldInfo != null)
+                    {
+                        Log(instance, "Field " + name + " found");
+                        try
+                        {
+                            result = fieldInfo.GetValue(instance);
+                            if (result != null)
+                            {
+                                break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Log(instance, "Field " + name + " failed to get value");
+                        }
+                    }
+                    else
+                    {
+                        Log(instance, "Field " + name + " not found for type " + type.FullName);
+                    }
+                }
+            }
+
+            if (result != null)
+            {
+                if (result is LocaText locaText)
+                {
+                    Log(instance, "Found " + locaText.GetText());
+                    return locaText.GetText();
+                }
+                else if (result is string s)
+                {
+                    Log(instance, "Found " + s);
+                    return s;
+                }
+                
+                Log(instance, "Something was found but unknown " + result.GetType().FullName);
+            }
+            else
+            {
+                Log(instance, "Nothing found");
+            }
+
+            return null;
+        }
 
 
         // Display Name
-        string displayName = (string)type.GetProperty("DisplayName",
-                BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetProperty)
-            ?.GetMethod
-            ?.Invoke(a, null);
-
-        if (string.IsNullOrEmpty(displayName))
-        {
-            var locaTextField = type.GetField("displayName", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
-            object dnValue = locaTextField?.GetValue(a);
-            displayName = (string)locaTextField?.FieldType.GetMethod("GetText", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
-                ?.Invoke(dnValue, null);
-        }
+        string displayName = GetFieldResults(a, ["DisplayName"], ["displayName"]);
         if(displayName == ">Missing key<")
-            displayName = "";
-        
-        
-        // Description
-        string description = (string)type.GetProperty("Description",
-                BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.GetProperty)
-            ?.GetMethod
-            ?.Invoke(a, null);
-        
-        if (string.IsNullOrEmpty(description))
         {
-            var desc = type.GetField("description", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
-            object descValue = desc?.GetValue(a);
-            description = (string)desc?.FieldType.GetMethod("GetText", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
-                ?.Invoke(descValue, null);
+            Log(a, "DisplayName is missing key");
+            displayName = "";
         }
 
+
+        // Description
+        string description = GetFieldResults(a, ["FormatedDescription", "Description"], ["description"]);
         if(description == ">Missing key<")
+        {
+            Log(a, "Description is missing key");
             description = "";
-        
+        }
+
+        string result = "";
         if(!string.IsNullOrEmpty(displayName) && !string.IsNullOrEmpty(description))
-            return displayName + " - " + description;
+            result = displayName + " - " + description;
         
-        if(string.IsNullOrEmpty(displayName) && string.IsNullOrEmpty(description))
-            return "";
+        else if(string.IsNullOrEmpty(displayName) && string.IsNullOrEmpty(description))
+            result = "";
+
+        else if (string.IsNullOrEmpty(displayName))
+            result = description;
+        else
+            result = displayName;
         
-        if(string.IsNullOrEmpty(displayName))
-            return description;
+        Log(a, "Result: " + result + " from " + displayName + " - " + description);
         
-        return displayName;
+        return result;
     }
 
     private static string DifficultyComment(DifficultyModel a)

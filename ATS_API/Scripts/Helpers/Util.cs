@@ -1,7 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using ATS_API;
 using UnityEngine;
 
 namespace ATS_API.Helpers;
@@ -19,6 +20,30 @@ public static class Util
         return reader.ReadToEnd();
     }
     
+    public static List<FieldInfo> AllFields(Type type, string[] fieldNames)
+    {
+        List<FieldInfo> fields = new();
+        FieldInfo[] fieldInfos = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        fields.AddRange(fieldInfos.Where(a=>Array.IndexOf(fieldNames, a.Name) >= 0 && !fields.Exists(b=>b.Name == a.Name)));
+        if(type.BaseType != null && fields.Count < fieldNames.Length)
+        {
+            fields.AddRange(AllFields(type.BaseType, fieldNames));
+        }
+        return fields;
+    }
+    
+    
+    public static List<PropertyInfo> AllProperties(Type type, string[] propertyNames)
+    {
+        List<PropertyInfo> properties = new();
+        PropertyInfo[] propertyInfos = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.GetProperty | BindingFlags.SetProperty);
+        properties.AddRange(propertyInfos.Where(a=>Array.IndexOf(propertyNames, a.Name) >= 0 && !properties.Exists(b=>b.Name == a.Name)));
+        if(type.BaseType != null && properties.Count < propertyNames.Length)
+        {
+            properties.AddRange(AllProperties(type.BaseType, propertyNames));
+        }
+        return properties;
+    }
     
     
     public static Transform Find(Transform t, string name, bool errorIfNotFound=true)
