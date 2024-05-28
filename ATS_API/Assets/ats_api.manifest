@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3958055858
+CRC: 4051111145
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 70ca1bd85131cab17f1f0040e62720dc
+    Hash: ce7e5c7c138a3aeb68a35e66b3ebf4a2
   TypeTreeHash:
     serializedVersion: 2
     Hash: c53c95f7b920ab97625ab84c9258c40d
@@ -32,9 +32,10 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Custom/Building/BuildingMaterial2.mat
+- Assets/Custom/Building/BuildingTemplate.prefab
 - Assets/Custom/Building/Icon.png
 - Assets/Custom/Building/BuildingIconMateral.mat
 - Assets/Custom/Building/BuildingMaterial1.mat
 - Assets/Custom/Building/BuildingMaterial3.mat
-- Assets/Custom/Building/CustomBuilding.prefab
+- Assets/Custom/Building/CustomBuildingBase.prefab
 Dependencies: []

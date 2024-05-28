@@ -150,6 +150,18 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         
         m_newData.VisualData = visualData;
     }
+
+    public void SetCustomModel(GameObject loadAsset)
+    {
+        if(loadAsset == null)
+        {
+            Plugin.Log.LogError($"Custom prefab for building {m_buildingModel.name} is null!");
+            return;
+        }
+        
+        m_newData.VisualData = new BuildingVisualData();
+        m_newData.CustomPrefab = loadAsset;
+    }
     
     public void SetRequiredGoods(params NameToAmount [] goods)
     {

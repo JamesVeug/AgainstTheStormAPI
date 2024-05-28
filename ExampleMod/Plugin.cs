@@ -1,6 +1,8 @@
-﻿using BepInEx;
+﻿using ATS_API.Helpers;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using UnityEngine;
 
 namespace ExampleMod;
 
@@ -15,6 +17,7 @@ public partial class Plugin : BaseUnityPlugin
     public static ManualLogSource Log;
     private Harmony harmony;
         
+    public static AssetBundle AssetBundle;
  
     private void Awake()
     {
@@ -23,11 +26,16 @@ public partial class Plugin : BaseUnityPlugin
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
 
         PluginDirectory = Info.Location.Replace("API_ExampleMod.dll", "");
-
+        
         CreateGoods();
         CreateCornerstones();
         CreateTrader();
-        CreateBuildings();
+        
+        if (AssetBundleHelper.TryLoadAssetBundleFromFile("ats_examplemod", out AssetBundle))
+        {
+            CreateBuildings();
+        }
+        
         
         Log.LogInfo($"{PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} Plugin loaded");
     }

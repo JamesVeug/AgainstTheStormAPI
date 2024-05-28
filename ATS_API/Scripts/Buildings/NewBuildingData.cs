@@ -7,6 +7,7 @@ using Eremite.Buildings;
 using Eremite.MapObjects;
 using Eremite.Model;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace ATS_API.Buildings;
 
@@ -24,21 +25,12 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public BuildingCategoriesTypes Category = BuildingCategoriesTypes.Industry;
     public List<TagTypes> UsabilityTags = new List<TagTypes>();
     public List<BuildingTagTypes> Tags = new List<BuildingTagTypes>();
+    public GameObject CustomPrefab;
 
-    public override void Sync(BuildingModel model)
+    public override bool Sync(BuildingModel model)
     {
         base.Sync(model);
-
-        SetupPrefab();
-    }
-
-    private void SetupPrefab()
-    {
-        if (VisualData.Prefab != null)
-        {
-            return;
-        }
-
+        
         if (MoveCost != null)
         {
             BuildingModel.movingCost = new GoodRef()
@@ -68,30 +60,64 @@ public class NewBuildingData : ASyncable<BuildingModel>
         }
         
         BuildingModel.category = Category.ToBuildingCategoryModel();
+
+        try
+        {
+            return SetupPrefab();
+        } 
+        catch (Exception e)
+        {
+            Debug.LogError($"Error while setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
+            Debug.LogError(e);
+            return false;
+        }
+    }
+
+    private bool SetupPrefab()
+    {
+        if (VisualData.Prefab != null)
+        {
+            // Already setup????
+            return true;
+        }
   
+        Plugin.Log.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
+        GameObject prefab = CustomPrefab == null ? BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon) : CustomPrefab;
+        if (prefab == null)
+        {
+            Plugin.Log.LogError($"Custom prefab for building {BuildingModel.name} is null! Has Custom prefab: {CustomPrefab != null}");
+            return false;
+        }
+        GameObject root = Object.Instantiate(prefab, BuildingManager.PrefabContainer);
         if (Behaviour == BuildingBehaviourTypes.Workshop)
         {
+            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             WorkshopModel workshopModel = BuildingModel as WorkshopModel;
             WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
             
             // Visuals
-            GameObject prefab = BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon);
             try
             {
-                BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(prefab, workshopModel, VisualData.Icon, AnimHookType.Construction);
-            }catch (Exception e)
+                Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
+                BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(root, workshopModel, VisualData.Icon, AnimHookType.Construction);
+            } 
+            catch (Exception e)
             {
+                Debug.LogError($"Could not set up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
                 Debug.LogError(e);
+                return false;
             }
 
-            Workshop workshop = prefab.GetComponent<Workshop>();
+            Workshop workshop = root.GetComponent<Workshop>();
             VisualData.Prefab = workshop;
         
             // Data
+            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.prefab = workshop;
             workshopModel.recipes = metaData.Recipes.Concat(metaData.Builders.Select(a=>a.Build())).ToArray();
             workshopModel.profession = Profession.ToProfessionModel();
 
+            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
             for (int i = 0; i < metaData.WorkPlaces.Count; i++)
             {
@@ -112,16 +138,16 @@ public class NewBuildingData : ASyncable<BuildingModel>
             HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
             
             // Visuals
-            GameObject prefab = BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon);
             try
             {
-                BuildingManager.InitializePrefab<House, HouseView, HouseModel>(prefab, houseModel, VisualData.Icon, AnimHookType.Construction);
-            }catch (Exception e)
+                BuildingManager.InitializePrefab<House, HouseView, HouseModel>(root, houseModel, VisualData.Icon, AnimHookType.Construction);
+            }
+            catch (Exception e)
             {
                 Debug.LogError(e);
             }
 
-            House workshop = prefab.GetComponent<House>();
+            House workshop = root.GetComponent<House>();
             VisualData.Prefab = workshop;
         
             // Data
@@ -131,8 +157,11 @@ public class NewBuildingData : ASyncable<BuildingModel>
             houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
         }
         else
-        {
-            throw new NotImplementedException($"Building type {Behaviour} not implemented yet!");
+        { 
+            Plugin.Log.LogError($"Building type {Behaviour} for buildings not implemented yet!");
+            return false;
         }
+
+        return true;
     }
 }

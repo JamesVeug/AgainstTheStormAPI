@@ -1,7 +1,7 @@
 ﻿public class ASyncable<ATS>
 {
-    public virtual void Sync(ATS model)
+    public virtual bool Sync(ATS model)
     {
-        
+        return true;
     }
 }

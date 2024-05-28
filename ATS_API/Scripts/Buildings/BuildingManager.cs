@@ -16,12 +16,14 @@ namespace ATS_API.Buildings;
 public partial class BuildingManager
 {
     public static IReadOnlyList<NewBuildingData> NewBuildings => new ReadOnlyCollection<NewBuildingData>(s_newBuildings);
-    
+
+
     private static List<NewBuildingData> s_newBuildings = new List<NewBuildingData>();
+    internal static Transform PrefabContainer => s_prefabContainer;
     
     private static ArraySync<BuildingModel, NewBuildingData> s_buildings = new("New Buildings");
 
-    private static GameObject s_prefabContainer;
+    private static Transform s_prefabContainer;
     private static Dictionary<BuildingBehaviourTypes, GameObject> m_visualData = new();
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
@@ -63,24 +65,23 @@ public partial class BuildingManager
 
     internal static GameObject GetDefaultVisualData(BuildingBehaviourTypes behaviourTypes, Sprite sprite)
     {
-        if (!m_visualData.TryGetValue(behaviourTypes, out var data))
+        if (!m_visualData.TryGetValue(behaviourTypes, out var prefab))
         {
             string prefabName = behaviourTypes.ToAssetBundlePrefabName();
-            data = Plugin.ATS_API_Bundle.LoadAsset<GameObject>(prefabName);
-            if (data == null)
+            prefab = Plugin.ATS_API_Bundle.LoadAsset<GameObject>(prefabName);
+            if (prefab == null)
             {
                 Plugin.Log.LogError($"Could not find prefab {prefabName} for behaviour {behaviourTypes}");
                 return null;
             }
 
-            m_visualData.Add(behaviourTypes, data);
+            m_visualData.Add(behaviourTypes, prefab);
         }
 
-        GameObject clone = GameObject.Instantiate(data, s_prefabContainer.transform);
         
         // Replace tiers
         
-        return clone;
+        return prefab;
     }
     
     private static void SyncBuildings()
@@ -106,8 +107,8 @@ public partial class BuildingManager
         s_instantiated = true;
         s_dirty = true;
         
-        s_prefabContainer = new GameObject("New Buildings");
-        s_prefabContainer.transform.SetParent(Plugin.Instance.gameObject.transform);
+        s_prefabContainer = new GameObject("New Buildings").transform;
+        s_prefabContainer.SetParent(Plugin.Instance.gameObject.transform);
         s_prefabContainer.SetActive(false);
     }
 }

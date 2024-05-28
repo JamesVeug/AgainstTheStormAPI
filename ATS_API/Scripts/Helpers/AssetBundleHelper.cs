@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using BepInEx;
 using UnityEngine;
 
 namespace ATS_API.Helpers;
@@ -14,7 +15,10 @@ public static class AssetBundleHelper
         string resourceName = target.GetManifestResourceNames().FirstOrDefault(r => r.ToLowerInvariant().EndsWith(lowerKey));
 
         if (string.IsNullOrEmpty(resourceName))
-            throw new KeyNotFoundException($"Could not find resource matching {filename} in assembly {target}.");
+        {
+            string allResources = string.Join(", ", target.GetManifestResourceNames());
+            throw new KeyNotFoundException($"Could not find resource matching {filename} in assembly {target}. Resources: {allResources}");
+        }
 
         using (Stream resourceStream = target.GetManifestResourceStream(resourceName))
         {
@@ -33,6 +37,31 @@ public static class AssetBundleHelper
                 return bundle;
             }
         }
+    }
+    
+    public static bool TryLoadAssetBundleFromFile(string pathToAssetBundle, out AssetBundle AssetBundle)
+    {
+        string fullPath = pathToAssetBundle;
+        if (!Path.IsPathRooted(pathToAssetBundle))
+        {
+            var files = Directory.GetFiles(Paths.PluginPath, pathToAssetBundle, SearchOption.AllDirectories);
+            if (files.Length < 1)
+                throw new FileNotFoundException($"Could not find relative artwork file!\nFile name: {pathToAssetBundle}", pathToAssetBundle);
+
+            fullPath = files[0];
+        }
+
+        if (!File.Exists(fullPath))
+            throw new FileNotFoundException($"Absolute path to artwork file does not exist!\nFile name: {pathToAssetBundle}", fullPath);
+        
+        AssetBundle = AssetBundle.LoadFromFile(fullPath);
+        if (AssetBundle == null)
+        {
+            Plugin.Log.LogError($"Tried getting asset bundle at path: '{fullPath}' but failed! Is the path wrong?");
+            return false;
+        }
+
+        return true;
     }
     
     public static bool TryGet<T>(AssetBundle bundle, string prefabName, out T prefab) where T : Object

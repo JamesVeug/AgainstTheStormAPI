@@ -28,7 +28,7 @@ public class NewGood : ASyncable<GoodModel>
     public GoodSoldByTraderDetails SoldByTraderDetails;
     public List<RelicDetails> RelicRewards = new List<RelicDetails>();
 
-    public override void Sync(GoodModel model)
+    public override bool Sync(GoodModel model)
     {
         Settings settings = SO.Settings;
         if (model.category == null && Category != null)
@@ -42,5 +42,7 @@ public class NewGood : ASyncable<GoodModel>
             model.category = modelCategory;
             Plugin.Log.LogInfo($"Assigning new good {model.name} category {model.category.name}");
         }
+        
+        return true;
     }
 }

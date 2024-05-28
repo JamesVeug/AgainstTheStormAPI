@@ -46,7 +46,7 @@ public static class Util
     }
     
     
-    public static Transform Find(Transform t, string name, bool errorIfNotFound=true)
+    public static Transform FindChild(Transform t, string name, bool errorIfNotFound=true)
     {
         Transform found = FindInternal(t, name);
         if (found != null)
@@ -54,8 +54,59 @@ public static class Util
             return found;
         }
 
-        Plugin.Log.LogError($"Could not find {name} in {t.name}!");
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} in {t.name}!");
+        }
+
         return null;
+    }
+    
+    public static bool TryFindChild<T>(Component t, string name, out T found, bool errorIfNotFound=true) where T : Component
+    {
+        found = default;
+        
+        Transform transform = FindInternal(t.transform, name);
+        if (transform != null)
+        {
+            if (transform.TryGetComponent(out T component))
+            {
+                found = component;
+                return true;
+            }
+            
+            if (errorIfNotFound)
+            {
+                Plugin.Log.LogError($"Found child {name} but it does not have a {typeof(T).FullName} component!");
+            }
+            return false;
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find child {name} in {t.name} with component {typeof(T).FullName}!");
+        }
+
+        return false;
+    }
+    
+    public static bool TryFindChild(Component t, string name, out GameObject found, bool errorIfNotFound=true)
+    {
+        found = default;
+        
+        Transform transform = FindInternal(t.transform, name);
+        if (transform != null)
+        {
+            found = transform.gameObject;
+            return true;
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} gameobject in {t.name}!");
+        }
+
+        return false;
     }
     
     private static Transform FindInternal(Transform t, string name)
@@ -80,9 +131,9 @@ public static class Util
         return null;
     }
     
-    public static Transform Find(Transform t, string name, string secondName)
+    public static Transform FindChild(Transform t, string name, string secondName)
     {
-        Transform find = Find(t, name);
+        Transform find = FindChild(t, name);
         if (find == null)
         {
             return null;

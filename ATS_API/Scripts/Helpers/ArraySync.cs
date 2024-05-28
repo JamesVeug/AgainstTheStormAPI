@@ -26,7 +26,11 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         foreach (API t in newElements)
         {
             ATS so = getter(t);
-            t.Sync(so);
+            if (!t.Sync(so))
+            {
+                continue;
+            }
+            
             if (Array.IndexOf(array, so, m_baseLength) == -1)
             {
                 pending.Add(t);

@@ -63,7 +63,7 @@ public static class BuildingBehaviourTypesExtensions
         }
 
         Plugin.Log.LogError($"Cannot find prefab name for type: " + type);
-        return "CustomBuilding";
+        return "BuildingTemplate";
     }
 
     internal static readonly Dictionary<BuildingBehaviourTypes, Type> TypeToInternalName = new()
@@ -120,27 +120,27 @@ public static class BuildingBehaviourTypesExtensions
     
     internal static readonly Dictionary<BuildingBehaviourTypes, string> TypeToAssetBundlePrefabName = new()
     {
-        { BuildingBehaviourTypes.Alter, "CustomBuilding" },
-        { BuildingBehaviourTypes.FarmField, "CustomBuilding" },
-        { BuildingBehaviourTypes.Hydrant, "CustomBuilding" },
-        { BuildingBehaviourTypes.Road, "CustomBuilding" },
-        { BuildingBehaviourTypes.Seal, "CustomBuilding" },
-        { BuildingBehaviourTypes.Shrine, "CustomBuilding" },
-        { BuildingBehaviourTypes.TradingPost, "CustomBuilding" },
-        { BuildingBehaviourTypes.BlightPost, "CustomBuilding" },
-        { BuildingBehaviourTypes.Camp, "CustomBuilding" },
-        // { BuildingBehaviourTypes.Collector, "CustomBuilding" },
-        { BuildingBehaviourTypes.Decoration, "CustomBuilding" },
-        { BuildingBehaviourTypes.Extractor, "CustomBuilding" },
-        { BuildingBehaviourTypes.Farm, "CustomBuilding" },
-        { BuildingBehaviourTypes.GathererHut, "CustomBuilding" },
-        { BuildingBehaviourTypes.Hearth, "CustomBuilding" },
-        { BuildingBehaviourTypes.House, "CustomBuilding" },
-        { BuildingBehaviourTypes.Institution, "CustomBuilding" },
-        { BuildingBehaviourTypes.Mine, "CustomBuilding" },
-        { BuildingBehaviourTypes.RainCatcher, "CustomBuilding" },
-        { BuildingBehaviourTypes.Relic, "CustomBuilding" },
-        { BuildingBehaviourTypes.Storage, "CustomBuilding" },
-        { BuildingBehaviourTypes.Workshop, "CustomBuilding" },
+        { BuildingBehaviourTypes.Alter, "BuildingTemplate" },
+        { BuildingBehaviourTypes.FarmField, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Hydrant, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Road, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Seal, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Shrine, "BuildingTemplate" },
+        { BuildingBehaviourTypes.TradingPost, "BuildingTemplate" },
+        { BuildingBehaviourTypes.BlightPost, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Camp, "BuildingTemplate" },
+        // { BuildingBehaviourTypes.Collector, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Decoration, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Extractor, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Farm, "BuildingTemplate" },
+        { BuildingBehaviourTypes.GathererHut, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Hearth, "BuildingTemplate" },
+        { BuildingBehaviourTypes.House, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Institution, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Mine, "BuildingTemplate" },
+        { BuildingBehaviourTypes.RainCatcher, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Relic, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Storage, "BuildingTemplate" },
+        { BuildingBehaviourTypes.Workshop, "BuildingTemplate" },
     };
 }

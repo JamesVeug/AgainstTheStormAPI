@@ -1,7 +1,11 @@
 ManifestFileVersion: 0
-CRC: 2664248888
+CRC: 3259377079
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: ats_api
       Dependencies: {}
+    Info_1:
+      Name: ats_examplemod
+      Dependencies:
+        Dependency_0: ats_api
