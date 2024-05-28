@@ -50,6 +50,15 @@ public static partial class RecipeManager
                 RecipeModel = workshopRecipeModel,
             };
             s_newWorkshopRecipes.Add(item);
+            
+            // Workshops also need this... gross copy+paste but will refactor when more recipe types are added
+            var basicItem = new NewRecipeData()
+            {
+                Guid = guid,
+                Name = name,
+                RecipeModel = model,
+            };
+            s_newRecipes.Add(basicItem);
             data = item;
         }
         else
