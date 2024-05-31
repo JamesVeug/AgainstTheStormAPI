@@ -51,8 +51,8 @@ public class Plugin : BaseUnityPlugin
         //     TradeService tradeService = (TradeService)GameMB.TradeService;
         //     tradeService.Leave();
         // });
-        
-        ATS_API_Bundle = AssetBundleHelper.LoadAssetBundle("ats_api", typeof(Plugin).Assembly);
+
+        AssetBundleHelper.TryLoadAssetBundleFromFile("ats_api", out ATS_API_Bundle);
         
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }

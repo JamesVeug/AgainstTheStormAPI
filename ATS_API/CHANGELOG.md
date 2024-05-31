@@ -1,3 +1,39 @@
+# 1.2.0 - Contains mod breaking changes.
+- Light support for custom buildings with and without a custom model
+  - Houses and Workshops
+- Added RecipeBuilder and WorkshopRecipeBuilder
+- Added new enums
+  - BiomeTypes
+  - BuildingBehaviourTypes
+  - BuildingCategoryTypes
+  - BuildingTagTypes
+  - BuildingTypes
+  - DifficultyTypes
+  - EffectTypes
+  - GoalTypes
+  - GoodsTypes (Enums have been changed)
+  - MetaRewardTypes
+  - NeedTypes
+  - OreTypes
+  - ProfessionTypes
+  - RaceTypes
+  - RelicTypes
+  - ResolveEffectTypes
+  - SeasonTypes
+  - TagTypes
+  - TraderTypes
+- Added ToName, GetAll and ToModel helper methods for all enum types
+- Added remove hook helper methods
+- Added SetShowHookedRewardsAsPerks effect helper
+- Added missing language support to hooked effect building (Code breaking)
+- Added namespace for SeasonTypes (Code breaking)
+- Added helper method to generate .cs files for all enums 
+- Added Asset bundle helper methods
+- Fixed custom effects without declaring a hook throwing an exception
+- Fixed custom effects that add removal hooks not working
+- Fixed localization sometimes not working for custom mods
+- More code comments/documentation
+
 # 1.1.1 - Possible mod breaking changes.
 - Added defaults to new goods and effects to avoid errors when making a new perk/cornerstone
 - Added light support for devs to specify a renaming of an effect to avoid breaking saves.
@@ -11,7 +47,7 @@
 - Renamed CanbeSoldToAllTraders to CanBeSoldToAllTraders
 - Changed a lot of namespaces to be more precise
 
-# 1.1.0
+## 1.1.0
 - Added Custom Trader support
 - Added BareBones support for Custom Order
 - Added GoodsProductionBuilder
@@ -21,6 +57,6 @@
   - Added optional Short description goods
 - Fixed new fuels breaking existing save files
 
-# 1.0.0
+## 1.0.0
 - Added Custom Goods support
 - Added Custom Cornerstones support

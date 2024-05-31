@@ -2,7 +2,7 @@
 
 This mod is designed to be used in conjunction with other mods that wish to add new content to the game. It provides a number of useful functions for adding new things to the game in a way that takes away the struggles of understanding the code base and more.
 
-Against the Storm is a deeply complex game with tricky to navigate code for the average person. Also with the game being regulary updated it's impossible to know what the devs will change in code which can result in your mod breaking and requiring you to manually fix and reupload it.
+Against the Storm is a deeply complex game with tricky to navigate code for the average person. Also with the game being regular updated it's impossible to know what the devs will change in code which can result in your mod breaking and requiring you to manually fix and reupload it.
 
 The API works as an in-between of your mod and the game by supplying helper methods that create new content and insert it into the game accordingly. This means that if the game updates and breaks your mod, the API will be updated to fix it and require little to no support from your end. (fingers crossed)
 
@@ -18,13 +18,20 @@ https://discord.com/invite/ZfVWG86gsJ
 ### Wiki
 If you need help with how to use the API here is the wiki to provide examples and explanations.
 
-https://thunderstore.io/c/againstthestorm/p/JamesGames/api/wiki/
+https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 
 
-## What's added
+## Support added for
 - New Goods (items that can be traded/sold, food & fuel)
-- New Cornerstones
+- New Perks/Cornerstones
 - New Traders
+- New Orders (Minimal)
+- New Builders (Minimal)
+- New Recipes
+- Localization
+
+## Other stuff added
+- Enums that list everything in the game so you can easily see what items/orders exist and get their data without hassle.
 
 
 ## Contributors
