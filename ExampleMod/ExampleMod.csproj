@@ -37,6 +37,7 @@
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UniTask.dll" Publicize="false" private="false"/>
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.TextMeshPro.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UnityEngine.UI.dll" Publicize="false" private="false" />
+        <Reference Include="$(BepInExPath)/plugins/ATS_API_Devs-API/API.dll" Publicize="false" private="false" />
     </ItemGroup>
 
     <ItemGroup>
@@ -52,29 +53,34 @@
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\ATS_API\ATS_API.csproj" />
-    </ItemGroup>
-
     <Target Name="Deploy" AfterTargets="Build">
         <ItemGroup>
             <Assembly Include="$(OutputPath)\$(AssemblyName).dll" />
             <Assets Include="$(OutputPath)\Assets\*.*" />
-            <_CopyItems Include="$(OutputPath)\ThunderStore\plugins\**\*.*" />
         </ItemGroup>
 
         <!-- Create a folder with all the .dlls and files to easily uplaod to thunderstore -->
-        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\" />
+        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\Assets" />
+        <Copy SourceFiles="@(WIKI)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\WIKI" />
         <Copy SourceFiles="CHANGELOG.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="README.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="manifest.json" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="icon.png" DestinationFolder="$(OutputPath)\ThunderStore\" />
 
+        <ItemGroup>
+            <_CopyItems Include="$(OutputPath)\ThunderStore\plugins\**\*.*" />
+        </ItemGroup>
+
         <!-- Create a thunderstore folders to AgainstTheStorm game folder -->
         <Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-ExampleMod\%(RecursiveDir)" />
+        <Copy SourceFiles="CHANGELOG.md" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-ExampleMod\" />
+        <Copy SourceFiles="README.md" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-ExampleMod\" />
+        <Copy SourceFiles="manifest.json" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-ExampleMod\" />
+        <Copy SourceFiles="icon.png" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-ExampleMod\" />
+        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-ExampleMod\" />
 
         <!-- Run Against The Storm -->
-        <!-- <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
+        <!--         <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
     </Target>
 </Project>

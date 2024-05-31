@@ -59,10 +59,6 @@
     </ItemGroup>
       
     <ItemGroup>
-      <None Remove="Assets\ats_api" />
-      <EmbeddedResource Include="Assets\ats_api" />
-      <None Remove="Assets\ats_api.manifest" />
-      <EmbeddedResource Include="Assets\ats_api.manifest" />
       <None Remove="Scripts\WIKI\EnumTemplate.txt" />
       <EmbeddedResource Include="Scripts\WIKI\EnumTemplate.txt" />
     </ItemGroup>
@@ -72,20 +68,28 @@
             <Assembly Include="$(OutputPath)\$(AssemblyName).dll" />
             <Assets Include="$(OutputPath)\Assets\*.*" />
             <WIKI Include="$(OutputPath)\WIKI\*.*" />
-            <_CopyItems Include="$(OutputPath)\ThunderStore\plugins\**\*.*" />
         </ItemGroup>
          
         <!-- Create a folder with all the .dlls and files to easily uplaod to thunderstore -->
-        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\" />
+        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\Assets" />
-        <Copy SourceFiles="@(WIKI)" DestinationFolder="$(OutputPath)\ThunderStore\WIKI" />
+        <Copy SourceFiles="@(WIKI)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\WIKI" />
         <Copy SourceFiles="CHANGELOG.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="README.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="manifest.json" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="icon.png" DestinationFolder="$(OutputPath)\ThunderStore\" />
 
+        <ItemGroup>
+            <_CopyItems Include="$(OutputPath)\ThunderStore\plugins\**\*.*" />
+        </ItemGroup>
+        
         <!-- Create a thunderstore folders to AgainstTheStorm game folder -->
         <Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\%(RecursiveDir)" />
+        <Copy SourceFiles="CHANGELOG.md" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
+        <Copy SourceFiles="README.md" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
+        <Copy SourceFiles="manifest.json" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
+        <Copy SourceFiles="icon.png" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
+        <Copy SourceFiles="@(Assembly)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
 
         <!-- Run Against The Storm -->
 <!--         <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
