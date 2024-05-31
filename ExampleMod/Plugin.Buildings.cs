@@ -14,14 +14,14 @@ public partial class Plugin
 
     private void CreateHouse()
     {
-        var house = new HouseBuildingBuilder(PluginInfo.PLUGIN_GUID, "House", "TestBuildingIcon.png", 8);
+        var house = new HouseBuildingBuilder(PluginInfo.PLUGIN_GUID, "SkyScraper", "TestBuildingIcon.png", 9);
         house.SetDefaultVisualIcon("TestBuildingDisplayIcon.png");
-        house.SetDisplayName("Sky Scraper");
-        house.SetDescription("A tall building to house many people!");
+        house.SetDisplayName("SkyScraper");
+        house.SetDescription("A tall building to house many people that need to be close to their work. Has to be built near a Hearth. Can house 9 residents.");
         house.SetLabel("Housing");
-        house.SetMoveCost(1, GoodsTypes.Food_Raw_Meat); // optional
         house.SetAllHousingRaces();
         house.AddServedNeeds(NeedTypes.Any_Housing);
+        house.AddRequiredGoods((8, GoodsTypes.Mat_Processed_Planks));
     }
 
     private void CreateWorkshop()
@@ -35,6 +35,7 @@ public partial class Plugin
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
         burgerJoint.AddTags(BuildingTagTypes.Animals);
+        burgerJoint.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks, 10), (3, GoodsTypes.Mat_Processed_Parts));
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();

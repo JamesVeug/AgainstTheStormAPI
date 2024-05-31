@@ -4,7 +4,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <AssemblyName>API_ExampleMod</AssemblyName>
         <Description>Mod used as an example of how to use all of it methods</Description>
-        <Version>1.1.1</Version>
+        <Version>1.2.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <StormPath>C:\Program Files (x86)\Steam\steamapps\common\Against the Storm</StormPath>

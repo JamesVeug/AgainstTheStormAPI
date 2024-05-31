@@ -5,6 +5,7 @@ This mod is to be used as an example for those that wish to make their own mods.
 ## Includes
 - 6 New Goods
 - 3 New Cornerstones
+- 2 New Buildings
 - 1 New Trader
 
 ## Contributors

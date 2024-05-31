@@ -1,3 +1,12 @@
+# 1.2.0
+- Added Custom Workshop (Borgor King)
+  - Contains 3 custom recipes
+- Added Custom House (SkyScraper) 
+- Added 3 new Goods
+  - Burger
+  - Fries
+  - Cola
+
 # 1.1.1
 - Fixed wrong icon for the mod. Oops
 
