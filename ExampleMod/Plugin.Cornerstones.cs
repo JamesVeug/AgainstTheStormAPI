@@ -60,7 +60,7 @@ public partial class Plugin
     
     private void CreateGoodEveryYearProductionCornerstone()
     {
-        HookedEffectBuilder builder = new (PluginInfo.PLUGIN_GUID, "diamondHunter", "Diamonds.png");
+        HookedEffectBuilder builder = new (PluginInfo.PLUGIN_GUID, "diamondHunter", "DiamondHunter.png");
         builder.SetPositive(true);
         builder.SetRarity(EffectRarity.Rare);
         builder.SetObtainedAsCornerstone();
