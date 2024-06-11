@@ -10,6 +10,7 @@ using Eremite.Buildings;
 using Eremite.Model;
 using Eremite.Model.Effects;
 using Eremite.Model.Trade;
+using Eremite.WorldMap;
 using HarmonyLib;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -530,5 +531,77 @@ public class WIKI
     {
         DumpEffectsJSON(MB.Settings.effects, "Effects", a=>a.DisplayName);
         DumpEffectsJSON(MB.Settings.resolveEffects, "Effects", a=>a.displayName.GetText());
+    }
+
+    public static void ExportCSV()
+    {
+        CSVBuilder csv = new CSVBuilder();
+        
+        HashSet<Type> rewardTypes = new HashSet<Type>();
+        
+        var sortedRelics = MB.Settings.Relics.OrderBy(a=>a.name).Distinct();
+        foreach (RelicModel relic in sortedRelics)
+        {
+            csv.AddValue("ID", relic.name, 1);
+            csv.AddValue("Name", relic.displayName.GetText(), 2);
+            csv.AddValue("Description", relic.description.GetText(), 3);
+            csv.AddValue("DangerLevel", relic.dangerLevel.ToString(), 4);
+            csv.AddValue("Category", relic.category.name, 5);
+            
+            
+            for (var i = 0; i < relic.difficulties.Length; i++)
+            {
+                var difficulty = relic.difficulties[i];
+                for (var j = 0; j < difficulty.decisions.Length; j++)
+                {
+                    var decision = difficulty.decisions[j];
+                    string decisionKey = $"Difficulty_{difficulty.difficulty+1}_decision_{j+1}";
+                    csv.AddValue(decisionKey + "_workingTime", decision.workingTime.ToString("F"), 6);
+
+                    List<string> requiredGoods = new List<string>();
+                    for (var k = 0; k < decision.requriedGoods.sets.Length; k++)
+                    {
+                        var set = decision.requriedGoods.sets[k];
+                        for (var l = 0; l < set.goods.Length; l++)
+                        {
+                            var goodRef = set.goods[l];
+                            requiredGoods.Add(goodRef.amount + ":" + goodRef.good.name);
+                        }
+                    }
+                    
+                    csv.AddValue(decisionKey + $"_requiredGoods", requiredGoods.Count > 0 ? string.Join(", ", requiredGoods) : "", 7);
+                }
+            }
+            
+            for (var i = 0; i < relic.activeEffects.Length; i++)
+            {
+                var effectModel = relic.activeEffects[i];
+                csv.AddValue("Effect_" + (i+1), relic.category.name + ":" + effectModel.GetType().Name, 8);
+            }
+            
+            int rewardID = 0;
+            foreach (EffectsTable decision in relic.decisionsRewards)
+            {
+                // Vector2Int amounts = decision.amounts;
+                foreach (EffectsTableEntity reward in decision.effects)
+                {
+                    EffectModel effectModel = reward.effect;
+                    csv.AddValue("Reward_" + (rewardID+1), effectModel.name + ":" + reward.chance + ":" + effectModel.GetType().Name, 10);
+
+                    rewardTypes.Add(effectModel.GetType());
+                    rewardID++;
+                }
+                
+            }
+            
+            csv.NextRow();
+        }
+        
+        csv.SaveAsCSV(Path.Combine(Plugin.PluginDirectory, "Exports", "Relics.csv"));
+        
+        foreach (Type rewardType in rewardTypes)
+        {
+            Plugin.Log.LogInfo("Reward Type: " + rewardType.Name);
+        }
     }
 }
