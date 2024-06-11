@@ -20,7 +20,7 @@ namespace ATS_API;
 
 [HarmonyPatch]
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-public class Plugin : BaseUnityPlugin
+internal class Plugin : BaseUnityPlugin
 {
     public static string PluginDirectory;
         
