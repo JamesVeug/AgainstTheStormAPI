@@ -22,7 +22,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
             m_baseLength = array.Length;
         }
         
-        List<API> pending = new List<API>(); // TODO: Pool this
+        List<API> elementsToAdd = new List<API>(); // TODO: Pool this
         foreach (API t in newElements)
         {
             ATS so = getter(t);
@@ -33,21 +33,21 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
             
             if (Array.IndexOf(array, so, m_baseLength) == -1)
             {
-                pending.Add(t);
+                elementsToAdd.Add(t);
             }
         }
         
-        if (pending.Count == 0)
+        if (elementsToAdd.Count == 0)
         {
-            // Plugin.Log.LogInfo($"{m_Name} has all new elements!");
-            return pending;
+            // Plugin.Log.LogInfo($"{m_Name} has no new elements!");
+            return elementsToAdd;
         }
         
         int startingIndex = array.Length;
-        Array.Resize(ref array, startingIndex + pending.Count);
-        for (int i = 0; i < pending.Count; i++)
+        Array.Resize(ref array, startingIndex + elementsToAdd.Count);
+        for (int i = 0; i < elementsToAdd.Count; i++)
         {
-            API syncable = pending[i];
+            API syncable = elementsToAdd[i];
             ATS ats = getter(syncable);
             array[startingIndex + i] = ats;
             // Plugin.Log.LogInfo($"{m_Name} {i} {ats}");
@@ -61,6 +61,6 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         // Plugin.Log.LogInfo($"{m_Name} now has {array.Length} elements: {result}");
 
         settingsEffectsCache.cache = null;
-        return pending;
+        return elementsToAdd;
     }
 }
