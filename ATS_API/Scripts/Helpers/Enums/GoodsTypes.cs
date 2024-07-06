@@ -117,6 +117,19 @@ public static class GoodsTypesExtensions
         Plugin.Log.LogError("Cannot find GoodModel for GoodsTypes with name: " + name);
         return null;
     }
+	
+	public static GoodsTypes ToGoodsType(this string name)
+	{
+		foreach (KeyValuePair<GoodsTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		return GoodsTypes.Unknown;
+	}
 
 	public static GoodModel ToGoodModel(this GoodsTypes types)
 	{

@@ -184,7 +184,7 @@ public class WIKI
             .Replace("{COLLECTION}", modelGetter)
             .Replace("{ENUM_TO_NAME}", dictionaryLines);
         
-        File.WriteAllText(exportCSScriptsPath + EnumName + ".cs", cs);
+        File.WriteAllText(Path.Combine(exportCSScriptsPath, EnumName + ".cs"), cs);
     }
 
     public static void CreateAllEnumTypes(string csExportPath)
@@ -196,7 +196,8 @@ public class WIKI
         CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("NeedTypes", "SO.Settings.Needs", SO.Settings.Needs, a=>a.Name, a=>a.DisplayName, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        // CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("GoodsCategoriesTypes", "SO.Settings.GoodsCategories", SO.Settings.GoodsCategories, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("ProfessionTypes", "SO.Settings.Professions", SO.Settings.Professions, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("TagTypes", "SO.Settings.tags", SO.Settings.tags, a=>a.Name, null, ["Eremite.Model"]);
@@ -533,7 +534,11 @@ public class WIKI
         DumpEffectsJSON(MB.Settings.resolveEffects, "Effects", a=>a.displayName.GetText());
     }
 
-    public static void ExportCSV()
+    /// <summary>
+    /// Exports a bunch of data to CSV files so it can be loaded in excel or something
+    /// TODO: Only works for Relics atm. Make it work for everything
+    /// </summary>
+    public static void ExportCSVs()
     {
         CSVBuilder csv = new CSVBuilder();
         
