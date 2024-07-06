@@ -4,6 +4,7 @@ using ATS_API.Buildings;
 using ATS_API.Effects;
 using ATS_API.Goods;
 using ATS_API.Helpers;
+using ATS_API.Localization;
 using ATS_API.Orders;
 using ATS_API.Recipes;
 using ATS_API.Traders;
@@ -67,8 +68,9 @@ internal class Plugin : BaseUnityPlugin
         TextMeshProManager.Tick();
         RecipeManager.Tick();
         BuildingManager.Tick();
+        LocalizationManager.Tick();
         
-        // TODO: PostTick to set up links between objects since we can't guarantee they will be loaded in roder.
+        // TODO: PostTick to set up links between objects since we can't guarantee they will be loaded in order.
     }
         
     [HarmonyPatch(typeof(MainController), nameof(MainController.InitReferences))]
