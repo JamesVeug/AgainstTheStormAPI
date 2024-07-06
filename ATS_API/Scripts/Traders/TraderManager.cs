@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Biomes;
 using ATS_API.Goods;
 using ATS_API.Helpers;
@@ -20,6 +22,7 @@ public static partial class TraderManager
 
     private static ArraySync<TraderModel, CustomTrader> s_traders = new("New Traders");
 
+    private static event Action m_postSyncActions;
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
 
@@ -60,6 +63,12 @@ public static partial class TraderManager
             s_dirty = false;
             SyncTraders();
         }
+
+        if (m_postSyncActions != null)
+        {
+            m_postSyncActions.Invoke();
+            m_postSyncActions = null;
+        }
     }
 
     private static void SyncTraders()
@@ -78,44 +87,49 @@ public static partial class TraderManager
         BiomeManager.SetDirty(); // Add trader to biomes
     }
 
+    public static void PostSyncNewGood(NewGood newGood)
+    {
+        m_postSyncActions += () => SyncNewGood(newGood);
+    }
+    
     public static void SyncNewGood(NewGood newGood)
     {
-        if (newGood.SoldByTraderDetails != null || newGood.TraderDesiredAvailability != null)
+        if (newGood.SoldByTraderDetails == null && newGood.TraderDesiredAvailability == null) 
+            return;
+        
+        foreach (TraderModel traderModel in MB.Settings.traders)
         {
-            foreach (TraderModel traderModel in MB.Settings.traders)
+            if (newGood.SoldByTraderDetails != null && newGood.SoldByTraderDetails.TraderAvailability.ContainsTrader(traderModel))
             {
-                if (newGood.SoldByTraderDetails != null && newGood.SoldByTraderDetails.TraderAvailability.ContainsTrader(traderModel))
+                if (newGood.SoldByTraderDetails.Weight >= 100)
                 {
-                    if (newGood.SoldByTraderDetails.Weight >= 100)
+                    GoodRef goodRef = new GoodRef()
                     {
-                        GoodRef goodRef = new GoodRef()
-                        {
-                            good = newGood.goodModel,
-                            amount = newGood.SoldByTraderDetails.Amount
-                        };
-                        ArrayExtensions.AddElement(ref traderModel.guaranteedOfferedGoods, goodRef);
-                    }
-                    else
+                        good = newGood.goodModel,
+                        amount = newGood.SoldByTraderDetails.Amount
+                    };
+                    ArrayExtensions.AddElement(ref traderModel.guaranteedOfferedGoods, goodRef);
+                }
+                else
+                {
+                    GoodRefWeight goodRef = new GoodRefWeight()
                     {
-                        GoodRefWeight goodRef = new GoodRefWeight()
-                        {
-                            good = newGood.goodModel,
-                            amount = newGood.SoldByTraderDetails.Amount,
-                            weight = newGood.SoldByTraderDetails.Weight
-                        };
-                        ArrayExtensions.AddElement(ref traderModel.offeredGoods, goodRef);
-                    }
-
-                    Plugin.Log.LogInfo($"{newGood.goodModel.name} is offered by {traderModel.name}!");
+                        good = newGood.goodModel,
+                        amount = newGood.SoldByTraderDetails.Amount,
+                        weight = newGood.SoldByTraderDetails.Weight
+                    };
+                    ArrayExtensions.AddElement(ref traderModel.offeredGoods, goodRef);
                 }
 
-                if (newGood.TraderDesiredAvailability != null)
+                Plugin.Log.LogInfo($"{newGood.goodModel.name} is offered by {traderModel.name}!");
+            }
+
+            if (newGood.TraderDesiredAvailability != null)
+            {
+                if (newGood.TraderDesiredAvailability.ContainsTrader(traderModel))
                 {
-                    if (newGood.TraderDesiredAvailability.ContainsTrader(traderModel))
-                    {
-                        ArrayExtensions.AddElement(ref traderModel.desiredGoods, newGood.goodModel);
-                        Plugin.Log.LogInfo($"{newGood.goodModel.name} is desired by {traderModel.name}!");
-                    }
+                    ArrayExtensions.AddElement(ref traderModel.desiredGoods, newGood.goodModel);
+                    Plugin.Log.LogInfo($"{newGood.goodModel.name} is desired by {traderModel.name}!");
                 }
             }
         }

@@ -94,11 +94,10 @@ public static class GoodsManager
         
         Settings settings = SO.Settings;
         var added = s_goods.Sync(ref settings.Goods, settings.goodsCache, s_newGoods, a => a.goodModel);
-        Plugin.Log.LogInfo($"Syncing {added.Count} with the trader");
         foreach (NewGood model in added)
         {
-            TraderManager.SyncNewGood(model);
-            RelicManager.SyncNewGood(model);
+            TraderManager.PostSyncNewGood(model);
+            RelicManager.PostSyncNewGood(model);
         }
     }
 }

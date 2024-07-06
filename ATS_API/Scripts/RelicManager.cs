@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using ATS_API.Goods;
 using ATS_API.Helpers;
 using Eremite;
@@ -16,6 +17,7 @@ public static class RelicManager
     //
     // private static ArraySync<OrderModel, OrderModel> s_orders = new("New Goods");
 
+    private static event Action m_postSyncActions;
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
 
@@ -50,6 +52,12 @@ public static class RelicManager
             s_dirty = false;
             Sync();
         }
+
+        if (m_postSyncActions != null)
+        {
+            m_postSyncActions();
+            m_postSyncActions = null;
+        }
     }
 
     private static void Sync()
@@ -64,6 +72,11 @@ public static class RelicManager
         //
         // Settings settings = SO.Settings;
         // s_orders.Sync(ref settings.orders, settings.ordersCache, s_OrderModels, a => a);
+    }
+
+    public static void PostSyncNewGood(NewGood model)
+    {
+        m_postSyncActions += ()=>SyncNewGood(model);
     }
 
     public static void SyncNewGood(NewGood model)
