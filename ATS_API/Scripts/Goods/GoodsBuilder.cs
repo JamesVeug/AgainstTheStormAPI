@@ -10,12 +10,20 @@ namespace ATS_API.Goods;
 public class GoodsBuilder
 {
     public string Name => newModel.goodModel.name; // myguid_itemName
+    public NewGood NewGood => newModel;
     
     private readonly string guid; // myGuid
     private readonly string name; // itemName
     
     private readonly NewGood newModel;
 
+    public GoodsBuilder(GoodModel model)
+    {
+        newModel = NewGood.FromModel(model);
+        name = newModel.rawName;
+        guid = newModel.guid;
+    }
+    
     public GoodsBuilder(string guid, string name, string iconImage)
     {
         this.guid = guid;
@@ -30,13 +38,50 @@ public class GoodsBuilder
 
     public GoodsBuilder SetDisplayName(string text, SystemLanguage language = SystemLanguage.English)
     {
-        newModel.goodModel.displayName = LocalizationManager.ToLocaText(guid, name, "displayName", text, language);
+        string key = newModel.goodModel.displayName.key;
+        if (string.IsNullOrEmpty(key) || key == Placeholders.DisplayName.key)
+        {
+            // Create a new key for this field
+            return SetDisplayName(LocalizationManager.ToLocaText(guid, name, "displayName", text, language));
+        }
+        else
+        {
+            // Replace current key
+            LocalizationManager.AddString(key, text, language);
+            return this;
+        }
+    }
+    
+    public GoodsBuilder SetDisplayNameKey(string key)
+    {
+        return SetDisplayName(key.ToLocaText());
+    }
+    
+    public GoodsBuilder SetDisplayName(LocaText text)
+    {
+        newModel.goodModel.displayName = text;
         return this;
     }
 
     public GoodsBuilder SetDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
-        newModel.goodModel.description = LocalizationManager.ToLocaText(guid, name, "description", description, language);
+        string key = newModel.goodModel.description.key;
+        if (string.IsNullOrEmpty(key) || key == Placeholders.Description.key)
+        {
+            // Create a new key for this field
+            return SetDescriptionKey(LocalizationManager.ToLocaText(guid, name, "description", description, language));
+        }
+        else
+        {
+            // Replace current key
+            LocalizationManager.AddString(key, description, language);
+            return this;
+        }
+    }
+
+    public GoodsBuilder SetDescriptionKey(LocaText locaText)
+    {
+        newModel.goodModel.description = locaText;
         if (newModel.goodModel.shortDescription == null || newModel.goodModel.shortDescription.key == Placeholders.Description.key)
         {
             newModel.goodModel.shortDescription = newModel.goodModel.description;
@@ -44,10 +89,36 @@ public class GoodsBuilder
 
         return this;
     }
+
+    public GoodsBuilder SetDescriptionKey(string key)
+    {
+        return SetDescriptionKey(key.ToLocaText());
+    }
     
     public GoodsBuilder SetShortDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
-        newModel.goodModel.shortDescription = LocalizationManager.ToLocaText(guid, name, "shortDescription", description, language);
+        string key = newModel.goodModel.shortDescription.key;
+        if (string.IsNullOrEmpty(key) || key == Placeholders.Description.key)
+        {
+            // Create a new key for this field
+            return SetShortDescription(LocalizationManager.ToLocaText(guid, name, "shortDescription", description, language));
+        }
+        else
+        {
+            // Replace current key
+            LocalizationManager.AddString(key, description, language);
+            return this;
+        }
+    }
+    
+    public GoodsBuilder SetShortDescriptionKey(string key)
+    {
+        return SetShortDescription(key.ToLocaText());
+    }
+    
+    public GoodsBuilder SetShortDescription(LocaText locaText)
+    {
+        newModel.goodModel.shortDescription = locaText;
         if (newModel.goodModel.description == null || newModel.goodModel.description.key == Placeholders.Description.key)
         {
             newModel.goodModel.description = newModel.goodModel.shortDescription;

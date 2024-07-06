@@ -46,7 +46,7 @@ public static class GoodsManager
         return Add(guid, name, goodModel);
     }
 
-    private static NewGood Add(string guid, string name, GoodModel goodModel)
+    public static NewGood Add(string guid, string name, GoodModel goodModel)
     {
         goodModel.name = guid + "_" + name;
         
@@ -54,7 +54,9 @@ public static class GoodsManager
         NewGood newGood = new NewGood
         {
             goodModel = goodModel,
-            id = id
+            id = id,
+            guid = guid,
+            rawName = name
         };
         s_newGoods.Add(newGood);
         s_newGoodsLookup.Add(id, newGood);
