@@ -19,6 +19,7 @@ public partial class Plugin
         diamonds.SetCategory("Trade Goods");
         diamonds.SetTraderSellValue(40);
         diamonds.CanBeSoldToPlayer(3, 35);
+        diamonds.CanBeSoldToAllTraders();
         diamonds.AddRelicKeepRewardChance(10, 4);
         diamonds.AddRelicKeepRewardChance(5, 2);
         
@@ -28,6 +29,7 @@ public partial class Plugin
         lpg.SetCategory("Fuel");
         lpg.SetTraderSellValue(17f);
         lpg.CanBeSoldToPlayer(10, 29f);
+        lpg.CanBeSoldToAllTraders();
         lpg.SetFuel(200f);
         
         kiwiFruit = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Kiwi Fruit", "KiwiFruit.png");
@@ -36,6 +38,7 @@ public partial class Plugin
         kiwiFruit.SetCategory("Food");
         kiwiFruit.SetTraderSellValue(2.5f);
         kiwiFruit.CanBeSoldToPlayer(30, 5.0f);
+        kiwiFruit.CanBeSoldToAllTraders();
         kiwiFruit.AddRelicKeepRewardChance(10, 4);
         kiwiFruit.AddRelicKeepRewardChance(5, 2);
         kiwiFruit.SetEatable(1);
@@ -46,6 +49,7 @@ public partial class Plugin
         burger.SetCategory("Food");
         burger.SetTraderSellValue(2.5f);
         burger.CanBeSoldToPlayer(30, 5.0f);
+        burger.CanBeSoldToAllTraders();
         burger.SetEatable(3);
         
         fries = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Fries", "Fries.png");
@@ -54,6 +58,7 @@ public partial class Plugin
         fries.SetCategory("Food");
         fries.SetTraderSellValue(0.5f);
         fries.CanBeSoldToPlayer(100, 1f);
+        fries.CanBeSoldToAllTraders();
         fries.SetEatable(1);
         
         cola = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Cola", "Cola.png");
@@ -62,6 +67,7 @@ public partial class Plugin
         cola.SetCategory("Food");
         cola.SetTraderSellValue(0.5f);
         cola.CanBeSoldToPlayer(100, 1f);
+        cola.CanBeSoldToAllTraders();
         cola.SetEatable(2);
     }
 }
