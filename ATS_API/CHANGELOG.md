@@ -1,3 +1,12 @@
+# 1.2.1
+- Added CSVBuilder helper to export relics
+- Added GoodsCategoriesTypes enum helper
+- Can now do your own csv and .cs enum export using configs
+- Fixed displayName, description and shortDescription not editable if key exists.
+- Fixed New goods not working with new traders
+- Fixed not being able to add new strings after game has loaded
+- Added more config options
+
 # 1.2.0 - Contains mod breaking changes.
 - Light support for custom buildings with and without a custom model
   - Houses and Workshops
