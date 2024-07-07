@@ -1,3 +1,6 @@
+# 1.2.1
+- Fixed new goods not being able to be sold to traders
+
 # 1.2.0
 - Added Custom Workshop (Borgor King)
   - Contains 3 custom recipes
