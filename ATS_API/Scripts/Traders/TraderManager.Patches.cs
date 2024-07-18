@@ -1,5 +1,4 @@
-﻿using Eremite.Model.Configs;
-using Eremite.Model.Trade;
+﻿using Eremite.Model.Trade;
 using Eremite.Services;
 using HarmonyLib;
 

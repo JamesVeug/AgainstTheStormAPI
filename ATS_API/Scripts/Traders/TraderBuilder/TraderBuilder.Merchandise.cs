@@ -1,5 +1,4 @@
 ﻿using ATS_API.Helpers;
-using ATS_API.Traders;
 using Eremite.Model;
 
 namespace ATS_API.Effects;

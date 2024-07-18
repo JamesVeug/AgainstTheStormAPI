@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ATS_API.Helpers;
+﻿namespace ATS_API.Helpers;
 
 public static class Extensions
 {

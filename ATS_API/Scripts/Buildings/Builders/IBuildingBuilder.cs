@@ -1,5 +1,4 @@
 ﻿using Eremite.Buildings;
-using Eremite.Model;
 
 namespace ATS_API.Buildings;
 

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Eremite.Model;
-using HarmonyLib;
+﻿using HarmonyLib;
 
 namespace ATS_API.Effects;
 
