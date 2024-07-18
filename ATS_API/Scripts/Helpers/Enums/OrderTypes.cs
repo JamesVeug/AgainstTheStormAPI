@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum OrderTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Amber_And_Luxury_LOW,                 // Essence of Wealth
 	Amber_Transaction,                    // Crystal Feathers
 	Amber_Transaction_LOW,                // Crystal Feathers
@@ -373,23 +373,23 @@ public enum OrderTypes
 	WaterUsed,                            // Essence of Corruption
 
 
-    MAX = 361
+	MAX = 361
 }
 
 public static class OrderTypesExtensions
 {
-    private static OrderTypes[] s_All = null;
+	private static OrderTypes[] s_All = null;
 	public static OrderTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new OrderTypes[361];
-            for (int i = 0; i < 361; i++)
-            {
-                s_All[i] = (OrderTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new OrderTypes[361];
+			for (int i = 0; i < 361; i++)
+			{
+				s_All[i] = (OrderTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this OrderTypes type)
@@ -403,17 +403,31 @@ public static class OrderTypesExtensions
 		return TypeToInternalName[OrderTypes.Amber_And_Luxury_LOW];
 	}
 	
+	public static OrderTypes ToOrderTypes(this string name)
+	{
+		foreach (KeyValuePair<OrderTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find OrderTypes with name: " + name);
+		return OrderTypes.Unknown;
+	}
+	
 	public static OrderModel ToOrderModel(this string name)
-    {
-        OrderModel model = SO.Settings.orders.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find OrderModel for OrderTypes with name: " + name);
-        return null;
-    }
+	{
+		OrderModel model = SO.Settings.orders.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find OrderModel for OrderTypes with name: " + name);
+		return null;
+	}
 
 	public static OrderModel ToOrderModel(this OrderTypes types)
 	{
@@ -421,18 +435,18 @@ public static class OrderTypesExtensions
 	}
 	
 	public static OrderModel[] ToOrderModelArray(this IEnumerable<OrderTypes> collection)
-    {
-        int count = collection.Count();
-        OrderModel[] array = new OrderModel[count];
-        int i = 0;
-        foreach (OrderTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.orders.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		OrderModel[] array = new OrderModel[count];
+		int i = 0;
+		foreach (OrderTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.orders.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<OrderTypes, string> TypeToInternalName = new()
 	{

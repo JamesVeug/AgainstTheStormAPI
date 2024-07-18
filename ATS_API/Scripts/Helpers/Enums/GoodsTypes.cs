@@ -118,7 +118,7 @@ public static class GoodsTypesExtensions
         return null;
     }
 	
-	public static GoodsTypes ToGoodsType(this string name)
+	public static GoodsTypes ToGoodsTypes(this string name)
 	{
 		foreach (KeyValuePair<GoodsTypes,string> pair in TypeToInternalName)
 		{

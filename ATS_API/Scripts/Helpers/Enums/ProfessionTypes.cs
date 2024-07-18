@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum ProfessionTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Alchemist,                  // Alchemist
 	Apothecary,                 // Apothecary
 	Artisan,                    // Artisan
@@ -87,23 +87,23 @@ public enum ProfessionTypes
 	Woodcutter,                 // Woodcutter
 
 
-    MAX = 75
+	MAX = 75
 }
 
 public static class ProfessionTypesExtensions
 {
-    private static ProfessionTypes[] s_All = null;
+	private static ProfessionTypes[] s_All = null;
 	public static ProfessionTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new ProfessionTypes[75];
-            for (int i = 0; i < 75; i++)
-            {
-                s_All[i] = (ProfessionTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new ProfessionTypes[75];
+			for (int i = 0; i < 75; i++)
+			{
+				s_All[i] = (ProfessionTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this ProfessionTypes type)
@@ -117,17 +117,31 @@ public static class ProfessionTypesExtensions
 		return TypeToInternalName[ProfessionTypes.Alchemist];
 	}
 	
+	public static ProfessionTypes ToProfessionTypes(this string name)
+	{
+		foreach (KeyValuePair<ProfessionTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find ProfessionTypes with name: " + name);
+		return ProfessionTypes.Unknown;
+	}
+	
 	public static ProfessionModel ToProfessionModel(this string name)
-    {
-        ProfessionModel model = SO.Settings.Professions.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find ProfessionModel for ProfessionTypes with name: " + name);
-        return null;
-    }
+	{
+		ProfessionModel model = SO.Settings.Professions.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find ProfessionModel for ProfessionTypes with name: " + name);
+		return null;
+	}
 
 	public static ProfessionModel ToProfessionModel(this ProfessionTypes types)
 	{
@@ -135,18 +149,18 @@ public static class ProfessionTypesExtensions
 	}
 	
 	public static ProfessionModel[] ToProfessionModelArray(this IEnumerable<ProfessionTypes> collection)
-    {
-        int count = collection.Count();
-        ProfessionModel[] array = new ProfessionModel[count];
-        int i = 0;
-        foreach (ProfessionTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.Professions.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		ProfessionModel[] array = new ProfessionModel[count];
+		int i = 0;
+		foreach (ProfessionTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.Professions.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<ProfessionTypes, string> TypeToInternalName = new()
 	{

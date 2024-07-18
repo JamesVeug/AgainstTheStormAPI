@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum ResolveEffectTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Acidic_Environment,                                     // Acidic Environment - Working in a loud environment is really taxing.
 	Acidic_Environment_Blightrot,                           // Acidic Environment - Working in a loud environment is really taxing.
 	Agriculture_Penalty,                                    // Industrialized Agriculture - New farming methods are very effective, but cause a lot of pollution.
@@ -18,6 +18,7 @@ public enum ResolveEffectTypes
 	Ancient_Artifact_3,                                     // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 	Ancient_Artifact_Weak,                                  // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 	Any_Housing_Effect,                                     // Basic Housing - All species require at least basic shelter from the constant rainfall and gusting winds.
+	API_ExampleMod_Modding_Tools_resolve_effect_model,      // API_ExampleMod_Modding Tools_displayName - API_ExampleMod_Modding Tools_description
 	BattlegroundPenalty_Hard,                               // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	BattlegroundPenalty_Impossible,                         // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	BattlegroundPenalty_Normal,                             // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
@@ -175,23 +176,23 @@ public enum ResolveEffectTypes
 	Worse_Storms_For_Hostility_Resolve_Penalty,             // Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement.
 
 
-    MAX = 163
+	MAX = 164
 }
 
 public static class ResolveEffectTypesExtensions
 {
-    private static ResolveEffectTypes[] s_All = null;
+	private static ResolveEffectTypes[] s_All = null;
 	public static ResolveEffectTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new ResolveEffectTypes[163];
-            for (int i = 0; i < 163; i++)
-            {
-                s_All[i] = (ResolveEffectTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new ResolveEffectTypes[164];
+			for (int i = 0; i < 164; i++)
+			{
+				s_All[i] = (ResolveEffectTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this ResolveEffectTypes type)
@@ -205,17 +206,31 @@ public static class ResolveEffectTypesExtensions
 		return TypeToInternalName[ResolveEffectTypes.Acidic_Environment];
 	}
 	
+	public static ResolveEffectTypes ToResolveEffectTypes(this string name)
+	{
+		foreach (KeyValuePair<ResolveEffectTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find ResolveEffectTypes with name: " + name);
+		return ResolveEffectTypes.Unknown;
+	}
+	
 	public static ResolveEffectModel ToResolveEffectModel(this string name)
-    {
-        ResolveEffectModel model = SO.Settings.resolveEffects.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find ResolveEffectModel for ResolveEffectTypes with name: " + name);
-        return null;
-    }
+	{
+		ResolveEffectModel model = SO.Settings.resolveEffects.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find ResolveEffectModel for ResolveEffectTypes with name: " + name);
+		return null;
+	}
 
 	public static ResolveEffectModel ToResolveEffectModel(this ResolveEffectTypes types)
 	{
@@ -223,18 +238,18 @@ public static class ResolveEffectTypesExtensions
 	}
 	
 	public static ResolveEffectModel[] ToResolveEffectModelArray(this IEnumerable<ResolveEffectTypes> collection)
-    {
-        int count = collection.Count();
-        ResolveEffectModel[] array = new ResolveEffectModel[count];
-        int i = 0;
-        foreach (ResolveEffectTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.resolveEffects.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		ResolveEffectModel[] array = new ResolveEffectModel[count];
+		int i = 0;
+		foreach (ResolveEffectTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.resolveEffects.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<ResolveEffectTypes, string> TypeToInternalName = new()
 	{
@@ -246,6 +261,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Ancient_Artifact_3, "Ancient Artifact 3" },                                                                         // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 		{ ResolveEffectTypes.Ancient_Artifact_Weak, "Ancient Artifact - weak" },                                                                 // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 		{ ResolveEffectTypes.Any_Housing_Effect, "Any Housing Effect" },                                                                         // Basic Housing - All species require at least basic shelter from the constant rainfall and gusting winds.
+		{ ResolveEffectTypes.API_ExampleMod_Modding_Tools_resolve_effect_model, "API_ExampleMod_Modding Tools_resolve_effect_model" },           // API_ExampleMod_Modding Tools_displayName - API_ExampleMod_Modding Tools_description
 		{ ResolveEffectTypes.BattlegroundPenalty_Hard, "BattlegroundPenalty - hard" },                                                           // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 		{ ResolveEffectTypes.BattlegroundPenalty_Impossible, "BattlegroundPenalty - impossible" },                                               // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 		{ ResolveEffectTypes.BattlegroundPenalty_Normal, "BattlegroundPenalty - normal" },                                                       // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.

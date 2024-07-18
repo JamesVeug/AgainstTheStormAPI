@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum NeedTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Any_Housing,    // Basic Housing
 	Beaver_Housing, // Beaver Housing
 	Biscuits,       // Biscuits
@@ -31,23 +31,23 @@ public enum NeedTypes
 	Treatment,      // Treatment
 
 
-    MAX = 19
+	MAX = 19
 }
 
 public static class NeedTypesExtensions
 {
-    private static NeedTypes[] s_All = null;
+	private static NeedTypes[] s_All = null;
 	public static NeedTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new NeedTypes[19];
-            for (int i = 0; i < 19; i++)
-            {
-                s_All[i] = (NeedTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new NeedTypes[19];
+			for (int i = 0; i < 19; i++)
+			{
+				s_All[i] = (NeedTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this NeedTypes type)
@@ -61,17 +61,31 @@ public static class NeedTypesExtensions
 		return TypeToInternalName[NeedTypes.Any_Housing];
 	}
 	
+	public static NeedTypes ToNeedTypes(this string name)
+	{
+		foreach (KeyValuePair<NeedTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find NeedTypes with name: " + name);
+		return NeedTypes.Unknown;
+	}
+	
 	public static NeedModel ToNeedModel(this string name)
-    {
-        NeedModel model = SO.Settings.Needs.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find NeedModel for NeedTypes with name: " + name);
-        return null;
-    }
+	{
+		NeedModel model = SO.Settings.Needs.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find NeedModel for NeedTypes with name: " + name);
+		return null;
+	}
 
 	public static NeedModel ToNeedModel(this NeedTypes types)
 	{
@@ -79,18 +93,18 @@ public static class NeedTypesExtensions
 	}
 	
 	public static NeedModel[] ToNeedModelArray(this IEnumerable<NeedTypes> collection)
-    {
-        int count = collection.Count();
-        NeedModel[] array = new NeedModel[count];
-        int i = 0;
-        foreach (NeedTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.Needs.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		NeedModel[] array = new NeedModel[count];
+		int i = 0;
+		foreach (NeedTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.Needs.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<NeedTypes, string> TypeToInternalName = new()
 	{

@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum GoalTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Deed_Fox_Population,                             // Fox Settlement - Win a game with at least 25 Foxes.
 	Deed_Harpy_Population,                           // Harpy Settlement - Win a game with at least 25 Harpies.
 	Deed_Reforge_Seal_Adamantine,                    // The Adamantine Seal - Reforge the Adamantine Seal.
@@ -219,23 +219,23 @@ public enum GoalTypes
 	Win_Game_With_Modifier_Watchtower,               // Watchtower - Win a game near the Watchtower modifier.
 
 
-    MAX = 207
+	MAX = 207
 }
 
 public static class GoalTypesExtensions
 {
-    private static GoalTypes[] s_All = null;
+	private static GoalTypes[] s_All = null;
 	public static GoalTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new GoalTypes[207];
-            for (int i = 0; i < 207; i++)
-            {
-                s_All[i] = (GoalTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new GoalTypes[207];
+			for (int i = 0; i < 207; i++)
+			{
+				s_All[i] = (GoalTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this GoalTypes type)
@@ -249,17 +249,31 @@ public static class GoalTypesExtensions
 		return TypeToInternalName[GoalTypes.Deed_Fox_Population];
 	}
 	
+	public static GoalTypes ToGoalTypes(this string name)
+	{
+		foreach (KeyValuePair<GoalTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find GoalTypes with name: " + name);
+		return GoalTypes.Unknown;
+	}
+	
 	public static GoalModel ToGoalModel(this string name)
-    {
-        GoalModel model = SO.Settings.goals.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find GoalModel for GoalTypes with name: " + name);
-        return null;
-    }
+	{
+		GoalModel model = SO.Settings.goals.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find GoalModel for GoalTypes with name: " + name);
+		return null;
+	}
 
 	public static GoalModel ToGoalModel(this GoalTypes types)
 	{
@@ -267,18 +281,18 @@ public static class GoalTypesExtensions
 	}
 	
 	public static GoalModel[] ToGoalModelArray(this IEnumerable<GoalTypes> collection)
-    {
-        int count = collection.Count();
-        GoalModel[] array = new GoalModel[count];
-        int i = 0;
-        foreach (GoalTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.goals.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		GoalModel[] array = new GoalModel[count];
+		int i = 0;
+		foreach (GoalTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.goals.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<GoalTypes, string> TypeToInternalName = new()
 	{

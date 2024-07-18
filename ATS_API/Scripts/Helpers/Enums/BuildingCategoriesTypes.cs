@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum BuildingCategoriesTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	City_Buildings,     // City Buildings
 	Debug_Nodes,        // Rec
 	Decorations,        // Decorations
@@ -32,23 +32,23 @@ public enum BuildingCategoriesTypes
 	Tutorial_Invisible, // City Buildings
 
 
-    MAX = 20
+	MAX = 20
 }
 
 public static class BuildingCategoriesTypesExtensions
 {
-    private static BuildingCategoriesTypes[] s_All = null;
+	private static BuildingCategoriesTypes[] s_All = null;
 	public static BuildingCategoriesTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new BuildingCategoriesTypes[20];
-            for (int i = 0; i < 20; i++)
-            {
-                s_All[i] = (BuildingCategoriesTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new BuildingCategoriesTypes[20];
+			for (int i = 0; i < 20; i++)
+			{
+				s_All[i] = (BuildingCategoriesTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this BuildingCategoriesTypes type)
@@ -62,17 +62,31 @@ public static class BuildingCategoriesTypesExtensions
 		return TypeToInternalName[BuildingCategoriesTypes.City_Buildings];
 	}
 	
+	public static BuildingCategoriesTypes ToBuildingCategoriesTypes(this string name)
+	{
+		foreach (KeyValuePair<BuildingCategoriesTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find BuildingCategoriesTypes with name: " + name);
+		return BuildingCategoriesTypes.Unknown;
+	}
+	
 	public static BuildingCategoryModel ToBuildingCategoryModel(this string name)
-    {
-        BuildingCategoryModel model = SO.Settings.BuildingCategories.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find BuildingCategoryModel for BuildingCategoriesTypes with name: " + name);
-        return null;
-    }
+	{
+		BuildingCategoryModel model = SO.Settings.BuildingCategories.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find BuildingCategoryModel for BuildingCategoriesTypes with name: " + name);
+		return null;
+	}
 
 	public static BuildingCategoryModel ToBuildingCategoryModel(this BuildingCategoriesTypes types)
 	{
@@ -80,18 +94,18 @@ public static class BuildingCategoriesTypesExtensions
 	}
 	
 	public static BuildingCategoryModel[] ToBuildingCategoryModelArray(this IEnumerable<BuildingCategoriesTypes> collection)
-    {
-        int count = collection.Count();
-        BuildingCategoryModel[] array = new BuildingCategoryModel[count];
-        int i = 0;
-        foreach (BuildingCategoriesTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.BuildingCategories.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		BuildingCategoryModel[] array = new BuildingCategoryModel[count];
+		int i = 0;
+		foreach (BuildingCategoriesTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.BuildingCategories.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<BuildingCategoriesTypes, string> TypeToInternalName = new()
 	{

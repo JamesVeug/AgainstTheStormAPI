@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum TagTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Aggregation_Tag_Caches, 
 	Aggregation_Tag_Camps, 
 	Aggregation_Tag_Dangerous_Events, 
@@ -70,23 +70,23 @@ public enum TagTypes
 	Tag_Trade, 
 
 
-    MAX = 58
+	MAX = 58
 }
 
 public static class TagTypesExtensions
 {
-    private static TagTypes[] s_All = null;
+	private static TagTypes[] s_All = null;
 	public static TagTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new TagTypes[58];
-            for (int i = 0; i < 58; i++)
-            {
-                s_All[i] = (TagTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new TagTypes[58];
+			for (int i = 0; i < 58; i++)
+			{
+				s_All[i] = (TagTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this TagTypes type)
@@ -100,17 +100,31 @@ public static class TagTypesExtensions
 		return TypeToInternalName[TagTypes.Aggregation_Tag_Caches];
 	}
 	
+	public static TagTypes ToTagTypes(this string name)
+	{
+		foreach (KeyValuePair<TagTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find TagTypes with name: " + name);
+		return TagTypes.Unknown;
+	}
+	
 	public static ModelTag ToModelTag(this string name)
-    {
-        ModelTag model = SO.Settings.tags.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find ModelTag for TagTypes with name: " + name);
-        return null;
-    }
+	{
+		ModelTag model = SO.Settings.tags.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find ModelTag for TagTypes with name: " + name);
+		return null;
+	}
 
 	public static ModelTag ToModelTag(this TagTypes types)
 	{
@@ -118,18 +132,18 @@ public static class TagTypesExtensions
 	}
 	
 	public static ModelTag[] ToModelTagArray(this IEnumerable<TagTypes> collection)
-    {
-        int count = collection.Count();
-        ModelTag[] array = new ModelTag[count];
-        int i = 0;
-        foreach (TagTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.tags.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		ModelTag[] array = new ModelTag[count];
+		int i = 0;
+		foreach (TagTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.tags.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<TagTypes, string> TypeToInternalName = new()
 	{

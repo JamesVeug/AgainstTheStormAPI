@@ -7,27 +7,27 @@ namespace ATS_API.Helpers;
 {CLASS_HEADER}
 public enum {CLASSNAME}
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 {ENUMS}
 
-    MAX = {TOTAL_ENUMS}
+	MAX = {TOTAL_ENUMS}
 }
 
 public static class {CLASSNAME}Extensions
 {
-    private static {CLASSNAME}[] s_All = null;
+	private static {CLASSNAME}[] s_All = null;
 	public static {CLASSNAME}[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new {CLASSNAME}[{TOTAL_ENUMS}];
-            for (int i = 0; i < {TOTAL_ENUMS}; i++)
-            {
-                s_All[i] = ({CLASSNAME})(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new {CLASSNAME}[{TOTAL_ENUMS}];
+			for (int i = 0; i < {TOTAL_ENUMS}; i++)
+			{
+				s_All[i] = ({CLASSNAME})(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this {CLASSNAME} type)
@@ -41,17 +41,31 @@ public static class {CLASSNAME}Extensions
 		return TypeToInternalName[{CLASSNAME}.{FIRST_ENUM}];
 	}
 	
+	public static {CLASSNAME} To{CLASSNAME}(this string name)
+	{
+		foreach (KeyValuePair<{CLASSNAME},string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find {CLASSNAME} with name: " + name);
+		return {CLASSNAME}.Unknown;
+	}
+	
 	public static {MODELNAME} To{MODELNAME}(this string name)
-    {
-        {MODELNAME} model = {COLLECTION}.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name);
-        return null;
-    }
+	{
+		{MODELNAME} model = {COLLECTION}.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name);
+		return null;
+	}
 
 	public static {MODELNAME} To{MODELNAME}(this {CLASSNAME} types)
 	{
@@ -59,18 +73,18 @@ public static class {CLASSNAME}Extensions
 	}
 	
 	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<{CLASSNAME}> collection)
-    {
-        int count = collection.Count();
-        {MODELNAME}[] array = new {MODELNAME}[count];
-        int i = 0;
-        foreach ({CLASSNAME} element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = {COLLECTION}.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		{MODELNAME}[] array = new {MODELNAME}[count];
+		int i = 0;
+		foreach ({CLASSNAME} element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = {COLLECTION}.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<{CLASSNAME}, string> TypeToInternalName = new()
 	{

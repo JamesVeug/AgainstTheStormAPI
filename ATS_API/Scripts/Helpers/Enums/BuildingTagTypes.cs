@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum BuildingTagTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Alchemy,        // Alchemy (<sprite name="alchemy">)
 	Animals,        // Meat production (<sprite name="meat">)
 	Brewing,        // Brewing (<sprite name="brewing">)
@@ -27,23 +27,23 @@ public enum BuildingTagTypes
 	Wood,           // Woodworking (<sprite name="wood">)
 
 
-    MAX = 15
+	MAX = 15
 }
 
 public static class BuildingTagTypesExtensions
 {
-    private static BuildingTagTypes[] s_All = null;
+	private static BuildingTagTypes[] s_All = null;
 	public static BuildingTagTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new BuildingTagTypes[15];
-            for (int i = 0; i < 15; i++)
-            {
-                s_All[i] = (BuildingTagTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new BuildingTagTypes[15];
+			for (int i = 0; i < 15; i++)
+			{
+				s_All[i] = (BuildingTagTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this BuildingTagTypes type)
@@ -57,17 +57,31 @@ public static class BuildingTagTypesExtensions
 		return TypeToInternalName[BuildingTagTypes.Alchemy];
 	}
 	
+	public static BuildingTagTypes ToBuildingTagTypes(this string name)
+	{
+		foreach (KeyValuePair<BuildingTagTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find BuildingTagTypes with name: " + name);
+		return BuildingTagTypes.Unknown;
+	}
+	
 	public static BuildingTagModel ToBuildingTagModel(this string name)
-    {
-        BuildingTagModel model = SO.Settings.buildingsTags.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find BuildingTagModel for BuildingTagTypes with name: " + name);
-        return null;
-    }
+	{
+		BuildingTagModel model = SO.Settings.buildingsTags.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find BuildingTagModel for BuildingTagTypes with name: " + name);
+		return null;
+	}
 
 	public static BuildingTagModel ToBuildingTagModel(this BuildingTagTypes types)
 	{
@@ -75,18 +89,18 @@ public static class BuildingTagTypesExtensions
 	}
 	
 	public static BuildingTagModel[] ToBuildingTagModelArray(this IEnumerable<BuildingTagTypes> collection)
-    {
-        int count = collection.Count();
-        BuildingTagModel[] array = new BuildingTagModel[count];
-        int i = 0;
-        foreach (BuildingTagTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.buildingsTags.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		BuildingTagModel[] array = new BuildingTagModel[count];
+		int i = 0;
+		foreach (BuildingTagTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.buildingsTags.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<BuildingTagTypes, string> TypeToInternalName = new()
 	{

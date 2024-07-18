@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum BiomeTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Capital,                // Citadel
 	Coral_Forest,           // Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
 	Cursed_Royal_Woodlands, // Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
@@ -23,23 +23,23 @@ public enum BiomeTypes
 	Tutorial_IV,            // Tutorial - Tutorial
 
 
-    MAX = 11
+	MAX = 11
 }
 
 public static class BiomeTypesExtensions
 {
-    private static BiomeTypes[] s_All = null;
+	private static BiomeTypes[] s_All = null;
 	public static BiomeTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new BiomeTypes[11];
-            for (int i = 0; i < 11; i++)
-            {
-                s_All[i] = (BiomeTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new BiomeTypes[11];
+			for (int i = 0; i < 11; i++)
+			{
+				s_All[i] = (BiomeTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this BiomeTypes type)
@@ -53,17 +53,31 @@ public static class BiomeTypesExtensions
 		return TypeToInternalName[BiomeTypes.Capital];
 	}
 	
+	public static BiomeTypes ToBiomeTypes(this string name)
+	{
+		foreach (KeyValuePair<BiomeTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find BiomeTypes with name: " + name);
+		return BiomeTypes.Unknown;
+	}
+	
 	public static BiomeModel ToBiomeModel(this string name)
-    {
-        BiomeModel model = SO.Settings.biomes.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find BiomeModel for BiomeTypes with name: " + name);
-        return null;
-    }
+	{
+		BiomeModel model = SO.Settings.biomes.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find BiomeModel for BiomeTypes with name: " + name);
+		return null;
+	}
 
 	public static BiomeModel ToBiomeModel(this BiomeTypes types)
 	{
@@ -71,18 +85,18 @@ public static class BiomeTypesExtensions
 	}
 	
 	public static BiomeModel[] ToBiomeModelArray(this IEnumerable<BiomeTypes> collection)
-    {
-        int count = collection.Count();
-        BiomeModel[] array = new BiomeModel[count];
-        int i = 0;
-        foreach (BiomeTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.biomes.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		BiomeModel[] array = new BiomeModel[count];
+		int i = 0;
+		foreach (BiomeTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.biomes.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<BiomeTypes, string> TypeToInternalName = new()
 	{

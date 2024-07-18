@@ -59,7 +59,7 @@ public class NewGood : ASyncable<GoodModel>
         }
         
         NewGood newGood = new NewGood();
-        newGood.id = model.name.ToGoodsType();
+        newGood.id = model.name.ToGoodsTypes();
         newGood.goodModel = model;
         // TODO: populate with everything else maybe maybe??
         

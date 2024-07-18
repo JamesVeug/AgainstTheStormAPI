@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum BuildingTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Advanced_Rain_Catcher,                     // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
 	Aestherics_2x2_Garden,                     // Garden - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 	Aestherics_2x2_Groundwater_Extractor,      // Makeshift Extractor - <color=#8AAFFD>Aesthetics.</color> A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 <sprite name="[water] clearance water"> Clearance Water per minute. Counts as 4 decorations of its type.
@@ -41,6 +41,8 @@ public enum BuildingTypes
 	Angry_Ghost_9,                             // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
 	AngryGhostChest_T1,                        // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
 	Anvil,                                     // Anvil - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+	API_ExampleMod_BurgerJoint,                // API_ExampleMod_BurgerJoint_displayName - API_ExampleMod_BurgerJoint_description
+	API_ExampleMod_SkyScraper,                 // API_ExampleMod_SkyScraper_displayName - API_ExampleMod_SkyScraper_description
 	Apothecary,                                // Apothecary - Can produce:  <sprite name=[needs] tea> Tea (<sprite name=grade2>), <sprite name=[needs] incense> Incense (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
 	Arch,                                      // Ancient Arch - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 	Archaeology_Scorpion_Positive,             // Smoldering Scorpion - <color=#D6E54A>Harmony.</color> Legend has it that they once inhabited the top of the mountain on which the Smoldering City now stands. The Queen banished them, but it is said that some of them still hibernate somewhere on the outskirts of the kingdom.  Counts as 9 decorations of its type.
@@ -506,23 +508,23 @@ public enum BuildingTypes
 	Workshop,                                  // Workshop - Can produce:  <sprite name=[mat processed] planks> Planks (<sprite name=grade2>), <sprite name=[mat processed] fabric> Fabric (<sprite name=grade2>), <sprite name=[mat processed] bricks> Bricks (<sprite name=grade2>), <sprite name=[mat processed] pipe> Pipes (<sprite name=grade0>). Can use: <sprite name="[water] storm water"> Storm Water.
 
 
-    MAX = 494
+	MAX = 496
 }
 
 public static class BuildingTypesExtensions
 {
-    private static BuildingTypes[] s_All = null;
+	private static BuildingTypes[] s_All = null;
 	public static BuildingTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new BuildingTypes[494];
-            for (int i = 0; i < 494; i++)
-            {
-                s_All[i] = (BuildingTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new BuildingTypes[496];
+			for (int i = 0; i < 496; i++)
+			{
+				s_All[i] = (BuildingTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this BuildingTypes type)
@@ -536,17 +538,31 @@ public static class BuildingTypesExtensions
 		return TypeToInternalName[BuildingTypes.Advanced_Rain_Catcher];
 	}
 	
+	public static BuildingTypes ToBuildingTypes(this string name)
+	{
+		foreach (KeyValuePair<BuildingTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find BuildingTypes with name: " + name);
+		return BuildingTypes.Unknown;
+	}
+	
 	public static BuildingModel ToBuildingModel(this string name)
-    {
-        BuildingModel model = SO.Settings.Buildings.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find BuildingModel for BuildingTypes with name: " + name);
-        return null;
-    }
+	{
+		BuildingModel model = SO.Settings.Buildings.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find BuildingModel for BuildingTypes with name: " + name);
+		return null;
+	}
 
 	public static BuildingModel ToBuildingModel(this BuildingTypes types)
 	{
@@ -554,18 +570,18 @@ public static class BuildingTypesExtensions
 	}
 	
 	public static BuildingModel[] ToBuildingModelArray(this IEnumerable<BuildingTypes> collection)
-    {
-        int count = collection.Count();
-        BuildingModel[] array = new BuildingModel[count];
-        int i = 0;
-        foreach (BuildingTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.Buildings.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		BuildingModel[] array = new BuildingModel[count];
+		int i = 0;
+		foreach (BuildingTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.Buildings.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<BuildingTypes, string> TypeToInternalName = new()
 	{
@@ -600,6 +616,8 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                           // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
 		{ BuildingTypes.AngryGhostChest_T1, "AngryGhostChest_T1" },                                                 // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
 		{ BuildingTypes.Anvil, "Anvil" },                                                                           // Anvil - <color=#8AAFFD>Aesthetics.</color> The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
+		{ BuildingTypes.API_ExampleMod_BurgerJoint, "API_ExampleMod_BurgerJoint" },                                 // API_ExampleMod_BurgerJoint_displayName - API_ExampleMod_BurgerJoint_description
+		{ BuildingTypes.API_ExampleMod_SkyScraper, "API_ExampleMod_SkyScraper" },                                   // API_ExampleMod_SkyScraper_displayName - API_ExampleMod_SkyScraper_description
 		{ BuildingTypes.Apothecary, "Apothecary" },                                                                 // Apothecary - Can produce:  <sprite name=[needs] tea> Tea (<sprite name=grade2>), <sprite name=[needs] incense> Incense (<sprite name=grade2>), <sprite name=[food processed] biscuits> Biscuits (<sprite name=grade2>). Can use: <sprite name="[water] clearance water"> Clearance Water.
 		{ BuildingTypes.Arch, "Arch" },                                                                             // Ancient Arch - <color=#D6E54A>Harmony.</color> Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 		{ BuildingTypes.Archaeology_Scorpion_Positive, "Archaeology Scorpion Positive" },                           // Smoldering Scorpion - <color=#D6E54A>Harmony.</color> Legend has it that they once inhabited the top of the mountain on which the Smoldering City now stands. The Queen banished them, but it is said that some of them still hibernate somewhere on the outskirts of the kingdom.  Counts as 9 decorations of its type.

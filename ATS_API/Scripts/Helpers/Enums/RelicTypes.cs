@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum RelicTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	AncientBurrialGrounds,                     // Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
 	AncientGate,                               // Dark Gate - A strange monument of cyclopean proportions. Heavy storm clouds seem to be gathering around the settlement.
 	AncientShrine_T1,                          // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
@@ -329,23 +329,23 @@ public enum RelicTypes
 	Wildfire,                                  // Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
 
 
-    MAX = 317
+	MAX = 317
 }
 
 public static class RelicTypesExtensions
 {
-    private static RelicTypes[] s_All = null;
+	private static RelicTypes[] s_All = null;
 	public static RelicTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new RelicTypes[317];
-            for (int i = 0; i < 317; i++)
-            {
-                s_All[i] = (RelicTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new RelicTypes[317];
+			for (int i = 0; i < 317; i++)
+			{
+				s_All[i] = (RelicTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this RelicTypes type)
@@ -359,17 +359,31 @@ public static class RelicTypesExtensions
 		return TypeToInternalName[RelicTypes.AncientBurrialGrounds];
 	}
 	
+	public static RelicTypes ToRelicTypes(this string name)
+	{
+		foreach (KeyValuePair<RelicTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find RelicTypes with name: " + name);
+		return RelicTypes.Unknown;
+	}
+	
 	public static RelicModel ToRelicModel(this string name)
-    {
-        RelicModel model = SO.Settings.Relics.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find RelicModel for RelicTypes with name: " + name);
-        return null;
-    }
+	{
+		RelicModel model = SO.Settings.Relics.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find RelicModel for RelicTypes with name: " + name);
+		return null;
+	}
 
 	public static RelicModel ToRelicModel(this RelicTypes types)
 	{
@@ -377,18 +391,18 @@ public static class RelicTypesExtensions
 	}
 	
 	public static RelicModel[] ToRelicModelArray(this IEnumerable<RelicTypes> collection)
-    {
-        int count = collection.Count();
-        RelicModel[] array = new RelicModel[count];
-        int i = 0;
-        foreach (RelicTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.Relics.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		RelicModel[] array = new RelicModel[count];
+		int i = 0;
+		foreach (RelicTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.Relics.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<RelicTypes, string> TypeToInternalName = new()
 	{

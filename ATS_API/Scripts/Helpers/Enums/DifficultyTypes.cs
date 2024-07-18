@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum DifficultyTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Ascension_I,             // Prestige 1 - More Reputation required and harder Orders.
 	Ascension_II,            // Prestige 2 - The storm lasts longer.
 	Ascension_III,           // Prestige 3 - Blightrot appears every third Clearance season.
@@ -40,23 +40,23 @@ public enum DifficultyTypes
 	Very_Hard,               // Veteran - Blightrot & Corruption
 
 
-    MAX = 28
+	MAX = 28
 }
 
 public static class DifficultyTypesExtensions
 {
-    private static DifficultyTypes[] s_All = null;
+	private static DifficultyTypes[] s_All = null;
 	public static DifficultyTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new DifficultyTypes[28];
-            for (int i = 0; i < 28; i++)
-            {
-                s_All[i] = (DifficultyTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new DifficultyTypes[28];
+			for (int i = 0; i < 28; i++)
+			{
+				s_All[i] = (DifficultyTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this DifficultyTypes type)
@@ -70,17 +70,31 @@ public static class DifficultyTypesExtensions
 		return TypeToInternalName[DifficultyTypes.Ascension_I];
 	}
 	
+	public static DifficultyTypes ToDifficultyTypes(this string name)
+	{
+		foreach (KeyValuePair<DifficultyTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find DifficultyTypes with name: " + name);
+		return DifficultyTypes.Unknown;
+	}
+	
 	public static DifficultyModel ToDifficultyModel(this string name)
-    {
-        DifficultyModel model = SO.Settings.difficulties.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find DifficultyModel for DifficultyTypes with name: " + name);
-        return null;
-    }
+	{
+		DifficultyModel model = SO.Settings.difficulties.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find DifficultyModel for DifficultyTypes with name: " + name);
+		return null;
+	}
 
 	public static DifficultyModel ToDifficultyModel(this DifficultyTypes types)
 	{
@@ -88,18 +102,18 @@ public static class DifficultyTypesExtensions
 	}
 	
 	public static DifficultyModel[] ToDifficultyModelArray(this IEnumerable<DifficultyTypes> collection)
-    {
-        int count = collection.Count();
-        DifficultyModel[] array = new DifficultyModel[count];
-        int i = 0;
-        foreach (DifficultyTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.difficulties.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		DifficultyModel[] array = new DifficultyModel[count];
+		int i = 0;
+		foreach (DifficultyTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.difficulties.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<DifficultyTypes, string> TypeToInternalName = new()
 	{

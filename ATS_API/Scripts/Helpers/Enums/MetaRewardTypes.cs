@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum MetaRewardTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Artifacts_10,                                              // Artifacts
 	Artifacts_15,                                              // Artifacts
 	Artifacts_20,                                              // Artifacts
@@ -372,23 +372,23 @@ public enum MetaRewardTypes
 	Trade_Routes_Activation,                                   // Trade Routes
 
 
-    MAX = 360
+	MAX = 360
 }
 
 public static class MetaRewardTypesExtensions
 {
-    private static MetaRewardTypes[] s_All = null;
+	private static MetaRewardTypes[] s_All = null;
 	public static MetaRewardTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new MetaRewardTypes[360];
-            for (int i = 0; i < 360; i++)
-            {
-                s_All[i] = (MetaRewardTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new MetaRewardTypes[360];
+			for (int i = 0; i < 360; i++)
+			{
+				s_All[i] = (MetaRewardTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this MetaRewardTypes type)
@@ -402,17 +402,31 @@ public static class MetaRewardTypesExtensions
 		return TypeToInternalName[MetaRewardTypes.Artifacts_10];
 	}
 	
+	public static MetaRewardTypes ToMetaRewardTypes(this string name)
+	{
+		foreach (KeyValuePair<MetaRewardTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find MetaRewardTypes with name: " + name);
+		return MetaRewardTypes.Unknown;
+	}
+	
 	public static MetaRewardModel ToMetaRewardModel(this string name)
-    {
-        MetaRewardModel model = SO.Settings.metaRewards.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find MetaRewardModel for MetaRewardTypes with name: " + name);
-        return null;
-    }
+	{
+		MetaRewardModel model = SO.Settings.metaRewards.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find MetaRewardModel for MetaRewardTypes with name: " + name);
+		return null;
+	}
 
 	public static MetaRewardModel ToMetaRewardModel(this MetaRewardTypes types)
 	{
@@ -420,18 +434,18 @@ public static class MetaRewardTypesExtensions
 	}
 	
 	public static MetaRewardModel[] ToMetaRewardModelArray(this IEnumerable<MetaRewardTypes> collection)
-    {
-        int count = collection.Count();
-        MetaRewardModel[] array = new MetaRewardModel[count];
-        int i = 0;
-        foreach (MetaRewardTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.metaRewards.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		MetaRewardModel[] array = new MetaRewardModel[count];
+		int i = 0;
+		foreach (MetaRewardTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.metaRewards.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<MetaRewardTypes, string> TypeToInternalName = new()
 	{

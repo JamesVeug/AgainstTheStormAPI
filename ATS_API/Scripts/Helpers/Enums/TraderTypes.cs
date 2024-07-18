@@ -8,8 +8,9 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum TraderTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
+	API_ExampleMod_Wild_Bill,             // API_ExampleMod_Wild Bill_displayName - API_ExampleMod_Wild Bill_description
 	Trader_0_General,                     // Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
 	Trader_1_First_Dawn_Company,          // Zhorg - He might have <color=#e0e09f>cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture</color> for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
 	Trader_2_Brass_Order,                 // Old Farluf - He might have <color=#e0e09f>metal, fuel, tools, building materials, and a number of blueprints and perks</color> for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.
@@ -23,23 +24,23 @@ public enum TraderTypes
 	Trader_Glade_03,                      // Ruenhar Blightclaw
 
 
-    MAX = 11
+	MAX = 12
 }
 
 public static class TraderTypesExtensions
 {
-    private static TraderTypes[] s_All = null;
+	private static TraderTypes[] s_All = null;
 	public static TraderTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new TraderTypes[11];
-            for (int i = 0; i < 11; i++)
-            {
-                s_All[i] = (TraderTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new TraderTypes[12];
+			for (int i = 0; i < 12; i++)
+			{
+				s_All[i] = (TraderTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this TraderTypes type)
@@ -50,20 +51,34 @@ public static class TraderTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of TraderTypes: " + type);
-		return TypeToInternalName[TraderTypes.Trader_0_General];
+		return TypeToInternalName[TraderTypes.API_ExampleMod_Wild_Bill];
+	}
+	
+	public static TraderTypes ToTraderTypes(this string name)
+	{
+		foreach (KeyValuePair<TraderTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find TraderTypes with name: " + name);
+		return TraderTypes.Unknown;
 	}
 	
 	public static TraderModel ToTraderModel(this string name)
-    {
-        TraderModel model = SO.Settings.traders.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find TraderModel for TraderTypes with name: " + name);
-        return null;
-    }
+	{
+		TraderModel model = SO.Settings.traders.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find TraderModel for TraderTypes with name: " + name);
+		return null;
+	}
 
 	public static TraderModel ToTraderModel(this TraderTypes types)
 	{
@@ -71,21 +86,22 @@ public static class TraderTypesExtensions
 	}
 	
 	public static TraderModel[] ToTraderModelArray(this IEnumerable<TraderTypes> collection)
-    {
-        int count = collection.Count();
-        TraderModel[] array = new TraderModel[count];
-        int i = 0;
-        foreach (TraderTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.traders.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		TraderModel[] array = new TraderModel[count];
+		int i = 0;
+		foreach (TraderTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.traders.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<TraderTypes, string> TypeToInternalName = new()
 	{
+		{ TraderTypes.API_ExampleMod_Wild_Bill, "API_ExampleMod_Wild Bill" },                           // API_ExampleMod_Wild Bill_displayName - API_ExampleMod_Wild Bill_description
 		{ TraderTypes.Trader_0_General, "Trader 0 - General" },                                         // Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
 		{ TraderTypes.Trader_1_First_Dawn_Company, "Trader 1 - First Dawn Company" },                   // Zhorg - He might have <color=#e0e09f>cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture</color> for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
 		{ TraderTypes.Trader_2_Brass_Order, "Trader 2 - Brass Order" },                                 // Old Farluf - He might have <color=#e0e09f>metal, fuel, tools, building materials, and a number of blueprints and perks</color> for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.

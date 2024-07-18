@@ -8,8 +8,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum GoodsCategoriesTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	Building_Materials, // Building Materials - {0} to expand category
 	Consumable_Items,   // Consumable Items - {0} to expand category
 	Crafting,           // Crafting Resources - {0} to expand category
@@ -19,23 +19,23 @@ public enum GoodsCategoriesTypes
 	Trade_Goods,        // Trade Goods - {0} to expand category
 
 
-    MAX = 7
+	MAX = 7
 }
 
 public static class GoodsCategoriesTypesExtensions
 {
-    private static GoodsCategoriesTypes[] s_All = null;
+	private static GoodsCategoriesTypes[] s_All = null;
 	public static GoodsCategoriesTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new GoodsCategoriesTypes[7];
-            for (int i = 0; i < 7; i++)
-            {
-                s_All[i] = (GoodsCategoriesTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new GoodsCategoriesTypes[7];
+			for (int i = 0; i < 7; i++)
+			{
+				s_All[i] = (GoodsCategoriesTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this GoodsCategoriesTypes type)
@@ -49,17 +49,31 @@ public static class GoodsCategoriesTypesExtensions
 		return TypeToInternalName[GoodsCategoriesTypes.Building_Materials];
 	}
 	
+	public static GoodsCategoriesTypes ToGoodsCategoriesTypes(this string name)
+	{
+		foreach (KeyValuePair<GoodsCategoriesTypes,string> pair in TypeToInternalName)
+		{
+			if (pair.Value == name)
+			{
+				return pair.Key;
+			}
+		}
+
+		Plugin.Log.LogWarning("Cannot find GoodsCategoriesTypes with name: " + name);
+		return GoodsCategoriesTypes.Unknown;
+	}
+	
 	public static GoodCategoryModel ToGoodCategoryModel(this string name)
-    {
-        GoodCategoryModel model = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find GoodCategoryModel for GoodsCategoriesTypes with name: " + name);
-        return null;
-    }
+	{
+		GoodCategoryModel model = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find GoodCategoryModel for GoodsCategoriesTypes with name: " + name);
+		return null;
+	}
 
 	public static GoodCategoryModel ToGoodCategoryModel(this GoodsCategoriesTypes types)
 	{
@@ -67,18 +81,18 @@ public static class GoodsCategoriesTypesExtensions
 	}
 	
 	public static GoodCategoryModel[] ToGoodCategoryModelArray(this IEnumerable<GoodsCategoriesTypes> collection)
-    {
-        int count = collection.Count();
-        GoodCategoryModel[] array = new GoodCategoryModel[count];
-        int i = 0;
-        foreach (GoodsCategoriesTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		GoodCategoryModel[] array = new GoodCategoryModel[count];
+		int i = 0;
+		foreach (GoodsCategoriesTypes element in collection)
+		{
+			string elementName = element.ToName();
+			array[i++] = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == elementName);
+		}
 
-        return array;
-    }
+		return array;
+	}
 
 	internal static readonly Dictionary<GoodsCategoriesTypes, string> TypeToInternalName = new()
 	{
