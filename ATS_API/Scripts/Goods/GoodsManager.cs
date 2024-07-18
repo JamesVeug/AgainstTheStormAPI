@@ -43,7 +43,9 @@ public static class GoodsManager
         goodModel.tradingSellValue = 1.8f;
         goodModel.tradingBuyValue = 3.0f;
 
-        return Add(guid, name, goodModel);
+        NewGood good = Add(guid, name, goodModel);
+        TextMeshProManager.Add(goodModel.icon.texture, goodModel.name);
+        return good;
     }
 
     public static NewGood Add(string guid, string name, GoodModel goodModel)

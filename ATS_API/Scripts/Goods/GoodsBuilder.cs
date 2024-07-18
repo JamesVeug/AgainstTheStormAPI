@@ -33,6 +33,17 @@ public class GoodsBuilder
         newModel.goodModel.displayName = Placeholders.DisplayName;
         newModel.goodModel.description = Placeholders.Description;
         newModel.goodModel.shortDescription = Placeholders.Description;
+    }
+    
+    public void SetIcon(string iconImage)
+    {
+        newModel.goodModel.icon = TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.EffectIcon);
+        TextMeshProManager.Add(newModel.goodModel.icon.texture, newModel.goodModel.name);
+    }
+    
+    public void SetIcon(Sprite sprite)
+    {
+        newModel.goodModel.icon = sprite;
         TextMeshProManager.Add(newModel.goodModel.icon.texture, newModel.goodModel.name);
     }
 
