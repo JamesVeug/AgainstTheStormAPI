@@ -33,7 +33,6 @@ public static partial class LocalizationManager
         {
             foreach (KeyValuePair<string, string> pair in dic)
             {
-                Plugin.Log.LogInfo("Adding string: " + pair.Key + " - " + pair.Value);
                 textsService.texts[pair.Key] = pair.Value;
             }
         }

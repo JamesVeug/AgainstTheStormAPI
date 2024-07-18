@@ -119,8 +119,6 @@ public static partial class TraderManager
                     };
                     ArrayExtensions.AddElement(ref traderModel.offeredGoods, goodRef);
                 }
-
-                Plugin.Log.LogInfo($"{newGood.goodModel.name} is offered by {traderModel.name}!");
             }
 
             if (newGood.TraderDesiredAvailability != null)
@@ -128,7 +126,6 @@ public static partial class TraderManager
                 if (newGood.TraderDesiredAvailability.ContainsTrader(traderModel))
                 {
                     ArrayExtensions.AddElement(ref traderModel.desiredGoods, newGood.goodModel);
-                    Plugin.Log.LogInfo($"{newGood.goodModel.name} is desired by {traderModel.name}!");
                 }
             }
         }
