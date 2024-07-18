@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using BepInEx;
 using HarmonyLib;
-using System.Reflection;
 using UnityEngine;
 
 namespace ATS_API.Helpers;
@@ -17,7 +17,7 @@ public static class TextureHelper
     /// <summary>
     /// Thie is used to indicate what type of sprite you wish to create so that the appropriate size and pivot point can be determined.
     /// </summary>
-    public enum SpriteType : int
+    public enum SpriteType
     {
         /// <summary>
         /// An icon for a cornerstone/perk/effect
@@ -27,7 +27,7 @@ public static class TextureHelper
         TraderIconSmall = 2,
         BuildingIcon = 3,
         BuildingDefaultModelDisplayIcon = 4,
-    };
+    }
 
     private static Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
 
@@ -278,6 +278,7 @@ public static class TextureHelper
 
     public static Texture2D GetReadableTexture(Texture2D texture)
     {
+        var readableTexture = texture;
         if (!texture.isReadable)
         {
             RenderTexture renderTex = RenderTexture.GetTemporary(
@@ -289,15 +290,49 @@ public static class TextureHelper
 
             Graphics.Blit(texture, renderTex);
             RenderTexture previous = RenderTexture.active;
+            Texture2D readableText = new Texture2D(texture.width, texture.height, TextureFormat.RGBA32, false, true);
             RenderTexture.active = renderTex;
-            Texture2D readableText = new Texture2D(texture.width, texture.height);
             readableText.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
             readableText.Apply();
             RenderTexture.active = previous;
             RenderTexture.ReleaseTemporary(renderTex);
-            texture = readableText;
+            readableTexture = readableText;
         }
 
-        return texture;
+        return readableTexture;
+    }
+    
+    public static Texture2D ResizeTexture(Texture2D sourceTexture, int width, int height)
+    {
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture rt = RenderTexture.GetTemporary(
+            width,
+            height,
+            0,
+            RenderTextureFormat.Default,
+            RenderTextureReadWrite.Linear);
+        
+        RenderTexture.active = rt;
+        Graphics.Blit(sourceTexture,rt);
+        var sourceTextureResized = new Texture2D(width,height);
+        sourceTextureResized.ReadPixels(new Rect(0,0,width,height),0,0);
+        sourceTextureResized.Apply();
+        
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(rt);
+        return sourceTextureResized;
+    }
+    
+    public static void ExportTextureToAssets(Texture2D texture, string fullPath)
+    {
+        byte[] bytes = texture.EncodeToPNG();
+        string directory = Path.GetDirectoryName(fullPath);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+                
+        Plugin.Log.LogInfo($"Writing {fullPath}");
+        File.WriteAllBytes(fullPath, bytes);
     }
 }

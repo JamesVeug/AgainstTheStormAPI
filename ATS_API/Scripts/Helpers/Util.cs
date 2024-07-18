@@ -141,4 +141,32 @@ public static class Util
         
         return find.Find(secondName);
     }
+    
+    public static string FullName(this UnityEngine.Object obj)
+    {
+        if (obj == null)
+        {
+            return "null";
+        }
+        
+        string hierarchyPath = "";
+
+        GameObject go = null;
+        if (obj is GameObject)
+        {
+            go = obj as GameObject;
+            hierarchyPath = go.name + $" {obj.GetType().FullName}";
+        }
+        else if(obj is Component component)
+        {
+            go = component.gameObject;
+            hierarchyPath = go.name + $" {obj.GetType().FullName}";
+        }
+        else
+        {
+            hierarchyPath = $"{obj.GetType().FullName}";
+        }
+        
+        return hierarchyPath;
+    }
 }
