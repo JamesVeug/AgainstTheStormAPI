@@ -26,7 +26,7 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Perks/Cornerstones
 - New Traders
 - New Orders (Minimal)
-- New Builders (Minimal)
+- New Buildings (Minimal)
 - New Recipes
 - Localization
 

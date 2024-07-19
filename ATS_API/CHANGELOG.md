@@ -1,3 +1,11 @@
+# 1.2.2
+- Added Set icon method for GoodsBuilder, so it also changes inline images
+- Added string to Types enum helper for all enum types
+- Added support to replace existing inline images
+- Added load and export helpers for audio
+- Added export texture helper method
+- Reduced number of logs
+
 # 1.2.1
 - Added CSVBuilder helper to export relics
 - Added GoodsCategoriesTypes enum helper
