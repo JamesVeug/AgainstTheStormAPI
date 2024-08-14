@@ -72,6 +72,12 @@ public class CSVBuilder
         {
             NextRow();
         }
+        
+        string directory = System.IO.Path.GetDirectoryName(path);
+        if (!System.IO.Directory.Exists(directory))
+        {
+            System.IO.Directory.CreateDirectory(directory);
+        }
 
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(path))
         {
