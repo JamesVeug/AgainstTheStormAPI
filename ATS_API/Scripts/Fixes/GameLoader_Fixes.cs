@@ -54,5 +54,47 @@ internal class GameLoader_Fixes
             
             state.resolveEffects = clone;
         }
+        
+        // Remove any perks that no longer exist
+        foreach (string perkName in new List<string>(__instance.state.effects.perks.Keys))
+        {
+            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, perkName))
+            {
+                Plugin.Log.LogError($"Found missing perk: {perkName} when loading save! Removing from state.");
+                __instance.state.effects.perks.Remove(perkName);
+            }
+        }
+
+        // Remove all effects
+        Plugin.Log.LogInfo("Removing all effects from state.");
+        for (var i = __instance.state.hookedEffects.activeEffects.Count - 1; i >= 0; i--)
+        {
+            var activeEffect = __instance.state.hookedEffects.activeEffects[i];
+            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.model))
+            {
+                Plugin.Log.LogError($"Found missing active effect: {activeEffect.model} when loading save! Removing from state.");
+                __instance.state.hookedEffects.activeEffects.RemoveAt(i);
+            }
+        }
+        for (var i = __instance.state.hookedEffects.toAdd.Count - 1; i >= 0; i--)
+        {
+            var activeEffect = __instance.state.hookedEffects.toAdd[i];
+            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.model))
+            {
+                Plugin.Log.LogError($"Found missing toAdd effect: {activeEffect.model} when loading save! Removing from state.");
+                __instance.state.hookedEffects.toAdd.RemoveAt(i);
+            }
+        }
+        for (var i = __instance.state.hookedEffects.toRemove.Count - 1; i >= 0; i--)
+        {
+            var activeEffect = __instance.state.hookedEffects.toRemove[i];
+            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.Key))
+            {
+                Plugin.Log.LogError($"Found missing toRemove effect: {activeEffect.Key} when loading save! Removing from state.");
+                __instance.state.hookedEffects.toRemove.RemoveAt(i);
+            }
+        }
+        
+        
     }
 }
