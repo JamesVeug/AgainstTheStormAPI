@@ -40,7 +40,7 @@ public class NewGood : ASyncable<GoodModel>
                 modelCategory = settings.Goods[0].category;
             }
             model.category = modelCategory;
-            Plugin.Log.LogInfo($"Assigning new good {model.name} category {model.category.name}");
+            // Plugin.Log.LogInfo($"Assigning new good {model.name} category {model.category.name}");
         }
         
         return true;
