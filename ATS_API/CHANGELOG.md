@@ -1,3 +1,7 @@
+# 1.2.3
+- Added VillagerPerkTypes enum helper
+- Added BuildingPerkTypes enum helper
+
 # 1.2.2
 - Added Set icon method for GoodsBuilder, so it also changes inline images
 - Added string to Types enum helper for all enum types
