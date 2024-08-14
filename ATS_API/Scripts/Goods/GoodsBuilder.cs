@@ -37,8 +37,12 @@ public class GoodsBuilder
     
     public void SetIcon(string iconImage)
     {
-        newModel.goodModel.icon = TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.EffectIcon);
-        TextMeshProManager.Add(newModel.goodModel.icon.texture, newModel.goodModel.name);
+        SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.EffectIcon));
+    }
+
+    public void SetIcon(Texture2D texture2D)
+    {
+        SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.EffectIcon));
     }
     
     public void SetIcon(Sprite sprite)

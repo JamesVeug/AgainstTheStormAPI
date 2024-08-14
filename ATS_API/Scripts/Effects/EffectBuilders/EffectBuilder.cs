@@ -47,13 +47,26 @@ public class EffectBuilder<T> : IEffectBuilder where T : EffectModel
         m_effectModel.usabilityTags = [];
         m_effectModel.blockedBy = [];
 
-
         if (!string.IsNullOrEmpty(iconPath))
         {
-            Texture2D texture = TextureHelper.GetImageAsTexture(iconPath);
-            TextMeshProManager.Add(texture, m_newData.EffectModel.name);
-            m_effectModel.overrideIcon = texture.ConvertTexture(TextureHelper.SpriteType.EffectIcon);
+            SetIcon(iconPath);
         }
+    }
+    
+    public void SetIcon(string iconPath)
+    {
+        SetIcon(TextureHelper.GetImageAsSprite(iconPath, TextureHelper.SpriteType.EffectIcon));
+    }
+    
+    public void SetIcon(Texture2D texture)
+    {
+        SetIcon(texture.ConvertTexture(TextureHelper.SpriteType.EffectIcon));
+    }
+    
+    public void SetIcon(Sprite sprite)
+    {
+        TextMeshProManager.Add(sprite.texture, m_newData.EffectModel.name);
+        m_effectModel.overrideIcon = sprite;
     }
     
     public void SetRarity(EffectRarity rarity)
