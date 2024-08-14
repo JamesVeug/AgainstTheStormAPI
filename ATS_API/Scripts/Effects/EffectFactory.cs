@@ -30,4 +30,14 @@ public static class EffectFactory
 
         return effectModel;
     }
+    
+    public static HostilityEffectModel AddHookedEffect_AddHostility(IEffectBuilder builder, int amount = 1)
+    {
+        HostilityEffectModel effectEffectModel = NewHookedEffect<HostilityEffectModel>(builder);
+        effectEffectModel.amount = amount;
+        effectEffectModel.description = builder.Model.description;
+        effectEffectModel.displayName = builder.Model.displayName;
+        effectEffectModel.label = builder.Model.label;
+        return effectEffectModel;
+    }
 }
