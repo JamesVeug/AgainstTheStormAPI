@@ -2,9 +2,9 @@
 using ATS_API;
 using BepInEx.Configuration;
 
-namespace DebugMenu;
+namespace ATS_API;
 
-public static class Configs
+internal static class Configs
 {
     public static bool ExportEnumTypes
     {
