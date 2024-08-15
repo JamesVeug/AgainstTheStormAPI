@@ -178,9 +178,20 @@ public partial class BuildingManager
         if (view is HouseView houseView)
         {
             // Plugin.Log.LogInfo($"Starting houseView");
+            BuildingModel templateHouse = BuildingTypes.Lizard_House.ToBuildingModel();
+            HouseView templateHouseView = (HouseView)templateHouse.Prefab.BuildingView;
+            
             houseView.constructionAnimator = constructionAnimator;
             houseView.animator = prefab.GetComponent<Animator>();
             houseView.planOverlay = prefab.AddComponent<HousePlanOverlay>();
+            houseView.noHearthIcon = GameObject.Instantiate(templateHouseView.noHearthIcon, view.uiParent);
+            houseView.noHearthIcon.transform.localPosition = new Vector3(0.25f, -1, 0.25f);
+            
+            houseView.noGoodsIcon = GameObject.Instantiate(templateHouseView.noGoodsIcon, view.uiParent);
+            houseView.noGoodsIcon.transform.localPosition = new Vector3(0.25f, -1, 0.25f);
+            
+            houseView.noBuildersIcon = GameObject.Instantiate(templateHouseView.noBuildersIcon, view.uiParent);
+            houseView.noBuildersIcon.transform.localPosition = new Vector3(0.25f, -1, 0.25f);
             // Plugin.Log.LogInfo($"Done houseView");
         }
         
