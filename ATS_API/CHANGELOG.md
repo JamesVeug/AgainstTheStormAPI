@@ -1,3 +1,12 @@
+# 1.2.4
+- Fixed infinite loading screen when loading save with the SkyScaper building
+- Fixed infinite loading screen when loading save with missing perks/effects
+- Added MetaCurrencyTypes enum helper
+- Added more SetIcon methods for goods and effect builders
+- Added AddHostility helper method to EffectFactory
+- Added order support when exporting csv data
+- Reduced console spam
+
 # 1.2.3
 - Added VillagerPerkTypes enum helper
 - Added BuildingPerkTypes enum helper
