@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
@@ -18,5 +19,20 @@ public class Availability
     {
         WorkPlaces.Clear();
         WorkPlaces.Add("All");
+    }
+    
+    public void AddWorkPlace(string workPlace)
+    {
+        WorkPlaces.Add(workPlace);
+    }
+    
+    public void AddWorkPlace(BuildingModel buildingModel)
+    {
+        WorkPlaces.Add(buildingModel.name);
+    }
+
+    public bool HasWorkPlace(string buildingModelName)
+    {
+        return WorkPlaces.Contains(buildingModelName) || WorkPlaces.Contains("All");
     }
 }

@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using ATS_API.Helpers;
+using Eremite;
+using Eremite.Buildings;
 using Eremite.Model;
+using Eremite.View;
 
 namespace ATS_API.Races;
 
@@ -12,7 +18,7 @@ public class NewRaceData : ASyncable<RaceModel>
     public string racialHousingNeed;
     public List<RaceCharacteristicRef> characteristics = new List<RaceCharacteristicRef>();
     public ResolveEffectTypes HungerEffect = ResolveEffectTypes.Hunger_Penalty;
-    public Availability WorkPlaces = new Availability();
+    public Availability RaceWorkPlaceAvailability = new Availability();
 
     public override bool Sync()
     {
@@ -24,7 +30,7 @@ public class NewRaceData : ASyncable<RaceModel>
         // characteristics
         RaceModel.characteristics = new RaceCharacteristicModel[characteristics.Count];
         for (int i = 0; i < characteristics.Count; i++)
-        {
+        { 
             RaceCharacteristicRef characteristicRef = characteristics[i];
             RaceCharacteristicModel characteristicModel = new RaceCharacteristicModel();
             if(characteristicRef.Tag != BuildingTagTypes.None)
@@ -93,10 +99,69 @@ public class NewRaceData : ASyncable<RaceModel>
             RaceModel.characteristics = [];
         if(RaceModel.resilienceLabel == null)
             RaceModel.resilienceLabel = template.resilienceLabel;
+
+        if (RaceWorkPlaceAvailability.WorkPlaces.Count > 0)
+        {
+            foreach (BuildingModel buildingModel in SO.Settings.Buildings)
+            {
+                if (!RaceWorkPlaceAvailability.HasWorkPlace(buildingModel.name))
+                {
+                    continue;
+                }
+
+                if (TryGetWorkPlaceList(buildingModel, out WorkplaceModel[] workplaces))
+                {
+                    foreach (WorkplaceModel model in workplaces)
+                    {
+                        int index = Array.IndexOf(model.allowedRaces, RaceModel);
+                        if (index == -1)
+                        {
+                            // Race not added. We need to add it
+                            RaceModel[] newRaces = new RaceModel[model.allowedRaces.Length + 1];
+                            Array.Copy(model.allowedRaces, newRaces, model.allowedRaces.Length);
+                            newRaces[newRaces.Length - 1] = RaceModel;
+                            model.allowedRaces = newRaces;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public override string ToString()
     {
         return $"NewRace({(RaceModel == null ? "null" : RaceModel.name)})";
+    }
+    
+    private Dictionary<Type, FieldInfo> _workPlaceListCache = new Dictionary<Type, FieldInfo>();
+    private bool TryGetWorkPlaceList(BuildingModel buildingModel, out WorkplaceModel[] workPlaces)
+    {
+        if (_workPlaceListCache.TryGetValue(buildingModel.GetType(), out FieldInfo info))
+        {
+            if (info == null)
+            {
+                workPlaces = null;
+                return false;
+            }
+            
+            workPlaces = (WorkplaceModel[]) info.GetValue(buildingModel);
+            return true;
+        }
+        
+        // Get all fields and check for one that is a WorkplaceModel[]
+        FieldInfo[] fields = buildingModel.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+        foreach (FieldInfo field in fields)
+        {
+            if (field.FieldType == typeof(WorkplaceModel[]))
+            {
+                _workPlaceListCache[buildingModel.GetType()] = field;
+                workPlaces = (WorkplaceModel[]) field.GetValue(buildingModel);
+                return true;
+            }
+        }
+
+        _workPlaceListCache[buildingModel.GetType()] = null;
+        workPlaces = null;
+        return false;
     }
 }

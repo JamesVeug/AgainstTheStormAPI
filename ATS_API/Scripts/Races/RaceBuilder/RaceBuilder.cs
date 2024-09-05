@@ -23,6 +23,7 @@ public partial class RaceBuilder
         this.name = name;
 
         newRaceData = RaceManager.New(guid, name);
+        newRaceData.RaceWorkPlaceAvailability.AddAllWorkPlaces();
     }
     
     public RaceBuilder SetWalkSpeed(float speed)
