@@ -61,7 +61,11 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         // }
         // Plugin.Log.LogInfo($"{m_Name} now has {array.Length} elements: {result}");
 
-        settingsEffectsCache.cache = null;
+        if (settingsEffectsCache != null)
+        {
+            settingsEffectsCache.cache = null;
+        }
+
         return elementsToAdd;
     }
 }
