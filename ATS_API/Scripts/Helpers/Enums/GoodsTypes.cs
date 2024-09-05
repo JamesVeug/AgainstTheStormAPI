@@ -9,8 +9,8 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.3.4R
 public enum GoodsTypes
 {
-    Unknown = -1,
-    None,
+	Unknown = -1,
+	None,
 	_Meta_Artifacts,                  // Artifacts - The remnants of a long-forgotten world. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
 	_Meta_Food_Stockpiles,            // Food Stockpiles - A basic currency of the realm. Earned by completing settlements. Can be used to purchase upgrades in the Smoldering City.
 	_Meta_Machinery,                  // Machinery - Rainpunk technology ripped from the past. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
@@ -82,18 +82,18 @@ public enum GoodsTypes
 
 public static class GoodsTypesExtensions
 {
-    private static GoodsTypes[] s_All = null;
+	private static GoodsTypes[] s_All = null;
 	public static GoodsTypes[] All()
 	{
 		if (s_All == null)
-        {
-            s_All = new GoodsTypes[64];
-            for (int i = 0; i < 64; i++)
-            {
-                s_All[i] = (GoodsTypes)(i+1);
-            }
-        }
-        return s_All;
+		{
+			s_All = new GoodsTypes[64];
+			for (int i = 0; i < 64; i++)
+			{
+				s_All[i] = (GoodsTypes)(i+1);
+			}
+		}
+		return s_All;
 	}
 	
 	public static string ToName(this GoodsTypes type)
@@ -107,18 +107,6 @@ public static class GoodsTypesExtensions
 		return TypeToInternalName[GoodsTypes._Meta_Artifacts];
 	}
 	
-	public static GoodModel ToGoodModel(this string name)
-    {
-        GoodModel model = SO.Settings.Goods.FirstOrDefault(a=>a.name == name);
-        if (model != null)
-        {
-            return model;
-        }
-    
-        Plugin.Log.LogError("Cannot find GoodModel for GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
-        return null;
-    }
-	
 	public static GoodsTypes ToGoodsTypes(this string name)
 	{
 		foreach (KeyValuePair<GoodsTypes,string> pair in TypeToInternalName)
@@ -129,7 +117,20 @@ public static class GoodsTypesExtensions
 			}
 		}
 
+		Plugin.Log.LogWarning("Cannot find GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
 		return GoodsTypes.Unknown;
+	}
+	
+	public static GoodModel ToGoodModel(this string name)
+	{
+		GoodModel model = SO.Settings.Goods.FirstOrDefault(a=>a.name == name);
+		if (model != null)
+		{
+			return model;
+		}
+	
+		Plugin.Log.LogError("Cannot find GoodModel for GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
+		return null;
 	}
 
 	public static GoodModel ToGoodModel(this GoodsTypes types)
@@ -138,18 +139,30 @@ public static class GoodsTypesExtensions
 	}
 	
 	public static GoodModel[] ToGoodModelArray(this IEnumerable<GoodsTypes> collection)
-    {
-        int count = collection.Count();
-        GoodModel[] array = new GoodModel[count];
-        int i = 0;
-        foreach (GoodsTypes element in collection)
-        {
-            string elementName = element.ToName();
-            array[i++] = SO.Settings.Goods.FirstOrDefault(a=>a.name == elementName);
-        }
+	{
+		int count = collection.Count();
+		GoodModel[] array = new GoodModel[count];
+		int i = 0;
+		foreach (GoodsTypes element in collection)
+		{
+			array[i++] = element.ToGoodModel();
+		}
 
-        return array;
-    }
+		return array;
+	}
+	
+	public static GoodModel[] ToGoodModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		GoodModel[] array = new GoodModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToGoodModel();
+		}
+
+		return array;
+	}
 
 	internal static readonly Dictionary<GoodsTypes, string> TypeToInternalName = new()
 	{
