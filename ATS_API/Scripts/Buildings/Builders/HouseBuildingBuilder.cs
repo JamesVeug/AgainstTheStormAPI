@@ -29,23 +29,36 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
         m_buildingModel.housingRaces = [];
         m_buildingModel.servedNeeds = [];
     }
+    
+    public HouseBuildingBuilder AddHousingRace(RaceTypes race)
+    {
+        metaData.HousingRaces.Add(race);
+        return this;
+    }
 
     public HouseBuildingBuilder AddHousingRaces(params RaceTypes[] types)
     {
-        metaData.HousingRaces.Clear();
         metaData.HousingRaces.AddRange(types);
         return this;
     }
 
     public HouseBuildingBuilder SetHousingRaces(params RaceTypes[] types)
     {
+        metaData.HousingRaces.Clear();
         metaData.HousingRaces.AddRange(types);
         return this;
     }
     
     public HouseBuildingBuilder SetAllHousingRaces()
     {
+        metaData.HousingRaces.Clear();
         metaData.HousingRaces.AddRange(RaceTypesExtensions.All());
+        return this;
+    }
+    
+    public HouseBuildingBuilder AddServedNeed(NeedTypes need)
+    {
+        metaData.ServedNeeds.Add(need);
         return this;
     }
     

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
-using Eremite.View;
 
 namespace ATS_API.Races;
 
@@ -104,23 +102,40 @@ public class NewRaceData : ASyncable<RaceModel>
         {
             foreach (BuildingModel buildingModel in SO.Settings.Buildings)
             {
-                if (!RaceWorkPlaceAvailability.HasWorkPlace(buildingModel.name))
+                if (buildingModel is HouseModel houseModel)
                 {
-                    continue;
-                }
-
-                if (TryGetWorkPlaceList(buildingModel, out WorkplaceModel[] workplaces))
-                {
-                    foreach (WorkplaceModel model in workplaces)
+                    // Add this race to the house so they can sleep in it
+                    if (houseModel.housingRaces.Length > 1)
                     {
-                        int index = Array.IndexOf(model.allowedRaces, RaceModel);
-                        if (index == -1)
+                        if (!houseModel.housingRaces.Contains(RaceModel))
                         {
-                            // Race not added. We need to add it
-                            RaceModel[] newRaces = new RaceModel[model.allowedRaces.Length + 1];
-                            Array.Copy(model.allowedRaces, newRaces, model.allowedRaces.Length);
+                            // Add this race to the list
+                            RaceModel[] newRaces = new RaceModel[houseModel.housingRaces.Length + 1];
+                            Array.Copy(houseModel.housingRaces, newRaces, houseModel.housingRaces.Length);
                             newRaces[newRaces.Length - 1] = RaceModel;
-                            model.allowedRaces = newRaces;
+                            houseModel.housingRaces = newRaces;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!RaceWorkPlaceAvailability.HasWorkPlace(buildingModel.name))
+                    {
+                        continue;
+                    }
+
+                    if (TryGetWorkPlaceList(buildingModel, out WorkplaceModel[] workplaces))
+                    {
+                        foreach (WorkplaceModel model in workplaces)
+                        {
+                            if (!model.allowedRaces.Contains(RaceModel))
+                            {
+                                // Race not added. We need to add it
+                                RaceModel[] newRaces = new RaceModel[model.allowedRaces.Length + 1];
+                                Array.Copy(model.allowedRaces, newRaces, model.allowedRaces.Length);
+                                newRaces[newRaces.Length - 1] = RaceModel;
+                                model.allowedRaces = newRaces;
+                            }
                         }
                     }
                 }

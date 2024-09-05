@@ -72,6 +72,21 @@ public class NewBuildingData : ASyncable<BuildingModel>
         }
     }
 
+    public override void PostSync()
+    {
+        base.PostSync();
+        
+        if(BuildingModel is HouseModel houseModel)
+        {
+            HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
+            houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
+            houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
+            
+            Plugin.Log.LogInfo($"{BuildingModel.name} housingRaces: {string.Join(",", houseModel.housingRaces.Select(a=>a?.name))}");
+            Plugin.Log.LogInfo($"{BuildingModel.name} servedNeeds races: {string.Join(",", houseModel.servedNeeds.Select(a=>a?.name))}");
+        }
+    }
+
     private bool SetupPrefab()
     {
         if (VisualData.Prefab != null)
@@ -151,9 +166,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
         
             // Data
             houseModel.prefab = workshop;
-
-            houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
-            houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
         }
         else
         { 

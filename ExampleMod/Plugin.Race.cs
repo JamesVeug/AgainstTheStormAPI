@@ -40,5 +40,9 @@ public partial class Plugin
         
         CustomRaceNeed burgerNeed = RaceNeedFactory.ComplexFoodNeed(PluginInfo.PLUGIN_GUID, burger.NewGood.id, 7);
         builder.AddNeed(burgerNeed.ID);
+
+        // Axolotls are the only ones that can sleep in this house
+        axolotlHouse.AddHousingRace(builder.NewRaceData.ID);
+        axolotlHouse.AddServedNeed(houseNeed.ID);
     }
 }
