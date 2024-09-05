@@ -1,4 +1,5 @@
-﻿using ATS_API.Helpers;
+﻿using System;
+using ATS_API.Helpers;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
@@ -34,8 +35,8 @@ public partial class Plugin : BaseUnityPlugin
         if (AssetBundleHelper.TryLoadAssetBundleFromFile("ats_examplemod", out AssetBundle))
         {
             CreateBuildings();
+            CreateRaces();
         }
-        
         
         Log.LogInfo($"{PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} Plugin loaded");
     }

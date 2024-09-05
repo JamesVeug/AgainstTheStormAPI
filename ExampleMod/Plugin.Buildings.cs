@@ -1,18 +1,22 @@
 ﻿using ATS_API.Buildings;
 using ATS_API.Helpers;
+using Eremite.Buildings;
 using UnityEngine;
 
 namespace ExampleMod;
 
 public partial class Plugin
 {
+    private HouseBuildingBuilder axolotlHouse;
+
     private void CreateBuildings()
     {
         CreateWorkshop();
-        CreateHouse();
+        CreateSkyScraperHouse();
+        CreateAxolotlHouse();
     }
 
-    private void CreateHouse()
+    private void CreateSkyScraperHouse()
     {
         var house = new HouseBuildingBuilder(PluginInfo.PLUGIN_GUID, "SkyScraper", "TestBuildingIcon.png", 9);
         house.SetDefaultVisualIcon("TestBuildingDisplayIcon.png");
@@ -22,6 +26,17 @@ public partial class Plugin
         house.SetAllHousingRaces();
         house.AddServedNeeds(NeedTypes.Any_Housing);
         house.AddRequiredGoods((8, GoodsTypes.Mat_Processed_Planks));
+    }
+    
+    private void CreateAxolotlHouse()
+    {
+        axolotlHouse = new HouseBuildingBuilder(PluginInfo.PLUGIN_GUID, "AxolotlHouse", "TestBuildingIcon.png", 2);
+        axolotlHouse.SetDefaultVisualIcon("AxolotlHouseDisplayIcon.png");
+        axolotlHouse.SetDisplayName("Axolotl House");
+        axolotlHouse.SetDescription("Building specifically made for Axolotls. Has to be built near a Hearth. Can house 2 residents.");
+        axolotlHouse.SetLabel("Housing");
+        axolotlHouse.AddServedNeeds(NeedTypes.Any_Housing);
+        axolotlHouse.AddRequiredGoods((2, GoodsTypes.Mat_Processed_Fabric), (2, GoodsTypes.Mat_Raw_Stone));
     }
 
     private void CreateWorkshop()
