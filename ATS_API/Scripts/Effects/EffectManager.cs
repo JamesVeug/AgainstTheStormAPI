@@ -54,13 +54,11 @@ public static partial class EffectManager
         return true;
     }
     
-    public static T CreateResolveEffect<T>(string guid, string name) where T : ResolveEffectModel
+    public static NewResolveEffectData CreateResolveEffect<T>(string guid, string name) where T : ResolveEffectModel
     {
         T data = ScriptableObject.CreateInstance<T>();
         data.name = guid + "_" + name;
-        AddResolveEffect(data);
-
-        return data;
+        return AddResolveEffect(data);
     }
 
     public static NewEffectData AddEffect<T>(string guid, string name, T model, Availability availability) where T : EffectModel
@@ -80,13 +78,17 @@ public static partial class EffectManager
         return item;
     }
 
-    public static void AddResolveEffect(ResolveEffectModel model)
+    public static NewResolveEffectData AddResolveEffect(ResolveEffectModel model)
     {
         s_dirty = true;
-        s_newResolveEffects.Add(new NewResolveEffectData()
+        
+        NewResolveEffectData resolveEffectData = new NewResolveEffectData()
         {
             Model = model
-        });
+        };
+        s_newResolveEffects.Add(resolveEffectData);
+
+        return resolveEffectData;
     }
 
     public static void AddPreviouslyNamedEffect(string oldName, string newName)

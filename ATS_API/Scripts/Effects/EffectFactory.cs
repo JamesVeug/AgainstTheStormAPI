@@ -17,7 +17,7 @@ public static class EffectFactory
     public static GlobalResolveEffectEffectModel AddHookedEffect_IncreaseResolve(IEffectBuilder builder, int resolveAmount = 1, ResolveEffectType type = ResolveEffectType.Global)
     {
         GlobalResolveEffectEffectModel effectModel = NewHookedEffect<GlobalResolveEffectEffectModel>(builder);
-        effectModel.effect = EffectManager.CreateResolveEffect<ResolveEffectModel>(builder.GUID, builder.Name + "_resolve_effect_model");
+        effectModel.effect = EffectManager.CreateResolveEffect<ResolveEffectModel>(builder.GUID, builder.Name + "_resolve_effect_model").Model;
         effectModel.effect.resolve = resolveAmount;
         effectModel.effect.description = builder.Model.description;
         effectModel.effect.displayName = builder.Model.displayName;
