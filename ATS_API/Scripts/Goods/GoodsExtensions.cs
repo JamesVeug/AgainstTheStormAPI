@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -20,7 +21,7 @@ public static class GoodsExtensions
             else
             {
                 // TODO: Find similar names goods to log out what they MIGHT want
-                Plugin.Log.LogWarning("Can't find good " + goodName);
+                Plugin.Log.LogWarning("Can't find good " + goodName + "\n" + Environment.StackTrace);
             }
         }
         return list;
@@ -38,7 +39,7 @@ public static class GoodsExtensions
         }
 
         // TODO: Find similar names goods to log out what they MIGHT want
-        Plugin.Log.LogWarning("Can't find good " + goodName.Name);
+        Plugin.Log.LogWarning("Can't find good " + goodName.Name + "\n" + Environment.StackTrace);
         return null;
     }
     
@@ -58,7 +59,7 @@ public static class GoodsExtensions
             else
             {
                 // TODO: Find similar names goods to log out
-                Plugin.Log.LogWarning("Can't find good " + goodName);
+                Plugin.Log.LogWarning("Can't find good " + goodName + "\n" + Environment.StackTrace);
             }
         }
         return list;
@@ -81,7 +82,7 @@ public static class GoodsExtensions
             else
             {
                 // TODO: Find similar names goods to log out
-                Plugin.Log.LogWarning("Can't find good " + goodName);
+                Plugin.Log.LogWarning("Can't find good " + goodName + "\n" + Environment.StackTrace);
             }
         }
         return list;
