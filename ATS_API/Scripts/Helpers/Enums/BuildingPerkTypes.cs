@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -84,7 +85,7 @@ public static class BuildingPerkTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of BuildingPerkTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of BuildingPerkTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[BuildingPerkTypes.Arch_Inst_Extra_Production];
 	}
 	
@@ -98,7 +99,7 @@ public static class BuildingPerkTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find BuildingPerkTypes with name: " + name);
+		Plugin.Log.LogWarning("Cannot find BuildingPerkTypes with name: " + name + "\n" + Environment.StackTrace);
 		return BuildingPerkTypes.Unknown;
 	}
 	
@@ -110,7 +111,7 @@ public static class BuildingPerkTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find BuildingPerkModel for BuildingPerkTypes with name: " + name);
+		Plugin.Log.LogError("Cannot find BuildingPerkModel for BuildingPerkTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

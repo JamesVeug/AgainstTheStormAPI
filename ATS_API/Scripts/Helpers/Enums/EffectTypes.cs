@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -2699,7 +2700,7 @@ public static class EffectTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of EffectTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of EffectTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[EffectTypes.Additional_Impatience_For_Death];
 	}
 	
@@ -2713,7 +2714,7 @@ public static class EffectTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find EffectTypes with name: " + name);
+		Plugin.Log.LogWarning("Cannot find EffectTypes with name: " + name + "\n" + Environment.StackTrace);
 		return EffectTypes.Unknown;
 	}
 	
@@ -2725,7 +2726,7 @@ public static class EffectTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find EffectModel for EffectTypes with name: " + name);
+		Plugin.Log.LogError("Cannot find EffectModel for EffectTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

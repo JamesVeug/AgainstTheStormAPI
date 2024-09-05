@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -102,7 +103,7 @@ public static class GoodsTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of GoodsTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of GoodsTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[GoodsTypes._Meta_Artifacts];
 	}
 	
@@ -114,7 +115,7 @@ public static class GoodsTypesExtensions
             return model;
         }
     
-        Plugin.Log.LogError("Cannot find GoodModel for GoodsTypes with name: " + name);
+        Plugin.Log.LogError("Cannot find GoodModel for GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
         return null;
     }
 	

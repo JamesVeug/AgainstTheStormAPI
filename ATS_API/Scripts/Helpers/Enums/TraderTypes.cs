@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -50,7 +51,7 @@ public static class TraderTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of TraderTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of TraderTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[TraderTypes.API_ExampleMod_Wild_Bill];
 	}
 	
@@ -64,7 +65,7 @@ public static class TraderTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find TraderTypes with name: " + name);
+		Plugin.Log.LogWarning("Cannot find TraderTypes with name: " + name + "\n" + Environment.StackTrace);
 		return TraderTypes.Unknown;
 	}
 	
@@ -76,7 +77,7 @@ public static class TraderTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find TraderModel for TraderTypes with name: " + name);
+		Plugin.Log.LogError("Cannot find TraderModel for TraderTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

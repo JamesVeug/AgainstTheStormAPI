@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -58,7 +59,7 @@ public static class BuildingCategoriesTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of BuildingCategoriesTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of BuildingCategoriesTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[BuildingCategoriesTypes.City_Buildings];
 	}
 	
@@ -72,7 +73,7 @@ public static class BuildingCategoriesTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find BuildingCategoriesTypes with name: " + name);
+		Plugin.Log.LogWarning("Cannot find BuildingCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
 		return BuildingCategoriesTypes.Unknown;
 	}
 	
@@ -84,7 +85,7 @@ public static class BuildingCategoriesTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find BuildingCategoryModel for BuildingCategoriesTypes with name: " + name);
+		Plugin.Log.LogError("Cannot find BuildingCategoryModel for BuildingCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

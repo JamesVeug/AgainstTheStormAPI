@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -40,7 +41,7 @@ public static class OreTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of OreTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of OreTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[OreTypes.Coal_Ore];
 	}
 	
@@ -54,7 +55,7 @@ public static class OreTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find OreTypes with name: " + name);
+		Plugin.Log.LogWarning("Cannot find OreTypes with name: " + name + "\n" + Environment.StackTrace);
 		return OreTypes.Unknown;
 	}
 	
@@ -66,7 +67,7 @@ public static class OreTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find OreModel for OreTypes with name: " + name);
+		Plugin.Log.LogError("Cannot find OreModel for OreTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

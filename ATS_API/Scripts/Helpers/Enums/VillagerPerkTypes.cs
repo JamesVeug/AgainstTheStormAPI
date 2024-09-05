@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -108,7 +109,7 @@ public static class VillagerPerkTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of VillagerPerkTypes: " + type);
+		Plugin.Log.LogError($"Cannot find name of VillagerPerkTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[VillagerPerkTypes.Acidic_Environment];
 	}
 	
@@ -122,7 +123,7 @@ public static class VillagerPerkTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find VillagerPerkTypes with name: " + name);
+		Plugin.Log.LogWarning("Cannot find VillagerPerkTypes with name: " + name + "\n" + Environment.StackTrace);
 		return VillagerPerkTypes.Unknown;
 	}
 	
@@ -134,7 +135,7 @@ public static class VillagerPerkTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find VillagerPerkModel for VillagerPerkTypes with name: " + name);
+		Plugin.Log.LogError("Cannot find VillagerPerkModel for VillagerPerkTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

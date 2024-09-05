@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Eremite;
@@ -37,7 +38,7 @@ public static class {CLASSNAME}Extensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of {CLASSNAME}: " + type);
+		Plugin.Log.LogError($"Cannot find name of {CLASSNAME}: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[{CLASSNAME}.{FIRST_ENUM}];
 	}
 	
@@ -51,7 +52,7 @@ public static class {CLASSNAME}Extensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find {CLASSNAME} with name: " + name);
+		Plugin.Log.LogWarning("Cannot find {CLASSNAME} with name: " + name + "\n" + Environment.StackTrace);
 		return {CLASSNAME}.Unknown;
 	}
 	
@@ -63,7 +64,7 @@ public static class {CLASSNAME}Extensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name);
+		Plugin.Log.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 
