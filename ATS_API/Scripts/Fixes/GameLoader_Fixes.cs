@@ -17,7 +17,12 @@ internal class GameLoader_Fixes
     public static async UniTask PostLoadGame(UniTask enumerator, GameLoader __instance)
     {
         await enumerator;
-        
+
+        PostLoadGame(__instance);
+    }
+
+    private static void PostLoadGame(GameLoader __instance)
+    {
         // Add new fuel types if the player added a new mod when loading a save
         foreach (NewGood effect in GoodsManager.NewGoods)
         {
