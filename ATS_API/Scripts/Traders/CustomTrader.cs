@@ -15,12 +15,12 @@ public class CustomTrader : ASyncable<TraderModel>
     public List<NameToAmount> Merchandise = new List<NameToAmount>();
     public Availability Availability = new Availability();
 
-    public override bool Sync(TraderModel traderModel)
+    public override bool Sync()
     {
-        traderModel.desiredGoods = DesiredGoods.GetGoods().ToArray();
-        traderModel.guaranteedOfferedGoods = GuaranteedOfferedGoods.GetGoodRefs().ToArray();
-        traderModel.offeredGoods = OfferedGoods.GetGoodRefWeights().ToArray();
-        traderModel.merchandise = Merchandise.ToEffectDrops().ToArray();
+        TraderModel.desiredGoods = DesiredGoods.GetGoods().ToArray();
+        TraderModel.guaranteedOfferedGoods = GuaranteedOfferedGoods.GetGoodRefs().ToArray();
+        TraderModel.offeredGoods = OfferedGoods.GetGoodRefWeights().ToArray();
+        TraderModel.merchandise = Merchandise.ToEffectDrops().ToArray();
         
         return true;
     }

@@ -6,7 +6,7 @@ public class NewOrderData : ASyncable<OrderModel>
 {
     public OrderModel Model;
 
-    public override bool Sync(OrderModel model)
+    public override bool Sync()
     {
         return true;
     }

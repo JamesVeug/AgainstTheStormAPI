@@ -15,9 +15,9 @@ public class NewEffectData : ASyncable<EffectModel>
     public int Chance = 10; // 1-100
     public object MetaData;
 
-    public override bool Sync(EffectModel model)
+    public override bool Sync()
     {
-        if (model is GoodsRawProductionEffectModel goodsRawProductionEffectModel)
+        if (EffectModel is GoodsRawProductionEffectModel goodsRawProductionEffectModel)
         {
             if (MetaData is GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData metaData)
             {
@@ -25,10 +25,10 @@ public class NewEffectData : ASyncable<EffectModel>
             }
             else if(MetaData != null)
             {
-                Plugin.Log.LogError($"{model.name} MetaData is not GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData");
+                Plugin.Log.LogError($"{EffectModel.name} MetaData is not GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData");
             }
         }
-        if (model is GoodsEffectModel goodsEffectModel)
+        if (EffectModel is GoodsEffectModel goodsEffectModel)
         {
             if (MetaData is GoodsEffectBuilder.GoodEffectBuildMetaData metaData)
             {
@@ -36,7 +36,7 @@ public class NewEffectData : ASyncable<EffectModel>
             }
             else if(MetaData != null)
             {
-                Plugin.Log.LogError($"{model.name} MetaData is not GoodsEffectBuilder.GoodEffectBuildMetaData");
+                Plugin.Log.LogError($"{EffectModel.name} MetaData is not GoodsEffectBuilder.GoodEffectBuildMetaData");
             }
         }
         

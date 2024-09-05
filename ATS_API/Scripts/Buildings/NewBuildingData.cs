@@ -26,10 +26,8 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public List<BuildingTagTypes> Tags = new List<BuildingTagTypes>();
     public GameObject CustomPrefab;
 
-    public override bool Sync(BuildingModel model)
+    public override bool Sync()
     {
-        base.Sync(model);
-        
         if (MoveCost != null)
         {
             BuildingModel.movingCost = new GoodRef()

@@ -28,18 +28,18 @@ public class NewGood : ASyncable<GoodModel>
     public GoodSoldByTraderDetails SoldByTraderDetails;
     public List<RelicDetails> RelicRewards = new List<RelicDetails>();
 
-    public override bool Sync(GoodModel model)
+    public override bool Sync()
     {
         Settings settings = SO.Settings;
-        if (model.category == null && Category != null)
+        if (goodModel.category == null && Category != null)
         {
             GoodCategoryModel modelCategory = Category.ToGoodCategoryModel();
             if (modelCategory == null)
             {
-                Plugin.Log.LogError($"Good Category {Category} not found for good {model.name}. Custom Good Categories not supported yet!");
+                Plugin.Log.LogError($"Good Category {Category} not found for good {goodModel.name}. Custom Good Categories not supported yet!");
                 modelCategory = settings.Goods[0].category;
             }
-            model.category = modelCategory;
+            goodModel.category = modelCategory;
             // Plugin.Log.LogInfo($"Assigning new good {model.name} category {model.category.name}");
         }
         

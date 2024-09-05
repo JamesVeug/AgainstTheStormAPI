@@ -25,12 +25,12 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         List<API> elementsToAdd = new List<API>(); // TODO: Pool this
         foreach (API t in newElements)
         {
-            ATS so = getter(t);
-            if (!t.Sync(so))
+            if (!t.Sync())
             {
                 continue;
             }
             
+            ATS so = getter(t);
             if (Array.IndexOf(array, so, m_baseLength) == -1)
             {
                 elementsToAdd.Add(t);
