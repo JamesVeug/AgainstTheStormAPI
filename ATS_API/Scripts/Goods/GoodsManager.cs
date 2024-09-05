@@ -53,7 +53,7 @@ public static class GoodsManager
         goodModel.name = guid + "_" + name;
         
         GoodsTypes id = GUIDManager.Get<GoodsTypes>(guid, name);
-        GoodsTypesExtensions.TypeToInternalName[id] = guid + "_" + name;
+        GoodsTypesExtensions.TypeToInternalName[id] = goodModel.name;
         NewGood newGood = new NewGood
         {
             goodModel = goodModel,

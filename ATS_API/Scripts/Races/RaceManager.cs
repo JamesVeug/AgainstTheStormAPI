@@ -73,7 +73,7 @@ public static class RaceManager
     {
         model.name = guid + "_" + name;
         RaceTypes id = GUIDManager.Get<RaceTypes>(guid, name);
-        RaceTypesExtensions.TypeToInternalName[id] = name;
+        RaceTypesExtensions.TypeToInternalName[id] = model.name;
         NewRaceData newTrader = new NewRaceData()
         {
             ID = id,
@@ -111,48 +111,6 @@ public static class RaceManager
 
 
         Settings settings = SO.Settings;
-        var addedRaces = s_races.Sync(ref settings.Races, settings.racesCache, s_newRaces, a=>a.RaceModel);
-        Plugin.Log.LogInfo("RaceManager.SyncedRaces");
-        
-        // MetaStateService val = (MetaStateService)SO.MetaStateService;
-        // Plugin.Log.LogInfo("#a");
-        // if (val == null)
-        // {
-        //     Plugin.Log.LogError("MetaStateService is null");
-        //     return;
-        // }
-        //
-        // Plugin.Log.LogInfo("#b");
-        // if (val.Content == null)
-        // {
-        //     Plugin.Log.LogError("MetaStateService.Content is null");
-        //     return;
-        // }
-        //
-        // Plugin.Log.LogInfo("#c");
-        // if (val.Content.races == null)
-        // {
-        //     Plugin.Log.LogError("MetaStateService.Content.races is null");
-        //     return;
-        // }
-        //
-        // Plugin.Log.LogInfo("#d");
-        // if (addedRaces == null)
-        // {
-        //     Plugin.Log.LogError("addedRaces is null");
-        //     return;
-        // }
-        //
-        //
-        // Plugin.Log.LogInfo("#e");
-        // Plugin.Log.LogInfo("Adding races: " + addedRaces.Count);
-        // Plugin.Log.LogInfo("#f");
-        // foreach (NewRace race in addedRaces)
-        // {
-        //     Plugin.Log.LogInfo("#g");
-        //     Plugin.Log.LogInfo("New race: " + race);
-        //     val.Content.races.Add(race.RaceModel.name);
-        // }
-        // Plugin.Log.LogInfo("Done syncing races");
+        s_races.Sync(ref settings.Races, settings.racesCache, s_newRaces, a=>a.RaceModel);
     }
 }

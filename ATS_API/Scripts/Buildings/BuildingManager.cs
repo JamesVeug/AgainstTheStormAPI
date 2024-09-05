@@ -46,7 +46,7 @@ public partial class BuildingManager
         T data = ScriptableObject.CreateInstance<T>();
         data.name = guid + "_" + name;
         
-        NewBuildingData newBuilding = AddBuilding(guid, data.name, data, behaviour);
+        NewBuildingData newBuilding = AddBuilding(guid, name, data, behaviour);
         
         NewBuildingTagModel housingTag = NewBuildingTagModel(guid, name);
         newBuilding.Tag = housingTag.ID;
@@ -86,7 +86,7 @@ public partial class BuildingManager
         // tag.icon = TODO: Add temp icon 
 
         BuildingTagTypes id = GUIDManager.Get<BuildingTagTypes>(guid, name);
-        BuildingTagTypesExtensions.TypeToInternalName[id] = guid + "_" + name;
+        BuildingTagTypesExtensions.TypeToInternalName[id] = tag.name;
         NewBuildingTagModel newTag = new NewBuildingTagModel(id, tag);
         s_newBuildingTags.Add(newTag);
         
