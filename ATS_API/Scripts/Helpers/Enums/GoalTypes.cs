@@ -288,8 +288,20 @@ public static class GoalTypesExtensions
 		int i = 0;
 		foreach (GoalTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.goals.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToGoalModel();
+		}
+
+		return array;
+	}
+	
+	public static GoalModel[] ToGoalModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		GoalModel[] array = new GoalModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToGoalModel();
 		}
 
 		return array;

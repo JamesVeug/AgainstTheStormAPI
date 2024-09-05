@@ -88,8 +88,20 @@ public static class GoodsCategoriesTypesExtensions
 		int i = 0;
 		foreach (GoodsCategoriesTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToGoodCategoryModel();
+		}
+
+		return array;
+	}
+	
+	public static GoodCategoryModel[] ToGoodCategoryModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		GoodCategoryModel[] array = new GoodCategoryModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToGoodCategoryModel();
 		}
 
 		return array;

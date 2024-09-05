@@ -83,8 +83,20 @@ public static class OreTypesExtensions
 		int i = 0;
 		foreach (OreTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.Ore.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToOreModel();
+		}
+
+		return array;
+	}
+	
+	public static OreModel[] ToOreModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		OreModel[] array = new OreModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToOreModel();
 		}
 
 		return array;

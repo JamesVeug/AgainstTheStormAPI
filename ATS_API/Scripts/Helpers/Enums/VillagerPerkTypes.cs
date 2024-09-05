@@ -151,8 +151,20 @@ public static class VillagerPerkTypesExtensions
 		int i = 0;
 		foreach (VillagerPerkTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.villagersPerks.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToVillagerPerkModel();
+		}
+
+		return array;
+	}
+	
+	public static VillagerPerkModel[] ToVillagerPerkModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		VillagerPerkModel[] array = new VillagerPerkModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToVillagerPerkModel();
 		}
 
 		return array;

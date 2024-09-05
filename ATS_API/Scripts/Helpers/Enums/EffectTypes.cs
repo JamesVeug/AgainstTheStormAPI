@@ -2742,8 +2742,20 @@ public static class EffectTypesExtensions
 		int i = 0;
 		foreach (EffectTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.effects.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToEffectModel();
+		}
+
+		return array;
+	}
+	
+	public static EffectModel[] ToEffectModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		EffectModel[] array = new EffectModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToEffectModel();
 		}
 
 		return array;

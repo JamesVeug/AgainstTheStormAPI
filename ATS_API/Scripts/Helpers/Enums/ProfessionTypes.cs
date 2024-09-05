@@ -156,8 +156,20 @@ public static class ProfessionTypesExtensions
 		int i = 0;
 		foreach (ProfessionTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.Professions.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToProfessionModel();
+		}
+
+		return array;
+	}
+	
+	public static ProfessionModel[] ToProfessionModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		ProfessionModel[] array = new ProfessionModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToProfessionModel();
 		}
 
 		return array;

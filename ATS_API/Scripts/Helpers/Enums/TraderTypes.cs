@@ -93,8 +93,20 @@ public static class TraderTypesExtensions
 		int i = 0;
 		foreach (TraderTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.traders.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToTraderModel();
+		}
+
+		return array;
+	}
+	
+	public static TraderModel[] ToTraderModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		TraderModel[] array = new TraderModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToTraderModel();
 		}
 
 		return array;

@@ -441,8 +441,20 @@ public static class MetaRewardTypesExtensions
 		int i = 0;
 		foreach (MetaRewardTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.metaRewards.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToMetaRewardModel();
+		}
+
+		return array;
+	}
+	
+	public static MetaRewardModel[] ToMetaRewardModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		MetaRewardModel[] array = new MetaRewardModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToMetaRewardModel();
 		}
 
 		return array;

@@ -86,8 +86,20 @@ public static class RaceTypesExtensions
 		int i = 0;
 		foreach (RaceTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.Races.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToRaceModel();
+		}
+
+		return array;
+	}
+	
+	public static RaceModel[] ToRaceModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		RaceModel[] array = new RaceModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToRaceModel();
 		}
 
 		return array;

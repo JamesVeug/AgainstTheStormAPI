@@ -92,8 +92,20 @@ public static class BiomeTypesExtensions
 		int i = 0;
 		foreach (BiomeTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.biomes.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToBiomeModel();
+		}
+
+		return array;
+	}
+	
+	public static BiomeModel[] ToBiomeModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		BiomeModel[] array = new BiomeModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToBiomeModel();
 		}
 
 		return array;

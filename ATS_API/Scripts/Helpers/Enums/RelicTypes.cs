@@ -398,8 +398,20 @@ public static class RelicTypesExtensions
 		int i = 0;
 		foreach (RelicTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.Relics.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToRelicModel();
+		}
+
+		return array;
+	}
+	
+	public static RelicModel[] ToRelicModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		RelicModel[] array = new RelicModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToRelicModel();
 		}
 
 		return array;

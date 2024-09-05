@@ -101,8 +101,20 @@ public static class BuildingCategoriesTypesExtensions
 		int i = 0;
 		foreach (BuildingCategoriesTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.BuildingCategories.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToBuildingCategoryModel();
+		}
+
+		return array;
+	}
+	
+	public static BuildingCategoryModel[] ToBuildingCategoryModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		BuildingCategoryModel[] array = new BuildingCategoryModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToBuildingCategoryModel();
 		}
 
 		return array;

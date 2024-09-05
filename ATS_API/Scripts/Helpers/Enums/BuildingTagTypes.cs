@@ -96,8 +96,20 @@ public static class BuildingTagTypesExtensions
 		int i = 0;
 		foreach (BuildingTagTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.buildingsTags.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToBuildingTagModel();
+		}
+
+		return array;
+	}
+	
+	public static BuildingTagModel[] ToBuildingTagModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		BuildingTagModel[] array = new BuildingTagModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToBuildingTagModel();
 		}
 
 		return array;

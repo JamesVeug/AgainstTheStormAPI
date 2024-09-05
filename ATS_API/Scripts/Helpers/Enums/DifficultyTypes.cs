@@ -109,8 +109,20 @@ public static class DifficultyTypesExtensions
 		int i = 0;
 		foreach (DifficultyTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.difficulties.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToDifficultyModel();
+		}
+
+		return array;
+	}
+	
+	public static DifficultyModel[] ToDifficultyModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		DifficultyModel[] array = new DifficultyModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToDifficultyModel();
 		}
 
 		return array;

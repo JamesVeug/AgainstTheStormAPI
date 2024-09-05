@@ -84,8 +84,20 @@ public static class MetaCurrencyTypesExtensions
 		int i = 0;
 		foreach (MetaCurrencyTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.metaCurrencies.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToMetaCurrencyModel();
+		}
+
+		return array;
+	}
+	
+	public static MetaCurrencyModel[] ToMetaCurrencyModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		MetaCurrencyModel[] array = new MetaCurrencyModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToMetaCurrencyModel();
 		}
 
 		return array;

@@ -127,8 +127,20 @@ public static class BuildingPerkTypesExtensions
 		int i = 0;
 		foreach (BuildingPerkTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.buildingsPerks.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToBuildingPerkModel();
+		}
+
+		return array;
+	}
+	
+	public static BuildingPerkModel[] ToBuildingPerkModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		BuildingPerkModel[] array = new BuildingPerkModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToBuildingPerkModel();
 		}
 
 		return array;

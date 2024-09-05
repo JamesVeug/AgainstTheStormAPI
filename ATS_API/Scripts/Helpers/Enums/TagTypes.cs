@@ -139,8 +139,20 @@ public static class TagTypesExtensions
 		int i = 0;
 		foreach (TagTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.tags.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToModelTag();
+		}
+
+		return array;
+	}
+	
+	public static ModelTag[] ToModelTagArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		ModelTag[] array = new ModelTag[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToModelTag();
 		}
 
 		return array;

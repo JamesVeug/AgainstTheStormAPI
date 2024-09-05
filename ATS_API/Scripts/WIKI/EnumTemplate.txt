@@ -80,8 +80,20 @@ public static class {CLASSNAME}Extensions
 		int i = 0;
 		foreach ({CLASSNAME} element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = {COLLECTION}.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.To{MODELNAME}();
+		}
+
+		return array;
+	}
+	
+	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		{MODELNAME}[] array = new {MODELNAME}[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.To{MODELNAME}();
 		}
 
 		return array;

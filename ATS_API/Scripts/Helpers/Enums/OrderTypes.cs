@@ -442,8 +442,20 @@ public static class OrderTypesExtensions
 		int i = 0;
 		foreach (OrderTypes element in collection)
 		{
-			string elementName = element.ToName();
-			array[i++] = SO.Settings.orders.FirstOrDefault(a=>a.name == elementName);
+			array[i++] = element.ToOrderModel();
+		}
+
+		return array;
+	}
+	
+	public static OrderModel[] ToOrderModelArray(this IEnumerable<string> collection)
+	{
+		int count = collection.Count();
+		OrderModel[] array = new OrderModel[count];
+		int i = 0;
+		foreach (string element in collection)
+		{
+			array[i++] = element.ToOrderModel();
 		}
 
 		return array;
