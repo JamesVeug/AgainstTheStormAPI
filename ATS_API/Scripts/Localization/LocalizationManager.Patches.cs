@@ -13,7 +13,7 @@ public static partial class LocalizationManager
     private static async UniTask PostLoadLocalisation(UniTask enumerator, TextsService __instance)
     {
         await enumerator;
-        m_coreGameLoaded = true;
+        Plugin.CoreGameLoaded = true;
 
 
         // Exports all enums so we cna have updated code for the API

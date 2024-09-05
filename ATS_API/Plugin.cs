@@ -24,6 +24,12 @@ namespace ATS_API;
 internal class Plugin : BaseUnityPlugin
 {
     public static string PluginDirectory;
+
+    public static bool CoreGameLoaded
+    {
+        get;
+        internal set;
+    }
         
     public static Plugin Instance;
     public static ManualLogSource Log;
@@ -60,6 +66,11 @@ internal class Plugin : BaseUnityPlugin
 
     private void LateUpdate()
     {
+        if (!CoreGameLoaded)
+        {
+            return;
+        }
+        
         GoodsManager.Tick();
         EffectManager.Tick();
         TraderManager.Tick();

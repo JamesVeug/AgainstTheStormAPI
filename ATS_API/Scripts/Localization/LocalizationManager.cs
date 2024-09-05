@@ -13,11 +13,10 @@ public static partial class LocalizationManager
     private static readonly Dictionary<SystemLanguage, LanguageDictionary> s_languageStrings = new();
 
     private static bool m_isDirty = false;
-    private static bool m_coreGameLoaded = false;
     
     public static void Tick()
     {
-        if (!m_isDirty || !m_coreGameLoaded)
+        if (!m_isDirty)
         {
             return;
         }
