@@ -4,4 +4,8 @@
     {
         return true;
     }
+    
+    public virtual void PostSync()
+    {
+    }
 }

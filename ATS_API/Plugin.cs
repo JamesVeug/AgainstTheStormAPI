@@ -23,6 +23,7 @@ namespace ATS_API;
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
 internal class Plugin : BaseUnityPlugin
 {
+    public static event Action PostTick;
     public static string PluginDirectory;
 
     public static bool CoreGameLoaded
@@ -82,6 +83,12 @@ internal class Plugin : BaseUnityPlugin
         LocalizationManager.Tick();
         
         // TODO: PostTick to set up links between objects since we can't guarantee they will be loaded in order.
+        // PostTick to set up links objects between each other since we can't guarantee they will be loaded in order.
+        if (PostTick != null)
+        {
+            PostTick.Invoke();
+            PostTick = null;
+        }
     }
         
     [HarmonyPatch(typeof(MainController), nameof(MainController.InitReferences))]

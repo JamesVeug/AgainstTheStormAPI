@@ -29,6 +29,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
             {
                 continue;
             }
+            Plugin.PostTick += t.PostSync;
             
             ATS so = getter(t);
             if (Array.IndexOf(array, so, m_baseLength) == -1)
