@@ -53,6 +53,7 @@ public static class GoodsManager
         goodModel.name = guid + "_" + name;
         
         GoodsTypes id = GUIDManager.Get<GoodsTypes>(guid, name);
+        GoodsTypesExtensions.TypeToInternalName[id] = guid + "_" + name;
         NewGood newGood = new NewGood
         {
             goodModel = goodModel,
@@ -62,7 +63,6 @@ public static class GoodsManager
         };
         s_newGoods.Add(newGood);
         s_newGoodsLookup.Add(id, newGood);
-        GoodsTypesExtensions.TypeToInternalName.Add(id, guid + "_" + name);
         s_dirty = true;
 
         return newGood;

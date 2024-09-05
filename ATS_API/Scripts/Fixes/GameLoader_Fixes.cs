@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using Eremite;
 using Eremite.Characters.Villagers;
 using Eremite.Controller.Generator;
+using Eremite.Model;
 using HarmonyLib;
 
 namespace ATS_API.Fixes;
@@ -100,6 +101,14 @@ internal class GameLoader_Fixes
             }
         }
         
-        
+        // Add resolve for missing races
+        foreach (RaceModel race in SO.Settings.Races)
+        {
+            if (!__instance.state.actors.currentRacesResolve.TryGetValue(race.name, out _))
+            {
+                Plugin.Log.LogWarning($"New race {race.name} has been added to existing save. Setting resolve to 0.");
+                __instance.state.actors.currentRacesResolve[race.name] = 0;
+            }
+        }
     }
 }

@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ATS_API.Biomes;
 using ATS_API.Buildings;
 using ATS_API.Effects;
 using ATS_API.Goods;
 using ATS_API.Helpers;
 using ATS_API.Localization;
+using ATS_API.Needs;
 using ATS_API.Orders;
+using ATS_API.Races;
 using ATS_API.Recipes;
 using ATS_API.Traders;
 using BepInEx;
@@ -37,7 +40,7 @@ internal class Plugin : BaseUnityPlugin
     private Harmony harmony;
     
     internal static AssetBundle ATS_API_Bundle;
-        
+
 
     private void Awake()
     {
@@ -53,7 +56,7 @@ internal class Plugin : BaseUnityPlugin
         // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
         gameObject.hideFlags = HideFlags.HideAndDontSave;
         
-        // Hotkeys.RegisterKey("Reset Tradder", KeyCode.F1, () =>
+        // Hotkeys.RegisterKey("Reset Trader", KeyCode.F1, () =>
         // {
         //     Logger.LogInfo($"Resetting trader!");
         //     TradeService tradeService = (TradeService)GameMB.TradeService;
@@ -79,10 +82,12 @@ internal class Plugin : BaseUnityPlugin
         BiomeManager.Tick();
         TextMeshProManager.Tick();
         RecipeManager.Tick();
+        RaceManager.Tick();
         BuildingManager.Tick();
+        RaceNeedManager.Tick();
+        
         LocalizationManager.Tick();
         
-        // TODO: PostTick to set up links between objects since we can't guarantee they will be loaded in order.
         // PostTick to set up links objects between each other since we can't guarantee they will be loaded in order.
         if (PostTick != null)
         {
@@ -95,8 +100,6 @@ internal class Plugin : BaseUnityPlugin
     [HarmonyPostfix]
     private static void PostSetupMainController()
     {
-        Log.LogInfo($"PostSetupMainController");
-        
         RecipeManager.Instantiate();
         GoodsManager.Instantiate();
         EffectManager.Instantiate();
@@ -105,27 +108,13 @@ internal class Plugin : BaseUnityPlugin
         BiomeManager.Instantiate();
         TextMeshProManager.Instantiate();
         BuildingManager.Instantiate();
+        RaceManager.Instantiate();
+        RaceNeedManager.Instantiate();
             
         // DumpPerksToJSON(MB.Settings.Relics, "Relics");
         // DumpPerksToJSON(MB.Settings.orders, "Orders");
         // DumpGoodsToJSON(MB.Settings.Goods, "Goods");
     }
-
-        
-    [HarmonyPatch(typeof(MainController), nameof(MainController.OnServicesReady))]
-    [HarmonyPostfix]
-    private static void HookMainControllerSetup()
-    { 
-        // This method will run after game load (Roughly on entering the main menu)
-        // At this point a lot of the game's data will be available.
-        // Your main entry point to access this data will be `Serviceable.Settings` or `MainController.Instance.Settings`
-        Instance.Logger.LogInfo($"Performing game initialization on behalf of {PluginInfo.PLUGIN_GUID}.");
-        Instance.Logger.LogInfo($"The game has loaded {MainController.Instance.Settings.effects.Length} effects.");
-
-        
-        // ExportWikiInformation();
-    }
-
         
     [HarmonyPatch(typeof(MetaStateService), nameof(MetaStateService.CheckForInitialLevel))]
     [HarmonyPostfix]
