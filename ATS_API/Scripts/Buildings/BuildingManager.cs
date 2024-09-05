@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using ATS_API.Helpers;
 using Eremite;
@@ -12,14 +13,16 @@ public partial class BuildingManager
 {
     public static IReadOnlyList<NewBuildingData> NewBuildings => new ReadOnlyCollection<NewBuildingData>(s_newBuildings);
 
-
     private static List<NewBuildingData> s_newBuildings = new List<NewBuildingData>();
+    private static List<NewBuildingTagModel> s_newBuildingTags = new List<NewBuildingTagModel>();
     internal static Transform PrefabContainer => s_prefabContainer;
     
     private static ArraySync<BuildingModel, NewBuildingData> s_buildings = new("New Buildings");
+    private static ArraySync<BuildingTagModel, NewBuildingTagModel> s_buildingTags = new("New Buildings Tags");
 
     private static Transform s_prefabContainer;
     private static Dictionary<BuildingBehaviourTypes, GameObject> m_visualData = new();
+    
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
     
@@ -27,27 +30,42 @@ public partial class BuildingManager
     {
         if(s_dirty)
         {
+            if (!s_instantiated)
+            {
+                return;
+            }
+            
             s_dirty = false;
+            SyncBuildingTags();
             SyncBuildings();
         }
     }
-    
+
     public static NewBuildingData CreateBuilding<T>(string guid, string name, BuildingBehaviourTypes behaviour) where T : BuildingModel
     {
         T data = ScriptableObject.CreateInstance<T>();
         data.name = guid + "_" + name;
         
-        return AddBuilding(guid, data.name, data, behaviour);
+        NewBuildingData newBuilding = AddBuilding(guid, data.name, data, behaviour);
+        
+        NewBuildingTagModel housingTag = NewBuildingTagModel(guid, name);
+        newBuilding.Tag = housingTag.ID;
+        data.tags = [housingTag.Model];
+
+        return newBuilding;
     }
     
     public static NewBuildingData AddBuilding<T>(string guid, string name, T model, BuildingBehaviourTypes behaviour) where T : BuildingModel
     {
         s_dirty = true;
 
+        BuildingTypes id = GUIDManager.Get<BuildingTypes>(guid, name);
+        BuildingTypesExtensions.TypeToInternalName[id] = model.name;
         NewBuildingData item = new NewBuildingData()
         {
             Guid = guid,
             Name = name,
+            ID = id,
             BuildingModel = model,
             VisualData = null,
             Behaviour = behaviour
@@ -56,6 +74,26 @@ public partial class BuildingManager
         Plugin.Log.LogInfo($"Added new building {name} with guid {guid} name: {(model == null ? "null" : model.name)}");
         
         return item;
+    }
+
+    public static NewBuildingTagModel NewBuildingTagModel(string guid, string name)
+    {
+        BuildingTagModel tag = ScriptableObject.CreateInstance<BuildingTagModel>();
+        tag.workerSlotAnim = "Pulsate Orange";
+        tag.visible = false;
+        tag.workerSlotPositon = BuildingTagIconPosition.None;
+        tag.name = guid + "_" + name;
+        // tag.icon = TODO: Add temp icon 
+
+        BuildingTagTypes id = GUIDManager.Get<BuildingTagTypes>(guid, name);
+        BuildingTagTypesExtensions.TypeToInternalName[id] = guid + "_" + name;
+        NewBuildingTagModel newTag = new NewBuildingTagModel(id, tag);
+        s_newBuildingTags.Add(newTag);
+        
+        s_dirty = true;
+        Plugin.Log.LogInfo($"Added new building tag {name} with guid {guid} name");
+        
+        return newTag;
     }
 
     internal static GameObject GetDefaultVisualData(BuildingBehaviourTypes behaviourTypes, Sprite sprite)
@@ -81,20 +119,18 @@ public partial class BuildingManager
     
     private static void SyncBuildings()
     {
-        if (!s_instantiated)
-        {
-            return;
-        }
-        
         Plugin.Log.LogInfo($"Syncing {s_newBuildings.Count} new buildings");
-        // foreach (NewBuildingData buildingData in s_newBuildings)
-        // {
-        //     Plugin.Log.LogInfo($"- {buildingData.BuildingModel} new buildings");
-        // }
-
 
         Settings settings = SO.Settings;
         s_buildings.Sync(ref settings.Buildings, settings.buildingsCache, s_newBuildings, a=>a.BuildingModel);
+    }
+
+    private static void SyncBuildingTags()
+    {
+        Plugin.Log.LogInfo($"Syncing {s_newBuildingTags.Count} new building tags");
+        
+        Settings settings = SO.Settings;
+        s_buildingTags.Sync(ref settings.buildingsTags, settings.buildingsTagsCache, s_newBuildingTags, a=>a.Model);
     }
 
     internal static void Instantiate()
@@ -107,29 +143,3 @@ public partial class BuildingManager
         s_prefabContainer.SetActive(false);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

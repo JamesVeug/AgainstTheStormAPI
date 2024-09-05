@@ -14,6 +14,8 @@ public class NewBuildingData : ASyncable<BuildingModel>
 {
     public string Guid;
     public string Name;
+    public BuildingTypes ID;
+    public BuildingTagTypes Tag;
     public BuildingModel BuildingModel;
     public BuildingVisualData VisualData;
     public BuildingBehaviourTypes Behaviour;

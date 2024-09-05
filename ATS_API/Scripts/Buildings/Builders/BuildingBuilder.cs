@@ -13,7 +13,10 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
     public string GUID => m_guid;
     public T BuildingModel => m_buildingModel;
     public BuildingModel Model => m_buildingModel;
+    public NewBuildingData NewData => m_newData;
+    public BuildingTagModel BuildingTagModel => m_buildingTagModel;
     
+    private BuildingTagModel m_buildingTagModel;
     protected readonly NewBuildingData m_newData;
     protected readonly T m_buildingModel;
     protected readonly string m_guid;
@@ -88,31 +91,11 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.showFinishedEffect = true;
         m_buildingModel.skipOnExport = false;
         m_buildingModel.skipIconGeneration = false;
-        m_buildingModel.tags = []; // TODO: Fill out more
-        // m_buildingModel.tags[0].name = m_buildingModel.name;
-        // m_buildingModel.tags[0].workerSlotAnim = "Pulsate";
-        // m_buildingModel.tags[0].visible = true;
-        // m_buildingModel.tags[0].workerSlotPositon = BuildingTagIconPosition.Right;
-        // m_buildingModel.tags[0].icon = null;
-        // m_buildingModel.tags[0].name = m_buildingModel.name;
-        // m_buildingModel.tags[0].name = m_buildingModel.name;
         
         m_buildingModel.usabilityTags = [];
         m_buildingModel.initiallyEssential = true;
         m_buildingModel.canBePicked = true;
         m_buildingModel.costRange = new Vector2Int(1, 2);
-        // m_buildingModel.Levels = new Vector2Int(1, 2);
-        // m_buildingModel.cysts = new Vector2Int(1, 2);
-        // m_buildingModel.housingRaces = new Vector2Int(1, 2);
-        // m_buildingModel.servedNeeds = new Vector2Int(1, 2);
-        // m_buildingModel.Prefab = new Vector2Int(1, 2);
-        
-        // if (!string.IsNullOrEmpty(iconPath))
-        // {
-        //     Texture2D texture = TextureHelper.GetImageAsTexture(iconPath);
-        //     TextMeshProManager.Add(texture, m_newData.BuildingModel.name);
-        //     m_buildingModel.icon = texture.ConvertTexture(TextureHelper.SpriteType.EffectIcon);
-        // }
     }
 
     public void SetDisplayName(string displayName, SystemLanguage systemLanguage = SystemLanguage.English)
