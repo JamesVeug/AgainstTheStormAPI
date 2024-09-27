@@ -1,3 +1,13 @@
+# 2.0.0 - Contains mod breaking changes.
+- Bumped ATS version to 1.4.4v + DLC
+  - Updated Enum helpers
+- Added Custom race support (first pass)
+- Added ResolveEffectBuilder
+- Added more columns to relics.csv export
+- Added stack trace when failing to find data using enum helpers
+- Custom BuildingTagModel support
+- Refactored loading mods flow to be less error-prone
+
 # 1.2.4
 - Fixed infinite loading screen when loading save with the SkyScaper building
 - Fixed infinite loading screen when loading save with missing perks/effects
