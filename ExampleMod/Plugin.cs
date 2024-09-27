@@ -1,5 +1,4 @@
-﻿using System;
-using ATS_API.Helpers;
+﻿using ATS_API.Helpers;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;

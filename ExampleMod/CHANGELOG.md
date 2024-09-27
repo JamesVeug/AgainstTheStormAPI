@@ -1,3 +1,7 @@
+# 2.0.0
+- Bumped ATS version to 1.4.4v + DLC
+- Added Axolotl Custom Race example (First pass)
+
 # 1.2.1
 - Fixed new goods not being able to be sold to traders
 
