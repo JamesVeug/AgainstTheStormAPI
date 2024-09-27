@@ -24,6 +24,7 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
         m_newData.Category = BuildingCategoriesTypes.Housing;
         
         m_buildingModel.housingPlaces = housingPlaces;
+        m_buildingModel.level = 2;
         m_buildingModel.levels = [];
         m_buildingModel.cystsAmount = 3;
         m_buildingModel.housingRaces = [];

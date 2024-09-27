@@ -24,7 +24,7 @@ public partial class Plugin
         // Characteristic
         builder.AddCharacteristic(BuildingTagTypes.Rainwater, VillagerPerkTypes.Proficiency);
         builder.AddCharacteristic(BuildingTagTypes.Brewing, VillagerPerkTypes.Comfortable_Job);
-        builder.AddCharacteristic(axolotlHouse.NewData.Tag, EffectTypes.Meat_Plus1);
+        builder.AddGlobalCharacteristic(axolotlHouse.NewData.Tag, EffectTypes.Meat_Plus1);
         
         // Needs
         CustomRaceNeed houseNeed = RaceNeedFactory.HousingNeed(PluginInfo.PLUGIN_GUID, builder.NewRaceData.ID, axolotlHouse.NewData.ID, 

@@ -1,5 +1,6 @@
 ﻿using ATS_API.Helpers;
 using ATS_API.Localization;
+using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
 using Eremite.Model.Needs;
@@ -46,11 +47,6 @@ public class CustomRaceNeed : ASyncable<NeedModel>
 
     private bool SyncHouseNeed()
     {
-        if (NeedModel.category == null)
-        {
-            NeedModel.category = NeedTypes.Jerky.ToNeedModel().category;
-        }
-
         return true;
     }
 
@@ -62,11 +58,15 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         
         // Presentation
         HousePresentationModel presentation = (HousePresentationModel)NeedModel.presentation;
-        presentation.houses = [(HouseModel)houseName.ToBuildingModel()];
+        HouseModel houseModel = (HouseModel)houseName.ToBuildingModel();
+        presentation.houses = [houseModel];
         if (presentation.overrideIcon == null)
         {
             presentation.overrideIcon = presentation.houses[0].icon;
         }
+
+        HearthModel hearth = (HearthModel)SO.Settings.GetBuilding("Small Hearth");
+        hearth.tags = hearth.tags.ForceAdd(houseModel.tags[0]);
     }
 
     private bool SyncComplexFoodNeed()

@@ -15,7 +15,7 @@ public partial class RaceBuilder
         return this;
     }
     
-    public RaceBuilder AddCharacteristic(BuildingTagTypes buildingTagTypes, EffectTypes effect)
+    public RaceBuilder AddGlobalCharacteristic(BuildingTagTypes buildingTagTypes, EffectTypes effect)
     {
         newRaceData.characteristics.Add(new RaceCharacteristicRef
         {
