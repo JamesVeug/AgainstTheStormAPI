@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum GoodsTypes
 {
 	Unknown = -1,
@@ -14,20 +14,28 @@ public enum GoodsTypes
 	_Meta_Artifacts,                  // Artifacts - The remnants of a long-forgotten world. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
 	_Meta_Food_Stockpiles,            // Food Stockpiles - A basic currency of the realm. Earned by completing settlements. Can be used to purchase upgrades in the Smoldering City.
 	_Meta_Machinery,                  // Machinery - Rainpunk technology ripped from the past. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
+	API_ExampleMod_Borgor,            // API_ExampleMod_Borgor_displayName - API_ExampleMod_Borgor_description
+	API_ExampleMod_Cola,              // API_ExampleMod_Cola_displayName - API_ExampleMod_Cola_description
+	API_ExampleMod_Diamonds,          // API_ExampleMod_Diamonds_displayName - API_ExampleMod_Diamonds_description
+	API_ExampleMod_Fries,             // API_ExampleMod_Fries_displayName - API_ExampleMod_Fries_description
+	API_ExampleMod_Kiwi_Fruit,        // API_ExampleMod_Kiwi Fruit_displayName - API_ExampleMod_Kiwi Fruit_description
+	API_ExampleMod_LPG,               // API_ExampleMod_LPG_displayName - API_ExampleMod_LPG_description
 	Blight_Fuel,                      // Purging Fire - A unique resource used by Blight Fighters to burn down Blightrot Cysts.   <b>Produced in:</b> {0}
 	Crafting_Coal,                    // Coal - Efficient fuel.   <b>Obtained in:</b> {0}
+	Crafting_Dye,                     // Dye - Used for crafting.  <b>Produced in:</b> {0}
 	Crafting_Flour,                   // Flour - Used for cooking.  <b>Produced in:</b> {0}
 	Crafting_Oil,                     // Oil - Efficient fuel.   <b>Obtained in:</b> {0}
-	Crafting_Pigment,                 // Pigment - Used for crafting.  <b>Produced in:</b> {0}
 	Crafting_Sea_Marrow,              // Sea Marrow - Efficient fuel.   <b>Obtained in:</b> {0}
-	Food_Processed_Biscuits,          // Biscuits - Tasty and crunchy. Liked by: {2}.  <b>Produced in:</b> {0}
-	Food_Processed_Jerky,             // Jerky - Preserved, dried meat. Liked by: {2}.  <b>Produced in:</b> {0}
-	Food_Processed_Pickled_Goods,     // Pickled Goods - A Beaver specialty. Liked by: {2}.  <b>Produced in:</b> {0}
-	Food_Processed_Pie,               // Pie - A Human specialty. Liked by: {2}.  <b>Produced in:</b> {0}
-	Food_Processed_Porridge,          // Porridge - A nutritious and warming meal. Liked by: {2}.  <b>Produced in:</b> {0}
-	Food_Processed_Skewers,           // Skewers - A Lizard specialty. Liked by: {2}.  <b>Produced in:</b> {0}
+	Food_Processed_Biscuits,          // Biscuits - Tasty and crunchy. Liked by: {2}. Villagers with a satisfied need for biscuits have an increased chance of producing double yields.<b>Produced in:</b> {0}
+	Food_Processed_Jerky,             // Jerky - Preserved, dried meat. Liked by: {2}. Villagers with a satisfied need for jerky have an increased chance of producing double yields.<b>Produced in:</b> {0}
+	Food_Processed_Paste,             // Paste - A smooth paste, no chewing required. Liked by: {2}. Villagers with a satisfied need for paste have an increased chance of producing double yields.<b>Produced in:</b> {0}
+	Food_Processed_Pickled_Goods,     // Pickled Goods - A Beaver specialty. Liked by: {2}. Villagers with a satisfied need for pickled goods have an increased chance of producing double yields.<b>Produced in:</b> {0}
+	Food_Processed_Pie,               // Pie - A savory delicacy. Liked by: {2}. Villagers with a satisfied need for pie have an increased chance of producing double yields.<b>Produced in:</b> {0}
+	Food_Processed_Porridge,          // Porridge - A nutritious and warming meal. Liked by: {2}. Villagers with a satisfied need for porridge have an increased chance of producing double yields.<b>Produced in:</b> {0}
+	Food_Processed_Skewers,           // Skewers - A Lizard specialty. Liked by: {2}. Villagers with a satisfied need for skewers have an increased chance of producing double yields.<b>Produced in:</b> {0}
 	Food_Raw_Berries,                 // Berries - Common food source.  <b>Obtained in:</b> {0}
 	Food_Raw_Eggs,                    // Eggs - Common food source.  <b>Obtained in:</b> {0}
+	Food_Raw_Fish,                    // Fish - Plenty of them in the sea. A common food source.<b>Obtained at:</b> {0}
 	Food_Raw_Grain,                   // Grain - Isn't eaten raw, but can be processed.  <b>Obtained in:</b> {0}
 	Food_Raw_Herbs,                   // Herbs - Isn't eaten raw, but can be processed.  <b>Obtained in:</b> {0}
 	Food_Raw_Insects,                 // Insects - Common food source.  <b>Obtained in:</b> {0}
@@ -41,25 +49,29 @@ public enum GoodsTypes
 	Mat_Processed_Parts,              // Parts - Rare elements used in camp construction. Difficult to produce in this harsh environment.
 	Mat_Processed_Pipe,               // Pipes - Used to install Rainpunk Engines in production buildings and build Geyser Pumps.  <b>Produced in:</b> {0}
 	Mat_Processed_Planks,             // Planks - Mostly used for construction.  <b>Produced in:</b> {0}
+	Mat_Raw_Algae,                    // Algae - Slimy, tough fibers fished from murky waters. Used for crafting.<b>Obtained at:</b> {0}
 	Mat_Raw_Clay,                     // Clay - Flesh of the earth. Used mostly for crafting.  <b>Obtained in:</b> {0}
 	Mat_Raw_Leather,                  // Leather - Used for crafting.  <b>Obtained in:</b> {0}
 	Mat_Raw_Plant_Fibre,              // Plant Fiber - Used for crafting.  <b>Obtained in:</b> {0}
 	Mat_Raw_Reeds,                    // Reed - Used for crafting.  <b>Obtained in:</b> {0}
 	Mat_Raw_Resin,                    // Resin - Used for crafting.  <b>Obtained in:</b> {0}
+	Mat_Raw_Scales,                   // Scales - Durable fish skin, richly infused with copper. Used for crafting.<b>Obtained at:</b> {0}
 	Mat_Raw_Sparkdew,                 // Sparkdew - Charged rainwater. Extremely useful, and dangerous at the same time. Obtained by: {0}
 	Mat_Raw_Stone,                    // Stone - Bones of the earth. Used mostly for crafting.  <b>Obtained in:</b> {0}
 	Mat_Raw_Wood,                     // Wood - An abundant, yet crucial resource.   <b>Obtained in:</b> {0}
 	Metal_Copper_Bar,                 // Copper Bars - Refined copper ore, used for crafting.  <b>Produced in:</b> {0}
 	Metal_Copper_Ore,                 // Copper Ore - A soft and malleable metal.  <b>Obtained in:</b> {0}
 	Metal_Crystalized_Dew,            // Crystalized Dew - Crystalized rain essence.  <b>Produced in:</b> {0}
-	Needs_Ale,                        // Ale - Used for leisure at: {1}, by {2}.  <b>Produced in:</b> {0}
-	Needs_Coats,                      // Coats - Used as clothing by: {2}.   <b>Produced in:</b> {0}
-	Needs_Incense,                    // Incense - Used for religion at: {1}, by {2}.  <b>Produced in:</b> {0}
-	Needs_Scrolls,                    // Scrolls - Used for education at: {1}, by: {2}.  <b>Produced in:</b> {0}
+	Needs_Ale,                        // Ale - Used for leisure at: {1}, by {2}. Villagers with a satisfied need for leisure have a higher chance of producing double yields.<b>Produced in:</b> {0}
+	Needs_Boots,                      // Boots - Sturdy and waterproof. Used as clothing by: {2}. Grants a movement speed bonus to villagers wearing them.<b>Produced in:</b> {0}
+	Needs_Coats,                      // Coats - Reliable protection from the rain. Used as clothing by: {2}. Grants an additional Resolve bonus during the storm.<b>Produced in:</b> {0}
+	Needs_Incense,                    // Incense - Used for religion at: {1}, by {2}. Villagers with a satisfied need for religion have a higher chance of producing double yields.<b>Produced in:</b> {0}
+	Needs_Scrolls,                    // Scrolls - Used for education at: {1}, by: {2}. Villagers with a satisfied need for education have a higher chance of producing double yields.<b>Produced in:</b> {0}
 	Needs_Scrolls_Tutorial,           // Scrolls - Luxury goods used for Education. Unavailable in this tutorial. <u>Select the icon</u> to change to another resource.
-	Needs_Tea,                        // Tea - A soothing infusion made out of rainwater, that must be kept in a metal pot. Used for treatment at: {1}, by: {2}.  <b>Produced in:</b> {0}
-	Needs_Training_Gear,              // Training Gear - Used for brawling at: {1}, by: {2}.  <b>Produced in:</b> {0}
-	Needs_Wine,                       // Wine - Used for luxury at: {1}, by: {2}.  <b>Produced in:</b> {0}
+	Needs_Tea,                        // Tea - Used for treatment at: {1}, by: {2}. Villagers with a satisfied need for treatment have a higher chance of producing double yields.<b>Produced in:</b> {0}
+	Needs_Training_Gear,              // Training Gear - Used for brawling at: {1}, by: {2}. Villagers with a satisfied need for brawling have a higher chance of producing double yields.<b>Produced in:</b> {0}
+	Needs_Wine,                       // Wine - Used for luxury at: {1}, by: {2}. Villagers with a satisfied need for luxury have a higher chance of producing double yields.<b>Produced in:</b> {0}
+	Other_Fishing_Bait,               // Ground Bait - Bait made from Packs of Crops. Used in fishing huts to double fishing yields.
 	Packs_Pack_Of_Building_Materials, // Pack of Building Materials - Building materials packaged for delivery, used to fulfill orders, upgrade buildings, and trade.  <b>Produced in:</b> {0}
 	Packs_Pack_Of_Crops,              // Pack of Crops - Crops packaged for delivery, used to fulfill orders and trade.  <b>Produced in:</b> {0}
 	Packs_Pack_Of_Luxury_Goods,       // Pack of Luxury Goods - Goods highly sought after by traders. Can be used to fulfill orders, or sold for a large profit.  <b>Produced in:</b> {0}
@@ -77,7 +89,7 @@ public enum GoodsTypes
 	Water_Storm_Water,                // Storm Water - Highly concentrated blue storm rainwater. Used to power Rain Engines in industry-oriented buildings.
 
 
-    MAX = 64
+	MAX = 76
 }
 
 public static class GoodsTypesExtensions
@@ -87,8 +99,8 @@ public static class GoodsTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new GoodsTypes[64];
-			for (int i = 0; i < 64; i++)
+			s_All = new GoodsTypes[76];
+			for (int i = 0; i < 76; i++)
 			{
 				s_All[i] = (GoodsTypes)(i+1);
 			}
@@ -169,20 +181,28 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes._Meta_Artifacts, "_Meta Artifacts" },                                     // Artifacts - The remnants of a long-forgotten world. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
 		{ GoodsTypes._Meta_Food_Stockpiles, "_Meta Food Stockpiles" },                         // Food Stockpiles - A basic currency of the realm. Earned by completing settlements. Can be used to purchase upgrades in the Smoldering City.
 		{ GoodsTypes._Meta_Machinery, "_Meta Machinery" },                                     // Machinery - Rainpunk technology ripped from the past. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
+		{ GoodsTypes.API_ExampleMod_Borgor, "API_ExampleMod_Borgor" },                         // API_ExampleMod_Borgor_displayName - API_ExampleMod_Borgor_description
+		{ GoodsTypes.API_ExampleMod_Cola, "API_ExampleMod_Cola" },                             // API_ExampleMod_Cola_displayName - API_ExampleMod_Cola_description
+		{ GoodsTypes.API_ExampleMod_Diamonds, "API_ExampleMod_Diamonds" },                     // API_ExampleMod_Diamonds_displayName - API_ExampleMod_Diamonds_description
+		{ GoodsTypes.API_ExampleMod_Fries, "API_ExampleMod_Fries" },                           // API_ExampleMod_Fries_displayName - API_ExampleMod_Fries_description
+		{ GoodsTypes.API_ExampleMod_Kiwi_Fruit, "API_ExampleMod_Kiwi Fruit" },                 // API_ExampleMod_Kiwi Fruit_displayName - API_ExampleMod_Kiwi Fruit_description
+		{ GoodsTypes.API_ExampleMod_LPG, "API_ExampleMod_LPG" },                               // API_ExampleMod_LPG_displayName - API_ExampleMod_LPG_description
 		{ GoodsTypes.Blight_Fuel, "Blight Fuel" },                                             // Purging Fire - A unique resource used by Blight Fighters to burn down Blightrot Cysts.   <b>Produced in:</b> {0}
 		{ GoodsTypes.Crafting_Coal, "[Crafting] Coal" },                                       // Coal - Efficient fuel.   <b>Obtained in:</b> {0}
+		{ GoodsTypes.Crafting_Dye, "[Crafting] Dye" },                                         // Dye - Used for crafting.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Crafting_Flour, "[Crafting] Flour" },                                     // Flour - Used for cooking.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Crafting_Oil, "[Crafting] Oil" },                                         // Oil - Efficient fuel.   <b>Obtained in:</b> {0}
-		{ GoodsTypes.Crafting_Pigment, "[Crafting] Pigment" },                                 // Pigment - Used for crafting.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Crafting_Sea_Marrow, "[Crafting] Sea Marrow" },                           // Sea Marrow - Efficient fuel.   <b>Obtained in:</b> {0}
-		{ GoodsTypes.Food_Processed_Biscuits, "[Food Processed] Biscuits" },                   // Biscuits - Tasty and crunchy. Liked by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Food_Processed_Jerky, "[Food Processed] Jerky" },                         // Jerky - Preserved, dried meat. Liked by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Food_Processed_Pickled_Goods, "[Food Processed] Pickled Goods" },         // Pickled Goods - A Beaver specialty. Liked by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Food_Processed_Pie, "[Food Processed] Pie" },                             // Pie - A Human specialty. Liked by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Food_Processed_Porridge, "[Food Processed] Porridge" },                   // Porridge - A nutritious and warming meal. Liked by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Food_Processed_Skewers, "[Food Processed] Skewers" },                     // Skewers - A Lizard specialty. Liked by: {2}.  <b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Biscuits, "[Food Processed] Biscuits" },                   // Biscuits - Tasty and crunchy. Liked by: {2}. Villagers with a satisfied need for biscuits have an increased chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Jerky, "[Food Processed] Jerky" },                         // Jerky - Preserved, dried meat. Liked by: {2}. Villagers with a satisfied need for jerky have an increased chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Paste, "[Food Processed] Paste" },                         // Paste - A smooth paste, no chewing required. Liked by: {2}. Villagers with a satisfied need for paste have an increased chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Pickled_Goods, "[Food Processed] Pickled Goods" },         // Pickled Goods - A Beaver specialty. Liked by: {2}. Villagers with a satisfied need for pickled goods have an increased chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Pie, "[Food Processed] Pie" },                             // Pie - A savory delicacy. Liked by: {2}. Villagers with a satisfied need for pie have an increased chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Porridge, "[Food Processed] Porridge" },                   // Porridge - A nutritious and warming meal. Liked by: {2}. Villagers with a satisfied need for porridge have an increased chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Food_Processed_Skewers, "[Food Processed] Skewers" },                     // Skewers - A Lizard specialty. Liked by: {2}. Villagers with a satisfied need for skewers have an increased chance of producing double yields.<b>Produced in:</b> {0}
 		{ GoodsTypes.Food_Raw_Berries, "[Food Raw] Berries" },                                 // Berries - Common food source.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Food_Raw_Eggs, "[Food Raw] Eggs" },                                       // Eggs - Common food source.  <b>Obtained in:</b> {0}
+		{ GoodsTypes.Food_Raw_Fish, "[Food Raw] Fish" },                                       // Fish - Plenty of them in the sea. A common food source.<b>Obtained at:</b> {0}
 		{ GoodsTypes.Food_Raw_Grain, "[Food Raw] Grain" },                                     // Grain - Isn't eaten raw, but can be processed.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Food_Raw_Herbs, "[Food Raw] Herbs" },                                     // Herbs - Isn't eaten raw, but can be processed.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Food_Raw_Insects, "[Food Raw] Insects" },                                 // Insects - Common food source.  <b>Obtained in:</b> {0}
@@ -196,25 +216,29 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes.Mat_Processed_Parts, "[Mat Processed] Parts" },                           // Parts - Rare elements used in camp construction. Difficult to produce in this harsh environment.
 		{ GoodsTypes.Mat_Processed_Pipe, "[Mat Processed] Pipe" },                             // Pipes - Used to install Rainpunk Engines in production buildings and build Geyser Pumps.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Mat_Processed_Planks, "[Mat Processed] Planks" },                         // Planks - Mostly used for construction.  <b>Produced in:</b> {0}
+		{ GoodsTypes.Mat_Raw_Algae, "[Mat Raw] Algae" },                                       // Algae - Slimy, tough fibers fished from murky waters. Used for crafting.<b>Obtained at:</b> {0}
 		{ GoodsTypes.Mat_Raw_Clay, "[Mat Raw] Clay" },                                         // Clay - Flesh of the earth. Used mostly for crafting.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Mat_Raw_Leather, "[Mat Raw] Leather" },                                   // Leather - Used for crafting.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Mat_Raw_Plant_Fibre, "[Mat Raw] Plant Fibre" },                           // Plant Fiber - Used for crafting.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Mat_Raw_Reeds, "[Mat Raw] Reeds" },                                       // Reed - Used for crafting.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Mat_Raw_Resin, "[Mat Raw] Resin" },                                       // Resin - Used for crafting.  <b>Obtained in:</b> {0}
+		{ GoodsTypes.Mat_Raw_Scales, "[Mat Raw] Scales" },                                     // Scales - Durable fish skin, richly infused with copper. Used for crafting.<b>Obtained at:</b> {0}
 		{ GoodsTypes.Mat_Raw_Sparkdew, "[Mat Raw] Sparkdew" },                                 // Sparkdew - Charged rainwater. Extremely useful, and dangerous at the same time. Obtained by: {0}
 		{ GoodsTypes.Mat_Raw_Stone, "[Mat Raw] Stone" },                                       // Stone - Bones of the earth. Used mostly for crafting.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Mat_Raw_Wood, "[Mat Raw] Wood" },                                         // Wood - An abundant, yet crucial resource.   <b>Obtained in:</b> {0}
 		{ GoodsTypes.Metal_Copper_Bar, "[Metal] Copper Bar" },                                 // Copper Bars - Refined copper ore, used for crafting.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Metal_Copper_Ore, "[Metal] Copper Ore" },                                 // Copper Ore - A soft and malleable metal.  <b>Obtained in:</b> {0}
 		{ GoodsTypes.Metal_Crystalized_Dew, "[Metal] Crystalized Dew" },                       // Crystalized Dew - Crystalized rain essence.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Ale, "[Needs] Ale" },                                               // Ale - Used for leisure at: {1}, by {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Coats, "[Needs] Coats" },                                           // Coats - Used as clothing by: {2}.   <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Incense, "[Needs] Incense" },                                       // Incense - Used for religion at: {1}, by {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Scrolls, "[Needs] Scrolls" },                                       // Scrolls - Used for education at: {1}, by: {2}.  <b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Ale, "[Needs] Ale" },                                               // Ale - Used for leisure at: {1}, by {2}. Villagers with a satisfied need for leisure have a higher chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Boots, "[Needs] Boots" },                                           // Boots - Sturdy and waterproof. Used as clothing by: {2}. Grants a movement speed bonus to villagers wearing them.<b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Coats, "[Needs] Coats" },                                           // Coats - Reliable protection from the rain. Used as clothing by: {2}. Grants an additional Resolve bonus during the storm.<b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Incense, "[Needs] Incense" },                                       // Incense - Used for religion at: {1}, by {2}. Villagers with a satisfied need for religion have a higher chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Scrolls, "[Needs] Scrolls" },                                       // Scrolls - Used for education at: {1}, by: {2}. Villagers with a satisfied need for education have a higher chance of producing double yields.<b>Produced in:</b> {0}
 		{ GoodsTypes.Needs_Scrolls_Tutorial, "[Needs] Scrolls - tutorial" },                   // Scrolls - Luxury goods used for Education. Unavailable in this tutorial. <u>Select the icon</u> to change to another resource.
-		{ GoodsTypes.Needs_Tea, "[Needs] Tea" },                                               // Tea - A soothing infusion made out of rainwater, that must be kept in a metal pot. Used for treatment at: {1}, by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Training_Gear, "[Needs] Training Gear" },                           // Training Gear - Used for brawling at: {1}, by: {2}.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Wine, "[Needs] Wine" },                                             // Wine - Used for luxury at: {1}, by: {2}.  <b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Tea, "[Needs] Tea" },                                               // Tea - Used for treatment at: {1}, by: {2}. Villagers with a satisfied need for treatment have a higher chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Training_Gear, "[Needs] Training Gear" },                           // Training Gear - Used for brawling at: {1}, by: {2}. Villagers with a satisfied need for brawling have a higher chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Needs_Wine, "[Needs] Wine" },                                             // Wine - Used for luxury at: {1}, by: {2}. Villagers with a satisfied need for luxury have a higher chance of producing double yields.<b>Produced in:</b> {0}
+		{ GoodsTypes.Other_Fishing_Bait, "[Other] Fishing Bait" },                             // Ground Bait - Bait made from Packs of Crops. Used in fishing huts to double fishing yields.
 		{ GoodsTypes.Packs_Pack_Of_Building_Materials, "[Packs] Pack of Building Materials" }, // Pack of Building Materials - Building materials packaged for delivery, used to fulfill orders, upgrade buildings, and trade.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Packs_Pack_Of_Crops, "[Packs] Pack of Crops" },                           // Pack of Crops - Crops packaged for delivery, used to fulfill orders and trade.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Packs_Pack_Of_Luxury_Goods, "[Packs] Pack of Luxury Goods" },             // Pack of Luxury Goods - Goods highly sought after by traders. Can be used to fulfill orders, or sold for a large profit.  <b>Produced in:</b> {0}

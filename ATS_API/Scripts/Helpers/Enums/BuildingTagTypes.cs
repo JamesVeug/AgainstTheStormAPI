@@ -6,7 +6,7 @@ using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum BuildingTagTypes
 {
 	Unknown = -1,
@@ -15,20 +15,23 @@ public enum BuildingTagTypes
 	Animals,        // Meat production (<sprite name="meat">)
 	Brewing,        // Brewing (<sprite name="brewing">)
 	Cloth,          // Tailoring (<sprite name="cloth">)
+	Cysts,          // Blightrot (<sprite name="cysts">)
 	Farming,        // Farming (<sprite name="farming">)
 	Forest,         // Forest (<sprite name="foxforest">)
 	Hearth_Beavers, 
 	Hearth_Foxes, 
+	Hearth_Frogs, 
 	Hearth_Harpies, 
 	Hearth_Humans, 
 	Hearth_Lizards, 
 	Rainwater,      // Rainwater (<sprite name="rainwater">)
+	Stone,          // Masonry (<sprite name="stone">)
 	Tech,           // Engineering (<sprite name="tech">)
 	Warmth,         // Warmth (<sprite name="fire">)
 	Wood,           // Woodworking (<sprite name="wood">)
 
 
-	MAX = 15
+	MAX = 18
 }
 
 public static class BuildingTagTypesExtensions
@@ -38,8 +41,8 @@ public static class BuildingTagTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new BuildingTagTypes[15];
-			for (int i = 0; i < 15; i++)
+			s_All = new BuildingTagTypes[18];
+			for (int i = 0; i < 18; i++)
 			{
 				s_All[i] = (BuildingTagTypes)(i+1);
 			}
@@ -121,14 +124,17 @@ public static class BuildingTagTypesExtensions
 		{ BuildingTagTypes.Animals, "Animals" },               // Meat production (<sprite name="meat">)
 		{ BuildingTagTypes.Brewing, "Brewing" },               // Brewing (<sprite name="brewing">)
 		{ BuildingTagTypes.Cloth, "Cloth" },                   // Tailoring (<sprite name="cloth">)
+		{ BuildingTagTypes.Cysts, "Cysts" },                   // Blightrot (<sprite name="cysts">)
 		{ BuildingTagTypes.Farming, "Farming" },               // Farming (<sprite name="farming">)
 		{ BuildingTagTypes.Forest, "Forest" },                 // Forest (<sprite name="foxforest">)
 		{ BuildingTagTypes.Hearth_Beavers, "Hearth_Beavers" }, 
 		{ BuildingTagTypes.Hearth_Foxes, "Hearth_Foxes" }, 
+		{ BuildingTagTypes.Hearth_Frogs, "Hearth_Frogs" }, 
 		{ BuildingTagTypes.Hearth_Harpies, "Hearth_Harpies" }, 
 		{ BuildingTagTypes.Hearth_Humans, "Hearth_Humans" }, 
 		{ BuildingTagTypes.Hearth_Lizards, "Hearth_Lizards" }, 
 		{ BuildingTagTypes.Rainwater, "Rainwater" },           // Rainwater (<sprite name="rainwater">)
+		{ BuildingTagTypes.Stone, "Stone" },                   // Masonry (<sprite name="stone">)
 		{ BuildingTagTypes.Tech, "Tech" },                     // Engineering (<sprite name="tech">)
 		{ BuildingTagTypes.Warmth, "Warmth" },                 // Warmth (<sprite name="fire">)
 		{ BuildingTagTypes.Wood, "Wood" },                     // Woodworking (<sprite name="wood">)

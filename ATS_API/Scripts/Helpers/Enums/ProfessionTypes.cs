@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum ProfessionTypes
 {
 	Unknown = -1,
@@ -22,11 +22,13 @@ public enum ProfessionTypes
 	Brickyard_Worker,           // Brickyard Worker
 	Builder,                    // Builder
 	Butcher,                    // Cook
+	Cannery_Worker,             // Cannery Worker
 	Carpenter,                  // Carpenter
 	Cellar_Worker,              // Cellar Worker
 	Clan_Mamber,                // Clan Steward
 	Clay_Pit_Workshop_Worker,   // Clay Pit Digger
 	Claypit_Digger,             // Clay Pit Digger
+	Cobbler,                    // Cobbler
 	Cook,                       // Cook
 	Cooper,                     // Cooper
 	Craftsman,                  // Craftsman
@@ -37,6 +39,7 @@ public enum ProfessionTypes
 	Farmer,                     // Farmer
 	Finesmith,                  // Finesmith
 	FireKeeper,                 // Firekeeper
+	Fisherman,                  // Fisherman
 	Forager,                    // Forager
 	Furnace_Worker,             // Furnace Worker
 	Geologist,                  // Pump Operator
@@ -75,6 +78,7 @@ public enum ProfessionTypes
 	Smokehouse_Worker,          // Smokehouse Worker
 	Speaker,                    // Speaker
 	Stamping_Mill_Worker,       // Stamping Mill Worker
+	Stevedore,                  // Dockworker
 	Stonecutter,                // Stonecutter
 	Supplier,                   // Supplier
 	Teadoctor,                  // Teadoctor
@@ -88,7 +92,7 @@ public enum ProfessionTypes
 	Woodcutter,                 // Woodcutter
 
 
-	MAX = 75
+	MAX = 79
 }
 
 public static class ProfessionTypesExtensions
@@ -98,8 +102,8 @@ public static class ProfessionTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new ProfessionTypes[75];
-			for (int i = 0; i < 75; i++)
+			s_All = new ProfessionTypes[79];
+			for (int i = 0; i < 79; i++)
 			{
 				s_All[i] = (ProfessionTypes)(i+1);
 			}
@@ -188,11 +192,13 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Brickyard_Worker, "Brickyard Worker" },                     // Brickyard Worker
 		{ ProfessionTypes.Builder, "Builder" },                                       // Builder
 		{ ProfessionTypes.Butcher, "Butcher" },                                       // Cook
+		{ ProfessionTypes.Cannery_Worker, "Cannery Worker" },                         // Cannery Worker
 		{ ProfessionTypes.Carpenter, "Carpenter" },                                   // Carpenter
 		{ ProfessionTypes.Cellar_Worker, "Cellar worker" },                           // Cellar Worker
 		{ ProfessionTypes.Clan_Mamber, "Clan Mamber" },                               // Clan Steward
 		{ ProfessionTypes.Clay_Pit_Workshop_Worker, "Clay Pit Workshop Worker" },     // Clay Pit Digger
 		{ ProfessionTypes.Claypit_Digger, "Claypit Digger" },                         // Clay Pit Digger
+		{ ProfessionTypes.Cobbler, "Cobbler" },                                       // Cobbler
 		{ ProfessionTypes.Cook, "Cook" },                                             // Cook
 		{ ProfessionTypes.Cooper, "Cooper" },                                         // Cooper
 		{ ProfessionTypes.Craftsman, "Craftsman" },                                   // Craftsman
@@ -203,6 +209,7 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Farmer, "Farmer" },                                         // Farmer
 		{ ProfessionTypes.Finesmith, "Finesmith" },                                   // Finesmith
 		{ ProfessionTypes.FireKeeper, "FireKeeper" },                                 // Firekeeper
+		{ ProfessionTypes.Fisherman, "Fisherman" },                                   // Fisherman
 		{ ProfessionTypes.Forager, "Forager" },                                       // Forager
 		{ ProfessionTypes.Furnace_Worker, "Furnace worker" },                         // Furnace Worker
 		{ ProfessionTypes.Geologist, "Geologist" },                                   // Pump Operator
@@ -241,6 +248,7 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Smokehouse_Worker, "Smokehouse worker" },                   // Smokehouse Worker
 		{ ProfessionTypes.Speaker, "Speaker" },                                       // Speaker
 		{ ProfessionTypes.Stamping_Mill_Worker, "Stamping Mill Worker" },             // Stamping Mill Worker
+		{ ProfessionTypes.Stevedore, "Stevedore" },                                   // Dockworker
 		{ ProfessionTypes.Stonecutter, "Stonecutter" },                               // Stonecutter
 		{ ProfessionTypes.Supplier, "Supplier" },                                     // Supplier
 		{ ProfessionTypes.Teadoctor, "Teadoctor" },                                   // Teadoctor

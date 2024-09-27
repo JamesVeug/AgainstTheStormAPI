@@ -6,13 +6,15 @@ using Eremite.Model.Goals;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum GoalTypes
 {
 	Unknown = -1,
 	None,
 	Deed_Fox_Population,                             // Fox Settlement - Win a game with at least 25 Foxes.
+	Deed_Frog_Population,                            // Frog Settlement - Win a game with at least 30 Frogs.
 	Deed_Harpy_Population,                           // Harpy Settlement - Win a game with at least 25 Harpies.
+	Deed_Homestead_And_Foundry,                      // Feeling Lucky - Obtain the Homestead and Rainpunk Foundry blueprints from expeditions in the Coastal Grove (in one game).
 	Deed_Reforge_Seal_Adamantine,                    // The Adamantine Seal - Reforge the Adamantine Seal.
 	Deed_Reforge_Seal_Bronze,                        // The Bronze Seal - Reforge the Bronze Seal.
 	Deed_Reforge_Seal_Cobalt,                        // The Cobalt Seal - Reforge the Cobalt Seal.
@@ -22,6 +24,8 @@ public enum GoalTypes
 	Deed_Reforge_Seal_Silver,                        // The Silver Seal - Reforge the Silver Seal.
 	Deed_Reforge_Seal_Titanium,                      // The Titanium Seal - Reforge the Titanium Seal.
 	Deed_Scorpion,                                   // Apprentice Archaeologist 1 - Win a game with a reconstructed Smoldering Scorpion skeleton in the Scarlet Orchard.
+	Deed_Send_Expeditions,                           // Strider Rider - Send out 100 expeditions in the Coastal Grove.
+	Deed_Send_Expeditions_In_One_Game,               // The Search Continues - Send out 12 expeditions in one game in the Coastal Grove.
 	Deed_Snake,                                      // Apprentice Archaeologist 2 - Win a game with a reconstructed Sea Serpent skeleton in the Scarlet Orchard.
 	Deed_Spider,                                     // Apprentice Archaeologist 3 - Win a game with a reconstructed Sealed Spider skeleton in the Scarlet Orchard.
 	Deed_Spider_Snake_Scorpion,                      // Master Archaeologist - Win a game with all three skeletons reconstructed in the Scarlet Orchard.
@@ -37,6 +41,11 @@ public enum GoalTypes
 	Deed_Trade_Routes_4,                             // Export Expert 4 - Complete 150 trade routes.
 	Deed_Trade_Routes_5,                             // Export Expert 5 - Complete 250 trade routes.
 	Deed_Trade_Routes_6,                             // Export Expert 6 - Complete 400 trade routes.
+	Deed_Upgrade_Frog_Houses,                        // Frog Republic - Upgrade 12 Frog Houses to the maximum level in one game.
+	Deed_Upgrades_Bought,                            // Renovator - Upgrade any buildings in your settlements 80 times.
+	Deed_Use_Bait,                                   // Taking the Bait - Use 500 ground bait in Fishing Huts.
+	Deed_Win_Coastal_Grove,                          // The Coastal Grove - Win a game on the Coastal Grove biome.
+	Deed_Win_Coastal_Grove_Impossible,               // Salty Breeze - Win a game in the Coastal Grove biome, and on Viceroy difficulty (or higher).
 	Deed_Win_Coral_Impossible,                       // The Reef - Win a game in the Coral Forest biome, and on Viceroy difficulty (or higher).
 	Deed_Win_Cursed_Impossible,                      // Thick Clouds - Win a game in the Cursed Royal Woodlands biome, and on Viceroy difficulty (or higher).
 	Deed_Win_Game_Hard,                              // Overcoming Difficulty - Win a game on Pioneer difficulty (or higher).
@@ -67,7 +76,8 @@ public enum GoalTypes
 	Deed_Win_Game_With_Glades,                       // Thorough Exploration - Win a game with 30 or more glades discovered, on Pioneer difficulty (or higher).
 	Deed_Win_Game_With_Timed_Orders,                 // Like a Machine - Win a game after completing 3 timed orders.
 	Deed_Win_Game_With_Trade_Routes,                 // Trade Baron - Win a game after completing 20 trade routes.
-	Deed_Win_Marshlands_Impossible,                  // Deadly Spores - Win a game in the The Marshlands biome, and on Viceroy difficulty (or higher).
+	Deed_Win_Marshlands_Impossible,                  // Deadly Spores - Win a game in the Marshlands biome, and on Viceroy difficulty (or higher).
+	Deed_Win_On_Wednesday,                           // It's Wednesday - Win a game with Frogs on a Wednesday.
 	Deed_Win_Queens_Hand,                            // The Queen's Hand - Complete the Queen's Hand Trial.
 	Deed_Win_Scarlet_Impossible,                     // Crimson Soil - Win a game in the Scarlet Orchard biome, and on Viceroy difficulty (or higher).
 	Deed_Win_With_Ale_Chain,                         // Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on the difficulty: Veteran.
@@ -79,6 +89,7 @@ public enum GoalTypes
 	Deed_Win_With_Dead_Villagers_Prestige,           // High Price - Win a game after 15 villagers died, on Prestige 18 difficulty (or higher).
 	Deed_Win_With_Food_Needs,                        // Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously.
 	Deed_Win_With_Foxes,                             // Fox Utopia - Win a game with 30 Foxes, 15 x Fox House, 1 x Tea Doctor
+	Deed_Win_With_Frogs,                             // Frog Utopia - Win a game with 40 Frogs, 20 x Frog House, 1 x Forum
 	Deed_Win_With_Harpies,                           // Harpy Utopia - Win a game with 30 Harpies, 15 x Harpy House, 1 x Bath House
 	Deed_Win_With_Humans,                            // Human Utopia - Win a game with 30 Humans, 15 x Human House, 1 x Temple
 	Deed_Win_With_Lizards,                           // Lizard Utopia - Win a game with 30 Lizards, 15 x Lizard House, 1 x Clan Hall
@@ -101,6 +112,16 @@ public enum GoalTypes
 	Deed_Year_1_Forbidden,                           // Outstanding Move - Win a game after discovering a Forbidden Glade before the end of Year 1, on Veteran difficulty (or higher).
 	Deed_Year_2_Forbidden,                           // Stalking Shadows - Win a game after discovering a Forbidden Glade before the end of Year 2, on Pioneer difficulty (or higher).
 	Finish_One_Game,                                 // First Steps - Finish your first game after the tutorial.
+	H_Assault_Royal_Trader,                          // The Fool - Attack him yourself next time and rid us of your stupidity. Awarded for attacking Sir Renwald Redmane.
+	H_Complete_Skeleton_In_Time,                     // Red Chase - <i>One day, the world will be theirs again.</i> Awarded for completing any Archaeological Discovery in the Scarlet Orchard in less than 25 minutes.
+	H_Discover_First_Forbidden_Glades,               // Jinxed - Ever thought of buying a lottery ticket? Awarded for stumbling upon 2 Forbidden Glades in a row at the beginning of a game in the Cursed Royal Woodlands.
+	H_Kill_Villagers_With_Ritual,                    // Chants from the Deep - <i>The moment the world remembers, it will unravel into nothingness.</i> Awarded for losing 10 villagers in a single game to the Forbidden Ritual effect.
+	H_Marhs_Meat_Depleted,                           // The Appetizer - You just had to try it, didn't you? Awarded for "naturally" depleting a Dead Leviathan resource node.
+	H_Win_Game_With_Many_Forbidden_Events_Solved,    // The Rebel - Seek adversity, and the rest will follow. Awarded for completing 6 Forbidden Events in a single game.
+	H_Win_Game_Without_Cutting_Trees,                // Arckmage's Challange - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree.
+	H_Win_Games_With_Blood_Flowers_Farmed,           // Crimson Farmer - It ain't much, but it's honest work. Awarded for completing a settlement after removing 20 Blood Flowers.
+	H_Win_Highest_Difficulty_Fast,                   // Speedrun - Why even bother balancing this game? Awarded for completing a settlement in 3 years (or less), on Prestige 20 difficulty.
+	H_Win_Storm_Ants_Without_Hunger,                 // Not On My Watch - That was actually quite impressive! Awarded for completing the Storm Ant Column world event on Prestige 20 difficulty without any villagers suffering the hunger effect.
 	ScalingGoal_Phase0_CompleteOrders,               // Orders From the Queen 1 - Complete 10 orders.
 	ScalingGoal_Phase0_GladeDiscovery,               // Discovery 1 - Discover 10 glades.
 	ScalingGoal_Phase0_TradeGoods,                   // Rolling in Wealth 1 - Trade goods worth 50 Amber.
@@ -160,7 +181,7 @@ public enum GoalTypes
 	UniqueGoal_Phase2_WinGameNearBarren,             // Barren Lands - Win a game near the Barren Lands modifier.
 	UniqueGoal_Phase2_WinGameNearRuins,              // Lost Colonies - Win a game near the Ruins modifier.
 	UniqueGoal_Phase2_WinGameOnFaction,              // Rivalry 1 - Win 3 games on faction markers.
-	UniqueGoal_Phase2_WinGameOnMarshlands,           // The Marshlands - Win a game on the The Marshlands biome.
+	UniqueGoal_Phase2_WinGameOnMarshlands,           // The Marshlands - Win a game on the Marshlands biome.
 	UniqueGoal_Phase2_WinGameOnMoorlands,            // The Scarlet Orchard - Win a game on the Scarlet Orchard biome.
 	UniqueGoal_Phase2_WinGameWithoutOrders,          // Defying the Crown - Win a game without completing any orders.
 	UniqueGoal_Phase2_WInGameWithResolve,            // Victory Through Resolve - Win a game having gained at least 5 Reputation Points through Resolve.
@@ -220,7 +241,7 @@ public enum GoalTypes
 	Win_Game_With_Modifier_Watchtower,               // Watchtower - Win a game near the Watchtower modifier.
 
 
-	MAX = 207
+	MAX = 228
 }
 
 public static class GoalTypesExtensions
@@ -230,8 +251,8 @@ public static class GoalTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new GoalTypes[207];
-			for (int i = 0; i < 207; i++)
+			s_All = new GoalTypes[228];
+			for (int i = 0; i < 228; i++)
 			{
 				s_All[i] = (GoalTypes)(i+1);
 			}
@@ -310,7 +331,9 @@ public static class GoalTypesExtensions
 	internal static readonly Dictionary<GoalTypes, string> TypeToInternalName = new()
 	{
 		{ GoalTypes.Deed_Fox_Population, "Deed Fox Population" },                                                           // Fox Settlement - Win a game with at least 25 Foxes.
+		{ GoalTypes.Deed_Frog_Population, "Deed Frog Population" },                                                         // Frog Settlement - Win a game with at least 30 Frogs.
 		{ GoalTypes.Deed_Harpy_Population, "Deed Harpy Population" },                                                       // Harpy Settlement - Win a game with at least 25 Harpies.
+		{ GoalTypes.Deed_Homestead_And_Foundry, "Deed Homestead and Foundry" },                                             // Feeling Lucky - Obtain the Homestead and Rainpunk Foundry blueprints from expeditions in the Coastal Grove (in one game).
 		{ GoalTypes.Deed_Reforge_Seal_Adamantine, "Deed Reforge Seal Adamantine" },                                         // The Adamantine Seal - Reforge the Adamantine Seal.
 		{ GoalTypes.Deed_Reforge_Seal_Bronze, "Deed Reforge Seal Bronze" },                                                 // The Bronze Seal - Reforge the Bronze Seal.
 		{ GoalTypes.Deed_Reforge_Seal_Cobalt, "Deed Reforge Seal Cobalt" },                                                 // The Cobalt Seal - Reforge the Cobalt Seal.
@@ -320,6 +343,8 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Reforge_Seal_Silver, "Deed Reforge Seal Silver" },                                                 // The Silver Seal - Reforge the Silver Seal.
 		{ GoalTypes.Deed_Reforge_Seal_Titanium, "Deed Reforge Seal Titanium" },                                             // The Titanium Seal - Reforge the Titanium Seal.
 		{ GoalTypes.Deed_Scorpion, "Deed Scorpion" },                                                                       // Apprentice Archaeologist 1 - Win a game with a reconstructed Smoldering Scorpion skeleton in the Scarlet Orchard.
+		{ GoalTypes.Deed_Send_Expeditions, "Deed Send Expeditions" },                                                       // Strider Rider - Send out 100 expeditions in the Coastal Grove.
+		{ GoalTypes.Deed_Send_Expeditions_In_One_Game, "Deed Send Expeditions In One Game" },                               // The Search Continues - Send out 12 expeditions in one game in the Coastal Grove.
 		{ GoalTypes.Deed_Snake, "Deed Snake" },                                                                             // Apprentice Archaeologist 2 - Win a game with a reconstructed Sea Serpent skeleton in the Scarlet Orchard.
 		{ GoalTypes.Deed_Spider, "Deed Spider" },                                                                           // Apprentice Archaeologist 3 - Win a game with a reconstructed Sealed Spider skeleton in the Scarlet Orchard.
 		{ GoalTypes.Deed_Spider_Snake_Scorpion, "Deed Spider Snake Scorpion" },                                             // Master Archaeologist - Win a game with all three skeletons reconstructed in the Scarlet Orchard.
@@ -335,6 +360,11 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Trade_Routes_4, "Deed Trade Routes 4" },                                                           // Export Expert 4 - Complete 150 trade routes.
 		{ GoalTypes.Deed_Trade_Routes_5, "Deed Trade Routes 5" },                                                           // Export Expert 5 - Complete 250 trade routes.
 		{ GoalTypes.Deed_Trade_Routes_6, "Deed Trade Routes 6" },                                                           // Export Expert 6 - Complete 400 trade routes.
+		{ GoalTypes.Deed_Upgrade_Frog_Houses, "Deed Upgrade Frog Houses" },                                                 // Frog Republic - Upgrade 12 Frog Houses to the maximum level in one game.
+		{ GoalTypes.Deed_Upgrades_Bought, "Deed Upgrades Bought" },                                                         // Renovator - Upgrade any buildings in your settlements 80 times.
+		{ GoalTypes.Deed_Use_Bait, "Deed Use Bait" },                                                                       // Taking the Bait - Use 500 ground bait in Fishing Huts.
+		{ GoalTypes.Deed_Win_Coastal_Grove, "Deed Win Coastal Grove" },                                                     // The Coastal Grove - Win a game on the Coastal Grove biome.
+		{ GoalTypes.Deed_Win_Coastal_Grove_Impossible, "Deed Win Coastal Grove Impossible" },                               // Salty Breeze - Win a game in the Coastal Grove biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Coral_Impossible, "Deed Win Coral Impossible" },                                               // The Reef - Win a game in the Coral Forest biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Cursed_Impossible, "Deed Win Cursed Impossible" },                                             // Thick Clouds - Win a game in the Cursed Royal Woodlands biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Game_Hard, "Deed Win Game Hard" },                                                             // Overcoming Difficulty - Win a game on Pioneer difficulty (or higher).
@@ -365,7 +395,8 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_Game_With_Glades, "Deed Win Game With Glades" },                                               // Thorough Exploration - Win a game with 30 or more glades discovered, on Pioneer difficulty (or higher).
 		{ GoalTypes.Deed_Win_Game_With_Timed_Orders, "Deed Win Game With Timed Orders" },                                   // Like a Machine - Win a game after completing 3 timed orders.
 		{ GoalTypes.Deed_Win_Game_With_Trade_Routes, "Deed Win Game With Trade Routes" },                                   // Trade Baron - Win a game after completing 20 trade routes.
-		{ GoalTypes.Deed_Win_Marshlands_Impossible, "Deed Win Marshlands Impossible" },                                     // Deadly Spores - Win a game in the The Marshlands biome, and on Viceroy difficulty (or higher).
+		{ GoalTypes.Deed_Win_Marshlands_Impossible, "Deed Win Marshlands Impossible" },                                     // Deadly Spores - Win a game in the Marshlands biome, and on Viceroy difficulty (or higher).
+		{ GoalTypes.Deed_Win_On_Wednesday, "Deed Win on Wednesday" },                                                       // It's Wednesday - Win a game with Frogs on a Wednesday.
 		{ GoalTypes.Deed_Win_Queens_Hand, "Deed Win Queens Hand" },                                                         // The Queen's Hand - Complete the Queen's Hand Trial.
 		{ GoalTypes.Deed_Win_Scarlet_Impossible, "Deed Win Scarlet Impossible" },                                           // Crimson Soil - Win a game in the Scarlet Orchard biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Ale_Chain, "Deed Win With Ale Chain" },                                                   // Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on the difficulty: Veteran.
@@ -377,6 +408,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_With_Dead_Villagers_Prestige, "Deed Win With Dead Villagers Prestige" },                       // High Price - Win a game after 15 villagers died, on Prestige 18 difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Food_Needs, "Deed Win With Food Needs" },                                                 // Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously.
 		{ GoalTypes.Deed_Win_With_Foxes, "Deed Win With Foxes" },                                                           // Fox Utopia - Win a game with 30 Foxes, 15 x Fox House, 1 x Tea Doctor
+		{ GoalTypes.Deed_Win_With_Frogs, "Deed Win With Frogs" },                                                           // Frog Utopia - Win a game with 40 Frogs, 20 x Frog House, 1 x Forum
 		{ GoalTypes.Deed_Win_With_Harpies, "Deed Win With Harpies" },                                                       // Harpy Utopia - Win a game with 30 Harpies, 15 x Harpy House, 1 x Bath House
 		{ GoalTypes.Deed_Win_With_Humans, "Deed Win With Humans" },                                                         // Human Utopia - Win a game with 30 Humans, 15 x Human House, 1 x Temple
 		{ GoalTypes.Deed_Win_With_Lizards, "Deed Win With Lizards" },                                                       // Lizard Utopia - Win a game with 30 Lizards, 15 x Lizard House, 1 x Clan Hall
@@ -399,6 +431,16 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Year_1_Forbidden, "Deed Year 1 Forbidden" },                                                       // Outstanding Move - Win a game after discovering a Forbidden Glade before the end of Year 1, on Veteran difficulty (or higher).
 		{ GoalTypes.Deed_Year_2_Forbidden, "Deed Year 2 Forbidden" },                                                       // Stalking Shadows - Win a game after discovering a Forbidden Glade before the end of Year 2, on Pioneer difficulty (or higher).
 		{ GoalTypes.Finish_One_Game, "Finish One Game" },                                                                   // First Steps - Finish your first game after the tutorial.
+		{ GoalTypes.H_Assault_Royal_Trader, "[H] Assault Royal Trader" },                                                   // The Fool - Attack him yourself next time and rid us of your stupidity. Awarded for attacking Sir Renwald Redmane.
+		{ GoalTypes.H_Complete_Skeleton_In_Time, "[H] Complete Skeleton In Time" },                                         // Red Chase - <i>One day, the world will be theirs again.</i> Awarded for completing any Archaeological Discovery in the Scarlet Orchard in less than 25 minutes.
+		{ GoalTypes.H_Discover_First_Forbidden_Glades, "[H] Discover First Forbidden Glades" },                             // Jinxed - Ever thought of buying a lottery ticket? Awarded for stumbling upon 2 Forbidden Glades in a row at the beginning of a game in the Cursed Royal Woodlands.
+		{ GoalTypes.H_Kill_Villagers_With_Ritual, "[H] Kill Villagers With Ritual" },                                       // Chants from the Deep - <i>The moment the world remembers, it will unravel into nothingness.</i> Awarded for losing 10 villagers in a single game to the Forbidden Ritual effect.
+		{ GoalTypes.H_Marhs_Meat_Depleted, "[H] Marhs Meat Depleted" },                                                     // The Appetizer - You just had to try it, didn't you? Awarded for "naturally" depleting a Dead Leviathan resource node.
+		{ GoalTypes.H_Win_Game_With_Many_Forbidden_Events_Solved, "[H] Win Game With Many Forbidden Events Solved" },       // The Rebel - Seek adversity, and the rest will follow. Awarded for completing 6 Forbidden Events in a single game.
+		{ GoalTypes.H_Win_Game_Without_Cutting_Trees, "[H] Win Game Without Cutting Trees" },                               // Arckmage's Challange - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree.
+		{ GoalTypes.H_Win_Games_With_Blood_Flowers_Farmed, "[H] Win Games With Blood Flowers Farmed" },                     // Crimson Farmer - It ain't much, but it's honest work. Awarded for completing a settlement after removing 20 Blood Flowers.
+		{ GoalTypes.H_Win_Highest_Difficulty_Fast, "[H] Win Highest Difficulty Fast" },                                     // Speedrun - Why even bother balancing this game? Awarded for completing a settlement in 3 years (or less), on Prestige 20 difficulty.
+		{ GoalTypes.H_Win_Storm_Ants_Without_Hunger, "[H] Win Storm Ants Without Hunger" },                                 // Not On My Watch - That was actually quite impressive! Awarded for completing the Storm Ant Column world event on Prestige 20 difficulty without any villagers suffering the hunger effect.
 		{ GoalTypes.ScalingGoal_Phase0_CompleteOrders, "ScalingGoal_Phase0_CompleteOrders" },                               // Orders From the Queen 1 - Complete 10 orders.
 		{ GoalTypes.ScalingGoal_Phase0_GladeDiscovery, "ScalingGoal_Phase0_GladeDiscovery" },                               // Discovery 1 - Discover 10 glades.
 		{ GoalTypes.ScalingGoal_Phase0_TradeGoods, "ScalingGoal_Phase0_TradeGoods" },                                       // Rolling in Wealth 1 - Trade goods worth 50 Amber.
@@ -458,7 +500,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.UniqueGoal_Phase2_WinGameNearBarren, "UniqueGoal_Phase2_WinGameNearBarren" },                           // Barren Lands - Win a game near the Barren Lands modifier.
 		{ GoalTypes.UniqueGoal_Phase2_WinGameNearRuins, "UniqueGoal_Phase2_WinGameNearRuins" },                             // Lost Colonies - Win a game near the Ruins modifier.
 		{ GoalTypes.UniqueGoal_Phase2_WinGameOnFaction, "UniqueGoal_Phase2_WinGameOnFaction" },                             // Rivalry 1 - Win 3 games on faction markers.
-		{ GoalTypes.UniqueGoal_Phase2_WinGameOnMarshlands, "UniqueGoal_Phase2_WinGameOnMarshlands" },                       // The Marshlands - Win a game on the The Marshlands biome.
+		{ GoalTypes.UniqueGoal_Phase2_WinGameOnMarshlands, "UniqueGoal_Phase2_WinGameOnMarshlands" },                       // The Marshlands - Win a game on the Marshlands biome.
 		{ GoalTypes.UniqueGoal_Phase2_WinGameOnMoorlands, "UniqueGoal_Phase2_WinGameOnMoorlands" },                         // The Scarlet Orchard - Win a game on the Scarlet Orchard biome.
 		{ GoalTypes.UniqueGoal_Phase2_WinGameWithoutOrders, "UniqueGoal_Phase2_WinGameWithoutOrders" },                     // Defying the Crown - Win a game without completing any orders.
 		{ GoalTypes.UniqueGoal_Phase2_WInGameWithResolve, "UniqueGoal_Phase2_WInGameWithResolve" },                         // Victory Through Resolve - Win a game having gained at least 5 Reputation Points through Resolve.

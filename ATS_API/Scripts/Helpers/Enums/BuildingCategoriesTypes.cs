@@ -6,7 +6,7 @@ using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum BuildingCategoriesTypes
 {
 	Unknown = -1,
@@ -27,7 +27,7 @@ public enum BuildingCategoriesTypes
 	Lore_Tablet_6,      // Lore Tablet VI
 	Lore_Tablet_7,      // Lore Tablet VII
 	Relics,             // Ancient Relic
-	Resource_Gathering, // Camps
+	Resource_Gathering, // Resource Gathering
 	Roads,              // Roads
 	Ruins,              // Ruin
 	Tutorial_Invisible, // City Buildings
@@ -138,7 +138,7 @@ public static class BuildingCategoriesTypesExtensions
 		{ BuildingCategoriesTypes.Lore_Tablet_6, "Lore Tablet 6" },             // Lore Tablet VI
 		{ BuildingCategoriesTypes.Lore_Tablet_7, "Lore Tablet 7" },             // Lore Tablet VII
 		{ BuildingCategoriesTypes.Relics, "Relics" },                           // Ancient Relic
-		{ BuildingCategoriesTypes.Resource_Gathering, "Resource Gathering" },   // Camps
+		{ BuildingCategoriesTypes.Resource_Gathering, "Resource Gathering" },   // Resource Gathering
 		{ BuildingCategoriesTypes.Roads, "Roads" },                             // Roads
 		{ BuildingCategoriesTypes.Ruins, "Ruins" },                             // Ruin
 		{ BuildingCategoriesTypes.Tutorial_Invisible, "Tutorial - invisible" }, // City Buildings

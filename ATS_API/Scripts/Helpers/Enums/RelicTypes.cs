@@ -6,7 +6,7 @@ using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum RelicTypes
 {
 	Unknown = -1,
@@ -31,6 +31,7 @@ public enum RelicTypes
 	Angry_Ghost_32,                            // Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
 	Angry_Ghost_34,                            // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
 	Angry_Ghost_4,                             // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
+	Angry_Ghost_41,                            // Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
 	Angry_Ghost_5,                             // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
 	Angry_Ghost_6,                             // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
 	Angry_Ghost_9,                             // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
@@ -56,6 +57,9 @@ public enum RelicTypes
 	Calm_Ghost_33,                             // Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
 	Calm_Ghost_35,                             // Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
 	Calm_Ghost_36,                             // Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
+	Calm_Ghost_38,                             // Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
+	Calm_Ghost_39,                             // Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
+	Calm_Ghost_40,                             // Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
 	Calm_Ghost_7,                              // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
 	Calm_Ghost_8,                              // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
 	CalmGhostChest_T1,                         // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
@@ -110,6 +114,7 @@ public enum RelicTypes
 	Fishmen_Totem,                             // Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
 	ForsakenCrypt,                             // Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
 	FoxBattleground_T1,                        // Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
+	FrogBattleground_T1,                       // Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
 	Fuming_Machinery,                          // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
 	Giant_Stormbird,                           // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
 	Glade_Trader_The_Hermit,                   // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
@@ -125,6 +130,8 @@ public enum RelicTypes
 	Haunted_Ruined_Cooperage,                  // Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	Haunted_Ruined_Druid,                      // Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	Haunted_Ruined_Fox_House,                  // Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Frog_House,                 // Haunted Frog House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	Haunted_Ruined_Guild_House,                // Haunted Guild House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	Haunted_Ruined_Harpy_House,                // Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	Haunted_Ruined_Herb_Garden,                // Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	Haunted_Ruined_Human_House,                // Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
@@ -181,6 +188,8 @@ public enum RelicTypes
 	Ruined_Brickyard_no_Reward,                // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Butcher,                            // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Butcher_no_Reward,                  // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Cannery,                            // Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Cannery_no_Reward,                  // Cannery - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Carpenter,                          // Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Carpenter_no_Reward,                // Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Cellar,                             // Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -189,6 +198,8 @@ public enum RelicTypes
 	Ruined_Clan_Hall_no_Reward,                // Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Clay_Pit,                           // Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Clay_Pit_no_Reward,                 // Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Cobbler,                            // Cobbler - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Cobbler_no_Reward,                  // Cobbler - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Cookhouse,                          // Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Cookhouse_no_Reward,                // Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Cooperage,                          // Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -205,6 +216,9 @@ public enum RelicTypes
 	Ruined_Field_Kitchen_no_Reward,            // Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Finesmith,                          // Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Finesmith_no_Reward,                // Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Fishing_Hut,                        // Fishing Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Fishing_Hut_no_Reward,              // Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Fishing_Hut_Primitive_no_Reward,    // Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Foragers_Camp,                      // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Foragers_Camp_no_Reward,            // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Foragers_Camp_Primitive_no_Reward,  // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
@@ -212,6 +226,7 @@ public enum RelicTypes
 	Ruined_Forum_no_Reward,                    // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Fox_House,                          // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Fox_House_no_Reward,                // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+	Ruined_Frog_House_no_Reward,               // Frog House - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Furnace,                            // Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Furnace_no_Reward,                  // Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Granary,                            // Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -228,8 +243,6 @@ public enum RelicTypes
 	Ruined_Harpy_House_no_Reward,              // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Harvester_Camp,                     // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Harvester_Camp_no_Reward,           // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Hearth,                             // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Hearth_no_Reward,                   // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Herb_Garden,                        // Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Herb_Garden_no_Reward,              // Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Herbalist_Camp,                     // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -253,6 +266,8 @@ public enum RelicTypes
 	Ruined_Mine_no_Reward,                     // Mine - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Monastery,                          // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Monastery_no_Reward,                // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Pantry,                             // Pantry - A building destroyed by the storm. It can be rebuilt or salvaged.
+	Ruined_Pantry_no_Reward,                   // Pantry - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Plantation,                         // Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
 	Ruined_Plantation_no_Reward,               // Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
 	Ruined_Press,                              // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -330,7 +345,7 @@ public enum RelicTypes
 	Wildfire,                                  // Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
 
 
-	MAX = 317
+	MAX = 332
 }
 
 public static class RelicTypesExtensions
@@ -340,8 +355,8 @@ public static class RelicTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new RelicTypes[317];
-			for (int i = 0; i < 317; i++)
+			s_All = new RelicTypes[332];
+			for (int i = 0; i < 332; i++)
 			{
 				s_All[i] = (RelicTypes)(i+1);
 			}
@@ -439,6 +454,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Angry_Ghost_32, "Angry Ghost 32" },                                                         // Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
 		{ RelicTypes.Angry_Ghost_34, "Angry Ghost 34" },                                                         // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
 		{ RelicTypes.Angry_Ghost_4, "Angry Ghost 4" },                                                           // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
+		{ RelicTypes.Angry_Ghost_41, "Angry Ghost 41" },                                                         // Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
 		{ RelicTypes.Angry_Ghost_5, "Angry Ghost 5" },                                                           // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
 		{ RelicTypes.Angry_Ghost_6, "Angry Ghost 6" },                                                           // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
 		{ RelicTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                           // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
@@ -464,6 +480,9 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Calm_Ghost_33, "Calm Ghost 33" },                                                           // Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
 		{ RelicTypes.Calm_Ghost_35, "Calm Ghost 35" },                                                           // Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
 		{ RelicTypes.Calm_Ghost_36, "Calm Ghost 36" },                                                           // Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
+		{ RelicTypes.Calm_Ghost_38, "Calm Ghost 38" },                                                           // Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
+		{ RelicTypes.Calm_Ghost_39, "Calm Ghost 39" },                                                           // Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
+		{ RelicTypes.Calm_Ghost_40, "Calm Ghost 40" },                                                           // Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
 		{ RelicTypes.Calm_Ghost_7, "Calm Ghost 7" },                                                             // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
 		{ RelicTypes.Calm_Ghost_8, "Calm Ghost 8" },                                                             // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
 		{ RelicTypes.CalmGhostChest_T1, "CalmGhostChest_T1" },                                                   // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
@@ -518,6 +537,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Fishmen_Totem, "Fishmen Totem" },                                                           // Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
 		{ RelicTypes.ForsakenCrypt, "ForsakenCrypt" },                                                           // Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
 		{ RelicTypes.FoxBattleground_T1, "FoxBattleground_T1" },                                                 // Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
+		{ RelicTypes.FrogBattleground_T1, "FrogBattleground_T1" },                                               // Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
 		{ RelicTypes.Fuming_Machinery, "Fuming Machinery" },                                                     // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
 		{ RelicTypes.Giant_Stormbird, "Giant Stormbird" },                                                       // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
 		{ RelicTypes.Glade_Trader_The_Hermit, "Glade Trader - The Hermit" },                                     // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
@@ -533,6 +553,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Haunted_Ruined_Cooperage, "Haunted Ruined Cooperage" },                                     // Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Druid, "Haunted Ruined Druid" },                                             // Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Fox_House, "Haunted Ruined Fox House" },                                     // Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ RelicTypes.Haunted_Ruined_Frog_House, "Haunted Ruined Frog House" },                                   // Haunted Frog House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+		{ RelicTypes.Haunted_Ruined_Guild_House, "Haunted Ruined Guild House" },                                 // Haunted Guild House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Harpy_House, "Haunted Ruined Harpy House" },                                 // Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Herb_Garden, "Haunted Ruined Herb Garden" },                                 // Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Human_House, "Haunted Ruined Human House" },                                 // Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
@@ -589,6 +611,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Brickyard_no_Reward, "Ruined Brickyard (no reward)" },                               // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Butcher, "Ruined Butcher" },                                                         // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Butcher_no_Reward, "Ruined Butcher (no reward)" },                                   // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Cannery, "Ruined Cannery" },                                                         // Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Cannery_no_Reward, "Ruined Cannery (no reward)" },                                   // Cannery - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Carpenter, "Ruined Carpenter" },                                                     // Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Carpenter_no_Reward, "Ruined Carpenter (no reward)" },                               // Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Cellar, "Ruined Cellar" },                                                           // Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -597,6 +621,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Clan_Hall_no_Reward, "Ruined Clan Hall (no reward)" },                               // Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Clay_Pit, "Ruined Clay Pit" },                                                       // Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Clay_Pit_no_Reward, "Ruined Clay Pit (no reward)" },                                 // Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Cobbler, "Ruined Cobbler" },                                                         // Cobbler - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Cobbler_no_Reward, "Ruined Cobbler (no reward)" },                                   // Cobbler - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Cookhouse, "Ruined Cookhouse" },                                                     // Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Cookhouse_no_Reward, "Ruined Cookhouse (no reward)" },                               // Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Cooperage, "Ruined Cooperage" },                                                     // Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -613,6 +639,9 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Field_Kitchen_no_Reward, "Ruined Field Kitchen (no reward)" },                       // Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Finesmith, "Ruined Finesmith" },                                                     // Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Finesmith_no_Reward, "Ruined Finesmith (no reward)" },                               // Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Fishing_Hut, "Ruined Fishing Hut" },                                                 // Fishing Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Fishing_Hut_no_Reward, "Ruined Fishing Hut (no reward)" },                           // Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Fishing_Hut_Primitive_no_Reward, "Ruined Fishing Hut Primitive (no reward)" },       // Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Foragers_Camp, "Ruined Foragers Camp" },                                             // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Foragers_Camp_no_Reward, "Ruined Foragers Camp (no reward)" },                       // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Foragers_Camp_Primitive_no_Reward, "Ruined Foragers Camp Primitive (no reward)" },   // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
@@ -620,6 +649,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Forum_no_Reward, "Ruined Forum (no reward)" },                                       // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Fox_House, "Ruined Fox House" },                                                     // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Fox_House_no_Reward, "Ruined Fox House (no reward)" },                               // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Frog_House_no_Reward, "Ruined Frog House (no reward)" },                             // Frog House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Furnace, "Ruined Furnace" },                                                         // Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Furnace_no_Reward, "Ruined Furnace (no reward)" },                                   // Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Granary, "Ruined Granary" },                                                         // Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -636,8 +666,6 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Harpy_House_no_Reward, "Ruined Harpy House (no reward)" },                           // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Harvester_Camp, "Ruined Harvester Camp" },                                           // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Harvester_Camp_no_Reward, "Ruined Harvester Camp (no reward)" },                     // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-		{ RelicTypes.Ruined_Hearth, "Ruined Hearth" },                                                           // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or salvaged.
-		{ RelicTypes.Ruined_Hearth_no_Reward, "Ruined Hearth (no reward)" },                                     // Ancient Hearth - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Herb_Garden, "Ruined Herb Garden" },                                                 // Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Herb_Garden_no_Reward, "Ruined Herb Garden (no reward)" },                           // Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Herbalist_Camp, "Ruined Herbalist Camp" },                                           // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -661,6 +689,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Mine_no_Reward, "Ruined Mine (no reward)" },                                         // Mine - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Monastery, "Ruined Monastery" },                                                     // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Monastery_no_Reward, "Ruined Monastery (no reward)" },                               // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Pantry, "Ruined Pantry" },                                                           // Pantry - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Pantry_no_Reward, "Ruined Pantry (no reward)" },                                     // Pantry - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Plantation, "Ruined Plantation" },                                                   // Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Plantation_no_Reward, "Ruined Plantation (no reward)" },                             // Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Press, "Ruined Press" },                                                             // Press - A building destroyed by the storm. It can be rebuilt or salvaged.

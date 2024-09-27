@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum MetaCurrencyTypes
 {
 	Unknown = -1,

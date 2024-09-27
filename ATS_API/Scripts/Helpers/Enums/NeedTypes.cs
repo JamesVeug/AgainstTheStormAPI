@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum NeedTypes
 {
 	Unknown = -1,
@@ -17,15 +17,18 @@ public enum NeedTypes
 	Beaver_Housing,                                         // Beaver Housing
 	Biscuits,                                               // Biscuits
 	Bloodthirst,                                            // Brawling
-	Clothes,                                                // Clothing
+	Boots,                                                  // Boots
+	Clothes,                                                // Coats
 	Education,                                              // Education
 	Fox_Housing,                                            // Fox Housing
+	Frog_Housing,                                           // Frog Housing
 	Harpy_Housing,                                          // Harpy Housing
 	Human_Housing,                                          // Human Housing
 	Jerky,                                                  // Jerky
 	Leasiure,                                               // Leisure
 	Lizard_Housing,                                         // Lizard Housing
 	Luxury,                                                 // Luxury
+	Paste,                                                  // Paste
 	Pickled_Goods,                                          // Pickled Goods
 	Pie,                                                    // Pie
 	Porridge,                                               // Porridge
@@ -34,7 +37,7 @@ public enum NeedTypes
 	Treatment,                                              // Treatment
 
 
-	MAX = 21
+	MAX = 24
 }
 
 public static class NeedTypesExtensions
@@ -44,8 +47,8 @@ public static class NeedTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new NeedTypes[21];
-			for (int i = 0; i < 21; i++)
+			s_All = new NeedTypes[24];
+			for (int i = 0; i < 24; i++)
 			{
 				s_All[i] = (NeedTypes)(i+1);
 			}
@@ -129,15 +132,18 @@ public static class NeedTypesExtensions
 		{ NeedTypes.Beaver_Housing, "Beaver Housing" },                                                                                 // Beaver Housing
 		{ NeedTypes.Biscuits, "Biscuits" },                                                                                             // Biscuits
 		{ NeedTypes.Bloodthirst, "Bloodthirst" },                                                                                       // Brawling
-		{ NeedTypes.Clothes, "Clothes" },                                                                                               // Clothing
+		{ NeedTypes.Boots, "Boots" },                                                                                                   // Boots
+		{ NeedTypes.Clothes, "Clothes" },                                                                                               // Coats
 		{ NeedTypes.Education, "Education" },                                                                                           // Education
 		{ NeedTypes.Fox_Housing, "Fox Housing" },                                                                                       // Fox Housing
+		{ NeedTypes.Frog_Housing, "Frog Housing" },                                                                                     // Frog Housing
 		{ NeedTypes.Harpy_Housing, "Harpy Housing" },                                                                                   // Harpy Housing
 		{ NeedTypes.Human_Housing, "Human Housing" },                                                                                   // Human Housing
 		{ NeedTypes.Jerky, "Jerky" },                                                                                                   // Jerky
 		{ NeedTypes.Leasiure, "Leasiure" },                                                                                             // Leisure
 		{ NeedTypes.Lizard_Housing, "Lizard Housing" },                                                                                 // Lizard Housing
 		{ NeedTypes.Luxury, "Luxury" },                                                                                                 // Luxury
+		{ NeedTypes.Paste, "Paste" },                                                                                                   // Paste
 		{ NeedTypes.Pickled_Goods, "Pickled Goods" },                                                                                   // Pickled Goods
 		{ NeedTypes.Pie, "Pie" },                                                                                                       // Pie
 		{ NeedTypes.Porridge, "Porridge" },                                                                                             // Porridge

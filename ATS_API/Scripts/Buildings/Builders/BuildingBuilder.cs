@@ -81,7 +81,6 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.movingCost = null;
         m_buildingModel.canBeMovedBetween = true;
         m_buildingModel.canHaveShortcut = true;
-        m_buildingModel.hideAsSource = false;
         m_buildingModel.prefabHeight = 0.6f;
         m_buildingModel.iconXOffset = -0.05f;
         m_buildingModel.iconSizeOffset = 0.4f;

@@ -6,27 +6,30 @@ using Eremite.Model.Orders;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum OrderTypes
 {
 	Unknown = -1,
 	None,
 	Amber_And_Luxury_LOW,                 // Essence of Wealth
 	Amber_Transaction,                    // Crystal Feathers
+	Amber_Transaction_HIGH,               // Crystal Feathers
 	Amber_Transaction_LOW,                // Crystal Feathers
 	Ancient_Tablets,                      // Forbidden Essence
+	Ancient_Tablets_HIGH,                 // Forbidden Essence
 	Ancient_Tablets_LOW,                  // Forbidden Essence
 	Caches,                               // Heart of the Forest
+	Caches_HIGH,                          // Heart of the Forest
 	Caches_LOW,                           // Heart of the Forest
-	CystsRemoved,                         // Magnate
+	CystsBurned,                          // Essence of Corruption
 	Deliver_Packs,                        // Heart of Amber
+	Deliver_Packs_HIGH,                   // Heart of Amber
 	Deliver_Packs_LOW,                    // Heart of Amber
 	Deliver_Tools,                        // Metal Feathers
-	Deliver_Tools_LOW,                    // Metal Feathers
+	Deliver_Tools_HIGH,                   // Metal Feathers
 	Discover_Forbidden_LOW,               // Stormbird Feathers
 	Engines_Connected,                    // Mechanical Heart
-	Events_Decisions,                     // Blood of the Stag
-	Events_Decisions_LOW,                 // Blood of the Stag
+	Engines_Connected_HIGH,               // Mechanical Heart
 	Heart_Parts_And_Sacrifice_LOW,        // Heart of the Ancient Flame
 	I_Amber,                              // Amber Trade
 	I_Blighfuel,                          // Call to Arms
@@ -55,6 +58,7 @@ public enum OrderTypes
 	I_Ranch_Life,                         // Ranch Life
 	I_Resolve_Beavers,                    // The Guild
 	I_Resolve_Foxes,                      // The Pack
+	I_Resolve_Frogs,                      // The Collegium
 	I_Resolve_Harpies,                    // The Flock
 	I_Resolve_Humans,                     // People's Resolve
 	I_Resolve_Lizards,                    // The Clan
@@ -66,6 +70,7 @@ public enum OrderTypes
 	I_TO_Beaver_Resolve,                  // Joyful Beavers
 	I_TO_Dangerous_Relics,                // Zealous Scouts
 	I_TO_Fox_Resolve,                     // Joyful Foxes
+	I_TO_Frog_Resolve,                    // Joyful Frogs
 	I_TO_Harpy_Resolve,                   // Joyful Harpies
 	I_TO_HUB,                             // Speedy Real Estate
 	I_TO_Human_Resolve,                   // Joyful Humans
@@ -74,6 +79,7 @@ public enum OrderTypes
 	I_TO_Ruins_And_Glades,                // Call of the Ruins
 	I_TO_Sold_Amber,                      // Quick Transaction
 	I_TO_Solve_Relics,                    // Impetuous Explorer
+	I_TO_Trade_Routes_With_Value,         // Supply Thy Neighbor
 	I_Trade_Routes,                       // Businessman
 	I_Trader_Value_Sold,                  // Booming Economy
 	I_Upgrade_Pump,                       // Water Extraction
@@ -88,6 +94,7 @@ public enum OrderTypes
 	IB_Camps,                             // Camps
 	IB_Crops,                             // Rich Harvest
 	IB_Foxes,                             // People of the Forest
+	IB_Frogs,                             // Architects
 	IB_Harpies,                           // The Nest
 	IB_Humans,                            // Help From the Queen
 	IB_Lizards,                           // Trappers
@@ -101,6 +108,7 @@ public enum OrderTypes
 	II_Advanced_Trading,                  // Advanced Trading
 	II_Aid_For_The_Beaver_Faction,        // Aid For the Beaver Clan
 	II_Aid_For_The_Fox_Faction,           // Aid for the Fox Pack
+	II_Aid_For_The_Frog_Faction,          // Aid for the Frog Clan
 	II_Aid_For_The_Harpy_Faction,         // Aiding the Flock
 	II_Aid_For_The_Human_Faction,         // Aid for the Human Clan
 	II_Aid_For_The_Lizard_Faction,        // Aid for the Lizard Clan
@@ -115,13 +123,19 @@ public enum OrderTypes
 	II_Cysts,                             // Firestarter
 	II_Dangerous_Glades,                  // Risky Expedition
 	II_Engines,                           // Rain Engines
+	II_Fishing_Trial_M_S_NB,              // Algal Bloom
+	II_Fishing_Trial_RW_CF_S,             // Scaling Up
+	II_Fishing_Trial_SO_M_CRW_NB,         // Out Fishing
 	II_Fox_Influx,                        // Fox Influx
 	II_Fox_Population,                    // Fox Population
+	II_Frog_Influx,                       // Frog Influx
+	II_Frog_Population,                   // Frog Population
 	II_Fuel_And_Building,                 // Important Delivery
 	II_Glades,                            // Into the Wilds
 	II_Glades_In_Time,                    // Into the Unknown
 	II_Happy_Beavers,                     // Happy Beavers
 	II_Happy_Foxes,                       // Happy Foxes
+	II_Happy_Frogs,                       // Happy Frogs
 	II_Happy_Harpies,                     // Happy Harpies
 	II_Happy_Humans,                      // Happy Humans
 	II_Happy_Lizards,                     // Happy Lizards
@@ -137,7 +151,7 @@ public enum OrderTypes
 	II_Luxury_Packs,                      // Luxurious Delivery
 	II_Means_Of_Production,               // Building Materials
 	II_Multiply_Routes,                   // Stacking Amber
-	II_Offering_Butcher,                  // Bloody Sacrifices
+	II_Offering_Butcher,                  // Feast
 	II_Outpost,                           // Outposts
 	II_Paths,                             // Infrastructure
 	II_Population_Influx,                 // Population Influx
@@ -160,6 +174,7 @@ public enum OrderTypes
 	II_TO_Herbalist_Trial_SO,             // Herbalist's Trial
 	II_TO_Homes_For_Beavers,              // Beaver Colony
 	II_TO_Homes_For_Foxes,                // Homes For Foxes
+	II_TO_Homes_For_Frogs,                // Frog Colony
 	II_TO_Homes_For_Harpies,              // Harpy Colony
 	II_TO_Homes_For_Humans,               // Human Colony
 	II_TO_Homes_For_Lizards,              // Lizard Colony
@@ -170,7 +185,6 @@ public enum OrderTypes
 	II_TO_Trappers_Trial_RW_M,            // Trapper's Trial
 	II_Trade_Connections,                 // Trade Connections
 	II_Use_Water,                         // Rainpunk Engineer
-	II_Workshop,                          // Workshop
 	III_Aesthethics,                      // Royal Gardens
 	III_Ale_And_Tavern,                   // Cups and Glasses
 	III_Amber_And_Market,                 // Charity Fair
@@ -185,22 +199,25 @@ public enum OrderTypes
 	III_Farmfields,                       // Agriculture
 	III_Forum,                            // The Forum
 	III_Fox_Relatives,                    // Fox Relatives
+	III_Frog_Relatives,                   // Frog Relatives
+	III_Frog_Upgrades,                    // Upgraded Living
 	III_Glades,                           // Trailblazing
 	III_Glades_In_Time,                   // Hasty Explorer
 	III_Harpy_Relatives,                  // Harpy Relatives
 	III_Higene,                           // Cleanliness
 	III_Hub,                              // Advanced District
 	III_Human_Relatives,                  // Human Relatives
-	III_Kiln,                             // Dirty Work
 	III_Leisure_For_Time,                 // Basic Rights
 	III_Lizard_Relatives,                 // Lizard Relatives
 	III_Lost_Villagers,                   // Lost in the Woods
 	III_Luxury,                           // Luxury
 	III_Provisions_And_Crops,             // Rations for the Citadel
+	III_Pump_Upgrade,                     // Water Industry
 	III_Rain_Collector,                   // Advanced Logistics
 	III_Religion,                         // Religion
 	III_Resolve_Beavers,                  // Beaver Resolve
 	III_Resolve_Foxes,                    // Fox Villagers
+	III_Resolve_Frogs,                    // Frog Resolve
 	III_Resolve_Harpies,                  // Harpy Villagers
 	III_Resolve_Humans,                   // Human Villagers
 	III_Resolve_Lizards,                  // Lizard Villagers
@@ -236,6 +253,8 @@ public enum OrderTypes
 	III_Trade_And_Spark,                  // Trade and Industry
 	III_TradePacks,                       // Trading Goods
 	III_Trader_Value_Sold,                // Booming Economy
+	III_Upgrade_Mine_Coal,                // Lumps of Coal
+	III_Upgrade_Mine_Copper,              // Ore Mining
 	III_Use_Blue_Water,                   // Power of the Storm
 	III_Use_Green_Water,                  // Power of the Drizzle
 	III_Use_Yellow_Water,                 // Power of the Clearance
@@ -278,6 +297,7 @@ public enum OrderTypes
 	IVB_Builders_Tools,                   // Builder's Tools
 	IVB_Education,                        // Knowledge
 	IVB_Fox_Majority,                     // Fox Majority
+	IVB_Frog_Majority,                    // Frog Majority
 	IVB_Harpy_Majority,                   // Harpy Majority
 	IVB_Human_Majority,                   // Human Majority
 	IVB_Leisure,                          // Leisure
@@ -290,6 +310,7 @@ public enum OrderTypes
 	IVB_Travel_Rations,                   // Travel Rations
 	IVB_Utopia,                           // Utopia
 	Needs_Served,                         // Queen's Feathers
+	Needs_Served_HIGH,                    // Queen's Feathers
 	Needs_Served_LOW,                     // Queen's Feathers
 	R_Ghost_Assault_Trader, 
 	R_Ghost_Cut_Trees, 
@@ -297,6 +318,7 @@ public enum OrderTypes
 	R_Ghost_Decorations_Harmony, 
 	R_Ghost_Discover_DangGlades, 
 	R_Ghost_Discover_DangGlades_In_Time, 
+	R_Ghost_Engines, 
 	R_Ghost_Forbid_Needs_Beavers, 
 	R_Ghost_Forbid_Needs_Foxes, 
 	R_Ghost_Forbid_Needs_Harpies, 
@@ -305,6 +327,7 @@ public enum OrderTypes
 	R_Ghost_Generate_Cysts, 
 	R_Ghost_Hostility_High, 
 	R_Ghost_Hostility_Low, 
+	R_Ghost_Housing_Needs, 
 	R_Ghost_HUBs_Upgrade, 
 	R_Ghost_Human_Houses, 
 	R_Ghost_Keep_Goods, 
@@ -320,21 +343,26 @@ public enum OrderTypes
 	R_Ghost_Sacrifice_Goods, 
 	R_Ghost_Salvage_Ruins, 
 	R_Ghost_Send_Goods_To_Citadel, 
+	R_Ghost_Service_Needs, 
 	R_Ghost_Solve_DangRelics, 
 	R_Ghost_Starve_Beavers, 
 	R_Ghost_Starve_Humans, 
 	R_Ghost_Trade_Routes, 
 	R_Ghost_Trade_Routes_With_Value, 
 	R_Ghost_Trade_Routes_With_Value_Many, 
+	R_Ghost_Upgrade_Houses, 
 	R_Ghost_Use_Water, 
 	Rep_From_Events,                      // Blood of the Stag
+	Rep_From_Events_HIGH,                 // Blood of the Stag
 	Rep_From_Events_LOW,                  // Blood of the Stag
 	Rep_From_Resolve,                     // Mortal Blood
+	Rep_From_Resolve_HIGH,                // Mortal Blood
 	Rep_From_Resolve_LOW,                 // Mortal Blood
 	Resolve,                              // Fire Essence
+	Resolve_HIGH,                         // Fire Essence
 	Resolve_LOW,                          // Fire Essence
 	Standing,                             // Golden Blood
-	Standing_LOW,                         // Golden Blood
+	Standing_HIGH,                        // Golden Blood
 	T_II_Brewery,                         // Brewing Ale
 	T_II_Farm,                            // Farming
 	T_II_Provisions,                      // Provisions
@@ -371,10 +399,10 @@ public enum OrderTypes
 	TI_Stonecutter,                       // Stonecutters' Camp
 	TI_Woodcutters_Camp,                  // Woodcutters' Camps
 	Trade_Packs_And_Perks_LOW,            // Golden Blood
-	WaterUsed,                            // Essence of Corruption
+	WaterUsed_HIGH,                       // Essence of Corruption
 
 
-	MAX = 361
+	MAX = 389
 }
 
 public static class OrderTypesExtensions
@@ -384,8 +412,8 @@ public static class OrderTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new OrderTypes[361];
-			for (int i = 0; i < 361; i++)
+			s_All = new OrderTypes[389];
+			for (int i = 0; i < 389; i++)
 			{
 				s_All[i] = (OrderTypes)(i+1);
 			}
@@ -465,20 +493,23 @@ public static class OrderTypesExtensions
 	{
 		{ OrderTypes.Amber_And_Luxury_LOW, "Amber and Luxury LOW" },                                   // Essence of Wealth
 		{ OrderTypes.Amber_Transaction, "Amber Transaction" },                                         // Crystal Feathers
+		{ OrderTypes.Amber_Transaction_HIGH, "Amber Transaction HIGH" },                               // Crystal Feathers
 		{ OrderTypes.Amber_Transaction_LOW, "Amber Transaction LOW" },                                 // Crystal Feathers
 		{ OrderTypes.Ancient_Tablets, "Ancient Tablets" },                                             // Forbidden Essence
+		{ OrderTypes.Ancient_Tablets_HIGH, "Ancient Tablets HIGH" },                                   // Forbidden Essence
 		{ OrderTypes.Ancient_Tablets_LOW, "Ancient Tablets LOW" },                                     // Forbidden Essence
 		{ OrderTypes.Caches, "Caches" },                                                               // Heart of the Forest
+		{ OrderTypes.Caches_HIGH, "Caches HIGH" },                                                     // Heart of the Forest
 		{ OrderTypes.Caches_LOW, "Caches LOW" },                                                       // Heart of the Forest
-		{ OrderTypes.CystsRemoved, "CystsRemoved" },                                                   // Magnate
+		{ OrderTypes.CystsBurned, "CystsBurned" },                                                     // Essence of Corruption
 		{ OrderTypes.Deliver_Packs, "Deliver Packs" },                                                 // Heart of Amber
+		{ OrderTypes.Deliver_Packs_HIGH, "Deliver Packs HIGH" },                                       // Heart of Amber
 		{ OrderTypes.Deliver_Packs_LOW, "Deliver Packs LOW" },                                         // Heart of Amber
 		{ OrderTypes.Deliver_Tools, "Deliver Tools" },                                                 // Metal Feathers
-		{ OrderTypes.Deliver_Tools_LOW, "Deliver Tools LOW" },                                         // Metal Feathers
+		{ OrderTypes.Deliver_Tools_HIGH, "Deliver Tools HIGH" },                                       // Metal Feathers
 		{ OrderTypes.Discover_Forbidden_LOW, "Discover Forbidden LOW" },                               // Stormbird Feathers
 		{ OrderTypes.Engines_Connected, "Engines Connected" },                                         // Mechanical Heart
-		{ OrderTypes.Events_Decisions, "Events Decisions" },                                           // Blood of the Stag
-		{ OrderTypes.Events_Decisions_LOW, "Events Decisions LOW" },                                   // Blood of the Stag
+		{ OrderTypes.Engines_Connected_HIGH, "Engines Connected HIGH" },                               // Mechanical Heart
 		{ OrderTypes.Heart_Parts_And_Sacrifice_LOW, "Heart Parts and Sacrifice LOW" },                 // Heart of the Ancient Flame
 		{ OrderTypes.I_Amber, "I Amber" },                                                             // Amber Trade
 		{ OrderTypes.I_Blighfuel, "I Blighfuel" },                                                     // Call to Arms
@@ -507,6 +538,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Ranch_Life, "I Ranch Life" },                                                   // Ranch Life
 		{ OrderTypes.I_Resolve_Beavers, "I Resolve Beavers" },                                         // The Guild
 		{ OrderTypes.I_Resolve_Foxes, "I Resolve Foxes" },                                             // The Pack
+		{ OrderTypes.I_Resolve_Frogs, "I Resolve Frogs" },                                             // The Collegium
 		{ OrderTypes.I_Resolve_Harpies, "I Resolve Harpies" },                                         // The Flock
 		{ OrderTypes.I_Resolve_Humans, "I Resolve Humans" },                                           // People's Resolve
 		{ OrderTypes.I_Resolve_Lizards, "I Resolve Lizards" },                                         // The Clan
@@ -518,6 +550,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_TO_Beaver_Resolve, "I TO Beaver Resolve" },                                     // Joyful Beavers
 		{ OrderTypes.I_TO_Dangerous_Relics, "I TO Dangerous Relics" },                                 // Zealous Scouts
 		{ OrderTypes.I_TO_Fox_Resolve, "I TO Fox Resolve" },                                           // Joyful Foxes
+		{ OrderTypes.I_TO_Frog_Resolve, "I TO Frog Resolve" },                                         // Joyful Frogs
 		{ OrderTypes.I_TO_Harpy_Resolve, "I TO Harpy Resolve" },                                       // Joyful Harpies
 		{ OrderTypes.I_TO_HUB, "I TO HUB" },                                                           // Speedy Real Estate
 		{ OrderTypes.I_TO_Human_Resolve, "I TO Human Resolve" },                                       // Joyful Humans
@@ -526,6 +559,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_TO_Ruins_And_Glades, "I TO Ruins and Glades" },                                 // Call of the Ruins
 		{ OrderTypes.I_TO_Sold_Amber, "I TO Sold Amber" },                                             // Quick Transaction
 		{ OrderTypes.I_TO_Solve_Relics, "I TO Solve Relics" },                                         // Impetuous Explorer
+		{ OrderTypes.I_TO_Trade_Routes_With_Value, "I TO Trade Routes With Value" },                   // Supply Thy Neighbor
 		{ OrderTypes.I_Trade_Routes, "I Trade Routes" },                                               // Businessman
 		{ OrderTypes.I_Trader_Value_Sold, "I Trader Value Sold" },                                     // Booming Economy
 		{ OrderTypes.I_Upgrade_Pump, "I Upgrade Pump" },                                               // Water Extraction
@@ -540,6 +574,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IB_Camps, "IB Camps" },                                                           // Camps
 		{ OrderTypes.IB_Crops, "IB Crops" },                                                           // Rich Harvest
 		{ OrderTypes.IB_Foxes, "IB Foxes" },                                                           // People of the Forest
+		{ OrderTypes.IB_Frogs, "IB Frogs" },                                                           // Architects
 		{ OrderTypes.IB_Harpies, "IB Harpies" },                                                       // The Nest
 		{ OrderTypes.IB_Humans, "IB Humans" },                                                         // Help From the Queen
 		{ OrderTypes.IB_Lizards, "IB Lizards" },                                                       // Trappers
@@ -553,6 +588,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Advanced_Trading, "II Advanced Trading" },                                     // Advanced Trading
 		{ OrderTypes.II_Aid_For_The_Beaver_Faction, "II Aid for the Beaver Faction" },                 // Aid For the Beaver Clan
 		{ OrderTypes.II_Aid_For_The_Fox_Faction, "II Aid for the Fox Faction" },                       // Aid for the Fox Pack
+		{ OrderTypes.II_Aid_For_The_Frog_Faction, "II Aid for the Frog Faction" },                     // Aid for the Frog Clan
 		{ OrderTypes.II_Aid_For_The_Harpy_Faction, "II Aid for the Harpy Faction" },                   // Aiding the Flock
 		{ OrderTypes.II_Aid_For_The_Human_Faction, "II Aid for the Human Faction" },                   // Aid for the Human Clan
 		{ OrderTypes.II_Aid_For_The_Lizard_Faction, "II Aid for the Lizard Faction" },                 // Aid for the Lizard Clan
@@ -567,13 +603,19 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Cysts, "II Cysts" },                                                           // Firestarter
 		{ OrderTypes.II_Dangerous_Glades, "II Dangerous Glades" },                                     // Risky Expedition
 		{ OrderTypes.II_Engines, "II Engines" },                                                       // Rain Engines
+		{ OrderTypes.II_Fishing_Trial_M_S_NB, "II Fishing Trial M S NB" },                             // Algal Bloom
+		{ OrderTypes.II_Fishing_Trial_RW_CF_S, "II Fishing Trial RW CF S" },                           // Scaling Up
+		{ OrderTypes.II_Fishing_Trial_SO_M_CRW_NB, "II Fishing Trial SO M CRW NB" },                   // Out Fishing
 		{ OrderTypes.II_Fox_Influx, "II Fox Influx" },                                                 // Fox Influx
 		{ OrderTypes.II_Fox_Population, "II Fox Population" },                                         // Fox Population
+		{ OrderTypes.II_Frog_Influx, "II Frog Influx" },                                               // Frog Influx
+		{ OrderTypes.II_Frog_Population, "II Frog Population" },                                       // Frog Population
 		{ OrderTypes.II_Fuel_And_Building, "II Fuel and Building" },                                   // Important Delivery
 		{ OrderTypes.II_Glades, "II Glades" },                                                         // Into the Wilds
 		{ OrderTypes.II_Glades_In_Time, "II Glades in Time" },                                         // Into the Unknown
 		{ OrderTypes.II_Happy_Beavers, "II Happy Beavers" },                                           // Happy Beavers
 		{ OrderTypes.II_Happy_Foxes, "II Happy Foxes" },                                               // Happy Foxes
+		{ OrderTypes.II_Happy_Frogs, "II Happy Frogs" },                                               // Happy Frogs
 		{ OrderTypes.II_Happy_Harpies, "II Happy Harpies" },                                           // Happy Harpies
 		{ OrderTypes.II_Happy_Humans, "II Happy Humans" },                                             // Happy Humans
 		{ OrderTypes.II_Happy_Lizards, "II Happy Lizards" },                                           // Happy Lizards
@@ -589,7 +631,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Luxury_Packs, "II Luxury Packs" },                                             // Luxurious Delivery
 		{ OrderTypes.II_Means_Of_Production, "II Means of Production" },                               // Building Materials
 		{ OrderTypes.II_Multiply_Routes, "II Multiply Routes" },                                       // Stacking Amber
-		{ OrderTypes.II_Offering_Butcher, "II Offering Butcher" },                                     // Bloody Sacrifices
+		{ OrderTypes.II_Offering_Butcher, "II Offering Butcher" },                                     // Feast
 		{ OrderTypes.II_Outpost, "II Outpost" },                                                       // Outposts
 		{ OrderTypes.II_Paths, "II Paths" },                                                           // Infrastructure
 		{ OrderTypes.II_Population_Influx, "II Population Influx" },                                   // Population Influx
@@ -612,6 +654,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_Herbalist_Trial_SO, "II TO Herbalist Trial - SO" },                         // Herbalist's Trial
 		{ OrderTypes.II_TO_Homes_For_Beavers, "II TO Homes for Beavers" },                             // Beaver Colony
 		{ OrderTypes.II_TO_Homes_For_Foxes, "II TO Homes for Foxes" },                                 // Homes For Foxes
+		{ OrderTypes.II_TO_Homes_For_Frogs, "II TO Homes for Frogs" },                                 // Frog Colony
 		{ OrderTypes.II_TO_Homes_For_Harpies, "II TO Homes for Harpies" },                             // Harpy Colony
 		{ OrderTypes.II_TO_Homes_For_Humans, "II TO Homes for Humans" },                               // Human Colony
 		{ OrderTypes.II_TO_Homes_For_Lizards, "II TO Homes for Lizards" },                             // Lizard Colony
@@ -622,7 +665,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_Trappers_Trial_RW_M, "II TO Trappers Trial - RW M" },                       // Trapper's Trial
 		{ OrderTypes.II_Trade_Connections, "II Trade Connections" },                                   // Trade Connections
 		{ OrderTypes.II_Use_Water, "II Use Water" },                                                   // Rainpunk Engineer
-		{ OrderTypes.II_Workshop, "II Workshop" },                                                     // Workshop
 		{ OrderTypes.III_Aesthethics, "III Aesthethics" },                                             // Royal Gardens
 		{ OrderTypes.III_Ale_And_Tavern, "III Ale and Tavern" },                                       // Cups and Glasses
 		{ OrderTypes.III_Amber_And_Market, "III Amber and Market" },                                   // Charity Fair
@@ -637,22 +679,25 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Farmfields, "III Farmfields" },                                               // Agriculture
 		{ OrderTypes.III_Forum, "III Forum" },                                                         // The Forum
 		{ OrderTypes.III_Fox_Relatives, "III Fox Relatives" },                                         // Fox Relatives
+		{ OrderTypes.III_Frog_Relatives, "III Frog Relatives" },                                       // Frog Relatives
+		{ OrderTypes.III_Frog_Upgrades, "III Frog Upgrades" },                                         // Upgraded Living
 		{ OrderTypes.III_Glades, "III Glades" },                                                       // Trailblazing
 		{ OrderTypes.III_Glades_In_Time, "III Glades in Time" },                                       // Hasty Explorer
 		{ OrderTypes.III_Harpy_Relatives, "III Harpy Relatives" },                                     // Harpy Relatives
 		{ OrderTypes.III_Higene, "III Higene" },                                                       // Cleanliness
 		{ OrderTypes.III_Hub, "III Hub" },                                                             // Advanced District
 		{ OrderTypes.III_Human_Relatives, "III Human Relatives" },                                     // Human Relatives
-		{ OrderTypes.III_Kiln, "III Kiln" },                                                           // Dirty Work
 		{ OrderTypes.III_Leisure_For_Time, "III Leisure for Time" },                                   // Basic Rights
 		{ OrderTypes.III_Lizard_Relatives, "III Lizard Relatives" },                                   // Lizard Relatives
 		{ OrderTypes.III_Lost_Villagers, "III Lost Villagers" },                                       // Lost in the Woods
 		{ OrderTypes.III_Luxury, "III Luxury" },                                                       // Luxury
 		{ OrderTypes.III_Provisions_And_Crops, "III Provisions and Crops" },                           // Rations for the Citadel
+		{ OrderTypes.III_Pump_Upgrade, "III Pump Upgrade" },                                           // Water Industry
 		{ OrderTypes.III_Rain_Collector, "III Rain Collector" },                                       // Advanced Logistics
 		{ OrderTypes.III_Religion, "III Religion" },                                                   // Religion
 		{ OrderTypes.III_Resolve_Beavers, "III Resolve Beavers" },                                     // Beaver Resolve
 		{ OrderTypes.III_Resolve_Foxes, "III Resolve Foxes" },                                         // Fox Villagers
+		{ OrderTypes.III_Resolve_Frogs, "III Resolve Frogs" },                                         // Frog Resolve
 		{ OrderTypes.III_Resolve_Harpies, "III Resolve Harpies" },                                     // Harpy Villagers
 		{ OrderTypes.III_Resolve_Humans, "III Resolve Humans" },                                       // Human Villagers
 		{ OrderTypes.III_Resolve_Lizards, "III Resolve Lizards" },                                     // Lizard Villagers
@@ -688,6 +733,8 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Trade_And_Spark, "III Trade and Spark" },                                     // Trade and Industry
 		{ OrderTypes.III_TradePacks, "III TradePacks" },                                               // Trading Goods
 		{ OrderTypes.III_Trader_Value_Sold, "III Trader Value Sold" },                                 // Booming Economy
+		{ OrderTypes.III_Upgrade_Mine_Coal, "III Upgrade Mine - Coal" },                               // Lumps of Coal
+		{ OrderTypes.III_Upgrade_Mine_Copper, "III Upgrade Mine - Copper" },                           // Ore Mining
 		{ OrderTypes.III_Use_Blue_Water, "III Use Blue Water" },                                       // Power of the Storm
 		{ OrderTypes.III_Use_Green_Water, "III Use Green Water" },                                     // Power of the Drizzle
 		{ OrderTypes.III_Use_Yellow_Water, "III Use Yellow Water" },                                   // Power of the Clearance
@@ -730,6 +777,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IVB_Builders_Tools, "IVB Builders Tools" },                                       // Builder's Tools
 		{ OrderTypes.IVB_Education, "IVB Education" },                                                 // Knowledge
 		{ OrderTypes.IVB_Fox_Majority, "IVB Fox Majority" },                                           // Fox Majority
+		{ OrderTypes.IVB_Frog_Majority, "IVB Frog Majority" },                                         // Frog Majority
 		{ OrderTypes.IVB_Harpy_Majority, "IVB Harpy Majority" },                                       // Harpy Majority
 		{ OrderTypes.IVB_Human_Majority, "IVB Human Majority" },                                       // Human Majority
 		{ OrderTypes.IVB_Leisure, "IVB Leisure" },                                                     // Leisure
@@ -742,6 +790,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IVB_Travel_Rations, "IVB Travel Rations" },                                       // Travel Rations
 		{ OrderTypes.IVB_Utopia, "IVB Utopia" },                                                       // Utopia
 		{ OrderTypes.Needs_Served, "Needs Served" },                                                   // Queen's Feathers
+		{ OrderTypes.Needs_Served_HIGH, "Needs Served HIGH" },                                         // Queen's Feathers
 		{ OrderTypes.Needs_Served_LOW, "Needs Served LOW" },                                           // Queen's Feathers
 		{ OrderTypes.R_Ghost_Assault_Trader, "[R] Ghost Assault Trader" }, 
 		{ OrderTypes.R_Ghost_Cut_Trees, "[R] Ghost Cut Trees" }, 
@@ -749,6 +798,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Decorations_Harmony, "[R] Ghost Decorations Harmony" }, 
 		{ OrderTypes.R_Ghost_Discover_DangGlades, "[R] Ghost Discover DangGlades" }, 
 		{ OrderTypes.R_Ghost_Discover_DangGlades_In_Time, "[R] Ghost Discover DangGlades in Time" }, 
+		{ OrderTypes.R_Ghost_Engines, "[R] Ghost Engines" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Beavers, "[R] Ghost Forbid Needs Beavers" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Foxes, "[R] Ghost Forbid Needs Foxes" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Harpies, "[R] Ghost Forbid Needs Harpies" }, 
@@ -757,6 +807,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Generate_Cysts, "[R] Ghost Generate Cysts" }, 
 		{ OrderTypes.R_Ghost_Hostility_High, "[R] Ghost Hostility High" }, 
 		{ OrderTypes.R_Ghost_Hostility_Low, "[R] Ghost Hostility Low" }, 
+		{ OrderTypes.R_Ghost_Housing_Needs, "[R] Ghost Housing Needs" }, 
 		{ OrderTypes.R_Ghost_HUBs_Upgrade, "[R] Ghost HUBs upgrade" }, 
 		{ OrderTypes.R_Ghost_Human_Houses, "[R] Ghost Human Houses" }, 
 		{ OrderTypes.R_Ghost_Keep_Goods, "[R] Ghost Keep Goods" }, 
@@ -772,21 +823,26 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Sacrifice_Goods, "[R] Ghost Sacrifice Goods" }, 
 		{ OrderTypes.R_Ghost_Salvage_Ruins, "[R] Ghost Salvage Ruins" }, 
 		{ OrderTypes.R_Ghost_Send_Goods_To_Citadel, "[R] Ghost Send Goods to Citadel" }, 
+		{ OrderTypes.R_Ghost_Service_Needs, "[R] Ghost Service Needs" }, 
 		{ OrderTypes.R_Ghost_Solve_DangRelics, "[R] Ghost Solve DangRelics" }, 
 		{ OrderTypes.R_Ghost_Starve_Beavers, "[R] Ghost Starve Beavers" }, 
 		{ OrderTypes.R_Ghost_Starve_Humans, "[R] Ghost Starve Humans" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes, "[R] Ghost Trade Routes" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes_With_Value, "[R] Ghost Trade Routes with Value" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes_With_Value_Many, "[R] Ghost Trade Routes with Value Many" }, 
+		{ OrderTypes.R_Ghost_Upgrade_Houses, "[R] Ghost Upgrade Houses" }, 
 		{ OrderTypes.R_Ghost_Use_Water, "[R] Ghost Use Water" }, 
 		{ OrderTypes.Rep_From_Events, "Rep from Events" },                                             // Blood of the Stag
+		{ OrderTypes.Rep_From_Events_HIGH, "Rep from Events HIGH" },                                   // Blood of the Stag
 		{ OrderTypes.Rep_From_Events_LOW, "Rep from Events LOW" },                                     // Blood of the Stag
 		{ OrderTypes.Rep_From_Resolve, "Rep from Resolve" },                                           // Mortal Blood
+		{ OrderTypes.Rep_From_Resolve_HIGH, "Rep from Resolve HIGH" },                                 // Mortal Blood
 		{ OrderTypes.Rep_From_Resolve_LOW, "Rep from Resolve LOW" },                                   // Mortal Blood
 		{ OrderTypes.Resolve, "Resolve" },                                                             // Fire Essence
+		{ OrderTypes.Resolve_HIGH, "Resolve HIGH" },                                                   // Fire Essence
 		{ OrderTypes.Resolve_LOW, "Resolve LOW" },                                                     // Fire Essence
 		{ OrderTypes.Standing, "Standing" },                                                           // Golden Blood
-		{ OrderTypes.Standing_LOW, "Standing LOW" },                                                   // Golden Blood
+		{ OrderTypes.Standing_HIGH, "Standing HIGH" },                                                 // Golden Blood
 		{ OrderTypes.T_II_Brewery, "T II Brewery" },                                                   // Brewing Ale
 		{ OrderTypes.T_II_Farm, "T II Farm" },                                                         // Farming
 		{ OrderTypes.T_II_Provisions, "T II Provisions" },                                             // Provisions
@@ -823,7 +879,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.TI_Stonecutter, "TI Stonecutter" },                                               // Stonecutters' Camp
 		{ OrderTypes.TI_Woodcutters_Camp, "TI Woodcutters Camp" },                                     // Woodcutters' Camps
 		{ OrderTypes.Trade_Packs_And_Perks_LOW, "Trade Packs and Perks LOW" },                         // Golden Blood
-		{ OrderTypes.WaterUsed, "WaterUsed" },                                                         // Essence of Corruption
+		{ OrderTypes.WaterUsed_HIGH, "WaterUsed HIGH" },                                               // Essence of Corruption
 
 	};
 }

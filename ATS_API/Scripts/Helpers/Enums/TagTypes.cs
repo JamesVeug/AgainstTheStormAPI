@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum TagTypes
 {
 	Unknown = -1,
@@ -23,6 +23,8 @@ public enum TagTypes
 	Aggregation_Tag_Haunted_Ruin_Cooperage, 
 	Aggregation_Tag_Haunted_Ruin_Druid, 
 	Aggregation_Tag_Haunted_Ruin_Fox_House, 
+	Aggregation_Tag_Haunted_Ruin_Frog_House, 
+	Aggregation_Tag_Haunted_Ruin_Guild_House, 
 	Aggregation_Tag_Haunted_Ruin_Harpy_House, 
 	Aggregation_Tag_Haunted_Ruin_Herb_Garden, 
 	Aggregation_Tag_Haunted_Ruin_Human_House, 
@@ -39,6 +41,7 @@ public enum TagTypes
 	Building_Material_Tag, 
 	Fabric_Tag, 
 	Farm_Recipe_Tag, 
+	Fishing_Tag, 
 	Food_Tag, 
 	Fuel_Tag, 
 	Gatherer_Hut_Tag, 
@@ -52,12 +55,14 @@ public enum TagTypes
 	N_IronmanStart, 
 	Ore_Tag, 
 	Packs_Tag, 
+	Recipe_With_Water_Tag, 
 	Relic_Archeology, 
 	Relic_Chest, 
 	Tag_Beaver, 
 	Tag_Blight, 
 	Tag_Event_Send_To_Citadel_Reward, 
 	Tag_Fox, 
+	Tag_Frog, 
 	Tag_Harpy, 
 	Tag_Human, 
 	Tag_Lizzard, 
@@ -71,7 +76,7 @@ public enum TagTypes
 	Tag_Trade, 
 
 
-	MAX = 58
+	MAX = 63
 }
 
 public static class TagTypesExtensions
@@ -81,8 +86,8 @@ public static class TagTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new TagTypes[58];
-			for (int i = 0; i < 58; i++)
+			s_All = new TagTypes[63];
+			for (int i = 0; i < 63; i++)
 			{
 				s_All[i] = (TagTypes)(i+1);
 			}
@@ -172,6 +177,8 @@ public static class TagTypesExtensions
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Cooperage, "Aggregation Tag - Haunted Ruin - Cooperage" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Druid, "Aggregation Tag - Haunted Ruin - Druid" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Fox_House, "Aggregation Tag - Haunted Ruin - Fox House" }, 
+		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Frog_House, "Aggregation Tag - Haunted Ruin - Frog House" }, 
+		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Guild_House, "Aggregation Tag - Haunted Ruin - Guild House" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Harpy_House, "Aggregation Tag - Haunted Ruin - Harpy House" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Herb_Garden, "Aggregation Tag - Haunted Ruin - Herb Garden" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Human_House, "Aggregation Tag - Haunted Ruin - Human House" }, 
@@ -188,6 +195,7 @@ public static class TagTypesExtensions
 		{ TagTypes.Building_Material_Tag, "Building Material Tag" }, 
 		{ TagTypes.Fabric_Tag, "Fabric Tag" }, 
 		{ TagTypes.Farm_Recipe_Tag, "Farm Recipe Tag" }, 
+		{ TagTypes.Fishing_Tag, "Fishing Tag" }, 
 		{ TagTypes.Food_Tag, "Food Tag" }, 
 		{ TagTypes.Fuel_Tag, "Fuel Tag" }, 
 		{ TagTypes.Gatherer_Hut_Tag, "Gatherer Hut Tag" }, 
@@ -201,12 +209,14 @@ public static class TagTypesExtensions
 		{ TagTypes.N_IronmanStart, "[N] IronmanStart" }, 
 		{ TagTypes.Ore_Tag, "Ore Tag" }, 
 		{ TagTypes.Packs_Tag, "Packs Tag" }, 
+		{ TagTypes.Recipe_With_Water_Tag, "Recipe With Water Tag" }, 
 		{ TagTypes.Relic_Archeology, "[Relic] Archeology" }, 
 		{ TagTypes.Relic_Chest, "[Relic] Chest" }, 
 		{ TagTypes.Tag_Beaver, "[Tag] Beaver" }, 
 		{ TagTypes.Tag_Blight, "[Tag] Blight" }, 
 		{ TagTypes.Tag_Event_Send_To_Citadel_Reward, "[Tag] Event - Send To Citadel Reward" }, 
 		{ TagTypes.Tag_Fox, "[Tag] Fox" }, 
+		{ TagTypes.Tag_Frog, "[Tag] Frog" }, 
 		{ TagTypes.Tag_Harpy, "[Tag] Harpy" }, 
 		{ TagTypes.Tag_Human, "[Tag] Human" }, 
 		{ TagTypes.Tag_Lizzard, "[Tag] Lizzard" }, 

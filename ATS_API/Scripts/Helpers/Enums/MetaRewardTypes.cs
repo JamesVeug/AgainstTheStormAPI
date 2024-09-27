@@ -6,7 +6,7 @@ using Eremite.Model.Meta;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum MetaRewardTypes
 {
 	Unknown = -1,
@@ -27,21 +27,26 @@ public enum MetaRewardTypes
 	Essential_Decor_Bonfire,                                   // Bonfire
 	Essential_Decor_Cages,                                     // Cages
 	Essential_Decor_Chest,                                     // Chest
+	Essential_Decor_Coastal_Plant,                             // Saltwater Pitcher Plant
 	Essential_Decor_Coral,                                     // Coral Growth
 	Essential_Decor_Crates,                                    // Crates
 	Essential_Decor_Fence,                                     // Fence
 	Essential_Decor_Fence_Corner,                              // Fence Corner
 	Essential_Decor_Fire_Shrine,                               // Fire Shrine
+	Essential_Decor_Fish,                                      // Fish Mount
 	Essential_Decor_Flower_Bed,                                // Flower Bed
 	Essential_Decor_Fox_Fence,                                 // Overgrown Fence
 	Essential_Decor_Fox_Fence_Corner,                          // Overgrown Fence Corner
+	Essential_Decor_Frog_Tree,                                 // Evergreen Shrub
 	Essential_Decor_Gate,                                      // Gate
 	Essential_Decor_Golden_Leaf,                               // Golden Leaf Plant
 	Essential_Decor_Lamp,                                      // Lamp
 	Essential_Decor_Lizard_Post,                               // Lizard Post
 	Essential_Decor_Marbe_Fountain,                            // Marble Fountain
+	Essential_Decor_Monument_Of_Greed,                         // Monument of Greed
 	Essential_Decor_Mushroom,                                  // Decorative Fungus
 	Essential_Decor_Nightfern,                                 // Nightfern
+	Essential_Decor_Ornate_Column,                             // Monument of Greed
 	Essential_Decor_Pipe,                                      // Pipe
 	Essential_Decor_Pipe_Cross,                                // Pipe Cross
 	Essential_Decor_Pipe_Elbow,                                // Pipe Elbow
@@ -52,18 +57,22 @@ public enum MetaRewardTypes
 	Essential_Decor_Scarlet_Decor,                             // Thorny Reed
 	Essential_Decor_Side_Barrels,                              // Rainpunk Barrels
 	Essential_Decor_Signboard,                                 // Signboard
+	Essential_Decor_Stone_Fence,                               // Stone Fence
+	Essential_Decor_Stone_Fence_Corner,                        // Stone Fence Corner
 	Essential_Decor_Tower,                                     // Wall Crossing
 	Essential_Decor_Town_Board,                                // Town Board
 	Essential_Decor_Umbrella,                                  // Umbrella
 	Essential_Decor_Wall,                                      // Wall
 	Essential_Decor_Wall_Corner,                               // Wall Corner
 	Essential_Decor_Water_Barrels,                             // Water Barrels
+	Essential_Decor_Water_Shrine,                              // Water Shrine
 	Essential_Decor_Well,                                      // Overgrown Well
 	Essential_Farmfield,                                       // Farm Field
 	Essential_Harvester,                                       // Harvesters' Camp
 	Essential_Makeshift_Post,                                  // Makeshift Post
 	Essential_Mine,                                            // Mine
 	Essential_Paved_Road,                                      // Paved Road
+	Essential_Primitive_Fishing_Hut,                           // Small Fishing Hut
 	Essential_Primitive_Forager,                               // Small Foragers' Camp
 	Essential_Primitive_Herbalist,                             // Small Herbalists' Camp
 	Essential_Primitive_Trapper,                               // Small Trappers' Camp
@@ -82,11 +91,12 @@ public enum MetaRewardTypes
 	Food_Stockpiles_30,                                        // Food Stockpiles
 	Food_Stockpiles_5,                                         // Food Stockpiles
 	Goals_Exp_Reward_Regular,                                  // Honor Badge
-	House_Upgrades_Unlock_Beavers,                             // House Upgrades - Beavers
-	House_Upgrades_Unlock_Foxes,                               // House Upgrades - Foxes
-	House_Upgrades_Unlock_Harpies,                             // House Upgrades - Harpies
-	House_Upgrades_Unlock_Humans,                              // House Upgrades - Humans
-	House_Upgrades_Unlock_Lizards,                             // House Upgrades - Lizards
+	House_Upgrades_Unlock_Beavers,                             // House Upgrades: Beavers
+	House_Upgrades_Unlock_Foxes,                               // House Upgrades: Foxes
+	House_Upgrades_Unlock_Frogs,                               // House Upgrades: Frogs
+	House_Upgrades_Unlock_Harpies,                             // House Upgrades: Harpies
+	House_Upgrades_Unlock_Humans,                              // House Upgrades: Humans
+	House_Upgrades_Unlock_Lizards,                             // House Upgrades: Lizards
 	Ironman_Activation,                                        // Queen's Hand Trial
 	Machinery_10,                                              // Machinery
 	Machinery_15,                                              // Machinery
@@ -94,6 +104,7 @@ public enum MetaRewardTypes
 	Machinery_25,                                              // Machinery
 	Machinery_5,                                               // Machinery
 	Meta_Foxes_Unlock,                                         // Fox
+	Meta_Frogs_Unlock,                                         // Frog
 	Meta_Harpies_Unlock,                                       // Harpy
 	Meta_Perk_Unlock_2_Hauling_Carts_In_Main_Warehouse,        // Dual Carriage System
 	Meta_Perk_Unlock_Accidental_Barrels,                       // Over-Diligent Woodworkers
@@ -116,6 +127,11 @@ public enum MetaRewardTypes
 	Meta_Perk_Unlock_Extra_Trader_Merch,                       // Guild Catalogue
 	Meta_Perk_Unlock_Fedora_Hat,                               // Old Fedora Hat
 	Meta_Perk_Unlock_Forge_Trip_Hammer,                        // Forge Trip Hammer
+	Meta_Perk_Unlock_Frog_DLC_Borrowed_Time,                   // Borrowed Time
+	Meta_Perk_Unlock_Frog_DLC_City_Of_Wonders,                 // City of Wonders
+	Meta_Perk_Unlock_Frog_DLC_Frog_Clan_Support,               // Frog Clan Support
+	Meta_Perk_Unlock_Frog_DLC_Frog_Friendship,                 // Frog Friendship
+	Meta_Perk_Unlock_Frog_DLC_Strength_In_Numbers,             // Strength in Numbers
 	Meta_Perk_Unlock_Hauling_Cart_In_All_Warehouses,           // Hauling Cart
 	Meta_Perk_Unlock_Hostility_For_Relics,                     // Frequent Patrols
 	Meta_Perk_Unlock_Hostility_For_Removed_Cysts,              // Baptism of Fire
@@ -152,9 +168,11 @@ public enum MetaRewardTypes
 	Meta_Perk_Unlock_Trading_Packs,                            // Trade Logs
 	Meta_Perk_Unlock_VillagerDeathEffectBlock,                 // Hidden from the Queen
 	Meta_Perk_Unlock_Villagers_For_Corruption,                 // From the Shadows
+	Meta_Perk_Unlock_Water_Crit_For_Fishing,                   // Book of Water
 	Meta_Perk_Unlock_Wildcard,                                 // Smuggler's Visit
 	Meta_Perk_Unlock_Wood_Plus2_For_Insects,                   // No Quality Control
 	Meta_Perk_Unlock_Working_Time_For_Firekeeper,              // Prayer Book
+	Meta_Reward_0_Exp,                                         // Absolutely Nothing
 	Meta_Reward_Advanced_Rain_Collector,                       // Advanced Rain Collector
 	Meta_Reward_Alchemist_Hut,                                 // Alchemist's Hut
 	Meta_Reward_Apothecary,                                    // Apothecary
@@ -165,6 +183,7 @@ public enum MetaRewardTypes
 	Meta_Reward_Beaver_House,                                  // Beaver House
 	Meta_Reward_Big_Shelter,                                   // Big Shelter
 	Meta_Reward_Blight_Post_Upgrades_Unlock,                   // Blight Post Upgrades
+	Meta_Reward_Bonus_Villagers,                               // More Villagers
 	Meta_Reward_Bonus_Yield,                                   // Unforeseen Riches
 	Meta_Reward_Brewery,                                       // Brewery
 	Meta_Reward_Brick_Oven,                                    // Brick Oven
@@ -172,6 +191,7 @@ public enum MetaRewardTypes
 	Meta_Reward_Building_Storage,                              // Larger Storage
 	Meta_Reward_Burning_Duration,                              // Everlasting Flames
 	Meta_Reward_Butcher,                                       // Butcher
+	Meta_Reward_Cannery,                                       // Cannery
 	Meta_Reward_Caravan_Goods,                                 // Stocked Caravans
 	Meta_Reward_Caravan_Slot,                                  // Additional Caravan Choice
 	Meta_Reward_Carpenter,                                     // Carpenter
@@ -180,6 +200,7 @@ public enum MetaRewardTypes
 	Meta_Reward_Clan_Hall,                                     // Clan Hall
 	Meta_Reward_Clay_Pit,                                      // Clay Pit
 	Meta_Reward_Clothier,                                      // Clothier
+	Meta_Reward_Cobbler,                                       // Cobbler
 	Meta_Reward_Cookhouse,                                     // Cookhouse
 	Meta_Reward_Cooperage,                                     // Cooperage
 	Meta_Reward_Cornerstone,                                   // Additional Cornerstone Choice
@@ -212,6 +233,7 @@ public enum MetaRewardTypes
 	Meta_Reward_Decor_Wall,                                    // Wall
 	Meta_Reward_Distillery,                                    // Distillery
 	Meta_Reward_Druid,                                         // Druid's Hut
+	Meta_Reward_Embark_Blueprint_Fishing_Hut,                  // Embarkation Bonus: Fishing Hut
 	Meta_Reward_Embark_Blueprint_Forager,                      // Embarkation Bonus: Foragers' Camp
 	Meta_Reward_Embark_Blueprint_Herb_Garden,                  // Embarkation Bonus: Herb Garden
 	Meta_Reward_Embark_Blueprint_Herbalist,                    // Embarkation Bonus: Herbalists' Camp
@@ -248,6 +270,7 @@ public enum MetaRewardTypes
 	Meta_Reward_Essential_Beaver_House,                        // Essential Blueprint: Beaver House
 	Meta_Reward_Essential_Field_Kitchen,                       // Essential Blueprint: Field Kitchen
 	Meta_Reward_Essential_Fox_House,                           // Essential Blueprint: Fox House
+	Meta_Reward_Essential_Frog_House,                          // Essential Blueprint: Frog House
 	Meta_Reward_Essential_Harpy_House,                         // Essential Blueprint: Harpy House
 	Meta_Reward_Essential_Human_House,                         // Essential Blueprint: Human House
 	Meta_Reward_Essential_Lizard_House,                        // Essential Blueprint: Lizard House
@@ -258,9 +281,11 @@ public enum MetaRewardTypes
 	Meta_Reward_Faction_Orange,                                // Brass Order
 	Meta_Reward_Farm_Range,                                    // Farm Range Increase
 	Meta_Reward_Finesmith,                                     // Finesmith
+	Meta_Reward_Fishers_Camp,                                  // Fishing Hut
 	Meta_Reward_Foragers_Camp,                                 // Foragers' Camp
 	Meta_Reward_Forum,                                         // Forum
 	Meta_Reward_Fox_House,                                     // Fox House
+	Meta_Reward_Frog_House,                                    // Frog House
 	Meta_Reward_Furnace,                                       // Furnace
 	Meta_Reward_Global_Capacity,                               // Worker Capacity Increase
 	Meta_Reward_Goals_Unlock,                                  // Obsidian Archive
@@ -274,6 +299,7 @@ public enum MetaRewardTypes
 	Meta_Reward_Guaranteed_Pipes, 
 	Meta_Reward_Guaranteed_Planks, 
 	Meta_Reward_Guild_House,                                   // Guild House
+	Meta_Reward_Harpy_House,                                   // Harpy House
 	Meta_Reward_Haulers_Main_Storage,                          // Haulers - Main Warehouse
 	Meta_Reward_Haulers_Secondary_Storage,                     // Haulers - Small Warehouse
 	Meta_Reward_Hearth,                                        // Small Hearth
@@ -312,21 +338,31 @@ public enum MetaRewardTypes
 	Meta_Reward_Human_House,                                   // Human House
 	Meta_Reward_Impatience,                                    // Queen's Patience
 	Meta_Reward_Kiln,                                          // Kiln
+	Meta_Reward_Leatherworks,                                  // Leatherworker
 	Meta_Reward_Lizard_House,                                  // Lizard House
 	Meta_Reward_Lumbermill,                                    // Lumber Mill
 	Meta_Reward_Manufactory,                                   // Manufactory
 	Meta_Reward_Market,                                        // Market
+	Meta_Reward_Menu_Skin_Coral_Forest,                        // Menu Skin: Coral Forest
+	Meta_Reward_Menu_Skin_Cursed_Royal_Woodlands,              // Menu Skin: Cursed Royal Woodlands
+	Meta_Reward_Menu_Skin_Farming,                             // Menu Skin: Calm Settlement
+	Meta_Reward_Menu_Skin_Industry,                            // Menu Skin: Industrial Town
+	Meta_Reward_Menu_Skin_Marshlands,                          // Menu Skin: Marshlands
+	Meta_Reward_Menu_Skin_Scarlet_Orchard,                     // Menu Skin: Scarlet Orchard
+	Meta_Reward_Menu_Skin_Sealed_Forest,                       // Menu Skin: Sealed Forest
 	Meta_Reward_Meta_Resources,                                // More Citadel Resources
 	Meta_Reward_Mine,                                          // Mine
 	Meta_Reward_Mine_Upgrade_Unlock,                           // Mine Upgrades
 	Meta_Reward_Monastery,                                     // Monastery
 	Meta_Reward_Newcomer_Goods,                                // Newcomer Gifts
 	Meta_Reward_Node_Charges,                                  // Gathering Technique
-	Meta_Reward_Passive_Beavers,                               // Starting Ability - Beavers
-	Meta_Reward_Passive_Foxes,                                 // Starting Ability - Foxes
-	Meta_Reward_Passive_Harpies,                               // Starting Ability - Harpies
-	Meta_Reward_Passive_Humans,                                // Starting Ability - Humans
-	Meta_Reward_Passive_Lizards,                               // Starting Ability - Lizards
+	Meta_Reward_Pantry,                                        // Pantry
+	Meta_Reward_Passive_Beavers,                               // Starting Ability: Beavers
+	Meta_Reward_Passive_Foxes,                                 // Starting Ability: Foxes
+	Meta_Reward_Passive_Frogs,                                 // Starting Ability: Frogs
+	Meta_Reward_Passive_Harpies,                               // Starting Ability: Harpies
+	Meta_Reward_Passive_Humans,                                // Starting Ability: Humans
+	Meta_Reward_Passive_Lizards,                               // Starting Ability: Lizards
 	Meta_Reward_Paved_Road,                                    // Paved Road
 	Meta_Reward_Plantation,                                    // Plantation
 	Meta_Reward_Press,                                         // Press
@@ -373,7 +409,7 @@ public enum MetaRewardTypes
 	Trade_Routes_Activation,                                   // Trade Routes
 
 
-	MAX = 360
+	MAX = 396
 }
 
 public static class MetaRewardTypesExtensions
@@ -383,8 +419,8 @@ public static class MetaRewardTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new MetaRewardTypes[360];
-			for (int i = 0; i < 360; i++)
+			s_All = new MetaRewardTypes[396];
+			for (int i = 0; i < 396; i++)
 			{
 				s_All[i] = (MetaRewardTypes)(i+1);
 			}
@@ -478,21 +514,26 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Essential_Decor_Bonfire, "Essential Decor Bonfire" },                                                                        // Bonfire
 		{ MetaRewardTypes.Essential_Decor_Cages, "Essential Decor Cages" },                                                                            // Cages
 		{ MetaRewardTypes.Essential_Decor_Chest, "Essential Decor Chest" },                                                                            // Chest
+		{ MetaRewardTypes.Essential_Decor_Coastal_Plant, "Essential Decor Coastal Plant" },                                                            // Saltwater Pitcher Plant
 		{ MetaRewardTypes.Essential_Decor_Coral, "Essential Decor Coral" },                                                                            // Coral Growth
 		{ MetaRewardTypes.Essential_Decor_Crates, "Essential Decor Crates" },                                                                          // Crates
 		{ MetaRewardTypes.Essential_Decor_Fence, "Essential Decor Fence" },                                                                            // Fence
 		{ MetaRewardTypes.Essential_Decor_Fence_Corner, "Essential Decor Fence Corner" },                                                              // Fence Corner
 		{ MetaRewardTypes.Essential_Decor_Fire_Shrine, "Essential Decor Fire Shrine" },                                                                // Fire Shrine
+		{ MetaRewardTypes.Essential_Decor_Fish, "Essential Decor Fish" },                                                                              // Fish Mount
 		{ MetaRewardTypes.Essential_Decor_Flower_Bed, "Essential Decor Flower Bed" },                                                                  // Flower Bed
 		{ MetaRewardTypes.Essential_Decor_Fox_Fence, "Essential Decor Fox Fence" },                                                                    // Overgrown Fence
 		{ MetaRewardTypes.Essential_Decor_Fox_Fence_Corner, "Essential Decor Fox Fence Corner" },                                                      // Overgrown Fence Corner
+		{ MetaRewardTypes.Essential_Decor_Frog_Tree, "Essential Decor Frog Tree" },                                                                    // Evergreen Shrub
 		{ MetaRewardTypes.Essential_Decor_Gate, "Essential Decor Gate" },                                                                              // Gate
 		{ MetaRewardTypes.Essential_Decor_Golden_Leaf, "Essential Decor Golden Leaf" },                                                                // Golden Leaf Plant
 		{ MetaRewardTypes.Essential_Decor_Lamp, "Essential Decor Lamp" },                                                                              // Lamp
 		{ MetaRewardTypes.Essential_Decor_Lizard_Post, "Essential Decor Lizard Post" },                                                                // Lizard Post
 		{ MetaRewardTypes.Essential_Decor_Marbe_Fountain, "Essential Decor Marbe Fountain" },                                                          // Marble Fountain
+		{ MetaRewardTypes.Essential_Decor_Monument_Of_Greed, "Essential Decor Monument of Greed" },                                                    // Monument of Greed
 		{ MetaRewardTypes.Essential_Decor_Mushroom, "Essential Decor Mushroom" },                                                                      // Decorative Fungus
 		{ MetaRewardTypes.Essential_Decor_Nightfern, "Essential Decor Nightfern" },                                                                    // Nightfern
+		{ MetaRewardTypes.Essential_Decor_Ornate_Column, "Essential Decor Ornate Column" },                                                            // Monument of Greed
 		{ MetaRewardTypes.Essential_Decor_Pipe, "Essential Decor Pipe" },                                                                              // Pipe
 		{ MetaRewardTypes.Essential_Decor_Pipe_Cross, "Essential Decor Pipe Cross" },                                                                  // Pipe Cross
 		{ MetaRewardTypes.Essential_Decor_Pipe_Elbow, "Essential Decor Pipe Elbow" },                                                                  // Pipe Elbow
@@ -503,18 +544,22 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Essential_Decor_Scarlet_Decor, "Essential Decor Scarlet Decor" },                                                            // Thorny Reed
 		{ MetaRewardTypes.Essential_Decor_Side_Barrels, "Essential Decor Side Barrels" },                                                              // Rainpunk Barrels
 		{ MetaRewardTypes.Essential_Decor_Signboard, "Essential Decor Signboard" },                                                                    // Signboard
+		{ MetaRewardTypes.Essential_Decor_Stone_Fence, "Essential Decor Stone Fence" },                                                                // Stone Fence
+		{ MetaRewardTypes.Essential_Decor_Stone_Fence_Corner, "Essential Decor Stone Fence Corner" },                                                  // Stone Fence Corner
 		{ MetaRewardTypes.Essential_Decor_Tower, "Essential Decor Tower" },                                                                            // Wall Crossing
 		{ MetaRewardTypes.Essential_Decor_Town_Board, "Essential Decor Town Board" },                                                                  // Town Board
 		{ MetaRewardTypes.Essential_Decor_Umbrella, "Essential Decor Umbrella" },                                                                      // Umbrella
 		{ MetaRewardTypes.Essential_Decor_Wall, "Essential Decor Wall" },                                                                              // Wall
 		{ MetaRewardTypes.Essential_Decor_Wall_Corner, "Essential Decor Wall Corner" },                                                                // Wall Corner
 		{ MetaRewardTypes.Essential_Decor_Water_Barrels, "Essential Decor Water Barrels" },                                                            // Water Barrels
+		{ MetaRewardTypes.Essential_Decor_Water_Shrine, "Essential Decor Water Shrine" },                                                              // Water Shrine
 		{ MetaRewardTypes.Essential_Decor_Well, "Essential Decor Well" },                                                                              // Overgrown Well
 		{ MetaRewardTypes.Essential_Farmfield, "Essential Farmfield" },                                                                                // Farm Field
 		{ MetaRewardTypes.Essential_Harvester, "Essential Harvester" },                                                                                // Harvesters' Camp
 		{ MetaRewardTypes.Essential_Makeshift_Post, "Essential Makeshift Post" },                                                                      // Makeshift Post
 		{ MetaRewardTypes.Essential_Mine, "Essential Mine" },                                                                                          // Mine
 		{ MetaRewardTypes.Essential_Paved_Road, "Essential Paved Road" },                                                                              // Paved Road
+		{ MetaRewardTypes.Essential_Primitive_Fishing_Hut, "Essential Primitive Fishing Hut" },                                                        // Small Fishing Hut
 		{ MetaRewardTypes.Essential_Primitive_Forager, "Essential Primitive Forager" },                                                                // Small Foragers' Camp
 		{ MetaRewardTypes.Essential_Primitive_Herbalist, "Essential Primitive Herbalist" },                                                            // Small Herbalists' Camp
 		{ MetaRewardTypes.Essential_Primitive_Trapper, "Essential Primitive Trapper" },                                                                // Small Trappers' Camp
@@ -533,11 +578,12 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Food_Stockpiles_30, "Food Stockpiles 30" },                                                                                  // Food Stockpiles
 		{ MetaRewardTypes.Food_Stockpiles_5, "Food Stockpiles 5" },                                                                                    // Food Stockpiles
 		{ MetaRewardTypes.Goals_Exp_Reward_Regular, "Goals Exp Reward - Regular" },                                                                    // Honor Badge
-		{ MetaRewardTypes.House_Upgrades_Unlock_Beavers, "House Upgrades Unlock - Beavers" },                                                          // House Upgrades - Beavers
-		{ MetaRewardTypes.House_Upgrades_Unlock_Foxes, "House Upgrades Unlock - Foxes" },                                                              // House Upgrades - Foxes
-		{ MetaRewardTypes.House_Upgrades_Unlock_Harpies, "House Upgrades Unlock - Harpies" },                                                          // House Upgrades - Harpies
-		{ MetaRewardTypes.House_Upgrades_Unlock_Humans, "House Upgrades Unlock - Humans" },                                                            // House Upgrades - Humans
-		{ MetaRewardTypes.House_Upgrades_Unlock_Lizards, "House Upgrades Unlock - Lizards" },                                                          // House Upgrades - Lizards
+		{ MetaRewardTypes.House_Upgrades_Unlock_Beavers, "House Upgrades Unlock - Beavers" },                                                          // House Upgrades: Beavers
+		{ MetaRewardTypes.House_Upgrades_Unlock_Foxes, "House Upgrades Unlock - Foxes" },                                                              // House Upgrades: Foxes
+		{ MetaRewardTypes.House_Upgrades_Unlock_Frogs, "House Upgrades Unlock - Frogs" },                                                              // House Upgrades: Frogs
+		{ MetaRewardTypes.House_Upgrades_Unlock_Harpies, "House Upgrades Unlock - Harpies" },                                                          // House Upgrades: Harpies
+		{ MetaRewardTypes.House_Upgrades_Unlock_Humans, "House Upgrades Unlock - Humans" },                                                            // House Upgrades: Humans
+		{ MetaRewardTypes.House_Upgrades_Unlock_Lizards, "House Upgrades Unlock - Lizards" },                                                          // House Upgrades: Lizards
 		{ MetaRewardTypes.Ironman_Activation, "Ironman Activation" },                                                                                  // Queen's Hand Trial
 		{ MetaRewardTypes.Machinery_10, "Machinery 10" },                                                                                              // Machinery
 		{ MetaRewardTypes.Machinery_15, "Machinery 15" },                                                                                              // Machinery
@@ -545,6 +591,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Machinery_25, "Machinery 25" },                                                                                              // Machinery
 		{ MetaRewardTypes.Machinery_5, "Machinery 5" },                                                                                                // Machinery
 		{ MetaRewardTypes.Meta_Foxes_Unlock, "Meta Foxes Unlock" },                                                                                    // Fox
+		{ MetaRewardTypes.Meta_Frogs_Unlock, "Meta Frogs Unlock" },                                                                                    // Frog
 		{ MetaRewardTypes.Meta_Harpies_Unlock, "Meta Harpies Unlock" },                                                                                // Harpy
 		{ MetaRewardTypes.Meta_Perk_Unlock_2_Hauling_Carts_In_Main_Warehouse, "Meta Perk Unlock 2 Hauling Carts in Main Warehouse" },                  // Dual Carriage System
 		{ MetaRewardTypes.Meta_Perk_Unlock_Accidental_Barrels, "Meta Perk Unlock Accidental Barrels" },                                                // Over-Diligent Woodworkers
@@ -567,6 +614,11 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Perk_Unlock_Extra_Trader_Merch, "Meta Perk Unlock Extra Trader Merch" },                                                // Guild Catalogue
 		{ MetaRewardTypes.Meta_Perk_Unlock_Fedora_Hat, "Meta Perk Unlock Fedora Hat" },                                                                // Old Fedora Hat
 		{ MetaRewardTypes.Meta_Perk_Unlock_Forge_Trip_Hammer, "Meta Perk Unlock Forge Trip Hammer" },                                                  // Forge Trip Hammer
+		{ MetaRewardTypes.Meta_Perk_Unlock_Frog_DLC_Borrowed_Time, "Meta Perk Unlock Frog DLC - Borrowed Time" },                                      // Borrowed Time
+		{ MetaRewardTypes.Meta_Perk_Unlock_Frog_DLC_City_Of_Wonders, "Meta Perk Unlock Frog DLC - City of Wonders" },                                  // City of Wonders
+		{ MetaRewardTypes.Meta_Perk_Unlock_Frog_DLC_Frog_Clan_Support, "Meta Perk Unlock Frog DLC - Frog Clan Support" },                              // Frog Clan Support
+		{ MetaRewardTypes.Meta_Perk_Unlock_Frog_DLC_Frog_Friendship, "Meta Perk Unlock Frog DLC - Frog Friendship" },                                  // Frog Friendship
+		{ MetaRewardTypes.Meta_Perk_Unlock_Frog_DLC_Strength_In_Numbers, "Meta Perk Unlock Frog DLC - Strength in Numbers" },                          // Strength in Numbers
 		{ MetaRewardTypes.Meta_Perk_Unlock_Hauling_Cart_In_All_Warehouses, "Meta Perk Unlock Hauling Cart in All Warehouses" },                        // Hauling Cart
 		{ MetaRewardTypes.Meta_Perk_Unlock_Hostility_For_Relics, "Meta Perk Unlock Hostility for Relics" },                                            // Frequent Patrols
 		{ MetaRewardTypes.Meta_Perk_Unlock_Hostility_For_Removed_Cysts, "Meta Perk Unlock Hostility for Removed Cysts" },                              // Baptism of Fire
@@ -603,9 +655,11 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Perk_Unlock_Trading_Packs, "Meta Perk Unlock Trading Packs" },                                                          // Trade Logs
 		{ MetaRewardTypes.Meta_Perk_Unlock_VillagerDeathEffectBlock, "Meta Perk Unlock VillagerDeathEffectBlock" },                                    // Hidden from the Queen
 		{ MetaRewardTypes.Meta_Perk_Unlock_Villagers_For_Corruption, "Meta Perk Unlock Villagers For Corruption" },                                    // From the Shadows
+		{ MetaRewardTypes.Meta_Perk_Unlock_Water_Crit_For_Fishing, "Meta Perk Unlock Water Crit For Fishing" },                                        // Book of Water
 		{ MetaRewardTypes.Meta_Perk_Unlock_Wildcard, "Meta Perk Unlock Wildcard" },                                                                    // Smuggler's Visit
 		{ MetaRewardTypes.Meta_Perk_Unlock_Wood_Plus2_For_Insects, "Meta Perk Unlock Wood +2 for insects" },                                           // No Quality Control
 		{ MetaRewardTypes.Meta_Perk_Unlock_Working_Time_For_Firekeeper, "Meta Perk Unlock Working time for firekeeper" },                              // Prayer Book
+		{ MetaRewardTypes.Meta_Reward_0_Exp, "Meta Reward 0 Exp" },                                                                                    // Absolutely Nothing
 		{ MetaRewardTypes.Meta_Reward_Advanced_Rain_Collector, "Meta Reward Advanced Rain Collector" },                                                // Advanced Rain Collector
 		{ MetaRewardTypes.Meta_Reward_Alchemist_Hut, "Meta Reward Alchemist Hut" },                                                                    // Alchemist's Hut
 		{ MetaRewardTypes.Meta_Reward_Apothecary, "Meta Reward Apothecary" },                                                                          // Apothecary
@@ -616,6 +670,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Beaver_House, "Meta Reward Beaver House" },                                                                      // Beaver House
 		{ MetaRewardTypes.Meta_Reward_Big_Shelter, "Meta Reward Big Shelter" },                                                                        // Big Shelter
 		{ MetaRewardTypes.Meta_Reward_Blight_Post_Upgrades_Unlock, "Meta Reward Blight Post Upgrades Unlock" },                                        // Blight Post Upgrades
+		{ MetaRewardTypes.Meta_Reward_Bonus_Villagers, "Meta Reward Bonus Villagers" },                                                                // More Villagers
 		{ MetaRewardTypes.Meta_Reward_Bonus_Yield, "Meta Reward Bonus Yield" },                                                                        // Unforeseen Riches
 		{ MetaRewardTypes.Meta_Reward_Brewery, "Meta Reward Brewery" },                                                                                // Brewery
 		{ MetaRewardTypes.Meta_Reward_Brick_Oven, "Meta Reward Brick Oven" },                                                                          // Brick Oven
@@ -623,6 +678,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Building_Storage, "Meta Reward Building Storage" },                                                              // Larger Storage
 		{ MetaRewardTypes.Meta_Reward_Burning_Duration, "Meta Reward Burning Duration" },                                                              // Everlasting Flames
 		{ MetaRewardTypes.Meta_Reward_Butcher, "Meta Reward Butcher" },                                                                                // Butcher
+		{ MetaRewardTypes.Meta_Reward_Cannery, "Meta Reward Cannery" },                                                                                // Cannery
 		{ MetaRewardTypes.Meta_Reward_Caravan_Goods, "Meta Reward Caravan Goods" },                                                                    // Stocked Caravans
 		{ MetaRewardTypes.Meta_Reward_Caravan_Slot, "Meta Reward Caravan Slot" },                                                                      // Additional Caravan Choice
 		{ MetaRewardTypes.Meta_Reward_Carpenter, "Meta Reward Carpenter" },                                                                            // Carpenter
@@ -631,6 +687,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Clan_Hall, "Meta Reward Clan Hall" },                                                                            // Clan Hall
 		{ MetaRewardTypes.Meta_Reward_Clay_Pit, "Meta Reward Clay Pit" },                                                                              // Clay Pit
 		{ MetaRewardTypes.Meta_Reward_Clothier, "Meta Reward Clothier" },                                                                              // Clothier
+		{ MetaRewardTypes.Meta_Reward_Cobbler, "Meta Reward Cobbler" },                                                                                // Cobbler
 		{ MetaRewardTypes.Meta_Reward_Cookhouse, "Meta Reward Cookhouse" },                                                                            // Cookhouse
 		{ MetaRewardTypes.Meta_Reward_Cooperage, "Meta Reward Cooperage" },                                                                            // Cooperage
 		{ MetaRewardTypes.Meta_Reward_Cornerstone, "Meta Reward Cornerstone" },                                                                        // Additional Cornerstone Choice
@@ -663,6 +720,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Decor_Wall, "Meta Reward Decor Wall" },                                                                          // Wall
 		{ MetaRewardTypes.Meta_Reward_Distillery, "Meta Reward Distillery" },                                                                          // Distillery
 		{ MetaRewardTypes.Meta_Reward_Druid, "Meta Reward Druid" },                                                                                    // Druid's Hut
+		{ MetaRewardTypes.Meta_Reward_Embark_Blueprint_Fishing_Hut, "Meta Reward Embark Blueprint Fishing Hut" },                                      // Embarkation Bonus: Fishing Hut
 		{ MetaRewardTypes.Meta_Reward_Embark_Blueprint_Forager, "Meta Reward Embark Blueprint Forager" },                                              // Embarkation Bonus: Foragers' Camp
 		{ MetaRewardTypes.Meta_Reward_Embark_Blueprint_Herb_Garden, "Meta Reward Embark Blueprint Herb Garden" },                                      // Embarkation Bonus: Herb Garden
 		{ MetaRewardTypes.Meta_Reward_Embark_Blueprint_Herbalist, "Meta Reward Embark Blueprint Herbalist" },                                          // Embarkation Bonus: Herbalists' Camp
@@ -699,6 +757,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Essential_Beaver_House, "Meta Reward Essential Beaver House" },                                                  // Essential Blueprint: Beaver House
 		{ MetaRewardTypes.Meta_Reward_Essential_Field_Kitchen, "Meta Reward Essential Field Kitchen" },                                                // Essential Blueprint: Field Kitchen
 		{ MetaRewardTypes.Meta_Reward_Essential_Fox_House, "Meta Reward Essential Fox House" },                                                        // Essential Blueprint: Fox House
+		{ MetaRewardTypes.Meta_Reward_Essential_Frog_House, "Meta Reward Essential Frog House" },                                                      // Essential Blueprint: Frog House
 		{ MetaRewardTypes.Meta_Reward_Essential_Harpy_House, "Meta Reward Essential Harpy House" },                                                    // Essential Blueprint: Harpy House
 		{ MetaRewardTypes.Meta_Reward_Essential_Human_House, "Meta Reward Essential Human House" },                                                    // Essential Blueprint: Human House
 		{ MetaRewardTypes.Meta_Reward_Essential_Lizard_House, "Meta Reward Essential Lizard House" },                                                  // Essential Blueprint: Lizard House
@@ -709,9 +768,11 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Faction_Orange, "Meta Reward Faction Orange" },                                                                  // Brass Order
 		{ MetaRewardTypes.Meta_Reward_Farm_Range, "Meta Reward Farm Range" },                                                                          // Farm Range Increase
 		{ MetaRewardTypes.Meta_Reward_Finesmith, "Meta Reward Finesmith" },                                                                            // Finesmith
+		{ MetaRewardTypes.Meta_Reward_Fishers_Camp, "Meta Reward Fishers Camp" },                                                                      // Fishing Hut
 		{ MetaRewardTypes.Meta_Reward_Foragers_Camp, "Meta Reward Forager's Camp" },                                                                   // Foragers' Camp
 		{ MetaRewardTypes.Meta_Reward_Forum, "Meta Reward Forum" },                                                                                    // Forum
 		{ MetaRewardTypes.Meta_Reward_Fox_House, "Meta Reward Fox House" },                                                                            // Fox House
+		{ MetaRewardTypes.Meta_Reward_Frog_House, "Meta Reward Frog House" },                                                                          // Frog House
 		{ MetaRewardTypes.Meta_Reward_Furnace, "Meta Reward Furnace" },                                                                                // Furnace
 		{ MetaRewardTypes.Meta_Reward_Global_Capacity, "Meta Reward Global Capacity" },                                                                // Worker Capacity Increase
 		{ MetaRewardTypes.Meta_Reward_Goals_Unlock, "Meta Reward Goals Unlock" },                                                                      // Obsidian Archive
@@ -725,6 +786,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Guaranteed_Pipes, "Meta Reward Guaranteed Pipes" }, 
 		{ MetaRewardTypes.Meta_Reward_Guaranteed_Planks, "Meta Reward Guaranteed Planks" }, 
 		{ MetaRewardTypes.Meta_Reward_Guild_House, "Meta Reward Guild House" },                                                                        // Guild House
+		{ MetaRewardTypes.Meta_Reward_Harpy_House, "Meta Reward Harpy House" },                                                                        // Harpy House
 		{ MetaRewardTypes.Meta_Reward_Haulers_Main_Storage, "Meta Reward Haulers - Main Storage" },                                                    // Haulers - Main Warehouse
 		{ MetaRewardTypes.Meta_Reward_Haulers_Secondary_Storage, "Meta Reward Haulers - Secondary Storage" },                                          // Haulers - Small Warehouse
 		{ MetaRewardTypes.Meta_Reward_Hearth, "Meta Reward Hearth" },                                                                                  // Small Hearth
@@ -763,21 +825,31 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Human_House, "Meta Reward Human House" },                                                                        // Human House
 		{ MetaRewardTypes.Meta_Reward_Impatience, "Meta Reward Impatience" },                                                                          // Queen's Patience
 		{ MetaRewardTypes.Meta_Reward_Kiln, "Meta Reward Kiln" },                                                                                      // Kiln
+		{ MetaRewardTypes.Meta_Reward_Leatherworks, "Meta Reward Leatherworks" },                                                                      // Leatherworker
 		{ MetaRewardTypes.Meta_Reward_Lizard_House, "Meta Reward Lizard House" },                                                                      // Lizard House
 		{ MetaRewardTypes.Meta_Reward_Lumbermill, "Meta Reward Lumbermill" },                                                                          // Lumber Mill
 		{ MetaRewardTypes.Meta_Reward_Manufactory, "Meta Reward Manufactory" },                                                                        // Manufactory
 		{ MetaRewardTypes.Meta_Reward_Market, "Meta Reward Market" },                                                                                  // Market
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Coral_Forest, "Meta Reward Menu Skin - Coral Forest" },                                                // Menu Skin: Coral Forest
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Cursed_Royal_Woodlands, "Meta Reward Menu Skin - Cursed Royal Woodlands" },                            // Menu Skin: Cursed Royal Woodlands
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Farming, "Meta Reward Menu Skin - Farming" },                                                          // Menu Skin: Calm Settlement
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Industry, "Meta Reward Menu Skin - Industry" },                                                        // Menu Skin: Industrial Town
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Marshlands, "Meta Reward Menu Skin - Marshlands" },                                                    // Menu Skin: Marshlands
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Scarlet_Orchard, "Meta Reward Menu Skin - Scarlet Orchard" },                                          // Menu Skin: Scarlet Orchard
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Sealed_Forest, "Meta Reward Menu Skin - Sealed Forest" },                                              // Menu Skin: Sealed Forest
 		{ MetaRewardTypes.Meta_Reward_Meta_Resources, "Meta Reward Meta Resources" },                                                                  // More Citadel Resources
 		{ MetaRewardTypes.Meta_Reward_Mine, "Meta Reward Mine" },                                                                                      // Mine
 		{ MetaRewardTypes.Meta_Reward_Mine_Upgrade_Unlock, "Meta Reward Mine Upgrade Unlock" },                                                        // Mine Upgrades
 		{ MetaRewardTypes.Meta_Reward_Monastery, "Meta Reward Monastery" },                                                                            // Monastery
 		{ MetaRewardTypes.Meta_Reward_Newcomer_Goods, "Meta Reward Newcomer Goods" },                                                                  // Newcomer Gifts
 		{ MetaRewardTypes.Meta_Reward_Node_Charges, "Meta Reward Node Charges" },                                                                      // Gathering Technique
-		{ MetaRewardTypes.Meta_Reward_Passive_Beavers, "Meta Reward Passive Beavers" },                                                                // Starting Ability - Beavers
-		{ MetaRewardTypes.Meta_Reward_Passive_Foxes, "Meta Reward Passive Foxes" },                                                                    // Starting Ability - Foxes
-		{ MetaRewardTypes.Meta_Reward_Passive_Harpies, "Meta Reward Passive Harpies" },                                                                // Starting Ability - Harpies
-		{ MetaRewardTypes.Meta_Reward_Passive_Humans, "Meta Reward Passive Humans" },                                                                  // Starting Ability - Humans
-		{ MetaRewardTypes.Meta_Reward_Passive_Lizards, "Meta Reward Passive Lizards" },                                                                // Starting Ability - Lizards
+		{ MetaRewardTypes.Meta_Reward_Pantry, "Meta Reward Pantry" },                                                                                  // Pantry
+		{ MetaRewardTypes.Meta_Reward_Passive_Beavers, "Meta Reward Passive Beavers" },                                                                // Starting Ability: Beavers
+		{ MetaRewardTypes.Meta_Reward_Passive_Foxes, "Meta Reward Passive Foxes" },                                                                    // Starting Ability: Foxes
+		{ MetaRewardTypes.Meta_Reward_Passive_Frogs, "Meta Reward Passive Frogs" },                                                                    // Starting Ability: Frogs
+		{ MetaRewardTypes.Meta_Reward_Passive_Harpies, "Meta Reward Passive Harpies" },                                                                // Starting Ability: Harpies
+		{ MetaRewardTypes.Meta_Reward_Passive_Humans, "Meta Reward Passive Humans" },                                                                  // Starting Ability: Humans
+		{ MetaRewardTypes.Meta_Reward_Passive_Lizards, "Meta Reward Passive Lizards" },                                                                // Starting Ability: Lizards
 		{ MetaRewardTypes.Meta_Reward_Paved_Road, "Meta Reward Paved Road" },                                                                          // Paved Road
 		{ MetaRewardTypes.Meta_Reward_Plantation, "Meta Reward Plantation" },                                                                          // Plantation
 		{ MetaRewardTypes.Meta_Reward_Press, "Meta Reward Press" },                                                                                    // Press

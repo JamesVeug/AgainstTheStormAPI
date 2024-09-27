@@ -83,6 +83,7 @@ public partial class BuildingManager
         tag.visible = false;
         tag.workerSlotPositon = BuildingTagIconPosition.None;
         tag.name = guid + "_" + name;
+        tag.logic = new AlwaysActiveTagLogic();
         // tag.icon = TODO: Add temp icon 
 
         BuildingTagTypes id = GUIDManager.Get<BuildingTagTypes>(guid, name);

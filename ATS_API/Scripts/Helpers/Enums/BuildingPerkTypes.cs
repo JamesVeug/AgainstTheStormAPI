@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum BuildingPerkTypes
 {
 	Unknown = -1,
@@ -27,9 +27,15 @@ public enum BuildingPerkTypes
 	R_Rainpunk_Comfortable,                     // Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
 	Spec_Relics_Working_Time,                   // Scouts by Nature - Each Fox scout assigned to a Glade Event reduces its working time by {0}.
 	U_Beaver_Houses_Unique_Bonus,               // Writing Desk - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Extractor_Automaton,                      // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
 	U_Extractor_Tank,                           // Tank Capacity Increase - Increases tank capacity for the corresponding rainwater type by {0}.
 	U_Fox_Houses_Unique_Bonus,                  // Lichen - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	U_Frog_House_Building_Mat_Crit,             // Workbench - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	U_Frog_House_Building_Mat_Speed,            // Drafting Table - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	U_Frog_House_More_Resolve_For_Rainpunk,     // Water Pipeline - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	U_Frog_House_Newcomer_Bonus,                // Atrium - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	U_Frog_House_Water_Tank,                    // Rainwater Storage - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
+	U_Frog_House_Yearly_Packs,                  // Storage Room - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	U_Frog_Houses_Bonus_Resolve,                // Indoor Pool - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
 	U_Harpy_Houses_Unique_Bonus,                // Canopy - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
 	U_Hauler_Extra_Capacity,                    // HaulerUpgrade_CarryCapacity_Name - HaulerUpgrade_CarryCapacity_Desc
 	U_Hauler_Range,                             // HaulerUpgrade_Radius_Name - HaulerUpgrade_Radius_Desc
@@ -49,8 +55,9 @@ public enum BuildingPerkTypes
 	U_Mine_Upgrade_Cart_2,                      // Minecart - {0} {1}
 	U_Mine_Upgrade_Speed_1,                     // Pit Pony - {0} {1}
 	U_Mine_Upgrade_Speed_2,                     // Pit Pony - {0} {1}
-	U_Storage_Cart,                             // Minecart - An automated minecart will help miners transport resources from the Mine to the Storage.
-	UBP_Blight_Fighter_Cart,                    // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce <sprite name="blight fuel"> Purging Fire.
+	U_Pump_Automaton,                           // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
+	U_Storage_Automaton,                        // Minecart - An automated minecart will help miners transport resources from the Mine to the Warehouse.
+	UBP_Blight_Fighter_Automaton,               // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce <sprite name="blight fuel"> Purging Fire.
 	UBP_Blight_Fighter_Speed,                   // Mobile Sparkcasters
 	UBP_Blight_Post_Production_Rate,            // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
 	UBP_Extra_Production_Chance,                // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
@@ -59,7 +66,7 @@ public enum BuildingPerkTypes
 	UBP_Global_Cyst_Generation_Rate,            // Manned Lookout
 
 
-	MAX = 46
+	MAX = 53
 }
 
 public static class BuildingPerkTypesExtensions
@@ -69,8 +76,8 @@ public static class BuildingPerkTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new BuildingPerkTypes[46];
-			for (int i = 0; i < 46; i++)
+			s_All = new BuildingPerkTypes[53];
+			for (int i = 0; i < 53; i++)
 			{
 				s_All[i] = (BuildingPerkTypes)(i+1);
 			}
@@ -164,9 +171,15 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.R_Rainpunk_Comfortable, "[R] Rainpunk Comfortable" },                                             // Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
 		{ BuildingPerkTypes.Spec_Relics_Working_Time, "[Spec] Relics Working Time" },                                         // Scouts by Nature - Each Fox scout assigned to a Glade Event reduces its working time by {0}.
 		{ BuildingPerkTypes.U_Beaver_Houses_Unique_Bonus, "[U] Beaver Houses Unique Bonus" },                                 // Writing Desk - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-		{ BuildingPerkTypes.U_Extractor_Automaton, "[U] Extractor Automaton" },                                               // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
 		{ BuildingPerkTypes.U_Extractor_Tank, "[U] Extractor Tank" },                                                         // Tank Capacity Increase - Increases tank capacity for the corresponding rainwater type by {0}.
 		{ BuildingPerkTypes.U_Fox_Houses_Unique_Bonus, "[U] Fox Houses Unique Bonus" },                                       // Lichen - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.U_Frog_House_Building_Mat_Crit, "[U] Frog House Building Mat Crit" },                             // Workbench - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.U_Frog_House_Building_Mat_Speed, "[U] Frog House Building Mat Speed" },                           // Drafting Table - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.U_Frog_House_More_Resolve_For_Rainpunk, "[U] Frog House More Resolve For Rainpunk" },             // Water Pipeline - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.U_Frog_House_Newcomer_Bonus, "[U] Frog House Newcomer Bonus" },                                   // Atrium - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.U_Frog_House_Water_Tank, "[U] Frog House Water Tank" },                                           // Rainwater Storage - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
+		{ BuildingPerkTypes.U_Frog_House_Yearly_Packs, "[U] Frog House Yearly Packs" },                                       // Storage Room - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.U_Frog_Houses_Bonus_Resolve, "[U] Frog Houses Bonus Resolve" },                                   // Indoor Pool - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
 		{ BuildingPerkTypes.U_Harpy_Houses_Unique_Bonus, "[U] Harpy Houses Unique Bonus" },                                   // Canopy - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
 		{ BuildingPerkTypes.U_Hauler_Extra_Capacity, "[U] Hauler Extra Capacity" },                                           // HaulerUpgrade_CarryCapacity_Name - HaulerUpgrade_CarryCapacity_Desc
 		{ BuildingPerkTypes.U_Hauler_Range, "[U] Hauler Range" },                                                             // HaulerUpgrade_Radius_Name - HaulerUpgrade_Radius_Desc
@@ -186,8 +199,9 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.U_Mine_Upgrade_Cart_2, "[U] Mine Upgrade Cart 2" },                                               // Minecart - {0} {1}
 		{ BuildingPerkTypes.U_Mine_Upgrade_Speed_1, "[U] Mine Upgrade Speed 1" },                                             // Pit Pony - {0} {1}
 		{ BuildingPerkTypes.U_Mine_Upgrade_Speed_2, "[U] Mine Upgrade Speed 2" },                                             // Pit Pony - {0} {1}
-		{ BuildingPerkTypes.U_Storage_Cart, "[U] Storage Cart" },                                                             // Minecart - An automated minecart will help miners transport resources from the Mine to the Storage.
-		{ BuildingPerkTypes.UBP_Blight_Fighter_Cart, "[U][BP] Blight Fighter Cart" },                                         // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce <sprite name="blight fuel"> Purging Fire.
+		{ BuildingPerkTypes.U_Pump_Automaton, "[U] Pump Automaton" },                                                         // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
+		{ BuildingPerkTypes.U_Storage_Automaton, "[U] Storage Automaton" },                                                   // Minecart - An automated minecart will help miners transport resources from the Mine to the Warehouse.
+		{ BuildingPerkTypes.UBP_Blight_Fighter_Automaton, "[U][BP] Blight Fighter Automaton" },                               // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce <sprite name="blight fuel"> Purging Fire.
 		{ BuildingPerkTypes.UBP_Blight_Fighter_Speed, "[U][BP] Blight Fighter Speed" },                                       // Mobile Sparkcasters
 		{ BuildingPerkTypes.UBP_Blight_Post_Production_Rate, "[U][BP] Blight Post Production Rate" },                         // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
 		{ BuildingPerkTypes.UBP_Extra_Production_Chance, "[U][BP] Extra Production Chance" },                                 // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.

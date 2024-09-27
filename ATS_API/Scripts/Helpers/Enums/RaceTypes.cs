@@ -6,19 +6,20 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.3.4R
+// Generated using Version 1.4.4R
 public enum RaceTypes
 {
 	Unknown = -1,
 	None,
 	Beaver, // Beaver - Beavers are hardworking and honest, but also quite demanding. They are gifted woodworkers (<sprite name="wood">) and enjoy engineering (<sprite name="tech">). Beavers are also known for their innate talent for salesmanship.
-	Foxes,  // Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts (<sprite name="foxforest">) and feel comfortable working with rainwater (<sprite name="rainwater">). They are highly susceptible to starvation and immune to Hostility.
+	Foxes,  // Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts (<sprite name="foxforest">) and feel comfortable working in buildings infested with Blightrot (<sprite name="cysts">). They are highly susceptible to starvation, yet are immune to Hostility.
+	Frog,   // Frog - A dignified and proud people with a unique affinity for wealth, renowned for their exceptional skills in architecture and their love of water. They seem to be the least bothered by rain and prefer not to live in ordinary shelters. Frogs are skilled masons (<sprite name="stone">) and love working with rainwater (<sprite name="rainwater">).
 	Harpy,  // Harpy - Harpies are a noble and fragile species, with a primal, aggressive side to them. They have lost their ability to fly due to centuries of exposure to the rain. They excel at alchemy (<sprite name="alchemy">) and love to work with cloth (<sprite name="cloth">).
 	Human,  // Human - Humans are a very adaptable species, but they are also very susceptible to the rain. They rely heavily on special clothing, such as their famous rain shells, to keep them dry. Humans are adept at farming (<sprite name="farming">) and really enjoy brewing (<sprite name="brewing">).
 	Lizard, // Lizard - Lizards are a very resilient species, but their cold-blooded nature makes them more dependent on fire than any other species. They are very distrustful and religiously believe that true bonds are only forged in battle. They are very good with animals and meat production (<sprite name="meat">), and prefer to work in warm environments (<sprite name="fire">).
 
 
-	MAX = 5
+	MAX = 6
 }
 
 public static class RaceTypesExtensions
@@ -28,8 +29,8 @@ public static class RaceTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new RaceTypes[5];
-			for (int i = 0; i < 5; i++)
+			s_All = new RaceTypes[6];
+			for (int i = 0; i < 6; i++)
 			{
 				s_All[i] = (RaceTypes)(i+1);
 			}
@@ -108,7 +109,8 @@ public static class RaceTypesExtensions
 	internal static readonly Dictionary<RaceTypes, string> TypeToInternalName = new()
 	{
 		{ RaceTypes.Beaver, "Beaver" }, // Beaver - Beavers are hardworking and honest, but also quite demanding. They are gifted woodworkers (<sprite name="wood">) and enjoy engineering (<sprite name="tech">). Beavers are also known for their innate talent for salesmanship.
-		{ RaceTypes.Foxes, "Foxes" },   // Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts (<sprite name="foxforest">) and feel comfortable working with rainwater (<sprite name="rainwater">). They are highly susceptible to starvation and immune to Hostility.
+		{ RaceTypes.Foxes, "Foxes" },   // Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts (<sprite name="foxforest">) and feel comfortable working in buildings infested with Blightrot (<sprite name="cysts">). They are highly susceptible to starvation, yet are immune to Hostility.
+		{ RaceTypes.Frog, "Frog" },     // Frog - A dignified and proud people with a unique affinity for wealth, renowned for their exceptional skills in architecture and their love of water. They seem to be the least bothered by rain and prefer not to live in ordinary shelters. Frogs are skilled masons (<sprite name="stone">) and love working with rainwater (<sprite name="rainwater">).
 		{ RaceTypes.Harpy, "Harpy" },   // Harpy - Harpies are a noble and fragile species, with a primal, aggressive side to them. They have lost their ability to fly due to centuries of exposure to the rain. They excel at alchemy (<sprite name="alchemy">) and love to work with cloth (<sprite name="cloth">).
 		{ RaceTypes.Human, "Human" },   // Human - Humans are a very adaptable species, but they are also very susceptible to the rain. They rely heavily on special clothing, such as their famous rain shells, to keep them dry. Humans are adept at farming (<sprite name="farming">) and really enjoy brewing (<sprite name="brewing">).
 		{ RaceTypes.Lizard, "Lizard" }, // Lizard - Lizards are a very resilient species, but their cold-blooded nature makes them more dependent on fire than any other species. They are very distrustful and religiously believe that true bonds are only forged in battle. They are very good with animals and meat production (<sprite name="meat">), and prefer to work in warm environments (<sprite name="fire">).
