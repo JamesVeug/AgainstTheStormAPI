@@ -71,6 +71,7 @@ public partial class WIKI
             csv.AddValue("Description", relic.description.GetText(), 3);
             csv.AddValue("DangerLevel", relic.dangerLevel.ToString(), 4);
             csv.AddValue("Category", relic.category.name, 5);
+            csv.AddValue("Profession", relic.profession.name, 6);
 
 
             for (var i = 0; i < relic.difficulties.Length; i++)
@@ -80,7 +81,8 @@ public partial class WIKI
                 {
                     var decision = difficulty.decisions[j];
                     string decisionKey = $"Difficulty_{difficulty.difficulty + 1}_decision_{j + 1}";
-                    csv.AddValue(decisionKey + "_workingTime", decision.workingTime.ToString("F"), 6);
+                    csv.AddValue(decisionKey + "_workingTime", decision.workingTime.ToString("F"), 7);
+                    csv.AddValue(decisionKey + "_decisionType", decision.decisionTag?.name, 8);
 
                     List<string> requiredGoods = new List<string>();
                     for (var k = 0; k < decision.requriedGoods.sets.Length; k++)
@@ -92,16 +94,33 @@ public partial class WIKI
                             requiredGoods.Add(goodRef.amount + ":" + goodRef.good.name);
                         }
                     }
+                    csv.AddValue(decisionKey + $"_requiredGoods", requiredGoods.Count > 0 ? string.Join(", ", requiredGoods) : "", 9);
 
-                    csv.AddValue(decisionKey + $"_requiredGoods",
-                        requiredGoods.Count > 0 ? string.Join(", ", requiredGoods) : "", 7);
+                    string workingEffects = string.Join(":",decision.workingEffects.Select(a => a.name));
+                    csv.AddValue(decisionKey + $"_workingEffects", workingEffects, 10);
+                }
+            }
+            
+            for (var i = 0; i < relic.effectsTiers.Length; i++)
+            {
+                EffectStep effectModel = relic.effectsTiers[i];
+                string header = "EffectTier_" + (i + 1);
+                
+                // Time TO Start
+                csv.AddValue(header + "_TTS", ((int)effectModel.timeToStart).ToString(), 11);
+
+                // Effect
+                for (var j = 0; j < effectModel.effect.Length; j++)
+                {
+                    var model = effectModel.effect[j];
+                    csv.AddValue(header + "_Effect_" + (j+1), model.name, 12);
                 }
             }
 
             for (var i = 0; i < relic.activeEffects.Length; i++)
             {
                 var effectModel = relic.activeEffects[i];
-                csv.AddValue("Effect_" + (i + 1), relic.category.name + ":" + effectModel.GetType().Name, 8);
+                csv.AddValue("ActiveEffect_" + (i + 1), relic.category.name + ":" + effectModel.GetType().Name, 13);
             }
 
             int rewardID = 0;
@@ -112,7 +131,7 @@ public partial class WIKI
                 {
                     EffectModel effectModel = reward.effect;
                     csv.AddValue("Reward_" + (rewardID + 1),
-                        effectModel.name + ":" + reward.chance + ":" + effectModel.GetType().Name, 10);
+                        effectModel.name + ":" + reward.chance + ":" + effectModel.GetType().Name, 14);
 
                     rewardTypes.Add(effectModel.GetType());
                     rewardID++;
