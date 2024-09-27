@@ -641,11 +641,6 @@ public enum EffectTypes
 	Ancient_Tablet_3,                                              // Chest of Ancient Tablets - 3 <sprite name="[valuable] ancient tablet"> Ancient Tablet
 	Ancient_Tablet_5,                                              // Chest of Ancient Tablets - 5 <sprite name="[valuable] ancient tablet"> Ancient Tablet
 	Ancient_Tablet_8,                                              // Chest of Ancient Tablets - 8 <sprite name="[valuable] ancient tablet"> Ancient Tablet
-	API_ExampleMod_diamondHunter_hookedEffect_1,                   // API_ExampleMod_Diamonds_displayName - API_ExampleMod_Diamonds_description
-	API_ExampleMod_Diamonds_RelicKeepEffect_1,                     // API_ExampleMod_Diamonds_displayName - 4 <sprite name="api_examplemod_diamonds"> API_ExampleMod_Diamonds_displayName
-	API_ExampleMod_Diamonds_RelicKeepEffect_2,                     // API_ExampleMod_Diamonds_displayName - 2 <sprite name="api_examplemod_diamonds"> API_ExampleMod_Diamonds_displayName
-	API_ExampleMod_Kiwi_Fruit_RelicKeepEffect_1,                   // API_ExampleMod_Kiwi Fruit_displayName - 4 <sprite name="api_examplemod_kiwi fruit"> API_ExampleMod_Kiwi Fruit_displayName
-	API_ExampleMod_Kiwi_Fruit_RelicKeepEffect_2,                   // API_ExampleMod_Kiwi Fruit_displayName - 2 <sprite name="api_examplemod_kiwi fruit"> API_ExampleMod_Kiwi Fruit_displayName
 	Artifacts_1,                                                   // Artifacts - 1 <sprite name="_meta artifacts"> Artifacts
 	Artifacts_10,                                                  // Artifacts - 10 <sprite name="_meta artifacts"> Artifacts
 	Artifacts_2,                                                   // Artifacts - 2 <sprite name="_meta artifacts"> Artifacts
@@ -1196,7 +1191,6 @@ public enum EffectTypes
 	Ale_Plus3,                                                     // Bigger Barrels - +3 to <sprite name="[needs] ale"> Ale production. Gain an additional <sprite name="[needs] ale"> Ale every yield (from gathering, farming, fishing, or production).
 	Ale_Plus5,                                                     // Bigger Barrels - +5 to <sprite name="[needs] ale"> Ale production. Gain an additional <sprite name="[needs] ale"> Ale every yield (from gathering, farming, fishing, or production).
 	Algae_Plus1,                                                   // Microfilter Net - +1 to <sprite name="[mat raw] algae"> Algae production. Gain an additional <sprite name="[mat raw] algae"> Algae every yield (from gathering, farming, fishing, or production).
-	API_ExampleMod_Omega_Sewing_Technique,                         // API_ExampleMod_Omega Sewing Technique_displayName - +10 to <sprite name="[needs] coats"> Coats production. Gain an additional <sprite name="[needs] coats"> Coats every yield (from gathering, farming, fishing, or production).
 	Barrels_Plus1,                                                 // Advanced Coopering - +1 to <sprite name="[vessel] barrels"> Barrels production. Gain an additional <sprite name="[vessel] barrels"> Barrels every yield (from gathering, farming, fishing, or production).
 	Barrels_Plus2,                                                 // Advanced Coopering - +2 to <sprite name="[vessel] barrels"> Barrels production. Gain an additional <sprite name="[vessel] barrels"> Barrels every yield (from gathering, farming, fishing, or production).
 	Barrels_Plus3,                                                 // Advanced Coopering - +3 to <sprite name="[vessel] barrels"> Barrels production. Gain an additional <sprite name="[vessel] barrels"> Barrels every yield (from gathering, farming, fishing, or production).
@@ -1526,8 +1520,6 @@ public enum EffectTypes
 	Amber_For_Wood,                                                // Lumber Tax - Gain 1 <sprite name="[valuable] amber"> Amber for every 50 <sprite name="[mat raw] wood"> Wood produced.
 	Amber_Worth_More_For_Relics,                                   // Respected Business Partner - Traders value your efforts in keeping the region safe. Amber is worth +10% more for every completed Dangerous and Forbidden Glade Event.
 	AmberForLuxury,                                                // Luxury Tax - Amber is worth +5% more for every 2 villagers with the need for luxury fulfilled.
-	API_ExampleMod_diamondHunter,                                  // API_ExampleMod_diamondHunter_displayName - API_ExampleMod_diamondHunter_description
-	API_ExampleMod_Modding_Tools,                                  // API_ExampleMod_Modding Tools_displayName - API_ExampleMod_Modding Tools_description
 	Artifact_For_Dangerous_Relic,                                  // From the Ashes - An odd talisman made from the talons of a phoenix. Gain 2 <sprite name="hearth parts"> Wildfire Essence for every 2 completed Dangerous or Forbidden Glade Events.
 	Back_To_Nature,                                                // Back to Nature - An old, forbidden ritual. Increases yields by 100% in all buildings that use fertile soil. You will lose all stored food (cooked and raw) upon choosing this cornerstone.
 	Beaver_Resolve_For_Wine_Prod,                                  // Vineyard Town - The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 70 <sprite name="[needs] wine"> Wine produced.
@@ -2815,7 +2807,7 @@ public enum EffectTypes
 	Vault_WoodcuttersResolvePenalty_normal, 
 
 
-	MAX = 2494
+	MAX = 2486
 }
 
 public static class EffectTypesExtensions
@@ -2825,8 +2817,8 @@ public static class EffectTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new EffectTypes[2494];
-			for (int i = 0; i < 2494; i++)
+			s_All = new EffectTypes[2486];
+			for (int i = 0; i < 2486; i++)
 			{
 				s_All[i] = (EffectTypes)(i+1);
 			}
@@ -3534,11 +3526,6 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Ancient_Tablet_3, "Ancient Tablet 3" },                                                                                               // Chest of Ancient Tablets - 3 <sprite name="[valuable] ancient tablet"> Ancient Tablet
 		{ EffectTypes.Ancient_Tablet_5, "Ancient Tablet 5" },                                                                                               // Chest of Ancient Tablets - 5 <sprite name="[valuable] ancient tablet"> Ancient Tablet
 		{ EffectTypes.Ancient_Tablet_8, "Ancient Tablet 8" },                                                                                               // Chest of Ancient Tablets - 8 <sprite name="[valuable] ancient tablet"> Ancient Tablet
-		{ EffectTypes.API_ExampleMod_diamondHunter_hookedEffect_1, "API_ExampleMod_diamondHunter_hookedEffect_1" },                                         // API_ExampleMod_Diamonds_displayName - API_ExampleMod_Diamonds_description
-		{ EffectTypes.API_ExampleMod_Diamonds_RelicKeepEffect_1, "API_ExampleMod_Diamonds_RelicKeepEffect_1" },                                             // API_ExampleMod_Diamonds_displayName - 4 <sprite name="api_examplemod_diamonds"> API_ExampleMod_Diamonds_displayName
-		{ EffectTypes.API_ExampleMod_Diamonds_RelicKeepEffect_2, "API_ExampleMod_Diamonds_RelicKeepEffect_2" },                                             // API_ExampleMod_Diamonds_displayName - 2 <sprite name="api_examplemod_diamonds"> API_ExampleMod_Diamonds_displayName
-		{ EffectTypes.API_ExampleMod_Kiwi_Fruit_RelicKeepEffect_1, "API_ExampleMod_Kiwi Fruit_RelicKeepEffect_1" },                                         // API_ExampleMod_Kiwi Fruit_displayName - 4 <sprite name="api_examplemod_kiwi fruit"> API_ExampleMod_Kiwi Fruit_displayName
-		{ EffectTypes.API_ExampleMod_Kiwi_Fruit_RelicKeepEffect_2, "API_ExampleMod_Kiwi Fruit_RelicKeepEffect_2" },                                         // API_ExampleMod_Kiwi Fruit_displayName - 2 <sprite name="api_examplemod_kiwi fruit"> API_ExampleMod_Kiwi Fruit_displayName
 		{ EffectTypes.Artifacts_1, "Artifacts 1" },                                                                                                         // Artifacts - 1 <sprite name="_meta artifacts"> Artifacts
 		{ EffectTypes.Artifacts_10, "Artifacts 10" },                                                                                                       // Artifacts - 10 <sprite name="_meta artifacts"> Artifacts
 		{ EffectTypes.Artifacts_2, "Artifacts 2" },                                                                                                         // Artifacts - 2 <sprite name="_meta artifacts"> Artifacts
@@ -4089,7 +4076,6 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Ale_Plus3, "Ale +3" },                                                                                                                // Bigger Barrels - +3 to <sprite name="[needs] ale"> Ale production. Gain an additional <sprite name="[needs] ale"> Ale every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Ale_Plus5, "Ale +5" },                                                                                                                // Bigger Barrels - +5 to <sprite name="[needs] ale"> Ale production. Gain an additional <sprite name="[needs] ale"> Ale every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Algae_Plus1, "Algae +1" },                                                                                                            // Microfilter Net - +1 to <sprite name="[mat raw] algae"> Algae production. Gain an additional <sprite name="[mat raw] algae"> Algae every yield (from gathering, farming, fishing, or production).
-		{ EffectTypes.API_ExampleMod_Omega_Sewing_Technique, "API_ExampleMod_Omega Sewing Technique" },                                                     // API_ExampleMod_Omega Sewing Technique_displayName - +10 to <sprite name="[needs] coats"> Coats production. Gain an additional <sprite name="[needs] coats"> Coats every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Barrels_Plus1, "Barrels +1" },                                                                                                        // Advanced Coopering - +1 to <sprite name="[vessel] barrels"> Barrels production. Gain an additional <sprite name="[vessel] barrels"> Barrels every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Barrels_Plus2, "Barrels +2" },                                                                                                        // Advanced Coopering - +2 to <sprite name="[vessel] barrels"> Barrels production. Gain an additional <sprite name="[vessel] barrels"> Barrels every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Barrels_Plus3, "Barrels +3" },                                                                                                        // Advanced Coopering - +3 to <sprite name="[vessel] barrels"> Barrels production. Gain an additional <sprite name="[vessel] barrels"> Barrels every yield (from gathering, farming, fishing, or production).
@@ -4419,8 +4405,6 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Amber_For_Wood, "Amber for Wood" },                                                                                                   // Lumber Tax - Gain 1 <sprite name="[valuable] amber"> Amber for every 50 <sprite name="[mat raw] wood"> Wood produced.
 		{ EffectTypes.Amber_Worth_More_For_Relics, "Amber Worth More For Relics" },                                                                         // Respected Business Partner - Traders value your efforts in keeping the region safe. Amber is worth +10% more for every completed Dangerous and Forbidden Glade Event.
 		{ EffectTypes.AmberForLuxury, "AmberForLuxury" },                                                                                                   // Luxury Tax - Amber is worth +5% more for every 2 villagers with the need for luxury fulfilled.
-		{ EffectTypes.API_ExampleMod_diamondHunter, "API_ExampleMod_diamondHunter" },                                                                       // API_ExampleMod_diamondHunter_displayName - API_ExampleMod_diamondHunter_description
-		{ EffectTypes.API_ExampleMod_Modding_Tools, "API_ExampleMod_Modding Tools" },                                                                       // API_ExampleMod_Modding Tools_displayName - API_ExampleMod_Modding Tools_description
 		{ EffectTypes.Artifact_For_Dangerous_Relic, "Artifact for Dangerous Relic" },                                                                       // From the Ashes - An odd talisman made from the talons of a phoenix. Gain 2 <sprite name="hearth parts"> Wildfire Essence for every 2 completed Dangerous or Forbidden Glade Events.
 		{ EffectTypes.Back_To_Nature, "Back To Nature" },                                                                                                   // Back to Nature - An old, forbidden ritual. Increases yields by 100% in all buildings that use fertile soil. You will lose all stored food (cooked and raw) upon choosing this cornerstone.
 		{ EffectTypes.Beaver_Resolve_For_Wine_Prod, "Beaver Resolve for Wine Prod" },                                                                       // Vineyard Town - The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 70 <sprite name="[needs] wine"> Wine produced.

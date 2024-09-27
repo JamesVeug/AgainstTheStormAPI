@@ -14,12 +14,6 @@ public enum GoodsTypes
 	_Meta_Artifacts,                  // Artifacts - The remnants of a long-forgotten world. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
 	_Meta_Food_Stockpiles,            // Food Stockpiles - A basic currency of the realm. Earned by completing settlements. Can be used to purchase upgrades in the Smoldering City.
 	_Meta_Machinery,                  // Machinery - Rainpunk technology ripped from the past. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
-	API_ExampleMod_Borgor,            // API_ExampleMod_Borgor_displayName - API_ExampleMod_Borgor_description
-	API_ExampleMod_Cola,              // API_ExampleMod_Cola_displayName - API_ExampleMod_Cola_description
-	API_ExampleMod_Diamonds,          // API_ExampleMod_Diamonds_displayName - API_ExampleMod_Diamonds_description
-	API_ExampleMod_Fries,             // API_ExampleMod_Fries_displayName - API_ExampleMod_Fries_description
-	API_ExampleMod_Kiwi_Fruit,        // API_ExampleMod_Kiwi Fruit_displayName - API_ExampleMod_Kiwi Fruit_description
-	API_ExampleMod_LPG,               // API_ExampleMod_LPG_displayName - API_ExampleMod_LPG_description
 	Blight_Fuel,                      // Purging Fire - A unique resource used by Blight Fighters to burn down Blightrot Cysts.   <b>Produced in:</b> {0}
 	Crafting_Coal,                    // Coal - Efficient fuel.   <b>Obtained in:</b> {0}
 	Crafting_Dye,                     // Dye - Used for crafting.  <b>Produced in:</b> {0}
@@ -89,7 +83,7 @@ public enum GoodsTypes
 	Water_Storm_Water,                // Storm Water - Highly concentrated blue storm rainwater. Used to power Rain Engines in industry-oriented buildings.
 
 
-	MAX = 76
+	MAX = 70
 }
 
 public static class GoodsTypesExtensions
@@ -99,8 +93,8 @@ public static class GoodsTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new GoodsTypes[76];
-			for (int i = 0; i < 76; i++)
+			s_All = new GoodsTypes[70];
+			for (int i = 0; i < 70; i++)
 			{
 				s_All[i] = (GoodsTypes)(i+1);
 			}
@@ -181,12 +175,6 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes._Meta_Artifacts, "_Meta Artifacts" },                                     // Artifacts - The remnants of a long-forgotten world. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
 		{ GoodsTypes._Meta_Food_Stockpiles, "_Meta Food Stockpiles" },                         // Food Stockpiles - A basic currency of the realm. Earned by completing settlements. Can be used to purchase upgrades in the Smoldering City.
 		{ GoodsTypes._Meta_Machinery, "_Meta Machinery" },                                     // Machinery - Rainpunk technology ripped from the past. Earned by completing world events, modifiers, seals, and daily expeditions. Can be used to purchase upgrades in the Smoldering City.
-		{ GoodsTypes.API_ExampleMod_Borgor, "API_ExampleMod_Borgor" },                         // API_ExampleMod_Borgor_displayName - API_ExampleMod_Borgor_description
-		{ GoodsTypes.API_ExampleMod_Cola, "API_ExampleMod_Cola" },                             // API_ExampleMod_Cola_displayName - API_ExampleMod_Cola_description
-		{ GoodsTypes.API_ExampleMod_Diamonds, "API_ExampleMod_Diamonds" },                     // API_ExampleMod_Diamonds_displayName - API_ExampleMod_Diamonds_description
-		{ GoodsTypes.API_ExampleMod_Fries, "API_ExampleMod_Fries" },                           // API_ExampleMod_Fries_displayName - API_ExampleMod_Fries_description
-		{ GoodsTypes.API_ExampleMod_Kiwi_Fruit, "API_ExampleMod_Kiwi Fruit" },                 // API_ExampleMod_Kiwi Fruit_displayName - API_ExampleMod_Kiwi Fruit_description
-		{ GoodsTypes.API_ExampleMod_LPG, "API_ExampleMod_LPG" },                               // API_ExampleMod_LPG_displayName - API_ExampleMod_LPG_description
 		{ GoodsTypes.Blight_Fuel, "Blight Fuel" },                                             // Purging Fire - A unique resource used by Blight Fighters to burn down Blightrot Cysts.   <b>Produced in:</b> {0}
 		{ GoodsTypes.Crafting_Coal, "[Crafting] Coal" },                                       // Coal - Efficient fuel.   <b>Obtained in:</b> {0}
 		{ GoodsTypes.Crafting_Dye, "[Crafting] Dye" },                                         // Dye - Used for crafting.  <b>Produced in:</b> {0}

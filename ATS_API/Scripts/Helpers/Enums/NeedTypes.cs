@@ -11,33 +11,31 @@ public enum NeedTypes
 {
 	Unknown = -1,
 	None,
-	Any_Housing,                                            // Basic Housing
-	API_ExampleMod_API_ExampleMod_AxolotlHouse_housingNeed, // API_ExampleMod_API_ExampleMod_AxolotlHouse_housingNeed_displayName
-	API_ExampleMod_API_ExampleMod_Borgor_complexFoodNeed, 
-	Beaver_Housing,                                         // Beaver Housing
-	Biscuits,                                               // Biscuits
-	Bloodthirst,                                            // Brawling
-	Boots,                                                  // Boots
-	Clothes,                                                // Coats
-	Education,                                              // Education
-	Fox_Housing,                                            // Fox Housing
-	Frog_Housing,                                           // Frog Housing
-	Harpy_Housing,                                          // Harpy Housing
-	Human_Housing,                                          // Human Housing
-	Jerky,                                                  // Jerky
-	Leasiure,                                               // Leisure
-	Lizard_Housing,                                         // Lizard Housing
-	Luxury,                                                 // Luxury
-	Paste,                                                  // Paste
-	Pickled_Goods,                                          // Pickled Goods
-	Pie,                                                    // Pie
-	Porridge,                                               // Porridge
-	Religion,                                               // Religion
-	Skewer,                                                 // Skewers
-	Treatment,                                              // Treatment
+	Any_Housing,    // Basic Housing
+	Beaver_Housing, // Beaver Housing
+	Biscuits,       // Biscuits
+	Bloodthirst,    // Brawling
+	Boots,          // Boots
+	Clothes,        // Coats
+	Education,      // Education
+	Fox_Housing,    // Fox Housing
+	Frog_Housing,   // Frog Housing
+	Harpy_Housing,  // Harpy Housing
+	Human_Housing,  // Human Housing
+	Jerky,          // Jerky
+	Leasiure,       // Leisure
+	Lizard_Housing, // Lizard Housing
+	Luxury,         // Luxury
+	Paste,          // Paste
+	Pickled_Goods,  // Pickled Goods
+	Pie,            // Pie
+	Porridge,       // Porridge
+	Religion,       // Religion
+	Skewer,         // Skewers
+	Treatment,      // Treatment
 
 
-	MAX = 24
+	MAX = 22
 }
 
 public static class NeedTypesExtensions
@@ -47,8 +45,8 @@ public static class NeedTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new NeedTypes[24];
-			for (int i = 0; i < 24; i++)
+			s_All = new NeedTypes[22];
+			for (int i = 0; i < 22; i++)
 			{
 				s_All[i] = (NeedTypes)(i+1);
 			}
@@ -126,30 +124,28 @@ public static class NeedTypesExtensions
 
 	internal static readonly Dictionary<NeedTypes, string> TypeToInternalName = new()
 	{
-		{ NeedTypes.Any_Housing, "Any Housing" },                                                                                       // Basic Housing
-		{ NeedTypes.API_ExampleMod_API_ExampleMod_AxolotlHouse_housingNeed, "API_ExampleMod_API_ExampleMod_AxolotlHouse_housingNeed" }, // API_ExampleMod_API_ExampleMod_AxolotlHouse_housingNeed_displayName
-		{ NeedTypes.API_ExampleMod_API_ExampleMod_Borgor_complexFoodNeed, "API_ExampleMod_API_ExampleMod_Borgor_complexFoodNeed" }, 
-		{ NeedTypes.Beaver_Housing, "Beaver Housing" },                                                                                 // Beaver Housing
-		{ NeedTypes.Biscuits, "Biscuits" },                                                                                             // Biscuits
-		{ NeedTypes.Bloodthirst, "Bloodthirst" },                                                                                       // Brawling
-		{ NeedTypes.Boots, "Boots" },                                                                                                   // Boots
-		{ NeedTypes.Clothes, "Clothes" },                                                                                               // Coats
-		{ NeedTypes.Education, "Education" },                                                                                           // Education
-		{ NeedTypes.Fox_Housing, "Fox Housing" },                                                                                       // Fox Housing
-		{ NeedTypes.Frog_Housing, "Frog Housing" },                                                                                     // Frog Housing
-		{ NeedTypes.Harpy_Housing, "Harpy Housing" },                                                                                   // Harpy Housing
-		{ NeedTypes.Human_Housing, "Human Housing" },                                                                                   // Human Housing
-		{ NeedTypes.Jerky, "Jerky" },                                                                                                   // Jerky
-		{ NeedTypes.Leasiure, "Leasiure" },                                                                                             // Leisure
-		{ NeedTypes.Lizard_Housing, "Lizard Housing" },                                                                                 // Lizard Housing
-		{ NeedTypes.Luxury, "Luxury" },                                                                                                 // Luxury
-		{ NeedTypes.Paste, "Paste" },                                                                                                   // Paste
-		{ NeedTypes.Pickled_Goods, "Pickled Goods" },                                                                                   // Pickled Goods
-		{ NeedTypes.Pie, "Pie" },                                                                                                       // Pie
-		{ NeedTypes.Porridge, "Porridge" },                                                                                             // Porridge
-		{ NeedTypes.Religion, "Religion" },                                                                                             // Religion
-		{ NeedTypes.Skewer, "Skewer" },                                                                                                 // Skewers
-		{ NeedTypes.Treatment, "Treatment" },                                                                                           // Treatment
+		{ NeedTypes.Any_Housing, "Any Housing" },       // Basic Housing
+		{ NeedTypes.Beaver_Housing, "Beaver Housing" }, // Beaver Housing
+		{ NeedTypes.Biscuits, "Biscuits" },             // Biscuits
+		{ NeedTypes.Bloodthirst, "Bloodthirst" },       // Brawling
+		{ NeedTypes.Boots, "Boots" },                   // Boots
+		{ NeedTypes.Clothes, "Clothes" },               // Coats
+		{ NeedTypes.Education, "Education" },           // Education
+		{ NeedTypes.Fox_Housing, "Fox Housing" },       // Fox Housing
+		{ NeedTypes.Frog_Housing, "Frog Housing" },     // Frog Housing
+		{ NeedTypes.Harpy_Housing, "Harpy Housing" },   // Harpy Housing
+		{ NeedTypes.Human_Housing, "Human Housing" },   // Human Housing
+		{ NeedTypes.Jerky, "Jerky" },                   // Jerky
+		{ NeedTypes.Leasiure, "Leasiure" },             // Leisure
+		{ NeedTypes.Lizard_Housing, "Lizard Housing" }, // Lizard Housing
+		{ NeedTypes.Luxury, "Luxury" },                 // Luxury
+		{ NeedTypes.Paste, "Paste" },                   // Paste
+		{ NeedTypes.Pickled_Goods, "Pickled Goods" },   // Pickled Goods
+		{ NeedTypes.Pie, "Pie" },                       // Pie
+		{ NeedTypes.Porridge, "Porridge" },             // Porridge
+		{ NeedTypes.Religion, "Religion" },             // Religion
+		{ NeedTypes.Skewer, "Skewer" },                 // Skewers
+		{ NeedTypes.Treatment, "Treatment" },           // Treatment
 
 	};
 }

@@ -11,7 +11,6 @@ public enum TraderTypes
 {
 	Unknown = -1,
 	None,
-	API_ExampleMod_Wild_Bill,             // API_ExampleMod_Wild Bill_displayName - API_ExampleMod_Wild Bill_description
 	Trader_0_General,                     // Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
 	Trader_1_First_Dawn_Company,          // Zhorg - He might have <color=#e0e09f>cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture</color> for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
 	Trader_2_Brass_Order,                 // Old Farluf - He might have <color=#e0e09f>metal, fuel, tools, building materials, and a number of blueprints and perks</color> for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.
@@ -25,7 +24,7 @@ public enum TraderTypes
 	Trader_Glade_03,                      // Ruenhar Blightclaw
 
 
-	MAX = 12
+	MAX = 11
 }
 
 public static class TraderTypesExtensions
@@ -35,8 +34,8 @@ public static class TraderTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new TraderTypes[12];
-			for (int i = 0; i < 12; i++)
+			s_All = new TraderTypes[11];
+			for (int i = 0; i < 11; i++)
 			{
 				s_All[i] = (TraderTypes)(i+1);
 			}
@@ -52,7 +51,7 @@ public static class TraderTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of TraderTypes: " + type + "\n" + Environment.StackTrace);
-		return TypeToInternalName[TraderTypes.API_ExampleMod_Wild_Bill];
+		return TypeToInternalName[TraderTypes.Trader_0_General];
 	}
 	
 	public static TraderTypes ToTraderTypes(this string name)
@@ -114,7 +113,6 @@ public static class TraderTypesExtensions
 
 	internal static readonly Dictionary<TraderTypes, string> TypeToInternalName = new()
 	{
-		{ TraderTypes.API_ExampleMod_Wild_Bill, "API_ExampleMod_Wild Bill" },                           // API_ExampleMod_Wild Bill_displayName - API_ExampleMod_Wild Bill_description
 		{ TraderTypes.Trader_0_General, "Trader 0 - General" },                                         // Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
 		{ TraderTypes.Trader_1_First_Dawn_Company, "Trader 1 - First Dawn Company" },                   // Zhorg - He might have <color=#e0e09f>cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture</color> for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
 		{ TraderTypes.Trader_2_Brass_Order, "Trader 2 - Brass Order" },                                 // Old Farluf - He might have <color=#e0e09f>metal, fuel, tools, building materials, and a number of blueprints and perks</color> for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.
