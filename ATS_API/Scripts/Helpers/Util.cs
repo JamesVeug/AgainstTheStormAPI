@@ -280,6 +280,28 @@ public static class Util
         return find.Find(secondName);
     }
     
+    public static T GetOrAdd<T>(this Transform go) where T : Component
+    {
+        T component = go.GetComponent<T>();
+        if (component == null)
+        {
+            component = go.gameObject.AddComponent<T>();
+        }
+
+        return component;
+    }
+    
+    public static T GetOrAdd<T>(this GameObject go) where T : Component
+    {
+        T component = go.GetComponent<T>();
+        if (component == null)
+        {
+            component = go.AddComponent<T>();
+        }
+
+        return component;
+    }
+    
     public static string FullName(this UnityEngine.Object obj)
     {
         if (obj == null)

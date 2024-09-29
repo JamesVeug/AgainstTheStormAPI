@@ -86,10 +86,16 @@ public static class ModMenuTab
             }
             
             GameObject modSection = GameObject.Instantiate(sectionTemplate, content.transform);
-            GameObject.Destroy(modSection.FindChild("Header").SafeGetComponent<LocalizationText>());
-            modSection.FindChild("Header").SafeGetComponent<TMP_Text>().text = plugin.Metadata.Name + " v" + plugin.Metadata.Version;
-            modSection.name = modSection.FindChild("Header").GetComponent<TMP_Text>().text;
+            GameObject header = modSection.FindChild("Header");
+            GameObject.Destroy(header.SafeGetComponent<LocalizationText>());
+            header.SafeGetComponent<TMP_Text>().text = plugin.Metadata.Name + " v" + plugin.Metadata.Version;
+            modSection.name = header.GetComponent<TMP_Text>().text;
 
+            SimpleTooltipTrigger tooltipTrigger = header.GetOrAdd<SimpleTooltipTrigger>();
+            tooltipTrigger.target = header.GetComponent<RectTransform>();
+            tooltipTrigger.descKey = $"Name: {plugin.Metadata.Name}\n" +
+                                     $"GUID: {plugin.Metadata.GUID}\n" +
+                                     $"Version: {plugin.Metadata.Version}";
 
             // Go through all keys in the config file
             foreach (ConfigEntryBase entry in file.GetConfigEntries())
