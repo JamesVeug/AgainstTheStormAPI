@@ -26,7 +26,7 @@ public partial class BuildingManager
 
         // Plugin.Log.LogInfo($"Starting Building");
         B building = prefab.AddComponent<B>();
-        building.entrance = Util.FindChild(prefab.transform, "Entrance");
+        building.entrance = Util.FindChildRecursive(prefab.transform, "Entrance");
 
         // Plugin.Log.LogInfo($"Starting View");
         V view = prefab.AddComponent<V>();
@@ -34,7 +34,7 @@ public partial class BuildingManager
         // Plugin.Log.LogInfo($"Starting Scaffolding");
         var constructionAnimator = prefab.AddComponent<ScaffoldingConstructionAnimator>();
         view.constructionAnimator = constructionAnimator;
-        constructionAnimator.scaffoldingParent = Util.FindChild(prefab.transform, "ToRotate");
+        constructionAnimator.scaffoldingParent = Util.FindChildRecursive(prefab.transform, "ToRotate");
         constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer");
         constructionAnimator.unconstructedPosition = new Vector3(0, -3, 0);
         constructionAnimator.constructedPosition = new Vector3(0, 0, 0);
@@ -48,7 +48,7 @@ public partial class BuildingManager
         constructionAnimator.scaffoldingRising = new Vector2(0.01f, 0.8f);
 
         // Plugin.Log.LogInfo($"Starting AnimationsHooks");
-        Transform animationsHooks = Util.FindChild(prefab.transform, "AnimationsHooks");
+        Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks");
         // Plugin.Log.LogInfo($"Starting AnimationsHooks 2");
         building.villagersPositioner = animationsHooks.gameObject.AddComponent<VillagersPositioner>();
         
@@ -108,10 +108,10 @@ public partial class BuildingManager
         // }
 
         // Plugin.Log.LogInfo($"Starting icons");
-        view.entranceIcon = Util.FindChild(view.rotationParent, "Entrance").gameObject;
-        view.noBuildersIcon = Util.FindChild(view.uiParent, "NoBuildersIcon").gameObject;
-        view.sleepingIcon = Util.FindChild(view.uiParent, "SleepingIcon").gameObject;
-        view.noGoodsIcon = Util.FindChild(view.uiParent, "NoGoodsIcon").gameObject;
+        view.entranceIcon = Util.FindChildRecursive(view.rotationParent, "Entrance").gameObject;
+        view.noBuildersIcon = Util.FindChildRecursive(view.uiParent, "NoBuildersIcon").gameObject;
+        view.sleepingIcon = Util.FindChildRecursive(view.uiParent, "SleepingIcon").gameObject;
+        view.noGoodsIcon = Util.FindChildRecursive(view.uiParent, "NoGoodsIcon").gameObject;
         view.iconsLayout = layout;
 
         // Plugin.Log.LogInfo($"Starting panelBackgroundSound");
@@ -138,8 +138,8 @@ public partial class BuildingManager
         {
             // Plugin.Log.LogInfo($"Starting productionView");
             productionView.productonLoopSound = null;
-            productionView.noWorkersIcon = Util.FindChild(view.uiParent, "NoWorkersIcon").gameObject;
-            productionView.idleIcon = Util.FindChild(view.uiParent, "IdleIcon").gameObject;
+            productionView.noWorkersIcon = Util.FindChildRecursive(view.uiParent, "NoWorkersIcon").gameObject;
+            productionView.idleIcon = Util.FindChildRecursive(view.uiParent, "IdleIcon").gameObject;
             productionView.animator = prefab.GetComponent<Animator>();
         }
 
@@ -147,7 +147,7 @@ public partial class BuildingManager
         {
             campView.planOverlay = prefab.AddComponent<SimplePlanOverlay>();
 
-            Transform area = Util.FindChild(view.rotationParent, "Area");
+            Transform area = Util.FindChildRecursive(view.rotationParent, "Area");
             campView.area = area.gameObject.AddComponent<GridArea>();
 
             var mainGenerator = area.Find("MainArea").gameObject.AddComponent<MeshGridShapeWithEdgesGenerator>();
@@ -199,8 +199,8 @@ public partial class BuildingManager
         {
             workshopView.constructionAnimator = constructionAnimator;
             workshopView.productonLoopSound = workshopTemplate.view.productonLoopSound;
-            workshopView.noWorkersIcon = Util.FindChild(view.uiParent, "NoWorkersIcon").gameObject;
-            workshopView.idleIcon = Util.FindChild(view.uiParent, "IdleIcon").gameObject;
+            workshopView.noWorkersIcon = Util.FindChildRecursive(view.uiParent, "NoWorkersIcon").gameObject;
+            workshopView.idleIcon = Util.FindChildRecursive(view.uiParent, "IdleIcon").gameObject;
             workshopView.animator = prefab.GetComponent<Animator>();
             workshopView.planOverlay = prefab.AddComponent<SimplePlanOverlay>();
             workshopView.pressureIcon = GameObject.Instantiate(workshopTemplate.view.pressureIcon, view.uiParent);
@@ -208,7 +208,7 @@ public partial class BuildingManager
             workshopView.pressureIcon.transform.rotation = Quaternion.identity;
         }
 
-        if (Util.TryFindChild(prefab.transform, "BuildingDisplayIcon", out SpriteRenderer renderer, false))
+        if (Util.TryFindChildRecursive(prefab.transform, "BuildingDisplayIcon", out SpriteRenderer renderer, false))
         {
             renderer.sprite = displayIcon;
         }

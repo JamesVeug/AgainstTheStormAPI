@@ -45,10 +45,131 @@ public static class Util
         return properties;
     }
     
-    
-    public static Transform FindChild(Transform t, string name, bool errorIfNotFound=true)
+    public static string GetHierarchyPath(Transform t)
     {
-        Transform found = FindInternal(t, name);
+        string hierarchyPath = t.name;
+        while (t.parent != null)
+        {
+            t = t.parent;
+            hierarchyPath = t.name + "/" + hierarchyPath;
+        }
+
+        return t.gameObject.scene.name + ":" + hierarchyPath;
+    }
+    
+    public static T SafeGetComponent<T>(this GameObject go) where T : Component
+    {
+        if(go.TryGetComponent(out T component))
+        {
+            return component;
+        }
+        
+        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in {go.FullName()}!");
+        return component;
+    }
+    
+    public static T SafeGetComponent<T>(this Component go) where T : Component
+    {
+        if(go.TryGetComponent(out T component))
+        {
+            return component;
+        }
+        
+        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in {go.FullName()}!");
+        return component;
+    }
+    
+    public static T SafeGetComponentInChildren<T>(this Component go) where T : Component
+    {
+        T componentInChildren = go.GetComponentInChildren<T>();
+        if(componentInChildren != null)
+        {
+            return componentInChildren;
+        }
+        
+        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        return componentInChildren;
+    }
+    
+    public static T SafeGetComponentInChildren<T>(this GameObject go, bool includeInactive=false) where T : Component
+    {
+        T componentInChildren = go.GetComponentInChildren<T>(includeInactive);
+        if(componentInChildren != null)
+        {
+            return componentInChildren;
+        }
+        
+        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        return componentInChildren;
+    }
+    
+    public static T FindChild<T>(this GameObject t, string name, bool errorIfNotFound=true) where T : Component
+    {
+        Transform found = t.transform.Find(name);
+        if (found != null)
+        {
+            return SafeGetComponent<T>(found);
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+        }
+
+        return null;
+    }
+    
+    public static T FindChild<T>(this Component t, string name, bool errorIfNotFound=true) where T : Component
+    {
+        Transform found = t.transform.Find(name);
+        if (found != null)
+        {
+            return SafeGetComponent<T>(found);
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+        }
+
+        return null;
+    }
+    
+    public static GameObject FindChild(this GameObject t, string name, bool errorIfNotFound=true)
+    {
+        Transform found = t.transform.Find(name);
+        if (found != null)
+        {
+            return found.gameObject;
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+        }
+
+        return null;
+    }
+    
+    public static GameObject FindChild(this Component t, string name, bool errorIfNotFound=true)
+    {
+        Transform found = t.transform.Find(name);
+        if (found != null)
+        {
+            return found.gameObject;
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+        }
+
+        return null;
+    }
+    
+    public static Transform FindChild(this Transform t, string name, bool errorIfNotFound=true)
+    {
+        Transform found = t.Find(name);
         if (found != null)
         {
             return found;
@@ -56,17 +177,34 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.name}!");
+            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
     }
     
-    public static bool TryFindChild<T>(Component t, string name, out T found, bool errorIfNotFound=true) where T : Component
+    
+    public static Transform FindChildRecursive(this Transform t, string name, bool errorIfNotFound=true)
+    {
+        Transform found = FindRecursiveInternal(t, name);
+        if (found != null)
+        {
+            return found;
+        }
+
+        if (errorIfNotFound)
+        {
+            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+        }
+
+        return null;
+    }
+    
+    public static bool TryFindChildRecursive<T>(this Component t, string name, out T found, bool errorIfNotFound=true) where T : Component
     {
         found = default;
         
-        Transform transform = FindInternal(t.transform, name);
+        Transform transform = FindRecursiveInternal(t.transform, name);
         if (transform != null)
         {
             if (transform.TryGetComponent(out T component))
@@ -84,17 +222,17 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find child {name} in {t.name} with component {typeof(T).FullName}!");
+            Plugin.Log.LogError($"Could not find child {name} in {t.FullName()} with component {typeof(T).FullName}!");
         }
 
         return false;
     }
     
-    public static bool TryFindChild(Component t, string name, out GameObject found, bool errorIfNotFound=true)
+    public static bool TryFindChild(this Component t, string name, out GameObject found, bool errorIfNotFound=true)
     {
         found = default;
         
-        Transform transform = FindInternal(t.transform, name);
+        Transform transform = FindRecursiveInternal(t.transform, name);
         if (transform != null)
         {
             found = transform.gameObject;
@@ -103,13 +241,13 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} gameobject in {t.name}!");
+            Plugin.Log.LogError($"Could not find {name} gameobject in {t.FullName()}!");
         }
 
         return false;
     }
     
-    private static Transform FindInternal(Transform t, string name)
+    private static Transform FindRecursiveInternal(this Transform t, string name)
     {
         foreach (Transform child in t)
         {
@@ -121,7 +259,7 @@ public static class Util
         
         foreach (Transform child in t)
         {
-            Transform found = FindInternal(child, name);
+            Transform found = FindRecursiveInternal(child, name);
             if (found != null)
             {
                 return found;
@@ -131,9 +269,9 @@ public static class Util
         return null;
     }
     
-    public static Transform FindChild(Transform t, string name, string secondName)
+    public static Transform FindChild(this Transform t, string name, string secondName)
     {
-        Transform find = FindChild(t, name);
+        Transform find = FindChildRecursive(t, name);
         if (find == null)
         {
             return null;
@@ -155,12 +293,14 @@ public static class Util
         if (obj is GameObject)
         {
             go = obj as GameObject;
-            hierarchyPath = go.name + $" {obj.GetType().FullName}";
+            
+            hierarchyPath = GetHierarchyPath(go.transform);
         }
         else if(obj is Component component)
         {
             go = component.gameObject;
-            hierarchyPath = go.name + $" {obj.GetType().FullName}";
+            hierarchyPath = GetHierarchyPath(go.transform);
+            hierarchyPath += $" {obj.GetType().FullName}";
         }
         else
         {
