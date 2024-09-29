@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using ATS_API.Biomes;
 using ATS_API.Buildings;
 using ATS_API.Effects;
@@ -29,6 +30,8 @@ internal class Plugin : BaseUnityPlugin
     public static event Action PostTick;
     public static string PluginDirectory;
 
+    public static string ExportPath => Path.Combine(PluginDirectory, "Exports");
+    
     public static bool CoreGameLoaded
     {
         get;

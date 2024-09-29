@@ -1,3 +1,4 @@
+using System.IO;
 using Cysharp.Threading.Tasks;
 using Eremite.Services;
 using HarmonyLib;
@@ -17,13 +18,13 @@ public static partial class LocalizationManager
 
 
         // Exports all enums so we cna have updated code for the API
-        if (Configs.ExportEnumTypes && !string.IsNullOrEmpty(Configs.ExportEnumsPath))
+        if (Configs.ExportEnumTypes )
         {
-            WIKI.CreateAllEnumTypes(Configs.ExportEnumsPath);
+            WIKI.CreateAllEnumTypes(Path.Combine(Plugin.ExportPath, "Enums"));
         }
 
         // Exports all CSVs, so we can have updated data for the API
-        if (Configs.ExportCSVs && !string.IsNullOrEmpty(Configs.ExportCSVPath))
+        if (Configs.ExportCSVs)
         {
             WIKI.ExportCSVs();
         }

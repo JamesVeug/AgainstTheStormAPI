@@ -12,6 +12,7 @@ namespace ATS_API;
 
 public partial class WIKI
 {
+    
     /// <summary>
     /// Exports a bunch of data to CSV files so it can be loaded in excel or something
     /// TODO: Only works for Relics atm. Make it work for everything
@@ -54,7 +55,7 @@ public partial class WIKI
             csv.NextRow();
         }
 
-        csv.SaveAsCSV(Path.Combine(Configs.ExportCSVPath, "Exports", "Orders.csv"));
+        csv.SaveAsCSV(Path.Combine(Plugin.ExportPath, "CSV", "Orders.csv"));
     }
 
     private static void ExportRelicsAsCSV()
@@ -141,6 +142,6 @@ public partial class WIKI
             csv.NextRow();
         }
 
-        csv.SaveAsCSV(Path.Combine(Configs.ExportCSVPath, "Exports", "Relics.csv"));
+        csv.SaveAsCSV(Path.Combine(Plugin.ExportPath, "CSV", "Relics.csv"));
     }
 }

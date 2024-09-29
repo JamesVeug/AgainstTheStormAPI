@@ -19,8 +19,7 @@ public partial class WIKI
         // Quit if the directory does not exist
         if (!Directory.Exists(exportCSScriptsPath))
         {
-            Plugin.Log.LogError("Directory does not exist: " + exportCSScriptsPath);
-            return;
+            Directory.CreateDirectory(exportCSScriptsPath);
         }
 
         HashSet<T> set = new(list);
