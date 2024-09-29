@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.4R
+// Generated using Version 1.4.11R
 public enum EffectTypes
 {
 	Unknown = -1,
@@ -1857,6 +1857,7 @@ public enum EffectTypes
 	// NeedPerkEffectModel
 	FallenViceroyCommemoration_Beaver_Housing,                     // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	FallenViceroyCommemoration_Foxes_Housing,                      // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
+	FallenViceroyCommemoration_Frogs_Housing,                      // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	FallenViceroyCommemoration_Harpy_Housing,                      // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	FallenViceroyCommemoration_Humans_Housing,                     // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	FallenViceroyCommemoration_Lizards_Housing,                    // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
@@ -2807,7 +2808,7 @@ public enum EffectTypes
 	Vault_WoodcuttersResolvePenalty_normal, 
 
 
-	MAX = 2486
+	MAX = 2487
 }
 
 public static class EffectTypesExtensions
@@ -2817,8 +2818,8 @@ public static class EffectTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new EffectTypes[2486];
-			for (int i = 0; i < 2486; i++)
+			s_All = new EffectTypes[2487];
+			for (int i = 0; i < 2487; i++)
 			{
 				s_All[i] = (EffectTypes)(i+1);
 			}
@@ -4742,6 +4743,7 @@ public static class EffectTypesExtensions
 		// NeedPerkEffectModel
 		{ EffectTypes.FallenViceroyCommemoration_Beaver_Housing, "FallenViceroyCommemoration Beaver Housing" },                                             // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.FallenViceroyCommemoration_Foxes_Housing, "FallenViceroyCommemoration Foxes Housing" },                                               // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
+		{ EffectTypes.FallenViceroyCommemoration_Frogs_Housing, "FallenViceroyCommemoration Frogs Housing" },                                               // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.FallenViceroyCommemoration_Harpy_Housing, "FallenViceroyCommemoration Harpy Housing" },                                               // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.FallenViceroyCommemoration_Humans_Housing, "FallenViceroyCommemoration Humans Housing" },                                             // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.FallenViceroyCommemoration_Lizards_Housing, "FallenViceroyCommemoration Lizards Housing" },                                           // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.

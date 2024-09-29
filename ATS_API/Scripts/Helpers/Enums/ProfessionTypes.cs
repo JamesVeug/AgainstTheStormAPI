@@ -6,7 +6,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.4R
+// Generated using Version 1.4.11R
 public enum ProfessionTypes
 {
 	Unknown = -1,
