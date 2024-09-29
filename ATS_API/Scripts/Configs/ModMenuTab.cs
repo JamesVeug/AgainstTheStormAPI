@@ -77,7 +77,7 @@ public static class ModMenuTab
         Sprite textFieldBackground = dropdownTemplate.FindChild<Image>("Dropdown").sprite;
         
         // Get all types inheriting BaseUnityPlugin from all assemblies
-        foreach (PluginInfo plugin in Chainloader.PluginInfos.Values)
+        foreach (PluginInfo plugin in Chainloader.PluginInfos.Values.OrderBy(a=>a.Metadata.Name))
         {
             ConfigFile file = plugin.Instance.Config;
             if (file == null || file.Keys.Count == 0)
