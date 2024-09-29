@@ -62,32 +62,38 @@ public static partial class Input
 
         if (Serviceable.CommandLineArgsService.HasKey("-resetkeybinds"))
         {
-            Log.Info("Clearing keybinds!");
+            Plugin.Log.LogInfo("Clearing keybinds!");
             return;
         }
 
         MasterInputAsset.Disable();
         foreach (SavedInputConfig pair in savedInputs.configs)
         {
-            Log.Info("Loading keybinds for " + pair.modName + " with value " + pair.bindings);
+            Plugin.Log.LogInfo("Loading keybinds for " + pair.modName + " with value " + pair.bindings);
 
             string actionMapJSON = pair.actionMap;
             InputActionMap[] actionMap = InputActionMap.FromJson(actionMapJSON);
             if(actionMap.Length == 0)
             {
-                Log.Error($"Failed to load {pair.modName} action map from json: " + actionMapJSON);
+                Plugin.Log.LogError($"Failed to load {pair.modName} action map from json: " + actionMapJSON);
                 continue;
             }
             else if (actionMap.Length > 1)
             {
-                Log.Warning($"Loaded {actionMap.Length} action maps for {pair.modName}, using the first one.");
+                Plugin.Log.LogWarning($"Loaded {actionMap.Length} action maps for {pair.modName}, using the first one.");
             }
 
             InputActionMap map = actionMap[0];
-            MasterInputAsset.AddActionMap(map);
+            if(MasterInputAsset.FindActionMap(map.name) == null)
+            {
+                MasterInputAsset.AddActionMap(map);
+                map.LoadBindingOverridesFromJson(pair.bindings);
+            }
+            else
+            {
+                Plugin.Log.LogWarning($"Action map {map.name} already exists. Likely another mod already loaded this so your hotkeys may differ!");
+            }
             modNameToActionMaps[pair.modName] = map;
-
-            map.LoadBindingOverridesFromJson(pair.bindings);
         }
 
         MasterInputAsset.Enable();
