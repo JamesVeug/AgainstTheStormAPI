@@ -10,6 +10,8 @@ namespace ATS_API;
 
 public static partial class Input
 {
+    private static string CustomBindingsPath => Path.Combine(Application.persistentDataPath, "CustomBindings.save");
+    
     [HarmonyPatch(typeof(ClientPrefsService), nameof(ClientPrefsService.Reset))]
     [HarmonyPrefix]
     private static void ClientPrefsService_Reset()
@@ -38,22 +40,20 @@ public static partial class Input
             });
         }
 
-        string path = Path.Combine(Application.persistentDataPath, "CustomBindings.save");
-        JsonIO.SaveToFile(savedInputs, path);
+        JsonIO.SaveToFile(savedInputs, CustomBindingsPath);
     }
 
     [HarmonyPatch(typeof(ClientPrefsService), nameof(ClientPrefsService.LoadInputConfig))]
     [HarmonyPostfix]
     private static void ClientPrefsService_LoadInputConfig()
     {
-        string path = Path.Combine(Application.persistentDataPath, "CustomBindings.save");
-        if (!File.Exists(path))
+        if (!File.Exists(CustomBindingsPath))
         {
             Plugin.Log.LogInfo("No saved inputs found.");
             return;
         }
 
-        SavedInputs savedInputs = JsonIO.GetFromFile<SavedInputs>(path);
+        SavedInputs savedInputs = JsonIO.GetFromFile<SavedInputs>(CustomBindingsPath);
         if (savedInputs == null)
         {
             Plugin.Log.LogInfo("Couldn't load custom input json.");
