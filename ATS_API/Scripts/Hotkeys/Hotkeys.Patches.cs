@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ATS_API.Helpers;
 using Eremite;
 using Eremite.Services;
 using Eremite.View;
-using Eremite.View.HUD;
 using Eremite.View.Popups.GameMenu;
 using Eremite.View.Utils;
 using HarmonyLib;
@@ -14,7 +12,7 @@ using UnityEngine.InputSystem;
 
 namespace ATS_API;
 
-public static partial class Input
+public static partial class Hotkeys
 {
     [HarmonyPatch(typeof(KeyBindingsPanel), nameof(KeyBindingsPanel.OnEnable))]
     [HarmonyPrefix]
@@ -68,7 +66,7 @@ public static partial class Input
     {
         foreach (KeyValuePair<string, InputActionMap> pair in modNameToActionMaps)
         {
-            InputActionMap actionMap = Input.MasterInputAsset.FindActionMap(pair.Key);
+            InputActionMap actionMap = Hotkeys.MasterInputAsset.FindActionMap(pair.Key);
             if (actionMap == null)
             {
                 Plugin.Log.LogInfo($"Action map is null for mod {pair.Key}, skipping.");

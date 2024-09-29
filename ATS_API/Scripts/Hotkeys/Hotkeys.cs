@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 namespace ATS_API;
 
 [HarmonyPatch]
-public static partial class Input
+public static partial class Hotkeys
 {
     public class Hotkey
     {

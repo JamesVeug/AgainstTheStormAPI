@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 namespace ATS_API;
 
-public static partial class Input
+public static partial class Hotkeys
 {
     private static string CustomBindingsPath => Path.Combine(Application.persistentDataPath, "CustomBindings.save");
     

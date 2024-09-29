@@ -34,7 +34,7 @@ public class ModdedKeyboardSlots :MonoBehaviour
         Plugin.Log.LogInfo("Setting up key bindings. " + actionMap.actions.Count + " actions and " + slots.Count + " slots.");
         foreach (InputAction action in actionMap.actions)
         {
-            if (!Input.IsActionActive(action))
+            if (!Hotkeys.IsActionActive(action))
             {
                 continue;
             }

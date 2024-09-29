@@ -78,7 +78,7 @@ internal class Plugin : BaseUnityPlugin
             return;
         }
 
-        Input.Update();
+        Hotkeys.Update();
         
         GoodsManager.Tick();
         EffectManager.Tick();
