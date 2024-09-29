@@ -42,8 +42,8 @@ public static partial class Input
             {
                 map = new InputActionMap(pair.Key);
                 MasterInputAsset.AddActionMap(map);
-                modNameToActionMaps[pair.Key] = map;
             }
+            modNameToActionMaps[pair.Key] = map;
             
             foreach (Hotkey hotkey in pair.Value)
             {
