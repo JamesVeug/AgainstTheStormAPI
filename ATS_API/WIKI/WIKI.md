@@ -111,3 +111,57 @@ builder.AddDesiredGoods("[Mat Raw] Wood");
 builder.SetAmountOfGoods(20,30);
 builder.SetAvailableInAllBiomes();
 ```
+
+
+# Custom Race
+
+Custom races are still in the experimental phase and may not work as intended. Here's an example of how to create one using existing game data.
+
+```csharp
+RaceBuilder builder = new RaceBuilder(PluginInfo.PLUGIN_GUID, "Axolotl");
+builder.SetDisplayName("Axolotl");
+builder.SetPluralDisplayName("Axolotls");
+builder.SetDescription("Axolotls are a type of salamander that fully metamorphosed into land-dwelling creatures.");
+builder.SetIcon("Axolotl.png");
+builder.SetRoundIcon("AxolotlRound.png");
+builder.SetWideIcon("AxolotlWide.png");
+
+builder.AddCharacteristic(BuildingTagTypes.Rainwater, VillagerPerkTypes.Proficiency);
+builder.AddCharacteristic(BuildingTagTypes.Brewing, VillagerPerkTypes.Comfortable_Job);
+
+builder.AddNeed(NeedTypes.Any_Housing);
+builder.AddNeed(NeedTypes.Biscuits);
+
+CustomRaceNeed burgerNeed = RaceNeedFactory.ComplexFoodNeed(PluginInfo.PLUGIN_GUID, burger.NewGood.id, 7);
+builder.AddNeed(burgerNeed.ID);
+```
+
+Characteristics, Needs and housing all are currently being tested so some may not work as intended which is why documentation is limited at this time.
+
+Custom models are not supported atm, so they use the Harpy model by default.
+
+See the example mod for more code examples.
+
+
+# Custom Hotkeys
+
+Hotkeys are keybindings that the player can change in the options menu and when performed will trigger code within your mod.
+
+To create your own C# hotkey you can use the following code as an example. This will register a hotkey that when F1 is pressed will log "Hello!" to the console.
+
+```csharp
+Hotkeys.RegisterKey("My Mod Name", "dothething", "Log Hello", [KeyCode.F1], () =>
+{
+    Debug.Log("Hello"!);
+});
+```
+
+`"My Mod Name"` is what will to show as the header in the options menu. 
+
+`"dothething"` is the key that will be saved and loaded as an id for the action. So this needs to be unique and once your mod is released you should NEVER change this. 
+
+`"Log Hello"` is the text that will appear in the options menu.
+
+`[KeyCode.F1]` are the default keys that will trigger the hotkey. [See here for more KeyCodes](https://docs.unity3d.com/ScriptReference/KeyCode.html)
+
+Every set of keys with the same id will be saved in their own file when the user closes the KeyBindings menu. You can view these in `%localappdata%low/Eremite Games/Against the Storm/My Mod Name.save`

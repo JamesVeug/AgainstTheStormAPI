@@ -6,11 +6,42 @@ Against the Storm is a deeply complex game with tricky to navigate code for the 
 
 The API works as an in-between of your mod and the game by supplying helper methods that create new content and insert it into the game accordingly. This means that if the game updates and breaks your mod, the API will be updated to fix it and require little to no support from your end. (fingers crossed)
 
+![alt text](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/Github/CustomKeyBindings.png?raw=true "Custom Keybindings")
+![alt text](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/Github/ModsTab.png?raw=true "Mods tab for adjustable values")
+
+
+## How to install
+
+### Installation with Thunderstore (Recommended)
+1. Download and install the Thunderstore app for free from [here](https://thunderstore.io/)
+2. When the app is open search for the API mod and install it
+   - Be sure to install BepInEx using the app too!
+3. Run game using Thunderstore
+
+
+### Manual Installation
+1. Download latest [BepInEx](https://github.com/BepInEx/BepInEx/releases)
+2. Extract the contents of the zip into AgainstTheStorms folder that has the games .exe in it
+3. Run the game once so the BepInEx folder gets a plugins folder. [If the plugins folder does not get created then you installed it wrong.](https://docs.bepinex.dev/articles/user_guide/installation/index.html)
+4. Download the latest version of the mod [from Thunderstore](https://thunderstore.io/c/against-the-storm/p/ATS_API_Devs/API/) using the Manual Install button
+5. Extract the contents of the zip into the `Against the Storm/BepInEx/plugins` folder
 
 ## Help
 
+### Example Mod
+The API is worked on alongside the Example Mod mod which contains at least 1 of every new feature in the API to ensure everything is working as we expect.
+
+You're encouraged to view all the code and copy+paste anything you require into your own mod.
+
+If anything does not work please reach out on the discord!
+
+**Github:** https://github.com/JamesVeug/AgainstTheStormAPI/tree/master/ExampleMod
+
+**Thunderstore:** https://thunderstore.io/c/against-the-storm/p/ATS_API_Devs/ExampleMod/
+
+
 ### Discord
-If you require help with the mod, have ideas you want added, want to report a problem or want to contribute you can join our discord.
+If you require help with the mod, have ideas you want added, want to report a problem or just want to chat join our discord.
     
 https://discord.com/invite/ZfVWG86gsJ
 
@@ -28,10 +59,13 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Orders (Minimal)
 - New Buildings (Minimal)
 - New Recipes
+- New Races (Experimental)
 - Localization
+- Custom Hotkeys (Saving and rebinding included)
 
 ## Other stuff added
-- Enums that list everything in the game so you can easily see what items/orders exist and get their data without hassle.
+- Any options/configs that mods add can be modified in the options menu of the game.
+- Enums that list everything in the game, so you can easily see what items/orders exist and get their data without hassle.
 
 
 ## Contributors
