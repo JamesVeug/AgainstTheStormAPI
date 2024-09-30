@@ -13,11 +13,6 @@ public class ModdedKeyboardSlots :MonoBehaviour
     public List<KeyBindingSlot> slots = new List<KeyBindingSlot>();
     public int usedSlots = 0;
 
-    public void Start()
-    {
-        Plugin.Log.LogInfo("Modded keyboard slots started.");
-    }
-
     public void Initialize(string hotkeyName, Transform clone)
     {
         ModName = hotkeyName;
@@ -31,7 +26,6 @@ public class ModdedKeyboardSlots :MonoBehaviour
 
     public void SetupKeyboardSlots(InputActionMap actionMap, KeyBindingsPanel panel)
     {
-        Plugin.Log.LogInfo("Setting up key bindings. " + actionMap.actions.Count + " actions and " + slots.Count + " slots.");
         foreach (InputAction action in actionMap.actions)
         {
             if (!Hotkeys.IsActionActive(action))

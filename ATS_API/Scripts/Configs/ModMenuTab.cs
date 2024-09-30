@@ -82,6 +82,7 @@ public static class ModMenuTab
             ConfigFile file = plugin.Instance.Config;
             if (file == null || file.Keys.Count == 0)
             {
+                Plugin.Log.LogInfo($"Skipping {plugin.Metadata.Name} because it has no config file.");
                 continue;
             }
             
@@ -104,10 +105,10 @@ public static class ModMenuTab
                 AcceptableValueBase acceptableValues = entry.Description.AcceptableValues;
                 if(acceptableValues != null)
                 {
-                    if(acceptableValues.GetType() == typeof(AcceptableValueList<>))
+                    if(acceptableValues.GetType().GetGenericTypeDefinition() == typeof(AcceptableValueList<>))
                     {
                         var genericType = acceptableValues.GetType().GetGenericArguments()[0];
-                        var arrayOfObjects = acceptableValues.GetType().GetField("AcceptableValues").GetValue(acceptableValues);
+                        var arrayOfObjects = acceptableValues.GetType().GetProperty("AcceptableValues").GetGetMethod().Invoke(acceptableValues, null);
                         
                         // Dropdown of all possible choices
                         if (genericType == typeof(int))
@@ -152,23 +153,27 @@ public static class ModMenuTab
                             continue;
                         }
                     }
-                    else if (acceptableValues.GetType() == typeof(AcceptableValueRange<>))
+                    else if (acceptableValues.GetType().GetGenericTypeDefinition() == typeof(AcceptableValueRange<>))
                     {
                         // Slider
                         if (entrySettingType == typeof(int))
                         {
                             int min = (int)acceptableValues.GetType().GetProperty("MinValue").GetValue(acceptableValues);
-                            int max = (int)acceptableValues.GetType().GetField("MaxValue").GetValue(acceptableValues);
+                            int max = (int)acceptableValues.GetType().GetProperty("MaxValue").GetValue(acceptableValues);
                             AddIntSlider(sliderTemplate, modSection, entry, min, max);
                             continue;
                         }
                         else if (entrySettingType == typeof(float))
                         {
-                            float min = (float)acceptableValues.GetType().GetProperty("MinValue").GetValue(acceptableValues);
-                            float max = (float)acceptableValues.GetType().GetField("MaxValue").GetValue(acceptableValues);
+                            float min = (float)acceptableValues.GetType().GetProperty("MinValue").GetGetMethod().Invoke(acceptableValues, null);
+                            float max = (float)acceptableValues.GetType().GetProperty("MaxValue").GetGetMethod().Invoke(acceptableValues, null);
                             AddFloatSlider(sliderTemplate, modSection, entry, min, max);
                             continue;
                         }
+                    }
+                    else
+                    {
+                        Plugin.Log.LogError($"Unsupported acceptableValues type {acceptableValues.GetType().FullName} for {entry.Definition.Key}");
                     }
                 }
                 
@@ -318,22 +323,12 @@ public static class ModMenuTab
 
     private static void PopulateToolTip(GameObject gameObject, ConfigEntryBase entry)
     {
-        if (string.IsNullOrEmpty(entry.Description.Description))
+        if (!gameObject.TryGetComponent(out SimpleTooltipTrigger tooltip))
         {
-            if(gameObject.TryGetComponent(out SimpleTooltipTrigger tooltip))
-            {
-                GameObject.Destroy(tooltip);
-            }
+            tooltip = gameObject.AddComponent<SimpleTooltipTrigger>();
+            tooltip.target = gameObject.GetComponent<RectTransform>();
         }
-        else
-        {
-            if (!gameObject.TryGetComponent(out SimpleTooltipTrigger tooltip))
-            {
-                tooltip = gameObject.AddComponent<SimpleTooltipTrigger>();
-                tooltip.target = gameObject.GetComponent<RectTransform>();
-            }
-            tooltip.descKey = entry.Description.Description;
-        }
+        tooltip.descKey = entry.Description.Description + "\nDefault: " + entry.DefaultValue;
     }
 
     private static void AddFloatSlider(GameObject sliderTemplate, GameObject modSection, ConfigEntryBase entry, float min, float max)
@@ -343,18 +338,21 @@ public static class ModMenuTab
         PopulateToolTip(slider, entry);
         
         GameObject.Destroy(slider.FindChild<LocalizationText>("Label"));
-        slider.FindChild<TMP_Text>("Label").text = entry.Definition.Key;
+        TMP_Text label = slider.FindChild<TMP_Text>("Label");
+        label.text = entry.Definition.Key;
         Slider sliderComponent = slider.SafeGetComponentInChildren<Slider>();
         sliderComponent.minValue = min;
         sliderComponent.maxValue = max;
         sliderComponent.onValueChanged.AddListener((value) =>
         {
             entry.BoxedValue = value;
+            label.text = entry.Definition.Key + " (" + entry.BoxedValue + ")";
         });
         
         OptionsMenuEnabled += () =>
         {
             sliderComponent.value = (float)entry.BoxedValue;
+            label.text = entry.Definition.Key + " (" + entry.BoxedValue + ")";
         };
     }
 
@@ -365,18 +363,21 @@ public static class ModMenuTab
         PopulateToolTip(slider, entry);
         
         GameObject.Destroy(slider.FindChild<LocalizationText>("Label"));
-        Util.FindChild(slider, "Label").SafeGetComponent<TMP_Text>().text = entry.Definition.Key;
+        TMP_Text label = Util.FindChild(slider, "Label").SafeGetComponent<TMP_Text>();
+        label.text = entry.Definition.Key;
         Slider sliderComponent = slider.SafeGetComponentInChildren<Slider>();
         sliderComponent.minValue = min;
         sliderComponent.maxValue = max;
         sliderComponent.onValueChanged.AddListener((value) =>
         {
             entry.BoxedValue = (int)value;
+            label.text = entry.Definition.Key + " (" + entry.BoxedValue + ")";
         });
         
         OptionsMenuEnabled += () =>
         {
             sliderComponent.value = (int)entry.BoxedValue;
+            label.text = entry.Definition.Key + " (" + entry.BoxedValue + ")";
         };
     }
 

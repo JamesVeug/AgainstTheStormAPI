@@ -56,7 +56,7 @@ public static partial class Hotkeys
     
     public static void RegisterKey(string modName, Hotkey hotkey)
     {
-        Plugin.Log.LogInfo($"Registering key {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
+        LogInfo($"Registering key {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
         if(!pendingHotkeys.TryGetValue(modName, out var hotkeys))
         {
             hotkeys = new List<Hotkey>();
@@ -104,7 +104,7 @@ public static partial class Hotkeys
 
     private static void AddHotkey(string modName, InputActionMap actionMap, Hotkey hotkey)
     {
-        Plugin.Log.LogInfo($"Adding hotkey {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
+        LogInfo($"Adding hotkey {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
         List<string> codes = hotkey.codes;
         string keyName = hotkey.keyName;
         Action<InputAction.CallbackContext> callback = hotkey.onCallback;
@@ -139,7 +139,7 @@ public static partial class Hotkeys
             }
             else
             {
-                Plugin.Log.LogError("More than 3 key codes are not supported.");
+                LogError("More than 3 key codes are not supported.");
                 return;
             }
         }
@@ -158,17 +158,17 @@ public static partial class Hotkeys
     {
         action.performed += ctx =>
         {
-            Plugin.Log.LogInfo($"{keyName} action performed!");
+            LogInfo($"{keyName} action performed!");
             callback.Invoke(ctx);
         };
         action.canceled += ctx =>
         {
-            Plugin.Log.LogInfo($"{keyName} action canceled!");
+            LogInfo($"{keyName} action canceled!");
             callback.Invoke(ctx);
         };
         action.started += ctx =>
         {
-            Plugin.Log.LogInfo($"{keyName} action started!");
+            LogInfo($"{keyName} action started!");
             callback.Invoke(ctx);
         };
     }
@@ -301,4 +301,19 @@ public static partial class Hotkeys
         { KeyCode.Alpha9, "<Keyboard>/9" },
         { KeyCode.Alpha0, "<Keyboard>/0" }
     };
+    
+    private static void LogError(string message)
+    {
+        Plugin.Log.LogError(message);
+    }
+    
+    private static void LogInfo(string message)
+    {
+        Plugin.Log.LogInfo(message);
+    }
+    
+    private static void LogWarning(string message)
+    {
+        Plugin.Log.LogWarning(message);
+    }
 }
