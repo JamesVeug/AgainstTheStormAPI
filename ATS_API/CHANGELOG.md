@@ -1,5 +1,10 @@
+# 2.1.0
+- Bumped ATS version to 1.4.11R
+- Options/Configs for mods that can be modified will show in the options menu now
+- Improved support for custom hotkeys that appear in the options menu too
+
 # 2.0.0 - Contains mod breaking changes.
-- Bumped ATS version to 1.4.4v + DLC
+- Bumped ATS version to 1.4.4R
   - Updated Enum helpers
 - Added Custom race support (first pass)
 - Added ResolveEffectBuilder
