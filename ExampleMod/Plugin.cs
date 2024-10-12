@@ -30,6 +30,7 @@ public partial class Plugin : BaseUnityPlugin
         CreateGoods();
         CreateCornerstones();
         CreateTrader();
+        CreateDifficulty();
         
         if (AssetBundleHelper.TryLoadAssetBundleFromFile("ats_examplemod", out AssetBundle))
         {

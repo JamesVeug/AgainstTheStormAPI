@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using ATS_API.Biomes;
 using ATS_API.Buildings;
+using ATS_API.Difficulties;
 using ATS_API.Effects;
 using ATS_API.Goods;
 using ATS_API.Helpers;
@@ -80,6 +81,7 @@ internal class Plugin : BaseUnityPlugin
 
         Hotkeys.Update();
         
+        DifficultyManager.Tick();
         GoodsManager.Tick();
         EffectManager.Tick();
         TraderManager.Tick();
@@ -105,6 +107,7 @@ internal class Plugin : BaseUnityPlugin
     [HarmonyPostfix]
     private static void PostSetupMainController()
     {
+        DifficultyManager.Instantiate();
         RecipeManager.Instantiate();
         GoodsManager.Instantiate();
         EffectManager.Instantiate();
