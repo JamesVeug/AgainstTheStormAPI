@@ -8,9 +8,9 @@ namespace ATS_API.Localization;
 
 public static partial class LocalizationManager
 {
-    private static readonly Dictionary<string, LanguageDictionary> s_pendingLanguageStrings = new();
+    private static readonly Dictionary<string, Dictionary<SystemLanguage, string>> s_pendingLanguageStrings = new();
     
-    private static readonly Dictionary<SystemLanguage, LanguageDictionary> s_languageStrings = new();
+    private static readonly Dictionary<string, Dictionary<SystemLanguage, string>> s_newStrings = new();
 
     private static bool m_isDirty = false;
     
@@ -27,40 +27,59 @@ public static partial class LocalizationManager
 
     private static void Sync()
     {
-        TextsService textsService = (TextsService)MB.TextsService;
-        if (s_pendingLanguageStrings.TryGetValue(textsService.CurrentLocaCode, out LanguageDictionary dic))
+        SystemLanguage language = CodeToLanguage(MB.TextsService.CurrentLocaCode);
+        foreach (KeyValuePair<string,Dictionary<SystemLanguage,string>> pair in s_pendingLanguageStrings)
         {
-            foreach (KeyValuePair<string, string> pair in dic)
-            {
-                textsService.texts[pair.Key] = pair.Value;
-            }
+            AddKeyToTextService(pair.Key, pair.Value, language);
         }
         s_pendingLanguageStrings.Clear();
     }
 
-    public static async UniTask LoadAllLanguageStrings()
+    private static void AddKeyToTextService(string key, Dictionary<SystemLanguage,string> translations, SystemLanguage language)
     {
-        Plugin.Log.LogInfo("Loading all language strings...");
-        foreach (string languageCode in MB.TextsService.GetSupportedLanguages())
+        TextsService textsService = (TextsService)MB.TextsService;
+        
+        if (!translations.TryGetValue(language, out string value))
         {
-            var dictionary = await ((TextsService)MB.TextsService).GetTextsFromFile(languageCode);
-            
-            SystemLanguage language = CodeToLanguage(languageCode);
-            s_languageStrings[language] = new LanguageDictionary(dictionary);
+            // Specified language does not exist
+            if(language != SystemLanguage.English && translations.TryGetValue(SystemLanguage.English, out string englishValue))
+            {
+                // Fallback to English
+                value = englishValue;
+            }
+            else
+            {
+                // Fallback to first language
+                value = translations.Values.GetEnumerator().Current;
+            }
         }
-        Plugin.Log.LogInfo("All language strings loaded. (Count: " + s_languageStrings.Count + ")");
+        
+        // Add key to the game so it can be displayed
+        textsService.texts[key] = value;
+        
+        Plugin.Log.LogInfo($"Added key: {key} with value: {value}");
     }
 
     public static void AddString(string key, string value, SystemLanguage language = SystemLanguage.English)
     {
         string languageCode = LanguageToCode(language);
-        if (!s_pendingLanguageStrings.TryGetValue(languageCode, out LanguageDictionary dic))
+        
+        // Queue string to sync later
+        if (!s_pendingLanguageStrings.TryGetValue(languageCode, out Dictionary<SystemLanguage, string> pendingDictionary))
         {
-            dic = new LanguageDictionary();
-            s_pendingLanguageStrings[languageCode] = dic;
+            pendingDictionary = new Dictionary<SystemLanguage, string>();
+            s_pendingLanguageStrings[languageCode] = pendingDictionary;
+        }
+        
+        // Record all new strings for when the language is changed
+        if(!s_newStrings.TryGetValue(key, out Dictionary<SystemLanguage, string> newStringsDictionary))
+        {
+            newStringsDictionary = new Dictionary<SystemLanguage, string>();
+            s_newStrings[key] = newStringsDictionary;
         }
 
-        dic[key] = value;
+        newStringsDictionary[language] = value;
+        pendingDictionary[language] = value;
         m_isDirty = true;
     }
 
@@ -71,23 +90,6 @@ public static partial class LocalizationManager
         string key = guidPrefix + name + "_" + keySuffix;
         AddString(key, value, language);
         return key;
-    }
-    
-    /// <summary>
-    /// Requires LoadAllLanguageStrings to be called at least once
-    /// </summary>
-    public static Dictionary<SystemLanguage, string> GetAllTranslationsFromKey(string key)
-    {
-        Dictionary<SystemLanguage, string> translations = new Dictionary<SystemLanguage, string>(s_languageStrings.Count);
-        foreach (KeyValuePair<SystemLanguage, LanguageDictionary> pair in s_languageStrings)
-        {
-            if(pair.Value.TryGetValue(key, out string value))
-            {
-                translations[pair.Key] = value;
-            }
-        }
-
-        return translations;
     }
 
     public static string LanguageToCode(SystemLanguage language)
@@ -262,5 +264,35 @@ public static partial class LocalizationManager
             default:
                 return SystemLanguage.English; //Default to English if the language is not in the list
         }
+
+        // public static async UniTask LoadAllLanguageStrings()
+        // {
+        //     Plugin.Log.LogInfo("Loading all language strings...");
+        //     foreach (string languageCode in MB.TextsService.GetSupportedLanguages())
+        //     {
+        //         var dictionary = await ((TextsService)MB.TextsService).GetTextsFromFile(languageCode);
+        //         
+        //         SystemLanguage language = CodeToLanguage(languageCode);
+        //         s_languageStrings[language] = new LanguageDictionary(dictionary);
+        //     }
+        //     Plugin.Log.LogInfo("All language strings loaded. (Count: " + s_languageStrings.Count + ")");
+        // }
+    
+        /// <summary>
+        /// Requires LoadAllLanguageStrings to be called at least once
+        /// </summary>
+        // public static Dictionary<SystemLanguage, string> GetAllTranslationsFromKey(string key)
+        // {
+        //     Dictionary<SystemLanguage, string> translations = new Dictionary<SystemLanguage, string>(s_languageStrings.Count);
+        //     foreach (KeyValuePair<SystemLanguage, LanguageDictionary> pair in s_languageStrings)
+        //     {
+        //         if(pair.Value.TryGetValue(key, out string value))
+        //         {
+        //             translations[pair.Key] = value;
+        //         }
+        //     }
+        //
+        //     return translations;
+        // }
     }
 }
