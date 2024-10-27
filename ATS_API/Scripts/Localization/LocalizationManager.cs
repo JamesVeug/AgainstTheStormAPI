@@ -41,16 +41,11 @@ public static partial class LocalizationManager
         
         if (!translations.TryGetValue(language, out string value))
         {
-            // Specified language does not exist
-            if(language != SystemLanguage.English && translations.TryGetValue(SystemLanguage.English, out string englishValue))
+            // Don't have a translation for the current language
+            // See if we can show something else instead
+            if (!TryGetFallbackValue(translations, language, out value))
             {
-                // Fallback to English
-                value = englishValue;
-            }
-            else
-            {
-                // Fallback to first language
-                value = translations.Values.GetEnumerator().Current;
+                return;
             }
         }
         
@@ -58,6 +53,40 @@ public static partial class LocalizationManager
         textsService.texts[key] = value;
         
         Plugin.Log.LogInfo($"Added key: {key} with value: {value}");
+    }
+    
+    private static bool TryGetFallbackValue(Dictionary<SystemLanguage, string> translations, SystemLanguage language, out string value)
+    {
+        if (translations.Count == 0)
+        {
+            value = null;
+            return false;
+        }
+        
+        // Specified language does not exist
+        if (language == SystemLanguage.ChineseTraditional && translations.TryGetValue(SystemLanguage.ChineseSimplified, out value))
+        {
+            // ChineseTraditional Fallback to ChineseSimplified
+            return true;
+        }
+        
+        // Specified language does not exist
+        if (language == SystemLanguage.ChineseSimplified && translations.TryGetValue(SystemLanguage.ChineseTraditional, out value))
+        {
+            // ChineseSimplified Fallback to ChineseTraditional
+            return true;
+        }
+        
+        // No fallbacks - try and use english for consistency
+        if (language != SystemLanguage.English && translations.TryGetValue(SystemLanguage.English, out value))
+        {
+            // Fallback to English
+            return true;
+        }
+        
+        // No english. Try anything
+        value = translations.Values.GetEnumerator().Current;
+        return true;
     }
 
     public static void AddString(string key, string value, SystemLanguage language = SystemLanguage.English)
