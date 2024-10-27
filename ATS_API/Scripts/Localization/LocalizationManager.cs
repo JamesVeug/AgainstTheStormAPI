@@ -63,12 +63,13 @@ public static partial class LocalizationManager
     public static void AddString(string key, string value, SystemLanguage language = SystemLanguage.English)
     {
         string languageCode = LanguageToCode(language);
+        SystemLanguage internalLanguage = CodeToLanguage(languageCode); // Some languages shared LanguageCode so this keeps it consistent
         
         // Queue string to sync later
-        if (!s_pendingLanguageStrings.TryGetValue(languageCode, out Dictionary<SystemLanguage, string> pendingDictionary))
+        if (!s_pendingLanguageStrings.TryGetValue(key, out Dictionary<SystemLanguage, string> pendingDictionary))
         {
             pendingDictionary = new Dictionary<SystemLanguage, string>();
-            s_pendingLanguageStrings[languageCode] = pendingDictionary;
+            s_pendingLanguageStrings[key] = pendingDictionary;
         }
         
         // Record all new strings for when the language is changed
@@ -78,8 +79,8 @@ public static partial class LocalizationManager
             s_newStrings[key] = newStringsDictionary;
         }
 
-        newStringsDictionary[language] = value;
-        pendingDictionary[language] = value;
+        newStringsDictionary[internalLanguage] = value;
+        pendingDictionary[internalLanguage] = value;
         m_isDirty = true;
     }
 
@@ -111,7 +112,10 @@ public static partial class LocalizationManager
             case SystemLanguage.Catalan:
                 return "ca";
             case SystemLanguage.Chinese:
-                return "zh";
+            case SystemLanguage.ChineseSimplified:
+                return "zh-CN";
+            case SystemLanguage.ChineseTraditional:
+                return "zh-TW";
             case SystemLanguage.Czech:
                 return "cs";
             case SystemLanguage.Danish:
@@ -197,8 +201,10 @@ public static partial class LocalizationManager
                 return SystemLanguage.Bulgarian;
             case "ca":
                 return SystemLanguage.Catalan;
-            case "zh":
-                return SystemLanguage.Chinese;
+            case "zh-CN":
+                return SystemLanguage.ChineseSimplified;
+            case "zh-TW":
+                return SystemLanguage.ChineseTraditional;
             case "cs":
                 return SystemLanguage.Czech;
             case "da":
