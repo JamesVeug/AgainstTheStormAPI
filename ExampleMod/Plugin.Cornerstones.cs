@@ -3,6 +3,7 @@ using ATS_API.Helpers;
 using Eremite.Model;
 using Eremite.Model.Effects;
 using Eremite.Model.Effects.Hooked;
+using UnityEngine;
 using TextArgType = Eremite.Model.Effects.Hooked.TextArgType;
 
 namespace ExampleMod;
@@ -29,6 +30,8 @@ public partial class Plugin
         builder.SetDisplayName("Modding Tools");
         builder.SetDescription("Modders have assembled new tools that bring in new talent. " +
                                 "Every {0} new Villagers gain +{1} Global Resolve.");
+        
+        
         builder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), (SourceType.HookedEffect, TextArgType.Amount, 0));
         builder.SetPreviewDescription("+{0} Global Resolve");
         builder.SetPreviewDescriptionArgs((HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked, 0));
@@ -40,6 +43,13 @@ public partial class Plugin
         // Example if you had to rename something and it broke your save. This corrects your save data to use the right name. 
         GlobalResolveEffectEffectModel model = (GlobalResolveEffectEffectModel)builder.EffectModel.hookedEffects[builder.EffectModel.hookedEffects.Length - 1];
         EffectManager.AddPreviouslyNamedEffect("API_ExampleMod_UniteResolve_resolve_effect_model", model.effect.name);
+        
+        // Localization
+        builder.SetDisplayName("模组工具", SystemLanguage.ChineseSimplified);
+        builder.SetDescription("模组制作者已经组装了新的工具，吸引了新的人才。每 {0} 个新村民获得 +{1} 全局决心。", SystemLanguage.ChineseSimplified);
+        
+        builder.SetDisplayName("Outils de modding", SystemLanguage.French);
+        builder.SetDescription("Les moddeurs ont assemblé de nouveaux outils qui attirent de nouveaux talents. Chaque {0} nouveaux villageois gagnent +{1} de résolution globale.", SystemLanguage.French);
     }
     
     private void CreateGoodsRawProductionCornerstone()

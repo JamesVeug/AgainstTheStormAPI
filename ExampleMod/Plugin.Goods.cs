@@ -1,4 +1,5 @@
 ﻿using ATS_API.Goods;
+using UnityEngine;
 
 namespace ExampleMod;
 
@@ -15,7 +16,9 @@ public partial class Plugin
     {
         diamonds = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Diamonds", "Diamonds.png");
         diamonds.SetDisplayName("Diamonds");
+        diamonds.SetDisplayName("钻石", SystemLanguage.Chinese);
         diamonds.SetDescription("Shiny and worth a lot of money. but not strong enough to be used as Armor.");
+        diamonds.SetDescription("闪闪发亮，值很多钱。但强度不足以用作盔甲.", SystemLanguage.Chinese);
         diamonds.SetCategory("Trade Goods");
         diamonds.SetTraderSellValue(40);
         diamonds.CanBeSoldToPlayer(3, 35);
@@ -25,7 +28,9 @@ public partial class Plugin
         
         lpg = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "LPG", "LPG.png");
         lpg.SetDisplayName("LPG");
+        lpg.SetDisplayName("液化石油ガス", SystemLanguage.Japanese);
         lpg.SetDescription("A clean and efficient fuel.");
+        lpg.SetDescription("クリーンで効率的な燃料。", SystemLanguage.Japanese);
         lpg.SetCategory("Fuel");
         lpg.SetTraderSellValue(17f);
         lpg.CanBeSoldToPlayer(10, 29f);
@@ -34,7 +39,9 @@ public partial class Plugin
         
         kiwiFruit = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Kiwi Fruit", "KiwiFruit.png");
         kiwiFruit.SetDisplayName("Kiwi Fruit");
+        kiwiFruit.SetDisplayName("Киви", SystemLanguage.Russian);
         kiwiFruit.SetDescription("Sour and sweet fruit that's great for a snack. Eat with a spoon.");
+        kiwiFruit.SetDescription("Кислые и сладкие фрукты, которые отлично подходят для перекуса. Ешьте ложкой.");
         kiwiFruit.SetCategory("Food");
         kiwiFruit.SetTraderSellValue(2.5f);
         kiwiFruit.CanBeSoldToPlayer(30, 5.0f);
