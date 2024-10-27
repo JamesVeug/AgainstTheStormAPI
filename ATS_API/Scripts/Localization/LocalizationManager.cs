@@ -115,7 +115,7 @@ public static partial class LocalizationManager
             case SystemLanguage.ChineseSimplified:
                 return "zh-CN";
             case SystemLanguage.ChineseTraditional:
-                return "zh-TW";
+                return "zh-CT"; // Normally this is TW but ATS uses CT for traditional
             case SystemLanguage.Czech:
                 return "cs";
             case SystemLanguage.Danish:
@@ -203,7 +203,7 @@ public static partial class LocalizationManager
                 return SystemLanguage.Catalan;
             case "zh-CN":
                 return SystemLanguage.ChineseSimplified;
-            case "zh-TW":
+            case "zh-CT":
                 return SystemLanguage.ChineseTraditional;
             case "cs":
                 return SystemLanguage.Czech;
