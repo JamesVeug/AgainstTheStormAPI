@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Buildings;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace ATS_API.Buildings;
 
-public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
+public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
 {
     public string Name => m_name;
     public string GUID => m_guid;
@@ -107,9 +108,9 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.displayName = new LocaText() { key = key };
     }
 
-    public virtual void SetDescription(string description)
+    public virtual void SetDescription(string description, SystemLanguage systemLanguage = SystemLanguage.English)
     {
-        m_buildingModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description);
+        m_buildingModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description, systemLanguage);
     }
     
     public virtual void SetDescriptionKey(string key)
@@ -117,9 +118,9 @@ public class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
         m_buildingModel.description = new LocaText() { key = key };
     }
     
-    public void SetLabel(string label)
+    public void SetLabel(string label, SystemLanguage systemLanguage = SystemLanguage.English)
     {
-        m_buildingModel.displayLabel = LocalizationManager.ToLabelModel(m_guid, m_name, "displayLabel", label);
+        m_buildingModel.displayLabel = LocalizationManager.ToLabelModel(m_guid, m_name, "displayLabel", label, systemLanguage);
     }
 
     /// <summary>

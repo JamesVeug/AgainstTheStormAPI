@@ -49,19 +49,28 @@ public partial class TraderBuilder
         m_traderModel.displayName = LocalizationManager.ToLocaText(m_guid, m_name, "displayName", displayName, systemLanguage);
     }
 
-    public void SetDescription(string description)
+    public void SetDescription(string description, SystemLanguage systemLanguage = SystemLanguage.English)
     {
-        m_traderModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description);
+        m_traderModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description, systemLanguage);
     }
 
-    public void SetDialogue(string description)
+    public void SetDialogue(string description, SystemLanguage systemLanguage = SystemLanguage.English)
     {
-        m_traderModel.dialogue = LocalizationManager.ToLocaText(m_guid, m_name, "dialogue", description);
+        m_traderModel.dialogue = LocalizationManager.ToLocaText(m_guid, m_name, "dialogue", description, systemLanguage);
     }
     
-    public void SetLabel(string label)
+    public void SetLabel(string label, SystemLanguage systemLanguage = SystemLanguage.English)
     {
-        m_traderModel.label = LocalizationManager.ToLabelModel(m_guid, m_name, "label", label);
+        m_traderModel.label = LocalizationManager.ToLabelModel(m_guid, m_name, "label", label, systemLanguage);
+    }
+
+    /// <summary>
+    /// Optional. Most Traders are blank by default
+    /// </summary>
+    /// <param name="description"></param>
+    public void SetAssaultLockedText(string description, SystemLanguage systemLanguage = SystemLanguage.English)
+    {
+        m_traderModel.assaultLockedTooltipText = LocalizationManager.ToLocaText(m_guid, m_name, "assaultLockedTooltipText", description, systemLanguage);
     }
 
     public void SetStayingTime(float time)
@@ -72,15 +81,6 @@ public partial class TraderBuilder
     public void SetArrivalTime(float time)
     {
         m_traderModel.arrivalTime = time;
-    }
-
-    /// <summary>
-    /// Optional. Most Traders are blank by default
-    /// </summary>
-    /// <param name="description"></param>
-    public void SetAssaultLockedText(string description)
-    {
-        m_traderModel.assaultLockedTooltipText = LocalizationManager.ToLocaText(m_guid, m_name, "assaultLockedTooltipText", description);
     }
 
     public void SetAssaultData(int minVillagersKilled=3, int maxVillagersKilled=5, float percentageOfStolenGoods=0.25f, float percentageOfStolenEffects=0.25f, bool canAssault=true)

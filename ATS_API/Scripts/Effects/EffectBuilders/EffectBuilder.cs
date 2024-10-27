@@ -1,4 +1,5 @@
-﻿using ATS_API.Helpers;
+﻿using System;
+using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Model;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace ATS_API.Effects;
 /// See helper methods to see how to acquire them in-game
 /// </summary>
 /// <typeparam name="T">The type you want to create</typeparam>
-public class EffectBuilder<T> : IEffectBuilder where T : EffectModel 
+public partial class EffectBuilder<T> : IEffectBuilder where T : EffectModel 
 {
     public string Name => m_name;
     public string GUID => m_guid;
@@ -94,9 +95,9 @@ public class EffectBuilder<T> : IEffectBuilder where T : EffectModel
         m_effectModel.displayName = new LocaText() { key = key };
     }
 
-    public virtual void SetDescription(string description)
+    public virtual void SetDescription(string description, SystemLanguage systemLanguage=SystemLanguage.English)
     {
-        m_effectModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description);
+        m_effectModel.description = LocalizationManager.ToLocaText(m_guid, m_name, "description", description, systemLanguage);
     }
     
     public virtual void SetDescriptionKey(string key)

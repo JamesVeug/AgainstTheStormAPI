@@ -1,4 +1,5 @@
-﻿using ATS_API.Effects;
+﻿using System;
+using ATS_API.Effects;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Model;
@@ -9,7 +10,13 @@ namespace ATS_API.Needs;
 
 public static class RaceNeedFactory
 {
-    public static CustomRaceNeed HousingNeed(string guid, RaceTypes race, BuildingTypes building, string displayName, string description, Sprite icon, int resolve = 3)
+    [Obsolete("Use HousingNeed(....icon, resolve, SystemLanguage language) instead", true)]
+    private static CustomRaceNeed HousingNeed(string guid, RaceTypes race, BuildingTypes building, string displayName, string description, Sprite icon, int resolve = 3)
+    {
+        return HousingNeed(guid, race, building, displayName, description, icon, resolve, SystemLanguage.English);
+    }
+    
+    public static CustomRaceNeed HousingNeed(string guid, RaceTypes race, BuildingTypes building, string displayName, string description, Sprite icon, int resolve = 3, SystemLanguage language = SystemLanguage.English)
     {
         string buildingName = building.ToName();
         string needName = buildingName + "_housingNeed";
@@ -26,8 +33,8 @@ public static class RaceNeedFactory
 
         var effect = EffectManager.CreateResolveEffect<ResolveEffectModel>(guid, needName + "_resolveEffect");
         effect.Model.icon = icon;
-        effect.Model.displayName = LocalizationManager.ToLocaText(guid, needName, "displayName", displayName);
-        effect.Model.description = LocalizationManager.ToLocaText(guid, needName, "description", description);
+        effect.Model.displayName = LocalizationManager.ToLocaText(guid, needName, "displayName", displayName, language);
+        effect.Model.description = LocalizationManager.ToLocaText(guid, needName, "description", description, language);
         effect.Model.resolve = resolve;
         
         need.NeedModel.effect = effect.Model;
