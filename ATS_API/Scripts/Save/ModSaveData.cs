@@ -18,17 +18,20 @@ public class SaveData
     [JsonProperty]
     private Dictionary<string, object> Data = new Dictionary<string, object>();
     
-    public T GetValueAsObject<T>(string key)
+    public T GetValueAsObject<T>(string key, T defaultValue = default)
     {
         if (!Data.ContainsKey(key))
-            Data.Add(key, default(T));
+            Data.Add(key, defaultValue);
 
         return (T)Data[key];
     }
     
-    public object GetValue(string key)
+    public object GetValue(string key, object defaultValue = null)
     {
-        return GetValueAsObject<object>(key);
+        if (!Data.ContainsKey(key))
+            Data.Add(key, defaultValue);
+
+        return Data[key];
     }
 
     public void SetValue(string key, object value)
