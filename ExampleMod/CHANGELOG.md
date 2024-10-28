@@ -1,3 +1,7 @@
+# 2.1.0
+- Added Custom Difficulty (P21)
+- Added some localization examples
+
 # 2.0.0
 - Bumped ATS version to 1.4.4v + DLC
 - Added Axolotl Custom Race example (First pass)
