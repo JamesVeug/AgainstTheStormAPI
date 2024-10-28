@@ -190,3 +190,21 @@ This will create a new P21 difficulty for you to play that will increase the cor
 
 `CopyModifiersFromPreviousDifficulties();` will copy all the modifiers from the previous prestige levels. Can be set to false to define your own modifiers
 
+# Custom save data
+
+Sometimes you might want to save data for your mod that can be loaded when the game is loaded. 
+
+This can be used to save settings, progress or anything else you might need.
+
+```csharp
+ModSaveData data = ModdedSaveManager.GetSaveData(PluginInfo.PLUGIN_GUID);
+data.General.SetValue("Used my mod", true);
+data.CurrentCycle.SetValue("Time", DateTime.Now.ToLongTimeString());
+data.CurrentSettlement.SetValue("Time", DateTime.Now.ToLongTimeString());
+
+bool usedMod = data.General.GetValue<bool>("Used my mod");
+```
+
+- General save data always persists.
+- CurrentCycle resets every time you end a cycle.
+- CurrentSettlement resets every time you start a new game.
