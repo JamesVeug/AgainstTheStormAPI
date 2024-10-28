@@ -113,7 +113,7 @@ builder.SetAvailableInAllBiomes();
 ```
 
 
-# Custom Race
+# Custom Races
 
 Custom races are still in the experimental phase and may not work as intended. Here's an example of how to create one using existing game data.
 
@@ -165,3 +165,28 @@ Hotkeys.RegisterKey("My Mod Name", "dothething", "Log Hello", [KeyCode.F1], () =
 `[KeyCode.F1]` are the default keys that will trigger the hotkey. [See here for more KeyCodes](https://docs.unity3d.com/ScriptReference/KeyCode.html)
 
 Every set of keys with the same id will be saved in their own file when the user closes the KeyBindings menu. You can view these in `%localappdata%low/Eremite Games/Against the Storm/My Mod Name.save`
+
+
+# Custom Difficulties / Prestiges
+
+Against the Storm has an array of difficulties that can be selected when starting a new game. You can add your own difficulty to the game using the following code.
+
+```csharp
+DifficultyBuilder builder = new DifficultyBuilder("My Mod Name", "Faster Corruption");
+builder.SetPrestigeLevel(21);
+builder.CopyModifiersFromPreviousDifficulties(true);
+
+NewAscensionModifierModel modifier = builder.AddModifier(EffectTypes.Hearth_Corruption_Rate_Plus50);
+modifier.SetShortDescription("Corruption in the Ancient Hearth grows 50% quicker.");
+``` 
+
+This will create a new P21 difficulty for you to play that will increase the corruption rate by 50% and include all previous modifiers from early prestiges.
+
+`"My Mod Name"` is the name of your mod. This should commonly `PluginInfo.PLUGIN_GUID.`
+
+`"Faster Corruption"` is the name of the difficulty. Used to uniquely identify the difficulty.
+
+`"Corruption in the Ancient Hearth grows 50% quicker."` is the description of the difficulty that will appear in the options menu.
+
+`CopyModifiersFromPreviousDifficulties();` will copy all the modifiers from the previous prestige levels. Can be set to false to define your own modifiers
+

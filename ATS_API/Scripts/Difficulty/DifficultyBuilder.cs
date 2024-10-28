@@ -154,17 +154,22 @@ public class DifficultyBuilder
 
         return this;
     }
+    
+    public DifficultyBuilder CopyModifiersFromPreviousDifficulties(bool copy = true)
+    {
+        newDifficulty.copyModifiersFromPreviousDifficulty = copy;
+        return this;
+    }
 
-    public DifficultyBuilder AddModifier(EffectTypes effect, bool isShown = true, bool isEarlyEffect = false, string shortDescription = null)
+    public NewAscensionModifierModel AddModifier(EffectTypes effect, bool isShown = true, bool isEarlyEffect = false)
     {
         AscensionModifierModel modifier = ScriptableObject.CreateInstance<AscensionModifierModel>();
         modifier.name = newModel.name + "_Modifier_" + (newDifficulty.ascensionModifiers.Count + 1);
         modifier.isEarlyEffect = isEarlyEffect;
-        NewAscensionModifierModel model = new NewAscensionModifierModel(modifier);
-        model.EffectTypes = effect;
-        model.ShortDescription = LocalizationManager.ToLocaText(guid, name, "shortDescription", shortDescription);
+        modifier.isShown = isShown;
         
+        NewAscensionModifierModel model = new NewAscensionModifierModel(modifier.name, modifier, effect);
         newDifficulty.ascensionModifiers.Add(model);
-        return this;
+        return model;
     }
 }
