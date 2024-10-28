@@ -1,3 +1,8 @@
+# 2.2.0
+- Custom Difficulty support
+- Fixed localization not working
+- Fixed ChineseSimplified and Chinese Traditional using wrong locale codes
+
 # 2.1.0
 - Bumped ATS version to 1.4.11R
 - Options/Configs for mods that can be modified will show in the options menu now

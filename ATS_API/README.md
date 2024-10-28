@@ -60,6 +60,7 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Buildings (Minimal)
 - New Recipes
 - New Races (Experimental)
+- New Difficulties
 - Localization
 - Custom Hotkeys (Saving and rebinding included)
 
