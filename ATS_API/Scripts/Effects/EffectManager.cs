@@ -58,15 +58,19 @@ public static partial class EffectManager
     {
         T data = ScriptableObject.CreateInstance<T>();
         data.name = guid + "_" + name;
-        return AddResolveEffect(data);
+        return AddResolveEffect(guid, name, data);
     }
 
     public static NewEffectData AddEffect<T>(string guid, string name, T model, Availability availability) where T : EffectModel
     {
         s_dirty = true;
         
+        
+        EffectTypes id = GUIDManager.Get<EffectTypes>(guid, name);
+        EffectTypesExtensions.TypeToInternalName[id] = model.name;
         NewEffectData item = new NewEffectData()
         {
+            ID = id,
             Guid = guid,
             Name = name,
             EffectModel = model,
@@ -78,12 +82,15 @@ public static partial class EffectManager
         return item;
     }
 
-    public static NewResolveEffectData AddResolveEffect(ResolveEffectModel model)
+    public static NewResolveEffectData AddResolveEffect(string guid, string name, ResolveEffectModel model)
     {
         s_dirty = true;
         
+        ResolveEffectTypes id = GUIDManager.Get<ResolveEffectTypes>(guid, name);
+        ResolveEffectTypesExtensions.TypeToInternalName[id] = model.name;
         NewResolveEffectData resolveEffectData = new NewResolveEffectData()
         {
+            ID = id,
             Model = model
         };
         s_newResolveEffects.Add(resolveEffectData);

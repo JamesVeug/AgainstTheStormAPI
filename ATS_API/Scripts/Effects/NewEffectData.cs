@@ -7,6 +7,7 @@ namespace ATS_API.Effects;
 
 public class NewEffectData : ASyncable<EffectModel>
 {
+    public EffectTypes ID;
     public string Guid;
     public string Name;
     public EffectModel EffectModel;

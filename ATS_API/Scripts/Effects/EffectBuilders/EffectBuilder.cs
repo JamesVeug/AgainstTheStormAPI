@@ -18,6 +18,7 @@ public partial class EffectBuilder<T> : IEffectBuilder where T : EffectModel
     public string GUID => m_guid;
     public T EffectModel => m_effectModel;
     public EffectModel Model => m_effectModel;
+    public EffectTypes EffectType => m_newData.ID;
     
     protected readonly NewEffectData m_newData;
     protected readonly T m_effectModel;
