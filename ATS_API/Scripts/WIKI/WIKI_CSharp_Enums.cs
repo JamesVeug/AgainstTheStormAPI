@@ -167,7 +167,7 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("DifficultyTypes", "SO.Settings.difficulties", SO.Settings.difficulties, a=>a.Name, difficultyComment, ["Eremite.Model"], noStartingNumbersEnum);
         CreateEnumTypesCSharpScript("GoalTypes", "SO.Settings.goals", SO.Settings.goals, a=>a.Name, NameAndDescription, ["Eremite.Model.Goals"]);
         CreateEnumTypesCSharpScript("RelicTypes", "SO.Settings.Relics", SO.Settings.Relics, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("MetaRewardTypes", "SO.Settings.metaRewards", SO.Settings.metaRewards, a=>a.Name, a=>a.DisplayName, ["Eremite.Model.Meta"]);
+        CreateEnumTypesCSharpScript("MetaRewardTypes", "SO.Settings.metaRewards", SO.Settings.metaRewards, a=>a.Name, a=>a.GetType().Name + "-" + a.DisplayName, ["Eremite.Model.Meta"]);
         CreateEnumTypesCSharpScript("OreTypes", "SO.Settings.Ore", SO.Settings.Ore, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("VillagerPerkTypes", "SO.Settings.villagersPerks", SO.Settings.villagersPerks, a=>a.Name, NameAndDescription, ["Eremite.Characters.Villagers"]);
         CreateEnumTypesCSharpScript("BuildingPerkTypes", "SO.Settings.buildingsPerks", SO.Settings.buildingsPerks, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
