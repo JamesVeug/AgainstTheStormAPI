@@ -8,6 +8,7 @@ using ATS_API.Effects;
 using ATS_API.Goods;
 using ATS_API.Helpers;
 using ATS_API.Localization;
+using ATS_API.MetaRewards;
 using ATS_API.Needs;
 using ATS_API.Orders;
 using ATS_API.Races;
@@ -92,6 +93,7 @@ internal class Plugin : BaseUnityPlugin
         RaceManager.Tick();
         BuildingManager.Tick();
         RaceNeedManager.Tick();
+        MetaRewardManager.Tick();
         
         LocalizationManager.Tick();
         
@@ -118,6 +120,7 @@ internal class Plugin : BaseUnityPlugin
         BuildingManager.Instantiate();
         RaceManager.Instantiate();
         RaceNeedManager.Instantiate();
+        MetaRewardManager.Instantiate();
             
         // DumpPerksToJSON(MB.Settings.Relics, "Relics");
         // DumpPerksToJSON(MB.Settings.orders, "Orders");
