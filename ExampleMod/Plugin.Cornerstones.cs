@@ -10,6 +10,8 @@ namespace ExampleMod;
 
 public partial class Plugin
 {
+    public HookedEffectBuilder ModdingToolsBuilder;
+    
     private void CreateCornerstones()
     {
         CreateModdingToolsCornerstone();
@@ -19,37 +21,37 @@ public partial class Plugin
 
     private void CreateModdingToolsCornerstone()
     {
-        HookedEffectBuilder builder = new (PluginInfo.PLUGIN_GUID, "Modding Tools", "ModdingTools.png");
-        builder.SetPositive(true);
-        builder.SetRarity(EffectRarity.Rare);
-        builder.SetObtainedAsCornerstone();
-        builder.SetAvailableInAllBiomesAndSeasons();
-        builder.SetDrawLimit(1);
-        builder.SetLabel("API");
+        ModdingToolsBuilder = new (PluginInfo.PLUGIN_GUID, "Modding Tools", "ModdingTools.png");
+        ModdingToolsBuilder.SetPositive(true);
+        ModdingToolsBuilder.SetRarity(EffectRarity.Rare);
+        ModdingToolsBuilder.SetObtainedAsCornerstone();
+        ModdingToolsBuilder.SetAvailableInAllBiomesAndSeasons();
+        ModdingToolsBuilder.SetDrawLimit(1);
+        ModdingToolsBuilder.SetLabel("API");
  
-        builder.SetDisplayName("Modding Tools");
-        builder.SetDescription("Modders have assembled new tools that bring in new talent. " +
+        ModdingToolsBuilder.SetDisplayName("Modding Tools");
+        ModdingToolsBuilder.SetDescription("Modders have assembled new tools that bring in new talent. " +
                                 "Every {0} new Villagers gain +{1} Global Resolve.");
         
         
-        builder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), (SourceType.HookedEffect, TextArgType.Amount, 0));
-        builder.SetPreviewDescription("+{0} Global Resolve");
-        builder.SetPreviewDescriptionArgs((HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked, 0));
+        ModdingToolsBuilder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), (SourceType.HookedEffect, TextArgType.Amount, 0));
+        ModdingToolsBuilder.SetPreviewDescription("+{0} Global Resolve");
+        ModdingToolsBuilder.SetPreviewDescriptionArgs((HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked, 0));
 
         // Add last so if anything is missing it uses the main effects description/name/icon
-        builder.AddHook(HookFactory.AfterXNewVillagers(8));
-        builder.AddHookedEffect(EffectFactory.AddHookedEffect_IncreaseResolve(builder, 1, ResolveEffectType.Global));
+        ModdingToolsBuilder.AddHook(HookFactory.AfterXNewVillagers(8));
+        ModdingToolsBuilder.AddHookedEffect(EffectFactory.AddHookedEffect_IncreaseResolve(ModdingToolsBuilder, 1, ResolveEffectType.Global));
 
         // Example if you had to rename something and it broke your save. This corrects your save data to use the right name. 
-        GlobalResolveEffectEffectModel model = (GlobalResolveEffectEffectModel)builder.EffectModel.hookedEffects[builder.EffectModel.hookedEffects.Length - 1];
+        GlobalResolveEffectEffectModel model = (GlobalResolveEffectEffectModel)ModdingToolsBuilder.EffectModel.hookedEffects[ModdingToolsBuilder.EffectModel.hookedEffects.Length - 1];
         EffectManager.AddPreviouslyNamedEffect("API_ExampleMod_UniteResolve_resolve_effect_model", model.effect.name);
         
         // Localization
-        builder.SetDisplayName("模组工具", SystemLanguage.ChineseSimplified);
-        builder.SetDescription("模组制作者已经组装了新的工具，吸引了新的人才。每 {0} 个新村民获得 +{1} 全局决心。", SystemLanguage.ChineseSimplified);
+        ModdingToolsBuilder.SetDisplayName("模组工具", SystemLanguage.ChineseSimplified);
+        ModdingToolsBuilder.SetDescription("模组制作者已经组装了新的工具，吸引了新的人才。每 {0} 个新村民获得 +{1} 全局决心。", SystemLanguage.ChineseSimplified);
         
-        builder.SetDisplayName("Outils de modding", SystemLanguage.French);
-        builder.SetDescription("Les moddeurs ont assemblé de nouveaux outils qui attirent de nouveaux talents. Chaque {0} nouveaux villageois gagnent +{1} de résolution globale.", SystemLanguage.French);
+        ModdingToolsBuilder.SetDisplayName("Outils de modding", SystemLanguage.French);
+        ModdingToolsBuilder.SetDescription("Les moddeurs ont assemblé de nouveaux outils qui attirent de nouveaux talents. Chaque {0} nouveaux villageois gagnent +{1} de résolution globale.", SystemLanguage.French);
     }
     
     private void CreateGoodsRawProductionCornerstone()

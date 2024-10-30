@@ -1,6 +1,5 @@
-﻿using System;
-using ATS_API.Helpers;
-using ATS_API.SaveLoading;
+﻿using ATS_API.Helpers;
+using ATS_API.MetaRewards;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
@@ -39,6 +38,8 @@ public partial class Plugin : BaseUnityPlugin
             CreateBuildings();
             CreateRaces();
         }
+
+        CreateEmbarkRewards();
 
         Log.LogInfo($"{PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} Plugin loaded");
     }
