@@ -30,6 +30,7 @@ public static class TextureHelper
         RaceIcon = 5,
         RaceIconWide = 6,
         DifficultyIcon = 7,
+        GoodIcon = 8,
     }
 
     private static Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
@@ -44,6 +45,7 @@ public static class TextureHelper
         { SpriteType.RaceIcon, new Rect(0.0f, 0.0f, 255.0f, 255.0f) },
         { SpriteType.RaceIconWide, new Rect(0.0f, 0.0f, 512.0f, 201.0f) },
         { SpriteType.DifficultyIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
+        { SpriteType.GoodIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
     };
 
     private static readonly Dictionary<SpriteType, Vector2> SPRITE_PIVOTS = new()
@@ -56,6 +58,7 @@ public static class TextureHelper
         { SpriteType.RaceIcon, DEFAULT_PIVOT },
         { SpriteType.RaceIconWide, DEFAULT_PIVOT },
         { SpriteType.DifficultyIcon, DEFAULT_PIVOT },
+        { SpriteType.GoodIcon, DEFAULT_PIVOT },
     };
     
     public static Texture2D GetWhiteTexture(SpriteType spriteType)

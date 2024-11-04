@@ -37,12 +37,12 @@ public class GoodsBuilder
     
     public void SetIcon(string iconImage)
     {
-        SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.EffectIcon));
+        SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.GoodIcon));
     }
 
     public void SetIcon(Texture2D texture2D)
     {
-        SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.EffectIcon));
+        SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.GoodIcon));
     }
     
     public void SetIcon(Sprite sprite)
