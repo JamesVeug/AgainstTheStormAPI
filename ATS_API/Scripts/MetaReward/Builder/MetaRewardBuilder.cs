@@ -23,4 +23,12 @@ public class MetaRewardBuilder<T> where T: MetaRewardModel
         m_model.label.color = Color.black;
         m_model.label.name = m_model.name + "_label";
     }
+
+    protected MetaRewardBuilder(MetaRewardModel model)
+    {
+        m_model = model as T;
+        m_newData = NewMetaRewardData.FromModel(model);
+        m_guid = m_newData.guid;
+        m_name = m_newData.rawName;
+    }
 }

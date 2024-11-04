@@ -11,10 +11,13 @@ namespace ATS_API.MetaRewards;
 public partial class MetaRewardManager
 {
     public static IReadOnlyList<NewMetaRewardData> NewMetaRewards => new ReadOnlyCollection<NewMetaRewardData>(s_newMetaRewards);
+    public static IReadOnlyDictionary<MetaRewardTypes, NewMetaRewardData> NewMetaRewardsLookup => new ReadOnlyDictionary<MetaRewardTypes, NewMetaRewardData>(s_newMetaRewardsLookup);
     
     private static List<NewMetaRewardData> s_newMetaRewards = new List<NewMetaRewardData>();
+    private static Dictionary<MetaRewardTypes, NewMetaRewardData> s_newMetaRewardsLookup = new Dictionary<MetaRewardTypes, NewMetaRewardData>();
     
     private static ArraySync<MetaRewardModel, NewMetaRewardData> s_metaRewards = new("New Meta Reward");
+    private static HashSet<MetaRewardModel> s_disabledMetaRewards = new HashSet<MetaRewardModel>();
     
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
@@ -29,6 +32,8 @@ public partial class MetaRewardManager
     {
         model.name = guid + "_" + name;
         
+        MetaRewardTypes id = GUIDManager.Get<MetaRewardTypes>(guid, name);
+        MetaRewardTypesExtensions.TypeToInternalName[id] = model.name;
         NewMetaRewardData newMetaReward = new NewMetaRewardData(guid, name);
         newMetaReward.Model = model;
         s_newMetaRewards.Add(newMetaReward);
@@ -62,5 +67,10 @@ public partial class MetaRewardManager
     {
         s_instantiated = true;
         s_dirty = true;
+    }
+    
+    public void DisableMetaReward(MetaRewardTypes type)
+    {
+        s_disabledMetaRewards.Add(NewMetaRewardsLookup[type].Model);
     }
 }

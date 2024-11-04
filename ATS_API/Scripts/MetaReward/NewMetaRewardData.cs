@@ -1,12 +1,14 @@
-﻿using ATS_API.Helpers;
+﻿using System;
+using System.Linq;
+using ATS_API.Helpers;
 using Eremite.Model.Meta;
 
 namespace ATS_API.MetaRewards;
 
 public class NewMetaRewardData : ASyncable<MetaRewardModel>
 {
-    private readonly string guid;
-    private readonly string rawName;
+    public readonly string guid;
+    public readonly string rawName;
     
     public MetaRewardModel Model;
 
@@ -31,5 +33,38 @@ public class NewMetaRewardData : ASyncable<MetaRewardModel>
         {
             embarkEffectMetaRewardModel.effect = EffectType.ToEffectModel();
         }
+        else
+        {
+            throw new NotSupportedException("Unsupported MetaRewardModel type.\n" + Environment.StackTrace);
+        }
+    }
+
+    public static NewMetaRewardData FromModel(MetaRewardModel model)
+    {
+        NewMetaRewardData data = MetaRewardManager.NewMetaRewards.FirstOrDefault(a => a.Model == model);
+        if (data != null)
+        {
+            return data;
+        }
+        
+        NewMetaRewardData newMetaRewardData = new NewMetaRewardData("", model.name)
+        {
+            Model = model
+        };
+        
+        if (model is EmbarkGoodMetaRewardModel embarkGoodMetaRewardModel)
+        {
+            newMetaRewardData.GoodsTypes = embarkGoodMetaRewardModel.good?.good?.name.ToGoodsTypes() ?? GoodsTypes.None;
+        }
+        else if (model is EmbarkEffectMetaRewardModel embarkEffectMetaRewardModel)
+        {
+            newMetaRewardData.EffectType = embarkEffectMetaRewardModel.effect?.name.ToEffectTypes() ?? EffectTypes.None;
+        }
+        else
+        {
+            throw new NotSupportedException("Unsupported MetaRewardModel type\n" + Environment.StackTrace);
+        }
+        
+        return newMetaRewardData;
     }
 }

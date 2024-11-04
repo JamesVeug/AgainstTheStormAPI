@@ -27,4 +27,21 @@ public partial class MetaRewardManager
         //     .Where(a=>a.BuildingModel.canBePicked)
         //     .Select(a => __instance.CreateBuildingPickState(a.BuildingModel)));
     }
+    
+    [HarmonyPatch(typeof(RaceMetaRewardModel), nameof(MetaRewardModel.HasAccessTo))]
+    [HarmonyPatch(typeof(EssentialBuildingMetaRewardModel), nameof(MetaRewardModel.HasAccessTo))]
+    [HarmonyPatch(typeof(RaceMetaRewardModel), nameof(MetaRewardModel.HasAccessTo))]
+    [HarmonyPatch(typeof(MetaRewardModel), nameof(MetaRewardModel.HasAccessTo))]
+    [HarmonyPrefix]
+    public static bool MetaRewardModel_Access(MetaRewardModel __instance, ref bool __result)
+    {
+        if (s_disabledMetaRewards.Contains(__instance))
+        {
+            Plugin.Log.LogInfo($"MetaReward {__instance.name} is disabled");
+            __result = false;
+            return false;
+        }
+        
+        return true;
+    }
 }

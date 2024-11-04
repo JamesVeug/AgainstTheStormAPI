@@ -14,6 +14,11 @@ public class EmbarkGoodMetaRewardBuilder : MetaRewardBuilder<EmbarkGoodMetaRewar
         m_model.description = Placeholders.Description;
     }
 
+    public EmbarkGoodMetaRewardBuilder(MetaRewardModel model) : base(model)
+    {
+        
+    }
+
     public EmbarkGoodMetaRewardBuilder SetCostRange(int minCost, int maxCost)
     {
         m_model.costRange = new Vector2Int(minCost, maxCost);

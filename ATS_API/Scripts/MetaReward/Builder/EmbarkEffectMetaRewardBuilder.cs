@@ -10,8 +10,12 @@ public class EmbarkEffectMetaRewardBuilder : MetaRewardBuilder<EmbarkEffectMetaR
 {
     public EmbarkEffectMetaRewardBuilder(string guid, string name) : base(guid, name)
     {
-        Model.displayName = Placeholders.DisplayName;
-        Model.description = Placeholders.Description;
+        Model.displayName = "MetaReward_EmbarkBonus_Name".ToLocaText();
+        Model.description = "MetaReward_EmbarkBonusGoods_Desc".ToLocaText();
+    }
+
+    public EmbarkEffectMetaRewardBuilder(MetaRewardModel model) : base(model)
+    {
     }
 
     public EmbarkEffectMetaRewardBuilder SetCostRange(int minCost, int maxCost)
