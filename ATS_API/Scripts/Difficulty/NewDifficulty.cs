@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Ascension;
+using ATS_API.Goods;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -153,5 +154,22 @@ public class NewDifficulty : ASyncable<DifficultyModel>
             return a.Model;
         }));
         difficultyModel.modifiers = modifiers.ToArray();
+    }
+
+    public static NewDifficulty FromModel(DifficultyModel model)
+    {
+        foreach (NewDifficulty difficulty in DifficultyManager.NewDifficulties)
+        {
+            if (difficulty.difficultyModel == model)
+            {
+                return difficulty;
+            }
+        }
+    
+        NewDifficulty newGood = new NewDifficulty();
+        newGood.id = model.name.ToDifficultyTypes();
+        newGood.difficultyModel = model;
+
+        return newGood;
     }
 }

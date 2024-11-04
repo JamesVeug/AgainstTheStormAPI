@@ -8,6 +8,9 @@ namespace ATS_API.Difficulties;
 
 public class DifficultyBuilder
 {
+    public NewDifficulty NewDifficulty => newDifficulty;
+    public DifficultyModel Model => newModel;
+    
     private readonly NewDifficulty newDifficulty;
     private readonly DifficultyModel newModel;
     private readonly string guid; // myGuid
@@ -38,21 +41,28 @@ public class DifficultyBuilder
         newModel.portRequirementsRatio = 1;
         newModel.maxWildcards = 1;
     }
-    
-    public void SetIcon(string iconImage)
+
+    public DifficultyBuilder(DifficultyModel model)
     {
-        SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.EffectIcon));
+        newModel = model;
+        newDifficulty = NewDifficulty.FromModel(model);
+    }
+    
+    public DifficultyBuilder SetIcon(string iconImage)
+    {
+        return SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.DifficultyIcon));
     }
 
-    public void SetIcon(Texture2D texture2D)
+    public DifficultyBuilder SetIcon(Texture2D texture2D)
     {
-        SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.EffectIcon));
+        return SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.DifficultyIcon));
     }
     
-    public void SetIcon(Sprite sprite)
+    public DifficultyBuilder SetIcon(Sprite sprite)
     {
         newModel.icon = sprite;
         TextMeshProManager.Add(newModel.icon.texture, newModel.name);
+        return this;
     }
 
     public DifficultyBuilder SetDisplayName(string text, SystemLanguage language = SystemLanguage.English)
@@ -161,12 +171,13 @@ public class DifficultyBuilder
         return this;
     }
 
-    public NewAscensionModifierModel AddModifier(EffectTypes effect, bool isShown = true, bool isEarlyEffect = false)
+    public NewAscensionModifierModel AddModifier(EffectTypes effect, bool isShown = true, bool isEarlyEffect = false, bool inCustomMode = true)
     {
         AscensionModifierModel modifier = ScriptableObject.CreateInstance<AscensionModifierModel>();
         modifier.name = newModel.name + "_Modifier_" + (newDifficulty.ascensionModifiers.Count + 1);
         modifier.isEarlyEffect = isEarlyEffect;
         modifier.isShown = isShown;
+        modifier.inCustomMode = inCustomMode;
         
         NewAscensionModifierModel model = new NewAscensionModifierModel(modifier.name, modifier, effect);
         newDifficulty.ascensionModifiers.Add(model);
