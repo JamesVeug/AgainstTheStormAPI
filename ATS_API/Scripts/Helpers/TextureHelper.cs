@@ -345,4 +345,10 @@ public static class TextureHelper
         Plugin.Log.LogInfo($"Writing {fullPath}");
         File.WriteAllBytes(fullPath, bytes);
     }
+    
+    public static Vector2 GetSpriteSize(SpriteType spriteType)
+    {
+        SPRITE_RECTS.TryGetValue(spriteType, out Rect rect);
+        return new Vector2(rect.width, rect.height);
+    }
 }
