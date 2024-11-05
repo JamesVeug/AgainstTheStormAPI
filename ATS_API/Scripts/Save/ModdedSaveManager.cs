@@ -1,75 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 using UnityEngine;
 
 namespace ATS_API.SaveLoading;
 
 public static partial class ModdedSaveManager
 {
-    // %userprofile%\AppData\LocalLow\Eremite Games\Against the Storm\ATS_API.moddedsave
-    private static readonly string saveFilePath = Path.Combine(Application.persistentDataPath);
+    internal static Dictionary<string, ModSaveData> ModGuidToDataLookup => m_ModSaveData;
+    
+    // %userprofile%\AppData\LocalLow\Eremite Games\Against the Storm\
+    public static readonly string PathToSaveFile = Path.Combine(Application.persistentDataPath);
 
-    private static readonly Dictionary<string, ModSaveData> saveData = new Dictionary<string, ModSaveData>();
-    
-    static ModdedSaveManager()
-    {
-        LoadAllModdedFiles();
-    }
-    
+    private static readonly Dictionary<string, ModSaveData> m_ModSaveData = new Dictionary<string, ModSaveData>();
+
     public static ModSaveData GetSaveData(string guid)
     {
-        string cleanedGUID = CleanGuid(guid);
-        if (saveData.TryGetValue(cleanedGUID, out var data))
+        if (ModdedSaveManagerService.Instance == null || !ModdedSaveManagerService.Instance.Loaded)
+        {
+            throw new Exception("ModdedSaveManagerService not loaded yet. Use ModdedSaveManager.ListenForLoadedSaveData to wait for it to load instead!");
+        }
+        
+        if (m_ModSaveData.TryGetValue(guid, out var data))
         {
             return data;
         }
         
-        saveData[cleanedGUID] = new ModSaveData();
-        return saveData[cleanedGUID];
+        m_ModSaveData[guid] = new ModSaveData(guid);
+        return m_ModSaveData[guid];
     }
 
-    /// <summary>
-    /// Remove any characters that would upset a file path
-    /// </summary>
-    private static string CleanGuid(string guid)
+    public static void SaveAllModdedData()
     {
-        return guid.Replace("/", "").Replace("\\", "").Replace(":", "").Replace("*", "")
-            .Replace("?", "").Replace("\"", "").Replace("<", "").Replace(">", "")
-            .Replace("|", "").Replace(".", "_");
+        ModdedSaveManagerService.Instance.SaveAllModdedData();
+    }
+    
+    public static void ListenForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
+    {
+        ModdedSaveManagerService.ListenForLoadedSaveData(guid, callback);
+    }
+    
+    public static void StopListeningForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
+    {
+        ModdedSaveManagerService.StopListeningForLoadedSaveData(guid, callback);
     }
 
-    private static void LoadAllModdedFiles()
+    public static bool ContainsSaveData(string guid)
     {
-        foreach (string fullFilePath in Directory.GetFiles(saveFilePath, "*.moddedsave"))
-        {
-            try
-            {
-                string json = File.ReadAllText(fullFilePath);
-                var saveData = JsonConvert.DeserializeObject<ModSaveData>(json);
-
-                string guid = Path.GetFileNameWithoutExtension(fullFilePath);
-                ModdedSaveManager.saveData[guid] = saveData;
-            } catch (Exception e)
-            {
-                Plugin.Log.LogError($"Failed to load save file {fullFilePath}");
-                Plugin.Log.LogError(e);
-            }
-        }
-    }
-
-    private static void SaveAllModdedData()
-    {
-        foreach (var kvp in saveData)
-        {
-            string guid = kvp.Key;
-            ModSaveData data = kvp.Value;
-
-            string json = JsonConvert.SerializeObject(data, Formatting.Indented);
-            string fullFilePath = Path.Combine(saveFilePath, $"{guid}.moddedsave");
-            File.WriteAllText(fullFilePath, json);
-            Plugin.Log.LogInfo($"Saved modded data for {guid}");
-        }
+        return m_ModSaveData.ContainsKey(guid);
     }
 }

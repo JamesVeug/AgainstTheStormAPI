@@ -19,7 +19,7 @@ public static partial class ModdedSaveManager
     {
         Plugin.Log.LogInfo("WorldStateService changed so Saving all modded data");
         // Save Cycle state
-        SaveAllModdedData();
+        ModdedSaveManager.SaveAllModdedData();
     }
 
     [HarmonyPatch(typeof(GameSaveService), nameof(GameSaveService.SaveState))]
@@ -30,7 +30,7 @@ public static partial class ModdedSaveManager
         Plugin.Log.LogInfo("GameSaveService changed so Saving all modded data");
 
         // Save Settlement state
-        SaveAllModdedData();
+        ModdedSaveManager.SaveAllModdedData();
     }
 
     [HarmonyPatch(typeof(MetaStateService), nameof(MetaStateService.SaveState))]
@@ -40,7 +40,7 @@ public static partial class ModdedSaveManager
         Plugin.Log.LogInfo("MetaStateService changed so Saving all modded data");
         
         // Save Settlement state
-        SaveAllModdedData();
+        ModdedSaveManager.SaveAllModdedData();
     }
     
     //
@@ -53,7 +53,7 @@ public static partial class ModdedSaveManager
     {
         Plugin.Log.LogInfo("OnCycleEnded. Clearing cycle data from all mods");
 
-        foreach (KeyValuePair<string,ModSaveData> data in saveData)
+        foreach (KeyValuePair<string,ModSaveData> data in ModdedSaveManager.ModGuidToDataLookup)
         {
             data.Value.CurrentCycle = new SaveData();
         }
@@ -65,7 +65,7 @@ public static partial class ModdedSaveManager
     {
         Plugin.Log.LogInfo("StartNewGame. Clearing settlement data from all mods");
 
-        foreach (KeyValuePair<string,ModSaveData> data in saveData)
+        foreach (KeyValuePair<string,ModSaveData> data in ModdedSaveManager.ModGuidToDataLookup)
         {
             data.Value.CurrentSettlement = new SaveData();
         }

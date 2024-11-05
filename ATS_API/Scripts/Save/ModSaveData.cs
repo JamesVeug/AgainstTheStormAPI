@@ -7,9 +7,16 @@ namespace ATS_API.SaveLoading;
 [Serializable]
 public class ModSaveData
 {
+    public string ModGuid;
+    
     public SaveData General = new SaveData();
     public SaveData CurrentSettlement = new SaveData();
     public SaveData CurrentCycle = new SaveData();
+
+    public ModSaveData(string guid)
+    {
+        ModGuid = guid;
+    }
 }
 
 [Serializable]
