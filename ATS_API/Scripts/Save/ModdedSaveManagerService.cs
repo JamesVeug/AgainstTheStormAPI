@@ -9,6 +9,7 @@ using Eremite.Services;
 using Eremite.View.SaveSupport;
 using HarmonyLib;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UniRx;
 using UnityEngine;
 
@@ -39,7 +40,8 @@ internal class ModdedSaveManagerService : Service
                 {
                     // Try loading the file
                     string json = File.ReadAllText(saveFilePath);
-                    ModSaveData saveData = JsonConvert.DeserializeObject<ModSaveData>(json);
+                    JObject saveDataJObject = (JObject)JsonConvert.DeserializeObject(json);
+                    ModSaveData saveData = (ModSaveData)saveDataJObject.ToObject(typeof(ModSaveData));
                     ModdedSaveManager.ModGuidToDataLookup[saveData.ModGuid] = saveData;
                     Plugin.Log.LogInfo($"Loaded save file {saveFilePath}");
                     

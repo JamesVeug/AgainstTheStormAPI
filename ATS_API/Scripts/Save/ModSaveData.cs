@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ATS_API.SaveLoading;
 
@@ -30,7 +31,19 @@ public class SaveData
         if (!Data.ContainsKey(key))
             Data.Add(key, defaultValue);
 
-        return (T)Data[key];
+        object o = Data[key];
+        try
+        {
+            if (o is JObject jObject)
+            {
+                return jObject.ToObject<T>();
+            }
+            return (T)Convert.ChangeType(o, typeof(T));
+        }
+        catch (InvalidCastException e)
+        {
+            throw new InvalidCastException($"Failed to cast value of key {key} to type {typeof(T)} from type {(o == null ? null : o.GetType())}");
+        }
     }
     
     public object GetValue(string key, object defaultValue = null)
