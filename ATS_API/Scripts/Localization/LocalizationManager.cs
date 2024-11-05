@@ -18,7 +18,7 @@ public static partial class LocalizationManager
     {
         AddString(APIKeys.GenericPopup_Header_Key, "Something went wrong!");
         AddString(APIKeys.GenericPopup_Description_Key, "Check logs for more information");
-        AddString(APIKeys.GenericPopup_ExceptionDescription_Key, "{0}\n\nAn exception occurred:\n{1}");
+        AddString(APIKeys.GenericPopup_ExceptionDescription_Key, "{0}\n\nAn exception occurred:");
         AddString(APIKeys.GenericPopup_ContinueAtRisk_Key, "Continue the game where some content may not work.");
         AddString(APIKeys.GenericPopup_QuitGameAndDisableMod_Key, "Close the game and disable the affected mod.");
         AddString(APIKeys.GenericPopup_YouHaveXOptions_Key, "You have {0} options:");
