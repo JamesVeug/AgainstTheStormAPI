@@ -13,6 +13,16 @@ public static partial class LocalizationManager
     private static readonly Dictionary<string, Dictionary<SystemLanguage, string>> s_newStrings = new();
 
     private static bool m_isDirty = false;
+
+    public static void Instantiate()
+    {
+        AddString(APIKeys.GenericPopup_Header_Key, "Something went wrong!");
+        AddString(APIKeys.GenericPopup_Description_Key, "Check logs for more information");
+        AddString(APIKeys.GenericPopup_ExceptionDescription_Key, "{0}\n\nAn exception occurred:\n{1}");
+        AddString(APIKeys.GenericPopup_ContinueAtRisk_Key, "Continue the game where some content may not work.");
+        AddString(APIKeys.GenericPopup_QuitGameAndDisableMod_Key, "Close the game and disable the affected mod.");
+        AddString(APIKeys.GenericPopup_YouHaveXOptions_Key, "You have {0} options:");
+    }
     
     public static void Tick()
     {
@@ -299,35 +309,5 @@ public static partial class LocalizationManager
             default:
                 return SystemLanguage.English; //Default to English if the language is not in the list
         }
-
-        // public static async UniTask LoadAllLanguageStrings()
-        // {
-        //     Plugin.Log.LogInfo("Loading all language strings...");
-        //     foreach (string languageCode in MB.TextsService.GetSupportedLanguages())
-        //     {
-        //         var dictionary = await ((TextsService)MB.TextsService).GetTextsFromFile(languageCode);
-        //         
-        //         SystemLanguage language = CodeToLanguage(languageCode);
-        //         s_languageStrings[language] = new LanguageDictionary(dictionary);
-        //     }
-        //     Plugin.Log.LogInfo("All language strings loaded. (Count: " + s_languageStrings.Count + ")");
-        // }
-    
-        /// <summary>
-        /// Requires LoadAllLanguageStrings to be called at least once
-        /// </summary>
-        // public static Dictionary<SystemLanguage, string> GetAllTranslationsFromKey(string key)
-        // {
-        //     Dictionary<SystemLanguage, string> translations = new Dictionary<SystemLanguage, string>(s_languageStrings.Count);
-        //     foreach (KeyValuePair<SystemLanguage, LanguageDictionary> pair in s_languageStrings)
-        //     {
-        //         if(pair.Value.TryGetValue(key, out string value))
-        //         {
-        //             translations[pair.Key] = value;
-        //         }
-        //     }
-        //
-        //     return translations;
-        // }
     }
 }

@@ -109,6 +109,8 @@ internal class Plugin : BaseUnityPlugin
     [HarmonyPostfix]
     private static void PostSetupMainController()
     {
+        LocalizationManager.Instantiate();
+        
         DifficultyManager.Instantiate();
         RecipeManager.Instantiate();
         GoodsManager.Instantiate();
