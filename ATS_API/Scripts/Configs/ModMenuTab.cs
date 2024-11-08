@@ -86,8 +86,13 @@ public static class ModMenuTab
 
             var modName = GetModName(plugin);
             Version modVersion = manifest != null && manifest.ManifestVersion() != null ? manifest.ManifestVersion() : plugin.Metadata.Version;
-            
-            
+            string description;
+            if (manifest != null && !string.IsNullOrEmpty(manifest.description))
+                description = manifest.description + "\n\n";
+            else
+                description = "";
+
+
             GameObject modSection = GameObject.Instantiate(sectionTemplate, content.transform);
             GameObject header = modSection.FindChild("Header");
             GameObject.Destroy(header.SafeGetComponent<LocalizationText>());
@@ -97,7 +102,7 @@ public static class ModMenuTab
             SimpleTooltipTrigger tooltipTrigger = header.GetOrAdd<SimpleTooltipTrigger>();
             tooltipTrigger.target = header.GetComponent<RectTransform>();
             tooltipTrigger.descKey = $"<align=\"left\">" +
-                                     // $"<b>Name:</b> {plugin.Metadata.Name}\n\n" +
+                                     $"{description}" +
                                      $"<b>GUID:</b> {plugin.Metadata.GUID}\n\n" +
                                      // $"<b>Version:</b> {plugin.Metadata.Version}\n\n" +
                                      $"<b>Dependencies:</b>\n{GetDependencies(plugin, manifest)}" +
