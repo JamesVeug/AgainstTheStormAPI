@@ -14,17 +14,20 @@ The API works as an in-between of your mod and the game by supplying helper meth
 
 ### Installation with Thunderstore (Recommended)
 1. Download and install the Thunderstore app for free from [here](https://thunderstore.io/)
-2. When the app is open search for the API mod and install it
-   - Be sure to install BepInEx using the app too!
-3. Run game using Thunderstore
+2. Install [API mod](https://thunderstore.io/c/against-the-storm/p/ATS_API_Devs/API/) using the Thunderstore App
+   - Be sure `BepInEx` is installed too!
+3. Run the game using Thunderstore
 
 
 ### Manual Installation
-1. Download latest [BepInEx](https://github.com/BepInEx/BepInEx/releases)
-2. Extract the contents of the zip into AgainstTheStorms folder that has the games .exe in it
-3. Run the game once so the BepInEx folder gets a plugins folder. [If the plugins folder does not get created then you installed it wrong.](https://docs.bepinex.dev/articles/user_guide/installation/index.html)
-4. Download the latest version of the mod [from Thunderstore](https://thunderstore.io/c/against-the-storm/p/ATS_API_Devs/API/) using the Manual Install button
-5. Extract the contents of the zip into the `Against the Storm/BepInEx/plugins` folder
+1. Install v5.4.21 of [BepInEx](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.21)
+   - Extract the contents of the zip into `Against the Storm` folder that has the games `Against the Storm.exe` in it
+   - Run the game once so `Against the Storm/BepInEx/plugins` gets created. [If the plugins folder does not get created then you installed it wrong.](https://docs.bepinex.dev/articles/user_guide/installation/index.html)
+2. Install [API mod](https://thunderstore.io/c/against-the-storm/p/ATS_API_Devs/API/)
+   - Download content using the Manual Download button
+   - Extract the contents of the zip into the `Against the Storm/BepInEx/plugins` folder
+3. Run the game
+
 
 ## Help
 
