@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using ATS_API;
 using Cysharp.Threading.Tasks;
 
+namespace ATS_API.Helpers;
+
 public class SafeAction
 {
     private List<Action> _actions = new List<Action>();
