@@ -79,7 +79,6 @@ public partial class BuildingManager
             house.view = view as HouseView;
             house.blight = SetupBlight(prefab, constructionAnimator, blightCyst);
             house.model.cystsAmount = house.blight.cysts.Length;
-            Plugin.Log.LogInfo($"Done house");
         }
         else if (building is Workshop workshop)
         {
@@ -212,8 +211,6 @@ public partial class BuildingManager
         {
             renderer.sprite = displayIcon;
         }
-        
-        Plugin.Log.LogInfo($"Done!");
     }
 
     private static BuildingBlight SetupBlight(GameObject prefab, ScaffoldingConstructionAnimator constructionAnimator, BlightCyst cystTemplate)

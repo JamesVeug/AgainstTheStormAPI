@@ -81,9 +81,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
             HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
             houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
             houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
-            
-            Plugin.Log.LogInfo($"{BuildingModel.name} housingRaces: {string.Join(",", houseModel.housingRaces.Select(a=>a?.name))}");
-            Plugin.Log.LogInfo($"{BuildingModel.name} servedNeeds races: {string.Join(",", houseModel.servedNeeds.Select(a=>a?.name))}");
         }
     }
 
@@ -95,7 +92,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             return true;
         }
   
-        Plugin.Log.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
+        // Plugin.Log.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
         GameObject prefab = CustomPrefab == null ? BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon) : CustomPrefab;
         if (prefab == null)
         {
@@ -105,14 +102,14 @@ public class NewBuildingData : ASyncable<BuildingModel>
         GameObject root = Object.Instantiate(prefab, BuildingManager.PrefabContainer);
         if (Behaviour == BuildingBehaviourTypes.Workshop)
         {
-            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
+            // Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             WorkshopModel workshopModel = BuildingModel as WorkshopModel;
             WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             try
             {
-                Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
+                // Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
                 BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(root, workshopModel, VisualData.Icon, AnimHookType.Construction);
             } 
             catch (Exception e)
@@ -126,12 +123,12 @@ public class NewBuildingData : ASyncable<BuildingModel>
             VisualData.Prefab = workshop;
         
             // Data
-            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
+            // Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.prefab = workshop;
             workshopModel.recipes = metaData.Recipes.Concat(metaData.Builders.Select(a=>a.Build())).ToArray();
             workshopModel.profession = Profession.ToProfessionModel();
 
-            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
+            // Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
             for (int i = 0; i < metaData.WorkPlaces.Count; i++)
             {

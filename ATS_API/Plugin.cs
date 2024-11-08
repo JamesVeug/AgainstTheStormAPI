@@ -136,8 +136,6 @@ internal class Plugin : BaseUnityPlugin
         // This method will run after game load (Roughly on entering the main menu)
         // At this point a lot of the game's data will be available.
         // Your main entry point to access this data will be `Serviceable.Settings` or `MainController.Instance.Settings`
-        Instance.Logger.LogInfo($"MetaStateService.CheckForInitialLevel");
-
         foreach (NewBuildingData BuildingModel in BuildingManager.NewBuildings)
         {
             if(!__instance.Content.buildings.Contains(BuildingModel.BuildingModel.name))

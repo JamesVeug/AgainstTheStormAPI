@@ -104,7 +104,7 @@ public static partial class Hotkeys
 
     private static void AddHotkey(string modName, InputActionMap actionMap, Hotkey hotkey)
     {
-        LogInfo($"Adding hotkey {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
+        // LogInfo($"Adding hotkey {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
         List<string> codes = hotkey.codes;
         string keyName = hotkey.keyName;
         Action<InputAction.CallbackContext> callback = hotkey.onCallback;

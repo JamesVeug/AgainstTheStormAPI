@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using ATS_API.Helpers;
 using Eremite;
@@ -34,8 +35,7 @@ public partial class MetaRewardManager
         
         MetaRewardTypes id = GUIDManager.Get<MetaRewardTypes>(guid, name);
         MetaRewardTypesExtensions.TypeToInternalName[id] = model.name;
-        NewMetaRewardData newMetaReward = new NewMetaRewardData(guid, name);
-        newMetaReward.Model = model;
+        NewMetaRewardData newMetaReward = new NewMetaRewardData(guid, name, model);
         s_newMetaRewards.Add(newMetaReward);
         s_dirty = true;
         return newMetaReward;

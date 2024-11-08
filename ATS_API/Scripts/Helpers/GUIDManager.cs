@@ -19,7 +19,6 @@ public static class GUIDManager
         // should reduce the likelihood of collisions.
         int hash = (guidHash ^ nameHash) + 10_000; // min 10,000 to avoid clashing with existing values
 
-        Plugin.Log.LogInfo("Hash: " + hash);
         return (T)(object)hash;
     }
 }

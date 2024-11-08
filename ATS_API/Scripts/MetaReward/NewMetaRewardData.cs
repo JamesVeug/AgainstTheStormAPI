@@ -15,10 +15,11 @@ public class NewMetaRewardData : ASyncable<MetaRewardModel>
     public GoodsTypes GoodsTypes = GoodsTypes.None;
     public EffectTypes EffectType = EffectTypes.None;
 
-    public NewMetaRewardData(string guid, string name)
+    public NewMetaRewardData(string guid, string name, MetaRewardModel model)
     {
         this.guid = guid;
         this.rawName = name;
+        this.Model = model;
     }
 
     public override void PostSync()
@@ -27,7 +28,18 @@ public class NewMetaRewardData : ASyncable<MetaRewardModel>
         
         if (Model is EmbarkGoodMetaRewardModel embarkGoodMetaRewardModel)
         {
-            embarkGoodMetaRewardModel.good.good = GoodsTypes.ToGoodModel();
+            if (embarkGoodMetaRewardModel.good.good == null)
+            {
+                if (GoodsTypes != GoodsTypes.None)
+                {
+                    embarkGoodMetaRewardModel.good.good = GoodsTypes.ToGoodModel();
+                }
+                else
+                {
+                    Plugin.Log.LogError(
+                        $"Tried syncing new EmbarkGoodMetaRewardModel ({Model.name}) but GoodsTypes was not assigned!");
+                }
+            }
         }
         else if (Model is EmbarkEffectMetaRewardModel embarkEffectMetaRewardModel)
         {
@@ -46,11 +58,8 @@ public class NewMetaRewardData : ASyncable<MetaRewardModel>
         {
             return data;
         }
-        
-        NewMetaRewardData newMetaRewardData = new NewMetaRewardData("", model.name)
-        {
-            Model = model
-        };
+
+        NewMetaRewardData newMetaRewardData = new NewMetaRewardData("", model.name, model);
         
         if (model is EmbarkGoodMetaRewardModel embarkGoodMetaRewardModel)
         {

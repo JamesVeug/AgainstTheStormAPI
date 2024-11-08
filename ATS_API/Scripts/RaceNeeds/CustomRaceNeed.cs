@@ -34,7 +34,6 @@ public class CustomRaceNeed : ASyncable<NeedModel>
 
     public override void PostSync()
     {
-        Plugin.Log.LogInfo($"PostSync for {NeedModel.name}");
         if (referenceGood != GoodsTypes.None)
         {
             PostSyncGoodNeed();
@@ -83,7 +82,6 @@ public class CustomRaceNeed : ASyncable<NeedModel>
 
     private void PostSyncGoodNeed()
     {
-        Plugin.Log.LogInfo($"PostSyncGoodNeed for {NeedModel.name}");
         GoodModel good = referenceGood.ToGoodModel();
         if (good == null)
         {
@@ -105,7 +103,6 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         // Presentation
         GoodPresentationModel presentation = (GoodPresentationModel)NeedModel.presentation;
         presentation.good = good;
-        Plugin.Log.LogInfo($"Need {needName} presentation good: {presentation.good}");
         if (presentation.description == null)
         {
             string text = $"This need is fulfilled at the Hearth. It requires <sprite name=\"{good.name}\"> {good.displayName.GetText()}.";

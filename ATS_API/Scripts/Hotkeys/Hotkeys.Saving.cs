@@ -88,8 +88,6 @@ public static partial class Hotkeys
                 continue;
             }
 
-            LogInfo("Loading keybinds for " + modInput.modName + " with value " + modInput.bindings);
-
             string actionMapJSON = modInput.actionMap;
             InputActionMap[] actionMap = InputActionMap.FromJson(actionMapJSON);
             if (actionMap.Length == 0)
@@ -106,20 +104,8 @@ public static partial class Hotkeys
             InputActionMap map = actionMap[0];
             if (MasterInputAsset.FindActionMap(map.name) == null)
             {
-                LogInfo($"Added action map {map.name}");
                 MasterInputAsset.AddActionMap(map);
-
-                foreach (InputAction action in map.actions)
-                {
-                    LogInfo($"\tAdded action {action.name}");
-                }
-                
                 map.LoadBindingOverridesFromJson(modInput.bindings);
-                // log overrides
-                foreach (InputBinding binding in map.bindings)
-                {
-                    LogInfo($"\tAdded binding {binding.path}");
-                }
             }
             else
             {

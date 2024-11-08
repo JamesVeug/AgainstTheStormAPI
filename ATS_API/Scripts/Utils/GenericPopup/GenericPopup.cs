@@ -33,7 +33,6 @@ internal partial class GenericPopup : Popup
         PrepareForEvents();
         contentInitialHeight = content.GetComponent<RectTransform>().sizeDelta.y;
         descriptionInitialHeight = descriptionText.GetComponent<RectTransform>().sizeDelta.y;
-        Plugin.Log.LogInfo($"GenericPopup setup contentInitialHeight: {contentInitialHeight} descriptionInitialHeight: {descriptionInitialHeight}");
     }
 
     private void PrepareForEvents()

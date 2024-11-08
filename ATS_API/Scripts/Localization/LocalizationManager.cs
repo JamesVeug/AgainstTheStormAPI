@@ -61,8 +61,6 @@ public static partial class LocalizationManager
         
         // Add key to the game so it can be displayed
         textsService.texts[key] = value;
-        
-        Plugin.Log.LogInfo($"Added key: {key} with value: {value}");
     }
     
     private static bool TryGetFallbackValue(Dictionary<SystemLanguage, string> translations, SystemLanguage language, out string value)

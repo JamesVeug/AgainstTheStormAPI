@@ -51,7 +51,7 @@ namespace ATS_API
             {
                 return;
             }
-            Plugin.Log.LogInfo("Syncing TMP " + m_pendingSpriteAssets.Count);
+            Plugin.Log.LogInfo("Syncing TextMeshPro sprites " + m_pendingSpriteAssets.Count);
             
             
             // check if the asset exists in m_spriteAssets

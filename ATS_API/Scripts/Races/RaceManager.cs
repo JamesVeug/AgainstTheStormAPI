@@ -107,7 +107,7 @@ public static class RaceManager
             return;
         }
 
-        Plugin.Log.LogInfo("RaceManager.SyncRaces: " + s_newRaces.Count + " new races");
+        Plugin.Log.LogInfo("Syncing Races: " + s_newRaces.Count + " new races");
 
 
         Settings settings = SO.Settings;

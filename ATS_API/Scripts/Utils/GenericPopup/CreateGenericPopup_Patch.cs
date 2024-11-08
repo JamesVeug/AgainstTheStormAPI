@@ -54,8 +54,6 @@ internal partial class GenericPopup
             popup.options.GetRectTransform().anchoredPosition = new Vector2(0, popup.ctaButtonTemplate.GetRectTransform().anchoredPosition.y + popup.ctaButtonTemplate.GetRectTransform().sizeDelta.y + 40);
             Destroy(popup.options.GetComponent<LocalizationText>());
             
-            Plugin.Log.LogInfo("footerText: " + popup.footerText.FullName());
-            
             LocalizationText localizationText = popup.headerText.GetComponent<LocalizationText>();
             Destroy(localizationText);
             
