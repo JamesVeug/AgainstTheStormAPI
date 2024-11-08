@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ATS_API;
 using ATS_API.Helpers;
+using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;
 using Eremite;
@@ -13,6 +14,8 @@ using Eremite.View.Popups.GameMenu;
 using Eremite.View.UI;
 using Eremite.View.Utils;
 using HarmonyLib;
+using Mono.Cecil;
+using MonoMod.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -77,144 +80,228 @@ public static class ModMenuTab
         Sprite textFieldBackground = dropdownTemplate.FindChild<Image>("Dropdown").sprite;
         
         // Get all types inheriting BaseUnityPlugin from all assemblies
-        foreach (PluginInfo plugin in Chainloader.PluginInfos.Values.OrderBy(a=>a.Metadata.Name))
+        foreach (PluginInfo plugin in Chainloader.PluginInfos.Values.OrderBy(GetModName))
         {
-            ConfigFile file = plugin.Instance.Config;
-            if (file == null || file.Keys.Count == 0)
-            {
-                Plugin.Log.LogInfo($"Skipping {plugin.Metadata.Name} because it has no config file.");
-                continue;
-            }
+            PluginInfoExtensions.PluginManifest manifest = plugin.Manifest();
+
+            var modName = GetModName(plugin);
+            Version modVersion = manifest != null && manifest.ManifestVersion() != null ? manifest.ManifestVersion() : plugin.Metadata.Version;
+            
             
             GameObject modSection = GameObject.Instantiate(sectionTemplate, content.transform);
             GameObject header = modSection.FindChild("Header");
             GameObject.Destroy(header.SafeGetComponent<LocalizationText>());
-            header.SafeGetComponent<TMP_Text>().text = plugin.Metadata.Name + " v" + plugin.Metadata.Version;
+            header.SafeGetComponent<TMP_Text>().text = modName + (modVersion != null && modVersion.ToString() != "0.0" ? " v" + modVersion : "");
             modSection.name = header.GetComponent<TMP_Text>().text;
 
             SimpleTooltipTrigger tooltipTrigger = header.GetOrAdd<SimpleTooltipTrigger>();
             tooltipTrigger.target = header.GetComponent<RectTransform>();
-            tooltipTrigger.descKey = $"Name: {plugin.Metadata.Name}\n" +
-                                     $"GUID: {plugin.Metadata.GUID}\n" +
-                                     $"Version: {plugin.Metadata.Version}";
+            tooltipTrigger.descKey = $"<align=\"left\">" +
+                                     // $"<b>Name:</b> {plugin.Metadata.Name}\n\n" +
+                                     $"<b>GUID:</b> {plugin.Metadata.GUID}\n\n" +
+                                     // $"<b>Version:</b> {plugin.Metadata.Version}\n\n" +
+                                     $"<b>Dependencies:</b>\n{GetDependencies(plugin, manifest)}" +
+                                     "</align>";
 
-            // Go through all keys in the config file
-            foreach (ConfigEntryBase entry in file.GetConfigEntries())
-            {
-                Type entrySettingType = entry.SettingType;
-                AcceptableValueBase acceptableValues = entry.Description.AcceptableValues;
-                if(acceptableValues != null)
-                {
-                    if(acceptableValues.GetType().GetGenericTypeDefinition() == typeof(AcceptableValueList<>))
-                    {
-                        var genericType = acceptableValues.GetType().GetGenericArguments()[0];
-                        var arrayOfObjects = acceptableValues.GetType().GetProperty("AcceptableValues").GetGetMethod().Invoke(acceptableValues, null);
-                        
-                        // Dropdown of all possible choices
-                        if (genericType == typeof(int))
-                        {
-                            Dictionary<int, int> values = new();
-                            foreach (int value in (int[])arrayOfObjects)
-                            {
-                                values[value] = value;
-                            }
-                            Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
-                            continue;
-                        }
-                        else if (genericType == typeof(float))
-                        {
-                            Dictionary<float, float> values = new();
-                            foreach (float value in (float[])arrayOfObjects)
-                            {
-                                values[value] = value;
-                            }
-                            Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
-                            continue;
-                        }
-                        else if (genericType == typeof(string))
-                        {
-                            Dictionary<string, string> values = new();
-                            foreach (string value in (string[])arrayOfObjects)
-                            {
-                                values[value] = value;
-                            }
-                            Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
-                            continue;
-                        }
-                        else if (genericType.IsEnum)
-                        {
-                            Dictionary<string, string> values = new();
-                            foreach (string value in (string[])arrayOfObjects)
-                            {
-                                values[value] = value;
-                            }
+            AddConfigsToModSection(plugin, dropdownTemplate, modSection, sliderTemplate, toggleTemplate, inputFieldTemplate, textFieldBackground, labelTemplate);
 
-                            Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
-                            continue;
-                        }
-                    }
-                    else if (acceptableValues.GetType().GetGenericTypeDefinition() == typeof(AcceptableValueRange<>))
-                    {
-                        // Slider
-                        if (entrySettingType == typeof(int))
-                        {
-                            int min = (int)acceptableValues.GetType().GetProperty("MinValue").GetValue(acceptableValues);
-                            int max = (int)acceptableValues.GetType().GetProperty("MaxValue").GetValue(acceptableValues);
-                            AddIntSlider(sliderTemplate, modSection, entry, min, max);
-                            continue;
-                        }
-                        else if (entrySettingType == typeof(float))
-                        {
-                            float min = (float)acceptableValues.GetType().GetProperty("MinValue").GetGetMethod().Invoke(acceptableValues, null);
-                            float max = (float)acceptableValues.GetType().GetProperty("MaxValue").GetGetMethod().Invoke(acceptableValues, null);
-                            AddFloatSlider(sliderTemplate, modSection, entry, min, max);
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        Plugin.Log.LogError($"Unsupported acceptableValues type {acceptableValues.GetType().FullName} for {entry.Definition.Key}");
-                    }
-                }
-                
-                if (entrySettingType == typeof(bool))
-                {
-                    // Toggle
-                    AddToggle(toggleTemplate, modSection, entry);
-                }
-                else if (entrySettingType == typeof(int))
-                {
-                    // Slider
-                    AddInputField<int>(inputFieldTemplate, modSection.transform, entry, textFieldBackground);
-                }
-                else if (entrySettingType == typeof(float))
-                {
-                    // InputField
-                    AddInputField<float>(inputFieldTemplate, modSection.transform, entry, textFieldBackground);
-                }
-                else if (entrySettingType == typeof(string))
-                {
-                    // InputField
-                    AddInputField<string>(inputFieldTemplate, modSection.transform, entry, textFieldBackground);
-                }
-                else if (entrySettingType.IsEnum)
-                {
-                    // InputField
-                    EnumDropdown(entrySettingType, dropdownTemplate, modSection, entry);
-                }
-                else
-                {
-                    // Label saying what the type is
-                    AddUnknownType(labelTemplate, modSection, entry);
-                }
-            }
-            
             modSection.SetActive(true);
         }
         
         OptionsMenuEnabled?.Invoke();
     }
-    
+
+    private static string GetModName(PluginInfo plugin)
+    {
+        PluginInfoExtensions.PluginManifest manifest = plugin.Manifest();
+        string modName = manifest != null ? manifest.name : plugin.Metadata.Name;
+        return modName;
+    }
+
+    private static string GetDependencies(PluginInfo plugin, PluginInfoExtensions.PluginManifest pluginManifest)
+    {
+        Dictionary<string, Version> dependencies = new Dictionary<string, Version>();
+        
+        dependencies.AddRange(plugin.Dependencies.ToDictionary(a=>a.DependencyGUID, a=>a.MinimumVersion));
+
+        if (pluginManifest != null)
+        {
+            foreach (PluginInfoExtensions.PluginManifest.Dependency dependency in pluginManifest.Dependencies())
+            {
+                if(dependencies.TryGetValue(dependency.Name, out Version version))
+                {
+                    dependencies[dependency.Name] = dependency.Version == null || version > dependency.Version ? version : dependency.Version;
+                }
+                else
+                {
+                    dependencies[dependency.Name] = dependency.Version;
+                }
+            }
+        }
+        
+        dependencies.Remove("BepInExPack");
+
+
+        string text = "";
+        if (dependencies.Count > 0)
+        {
+            text = string.Join("\n", dependencies.Select(pair=>
+            {
+                string guid = pair.Key;
+                Version version = pair.Value;
+                
+                string s = guid + (version != null && version.ToString() != "0.0" ? " v" + version : "");
+                bool loaded = false;
+                if (Chainloader.PluginInfos.TryGetValue(guid, out PluginInfo pluginInfo))
+                {
+                    s = pluginInfo.Metadata.Name + " v" + pluginInfo.Metadata.Version;
+                    loaded = pluginInfo.Metadata.Version >= version;
+                    if (!loaded)
+                    {
+                        s += " (Wrong Version)";
+                    }
+                }
+                else
+                {
+                    s += " (Missing)";
+                }
+                
+                Color color = loaded ? Color.green : Color.red;
+                string hex = ColorUtility.ToHtmlStringRGB(color);
+                return $"<color=#{hex}>" + s + "</color>";
+            }));
+        }
+        else
+        {
+            text = "None";
+        }
+
+        return text;
+    }
+
+    private static void AddConfigsToModSection(PluginInfo pluginInfo, GameObject dropdownTemplate, GameObject modSection,
+        GameObject sliderTemplate, GameObject toggleTemplate, GameObject inputFieldTemplate, Sprite textFieldBackground,
+        GameObject labelTemplate)
+    {
+        
+        ConfigFile file = pluginInfo.Instance.Config;
+        if (file == null || file.Keys.Count == 0)
+        {
+            return;
+        }
+        
+        // Go through all keys in the config file
+        foreach (ConfigEntryBase entry in file.GetConfigEntries())
+        {
+            Type entrySettingType = entry.SettingType;
+            AcceptableValueBase acceptableValues = entry.Description.AcceptableValues;
+            if(acceptableValues != null)
+            {
+                if(acceptableValues.GetType().GetGenericTypeDefinition() == typeof(AcceptableValueList<>))
+                {
+                    var genericType = acceptableValues.GetType().GetGenericArguments()[0];
+                    var arrayOfObjects = acceptableValues.GetType().GetProperty("AcceptableValues").GetGetMethod().Invoke(acceptableValues, null);
+                        
+                    // Dropdown of all possible choices
+                    if (genericType == typeof(int))
+                    {
+                        Dictionary<int, int> values = new();
+                        foreach (int value in (int[])arrayOfObjects)
+                        {
+                            values[value] = value;
+                        }
+                        Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
+                        continue;
+                    }
+                    else if (genericType == typeof(float))
+                    {
+                        Dictionary<float, float> values = new();
+                        foreach (float value in (float[])arrayOfObjects)
+                        {
+                            values[value] = value;
+                        }
+                        Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
+                        continue;
+                    }
+                    else if (genericType == typeof(string))
+                    {
+                        Dictionary<string, string> values = new();
+                        foreach (string value in (string[])arrayOfObjects)
+                        {
+                            values[value] = value;
+                        }
+                        Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
+                        continue;
+                    }
+                    else if (genericType.IsEnum)
+                    {
+                        Dictionary<string, string> values = new();
+                        foreach (string value in (string[])arrayOfObjects)
+                        {
+                            values[value] = value;
+                        }
+
+                        Dropdown(entrySettingType, values, dropdownTemplate, modSection, entry);
+                        continue;
+                    }
+                }
+                else if (acceptableValues.GetType().GetGenericTypeDefinition() == typeof(AcceptableValueRange<>))
+                {
+                    // Slider
+                    if (entrySettingType == typeof(int))
+                    {
+                        int min = (int)acceptableValues.GetType().GetProperty("MinValue").GetValue(acceptableValues);
+                        int max = (int)acceptableValues.GetType().GetProperty("MaxValue").GetValue(acceptableValues);
+                        AddIntSlider(sliderTemplate, modSection, entry, min, max);
+                        continue;
+                    }
+                    else if (entrySettingType == typeof(float))
+                    {
+                        float min = (float)acceptableValues.GetType().GetProperty("MinValue").GetGetMethod().Invoke(acceptableValues, null);
+                        float max = (float)acceptableValues.GetType().GetProperty("MaxValue").GetGetMethod().Invoke(acceptableValues, null);
+                        AddFloatSlider(sliderTemplate, modSection, entry, min, max);
+                        continue;
+                    }
+                }
+                else
+                {
+                    Plugin.Log.LogError($"Unsupported acceptableValues type {acceptableValues.GetType().FullName} for {entry.Definition.Key}");
+                }
+            }
+                
+            if (entrySettingType == typeof(bool))
+            {
+                // Toggle
+                AddToggle(toggleTemplate, modSection, entry);
+            }
+            else if (entrySettingType == typeof(int))
+            {
+                // Slider
+                AddInputField<int>(inputFieldTemplate, modSection.transform, entry, textFieldBackground);
+            }
+            else if (entrySettingType == typeof(float))
+            {
+                // InputField
+                AddInputField<float>(inputFieldTemplate, modSection.transform, entry, textFieldBackground);
+            }
+            else if (entrySettingType == typeof(string))
+            {
+                // InputField
+                AddInputField<string>(inputFieldTemplate, modSection.transform, entry, textFieldBackground);
+            }
+            else if (entrySettingType.IsEnum)
+            {
+                // InputField
+                EnumDropdown(entrySettingType, dropdownTemplate, modSection, entry);
+            }
+            else
+            {
+                // Label saying what the type is
+                AddUnknownType(labelTemplate, modSection, entry);
+            }
+        }
+    }
+
     private static void Dropdown<K,V>(Type type, Dictionary<K,V> values, GameObject dropdownTemplate, GameObject modSection, ConfigEntryBase entry)
     {
         GameObject dropdown = GameObject.Instantiate(dropdownTemplate, modSection.transform);
