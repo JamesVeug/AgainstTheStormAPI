@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using ATS_API.Helpers;
 using ATS_API.Localization;
 using Cysharp.Threading.Tasks;
 using Eremite;
@@ -81,18 +82,18 @@ internal class ModdedSaveManagerService : Service
     {
         await callback.Invoke(saveData, fileState, async (Exception e) =>
         {
-            await GenericPopupTask.Exception(guid, "Tried invoking callback after loading a mods save data.", e)
-                .WaitForDecision(new GenericPopupTask.ButtonInfo
+            await GenericPopupTask.ShowException(guid, "Tried invoking callback after loading a mods save data.", e)
+                .WaitForDecisionAsync(new GenericPopupTask.ButtonInfo
                 {
-                    Key = APIKeys.Continue_Key,
-                    OptionKey = APIKeys.GenericPopup_ContinueAtRisk_Key,
+                    Key = Keys.Continue_Key.ToLocaText(),
+                    OptionKey = Keys.GenericPopup_ContinueAtRisk_Key.ToLocaText(),
                     Type = GenericPopupTask.ButtonTypes.Normal,
                     OnPressed = () => { }
                 },
                 new GenericPopupTask.ButtonInfo
                 {
-                    Key = APIKeys.Quit_Key,
-                    OptionKey = APIKeys.GenericPopup_QuitGameAndDisableMod_Key,
+                    Key = Keys.Quit_Key.ToLocaText(),
+                    OptionKey = Keys.GenericPopup_QuitGameAndDisableMod_Key.ToLocaText(),
                     Type = GenericPopupTask.ButtonTypes.CTA,
                     OnPressed = Application.Quit
                 }

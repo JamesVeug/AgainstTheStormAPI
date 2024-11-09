@@ -131,7 +131,7 @@ internal partial class GenericPopup : Popup
         // descriptionText.alignment = TextAlignmentOptions.Left;
         
         
-        string optionText = "<align=\"center\">" + GetText(APIKeys.GenericPopup_YouHaveXOptions_Key, task.buttons.Count) + "</align>\n";
+        string optionText = "<align=\"center\">" + GetText(Keys.GenericPopup_YouHaveXOptions_Key, task.buttons.Count) + "</align>\n";
         for (var i = 0; i < task.buttons.Count; i++)
         {
             var button = task.buttons[i];

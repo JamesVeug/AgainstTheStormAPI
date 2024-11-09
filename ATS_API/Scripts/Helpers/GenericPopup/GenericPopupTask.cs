@@ -30,8 +30,8 @@ public class GenericPopupTask
     
     public static ReactiveProperty<GenericPopupTask> Task = new ReactiveProperty<GenericPopupTask>();
 
-    public string headerKey = APIKeys.GenericPopup_Header_Key;
-    public string descKey = APIKeys.GenericPopup_Description_Key;
+    public string headerKey = Keys.GenericPopup_Header_Key;
+    public string descKey = Keys.GenericPopup_Description_Key;
     public object[] descArgs = new object[0];
     public string modGUID;
     public string stackTrace;
@@ -46,7 +46,7 @@ public class GenericPopupTask
     {
         GenericPopupTask task = new GenericPopupTask();
         task.modGUID = modGUID;
-        task.descKey = APIKeys.GenericPopup_ExceptionDescription_Key;
+        task.descKey = Keys.GenericPopup_ExceptionDescription_Key;
         task.descArgs = new object[] { description };
         task.stackTrace = exception.ToString();
         task.completionSource = new UniTaskCompletionSource();
