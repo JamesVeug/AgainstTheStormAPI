@@ -37,6 +37,7 @@
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UniTask.dll" Publicize="false" private="false"/>
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.TextMeshPro.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UnityEngine.UI.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.InputSystem.dll" Publicize="false" private="false" />
         <Reference Include="$(BepInExPath)/plugins/ATS_API_Devs-API/API.dll" Publicize="false" private="false" />
     </ItemGroup>
 

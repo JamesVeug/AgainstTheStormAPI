@@ -1,7 +1,10 @@
-﻿using ATS_API.Helpers;
+﻿using ATS_API;
+using ATS_API.Helpers;
+using ATS_API.Localization;
 using ATS_API.SaveLoading;
 using BepInEx;
 using BepInEx.Logging;
+using Eremite.Model;
 using HarmonyLib;
 using UnityEngine;
 
@@ -19,13 +22,14 @@ public partial class Plugin : BaseUnityPlugin
     private Harmony harmony;
         
     public static AssetBundle AssetBundle;
+    private Hotkeys.Hotkey showPopupHotkey;
  
     private void Awake()
     {
         Instance = this; 
         Log = Logger;
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
-        PluginDirectory = Info.Location.Replace("API_ExampleMod.dll", "");
+        PluginDirectory = System.IO.Path.GetDirectoryName(Info.Location);
         
         ModdedSaveManager.ListenForLoadedSaveData(PluginInfo.PLUGIN_GUID, PostLoadedSaveData);
         
@@ -44,6 +48,38 @@ public partial class Plugin : BaseUnityPlugin
 
 
         Log.LogInfo($"{PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} Plugin loaded");
+    }
+
+    private void Start()
+    {
+        LocaText header = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "showExamplePopup", "Header", "Hello!");
+        LocaText description = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "showExamplePopup", "Description", "This is an example popup");
+            
+        LocaText disableHotkey = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "showExamplePopup", "DisableButton", "Disable Hotkey");
+        
+        // Add a Key Binding that shows a popup when "." is pressed. Then add a button to disable the hotkey.
+        showPopupHotkey = Hotkeys.New(PluginInfo.PLUGIN_GUID, "showExamplePopup", "Show Popup", [KeyCode.KeypadPeriod], () =>
+        {
+            Log.LogInfo("Showing popup");
+            GenericPopupTask.Show(PluginInfo.PLUGIN_GUID, header, description).WaitForDecision(
+                new GenericPopupTask.ButtonInfo() {
+                    Key = APIKeys.Continue_Key.ToLocaText(),
+                    Type = GenericPopupTask.ButtonTypes.Normal,
+                    OnPressed = static () =>
+                    {
+                        Log.LogInfo("Okay button pressed");
+                    } 
+                },
+                new GenericPopupTask.ButtonInfo() {
+                    Key = disableHotkey,
+                    Type = GenericPopupTask.ButtonTypes.CTA,
+                    OnPressed = static () =>
+                    {
+                        Instance.showPopupHotkey.action.Disable();
+                    } 
+                }
+                );
+        });
     }
 
     private void PostLoadedSaveData(ModSaveData saveData, SaveFileState saveState)
