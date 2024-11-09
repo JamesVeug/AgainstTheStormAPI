@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ATS_API;
 using ATS_API.Localization;
 using Cysharp.Threading.Tasks;
+using Eremite.Model;
 using UniRx;
 
 public class GenericPopupTask
@@ -21,13 +22,13 @@ public class GenericPopupTask
 
     public class ButtonInfo
     {
-        public string Key;
-        public string OptionKey;
+        public LocaText Key;
+        public LocaText OptionKey;
         public ButtonTypes Type;
         public Action OnPressed;
     }
     
-    public static ReactiveProperty<GenericPopupTask> ExceptionTask = new ReactiveProperty<GenericPopupTask>();
+    public static ReactiveProperty<GenericPopupTask> Task = new ReactiveProperty<GenericPopupTask>();
 
     public string headerKey = APIKeys.GenericPopup_Header_Key;
     public string descKey = APIKeys.GenericPopup_Description_Key;
@@ -36,11 +37,12 @@ public class GenericPopupTask
     public string stackTrace;
 
     public List<ButtonInfo> buttons = new List<ButtonInfo>();
+    public ButtonInfo decisionButton;
     
     public UniTaskCompletionSource completionSource;
     
     
-    public static GenericPopupTask Exception(string modGUID, string description, Exception exception)
+    public static GenericPopupTask ShowException(string modGUID, string description, Exception exception)
     {
         GenericPopupTask task = new GenericPopupTask();
         task.modGUID = modGUID;
@@ -51,11 +53,29 @@ public class GenericPopupTask
         return task;
     }
     
-    public async UniTask WaitForDecision(params ButtonInfo[] buttons)
+    public static GenericPopupTask Show(string modGUID, LocaText header, LocaText description, params object[] descriptionArgs)
+    {
+        GenericPopupTask task = new GenericPopupTask();
+        task.modGUID = modGUID;
+        task.headerKey = header.key;
+        task.descKey = description.key;
+        task.descArgs = descriptionArgs;
+        task.completionSource = new UniTaskCompletionSource();
+        return task;
+    }
+    
+    public void WaitForDecision(params ButtonInfo[] buttons)
+    {
+        WaitForDecisionAsync(buttons).Forget();
+    }
+    
+    public async UniTask WaitForDecisionAsync(params ButtonInfo[] buttons)
     {
         Plugin.Log.LogInfo("Waiting for decision with " + buttons.Length + " buttons");
+        this.buttons.Clear();
         this.buttons.AddRange(buttons);
-        ReactiveProperty<GenericPopupTask> CorruptionTask = ExceptionTask;
+        decisionButton = null;
+        ReactiveProperty<GenericPopupTask> CorruptionTask = Task;
         CorruptionTask.Value = this;
         await completionSource.Task;
         CorruptionTask.Value = null;

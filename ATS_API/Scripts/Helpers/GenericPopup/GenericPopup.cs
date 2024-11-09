@@ -37,7 +37,7 @@ internal partial class GenericPopup : Popup
 
     private void PrepareForEvents()
     {
-        GenericPopupTask.ExceptionTask.Where((GenericPopupTask t) => t != null).Subscribe(Show).AddTo(this);
+        GenericPopupTask.Task.Where((GenericPopupTask t) => t != null).Subscribe(Show).AddTo(this);
     }
 
     private void Show(GenericPopupTask task)
@@ -74,9 +74,9 @@ internal partial class GenericPopup : Popup
             var button = task.buttons[index];
             var t = button.Type == GenericPopupTask.ButtonTypes.Normal ? normalButtonTemplate : ctaButtonTemplate;
             Button newButton = Instantiate(t, normalButtonTemplate.transform.parent);
-            newButton.gameObject.name = button.Key;
-            newButton.GetComponentInChildren<LocalizationText>().key = button.Key;
+            newButton.GetComponentInChildren<LocalizationText>().key = button.Key.key;
             newButton.GetComponentInChildren<LocalizationText>().SetText();
+            newButton.gameObject.name = newButton.GetComponentInChildren<LocalizationText>().text.text;
 
             newButton.onClick.AddListener(() => OnButtonPressed(button));
             newButton.gameObject.SetActive(true);
@@ -135,13 +135,13 @@ internal partial class GenericPopup : Popup
         for (var i = 0; i < task.buttons.Count; i++)
         {
             var button = task.buttons[i];
-            if (!string.IsNullOrEmpty(button.OptionKey))
+            if (button.OptionKey != null && !string.IsNullOrEmpty(button.OptionKey.key))
             {
-                optionText += "\n- " + GetText(button.OptionKey);
+                optionText += "\n- " + GetText(button.OptionKey.key);
             }
             else
             {
-                optionText += "\n- " + GetText(button.Key);
+                optionText += "\n- " + GetText(button.Key.key);
             }
         }
         
@@ -170,6 +170,7 @@ internal partial class GenericPopup : Popup
 
     private void OnButtonPressed(GenericPopupTask.ButtonInfo buttonInfoData)
     {
+        task.decisionButton = buttonInfoData;
         buttonInfoData.OnPressed?.Invoke();
         task.completionSource.TrySetResult();
         task = null;
