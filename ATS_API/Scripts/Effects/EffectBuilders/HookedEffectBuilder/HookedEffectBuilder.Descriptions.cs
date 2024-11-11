@@ -19,6 +19,11 @@ public partial class HookedEffectBuilder
         m_effectModel.retroactivePreviewText =
             LocalizationManager.ToLocaText(m_guid, m_name, "retroactive", description, language);
     }
+    
+    public void SetRetroactiveDescriptionKey(string key)
+    {
+        m_effectModel.retroactivePreviewText = key.ToLocaText();
+    }
 
     public void SetRetroactiveDescriptionArgs(params (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
     {
@@ -40,6 +45,12 @@ public partial class HookedEffectBuilder
     {
         // Additional Tooltip in the bottom left icon of the game showing progress 
         m_effectModel.dynamicPreviewText = LocalizationManager.ToLocaText(m_guid, m_name, "preview", description, language);
+    }
+    
+    public void SetPreviewDescriptionKey(string key)
+    {
+        // Additional Tooltip in the bottom left icon of the game showing progress 
+        m_effectModel.dynamicPreviewText = key.ToLocaText();
     }
 
     public void SetPreviewDescriptionArgs(params (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
@@ -72,6 +83,11 @@ public partial class HookedEffectBuilder
     public void SetRemovalPreviewDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
         m_effectModel.removalDynamicPreviewText = LocalizationManager.ToLocaText(m_guid, m_name, "removalDescription", description, language);
+    }
+    
+    public void SetRemovalPreviewDescriptionKey(string key)
+    {
+        m_effectModel.removalDynamicPreviewText = key.ToLocaText();
     }
 
     public void SetRemovalPreviewDescriptionArgs(params (HookedStateTextArg.HookedStateTextSource source, int sourceIndex)[] args)
