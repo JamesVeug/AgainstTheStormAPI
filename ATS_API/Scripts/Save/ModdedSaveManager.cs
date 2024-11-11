@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using ATS_API.Helpers;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ATS_API.SaveLoading;
@@ -30,23 +32,51 @@ public static partial class ModdedSaveManager
         return m_ModSaveData[guid];
     }
 
+    public static bool ContainsSaveData(string guid)
+    {
+        return m_ModSaveData.ContainsKey(guid);
+    }
+
     public static void SaveAllModdedData()
     {
         ModdedSaveManagerService.Instance.SaveAllModdedData();
     }
-    
+
     public static void ListenForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
     {
-        ModdedSaveManagerService.ListenForLoadedSaveData(guid, callback);
+        if (!ModdedSaveManagerService.LoadedSaveDataListeners.TryGetValue(guid, out SafeAction<ModSaveData, SaveFileState> listeners))
+        {
+            listeners = new SafeAction<ModSaveData, SaveFileState>();
+            ModdedSaveManagerService.LoadedSaveDataListeners[guid] = listeners;
+        }
+        
+        listeners.AddListener(callback);
     }
     
     public static void StopListeningForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
     {
-        ModdedSaveManagerService.StopListeningForLoadedSaveData(guid, callback);
+        if (ModdedSaveManagerService.LoadedSaveDataListeners.TryGetValue(guid, out SafeAction<ModSaveData, SaveFileState> listeners))
+        {
+            listeners.RemoveListener(callback);
+        }
     }
-
-    public static bool ContainsSaveData(string guid)
+    
+    public static void AddErrorHandler(string guid, Func<ErrorData, UniTask<ModSaveData>> handler)
     {
-        return m_ModSaveData.ContainsKey(guid);
+        if (!ModdedSaveManagerService.ErrorHandlers.TryGetValue(guid, out SafeFunc<ErrorData, UniTask<ModSaveData>> handlers))
+        {
+            handlers = new SafeFunc<ErrorData, UniTask<ModSaveData>>();
+            ModdedSaveManagerService.ErrorHandlers[guid] = handlers;
+        }
+        
+        handlers.AddListener(handler);
+    }
+    
+    public static void RemoveErrorhandler(string guid, Func<ErrorData, UniTask<ModSaveData>> handler)
+    {
+        if (ModdedSaveManagerService.ErrorHandlers.TryGetValue(guid, out SafeFunc<ErrorData, UniTask<ModSaveData>> handlers))
+        {
+            handlers.RemoveListener(handler);
+        }
     }
 }

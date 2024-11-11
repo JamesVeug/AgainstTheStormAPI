@@ -20,8 +20,9 @@ namespace ATS_API.SaveLoading;
 internal class ModdedSaveManagerService : Service
 {
     public static ModdedSaveManagerService Instance { get; private set; }
-    
+
     public static Dictionary<string, SafeAction<ModSaveData, SaveFileState>> LoadedSaveDataListeners = new();
+    public static Dictionary<string, SafeFunc<ErrorData, UniTask<ModSaveData>>> ErrorHandlers = new();
     
     public override UniTask OnLoading()
     {
@@ -34,7 +35,8 @@ internal class ModdedSaveManagerService : Service
         {
             string guid = pair.Key;
             var callback = pair.Value;
-            string saveFilePath = Path.Combine(ModdedSaveManager.PathToSaveFile, $"{CleanGuid(pair.Key)}.moddedsave");
+            string saveFilePath = Path.Combine(ModdedSaveManager.PathToSaveFile, $"{CleanGuid(guid)}.moddedsave");
+            bool dataLoaded = false;
             if (File.Exists(saveFilePath))
             {
                 try
@@ -43,7 +45,8 @@ internal class ModdedSaveManagerService : Service
                     string json = File.ReadAllText(saveFilePath);
                     JObject saveDataJObject = (JObject)JsonConvert.DeserializeObject(json);
                     ModSaveData saveData = (ModSaveData)saveDataJObject.ToObject(typeof(ModSaveData));
-                    ModdedSaveManager.ModGuidToDataLookup[saveData.ModGuid] = saveData;
+                    ModdedSaveManager.ModGuidToDataLookup[guid] = saveData;
+                    dataLoaded = true;
                     Plugin.Log.LogInfo($"Loaded save file {saveFilePath}");
                     
                     // Tell any listeners (the mod) that we loaded the data
@@ -53,11 +56,35 @@ internal class ModdedSaveManagerService : Service
                 }
                 catch (Exception e)
                 {
+                    if (dataLoaded)
+                    {
+                        continue;
+                    }
+                    
                     // Something went wrong when loading the file
                     // As the user what they want to do (Use backup, Delete, Go to the discord)
                     Plugin.Log.LogError($"Failed to load save file {saveFilePath}");
                     Plugin.Log.LogError(e);
 
+                    // See if a mod wants to handle the error themselves.
+                    if(ErrorHandlers.TryGetValue(guid, out SafeFunc<ErrorData, UniTask<ModSaveData>> errorHandler))
+                    {
+                        ErrorData errorData = new ErrorData
+                        {
+                            exception = e,
+                            filePath = saveFilePath
+                        };
+                        
+                        ModSaveData value = await errorHandler.Invoke(errorData);
+                        if (value != null)
+                        {
+                            Plugin.Log.LogInfo($"Manually Handled save file {saveFilePath}");
+                            ModdedSaveManager.ModGuidToDataLookup[guid] = value;
+                            await Callback(guid, callback, value, SaveFileState.LoadedFile);
+                            continue;
+                        }
+                    }
+                    
                     string fileName = Path.GetFileName(saveFilePath);
                     ModSaveData handled = await HandleCorruptionTask<ModSaveData>(CreateSaveCorruptionTask(saveFilePath, fileName));
                     if (handled != null)
@@ -211,23 +238,10 @@ internal class ModdedSaveManagerService : Service
 
         return true;
     }
+}
 
-    public static void ListenForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
-    {
-        if (!LoadedSaveDataListeners.TryGetValue(guid, out SafeAction<ModSaveData, SaveFileState> listeners))
-        {
-            listeners = new SafeAction<ModSaveData, SaveFileState>();
-            LoadedSaveDataListeners[guid] = listeners;
-        }
-        
-        listeners.AddListener(callback);
-    }
-    
-    public static void StopListeningForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
-    {
-        if (LoadedSaveDataListeners.TryGetValue(guid, out SafeAction<ModSaveData, SaveFileState> listeners))
-        {
-            listeners.RemoveListener(callback);
-        }
-    }
+public struct ErrorData
+{
+    public Exception exception;
+    public string filePath;
 }
