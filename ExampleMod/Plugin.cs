@@ -63,7 +63,7 @@ public partial class Plugin : BaseUnityPlugin
             Log.LogInfo("Showing popup");
             GenericPopupTask.Show(PluginInfo.PLUGIN_GUID, header, description).WaitForDecision(
                 new GenericPopupTask.ButtonInfo() {
-                    Key = APIKeys.Continue_Key.ToLocaText(),
+                    Key = Keys.Continue_Key.ToLocaText(),
                     Type = GenericPopupTask.ButtonTypes.Normal,
                     OnPressed = static () =>
                     {
