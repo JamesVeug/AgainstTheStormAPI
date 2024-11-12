@@ -190,6 +190,7 @@ This will create a new P21 difficulty for you to play that will increase the cor
 
 `CopyModifiersFromPreviousDifficulties();` will copy all the modifiers from the previous prestige levels. Can be set to false to define your own modifiers
 
+
 # Custom save data
 
 Sometimes you might want to save data for your mod that can be loaded when the game is loaded. 
@@ -208,3 +209,104 @@ bool usedMod = data.General.GetValue<bool>("Used my mod");
 - General save data always persists.
 - CurrentCycle resets every time you end a cycle.
 - CurrentSettlement resets every time you start a new game.
+
+
+# Custom Embark Rewards
+
+When starting a settlement you're given options to choose from to spend your embark points. These are either on goods or effects that can benefit your run.
+
+This is how you add your own.
+
+
+## Goods
+```csharp
+var artifactEmbarkReward = new EmbarkGoodMetaRewardBuilder(PluginInfo.PLUGIN_GUID, "Artifact Embark Reward");
+artifactEmbarkReward.SetGood(GoodsTypes.Valuable_Ancient_Tablet, 5);
+artifactEmbarkReward.SetCostRange(3, 6);
+```
+
+```csharp
+var alePerMinuteEmbarkReward = new EmbarkEffectMetaRewardBuilder(PluginInfo.PLUGIN_GUID, "3 ale per minute Embark Reward");
+alePerMinuteEmbarkReward.SetEffect(EffectTypes.Ale_3pm);
+alePerMinuteEmbarkReward.SetCostRange(3, 5);
+```
+
+
+# Showing a Popup to the player
+
+Sometimes you might want to show a message to the player and let them decide what to do. You can do this by using the following code.
+
+```csharp
+LocaText header = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "myPopup", "Header", "Hello!");
+LocaText description = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "myPopup", "Description", "This is an example popup");
+LocaText greenButtonKey = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "myPopup", "GreenButton", "I'm Green!");
+        
+var task = GenericPopupTask.Show(PluginInfo.PLUGIN_GUID, header, description);
+task.WaitForDecision(
+    new GenericPopupTask.ButtonInfo() {
+        Key = Keys.Continue_Key.ToLocaText(),
+        Type = GenericPopupTask.ButtonTypes.Normal,
+        OnPressed = static () =>
+        {
+            Log.LogInfo("Continue button pressed");
+        } 
+    },
+    new GenericPopupTask.ButtonInfo() {
+        Key = greenButtonKey,
+        Type = GenericPopupTask.ButtonTypes.CTA,
+        OnPressed = static () =>
+        {
+            Log.LogInfo("Green button pressed");
+        } 
+    }
+);
+```
+
+This code will show a popup asking the following
+
+"Hello!"
+
+"This is an example popup"
+
+With two buttons, one that says "Continue" and one that says "I'm Green!"
+
+When the continue button is pressed it will log "Continue button pressed" to the console. When the green button is pressed it will log "Green button pressed" to the console.
+
+## But i want to wait for the popup to finish before continuing
+
+`await WaitForDecision(...)` will wait for the popup to finish before continuing
+Or if you don't know how to use async/await you can use `task.WaitForDecision(...)`, add a bool and create a coroutine to wait until the bool is true.
+
+```csharp
+private IEnumerator ShowAndWaitForPopup()
+{
+    bool isDone = false;
+    var task = GenericPopupTask.Show(PluginInfo.PLUGIN_GUID, header, description);
+    task.WaitForDecision(new GenericPopupTask.ButtonInfo() {
+            Key = Keys.Continue_Key.ToLocaText(),
+            Type = GenericPopupTask.ButtonTypes.Normal,
+            OnPressed = static () =>
+            {
+                Log.LogInfo("Continue button pressed");
+                isDone = true;
+            } 
+        },
+        new GenericPopupTask.ButtonInfo() {
+            Key = greenButtonKey,
+            Type = GenericPopupTask.ButtonTypes.CTA,
+            OnPressed = static () =>
+            {
+                Log.LogInfo("Green button pressed");
+                isDone = true;
+            } 
+        }
+    ); 
+
+    while (!isDone)
+    {
+        yield return null;
+    }
+    
+    Log.LogInfo("Popup has gone away!");
+}
+```
