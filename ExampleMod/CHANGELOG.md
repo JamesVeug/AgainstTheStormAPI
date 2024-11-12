@@ -1,3 +1,9 @@
+# 2.2.0
+- Added Custom support for custom embark goods
+- Added Custom support for custom embark effects
+- Added Example for custom embark goods
+- Added Example for custom embark effects
+
 # 2.1.0
 - Added Custom Difficulty (P21)
 - Added some localization examples
