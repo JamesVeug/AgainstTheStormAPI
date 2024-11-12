@@ -13,7 +13,8 @@ For more help/guids/examples checkout the modding discord.
 - 1 New Trader
 - 1 New Race (Experimental)
 - 1 New Difficulty (P21)
-- 2 new Embark rewards to choose from 
+- 2 new Embark good rewards 
+- 2 new Embark effect rewards 
 
 ## How to install
 
