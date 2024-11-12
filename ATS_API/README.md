@@ -64,8 +64,10 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Recipes
 - New Races (Experimental)
 - New Difficulties
-- Localization
+- New MetaRewards (Goods and Effects when embarking)
+- Localization for all of the above
 - Custom Hotkeys (Saving and rebinding included)
+- Custom Save/Load system
 
 ## Other stuff added
 - Any options/configs that mods add can be modified in the options menu of the game.

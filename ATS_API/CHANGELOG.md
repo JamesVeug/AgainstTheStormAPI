@@ -1,5 +1,21 @@
+# 2.3.0
+- Added Custom saving support
+- Added Custom Meta Reward support (Goods and Effects)
+- Added AscensionModifierTypes enum
+- Added GeneralPopup which any mod can use
+  - Custom save system uses this when a file fails to load
+- Mods Tab now shows a tooltip with mod description and dependencies and if they are installed or not.
+- MetaRewardTypes enum updated to 1.4.17R and now includes the type of MetaReward
+- Difficulty cleanup and added more methods (may break existing mods - none on thunderstore atm)
+- Added missing Key methods for HookedEffectBuilder
+- Exposed more stuff that was previously private
+- Added preset Localization keys
+- Deprecated `RegisterKey` function for Hotkeys in favor of `New`
+- Removed a bunch of logs to reduce console spam
+- Goods and effects now have custom icon types
+
 # 2.2.0
-- Custom Difficulty support
+- Added Custom Difficulty support
 - Fixed localization not working
 - Fixed ChineseSimplified and Chinese Traditional using wrong locale codes
 
