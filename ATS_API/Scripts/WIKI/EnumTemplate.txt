@@ -1,6 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 {USINGS}
 namespace ATS_API.Helpers;
@@ -31,6 +32,11 @@ public static class {CLASSNAME}Extensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every {CLASSNAME} should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return {CLASSNAME}.{FIRST_ENUM} in the enum and log an error.
+	/// </summary>
 	public static string ToName(this {CLASSNAME} type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -42,6 +48,11 @@ public static class {CLASSNAME}Extensions
 		return TypeToInternalName[{CLASSNAME}.{FIRST_ENUM}];
 	}
 	
+	/// <summary>
+	/// Returns a {CLASSNAME} associated with the given name.
+	/// Every {CLASSNAME} should have a unique name as to distinguish it from others.
+	/// If no {CLASSNAME} is found, it will return {CLASSNAME}.Unknown and log a warning.
+	/// </summary>
 	public static {CLASSNAME} To{CLASSNAME}(this string name)
 	{
 		foreach (KeyValuePair<{CLASSNAME},string> pair in TypeToInternalName)
@@ -56,6 +67,12 @@ public static class {CLASSNAME}Extensions
 		return {CLASSNAME}.Unknown;
 	}
 	
+	/// <summary>
+	/// Returns a {MODELNAME} associated with the given name.
+	/// {MODELNAME} contain all the data that will be used in the game.
+	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
+	/// If no {MODELNAME} is found, it will return null and log an error.
+	/// </summary>
 	public static {MODELNAME} To{MODELNAME}(this string name)
 	{
 		{MODELNAME} model = {COLLECTION}.FirstOrDefault(a=>a.name == name);
@@ -68,11 +85,23 @@ public static class {CLASSNAME}Extensions
 		return null;
 	}
 
+    /// <summary>
+    /// Returns a {MODELNAME} associated with the given {CLASSNAME}.
+    /// {MODELNAME} contain all the data that will be used in the game.
+    /// Every {MODELNAME} should have a unique name as to distinguish it from others.
+    /// If no {MODELNAME} is found, it will return null and log an error.
+    /// </summary>
 	public static {MODELNAME} To{MODELNAME}(this {CLASSNAME} types)
 	{
 		return types.ToName().To{MODELNAME}();
 	}
 	
+	/// <summary>
+	/// Returns an array of {MODELNAME} associated with the given {CLASSNAME}.
+	/// {MODELNAME} contain all the data that will be used in the game.
+	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
+	/// If a {MODELNAME} is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
 	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<{CLASSNAME}> collection)
 	{
 		int count = collection.Count();
@@ -86,6 +115,12 @@ public static class {CLASSNAME}Extensions
 		return array;
 	}
 	
+	/// <summary>
+	/// Returns an array of {MODELNAME} associated with the given {CLASSNAME}.
+	/// {MODELNAME} contain all the data that will be used in the game.
+	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
+	/// If a {MODELNAME} is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
 	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
@@ -98,7 +133,51 @@ public static class {CLASSNAME}Extensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of {MODELNAME} associated with the given {CLASSNAME}.
+	/// {MODELNAME} contain all the data that will be used in the game.
+	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
+	/// If a {MODELNAME} is not found, it will not be included in the array.
+	/// </summary>
+	public static {MODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<{MODELNAME}>.Get(out List<{MODELNAME}> list))
+		{
+			foreach (string element in collection)
+			{
+				{MODELNAME} model = element.To{MODELNAME}();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of {MODELNAME} associated with the given {CLASSNAME}.
+	/// {MODELNAME} contain all the data that will be used in the game.
+	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
+	/// If a {MODELNAME} is not found, it will not be included in the array.
+	/// </summary>
+	public static {MODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<GoodsTypes> collection)
+	{
+		using(ListPool<{MODELNAME}>.Get(out List<{MODELNAME}> list))
+		{
+			foreach (GoodsTypes element in collection)
+			{
+				{MODELNAME} model = element.To{MODELNAME}();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<{CLASSNAME}, string> TypeToInternalName = new()
 	{
 {ENUM_TO_NAME}
