@@ -45,6 +45,7 @@ public partial class Plugin : BaseUnityPlugin
         }
 
         CreateEmbarkRewards();
+        CreateBiomes();
 
 
         Log.LogInfo($"{PluginInfo.PLUGIN_NAME} v{PluginInfo.PLUGIN_VERSION} Plugin loaded");

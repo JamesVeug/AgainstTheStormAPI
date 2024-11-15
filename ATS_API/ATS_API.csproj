@@ -40,6 +40,7 @@
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.InputSystem.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/UniRx.dll" Publicize="false" private="false" />
         <Reference Include="$(StormPath)/Against the Storm_Data/Managed/DOTween.dll" Publicize="false" private="false" />
+        <Reference Include="$(StormPath)/Against the Storm_Data/Managed/Unity.Addressables.dll" Publicize="false" private="false" />
     </ItemGroup>
       
     <ItemGroup>

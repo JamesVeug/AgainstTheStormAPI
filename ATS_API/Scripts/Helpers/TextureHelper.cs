@@ -31,6 +31,8 @@ public static class TextureHelper
         RaceIconWide = 6,
         DifficultyIcon = 7,
         GoodIcon = 8,
+        BiomeIcon = 9,
+        BiomeWorldMapTexture = 10,
     }
 
     private static Vector2 DEFAULT_PIVOT = new(0.5f, 0.5f);
@@ -46,6 +48,8 @@ public static class TextureHelper
         { SpriteType.RaceIconWide, new Rect(0.0f, 0.0f, 512.0f, 201.0f) },
         { SpriteType.DifficultyIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
         { SpriteType.GoodIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
+        { SpriteType.BiomeIcon, new Rect(0.0f, 0.0f, 128.0f, 128.0f) },
+        { SpriteType.BiomeWorldMapTexture, new Rect(0.0f, 0.0f, 2048.0f, 2048.0f) },
     };
 
     private static readonly Dictionary<SpriteType, Vector2> SPRITE_PIVOTS = new()
@@ -59,6 +63,8 @@ public static class TextureHelper
         { SpriteType.RaceIconWide, DEFAULT_PIVOT },
         { SpriteType.DifficultyIcon, DEFAULT_PIVOT },
         { SpriteType.GoodIcon, DEFAULT_PIVOT },
+        { SpriteType.BiomeIcon, DEFAULT_PIVOT },
+        { SpriteType.BiomeWorldMapTexture, DEFAULT_PIVOT },
     };
     
     public static Texture2D GetWhiteTexture(SpriteType spriteType)

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using ATS_API.Difficulties;
 using ATS_API.Effects;
 using ATS_API.Helpers;
 using ATS_API.Traders;
@@ -7,15 +9,51 @@ using Eremite;
 using Eremite.Model;
 using Eremite.Model.Configs;
 using Eremite.WorldMap;
+using UnityEngine;
 
 namespace ATS_API.Biomes;
 
 public static partial class BiomeManager
 {
-    private class SeasonRewardLookup : Dictionary<SeasonsConfig, List<SeasonRewardModel>>;
+    public static IReadOnlyList<NewBiome> NewBiomes => new ReadOnlyCollection<NewBiome>(s_newBiomes);
+    public static IReadOnlyDictionary<BiomeTypes, NewBiome> NewBiomeLookup => new ReadOnlyDictionary<BiomeTypes, NewBiome>(s_newBiomesLookup);
+    
+    private static List<NewBiome> s_newBiomes = new List<NewBiome>();
+    private static Dictionary<BiomeTypes, NewBiome> s_newBiomesLookup = new Dictionary<BiomeTypes, NewBiome>();
+    
+    private static ArraySync<BiomeModel, NewBiome> s_biomes = new("New Biomes");
 
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
+    
+    public static NewBiome New(string guid, string name)
+    {
+        BiomeModel model = ScriptableObject.CreateInstance<BiomeModel>();
+        
+
+        NewBiome newBiome = Add(guid, name, model);
+        return newBiome;
+    }
+
+    public static NewBiome Add(string guid, string name, BiomeModel model)
+    {
+        model.name = guid + "_" + name;
+        
+        BiomeTypes id = GUIDManager.Get<BiomeTypes>(guid, name);
+        BiomeTypesExtensions.TypeToInternalName[id] = model.name;
+        NewBiome newGood = new NewBiome
+        {
+            biomeModel = model,
+            id = id,
+            guid = guid,
+            rawName = name
+        };
+        s_newBiomes.Add(newGood);
+        s_newBiomesLookup.Add(id, newGood);
+        s_dirty = true;
+
+        return newGood;
+    }
 
     internal static void Instantiate()
     {
@@ -51,7 +89,10 @@ public static partial class BiomeManager
         }
         
         Plugin.Log.LogInfo($"Syncing biomes");
-        foreach (BiomeModel biome in SO.Settings.biomes)
+        Settings settings = SO.Settings;
+        s_biomes.Sync(ref settings.biomes, settings.biomesCache, s_newBiomes, a => a.biomeModel);
+        
+        foreach (BiomeModel biome in settings.biomes)
         {
             SyncTrader(biome);
             foreach (SeasonRewardModel seasonRewardModel in biome.seasons.SeasonRewards)
