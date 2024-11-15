@@ -40,4 +40,11 @@ public static class ArrayExtensions
         Array.Resize(ref array, startingIndex + 1);
         array[startingIndex] = element;
     }
+    
+    public static T[] Copy<T>(this T[] array)
+    {
+        T[] copy = new T[array.Length];
+        Array.Copy(array, copy, array.Length);
+        return copy;
+    }
 }
