@@ -23,7 +23,7 @@ public partial class BiomeBuilder
 
     public void SetWorldMapTexture(string worldMapImage)
     {
-        SetIcon(TextureHelper.GetImageAsSprite(worldMapImage, TextureHelper.SpriteType.BiomeWorldMapTexture));
+        SetWorldMapTexture(TextureHelper.GetImageAsTexture(worldMapImage));
     }
 
     public void SetWorldMapTexture(Texture2D texture2D)

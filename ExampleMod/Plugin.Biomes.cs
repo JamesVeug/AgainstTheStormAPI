@@ -19,8 +19,8 @@ public partial class Plugin
         builder.SetTownName("Desert Town");
         builder.SetTownDescription("The Queen's new town in the Dry Lands.");
         
-        builder.SetIcon("desertTownIcon");
-        builder.SetWorldMapTexture("dessertWorldMapTerrain");
+        builder.SetIcon("desertTownIcon.png");
+        builder.SetWorldMapTexture("dessertWorldMapTerrain.png");
         
     }
 }

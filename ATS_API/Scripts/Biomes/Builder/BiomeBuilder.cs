@@ -1,6 +1,7 @@
 ﻿using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Model;
+using Eremite.Model.Configs;
 using Eremite.Model.Configs.CustomGame;
 using Eremite.WorldMap;
 using UnityEngine;
@@ -74,6 +75,7 @@ public partial class BiomeBuilder
         // LOOOOOOOOOOOOOTS to do here wow
         newModel.seasons = null; 
         
+        newModel.trade = null; // Use the existing model if its null. (All biomes use this really)
         
         // Clone Cursed Royal Woodlands and insert rewards and whatnot from NewBiome
         // Pretty standard but lots of options for the player
@@ -81,7 +83,6 @@ public partial class BiomeBuilder
         
         newModel.music = null; // Use the existing model if its null.
         newModel.graphics = null; // Use the existing model if its null.
-        newModel.trade = null; // Use the existing model if its null. (All biomes use this really)
         newModel.difficulty = null; // Clone the existing model if its null.
         newModel.hostility = null; // Clone the existing model if its null.
         

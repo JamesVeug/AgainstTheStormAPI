@@ -33,22 +33,30 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<OreTypes> ores = new List<OreTypes>();
     public List<GoodRef> initialGoods = new List<GoodRef>();
 
-    public override void PostSync()
+    public override bool Sync()
     {
-        base.PostSync();
+        base.Sync();
         
-        BiomeModel templateModel = BiomeTypes.Cursed_Royal_Woodlands.ToBiomeModel();
+        BiomeModel templateModel = BiomeTypes.Royal_Woodlands.ToBiomeModel();
         if(biomeModel.material == null)
         {
-            biomeModel.material = Material.Instantiate(templateModel.material);
+            Plugin.Log.LogError($"Material is null for {biomeModel.name}");
+            Material material = Material.Instantiate(templateModel.material);
             if(worldMapTexture != null)
             {
-                biomeModel.material.mainTexture = worldMapTexture;
+                Plugin.Log.LogInfo($"Setting worldMapTexture for {biomeModel.name}");
+                material.SetTexture("Texture2D_17f52de1276c4a7ba20b64de1c1eddcd", worldMapTexture);
             }
             else
             {
-                biomeModel.material.mainTexture = null;
+                Plugin.Log.LogError($"worldMapTexture is null for {biomeModel.name}");
+                material.SetTexture("Texture2D_17f52de1276c4a7ba20b64de1c1eddcd", null);
             }
+            biomeModel.material = material;
+        }
+        else
+        {
+            Plugin.Log.LogError($"Material is NOT null for {biomeModel.name}");
         }
         
         if(biomeModel.fields == null)
@@ -228,5 +236,7 @@ public class NewBiome : ASyncable<BiomeModel>
         {
             biomeModel.corsairStormProfiles = templateModel.corsairStormProfiles;
         }
+
+        return true;
     }
 }

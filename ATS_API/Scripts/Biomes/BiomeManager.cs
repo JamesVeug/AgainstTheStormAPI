@@ -9,6 +9,7 @@ using Eremite;
 using Eremite.Model;
 using Eremite.Model.Configs;
 using Eremite.WorldMap;
+using Eremite.WorldMap.Model;
 using UnityEngine;
 
 namespace ATS_API.Biomes;
@@ -41,18 +42,19 @@ public static partial class BiomeManager
         
         BiomeTypes id = GUIDManager.Get<BiomeTypes>(guid, name);
         BiomeTypesExtensions.TypeToInternalName[id] = model.name;
-        NewBiome newGood = new NewBiome
+        NewBiome newBiome = new NewBiome
         {
             biomeModel = model,
             id = id,
             guid = guid,
             rawName = name
         };
-        s_newBiomes.Add(newGood);
-        s_newBiomesLookup.Add(id, newGood);
+        s_newBiomes.Add(newBiome);
+        s_newBiomesLookup.Add(id, newBiome);
         s_dirty = true;
 
-        return newGood;
+        Plugin.Log.LogInfo($"Added {newBiome.rawName}!");
+        return newBiome;
     }
 
     internal static void Instantiate()
@@ -83,21 +85,55 @@ public static partial class BiomeManager
         }
 
         s_dirty = false;
-        if (EffectManager.NewEffects.Count == 0)
-        {
-            return;
-        }
         
-        Plugin.Log.LogInfo($"Syncing biomes");
+        
+        Plugin.Log.LogInfo($"Syncing {s_newBiomes.Count} new biomes");
         Settings settings = SO.Settings;
-        s_biomes.Sync(ref settings.biomes, settings.biomesCache, s_newBiomes, a => a.biomeModel);
-        
-        foreach (BiomeModel biome in settings.biomes)
+        List<NewBiome> biomes = s_biomes.Sync(ref settings.biomes, settings.biomesCache, s_newBiomes, a => a.biomeModel);
+
+        if (biomes.Count > 0)
         {
-            SyncTrader(biome);
-            foreach (SeasonRewardModel seasonRewardModel in biome.seasons.SeasonRewards)
+            foreach (NewBiome newBiome in biomes)
             {
-                SyncSeason(seasonRewardModel, biome);
+                var biomeGenerationRule = new BiomeGenerationRule
+                {
+                    biome = newBiome.biomeModel,
+                    minDistanceFromCapital = 2,
+                    horizontalDistribution = 0.25f,
+                    verticalDistribution = 0.27f,
+                    generationTreshold = 0.585f,
+
+                };
+                
+                foreach (WorldSealModel seal in settings.worldSeals)
+                {
+                    if(seal.worldGenerationModel.biomesRules.All(a => a.biome != newBiome.biomeModel))
+                    {
+                        Plugin.Log.LogInfo($"Adding {newBiome.biomeModel.name} to {seal.worldGenerationModel.name}");
+                        ArrayExtensions.AddElement(ref seal.worldGenerationModel.biomesRules, biomeGenerationRule);
+                    }
+                }
+
+
+                WorldGenerationModel model = settings.worldConfig.generationModel;
+                if(model.biomesRules.All(a => a.biome != newBiome.biomeModel))
+                {
+                    Plugin.Log.LogInfo($"Adding {newBiome.biomeModel.name} to {model.name}");
+                    ArrayExtensions.AddElement(ref model.biomesRules, biomeGenerationRule);
+                }
+            }
+        }
+
+
+        if (EffectManager.NewEffects.Count > 0)
+        {
+            foreach (BiomeModel biome in settings.biomes)
+            {
+                SyncTrader(biome);
+                foreach (SeasonRewardModel seasonRewardModel in biome.seasons.SeasonRewards)
+                {
+                    SyncSeason(seasonRewardModel, biome);
+                }
             }
         }
     }
