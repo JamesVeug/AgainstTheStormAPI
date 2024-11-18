@@ -45,6 +45,7 @@ internal class Plugin : BaseUnityPlugin
     private Harmony harmony;
     
     internal static AssetBundle ATS_API_Bundle;
+    internal static AssetBundle ATS_API_TerrainBundle;
 
 
     private void Awake()
@@ -69,6 +70,7 @@ internal class Plugin : BaseUnityPlugin
         // });
 
         AssetBundleHelper.TryLoadAssetBundleFromFile("ats_api", out ATS_API_Bundle);
+        AssetBundleHelper.TryLoadAssetBundleFromFile("customterrain", out ATS_API_TerrainBundle);
         
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }

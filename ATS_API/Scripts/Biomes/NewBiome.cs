@@ -2,6 +2,7 @@
 using System.Linq;
 using ATS_API.Helpers;
 using Eremite.Buildings;
+using Eremite.Controller.Generator;
 using Eremite.Model;
 using Eremite.WorldMap;
 using UnityEngine;
@@ -16,6 +17,15 @@ public class NewBiome : ASyncable<BiomeModel>
     public string rawName;
 
     public Texture2D worldMapTexture;
+    public Texture2D terrainSeaBedTexture = Placeholders.BlackTexture;
+    public Vector2 terrainSeaBedTextureUVSize = new Vector2(100, 100);
+    public Texture2D terrainBlendTexture = null;
+    public Texture2D terrainBaseTexture;
+    public Vector2 terrainBaseTextureUVSize = new Vector2(100, 100);
+    public Texture2D terrainOverlayTexture;
+    public Vector2 terrainOverlayTextureUVSize = new Vector2(100, 100);
+    public Texture2D terrainCliffsTexture;
+    public Vector2 terrainCliffsTextureUVSize = new Vector2(100, 100);
     
     public MetaCurrencyTypes baseMetaCurrency = MetaCurrencyTypes.Food_Stockpiles;
     public int baseMetaCurrencyAmount = 2;
@@ -66,7 +76,9 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.maps == null)
         {
-            biomeModel.maps = templateModel.maps;
+            // Add 1 map so we can apply changes to it when we instantiate it.
+            // NOTE: Ideally we should have our own prefab of a map to randomize but this is a good start.
+            biomeModel.maps = new MapData[]{templateModel.maps[1]};
         }
         
         if(biomeModel.Ore == null)

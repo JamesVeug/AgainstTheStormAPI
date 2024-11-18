@@ -16,8 +16,8 @@ namespace ATS_API.Biomes;
 
 public static partial class BiomeManager
 {
-    public static IReadOnlyList<NewBiome> NewBiomes => new ReadOnlyCollection<NewBiome>(s_newBiomes);
-    public static IReadOnlyDictionary<BiomeTypes, NewBiome> NewBiomeLookup => new ReadOnlyDictionary<BiomeTypes, NewBiome>(s_newBiomesLookup);
+    public static IReadOnlyList<NewBiome> NewBiomes => s_newBiomes;
+    public static IReadOnlyDictionary<BiomeTypes, NewBiome> NewBiomeLookup => s_newBiomesLookup;
     
     private static List<NewBiome> s_newBiomes = new List<NewBiome>();
     private static Dictionary<BiomeTypes, NewBiome> s_newBiomesLookup = new Dictionary<BiomeTypes, NewBiome>();

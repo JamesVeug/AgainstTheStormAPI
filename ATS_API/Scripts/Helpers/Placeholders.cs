@@ -11,6 +11,9 @@ public static class Placeholders
     public static Sprite EffectIcon => EffectIconCache;
     private static Sprite EffectIconCache = TextureHelper.GetWhiteTexture(TextureHelper.SpriteType.EffectIcon).ConvertTexture(TextureHelper.SpriteType.EffectIcon);
     
+    public static Texture2D BlackTexture => BlackTextureCache;
+    private static Texture2D BlackTextureCache = TextureHelper.GetTexture(Color.black, 1,1);
+    
     // Create new object but not new key in case someone tries changing it
     public static LocaText DisplayName => DisplayNameKey.ToLocaText();
     public static readonly string DisplayNameKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "displayName", "Missing DisplayName");

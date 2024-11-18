@@ -70,11 +70,16 @@ public static class TextureHelper
     public static Texture2D GetWhiteTexture(SpriteType spriteType)
     {
         SPRITE_RECTS.TryGetValue(spriteType, out Rect rect);
-        Texture2D texture = new((int)rect.width, (int)rect.height, TextureFormat.RGBA32, false);
+        return GetTexture(Color.white, (int)rect.width, (int)rect.height);
+    }
+    
+    public static Texture2D GetTexture(Color color, int width, int height)
+    {
+        Texture2D texture = new(width, height, TextureFormat.RGBA32, false);
         Color[] pixels = new Color[texture.width * texture.height];
         for (int i = 0; i < pixels.Length; i++)
         {
-            pixels[i] = Color.white;
+            pixels[i] = color;
         }
 
         texture.SetPixels(pixels);

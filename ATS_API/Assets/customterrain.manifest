@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 651919257
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ded85ae7bb3394f21f3a69b158d63bd6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c4fe1fdcbb1a331074c17958100faf9a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/TerrainExample/TerainBlend.png
+- Assets/TerrainExample/TerrainPrefab.prefab
+- Assets/TerrainExample/rock.png
+- Assets/TerrainExample/TerrainMaterial.mat
+- Assets/TerrainExample/sand-seamless-surface-texture-pattern_662214-2638.png
+- Assets/TerrainExample/TerrainShader.shadergraph
+- Assets/TerrainExample/Terrain.fbx
+- Assets/TerrainExample/stone.png
+Dependencies: []

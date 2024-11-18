@@ -21,6 +21,10 @@ public partial class Plugin
         
         builder.SetIcon("desertTownIcon.png");
         builder.SetWorldMapTexture("dessertWorldMapTerrain.png");
-        
+            
+        builder.SetTerrainBaseTexture("terrainBase.png");
+        builder.SetTerrainBlendTexture("terrainBlend.png");
+        builder.SetTerrainCliffTexture("terrainCliff.png");
+        builder.SetTerrainOverlayTexture("terrainOverlay.png");
     }
 }
