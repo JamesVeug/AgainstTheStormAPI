@@ -162,11 +162,11 @@ public static class {CLASSNAME}Extensions
 	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
 	/// If a {MODELNAME} is not found, it will not be included in the array.
 	/// </summary>
-	public static {MODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<GoodsTypes> collection)
+	public static {MODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<{CLASSNAME}> collection)
 	{
 		using(ListPool<{MODELNAME}>.Get(out List<{MODELNAME}> list))
 		{
-			foreach (GoodsTypes element in collection)
+			foreach ({CLASSNAME} element in collection)
 			{
 				{MODELNAME} model = element.To{MODELNAME}();
 				if (model != null)

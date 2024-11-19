@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Helpers;
+using ATS_API.NaturalResource;
 using Eremite.Buildings;
 using Eremite.Controller.Generator;
 using Eremite.Model;
@@ -11,6 +12,15 @@ namespace ATS_API.Biomes;
 
 public class NewBiome : ASyncable<BiomeModel>
 {
+    public class NaturalResourceData
+    {
+        public float horizontalTreshold = 0.2f;
+        public float verticalTreshold = 0.2f;
+        public float generationThreshold = 0f;
+        public int minDistanceFromOrigin = 0;
+        public NaturalResourceTypes resourceType;
+    }
+    
     public BiomeModel biomeModel;
     public BiomeTypes id;
     public string guid;
@@ -42,6 +52,7 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<EffectTypes> effects = new List<EffectTypes>();
     public List<OreTypes> ores = new List<OreTypes>();
     public List<GoodRef> initialGoods = new List<GoodRef>();
+    public List<NaturalResourceData> naturalResources = new List<NaturalResourceData>();
 
     public override bool Sync()
     {
@@ -181,7 +192,23 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.mapResources == null)
         {
-            biomeModel.mapResources = templateModel.mapResources;
+            if(naturalResources != null)
+            {
+                NaturalResourcesContainer container = ScriptableObject.CreateInstance<NaturalResourcesContainer>();
+                container.resourcesRules = naturalResources.Select(r => new NaturalResourceRule()
+                {
+                    horizontalDistribution = r.horizontalTreshold,
+                    verticalDistribution = r.verticalTreshold,
+                    generationTreshold = r.generationThreshold,
+                    minDistanceFromOrigin = r.minDistanceFromOrigin,
+                    resource = r.resourceType.ToNaturalResourceModel()
+                }).ToArray();
+                biomeModel.mapResources = container;
+            }
+            else
+            {
+                biomeModel.mapResources = templateModel.mapResources;
+            }
         }
         
         if(biomeModel.gladesRewards == null)
