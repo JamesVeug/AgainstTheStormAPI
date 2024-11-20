@@ -9,6 +9,7 @@ using ATS_API.Goods;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using ATS_API.MetaRewards;
+using ATS_API.NaturalResource;
 using ATS_API.Needs;
 using ATS_API.Orders;
 using ATS_API.Races;
@@ -46,6 +47,7 @@ internal class Plugin : BaseUnityPlugin
     
     internal static AssetBundle ATS_API_Bundle;
     internal static AssetBundle ATS_API_TerrainBundle;
+    internal static Transform PrefabContainer;
 
 
     private void Awake()
@@ -61,6 +63,10 @@ internal class Plugin : BaseUnityPlugin
 
         // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
         gameObject.hideFlags = HideFlags.HideAndDontSave;
+        
+        PrefabContainer = new GameObject("ATS_API_PrefabContainer").transform;
+        PrefabContainer.SetParent(transform);
+        PrefabContainer.SetActive(false);
         
         // Hotkeys.RegisterKey("Reset Trader", KeyCode.F1, () =>
         // {
@@ -89,6 +95,7 @@ internal class Plugin : BaseUnityPlugin
         EffectManager.Tick();
         TraderManager.Tick();
         OrdersManager.Tick();
+        NaturalResourceManager.Tick();
         BiomeManager.Tick();
         TextMeshProManager.Tick();
         RecipeManager.Tick();
@@ -119,6 +126,7 @@ internal class Plugin : BaseUnityPlugin
         EffectManager.Instantiate();
         TraderManager.Instantiate();
         OrdersManager.Instantiate();
+        NaturalResourceManager.Instantiate();
         BiomeManager.Instantiate();
         TextMeshProManager.Instantiate();
         BuildingManager.Instantiate();

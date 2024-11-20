@@ -73,9 +73,9 @@ public static class {CLASSNAME}Extensions
 	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
 	/// If no {MODELNAME} is found, it will return null and log an error.
 	/// </summary>
-	public static {MODELNAME} To{MODELNAME}(this string name)
+	public static {FULLMODELNAME} To{MODELNAME}(this string name)
 	{
-		{MODELNAME} model = {COLLECTION}.FirstOrDefault(a=>a.name == name);
+		{FULLMODELNAME} model = {COLLECTION}.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -91,7 +91,7 @@ public static class {CLASSNAME}Extensions
     /// Every {MODELNAME} should have a unique name as to distinguish it from others.
     /// If no {MODELNAME} is found, it will return null and log an error.
     /// </summary>
-	public static {MODELNAME} To{MODELNAME}(this {CLASSNAME} types)
+	public static {FULLMODELNAME} To{MODELNAME}(this {CLASSNAME} types)
 	{
 		return types.ToName().To{MODELNAME}();
 	}
@@ -102,10 +102,10 @@ public static class {CLASSNAME}Extensions
 	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
 	/// If a {MODELNAME} is not found, the element will be replaced with null and an error will be logged.
 	/// </summary>
-	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<{CLASSNAME}> collection)
+	public static {FULLMODELNAME}[] To{MODELNAME}Array(this IEnumerable<{CLASSNAME}> collection)
 	{
 		int count = collection.Count();
-		{MODELNAME}[] array = new {MODELNAME}[count];
+		{FULLMODELNAME}[] array = new {FULLMODELNAME}[count];
 		int i = 0;
 		foreach ({CLASSNAME} element in collection)
 		{
@@ -121,10 +121,10 @@ public static class {CLASSNAME}Extensions
 	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
 	/// If a {MODELNAME} is not found, the element will be replaced with null and an error will be logged.
 	/// </summary>
-	public static {MODELNAME}[] To{MODELNAME}Array(this IEnumerable<string> collection)
+	public static {FULLMODELNAME}[] To{MODELNAME}Array(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		{MODELNAME}[] array = new {MODELNAME}[count];
+		{FULLMODELNAME}[] array = new {FULLMODELNAME}[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -140,13 +140,13 @@ public static class {CLASSNAME}Extensions
 	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
 	/// If a {MODELNAME} is not found, it will not be included in the array.
 	/// </summary>
-	public static {MODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<string> collection)
+	public static {FULLMODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<string> collection)
 	{
-		using(ListPool<{MODELNAME}>.Get(out List<{MODELNAME}> list))
+		using(ListPool<{FULLMODELNAME}>.Get(out List<{FULLMODELNAME}> list))
 		{
 			foreach (string element in collection)
 			{
-				{MODELNAME} model = element.To{MODELNAME}();
+				{FULLMODELNAME} model = element.To{MODELNAME}();
 				if (model != null)
 				{
 					list.Add(model);
@@ -162,13 +162,13 @@ public static class {CLASSNAME}Extensions
 	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
 	/// If a {MODELNAME} is not found, it will not be included in the array.
 	/// </summary>
-	public static {MODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<{CLASSNAME}> collection)
+	public static {FULLMODELNAME}[] To{MODELNAME}ArrayNoNulls(this IEnumerable<{CLASSNAME}> collection)
 	{
-		using(ListPool<{MODELNAME}>.Get(out List<{MODELNAME}> list))
+		using(ListPool<{FULLMODELNAME}>.Get(out List<{FULLMODELNAME}> list))
 		{
 			foreach ({CLASSNAME} element in collection)
 			{
-				{MODELNAME} model = element.To{MODELNAME}();
+				{FULLMODELNAME} model = element.To{MODELNAME}();
 				if (model != null)
 				{
 					list.Add(model);

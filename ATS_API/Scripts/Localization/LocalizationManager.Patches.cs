@@ -23,6 +23,7 @@ public static partial class LocalizationManager
         if (Configs.ExportEnumTypes )
         {
             WIKI.CreateAllEnumTypes(Path.Combine(Plugin.ExportPath, "Enums"));
+            WIKI.CreateAllPrefabEnumTypes(Path.Combine(Plugin.ExportPath, "EnumPrefabs"));
         }
 
         // Exports all CSVs, so we can have updated data for the API

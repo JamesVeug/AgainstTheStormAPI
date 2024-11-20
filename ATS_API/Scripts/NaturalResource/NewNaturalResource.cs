@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite.Model;
 
@@ -23,11 +24,11 @@ public class NewNaturalResource : ASyncable<NaturalResourceModel>
     
     public List<ExtraProducedGood> ExtraProducedGoods = new List<ExtraProducedGood>();
     
-    public List<Eremite.MapObjects.NaturalResource> Prefabs = new();
+    public List<NaturalResourcePrefabBuilder> Prefabs = new();
 
-    public override void PostSync()
+    public override bool Sync()
     {
-        base.PostSync();
+        base.Sync();
 
         Model.production = new GoodRef()
         {
@@ -47,12 +48,14 @@ public class NewNaturalResource : ASyncable<NaturalResourceModel>
             };
         }
         
-        Model.prefabs = Prefabs.ToArray();
+        Model.prefabs = Prefabs.Select(a=>a.CreatePrefab()).ToArray();
 
 
         NaturalResourceModel template = NaturalResourceTypes.Woodlands_Tree.ToNaturalResourceModel();
         Model.label = template.label;
         Model.gatheringSound = template.gatheringSound;
         Model.finalSound = template.finalSound;
+        
+        return true;
     }
 }

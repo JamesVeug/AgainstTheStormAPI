@@ -48,4 +48,10 @@ public partial class NaturalResourceBuilder
         });
         return this;
     }
+    
+    public NaturalResourceBuilder AddPrefab(NaturalResourcePrefabBuilder naturalResourcePrefab)
+    {
+        newModel.Prefabs.Add(naturalResourcePrefab);
+        return this;
+    }
 }

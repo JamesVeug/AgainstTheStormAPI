@@ -14,7 +14,7 @@ public partial class WIKI
 {
     public static void CreateEnumTypesCSharpScript<T>(string EnumName, string modelGetter, IEnumerable<T> list,
         Func<T, string> nameGetter, Func<T, string> comment, List<string> extraUsings = null,
-        Func<string, string> enumParser = null, Func<T, string> groupEnumsBy = null)
+        Func<string, string> enumParser = null, Func<T, string> groupEnumsBy = null, bool includeNamespaceInType=false)
     {
         // Quit if the directory does not exist
         if (!Directory.Exists(exportCSScriptsPath))
@@ -73,7 +73,8 @@ public partial class WIKI
 
         List<string> sortedGroups = groups.Keys.OrderBy(a => a).ToList();
 
-        string ModelName = typeof(T).Name;
+        string fullModelName = typeof(T).FullName;
+        string modelName = typeof(T).Name;
         string version = Application.version;
         string header = "// Generated using Version " + version;
         string firstEnum = sorted[sortedGroups[0]][0].enu;
@@ -134,7 +135,8 @@ public partial class WIKI
             .Replace("{ENUMS}", enumLines)
             .Replace("{TOTAL_ENUMS}", set.Count.ToString())
             .Replace("{FIRST_ENUM}", firstEnum)
-            .Replace("{MODELNAME}", ModelName)
+            .Replace("{FULLMODELNAME}", fullModelName)
+            .Replace("{MODELNAME}", modelName)
             .Replace("{COLLECTION}", modelGetter)
             .Replace("{ENUM_TO_NAME}", dictionaryLines);
 
@@ -174,6 +176,20 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("MetaCurrencyTypes", "SO.Settings.metaCurrencies", SO.Settings.metaCurrencies, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("AscensionModifierTypes", "SO.Settings.ascensionModifiers", SO.Settings.ascensionModifiers, a=>a.Name, (a)=>NameAndDescription(a.effect), ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+    }
+    
+    public static void CreateAllPrefabEnumTypes(string csExportPath)
+    {
+        exportCSScriptsPath = csExportPath;
+        
+        List<Eremite.MapObjects.NaturalResource> resources = SO.Settings.NaturalResources.Select(a=>a.prefabs).SelectMany(a=>a).Distinct().ToList();
+        string resourceString = "SO.Settings.NaturalResources.Select(a=>a.prefabs).SelectMany(a=>a)";
+        Func<Eremite.MapObjects.NaturalResource, string> comment = a =>
+        {
+            var models = string.Join(", ", SO.Settings.NaturalResources.Where(m => m.prefabs.Contains(a)).Select(a=>a.displayName.GetText()));
+            return a.name + (string.IsNullOrEmpty(models) ? "" : " - " + models);
+        };
+        CreateEnumTypesCSharpScript("NaturalResourcePrefabs", resourceString, resources, a=>a.name, comment, [], includeNamespaceInType:true);
     }
 
     private static string EffectGroup(EffectModel arg)
