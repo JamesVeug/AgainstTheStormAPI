@@ -20,6 +20,12 @@ public class NewBiome : ASyncable<BiomeModel>
         public int minDistanceFromOrigin = 0;
         public NaturalResourceTypes resourceType;
     }
+
+    public class InitialGood
+    {
+        public GoodsTypes goodType;
+        public int amount;
+    }
     
     public BiomeModel biomeModel;
     public BiomeTypes id;
@@ -52,7 +58,7 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<EffectTypes> earlyEfects = new List<EffectTypes>();
     public List<EffectTypes> effects = new List<EffectTypes>();
     public List<OreTypes> ores = new List<OreTypes>();
-    public List<GoodRef> initialGoods = new List<GoodRef>();
+    public List<InitialGood> initialGoods = new List<InitialGood>();
     public List<NaturalResourceData> naturalResources = new List<NaturalResourceData>();
 
     public override bool Sync()
@@ -259,7 +265,11 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.initialGoods == null)
         {
-            biomeModel.initialGoods = initialGoods.ToArray();
+            biomeModel.initialGoods = initialGoods.Select(a=>new GoodRef()
+            {
+                good = a.goodType.ToGoodModel(),
+                amount = a.amount
+            }).ToArray();
         }
         
         if(biomeModel.corsairDrizzleProfiles == null)

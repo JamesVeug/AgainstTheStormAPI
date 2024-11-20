@@ -145,4 +145,14 @@ public partial class BiomeBuilder
         newBiome.naturalResources.Add(naturalResourceData);
         return this;
     }
+    
+    public void AddInitialGood(GoodsTypes goodType, int amount)
+    {
+        NewBiome.InitialGood initialGood = new NewBiome.InitialGood
+        {
+            goodType = goodType,
+            amount = amount
+        };
+        newBiome.initialGoods.Add(initialGood);
+    }
 }
