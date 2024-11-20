@@ -91,6 +91,18 @@ public static class Util
         return componentInChildren;
     }
     
+    public static T SafeGetComponentInChildren<T>(this Component go, bool includeInactive) where T : Component
+    {
+        T componentInChildren = go.GetComponentInChildren<T>(includeInactive);
+        if(componentInChildren != null)
+        {
+            return componentInChildren;
+        }
+        
+        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        return componentInChildren;
+    }
+    
     public static T[] SafeGetComponentsInChildren<T>(this Component go, bool includeInactive=false) where T : Component
     {
         T[] componentInChildren = go.GetComponentsInChildren<T>(includeInactive);

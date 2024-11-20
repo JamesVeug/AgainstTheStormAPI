@@ -61,4 +61,9 @@ public partial class BiomeBuilder
         newBiome.terrainCliffsTexture = TextureHelper.GetImageAsTexture(cliffsTexture);
         newBiome.terrainCliffsTextureUVSize = new Vector2(uvWidth, uvHeight);
     }
+    
+    public void SetWaterTexture(string waterTexture)
+    {
+        newBiome.waterTexture = TextureHelper.GetImageAsTexture(waterTexture);
+    }
 }

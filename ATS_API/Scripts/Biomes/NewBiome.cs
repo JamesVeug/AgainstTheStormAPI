@@ -36,6 +36,7 @@ public class NewBiome : ASyncable<BiomeModel>
     public Vector2 terrainOverlayTextureUVSize = new Vector2(100, 100);
     public Texture2D terrainCliffsTexture;
     public Vector2 terrainCliffsTextureUVSize = new Vector2(100, 100);
+    public Texture2D waterTexture;
     
     public MetaCurrencyTypes baseMetaCurrency = MetaCurrencyTypes.Food_Stockpiles;
     public int baseMetaCurrencyAmount = 2;

@@ -32,6 +32,7 @@ public partial class Plugin
         builder.SetTerrainBlendTexture("terrainBlend.png");
         builder.SetTerrainCliffTexture("terrainCliff.png");
         builder.SetTerrainOverlayTexture("terrainOverlay.png");
+        builder.SetWaterTexture("desertWorldWater.png");
 
         // Trees / natural resources
         // builder.AddNaturalResource(NaturalResourceTypes.Bay_Tree_2,

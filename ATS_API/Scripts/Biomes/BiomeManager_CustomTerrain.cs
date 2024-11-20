@@ -2,6 +2,7 @@
 using ATS_API.Helpers;
 using Cysharp.Threading.Tasks;
 using Eremite;
+using Eremite.Controller.Events;
 using Eremite.Controller.Generator;
 using HarmonyLib;
 using UnityEngine;
@@ -82,6 +83,15 @@ public static partial class BiomeManager
         {
             Plugin.Log.LogInfo($"Setting terrainBlendTexture for {newBiome.biomeModel.name}");
             material.SetTexture("_BlendTexture", newBiome.terrainBlendTexture);
+        }
+        
+        if(newBiome.waterTexture != null)
+        {
+            Plugin.Log.LogInfo($"Setting water texture for {newBiome.biomeModel.name}");
+            MeshRenderer meshRenderer = terrain.transform.parent.SafeGetComponentInChildren<FloodController>(true).SafeGetComponent<MeshRenderer>();
+            Material waterMaterial = new Material(meshRenderer.material);
+            waterMaterial.SetTexture("Texture2D_10557134404e44b38e6556f3c2d3fddb", newBiome.waterTexture);
+            meshRenderer.material = waterMaterial;
         }
         
         GameObject.Destroy(terrain.gameObject);
