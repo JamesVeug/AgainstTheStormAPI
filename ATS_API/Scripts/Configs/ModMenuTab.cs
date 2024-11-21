@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ATS_API;
 using ATS_API.Helpers;
+using ATS_API.Localization;
 using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;
@@ -40,13 +41,14 @@ public static class ModMenuTab
         GameObject modMenuTabButton = GameObject.Instantiate(tab.gameObject, tabs.transform);
         TabsButton button = modMenuTabButton.SafeGetComponentInChildren<TabsButton>();
         button.content = modMenuTab;
-        GameObject.Destroy(button.FindChild<LocalizationText>("Text"));
+        // GameObject.Destroy(button.FindChild<LocalizationText>("Text"));
         GameObject.Destroy(button.FindChild<TextFontFeaturesHelper>("Text"));
 
         IEnumerator MethodName()
         {
             yield return null;
-            button.FindChild<TMP_Text>("Text").text = "Mods";
+            button.FindChild<LocalizationText>("Text").key = Keys.OptionsUI_ModsTab_Text_Key;
+            button.FindChild<LocalizationText>("Text").SetText();
         }
         Plugin.Instance.StartCoroutine(MethodName());
 
@@ -99,13 +101,16 @@ public static class ModMenuTab
             header.SafeGetComponent<TMP_Text>().text = modName + (modVersion != null && modVersion.ToString() != "0.0" ? " v" + modVersion : "");
             modSection.name = header.GetComponent<TMP_Text>().text;
 
+            string guid = Keys.GUID.ToLocaText().GetTextOrNull();
+            string dependencies = Keys.Dependencies.ToLocaText().GetTextOrNull();
+
             SimpleTooltipTrigger tooltipTrigger = header.GetOrAdd<SimpleTooltipTrigger>();
             tooltipTrigger.target = header.GetComponent<RectTransform>();
             tooltipTrigger.descKey = $"<align=\"left\">" +
                                      $"{description}" +
-                                     $"<b>GUID:</b> {plugin.Metadata.GUID}\n\n" +
+                                     $"<b>{guid}:</b> {plugin.Metadata.GUID}\n\n" +
                                      // $"<b>Version:</b> {plugin.Metadata.Version}\n\n" +
-                                     $"<b>Dependencies:</b>\n{GetDependencies(plugin, manifest)}" +
+                                     $"<b>{dependencies}:</b>\n{GetDependencies(plugin, manifest)}" +
                                      "</align>";
 
             AddConfigsToModSection(plugin, dropdownTemplate, modSection, sliderTemplate, toggleTemplate, inputFieldTemplate, textFieldBackground, labelTemplate);
@@ -147,6 +152,9 @@ public static class ModMenuTab
         dependencies.Remove("BepInExPack");
 
 
+        string wrongVersion = Keys.WrongVersion.ToLocaText().GetTextOrNull();
+        string missing = Keys.Missing.ToLocaText().GetTextOrNull();
+        
         string text = "";
         if (dependencies.Count > 0)
         {
@@ -163,12 +171,12 @@ public static class ModMenuTab
                     loaded = pluginInfo.Metadata.Version >= version;
                     if (!loaded)
                     {
-                        s += " (Wrong Version)";
+                        s += $" ({wrongVersion})";
                     }
                 }
                 else
                 {
-                    s += " (Missing)";
+                    s += $" ({missing})";
                 }
                 
                 Color color = loaded ? Color.green : Color.red;
@@ -178,7 +186,7 @@ public static class ModMenuTab
         }
         else
         {
-            text = "None";
+            text = Keys.None.ToLocaText().GetTextOrNull();
         }
 
         return text;

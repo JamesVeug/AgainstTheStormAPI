@@ -13,6 +13,14 @@ public static class Keys
     public static readonly string Close_Key = "Common_Close"; // Close
     public static readonly string Yes_Key = "Common_Close"; // Yes
     
+    // API constants
+    public static readonly string GUID = "API_GUID"; // GUID
+    public static readonly string Dependencies = "API_Dependencies"; // Dependencies
+    public static readonly string WrongVersion = "API_WrongVersion"; // WrongVersion
+    public static readonly string Missing = "API_Missing"; // Missing
+    public static readonly string None = "API_None"; // None
+    
+    
     // API defined keys
     public static readonly string GenericPopup_Header_Key = "API_GenericPopup_Header"; // Something went wrong!
     public static readonly string GenericPopup_Description_Key = "API_GenericPopup_Description"; // Check logs for more information
@@ -20,4 +28,6 @@ public static class Keys
     public static readonly string GenericPopup_ContinueAtRisk_Key = "API_GenericPopup_ContinueAtRisk"; // Continue the game where some content may not work.
     public static readonly string GenericPopup_QuitGameAndDisableMod_Key = "API_GenericPopup_QuitGameAndDisableMod"; // Close the game and disable the affected mod.
     public static readonly string GenericPopup_YouHaveXOptions_Key = "API_GenericPopup_YouHaveXOptions"; // You have {0} options
+    
+    public static readonly string OptionsUI_ModsTab_Text_Key = "API_OptionsUI_ModsTab_Text"; // Mods
 }
