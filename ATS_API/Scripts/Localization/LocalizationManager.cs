@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using ATS_API.Helpers;
 using Eremite;
 using Eremite.Services;
 using UnityEngine;
@@ -8,6 +10,36 @@ namespace ATS_API.Localization;
 
 public static partial class LocalizationManager
 {
+    private class LanguageData
+    {
+        public SystemLanguage Language;
+        public string Code;
+        public string CultureCode;
+    }
+
+    private static readonly List<LanguageData> s_supportedlanguages = new List<LanguageData>()
+    {
+        new LanguageData() { Language = SystemLanguage.English,             Code = "en",        CultureCode = "en-US" },
+        new LanguageData() { Language = SystemLanguage.Czech,               Code = "cs",        CultureCode = "cs-CS" },
+        new LanguageData() { Language = SystemLanguage.German,              Code = "de",        CultureCode = "de-DE" },
+        new LanguageData() { Language = SystemLanguage.Spanish,             Code = "es",        CultureCode = "es-ES" },
+        new LanguageData() { Language = SystemLanguage.Spanish,             Code = "es-LATAM",  CultureCode = "es-MX" }, // Latin America
+        new LanguageData() { Language = SystemLanguage.French,              Code = "fr",        CultureCode = "fr-FR" },
+        new LanguageData() { Language = SystemLanguage.Hungarian,           Code = "hu",        CultureCode = "hu-HU" },
+        new LanguageData() { Language = SystemLanguage.Italian,             Code = "it",        CultureCode = "it-IT" },
+        new LanguageData() { Language = SystemLanguage.Japanese,            Code = "ja",        CultureCode = "ja-JP" },
+        new LanguageData() { Language = SystemLanguage.Korean,              Code = "ko",        CultureCode = "ko-KR" },
+        new LanguageData() { Language = SystemLanguage.Polish,              Code = "pl",        CultureCode = "pl-PL" },
+        new LanguageData() { Language = SystemLanguage.Portuguese,          Code = "pt",        CultureCode = "pt-BR" },
+        new LanguageData() { Language = SystemLanguage.Russian,             Code = "ru",        CultureCode = "ru-RU" },
+        new LanguageData() { Language = SystemLanguage.Thai,                Code = "th",        CultureCode = "th-TH" },
+        new LanguageData() { Language = SystemLanguage.Turkish,             Code = "tr",        CultureCode = "tr-TR" },
+        new LanguageData() { Language = SystemLanguage.Ukrainian,           Code = "ua",        CultureCode = "uk-UA" },
+        new LanguageData() { Language = SystemLanguage.Chinese,             Code = "zh-CN",     CultureCode = "zh-CN" },
+        new LanguageData() { Language = SystemLanguage.ChineseSimplified,   Code = "zh-CN",     CultureCode = "zh-CN" },
+        new LanguageData() { Language = SystemLanguage.ChineseTraditional,  Code = "zh-CT",     CultureCode = "zh-Hant" },
+    };
+    
     private static readonly Dictionary<string, Dictionary<SystemLanguage, string>> s_pendingLanguageStrings = new();
     
     private static readonly Dictionary<string, Dictionary<SystemLanguage, string>> s_newStrings = new();
@@ -16,14 +48,84 @@ public static partial class LocalizationManager
 
     public static void Instantiate()
     {
-        AddString(Keys.GenericPopup_Header_Key, "Something went wrong!");
-        AddString(Keys.GenericPopup_Description_Key, "Check logs for more information");
-        AddString(Keys.GenericPopup_ExceptionDescription_Key, "{0}\n\nAn exception occurred:");
-        AddString(Keys.GenericPopup_ContinueAtRisk_Key, "Continue the game where some content may not work.");
-        AddString(Keys.GenericPopup_QuitGameAndDisableMod_Key, "Close the game and disable the affected mod.");
-        AddString(Keys.GenericPopup_YouHaveXOptions_Key, "You have {0} options:");
+        // Look for localizedText.csv in the same path as PluginDirectory
+        string[] files = Directory.GetFiles(Plugin.PluginDirectory, "localizedText.tsv", SearchOption.AllDirectories);
+        if (files.Length == 0)
+        {
+            Debug.LogError($"Could not find localizedText.csv in: {Plugin.PluginDirectory}");
+            return;
+        }
+        
+        string path = files[0];
+        LoadTSV(PluginInfo.PLUGIN_GUID, path);
+    }
+
+    public static void LoadCSV(string guid, string path)
+    {
+        LoadFile(guid, path, ',');
     }
     
+    public static void LoadTSV(string guid, string path)
+    {
+        LoadFile(guid, path, '\t');
+    }
+    
+    private static void LoadFile(string guid, string path, char separator)
+    {
+        string[] lines = null;
+
+        try
+        {
+            lines = System.IO.File.ReadAllLines(path);
+            if (lines.Length < 3)
+            {
+                Plugin.Log.LogError($"Read .csv but has less than 3 lines!. The file is likely corrupt.\n" + Environment.StackTrace);
+                return;
+            }
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError($"Could not read .csv from: {path}\n" + Environment.StackTrace);
+            Plugin.Log.LogError(e);
+            return;
+        }
+
+        string[] headers = lines[0].Split(separator);
+        string[] cultureCodes = lines[1].Split(separator);
+        for (int i = 2; i < lines.Length; i++)
+        {
+            string[] values = lines[i].Split(separator);
+            
+            string key = values[0];
+            if (!string.IsNullOrEmpty(guid))
+            {
+                key = guid + "_" + key;
+            }
+            
+            for (int j = 1; j < values.Length; j++)
+            {
+                try
+                {
+                    string cultureCode = cultureCodes[j]; // en-UA or es-MX or uk-UA
+                    SystemLanguage language = CultureCodeToLanguage(cultureCode);
+                    if (language == SystemLanguage.Afrikaans)
+                    {
+                        continue;
+                    }
+
+                    string value = values[j];
+                    AddString(key, value, language);
+                }
+                catch (Exception e)
+                {
+                    Plugin.Log.LogError($"Error parsing line {i} column {j} in {path}. Check there's no {separator.ToLiteral()} anywhere in your code!\n" + Environment.StackTrace);
+                    Plugin.Log.LogError(e);
+                    return;
+                }
+            }
+        }
+    }
+
     public static void Tick()
     {
         if (!m_isDirty)
@@ -132,180 +234,69 @@ public static partial class LocalizationManager
 
     public static string LanguageToCode(SystemLanguage language)
     {
-        switch (language)
+        foreach (LanguageData languageData in s_supportedlanguages)
         {
-            case SystemLanguage.English:
-                return "en";
-            case SystemLanguage.Afrikaans:
-                return "af";
-            case SystemLanguage.Arabic:
-                return "ar";
-            case SystemLanguage.Basque:
-                return "eu";
-            case SystemLanguage.Belarusian:
-                return "be";
-            case SystemLanguage.Bulgarian:
-                return "bg";
-            case SystemLanguage.Catalan:
-                return "ca";
-            case SystemLanguage.Chinese:
-            case SystemLanguage.ChineseSimplified:
-                return "zh-CN";
-            case SystemLanguage.ChineseTraditional:
-                return "zh-CT"; // Normally this is TW but ATS uses CT for traditional
-            case SystemLanguage.Czech:
-                return "cs";
-            case SystemLanguage.Danish:
-                return "da";
-            case SystemLanguage.Dutch:
-                return "nl";
-            case SystemLanguage.Estonian:
-                return "et";
-            case SystemLanguage.Faroese:
-                return "fo";
-            case SystemLanguage.Finnish:
-                return "fi";
-            case SystemLanguage.French:
-                return "fr";
-            case SystemLanguage.German:
-                return "de";
-            case SystemLanguage.Greek:
-                return "el";
-            case SystemLanguage.Hebrew:
-                return "he";
-            case SystemLanguage.Icelandic:
-                return "is";
-            case SystemLanguage.Indonesian:
-                return "id";
-            case SystemLanguage.Italian:
-                return "it";
-            case SystemLanguage.Japanese:
-                return "ja";
-            case SystemLanguage.Korean:
-                return "ko";
-            case SystemLanguage.Latvian:
-                return "lv";
-            case SystemLanguage.Lithuanian:
-                return "lt";
-            case SystemLanguage.Norwegian:
-                return "no";
-            case SystemLanguage.Polish:
-                return "pl";
-            case SystemLanguage.Portuguese:
-                return "pt";
-            case SystemLanguage.Romanian:
-                return "ro";
-            case SystemLanguage.Russian:
-                return "ru";
-            case SystemLanguage.SerboCroatian:
-                return "sh";
-            case SystemLanguage.Slovak:
-                return "sk";
-            case SystemLanguage.Slovenian:
-                return "sl";
-            case SystemLanguage.Spanish:
-                return "es";
-            case SystemLanguage.Swedish:
-                return "sv";
-            case SystemLanguage.Thai:
-                return "th";
-            case SystemLanguage.Turkish:
-                return "tr";
-            case SystemLanguage.Ukrainian:
-                return "uk";
-            case SystemLanguage.Vietnamese:
-                return "vi";
-            default:
-                return "en"; //Default to English if the language is not in the list
+            if (languageData.Language == language)
+            {
+                return languageData.Code;
+            }
         }
+
+        Plugin.Log.LogError($"Could not find language code for {language}\n" + Environment.StackTrace);
+        return "en";
     }
 
     public static SystemLanguage CodeToLanguage(string code)
     {
-        switch (code)
+        foreach (LanguageData languageData in s_supportedlanguages)
         {
-            case "en":
-                return SystemLanguage.English;
-            case "af":
-                return SystemLanguage.Afrikaans;
-            case "ar":
-                return SystemLanguage.Arabic;
-            case "eu":
-                return SystemLanguage.Basque;
-            case "be":
-                return SystemLanguage.Belarusian;
-            case "bg":
-                return SystemLanguage.Bulgarian;
-            case "ca":
-                return SystemLanguage.Catalan;
-            case "zh-CN":
-                return SystemLanguage.ChineseSimplified;
-            case "zh-CT":
-                return SystemLanguage.ChineseTraditional;
-            case "cs":
-                return SystemLanguage.Czech;
-            case "da":
-                return SystemLanguage.Danish;
-            case "nl":
-                return SystemLanguage.Dutch;
-            case "et":
-                return SystemLanguage.Estonian;
-            case "fo":
-                return SystemLanguage.Faroese;
-            case "fi":
-                return SystemLanguage.Finnish;
-            case "fr":
-                return SystemLanguage.French;
-            case "de":
-                return SystemLanguage.German;
-            case "el":
-                return SystemLanguage.Greek;
-            case "he":
-                return SystemLanguage.Hebrew;
-            case "is":
-                return SystemLanguage.Icelandic;
-            case "id":
-                return SystemLanguage.Indonesian;
-            case "it":
-                return SystemLanguage.Italian;
-            case "ja":
-                return SystemLanguage.Japanese;
-            case "ko":
-                return SystemLanguage.Korean;
-            case "lv":
-                return SystemLanguage.Latvian;
-            case "lt":
-                return SystemLanguage.Lithuanian;
-            case "no":
-                return SystemLanguage.Norwegian;
-            case "pl":
-                return SystemLanguage.Polish;
-            case "pt":
-                return SystemLanguage.Portuguese;
-            case "ro":
-                return SystemLanguage.Romanian;
-            case "ru":
-                return SystemLanguage.Russian;
-            case "sh":
-                return SystemLanguage.SerboCroatian;
-            case "sk":
-                return SystemLanguage.Slovak;
-            case "sl":
-                return SystemLanguage.Slovenian;
-            case "es":
-                return SystemLanguage.Spanish;
-            case "sv":
-                return SystemLanguage.Swedish;
-            case "th":
-                return SystemLanguage.Thai;
-            case "tr":
-                return SystemLanguage.Turkish;
-            case "uk":
-                return SystemLanguage.Ukrainian;
-            case "vi":
-                return SystemLanguage.Vietnamese;
-            default:
-                return SystemLanguage.English; //Default to English if the language is not in the list
+            if (languageData.Code == code)
+            {
+                return languageData.Language;
+            }
         }
+
+        Plugin.Log.LogError($"Could not find language for code {code}\n" + Environment.StackTrace);
+        return SystemLanguage.English;
+    }
+    
+    public static SystemLanguage CultureCodeToLanguage(string code)
+    {
+        foreach (LanguageData languageData in s_supportedlanguages)
+        {
+            if (languageData.CultureCode == code)
+            {
+                return languageData.Language;
+            }
+        }
+
+        Plugin.Log.LogError($"Could not find language for culture code {code}\n" + Environment.StackTrace);
+        return SystemLanguage.English;
+    }
+    
+    public static bool IsLanguageCodeSupported(string code)
+    {
+        foreach (LanguageData languageData in s_supportedlanguages)
+        {
+            if (languageData.Code == code)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+    public static bool IsCultureCodeSupported(string code)
+    {
+        foreach (LanguageData languageData in s_supportedlanguages)
+        {
+            if (languageData.CultureCode == code)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
