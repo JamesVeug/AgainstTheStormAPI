@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Eremite;
 using Eremite.Model;
+using UnityEngine.Pool;
 
 namespace ATS_API.Helpers;
 
@@ -2901,7 +2902,7 @@ public static class EffectTypesExtensions
 		{
 			foreach (EffectTypes element in collection)
 			{
-				EffectModel model = element.EffectModel();
+				EffectModel model = element.ToEffectModel();
 				if (model != null)
 				{
 					list.Add(model);

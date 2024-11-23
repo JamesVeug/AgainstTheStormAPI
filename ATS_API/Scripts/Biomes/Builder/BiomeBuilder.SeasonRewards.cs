@@ -80,4 +80,22 @@ public partial class BiomeBuilder
         rewards.GuaranteedEffects.Add(effect);
         return this;
     }
+    
+    /// <summary>
+    /// All biomes use "_SSE_ _BIOME_ Storm" to reduce resolve during the storm.
+    /// </summary>
+    public BiomeBuilder AddSimpleStaticEffect(SimpleSeasonalEffectTypes effect)
+    {
+        newBiome.simpleStaticEffects.Add(effect);
+        return this;
+    }
+    
+    /// <summary>
+    /// I think this is the different negative effects that can happen during the seasons according to the hostility.
+    /// </summary>
+    public BiomeBuilder AddSimpleEffect(SimpleSeasonalEffectTypes effect)
+    {
+        newBiome.simpleEffects.Add(effect);
+        return this;
+    }
 }

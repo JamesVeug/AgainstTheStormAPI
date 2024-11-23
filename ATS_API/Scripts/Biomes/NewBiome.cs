@@ -95,6 +95,8 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<SeasonData> seasonData = new List<SeasonData>();
     public GoodsTypeAmount declineSeasonRewardsReward = new GoodsTypeAmount();
     public List<SeasonRewards> seasonRewards = new List<SeasonRewards>();
+    public List<SimpleSeasonalEffectTypes> simpleStaticEffects = new List<SimpleSeasonalEffectTypes>();
+    public List<SimpleSeasonalEffectTypes> simpleEffects = new List<SimpleSeasonalEffectTypes>();
     
     // newcomers Config
     public int newcomersInterval = 600;
@@ -239,7 +241,8 @@ public class NewBiome : ASyncable<BiomeModel>
                 amount = declineSeasonRewardsReward.amount
             };
             
-            BuildSeasonRewards(config);
+            BuildSeasonRewards(config, templateModel);
+            BuildSimpleStaticRewards(config, templateModel);
         }
         
         if(biomeModel.newcomers == null)
@@ -378,12 +381,12 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.earlyEffects == null)
         {
-            biomeModel.earlyEffects = earlyEfects.Select(e => e.ToEffectModel()).Where(a=>a != null).ToArray();
+            biomeModel.earlyEffects = earlyEfects.ToEffectModelArrayNoNulls();
         }
         
         if(biomeModel.effects == null)
         {
-            biomeModel.effects = effects.Select(e => e.ToEffectModel()).Where(a=>a != null).ToArray();
+            biomeModel.effects = effects.ToEffectModelArrayNoNulls();
         }
         
         if(biomeModel.initialGoods == null)
@@ -413,11 +416,12 @@ public class NewBiome : ASyncable<BiomeModel>
         return true;
     }
 
-    private void BuildSeasonRewards(SeasonsConfig config)
+    private void BuildSeasonRewards(SeasonsConfig config, BiomeModel template)
     {
         if (seasonRewards.Count == 0)
         {
             // Just keep the rewards from the template season
+            config.SeasonRewards = template.seasons.SeasonRewards.Copy();
             return;
         }
         
@@ -454,8 +458,30 @@ public class NewBiome : ASyncable<BiomeModel>
             }
         }
         
-        
         config.SeasonRewards = yearlyRewards;
+    }
+    
+    private void BuildSimpleStaticRewards(SeasonsConfig config, BiomeModel template)
+    {
+        if (simpleStaticEffects.Count == 0)
+        {
+            // Just keep the rewards from the template season
+            config.simpleEffects = template.seasons.simpleStaticEffects.Copy();
+            return;
+        }
         
+        config.simpleEffects = simpleStaticEffects.ToSimpleSeasonalEffectModelArrayNoNulls();
+    }
+    
+    private void BuildSimpleEffects(SeasonsConfig config, BiomeModel template)
+    {
+        if (simpleEffects.Count == 0)
+        {
+            // Just keep the rewards from the template season
+            config.simpleEffects = template.seasons.simpleEffects.Copy();
+            return;
+        }
+        
+        config.simpleEffects = simpleEffects.ToSimpleSeasonalEffectModelArrayNoNulls();
     }
 }

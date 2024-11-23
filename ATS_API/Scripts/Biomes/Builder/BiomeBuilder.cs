@@ -114,4 +114,16 @@ public partial class BiomeBuilder
         newBiome.initialGoods.Add(goodsTypeAmount);
         return this;
     }
+    
+    public BiomeBuilder AddCustomEffect(EffectTypes effect)
+    {
+        newBiome.effects.Add(effect);
+        return this;
+    }
+    
+    public BiomeBuilder AddEarlyEffect(EffectTypes effect)
+    {
+        newBiome.earlyEfects.Add(effect);
+        return this;
+    }
 }
