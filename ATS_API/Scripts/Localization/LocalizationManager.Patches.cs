@@ -25,7 +25,10 @@ public static partial class LocalizationManager
         // Exports all enums so we cna have updated code for the API
         if (Configs.ExportEnumTypes )
         {
-            WIKI.CreateAllEnumTypes(Path.Combine(Plugin.ExportPath, "Enums"));
+            string csExportPath = Plugin.ExportPath;
+            Plugin.Log.LogMessage($"Exporting enums to {csExportPath}");
+            
+            WIKI.CreateAllEnumTypes(Path.Combine(csExportPath, "EnumPrefabs"));
             WIKI.CreateAllPrefabEnumTypes(Path.Combine(Plugin.ExportPath, "EnumPrefabs"));
         }
 

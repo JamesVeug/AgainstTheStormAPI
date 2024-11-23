@@ -176,6 +176,7 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("MetaCurrencyTypes", "SO.Settings.metaCurrencies", SO.Settings.metaCurrencies, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("AscensionModifierTypes", "SO.Settings.ascensionModifiers", SO.Settings.ascensionModifiers, a=>a.Name, (a)=>NameAndDescription(a.effect), ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
     }
     
     public static void CreateAllPrefabEnumTypes(string csExportPath)
