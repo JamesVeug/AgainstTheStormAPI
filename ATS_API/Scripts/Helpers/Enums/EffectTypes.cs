@@ -2894,6 +2894,38 @@ public static class EffectTypesExtensions
 
 		return array;
 	}
+	
+	public static EffectModel[] ToEffectModelArrayNoNulls(this IEnumerable<EffectTypes> collection)
+	{
+		using(ListPool<EffectModel>.Get(out List<EffectModel> list))
+		{
+			foreach (EffectTypes element in collection)
+			{
+				EffectModel model = element.EffectModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	public static EffectModel[] ToEffectModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<EffectModel>.Get(out List<EffectModel> list))
+		{
+			foreach (string element in collection)
+			{
+				EffectModel model = element.ToEffectModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
 
 	internal static readonly Dictionary<EffectTypes, string> TypeToInternalName = new()
 	{

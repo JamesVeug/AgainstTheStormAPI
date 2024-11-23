@@ -24,6 +24,22 @@ public partial class Plugin
         // Icon that appears.... I actually have no idea where 
         builder.SetIcon("desertTownIcon.png");
         
+        // Season
+        builder.SetSeasonDuration(SeasonTypes.Storm, 30);
+        builder.SetSeasonDuration(SeasonTypes.Clearance, 240);
+        builder.SetSeasonDuration(SeasonTypes.Drizzle, 120);
+        builder.SetDeclinedSeasonalRewardsReward(GoodsTypes.Valuable_Ancient_Tablet, 2);
+        
+        // newcomers
+        builder.SetNewcomerInterval(300);
+        builder.SetNewcomerAmountOfGoods(1, 4);
+        builder.AddNewcomerRace(RaceTypes.Beaver, 50);
+        builder.AddNewcomerRace(RaceTypes.Harpy, 50);
+        builder.AddNewcomerRace(RaceTypes.Foxes, 50);
+        builder.AddNewcomerRace(RaceTypes.Frog, 25);
+        builder.AddNewcomerRace(RaceTypes.Human, 100);
+        builder.AddNewcomerRace(RaceTypes.Lizard, 50);
+        
         // World Map texture to overlay the little hexagons
         builder.SetWorldMapTexture("dessertWorldMapTerrain.png");
         

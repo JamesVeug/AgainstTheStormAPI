@@ -5,6 +5,7 @@ using ATS_API.NaturalResource;
 using Eremite.Buildings;
 using Eremite.Controller.Generator;
 using Eremite.Model;
+using Eremite.Model.Configs;
 using Eremite.WorldMap;
 using UnityEngine;
 
@@ -21,10 +22,39 @@ public class NewBiome : ASyncable<BiomeModel>
         public NaturalResourceTypes resourceType;
     }
 
-    public class InitialGood
+    public class GoodsTypeAmount
     {
         public GoodsTypes goodType;
         public int amount;
+    }
+    
+    public class WeightedEffectType
+    {
+        public EffectTypes effectType;
+        public float weight; // 1 - 100
+    }
+
+    public class SeasonData
+    {
+        public SeasonTypes season;
+        public int duration;
+    }
+
+    public class WeightedRace
+    {
+        public RaceTypes race;
+        public float chance;  // 0 - 100
+    }
+    
+    public class SeasonRewards
+    {
+        public int Year;
+        public SeasonQuarter Quarter;
+        public Season Season;
+        
+        public Vector2Int Amounts = new Vector2Int(2, 2);
+        public List<EffectTypes> GuaranteedEffects = new List<EffectTypes>();
+        public List<WeightedEffectType> Effects = new List<WeightedEffectType>();
     }
     
     public BiomeModel biomeModel;
@@ -58,8 +88,45 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<EffectTypes> earlyEfects = new List<EffectTypes>();
     public List<EffectTypes> effects = new List<EffectTypes>();
     public List<OreTypes> ores = new List<OreTypes>();
-    public List<InitialGood> initialGoods = new List<InitialGood>();
+    public List<GoodsTypeAmount> initialGoods = new List<GoodsTypeAmount>();
     public List<NaturalResourceData> naturalResources = new List<NaturalResourceData>();
+    
+    // Season Config
+    public List<SeasonData> seasonData = new List<SeasonData>();
+    public GoodsTypeAmount declineSeasonRewardsReward = new GoodsTypeAmount();
+    public List<SeasonRewards> seasonRewards = new List<SeasonRewards>();
+    
+    // newcomers Config
+    public int newcomersInterval = 600;
+    public Vector2Int newcomersBaseAmount = new Vector2Int(1, 2);
+    public Vector2 newcomersExtraAmount = new Vector2(0.51f, 0.96f);
+    public Vector2Int newcomerAmountOfGoods = new Vector2Int(1, 3);
+    public List<WeightedRace> newcomersRaces = new List<WeightedRace>();
+    // public bool newcomersIncludeCustomRaces = true;
+    public List<GoodsTypeAmount> newcomersGoodsAmount = new List<GoodsTypeAmount>();
+
+
+    public NewBiome()
+    {
+        seasonData.Add(new SeasonData()
+        {
+            season = SeasonTypes.Storm,
+            duration = 120
+        });
+        seasonData.Add(new SeasonData()
+        {
+            season = SeasonTypes.Clearance,
+            duration = 240
+        });
+        seasonData.Add(new SeasonData()
+        {
+            season = SeasonTypes.Drizzle,
+            duration = 240
+        });
+        
+        declineSeasonRewardsReward.goodType = GoodsTypes.Mat_Raw_Wood;
+        declineSeasonRewardsReward.amount = 1;
+    }
 
     public override bool Sync()
     {
@@ -164,12 +231,55 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.seasons == null)
         {
-            biomeModel.seasons = templateModel.seasons.Copy();
+            SeasonsConfig config = templateModel.seasons.Copy();
+            biomeModel.seasons = config;
+            
+            config.ClearanceTime = seasonData.FirstOrDefault(s => s.season == SeasonTypes.Clearance)?.duration ?? config.ClearanceTime;
+            config.DrizzleTime = seasonData.FirstOrDefault(s => s.season == SeasonTypes.Drizzle)?.duration ?? config.DrizzleTime;
+            config.StormTime = seasonData.FirstOrDefault(s => s.season == SeasonTypes.Storm)?.duration ?? config.StormTime;
+
+            config.seasonRewardsDeclineGood = new GoodRef()
+            {
+                good = declineSeasonRewardsReward.goodType.ToGoodModel(),
+                amount = declineSeasonRewardsReward.amount
+            };
+            
+            BuildSeasonRewards(config);
         }
         
         if(biomeModel.newcomers == null)
         {
-            biomeModel.newcomers = templateModel.newcomers.Copy();
+            biomeModel.newcomers = ScriptableObject.CreateInstance<NewcomersConfig>();
+            biomeModel.newcomers.newComersInterval = newcomersInterval;
+            biomeModel.newcomers.baseAmount = newcomersBaseAmount;
+            biomeModel.newcomers.amountPerYear = newcomersExtraAmount;
+            biomeModel.newcomers.goodsAmount = newcomerAmountOfGoods;
+            if (newcomersRaces.Count > 0)
+            {
+                biomeModel.newcomers.races = newcomersRaces.Select(r => new RaceChance()
+                {
+                    weight = (int)Mathf.Clamp(r.chance, 0, 100),
+                    race = r.race.ToRaceModel()
+
+                }).Where(a=>a.race != null).ToArray();
+            }
+            else
+            {
+                biomeModel.newcomers.races = templateModel.newcomers.races.Copy();
+            }
+            
+            if (newcomersGoodsAmount.Count > 0)
+            {
+                biomeModel.newcomers.goodsPerVillagers = newcomersGoodsAmount.Select(g => new GoodRef()
+                {
+                    good = g.goodType.ToGoodModel(),
+                    amount = g.amount
+                }).ToArray();
+            }
+            else
+            {
+                biomeModel.newcomers.goodsPerVillagers = templateModel.newcomers.goodsPerVillagers.Copy();
+            }
         }
         
         if(biomeModel.music == null)
@@ -265,7 +375,7 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.initialGoods == null)
         {
-            biomeModel.initialGoods = initialGoods.Select(a=>new GoodRef()
+            biomeModel.initialGoods = initialGoods.Select(a=>new Eremite.Model.GoodRef()
             {
                 good = a.goodType.ToGoodModel(),
                 amount = a.amount
@@ -288,5 +398,51 @@ public class NewBiome : ASyncable<BiomeModel>
         }
 
         return true;
+    }
+
+    private void BuildSeasonRewards(SeasonsConfig config)
+    {
+        if (seasonRewards.Count == 0)
+        {
+            // Just keep the rewards from the template season
+            return;
+        }
+        
+        // Core game usually has 10 different years
+        // Each year has its own set of rewards except 5+ which use the same set of rewards
+        // Each year has 4 quarters but core game only uses Quarter.First except the first year which is Quarter.Second
+        // Each quarter has 3 seasons but core game only uses Drizzle
+        
+        List<SeasonRewardModel> yearlyRewards = new List<SeasonRewardModel>();
+        foreach (int year in seasonRewards.Select(a=>a.Year).Distinct().OrderBy(a=>a))
+        {
+            foreach (SeasonQuarter quarter in seasonRewards.Where(a=>a.Year == year).Select(a=>a.Quarter).Distinct().OrderBy(a=>a))
+            {
+                foreach (SeasonRewards season in seasonRewards.Where(a=>a.Year == year && a.Quarter == quarter).Distinct().OrderBy(a=>a.Season))
+                {
+                    EffectsTable effectsTable = ScriptableObject.CreateInstance<EffectsTable>();
+                    effectsTable.amounts = season.Amounts;
+                    effectsTable.guaranteedEffects = season.GuaranteedEffects.ToEffectModelArrayNoNulls();
+                    effectsTable.effects = season.Effects.Select(a=>new EffectsTableEntity()
+                    {
+                        effect = a.effectType.ToEffectModel(),
+                        chance = (int)Mathf.Clamp(a.weight, 1, 100)
+                    }).Where(a=>a.effect != null).ToArray();
+                    
+                    SeasonRewardModel seasonConfig = new SeasonRewardModel()
+                    {
+                        year = year,
+                        season = season.Season,
+                        quarter = quarter,
+                        effectsTable = effectsTable
+                    };
+                    yearlyRewards.Add(seasonConfig);
+                }
+            }
+        }
+        
+        
+        config.SeasonRewards = yearlyRewards;
+        
     }
 }
