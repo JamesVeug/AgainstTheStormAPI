@@ -6,9 +6,10 @@ namespace ATS_API.Biomes;
 
 public partial class BiomeBuilder
 {
-    public void SetSeasonDuration(SeasonTypes seasonType, int time)
+    public BiomeBuilder SetSeasonDuration(SeasonTypes seasonType, int time)
     {
         NewBiome.seasonData.Find(a=>a.season == seasonType).duration = time;
+        return this;
     }
     
     /// <summary>
@@ -16,10 +17,11 @@ public partial class BiomeBuilder
     /// </summary>
     /// <param name="goodsTypes"></param>
     /// <param name="amount"></param>
-    public void SetDeclinedSeasonalRewardsReward(GoodsTypes goodsTypes, int amount)
+    public BiomeBuilder SetDeclinedSeasonalRewardsReward(GoodsTypes goodsTypes, int amount)
     {
         NewBiome.declineSeasonRewardsReward.goodType = goodsTypes;
         NewBiome.declineSeasonRewardsReward.amount = amount;
+        return this;
     }
 
     /// <summary>
@@ -30,7 +32,7 @@ public partial class BiomeBuilder
     /// <param name="year">Which year this reward can be obtained. Default: 1</param>
     /// <param name="quarter">Which quarter of the year the reward can be obtained. Default: First</param>
     /// <param name="season">Which season can the player get the reward from. default: Drizzle</param>
-    public void AddSeasonalReward(EffectTypes effect, ushort chance = 50, int year = 1, SeasonQuarter quarter = SeasonQuarter.First,
+    public BiomeBuilder AddSeasonalReward(EffectTypes effect, ushort chance = 50, int year = 1, SeasonQuarter quarter = SeasonQuarter.First,
         Season season = Season.Drizzle)
     {
         NewBiome.SeasonRewards rewards =
@@ -53,12 +55,13 @@ public partial class BiomeBuilder
             weight = chance
         };
         rewards.Effects.Add(effectType);
+        return this;
     }
 
     /// <summary>
     /// Cornerstones the player will always be able to choose from
     /// </summary>
-    public void AddGuaranteedSeasonalReward(EffectTypes effect, int year = 1, SeasonQuarter quarter = SeasonQuarter.First,
+    public BiomeBuilder AddGuaranteedSeasonalReward(EffectTypes effect, int year = 1, SeasonQuarter quarter = SeasonQuarter.First,
         Season season = Season.Drizzle)
     {
         NewBiome.SeasonRewards rewards =
@@ -75,5 +78,6 @@ public partial class BiomeBuilder
         }
 
         rewards.GuaranteedEffects.Add(effect);
+        return this;
     }
 }

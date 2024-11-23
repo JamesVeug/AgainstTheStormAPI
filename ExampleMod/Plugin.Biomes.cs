@@ -40,6 +40,12 @@ public partial class Plugin
         builder.AddNewcomerRace(RaceTypes.Human, 100);
         builder.AddNewcomerRace(RaceTypes.Lizard, 50);
         
+        // Trade
+        builder.SetTraderForceArrivalCost(1.0f, 2.5f); // Paying trader to arrive is expensive
+        builder.SetTraderForceArrivalReputationPrompt("Send for trader to arrive");
+        builder.SetTraderVillagerKilledByTraderText("dehydrated in the desert");
+        
+        
         // World Map texture to overlay the little hexagons
         builder.SetWorldMapTexture("dessertWorldMapTerrain.png");
         

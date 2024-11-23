@@ -5,9 +5,10 @@ namespace ATS_API.Biomes;
 
 public partial class BiomeBuilder
 {
-    public void SetNewcomerInterval(int seconds)
+    public BiomeBuilder SetNewcomerInterval(int seconds)
     {
         newBiome.newcomersInterval = seconds;
+        return this;
     }
 
     /// <summary>
@@ -15,19 +16,21 @@ public partial class BiomeBuilder
     /// </summary>
     /// <param name="baseAmount">Starting amount</param>
     /// <param name="scaledAmount">How many extra newcomers arrive per year</param>
-    public void SetNewcomerAmount(Vector2Int baseAmount, Vector2 scaledAmount)
+    public BiomeBuilder SetNewcomerAmount(Vector2Int baseAmount, Vector2 scaledAmount)
     {
         newBiome.newcomersBaseAmount = baseAmount;
         newBiome.newcomersExtraAmount = scaledAmount;
+        return this;
     }
 
     /// <summary>
     /// How many goods the newcomers bring.
     /// Commonly 1-3
     /// </summary>
-    public void SetNewcomerAmountOfGoods(int min, int max)
+    public BiomeBuilder SetNewcomerAmountOfGoods(int min, int max)
     {
         newBiome.newcomerAmountOfGoods = new Vector2Int(min, max);
+        return this;
     }
 
     /// <summary>
@@ -35,24 +38,26 @@ public partial class BiomeBuilder
     /// </summary>
     /// <param name="race">Race that can arrive</param>
     /// <param name="weight">0-100</param>
-    public void AddNewcomerRace(RaceTypes race, float weight)
+    public BiomeBuilder AddNewcomerRace(RaceTypes race, float weight)
     {
         newBiome.newcomersRaces.Add(new NewBiome.WeightedRace()
         {
             race = race,
             chance = weight
         });
+        return this;
     }
 
     /// <summary>
     /// Adds a good that newcomers can bring
     /// </summary>
-    public void AddNewcomerGood(GoodsTypes good, int amount)
+    public BiomeBuilder AddNewcomerGood(GoodsTypes good, int amount)
     {
         newBiome.newcomersGoodsAmount.Add(new NewBiome.GoodsTypeAmount()
         {
             goodType = good,
             amount = amount
         });
+        return this;
     }
 }

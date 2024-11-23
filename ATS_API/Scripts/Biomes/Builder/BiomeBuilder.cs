@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using ATS_API.Helpers;
 using ATS_API.Localization;
+using Eremite.Model;
 using Eremite.Model.Configs.CustomGame;
 using Eremite.WorldMap;
 using UnityEngine;
@@ -103,7 +104,7 @@ public partial class BiomeBuilder
         newModel.corsairStormProfiles = null; // Use the existing model if its null.
     }
 
-    public void AddInitialGood(GoodsTypes goodType, int amount)
+    public BiomeBuilder AddInitialGood(GoodsTypes goodType, int amount)
     {
         NewBiome.GoodsTypeAmount goodsTypeAmount = new NewBiome.GoodsTypeAmount
         {
@@ -111,5 +112,6 @@ public partial class BiomeBuilder
             amount = amount
         };
         newBiome.initialGoods.Add(goodsTypeAmount);
+        return this;
     }
 }

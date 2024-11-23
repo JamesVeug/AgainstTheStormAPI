@@ -104,6 +104,10 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<WeightedRace> newcomersRaces = new List<WeightedRace>();
     // public bool newcomersIncludeCustomRaces = true;
     public List<GoodsTypeAmount> newcomersGoodsAmount = new List<GoodsTypeAmount>();
+    public float traderForceArrivalCost = 0.5f;
+    public float traderForceArrivalCostMultiplier = 2.0f;
+    public LocaText traderForceArrivalReputationPrompt = null;
+    public LocaText traderKillsVillagerText = null;
 
 
     public NewBiome()
@@ -294,7 +298,12 @@ public class NewBiome : ASyncable<BiomeModel>
         
         if(biomeModel.trade == null)
         {
-            biomeModel.trade = templateModel.trade;
+            biomeModel.trade = ScriptableObject.CreateInstance<TradeConfig>();
+            biomeModel.trade.forceCost = traderForceArrivalCost;
+            biomeModel.trade.forceCostMultiplayer = traderForceArrivalCostMultiplier;
+            biomeModel.trade.forceArrivalReputationPrompt = traderForceArrivalReputationPrompt;
+            biomeModel.trade.forceArrivalProgress = templateModel.trade.forceArrivalProgress;
+            biomeModel.trade.ranges = templateModel.trade.ranges.Copy();
         }
         
         if(biomeModel.difficulty == null)
