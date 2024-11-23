@@ -1,3 +1,4 @@
+using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Model;
 using UnityEngine;
@@ -36,6 +37,12 @@ public partial class BiomeBuilder
     public BiomeBuilder SetTraderVillagerKilledByTraderTextKey(string key)
     {
         newBiome.traderKillsVillagerText = new LocaText() { key = key };
+        return this;
+    }
+
+    public BiomeBuilder AddTraderWantedGood(GoodsTypes types)
+    {
+        newBiome.traderWantedGoods.Add(types);
         return this;
     }
 }

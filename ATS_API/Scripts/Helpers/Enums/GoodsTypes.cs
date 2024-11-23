@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Eremite;
 using Eremite.Model;
+using UnityEngine.Pool;
 
 namespace ATS_API.Helpers;
 
@@ -168,6 +169,40 @@ public static class GoodsTypesExtensions
 		}
 
 		return array;
+	}
+	
+	
+	
+	public static GoodModel[] ToGoodModelArrayNoNulls(this IEnumerable<GoodsTypes> collection)
+	{
+		using(ListPool<GoodModel>.Get(out List<GoodModel> list))
+		{
+			foreach (GoodsTypes element in collection)
+			{
+				GoodModel model = element.ToGoodModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	public static GoodModel[] ToGoodModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<GoodModel>.Get(out List<GoodModel> list))
+		{
+			foreach (string element in collection)
+			{
+				GoodModel model = element.ToGoodModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
 	}
 
 	internal static readonly Dictionary<GoodsTypes, string> TypeToInternalName = new()

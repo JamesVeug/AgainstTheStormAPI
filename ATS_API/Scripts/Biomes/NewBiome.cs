@@ -104,10 +104,13 @@ public class NewBiome : ASyncable<BiomeModel>
     public List<WeightedRace> newcomersRaces = new List<WeightedRace>();
     // public bool newcomersIncludeCustomRaces = true;
     public List<GoodsTypeAmount> newcomersGoodsAmount = new List<GoodsTypeAmount>();
+    
+    // Trade Config
     public float traderForceArrivalCost = 0.5f;
     public float traderForceArrivalCostMultiplier = 2.0f;
     public LocaText traderForceArrivalReputationPrompt = null;
     public LocaText traderKillsVillagerText = null;
+    public List<GoodsTypes> traderWantedGoods = new List<GoodsTypes>();
 
 
     public NewBiome()
@@ -221,18 +224,6 @@ public class NewBiome : ASyncable<BiomeModel>
             }
         }
         
-        if(biomeModel.wantedGoods == null)
-        {
-            if(tradeRouteGoods.Count > 0)
-            {
-                biomeModel.wantedGoods = tradeRouteGoods.Select(g => g.ToGoodModel()).Where(a=>a != null).ToArray();
-            }
-            else
-            {
-                biomeModel.wantedGoods = templateModel.wantedGoods.Copy();
-            }
-        }
-        
         if(biomeModel.seasons == null)
         {
             SeasonsConfig config = templateModel.seasons.Copy();
@@ -296,12 +287,25 @@ public class NewBiome : ASyncable<BiomeModel>
             biomeModel.graphics = templateModel.graphics;
         }
         
+        if(biomeModel.wantedGoods == null)
+        {
+            if(traderWantedGoods.Count > 0)
+            {
+                biomeModel.wantedGoods = traderWantedGoods.ToGoodModelArrayNoNulls();
+            }
+            else
+            {
+                biomeModel.wantedGoods = templateModel.wantedGoods.Copy();
+            }
+        }
+        
         if(biomeModel.trade == null)
         {
             biomeModel.trade = ScriptableObject.CreateInstance<TradeConfig>();
             biomeModel.trade.forceCost = traderForceArrivalCost;
             biomeModel.trade.forceCostMultiplayer = traderForceArrivalCostMultiplier;
-            biomeModel.trade.forceArrivalReputationPrompt = traderForceArrivalReputationPrompt;
+            biomeModel.trade.villagerDeathReason = traderKillsVillagerText ?? templateModel.trade.villagerDeathReason;
+            biomeModel.trade.forceArrivalReputationPrompt = traderForceArrivalReputationPrompt ?? templateModel.trade.forceArrivalReputationPrompt;
             biomeModel.trade.forceArrivalProgress = templateModel.trade.forceArrivalProgress;
             biomeModel.trade.ranges = templateModel.trade.ranges.Copy();
         }
