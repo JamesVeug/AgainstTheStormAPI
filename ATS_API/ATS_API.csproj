@@ -10,6 +10,14 @@
         <StormPath>C:\Program Files (x86)\Steam\steamapps\common\Against the Storm</StormPath>
         <BepInExPath>$([System.Environment]::GetFolderPath(SpecialFolder.ApplicationData))/Thunderstore Mod Manager/DataFolder/AgainstTheStorm/profiles/Default/BepInEx</BepInExPath>
     </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\API.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\API.xml</DocumentationFile>
+    </PropertyGroup>
     
     <ItemGroup>
         <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" >
@@ -68,12 +76,14 @@
     <Target Name="Deploy" AfterTargets="Build">
         <ItemGroup>
             <Assembly Include="$(OutputPath)\$(AssemblyName).dll" />
+            <Docs Include="$(OutputPath)\API.xml" />
             <Assets Include="$(OutputPath)\Assets\*.*" />
             <WIKI Include="$(OutputPath)\WIKI\*.*" />
         </ItemGroup>
          
         <!-- Create a folder with all the .dlls and files to easily uplaod to thunderstore -->
         <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\ThunderStore\" />
+        <Copy SourceFiles="@(Docs)" DestinationFolder="$(OutputPath)\ThunderStore\" />
         <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\Assets" />
         <Copy SourceFiles="@(WIKI)" DestinationFolder="$(OutputPath)\ThunderStore\plugins\WIKI" />
         <Copy SourceFiles="CHANGELOG.md" DestinationFolder="$(OutputPath)\ThunderStore\" />
@@ -92,6 +102,7 @@
         <Copy SourceFiles="manifest.json" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
         <Copy SourceFiles="icon.png" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
         <Copy SourceFiles="@(Assembly)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
+        <Copy SourceFiles="@(Docs)" DestinationFolder="$(BepInExPath)\plugins\ATS_API_Devs-API\" />
 
         <!-- Run Against The Storm -->
 <!--         <Exec Command='call "$(StormPath)/Against The Storm.exe"' IgnoreExitCode="true"/>-->
