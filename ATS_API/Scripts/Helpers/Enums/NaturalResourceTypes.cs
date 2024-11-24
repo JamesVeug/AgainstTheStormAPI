@@ -14,12 +14,6 @@ public enum NaturalResourceTypes
 	None,
 	
 	/// <summary>
-	/// Dry Tree - A tree that grows in the Dry Lands.
-	/// </summary>
-	/// <name>API_ExampleMod_DryTree</name>
-	API_ExampleMod_DryTree,
-
-	/// <summary>
 	/// Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 	/// </summary>
 	/// <name>Bay Tree 1</name>
@@ -117,7 +111,7 @@ public enum NaturalResourceTypes
 
 
 
-	MAX = 17
+	MAX = 16
 }
 
 public static class NaturalResourceTypesExtensions
@@ -127,8 +121,8 @@ public static class NaturalResourceTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new NaturalResourceTypes[17];
-			for (int i = 0; i < 17; i++)
+			s_All = new NaturalResourceTypes[16];
+			for (int i = 0; i < 16; i++)
 			{
 				s_All[i] = (NaturalResourceTypes)(i+1);
 			}
@@ -139,7 +133,7 @@ public static class NaturalResourceTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every NaturalResourceTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return NaturalResourceTypes.API_ExampleMod_DryTree in the enum and log an error.
+	/// If no name is found, it will return NaturalResourceTypes.Bay_Tree_1 in the enum and log an error.
 	/// </summary>
 	public static string ToName(this NaturalResourceTypes type)
 	{
@@ -149,7 +143,7 @@ public static class NaturalResourceTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of NaturalResourceTypes: " + type + "\n" + Environment.StackTrace);
-		return TypeToInternalName[NaturalResourceTypes.API_ExampleMod_DryTree];
+		return TypeToInternalName[NaturalResourceTypes.Bay_Tree_1];
 	}
 	
 	/// <summary>
@@ -284,7 +278,6 @@ public static class NaturalResourceTypesExtensions
 	
 	internal static readonly Dictionary<NaturalResourceTypes, string> TypeToInternalName = new()
 	{
-		{ NaturalResourceTypes.API_ExampleMod_DryTree, "API_ExampleMod_DryTree" },     // Dry Tree - A tree that grows in the Dry Lands.
 		{ NaturalResourceTypes.Bay_Tree_1, "Bay Tree 1" },                             // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 		{ NaturalResourceTypes.Bay_Tree_2, "Bay Tree 2" },                             // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 		{ NaturalResourceTypes.CoralForest_Crimsonreach, "CoralForest_Crimsonreach" }, // Crimsonreach Tree - A mineralized coral tree.
