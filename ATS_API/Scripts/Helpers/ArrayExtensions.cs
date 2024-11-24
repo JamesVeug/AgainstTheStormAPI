@@ -47,4 +47,9 @@ public static class ArrayExtensions
         Array.Copy(array, copy, array.Length);
         return copy;
     }
+    
+    public static bool NullOrEmpty<T>(this T[] array)
+    {
+        return array == null || array.Length == 0;
+    }
 }

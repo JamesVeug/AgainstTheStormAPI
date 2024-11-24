@@ -11,6 +11,7 @@ public enum {CLASSNAME}
 {
 	Unknown = -1,
 	None,
+	
 {ENUMS}
 
 	MAX = {TOTAL_ENUMS}

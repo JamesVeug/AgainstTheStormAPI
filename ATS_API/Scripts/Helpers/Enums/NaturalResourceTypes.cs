@@ -12,25 +12,112 @@ public enum NaturalResourceTypes
 {
 	Unknown = -1,
 	None,
-	Bay_Tree_1,               // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
-	Bay_Tree_2,               // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
-	CoralForest_Crimsonreach, // Crimsonreach Tree - A mineralized coral tree.
-	CoralForest_Musselsprout, // Musselsprout Tree - The unusually hard bark conceals soft, fleshy tissue.
-	CoralForest_Plateleaf,    // Plateleaf Tree - A species of plant rarely seen above water.
-	Cursed_Tree,              // Dying Tree - A bare, rotting tree infested with grubs.
-	Last_Biome_1,             // Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
-	Last_Biome_2,             // Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
-	Last_Biome_3,             // Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
-	Last_Biome_4,             // Overgrown Abyssal Tree - A giant, bizarre growth... it's bigger than the other trees in the area.
-	Moorlands_Tree,           // Coppervein Tree - A scarlet tree covered in enormous thorns.
-	Moorlands_Tree_2,         // Coppervein Tree - A scarlet tree covered in enormous thorns.
-	Mushroom_Tree_Bugs,       // Mushwood - A giant fungal tree covered in a leathery bark.
-	Mushroom_Tree_Classic,    // Mushwood - A giant fungal tree covered in a leathery bark.
-	Sealed_Tree,              // Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
-	Woodlands_Tree,           // Lush Tree - A perfect source of wood.
+	
+	/// <summary>
+	/// Dry Tree - A tree that grows in the Dry Lands.
+	/// </summary>
+	/// <name>API_ExampleMod_DryTree</name>
+	API_ExampleMod_DryTree,
+
+	/// <summary>
+	/// Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
+	/// </summary>
+	/// <name>Bay Tree 1</name>
+	Bay_Tree_1,
+
+	/// <summary>
+	/// Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
+	/// </summary>
+	/// <name>Bay Tree 2</name>
+	Bay_Tree_2,
+
+	/// <summary>
+	/// Crimsonreach Tree - A mineralized coral tree.
+	/// </summary>
+	/// <name>CoralForest_Crimsonreach</name>
+	CoralForest_Crimsonreach,
+
+	/// <summary>
+	/// Musselsprout Tree - The unusually hard bark conceals soft, fleshy tissue.
+	/// </summary>
+	/// <name>CoralForest_Musselsprout</name>
+	CoralForest_Musselsprout,
+
+	/// <summary>
+	/// Plateleaf Tree - A species of plant rarely seen above water.
+	/// </summary>
+	/// <name>CoralForest_Plateleaf</name>
+	CoralForest_Plateleaf,
+
+	/// <summary>
+	/// Dying Tree - A bare, rotting tree infested with grubs.
+	/// </summary>
+	/// <name>Cursed Tree</name>
+	Cursed_Tree,
+
+	/// <summary>
+	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
+	/// </summary>
+	/// <name>Last Biome 1</name>
+	Last_Biome_1,
+
+	/// <summary>
+	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
+	/// </summary>
+	/// <name>Last Biome 2</name>
+	Last_Biome_2,
+
+	/// <summary>
+	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
+	/// </summary>
+	/// <name>Last Biome 3</name>
+	Last_Biome_3,
+
+	/// <summary>
+	/// Overgrown Abyssal Tree - A giant, bizarre growth... it's bigger than the other trees in the area.
+	/// </summary>
+	/// <name>Last Biome 4</name>
+	Last_Biome_4,
+
+	/// <summary>
+	/// Coppervein Tree - A scarlet tree covered in enormous thorns.
+	/// </summary>
+	/// <name>Moorlands Tree</name>
+	Moorlands_Tree,
+
+	/// <summary>
+	/// Coppervein Tree - A scarlet tree covered in enormous thorns.
+	/// </summary>
+	/// <name>Moorlands Tree 2</name>
+	Moorlands_Tree_2,
+
+	/// <summary>
+	/// Mushwood - A giant fungal tree covered in a leathery bark.
+	/// </summary>
+	/// <name>Mushroom Tree Bugs</name>
+	Mushroom_Tree_Bugs,
+
+	/// <summary>
+	/// Mushwood - A giant fungal tree covered in a leathery bark.
+	/// </summary>
+	/// <name>Mushroom Tree Classic</name>
+	Mushroom_Tree_Classic,
+
+	/// <summary>
+	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
+	/// </summary>
+	/// <name>Sealed Tree</name>
+	Sealed_Tree,
+
+	/// <summary>
+	/// Lush Tree - A perfect source of wood.
+	/// </summary>
+	/// <name>Woodlands Tree</name>
+	Woodlands_Tree,
 
 
-	MAX = 16
+
+	MAX = 17
 }
 
 public static class NaturalResourceTypesExtensions
@@ -40,8 +127,8 @@ public static class NaturalResourceTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new NaturalResourceTypes[16];
-			for (int i = 0; i < 16; i++)
+			s_All = new NaturalResourceTypes[17];
+			for (int i = 0; i < 17; i++)
 			{
 				s_All[i] = (NaturalResourceTypes)(i+1);
 			}
@@ -52,7 +139,7 @@ public static class NaturalResourceTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every NaturalResourceTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return NaturalResourceTypes.Bay_Tree_1 in the enum and log an error.
+	/// If no name is found, it will return NaturalResourceTypes.API_ExampleMod_DryTree in the enum and log an error.
 	/// </summary>
 	public static string ToName(this NaturalResourceTypes type)
 	{
@@ -62,7 +149,7 @@ public static class NaturalResourceTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of NaturalResourceTypes: " + type + "\n" + Environment.StackTrace);
-		return TypeToInternalName[NaturalResourceTypes.Bay_Tree_1];
+		return TypeToInternalName[NaturalResourceTypes.API_ExampleMod_DryTree];
 	}
 	
 	/// <summary>
@@ -90,9 +177,9 @@ public static class NaturalResourceTypesExtensions
 	/// Every NaturalResourceModel should have a unique name as to distinguish it from others.
 	/// If no NaturalResourceModel is found, it will return null and log an error.
 	/// </summary>
-	public static NaturalResourceModel ToNaturalResourceModel(this string name)
+	public static Eremite.Model.NaturalResourceModel ToNaturalResourceModel(this string name)
 	{
-		NaturalResourceModel model = SO.Settings.NaturalResources.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.NaturalResourceModel model = SO.Settings.NaturalResources.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -108,7 +195,7 @@ public static class NaturalResourceTypesExtensions
     /// Every NaturalResourceModel should have a unique name as to distinguish it from others.
     /// If no NaturalResourceModel is found, it will return null and log an error.
     /// </summary>
-	public static NaturalResourceModel ToNaturalResourceModel(this NaturalResourceTypes types)
+	public static Eremite.Model.NaturalResourceModel ToNaturalResourceModel(this NaturalResourceTypes types)
 	{
 		return types.ToName().ToNaturalResourceModel();
 	}
@@ -119,10 +206,10 @@ public static class NaturalResourceTypesExtensions
 	/// Every NaturalResourceModel should have a unique name as to distinguish it from others.
 	/// If a NaturalResourceModel is not found, the element will be replaced with null and an error will be logged.
 	/// </summary>
-	public static NaturalResourceModel[] ToNaturalResourceModelArray(this IEnumerable<NaturalResourceTypes> collection)
+	public static Eremite.Model.NaturalResourceModel[] ToNaturalResourceModelArray(this IEnumerable<NaturalResourceTypes> collection)
 	{
 		int count = collection.Count();
-		NaturalResourceModel[] array = new NaturalResourceModel[count];
+		Eremite.Model.NaturalResourceModel[] array = new Eremite.Model.NaturalResourceModel[count];
 		int i = 0;
 		foreach (NaturalResourceTypes element in collection)
 		{
@@ -138,10 +225,10 @@ public static class NaturalResourceTypesExtensions
 	/// Every NaturalResourceModel should have a unique name as to distinguish it from others.
 	/// If a NaturalResourceModel is not found, the element will be replaced with null and an error will be logged.
 	/// </summary>
-	public static NaturalResourceModel[] ToNaturalResourceModelArray(this IEnumerable<string> collection)
+	public static Eremite.Model.NaturalResourceModel[] ToNaturalResourceModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		NaturalResourceModel[] array = new NaturalResourceModel[count];
+		Eremite.Model.NaturalResourceModel[] array = new Eremite.Model.NaturalResourceModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -157,13 +244,13 @@ public static class NaturalResourceTypesExtensions
 	/// Every NaturalResourceModel should have a unique name as to distinguish it from others.
 	/// If a NaturalResourceModel is not found, it will not be included in the array.
 	/// </summary>
-	public static NaturalResourceModel[] ToNaturalResourceModelArrayNoNulls(this IEnumerable<string> collection)
+	public static Eremite.Model.NaturalResourceModel[] ToNaturalResourceModelArrayNoNulls(this IEnumerable<string> collection)
 	{
-		using(ListPool<NaturalResourceModel>.Get(out List<NaturalResourceModel> list))
+		using(ListPool<Eremite.Model.NaturalResourceModel>.Get(out List<Eremite.Model.NaturalResourceModel> list))
 		{
 			foreach (string element in collection)
 			{
-				NaturalResourceModel model = element.ToNaturalResourceModel();
+				Eremite.Model.NaturalResourceModel model = element.ToNaturalResourceModel();
 				if (model != null)
 				{
 					list.Add(model);
@@ -179,13 +266,13 @@ public static class NaturalResourceTypesExtensions
 	/// Every NaturalResourceModel should have a unique name as to distinguish it from others.
 	/// If a NaturalResourceModel is not found, it will not be included in the array.
 	/// </summary>
-	public static NaturalResourceModel[] ToNaturalResourceModelArrayNoNulls(this IEnumerable<NaturalResourceTypes> collection)
+	public static Eremite.Model.NaturalResourceModel[] ToNaturalResourceModelArrayNoNulls(this IEnumerable<NaturalResourceTypes> collection)
 	{
-		using(ListPool<NaturalResourceModel>.Get(out List<NaturalResourceModel> list))
+		using(ListPool<Eremite.Model.NaturalResourceModel>.Get(out List<Eremite.Model.NaturalResourceModel> list))
 		{
 			foreach (NaturalResourceTypes element in collection)
 			{
-				NaturalResourceModel model = element.ToNaturalResourceModel();
+				Eremite.Model.NaturalResourceModel model = element.ToNaturalResourceModel();
 				if (model != null)
 				{
 					list.Add(model);
@@ -197,6 +284,7 @@ public static class NaturalResourceTypesExtensions
 	
 	internal static readonly Dictionary<NaturalResourceTypes, string> TypeToInternalName = new()
 	{
+		{ NaturalResourceTypes.API_ExampleMod_DryTree, "API_ExampleMod_DryTree" },     // Dry Tree - A tree that grows in the Dry Lands.
 		{ NaturalResourceTypes.Bay_Tree_1, "Bay Tree 1" },                             // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 		{ NaturalResourceTypes.Bay_Tree_2, "Bay Tree 2" },                             // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 		{ NaturalResourceTypes.CoralForest_Crimsonreach, "CoralForest_Crimsonreach" }, // Crimsonreach Tree - A mineralized coral tree.
