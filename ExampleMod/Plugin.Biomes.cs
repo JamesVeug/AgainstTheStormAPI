@@ -55,12 +55,12 @@ public partial class Plugin
         builder.SetWaterTexture("desertWorldWater.png");
 
         // Trees / natural resources
-        // builder.AddNaturalResource(NaturalResourceTypes.Bay_Tree_2,
-        //     horizontalTreshold: 0.2f,
-        //     verticalTreshold: 0.3f,
-        //     generationThreshold: 0.0f,
-        //     minDistanceFromOrigin: 10);
-        
+        builder.AddNaturalResource(NaturalResourceTypes.Cursed_Tree,
+            horizontalTreshold: 0.2f,
+            verticalTreshold: 0.3f,
+            generationThreshold: 0.0f,
+            minDistanceFromOrigin: 10);
+
         NaturalResourceBuilder resourceBuilder = builder.NewNaturalResource("DryTree",
             horizontalTreshold: 0.2f,
             verticalTreshold: 0.3f,
