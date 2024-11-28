@@ -359,3 +359,98 @@ Third parameter is the result of taking the object out of the asset bundle.
 AssetBundle bundle = AssetBundle.LoadFromFile("pathToBundleFile");
 GameObject prefab = bundle.LoadAsset<GameObject>("nameOfPrefabInsideAssetBundle");
 ```
+
+
+# Custom Biomes
+
+Biomes are the different areas of the map that have different resources, weather and more. 
+
+You can create your own biome using the following code. (Royal Woodlands is used to replace any unchanged values)
+
+```csharp
+BiomeBuilder builder = new BiomeBuilder(PluginInfo.PLUGIN_GUID, "myBiome");
+builder.SetDisplayName("Dry Lands");
+builder.SetDescription("The queen got this land because she thought it was cute. " +
+                       "This is a custom biome that does things!.");
+
+builder.SetTownName("My Town");
+builder.SetTownDescription("The queen claims this land because reasons.");
+
+// Icon that appears.... I actually have no idea where 
+builder.SetIcon("myBiomeIcon.png"); // 128x128
+
+// Change water texture
+builder.SetWaterTexture("desertWorldWater.png");
+
+// World Map texture to overlay the little hexagons
+builder.SetWorldMapTexture("dessertWorldMapTerrain.png"); // 2048x2048
+```
+
+## Changing season duration
+```csharp
+builder.SetSeasonDuration(SeasonTypes.Storm, 30);
+builder.SetSeasonDuration(SeasonTypes.Clearance, 240);
+builder.SetSeasonDuration(SeasonTypes.Drizzle, 120);
+```
+
+## Changing Newcomer information
+```csharp
+builder.SetNewcomerInterval(300);
+builder.SetNewcomerAmountOfGoods(1, 4);
+builder.AddNewcomerRace(RaceTypes.Beaver, 50); // 50 Weight for Beaver to appear as a newcomer
+builder.AddNewcomerRace(RaceTypes.Harpy, 50);
+builder.AddNewcomerRace(RaceTypes.Foxes, 50);
+builder.AddNewcomerRace(RaceTypes.Frog, 25);   // 25 Weight for Frogs so they are uncommon
+builder.AddNewcomerRace(RaceTypes.Human, 100); // 100 Weight so Humans appear more often
+builder.AddNewcomerRace(RaceTypes.Lizard, 50);
+```
+
+## Changing trader details
+```csharp
+builder.SetTraderForceArrivalCost(1.0f, 2.5f); // Paying trader to arrive is expensive
+builder.SetTraderForceArrivalReputationPrompt("Send for trader to arrive");
+builder.SetTraderVillagerKilledByTraderText("dehydrated in the desert");
+```
+
+## Starting effects
+Every biome has starting cornerstones/effects that are applied to the player when they start in that biome.
+```csharp
+builder.AddEffect(EffectTypes.Ale_3pm);
+```
+
+## Change natural resources
+Every map has a set of natural resources that a map fills with when starting a new map (These are commonly trees).
+
+This is how you add an existing resource to the map.
+
+```csharp
+builder.AddNaturalResource(NaturalResourceTypes.Cursed_Tree,
+horizontalTreshold: 0.2f,   // How much of the map on a horizontal basis
+verticalTreshold: 0.3f,     // How much of the map on a vertical basis
+generationThreshold: 0.0f,  // Higher the value the more common this will appear
+minDistanceFromOrigin: 10); // How far from the center of the starting area it will appear
+```
+
+### Custom resources
+```csharp
+NaturalResourceBuilder resourceBuilder = builder.NewNaturalResource("DryTree",
+            horizontalTreshold: 0.2f,   // How much of the map on a horizontal basis
+            verticalTreshold: 0.3f,     // How much of the map on a vertical basis
+            generationThreshold: 0.0f,  // Higher the value the more common this will appear
+            minDistanceFromOrigin: 10); // How far from the center of the starting area it will appear
+resourceBuilder.SetDisplayName("Dry Tree");
+resourceBuilder.SetDescription("A tree that grows in the Dry Lands.");
+resourceBuilder.SetCharges(1); // How many resources can be gathered from this resource
+resourceBuilder.SetProduction(GoodsTypes.Mat_Raw_Wood, 1); // What resource you're expected to get
+resourceBuilder.AddExtraProduction(GoodsTypes.Food_Raw_Insects, 1, 0.25f); // 25% chance of getting insects
+
+NaturalResourcePrefabBuilder dryTree1Prefab = new NaturalResourcePrefabBuilder(PluginInfo.PLUGIN_GUID, "DryTree1");
+dryTree1Prefab.SetPrefabTemplate(NaturalResourcePrefabs.Cursed_Tree_3); // Use the prefab of an existing tree including its model
+dryTree1Prefab.SetTexture("DryTreeTexture1.png"); // Change the texture of the tree
+resourceBuilder.AddPrefab(dryTree1Prefab); // Add the prefab to the resource so it has a chance of being chosen
+
+NaturalResourcePrefabBuilder dryTree2Prefab = new NaturalResourcePrefabBuilder(PluginInfo.PLUGIN_GUID, "DryTree2");
+dryTree2Prefab.SetPrefabTemplate(NaturalResourcePrefabs.Cursed_Tree_3); // Use the prefab of an existing tree including its model
+dryTree2Prefab.SetTexture("DryTreeTexture2.png"); // Change the texture of the tree
+resourceBuilder.AddPrefab(dryTree2Prefab); // Add the prefab to the resource so it has a chance of being chosen
+```
