@@ -162,10 +162,6 @@ public class NewBiome : ASyncable<BiomeModel>
             }
             biomeModel.material = material;
         }
-        else
-        {
-            Plugin.Log.LogError($"Material is NOT null for {biomeModel.name}");
-        }
         
         if(biomeModel.fields == null)
         {

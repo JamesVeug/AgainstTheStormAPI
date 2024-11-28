@@ -45,10 +45,8 @@ public class NaturalResourcePrefabBuilder
         
         if(m_textureOverride != null)
         {
-            Plugin.Log.LogInfo($"Overriding texture for {fullName}");
             foreach (MeshRenderer renderer in clone.GetComponentsInChildren<MeshRenderer>())
             {
-                Plugin.Log.LogInfo($"Overriding texture for {renderer.name}");
                 Material material = new Material(renderer.material);
                 material.SetTexture("Texture2D_46400E5F", m_textureOverride);
                 renderer.material = material;
