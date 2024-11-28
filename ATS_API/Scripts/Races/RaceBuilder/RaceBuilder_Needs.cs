@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using ATS_API.Helpers;
 
@@ -5,18 +6,6 @@ namespace ATS_API.Races;
 
 public partial class RaceBuilder
 {
-    public RaceBuilder SetHousingNeed(string housingNeed)
-    {
-        newRaceData.racialHousingNeed = housingNeed;
-        return this;
-    }
-    
-    public RaceBuilder SetHousingNeed(NeedTypes housingNeed)
-    {
-        newRaceData.racialHousingNeed = housingNeed.ToName();
-        return this;
-    }
-
     public RaceBuilder SetNeeds(params string[] needs)
     {
         newRaceData.needs.Clear();

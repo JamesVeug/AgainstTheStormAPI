@@ -99,9 +99,7 @@ public static partial class BiomeManager
                 {
                     biome = newBiome.biomeModel,
                     minDistanceFromCapital = 2,
-                    horizontalDistribution = 0.25f,
-                    verticalDistribution = 0.27f,
-                    generationTreshold = 0.585f,
+                    weight = 10,
 
                 };
                 

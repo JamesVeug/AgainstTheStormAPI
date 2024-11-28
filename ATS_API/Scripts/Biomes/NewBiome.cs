@@ -379,10 +379,11 @@ public class NewBiome : ASyncable<BiomeModel>
             biomeModel.landPatches = templateModel.landPatches;
         }
         
-        if(biomeModel.earlyEffects == null)
-        {
-            biomeModel.earlyEffects = earlyEfects.ToEffectModelArrayNoNulls();
-        }
+        // Removed in v1.5
+        // if(biomeModel.earlyEffects == null)
+        // {
+        //     biomeModel.earlyEffects = earlyEfects.ToEffectModelArrayNoNulls();
+        // }
         
         if(biomeModel.effects == null)
         {

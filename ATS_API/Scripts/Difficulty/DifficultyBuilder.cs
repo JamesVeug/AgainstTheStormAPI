@@ -175,7 +175,7 @@ public class DifficultyBuilder
     {
         AscensionModifierModel modifier = ScriptableObject.CreateInstance<AscensionModifierModel>();
         modifier.name = newModel.name + "_Modifier_" + (newDifficulty.ascensionModifiers.Count + 1);
-        modifier.isEarlyEffect = isEarlyEffect;
+        // modifier.isEarlyEffect = isEarlyEffect; // Removed in v1.5
         modifier.isShown = isShown;
         modifier.inCustomMode = inCustomMode;
         

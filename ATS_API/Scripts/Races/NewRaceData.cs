@@ -13,7 +13,6 @@ public class NewRaceData : ASyncable<RaceModel>
     public RaceModel RaceModel;
     public RaceTypes ID;
     public List<string> needs = new List<string>();
-    public string racialHousingNeed;
     public List<RaceCharacteristicRef> characteristics = new List<RaceCharacteristicRef>();
     public ResolveEffectTypes HungerEffect = ResolveEffectTypes.Hunger_Penalty;
     public Availability RaceWorkPlaceAvailability = new Availability();
@@ -46,20 +45,6 @@ public class NewRaceData : ASyncable<RaceModel>
         }
         
         RaceModel.hungerEffect = HungerEffect.ToResolveEffectModel();
-        
-        // racialHousingNeed
-        if (!string.IsNullOrEmpty(racialHousingNeed))
-        {
-            NeedModel needModel = racialHousingNeed.ToNeedModel();
-            if (needModel != null)
-            {
-                RaceModel.racialHousingNeed = needModel;
-            }
-            else
-            {
-                Plugin.Log.LogError($"Failed to find need {racialHousingNeed} for new race {RaceModel.name}");
-            }
-        }
         
         // needs
         List<NeedModel> needModels = new List<NeedModel>();

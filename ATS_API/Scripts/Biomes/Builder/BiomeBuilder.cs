@@ -63,7 +63,7 @@ public partial class BiomeBuilder
         newModel.reputationToExpLooseRatio = 2f;
         newModel.expForLooseWithoutPoints = 0;
         
-        newModel.rewardChasesCalculatedFromCenter = false;
+        // newModel.rewardChasesCalculatedFromCenter = false; // Removed in v1.5
         
         newModel.mainHearth = null; // Use the existing model if its null.
         newModel.mainStorage = null; // Use the existing model if its null.
@@ -95,7 +95,7 @@ public partial class BiomeBuilder
         newModel.gladesRelics = null; // Clone the existing model if its null.
         newModel.landPatches = null; // Clone the existing model if its null.
 
-        newModel.earlyEffects = null; // Empty list for Cursed Royal Woodlands
+        // newModel.earlyEffects = null; // Empty list for Cursed Royal Woodlands // Removed in v1.5
         newModel.effects = null; // Use the existing model if its null. contains 1 that is _Biome_ Wood in Woodlands
         newModel.initialGoods = null; // Empty list for Cursed Royal Woodlands
         

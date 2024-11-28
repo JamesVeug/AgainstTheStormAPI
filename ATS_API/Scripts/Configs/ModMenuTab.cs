@@ -101,8 +101,8 @@ public static class ModMenuTab
             header.SafeGetComponent<TMP_Text>().text = modName + (modVersion != null && modVersion.ToString() != "0.0" ? " v" + modVersion : "");
             modSection.name = header.GetComponent<TMP_Text>().text;
 
-            string guid = Keys.GUID.ToLocaText().GetTextOrNull();
-            string dependencies = Keys.Dependencies.ToLocaText().GetTextOrNull();
+            string guid = Keys.GUID.ToLocaText().GetText();
+            string dependencies = Keys.Dependencies.ToLocaText().GetText();
 
             SimpleTooltipTrigger tooltipTrigger = header.GetOrAdd<SimpleTooltipTrigger>();
             tooltipTrigger.target = header.GetComponent<RectTransform>();
@@ -152,8 +152,8 @@ public static class ModMenuTab
         dependencies.Remove("BepInExPack");
 
 
-        string wrongVersion = Keys.WrongVersion.ToLocaText().GetTextOrNull();
-        string missing = Keys.Missing.ToLocaText().GetTextOrNull();
+        string wrongVersion = Keys.WrongVersion.ToLocaText().GetText();
+        string missing = Keys.Missing.ToLocaText().GetText();
         
         string text = "";
         if (dependencies.Count > 0)
@@ -186,7 +186,7 @@ public static class ModMenuTab
         }
         else
         {
-            text = Keys.None.ToLocaText().GetTextOrNull();
+            text = Keys.None.ToLocaText().GetText();
         }
 
         return text;
