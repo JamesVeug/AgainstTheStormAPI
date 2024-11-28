@@ -151,16 +151,13 @@ public class NewBiome : ASyncable<BiomeModel>
         BiomeModel templateModel = BiomeTypes.Royal_Woodlands.ToBiomeModel();
         if(biomeModel.material == null)
         {
-            Plugin.Log.LogError($"Material is null for {biomeModel.name}");
             Material material = Material.Instantiate(templateModel.material);
             if(worldMapTexture != null)
             {
-                Plugin.Log.LogInfo($"Setting worldMapTexture for {biomeModel.name}");
                 material.SetTexture("Texture2D_17f52de1276c4a7ba20b64de1c1eddcd", worldMapTexture);
             }
             else
             {
-                Plugin.Log.LogError($"worldMapTexture is null for {biomeModel.name}");
                 material.SetTexture("Texture2D_17f52de1276c4a7ba20b64de1c1eddcd", null);
             }
             biomeModel.material = material;
@@ -215,7 +212,6 @@ public class NewBiome : ASyncable<BiomeModel>
             else
             {
                 biomeModel.mainHearth = templateModel.mainHearth;
-                Plugin.Log.LogError($"Could not use {biomeModelMainHearth.name} as main hearth. Needs to be of type HearthModel");
             }
         }
         
@@ -229,7 +225,6 @@ public class NewBiome : ASyncable<BiomeModel>
             else
             {
                 biomeModel.mainStorage = templateModel.mainStorage;
-                Plugin.Log.LogError($"Could not use {biomeModelMainStorage.name} as main storage. Needs to be of type StorageModel");
             }
         }
         

@@ -11,7 +11,8 @@ namespace ExampleMod;
 public partial class Plugin
 {
     public HookedEffectBuilder ModdingToolsBuilder;
-    
+    public HookedEffectBuilder DiamondHunterBuilder;
+
     private void CreateCornerstones()
     {
         CreateModdingToolsCornerstone();
@@ -72,27 +73,27 @@ public partial class Plugin
     
     private void CreateGoodEveryYearProductionCornerstone()
     {
-        HookedEffectBuilder builder = new (PluginInfo.PLUGIN_GUID, "diamondHunter", "DiamondHunter.png");
-        builder.SetPositive(true);
-        builder.SetRarity(EffectRarity.Rare);
-        builder.SetObtainedAsCornerstone();
-        builder.SetAvailableInAllBiomesAndSeasons();
-        builder.SetLabel("API");
+        DiamondHunterBuilder = new (PluginInfo.PLUGIN_GUID, "diamondHunter", "DiamondHunter.png");
+        DiamondHunterBuilder.SetPositive(true);
+        DiamondHunterBuilder.SetRarity(EffectRarity.Rare);
+        DiamondHunterBuilder.SetObtainedAsCornerstone();
+        DiamondHunterBuilder.SetAvailableInAllBiomesAndSeasons();
+        DiamondHunterBuilder.SetLabel("API");
  
-        builder.SetDisplayName("Diamond Hunter");
-        builder.SetDescription("You hire an obsessed miner that has a serious problem for hunting for diamonds. " +
+        DiamondHunterBuilder.SetDisplayName("Diamond Hunter");
+        DiamondHunterBuilder.SetDescription("You hire an obsessed miner that has a serious problem for hunting for diamonds. " +
                                "At the beginning of every {0} season gain +{1} {2}s");
-        builder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), 
+        DiamondHunterBuilder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), 
             (SourceType.HookedEffect, TextArgType.Amount, 0), 
             (SourceType.HookedEffect, TextArgType.DisplayName, 0));
 
         // Add last so if anything is missing it uses the main effects description/name/icon
-        builder.AddHook(HookFactory.OnNewSeason(SeasonTypes.Drizzle, 1));
+        DiamondHunterBuilder.AddHook(HookFactory.OnNewSeason(SeasonTypes.Drizzle, 1));
         
         GoodsEffectBuilder giveDiamondEffect = new GoodsEffectBuilder(PluginInfo.PLUGIN_GUID, "Diamonds");
         giveDiamondEffect.SetDisplayName("Diamonds");
         giveDiamondEffect.SetDescription("A shiny gem that is used for crafting and trading.");
         giveDiamondEffect.SetGood(1, diamonds.Name);
-        builder.AddHookedEffect(giveDiamondEffect.EffectModel);
+        DiamondHunterBuilder.AddHookedEffect(giveDiamondEffect.EffectModel);
     }
 }

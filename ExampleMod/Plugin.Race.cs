@@ -32,7 +32,6 @@ public partial class Plugin
             "The axolotl is lentic, meaning it inhabits still-water lakes. Axolotl Houses are required to fulfill this need.",
             axolotlHouse.Model.icon,
             3);
-        builder.SetHousingNeed(houseNeed.ID);
         
         builder.AddNeed(NeedTypes.Any_Housing);
         builder.AddNeed(houseNeed.ID);

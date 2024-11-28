@@ -98,8 +98,8 @@ public static partial class BiomeManager
                 var biomeGenerationRule = new BiomeGenerationRule
                 {
                     biome = newBiome.biomeModel,
-                    minDistanceFromCapital = 2,
-                    weight = 10,
+                    minDistanceFromCapital = 2, // TODO: Expose this somewhere
+                    weight = 10,                // TODO: Expose this somewhere
 
                 };
                 
@@ -107,7 +107,6 @@ public static partial class BiomeManager
                 {
                     if(seal.worldGenerationModel.biomesRules.All(a => a.biome != newBiome.biomeModel))
                     {
-                        Plugin.Log.LogInfo($"Adding {newBiome.biomeModel.name} to {seal.worldGenerationModel.name}");
                         ArrayExtensions.AddElement(ref seal.worldGenerationModel.biomesRules, biomeGenerationRule);
                     }
                 }
@@ -116,7 +115,6 @@ public static partial class BiomeManager
                 WorldGenerationModel model = settings.worldConfig.generationModel;
                 if(model.biomesRules.All(a => a.biome != newBiome.biomeModel))
                 {
-                    Plugin.Log.LogInfo($"Adding {newBiome.biomeModel.name} to {model.name}");
                     ArrayExtensions.AddElement(ref model.biomesRules, biomeGenerationRule);
                 }
             }
