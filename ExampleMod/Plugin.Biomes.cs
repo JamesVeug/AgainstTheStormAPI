@@ -30,8 +30,6 @@ public partial class Plugin
         builder.SetSeasonDuration(SeasonTypes.Drizzle, 120);
         builder.SetDeclinedSeasonalRewardsReward(GoodsTypes.Valuable_Ancient_Tablet, 2);
 
-        // builder.SetStormRaindropTextures("SnowFlake.png", "SnowFlake.png");
-        
         // newcomers
         builder.SetNewcomerInterval(300);
         builder.SetNewcomerAmountOfGoods(1, 4);
@@ -47,19 +45,13 @@ public partial class Plugin
         builder.SetTraderForceArrivalReputationPrompt("Send for trader to arrive");
         builder.SetTraderVillagerKilledByTraderText("dehydrated in the desert");
         
-        
         // World Map texture to overlay the little hexagons
         builder.SetWorldMapTexture("dessertWorldMapTerrain.png");
-        
 
         // Starting effect
         builder.AddEffect(DiamondHunterBuilder.EffectType);
 
         // Terrain
-        builder.SetTerrainBaseTexture("terrainBase.png");
-        builder.SetTerrainBlendTexture("terrainBlend.png");
-        builder.SetTerrainCliffTexture("terrainCliff.png");
-        builder.SetTerrainOverlayTexture("terrainOverlay.png");
         builder.SetWaterTexture("desertWorldWater.png");
 
         // Trees / natural resources
