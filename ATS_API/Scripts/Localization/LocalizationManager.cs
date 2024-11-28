@@ -102,7 +102,10 @@ public static partial class LocalizationManager
                 key = guid + "_" + key;
             }
             
-            for (int j = 1; j < values.Length; j++)
+            // Column 1 is Keys
+            // Column 2 is Notes
+            // Column 3 starts with English
+            for (int j = 2; j < values.Length; j++)
             {
                 try
                 {
