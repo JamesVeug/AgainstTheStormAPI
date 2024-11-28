@@ -52,10 +52,12 @@ internal class Plugin : BaseUnityPlugin
 
     private void Awake()
     {
+        Logger.LogInfo($"Against the Storm v{Application.version}");
+        
         Instance = this;
         Log = Logger;
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
-
+        
         PluginDirectory = Info.Location.Replace("API.dll", "");
 
         string expectedUnityVersion = "2021.3.27f1";
