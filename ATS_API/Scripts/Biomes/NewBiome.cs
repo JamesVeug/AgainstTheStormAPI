@@ -93,7 +93,6 @@ public class NewBiome : ASyncable<BiomeModel>
     
     public List<GoodsTypes> tradeRouteGoods = new List<GoodsTypes>();
     
-    public List<EffectTypes> earlyEfects = new List<EffectTypes>();
     public List<EffectTypes> effects = new List<EffectTypes>();
     public List<OreTypes> ores = new List<OreTypes>();
     public List<GoodsTypeAmount> initialGoods = new List<GoodsTypeAmount>();
@@ -386,12 +385,6 @@ public class NewBiome : ASyncable<BiomeModel>
         {
             biomeModel.landPatches = templateModel.landPatches;
         }
-        
-        // Removed in v1.5
-        // if(biomeModel.earlyEffects == null)
-        // {
-        //     biomeModel.earlyEffects = earlyEfects.ToEffectModelArrayNoNulls();
-        // }
         
         if(biomeModel.effects == null)
         {

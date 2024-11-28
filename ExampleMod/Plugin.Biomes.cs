@@ -51,6 +51,10 @@ public partial class Plugin
         // World Map texture to overlay the little hexagons
         builder.SetWorldMapTexture("dessertWorldMapTerrain.png");
         
+
+        // Starting effect
+        builder.AddEffect(DiamondHunterBuilder.EffectType);
+
         // Terrain
         builder.SetTerrainBaseTexture("terrainBase.png");
         builder.SetTerrainBlendTexture("terrainBlend.png");
