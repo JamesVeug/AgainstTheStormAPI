@@ -1,27 +1,84 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model.Trade;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum TraderTypes
 {
 	Unknown = -1,
 	None,
-	Trader_0_General,                     // Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
-	Trader_1_First_Dawn_Company,          // Zhorg - He might have <color=#e0e09f>cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture</color> for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
-	Trader_2_Brass_Order,                 // Old Farluf - He might have <color=#e0e09f>metal, fuel, tools, building materials, and a number of blueprints and perks</color> for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.
-	Trader_3_Ancient,                     // Sothur The Ancient - He might have <color=#e0e09f>luxury items, crafting materials, blueprints for alchemical buildings, and perks</color> for sale. He is willing to buy packs of goods, fuel, cooked food, and luxury goods.
-	Trader_4_Vanguard_Of_The_Stolen_Keys, // Vliss Greybone - She might have <color=#e0e09f>tools, luxury items, building materials, and perks</color> for sale. She is willing to buy packs of goods, cooked food, metal, building materials, fuel, and tools.
-	Trader_5_Royal_Trading_Company,       // Sir Renwald Redmane - He might have <color=#e0e09f>cooked food, building materials, tools, parts, advanced blueprints, and perks</color> for sale. He is willing to buy packs of goods, fuel, building materials, luxury items, tools, and metal.
-	Trader_6_Wandering_Merchant,          // Xiadani Stormfeather - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
-	Trader_7_Trickster,                   // Dullahan Warlander - Dullahan might have <color=#e0e09f>metal, fabrics, crafting materials, and packs of goods</color> for sale. He also sells <color=#e0e09f>mystery boxes</color>. He is willing to buy packs of goods, luxury items, crafting materials, cooked food, and some raw resources.
-	Trader_Glade_01,                      // Alune Soulgazer
-	Trader_Glade_02,                      // Gex Runescale
-	Trader_Glade_03,                      // Ruenhar Blightclaw
+	
+	/// <summary>
+	/// Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
+	/// </summary>
+	/// <name>Trader 0 - General</name>
+	Trader_0_General,
+
+	/// <summary>
+	/// Zhorg - He might have <color=#e0e09f>cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture</color> for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
+	/// </summary>
+	/// <name>Trader 1 - First Dawn Company</name>
+	Trader_1_First_Dawn_Company,
+
+	/// <summary>
+	/// Old Farluf - He might have <color=#e0e09f>metal, fuel, tools, building materials, and a number of blueprints and perks</color> for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.
+	/// </summary>
+	/// <name>Trader 2 - Brass Order</name>
+	Trader_2_Brass_Order,
+
+	/// <summary>
+	/// Sothur The Ancient - He might have <color=#e0e09f>luxury items, crafting materials, blueprints for alchemical buildings, and perks</color> for sale. He is willing to buy packs of goods, fuel, cooked food, and luxury goods.
+	/// </summary>
+	/// <name>Trader 3 - Ancient</name>
+	Trader_3_Ancient,
+
+	/// <summary>
+	/// Vliss Greybone - She might have <color=#e0e09f>tools, luxury items, building materials, and perks</color> for sale. She is willing to buy packs of goods, cooked food, metal, building materials, fuel, and tools.
+	/// </summary>
+	/// <name>Trader 4 - Vanguard of the Stolen Keys</name>
+	Trader_4_Vanguard_Of_The_Stolen_Keys,
+
+	/// <summary>
+	/// Sir Renwald Redmane - He might have <color=#e0e09f>cooked food, building materials, tools, parts, advanced blueprints, and perks</color> for sale. He is willing to buy packs of goods, fuel, building materials, luxury items, tools, and metal.
+	/// </summary>
+	/// <name>Trader 5 - Royal Trading Company</name>
+	Trader_5_Royal_Trading_Company,
+
+	/// <summary>
+	/// Xiadani Stormfeather - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
+	/// </summary>
+	/// <name>Trader 6 - Wandering Merchant</name>
+	Trader_6_Wandering_Merchant,
+
+	/// <summary>
+	/// Dullahan Warlander - Dullahan might have <color=#e0e09f>metal, fabrics, crafting materials, and packs of goods</color> for sale. He also sells <color=#e0e09f>mystery boxes</color>. He is willing to buy packs of goods, luxury items, crafting materials, cooked food, and some raw resources.
+	/// </summary>
+	/// <name>Trader 7 - Trickster</name>
+	Trader_7_Trickster,
+
+	/// <summary>
+	/// Alune Soulgazer
+	/// </summary>
+	/// <name>Trader - Glade 01</name>
+	Trader_Glade_01,
+
+	/// <summary>
+	/// Gex Runescale
+	/// </summary>
+	/// <name>Trader - Glade 02</name>
+	Trader_Glade_02,
+
+	/// <summary>
+	/// Ruenhar Blightclaw
+	/// </summary>
+	/// <name>Trader - Glade 03</name>
+	Trader_Glade_03,
+
 
 
 	MAX = 11
@@ -43,6 +100,11 @@ public static class TraderTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every TraderTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return TraderTypes.Trader_0_General in the enum and log an error.
+	/// </summary>
 	public static string ToName(this TraderTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -54,6 +116,11 @@ public static class TraderTypesExtensions
 		return TypeToInternalName[TraderTypes.Trader_0_General];
 	}
 	
+	/// <summary>
+	/// Returns a TraderTypes associated with the given name.
+	/// Every TraderTypes should have a unique name as to distinguish it from others.
+	/// If no TraderTypes is found, it will return TraderTypes.Unknown and log a warning.
+	/// </summary>
 	public static TraderTypes ToTraderTypes(this string name)
 	{
 		foreach (KeyValuePair<TraderTypes,string> pair in TypeToInternalName)
@@ -68,9 +135,15 @@ public static class TraderTypesExtensions
 		return TraderTypes.Unknown;
 	}
 	
-	public static TraderModel ToTraderModel(this string name)
+	/// <summary>
+	/// Returns a TraderModel associated with the given name.
+	/// TraderModel contain all the data that will be used in the game.
+	/// Every TraderModel should have a unique name as to distinguish it from others.
+	/// If no TraderModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.Trade.TraderModel ToTraderModel(this string name)
 	{
-		TraderModel model = SO.Settings.traders.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.Trade.TraderModel model = SO.Settings.traders.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -80,15 +153,27 @@ public static class TraderTypesExtensions
 		return null;
 	}
 
-	public static TraderModel ToTraderModel(this TraderTypes types)
+    /// <summary>
+    /// Returns a TraderModel associated with the given TraderTypes.
+    /// TraderModel contain all the data that will be used in the game.
+    /// Every TraderModel should have a unique name as to distinguish it from others.
+    /// If no TraderModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.Trade.TraderModel ToTraderModel(this TraderTypes types)
 	{
 		return types.ToName().ToTraderModel();
 	}
 	
-	public static TraderModel[] ToTraderModelArray(this IEnumerable<TraderTypes> collection)
+	/// <summary>
+	/// Returns an array of TraderModel associated with the given TraderTypes.
+	/// TraderModel contain all the data that will be used in the game.
+	/// Every TraderModel should have a unique name as to distinguish it from others.
+	/// If a TraderModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.Trade.TraderModel[] ToTraderModelArray(this IEnumerable<TraderTypes> collection)
 	{
 		int count = collection.Count();
-		TraderModel[] array = new TraderModel[count];
+		Eremite.Model.Trade.TraderModel[] array = new Eremite.Model.Trade.TraderModel[count];
 		int i = 0;
 		foreach (TraderTypes element in collection)
 		{
@@ -98,10 +183,16 @@ public static class TraderTypesExtensions
 		return array;
 	}
 	
-	public static TraderModel[] ToTraderModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of TraderModel associated with the given TraderTypes.
+	/// TraderModel contain all the data that will be used in the game.
+	/// Every TraderModel should have a unique name as to distinguish it from others.
+	/// If a TraderModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.Trade.TraderModel[] ToTraderModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		TraderModel[] array = new TraderModel[count];
+		Eremite.Model.Trade.TraderModel[] array = new Eremite.Model.Trade.TraderModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -110,7 +201,51 @@ public static class TraderTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of TraderModel associated with the given TraderTypes.
+	/// TraderModel contain all the data that will be used in the game.
+	/// Every TraderModel should have a unique name as to distinguish it from others.
+	/// If a TraderModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.Trade.TraderModel[] ToTraderModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.Trade.TraderModel>.Get(out List<Eremite.Model.Trade.TraderModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.Trade.TraderModel model = element.ToTraderModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of TraderModel associated with the given TraderTypes.
+	/// TraderModel contain all the data that will be used in the game.
+	/// Every TraderModel should have a unique name as to distinguish it from others.
+	/// If a TraderModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.Trade.TraderModel[] ToTraderModelArrayNoNulls(this IEnumerable<TraderTypes> collection)
+	{
+		using(ListPool<Eremite.Model.Trade.TraderModel>.Get(out List<Eremite.Model.Trade.TraderModel> list))
+		{
+			foreach (TraderTypes element in collection)
+			{
+				Eremite.Model.Trade.TraderModel model = element.ToTraderModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<TraderTypes, string> TypeToInternalName = new()
 	{
 		{ TraderTypes.Trader_0_General, "Trader 0 - General" },                                         // Sahilda - She might have <color=#e0e09f>raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks</color> for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.

@@ -1,44 +1,186 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum DifficultyTypes
 {
 	Unknown = -1,
 	None,
-	Ascension_I,             // Prestige 1 - More Reputation required and harder Orders.
-	Ascension_II,            // Prestige 2 - The storm lasts longer.
-	Ascension_III,           // Prestige 3 - Blightrot appears every third Clearance season.
-	Ascension_IV,            // Prestige 4 - Blueprint rerolls cost more.
-	Ascension_IX,            // Prestige 9 - Villagers work slower on Events.
-	Ascension_V,             // Prestige 5 - Villagers with low Resolve leave faster.
-	Ascension_VI,            // Prestige 6 - Buildings cost more.
-	Ascension_VII,           // Prestige 7 - Higher food consumption.
-	Ascension_VIII,          // Prestige 8 - Villagers consume more luxury goods.
-	Ascension_X,             // Prestige 10 - Goods are worth less to traders.
-	Ascension_XI,            // Prestige 11 - Blightrot has a stronger impact.
-	Ascension_XII,           // Prestige 12 - Fewer blueprints to choose from.
-	Ascension_XIII,          // Prestige 13 - Fewer cornerstone choices.
-	Ascension_XIV,           // Prestige 14 - Impatience falls less on gaining Reputation.
-	Ascension_XIX,           // Prestige 19 - Fee for each discovered glade.
-	Ascension_XV,            // Prestige 15 - More Resolve needed to gain Reputation.
-	Ascension_XVI,           // Prestige 16 - One fewer blueprint to begin with.
-	Ascension_XVII,          // Prestige 17 - Stronger hunger penalty.
-	Ascension_XVIII,         // Prestige 18 - Sacrifices in the Hearth cost more.
-	Ascension_XX,            // Prestige 20 - Higher penalty for losing villagers.
-	Hard,                    // Pioneer - More Reputation required to win.
-	Impossible,              // Viceroy - Blightrot & Corruption
-	Normal,                  // Settler - Villagers eat less food.
-	Tutorial_I_Difficulty,   // Tutorial - No additional modifiers
-	Tutorial_II_Difficulty,  // Tutorial - No additional modifiers
-	Tutorial_III_Difficulty, // Tutorial - Villagers eat less food.
-	Tutorial_IV_Difficulty,  // Tutorial - Blightrot & Corruption
-	Very_Hard,               // Veteran - Blightrot & Corruption
+	
+	/// <summary>
+	/// Tutorial - Blightrot & Corruption
+	/// </summary>
+	/// <name>Tutorial IV Difficulty</name>
+	Tutorial_IV_Difficulty,
+
+	/// <summary>
+	/// Tutorial - Villagers eat less food.
+	/// </summary>
+	/// <name>Tutorial III Difficulty</name>
+	Tutorial_III_Difficulty,
+
+	/// <summary>
+	/// Tutorial - No additional modifiers
+	/// </summary>
+	/// <name>Tutorial II Difficulty</name>
+	Tutorial_II_Difficulty,
+
+	/// <summary>
+	/// Tutorial - No additional modifiers
+	/// </summary>
+	/// <name>Tutorial I Difficulty</name>
+	Tutorial_I_Difficulty,
+
+	/// <summary>
+	/// Settler - Villagers eat less food.
+	/// </summary>
+	/// <name>0 Normal</name>
+	Normal,
+
+	/// <summary>
+	/// Pioneer - More Reputation required to win.
+	/// </summary>
+	/// <name>1 Hard</name>
+	Hard,
+
+	/// <summary>
+	/// Veteran - Blightrot & Corruption
+	/// </summary>
+	/// <name>2 Very Hard</name>
+	Very_Hard,
+
+	/// <summary>
+	/// Viceroy - Blightrot & Corruption
+	/// </summary>
+	/// <name>3 Impossible</name>
+	Impossible,
+
+	/// <summary>
+	/// Prestige 1 - More Reputation required and harder Orders.
+	/// </summary>
+	/// <name>4 Ascension I</name>
+	Ascension_I,
+
+	/// <summary>
+	/// Prestige 2 - The storm lasts longer.
+	/// </summary>
+	/// <name>5 Ascension II</name>
+	Ascension_II,
+
+	/// <summary>
+	/// Prestige 3 - Blightrot appears every third Clearance season.
+	/// </summary>
+	/// <name>6 Ascension III</name>
+	Ascension_III,
+
+	/// <summary>
+	/// Prestige 4 - Blueprint rerolls cost more.
+	/// </summary>
+	/// <name>7 Ascension IV</name>
+	Ascension_IV,
+
+	/// <summary>
+	/// Prestige 5 - Villagers with low Resolve leave faster.
+	/// </summary>
+	/// <name>8 Ascension V</name>
+	Ascension_V,
+
+	/// <summary>
+	/// Prestige 6 - Buildings cost more.
+	/// </summary>
+	/// <name>9 Ascension VI</name>
+	Ascension_VI,
+
+	/// <summary>
+	/// Prestige 7 - Higher food consumption.
+	/// </summary>
+	/// <name>10 Ascension VII</name>
+	Ascension_VII,
+
+	/// <summary>
+	/// Prestige 8 - Villagers consume more luxury goods.
+	/// </summary>
+	/// <name>11 Ascension VIII</name>
+	Ascension_VIII,
+
+	/// <summary>
+	/// Prestige 9 - Villagers work slower on Events.
+	/// </summary>
+	/// <name>12 Ascension IX</name>
+	Ascension_IX,
+
+	/// <summary>
+	/// Prestige 10 - Goods are worth less to traders.
+	/// </summary>
+	/// <name>13 Ascension X</name>
+	Ascension_X,
+
+	/// <summary>
+	/// Prestige 11 - Blightrot has a stronger impact.
+	/// </summary>
+	/// <name>14 Ascension XI</name>
+	Ascension_XI,
+
+	/// <summary>
+	/// Prestige 12 - Fewer blueprints to choose from.
+	/// </summary>
+	/// <name>15 Ascension XII</name>
+	Ascension_XII,
+
+	/// <summary>
+	/// Prestige 13 - Fewer cornerstone choices.
+	/// </summary>
+	/// <name>16 Ascension XIII</name>
+	Ascension_XIII,
+
+	/// <summary>
+	/// Prestige 14 - Impatience falls less on gaining Reputation.
+	/// </summary>
+	/// <name>17 Ascension XIV</name>
+	Ascension_XIV,
+
+	/// <summary>
+	/// Prestige 15 - More Resolve needed to gain Reputation.
+	/// </summary>
+	/// <name>18 Ascension XV</name>
+	Ascension_XV,
+
+	/// <summary>
+	/// Prestige 16 - One fewer blueprint to begin with.
+	/// </summary>
+	/// <name>19 Ascension XVI</name>
+	Ascension_XVI,
+
+	/// <summary>
+	/// Prestige 17 - Stronger hunger penalty.
+	/// </summary>
+	/// <name>20 Ascension XVII</name>
+	Ascension_XVII,
+
+	/// <summary>
+	/// Prestige 18 - Sacrifices in the Hearth cost more.
+	/// </summary>
+	/// <name>21 Ascension XVIII</name>
+	Ascension_XVIII,
+
+	/// <summary>
+	/// Prestige 19 - Fee for each discovered glade.
+	/// </summary>
+	/// <name>22 Ascension XIX</name>
+	Ascension_XIX,
+
+	/// <summary>
+	/// Prestige 20 - Higher penalty for losing villagers.
+	/// </summary>
+	/// <name>23 Ascension XX</name>
+	Ascension_XX,
+
 
 
 	MAX = 28
@@ -60,6 +202,11 @@ public static class DifficultyTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every DifficultyTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return DifficultyTypes.Tutorial_IV_Difficulty in the enum and log an error.
+	/// </summary>
 	public static string ToName(this DifficultyTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -68,9 +215,14 @@ public static class DifficultyTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of DifficultyTypes: " + type + "\n" + Environment.StackTrace);
-		return TypeToInternalName[DifficultyTypes.Ascension_I];
+		return TypeToInternalName[DifficultyTypes.Tutorial_IV_Difficulty];
 	}
 	
+	/// <summary>
+	/// Returns a DifficultyTypes associated with the given name.
+	/// Every DifficultyTypes should have a unique name as to distinguish it from others.
+	/// If no DifficultyTypes is found, it will return DifficultyTypes.Unknown and log a warning.
+	/// </summary>
 	public static DifficultyTypes ToDifficultyTypes(this string name)
 	{
 		foreach (KeyValuePair<DifficultyTypes,string> pair in TypeToInternalName)
@@ -85,9 +237,15 @@ public static class DifficultyTypesExtensions
 		return DifficultyTypes.Unknown;
 	}
 	
-	public static DifficultyModel ToDifficultyModel(this string name)
+	/// <summary>
+	/// Returns a DifficultyModel associated with the given name.
+	/// DifficultyModel contain all the data that will be used in the game.
+	/// Every DifficultyModel should have a unique name as to distinguish it from others.
+	/// If no DifficultyModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.DifficultyModel ToDifficultyModel(this string name)
 	{
-		DifficultyModel model = SO.Settings.difficulties.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.DifficultyModel model = SO.Settings.difficulties.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -97,15 +255,27 @@ public static class DifficultyTypesExtensions
 		return null;
 	}
 
-	public static DifficultyModel ToDifficultyModel(this DifficultyTypes types)
+    /// <summary>
+    /// Returns a DifficultyModel associated with the given DifficultyTypes.
+    /// DifficultyModel contain all the data that will be used in the game.
+    /// Every DifficultyModel should have a unique name as to distinguish it from others.
+    /// If no DifficultyModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.DifficultyModel ToDifficultyModel(this DifficultyTypes types)
 	{
 		return types.ToName().ToDifficultyModel();
 	}
 	
-	public static DifficultyModel[] ToDifficultyModelArray(this IEnumerable<DifficultyTypes> collection)
+	/// <summary>
+	/// Returns an array of DifficultyModel associated with the given DifficultyTypes.
+	/// DifficultyModel contain all the data that will be used in the game.
+	/// Every DifficultyModel should have a unique name as to distinguish it from others.
+	/// If a DifficultyModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.DifficultyModel[] ToDifficultyModelArray(this IEnumerable<DifficultyTypes> collection)
 	{
 		int count = collection.Count();
-		DifficultyModel[] array = new DifficultyModel[count];
+		Eremite.Model.DifficultyModel[] array = new Eremite.Model.DifficultyModel[count];
 		int i = 0;
 		foreach (DifficultyTypes element in collection)
 		{
@@ -115,10 +285,16 @@ public static class DifficultyTypesExtensions
 		return array;
 	}
 	
-	public static DifficultyModel[] ToDifficultyModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of DifficultyModel associated with the given DifficultyTypes.
+	/// DifficultyModel contain all the data that will be used in the game.
+	/// Every DifficultyModel should have a unique name as to distinguish it from others.
+	/// If a DifficultyModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.DifficultyModel[] ToDifficultyModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		DifficultyModel[] array = new DifficultyModel[count];
+		Eremite.Model.DifficultyModel[] array = new Eremite.Model.DifficultyModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -127,37 +303,81 @@ public static class DifficultyTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of DifficultyModel associated with the given DifficultyTypes.
+	/// DifficultyModel contain all the data that will be used in the game.
+	/// Every DifficultyModel should have a unique name as to distinguish it from others.
+	/// If a DifficultyModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.DifficultyModel[] ToDifficultyModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.DifficultyModel>.Get(out List<Eremite.Model.DifficultyModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.DifficultyModel model = element.ToDifficultyModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of DifficultyModel associated with the given DifficultyTypes.
+	/// DifficultyModel contain all the data that will be used in the game.
+	/// Every DifficultyModel should have a unique name as to distinguish it from others.
+	/// If a DifficultyModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.DifficultyModel[] ToDifficultyModelArrayNoNulls(this IEnumerable<DifficultyTypes> collection)
+	{
+		using(ListPool<Eremite.Model.DifficultyModel>.Get(out List<Eremite.Model.DifficultyModel> list))
+		{
+			foreach (DifficultyTypes element in collection)
+			{
+				Eremite.Model.DifficultyModel model = element.ToDifficultyModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<DifficultyTypes, string> TypeToInternalName = new()
 	{
+		{ DifficultyTypes.Tutorial_IV_Difficulty, "Tutorial IV Difficulty" },   // Tutorial - Blightrot & Corruption
+		{ DifficultyTypes.Tutorial_III_Difficulty, "Tutorial III Difficulty" }, // Tutorial - Villagers eat less food.
+		{ DifficultyTypes.Tutorial_II_Difficulty, "Tutorial II Difficulty" },   // Tutorial - No additional modifiers
+		{ DifficultyTypes.Tutorial_I_Difficulty, "Tutorial I Difficulty" },     // Tutorial - No additional modifiers
+		{ DifficultyTypes.Normal, "0 Normal" },                                 // Settler - Villagers eat less food.
+		{ DifficultyTypes.Hard, "1 Hard" },                                     // Pioneer - More Reputation required to win.
+		{ DifficultyTypes.Very_Hard, "2 Very Hard" },                           // Veteran - Blightrot & Corruption
+		{ DifficultyTypes.Impossible, "3 Impossible" },                         // Viceroy - Blightrot & Corruption
 		{ DifficultyTypes.Ascension_I, "4 Ascension I" },                       // Prestige 1 - More Reputation required and harder Orders.
 		{ DifficultyTypes.Ascension_II, "5 Ascension II" },                     // Prestige 2 - The storm lasts longer.
 		{ DifficultyTypes.Ascension_III, "6 Ascension III" },                   // Prestige 3 - Blightrot appears every third Clearance season.
 		{ DifficultyTypes.Ascension_IV, "7 Ascension IV" },                     // Prestige 4 - Blueprint rerolls cost more.
-		{ DifficultyTypes.Ascension_IX, "12 Ascension IX" },                    // Prestige 9 - Villagers work slower on Events.
 		{ DifficultyTypes.Ascension_V, "8 Ascension V" },                       // Prestige 5 - Villagers with low Resolve leave faster.
 		{ DifficultyTypes.Ascension_VI, "9 Ascension VI" },                     // Prestige 6 - Buildings cost more.
 		{ DifficultyTypes.Ascension_VII, "10 Ascension VII" },                  // Prestige 7 - Higher food consumption.
 		{ DifficultyTypes.Ascension_VIII, "11 Ascension VIII" },                // Prestige 8 - Villagers consume more luxury goods.
+		{ DifficultyTypes.Ascension_IX, "12 Ascension IX" },                    // Prestige 9 - Villagers work slower on Events.
 		{ DifficultyTypes.Ascension_X, "13 Ascension X" },                      // Prestige 10 - Goods are worth less to traders.
 		{ DifficultyTypes.Ascension_XI, "14 Ascension XI" },                    // Prestige 11 - Blightrot has a stronger impact.
 		{ DifficultyTypes.Ascension_XII, "15 Ascension XII" },                  // Prestige 12 - Fewer blueprints to choose from.
 		{ DifficultyTypes.Ascension_XIII, "16 Ascension XIII" },                // Prestige 13 - Fewer cornerstone choices.
 		{ DifficultyTypes.Ascension_XIV, "17 Ascension XIV" },                  // Prestige 14 - Impatience falls less on gaining Reputation.
-		{ DifficultyTypes.Ascension_XIX, "22 Ascension XIX" },                  // Prestige 19 - Fee for each discovered glade.
 		{ DifficultyTypes.Ascension_XV, "18 Ascension XV" },                    // Prestige 15 - More Resolve needed to gain Reputation.
 		{ DifficultyTypes.Ascension_XVI, "19 Ascension XVI" },                  // Prestige 16 - One fewer blueprint to begin with.
 		{ DifficultyTypes.Ascension_XVII, "20 Ascension XVII" },                // Prestige 17 - Stronger hunger penalty.
 		{ DifficultyTypes.Ascension_XVIII, "21 Ascension XVIII" },              // Prestige 18 - Sacrifices in the Hearth cost more.
+		{ DifficultyTypes.Ascension_XIX, "22 Ascension XIX" },                  // Prestige 19 - Fee for each discovered glade.
 		{ DifficultyTypes.Ascension_XX, "23 Ascension XX" },                    // Prestige 20 - Higher penalty for losing villagers.
-		{ DifficultyTypes.Hard, "1 Hard" },                                     // Pioneer - More Reputation required to win.
-		{ DifficultyTypes.Impossible, "3 Impossible" },                         // Viceroy - Blightrot & Corruption
-		{ DifficultyTypes.Normal, "0 Normal" },                                 // Settler - Villagers eat less food.
-		{ DifficultyTypes.Tutorial_I_Difficulty, "Tutorial I Difficulty" },     // Tutorial - No additional modifiers
-		{ DifficultyTypes.Tutorial_II_Difficulty, "Tutorial II Difficulty" },   // Tutorial - No additional modifiers
-		{ DifficultyTypes.Tutorial_III_Difficulty, "Tutorial III Difficulty" }, // Tutorial - Villagers eat less food.
-		{ DifficultyTypes.Tutorial_IV_Difficulty, "Tutorial IV Difficulty" },   // Tutorial - Blightrot & Corruption
-		{ DifficultyTypes.Very_Hard, "2 Very Hard" },                           // Veteran - Blightrot & Corruption
 
 	};
 }

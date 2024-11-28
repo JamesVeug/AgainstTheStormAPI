@@ -1,408 +1,2287 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model.Orders;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum OrderTypes
 {
 	Unknown = -1,
 	None,
-	Amber_And_Luxury_LOW,                 // Essence of Wealth
-	Amber_Transaction,                    // Crystal Feathers
-	Amber_Transaction_HIGH,               // Crystal Feathers
-	Amber_Transaction_LOW,                // Crystal Feathers
-	Ancient_Tablets,                      // Forbidden Essence
-	Ancient_Tablets_HIGH,                 // Forbidden Essence
-	Ancient_Tablets_LOW,                  // Forbidden Essence
-	Caches,                               // Heart of the Forest
-	Caches_HIGH,                          // Heart of the Forest
-	Caches_LOW,                           // Heart of the Forest
-	CystsBurned,                          // Essence of Corruption
-	Deliver_Packs,                        // Heart of Amber
-	Deliver_Packs_HIGH,                   // Heart of Amber
-	Deliver_Packs_LOW,                    // Heart of Amber
-	Deliver_Tools,                        // Metal Feathers
-	Deliver_Tools_HIGH,                   // Metal Feathers
-	Discover_Forbidden_LOW,               // Stormbird Feathers
-	Engines_Connected,                    // Mechanical Heart
-	Engines_Connected_HIGH,               // Mechanical Heart
-	Heart_Parts_And_Sacrifice_LOW,        // Heart of the Ancient Flame
-	I_Amber,                              // Amber Trade
-	I_Blighfuel,                          // Call to Arms
-	I_Blue_Metal,                         // Blue Metal
-	I_Botanist,                           // Botanist
-	I_Clearing_Glades,                    // Clearing Glades
-	I_Clothing,                           // Rain Protection
-	I_Cysts,                              // The Purge
-	I_Cysts_Amount,                       // Cyst Cultivation
-	I_Eggs,                               // Egg Collection
-	I_Engines,                            // Start Your Engines
-	I_Farm_Life,                          // Farm Life
-	I_Foragers_Camp,                      // Foragers' Camp
-	I_Funding_The_Expedition,             // Funding the Expedition
-	I_Garden_Life,                        // Garden Life
-	I_Herbalist,                          // Herbalist
-	I_Houses,                             // No Place Like Home
-	I_Houses_V2,                          // Safe Place
-	I_Hunters,                            // Hunters
-	I_Jerky,                              // Meat Lover
-	I_Metal_Veins,                        // Metal Veins
-	I_Multiply_Routes,                    // Raising the Stakes
-	I_Pipes,                              // Hydraulics
-	I_Porridge,                           // Healthy Breakfast
-	I_Pump,                               // Beginner Engineer
-	I_Ranch_Life,                         // Ranch Life
-	I_Resolve_Beavers,                    // The Guild
-	I_Resolve_Foxes,                      // The Pack
-	I_Resolve_Frogs,                      // The Collegium
-	I_Resolve_Harpies,                    // The Flock
-	I_Resolve_Humans,                     // People's Resolve
-	I_Resolve_Lizards,                    // The Clan
-	I_Ruins,                              // Lost in the Woods
-	I_Skewers,                            // Barbecue
-	I_Solve_Any_Relic,                    // Problem Solver
-	I_Solve_Dangerous_Relic,              // Tick Tock
-	I_Storm_Water,                        // Basic Ingredient
-	I_TO_Beaver_Resolve,                  // Joyful Beavers
-	I_TO_Dangerous_Relics,                // Zealous Scouts
-	I_TO_Fox_Resolve,                     // Joyful Foxes
-	I_TO_Frog_Resolve,                    // Joyful Frogs
-	I_TO_Harpy_Resolve,                   // Joyful Harpies
-	I_TO_HUB,                             // Speedy Real Estate
-	I_TO_Human_Resolve,                   // Joyful Humans
-	I_TO_Lizard_Resolve,                  // Joyful Lizards
-	I_TO_Relic_Resolve,                   // Hurried Expedition
-	I_TO_Ruins_And_Glades,                // Call of the Ruins
-	I_TO_Sold_Amber,                      // Quick Transaction
-	I_TO_Solve_Relics,                    // Impetuous Explorer
-	I_TO_Trade_Routes_With_Value,         // Supply Thy Neighbor
-	I_Trade_Routes,                       // Businessman
-	I_Trader_Value_Sold,                  // Booming Economy
-	I_Upgrade_Pump,                       // Water Extraction
-	I_Water,                              // Fill the Engines
-	IA_Glades,                            // Exploration
-	IA_Shelters,                          // Shelters
-	IA_TO_Build_Shelters,                 // Housing Estate
-	IA_TO_Discover_Glades,                // Distant Journey
-	IA_Woodcutters_Camp,                  // Woodcutters
-	IB_Beavers,                           // The Grove
-	IB_Building_Packs,                    // Big Delivery
-	IB_Camps,                             // Camps
-	IB_Crops,                             // Rich Harvest
-	IB_Foxes,                             // People of the Forest
-	IB_Frogs,                             // Architects
-	IB_Harpies,                           // The Nest
-	IB_Humans,                            // Help From the Queen
-	IB_Lizards,                           // Trappers
-	IB_Paths,                             // Basic Logistics
-	IB_Provisions_And_Crops,              // Delivery
-	IB_Tablet,                            // Relics
-	IB_Three_Packs,                       // Three Packs
-	IB_TO_Three_Packs,                    // Quick Packaging
-	IB_Trading_Post,                      // Trading Post
-	IB_Wood,                              // Wood Delivery
-	II_Advanced_Trading,                  // Advanced Trading
-	II_Aid_For_The_Beaver_Faction,        // Aid For the Beaver Clan
-	II_Aid_For_The_Fox_Faction,           // Aid for the Fox Pack
-	II_Aid_For_The_Frog_Faction,          // Aid for the Frog Clan
-	II_Aid_For_The_Harpy_Faction,         // Aiding the Flock
-	II_Aid_For_The_Human_Faction,         // Aid for the Human Clan
-	II_Aid_For_The_Lizard_Faction,        // Aid for the Lizard Clan
-	II_Artisan,                           // Pottery and Wine
-	II_Beaver_Influx,                     // Beaver Influx
-	II_Beaver_Population,                 // Beaver Population
-	II_Blight_Post,                       // Fighting the Storm
-	II_Brewery,                           // Happy Brewing
-	II_Coats,                             // Clothing the People
-	II_Convert,                           // Restoration
-	II_Crops,                             // Advanced Farming
-	II_Cysts,                             // Firestarter
-	II_Dangerous_Glades,                  // Risky Expedition
-	II_Engines,                           // Rain Engines
-	II_Fishing_Trial_M_S_NB,              // Algal Bloom
-	II_Fishing_Trial_RW_CF_S,             // Scaling Up
-	II_Fishing_Trial_SO_M_CRW_NB,         // Out Fishing
-	II_Fox_Influx,                        // Fox Influx
-	II_Fox_Population,                    // Fox Population
-	II_Frog_Influx,                       // Frog Influx
-	II_Frog_Population,                   // Frog Population
-	II_Fuel_And_Building,                 // Important Delivery
-	II_Glades,                            // Into the Wilds
-	II_Glades_In_Time,                    // Into the Unknown
-	II_Happy_Beavers,                     // Happy Beavers
-	II_Happy_Foxes,                       // Happy Foxes
-	II_Happy_Frogs,                       // Happy Frogs
-	II_Happy_Harpies,                     // Happy Harpies
-	II_Happy_Humans,                      // Happy Humans
-	II_Happy_Lizards,                     // Happy Lizards
-	II_Harpy_Influx,                      // Harpy Influx
-	II_Harpy_Population,                  // Harpy Population
-	II_Human_Houses,                      // More Houses
-	II_Human_Influx,                      // Human Influx
-	II_Human_Population,                  // Human Population
-	II_Jerky,                             // Meat Diet
-	II_Jerky_For_Time,                    // Meat Treats
-	II_Lizard_Influx,                     // Lizard Influx
-	II_Lizard_Population,                 // Lizard Population
-	II_Luxury_Packs,                      // Luxurious Delivery
-	II_Means_Of_Production,               // Building Materials
-	II_Multiply_Routes,                   // Stacking Amber
-	II_Offering_Butcher,                  // Feast
-	II_Outpost,                           // Outposts
-	II_Paths,                             // Infrastructure
-	II_Population_Influx,                 // Population Influx
-	II_Rainwater,                         // Water Delivery
-	II_Route_Value,                       // Profit Margin
-	II_Routes,                            // Seller
-	II_Sacrifice,                         // Sacrificing
-	II_Standing,                          // Making Connections
-	II_Tablets,                           // Ancient Artifacts
-	II_TO_Cut_NOTrees,                    // Work Break
-	II_TO_Cut_Trees,                      // Need for Timber
-	II_TO_Discover_Dangerous_Glades,      // Adventurous Viceroy
-	II_TO_Forager_Trial_CRW,              // Forager's Trial
-	II_TO_Forager_Trial_RW,               // Forager's Trial
-	II_TO_Forager_Trial_SO,               // Forager's Trial
-	II_TO_Gathering_Stone,                // Stonecutter's Trial
-	II_TO_Glades_Discovery,               // Venturesome Leader
-	II_TO_Herbalist_Trial_CRW,            // Herbalist's Trial
-	II_TO_Herbalist_Trial_RW_SF,          // Herbalist's Trial
-	II_TO_Herbalist_Trial_SO,             // Herbalist's Trial
-	II_TO_Homes_For_Beavers,              // Beaver Colony
-	II_TO_Homes_For_Foxes,                // Homes For Foxes
-	II_TO_Homes_For_Frogs,                // Frog Colony
-	II_TO_Homes_For_Harpies,              // Harpy Colony
-	II_TO_Homes_For_Humans,               // Human Colony
-	II_TO_Homes_For_Lizards,              // Lizard Colony
-	II_TO_HUBs,                           // Outpost
-	II_TO_Lumbermill,                     // Efficiency Test
-	II_TO_Sacrificies,                    // Sacrificial Ceremony
-	II_TO_Trappers_Trial_CF_SF,           // Trapper's Trial
-	II_TO_Trappers_Trial_RW_M,            // Trapper's Trial
-	II_Trade_Connections,                 // Trade Connections
-	II_Use_Water,                         // Rainpunk Engineer
-	III_Aesthethics,                      // Royal Gardens
-	III_Ale_And_Tavern,                   // Cups and Glasses
-	III_Amber_And_Market,                 // Charity Fair
-	III_Ancient_Tablets,                  // Lost Knowledge
-	III_Archaeology,                      // Archaeology
-	III_Beaver_Relatives,                 // Beaver Relatives
-	III_Building_Packs,                   // Building the Citadel
-	III_Coats_NeedForTime,                // New Clothes
-	III_Copper,                           // Industry
-	III_Costly_Route,                     // Profitable Trade
-	III_Cysts,                            // Pyromania
-	III_Farmfields,                       // Agriculture
-	III_Forum,                            // The Forum
-	III_Fox_Relatives,                    // Fox Relatives
-	III_Frog_Relatives,                   // Frog Relatives
-	III_Frog_Upgrades,                    // Upgraded Living
-	III_Glades,                           // Trailblazing
-	III_Glades_In_Time,                   // Hasty Explorer
-	III_Harpy_Relatives,                  // Harpy Relatives
-	III_Higene,                           // Cleanliness
-	III_Hub,                              // Advanced District
-	III_Human_Relatives,                  // Human Relatives
-	III_Leisure_For_Time,                 // Basic Rights
-	III_Lizard_Relatives,                 // Lizard Relatives
-	III_Lost_Villagers,                   // Lost in the Woods
-	III_Luxury,                           // Luxury
-	III_Provisions_And_Crops,             // Rations for the Citadel
-	III_Pump_Upgrade,                     // Water Industry
-	III_Rain_Collector,                   // Advanced Logistics
-	III_Religion,                         // Religion
-	III_Resolve_Beavers,                  // Beaver Resolve
-	III_Resolve_Foxes,                    // Fox Villagers
-	III_Resolve_Frogs,                    // Frog Resolve
-	III_Resolve_Harpies,                  // Harpy Villagers
-	III_Resolve_Humans,                   // Human Villagers
-	III_Resolve_Lizards,                  // Lizard Villagers
-	III_Route_Value,                      // Fair Exchange
-	III_Routes,                           // Export
-	III_Routes_And_Amber,                 // Income Tax
-	III_Royal_Gardens,                    // Aesthetics
-	III_Ruins,                            // Ruins
-	III_Scrolls_And_Temple,               // Brotherhood
-	III_Send_To_Citadel,                  // Gifts for the Queen
-	III_Service_Harpy,                    // Healing
-	III_Service_Human,                    // Religious Rites
-	III_Service_Lizard,                   // Arena
-	III_Serving_Ale,                      // Serving Ale
-	III_Solve_Chests,                     // Open or send caches
-	III_Solve_Dangerous_Relic,            // Profitable Caution
-	III_Standing,                         // Good Friends
-	III_TO_Basic_Packs,                   // Basic Packages
-	III_TO_Building_Packs,                // Building Rush
-	III_TO_Chest_Chaser,                  // Chest Chaser
-	III_TO_Dangerous_Stuff,               // Foolhardy Man
-	III_TO_Digging_Coal,                  // Coal Fever
-	III_TO_Digging_Ore,                   // Copper Fever
-	III_TO_Engines_And_Water,             // Let It Rain
-	III_TO_Explore_And_Deliver,           // Disturbing the Ancients
-	III_TO_Forbidden_Glade,               // Devilish Curiosity
-	III_TO_Glades_And_Tools,              // Forest Fascination
-	III_TO_Rich_Trader,                   // Wealthy Trader
-	III_TO_Ruins_And_Planks,              // Into the Ruins
-	III_TO_Shiny,                         // Bling-Bling
-	III_TO_Thirsty_Trader,                // Thirsty Trader
-	III_TO_Water_Used,                    // The Source
-	III_Trade_And_Spark,                  // Trade and Industry
-	III_TradePacks,                       // Trading Goods
-	III_Trader_Value_Sold,                // Booming Economy
-	III_Upgrade_Mine_Coal,                // Lumps of Coal
-	III_Upgrade_Mine_Copper,              // Ore Mining
-	III_Use_Blue_Water,                   // Power of the Storm
-	III_Use_Green_Water,                  // Power of the Drizzle
-	III_Use_Yellow_Water,                 // Power of the Clearance
-	III_Valuables,                        // Luxury Goods
-	III_Varied_Delivery,                  // Varied Delivery
-	III_Wine_And_Guild_House,             // Liquid Luck
-	IV_2_Complex_Food_For_Time,           // Folks Gotta Eat!
-	IV_Cysts,                             // Pyromancer
-	IV_Dangerous_Glades,                  // Playing With Fire
-	IV_Glades_In_Time,                    // All at Once
-	IV_Peddler,                           // Peddler
-	IV_Rainwater,                         // Infused Rainwater
-	IV_Religion_For_Time,                 // The Cult of Fire
-	IV_Route_Value,                       // Export Hub
-	IV_Routes,                            // Trade Baron
-	IV_TO_Fearless,                       // Fearless
-	IV_TO_Forbidden_Glade,                // Ultimate Challenge
-	IV_TO_Greedy_Merchant,                // Greedy Merchant
-	IV_TO_Trading_Master,                 // Trading Master
-	IV_Trade_And_Luxury_Packs,            // Trade and Luxury
-	IV_Use_Water,                         // Rainpunk Enthusiast
-	IVA_Building_And_Crops_Packs,         // Funding an Outpost
-	IVA_Farmfields,                       // Focus on Farming
-	IVA_Luxury_Goods,                     // Luxuries for the Citadel
-	IVA_Master_Of_Exploration,            // Master of Exploration
-	IVA_Outpost,                          // Advanced Outposts
-	IVA_Pastries,                         // Pastries
-	IVA_Serving_The_People,               // Serving the People
-	IVA_Stone_Roads,                      // Stone Roads
-	IVA_Tablets,                          // Deeper into the Wilds
-	IVA_TO_Bonfire,                       // Great Expansion
-	IVA_TO_Cooking,                       // Advanced Cuisine
-	IVA_TO_Glades_Tablets_Relics,         // Time of Courage
-	IVA_TO_Packing,                       // Large Parcel
-	IVA_TO_Wood_And_Packs,                // Ravenous Axes
-	IVA_Trade_Goods,                      // Goods for the Citadel
-	IVA_Wood,                             // Wood and Provisions
-	IVB_Beaver_Majority,                  // Beaver Majority
-	IVB_Brawling,                         // Brawling
-	IVB_Builders_Tools,                   // Builder's Tools
-	IVB_Education,                        // Knowledge
-	IVB_Fox_Majority,                     // Fox Majority
-	IVB_Frog_Majority,                    // Frog Majority
-	IVB_Harpy_Majority,                   // Harpy Majority
-	IVB_Human_Majority,                   // Human Majority
-	IVB_Leisure,                          // Leisure
-	IVB_Lizard_Majority,                  // Lizard Majority
-	IVB_Rainproof_Coats,                  // Rainproof Coats
-	IVB_Rich_Delivery,                    // Expensive Delivery
-	IVB_TO_Building_Tools,                // Construction Work
-	IVB_TO_Engines_Amount,                // Technological Progress
-	IVB_TO_Food_Provision,                // Food Provision
-	IVB_Travel_Rations,                   // Travel Rations
-	IVB_Utopia,                           // Utopia
-	Needs_Served,                         // Queen's Feathers
-	Needs_Served_HIGH,                    // Queen's Feathers
-	Needs_Served_LOW,                     // Queen's Feathers
-	R_Ghost_Assault_Trader, 
-	R_Ghost_Cut_Trees, 
-	R_Ghost_Decorations_Aesthetics, 
-	R_Ghost_Decorations_Harmony, 
-	R_Ghost_Discover_DangGlades, 
-	R_Ghost_Discover_DangGlades_In_Time, 
-	R_Ghost_Engines, 
-	R_Ghost_Forbid_Needs_Beavers, 
-	R_Ghost_Forbid_Needs_Foxes, 
-	R_Ghost_Forbid_Needs_Harpies, 
-	R_Ghost_Forbid_Needs_Humans, 
-	R_Ghost_Forbid_Needs_Lizards, 
-	R_Ghost_Generate_Cysts, 
-	R_Ghost_Hostility_High, 
-	R_Ghost_Hostility_Low, 
-	R_Ghost_Housing_Needs, 
-	R_Ghost_HUBs_Upgrade, 
-	R_Ghost_Human_Houses, 
-	R_Ghost_Keep_Goods, 
-	R_Ghost_Keep_Villagers, 
-	R_Ghost_Leisure, 
-	R_Ghost_Luxury, 
-	R_Ghost_Rebuild_Ruins, 
-	R_Ghost_Religion, 
-	R_Ghost_Remove_Cysts, 
-	R_Ghost_Resolve_Foxes, 
-	R_Ghost_Resolve_Harpies, 
-	R_Ghost_Resolve_Lizards, 
-	R_Ghost_Sacrifice_Goods, 
-	R_Ghost_Salvage_Ruins, 
-	R_Ghost_Send_Goods_To_Citadel, 
-	R_Ghost_Service_Needs, 
-	R_Ghost_Solve_DangRelics, 
-	R_Ghost_Starve_Beavers, 
-	R_Ghost_Starve_Humans, 
-	R_Ghost_Trade_Routes, 
-	R_Ghost_Trade_Routes_With_Value, 
-	R_Ghost_Trade_Routes_With_Value_Many, 
-	R_Ghost_Upgrade_Houses, 
-	R_Ghost_Use_Water, 
-	Rep_From_Events,                      // Blood of the Stag
-	Rep_From_Events_HIGH,                 // Blood of the Stag
-	Rep_From_Events_LOW,                  // Blood of the Stag
-	Rep_From_Resolve,                     // Mortal Blood
-	Rep_From_Resolve_HIGH,                // Mortal Blood
-	Rep_From_Resolve_LOW,                 // Mortal Blood
-	Resolve,                              // Fire Essence
-	Resolve_HIGH,                         // Fire Essence
-	Resolve_LOW,                          // Fire Essence
-	Standing,                             // Golden Blood
-	Standing_HIGH,                        // Golden Blood
-	T_II_Brewery,                         // Brewing Ale
-	T_II_Farm,                            // Farming
-	T_II_Provisions,                      // Provisions
-	T_II_Resolve,                         // High Society
-	T_II_Smokehouse,                      // Smokehouse
-	T_II_Tavern,                          // A Place for Rest
-	T_II_Trapper,                         // First Yield
-	T_II_Woodcutters_Camp,                // Home & Hearth
-	T_III_Amber,                          // Get Rich
-	T_III_Beavers_Resolve,                // High Resolve
-	T_III_Berries,                        // Collecting Berries
-	T_III_Food,                           // Happy Meal
-	T_III_Guild_House,                    // Fulfilling Needs
-	T_III_Packs,                          // Buying & Selling
-	T_III_Rain,                           // Catching Rainwater
-	T_III_Sacrifice,                      // Surviving Requires Sacrifice
-	T_III_Trading_Post,                   // Traders & Currency
-	T_III_Wine,                           // Winemaking
-	T_IV_Blightpost,                      // Blight Fighters
-	T_IV_Caches,                          // Finders Keepers
-	T_IV_Clan_Hall,                       // Stay in Shape
-	T_IV_Engines,                         // Rainpunk Technology
-	T_IV_Frobidden,                       // Forbidden Fruit
-	T_IV_Metal,                           // Metallurgy
-	T_IV_Mine,                            // Mining Basics
-	T_IV_Pipes,                           // Pipe Manufacturing
-	T_IV_Pump,                            // Water Extraction
-	T_IV_Water_And_Cysts,                 // Effects of Technology
-	TI_Building_Blocks,                   // Building Blocks
-	TI_Deep_Exploration,                  // Ancient Tablets
-	TI_Forager,                           // Food Supplies
-	TI_Glades,                            // Exploring the Wilds
-	TI_Scavenger,                         // Harvesters' Camp
-	TI_Stonecutter,                       // Stonecutters' Camp
-	TI_Woodcutters_Camp,                  // Woodcutters' Camps
-	Trade_Packs_And_Perks_LOW,            // Golden Blood
-	WaterUsed_HIGH,                       // Essence of Corruption
+	
+	/// <summary>
+	/// Essence of Wealth
+	/// </summary>
+	/// <name>Amber and Luxury LOW</name>
+	Amber_And_Luxury_LOW,
+
+	/// <summary>
+	/// Crystal Feathers
+	/// </summary>
+	/// <name>Amber Transaction</name>
+	Amber_Transaction,
+
+	/// <summary>
+	/// Crystal Feathers
+	/// </summary>
+	/// <name>Amber Transaction HIGH</name>
+	Amber_Transaction_HIGH,
+
+	/// <summary>
+	/// Crystal Feathers
+	/// </summary>
+	/// <name>Amber Transaction LOW</name>
+	Amber_Transaction_LOW,
+
+	/// <summary>
+	/// Forbidden Essence
+	/// </summary>
+	/// <name>Ancient Tablets</name>
+	Ancient_Tablets,
+
+	/// <summary>
+	/// Forbidden Essence
+	/// </summary>
+	/// <name>Ancient Tablets HIGH</name>
+	Ancient_Tablets_HIGH,
+
+	/// <summary>
+	/// Forbidden Essence
+	/// </summary>
+	/// <name>Ancient Tablets LOW</name>
+	Ancient_Tablets_LOW,
+
+	/// <summary>
+	/// Heart of the Forest
+	/// </summary>
+	/// <name>Caches</name>
+	Caches,
+
+	/// <summary>
+	/// Heart of the Forest
+	/// </summary>
+	/// <name>Caches HIGH</name>
+	Caches_HIGH,
+
+	/// <summary>
+	/// Heart of the Forest
+	/// </summary>
+	/// <name>Caches LOW</name>
+	Caches_LOW,
+
+	/// <summary>
+	/// Essence of Corruption
+	/// </summary>
+	/// <name>CystsBurned</name>
+	CystsBurned,
+
+	/// <summary>
+	/// Heart of Amber
+	/// </summary>
+	/// <name>Deliver Packs</name>
+	Deliver_Packs,
+
+	/// <summary>
+	/// Heart of Amber
+	/// </summary>
+	/// <name>Deliver Packs HIGH</name>
+	Deliver_Packs_HIGH,
+
+	/// <summary>
+	/// Heart of Amber
+	/// </summary>
+	/// <name>Deliver Packs LOW</name>
+	Deliver_Packs_LOW,
+
+	/// <summary>
+	/// Metal Feathers
+	/// </summary>
+	/// <name>Deliver Tools</name>
+	Deliver_Tools,
+
+	/// <summary>
+	/// Metal Feathers
+	/// </summary>
+	/// <name>Deliver Tools HIGH</name>
+	Deliver_Tools_HIGH,
+
+	/// <summary>
+	/// Stormbird Feathers
+	/// </summary>
+	/// <name>Discover Forbidden LOW</name>
+	Discover_Forbidden_LOW,
+
+	/// <summary>
+	/// Mechanical Heart
+	/// </summary>
+	/// <name>Engines Connected</name>
+	Engines_Connected,
+
+	/// <summary>
+	/// Mechanical Heart
+	/// </summary>
+	/// <name>Engines Connected HIGH</name>
+	Engines_Connected_HIGH,
+
+	/// <summary>
+	/// Heart of the Ancient Flame
+	/// </summary>
+	/// <name>Heart Parts and Sacrifice LOW</name>
+	Heart_Parts_And_Sacrifice_LOW,
+
+	/// <summary>
+	/// Amber Trade
+	/// </summary>
+	/// <name>I Amber</name>
+	I_Amber,
+
+	/// <summary>
+	/// Call to Arms
+	/// </summary>
+	/// <name>I Blighfuel</name>
+	I_Blighfuel,
+
+	/// <summary>
+	/// Blue Metal
+	/// </summary>
+	/// <name>I Blue Metal</name>
+	I_Blue_Metal,
+
+	/// <summary>
+	/// Botanist
+	/// </summary>
+	/// <name>I Botanist</name>
+	I_Botanist,
+
+	/// <summary>
+	/// Clearing Glades
+	/// </summary>
+	/// <name>I Clearing Glades</name>
+	I_Clearing_Glades,
+
+	/// <summary>
+	/// Rain Protection
+	/// </summary>
+	/// <name>I Clothing</name>
+	I_Clothing,
+
+	/// <summary>
+	/// The Purge
+	/// </summary>
+	/// <name>I Cysts</name>
+	I_Cysts,
+
+	/// <summary>
+	/// Cyst Cultivation
+	/// </summary>
+	/// <name>I Cysts amount</name>
+	I_Cysts_Amount,
+
+	/// <summary>
+	/// Egg Collection
+	/// </summary>
+	/// <name>I Eggs</name>
+	I_Eggs,
+
+	/// <summary>
+	/// Start Your Engines
+	/// </summary>
+	/// <name>I Engines</name>
+	I_Engines,
+
+	/// <summary>
+	/// Farm Life
+	/// </summary>
+	/// <name>I Farm Life</name>
+	I_Farm_Life,
+
+	/// <summary>
+	/// Foragers' Camp
+	/// </summary>
+	/// <name>I Foragers Camp</name>
+	I_Foragers_Camp,
+
+	/// <summary>
+	/// Funding the Expedition
+	/// </summary>
+	/// <name>I Funding the Expedition</name>
+	I_Funding_The_Expedition,
+
+	/// <summary>
+	/// Garden Life
+	/// </summary>
+	/// <name>I Garden Life</name>
+	I_Garden_Life,
+
+	/// <summary>
+	/// Herbalist
+	/// </summary>
+	/// <name>I Herbalist</name>
+	I_Herbalist,
+
+	/// <summary>
+	/// No Place Like Home
+	/// </summary>
+	/// <name>I Houses</name>
+	I_Houses,
+
+	/// <summary>
+	/// Safe Place
+	/// </summary>
+	/// <name>I Houses v2</name>
+	I_Houses_V2,
+
+	/// <summary>
+	/// Hunters
+	/// </summary>
+	/// <name>I Hunters</name>
+	I_Hunters,
+
+	/// <summary>
+	/// Meat Lover
+	/// </summary>
+	/// <name>I Jerky</name>
+	I_Jerky,
+
+	/// <summary>
+	/// Metal Veins
+	/// </summary>
+	/// <name>I Metal Veins</name>
+	I_Metal_Veins,
+
+	/// <summary>
+	/// Raising the Stakes
+	/// </summary>
+	/// <name>I Multiply Routes</name>
+	I_Multiply_Routes,
+
+	/// <summary>
+	/// Hydraulics
+	/// </summary>
+	/// <name>I Pipes</name>
+	I_Pipes,
+
+	/// <summary>
+	/// Healthy Breakfast
+	/// </summary>
+	/// <name>I Porridge</name>
+	I_Porridge,
+
+	/// <summary>
+	/// Beginner Engineer
+	/// </summary>
+	/// <name>I Pump</name>
+	I_Pump,
+
+	/// <summary>
+	/// Ranch Life
+	/// </summary>
+	/// <name>I Ranch Life</name>
+	I_Ranch_Life,
+
+	/// <summary>
+	/// The Guild
+	/// </summary>
+	/// <name>I Resolve Beavers</name>
+	I_Resolve_Beavers,
+
+	/// <summary>
+	/// The Pack
+	/// </summary>
+	/// <name>I Resolve Foxes</name>
+	I_Resolve_Foxes,
+
+	/// <summary>
+	/// The Collegium
+	/// </summary>
+	/// <name>I Resolve Frogs</name>
+	I_Resolve_Frogs,
+
+	/// <summary>
+	/// The Flock
+	/// </summary>
+	/// <name>I Resolve Harpies</name>
+	I_Resolve_Harpies,
+
+	/// <summary>
+	/// People's Resolve
+	/// </summary>
+	/// <name>I Resolve Humans</name>
+	I_Resolve_Humans,
+
+	/// <summary>
+	/// The Clan
+	/// </summary>
+	/// <name>I Resolve Lizards</name>
+	I_Resolve_Lizards,
+
+	/// <summary>
+	/// Lost in the Woods
+	/// </summary>
+	/// <name>I Ruins</name>
+	I_Ruins,
+
+	/// <summary>
+	/// Salt Miner
+	/// </summary>
+	/// <name>I Salt</name>
+	I_Salt,
+
+	/// <summary>
+	/// Barbecue
+	/// </summary>
+	/// <name>I Skewers</name>
+	I_Skewers,
+
+	/// <summary>
+	/// Problem Solver
+	/// </summary>
+	/// <name>I Solve Any Relic</name>
+	I_Solve_Any_Relic,
+
+	/// <summary>
+	/// Tick Tock
+	/// </summary>
+	/// <name>I Solve Dangerous Relic</name>
+	I_Solve_Dangerous_Relic,
+
+	/// <summary>
+	/// Basic Ingredient
+	/// </summary>
+	/// <name>I Storm Water</name>
+	I_Storm_Water,
+
+	/// <summary>
+	/// Joyful Beavers
+	/// </summary>
+	/// <name>I TO Beaver Resolve</name>
+	I_TO_Beaver_Resolve,
+
+	/// <summary>
+	/// Zealous Scouts
+	/// </summary>
+	/// <name>I TO Dangerous Relics</name>
+	I_TO_Dangerous_Relics,
+
+	/// <summary>
+	/// Joyful Foxes
+	/// </summary>
+	/// <name>I TO Fox Resolve</name>
+	I_TO_Fox_Resolve,
+
+	/// <summary>
+	/// Joyful Frogs
+	/// </summary>
+	/// <name>I TO Frog Resolve</name>
+	I_TO_Frog_Resolve,
+
+	/// <summary>
+	/// Joyful Harpies
+	/// </summary>
+	/// <name>I TO Harpy Resolve</name>
+	I_TO_Harpy_Resolve,
+
+	/// <summary>
+	/// Speedy Real Estate
+	/// </summary>
+	/// <name>I TO HUB</name>
+	I_TO_HUB,
+
+	/// <summary>
+	/// Joyful Humans
+	/// </summary>
+	/// <name>I TO Human Resolve</name>
+	I_TO_Human_Resolve,
+
+	/// <summary>
+	/// Joyful Lizards
+	/// </summary>
+	/// <name>I TO Lizard Resolve</name>
+	I_TO_Lizard_Resolve,
+
+	/// <summary>
+	/// Hurried Expedition
+	/// </summary>
+	/// <name>I TO Relic Resolve</name>
+	I_TO_Relic_Resolve,
+
+	/// <summary>
+	/// Call of the Ruins
+	/// </summary>
+	/// <name>I TO Ruins and Glades</name>
+	I_TO_Ruins_And_Glades,
+
+	/// <summary>
+	/// Quick Transaction
+	/// </summary>
+	/// <name>I TO Sold Amber</name>
+	I_TO_Sold_Amber,
+
+	/// <summary>
+	/// Impetuous Explorer
+	/// </summary>
+	/// <name>I TO Solve Relics</name>
+	I_TO_Solve_Relics,
+
+	/// <summary>
+	/// Supply Thy Neighbor
+	/// </summary>
+	/// <name>I TO Trade Routes With Value</name>
+	I_TO_Trade_Routes_With_Value,
+
+	/// <summary>
+	/// Businessman
+	/// </summary>
+	/// <name>I Trade Routes</name>
+	I_Trade_Routes,
+
+	/// <summary>
+	/// Booming Economy
+	/// </summary>
+	/// <name>I Trader Value Sold</name>
+	I_Trader_Value_Sold,
+
+	/// <summary>
+	/// Water Extraction
+	/// </summary>
+	/// <name>I Upgrade Pump</name>
+	I_Upgrade_Pump,
+
+	/// <summary>
+	/// Fill the Engines
+	/// </summary>
+	/// <name>I Water</name>
+	I_Water,
+
+	/// <summary>
+	/// Exploration
+	/// </summary>
+	/// <name>IA Glades</name>
+	IA_Glades,
+
+	/// <summary>
+	/// Shelters
+	/// </summary>
+	/// <name>IA Shelters</name>
+	IA_Shelters,
+
+	/// <summary>
+	/// Housing Estate
+	/// </summary>
+	/// <name>IA TO Build Shelters</name>
+	IA_TO_Build_Shelters,
+
+	/// <summary>
+	/// Distant Journey
+	/// </summary>
+	/// <name>IA TO Discover Glades</name>
+	IA_TO_Discover_Glades,
+
+	/// <summary>
+	/// Woodcutters
+	/// </summary>
+	/// <name>IA Woodcutters Camp</name>
+	IA_Woodcutters_Camp,
+
+	/// <summary>
+	/// The Grove
+	/// </summary>
+	/// <name>IB Beavers</name>
+	IB_Beavers,
+
+	/// <summary>
+	/// Big Delivery
+	/// </summary>
+	/// <name>IB Building Packs</name>
+	IB_Building_Packs,
+
+	/// <summary>
+	/// Camps
+	/// </summary>
+	/// <name>IB Camps</name>
+	IB_Camps,
+
+	/// <summary>
+	/// Rich Harvest
+	/// </summary>
+	/// <name>IB Crops</name>
+	IB_Crops,
+
+	/// <summary>
+	/// People of the Forest
+	/// </summary>
+	/// <name>IB Foxes</name>
+	IB_Foxes,
+
+	/// <summary>
+	/// Architects
+	/// </summary>
+	/// <name>IB Frogs</name>
+	IB_Frogs,
+
+	/// <summary>
+	/// The Nest
+	/// </summary>
+	/// <name>IB Harpies</name>
+	IB_Harpies,
+
+	/// <summary>
+	/// Help From the Queen
+	/// </summary>
+	/// <name>IB Humans</name>
+	IB_Humans,
+
+	/// <summary>
+	/// Trappers
+	/// </summary>
+	/// <name>IB Lizards</name>
+	IB_Lizards,
+
+	/// <summary>
+	/// Basic Logistics
+	/// </summary>
+	/// <name>IB Paths</name>
+	IB_Paths,
+
+	/// <summary>
+	/// Delivery
+	/// </summary>
+	/// <name>IB Provisions and Crops</name>
+	IB_Provisions_And_Crops,
+
+	/// <summary>
+	/// Relics
+	/// </summary>
+	/// <name>IB Tablet</name>
+	IB_Tablet,
+
+	/// <summary>
+	/// Three Packs
+	/// </summary>
+	/// <name>IB Three Packs</name>
+	IB_Three_Packs,
+
+	/// <summary>
+	/// Quick Packaging
+	/// </summary>
+	/// <name>IB TO Three Packs</name>
+	IB_TO_Three_Packs,
+
+	/// <summary>
+	/// Trading Post
+	/// </summary>
+	/// <name>IB Trading Post</name>
+	IB_Trading_Post,
+
+	/// <summary>
+	/// Wood Delivery
+	/// </summary>
+	/// <name>IB Wood</name>
+	IB_Wood,
+
+	/// <summary>
+	/// Advanced Trading
+	/// </summary>
+	/// <name>II Advanced Trading</name>
+	II_Advanced_Trading,
+
+	/// <summary>
+	/// Aid For the Beaver Clan
+	/// </summary>
+	/// <name>II Aid for the Beaver Faction</name>
+	II_Aid_For_The_Beaver_Faction,
+
+	/// <summary>
+	/// Aid for the Fox Pack
+	/// </summary>
+	/// <name>II Aid for the Fox Faction</name>
+	II_Aid_For_The_Fox_Faction,
+
+	/// <summary>
+	/// Aid for the Frog Clan
+	/// </summary>
+	/// <name>II Aid for the Frog Faction</name>
+	II_Aid_For_The_Frog_Faction,
+
+	/// <summary>
+	/// Aiding the Flock
+	/// </summary>
+	/// <name>II Aid for the Harpy Faction</name>
+	II_Aid_For_The_Harpy_Faction,
+
+	/// <summary>
+	/// Aid for the Human Clan
+	/// </summary>
+	/// <name>II Aid for the Human Faction</name>
+	II_Aid_For_The_Human_Faction,
+
+	/// <summary>
+	/// Aid for the Lizard Clan
+	/// </summary>
+	/// <name>II Aid for the Lizard Faction</name>
+	II_Aid_For_The_Lizard_Faction,
+
+	/// <summary>
+	/// Pottery and Wine
+	/// </summary>
+	/// <name>II Artisan</name>
+	II_Artisan,
+
+	/// <summary>
+	/// Beaver Influx
+	/// </summary>
+	/// <name>II Beaver Influx</name>
+	II_Beaver_Influx,
+
+	/// <summary>
+	/// Beaver Population
+	/// </summary>
+	/// <name>II Beaver Population</name>
+	II_Beaver_Population,
+
+	/// <summary>
+	/// Fighting the Storm
+	/// </summary>
+	/// <name>II Blight Post</name>
+	II_Blight_Post,
+
+	/// <summary>
+	/// Happy Brewing
+	/// </summary>
+	/// <name>II Brewery</name>
+	II_Brewery,
+
+	/// <summary>
+	/// Clothing the People
+	/// </summary>
+	/// <name>II Coats</name>
+	II_Coats,
+
+	/// <summary>
+	/// Restoration
+	/// </summary>
+	/// <name>II Convert</name>
+	II_Convert,
+
+	/// <summary>
+	/// Advanced Farming
+	/// </summary>
+	/// <name>II Crops</name>
+	II_Crops,
+
+	/// <summary>
+	/// Firestarter
+	/// </summary>
+	/// <name>II Cysts</name>
+	II_Cysts,
+
+	/// <summary>
+	/// Risky Expedition
+	/// </summary>
+	/// <name>II Dangerous Glades</name>
+	II_Dangerous_Glades,
+
+	/// <summary>
+	/// Rain Engines
+	/// </summary>
+	/// <name>II Engines</name>
+	II_Engines,
+
+	/// <summary>
+	/// Algal Bloom
+	/// </summary>
+	/// <name>II Fishing Trial M S NB</name>
+	II_Fishing_Trial_M_S_NB,
+
+	/// <summary>
+	/// Scaling Up
+	/// </summary>
+	/// <name>II Fishing Trial RW CF S</name>
+	II_Fishing_Trial_RW_CF_S,
+
+	/// <summary>
+	/// Out Fishing
+	/// </summary>
+	/// <name>II Fishing Trial SO M CRW NB</name>
+	II_Fishing_Trial_SO_M_CRW_NB,
+
+	/// <summary>
+	/// Fox Influx
+	/// </summary>
+	/// <name>II Fox Influx</name>
+	II_Fox_Influx,
+
+	/// <summary>
+	/// Fox Population
+	/// </summary>
+	/// <name>II Fox Population</name>
+	II_Fox_Population,
+
+	/// <summary>
+	/// Frog Influx
+	/// </summary>
+	/// <name>II Frog Influx</name>
+	II_Frog_Influx,
+
+	/// <summary>
+	/// Frog Population
+	/// </summary>
+	/// <name>II Frog Population</name>
+	II_Frog_Population,
+
+	/// <summary>
+	/// Important Delivery
+	/// </summary>
+	/// <name>II Fuel and Building</name>
+	II_Fuel_And_Building,
+
+	/// <summary>
+	/// Into the Wilds
+	/// </summary>
+	/// <name>II Glades</name>
+	II_Glades,
+
+	/// <summary>
+	/// Into the Unknown
+	/// </summary>
+	/// <name>II Glades in Time</name>
+	II_Glades_In_Time,
+
+	/// <summary>
+	/// Happy Beavers
+	/// </summary>
+	/// <name>II Happy Beavers</name>
+	II_Happy_Beavers,
+
+	/// <summary>
+	/// Happy Foxes
+	/// </summary>
+	/// <name>II Happy Foxes</name>
+	II_Happy_Foxes,
+
+	/// <summary>
+	/// Happy Frogs
+	/// </summary>
+	/// <name>II Happy Frogs</name>
+	II_Happy_Frogs,
+
+	/// <summary>
+	/// Happy Harpies
+	/// </summary>
+	/// <name>II Happy Harpies</name>
+	II_Happy_Harpies,
+
+	/// <summary>
+	/// Happy Humans
+	/// </summary>
+	/// <name>II Happy Humans</name>
+	II_Happy_Humans,
+
+	/// <summary>
+	/// Happy Lizards
+	/// </summary>
+	/// <name>II Happy Lizards</name>
+	II_Happy_Lizards,
+
+	/// <summary>
+	/// Harpy Influx
+	/// </summary>
+	/// <name>II Harpy Influx</name>
+	II_Harpy_Influx,
+
+	/// <summary>
+	/// Harpy Population
+	/// </summary>
+	/// <name>II Harpy Population</name>
+	II_Harpy_Population,
+
+	/// <summary>
+	/// More Houses
+	/// </summary>
+	/// <name>II Human Houses</name>
+	II_Human_Houses,
+
+	/// <summary>
+	/// Human Influx
+	/// </summary>
+	/// <name>II Human Influx</name>
+	II_Human_Influx,
+
+	/// <summary>
+	/// Human Population
+	/// </summary>
+	/// <name>II Human Population</name>
+	II_Human_Population,
+
+	/// <summary>
+	/// Meat Diet
+	/// </summary>
+	/// <name>II Jerky</name>
+	II_Jerky,
+
+	/// <summary>
+	/// Meat Treats
+	/// </summary>
+	/// <name>II Jerky For Time</name>
+	II_Jerky_For_Time,
+
+	/// <summary>
+	/// Lizard Influx
+	/// </summary>
+	/// <name>II Lizard Influx</name>
+	II_Lizard_Influx,
+
+	/// <summary>
+	/// Lizard Population
+	/// </summary>
+	/// <name>II Lizard Population</name>
+	II_Lizard_Population,
+
+	/// <summary>
+	/// Luxurious Delivery
+	/// </summary>
+	/// <name>II Luxury Packs</name>
+	II_Luxury_Packs,
+
+	/// <summary>
+	/// Building Materials
+	/// </summary>
+	/// <name>II Means of Production</name>
+	II_Means_Of_Production,
+
+	/// <summary>
+	/// Stacking Amber
+	/// </summary>
+	/// <name>II Multiply Routes</name>
+	II_Multiply_Routes,
+
+	/// <summary>
+	/// Feast
+	/// </summary>
+	/// <name>II Offering Butcher</name>
+	II_Offering_Butcher,
+
+	/// <summary>
+	/// Outposts
+	/// </summary>
+	/// <name>II Outpost</name>
+	II_Outpost,
+
+	/// <summary>
+	/// Infrastructure
+	/// </summary>
+	/// <name>II Paths</name>
+	II_Paths,
+
+	/// <summary>
+	/// Population Influx
+	/// </summary>
+	/// <name>II Population Influx</name>
+	II_Population_Influx,
+
+	/// <summary>
+	/// Water Delivery
+	/// </summary>
+	/// <name>II Rainwater</name>
+	II_Rainwater,
+
+	/// <summary>
+	/// Profit Margin
+	/// </summary>
+	/// <name>II Route Value</name>
+	II_Route_Value,
+
+	/// <summary>
+	/// Seller
+	/// </summary>
+	/// <name>II Routes</name>
+	II_Routes,
+
+	/// <summary>
+	/// Sacrificing
+	/// </summary>
+	/// <name>II Sacrifice</name>
+	II_Sacrifice,
+
+	/// <summary>
+	/// Making Connections
+	/// </summary>
+	/// <name>II Standing</name>
+	II_Standing,
+
+	/// <summary>
+	/// Ancient Artifacts
+	/// </summary>
+	/// <name>II Tablets</name>
+	II_Tablets,
+
+	/// <summary>
+	/// Work Break
+	/// </summary>
+	/// <name>II TO Cut NOTrees</name>
+	II_TO_Cut_NOTrees,
+
+	/// <summary>
+	/// Need for Timber
+	/// </summary>
+	/// <name>II TO Cut Trees</name>
+	II_TO_Cut_Trees,
+
+	/// <summary>
+	/// Adventurous Viceroy
+	/// </summary>
+	/// <name>II TO Discover Dangerous Glades</name>
+	II_TO_Discover_Dangerous_Glades,
+
+	/// <summary>
+	/// Forager's Trial
+	/// </summary>
+	/// <name>II TO Forager Trial - CRW AT</name>
+	II_TO_Forager_Trial_CRW_AT,
+
+	/// <summary>
+	/// Forager's Trial
+	/// </summary>
+	/// <name>II TO Forager Trial - RW</name>
+	II_TO_Forager_Trial_RW,
+
+	/// <summary>
+	/// Forager's Trial
+	/// </summary>
+	/// <name>II TO Forager Trial - SO</name>
+	II_TO_Forager_Trial_SO,
+
+	/// <summary>
+	/// Stonecutter's Trial
+	/// </summary>
+	/// <name>II TO Gathering Stone</name>
+	II_TO_Gathering_Stone,
+
+	/// <summary>
+	/// Venturesome Leader
+	/// </summary>
+	/// <name>II TO Glades Discovery</name>
+	II_TO_Glades_Discovery,
+
+	/// <summary>
+	/// Herbalist's Trial
+	/// </summary>
+	/// <name>II TO Herbalist Trial - CRW</name>
+	II_TO_Herbalist_Trial_CRW,
+
+	/// <summary>
+	/// Herbalist's Trial
+	/// </summary>
+	/// <name>II TO Herbalist Trial - RW SF</name>
+	II_TO_Herbalist_Trial_RW_SF,
+
+	/// <summary>
+	/// Herbalist's Trial
+	/// </summary>
+	/// <name>II TO Herbalist Trial - SO</name>
+	II_TO_Herbalist_Trial_SO,
+
+	/// <summary>
+	/// Beaver Colony
+	/// </summary>
+	/// <name>II TO Homes for Beavers</name>
+	II_TO_Homes_For_Beavers,
+
+	/// <summary>
+	/// Homes For Foxes
+	/// </summary>
+	/// <name>II TO Homes for Foxes</name>
+	II_TO_Homes_For_Foxes,
+
+	/// <summary>
+	/// Frog Colony
+	/// </summary>
+	/// <name>II TO Homes for Frogs</name>
+	II_TO_Homes_For_Frogs,
+
+	/// <summary>
+	/// Harpy Colony
+	/// </summary>
+	/// <name>II TO Homes for Harpies</name>
+	II_TO_Homes_For_Harpies,
+
+	/// <summary>
+	/// Human Colony
+	/// </summary>
+	/// <name>II TO Homes for Humans</name>
+	II_TO_Homes_For_Humans,
+
+	/// <summary>
+	/// Lizard Colony
+	/// </summary>
+	/// <name>II TO Homes for Lizards</name>
+	II_TO_Homes_For_Lizards,
+
+	/// <summary>
+	/// Outpost
+	/// </summary>
+	/// <name>II TO HUBs</name>
+	II_TO_HUBs,
+
+	/// <summary>
+	/// Efficiency Test
+	/// </summary>
+	/// <name>II TO Lumbermill</name>
+	II_TO_Lumbermill,
+
+	/// <summary>
+	/// Sacrificial Ceremony
+	/// </summary>
+	/// <name>II TO Sacrificies</name>
+	II_TO_Sacrificies,
+
+	/// <summary>
+	/// Trapper's Trial
+	/// </summary>
+	/// <name>II TO Trappers Trial - CF SF</name>
+	II_TO_Trappers_Trial_CF_SF,
+
+	/// <summary>
+	/// Trapper's Trial
+	/// </summary>
+	/// <name>II TO Trappers Trial - RW M</name>
+	II_TO_Trappers_Trial_RW_M,
+
+	/// <summary>
+	/// Trade Connections
+	/// </summary>
+	/// <name>II Trade Connections</name>
+	II_Trade_Connections,
+
+	/// <summary>
+	/// Rainpunk Engineer
+	/// </summary>
+	/// <name>II Use Water</name>
+	II_Use_Water,
+
+	/// <summary>
+	/// Royal Gardens
+	/// </summary>
+	/// <name>III Aesthethics</name>
+	III_Aesthethics,
+
+	/// <summary>
+	/// Cups and Glasses
+	/// </summary>
+	/// <name>III Ale and Tavern</name>
+	III_Ale_And_Tavern,
+
+	/// <summary>
+	/// Charity Fair
+	/// </summary>
+	/// <name>III Amber and Market</name>
+	III_Amber_And_Market,
+
+	/// <summary>
+	/// Lost Knowledge
+	/// </summary>
+	/// <name>III Ancient Tablets</name>
+	III_Ancient_Tablets,
+
+	/// <summary>
+	/// Archaeology
+	/// </summary>
+	/// <name>III Archaeology</name>
+	III_Archaeology,
+
+	/// <summary>
+	/// Beaver Relatives
+	/// </summary>
+	/// <name>III Beaver Relatives</name>
+	III_Beaver_Relatives,
+
+	/// <summary>
+	/// Building the Citadel
+	/// </summary>
+	/// <name>III Building Packs</name>
+	III_Building_Packs,
+
+	/// <summary>
+	/// New Clothes
+	/// </summary>
+	/// <name>III Coats NeedForTime</name>
+	III_Coats_NeedForTime,
+
+	/// <summary>
+	/// Industry
+	/// </summary>
+	/// <name>III Copper</name>
+	III_Copper,
+
+	/// <summary>
+	/// Profitable Trade
+	/// </summary>
+	/// <name>III Costly Route</name>
+	III_Costly_Route,
+
+	/// <summary>
+	/// Pyromania
+	/// </summary>
+	/// <name>III Cysts</name>
+	III_Cysts,
+
+	/// <summary>
+	/// Agriculture
+	/// </summary>
+	/// <name>III Farmfields</name>
+	III_Farmfields,
+
+	/// <summary>
+	/// The Forum
+	/// </summary>
+	/// <name>III Forum</name>
+	III_Forum,
+
+	/// <summary>
+	/// Fox Relatives
+	/// </summary>
+	/// <name>III Fox Relatives</name>
+	III_Fox_Relatives,
+
+	/// <summary>
+	/// Frog Relatives
+	/// </summary>
+	/// <name>III Frog Relatives</name>
+	III_Frog_Relatives,
+
+	/// <summary>
+	/// Upgraded Living
+	/// </summary>
+	/// <name>III Frog Upgrades</name>
+	III_Frog_Upgrades,
+
+	/// <summary>
+	/// Trailblazing
+	/// </summary>
+	/// <name>III Glades</name>
+	III_Glades,
+
+	/// <summary>
+	/// Hasty Explorer
+	/// </summary>
+	/// <name>III Glades in Time</name>
+	III_Glades_In_Time,
+
+	/// <summary>
+	/// Harpy Relatives
+	/// </summary>
+	/// <name>III Harpy Relatives</name>
+	III_Harpy_Relatives,
+
+	/// <summary>
+	/// Cleanliness
+	/// </summary>
+	/// <name>III Higene</name>
+	III_Higene,
+
+	/// <summary>
+	/// Advanced District
+	/// </summary>
+	/// <name>III Hub</name>
+	III_Hub,
+
+	/// <summary>
+	/// Human Relatives
+	/// </summary>
+	/// <name>III Human Relatives</name>
+	III_Human_Relatives,
+
+	/// <summary>
+	/// Basic Rights
+	/// </summary>
+	/// <name>III Leisure for Time</name>
+	III_Leisure_For_Time,
+
+	/// <summary>
+	/// Lizard Relatives
+	/// </summary>
+	/// <name>III Lizard Relatives</name>
+	III_Lizard_Relatives,
+
+	/// <summary>
+	/// Lost in the Woods
+	/// </summary>
+	/// <name>III Lost Villagers</name>
+	III_Lost_Villagers,
+
+	/// <summary>
+	/// Luxury
+	/// </summary>
+	/// <name>III Luxury</name>
+	III_Luxury,
+
+	/// <summary>
+	/// Rations for the Citadel
+	/// </summary>
+	/// <name>III Provisions and Crops</name>
+	III_Provisions_And_Crops,
+
+	/// <summary>
+	/// Water Industry
+	/// </summary>
+	/// <name>III Pump Upgrade</name>
+	III_Pump_Upgrade,
+
+	/// <summary>
+	/// Advanced Logistics
+	/// </summary>
+	/// <name>III Rain Collector</name>
+	III_Rain_Collector,
+
+	/// <summary>
+	/// Religion
+	/// </summary>
+	/// <name>III Religion</name>
+	III_Religion,
+
+	/// <summary>
+	/// Beaver Resolve
+	/// </summary>
+	/// <name>III Resolve Beavers</name>
+	III_Resolve_Beavers,
+
+	/// <summary>
+	/// Fox Villagers
+	/// </summary>
+	/// <name>III Resolve Foxes</name>
+	III_Resolve_Foxes,
+
+	/// <summary>
+	/// Frog Resolve
+	/// </summary>
+	/// <name>III Resolve Frogs</name>
+	III_Resolve_Frogs,
+
+	/// <summary>
+	/// Harpy Villagers
+	/// </summary>
+	/// <name>III Resolve Harpies</name>
+	III_Resolve_Harpies,
+
+	/// <summary>
+	/// Human Villagers
+	/// </summary>
+	/// <name>III Resolve Humans</name>
+	III_Resolve_Humans,
+
+	/// <summary>
+	/// Lizard Villagers
+	/// </summary>
+	/// <name>III Resolve Lizards</name>
+	III_Resolve_Lizards,
+
+	/// <summary>
+	/// Fair Exchange
+	/// </summary>
+	/// <name>III Route Value</name>
+	III_Route_Value,
+
+	/// <summary>
+	/// Export
+	/// </summary>
+	/// <name>III Routes</name>
+	III_Routes,
+
+	/// <summary>
+	/// Income Tax
+	/// </summary>
+	/// <name>III Routes And Amber</name>
+	III_Routes_And_Amber,
+
+	/// <summary>
+	/// Aesthetics
+	/// </summary>
+	/// <name>III Royal Gardens</name>
+	III_Royal_Gardens,
+
+	/// <summary>
+	/// Ruins
+	/// </summary>
+	/// <name>III Ruins</name>
+	III_Ruins,
+
+	/// <summary>
+	/// Salty Delivery
+	/// </summary>
+	/// <name>III Salt</name>
+	III_Salt,
+
+	/// <summary>
+	/// Brotherhood
+	/// </summary>
+	/// <name>III Scrolls and Temple</name>
+	III_Scrolls_And_Temple,
+
+	/// <summary>
+	/// Gifts for the Queen
+	/// </summary>
+	/// <name>III Send to Citadel</name>
+	III_Send_To_Citadel,
+
+	/// <summary>
+	/// Healing
+	/// </summary>
+	/// <name>III Service Harpy</name>
+	III_Service_Harpy,
+
+	/// <summary>
+	/// Religious Rites
+	/// </summary>
+	/// <name>III Service Human</name>
+	III_Service_Human,
+
+	/// <summary>
+	/// Arena
+	/// </summary>
+	/// <name>III Service Lizard</name>
+	III_Service_Lizard,
+
+	/// <summary>
+	/// Serving Ale
+	/// </summary>
+	/// <name>III Serving Ale</name>
+	III_Serving_Ale,
+
+	/// <summary>
+	/// Open or send caches
+	/// </summary>
+	/// <name>III Solve Chests</name>
+	III_Solve_Chests,
+
+	/// <summary>
+	/// Profitable Caution
+	/// </summary>
+	/// <name>III Solve Dangerous Relic</name>
+	III_Solve_Dangerous_Relic,
+
+	/// <summary>
+	/// Good Friends
+	/// </summary>
+	/// <name>III Standing</name>
+	III_Standing,
+
+	/// <summary>
+	/// Basic Packages
+	/// </summary>
+	/// <name>III TO Basic Packs</name>
+	III_TO_Basic_Packs,
+
+	/// <summary>
+	/// Building Rush
+	/// </summary>
+	/// <name>III TO Building Packs</name>
+	III_TO_Building_Packs,
+
+	/// <summary>
+	/// Chest Chaser
+	/// </summary>
+	/// <name>III TO Chest Chaser</name>
+	III_TO_Chest_Chaser,
+
+	/// <summary>
+	/// Foolhardy Man
+	/// </summary>
+	/// <name>III TO Dangerous Stuff</name>
+	III_TO_Dangerous_Stuff,
+
+	/// <summary>
+	/// Coal Fever
+	/// </summary>
+	/// <name>III TO Digging Coal</name>
+	III_TO_Digging_Coal,
+
+	/// <summary>
+	/// Copper Fever
+	/// </summary>
+	/// <name>III TO Digging Ore</name>
+	III_TO_Digging_Ore,
+
+	/// <summary>
+	/// Salt Fever
+	/// </summary>
+	/// <name>III TO Digging Salt</name>
+	III_TO_Digging_Salt,
+
+	/// <summary>
+	/// Let It Rain
+	/// </summary>
+	/// <name>III TO Engines and Water</name>
+	III_TO_Engines_And_Water,
+
+	/// <summary>
+	/// Disturbing the Ancients
+	/// </summary>
+	/// <name>III TO Explore and Deliver</name>
+	III_TO_Explore_And_Deliver,
+
+	/// <summary>
+	/// Devilish Curiosity
+	/// </summary>
+	/// <name>III TO Forbidden Glade</name>
+	III_TO_Forbidden_Glade,
+
+	/// <summary>
+	/// Forest Fascination
+	/// </summary>
+	/// <name>III TO Glades and Tools</name>
+	III_TO_Glades_And_Tools,
+
+	/// <summary>
+	/// Wealthy Trader
+	/// </summary>
+	/// <name>III TO Rich Trader</name>
+	III_TO_Rich_Trader,
+
+	/// <summary>
+	/// Into the Ruins
+	/// </summary>
+	/// <name>III TO Ruins and Planks</name>
+	III_TO_Ruins_And_Planks,
+
+	/// <summary>
+	/// Bling-Bling
+	/// </summary>
+	/// <name>III TO Shiny</name>
+	III_TO_Shiny,
+
+	/// <summary>
+	/// Thirsty Trader
+	/// </summary>
+	/// <name>III TO Thirsty Trader</name>
+	III_TO_Thirsty_Trader,
+
+	/// <summary>
+	/// The Source
+	/// </summary>
+	/// <name>III TO Water Used</name>
+	III_TO_Water_Used,
+
+	/// <summary>
+	/// Trade and Industry
+	/// </summary>
+	/// <name>III Trade and Spark</name>
+	III_Trade_And_Spark,
+
+	/// <summary>
+	/// Trading Goods
+	/// </summary>
+	/// <name>III TradePacks</name>
+	III_TradePacks,
+
+	/// <summary>
+	/// Booming Economy
+	/// </summary>
+	/// <name>III Trader Value Sold</name>
+	III_Trader_Value_Sold,
+
+	/// <summary>
+	/// Lumps of Coal
+	/// </summary>
+	/// <name>III Upgrade Mine - Coal</name>
+	III_Upgrade_Mine_Coal,
+
+	/// <summary>
+	/// Ore Mining
+	/// </summary>
+	/// <name>III Upgrade Mine - Copper</name>
+	III_Upgrade_Mine_Copper,
+
+	/// <summary>
+	/// Power of the Storm
+	/// </summary>
+	/// <name>III Use Blue Water</name>
+	III_Use_Blue_Water,
+
+	/// <summary>
+	/// Power of the Drizzle
+	/// </summary>
+	/// <name>III Use Green Water</name>
+	III_Use_Green_Water,
+
+	/// <summary>
+	/// Power of the Clearance
+	/// </summary>
+	/// <name>III Use Yellow Water</name>
+	III_Use_Yellow_Water,
+
+	/// <summary>
+	/// Luxury Goods
+	/// </summary>
+	/// <name>III Valuables</name>
+	III_Valuables,
+
+	/// <summary>
+	/// Varied Delivery
+	/// </summary>
+	/// <name>III Varied Delivery</name>
+	III_Varied_Delivery,
+
+	/// <summary>
+	/// Liquid Luck
+	/// </summary>
+	/// <name>III Wine and Guild House</name>
+	III_Wine_And_Guild_House,
+
+	/// <summary>
+	/// Folks Gotta Eat!
+	/// </summary>
+	/// <name>IV 2 Complex Food for Time</name>
+	IV_2_Complex_Food_For_Time,
+
+	/// <summary>
+	/// Pyromancer
+	/// </summary>
+	/// <name>IV Cysts</name>
+	IV_Cysts,
+
+	/// <summary>
+	/// Playing With Fire
+	/// </summary>
+	/// <name>IV Dangerous Glades</name>
+	IV_Dangerous_Glades,
+
+	/// <summary>
+	/// All at Once
+	/// </summary>
+	/// <name>IV Glades in Time</name>
+	IV_Glades_In_Time,
+
+	/// <summary>
+	/// Peddler
+	/// </summary>
+	/// <name>IV Peddler</name>
+	IV_Peddler,
+
+	/// <summary>
+	/// Infused Rainwater
+	/// </summary>
+	/// <name>IV Rainwater</name>
+	IV_Rainwater,
+
+	/// <summary>
+	/// The Cult of Fire
+	/// </summary>
+	/// <name>IV Religion for Time</name>
+	IV_Religion_For_Time,
+
+	/// <summary>
+	/// Export Hub
+	/// </summary>
+	/// <name>IV Route Value</name>
+	IV_Route_Value,
+
+	/// <summary>
+	/// Trade Baron
+	/// </summary>
+	/// <name>IV Routes</name>
+	IV_Routes,
+
+	/// <summary>
+	/// Fearless
+	/// </summary>
+	/// <name>IV TO Fearless</name>
+	IV_TO_Fearless,
+
+	/// <summary>
+	/// Ultimate Challenge
+	/// </summary>
+	/// <name>IV TO Forbidden Glade</name>
+	IV_TO_Forbidden_Glade,
+
+	/// <summary>
+	/// Greedy Merchant
+	/// </summary>
+	/// <name>IV TO Greedy Merchant</name>
+	IV_TO_Greedy_Merchant,
+
+	/// <summary>
+	/// Trading Master
+	/// </summary>
+	/// <name>IV TO Trading Master</name>
+	IV_TO_Trading_Master,
+
+	/// <summary>
+	/// Trade and Luxury
+	/// </summary>
+	/// <name>IV Trade and Luxury Packs</name>
+	IV_Trade_And_Luxury_Packs,
+
+	/// <summary>
+	/// Rainpunk Enthusiast
+	/// </summary>
+	/// <name>IV Use Water</name>
+	IV_Use_Water,
+
+	/// <summary>
+	/// Funding an Outpost
+	/// </summary>
+	/// <name>IVA Building and Crops Packs</name>
+	IVA_Building_And_Crops_Packs,
+
+	/// <summary>
+	/// Focus on Farming
+	/// </summary>
+	/// <name>IVA Farmfields</name>
+	IVA_Farmfields,
+
+	/// <summary>
+	/// Luxuries for the Citadel
+	/// </summary>
+	/// <name>IVA Luxury Goods</name>
+	IVA_Luxury_Goods,
+
+	/// <summary>
+	/// Master of Exploration
+	/// </summary>
+	/// <name>IVA Master of Exploration</name>
+	IVA_Master_Of_Exploration,
+
+	/// <summary>
+	/// Advanced Outposts
+	/// </summary>
+	/// <name>IVA Outpost</name>
+	IVA_Outpost,
+
+	/// <summary>
+	/// Pastries
+	/// </summary>
+	/// <name>IVA Pastries</name>
+	IVA_Pastries,
+
+	/// <summary>
+	/// Serving the People
+	/// </summary>
+	/// <name>IVA Serving the People</name>
+	IVA_Serving_The_People,
+
+	/// <summary>
+	/// Stone Roads
+	/// </summary>
+	/// <name>IVA Stone Roads</name>
+	IVA_Stone_Roads,
+
+	/// <summary>
+	/// Deeper into the Wilds
+	/// </summary>
+	/// <name>IVA Tablets</name>
+	IVA_Tablets,
+
+	/// <summary>
+	/// Great Expansion
+	/// </summary>
+	/// <name>IVA TO Bonfire</name>
+	IVA_TO_Bonfire,
+
+	/// <summary>
+	/// Advanced Cuisine
+	/// </summary>
+	/// <name>IVA TO Cooking</name>
+	IVA_TO_Cooking,
+
+	/// <summary>
+	/// Time of Courage
+	/// </summary>
+	/// <name>IVA TO Glades Tablets Relics</name>
+	IVA_TO_Glades_Tablets_Relics,
+
+	/// <summary>
+	/// Large Parcel
+	/// </summary>
+	/// <name>IVA TO Packing</name>
+	IVA_TO_Packing,
+
+	/// <summary>
+	/// Ravenous Axes
+	/// </summary>
+	/// <name>IVA TO Wood and Packs</name>
+	IVA_TO_Wood_And_Packs,
+
+	/// <summary>
+	/// Goods for the Citadel
+	/// </summary>
+	/// <name>IVA Trade Goods</name>
+	IVA_Trade_Goods,
+
+	/// <summary>
+	/// Wood and Provisions
+	/// </summary>
+	/// <name>IVA Wood</name>
+	IVA_Wood,
+
+	/// <summary>
+	/// Beaver Majority
+	/// </summary>
+	/// <name>IVB Beaver Majority</name>
+	IVB_Beaver_Majority,
+
+	/// <summary>
+	/// Brawling
+	/// </summary>
+	/// <name>IVB Brawling</name>
+	IVB_Brawling,
+
+	/// <summary>
+	/// Builder's Tools
+	/// </summary>
+	/// <name>IVB Builders Tools</name>
+	IVB_Builders_Tools,
+
+	/// <summary>
+	/// Knowledge
+	/// </summary>
+	/// <name>IVB Education</name>
+	IVB_Education,
+
+	/// <summary>
+	/// Fox Majority
+	/// </summary>
+	/// <name>IVB Fox Majority</name>
+	IVB_Fox_Majority,
+
+	/// <summary>
+	/// Frog Majority
+	/// </summary>
+	/// <name>IVB Frog Majority</name>
+	IVB_Frog_Majority,
+
+	/// <summary>
+	/// Harpy Majority
+	/// </summary>
+	/// <name>IVB Harpy Majority</name>
+	IVB_Harpy_Majority,
+
+	/// <summary>
+	/// Human Majority
+	/// </summary>
+	/// <name>IVB Human Majority</name>
+	IVB_Human_Majority,
+
+	/// <summary>
+	/// Leisure
+	/// </summary>
+	/// <name>IVB Leisure</name>
+	IVB_Leisure,
+
+	/// <summary>
+	/// Lizard Majority
+	/// </summary>
+	/// <name>IVB Lizard Majority</name>
+	IVB_Lizard_Majority,
+
+	/// <summary>
+	/// Rainproof Coats
+	/// </summary>
+	/// <name>IVB Rainproof Coats</name>
+	IVB_Rainproof_Coats,
+
+	/// <summary>
+	/// Expensive Delivery
+	/// </summary>
+	/// <name>IVB Rich Delivery</name>
+	IVB_Rich_Delivery,
+
+	/// <summary>
+	/// Construction Work
+	/// </summary>
+	/// <name>IVB TO Building Tools</name>
+	IVB_TO_Building_Tools,
+
+	/// <summary>
+	/// Technological Progress
+	/// </summary>
+	/// <name>IVB TO Engines Amount</name>
+	IVB_TO_Engines_Amount,
+
+	/// <summary>
+	/// Food Provision
+	/// </summary>
+	/// <name>IVB TO Food Provision</name>
+	IVB_TO_Food_Provision,
+
+	/// <summary>
+	/// Travel Rations
+	/// </summary>
+	/// <name>IVB Travel Rations</name>
+	IVB_Travel_Rations,
+
+	/// <summary>
+	/// Utopia
+	/// </summary>
+	/// <name>IVB Utopia</name>
+	IVB_Utopia,
+
+	/// <summary>
+	/// Queen's Feathers
+	/// </summary>
+	/// <name>Needs Served</name>
+	Needs_Served,
+
+	/// <summary>
+	/// Queen's Feathers
+	/// </summary>
+	/// <name>Needs Served HIGH</name>
+	Needs_Served_HIGH,
+
+	/// <summary>
+	/// Queen's Feathers
+	/// </summary>
+	/// <name>Needs Served LOW</name>
+	Needs_Served_LOW,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Assault Trader</name>
+	R_Ghost_Assault_Trader,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Cut Trees</name>
+	R_Ghost_Cut_Trees,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Decorations Aesthetics</name>
+	R_Ghost_Decorations_Aesthetics,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Decorations Harmony</name>
+	R_Ghost_Decorations_Harmony,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Discover DangGlades</name>
+	R_Ghost_Discover_DangGlades,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Discover DangGlades in Time</name>
+	R_Ghost_Discover_DangGlades_In_Time,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Engines</name>
+	R_Ghost_Engines,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Forbid Needs Beavers</name>
+	R_Ghost_Forbid_Needs_Beavers,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Forbid Needs Foxes</name>
+	R_Ghost_Forbid_Needs_Foxes,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Forbid Needs Harpies</name>
+	R_Ghost_Forbid_Needs_Harpies,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Forbid Needs Humans</name>
+	R_Ghost_Forbid_Needs_Humans,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Forbid Needs Lizards</name>
+	R_Ghost_Forbid_Needs_Lizards,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Generate Cysts</name>
+	R_Ghost_Generate_Cysts,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Hostility High</name>
+	R_Ghost_Hostility_High,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Hostility Low</name>
+	R_Ghost_Hostility_Low,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Housing Needs</name>
+	R_Ghost_Housing_Needs,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost HUBs upgrade</name>
+	R_Ghost_HUBs_Upgrade,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Human Houses</name>
+	R_Ghost_Human_Houses,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Keep Goods</name>
+	R_Ghost_Keep_Goods,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Keep Villagers</name>
+	R_Ghost_Keep_Villagers,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Leisure</name>
+	R_Ghost_Leisure,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Luxury</name>
+	R_Ghost_Luxury,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Rebuild Ruins</name>
+	R_Ghost_Rebuild_Ruins,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Religion</name>
+	R_Ghost_Religion,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Remove Cysts</name>
+	R_Ghost_Remove_Cysts,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Resolve Foxes</name>
+	R_Ghost_Resolve_Foxes,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Resolve Harpies</name>
+	R_Ghost_Resolve_Harpies,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Resolve Lizards</name>
+	R_Ghost_Resolve_Lizards,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Sacrifice Goods</name>
+	R_Ghost_Sacrifice_Goods,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Salvage Ruins</name>
+	R_Ghost_Salvage_Ruins,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Send Goods to Citadel</name>
+	R_Ghost_Send_Goods_To_Citadel,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Service Needs</name>
+	R_Ghost_Service_Needs,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Solve DangRelics</name>
+	R_Ghost_Solve_DangRelics,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Starve Beavers</name>
+	R_Ghost_Starve_Beavers,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Starve Humans</name>
+	R_Ghost_Starve_Humans,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Trade Routes</name>
+	R_Ghost_Trade_Routes,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Trade Routes with Value</name>
+	R_Ghost_Trade_Routes_With_Value,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Trade Routes with Value Many</name>
+	R_Ghost_Trade_Routes_With_Value_Many,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Upgrade Houses</name>
+	R_Ghost_Upgrade_Houses,
+
+	/// <summary></summary>
+	/// <name>[R] Ghost Use Water</name>
+	R_Ghost_Use_Water,
+
+	/// <summary>
+	/// Blood of the Stag
+	/// </summary>
+	/// <name>Rep from Events</name>
+	Rep_From_Events,
+
+	/// <summary>
+	/// Blood of the Stag
+	/// </summary>
+	/// <name>Rep from Events HIGH</name>
+	Rep_From_Events_HIGH,
+
+	/// <summary>
+	/// Blood of the Stag
+	/// </summary>
+	/// <name>Rep from Events LOW</name>
+	Rep_From_Events_LOW,
+
+	/// <summary>
+	/// Mortal Blood
+	/// </summary>
+	/// <name>Rep from Resolve</name>
+	Rep_From_Resolve,
+
+	/// <summary>
+	/// Mortal Blood
+	/// </summary>
+	/// <name>Rep from Resolve HIGH</name>
+	Rep_From_Resolve_HIGH,
+
+	/// <summary>
+	/// Mortal Blood
+	/// </summary>
+	/// <name>Rep from Resolve LOW</name>
+	Rep_From_Resolve_LOW,
+
+	/// <summary>
+	/// Fire Essence
+	/// </summary>
+	/// <name>Resolve</name>
+	Resolve,
+
+	/// <summary>
+	/// Fire Essence
+	/// </summary>
+	/// <name>Resolve HIGH</name>
+	Resolve_HIGH,
+
+	/// <summary>
+	/// Fire Essence
+	/// </summary>
+	/// <name>Resolve LOW</name>
+	Resolve_LOW,
+
+	/// <summary>
+	/// Golden Blood
+	/// </summary>
+	/// <name>Standing</name>
+	Standing,
+
+	/// <summary>
+	/// Golden Blood
+	/// </summary>
+	/// <name>Standing HIGH</name>
+	Standing_HIGH,
+
+	/// <summary>
+	/// Brewing Ale
+	/// </summary>
+	/// <name>T II Brewery</name>
+	T_II_Brewery,
+
+	/// <summary>
+	/// Farming
+	/// </summary>
+	/// <name>T II Farm</name>
+	T_II_Farm,
+
+	/// <summary>
+	/// Provisions
+	/// </summary>
+	/// <name>T II Provisions</name>
+	T_II_Provisions,
+
+	/// <summary>
+	/// High Society
+	/// </summary>
+	/// <name>T II Resolve</name>
+	T_II_Resolve,
+
+	/// <summary>
+	/// Smokehouse
+	/// </summary>
+	/// <name>T II Smokehouse</name>
+	T_II_Smokehouse,
+
+	/// <summary>
+	/// A Place for Rest
+	/// </summary>
+	/// <name>T II Tavern</name>
+	T_II_Tavern,
+
+	/// <summary>
+	/// First Yield
+	/// </summary>
+	/// <name>T II Trapper</name>
+	T_II_Trapper,
+
+	/// <summary>
+	/// Home & Hearth
+	/// </summary>
+	/// <name>T II Woodcutters Camp</name>
+	T_II_Woodcutters_Camp,
+
+	/// <summary>
+	/// Get Rich
+	/// </summary>
+	/// <name>T III Amber</name>
+	T_III_Amber,
+
+	/// <summary>
+	/// High Resolve
+	/// </summary>
+	/// <name>T III Beavers Resolve</name>
+	T_III_Beavers_Resolve,
+
+	/// <summary>
+	/// Collecting Berries
+	/// </summary>
+	/// <name>T III Berries</name>
+	T_III_Berries,
+
+	/// <summary>
+	/// Happy Meal
+	/// </summary>
+	/// <name>T III Food</name>
+	T_III_Food,
+
+	/// <summary>
+	/// Fulfilling Needs
+	/// </summary>
+	/// <name>T III Guild House</name>
+	T_III_Guild_House,
+
+	/// <summary>
+	/// Buying & Selling
+	/// </summary>
+	/// <name>T III Packs</name>
+	T_III_Packs,
+
+	/// <summary>
+	/// Catching Rainwater
+	/// </summary>
+	/// <name>T III Rain</name>
+	T_III_Rain,
+
+	/// <summary>
+	/// Surviving Requires Sacrifice
+	/// </summary>
+	/// <name>T III Sacrifice</name>
+	T_III_Sacrifice,
+
+	/// <summary>
+	/// Traders & Currency
+	/// </summary>
+	/// <name>T III Trading Post</name>
+	T_III_Trading_Post,
+
+	/// <summary>
+	/// Winemaking
+	/// </summary>
+	/// <name>T III Wine</name>
+	T_III_Wine,
+
+	/// <summary>
+	/// Blight Fighters
+	/// </summary>
+	/// <name>T IV Blightpost</name>
+	T_IV_Blightpost,
+
+	/// <summary>
+	/// Finders Keepers
+	/// </summary>
+	/// <name>T IV Caches</name>
+	T_IV_Caches,
+
+	/// <summary>
+	/// Stay in Shape
+	/// </summary>
+	/// <name>T IV Clan Hall</name>
+	T_IV_Clan_Hall,
+
+	/// <summary>
+	/// Rainpunk Technology
+	/// </summary>
+	/// <name>T IV Engines</name>
+	T_IV_Engines,
+
+	/// <summary>
+	/// Forbidden Fruit
+	/// </summary>
+	/// <name>T IV Frobidden</name>
+	T_IV_Frobidden,
+
+	/// <summary>
+	/// Metallurgy
+	/// </summary>
+	/// <name>T IV Metal</name>
+	T_IV_Metal,
+
+	/// <summary>
+	/// Mining Basics
+	/// </summary>
+	/// <name>T IV Mine</name>
+	T_IV_Mine,
+
+	/// <summary>
+	/// Pipe Manufacturing
+	/// </summary>
+	/// <name>T IV Pipes</name>
+	T_IV_Pipes,
+
+	/// <summary>
+	/// Water Extraction
+	/// </summary>
+	/// <name>T IV Pump</name>
+	T_IV_Pump,
+
+	/// <summary>
+	/// Effects of Technology
+	/// </summary>
+	/// <name>T IV Water & Cysts</name>
+	T_IV_Water_And_Cysts,
+
+	/// <summary>
+	/// Building Blocks
+	/// </summary>
+	/// <name>TI Building Blocks</name>
+	TI_Building_Blocks,
+
+	/// <summary>
+	/// Ancient Tablets
+	/// </summary>
+	/// <name>TI Deep Exploration</name>
+	TI_Deep_Exploration,
+
+	/// <summary>
+	/// Food Supplies
+	/// </summary>
+	/// <name>TI Forager</name>
+	TI_Forager,
+
+	/// <summary>
+	/// Exploring the Wilds
+	/// </summary>
+	/// <name>TI Glades</name>
+	TI_Glades,
+
+	/// <summary>
+	/// Harvesters' Camp
+	/// </summary>
+	/// <name>TI Scavenger</name>
+	TI_Scavenger,
+
+	/// <summary>
+	/// Stonecutters' Camp
+	/// </summary>
+	/// <name>TI Stonecutter</name>
+	TI_Stonecutter,
+
+	/// <summary>
+	/// Woodcutters' Camps
+	/// </summary>
+	/// <name>TI Woodcutters Camp</name>
+	TI_Woodcutters_Camp,
+
+	/// <summary>
+	/// Golden Blood
+	/// </summary>
+	/// <name>Trade Packs and Perks LOW</name>
+	Trade_Packs_And_Perks_LOW,
 
 
-	MAX = 389
+
+	MAX = 391
 }
 
 public static class OrderTypesExtensions
@@ -412,8 +2291,8 @@ public static class OrderTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new OrderTypes[389];
-			for (int i = 0; i < 389; i++)
+			s_All = new OrderTypes[391];
+			for (int i = 0; i < 391; i++)
 			{
 				s_All[i] = (OrderTypes)(i+1);
 			}
@@ -421,6 +2300,11 @@ public static class OrderTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every OrderTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return OrderTypes.Amber_And_Luxury_LOW in the enum and log an error.
+	/// </summary>
 	public static string ToName(this OrderTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -432,6 +2316,11 @@ public static class OrderTypesExtensions
 		return TypeToInternalName[OrderTypes.Amber_And_Luxury_LOW];
 	}
 	
+	/// <summary>
+	/// Returns a OrderTypes associated with the given name.
+	/// Every OrderTypes should have a unique name as to distinguish it from others.
+	/// If no OrderTypes is found, it will return OrderTypes.Unknown and log a warning.
+	/// </summary>
 	public static OrderTypes ToOrderTypes(this string name)
 	{
 		foreach (KeyValuePair<OrderTypes,string> pair in TypeToInternalName)
@@ -446,9 +2335,15 @@ public static class OrderTypesExtensions
 		return OrderTypes.Unknown;
 	}
 	
-	public static OrderModel ToOrderModel(this string name)
+	/// <summary>
+	/// Returns a OrderModel associated with the given name.
+	/// OrderModel contain all the data that will be used in the game.
+	/// Every OrderModel should have a unique name as to distinguish it from others.
+	/// If no OrderModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.Orders.OrderModel ToOrderModel(this string name)
 	{
-		OrderModel model = SO.Settings.orders.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.Orders.OrderModel model = SO.Settings.orders.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -458,15 +2353,27 @@ public static class OrderTypesExtensions
 		return null;
 	}
 
-	public static OrderModel ToOrderModel(this OrderTypes types)
+    /// <summary>
+    /// Returns a OrderModel associated with the given OrderTypes.
+    /// OrderModel contain all the data that will be used in the game.
+    /// Every OrderModel should have a unique name as to distinguish it from others.
+    /// If no OrderModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.Orders.OrderModel ToOrderModel(this OrderTypes types)
 	{
 		return types.ToName().ToOrderModel();
 	}
 	
-	public static OrderModel[] ToOrderModelArray(this IEnumerable<OrderTypes> collection)
+	/// <summary>
+	/// Returns an array of OrderModel associated with the given OrderTypes.
+	/// OrderModel contain all the data that will be used in the game.
+	/// Every OrderModel should have a unique name as to distinguish it from others.
+	/// If a OrderModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.Orders.OrderModel[] ToOrderModelArray(this IEnumerable<OrderTypes> collection)
 	{
 		int count = collection.Count();
-		OrderModel[] array = new OrderModel[count];
+		Eremite.Model.Orders.OrderModel[] array = new Eremite.Model.Orders.OrderModel[count];
 		int i = 0;
 		foreach (OrderTypes element in collection)
 		{
@@ -476,10 +2383,16 @@ public static class OrderTypesExtensions
 		return array;
 	}
 	
-	public static OrderModel[] ToOrderModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of OrderModel associated with the given OrderTypes.
+	/// OrderModel contain all the data that will be used in the game.
+	/// Every OrderModel should have a unique name as to distinguish it from others.
+	/// If a OrderModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.Orders.OrderModel[] ToOrderModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		OrderModel[] array = new OrderModel[count];
+		Eremite.Model.Orders.OrderModel[] array = new Eremite.Model.Orders.OrderModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -488,7 +2401,51 @@ public static class OrderTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of OrderModel associated with the given OrderTypes.
+	/// OrderModel contain all the data that will be used in the game.
+	/// Every OrderModel should have a unique name as to distinguish it from others.
+	/// If a OrderModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.Orders.OrderModel[] ToOrderModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.Orders.OrderModel>.Get(out List<Eremite.Model.Orders.OrderModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.Orders.OrderModel model = element.ToOrderModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of OrderModel associated with the given OrderTypes.
+	/// OrderModel contain all the data that will be used in the game.
+	/// Every OrderModel should have a unique name as to distinguish it from others.
+	/// If a OrderModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.Orders.OrderModel[] ToOrderModelArrayNoNulls(this IEnumerable<OrderTypes> collection)
+	{
+		using(ListPool<Eremite.Model.Orders.OrderModel>.Get(out List<Eremite.Model.Orders.OrderModel> list))
+		{
+			foreach (OrderTypes element in collection)
+			{
+				Eremite.Model.Orders.OrderModel model = element.ToOrderModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<OrderTypes, string> TypeToInternalName = new()
 	{
 		{ OrderTypes.Amber_And_Luxury_LOW, "Amber and Luxury LOW" },                                   // Essence of Wealth
@@ -543,6 +2500,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Resolve_Humans, "I Resolve Humans" },                                           // People's Resolve
 		{ OrderTypes.I_Resolve_Lizards, "I Resolve Lizards" },                                         // The Clan
 		{ OrderTypes.I_Ruins, "I Ruins" },                                                             // Lost in the Woods
+		{ OrderTypes.I_Salt, "I Salt" },                                                               // Salt Miner
 		{ OrderTypes.I_Skewers, "I Skewers" },                                                         // Barbecue
 		{ OrderTypes.I_Solve_Any_Relic, "I Solve Any Relic" },                                         // Problem Solver
 		{ OrderTypes.I_Solve_Dangerous_Relic, "I Solve Dangerous Relic" },                             // Tick Tock
@@ -644,7 +2602,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_Cut_NOTrees, "II TO Cut NOTrees" },                                         // Work Break
 		{ OrderTypes.II_TO_Cut_Trees, "II TO Cut Trees" },                                             // Need for Timber
 		{ OrderTypes.II_TO_Discover_Dangerous_Glades, "II TO Discover Dangerous Glades" },             // Adventurous Viceroy
-		{ OrderTypes.II_TO_Forager_Trial_CRW, "II TO Forager Trial - CRW" },                           // Forager's Trial
+		{ OrderTypes.II_TO_Forager_Trial_CRW_AT, "II TO Forager Trial - CRW AT" },                     // Forager's Trial
 		{ OrderTypes.II_TO_Forager_Trial_RW, "II TO Forager Trial - RW" },                             // Forager's Trial
 		{ OrderTypes.II_TO_Forager_Trial_SO, "II TO Forager Trial - SO" },                             // Forager's Trial
 		{ OrderTypes.II_TO_Gathering_Stone, "II TO Gathering Stone" },                                 // Stonecutter's Trial
@@ -706,6 +2664,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Routes_And_Amber, "III Routes And Amber" },                                   // Income Tax
 		{ OrderTypes.III_Royal_Gardens, "III Royal Gardens" },                                         // Aesthetics
 		{ OrderTypes.III_Ruins, "III Ruins" },                                                         // Ruins
+		{ OrderTypes.III_Salt, "III Salt" },                                                           // Salty Delivery
 		{ OrderTypes.III_Scrolls_And_Temple, "III Scrolls and Temple" },                               // Brotherhood
 		{ OrderTypes.III_Send_To_Citadel, "III Send to Citadel" },                                     // Gifts for the Queen
 		{ OrderTypes.III_Service_Harpy, "III Service Harpy" },                                         // Healing
@@ -721,6 +2680,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_TO_Dangerous_Stuff, "III TO Dangerous Stuff" },                               // Foolhardy Man
 		{ OrderTypes.III_TO_Digging_Coal, "III TO Digging Coal" },                                     // Coal Fever
 		{ OrderTypes.III_TO_Digging_Ore, "III TO Digging Ore" },                                       // Copper Fever
+		{ OrderTypes.III_TO_Digging_Salt, "III TO Digging Salt" },                                     // Salt Fever
 		{ OrderTypes.III_TO_Engines_And_Water, "III TO Engines and Water" },                           // Let It Rain
 		{ OrderTypes.III_TO_Explore_And_Deliver, "III TO Explore and Deliver" },                       // Disturbing the Ancients
 		{ OrderTypes.III_TO_Forbidden_Glade, "III TO Forbidden Glade" },                               // Devilish Curiosity
@@ -879,7 +2839,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.TI_Stonecutter, "TI Stonecutter" },                                               // Stonecutters' Camp
 		{ OrderTypes.TI_Woodcutters_Camp, "TI Woodcutters Camp" },                                     // Woodcutters' Camps
 		{ OrderTypes.Trade_Packs_And_Perks_LOW, "Trade Packs and Perks LOW" },                         // Golden Blood
-		{ OrderTypes.WaterUsed_HIGH, "WaterUsed HIGH" },                                               // Essence of Corruption
 
 	};
 }

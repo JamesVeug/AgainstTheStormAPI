@@ -1,95 +1,492 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum ProfessionTypes
 {
 	Unknown = -1,
 	None,
-	Alchemist,                  // Alchemist
-	Apothecary,                 // Apothecary
-	Artisan,                    // Artisan
-	Baker,                      // Baker
-	Bath_House_Worker,          // Bath House Worker
-	Beanery_Worker,             // Beanery Worker
-	BlightFighter,              // Blight Fighter
-	Brewery_Worker,             // Brewer
-	Brickyard_Worker,           // Brickyard Worker
-	Builder,                    // Builder
-	Butcher,                    // Cook
-	Cannery_Worker,             // Cannery Worker
-	Carpenter,                  // Carpenter
-	Cellar_Worker,              // Cellar Worker
-	Clan_Mamber,                // Clan Steward
-	Clay_Pit_Workshop_Worker,   // Clay Pit Digger
-	Claypit_Digger,             // Clay Pit Digger
-	Cobbler,                    // Cobbler
-	Cook,                       // Cook
-	Cooper,                     // Cooper
-	Craftsman,                  // Craftsman
-	Distillery_Worker,          // Distillery Worker
-	Druid,                      // Druid
-	Explorer,                   // Explorer
-	Factory_Worker,             // Factory Worker
-	Farmer,                     // Farmer
-	Finesmith,                  // Finesmith
-	FireKeeper,                 // Firekeeper
-	Fisherman,                  // Fisherman
-	Forager,                    // Forager
-	Furnace_Worker,             // Furnace Worker
-	Geologist,                  // Pump Operator
-	Granary_Worker,             // Granary Worker
-	Greenhouse_Worker,          // Greenhouse Worker
-	Greenhouse_Workshop_Worker, // Greenhouse Worker
-	Grill_Worker,               // Grill Worker
-	Guild_Member,               // Guild Member
-	Harvester,                  // Harvester
-	Hauler,                     // Hauler
-	Herbalist,                  // Herbalist
-	Kiln_Worker,                // Kiln Worker
-	Leatherworker,              // Leatherworker
-	Librarian,                  // Librarian
-	Lumbermill_Worker,          // Lumber Mill Worker
-	Manufacturer,               // Manufactory Worker
-	Mill_Worker,                // Miller
-	Miner,                      // Miner
-	Monk,                       // Monk
-	Outfitter,                  // Supplier
-	Oven_Worker,                // Brick Oven Worker
-	Pantry_Worker,              // Pantry Worker
-	Press_Worker,               // Press Worker
-	Priest,                     // Priest
-	Provisioner,                // Provisioner
-	Rain_Catcher_Worker,        // Rain Collector Worker
-	Rain_Collector_Worker,      // Rain Collector Worker
-	Rancher,                    // Rancher
-	Scavenger,                  // Scavenger
-	Scout,                      // Scout
-	Scribe,                     // Scribe
-	Seller,                     // Seller
-	Sewer,                      // Clothier
-	Smelter,                    // Smelter
-	Smith,                      // Smith
-	Smokehouse_Worker,          // Smokehouse Worker
-	Speaker,                    // Speaker
-	Stamping_Mill_Worker,       // Stamping Mill Worker
-	Stevedore,                  // Dockworker
-	Stonecutter,                // Stonecutter
-	Supplier,                   // Supplier
-	Teadoctor,                  // Teadoctor
-	Teahouse_Worker,            // Teahouse Worker
-	Tinctury_Worker,            // Tinctury Worker
-	Tinkerer,                   // Tinkerer
-	Toolshop_Worker,            // Toolshop Worker
-	Trapper,                    // Trapper
-	Waiter,                     // Waiter
-	Weaver,                     // Weaver
-	Woodcutter,                 // Woodcutter
+	
+	/// <summary>
+	/// Alchemist
+	/// </summary>
+	/// <name>Alchemist</name>
+	Alchemist,
+
+	/// <summary>
+	/// Apothecary
+	/// </summary>
+	/// <name>Apothecary</name>
+	Apothecary,
+
+	/// <summary>
+	/// Artisan
+	/// </summary>
+	/// <name>Artisan</name>
+	Artisan,
+
+	/// <summary>
+	/// Baker
+	/// </summary>
+	/// <name>Baker</name>
+	Baker,
+
+	/// <summary>
+	/// Bath House Worker
+	/// </summary>
+	/// <name>Bath House worker</name>
+	Bath_House_Worker,
+
+	/// <summary>
+	/// Beanery Worker
+	/// </summary>
+	/// <name>Beanery Worker</name>
+	Beanery_Worker,
+
+	/// <summary>
+	/// Blight Fighter
+	/// </summary>
+	/// <name>BlightFighter</name>
+	BlightFighter,
+
+	/// <summary>
+	/// Brewer
+	/// </summary>
+	/// <name>Brewery Worker</name>
+	Brewery_Worker,
+
+	/// <summary>
+	/// Brickyard Worker
+	/// </summary>
+	/// <name>Brickyard Worker</name>
+	Brickyard_Worker,
+
+	/// <summary>
+	/// Builder
+	/// </summary>
+	/// <name>Builder</name>
+	Builder,
+
+	/// <summary>
+	/// Cook
+	/// </summary>
+	/// <name>Butcher</name>
+	Butcher,
+
+	/// <summary>
+	/// Cannery Worker
+	/// </summary>
+	/// <name>Cannery Worker</name>
+	Cannery_Worker,
+
+	/// <summary>
+	/// Carpenter
+	/// </summary>
+	/// <name>Carpenter</name>
+	Carpenter,
+
+	/// <summary>
+	/// Cellar Worker
+	/// </summary>
+	/// <name>Cellar worker</name>
+	Cellar_Worker,
+
+	/// <summary>
+	/// Clan Steward
+	/// </summary>
+	/// <name>Clan Mamber</name>
+	Clan_Mamber,
+
+	/// <summary>
+	/// Clay Pit Digger
+	/// </summary>
+	/// <name>Clay Pit Workshop Worker</name>
+	Clay_Pit_Workshop_Worker,
+
+	/// <summary>
+	/// Clay Pit Digger
+	/// </summary>
+	/// <name>Claypit Digger</name>
+	Claypit_Digger,
+
+	/// <summary>
+	/// Cobbler
+	/// </summary>
+	/// <name>Cobbler</name>
+	Cobbler,
+
+	/// <summary>
+	/// Cook
+	/// </summary>
+	/// <name>Cook</name>
+	Cook,
+
+	/// <summary>
+	/// Cooper
+	/// </summary>
+	/// <name>Cooper</name>
+	Cooper,
+
+	/// <summary>
+	/// Craftsman
+	/// </summary>
+	/// <name>Craftsman</name>
+	Craftsman,
+
+	/// <summary>
+	/// Distillery Worker
+	/// </summary>
+	/// <name>Distillery Worker</name>
+	Distillery_Worker,
+
+	/// <summary>
+	/// Druid
+	/// </summary>
+	/// <name>Druid</name>
+	Druid,
+
+	/// <summary>
+	/// Explorer
+	/// </summary>
+	/// <name>Explorer</name>
+	Explorer,
+
+	/// <summary>
+	/// Factory Worker
+	/// </summary>
+	/// <name>Factory Worker</name>
+	Factory_Worker,
+
+	/// <summary>
+	/// Farmer
+	/// </summary>
+	/// <name>Farmer</name>
+	Farmer,
+
+	/// <summary>
+	/// Finesmith
+	/// </summary>
+	/// <name>Finesmith</name>
+	Finesmith,
+
+	/// <summary>
+	/// Firekeeper
+	/// </summary>
+	/// <name>FireKeeper</name>
+	FireKeeper,
+
+	/// <summary>
+	/// Fisherman
+	/// </summary>
+	/// <name>Fisherman</name>
+	Fisherman,
+
+	/// <summary>
+	/// Forager
+	/// </summary>
+	/// <name>Forager</name>
+	Forager,
+
+	/// <summary>
+	/// Furnace Worker
+	/// </summary>
+	/// <name>Furnace worker</name>
+	Furnace_Worker,
+
+	/// <summary>
+	/// Pump Operator
+	/// </summary>
+	/// <name>Geologist</name>
+	Geologist,
+
+	/// <summary>
+	/// Granary Worker
+	/// </summary>
+	/// <name>Granary worker</name>
+	Granary_Worker,
+
+	/// <summary>
+	/// Greenhouse Worker
+	/// </summary>
+	/// <name>Greenhouse Worker</name>
+	Greenhouse_Worker,
+
+	/// <summary>
+	/// Greenhouse Worker
+	/// </summary>
+	/// <name>Greenhouse Workshop Worker</name>
+	Greenhouse_Workshop_Worker,
+
+	/// <summary>
+	/// Grill Worker
+	/// </summary>
+	/// <name>Grill Worker</name>
+	Grill_Worker,
+
+	/// <summary>
+	/// Guild Member
+	/// </summary>
+	/// <name>Guild member</name>
+	Guild_Member,
+
+	/// <summary>
+	/// Harvester
+	/// </summary>
+	/// <name>Harvester</name>
+	Harvester,
+
+	/// <summary>
+	/// Hauler
+	/// </summary>
+	/// <name>Hauler</name>
+	Hauler,
+
+	/// <summary>
+	/// Herbalist
+	/// </summary>
+	/// <name>Herbalist</name>
+	Herbalist,
+
+	/// <summary>
+	/// Kiln Worker
+	/// </summary>
+	/// <name>Kiln worker</name>
+	Kiln_Worker,
+
+	/// <summary>
+	/// Leatherworker
+	/// </summary>
+	/// <name>Leatherworker</name>
+	Leatherworker,
+
+	/// <summary>
+	/// Librarian
+	/// </summary>
+	/// <name>Librarian</name>
+	Librarian,
+
+	/// <summary>
+	/// Lumber Mill Worker
+	/// </summary>
+	/// <name>Lumbermill worker</name>
+	Lumbermill_Worker,
+
+	/// <summary>
+	/// Manufactory Worker
+	/// </summary>
+	/// <name>Manufacturer</name>
+	Manufacturer,
+
+	/// <summary>
+	/// Miller
+	/// </summary>
+	/// <name>Mill worker</name>
+	Mill_Worker,
+
+	/// <summary>
+	/// Miner
+	/// </summary>
+	/// <name>Miner</name>
+	Miner,
+
+	/// <summary>
+	/// Monk
+	/// </summary>
+	/// <name>Monk</name>
+	Monk,
+
+	/// <summary>
+	/// Supplier
+	/// </summary>
+	/// <name>Outfitter</name>
+	Outfitter,
+
+	/// <summary>
+	/// Brick Oven Worker
+	/// </summary>
+	/// <name>Oven worker</name>
+	Oven_Worker,
+
+	/// <summary>
+	/// Pantry Worker
+	/// </summary>
+	/// <name>Pantry worker</name>
+	Pantry_Worker,
+
+	/// <summary>
+	/// Press Worker
+	/// </summary>
+	/// <name>Press Worker</name>
+	Press_Worker,
+
+	/// <summary>
+	/// Priest
+	/// </summary>
+	/// <name>Priest</name>
+	Priest,
+
+	/// <summary>
+	/// Provisioner
+	/// </summary>
+	/// <name>Provisioner</name>
+	Provisioner,
+
+	/// <summary>
+	/// Rain Collector Worker
+	/// </summary>
+	/// <name>Rain Catcher Worker</name>
+	Rain_Catcher_Worker,
+
+	/// <summary>
+	/// Rain Collector Worker
+	/// </summary>
+	/// <name>Rain Collector Worker</name>
+	Rain_Collector_Worker,
+
+	/// <summary>
+	/// Rancher
+	/// </summary>
+	/// <name>Rancher</name>
+	Rancher,
+
+	/// <summary>
+	/// Scavenger
+	/// </summary>
+	/// <name>Scavenger</name>
+	Scavenger,
+
+	/// <summary>
+	/// Scout
+	/// </summary>
+	/// <name>Scout</name>
+	Scout,
+
+	/// <summary>
+	/// Scribe
+	/// </summary>
+	/// <name>Scribe</name>
+	Scribe,
+
+	/// <summary>
+	/// Seller
+	/// </summary>
+	/// <name>Seller</name>
+	Seller,
+
+	/// <summary>
+	/// Clothier
+	/// </summary>
+	/// <name>Sewer</name>
+	Sewer,
+
+	/// <summary>
+	/// Smelter
+	/// </summary>
+	/// <name>Smelter</name>
+	Smelter,
+
+	/// <summary>
+	/// Smith
+	/// </summary>
+	/// <name>Smith</name>
+	Smith,
+
+	/// <summary>
+	/// Smokehouse Worker
+	/// </summary>
+	/// <name>Smokehouse worker</name>
+	Smokehouse_Worker,
+
+	/// <summary>
+	/// Speaker
+	/// </summary>
+	/// <name>Speaker</name>
+	Speaker,
+
+	/// <summary>
+	/// Stamping Mill Worker
+	/// </summary>
+	/// <name>Stamping Mill Worker</name>
+	Stamping_Mill_Worker,
+
+	/// <summary>
+	/// Dockworker
+	/// </summary>
+	/// <name>Stevedore</name>
+	Stevedore,
+
+	/// <summary>
+	/// Stonecutter
+	/// </summary>
+	/// <name>Stonecutter</name>
+	Stonecutter,
+
+	/// <summary>
+	/// Supplier
+	/// </summary>
+	/// <name>Supplier</name>
+	Supplier,
+
+	/// <summary>
+	/// Teadoctor
+	/// </summary>
+	/// <name>Teadoctor</name>
+	Teadoctor,
+
+	/// <summary>
+	/// Teahouse Worker
+	/// </summary>
+	/// <name>Teahouse Worker</name>
+	Teahouse_Worker,
+
+	/// <summary>
+	/// Tinctury Worker
+	/// </summary>
+	/// <name>Tinctury Worker</name>
+	Tinctury_Worker,
+
+	/// <summary>
+	/// Tinkerer
+	/// </summary>
+	/// <name>Tinkerer</name>
+	Tinkerer,
+
+	/// <summary>
+	/// Toolshop Worker
+	/// </summary>
+	/// <name>Toolshop Worker</name>
+	Toolshop_Worker,
+
+	/// <summary>
+	/// Trapper
+	/// </summary>
+	/// <name>Trapper</name>
+	Trapper,
+
+	/// <summary>
+	/// Waiter
+	/// </summary>
+	/// <name>Waiter</name>
+	Waiter,
+
+	/// <summary>
+	/// Weaver
+	/// </summary>
+	/// <name>Weaver</name>
+	Weaver,
+
+	/// <summary>
+	/// Woodcutter
+	/// </summary>
+	/// <name>Woodcutter</name>
+	Woodcutter,
+
 
 
 	MAX = 79
@@ -111,6 +508,11 @@ public static class ProfessionTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every ProfessionTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return ProfessionTypes.Alchemist in the enum and log an error.
+	/// </summary>
 	public static string ToName(this ProfessionTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -122,6 +524,11 @@ public static class ProfessionTypesExtensions
 		return TypeToInternalName[ProfessionTypes.Alchemist];
 	}
 	
+	/// <summary>
+	/// Returns a ProfessionTypes associated with the given name.
+	/// Every ProfessionTypes should have a unique name as to distinguish it from others.
+	/// If no ProfessionTypes is found, it will return ProfessionTypes.Unknown and log a warning.
+	/// </summary>
 	public static ProfessionTypes ToProfessionTypes(this string name)
 	{
 		foreach (KeyValuePair<ProfessionTypes,string> pair in TypeToInternalName)
@@ -136,9 +543,15 @@ public static class ProfessionTypesExtensions
 		return ProfessionTypes.Unknown;
 	}
 	
-	public static ProfessionModel ToProfessionModel(this string name)
+	/// <summary>
+	/// Returns a ProfessionModel associated with the given name.
+	/// ProfessionModel contain all the data that will be used in the game.
+	/// Every ProfessionModel should have a unique name as to distinguish it from others.
+	/// If no ProfessionModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.ProfessionModel ToProfessionModel(this string name)
 	{
-		ProfessionModel model = SO.Settings.Professions.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.ProfessionModel model = SO.Settings.Professions.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -148,15 +561,27 @@ public static class ProfessionTypesExtensions
 		return null;
 	}
 
-	public static ProfessionModel ToProfessionModel(this ProfessionTypes types)
+    /// <summary>
+    /// Returns a ProfessionModel associated with the given ProfessionTypes.
+    /// ProfessionModel contain all the data that will be used in the game.
+    /// Every ProfessionModel should have a unique name as to distinguish it from others.
+    /// If no ProfessionModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.ProfessionModel ToProfessionModel(this ProfessionTypes types)
 	{
 		return types.ToName().ToProfessionModel();
 	}
 	
-	public static ProfessionModel[] ToProfessionModelArray(this IEnumerable<ProfessionTypes> collection)
+	/// <summary>
+	/// Returns an array of ProfessionModel associated with the given ProfessionTypes.
+	/// ProfessionModel contain all the data that will be used in the game.
+	/// Every ProfessionModel should have a unique name as to distinguish it from others.
+	/// If a ProfessionModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.ProfessionModel[] ToProfessionModelArray(this IEnumerable<ProfessionTypes> collection)
 	{
 		int count = collection.Count();
-		ProfessionModel[] array = new ProfessionModel[count];
+		Eremite.Model.ProfessionModel[] array = new Eremite.Model.ProfessionModel[count];
 		int i = 0;
 		foreach (ProfessionTypes element in collection)
 		{
@@ -166,10 +591,16 @@ public static class ProfessionTypesExtensions
 		return array;
 	}
 	
-	public static ProfessionModel[] ToProfessionModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of ProfessionModel associated with the given ProfessionTypes.
+	/// ProfessionModel contain all the data that will be used in the game.
+	/// Every ProfessionModel should have a unique name as to distinguish it from others.
+	/// If a ProfessionModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.ProfessionModel[] ToProfessionModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		ProfessionModel[] array = new ProfessionModel[count];
+		Eremite.Model.ProfessionModel[] array = new Eremite.Model.ProfessionModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -178,7 +609,51 @@ public static class ProfessionTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of ProfessionModel associated with the given ProfessionTypes.
+	/// ProfessionModel contain all the data that will be used in the game.
+	/// Every ProfessionModel should have a unique name as to distinguish it from others.
+	/// If a ProfessionModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.ProfessionModel[] ToProfessionModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.ProfessionModel>.Get(out List<Eremite.Model.ProfessionModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.ProfessionModel model = element.ToProfessionModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of ProfessionModel associated with the given ProfessionTypes.
+	/// ProfessionModel contain all the data that will be used in the game.
+	/// Every ProfessionModel should have a unique name as to distinguish it from others.
+	/// If a ProfessionModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.ProfessionModel[] ToProfessionModelArrayNoNulls(this IEnumerable<ProfessionTypes> collection)
+	{
+		using(ListPool<Eremite.Model.ProfessionModel>.Get(out List<Eremite.Model.ProfessionModel> list))
+		{
+			foreach (ProfessionTypes element in collection)
+			{
+				Eremite.Model.ProfessionModel model = element.ToProfessionModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<ProfessionTypes, string> TypeToInternalName = new()
 	{
 		{ ProfessionTypes.Alchemist, "Alchemist" },                                   // Alchemist

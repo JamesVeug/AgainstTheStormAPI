@@ -1,82 +1,155 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum TagTypes
 {
 	Unknown = -1,
 	None,
-	Aggregation_Tag_Caches, 
-	Aggregation_Tag_Camps, 
-	Aggregation_Tag_Dangerous_Events, 
-	Aggregation_Tag_Drills, 
-	Aggregation_Tag_Excavation, 
-	Aggregation_Tag_Ghosts, 
-	Aggregation_Tag_Haunted_Ruin_Beaver_House, 
-	Aggregation_Tag_Haunted_Ruin_Brewery, 
-	Aggregation_Tag_Haunted_Ruin_Cellar, 
-	Aggregation_Tag_Haunted_Ruin_Cooperage, 
-	Aggregation_Tag_Haunted_Ruin_Druid, 
-	Aggregation_Tag_Haunted_Ruin_Fox_House, 
-	Aggregation_Tag_Haunted_Ruin_Frog_House, 
-	Aggregation_Tag_Haunted_Ruin_Guild_House, 
-	Aggregation_Tag_Haunted_Ruin_Harpy_House, 
-	Aggregation_Tag_Haunted_Ruin_Herb_Garden, 
-	Aggregation_Tag_Haunted_Ruin_Human_House, 
-	Aggregation_Tag_Haunted_Ruin_Leatherworks, 
-	Aggregation_Tag_Haunted_Ruin_Lizard_House, 
-	Aggregation_Tag_Haunted_Ruin_Market, 
-	Aggregation_Tag_Haunted_Ruin_Rainmill, 
-	Aggregation_Tag_Haunted_Ruin_SmallFarm, 
-	Aggregation_Tag_Haunted_Ruin_Smelter, 
-	Aggregation_Tag_Haunted_Ruin_Temple, 
-	Aggregation_Tag_Hearths, 
-	Aggregation_Tag_Ruins, 
-	Aggregation_Tag_Storages, 
-	Building_Material_Tag, 
-	Fabric_Tag, 
-	Farm_Recipe_Tag, 
-	Fishing_Tag, 
-	Food_Tag, 
-	Fuel_Tag, 
-	Gatherer_Hut_Tag, 
-	Gathering_Tag, 
-	Metal_Tag, 
-	N_FirstGameResultDialog, 
-	N_Initiation, 
-	N_IronmanMid, 
-	N_IronmanPostSeal, 
-	N_IronmanPreSeal, 
-	N_IronmanStart, 
-	Ore_Tag, 
-	Packs_Tag, 
-	Recipe_With_Water_Tag, 
-	Relic_Archeology, 
-	Relic_Chest, 
-	Tag_Beaver, 
-	Tag_Blight, 
-	Tag_Event_Send_To_Citadel_Reward, 
-	Tag_Fox, 
-	Tag_Frog, 
-	Tag_Harpy, 
-	Tag_Human, 
-	Tag_Lizzard, 
-	Tag_Metal_Bars_In_Recipe, 
-	Tag_Profession_Firekeeper, 
-	Tag_Profession_Scout, 
-	Tag_Profession_Woodcutter, 
-	Tag_Rainpunk, 
-	Tag_Requires_Fertile_Soil, 
-	Tag_Storage_Haulers, 
-	Tag_Trade, 
+	
+	Aggregation_Tag_Caches,
+
+	Aggregation_Tag_Camps,
+
+	Aggregation_Tag_Dangerous_Events,
+
+	Aggregation_Tag_Drills,
+
+	Aggregation_Tag_Excavation,
+
+	Aggregation_Tag_Ghosts,
+
+	Aggregation_Tag_Haunted_Ruin_Beaver_House,
+
+	Aggregation_Tag_Haunted_Ruin_Brewery,
+
+	Aggregation_Tag_Haunted_Ruin_Cellar,
+
+	Aggregation_Tag_Haunted_Ruin_Cooperage,
+
+	Aggregation_Tag_Haunted_Ruin_Druid,
+
+	Aggregation_Tag_Haunted_Ruin_Fox_House,
+
+	Aggregation_Tag_Haunted_Ruin_Frog_House,
+
+	Aggregation_Tag_Haunted_Ruin_Guild_House,
+
+	Aggregation_Tag_Haunted_Ruin_Harpy_House,
+
+	Aggregation_Tag_Haunted_Ruin_Herb_Garden,
+
+	Aggregation_Tag_Haunted_Ruin_Human_House,
+
+	Aggregation_Tag_Haunted_Ruin_Leatherworks,
+
+	Aggregation_Tag_Haunted_Ruin_Lizard_House,
+
+	Aggregation_Tag_Haunted_Ruin_Market,
+
+	Aggregation_Tag_Haunted_Ruin_Rainmill,
+
+	Aggregation_Tag_Haunted_Ruin_SmallFarm,
+
+	Aggregation_Tag_Haunted_Ruin_Smelter,
+
+	Aggregation_Tag_Haunted_Ruin_Temple,
+
+	Aggregation_Tag_Hearths,
+
+	Aggregation_Tag_Ruins,
+
+	Aggregation_Tag_Storages,
+
+	Building_Material_Tag,
+
+	Complex_Food_Tag,
+
+	Copper_Bar_And_Crystalized_Tag,
+
+	Fabric_Tag,
+
+	Farm_Recipe_Tag,
+
+	Fishing_Tag,
+
+	Food_Tag,
+
+	Fuel_Tag,
+
+	Gatherer_Hut_Tag,
+
+	Gathering_Tag,
+
+	Metal_Tag,
+
+	N_FirstGameResultDialog,
+
+	N_Initiation,
+
+	N_IronmanMid,
+
+	N_IronmanPostSeal,
+
+	N_IronmanPreSeal,
+
+	N_IronmanStart,
+
+	Ore_Tag,
+
+	Packs_Tag,
+
+	Recipe_With_Water_Tag,
+
+	Relic_Archeology,
+
+	Relic_Chest,
+
+	Tag_Beaver,
+
+	Tag_Blight,
+
+	Tag_Event_Send_To_Citadel_Reward,
+
+	Tag_Fox,
+
+	Tag_Frog,
+
+	Tag_Harpy,
+
+	Tag_Human,
+
+	Tag_Lizzard,
+
+	Tag_Metal_Bars_In_Recipe,
+
+	Tag_Profession_Blight_Fighters,
+
+	Tag_Profession_Firekeeper,
+
+	Tag_Profession_Miner,
+
+	Tag_Profession_Scout,
+
+	Tag_Profession_Woodcutter,
+
+	Tag_Rainpunk,
+
+	Tag_Requires_Fertile_Soil,
+
+	Tag_Storage_Haulers,
+
+	Tag_Trade,
 
 
-	MAX = 63
+
+	MAX = 67
 }
 
 public static class TagTypesExtensions
@@ -86,8 +159,8 @@ public static class TagTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new TagTypes[63];
-			for (int i = 0; i < 63; i++)
+			s_All = new TagTypes[67];
+			for (int i = 0; i < 67; i++)
 			{
 				s_All[i] = (TagTypes)(i+1);
 			}
@@ -95,6 +168,11 @@ public static class TagTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every TagTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return TagTypes.Aggregation_Tag_Caches in the enum and log an error.
+	/// </summary>
 	public static string ToName(this TagTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -106,6 +184,11 @@ public static class TagTypesExtensions
 		return TypeToInternalName[TagTypes.Aggregation_Tag_Caches];
 	}
 	
+	/// <summary>
+	/// Returns a TagTypes associated with the given name.
+	/// Every TagTypes should have a unique name as to distinguish it from others.
+	/// If no TagTypes is found, it will return TagTypes.Unknown and log a warning.
+	/// </summary>
 	public static TagTypes ToTagTypes(this string name)
 	{
 		foreach (KeyValuePair<TagTypes,string> pair in TypeToInternalName)
@@ -120,9 +203,15 @@ public static class TagTypesExtensions
 		return TagTypes.Unknown;
 	}
 	
-	public static ModelTag ToModelTag(this string name)
+	/// <summary>
+	/// Returns a ModelTag associated with the given name.
+	/// ModelTag contain all the data that will be used in the game.
+	/// Every ModelTag should have a unique name as to distinguish it from others.
+	/// If no ModelTag is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.ModelTag ToModelTag(this string name)
 	{
-		ModelTag model = SO.Settings.tags.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.ModelTag model = SO.Settings.tags.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -132,15 +221,27 @@ public static class TagTypesExtensions
 		return null;
 	}
 
-	public static ModelTag ToModelTag(this TagTypes types)
+    /// <summary>
+    /// Returns a ModelTag associated with the given TagTypes.
+    /// ModelTag contain all the data that will be used in the game.
+    /// Every ModelTag should have a unique name as to distinguish it from others.
+    /// If no ModelTag is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.ModelTag ToModelTag(this TagTypes types)
 	{
 		return types.ToName().ToModelTag();
 	}
 	
-	public static ModelTag[] ToModelTagArray(this IEnumerable<TagTypes> collection)
+	/// <summary>
+	/// Returns an array of ModelTag associated with the given TagTypes.
+	/// ModelTag contain all the data that will be used in the game.
+	/// Every ModelTag should have a unique name as to distinguish it from others.
+	/// If a ModelTag is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.ModelTag[] ToModelTagArray(this IEnumerable<TagTypes> collection)
 	{
 		int count = collection.Count();
-		ModelTag[] array = new ModelTag[count];
+		Eremite.Model.ModelTag[] array = new Eremite.Model.ModelTag[count];
 		int i = 0;
 		foreach (TagTypes element in collection)
 		{
@@ -150,10 +251,16 @@ public static class TagTypesExtensions
 		return array;
 	}
 	
-	public static ModelTag[] ToModelTagArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of ModelTag associated with the given TagTypes.
+	/// ModelTag contain all the data that will be used in the game.
+	/// Every ModelTag should have a unique name as to distinguish it from others.
+	/// If a ModelTag is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.ModelTag[] ToModelTagArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		ModelTag[] array = new ModelTag[count];
+		Eremite.Model.ModelTag[] array = new Eremite.Model.ModelTag[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -162,7 +269,51 @@ public static class TagTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of ModelTag associated with the given TagTypes.
+	/// ModelTag contain all the data that will be used in the game.
+	/// Every ModelTag should have a unique name as to distinguish it from others.
+	/// If a ModelTag is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.ModelTag[] ToModelTagArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.ModelTag>.Get(out List<Eremite.Model.ModelTag> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.ModelTag model = element.ToModelTag();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of ModelTag associated with the given TagTypes.
+	/// ModelTag contain all the data that will be used in the game.
+	/// Every ModelTag should have a unique name as to distinguish it from others.
+	/// If a ModelTag is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.ModelTag[] ToModelTagArrayNoNulls(this IEnumerable<TagTypes> collection)
+	{
+		using(ListPool<Eremite.Model.ModelTag>.Get(out List<Eremite.Model.ModelTag> list))
+		{
+			foreach (TagTypes element in collection)
+			{
+				Eremite.Model.ModelTag model = element.ToModelTag();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<TagTypes, string> TypeToInternalName = new()
 	{
 		{ TagTypes.Aggregation_Tag_Caches, "Aggregation Tag - Caches" }, 
@@ -193,6 +344,8 @@ public static class TagTypesExtensions
 		{ TagTypes.Aggregation_Tag_Ruins, "Aggregation Tag - Ruins" }, 
 		{ TagTypes.Aggregation_Tag_Storages, "Aggregation Tag - Storages" }, 
 		{ TagTypes.Building_Material_Tag, "Building Material Tag" }, 
+		{ TagTypes.Complex_Food_Tag, "Complex Food Tag" }, 
+		{ TagTypes.Copper_Bar_And_Crystalized_Tag, "Copper Bar and Crystalized Tag" }, 
 		{ TagTypes.Fabric_Tag, "Fabric Tag" }, 
 		{ TagTypes.Farm_Recipe_Tag, "Farm Recipe Tag" }, 
 		{ TagTypes.Fishing_Tag, "Fishing Tag" }, 
@@ -221,7 +374,9 @@ public static class TagTypesExtensions
 		{ TagTypes.Tag_Human, "[Tag] Human" }, 
 		{ TagTypes.Tag_Lizzard, "[Tag] Lizzard" }, 
 		{ TagTypes.Tag_Metal_Bars_In_Recipe, "[Tag] Metal Bars in recipe" }, 
+		{ TagTypes.Tag_Profession_Blight_Fighters, "[Tag] Profession - Blight Fighters" }, 
 		{ TagTypes.Tag_Profession_Firekeeper, "[Tag] Profession - Firekeeper" }, 
+		{ TagTypes.Tag_Profession_Miner, "[Tag] Profession - Miner" }, 
 		{ TagTypes.Tag_Profession_Scout, "[Tag] Profession - Scout" }, 
 		{ TagTypes.Tag_Profession_Woodcutter, "[Tag] Profession - Woodcutter" }, 
 		{ TagTypes.Tag_Rainpunk, "[Tag] Rainpunk" }, 

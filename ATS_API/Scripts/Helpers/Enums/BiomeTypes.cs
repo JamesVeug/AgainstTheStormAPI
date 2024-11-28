@@ -1,31 +1,99 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.WorldMap;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum BiomeTypes
 {
 	Unknown = -1,
 	None,
-	Bay,                    // Coastal Grove - These lands have been underwater for centuries, allowing a dense forest of algae to flourish. The surrounding seawater has almost completely cut off the area from the rest of the kingdom, leaving the nearby marshes almost untouched and full of the remains of ancient settlements.
-	Capital,                // Citadel
-	Coral_Forest,           // Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
-	Cursed_Royal_Woodlands, // Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
-	Moorlands,              // Scarlet Orchard - A beautiful yet dangerous land that is colored a strange shade of crimson. It's called the Herb Garden of the Kingdom due to its abundance of herbs, berries, and roots.
-	Royal_Woodlands,        // Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
-	Sealed_Biome,           // Sealed Forest - Somewhere in this thick and dark forest, an ancient seal is hidden. Even the Ancients, in all their might and glory, couldn't defeat the creatures slumbering below - so they just imprisoned them. Over millennia, their sinister power gradually seeped to the surface, infecting the fauna and flora of this region. Viceroys don't embark here to establish settlements or gain reputation - their main goal is simply to find and close the seal.
-	The_Marshlands,         // Marshlands - A harsh and cold land that has been claimed by many different, and extremely resilient species of fungi. The ground here is extremely hard and rocky, making it difficult to farm. This region is most famous for the giant organisms that can be found in its forests.
-	Tutorial_I,             // Tutorial - Tutorial
-	Tutorial_II,            // Tutorial - Tutorial
-	Tutorial_III,           // Tutorial - Tutorial
-	Tutorial_IV,            // Tutorial - Tutorial
+	
+	/// <summary>
+	/// Coastal Grove - These lands have been underwater for centuries, allowing a dense forest of algae to flourish. The surrounding seawater has almost completely cut off the area from the rest of the kingdom, leaving the nearby marshes almost untouched and full of the remains of ancient settlements.
+	/// </summary>
+	/// <name>Bay</name>
+	Bay,
+
+	/// <summary>
+	/// Citadel
+	/// </summary>
+	/// <name>Capital</name>
+	Capital,
+
+	/// <summary>
+	/// Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
+	/// </summary>
+	/// <name>Coral Forest</name>
+	Coral_Forest,
+
+	/// <summary>
+	/// Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
+	/// </summary>
+	/// <name>Cursed Royal Woodlands</name>
+	Cursed_Royal_Woodlands,
+
+	/// <summary>
+	/// Scarlet Orchard - A beautiful yet dangerous land that is colored a strange shade of crimson. It's called the Herb Garden of the Kingdom due to its abundance of herbs, berries, and roots.
+	/// </summary>
+	/// <name>Moorlands</name>
+	Moorlands,
+
+	/// <summary>
+	/// Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
+	/// </summary>
+	/// <name>Royal Woodlands</name>
+	Royal_Woodlands,
+
+	/// <summary>
+	/// Sealed Forest - Somewhere in this thick and dark forest, an ancient seal is hidden. Even the Ancients, in all their might and glory, couldn't defeat the creatures slumbering below - so they just imprisoned them. Over millennia, their sinister power gradually seeped to the surface, infecting the fauna and flora of this region. Viceroys don't embark here to establish settlements or gain reputation - their main goal is simply to find and close the seal.
+	/// </summary>
+	/// <name>Sealed Biome</name>
+	Sealed_Biome,
+
+	/// <summary>
+	/// Marshlands - A harsh and cold land that has been claimed by many different, and extremely resilient species of fungi. The ground here is extremely hard and rocky, making it difficult to farm. This region is most famous for the giant organisms that can be found in its forests.
+	/// </summary>
+	/// <name>The Marshlands</name>
+	The_Marshlands,
+
+	/// <summary>
+	/// Tutorial - Tutorial
+	/// </summary>
+	/// <name>Tutorial I</name>
+	Tutorial_I,
+
+	/// <summary>
+	/// Tutorial - Tutorial
+	/// </summary>
+	/// <name>Tutorial II</name>
+	Tutorial_II,
+
+	/// <summary>
+	/// Tutorial - Tutorial
+	/// </summary>
+	/// <name>Tutorial III</name>
+	Tutorial_III,
+
+	/// <summary>
+	/// Tutorial - Tutorial
+	/// </summary>
+	/// <name>Tutorial IV</name>
+	Tutorial_IV,
+
+	/// <summary>
+	/// Ashen Thicket - Once a thriving forest of giant ashen trees, this land has been ravaged by relentless industrial exploitation and heavy mining, all driven by the lure of Thunderblight Shards - magically charged amber crystals used to craft cornerstones.
+	/// </summary>
+	/// <name>Wasteland</name>
+	Wasteland,
 
 
-	MAX = 12
+
+	MAX = 13
 }
 
 public static class BiomeTypesExtensions
@@ -35,8 +103,8 @@ public static class BiomeTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new BiomeTypes[12];
-			for (int i = 0; i < 12; i++)
+			s_All = new BiomeTypes[13];
+			for (int i = 0; i < 13; i++)
 			{
 				s_All[i] = (BiomeTypes)(i+1);
 			}
@@ -44,6 +112,11 @@ public static class BiomeTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every BiomeTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return BiomeTypes.Bay in the enum and log an error.
+	/// </summary>
 	public static string ToName(this BiomeTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -55,6 +128,11 @@ public static class BiomeTypesExtensions
 		return TypeToInternalName[BiomeTypes.Bay];
 	}
 	
+	/// <summary>
+	/// Returns a BiomeTypes associated with the given name.
+	/// Every BiomeTypes should have a unique name as to distinguish it from others.
+	/// If no BiomeTypes is found, it will return BiomeTypes.Unknown and log a warning.
+	/// </summary>
 	public static BiomeTypes ToBiomeTypes(this string name)
 	{
 		foreach (KeyValuePair<BiomeTypes,string> pair in TypeToInternalName)
@@ -69,9 +147,15 @@ public static class BiomeTypesExtensions
 		return BiomeTypes.Unknown;
 	}
 	
-	public static BiomeModel ToBiomeModel(this string name)
+	/// <summary>
+	/// Returns a BiomeModel associated with the given name.
+	/// BiomeModel contain all the data that will be used in the game.
+	/// Every BiomeModel should have a unique name as to distinguish it from others.
+	/// If no BiomeModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.WorldMap.BiomeModel ToBiomeModel(this string name)
 	{
-		BiomeModel model = SO.Settings.biomes.FirstOrDefault(a=>a.name == name);
+		Eremite.WorldMap.BiomeModel model = SO.Settings.biomes.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -81,15 +165,27 @@ public static class BiomeTypesExtensions
 		return null;
 	}
 
-	public static BiomeModel ToBiomeModel(this BiomeTypes types)
+    /// <summary>
+    /// Returns a BiomeModel associated with the given BiomeTypes.
+    /// BiomeModel contain all the data that will be used in the game.
+    /// Every BiomeModel should have a unique name as to distinguish it from others.
+    /// If no BiomeModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.WorldMap.BiomeModel ToBiomeModel(this BiomeTypes types)
 	{
 		return types.ToName().ToBiomeModel();
 	}
 	
-	public static BiomeModel[] ToBiomeModelArray(this IEnumerable<BiomeTypes> collection)
+	/// <summary>
+	/// Returns an array of BiomeModel associated with the given BiomeTypes.
+	/// BiomeModel contain all the data that will be used in the game.
+	/// Every BiomeModel should have a unique name as to distinguish it from others.
+	/// If a BiomeModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.WorldMap.BiomeModel[] ToBiomeModelArray(this IEnumerable<BiomeTypes> collection)
 	{
 		int count = collection.Count();
-		BiomeModel[] array = new BiomeModel[count];
+		Eremite.WorldMap.BiomeModel[] array = new Eremite.WorldMap.BiomeModel[count];
 		int i = 0;
 		foreach (BiomeTypes element in collection)
 		{
@@ -99,10 +195,16 @@ public static class BiomeTypesExtensions
 		return array;
 	}
 	
-	public static BiomeModel[] ToBiomeModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of BiomeModel associated with the given BiomeTypes.
+	/// BiomeModel contain all the data that will be used in the game.
+	/// Every BiomeModel should have a unique name as to distinguish it from others.
+	/// If a BiomeModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.WorldMap.BiomeModel[] ToBiomeModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		BiomeModel[] array = new BiomeModel[count];
+		Eremite.WorldMap.BiomeModel[] array = new Eremite.WorldMap.BiomeModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -111,7 +213,51 @@ public static class BiomeTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of BiomeModel associated with the given BiomeTypes.
+	/// BiomeModel contain all the data that will be used in the game.
+	/// Every BiomeModel should have a unique name as to distinguish it from others.
+	/// If a BiomeModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.WorldMap.BiomeModel[] ToBiomeModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.WorldMap.BiomeModel>.Get(out List<Eremite.WorldMap.BiomeModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.WorldMap.BiomeModel model = element.ToBiomeModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of BiomeModel associated with the given BiomeTypes.
+	/// BiomeModel contain all the data that will be used in the game.
+	/// Every BiomeModel should have a unique name as to distinguish it from others.
+	/// If a BiomeModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.WorldMap.BiomeModel[] ToBiomeModelArrayNoNulls(this IEnumerable<BiomeTypes> collection)
+	{
+		using(ListPool<Eremite.WorldMap.BiomeModel>.Get(out List<Eremite.WorldMap.BiomeModel> list))
+		{
+			foreach (BiomeTypes element in collection)
+			{
+				Eremite.WorldMap.BiomeModel model = element.ToBiomeModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<BiomeTypes, string> TypeToInternalName = new()
 	{
 		{ BiomeTypes.Bay, "Bay" },                                       // Coastal Grove - These lands have been underwater for centuries, allowing a dense forest of algae to flourish. The surrounding seawater has almost completely cut off the area from the rest of the kingdom, leaving the nearby marshes almost untouched and full of the remains of ancient settlements.
@@ -126,6 +272,7 @@ public static class BiomeTypesExtensions
 		{ BiomeTypes.Tutorial_II, "Tutorial II" },                       // Tutorial - Tutorial
 		{ BiomeTypes.Tutorial_III, "Tutorial III" },                     // Tutorial - Tutorial
 		{ BiomeTypes.Tutorial_IV, "Tutorial IV" },                       // Tutorial - Tutorial
+		{ BiomeTypes.Wasteland, "Wasteland" },                           // Ashen Thicket - Once a thriving forest of giant ashen trees, this land has been ravaged by relentless industrial exploitation and heavy mining, all driven by the lure of Thunderblight Shards - magically charged amber crystals used to craft cornerstones.
 
 	};
 }

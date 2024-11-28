@@ -1,351 +1,2019 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum RelicTypes
 {
 	Unknown = -1,
 	None,
-	AncientBurrialGrounds,                     // Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
-	AncientGate,                               // Dark Gate - A strange monument of cyclopean proportions. Heavy storm clouds seem to be gathering around the settlement.
-	AncientShrine_T1,                          // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
-	AncientTemple,                             // Forgotten Temple of the Sun - Who would worship the sun in a world with so little sunlight?
-	Angry_Ghost_1,                             // Ghost of a Blight Fighter Captain - I let us down and was defeated by the Blightrot... but you can avenge me! Kill it with fire!!!
-	Angry_Ghost_10,                            // Ghost of a Suppressed Rebel - I was leading a rebellion against the Queen's tyrannical rule, but the Royal Guard found us. Carry on my legacy!
-	Angry_Ghost_14,                            // Ghost of a Resentful Human - Humans deserve to be treated better than the others! Without us, you’d never achieve anything. If you don’t meet our basic needs, we’ll take our revenge!
-	Angry_Ghost_15,                            // Ghost of the Queen's Lickspittle - I challenge you, viceroy! Do you consider yourself worthy of the Queen's glance? Prove it. Time is ticking.
-	Angry_Ghost_16,                            // Ghost of a Lizard Leader - I'm so sick of these Beavers! They’re the bane of this kingdom! They deserve nothing but condemnation for what they did to us. I order you to torment them - or I'll do it myself!
-	Angry_Ghost_17,                            // Ghost of a Tortured Harpy - They took our homes and our crops. They desecrated our culture, and in the end, they took our lives. The time of contempt has come.
-	Angry_Ghost_18,                            // Ghost of a Beaver Engineer - These fanatics should pay for their heresies! They are dangerous, wild, and unpredictable creatures. Teach these savages, once and for all.
-	Angry_Ghost_19,                            // Ghost of a Poisoned Human - We will no longer tolerate those upturned beaks roaming the settlement freely. Everyone must learn the truth about how the Harpy alchemists poisoned us to seize power!
-	Angry_Ghost_2,                             // Ghost of a Mad Alchemist - I have studied the Blightrot all my life. Nobody believes me, but the cysts are essential for the ecosystem! Grow them and find out yourself!
-	Angry_Ghost_20,                            // Ghost of a Lizard Worker - Self-righteous Beavers only want to bask in the luxuries we’ve worked so hard for. Time to end this injustice!
-	Angry_Ghost_21,                            // Ghost of a Starved Harpy - Greedy Human farmers always want to keep all the crops for themselves. Those traitors hid everything from us, and pretended the crops were rotten!
-	Angry_Ghost_24,                            // Ghost of an Innkeeper - We worked so hard, and put our lives in danger every day. If you don't let your villagers rest, I will make sure your soul never finds peace.
-	Angry_Ghost_31,                            // Ghost of a Lizard Elder - It was them! I'm sure of it! I remember their blank, blight-tainted gaze! They ambushed me in the forest! Please, avenge me!
-	Angry_Ghost_32,                            // Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
-	Angry_Ghost_34,                            // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
-	Angry_Ghost_4,                             // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
-	Angry_Ghost_41,                            // Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
-	Angry_Ghost_5,                             // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
-	Angry_Ghost_6,                             // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
-	Angry_Ghost_9,                             // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
-	AngryGhostChest_T1,                        // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
-	BeaverBattleground_T1,                     // Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
-	Black_Stag,                                // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
-	Black_Treasure_Stag,                       // Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
-	Blightrot,                                 // Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
-	Blightrot_Cauldron,                        // Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
-	Blightrot_Clone,                           // Blood Flower (Clone) - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
-	Calm_Ghost_11,                             // Ghost of a Defeated Viceroy - A long time ago, I founded a prosperous settlement. Everything was fine, until one of our scouts discovered something terrifying in the forest. Please, help restore at least a scrap of my legacy.
-	Calm_Ghost_12,                             // Ghost of a Druid - Many viceroys disregard nature. Don't make the same mistake. Be a good example to your people.
-	Calm_Ghost_13,                             // Ghost of a Royal Gardener - In these difficult times, beauty helps us forget our troubles. Decorate your village, and your villagers will thank you.
-	Calm_Ghost_22,                             // Ghost of a Hooded Knight - I promised my Queen that I would cleanse this forest of all the horrors that lived here. One night, my mount got frightened by the storm, and we fell into the Fishmen's nets. My mission must be completed!
-	Calm_Ghost_23,                             // Ghost of a Fire Priest - Spread the word about the power of the Holy Fire! Only it can save us from the storm's wrath. Gather the villagers in the chapel and pray!
-	Calm_Ghost_25,                             // Ghost of a Treasure Hunter - If your eyes sparkle at the sight of gold, I have an offer for you. All you have to do is prove that you are one of us, and I will give you my treasure.
-	Calm_Ghost_26,                             // Ghost of a Royal Architect - The foundation of success is a thriving settlement. Without solid walls, you won't survive here. Create something you can be proud of.
-	Calm_Ghost_27,                             // Ghost of a Worried Carter - The last thing I remember is lightning hitting my caravan. The settlements are still waiting for the goods they ordered. If you deliver them, I’ll see that you’re rewarded.
-	Calm_Ghost_28,                             // Ghost of a Storm Victim - Let the fire burn in the Hearth and grow in all its strength. Sacrifice your goods, and help the villagers weather the storm!
-	Calm_Ghost_29,                             // Ghost of a Mourning Harpy - Our flock has been in mourning for many years. We will never forget the war. Please, rekindle the hope in the Harpies' hearts.
-	Calm_Ghost_3,                              // Ghost of a Terrified Woodcutter - I lived in a very prosperous settlement, but our viceroy was greedy and didn't care about the forest at all! In the end, it brought doom upon us. Refrain from greed, and calm the forest.
-	Calm_Ghost_30,                             // Ghost of a Lizard General - My army fought bravely against all odds. Many of us paid the ultimate price. Please, show your respect to those who survived. I'll take care of the fallen.
-	Calm_Ghost_33,                             // Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
-	Calm_Ghost_35,                             // Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
-	Calm_Ghost_36,                             // Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
-	Calm_Ghost_38,                             // Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
-	Calm_Ghost_39,                             // Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
-	Calm_Ghost_40,                             // Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
-	Calm_Ghost_7,                              // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
-	Calm_Ghost_8,                              // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
-	CalmGhostChest_T1,                         // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
-	Camp_T1,                                   // Small Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
-	Camp_T2,                                   // Large Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
-	Caravan_T1,                                // Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
-	Caravan_T2,                                // Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
-	Corrupted_Caravan,                         // Corrupted Caravan - A large caravan abandoned in the woods, overgrown with Blightrot Cysts. They must have fed on the transported goods... or people.
-	DebugNode_ClayBig,                         // Clay Deposit (Large) - Soil infused with the essence of the rain.
-	DebugNode_ClaySmall,                       // Clay Deposit (Small) - Soil infused with the essence of the rain.
-	DebugNode_DewberryBushBig,                 // Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain.
-	DebugNode_DewberryBushSmall,               // Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain.
-	DebugNode_FlaxBig,                         // Flax Field (Large) - Resilient plants that are perfect for cloth-making.
-	DebugNode_FlaxSmall,                       // Flax Field (Small) - Resilient plants that are perfect for cloth-making.
-	DebugNode_HerbsBig,                        // Herb Node (Large) - A dense shrub, full of many useful plant species.
-	DebugNode_HerbsSmall,                      // Herb Node (Small) - A dense shrub, full of many useful plant species.
-	DebugNode_LeechBroodmotherBig,             // Leech Broodmother (Large) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
-	DebugNode_LeechBroodmotherSmall,           // Leech Broodmother (Small) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
-	DebugNode_Marshlands_InfiniteGrain,        // Ancient Proto Wheat - A wild type of grain, mutated by an invasive species of fungi.
-	DebugNode_Marshlands_InfiniteMeat,         // Dead Leviathan - A giant, dead beast. How did it get here?
-	DebugNode_Marshlands_InfiniteMushroom,     // Giant Proto Fungus - An ancient and mysterious organism. Proto fungi are sometimes referred to as the living and breathing hearts of the Marshlands.
-	DebugNode_MarshlandsMushroomBig,           // Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
-	DebugNode_MarshlandsMushroomSmall,         // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
-	DebugNode_MossBroccoliBig,                 // Moss Broccoli Patch (Large) - An edible and tasty type of moss.
-	DebugNode_MossBroccoliSmall,               // Moss Broccoli Patch (Small) - An edible and tasty type of moss.
-	DebugNode_MushroomBig,                     // Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
-	DebugNode_MushroomSmall,                   // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
-	DebugNode_ReedBig,                         // Reed Field (Large) - A very common plant, it thrives thanks to the magical rain.
-	DebugNode_ReedSmall,                       // Reed Field (Small) - A very common plant, it thrives thanks to the magical rain.
-	DebugNode_RootsBig,                        // Root Deposit (Large) - A tangled net of living vines.
-	DebugNode_RootsSmall,                      // Root Deposit (Small) - A tangled net of living vines.
-	DebugNode_SeaMarrowBig,                    // Sea Marrow Deposit (Large) - Ancient fossils, rich in resources.
-	DebugNode_SeaMarrowSmall,                  // Sea Marrow Deposit (Small) - Ancient fossils, rich in resources.
-	DebugNode_SnailBroodmotherBig,             // Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
-	DebugNode_SnailBroodmotherSmall,           // Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
-	DebugNode_SnakeNestBig,                    // Snake Nest (Large) - A dangerous, but rich source of food and leather.
-	DebugNode_SnakeNestSmall,                  // Snake Nest (Small) - A dangerous, but rich source of food and leather.
-	DebugNode_StoneBig,                        // Stone Deposit (Large) - Stones, weathered by the everlasting rain.
-	DebugNode_StoneSmall,                      // Stone Deposit (Small) - Stones, weathered by the everlasting rain.
-	DebugNode_StormbirdNestBig,                // Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
-	DebugNode_StormbirdNestSmall,              // Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
-	DebugNode_SwampWheatBig,                   // Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp.
-	DebugNode_SwampWheatSmall,                 // Swamp Wheat Field (Small) - A plant species that’s right at home in the swamp.
-	DebugNode_WormtongueNestBig,               // Wormtongue Nest (Large) - A nest full of tasty wormtongues.
-	DebugNode_WormtongueNestSmall,             // Wormtongue Nest (Small) - A nest full of tasty wormtongues.
-	Decay_Altar,                               // Altar of Decay - A sinister stone structure created to worship the Blightrot. Cultists have engraved the inscription: "Nothing escapes death".
-	Escaped_Convicts,                          // Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
-	Fishmen_Cave,                              // Fishmen Cave - It looks abandoned, but what if it's not? A terrible fishy smell comes from within.
-	Fishmen_Lighthouse,                        // Fishmen Lighthouse - Once upon a time, there must have been a coast and a harbor here. Now this place is haunted by Fishmen and the waters have withdrawn. An ominous light is coming from the top of the lighthouse.
-	Fishmen_Outpost,                           // Fishmen Outpost - Fishmen aren't usually a threat, but they can be a real nuisance after a while.
-	Fishmen_Soothsayer,                        // Fishman Soothsayer - An old wandering soothsayer, teeming with magic. He does not speak, though you can hear his voice. His eyes are blank, yet you can feel his gaze. He is not afraid of death, he stands by its side.
-	Fishmen_Totem,                             // Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
-	ForsakenCrypt,                             // Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
-	FoxBattleground_T1,                        // Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
-	FrogBattleground_T1,                       // Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
-	Fuming_Machinery,                          // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
-	Giant_Stormbird,                           // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
-	Glade_Trader_The_Hermit,                   // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
-	Glade_Trader_The_Seer,                     // Wandering Merchant - Seer - A strange woman is observing the settlement from afar.
-	Glade_Trader_The_Shaman,                   // Wandering Merchant - Shaman - A mysterious and imposing figure has been spotted near the settlement. He is pulling a wagon full of herbs and ointments.
-	Gold_Stag,                                 // Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
-	Gold_Treasure_Stag,                        // Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
-	Harmony_Spirit_Altar,                      // Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
-	HarpyBattleground_T1,                      // Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
-	Haunted_Ruined_Beaver_House,               // Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Brewery,                    // Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Cellar,                     // Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Cooperage,                  // Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Druid,                      // Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Fox_House,                  // Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Frog_House,                 // Haunted Frog House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Guild_House,                // Haunted Guild House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Harpy_House,                // Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Herb_Garden,                // Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Human_House,                // Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Leatherworks,               // Haunted Leatherworker - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Lizard_House,               // Haunted Lizard House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Market,                     // Haunted Market - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Rainmill,                   // Haunted Rain Mill - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_SmallFarm,                  // Haunted Small Farm - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Smelter,                    // Haunted Smelter - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	Haunted_Ruined_Temple,                     // Haunted Temple - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	HumanBattleground_T1,                      // Fallen Human Explorers - A group of fallen Human explorers. They were probably looking for a place to settle, far from the Queen's watchful eyes... The sight causes uneasiness amongst the Human population.
-	Infected_Mole,                             // Infected Drainage Mole - One of the mythical guardians of the forest - still alive, but plagued by a mysterious disease. The Blightrot has taken over his mind, causing an unstoppable rage. You can try to heal him... or whisper prayers to its new masters.
-	Infected_Tree,                             // Withered Tree - The once mighty tree has been deformed by the Blightrot living in its root system. The Blightrot poisons the tree's tissues, leading to its long-lasting degradation.
-	Kelpie,                                    // River Kelpie - A legendary, shape-shifting aquatic spirit that lurks near water and mesmerizes travelers. It is said that whoever acquires the kelpie's bridle will be able to control it.
-	Leaking_Cauldron,                          // Leaking Cauldron - An old, broken piece of Rainpunk technology. It's contaminating the soil around it.
-	Lightning_Catcher,                         // Lightning Catcher - A weird contraption that attracts lightning. Its proximity to the settlement might have grave consequences.
-	LizardBattleground_T1,                     // Fallen Lizard Hunters - A group of fallen Lizard hunters... The sight causes unrest amongst the Lizard population.
-	Merchant_Ship_Wreck,                       // Merchant Shipwreck - How powerful must the storm surge have been to carry this shattered wreck all the way here? Perhaps in the distant past, there was a sea here? It looks as if it’s been lying here for centuries. Strange voices can be heard coming from below deck...
-	Mistworm_T1,                               // Hungry Mistworm - A small, yet dangerous creature. It normally lives underground or hides in the mist, but this one seems to be more courageous than its kin.
-	Mole,                                      // Drainage Mole - A wild beast that usually lives underground. It was forced to the surface for some reason.
-	Monolith,                                  // Obelisk - A mystical stone monument. Unknown runes are carved all over its surface.
-	Noxious_Machinery,                         // Noxious Machinery - A damaged and abandoned rainpunk contraption. The area was probably deserted because of a significant explosion risk. The machine's valves emit a distinct Blightrot odor.
-	PetrifiedTree_T1,                          // Petrified Tree - A strange tree that’s been turned to stone by the rain. It's radiating its sickness to the other trees around it.
-	Rain_Totem,                                // Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
-	Rainpunk_Drill_Coal,                       // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
-	Rainpunk_Drill_Copper,                     // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
-	RainpunkFactory,                           // Destroyed Rainpunk Foundry - An old, abandoned piece of advanced Rainpunk technology. It seems extremely unstable - but maybe it can be rebuilt...
-	RewardChest_T1,                            // Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
-	RewardChest_T2,                            // Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
-	RewardChest_T3,                            // Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
-	Ruined_Advanced_Rain_Catcher,              // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Advanced_Rain_Catcher_no_Reward,    // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Alchemist,                          // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Alchemist_no_Reward,                // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Apothecary,                         // Apothecary - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Apothecary_no_Reward,               // Apothecary - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Artisan,                            // Artisan - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Artisan_no_Reward,                  // Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Bakery,                             // Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Bakery_no_Reward,                   // Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Bath_House,                         // Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Bath_House_no_Reward,               // Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Beanery,                            // Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Beanery_no_Reward,                  // Beanery - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Beaver_House,                       // Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Beaver_House_no_Reward,             // Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Big_Shelter,                        // Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Big_Shelter_no_Reward,              // Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Brewery,                            // Brewery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Brewery_no_Reward,                  // Brewery - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Brick_Oven,                         // Brick Oven - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Brick_Oven_no_Reward,               // Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Brickyard,                          // Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Brickyard_no_Reward,                // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Butcher,                            // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Butcher_no_Reward,                  // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Cannery,                            // Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Cannery_no_Reward,                  // Cannery - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Carpenter,                          // Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Carpenter_no_Reward,                // Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Cellar,                             // Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Cellar_no_Reward,                   // Cellar - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Clan_Hall,                          // Clan Hall - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Clan_Hall_no_Reward,                // Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Clay_Pit,                           // Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Clay_Pit_no_Reward,                 // Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Cobbler,                            // Cobbler - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Cobbler_no_Reward,                  // Cobbler - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Cookhouse,                          // Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Cookhouse_no_Reward,                // Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Cooperage,                          // Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Cooperage_no_Reward,                // Cooperage - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Crude_Workstation_no_Reward,        // Crude Workstation - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Distillery,                         // Distillery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Distillery_no_Reward,               // Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Druid,                              // Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Druid_no_Reward,                    // Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Explorers_Lodge,                    // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Explorers_Lodge_no_Reward,          // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Farm,                               // Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Farm_no_Reward,                     // Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Field_Kitchen_no_Reward,            // Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Finesmith,                          // Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Finesmith_no_Reward,                // Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Fishing_Hut,                        // Fishing Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Fishing_Hut_no_Reward,              // Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Fishing_Hut_Primitive_no_Reward,    // Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Foragers_Camp,                      // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Foragers_Camp_no_Reward,            // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Foragers_Camp_Primitive_no_Reward,  // Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Forum,                              // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Forum_no_Reward,                    // Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Fox_House,                          // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Fox_House_no_Reward,                // Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Frog_House_no_Reward,               // Frog House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Furnace,                            // Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Furnace_no_Reward,                  // Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Granary,                            // Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Granary_no_Reward,                  // Granary - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Greenhouse,                         // Greenhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Greenhouse_no_Reward,               // Greenhouse - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Grill,                              // Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Grill_no_Reward,                    // Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Grove,                              // Forester's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Grove_no_Reward,                    // Forester's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Guild_House,                        // Guild House - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Guild_House_no_Reward,              // Guild House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Harpy_House,                        // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Harpy_House_no_Reward,              // Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Harvester_Camp,                     // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Harvester_Camp_no_Reward,           // Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Herb_Garden,                        // Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Herb_Garden_no_Reward,              // Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Herbalist_Camp,                     // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Herbalist_Camp_no_Reward,           // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Herbalist_Camp_Primitive_no_Reward, // Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Human_House,                        // Human House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Human_House_no_Reward,              // Human House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Kiln,                               // Kiln - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Kiln_no_Reward,                     // Kiln - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Leatherworks,                       // Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Leatherworks_no_Reward,             // Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Lizard_House,                       // Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Lizard_House_no_Reward,             // Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Lumbermill,                         // Lumber Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Lumbermill_no_Reward,               // Lumber Mill - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Makeshift_Post_no_Reward,           // Makeshift Post - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Manufatory,                         // Manufactory - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Manufatory_no_Reward,               // Manufactory - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Market,                             // Market - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Market_no_Reward,                   // Market - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Mine_no_Reward,                     // Mine - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Monastery,                          // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Monastery_no_Reward,                // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Pantry,                             // Pantry - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Pantry_no_Reward,                   // Pantry - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Plantation,                         // Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Plantation_no_Reward,               // Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Press,                              // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Press_no_Reward,                    // Press - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Provisioner,                        // Provisioner - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Provisioner_no_Reward,              // Provisioner - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Rain_Catcher_no_Reward,             // Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Rainmill,                           // Rain Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Rainmill_no_Reward,                 // Rain Mill - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Ranch,                              // Ranch - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Ranch_no_Reward,                    // Ranch - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Scribe,                             // Scribe - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Scribe_no_Reward,                   // Scribe - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Sewer,                              // Clothier - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Sewer_no_Reward,                    // Clothier - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Shelter,                            // Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Shelter_no_Reward,                  // Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_SmallFarm,                          // Small Farm - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_SmallFarm_no_Reward,                // Small Farm - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Smelter,                            // Smelter - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Smelter_no_Reward,                  // Smelter - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Smithy,                             // Smithy - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Smithy_no_Reward,                   // Smithy - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Smokehouse,                         // Smokehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Smokehouse_no_Reward,               // Smokehouse - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Stamping_Mill,                      // Stamping Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Stamping_Mill_no_Reward,            // Stamping Mill - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Stonecutter_Camp,                   // Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Stonecutter_Camp_no_Reward,         // Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Storage,                            // Small Warehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Storage_no_Reward,                  // Small Warehouse - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Supplier,                           // Supplier - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Supplier_no_Reward,                 // Supplier - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Tavern,                             // Tavern - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Tavern_no_Reward,                   // Tavern - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Tea_Doctor,                         // Tea Doctor - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Tea_Doctor_no_Reward,               // Tea Doctor - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Tea_House,                          // Teahouse - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Tea_House_no_Reward,                // Teahouse - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Temple,                             // Temple - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Temple_no_Reward,                   // Temple - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Tinctury,                           // Tinctury - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Tinctury_no_Reward,                 // Tinctury - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Tinkerer,                           // Tinkerer - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Tinkerer_no_Reward,                 // Tinkerer - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Toolshop,                           // Toolshop - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Toolshop_no_Reward,                 // Toolshop - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Trading_Post_no_Reward,             // Trading Post - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Trappers_Camp,                      // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Trappers_Camp_no_Reward,            // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Trappers_Camp_Primitive_no_Reward,  // Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Weaver,                             // Weaver - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Weaver_no_Reward,                   // Weaver - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Woodcutters_Camp,                   // Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Woodcutters_Camp_no_Reward,         // Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
-	Ruined_Workshop,                           // Workshop - A building destroyed by the storm. It can be rebuilt or salvaged.
-	Ruined_Workshop_no_Reward,                 // Workshop - A building destroyed by the storm. It can be rebuilt or demolished.
-	Sacrifice_Totem,                           // Totem of Denial - A religious structure built by the Fishmen. It interferes with the Hearth in the center of the settlement.
-	Scorpion_1,                                // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
-	Scorpion_2,                                // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
-	Scorpion_3,                                // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
-	SealedTomb_T1,                             // Open Vault - An open entrance to an ancient dungeon. Strange sounds can be heard coming from inside.
-	Snake_1,                                   // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
-	Snake_2,                                   // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
-	Snake_3,                                   // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
-	Spider_1,                                  // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
-	Spider_2,                                  // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
-	Spider_3,                                  // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
-	Termite_Burrow,                            // Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
-	TI_AncientShrine_T1,                       // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
-	Traders_Cemetery,                          // Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
-	War_Beast_Cage,                            // Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
-	White_Stag,                                // Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
-	White_Treasure_Stag,                       // Royal Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
-	Wildfire,                                  // Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
+	
+	/// <summary>
+	/// Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
+	/// </summary>
+	/// <name>AncientBurrialGrounds</name>
+	AncientBurrialGrounds,
+
+	/// <summary>
+	/// Dark Gate - A strange monument of cyclopean proportions. Heavy storm clouds seem to be gathering around the settlement.
+	/// </summary>
+	/// <name>AncientGate</name>
+	AncientGate,
+
+	/// <summary>
+	/// Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+	/// </summary>
+	/// <name>AncientShrine_T1</name>
+	AncientShrine_T1,
+
+	/// <summary>
+	/// Forgotten Temple of the Sun - Who would worship the sun in a world with so little sunlight?
+	/// </summary>
+	/// <name>AncientTemple</name>
+	AncientTemple,
+
+	/// <summary>
+	/// Ghost of a Blight Fighter Captain - I let us down and was defeated by the Blightrot... but you can avenge me! Kill it with fire!!!
+	/// </summary>
+	/// <name>Angry Ghost 1</name>
+	Angry_Ghost_1,
+
+	/// <summary>
+	/// Ghost of a Suppressed Rebel - I was leading a rebellion against the Queen's tyrannical rule, but the Royal Guard found us. Carry on my legacy!
+	/// </summary>
+	/// <name>Angry Ghost 10</name>
+	Angry_Ghost_10,
+
+	/// <summary>
+	/// Ghost of a Resentful Human - Humans deserve to be treated better than the others! Without us, you’d never achieve anything. If you don’t meet our basic needs, we’ll take our revenge!
+	/// </summary>
+	/// <name>Angry Ghost 14</name>
+	Angry_Ghost_14,
+
+	/// <summary>
+	/// Ghost of the Queen's Lickspittle - I challenge you, viceroy! Do you consider yourself worthy of the Queen's glance? Prove it. Time is ticking.
+	/// </summary>
+	/// <name>Angry Ghost 15</name>
+	Angry_Ghost_15,
+
+	/// <summary>
+	/// Ghost of a Lizard Leader - I'm so sick of these Beavers! They’re the bane of this kingdom! They deserve nothing but condemnation for what they did to us. I order you to torment them - or I'll do it myself!
+	/// </summary>
+	/// <name>Angry Ghost 16</name>
+	Angry_Ghost_16,
+
+	/// <summary>
+	/// Ghost of a Tortured Harpy - They took our homes and our crops. They desecrated our culture, and in the end, they took our lives. The time of contempt has come.
+	/// </summary>
+	/// <name>Angry Ghost 17</name>
+	Angry_Ghost_17,
+
+	/// <summary>
+	/// Ghost of a Beaver Engineer - These fanatics should pay for their heresies! They are dangerous, wild, and unpredictable creatures. Teach these savages, once and for all.
+	/// </summary>
+	/// <name>Angry Ghost 18</name>
+	Angry_Ghost_18,
+
+	/// <summary>
+	/// Ghost of a Poisoned Human - We will no longer tolerate those upturned beaks roaming the settlement freely. Everyone must learn the truth about how the Harpy alchemists poisoned us to seize power!
+	/// </summary>
+	/// <name>Angry Ghost 19</name>
+	Angry_Ghost_19,
+
+	/// <summary>
+	/// Ghost of a Mad Alchemist - I have studied the Blightrot all my life. Nobody believes me, but the cysts are essential for the ecosystem! Grow them and find out yourself!
+	/// </summary>
+	/// <name>Angry Ghost 2</name>
+	Angry_Ghost_2,
+
+	/// <summary>
+	/// Ghost of a Lizard Worker - Self-righteous Beavers only want to bask in the luxuries we’ve worked so hard for. Time to end this injustice!
+	/// </summary>
+	/// <name>Angry Ghost 20</name>
+	Angry_Ghost_20,
+
+	/// <summary>
+	/// Ghost of a Starved Harpy - Greedy Human farmers always want to keep all the crops for themselves. Those traitors hid everything from us, and pretended the crops were rotten!
+	/// </summary>
+	/// <name>Angry Ghost 21</name>
+	Angry_Ghost_21,
+
+	/// <summary>
+	/// Ghost of an Innkeeper - We worked so hard, and put our lives in danger every day. If you don't let your villagers rest, I will make sure your soul never finds peace.
+	/// </summary>
+	/// <name>Angry Ghost 24</name>
+	Angry_Ghost_24,
+
+	/// <summary>
+	/// Ghost of a Lizard Elder - It was them! I'm sure of it! I remember their blank, blight-tainted gaze! They ambushed me in the forest! Please, avenge me!
+	/// </summary>
+	/// <name>Angry Ghost 31</name>
+	Angry_Ghost_31,
+
+	/// <summary>
+	/// Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
+	/// </summary>
+	/// <name>Angry Ghost 32</name>
+	Angry_Ghost_32,
+
+	/// <summary>
+	/// Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
+	/// </summary>
+	/// <name>Angry Ghost 34</name>
+	Angry_Ghost_34,
+
+	/// <summary>
+	/// Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
+	/// </summary>
+	/// <name>Angry Ghost 4</name>
+	Angry_Ghost_4,
+
+	/// <summary>
+	/// Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
+	/// </summary>
+	/// <name>Angry Ghost 41</name>
+	Angry_Ghost_41,
+
+	/// <summary>
+	/// Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
+	/// </summary>
+	/// <name>Angry Ghost 5</name>
+	Angry_Ghost_5,
+
+	/// <summary>
+	/// Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
+	/// </summary>
+	/// <name>Angry Ghost 6</name>
+	Angry_Ghost_6,
+
+	/// <summary>
+	/// Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
+	/// </summary>
+	/// <name>Angry Ghost 9</name>
+	Angry_Ghost_9,
+
+	/// <summary>
+	/// Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
+	/// </summary>
+	/// <name>AngryGhostChest_T1</name>
+	AngryGhostChest_T1,
+
+	/// <summary>
+	/// Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
+	/// </summary>
+	/// <name>BeaverBattleground_T1</name>
+	BeaverBattleground_T1,
+
+	/// <summary>
+	/// Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
+	/// </summary>
+	/// <name>Black Stag</name>
+	Black_Stag,
+
+	/// <summary>
+	/// Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+	/// </summary>
+	/// <name>Black Treasure Stag</name>
+	Black_Treasure_Stag,
+
+	/// <summary>
+	/// Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
+	/// </summary>
+	/// <name>Blightrot</name>
+	Blightrot,
+
+	/// <summary>
+	/// Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
+	/// </summary>
+	/// <name>Blightrot Cauldron</name>
+	Blightrot_Cauldron,
+
+	/// <summary>
+	/// Blood Flower (Clone) - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
+	/// </summary>
+	/// <name>Blightrot - Clone</name>
+	Blightrot_Clone,
+
+	/// <summary>
+	/// Ghost of a Defeated Viceroy - A long time ago, I founded a prosperous settlement. Everything was fine, until one of our scouts discovered something terrifying in the forest. Please, help restore at least a scrap of my legacy.
+	/// </summary>
+	/// <name>Calm Ghost 11</name>
+	Calm_Ghost_11,
+
+	/// <summary>
+	/// Ghost of a Druid - Many viceroys disregard nature. Don't make the same mistake. Be a good example to your people.
+	/// </summary>
+	/// <name>Calm Ghost 12</name>
+	Calm_Ghost_12,
+
+	/// <summary>
+	/// Ghost of a Royal Gardener - In these difficult times, beauty helps us forget our troubles. Decorate your village, and your villagers will thank you.
+	/// </summary>
+	/// <name>Calm Ghost 13</name>
+	Calm_Ghost_13,
+
+	/// <summary>
+	/// Ghost of a Hooded Knight - I promised my Queen that I would cleanse this forest of all the horrors that lived here. One night, my mount got frightened by the storm, and we fell into the Fishmen's nets. My mission must be completed!
+	/// </summary>
+	/// <name>Calm Ghost 22</name>
+	Calm_Ghost_22,
+
+	/// <summary>
+	/// Ghost of a Fire Priest - Spread the word about the power of the Holy Fire! Only it can save us from the storm's wrath. Gather the villagers in the chapel and pray!
+	/// </summary>
+	/// <name>Calm Ghost 23</name>
+	Calm_Ghost_23,
+
+	/// <summary>
+	/// Ghost of a Treasure Hunter - If your eyes sparkle at the sight of gold, I have an offer for you. All you have to do is prove that you are one of us, and I will give you my treasure.
+	/// </summary>
+	/// <name>Calm Ghost 25</name>
+	Calm_Ghost_25,
+
+	/// <summary>
+	/// Ghost of a Royal Architect - The foundation of success is a thriving settlement. Without solid walls, you won't survive here. Create something you can be proud of.
+	/// </summary>
+	/// <name>Calm Ghost 26</name>
+	Calm_Ghost_26,
+
+	/// <summary>
+	/// Ghost of a Worried Carter - The last thing I remember is lightning hitting my caravan. The settlements are still waiting for the goods they ordered. If you deliver them, I’ll see that you’re rewarded.
+	/// </summary>
+	/// <name>Calm Ghost 27</name>
+	Calm_Ghost_27,
+
+	/// <summary>
+	/// Ghost of a Storm Victim - Let the fire burn in the Hearth and grow in all its strength. Sacrifice your goods, and help the villagers weather the storm!
+	/// </summary>
+	/// <name>Calm Ghost 28</name>
+	Calm_Ghost_28,
+
+	/// <summary>
+	/// Ghost of a Mourning Harpy - Our flock has been in mourning for many years. We will never forget the war. Please, rekindle the hope in the Harpies' hearts.
+	/// </summary>
+	/// <name>Calm Ghost 29</name>
+	Calm_Ghost_29,
+
+	/// <summary>
+	/// Ghost of a Terrified Woodcutter - I lived in a very prosperous settlement, but our viceroy was greedy and didn't care about the forest at all! In the end, it brought doom upon us. Refrain from greed, and calm the forest.
+	/// </summary>
+	/// <name>Calm Ghost 3</name>
+	Calm_Ghost_3,
+
+	/// <summary>
+	/// Ghost of a Lizard General - My army fought bravely against all odds. Many of us paid the ultimate price. Please, show your respect to those who survived. I'll take care of the fallen.
+	/// </summary>
+	/// <name>Calm Ghost 30</name>
+	Calm_Ghost_30,
+
+	/// <summary>
+	/// Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
+	/// </summary>
+	/// <name>Calm Ghost 33</name>
+	Calm_Ghost_33,
+
+	/// <summary>
+	/// Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
+	/// </summary>
+	/// <name>Calm Ghost 35</name>
+	Calm_Ghost_35,
+
+	/// <summary>
+	/// Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
+	/// </summary>
+	/// <name>Calm Ghost 36</name>
+	Calm_Ghost_36,
+
+	/// <summary>
+	/// Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
+	/// </summary>
+	/// <name>Calm Ghost 38</name>
+	Calm_Ghost_38,
+
+	/// <summary>
+	/// Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
+	/// </summary>
+	/// <name>Calm Ghost 39</name>
+	Calm_Ghost_39,
+
+	/// <summary>
+	/// Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
+	/// </summary>
+	/// <name>Calm Ghost 40</name>
+	Calm_Ghost_40,
+
+	/// <summary>
+	/// Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
+	/// </summary>
+	/// <name>Calm Ghost 7</name>
+	Calm_Ghost_7,
+
+	/// <summary>
+	/// Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
+	/// </summary>
+	/// <name>Calm Ghost 8</name>
+	Calm_Ghost_8,
+
+	/// <summary>
+	/// Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
+	/// </summary>
+	/// <name>CalmGhostChest_T1</name>
+	CalmGhostChest_T1,
+
+	/// <summary>
+	/// Small Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
+	/// </summary>
+	/// <name>Camp_T1</name>
+	Camp_T1,
+
+	/// <summary>
+	/// Large Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
+	/// </summary>
+	/// <name>Camp_T2</name>
+	Camp_T2,
+
+	/// <summary>
+	/// Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
+	/// </summary>
+	/// <name>Caravan_T1</name>
+	Caravan_T1,
+
+	/// <summary>
+	/// Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
+	/// </summary>
+	/// <name>Caravan_T2</name>
+	Caravan_T2,
+
+	/// <summary>
+	/// Corrupted Caravan - A large caravan abandoned in the woods, overgrown with Blightrot Cysts. They must have fed on the transported goods... or people.
+	/// </summary>
+	/// <name>Corrupted Caravan</name>
+	Corrupted_Caravan,
+
+	/// <summary>
+	/// Clay Node (Large) - Soil infused with the essence of the rain.
+	/// </summary>
+	/// <name>DebugNode_ClayBig</name>
+	DebugNode_ClayBig,
+
+	/// <summary>
+	/// Clay Node (Small) - Soil infused with the essence of the rain.
+	/// </summary>
+	/// <name>DebugNode_ClaySmall</name>
+	DebugNode_ClaySmall,
+
+	/// <summary>
+	/// Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain.
+	/// </summary>
+	/// <name>DebugNode_DewberryBushBig</name>
+	DebugNode_DewberryBushBig,
+
+	/// <summary>
+	/// Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain.
+	/// </summary>
+	/// <name>DebugNode_DewberryBushSmall</name>
+	DebugNode_DewberryBushSmall,
+
+	/// <summary>
+	/// Flax Field (Large) - Resilient plants that are perfect for cloth-making.
+	/// </summary>
+	/// <name>DebugNode_FlaxBig</name>
+	DebugNode_FlaxBig,
+
+	/// <summary>
+	/// Flax Field (Small) - Resilient plants that are perfect for cloth-making.
+	/// </summary>
+	/// <name>DebugNode_FlaxSmall</name>
+	DebugNode_FlaxSmall,
+
+	/// <summary>
+	/// Herb Node (Large) - A dense shrub, full of many useful plant species.
+	/// </summary>
+	/// <name>DebugNode_HerbsBig</name>
+	DebugNode_HerbsBig,
+
+	/// <summary>
+	/// Herb Node (Small) - A dense shrub, full of many useful plant species.
+	/// </summary>
+	/// <name>DebugNode_HerbsSmall</name>
+	DebugNode_HerbsSmall,
+
+	/// <summary>
+	/// Leech Broodmother (Large) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
+	/// </summary>
+	/// <name>DebugNode_LeechBroodmotherBig</name>
+	DebugNode_LeechBroodmotherBig,
+
+	/// <summary>
+	/// Leech Broodmother (Small) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
+	/// </summary>
+	/// <name>DebugNode_LeechBroodmotherSmall</name>
+	DebugNode_LeechBroodmotherSmall,
+
+	/// <summary>
+	/// Ancient Proto Wheat - A wild type of grain, mutated by an invasive species of fungi.
+	/// </summary>
+	/// <name>DebugNode_Marshlands_InfiniteGrain</name>
+	DebugNode_Marshlands_InfiniteGrain,
+
+	/// <summary>
+	/// Dead Leviathan - A giant, dead beast. How did it get here?
+	/// </summary>
+	/// <name>DebugNode_Marshlands_InfiniteMeat</name>
+	DebugNode_Marshlands_InfiniteMeat,
+
+	/// <summary>
+	/// Giant Proto Fungus - An ancient and mysterious organism. Proto fungi are sometimes referred to as the living and breathing hearts of the Marshlands.
+	/// </summary>
+	/// <name>DebugNode_Marshlands_InfiniteMushroom</name>
+	DebugNode_Marshlands_InfiniteMushroom,
+
+	/// <summary>
+	/// Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
+	/// </summary>
+	/// <name>DebugNode_MarshlandsMushroomBig</name>
+	DebugNode_MarshlandsMushroomBig,
+
+	/// <summary>
+	/// Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
+	/// </summary>
+	/// <name>DebugNode_MarshlandsMushroomSmall</name>
+	DebugNode_MarshlandsMushroomSmall,
+
+	/// <summary>
+	/// Moss Broccoli Patch (Large) - An edible and tasty type of moss.
+	/// </summary>
+	/// <name>DebugNode_MossBroccoliBig</name>
+	DebugNode_MossBroccoliBig,
+
+	/// <summary>
+	/// Moss Broccoli Patch (Small) - An edible and tasty type of moss.
+	/// </summary>
+	/// <name>DebugNode_MossBroccoliSmall</name>
+	DebugNode_MossBroccoliSmall,
+
+	/// <summary>
+	/// Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
+	/// </summary>
+	/// <name>DebugNode_MushroomBig</name>
+	DebugNode_MushroomBig,
+
+	/// <summary>
+	/// Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
+	/// </summary>
+	/// <name>DebugNode_MushroomSmall</name>
+	DebugNode_MushroomSmall,
+
+	/// <summary>
+	/// Reed Field (Large) - A very common plant, it thrives thanks to the magical rain.
+	/// </summary>
+	/// <name>DebugNode_ReedBig</name>
+	DebugNode_ReedBig,
+
+	/// <summary>
+	/// Reed Field (Small) - A very common plant, it thrives thanks to the magical rain.
+	/// </summary>
+	/// <name>DebugNode_ReedSmall</name>
+	DebugNode_ReedSmall,
+
+	/// <summary>
+	/// Root Node (Large) - A tangled net of living vines.
+	/// </summary>
+	/// <name>DebugNode_RootsBig</name>
+	DebugNode_RootsBig,
+
+	/// <summary>
+	/// Root Node (Small) - A tangled net of living vines.
+	/// </summary>
+	/// <name>DebugNode_RootsSmall</name>
+	DebugNode_RootsSmall,
+
+	/// <summary>
+	/// Sea Marrow Node (Large) - Ancient fossils, rich in resources.
+	/// </summary>
+	/// <name>DebugNode_SeaMarrowBig</name>
+	DebugNode_SeaMarrowBig,
+
+	/// <summary>
+	/// Sea Marrow Node (Small) - Ancient fossils, rich in resources.
+	/// </summary>
+	/// <name>DebugNode_SeaMarrowSmall</name>
+	DebugNode_SeaMarrowSmall,
+
+	/// <summary>
+	/// Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
+	/// </summary>
+	/// <name>DebugNode_SnailBroodmotherBig</name>
+	DebugNode_SnailBroodmotherBig,
+
+	/// <summary>
+	/// Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
+	/// </summary>
+	/// <name>DebugNode_SnailBroodmotherSmall</name>
+	DebugNode_SnailBroodmotherSmall,
+
+	/// <summary>
+	/// Snake Nest (Large) - A dangerous, but rich source of food and leather.
+	/// </summary>
+	/// <name>DebugNode_SnakeNestBig</name>
+	DebugNode_SnakeNestBig,
+
+	/// <summary>
+	/// Snake Nest (Small) - A dangerous, but rich source of food and leather.
+	/// </summary>
+	/// <name>DebugNode_SnakeNestSmall</name>
+	DebugNode_SnakeNestSmall,
+
+	/// <summary>
+	/// Stone Node (Large) - Stones, weathered by the everlasting rain.
+	/// </summary>
+	/// <name>DebugNode_StoneBig</name>
+	DebugNode_StoneBig,
+
+	/// <summary>
+	/// Stone Node (Small) - Stones, weathered by the everlasting rain.
+	/// </summary>
+	/// <name>DebugNode_StoneSmall</name>
+	DebugNode_StoneSmall,
+
+	/// <summary>
+	/// Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
+	/// </summary>
+	/// <name>DebugNode_StormbirdNestBig</name>
+	DebugNode_StormbirdNestBig,
+
+	/// <summary>
+	/// Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
+	/// </summary>
+	/// <name>DebugNode_StormbirdNestSmall</name>
+	DebugNode_StormbirdNestSmall,
+
+	/// <summary>
+	/// Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp.
+	/// </summary>
+	/// <name>DebugNode_SwampWheatBig</name>
+	DebugNode_SwampWheatBig,
+
+	/// <summary>
+	/// Swamp Wheat Field (Small) - A plant species that’s right at home in the swamp.
+	/// </summary>
+	/// <name>DebugNode_SwampWheatSmall</name>
+	DebugNode_SwampWheatSmall,
+
+	/// <summary>
+	/// Wormtongue Nest (Large) - A nest full of tasty wormtongues.
+	/// </summary>
+	/// <name>DebugNode_WormtongueNestBig</name>
+	DebugNode_WormtongueNestBig,
+
+	/// <summary>
+	/// Wormtongue Nest (Small) - A nest full of tasty wormtongues.
+	/// </summary>
+	/// <name>DebugNode_WormtongueNestSmall</name>
+	DebugNode_WormtongueNestSmall,
+
+	/// <summary>
+	/// Altar of Decay - A sinister stone structure created to worship the Blightrot. Cultists have engraved the inscription: "Nothing escapes death".
+	/// </summary>
+	/// <name>Decay Altar</name>
+	Decay_Altar,
+
+	/// <summary>
+	/// Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
+	/// </summary>
+	/// <name>Escaped Convicts</name>
+	Escaped_Convicts,
+
+	/// <summary>
+	/// Fishmen Cave - It looks abandoned, but what if it's not? A terrible fishy smell comes from within.
+	/// </summary>
+	/// <name>Fishmen Cave</name>
+	Fishmen_Cave,
+
+	/// <summary>
+	/// Fishmen Lighthouse - Once upon a time, there must have been a coast and a harbor here. Now this place is haunted by Fishmen and the waters have withdrawn. An ominous light is coming from the top of the lighthouse.
+	/// </summary>
+	/// <name>Fishmen Lighthouse</name>
+	Fishmen_Lighthouse,
+
+	/// <summary>
+	/// Fishmen Outpost - Fishmen aren't usually a threat, but they can be a real nuisance after a while.
+	/// </summary>
+	/// <name>Fishmen Outpost</name>
+	Fishmen_Outpost,
+
+	/// <summary>
+	/// Fishman Soothsayer - An old wandering soothsayer, teeming with magic. He does not speak, though you can hear his voice. His eyes are blank, yet you can feel his gaze. He is not afraid of death, he stands by its side.
+	/// </summary>
+	/// <name>Fishmen Soothsayer</name>
+	Fishmen_Soothsayer,
+
+	/// <summary>
+	/// Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
+	/// </summary>
+	/// <name>Fishmen Totem</name>
+	Fishmen_Totem,
+
+	/// <summary>
+	/// Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
+	/// </summary>
+	/// <name>ForsakenCrypt</name>
+	ForsakenCrypt,
+
+	/// <summary>
+	/// Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
+	/// </summary>
+	/// <name>FoxBattleground_T1</name>
+	FoxBattleground_T1,
+
+	/// <summary>
+	/// Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
+	/// </summary>
+	/// <name>FrogBattleground_T1</name>
+	FrogBattleground_T1,
+
+	/// <summary>
+	/// Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
+	/// </summary>
+	/// <name>Fuming Machinery</name>
+	Fuming_Machinery,
+
+	/// <summary>
+	/// Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
+	/// </summary>
+	/// <name>Giant Stormbird</name>
+	Giant_Stormbird,
+
+	/// <summary>
+	/// Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
+	/// </summary>
+	/// <name>Glade Trader - The Hermit</name>
+	Glade_Trader_The_Hermit,
+
+	/// <summary>
+	/// Wandering Merchant - Seer - A strange woman is observing the settlement from afar.
+	/// </summary>
+	/// <name>Glade Trader - The Seer</name>
+	Glade_Trader_The_Seer,
+
+	/// <summary>
+	/// Wandering Merchant - Shaman - A mysterious and imposing figure has been spotted near the settlement. He is pulling a wagon full of herbs and ointments.
+	/// </summary>
+	/// <name>Glade Trader - The Shaman</name>
+	Glade_Trader_The_Shaman,
+
+	/// <summary>
+	/// Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
+	/// </summary>
+	/// <name>Gold Stag</name>
+	Gold_Stag,
+
+	/// <summary>
+	/// Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+	/// </summary>
+	/// <name>Gold Treasure Stag</name>
+	Gold_Treasure_Stag,
+
+	/// <summary>
+	/// Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
+	/// </summary>
+	/// <name>Harmony Spirit Altar</name>
+	Harmony_Spirit_Altar,
+
+	/// <summary>
+	/// Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
+	/// </summary>
+	/// <name>HarpyBattleground_T1</name>
+	HarpyBattleground_T1,
+
+	/// <summary>
+	/// Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Beaver House</name>
+	Haunted_Ruined_Beaver_House,
+
+	/// <summary>
+	/// Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Brewery</name>
+	Haunted_Ruined_Brewery,
+
+	/// <summary>
+	/// Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Cellar</name>
+	Haunted_Ruined_Cellar,
+
+	/// <summary>
+	/// Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Cooperage</name>
+	Haunted_Ruined_Cooperage,
+
+	/// <summary>
+	/// Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Druid</name>
+	Haunted_Ruined_Druid,
+
+	/// <summary>
+	/// Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Fox House</name>
+	Haunted_Ruined_Fox_House,
+
+	/// <summary>
+	/// Haunted Frog House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Frog House</name>
+	Haunted_Ruined_Frog_House,
+
+	/// <summary>
+	/// Haunted Guild House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Guild House</name>
+	Haunted_Ruined_Guild_House,
+
+	/// <summary>
+	/// Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Harpy House</name>
+	Haunted_Ruined_Harpy_House,
+
+	/// <summary>
+	/// Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Herb Garden</name>
+	Haunted_Ruined_Herb_Garden,
+
+	/// <summary>
+	/// Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Human House</name>
+	Haunted_Ruined_Human_House,
+
+	/// <summary>
+	/// Haunted Leatherworker - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Leatherworks</name>
+	Haunted_Ruined_Leatherworks,
+
+	/// <summary>
+	/// Haunted Lizard House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Lizard House</name>
+	Haunted_Ruined_Lizard_House,
+
+	/// <summary>
+	/// Haunted Market - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Market</name>
+	Haunted_Ruined_Market,
+
+	/// <summary>
+	/// Haunted Rain Mill - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Rainmill</name>
+	Haunted_Ruined_Rainmill,
+
+	/// <summary>
+	/// Haunted Small Farm - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined SmallFarm</name>
+	Haunted_Ruined_SmallFarm,
+
+	/// <summary>
+	/// Haunted Smelter - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Smelter</name>
+	Haunted_Ruined_Smelter,
+
+	/// <summary>
+	/// Haunted Temple - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
+	/// </summary>
+	/// <name>Haunted Ruined Temple</name>
+	Haunted_Ruined_Temple,
+
+	/// <summary>
+	/// Fallen Human Explorers - A group of fallen Human explorers. They were probably looking for a place to settle, far from the Queen's watchful eyes... The sight causes uneasiness amongst the Human population.
+	/// </summary>
+	/// <name>HumanBattleground_T1</name>
+	HumanBattleground_T1,
+
+	/// <summary>
+	/// Infected Drainage Mole - One of the mythical guardians of the forest - still alive, but plagued by a mysterious disease. The Blightrot has taken over his mind, causing an unstoppable rage. You can try to heal him... or whisper prayers to its new masters.
+	/// </summary>
+	/// <name>Infected Mole</name>
+	Infected_Mole,
+
+	/// <summary>
+	/// Withered Tree - The once mighty tree has been deformed by the Blightrot living in its root system. The Blightrot poisons the tree's tissues, leading to its long-lasting degradation.
+	/// </summary>
+	/// <name>Infected Tree</name>
+	Infected_Tree,
+
+	/// <summary>
+	/// River Kelpie - A legendary, shape-shifting aquatic spirit that lurks near water and mesmerizes travelers. It is said that whoever acquires the kelpie's bridle will be able to control it.
+	/// </summary>
+	/// <name>Kelpie</name>
+	Kelpie,
+
+	/// <summary>
+	/// Leaking Cauldron - An old, broken piece of Rainpunk technology. It's contaminating the soil around it.
+	/// </summary>
+	/// <name>Leaking Cauldron</name>
+	Leaking_Cauldron,
+
+	/// <summary>
+	/// Lightning Catcher - A weird contraption that attracts lightning. Its proximity to the settlement might have grave consequences.
+	/// </summary>
+	/// <name>Lightning Catcher</name>
+	Lightning_Catcher,
+
+	/// <summary>
+	/// Fallen Lizard Hunters - A group of fallen Lizard hunters... The sight causes unrest amongst the Lizard population.
+	/// </summary>
+	/// <name>LizardBattleground_T1</name>
+	LizardBattleground_T1,
+
+	/// <summary>
+	/// Merchant Shipwreck - How powerful must the storm surge have been to carry this shattered wreck all the way here? Perhaps in the distant past, there was a sea here? It looks as if it’s been lying here for centuries. Strange voices can be heard coming from below deck...
+	/// </summary>
+	/// <name>Merchant Ship Wreck</name>
+	Merchant_Ship_Wreck,
+
+	/// <summary>
+	/// Hungry Mistworm - A small, yet dangerous creature. It normally lives underground or hides in the mist, but this one seems to be more courageous than its kin.
+	/// </summary>
+	/// <name>Mistworm_T1</name>
+	Mistworm_T1,
+
+	/// <summary>
+	/// Drainage Mole - A wild beast that usually lives underground. It was forced to the surface for some reason.
+	/// </summary>
+	/// <name>Mole</name>
+	Mole,
+
+	/// <summary>
+	/// Obelisk - A mystical stone monument. Unknown runes are carved all over its surface.
+	/// </summary>
+	/// <name>Monolith</name>
+	Monolith,
+
+	/// <summary>
+	/// Noxious Machinery - A damaged and abandoned rainpunk contraption. The area was probably deserted because of a significant explosion risk. The machine's valves emit a distinct Blightrot odor.
+	/// </summary>
+	/// <name>Noxious Machinery</name>
+	Noxious_Machinery,
+
+	/// <summary>
+	/// Petrified Tree - A strange tree that’s been turned to stone by the rain. It's radiating its sickness to the other trees around it.
+	/// </summary>
+	/// <name>PetrifiedTree_T1</name>
+	PetrifiedTree_T1,
+
+	/// <summary>
+	/// Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
+	/// </summary>
+	/// <name>Rain Totem</name>
+	Rain_Totem,
+
+	/// <summary>
+	/// Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+	/// </summary>
+	/// <name>Rainpunk Drill - Coal</name>
+	Rainpunk_Drill_Coal,
+
+	/// <summary>
+	/// Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+	/// </summary>
+	/// <name>Rainpunk Drill - Copper</name>
+	Rainpunk_Drill_Copper,
+
+	/// <summary>
+	/// Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+	/// </summary>
+	/// <name>Rainpunk Drill - Salt</name>
+	Rainpunk_Drill_Salt,
+
+	/// <summary>
+	/// Destroyed Rainpunk Foundry - An old, abandoned piece of advanced Rainpunk technology. It seems extremely unstable - but maybe it can be rebuilt...
+	/// </summary>
+	/// <name>RainpunkFactory</name>
+	RainpunkFactory,
+
+	/// <summary>
+	/// Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+	/// </summary>
+	/// <name>RewardChest_T1</name>
+	RewardChest_T1,
+
+	/// <summary>
+	/// Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+	/// </summary>
+	/// <name>RewardChest_T2</name>
+	RewardChest_T2,
+
+	/// <summary>
+	/// Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
+	/// </summary>
+	/// <name>RewardChest_T3</name>
+	RewardChest_T3,
+
+	/// <summary>
+	/// Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Advanced Rain Catcher</name>
+	Ruined_Advanced_Rain_Catcher,
+
+	/// <summary>
+	/// Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Advanced Rain Catcher (no reward)</name>
+	Ruined_Advanced_Rain_Catcher_no_Reward,
+
+	/// <summary>
+	/// Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Alchemist</name>
+	Ruined_Alchemist,
+
+	/// <summary>
+	/// Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Alchemist (no reward)</name>
+	Ruined_Alchemist_no_Reward,
+
+	/// <summary>
+	/// Apothecary - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Apothecary</name>
+	Ruined_Apothecary,
+
+	/// <summary>
+	/// Apothecary - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Apothecary (no reward)</name>
+	Ruined_Apothecary_no_Reward,
+
+	/// <summary>
+	/// Artisan - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Artisan</name>
+	Ruined_Artisan,
+
+	/// <summary>
+	/// Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Artisan (no reward)</name>
+	Ruined_Artisan_no_Reward,
+
+	/// <summary>
+	/// Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Bakery</name>
+	Ruined_Bakery,
+
+	/// <summary>
+	/// Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Bakery (no reward)</name>
+	Ruined_Bakery_no_Reward,
+
+	/// <summary>
+	/// Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Bath House</name>
+	Ruined_Bath_House,
+
+	/// <summary>
+	/// Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Bath House (no reward)</name>
+	Ruined_Bath_House_no_Reward,
+
+	/// <summary>
+	/// Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Beanery</name>
+	Ruined_Beanery,
+
+	/// <summary>
+	/// Beanery - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Beanery (no reward)</name>
+	Ruined_Beanery_no_Reward,
+
+	/// <summary>
+	/// Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Beaver House</name>
+	Ruined_Beaver_House,
+
+	/// <summary>
+	/// Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Beaver House (no reward)</name>
+	Ruined_Beaver_House_no_Reward,
+
+	/// <summary>
+	/// Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Big Shelter</name>
+	Ruined_Big_Shelter,
+
+	/// <summary>
+	/// Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Big Shelter (no reward)</name>
+	Ruined_Big_Shelter_no_Reward,
+
+	/// <summary>
+	/// Brewery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Brewery</name>
+	Ruined_Brewery,
+
+	/// <summary>
+	/// Brewery - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Brewery (no reward)</name>
+	Ruined_Brewery_no_Reward,
+
+	/// <summary>
+	/// Brick Oven - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Brick Oven</name>
+	Ruined_Brick_Oven,
+
+	/// <summary>
+	/// Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Brick Oven (no reward)</name>
+	Ruined_Brick_Oven_no_Reward,
+
+	/// <summary>
+	/// Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Brickyard</name>
+	Ruined_Brickyard,
+
+	/// <summary>
+	/// Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Brickyard (no reward)</name>
+	Ruined_Brickyard_no_Reward,
+
+	/// <summary>
+	/// Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Butcher</name>
+	Ruined_Butcher,
+
+	/// <summary>
+	/// Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Butcher (no reward)</name>
+	Ruined_Butcher_no_Reward,
+
+	/// <summary>
+	/// Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Cannery</name>
+	Ruined_Cannery,
+
+	/// <summary>
+	/// Cannery - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Cannery (no reward)</name>
+	Ruined_Cannery_no_Reward,
+
+	/// <summary>
+	/// Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Carpenter</name>
+	Ruined_Carpenter,
+
+	/// <summary>
+	/// Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Carpenter (no reward)</name>
+	Ruined_Carpenter_no_Reward,
+
+	/// <summary>
+	/// Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Cellar</name>
+	Ruined_Cellar,
+
+	/// <summary>
+	/// Cellar - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Cellar (no reward)</name>
+	Ruined_Cellar_no_Reward,
+
+	/// <summary>
+	/// Clan Hall - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Clan Hall</name>
+	Ruined_Clan_Hall,
+
+	/// <summary>
+	/// Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Clan Hall (no reward)</name>
+	Ruined_Clan_Hall_no_Reward,
+
+	/// <summary>
+	/// Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Clay Pit</name>
+	Ruined_Clay_Pit,
+
+	/// <summary>
+	/// Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Clay Pit (no reward)</name>
+	Ruined_Clay_Pit_no_Reward,
+
+	/// <summary>
+	/// Cobbler - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Cobbler</name>
+	Ruined_Cobbler,
+
+	/// <summary>
+	/// Cobbler - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Cobbler (no reward)</name>
+	Ruined_Cobbler_no_Reward,
+
+	/// <summary>
+	/// Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Cookhouse</name>
+	Ruined_Cookhouse,
+
+	/// <summary>
+	/// Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Cookhouse (no reward)</name>
+	Ruined_Cookhouse_no_Reward,
+
+	/// <summary>
+	/// Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Cooperage</name>
+	Ruined_Cooperage,
+
+	/// <summary>
+	/// Cooperage - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Cooperage (no reward)</name>
+	Ruined_Cooperage_no_Reward,
+
+	/// <summary>
+	/// Crude Workstation - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Crude Workstation (no reward)</name>
+	Ruined_Crude_Workstation_no_Reward,
+
+	/// <summary>
+	/// Distillery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Distillery</name>
+	Ruined_Distillery,
+
+	/// <summary>
+	/// Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Distillery (no reward)</name>
+	Ruined_Distillery_no_Reward,
+
+	/// <summary>
+	/// Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Druid</name>
+	Ruined_Druid,
+
+	/// <summary>
+	/// Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Druid (no reward)</name>
+	Ruined_Druid_no_Reward,
+
+	/// <summary>
+	/// Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Explorers Lodge</name>
+	Ruined_Explorers_Lodge,
+
+	/// <summary>
+	/// Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Explorers Lodge (no reward)</name>
+	Ruined_Explorers_Lodge_no_Reward,
+
+	/// <summary>
+	/// Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Farm</name>
+	Ruined_Farm,
+
+	/// <summary>
+	/// Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Farm (no reward)</name>
+	Ruined_Farm_no_Reward,
+
+	/// <summary>
+	/// Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Field Kitchen (no reward)</name>
+	Ruined_Field_Kitchen_no_Reward,
+
+	/// <summary>
+	/// Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Finesmith</name>
+	Ruined_Finesmith,
+
+	/// <summary>
+	/// Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Finesmith (no reward)</name>
+	Ruined_Finesmith_no_Reward,
+
+	/// <summary>
+	/// Fishing Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Fishing Hut</name>
+	Ruined_Fishing_Hut,
+
+	/// <summary>
+	/// Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Fishing Hut (no reward)</name>
+	Ruined_Fishing_Hut_no_Reward,
+
+	/// <summary>
+	/// Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Fishing Hut Primitive (no reward)</name>
+	Ruined_Fishing_Hut_Primitive_no_Reward,
+
+	/// <summary>
+	/// Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Foragers Camp</name>
+	Ruined_Foragers_Camp,
+
+	/// <summary>
+	/// Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Foragers Camp (no reward)</name>
+	Ruined_Foragers_Camp_no_Reward,
+
+	/// <summary>
+	/// Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Foragers Camp Primitive (no reward)</name>
+	Ruined_Foragers_Camp_Primitive_no_Reward,
+
+	/// <summary>
+	/// Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Forum</name>
+	Ruined_Forum,
+
+	/// <summary>
+	/// Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Forum (no reward)</name>
+	Ruined_Forum_no_Reward,
+
+	/// <summary>
+	/// Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Fox House</name>
+	Ruined_Fox_House,
+
+	/// <summary>
+	/// Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Fox House (no reward)</name>
+	Ruined_Fox_House_no_Reward,
+
+	/// <summary>
+	/// Frog House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Frog House (no reward)</name>
+	Ruined_Frog_House_no_Reward,
+
+	/// <summary>
+	/// Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Furnace</name>
+	Ruined_Furnace,
+
+	/// <summary>
+	/// Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Furnace (no reward)</name>
+	Ruined_Furnace_no_Reward,
+
+	/// <summary>
+	/// Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Granary</name>
+	Ruined_Granary,
+
+	/// <summary>
+	/// Granary - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Granary (no reward)</name>
+	Ruined_Granary_no_Reward,
+
+	/// <summary>
+	/// Greenhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Greenhouse</name>
+	Ruined_Greenhouse,
+
+	/// <summary>
+	/// Greenhouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Greenhouse (no reward)</name>
+	Ruined_Greenhouse_no_Reward,
+
+	/// <summary>
+	/// Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Grill</name>
+	Ruined_Grill,
+
+	/// <summary>
+	/// Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Grill (no reward)</name>
+	Ruined_Grill_no_Reward,
+
+	/// <summary>
+	/// Forester's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Grove</name>
+	Ruined_Grove,
+
+	/// <summary>
+	/// Forester's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Grove (no reward)</name>
+	Ruined_Grove_no_Reward,
+
+	/// <summary>
+	/// Guild House - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Guild House</name>
+	Ruined_Guild_House,
+
+	/// <summary>
+	/// Guild House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Guild House (no reward)</name>
+	Ruined_Guild_House_no_Reward,
+
+	/// <summary>
+	/// Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Harpy House</name>
+	Ruined_Harpy_House,
+
+	/// <summary>
+	/// Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Harpy House (no reward)</name>
+	Ruined_Harpy_House_no_Reward,
+
+	/// <summary>
+	/// Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Harvester Camp</name>
+	Ruined_Harvester_Camp,
+
+	/// <summary>
+	/// Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Harvester Camp (no reward)</name>
+	Ruined_Harvester_Camp_no_Reward,
+
+	/// <summary>
+	/// Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Herb Garden</name>
+	Ruined_Herb_Garden,
+
+	/// <summary>
+	/// Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Herb Garden (no reward)</name>
+	Ruined_Herb_Garden_no_Reward,
+
+	/// <summary>
+	/// Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Herbalist Camp</name>
+	Ruined_Herbalist_Camp,
+
+	/// <summary>
+	/// Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Herbalist Camp (no reward)</name>
+	Ruined_Herbalist_Camp_no_Reward,
+
+	/// <summary>
+	/// Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Herbalist Camp primitive (no reward)</name>
+	Ruined_Herbalist_Camp_Primitive_no_Reward,
+
+	/// <summary>
+	/// Human House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Human House</name>
+	Ruined_Human_House,
+
+	/// <summary>
+	/// Human House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Human House (no reward)</name>
+	Ruined_Human_House_no_Reward,
+
+	/// <summary>
+	/// Kiln - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Kiln</name>
+	Ruined_Kiln,
+
+	/// <summary>
+	/// Kiln - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Kiln (no reward)</name>
+	Ruined_Kiln_no_Reward,
+
+	/// <summary>
+	/// Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Leatherworks</name>
+	Ruined_Leatherworks,
+
+	/// <summary>
+	/// Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Leatherworks (no reward)</name>
+	Ruined_Leatherworks_no_Reward,
+
+	/// <summary>
+	/// Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Lizard House</name>
+	Ruined_Lizard_House,
+
+	/// <summary>
+	/// Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Lizard House (no reward)</name>
+	Ruined_Lizard_House_no_Reward,
+
+	/// <summary>
+	/// Lumber Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Lumbermill</name>
+	Ruined_Lumbermill,
+
+	/// <summary>
+	/// Lumber Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Lumbermill (no reward)</name>
+	Ruined_Lumbermill_no_Reward,
+
+	/// <summary>
+	/// Makeshift Post - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Makeshift Post (no reward)</name>
+	Ruined_Makeshift_Post_no_Reward,
+
+	/// <summary>
+	/// Manufactory - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Manufatory</name>
+	Ruined_Manufatory,
+
+	/// <summary>
+	/// Manufactory - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Manufatory (no reward)</name>
+	Ruined_Manufatory_no_Reward,
+
+	/// <summary>
+	/// Market - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Market</name>
+	Ruined_Market,
+
+	/// <summary>
+	/// Market - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Market (no reward)</name>
+	Ruined_Market_no_Reward,
+
+	/// <summary>
+	/// Mine - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Mine (no reward)</name>
+	Ruined_Mine_no_Reward,
+
+	/// <summary>
+	/// Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Monastery</name>
+	Ruined_Monastery,
+
+	/// <summary>
+	/// Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Monastery (no reward)</name>
+	Ruined_Monastery_no_Reward,
+
+	/// <summary>
+	/// Pantry - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Pantry</name>
+	Ruined_Pantry,
+
+	/// <summary>
+	/// Pantry - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Pantry (no reward)</name>
+	Ruined_Pantry_no_Reward,
+
+	/// <summary>
+	/// Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Plantation</name>
+	Ruined_Plantation,
+
+	/// <summary>
+	/// Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Plantation (no reward)</name>
+	Ruined_Plantation_no_Reward,
+
+	/// <summary>
+	/// Press - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Press</name>
+	Ruined_Press,
+
+	/// <summary>
+	/// Press - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Press (no reward)</name>
+	Ruined_Press_no_Reward,
+
+	/// <summary>
+	/// Provisioner - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Provisioner</name>
+	Ruined_Provisioner,
+
+	/// <summary>
+	/// Provisioner - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Provisioner (no reward)</name>
+	Ruined_Provisioner_no_Reward,
+
+	/// <summary>
+	/// Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Rain Catcher (no reward)</name>
+	Ruined_Rain_Catcher_no_Reward,
+
+	/// <summary>
+	/// Rain Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Rainmill</name>
+	Ruined_Rainmill,
+
+	/// <summary>
+	/// Rain Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Rainmill (no reward)</name>
+	Ruined_Rainmill_no_Reward,
+
+	/// <summary>
+	/// Ranch - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Ranch</name>
+	Ruined_Ranch,
+
+	/// <summary>
+	/// Ranch - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Ranch (no reward)</name>
+	Ruined_Ranch_no_Reward,
+
+	/// <summary>
+	/// Scribe - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Scribe</name>
+	Ruined_Scribe,
+
+	/// <summary>
+	/// Scribe - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Scribe (no reward)</name>
+	Ruined_Scribe_no_Reward,
+
+	/// <summary>
+	/// Clothier - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Sewer</name>
+	Ruined_Sewer,
+
+	/// <summary>
+	/// Clothier - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Sewer (no reward)</name>
+	Ruined_Sewer_no_Reward,
+
+	/// <summary>
+	/// Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Shelter</name>
+	Ruined_Shelter,
+
+	/// <summary>
+	/// Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Shelter (no reward)</name>
+	Ruined_Shelter_no_Reward,
+
+	/// <summary>
+	/// Small Farm - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined SmallFarm</name>
+	Ruined_SmallFarm,
+
+	/// <summary>
+	/// Small Farm - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined SmallFarm (no reward)</name>
+	Ruined_SmallFarm_no_Reward,
+
+	/// <summary>
+	/// Smelter - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Smelter</name>
+	Ruined_Smelter,
+
+	/// <summary>
+	/// Smelter - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Smelter (no reward)</name>
+	Ruined_Smelter_no_Reward,
+
+	/// <summary>
+	/// Smithy - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Smithy</name>
+	Ruined_Smithy,
+
+	/// <summary>
+	/// Smithy - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Smithy (no reward)</name>
+	Ruined_Smithy_no_Reward,
+
+	/// <summary>
+	/// Smokehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Smokehouse</name>
+	Ruined_Smokehouse,
+
+	/// <summary>
+	/// Smokehouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Smokehouse (no reward)</name>
+	Ruined_Smokehouse_no_Reward,
+
+	/// <summary>
+	/// Stamping Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Stamping Mill</name>
+	Ruined_Stamping_Mill,
+
+	/// <summary>
+	/// Stamping Mill - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Stamping Mill (no reward)</name>
+	Ruined_Stamping_Mill_no_Reward,
+
+	/// <summary>
+	/// Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Stonecutter Camp</name>
+	Ruined_Stonecutter_Camp,
+
+	/// <summary>
+	/// Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Stonecutter Camp (no reward)</name>
+	Ruined_Stonecutter_Camp_no_Reward,
+
+	/// <summary>
+	/// Small Warehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Storage</name>
+	Ruined_Storage,
+
+	/// <summary>
+	/// Small Warehouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Storage (no reward)</name>
+	Ruined_Storage_no_Reward,
+
+	/// <summary>
+	/// Supplier - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Supplier</name>
+	Ruined_Supplier,
+
+	/// <summary>
+	/// Supplier - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Supplier (no reward)</name>
+	Ruined_Supplier_no_Reward,
+
+	/// <summary>
+	/// Tavern - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Tavern</name>
+	Ruined_Tavern,
+
+	/// <summary>
+	/// Tavern - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Tavern (no reward)</name>
+	Ruined_Tavern_no_Reward,
+
+	/// <summary>
+	/// Tea Doctor - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Tea Doctor</name>
+	Ruined_Tea_Doctor,
+
+	/// <summary>
+	/// Tea Doctor - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Tea Doctor (no reward)</name>
+	Ruined_Tea_Doctor_no_Reward,
+
+	/// <summary>
+	/// Teahouse - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Tea House</name>
+	Ruined_Tea_House,
+
+	/// <summary>
+	/// Teahouse - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Tea House (no reward)</name>
+	Ruined_Tea_House_no_Reward,
+
+	/// <summary>
+	/// Temple - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Temple</name>
+	Ruined_Temple,
+
+	/// <summary>
+	/// Temple - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Temple (no reward)</name>
+	Ruined_Temple_no_Reward,
+
+	/// <summary>
+	/// Tinctury - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Tinctury</name>
+	Ruined_Tinctury,
+
+	/// <summary>
+	/// Tinctury - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Tinctury (no reward)</name>
+	Ruined_Tinctury_no_Reward,
+
+	/// <summary>
+	/// Tinkerer - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Tinkerer</name>
+	Ruined_Tinkerer,
+
+	/// <summary>
+	/// Tinkerer - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Tinkerer (no reward)</name>
+	Ruined_Tinkerer_no_Reward,
+
+	/// <summary>
+	/// Toolshop - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Toolshop</name>
+	Ruined_Toolshop,
+
+	/// <summary>
+	/// Toolshop - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Toolshop (no reward)</name>
+	Ruined_Toolshop_no_Reward,
+
+	/// <summary>
+	/// Trading Post - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Trading Post (no reward)</name>
+	Ruined_Trading_Post_no_Reward,
+
+	/// <summary>
+	/// Trappers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Trappers Camp</name>
+	Ruined_Trappers_Camp,
+
+	/// <summary>
+	/// Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Trappers Camp (no reward)</name>
+	Ruined_Trappers_Camp_no_Reward,
+
+	/// <summary>
+	/// Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Trappers Camp Primitive (no reward)</name>
+	Ruined_Trappers_Camp_Primitive_no_Reward,
+
+	/// <summary>
+	/// Weaver - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Weaver</name>
+	Ruined_Weaver,
+
+	/// <summary>
+	/// Weaver - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Weaver (no reward)</name>
+	Ruined_Weaver_no_Reward,
+
+	/// <summary>
+	/// Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Woodcutters Camp</name>
+	Ruined_Woodcutters_Camp,
+
+	/// <summary>
+	/// Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Woodcutters Camp (no reward)</name>
+	Ruined_Woodcutters_Camp_no_Reward,
+
+	/// <summary>
+	/// Workshop - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Workshop</name>
+	Ruined_Workshop,
+
+	/// <summary>
+	/// Workshop - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Workshop (no reward)</name>
+	Ruined_Workshop_no_Reward,
+
+	/// <summary>
+	/// Totem of Denial - A religious structure built by the Fishmen. It interferes with the Hearth in the center of the settlement.
+	/// </summary>
+	/// <name>Sacrifice Totem</name>
+	Sacrifice_Totem,
+
+	/// <summary>
+	/// Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+	/// </summary>
+	/// <name>Scorpion 1</name>
+	Scorpion_1,
+
+	/// <summary>
+	/// Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+	/// </summary>
+	/// <name>Scorpion 2</name>
+	Scorpion_2,
+
+	/// <summary>
+	/// Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+	/// </summary>
+	/// <name>Scorpion 3</name>
+	Scorpion_3,
+
+	/// <summary>
+	/// Open Vault - An open entrance to an ancient dungeon. Strange sounds can be heard coming from inside.
+	/// </summary>
+	/// <name>SealedTomb_T1</name>
+	SealedTomb_T1,
+
+	/// <summary>
+	/// Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+	/// </summary>
+	/// <name>Snake 1</name>
+	Snake_1,
+
+	/// <summary>
+	/// Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+	/// </summary>
+	/// <name>Snake 2</name>
+	Snake_2,
+
+	/// <summary>
+	/// Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+	/// </summary>
+	/// <name>Snake 3</name>
+	Snake_3,
+
+	/// <summary>
+	/// Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
+	/// </summary>
+	/// <name>Spider 1</name>
+	Spider_1,
+
+	/// <summary>
+	/// Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
+	/// </summary>
+	/// <name>Spider 2</name>
+	Spider_2,
+
+	/// <summary>
+	/// Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+	/// </summary>
+	/// <name>Spider 3</name>
+	Spider_3,
+
+	/// <summary>
+	/// Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
+	/// </summary>
+	/// <name>Termite Burrow</name>
+	Termite_Burrow,
+
+	/// <summary>
+	/// Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+	/// </summary>
+	/// <name>TI AncientShrine_T1</name>
+	TI_AncientShrine_T1,
+
+	/// <summary>
+	/// Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
+	/// </summary>
+	/// <name>Traders Cemetery</name>
+	Traders_Cemetery,
+
+	/// <summary>
+	/// Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
+	/// </summary>
+	/// <name>War Beast Cage</name>
+	War_Beast_Cage,
+
+	/// <summary>
+	/// Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
+	/// </summary>
+	/// <name>White Stag</name>
+	White_Stag,
+
+	/// <summary>
+	/// Royal Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
+	/// </summary>
+	/// <name>White Treasure Stag</name>
+	White_Treasure_Stag,
+
+	/// <summary>
+	/// Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
+	/// </summary>
+	/// <name>Wildfire</name>
+	Wildfire,
 
 
-	MAX = 332
+
+	MAX = 333
 }
 
 public static class RelicTypesExtensions
@@ -355,8 +2023,8 @@ public static class RelicTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new RelicTypes[332];
-			for (int i = 0; i < 332; i++)
+			s_All = new RelicTypes[333];
+			for (int i = 0; i < 333; i++)
 			{
 				s_All[i] = (RelicTypes)(i+1);
 			}
@@ -364,6 +2032,11 @@ public static class RelicTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every RelicTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return RelicTypes.AncientBurrialGrounds in the enum and log an error.
+	/// </summary>
 	public static string ToName(this RelicTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -375,6 +2048,11 @@ public static class RelicTypesExtensions
 		return TypeToInternalName[RelicTypes.AncientBurrialGrounds];
 	}
 	
+	/// <summary>
+	/// Returns a RelicTypes associated with the given name.
+	/// Every RelicTypes should have a unique name as to distinguish it from others.
+	/// If no RelicTypes is found, it will return RelicTypes.Unknown and log a warning.
+	/// </summary>
 	public static RelicTypes ToRelicTypes(this string name)
 	{
 		foreach (KeyValuePair<RelicTypes,string> pair in TypeToInternalName)
@@ -389,9 +2067,15 @@ public static class RelicTypesExtensions
 		return RelicTypes.Unknown;
 	}
 	
-	public static RelicModel ToRelicModel(this string name)
+	/// <summary>
+	/// Returns a RelicModel associated with the given name.
+	/// RelicModel contain all the data that will be used in the game.
+	/// Every RelicModel should have a unique name as to distinguish it from others.
+	/// If no RelicModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Buildings.RelicModel ToRelicModel(this string name)
 	{
-		RelicModel model = SO.Settings.Relics.FirstOrDefault(a=>a.name == name);
+		Eremite.Buildings.RelicModel model = SO.Settings.Relics.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -401,15 +2085,27 @@ public static class RelicTypesExtensions
 		return null;
 	}
 
-	public static RelicModel ToRelicModel(this RelicTypes types)
+    /// <summary>
+    /// Returns a RelicModel associated with the given RelicTypes.
+    /// RelicModel contain all the data that will be used in the game.
+    /// Every RelicModel should have a unique name as to distinguish it from others.
+    /// If no RelicModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Buildings.RelicModel ToRelicModel(this RelicTypes types)
 	{
 		return types.ToName().ToRelicModel();
 	}
 	
-	public static RelicModel[] ToRelicModelArray(this IEnumerable<RelicTypes> collection)
+	/// <summary>
+	/// Returns an array of RelicModel associated with the given RelicTypes.
+	/// RelicModel contain all the data that will be used in the game.
+	/// Every RelicModel should have a unique name as to distinguish it from others.
+	/// If a RelicModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Buildings.RelicModel[] ToRelicModelArray(this IEnumerable<RelicTypes> collection)
 	{
 		int count = collection.Count();
-		RelicModel[] array = new RelicModel[count];
+		Eremite.Buildings.RelicModel[] array = new Eremite.Buildings.RelicModel[count];
 		int i = 0;
 		foreach (RelicTypes element in collection)
 		{
@@ -419,10 +2115,16 @@ public static class RelicTypesExtensions
 		return array;
 	}
 	
-	public static RelicModel[] ToRelicModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of RelicModel associated with the given RelicTypes.
+	/// RelicModel contain all the data that will be used in the game.
+	/// Every RelicModel should have a unique name as to distinguish it from others.
+	/// If a RelicModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Buildings.RelicModel[] ToRelicModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		RelicModel[] array = new RelicModel[count];
+		Eremite.Buildings.RelicModel[] array = new Eremite.Buildings.RelicModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -431,7 +2133,51 @@ public static class RelicTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of RelicModel associated with the given RelicTypes.
+	/// RelicModel contain all the data that will be used in the game.
+	/// Every RelicModel should have a unique name as to distinguish it from others.
+	/// If a RelicModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Buildings.RelicModel[] ToRelicModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Buildings.RelicModel>.Get(out List<Eremite.Buildings.RelicModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Buildings.RelicModel model = element.ToRelicModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of RelicModel associated with the given RelicTypes.
+	/// RelicModel contain all the data that will be used in the game.
+	/// Every RelicModel should have a unique name as to distinguish it from others.
+	/// If a RelicModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Buildings.RelicModel[] ToRelicModelArrayNoNulls(this IEnumerable<RelicTypes> collection)
+	{
+		using(ListPool<Eremite.Buildings.RelicModel>.Get(out List<Eremite.Buildings.RelicModel> list))
+		{
+			foreach (RelicTypes element in collection)
+			{
+				Eremite.Buildings.RelicModel model = element.ToRelicModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<RelicTypes, string> TypeToInternalName = new()
 	{
 		{ RelicTypes.AncientBurrialGrounds, "AncientBurrialGrounds" },                                           // Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
@@ -460,7 +2206,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                           // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
 		{ RelicTypes.AngryGhostChest_T1, "AngryGhostChest_T1" },                                                 // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
 		{ RelicTypes.BeaverBattleground_T1, "BeaverBattleground_T1" },                                           // Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
-		{ RelicTypes.Black_Stag, "Black Stag" },                                                                 // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+		{ RelicTypes.Black_Stag, "Black Stag" },                                                                 // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 		{ RelicTypes.Black_Treasure_Stag, "Black Treasure Stag" },                                               // Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 		{ RelicTypes.Blightrot, "Blightrot" },                                                                   // Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
 		{ RelicTypes.Blightrot_Cauldron, "Blightrot Cauldron" },                                                 // Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
@@ -491,8 +2237,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Caravan_T1, "Caravan_T1" },                                                                 // Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
 		{ RelicTypes.Caravan_T2, "Caravan_T2" },                                                                 // Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
 		{ RelicTypes.Corrupted_Caravan, "Corrupted Caravan" },                                                   // Corrupted Caravan - A large caravan abandoned in the woods, overgrown with Blightrot Cysts. They must have fed on the transported goods... or people.
-		{ RelicTypes.DebugNode_ClayBig, "DebugNode_ClayBig" },                                                   // Clay Deposit (Large) - Soil infused with the essence of the rain.
-		{ RelicTypes.DebugNode_ClaySmall, "DebugNode_ClaySmall" },                                               // Clay Deposit (Small) - Soil infused with the essence of the rain.
+		{ RelicTypes.DebugNode_ClayBig, "DebugNode_ClayBig" },                                                   // Clay Node (Large) - Soil infused with the essence of the rain.
+		{ RelicTypes.DebugNode_ClaySmall, "DebugNode_ClaySmall" },                                               // Clay Node (Small) - Soil infused with the essence of the rain.
 		{ RelicTypes.DebugNode_DewberryBushBig, "DebugNode_DewberryBushBig" },                                   // Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain.
 		{ RelicTypes.DebugNode_DewberryBushSmall, "DebugNode_DewberryBushSmall" },                               // Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain.
 		{ RelicTypes.DebugNode_FlaxBig, "DebugNode_FlaxBig" },                                                   // Flax Field (Large) - Resilient plants that are perfect for cloth-making.
@@ -512,16 +2258,16 @@ public static class RelicTypesExtensions
 		{ RelicTypes.DebugNode_MushroomSmall, "DebugNode_MushroomSmall" },                                       // Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
 		{ RelicTypes.DebugNode_ReedBig, "DebugNode_ReedBig" },                                                   // Reed Field (Large) - A very common plant, it thrives thanks to the magical rain.
 		{ RelicTypes.DebugNode_ReedSmall, "DebugNode_ReedSmall" },                                               // Reed Field (Small) - A very common plant, it thrives thanks to the magical rain.
-		{ RelicTypes.DebugNode_RootsBig, "DebugNode_RootsBig" },                                                 // Root Deposit (Large) - A tangled net of living vines.
-		{ RelicTypes.DebugNode_RootsSmall, "DebugNode_RootsSmall" },                                             // Root Deposit (Small) - A tangled net of living vines.
-		{ RelicTypes.DebugNode_SeaMarrowBig, "DebugNode_SeaMarrowBig" },                                         // Sea Marrow Deposit (Large) - Ancient fossils, rich in resources.
-		{ RelicTypes.DebugNode_SeaMarrowSmall, "DebugNode_SeaMarrowSmall" },                                     // Sea Marrow Deposit (Small) - Ancient fossils, rich in resources.
+		{ RelicTypes.DebugNode_RootsBig, "DebugNode_RootsBig" },                                                 // Root Node (Large) - A tangled net of living vines.
+		{ RelicTypes.DebugNode_RootsSmall, "DebugNode_RootsSmall" },                                             // Root Node (Small) - A tangled net of living vines.
+		{ RelicTypes.DebugNode_SeaMarrowBig, "DebugNode_SeaMarrowBig" },                                         // Sea Marrow Node (Large) - Ancient fossils, rich in resources.
+		{ RelicTypes.DebugNode_SeaMarrowSmall, "DebugNode_SeaMarrowSmall" },                                     // Sea Marrow Node (Small) - Ancient fossils, rich in resources.
 		{ RelicTypes.DebugNode_SnailBroodmotherBig, "DebugNode_SnailBroodmotherBig" },                           // Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
 		{ RelicTypes.DebugNode_SnailBroodmotherSmall, "DebugNode_SnailBroodmotherSmall" },                       // Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
 		{ RelicTypes.DebugNode_SnakeNestBig, "DebugNode_SnakeNestBig" },                                         // Snake Nest (Large) - A dangerous, but rich source of food and leather.
 		{ RelicTypes.DebugNode_SnakeNestSmall, "DebugNode_SnakeNestSmall" },                                     // Snake Nest (Small) - A dangerous, but rich source of food and leather.
-		{ RelicTypes.DebugNode_StoneBig, "DebugNode_StoneBig" },                                                 // Stone Deposit (Large) - Stones, weathered by the everlasting rain.
-		{ RelicTypes.DebugNode_StoneSmall, "DebugNode_StoneSmall" },                                             // Stone Deposit (Small) - Stones, weathered by the everlasting rain.
+		{ RelicTypes.DebugNode_StoneBig, "DebugNode_StoneBig" },                                                 // Stone Node (Large) - Stones, weathered by the everlasting rain.
+		{ RelicTypes.DebugNode_StoneSmall, "DebugNode_StoneSmall" },                                             // Stone Node (Small) - Stones, weathered by the everlasting rain.
 		{ RelicTypes.DebugNode_StormbirdNestBig, "DebugNode_StormbirdNestBig" },                                 // Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
 		{ RelicTypes.DebugNode_StormbirdNestSmall, "DebugNode_StormbirdNestSmall" },                             // Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
 		{ RelicTypes.DebugNode_SwampWheatBig, "DebugNode_SwampWheatBig" },                                       // Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp.
@@ -543,7 +2289,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Glade_Trader_The_Hermit, "Glade Trader - The Hermit" },                                     // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
 		{ RelicTypes.Glade_Trader_The_Seer, "Glade Trader - The Seer" },                                         // Wandering Merchant - Seer - A strange woman is observing the settlement from afar.
 		{ RelicTypes.Glade_Trader_The_Shaman, "Glade Trader - The Shaman" },                                     // Wandering Merchant - Shaman - A mysterious and imposing figure has been spotted near the settlement. He is pulling a wagon full of herbs and ointments.
-		{ RelicTypes.Gold_Stag, "Gold Stag" },                                                                   // Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+		{ RelicTypes.Gold_Stag, "Gold Stag" },                                                                   // Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 		{ RelicTypes.Gold_Treasure_Stag, "Gold Treasure Stag" },                                                 // Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 		{ RelicTypes.Harmony_Spirit_Altar, "Harmony Spirit Altar" },                                             // Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
 		{ RelicTypes.HarpyBattleground_T1, "HarpyBattleground_T1" },                                             // Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
@@ -581,6 +2327,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Rain_Totem, "Rain Totem" },                                                                 // Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
 		{ RelicTypes.Rainpunk_Drill_Coal, "Rainpunk Drill - Coal" },                                             // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
 		{ RelicTypes.Rainpunk_Drill_Copper, "Rainpunk Drill - Copper" },                                         // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
+		{ RelicTypes.Rainpunk_Drill_Salt, "Rainpunk Drill - Salt" },                                             // Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
 		{ RelicTypes.RainpunkFactory, "RainpunkFactory" },                                                       // Destroyed Rainpunk Foundry - An old, abandoned piece of advanced Rainpunk technology. It seems extremely unstable - but maybe it can be rebuilt...
 		{ RelicTypes.RewardChest_T1, "RewardChest_T1" },                                                         // Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 		{ RelicTypes.RewardChest_T2, "RewardChest_T2" },                                                         // Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
@@ -763,7 +2510,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.TI_AncientShrine_T1, "TI AncientShrine_T1" },                                               // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
 		{ RelicTypes.Traders_Cemetery, "Traders Cemetery" },                                                     // Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
 		{ RelicTypes.War_Beast_Cage, "War Beast Cage" },                                                         // Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
-		{ RelicTypes.White_Stag, "White Stag" },                                                                 // Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous (<sprite name="dangerous">) or Forbidden Glade (<sprite name="forbidden">). It is said that a special treasure awaits the one who captures it.
+		{ RelicTypes.White_Stag, "White Stag" },                                                                 // Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 		{ RelicTypes.White_Treasure_Stag, "White Treasure Stag" },                                               // Royal Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 		{ RelicTypes.Wildfire, "Wildfire" },                                                                     // Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
 

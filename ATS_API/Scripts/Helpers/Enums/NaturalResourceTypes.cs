@@ -7,7 +7,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.17R
+// Generated using Version 1.5.2R
 public enum NaturalResourceTypes
 {
 	Unknown = -1,
@@ -104,6 +104,18 @@ public enum NaturalResourceTypes
 	Sealed_Tree,
 
 	/// <summary>
+	/// Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
+	/// </summary>
+	/// <name>Wasteland Tree 1</name>
+	Wasteland_Tree_1,
+
+	/// <summary>
+	/// Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
+	/// </summary>
+	/// <name>Wasteland Tree 2</name>
+	Wasteland_Tree_2,
+
+	/// <summary>
 	/// Lush Tree - A perfect source of wood.
 	/// </summary>
 	/// <name>Woodlands Tree</name>
@@ -111,7 +123,7 @@ public enum NaturalResourceTypes
 
 
 
-	MAX = 16
+	MAX = 18
 }
 
 public static class NaturalResourceTypesExtensions
@@ -121,8 +133,8 @@ public static class NaturalResourceTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new NaturalResourceTypes[16];
-			for (int i = 0; i < 16; i++)
+			s_All = new NaturalResourceTypes[18];
+			for (int i = 0; i < 18; i++)
 			{
 				s_All[i] = (NaturalResourceTypes)(i+1);
 			}
@@ -293,6 +305,8 @@ public static class NaturalResourceTypesExtensions
 		{ NaturalResourceTypes.Mushroom_Tree_Bugs, "Mushroom Tree Bugs" },             // Mushwood - A giant fungal tree covered in a leathery bark.
 		{ NaturalResourceTypes.Mushroom_Tree_Classic, "Mushroom Tree Classic" },       // Mushwood - A giant fungal tree covered in a leathery bark.
 		{ NaturalResourceTypes.Sealed_Tree, "Sealed Tree" },                           // Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
+		{ NaturalResourceTypes.Wasteland_Tree_1, "Wasteland Tree 1" },                 // Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
+		{ NaturalResourceTypes.Wasteland_Tree_2, "Wasteland Tree 2" },                 // Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
 		{ NaturalResourceTypes.Woodlands_Tree, "Woodlands Tree" },                     // Lush Tree - A perfect source of wood.
 
 	};

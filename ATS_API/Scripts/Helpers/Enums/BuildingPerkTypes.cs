@@ -1,69 +1,336 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum BuildingPerkTypes
 {
 	Unknown = -1,
 	None,
-	Arch_Inst_Extra_Production,                 // Ancient Practices - Archaeologists have learned a lot about a long-lost culture by examining old ruins. All workers get a {0} higher chance of producing double yields for every {1} completed Dangerous and Forbidden Glade Events.
-	Arch_Inst_Hostility,                        // Decryption - Effect_HostilityForTablets_Desc
-	Arch_Inst_Relic_Working_Time,               // Carved in Stone - Secret methods of dealing with threats are engraved in Ancient Tablets. Scouts work {0} faster on Glade Events for every {1} Reputation Points gained from completed Glade Events.
-	Arch_Inst_Saving,                           // Escaping the Shadows - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
-	Arch_Inst_Tools_For_Hostility,              // Forbidden Tools - All metal is permeated with malevolent magic from the forest. Every {1} Hostility levels grant {0}.
-	Arch_Inst_Workers_Carry_More,               // Ancient Strength - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	Hauler_Cart,                                // HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
-	Hauler_Cart_2,                              // HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
-	Highlight_Archeology_1,                     // Short-range Scanner - Reveals the location of the closest archaeological discovery.
-	Highlight_Archeology_2,                     // Mid-range Scanner - Reveals the location of the second closest archaeological discovery.
-	Highlight_Archeology_3,                     // Long-range Scanner - Reveals the location of the farthest archaeological discovery.
-	R_Extra_Production_Chance,                  // Reliability - Increases the chance for extra production yields by {0}.
-	R_Production_Rate,                          // Efficiency - Increases production speed by {0}.
-	R_Rainpunk_Comfortable,                     // Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
-	Spec_Relics_Working_Time,                   // Scouts by Nature - Each Fox scout assigned to a Glade Event reduces its working time by {0}.
-	U_Beaver_Houses_Unique_Bonus,               // Writing Desk - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Extractor_Tank,                           // Tank Capacity Increase - Increases tank capacity for the corresponding rainwater type by {0}.
-	U_Fox_Houses_Unique_Bonus,                  // Lichen - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Frog_House_Building_Mat_Crit,             // Workbench - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Frog_House_Building_Mat_Speed,            // Drafting Table - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Frog_House_More_Resolve_For_Rainpunk,     // Water Pipeline - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Frog_House_Newcomer_Bonus,                // Atrium - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Frog_House_Water_Tank,                    // Rainwater Storage - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
-	U_Frog_House_Yearly_Packs,                  // Storage Room - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Frog_Houses_Bonus_Resolve,                // Indoor Pool - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
-	U_Harpy_Houses_Unique_Bonus,                // Canopy - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Hauler_Extra_Capacity,                    // HaulerUpgrade_CarryCapacity_Name - HaulerUpgrade_CarryCapacity_Desc
-	U_Hauler_Range,                             // HaulerUpgrade_Radius_Name - HaulerUpgrade_Radius_Desc
-	U_Hauler_Speed,                             // HaulerUpgrade_Speed_Name
-	U_Hauler_Time_Between_Breaks,               // HaulerUpgrade_BreakTime_Name
-	U_Houses_Bonus_Capacity,                    // Extra Room - A strategically built wall can do wonders. This house will have room for one additional villager.
-	U_Houses_Bonus_Resolve,                     // Stove - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
-	U_Houses_Villagers_Speed_Bonus,             // Soft Beds - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
-	U_Human_Houses_Unique_Bonus,                // Toolshed - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Lizard_Houses_Unique_Bonus,               // Cellar - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-	U_Mine_Extra_Charges_Unlock_1,              // Box Crib - Miners have found a collapsed tunnel that leads to more ore veins: {0}.
-	U_Mine_Extra_Charges_Unlock_2,              // Box Crib - Miners have found a collapsed tunnel that leads to more ore veins: {0}.
-	U_Mine_Main_Charges_Unlock_1,               // Mine Dredging - A deeper mine level has revealed new ore veins: {0}.
-	U_Mine_Main_Charges_Unlock_2,               // Mine Dredging - A deeper mine level has revealed new ore veins: {0}.
-	U_Mine_Production_Rate,                     // Pit Pony - Where machines can't tread, a pony will be sent. Strong workhorses help the miners and increase production speed by {0}.
-	U_Mine_Upgrade_Cart_1,                      // Minecart - {0} {1}
-	U_Mine_Upgrade_Cart_2,                      // Minecart - {0} {1}
-	U_Mine_Upgrade_Speed_1,                     // Pit Pony - {0} {1}
-	U_Mine_Upgrade_Speed_2,                     // Pit Pony - {0} {1}
-	U_Pump_Automaton,                           // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
-	U_Storage_Automaton,                        // Minecart - An automated minecart will help miners transport resources from the Mine to the Warehouse.
-	UBP_Blight_Fighter_Automaton,               // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce <sprite name="blight fuel"> Purging Fire.
-	UBP_Blight_Fighter_Speed,                   // Mobile Sparkcasters
-	UBP_Blight_Post_Production_Rate,            // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
-	UBP_Extra_Production_Chance,                // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
-	UBP_Faster_Cysts_Burning,                   // Triple Ignition System - An innovative improvement to the flamethrower ignition system. Blight Fighters and Blight Automatons at this Blight Post need {0} seconds less to burn a Blightrot Cyst.
-	UBP_Global_Background_Cyst_Generation_Rate, // Manned Lookout
-	UBP_Global_Cyst_Generation_Rate,            // Manned Lookout
+	
+	/// <summary>
+	/// Ancient Practices - Archaeologists have learned a lot about a long-lost culture by examining old ruins. All workers get a {0} higher chance of producing double yields for every {1} completed Dangerous and Forbidden Glade Events.
+	/// </summary>
+	/// <name>Arch Inst - Extra Production</name>
+	Arch_Inst_Extra_Production,
+
+	/// <summary>
+	/// Decryption - Effect_HostilityForTablets_Desc
+	/// </summary>
+	/// <name>Arch Inst - Hostility</name>
+	Arch_Inst_Hostility,
+
+	/// <summary>
+	/// Carved in Stone - Secret methods of dealing with threats are engraved in Ancient Tablets. Scouts work {0} faster on Glade Events for every {1} Reputation Points gained from completed Glade Events.
+	/// </summary>
+	/// <name>Arch Inst - Relic Working Time</name>
+	Arch_Inst_Relic_Working_Time,
+
+	/// <summary>
+	/// Escaping the Shadows - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
+	/// </summary>
+	/// <name>Arch Inst - Saving</name>
+	Arch_Inst_Saving,
+
+	/// <summary>
+	/// Forbidden Tools - All metal is permeated with malevolent magic from the forest. Every {1} Hostility levels grant {0}.
+	/// </summary>
+	/// <name>Arch Inst - Tools for Hostility</name>
+	Arch_Inst_Tools_For_Hostility,
+
+	/// <summary>
+	/// Ancient Strength - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>Arch Inst - Workers carry more</name>
+	Arch_Inst_Workers_Carry_More,
+
+	/// <summary>
+	/// HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
+	/// </summary>
+	/// <name>Hauler Cart</name>
+	Hauler_Cart,
+
+	/// <summary>
+	/// HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
+	/// </summary>
+	/// <name>Hauler Cart 2</name>
+	Hauler_Cart_2,
+
+	/// <summary>
+	/// Short-range Scanner - Reveals the location of the closest archaeological discovery.
+	/// </summary>
+	/// <name>Highlight Archeology 1</name>
+	Highlight_Archeology_1,
+
+	/// <summary>
+	/// Mid-range Scanner - Reveals the location of the second closest archaeological discovery.
+	/// </summary>
+	/// <name>Highlight Archeology 2</name>
+	Highlight_Archeology_2,
+
+	/// <summary>
+	/// Long-range Scanner - Reveals the location of the farthest archaeological discovery.
+	/// </summary>
+	/// <name>Highlight Archeology 3</name>
+	Highlight_Archeology_3,
+
+	/// <summary>
+	/// Reliability - Increases the chance for extra production yields by {0}.
+	/// </summary>
+	/// <name>[R] Extra Production Chance</name>
+	R_Extra_Production_Chance,
+
+	/// <summary>
+	/// Efficiency - Increases production speed by {0}.
+	/// </summary>
+	/// <name>[R] Production Rate</name>
+	R_Production_Rate,
+
+	/// <summary>
+	/// Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
+	/// </summary>
+	/// <name>[R] Rainpunk Comfortable</name>
+	R_Rainpunk_Comfortable,
+
+	/// <summary>
+	/// Scouts by Nature - Each Fox scout assigned to a Glade Event reduces its working time by {0}.
+	/// </summary>
+	/// <name>[Spec] Relics Working Time</name>
+	Spec_Relics_Working_Time,
+
+	/// <summary>
+	/// Writing Desk - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Beaver Houses Unique Bonus</name>
+	U_Beaver_Houses_Unique_Bonus,
+
+	/// <summary>
+	/// Tank Capacity Increase - Increases tank capacity for the corresponding rainwater type by {0}.
+	/// </summary>
+	/// <name>[U] Extractor Tank</name>
+	U_Extractor_Tank,
+
+	/// <summary>
+	/// Lichen - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Fox Houses Unique Bonus</name>
+	U_Fox_Houses_Unique_Bonus,
+
+	/// <summary>
+	/// Workbench - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Frog House Building Mat Crit</name>
+	U_Frog_House_Building_Mat_Crit,
+
+	/// <summary>
+	/// Drafting Table - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Frog House Building Mat Speed</name>
+	U_Frog_House_Building_Mat_Speed,
+
+	/// <summary>
+	/// Water Pipeline - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Frog House More Resolve For Rainpunk</name>
+	U_Frog_House_More_Resolve_For_Rainpunk,
+
+	/// <summary>
+	/// Atrium - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Frog House Newcomer Bonus</name>
+	U_Frog_House_Newcomer_Bonus,
+
+	/// <summary>
+	/// Rainwater Storage - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
+	/// </summary>
+	/// <name>[U] Frog House Water Tank</name>
+	U_Frog_House_Water_Tank,
+
+	/// <summary>
+	/// Storage Room - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Frog House Yearly Packs</name>
+	U_Frog_House_Yearly_Packs,
+
+	/// <summary>
+	/// Indoor Pool - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
+	/// </summary>
+	/// <name>[U] Frog Houses Bonus Resolve</name>
+	U_Frog_Houses_Bonus_Resolve,
+
+	/// <summary>
+	/// Canopy - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Harpy Houses Unique Bonus</name>
+	U_Harpy_Houses_Unique_Bonus,
+
+	/// <summary>
+	/// HaulerUpgrade_CarryCapacity_Name - HaulerUpgrade_CarryCapacity_Desc
+	/// </summary>
+	/// <name>[U] Hauler Extra Capacity</name>
+	U_Hauler_Extra_Capacity,
+
+	/// <summary>
+	/// HaulerUpgrade_Radius_Name - HaulerUpgrade_Radius_Desc
+	/// </summary>
+	/// <name>[U] Hauler Range</name>
+	U_Hauler_Range,
+
+	/// <summary>
+	/// HaulerUpgrade_Speed_Name
+	/// </summary>
+	/// <name>[U] Hauler Speed</name>
+	U_Hauler_Speed,
+
+	/// <summary>
+	/// HaulerUpgrade_BreakTime_Name
+	/// </summary>
+	/// <name>[U] Hauler Time Between Breaks</name>
+	U_Hauler_Time_Between_Breaks,
+
+	/// <summary>
+	/// Extra Room - A strategically built wall can do wonders. This house will have room for one additional villager.
+	/// </summary>
+	/// <name>[U] Houses Bonus Capacity</name>
+	U_Houses_Bonus_Capacity,
+
+	/// <summary>
+	/// Stove - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
+	/// </summary>
+	/// <name>[U] Houses Bonus Resolve</name>
+	U_Houses_Bonus_Resolve,
+
+	/// <summary>
+	/// Soft Beds - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
+	/// </summary>
+	/// <name>[U] Houses Villagers Speed Bonus</name>
+	U_Houses_Villagers_Speed_Bonus,
+
+	/// <summary>
+	/// Toolshed - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Human Houses Unique Bonus</name>
+	U_Human_Houses_Unique_Bonus,
+
+	/// <summary>
+	/// Cellar - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Lizard Houses Unique Bonus</name>
+	U_Lizard_Houses_Unique_Bonus,
+
+	/// <summary>
+	/// Box Crib - Miners have found a collapsed tunnel that leads to more mining veins: {0}.
+	/// </summary>
+	/// <name>[U] Mine Extra Charges Unlock 1</name>
+	U_Mine_Extra_Charges_Unlock_1,
+
+	/// <summary>
+	/// Box Crib - Miners have found a collapsed tunnel that leads to more mining veins: {0}.
+	/// </summary>
+	/// <name>[U] Mine Extra Charges Unlock 2</name>
+	U_Mine_Extra_Charges_Unlock_2,
+
+	/// <summary>
+	/// Mine Dredging - A deeper mine level has revealed new mining veins: {0}.
+	/// </summary>
+	/// <name>[U] Mine Main Charges Unlock 1</name>
+	U_Mine_Main_Charges_Unlock_1,
+
+	/// <summary>
+	/// Mine Dredging - A deeper mine level has revealed new mining veins: {0}.
+	/// </summary>
+	/// <name>[U] Mine Main Charges Unlock 2</name>
+	U_Mine_Main_Charges_Unlock_2,
+
+	/// <summary>
+	/// Pit Pony - Where machines can't tread, a pony will be sent. Strong workhorses help the miners and increase production speed by {0}.
+	/// </summary>
+	/// <name>[U] Mine Production Rate</name>
+	U_Mine_Production_Rate,
+
+	/// <summary>
+	/// Minecart - {0} {1}
+	/// </summary>
+	/// <name>[U] Mine Upgrade Cart 1</name>
+	U_Mine_Upgrade_Cart_1,
+
+	/// <summary>
+	/// Minecart - {0} {1}
+	/// </summary>
+	/// <name>[U] Mine Upgrade Cart 2</name>
+	U_Mine_Upgrade_Cart_2,
+
+	/// <summary>
+	/// Pit Pony - {0} {1}
+	/// </summary>
+	/// <name>[U] Mine Upgrade Speed 1</name>
+	U_Mine_Upgrade_Speed_1,
+
+	/// <summary>
+	/// Pit Pony - {0} {1}
+	/// </summary>
+	/// <name>[U] Mine Upgrade Speed 2</name>
+	U_Mine_Upgrade_Speed_2,
+
+	/// <summary>
+	/// Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
+	/// </summary>
+	/// <name>[U] Pump Automaton</name>
+	U_Pump_Automaton,
+
+	/// <summary>
+	/// Minecart - An automated minecart will help miners transport resources from the Mine to the Warehouse.
+	/// </summary>
+	/// <name>[U] Storage Automaton</name>
+	U_Storage_Automaton,
+
+	/// <summary>
+	/// Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce "blight fuel" Purging Fire.
+	/// </summary>
+	/// <name>[U][BP] Blight Fighter Automaton</name>
+	UBP_Blight_Fighter_Automaton,
+
+	/// <summary>
+	/// Mobile Sparkcasters
+	/// </summary>
+	/// <name>[U][BP] Blight Fighter Speed</name>
+	UBP_Blight_Fighter_Speed,
+
+	/// <summary>
+	/// Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of "blight fuel" Purging Fire.
+	/// </summary>
+	/// <name>[U][BP] Blight Post Production Rate</name>
+	UBP_Blight_Post_Production_Rate,
+
+	/// <summary>
+	/// Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of "blight fuel" Purging Fire.
+	/// </summary>
+	/// <name>[U][BP] Extra Production Chance</name>
+	UBP_Extra_Production_Chance,
+
+	/// <summary>
+	/// Triple Ignition System - An innovative improvement to the flamethrower ignition system. Blight Fighters and Blight Automatons at this Blight Post need {0} seconds less to burn a Blightrot Cyst.
+	/// </summary>
+	/// <name>[U][BP] Faster Cysts Burning</name>
+	UBP_Faster_Cysts_Burning,
+
+	/// <summary>
+	/// Manned Lookout
+	/// </summary>
+	/// <name>[U][BP] Global Background - Cyst Generation Rate</name>
+	UBP_Global_Background_Cyst_Generation_Rate,
+
+	/// <summary>
+	/// Manned Lookout
+	/// </summary>
+	/// <name>[U][BP] Global - Cyst Generation Rate</name>
+	UBP_Global_Cyst_Generation_Rate,
+
 
 
 	MAX = 53
@@ -85,6 +352,11 @@ public static class BuildingPerkTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every BuildingPerkTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return BuildingPerkTypes.Arch_Inst_Extra_Production in the enum and log an error.
+	/// </summary>
 	public static string ToName(this BuildingPerkTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -96,6 +368,11 @@ public static class BuildingPerkTypesExtensions
 		return TypeToInternalName[BuildingPerkTypes.Arch_Inst_Extra_Production];
 	}
 	
+	/// <summary>
+	/// Returns a BuildingPerkTypes associated with the given name.
+	/// Every BuildingPerkTypes should have a unique name as to distinguish it from others.
+	/// If no BuildingPerkTypes is found, it will return BuildingPerkTypes.Unknown and log a warning.
+	/// </summary>
 	public static BuildingPerkTypes ToBuildingPerkTypes(this string name)
 	{
 		foreach (KeyValuePair<BuildingPerkTypes,string> pair in TypeToInternalName)
@@ -110,9 +387,15 @@ public static class BuildingPerkTypesExtensions
 		return BuildingPerkTypes.Unknown;
 	}
 	
-	public static BuildingPerkModel ToBuildingPerkModel(this string name)
+	/// <summary>
+	/// Returns a BuildingPerkModel associated with the given name.
+	/// BuildingPerkModel contain all the data that will be used in the game.
+	/// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+	/// If no BuildingPerkModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.BuildingPerkModel ToBuildingPerkModel(this string name)
 	{
-		BuildingPerkModel model = SO.Settings.buildingsPerks.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.BuildingPerkModel model = SO.Settings.buildingsPerks.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -122,15 +405,27 @@ public static class BuildingPerkTypesExtensions
 		return null;
 	}
 
-	public static BuildingPerkModel ToBuildingPerkModel(this BuildingPerkTypes types)
+    /// <summary>
+    /// Returns a BuildingPerkModel associated with the given BuildingPerkTypes.
+    /// BuildingPerkModel contain all the data that will be used in the game.
+    /// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+    /// If no BuildingPerkModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.BuildingPerkModel ToBuildingPerkModel(this BuildingPerkTypes types)
 	{
 		return types.ToName().ToBuildingPerkModel();
 	}
 	
-	public static BuildingPerkModel[] ToBuildingPerkModelArray(this IEnumerable<BuildingPerkTypes> collection)
+	/// <summary>
+	/// Returns an array of BuildingPerkModel associated with the given BuildingPerkTypes.
+	/// BuildingPerkModel contain all the data that will be used in the game.
+	/// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+	/// If a BuildingPerkModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.BuildingPerkModel[] ToBuildingPerkModelArray(this IEnumerable<BuildingPerkTypes> collection)
 	{
 		int count = collection.Count();
-		BuildingPerkModel[] array = new BuildingPerkModel[count];
+		Eremite.Model.BuildingPerkModel[] array = new Eremite.Model.BuildingPerkModel[count];
 		int i = 0;
 		foreach (BuildingPerkTypes element in collection)
 		{
@@ -140,10 +435,16 @@ public static class BuildingPerkTypesExtensions
 		return array;
 	}
 	
-	public static BuildingPerkModel[] ToBuildingPerkModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of BuildingPerkModel associated with the given BuildingPerkTypes.
+	/// BuildingPerkModel contain all the data that will be used in the game.
+	/// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+	/// If a BuildingPerkModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.BuildingPerkModel[] ToBuildingPerkModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		BuildingPerkModel[] array = new BuildingPerkModel[count];
+		Eremite.Model.BuildingPerkModel[] array = new Eremite.Model.BuildingPerkModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -152,7 +453,51 @@ public static class BuildingPerkTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of BuildingPerkModel associated with the given BuildingPerkTypes.
+	/// BuildingPerkModel contain all the data that will be used in the game.
+	/// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+	/// If a BuildingPerkModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.BuildingPerkModel[] ToBuildingPerkModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.BuildingPerkModel>.Get(out List<Eremite.Model.BuildingPerkModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.BuildingPerkModel model = element.ToBuildingPerkModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of BuildingPerkModel associated with the given BuildingPerkTypes.
+	/// BuildingPerkModel contain all the data that will be used in the game.
+	/// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+	/// If a BuildingPerkModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.BuildingPerkModel[] ToBuildingPerkModelArrayNoNulls(this IEnumerable<BuildingPerkTypes> collection)
+	{
+		using(ListPool<Eremite.Model.BuildingPerkModel>.Get(out List<Eremite.Model.BuildingPerkModel> list))
+		{
+			foreach (BuildingPerkTypes element in collection)
+			{
+				Eremite.Model.BuildingPerkModel model = element.ToBuildingPerkModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<BuildingPerkTypes, string> TypeToInternalName = new()
 	{
 		{ BuildingPerkTypes.Arch_Inst_Extra_Production, "Arch Inst - Extra Production" },                                     // Ancient Practices - Archaeologists have learned a lot about a long-lost culture by examining old ruins. All workers get a {0} higher chance of producing double yields for every {1} completed Dangerous and Forbidden Glade Events.
@@ -190,10 +535,10 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.U_Houses_Villagers_Speed_Bonus, "[U] Houses Villagers Speed Bonus" },                             // Soft Beds - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
 		{ BuildingPerkTypes.U_Human_Houses_Unique_Bonus, "[U] Human Houses Unique Bonus" },                                   // Toolshed - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
 		{ BuildingPerkTypes.U_Lizard_Houses_Unique_Bonus, "[U] Lizard Houses Unique Bonus" },                                 // Cellar - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
-		{ BuildingPerkTypes.U_Mine_Extra_Charges_Unlock_1, "[U] Mine Extra Charges Unlock 1" },                               // Box Crib - Miners have found a collapsed tunnel that leads to more ore veins: {0}.
-		{ BuildingPerkTypes.U_Mine_Extra_Charges_Unlock_2, "[U] Mine Extra Charges Unlock 2" },                               // Box Crib - Miners have found a collapsed tunnel that leads to more ore veins: {0}.
-		{ BuildingPerkTypes.U_Mine_Main_Charges_Unlock_1, "[U] Mine Main Charges Unlock 1" },                                 // Mine Dredging - A deeper mine level has revealed new ore veins: {0}.
-		{ BuildingPerkTypes.U_Mine_Main_Charges_Unlock_2, "[U] Mine Main Charges Unlock 2" },                                 // Mine Dredging - A deeper mine level has revealed new ore veins: {0}.
+		{ BuildingPerkTypes.U_Mine_Extra_Charges_Unlock_1, "[U] Mine Extra Charges Unlock 1" },                               // Box Crib - Miners have found a collapsed tunnel that leads to more mining veins: {0}.
+		{ BuildingPerkTypes.U_Mine_Extra_Charges_Unlock_2, "[U] Mine Extra Charges Unlock 2" },                               // Box Crib - Miners have found a collapsed tunnel that leads to more mining veins: {0}.
+		{ BuildingPerkTypes.U_Mine_Main_Charges_Unlock_1, "[U] Mine Main Charges Unlock 1" },                                 // Mine Dredging - A deeper mine level has revealed new mining veins: {0}.
+		{ BuildingPerkTypes.U_Mine_Main_Charges_Unlock_2, "[U] Mine Main Charges Unlock 2" },                                 // Mine Dredging - A deeper mine level has revealed new mining veins: {0}.
 		{ BuildingPerkTypes.U_Mine_Production_Rate, "[U] Mine Production Rate" },                                             // Pit Pony - Where machines can't tread, a pony will be sent. Strong workhorses help the miners and increase production speed by {0}.
 		{ BuildingPerkTypes.U_Mine_Upgrade_Cart_1, "[U] Mine Upgrade Cart 1" },                                               // Minecart - {0} {1}
 		{ BuildingPerkTypes.U_Mine_Upgrade_Cart_2, "[U] Mine Upgrade Cart 2" },                                               // Minecart - {0} {1}
@@ -201,10 +546,10 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.U_Mine_Upgrade_Speed_2, "[U] Mine Upgrade Speed 2" },                                             // Pit Pony - {0} {1}
 		{ BuildingPerkTypes.U_Pump_Automaton, "[U] Pump Automaton" },                                                         // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
 		{ BuildingPerkTypes.U_Storage_Automaton, "[U] Storage Automaton" },                                                   // Minecart - An automated minecart will help miners transport resources from the Mine to the Warehouse.
-		{ BuildingPerkTypes.UBP_Blight_Fighter_Automaton, "[U][BP] Blight Fighter Automaton" },                               // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce <sprite name="blight fuel"> Purging Fire.
+		{ BuildingPerkTypes.UBP_Blight_Fighter_Automaton, "[U][BP] Blight Fighter Automaton" },                               // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce "blight fuel" Purging Fire.
 		{ BuildingPerkTypes.UBP_Blight_Fighter_Speed, "[U][BP] Blight Fighter Speed" },                                       // Mobile Sparkcasters
-		{ BuildingPerkTypes.UBP_Blight_Post_Production_Rate, "[U][BP] Blight Post Production Rate" },                         // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
-		{ BuildingPerkTypes.UBP_Extra_Production_Chance, "[U][BP] Extra Production Chance" },                                 // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of <sprite name="blight fuel"> Purging Fire.
+		{ BuildingPerkTypes.UBP_Blight_Post_Production_Rate, "[U][BP] Blight Post Production Rate" },                         // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of "blight fuel" Purging Fire.
+		{ BuildingPerkTypes.UBP_Extra_Production_Chance, "[U][BP] Extra Production Chance" },                                 // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of "blight fuel" Purging Fire.
 		{ BuildingPerkTypes.UBP_Faster_Cysts_Burning, "[U][BP] Faster Cysts Burning" },                                       // Triple Ignition System - An innovative improvement to the flamethrower ignition system. Blight Fighters and Blight Automatons at this Blight Post need {0} seconds less to burn a Blightrot Cyst.
 		{ BuildingPerkTypes.UBP_Global_Background_Cyst_Generation_Rate, "[U][BP] Global Background - Cyst Generation Rate" }, // Manned Lookout
 		{ BuildingPerkTypes.UBP_Global_Cyst_Generation_Rate, "[U][BP] Global - Cyst Generation Rate" },                       // Manned Lookout

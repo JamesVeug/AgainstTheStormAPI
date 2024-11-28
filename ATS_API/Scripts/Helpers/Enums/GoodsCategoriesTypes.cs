@@ -1,23 +1,60 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum GoodsCategoriesTypes
 {
 	Unknown = -1,
 	None,
-	Building_Materials, // Building Materials - {0} to expand category
-	Consumable_Items,   // Consumable Items - {0} to expand category
-	Crafting,           // Crafting Resources - {0} to expand category
-	Food,               // Food - {0} to expand category
-	Fuel,               // Fuel & Exploration - {0} to expand category
-	Others,             // Others - {0} to expand category
-	Trade_Goods,        // Trade Goods - {0} to expand category
+	
+	/// <summary>
+	/// Building Materials - {0} to expand category
+	/// </summary>
+	/// <name>Building Materials</name>
+	Building_Materials,
+
+	/// <summary>
+	/// Consumable Items - {0} to expand category
+	/// </summary>
+	/// <name>Consumable Items</name>
+	Consumable_Items,
+
+	/// <summary>
+	/// Crafting Resources - {0} to expand category
+	/// </summary>
+	/// <name>Crafting</name>
+	Crafting,
+
+	/// <summary>
+	/// Food - {0} to expand category
+	/// </summary>
+	/// <name>Food</name>
+	Food,
+
+	/// <summary>
+	/// Fuel & Exploration - {0} to expand category
+	/// </summary>
+	/// <name>Fuel</name>
+	Fuel,
+
+	/// <summary>
+	/// Others - {0} to expand category
+	/// </summary>
+	/// <name>Others</name>
+	Others,
+
+	/// <summary>
+	/// Trade Goods - {0} to expand category
+	/// </summary>
+	/// <name>Trade Goods</name>
+	Trade_Goods,
+
 
 
 	MAX = 7
@@ -39,6 +76,11 @@ public static class GoodsCategoriesTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every GoodsCategoriesTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return GoodsCategoriesTypes.Building_Materials in the enum and log an error.
+	/// </summary>
 	public static string ToName(this GoodsCategoriesTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -50,6 +92,11 @@ public static class GoodsCategoriesTypesExtensions
 		return TypeToInternalName[GoodsCategoriesTypes.Building_Materials];
 	}
 	
+	/// <summary>
+	/// Returns a GoodsCategoriesTypes associated with the given name.
+	/// Every GoodsCategoriesTypes should have a unique name as to distinguish it from others.
+	/// If no GoodsCategoriesTypes is found, it will return GoodsCategoriesTypes.Unknown and log a warning.
+	/// </summary>
 	public static GoodsCategoriesTypes ToGoodsCategoriesTypes(this string name)
 	{
 		foreach (KeyValuePair<GoodsCategoriesTypes,string> pair in TypeToInternalName)
@@ -64,9 +111,15 @@ public static class GoodsCategoriesTypesExtensions
 		return GoodsCategoriesTypes.Unknown;
 	}
 	
-	public static GoodCategoryModel ToGoodCategoryModel(this string name)
+	/// <summary>
+	/// Returns a GoodCategoryModel associated with the given name.
+	/// GoodCategoryModel contain all the data that will be used in the game.
+	/// Every GoodCategoryModel should have a unique name as to distinguish it from others.
+	/// If no GoodCategoryModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.GoodCategoryModel ToGoodCategoryModel(this string name)
 	{
-		GoodCategoryModel model = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.GoodCategoryModel model = SO.Settings.GoodsCategories.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -76,15 +129,27 @@ public static class GoodsCategoriesTypesExtensions
 		return null;
 	}
 
-	public static GoodCategoryModel ToGoodCategoryModel(this GoodsCategoriesTypes types)
+    /// <summary>
+    /// Returns a GoodCategoryModel associated with the given GoodsCategoriesTypes.
+    /// GoodCategoryModel contain all the data that will be used in the game.
+    /// Every GoodCategoryModel should have a unique name as to distinguish it from others.
+    /// If no GoodCategoryModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.GoodCategoryModel ToGoodCategoryModel(this GoodsCategoriesTypes types)
 	{
 		return types.ToName().ToGoodCategoryModel();
 	}
 	
-	public static GoodCategoryModel[] ToGoodCategoryModelArray(this IEnumerable<GoodsCategoriesTypes> collection)
+	/// <summary>
+	/// Returns an array of GoodCategoryModel associated with the given GoodsCategoriesTypes.
+	/// GoodCategoryModel contain all the data that will be used in the game.
+	/// Every GoodCategoryModel should have a unique name as to distinguish it from others.
+	/// If a GoodCategoryModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.GoodCategoryModel[] ToGoodCategoryModelArray(this IEnumerable<GoodsCategoriesTypes> collection)
 	{
 		int count = collection.Count();
-		GoodCategoryModel[] array = new GoodCategoryModel[count];
+		Eremite.Model.GoodCategoryModel[] array = new Eremite.Model.GoodCategoryModel[count];
 		int i = 0;
 		foreach (GoodsCategoriesTypes element in collection)
 		{
@@ -94,10 +159,16 @@ public static class GoodsCategoriesTypesExtensions
 		return array;
 	}
 	
-	public static GoodCategoryModel[] ToGoodCategoryModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of GoodCategoryModel associated with the given GoodsCategoriesTypes.
+	/// GoodCategoryModel contain all the data that will be used in the game.
+	/// Every GoodCategoryModel should have a unique name as to distinguish it from others.
+	/// If a GoodCategoryModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.GoodCategoryModel[] ToGoodCategoryModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		GoodCategoryModel[] array = new GoodCategoryModel[count];
+		Eremite.Model.GoodCategoryModel[] array = new Eremite.Model.GoodCategoryModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -106,7 +177,51 @@ public static class GoodsCategoriesTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of GoodCategoryModel associated with the given GoodsCategoriesTypes.
+	/// GoodCategoryModel contain all the data that will be used in the game.
+	/// Every GoodCategoryModel should have a unique name as to distinguish it from others.
+	/// If a GoodCategoryModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.GoodCategoryModel[] ToGoodCategoryModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.GoodCategoryModel>.Get(out List<Eremite.Model.GoodCategoryModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.GoodCategoryModel model = element.ToGoodCategoryModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of GoodCategoryModel associated with the given GoodsCategoriesTypes.
+	/// GoodCategoryModel contain all the data that will be used in the game.
+	/// Every GoodCategoryModel should have a unique name as to distinguish it from others.
+	/// If a GoodCategoryModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.GoodCategoryModel[] ToGoodCategoryModelArrayNoNulls(this IEnumerable<GoodsCategoriesTypes> collection)
+	{
+		using(ListPool<Eremite.Model.GoodCategoryModel>.Get(out List<Eremite.Model.GoodCategoryModel> list))
+		{
+			foreach (GoodsCategoriesTypes element in collection)
+			{
+				Eremite.Model.GoodCategoryModel model = element.ToGoodCategoryModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<GoodsCategoriesTypes, string> TypeToInternalName = new()
 	{
 		{ GoodsCategoriesTypes.Building_Materials, "Building Materials" }, // Building Materials - {0} to expand category

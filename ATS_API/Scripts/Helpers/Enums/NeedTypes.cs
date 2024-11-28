@@ -1,38 +1,150 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.4.11R
+// Generated using Version 1.5.2R
 public enum NeedTypes
 {
 	Unknown = -1,
 	None,
-	Any_Housing,    // Basic Housing
-	Beaver_Housing, // Beaver Housing
-	Biscuits,       // Biscuits
-	Bloodthirst,    // Brawling
-	Boots,          // Boots
-	Clothes,        // Coats
-	Education,      // Education
-	Fox_Housing,    // Fox Housing
-	Frog_Housing,   // Frog Housing
-	Harpy_Housing,  // Harpy Housing
-	Human_Housing,  // Human Housing
-	Jerky,          // Jerky
-	Leasiure,       // Leisure
-	Lizard_Housing, // Lizard Housing
-	Luxury,         // Luxury
-	Paste,          // Paste
-	Pickled_Goods,  // Pickled Goods
-	Pie,            // Pie
-	Porridge,       // Porridge
-	Religion,       // Religion
-	Skewer,         // Skewers
-	Treatment,      // Treatment
+	
+	/// <summary>
+	/// Basic Housing - Most species require at least basic shelter from the constant rainfall and gusting winds.
+	/// </summary>
+	/// <name>Any Housing</name>
+	Any_Housing,
+
+	/// <summary>
+	/// Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Beaver Housing</name>
+	Beaver_Housing,
+
+	/// <summary>
+	/// Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Biscuits</name>
+	Biscuits,
+
+	/// <summary>
+	/// Brawling - This need is fulfilled in: Clan Hall, Forum, Explorers' Lodge. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Bloodthirst</name>
+	Bloodthirst,
+
+	/// <summary>
+	/// Boots - This need is fulfilled at the Hearth. It requires "[needs] boots" boots. Satisfying this need grants a movement speed bonus.
+	/// </summary>
+	/// <name>Boots</name>
+	Boots,
+
+	/// <summary>
+	/// Coats - This need is fulfilled at the Hearth. It requires "[needs] coats" coats. Satisfying this need grants a Resolve bonus during the storm.
+	/// </summary>
+	/// <name>Clothes</name>
+	Clothes,
+
+	/// <summary>
+	/// Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Explorers' Lodge. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Education</name>
+	Education,
+
+	/// <summary>
+	/// Fox Housing - Foxes prefer to live in wooden, well camouflaged houses. Fox Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Fox Housing</name>
+	Fox_Housing,
+
+	/// <summary>
+	/// Frog Housing - Frogs are at home in water. Frog Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Frog Housing</name>
+	Frog_Housing,
+
+	/// <summary>
+	/// Harpy Housing - Harpies prefer to live in well-lit, spacious homes. Harpy Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Harpy Housing</name>
+	Harpy_Housing,
+
+	/// <summary>
+	/// Human Housing - Humans prefer to live in solid, safe homes. Human Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Human Housing</name>
+	Human_Housing,
+
+	/// <summary>
+	/// Jerky - This need is fulfilled at the Hearth. It requires "[food processed] jerky" jerky. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Jerky</name>
+	Jerky,
+
+	/// <summary>
+	/// Leisure - This need is fulfilled in: Tavern, Monastery, Market. It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Leasiure</name>
+	Leasiure,
+
+	/// <summary>
+	/// Lizard Housing - Lizards prefer to live in warm, dry homes. Lizard Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Lizard Housing</name>
+	Lizard_Housing,
+
+	/// <summary>
+	/// Luxury - This need is fulfilled in: Tavern, Holy Guild House, Forum, Guild House. It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Luxury</name>
+	Luxury,
+
+	/// <summary>
+	/// Paste - This need is fulfilled at the Hearth. It requires "[food processed] paste" paste. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Paste</name>
+	Paste,
+
+	/// <summary>
+	/// Pickled Goods - This need is fulfilled at the Hearth. It requires "[food processed] pickled goods" pickled goods. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Pickled Goods</name>
+	Pickled_Goods,
+
+	/// <summary>
+	/// Pie - This need is fulfilled at the Hearth. It requires "[food processed] pie" pie. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Pie</name>
+	Pie,
+
+	/// <summary>
+	/// Porridge - This need is fulfilled at the Hearth. It requires "[food processed] porridge" porridge. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Porridge</name>
+	Porridge,
+
+	/// <summary>
+	/// Religion - This need is fulfilled in: Temple, Monastery, Tea Doctor. It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Religion</name>
+	Religion,
+
+	/// <summary>
+	/// Skewers - This need is fulfilled at the Hearth. It requires "[food processed] skewers" skewers. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Skewer</name>
+	Skewer,
+
+	/// <summary>
+	/// Treatment - This need is fulfilled in: Market, Tea Doctor, Bath House. It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Treatment</name>
+	Treatment,
+
 
 
 	MAX = 22
@@ -54,6 +166,11 @@ public static class NeedTypesExtensions
 		return s_All;
 	}
 	
+	/// <summary>
+	/// Returns the name or internal ID of the model that will be used in the game.
+	/// Every NeedTypes should have a unique name as to distinguish it from others.
+	/// If no name is found, it will return NeedTypes.Any_Housing in the enum and log an error.
+	/// </summary>
 	public static string ToName(this NeedTypes type)
 	{
 		if (TypeToInternalName.TryGetValue(type, out var name))
@@ -65,6 +182,11 @@ public static class NeedTypesExtensions
 		return TypeToInternalName[NeedTypes.Any_Housing];
 	}
 	
+	/// <summary>
+	/// Returns a NeedTypes associated with the given name.
+	/// Every NeedTypes should have a unique name as to distinguish it from others.
+	/// If no NeedTypes is found, it will return NeedTypes.Unknown and log a warning.
+	/// </summary>
 	public static NeedTypes ToNeedTypes(this string name)
 	{
 		foreach (KeyValuePair<NeedTypes,string> pair in TypeToInternalName)
@@ -79,9 +201,15 @@ public static class NeedTypesExtensions
 		return NeedTypes.Unknown;
 	}
 	
-	public static NeedModel ToNeedModel(this string name)
+	/// <summary>
+	/// Returns a NeedModel associated with the given name.
+	/// NeedModel contain all the data that will be used in the game.
+	/// Every NeedModel should have a unique name as to distinguish it from others.
+	/// If no NeedModel is found, it will return null and log an error.
+	/// </summary>
+	public static Eremite.Model.NeedModel ToNeedModel(this string name)
 	{
-		NeedModel model = SO.Settings.Needs.FirstOrDefault(a=>a.name == name);
+		Eremite.Model.NeedModel model = SO.Settings.Needs.FirstOrDefault(a=>a.name == name);
 		if (model != null)
 		{
 			return model;
@@ -91,15 +219,27 @@ public static class NeedTypesExtensions
 		return null;
 	}
 
-	public static NeedModel ToNeedModel(this NeedTypes types)
+    /// <summary>
+    /// Returns a NeedModel associated with the given NeedTypes.
+    /// NeedModel contain all the data that will be used in the game.
+    /// Every NeedModel should have a unique name as to distinguish it from others.
+    /// If no NeedModel is found, it will return null and log an error.
+    /// </summary>
+	public static Eremite.Model.NeedModel ToNeedModel(this NeedTypes types)
 	{
 		return types.ToName().ToNeedModel();
 	}
 	
-	public static NeedModel[] ToNeedModelArray(this IEnumerable<NeedTypes> collection)
+	/// <summary>
+	/// Returns an array of NeedModel associated with the given NeedTypes.
+	/// NeedModel contain all the data that will be used in the game.
+	/// Every NeedModel should have a unique name as to distinguish it from others.
+	/// If a NeedModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.NeedModel[] ToNeedModelArray(this IEnumerable<NeedTypes> collection)
 	{
 		int count = collection.Count();
-		NeedModel[] array = new NeedModel[count];
+		Eremite.Model.NeedModel[] array = new Eremite.Model.NeedModel[count];
 		int i = 0;
 		foreach (NeedTypes element in collection)
 		{
@@ -109,10 +249,16 @@ public static class NeedTypesExtensions
 		return array;
 	}
 	
-	public static NeedModel[] ToNeedModelArray(this IEnumerable<string> collection)
+	/// <summary>
+	/// Returns an array of NeedModel associated with the given NeedTypes.
+	/// NeedModel contain all the data that will be used in the game.
+	/// Every NeedModel should have a unique name as to distinguish it from others.
+	/// If a NeedModel is not found, the element will be replaced with null and an error will be logged.
+	/// </summary>
+	public static Eremite.Model.NeedModel[] ToNeedModelArray(this IEnumerable<string> collection)
 	{
 		int count = collection.Count();
-		NeedModel[] array = new NeedModel[count];
+		Eremite.Model.NeedModel[] array = new Eremite.Model.NeedModel[count];
 		int i = 0;
 		foreach (string element in collection)
 		{
@@ -121,31 +267,75 @@ public static class NeedTypesExtensions
 
 		return array;
 	}
-
+	
+	/// <summary>
+	/// Returns an array of NeedModel associated with the given NeedTypes.
+	/// NeedModel contain all the data that will be used in the game.
+	/// Every NeedModel should have a unique name as to distinguish it from others.
+	/// If a NeedModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.NeedModel[] ToNeedModelArrayNoNulls(this IEnumerable<string> collection)
+	{
+		using(ListPool<Eremite.Model.NeedModel>.Get(out List<Eremite.Model.NeedModel> list))
+		{
+			foreach (string element in collection)
+			{
+				Eremite.Model.NeedModel model = element.ToNeedModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
+	/// <summary>
+	/// Returns an array of NeedModel associated with the given NeedTypes.
+	/// NeedModel contain all the data that will be used in the game.
+	/// Every NeedModel should have a unique name as to distinguish it from others.
+	/// If a NeedModel is not found, it will not be included in the array.
+	/// </summary>
+	public static Eremite.Model.NeedModel[] ToNeedModelArrayNoNulls(this IEnumerable<NeedTypes> collection)
+	{
+		using(ListPool<Eremite.Model.NeedModel>.Get(out List<Eremite.Model.NeedModel> list))
+		{
+			foreach (NeedTypes element in collection)
+			{
+				Eremite.Model.NeedModel model = element.ToNeedModel();
+				if (model != null)
+				{
+					list.Add(model);
+				}
+			}
+			return list.ToArray();
+		}
+	}
+	
 	internal static readonly Dictionary<NeedTypes, string> TypeToInternalName = new()
 	{
-		{ NeedTypes.Any_Housing, "Any Housing" },       // Basic Housing
-		{ NeedTypes.Beaver_Housing, "Beaver Housing" }, // Beaver Housing
-		{ NeedTypes.Biscuits, "Biscuits" },             // Biscuits
-		{ NeedTypes.Bloodthirst, "Bloodthirst" },       // Brawling
-		{ NeedTypes.Boots, "Boots" },                   // Boots
-		{ NeedTypes.Clothes, "Clothes" },               // Coats
-		{ NeedTypes.Education, "Education" },           // Education
-		{ NeedTypes.Fox_Housing, "Fox Housing" },       // Fox Housing
-		{ NeedTypes.Frog_Housing, "Frog Housing" },     // Frog Housing
-		{ NeedTypes.Harpy_Housing, "Harpy Housing" },   // Harpy Housing
-		{ NeedTypes.Human_Housing, "Human Housing" },   // Human Housing
-		{ NeedTypes.Jerky, "Jerky" },                   // Jerky
-		{ NeedTypes.Leasiure, "Leasiure" },             // Leisure
-		{ NeedTypes.Lizard_Housing, "Lizard Housing" }, // Lizard Housing
-		{ NeedTypes.Luxury, "Luxury" },                 // Luxury
-		{ NeedTypes.Paste, "Paste" },                   // Paste
-		{ NeedTypes.Pickled_Goods, "Pickled Goods" },   // Pickled Goods
-		{ NeedTypes.Pie, "Pie" },                       // Pie
-		{ NeedTypes.Porridge, "Porridge" },             // Porridge
-		{ NeedTypes.Religion, "Religion" },             // Religion
-		{ NeedTypes.Skewer, "Skewer" },                 // Skewers
-		{ NeedTypes.Treatment, "Treatment" },           // Treatment
+		{ NeedTypes.Any_Housing, "Any Housing" },       // Basic Housing - Most species require at least basic shelter from the constant rainfall and gusting winds.
+		{ NeedTypes.Beaver_Housing, "Beaver Housing" }, // Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
+		{ NeedTypes.Biscuits, "Biscuits" },             // Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Bloodthirst, "Bloodthirst" },       // Brawling - This need is fulfilled in: Clan Hall, Forum, Explorers' Lodge. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Boots, "Boots" },                   // Boots - This need is fulfilled at the Hearth. It requires "[needs] boots" boots. Satisfying this need grants a movement speed bonus.
+		{ NeedTypes.Clothes, "Clothes" },               // Coats - This need is fulfilled at the Hearth. It requires "[needs] coats" coats. Satisfying this need grants a Resolve bonus during the storm.
+		{ NeedTypes.Education, "Education" },           // Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Explorers' Lodge. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Fox_Housing, "Fox Housing" },       // Fox Housing - Foxes prefer to live in wooden, well camouflaged houses. Fox Houses are required to fulfill this need.
+		{ NeedTypes.Frog_Housing, "Frog Housing" },     // Frog Housing - Frogs are at home in water. Frog Houses are required to fulfill this need.
+		{ NeedTypes.Harpy_Housing, "Harpy Housing" },   // Harpy Housing - Harpies prefer to live in well-lit, spacious homes. Harpy Houses are required to fulfill this need.
+		{ NeedTypes.Human_Housing, "Human Housing" },   // Human Housing - Humans prefer to live in solid, safe homes. Human Houses are required to fulfill this need.
+		{ NeedTypes.Jerky, "Jerky" },                   // Jerky - This need is fulfilled at the Hearth. It requires "[food processed] jerky" jerky. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Leasiure, "Leasiure" },             // Leisure - This need is fulfilled in: Tavern, Monastery, Market. It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Lizard_Housing, "Lizard Housing" }, // Lizard Housing - Lizards prefer to live in warm, dry homes. Lizard Houses are required to fulfill this need.
+		{ NeedTypes.Luxury, "Luxury" },                 // Luxury - This need is fulfilled in: Tavern, Holy Guild House, Forum, Guild House. It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Paste, "Paste" },                   // Paste - This need is fulfilled at the Hearth. It requires "[food processed] paste" paste. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Pickled_Goods, "Pickled Goods" },   // Pickled Goods - This need is fulfilled at the Hearth. It requires "[food processed] pickled goods" pickled goods. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Pie, "Pie" },                       // Pie - This need is fulfilled at the Hearth. It requires "[food processed] pie" pie. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Porridge, "Porridge" },             // Porridge - This need is fulfilled at the Hearth. It requires "[food processed] porridge" porridge. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Religion, "Religion" },             // Religion - This need is fulfilled in: Temple, Monastery, Tea Doctor. It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Skewer, "Skewer" },                 // Skewers - This need is fulfilled at the Hearth. It requires "[food processed] skewers" skewers. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Treatment, "Treatment" },           // Treatment - This need is fulfilled in: Market, Tea Doctor, Bath House. It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
 
 	};
 }
