@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using Eremite;
 using Eremite.Controller.Events;
 using Eremite.Controller.Generator;
+using Eremite.View.Cameras;
 using HarmonyLib;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public static partial class BiomeManager
 {
     [HarmonyPatch(typeof(MapGenerator), nameof(MapGenerator.SetTerrain))]
     [HarmonyPostfix]
-    public static async UniTask InstantiateCustomTerrain(UniTask enumerator, MapGenerator __instance) 
+    private static async UniTask InstantiateCustomTerrain(UniTask enumerator, MapGenerator __instance) 
     {
         Plugin.Log.LogInfo("Instantiating original terrain!");
         await enumerator;

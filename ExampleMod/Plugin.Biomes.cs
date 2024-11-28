@@ -29,6 +29,8 @@ public partial class Plugin
         builder.SetSeasonDuration(SeasonTypes.Clearance, 240);
         builder.SetSeasonDuration(SeasonTypes.Drizzle, 120);
         builder.SetDeclinedSeasonalRewardsReward(GoodsTypes.Valuable_Ancient_Tablet, 2);
+
+        // builder.SetStormRaindropTextures("SnowFlake.png", "SnowFlake.png");
         
         // newcomers
         builder.SetNewcomerInterval(300);

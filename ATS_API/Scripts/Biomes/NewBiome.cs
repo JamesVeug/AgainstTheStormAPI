@@ -56,6 +56,12 @@ public class NewBiome : ASyncable<BiomeModel>
         public List<EffectTypes> GuaranteedEffects = new List<EffectTypes>();
         public List<WeightedEffectType> Effects = new List<WeightedEffectType>();
     }
+
+    public class StormFX
+    {
+        public Texture2D Raindrop1Texture;
+        public Texture2D Raindrop2Texture;
+    }
     
     public BiomeModel biomeModel;
     public BiomeTypes id;
@@ -73,6 +79,8 @@ public class NewBiome : ASyncable<BiomeModel>
     public Texture2D terrainCliffsTexture;
     public Vector2 terrainCliffsTextureUVSize = new Vector2(100, 100);
     public Texture2D waterTexture;
+    
+    public StormFX stormFX = new StormFX();
     
     public MetaCurrencyTypes baseMetaCurrency = MetaCurrencyTypes.Food_Stockpiles;
     public int baseMetaCurrencyAmount = 2;
