@@ -7,7 +7,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.2R
+// Generated using Version 1.5.5R
 public enum EffectTypes
 {
 	Unknown = -1,
@@ -2821,6 +2821,16 @@ public enum EffectTypes
 
 
 	//
+	// ExtraBaitProductionEffectModel
+	//
+
+	/// <summary></summary>
+	/// <name>Bait Production +1</name>
+	/// <type>ExtraBaitProductionEffectModel</type>
+	Bait_Production_Plus1,
+
+
+	//
 	// ExtraCornerstonePickEffectModel
 	//
 
@@ -3704,13 +3714,6 @@ public enum EffectTypes
 	/// <name>Opened Dang Glades reduces Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
 	Opened_Dang_Glades_Reduces_Resolve,
-
-	/// <summary>
-	/// -2 to Global Resolve. (‑1 to Global Resolve)
-	/// </summary>
-	/// <name>[PerkCrafter] Resolve</name>
-	/// <type>GlobalResolveEffectEffectModel</type>
-	PerkCrafter_Resolve,
 
 	/// <summary>
 	/// Rebellious Spirit - The people are feeling oddly rebellious. (+1 to Global Resolve)
@@ -11102,12 +11105,12 @@ public enum EffectTypes
 	Back_To_Nature,
 
 	/// <summary>
-	/// Fish Scraps - For every 100 units of "[food raw] fish" Fish and "[mat raw] scales" Scales used in crafting, gain +1 to bait production when converting a "[packs] pack of crops" pack of crops into ground bait in a fishing hut.
+	/// Fish Scraps - For every 10 units of "[food raw] fish" Fish and "[mat raw] scales" Scales used in crafting, gain +1 to bait production when converting a "[packs] pack of crops" pack of crops into ground bait in a fishing hut.
 	/// </summary>
 	/// <name>Bait for crafting</name>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (IngredientUsedByListHook)</hooks_1>
-	/// <hookedEffect_1>Bait +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
+	/// <hookedEffect_1>Bait Production +1 (ExtraBaitProductionEffectModel)</hookedEffect_1>
 	Bait_For_Crafting,
 
 	/// <summary>
@@ -20855,6 +20858,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.More_Trade_Offers_Extra_Trade_Routes, "More Trade Offers - Extra Trade Routes" },                                                                         // Extends available trade offers by 2 in each neighboring town
 		{ EffectTypes.TEMP_Extend_Trade_Routes_Effect_Model, "TEMP Extend Trade Routes Effect Model" },                                                                         // More trade offers - Extends available trade offers by 1 in each neighboring town
 
+		// ExtraBaitProductionEffectModel
+		{ EffectTypes.Bait_Production_Plus1, "Bait Production +1" }, 
+
 		// ExtraCornerstonePickEffectModel
 		{ EffectTypes.Archeology_Extra_Cornerstone, "Archeology Extra Cornerstone" },                                                                                           // Scientific Award - The Queen has decided to reward you for your exceptional achievements in science. You receive an additional cornerstone choice.
 		{ EffectTypes.Port_Extra_Cornerstone, "Port Extra Cornerstone" },                                                                                                       // Effect_PortExtraCornerstone_Name - Effect_PortExtraCornerstone_Desc
@@ -21004,7 +21010,6 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Long_Live_The_Queen, "Long Live the Queen" },                                                                                                             // Long Live the Queen - Villagers admire the Queen's greatness. (+1 to Global Resolve)
 		{ EffectTypes.Map_Mod_Resolve_Penalty, "[Map Mod] Resolve Penalty" },                                                                                                   // Forsaken Gods Temple - ModifierEffect_TempleResolve_Desc (‑1 to Global Resolve)
 		{ EffectTypes.Opened_Dang_Glades_Reduces_Resolve, "Opened Dang Glades reduces Resolve" },                                                                               // Greater Threat - Villagers don't approve of discovering Dangerous ("dangerous") and Forbidden Glades ("forbidden") during the storm. (‑2 to Global Resolve)
-		{ EffectTypes.PerkCrafter_Resolve, "[PerkCrafter] Resolve" },                                                                                                           // -2 to Global Resolve. (‑1 to Global Resolve)
 		{ EffectTypes.Rebelious_Spirit, "Rebelious Spirit" },                                                                                                                   // Rebellious Spirit - The people are feeling oddly rebellious. (+1 to Global Resolve)
 		{ EffectTypes.Resolve_For_Glade_Resolve_Bonus_Effect, "Resolve for Glade - Resolve Bonus Effect" },                                                                     // Woodcutter's Song - The woodcutters' song lifts people's spirits. (+3 to Global Resolve)
 		{ EffectTypes.Resolve_Institution_Resolve_For_Ruins, "Resolve - Institution Resolve for Ruins" },                                                                       // The Crown Chronicles - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
@@ -22063,7 +22068,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.AmberForLuxury, "AmberForLuxury" },                                                                                                                       // Luxury Tax - Amber is worth +5% more for every 2 villagers with the need for luxury fulfilled.
 		{ EffectTypes.Artifact_For_Dangerous_Relic, "Artifact for Dangerous Relic" },                                                                                           // From the Ashes - An odd talisman made from the talons of a phoenix. Gain 2 "hearth parts" Wildfire Essence for every 2 completed Dangerous or Forbidden Glade Events.
 		{ EffectTypes.Back_To_Nature, "Back To Nature" },                                                                                                                       // Back to Nature - An old, forbidden ritual. Increases yields by 100% in all buildings that use fertile soil. You will lose all stored food (cooked and raw) upon choosing this cornerstone.
-		{ EffectTypes.Bait_For_Crafting, "Bait for crafting" },                                                                                                                 // Fish Scraps - For every 100 units of "[food raw] fish" Fish and "[mat raw] scales" Scales used in crafting, gain +1 to bait production when converting a "[packs] pack of crops" pack of crops into ground bait in a fishing hut.
+		{ EffectTypes.Bait_For_Crafting, "Bait for crafting" },                                                                                                                 // Fish Scraps - For every 10 units of "[food raw] fish" Fish and "[mat raw] scales" Scales used in crafting, gain +1 to bait production when converting a "[packs] pack of crops" pack of crops into ground bait in a fishing hut.
 		{ EffectTypes.Beaver_Resolve_For_Wine_Prod, "Beaver Resolve for Wine Prod" },                                                                                           // Vineyard Town - The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 70 "[needs] wine" Wine produced.
 		{ EffectTypes.BIOME_AlgaeSacrifice, "[BIOME] AlgaeSacrifice" },                                                                                                         // Gift of the Depths - After using bait 150 times in your fishing huts, you will unlock the ability to sacrifice "[mat raw] algae" algae in the Ancient Hearth to reduce Hostility.
 		{ EffectTypes.BIOME_Carts_For_Using_Ore, "[BIOME] Carts For Using Ore" },                                                                                               // Royal Mining Operation - The Crown is investing heavily in the region's industrial development. For every 80 units of "[crafting] coal" Coal, "[metal] copper ore" Copper Ore, and "[crafting] salt" Salt used in crafting, an automated rainpunk cart will be assigned to one of your warehouses.

@@ -7,7 +7,7 @@ using Eremite.Model.Goals;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.2R
+// Generated using Version 1.5.5R
 public enum GoalTypes
 {
 	Unknown = -1,

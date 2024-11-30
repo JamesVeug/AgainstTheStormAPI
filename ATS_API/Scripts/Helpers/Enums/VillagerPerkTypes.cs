@@ -7,7 +7,7 @@ using Eremite.Characters.Villagers;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.2R
+// Generated using Version 1.5.5R
 public enum VillagerPerkTypes
 {
 	Unknown = -1,
@@ -344,6 +344,30 @@ public enum VillagerPerkTypes
 	Need_Service_Goods_Extra_Production,
 
 	/// <summary>
+	/// The time interval between breaks is increased by +10%.
+	/// </summary>
+	/// <name>[PerkCrafter] Break Interval - child - 10</name>
+	PerkCrafter_Break_Interval_Child_10,
+
+	/// <summary>
+	/// The time interval between breaks is increased by +12%.
+	/// </summary>
+	/// <name>[PerkCrafter] Break Interval - child - 12</name>
+	PerkCrafter_Break_Interval_Child_12,
+
+	/// <summary>
+	/// The time interval between breaks is increased by +4%.
+	/// </summary>
+	/// <name>[PerkCrafter] Break Interval - child - 4</name>
+	PerkCrafter_Break_Interval_Child_4,
+
+	/// <summary>
+	/// The time interval between breaks is increased by +7%.
+	/// </summary>
+	/// <name>[PerkCrafter] Break Interval - child - 7</name>
+	PerkCrafter_Break_Interval_Child_7,
+
+	/// <summary>
 	/// Poisoned Food - Fishmen are small and cunning enough to sneak into a settlement and poison the food supply. Villagers have a +25% chance of death after eating.
 	/// </summary>
 	/// <name>Poisoned Food Instant</name>
@@ -459,7 +483,7 @@ public enum VillagerPerkTypes
 
 
 
-	MAX = 74
+	MAX = 78
 }
 
 public static class VillagerPerkTypesExtensions
@@ -469,8 +493,8 @@ public static class VillagerPerkTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new VillagerPerkTypes[74];
-			for (int i = 0; i < 74; i++)
+			s_All = new VillagerPerkTypes[78];
+			for (int i = 0; i < 78; i++)
 			{
 				s_All[i] = (VillagerPerkTypes)(i+1);
 			}
@@ -681,6 +705,10 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.N_Need_Villagers_Speed_Bonus, "[N] Need Villagers Speed Bonus" },                         // Boots - Increases movement speed by +15%.
 		{ VillagerPerkTypes.Need_Complex_Food_Extra_Production, "Need Complex Food Extra Production" },               // Full Belly - This worker has a +5% higher chance of producing double yields for each Complex Food need met.
 		{ VillagerPerkTypes.Need_Service_Goods_Extra_Production, "Need Service Goods Extra Production" },             // High Motivation - This worker has a +10% higher chance of producing double yields for each Complex Food need met.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_10, "[PerkCrafter] Break Interval - child - 10" },       // The time interval between breaks is increased by +10%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_12, "[PerkCrafter] Break Interval - child - 12" },       // The time interval between breaks is increased by +12%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_4, "[PerkCrafter] Break Interval - child - 4" },         // The time interval between breaks is increased by +4%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_7, "[PerkCrafter] Break Interval - child - 7" },         // The time interval between breaks is increased by +7%.
 		{ VillagerPerkTypes.Poisoned_Food_Instant, "Poisoned Food Instant" },                                         // Poisoned Food - Fishmen are small and cunning enough to sneak into a settlement and poison the food supply. Villagers have a +25% chance of death after eating.
 		{ VillagerPerkTypes.Proficiency, "Proficiency" },                                                             // Proficiency - This worker has a +10% chance of doubling their yield.
 		{ VillagerPerkTypes.Proficiency_Blightrot, "Proficiency Blightrot" },                                         // Proficiency - This worker has a +40% chance of doubling their yield.

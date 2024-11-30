@@ -7,7 +7,7 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.2R
+// Generated using Version 1.5.5R
 public enum BuildingPerkTypes
 {
 	Unknown = -1,
@@ -78,6 +78,10 @@ public enum BuildingPerkTypes
 	/// </summary>
 	/// <name>Highlight Archeology 3</name>
 	Highlight_Archeology_3,
+
+	/// <summary></summary>
+	/// <name>[PerkCrafter] Fewer Housing Spots - child</name>
+	PerkCrafter_Fewer_Housing_Spots_Child,
 
 	/// <summary>
 	/// Reliability - Increases the chance for extra production yields by {0}.
@@ -333,7 +337,7 @@ public enum BuildingPerkTypes
 
 
 
-	MAX = 53
+	MAX = 54
 }
 
 public static class BuildingPerkTypesExtensions
@@ -343,8 +347,8 @@ public static class BuildingPerkTypesExtensions
 	{
 		if (s_All == null)
 		{
-			s_All = new BuildingPerkTypes[53];
-			for (int i = 0; i < 53; i++)
+			s_All = new BuildingPerkTypes[54];
+			for (int i = 0; i < 54; i++)
 			{
 				s_All[i] = (BuildingPerkTypes)(i+1);
 			}
@@ -511,6 +515,7 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.Highlight_Archeology_1, "Highlight Archeology 1" },                                               // Short-range Scanner - Reveals the location of the closest archaeological discovery.
 		{ BuildingPerkTypes.Highlight_Archeology_2, "Highlight Archeology 2" },                                               // Mid-range Scanner - Reveals the location of the second closest archaeological discovery.
 		{ BuildingPerkTypes.Highlight_Archeology_3, "Highlight Archeology 3" },                                               // Long-range Scanner - Reveals the location of the farthest archaeological discovery.
+		{ BuildingPerkTypes.PerkCrafter_Fewer_Housing_Spots_Child, "[PerkCrafter] Fewer Housing Spots - child" }, 
 		{ BuildingPerkTypes.R_Extra_Production_Chance, "[R] Extra Production Chance" },                                       // Reliability - Increases the chance for extra production yields by {0}.
 		{ BuildingPerkTypes.R_Production_Rate, "[R] Production Rate" },                                                       // Efficiency - Increases production speed by {0}.
 		{ BuildingPerkTypes.R_Rainpunk_Comfortable, "[R] Rainpunk Comfortable" },                                             // Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
