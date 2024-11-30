@@ -1,3 +1,21 @@
+# 3.0.0 - Possible mod breaking changes.
+- Bumped ATS version to 1.5.5R
+- Added comments/documentation to API so modders have an idea of what things do (Project needs documentation pass)
+- Added Custom support for Biomes (Minimal)
+- Updated all enums to 1.5.2R with HEAPS more documentation (Mod breaking)
+- API now localizes all custom text to supported languages using google-translate
+  - [Link to spreadsheet for suggestions](https://docs.google.com/spreadsheets/d/1KeU4Dr45S2l7VQ2XEi_8hwKSiZ3IZE3LHkTP5aZA7IU/edit?usp=sharing)
+- Added more enums
+  - SimpleSeasonalEffectTypes
+  - ResourcesDepositsTypes
+  - NaturalResourceTypes
+- Added more documentation to enums
+- Added more helper methods
+- LocalizationManager now supports loading .csv and .tsv files
+- Added How to make asset bundles to WIKI
+- When playing in Spanish Latin American will default to Spanish translations 
+- Possibly more languageCode fixes
+
 # 2.3.0
 - Added Custom saving support
 - Added Custom Meta Reward support (Goods and Effects)

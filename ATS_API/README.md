@@ -65,6 +65,7 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Races (Experimental)
 - New Difficulties
 - New MetaRewards (Goods and Effects when embarking)
+- New Biomes (Minimal)
 - Localization for all of the above
 - Custom Hotkeys (Saving and rebinding included)
 - Custom Save/Load system
@@ -73,6 +74,10 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - Any options/configs that mods add can be modified in the options menu of the game.
 - Enums that list everything in the game, so you can easily see what items/orders exist and get their data without hassle.
 
+## API Localization
+The API contains text that is needed for custom message popups, missing content added by mods and others. The text has been google translated by default to other languages. 
+
+If you'd like to help translate the text to your language please reach out on the discord or [suggest changes on the spread sheet](https://docs.google.com/spreadsheets/d/1KeU4Dr45S2l7VQ2XEi_8hwKSiZ3IZE3LHkTP5aZA7IU/edit?usp=sharing) 
 
 ## Contributors
 - JamesGames
