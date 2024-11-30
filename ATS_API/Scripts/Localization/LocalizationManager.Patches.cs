@@ -29,7 +29,7 @@ public static partial class LocalizationManager
             Plugin.Log.LogMessage($"Exporting enums to {csExportPath}");
             
             WIKI.CreateAllEnumTypes(Path.Combine(csExportPath, "Enums"));
-            WIKI.CreateAllPrefabEnumTypes(Path.Combine(csExportPath, "EnumPrefabs"));
+            WIKI.CreateAllPrefabEnumTypes(Path.Combine(csExportPath, "Enums"));
         }
 
         // Exports all CSVs, so we can have updated data for the API
