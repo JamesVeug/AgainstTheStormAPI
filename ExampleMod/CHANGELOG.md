@@ -1,3 +1,7 @@
+# 3.0.0
+- Bumped ATS version to 1.5.5R
+- Added a custom Biome
+
 # 2.2.0
 - Added Custom support for custom embark goods
 - Added Custom support for custom embark effects

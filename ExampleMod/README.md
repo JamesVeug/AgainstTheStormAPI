@@ -7,6 +7,7 @@ It is a simple mod that adds at least 1 of each type so it can be copy+pasted or
 For more help/guids/examples checkout the modding discord.
 
 ## Includes
+- 1 New Biome
 - 6 New Goods
 - 3 New Cornerstones
 - 3 New Buildings
