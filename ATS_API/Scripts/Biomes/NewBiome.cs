@@ -59,8 +59,8 @@ public class NewBiome : ASyncable<BiomeModel>
 
     public class StormFX
     {
-        public Texture2D Raindrop1Texture;
-        public Texture2D Raindrop2Texture;
+        public Material RaindropMaterial;
+        public Texture2D RaindropTextureOverride;
     }
     
     public BiomeModel biomeModel;

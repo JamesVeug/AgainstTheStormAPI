@@ -20,10 +20,10 @@ public static partial class BiomeManager
         Plugin.Log.LogInfo("Instantiating original terrain!");
         await enumerator;
 
-        Plugin.Log.LogInfo("Instantiating custom terrain!");
         
         // Destroy the terrain from the model and put in our own
 
+        Plugin.Log.LogInfo("Getting biome lookup!");
         BiomeTypes biomeTypes = __instance.conditions.biomeName.ToBiomeTypes();
         if(!NewBiomeLookup.TryGetValue(biomeTypes, out NewBiome newBiome))
         {
@@ -35,56 +35,58 @@ public static partial class BiomeManager
             return;
         }
 
-        // var prefab = await Plugin.ATS_API_TerrainBundle.LoadAssetAsync<GameObject>("TerrainPrefab");
-        // if(prefab == null)
-        // {
-        //     Plugin.Log.LogError("TerrainPrefab not found!");
-        //     return;
-        // }
-        //
-        //
+        Plugin.Log.LogInfo("Instantiating terrain!");
+        GameObject prefab = Plugin.ATS_API_TerrainBundle.LoadAsset<GameObject>("TerrainPrefab");
+        if(prefab == null)
+        {
+            Plugin.Log.LogError("TerrainPrefab not found!");
+            return;
+        }
+        
+        Plugin.Log.LogInfo("Getting ActiveTerrain!");
         Terrain terrain = GameMB.GameBlackboardService.ActiveTerrain.Value;
         if(terrain == null)
         {
             Plugin.Log.LogError("Terrain not found!");
             return;
         }
-        //
-        // GameObject instantiate = GameObject.Instantiate((GameObject)prefab);
-        // instantiate.transform.SetParent(terrain.transform.parent);
-        // instantiate.transform.localPosition = new Vector3(340f, 0, 168.5f);
-        // instantiate.transform.localScale = new Vector3(100, 100, 100);
-        //
-        // Material material = terrain.GetComponent<MeshRenderer>().material;
-        // if(newBiome.terrainBaseTexture != null)
-        // {
-        //     Plugin.Log.LogInfo($"Setting terrainBaseTexture for {newBiome.biomeModel.name}");
-        //     material.SetTexture("_RedTexture", newBiome.terrainBaseTexture);
-        // }
-        //
-        // if(newBiome.terrainOverlayTexture != null)
-        // {
-        //     Plugin.Log.LogInfo($"Setting terrainOverlayTexture for {newBiome.biomeModel.name}");
-        //     material.SetTexture("_GreenTexture", newBiome.terrainOverlayTexture);
-        // }
-        //
-        // if(newBiome.terrainCliffsTexture != null)
-        // {
-        //     Plugin.Log.LogInfo($"Setting terrainCliffsTexture for {newBiome.biomeModel.name}");
-        //     material.SetTexture("_BlueTexture", newBiome.terrainCliffsTexture);
-        // }
-        //
-        // if(newBiome.terrainSeaBedTexture != null)
-        // {
-        //     Plugin.Log.LogInfo($"Setting terrainSeaBedTexture for {newBiome.biomeModel.name}");
-        //     material.SetTexture("_BottomTexture", newBiome.terrainSeaBedTexture);
-        // }
-        //
-        // if(newBiome.terrainBlendTexture != null)
-        // {
-        //     Plugin.Log.LogInfo($"Setting terrainBlendTexture for {newBiome.biomeModel.name}");
-        //     material.SetTexture("_BlendTexture", newBiome.terrainBlendTexture);
-        // }
+        
+        Plugin.Log.LogInfo("Setting up terrain prefab! " + prefab);
+        GameObject instantiate = GameObject.Instantiate((GameObject)prefab);
+        instantiate.transform.SetParent(terrain.transform.parent);
+        instantiate.transform.localPosition = new Vector3(340f, 0, 168.5f);
+        instantiate.transform.localScale = new Vector3(100, 100, 100);
+        
+        Material material = instantiate.SafeGetComponent<MeshRenderer>().material;
+        if(newBiome.terrainBaseTexture != null)
+        {
+            Plugin.Log.LogInfo($"Setting terrainBaseTexture for {newBiome.biomeModel.name}");
+            material.SetTexture("_RedTexture", newBiome.terrainBaseTexture);
+        }
+        
+        if(newBiome.terrainOverlayTexture != null)
+        {
+            Plugin.Log.LogInfo($"Setting terrainOverlayTexture for {newBiome.biomeModel.name}");
+            material.SetTexture("_GreenTexture", newBiome.terrainOverlayTexture);
+        }
+        
+        if(newBiome.terrainCliffsTexture != null)
+        {
+            Plugin.Log.LogInfo($"Setting terrainCliffsTexture for {newBiome.biomeModel.name}");
+            material.SetTexture("_BlueTexture", newBiome.terrainCliffsTexture);
+        }
+        
+        if(newBiome.terrainSeaBedTexture != null)
+        {
+            Plugin.Log.LogInfo($"Setting terrainSeaBedTexture for {newBiome.biomeModel.name}");
+            material.SetTexture("_BottomTexture", newBiome.terrainSeaBedTexture);
+        }
+        
+        if(newBiome.terrainBlendTexture != null)
+        {
+            Plugin.Log.LogInfo($"Setting terrainBlendTexture for {newBiome.biomeModel.name}");
+            material.SetTexture("_BlendTexture", newBiome.terrainBlendTexture);
+        }
         
         if(newBiome.waterTexture != null)
         {
@@ -95,7 +97,7 @@ public static partial class BiomeManager
             meshRenderer.material = waterMaterial;
         }
         
-        // GameObject.Destroy(terrain.gameObject);
+        GameObject.Destroy(terrain.gameObject);
         Plugin.Log.LogInfo("Custom terrain instantiated!");
     }
 }

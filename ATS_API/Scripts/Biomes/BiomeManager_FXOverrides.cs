@@ -1,12 +1,9 @@
-using System.Globalization;
-using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.View.Cameras;
 using Eremite.View.Utils;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace ATS_API.Biomes;
 
@@ -26,7 +23,7 @@ public static partial class BiomeManager
     //
     //     // Apply FX overrides
     //     Plugin.Log.LogInfo($"Setting up post processes for {newBiome.biomeModel.name}");
-    //     if (newBiome.stormFX.Raindrop1Texture != null)
+    //     if (newBiome.stormFX.RaindropMaterial != null)
     //     {
     //         ParticleSystemRenderer rainTexture = __instance.FindChild<ParticleSystemRenderer>("Rain/RainDrop");
     //         ChangeTexture(rainTexture, newBiome.stormFX.Raindrop1Texture);
@@ -64,10 +61,10 @@ public static partial class BiomeManager
     //
     //     // Change size of particles to 1,1,1
     //     ParticleSystem.MainModule mainModule = particleSystemRenderer.GetComponent<ParticleSystem>().main;
-    //     mainModule.startSizeX = 1;
-    //     mainModule.startSizeY = 1;
-    //     mainModule.startSizeZ = 1;
-    //     mainModule.startSize = 1;
+    //     mainModule.startSizeX = 0.25f;
+    //     mainModule.startSizeY = 0.25f;
+    //     mainModule.startSizeZ = 0.25f;
+    //     mainModule.startSize = 0.25f;
     //     
     //     ParticleSystem.SizeOverLifetimeModule module = particleSystemRenderer.GetComponent<ParticleSystem>().sizeOverLifetime;
     //     module.separateAxes = false;

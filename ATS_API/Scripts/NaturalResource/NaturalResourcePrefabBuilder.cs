@@ -3,7 +3,7 @@ using ATS_API.Helpers;
 using Eremite.MapObjects;
 using UnityEngine;
 
-public class NaturalResourcePrefabBuilder
+public partial class NaturalResourcePrefabBuilder
 {
     public string Name => m_name;
     public string GUID => m_guid;
@@ -12,6 +12,7 @@ public class NaturalResourcePrefabBuilder
     protected readonly string m_name;
     
     private NaturalResourcePrefabs m_prefabTemplate;
+    private NaturalResource m_customPrefab;
     private Texture2D m_textureOverride;
     
     public NaturalResourcePrefabBuilder(string guid, string name)
@@ -33,7 +34,17 @@ public class NaturalResourcePrefabBuilder
 
     public NaturalResource CreatePrefab()
     {
-        NaturalResource prefab = m_prefabTemplate.ToNaturalResource();
+        NaturalResource prefab = null;
+        if(m_customPrefab != null)
+        {
+            SyncCustomPrefab();
+            prefab = m_customPrefab;
+        }
+        else
+        {
+            prefab = m_prefabTemplate.ToNaturalResource();
+        }
+        
         string fullName = m_guid + "_" + m_name; 
         NaturalResourcePrefabs id = GUIDManager.Get<NaturalResourcePrefabs>(m_guid, m_name);
         NaturalResourcePrefabsExtensions.TypeToInternalName[id] = fullName;
