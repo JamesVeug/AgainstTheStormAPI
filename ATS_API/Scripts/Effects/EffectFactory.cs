@@ -11,6 +11,8 @@ public static class EffectFactory
         instance.description = builder.Model.description;
         instance.displayName = builder.Model.displayName;
         instance.label = builder.Model.label;
+        instance.blockedBy = [];
+        instance.usabilityTags = [];
         return instance;
     }
     

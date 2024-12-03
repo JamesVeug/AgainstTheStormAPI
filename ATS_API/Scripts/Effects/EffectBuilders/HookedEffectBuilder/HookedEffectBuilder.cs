@@ -44,5 +44,9 @@ public partial class HookedEffectBuilder : EffectBuilder<HookedEffectModel>
         {
             effect.overrideIcon = m_effectModel.GetIcon();
         }
+        if (effect.blockedBy == null)
+        {
+            effect.blockedBy = m_effectModel.blockedBy;
+        }
     }
 }
