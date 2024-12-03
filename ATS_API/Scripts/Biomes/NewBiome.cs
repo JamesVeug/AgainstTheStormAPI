@@ -175,11 +175,6 @@ public class NewBiome : ASyncable<BiomeModel>
             biomeModel.maps = new MapData[]{templateModel.maps[1]};
         }
         
-        if(biomeModel.Ore == null)
-        {
-            biomeModel.Ore = ores.Select(o => o.ToOreModel()).Where(a=>a != null).ToArray();
-        }
-        
         if(biomeModel.baseMetaCurrency == null)
         {
             biomeModel.baseMetaCurrency = new MetaCurrencyRef()

@@ -51,7 +51,7 @@ public partial class BiomeBuilder
         // NOTE: This is the entire world for the biome which will need a custom solution for when the player wants to change the texutre of the ground.
         newModel.maps = null;
         
-        newModel.Ore = null; // Empty list for Cursed Royal Woodlands
+        // newModel.Ore = null; // Removed in 1.5.6R
         newModel.haseBaseReward = true;
         
         newModel.baseMetaCurrency = null; // Use NewBiome baseMetaCurrency and baseMetaCurrencyAmount
