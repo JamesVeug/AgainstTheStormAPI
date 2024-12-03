@@ -1,3 +1,7 @@
+# 3.0.1
+- Bumped ATS version to 1.5.6R
+- Added more support for WorkshopRecipeBuilder
+
 # 3.0.0 - Possible mod breaking changes.
 - Bumped ATS version to 1.5.5R
 - Added comments/documentation to API so modders have an idea of what things do (Project needs documentation pass)
