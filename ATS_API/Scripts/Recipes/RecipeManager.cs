@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
@@ -13,8 +12,9 @@ public static partial class RecipeManager
     private static bool s_instantiated = false;
     private static bool s_dirty = false;
     
-    public static IReadOnlyList<NewRecipeData> NewBuildings => new ReadOnlyCollection<NewRecipeData>(s_newRecipes);
-    public static IReadOnlyList<NewWorkshopRecipeData> NewWorkshopBuildings => new ReadOnlyCollection<NewWorkshopRecipeData>(s_newWorkshopRecipes);
+    public static IReadOnlyList<NewRecipeData> NewRecipes => s_newRecipes;
+    public static IReadOnlyList<NewWorkshopRecipeData> NewWorkshopRecipes => s_newWorkshopRecipes;
+    
     
     private static List<NewRecipeData> s_newRecipes = new List<NewRecipeData>();
     private static List<NewWorkshopRecipeData> s_newWorkshopRecipes = new List<NewWorkshopRecipeData>();

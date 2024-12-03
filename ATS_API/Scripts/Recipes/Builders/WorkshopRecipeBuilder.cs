@@ -8,23 +8,53 @@ namespace ATS_API.Recipes.Builders;
 
 public class WorkshopRecipeBuilder : RecipeBuilder<WorkshopRecipeModel>
 {
-    private readonly string Good;
-    private readonly int Amount;
+    private string Good;
+    private int Amount;
+    private int ProductionTime;
+    
     private readonly List<List<NameToAmount>> RequiredGoods = new List<List<NameToAmount>>();
-    private readonly int ProductionTime;
+    
+    public WorkshopRecipeBuilder(string guid, string name) : base(guid, name)
+    {
+        
+    }
+    
+    public WorkshopRecipeBuilder(WorkshopRecipeModel model)
+    {
+        m_newData = NewWorkshopRecipeData.FromModel(model);
+        RecipeModel = model;
+    }
     
     public WorkshopRecipeBuilder(string guid, string name, GoodsTypes good, int amount, int productionTime, Grade grade) : base(guid, name, grade)
     {
-        Good = good.ToName();
-        Amount = amount;
-        ProductionTime = productionTime;
+        SetProducedGood(good, amount);
+        SetProductionTime(productionTime);
     }
 
     public WorkshopRecipeBuilder(string guid, string name, string good, int amount, int productionTime, Grade grade) : base(guid, name, grade)
     {
+        SetProducedGood(good, amount);
+        SetProductionTime(productionTime);
+    }
+    
+    public WorkshopRecipeBuilder SetProducedGood(GoodsTypes good, int amount)
+    {
+        Good = good.ToName();
+        Amount = amount;
+        return this;
+    }
+    
+    public WorkshopRecipeBuilder SetProducedGood(string good, int amount)
+    {
         Good = good;
         Amount = amount;
+        return this;
+    }
+    
+    public WorkshopRecipeBuilder SetProductionTime(int productionTime)
+    {
         ProductionTime = productionTime;
+        return this;
     }
     
     /// <summary>

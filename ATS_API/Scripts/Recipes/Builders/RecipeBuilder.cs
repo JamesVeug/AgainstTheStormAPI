@@ -7,17 +7,37 @@ namespace ATS_API.Recipes.Builders;
 
 public class RecipeBuilder<T> where T : RecipeModel
 {
-    private readonly Grade Grade;
-    private readonly List<TagTypes> Tags = new List<TagTypes>();
+    private readonly string guid; // myGuid
+    private readonly string name; // itemName
 
     public RecipeModel RecipeModel = null;
-    private INewRecipeData m_newData;
+    
+    protected readonly List<TagTypes> Tags = new List<TagTypes>();
+    protected Grade Grade;
+    protected INewRecipeData m_newData;
+
+    public RecipeBuilder()
+    {
+        
+    }
+    
+    public RecipeBuilder(string guid, string name)
+    {
+        m_newData = RecipeManager.CreateRecipe<T>(guid, name);
+        RecipeModel = m_newData.RecipeModel;
+    }
     
     public RecipeBuilder(string guid, string name, Grade grade)
     {
-        Grade = grade;
+        SetGrade(grade);
         m_newData = RecipeManager.CreateRecipe<T>(guid, name);
         RecipeModel = m_newData.RecipeModel;
+    }
+    
+    public RecipeBuilder<T> SetGrade(Grade grade)
+    {
+        Grade = grade;
+        return this;
     }
 
     public void AddTags(List<TagTypes> tags)
