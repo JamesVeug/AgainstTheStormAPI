@@ -42,7 +42,7 @@ public partial class Plugin
     private void CreateWorkshop()
     {
         var burgerJoint = new WorkshopBuildingBuilder(PluginInfo.PLUGIN_GUID, "BurgerJoint", "BurgerJoint.png");
-        burgerJoint.SetCustomModel(AssetBundle.LoadAsset<GameObject>("BorgorKing"));
+        burgerJoint.SetCustomModel(ExampleModAssetBundle.LoadAsset<GameObject>("BorgorKing"));
         burgerJoint.SetDisplayName("Borgor King");
         burgerJoint.SetDescription("The best Borgors in town!");
         burgerJoint.SetLabel("Fast Food");

@@ -21,7 +21,8 @@ public partial class Plugin : BaseUnityPlugin
     public static ManualLogSource Log;
     private Harmony harmony;
         
-    public static AssetBundle AssetBundle;
+    public static AssetBundle ExampleModAssetBundle;
+    public static AssetBundle TinyHearthAssetBundle;
     private Hotkeys.Hotkey showPopupHotkey;
  
     private void Awake()
@@ -38,13 +39,19 @@ public partial class Plugin : BaseUnityPlugin
         CreateTrader();
         CreateDifficulty();
         
-        if (AssetBundleHelper.TryLoadAssetBundleFromFile("ats_examplemod", out AssetBundle))
+        if (AssetBundleHelper.TryLoadAssetBundleFromFile("ats_examplemod", out ExampleModAssetBundle))
         {
             CreateBuildings();
             CreateRaces();
         }
 
         CreateEmbarkRewards();
+        
+        if (AssetBundleHelper.TryLoadAssetBundleFromFile("tinyhearth", out TinyHearthAssetBundle))
+        {
+            CreateDecorations();
+        }
+        
         CreateBiomes();
 
 
