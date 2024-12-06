@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Helpers;
+using ATS_API.Localization;
 using Eremite.Buildings;
 using Eremite.MapObjects;
 using Eremite.Model;
@@ -82,6 +83,28 @@ public class NewBuildingData : ASyncable<BuildingModel>
             houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
             houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
         }
+        else if(BuildingModel is DecorationModel decorationModel)
+        {
+            DecorationBuildingBuilder.MetaData metaData = (DecorationBuildingBuilder.MetaData) MetaData;
+            decorationModel.tier = metaData.Tier.ToDecorationTier();
+            
+            if ((decorationModel.description == null || decorationModel.description.key == Placeholders.DescriptionKey) 
+                && decorationModel.tier != null)
+            {
+                if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.DecorationTier_1)
+                {
+                    decorationModel.description = "Building_Decoration_Comfort_Desc".ToLocaText();
+                }
+                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.DecorationTier_2)
+                {
+                    decorationModel.description = "Building_Decoration_Aesthetics_Desc".ToLocaText();
+                }
+                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.DecorationTier_3)
+                {
+                    decorationModel.description = "Building_Decoration_Harmony_Desc".ToLocaText();
+                }
+            }
+        }
     }
 
     private bool SetupPrefab()
@@ -158,11 +181,33 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 Debug.LogError(e);
             }
 
-            House workshop = root.GetComponent<House>();
-            VisualData.Prefab = workshop;
+            House house = root.GetComponent<House>();
+            VisualData.Prefab = house;
+         
+            // Data
+            houseModel.prefab = house;
+        }
+        else if (Behaviour == BuildingBehaviourTypes.Decoration)
+        {
+            DecorationModel decorationModel = BuildingModel as DecorationModel;
+            DecorationBuildingBuilder.MetaData metaData = (DecorationBuildingBuilder.MetaData) MetaData;
+            
+            // Visuals
+            try
+            {
+                BuildingManager.InitializePrefab<Decoration, DecorationView, DecorationModel>(root, decorationModel, VisualData.Icon, AnimHookType.Construction);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+
+            Decoration decoration = root.GetComponent<Decoration>();
+            VisualData.Prefab = decoration;
         
             // Data
-            houseModel.prefab = workshop;
+            decorationModel.prefab = decoration;
+            decoration.model = decorationModel;
         }
         else
         { 
