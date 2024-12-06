@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2386664375
+CRC: 976358546
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ff1142c8a792404451d8b26b38f0416f
+    Hash: cd16dae97e3b359fa81e3dc285531a8d
   TypeTreeHash:
     serializedVersion: 2
     Hash: c4fe1fdcbb1a331074c17958100faf9a
@@ -28,4 +28,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/CustomDecoration/TinyHearth.prefab
+- Assets/CustomDecoration/HumanBody/HumanMaleDead.prefab
 Dependencies: []
