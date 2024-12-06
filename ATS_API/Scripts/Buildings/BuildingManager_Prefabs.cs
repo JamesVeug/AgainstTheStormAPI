@@ -10,6 +10,101 @@ namespace ATS_API.Buildings;
 
 public partial class BuildingManager
 {
+    private class ScaffoldingData
+    {
+        public GameObject ScaffoldingPrefab { get; set; }
+        
+        public int maxSize;
+        public Vector3 unconstructedPosition;
+        public Vector3 constructedPosition;
+        
+        public Vector2 buildingRising;
+        public Vector2 scaffoldingDropping;
+        public Vector2 dustRange;
+        public Vector3 scaffoldingPosition;
+        public Vector2 scaffoldingDroppedPosition;
+        public int levels;
+        public Vector2 scaffoldingRising;
+    }
+    
+    private static ScaffoldingData TileSize1x1ScaffoldingData => new ScaffoldingData
+    {
+        maxSize = 1,
+        levels = 1,
+        
+        unconstructedPosition = new Vector3(0, -1, 0),
+        constructedPosition = new Vector3(0, 0, 0),
+        
+        buildingRising = new Vector2(0.3f, 0.8f),
+        scaffoldingDropping = new Vector2(0.8f, 1f),
+        dustRange = new Vector2(0.01f, 0.8f),
+        scaffoldingPosition = new Vector3(0f, -0.1f, 0f),
+        scaffoldingDroppedPosition = new Vector3(0f, -0.5f, 0f),
+        scaffoldingRising = new Vector2(0, 0.3f),
+        
+        ScaffoldingPrefab = BuildingTypes.Pipe.ToBuildingModel().Prefab.GetComponent<SimpleConstructionAnimator>().scaffoldingPrefab
+    };
+    
+    private static ScaffoldingData TileSize2x2ScaffoldingData => new ScaffoldingData
+    {
+        maxSize = 2,
+        buildingRising = new Vector2(0.3f, 0.8f),
+        
+        unconstructedPosition = new Vector3(0, -3, 0),
+        constructedPosition = new Vector3(0, 0, 0),
+        levels = 3,
+        scaffoldingRising = new Vector2(0, 0.3f),
+        
+        ScaffoldingPrefab = BuildingTypes.Workshop.ToBuildingModel().Prefab.GetComponent<ScaffoldingConstructionAnimator>().scaffoldingPrefab
+    };
+
+    private static ConstructionAnimator AddScaffoldingConstructionAnimator(GameObject prefab, BuildingView view, ScaffoldingData scaffoldingData)
+    {
+        BuildingModel buildingModelTemplate = BuildingTypes.Workshop.ToBuildingModel();
+        Building buildingTemplate = buildingModelTemplate.Prefab;
+        
+        var constructionAnimator = prefab.AddComponent<ScaffoldingConstructionAnimator>();
+        constructionAnimator.scaffoldingParent = Util.FindChildRecursive(prefab.transform, "ToRotate");
+        view.constructionAnimator = constructionAnimator;
+        
+        constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer") ?? constructionAnimator.scaffoldingParent;
+        constructionAnimator.unconstructedPosition = scaffoldingData.unconstructedPosition;
+        constructionAnimator.constructedPosition = scaffoldingData.constructedPosition;
+        constructionAnimator.dustPrefab = buildingTemplate.GetComponent<ScaffoldingConstructionAnimator>().dustPrefab;
+        constructionAnimator.scaffoldingPrefab = scaffoldingData.ScaffoldingPrefab;
+        constructionAnimator.levels = scaffoldingData.levels;
+        constructionAnimator.scaffoldingRising = scaffoldingData.scaffoldingRising;
+        constructionAnimator.buildingRising = scaffoldingData.buildingRising;
+        constructionAnimator.scaffoldingDropping = scaffoldingData.scaffoldingDropping;
+        constructionAnimator.dustRange = scaffoldingData.dustRange;
+        
+        return constructionAnimator;
+    }
+    
+    private static ConstructionAnimator AddSimpleConstructionAnimator(GameObject prefab, BuildingView view, ScaffoldingData scaffoldingData)
+    {
+        BuildingModel buildingModelTemplate = BuildingTypes.Pipe.ToBuildingModel();
+        Building buildingTemplate = buildingModelTemplate.Prefab;
+        
+        var constructionAnimator = prefab.AddComponent<SimpleConstructionAnimator>();
+        constructionAnimator.scaffoldingParent = Util.FindChildRecursive(prefab.transform, "ToRotate");
+        view.constructionAnimator = constructionAnimator;
+        
+        constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer") ?? constructionAnimator.scaffoldingParent;
+        constructionAnimator.unconstructedPosition = scaffoldingData.unconstructedPosition;
+        constructionAnimator.constructedPosition = scaffoldingData.constructedPosition;
+        constructionAnimator.dustPrefab = buildingTemplate.GetComponent<SimpleConstructionAnimator>().dustPrefab;
+        constructionAnimator.scaffoldingPrefab = scaffoldingData.ScaffoldingPrefab;
+        constructionAnimator.buildingRising = scaffoldingData.buildingRising;
+        constructionAnimator.scaffoldingDropping = scaffoldingData.scaffoldingDropping;
+        constructionAnimator.dustRange = scaffoldingData.dustRange;
+        constructionAnimator.scaffoldingPositon = scaffoldingData.scaffoldingPosition;
+        constructionAnimator.scaffoldingDroppedPositon = scaffoldingData.scaffoldingDroppedPosition;
+        
+        return constructionAnimator;
+    }  
+    
+    
     /// <summary>
     /// NOTE: Only works for Workshop types atm
     /// </summary>
@@ -31,21 +126,19 @@ public partial class BuildingManager
         // Plugin.Log.LogInfo($"Starting View");
         V view = prefab.AddComponent<V>();
         
+        int maxTileSize = Mathf.Max(buildingModel.size.x, buildingModel.size.y);
+        ScaffoldingData scaffoldingData = maxTileSize == 1 ? TileSize1x1ScaffoldingData : TileSize2x2ScaffoldingData;
+        
         // Plugin.Log.LogInfo($"Starting Scaffolding");
-        var constructionAnimator = prefab.AddComponent<ScaffoldingConstructionAnimator>();
-        view.constructionAnimator = constructionAnimator;
-        constructionAnimator.scaffoldingParent = Util.FindChildRecursive(prefab.transform, "ToRotate");
-        constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer") ?? constructionAnimator.scaffoldingParent;
-        constructionAnimator.unconstructedPosition = new Vector3(0, -3, 0);
-        constructionAnimator.constructedPosition = new Vector3(0, 0, 0);
-        constructionAnimator.dustPrefab = buildingTemplate.GetComponent<ScaffoldingConstructionAnimator>().dustPrefab;
-        constructionAnimator.scaffoldingPrefab =
-            buildingTemplate.GetComponent<ScaffoldingConstructionAnimator>().scaffoldingPrefab;
-        constructionAnimator.levels = 3;
-        constructionAnimator.scaffoldingRising = new Vector2(0, 0.3f);
-        constructionAnimator.buildingRising = new Vector2(0.3f, 0.8f);
-        constructionAnimator.scaffoldingRising = new Vector2(0.8f, 1.0f);
-        constructionAnimator.scaffoldingRising = new Vector2(0.01f, 0.8f);
+        ConstructionAnimator constructionAnimator = null;
+        if (maxTileSize == 1)
+        {
+            constructionAnimator = AddSimpleConstructionAnimator(prefab, view, scaffoldingData);
+        }
+        else
+        {
+            constructionAnimator = AddScaffoldingConstructionAnimator(prefab, view, scaffoldingData);
+        }
 
         // Plugin.Log.LogInfo($"Starting AnimationsHooks");
         Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks", false);
@@ -68,6 +161,8 @@ public partial class BuildingManager
         }
 
 
+        Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
+        Transform buildingContent = toRotate.GetChild(0);
         if (building is Camp camp)
         {
             camp.productionStorage = prefab.AddComponent<BuildingStorage>();
@@ -81,7 +176,7 @@ public partial class BuildingManager
             house.state = new HouseState();
             house.model = buildingModel as HouseModel;
             house.view = view as HouseView;
-            house.blight = SetupBlight(prefab, constructionAnimator, blightCyst);
+            house.blight = SetupBlight(prefab, buildingContent, blightCyst);
             house.model.cystsAmount = house.blight.cysts.Length;
         }
         else if (building is Workshop workshop)
@@ -92,7 +187,7 @@ public partial class BuildingManager
             workshop.model = buildingModel as WorkshopModel;
             workshop.state = new WorkshopState();
             workshop.view = view as WorkshopView;
-            workshop.blight = SetupBlight(prefab, constructionAnimator, blightCyst);
+            workshop.blight = SetupBlight(prefab, buildingContent, blightCyst);
             workshop.model.cystsAmount = workshop.blight.cysts.Length;
         }
         else if (building is Decoration decoration)
@@ -104,7 +199,7 @@ public partial class BuildingManager
         }
 
         // Plugin.Log.LogInfo($"Starting SpritesLayout");
-        view.rotationParent = constructionAnimator.scaffoldingParent;
+        view.rotationParent = toRotate;
         view.uiParent = GameObject.Instantiate(workshopTemplate.view.uiParent, prefab.transform).transform;
         SpritesLayout layout = view.uiParent.gameObject.GetComponent<SpritesLayout>();
         view.iconsLayout = layout;
@@ -241,18 +336,18 @@ public partial class BuildingManager
         }
     }
 
-    private static BuildingBlight SetupBlight(GameObject prefab, ScaffoldingConstructionAnimator constructionAnimator, BlightCyst cystTemplate)
+    private static BuildingBlight SetupBlight(GameObject prefab, Transform buildingParent, BlightCyst cystTemplate)
     {
         BuildingBlight blightCyst = prefab.AddComponent<BuildingBlight>();
 
         List<BlightCyst> cysts = new List<BlightCyst>();
-        int children = constructionAnimator.buildingParent.childCount;
+        int children = buildingParent.childCount;
         for (int j = 0; j < children; j++)
         {
-            Transform transform = constructionAnimator.buildingParent.GetChild(j);
+            Transform transform = buildingParent.GetChild(j);
             if (transform.name.Contains("Blight Cyst"))
             {
-                BlightCyst clone = GameObject.Instantiate(cystTemplate, constructionAnimator.buildingParent);
+                BlightCyst clone = GameObject.Instantiate(cystTemplate, buildingParent);
                 clone.transform.position = transform.position;
                 clone.transform.rotation = transform.rotation;
                 cysts.Add(clone);

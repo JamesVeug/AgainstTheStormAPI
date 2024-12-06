@@ -211,6 +211,20 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
         m_newData.Tags.Clear();
         m_newData.Tags.AddRange(tag);
     }
+    
+    public void SetFootPrint(int width, int height, FieldType field = FieldType.Sand)
+    {
+        m_buildingModel.footprintMap.width = width;
+        m_buildingModel.footprintMap.height = height;
+        m_buildingModel.size = new Vector2Int(width, height);
+        
+        var fields = new FieldType[width * height];
+        for (int i = 0; i < fields.Length; i++)
+        {
+            fields[i] = field;
+        }
+        m_buildingModel.footprintMap.fields = fields;
+    }
 }
 
 
