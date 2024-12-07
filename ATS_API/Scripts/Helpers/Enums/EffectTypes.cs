@@ -7,11 +7,18 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum EffectTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown EffectTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no EffectTypes. Typically, seen if nothing is defined or failed to parse a string to a EffectTypes.
+    /// </summary>
+	None = 0,
 	
 
 	//
@@ -21,14 +28,14 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Additional Impatience for Death</name>
 	/// <type>AdditionalDeathEffectModel</type>
-	Additional_Impatience_For_Death,
+	Additional_Impatience_For_Death = 1,
 
 	/// <summary>
 	/// The Queen's People - For the Queen, nothing is more important than her people. Losing villagers will add 0.5 more points to her Impatience.
 	/// </summary>
 	/// <name>[Mod] Additional Impatience for Death</name>
 	/// <type>AdditionalDeathEffectModel</type>
-	Mod_Additional_Impatience_For_Death,
+	Mod_Additional_Impatience_For_Death = 2,
 
 
 	//
@@ -40,14 +47,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[WE] Adopted Town 1 - Easy</name>
 	/// <type>AdoptedTownEffectModel</type>
-	WE_Adopted_Town_1_Easy,
+	WE_Adopted_Town_1_Easy = 3,
 
 	/// <summary>
 	/// Forsaken Town - You've inherited a settlement you didn't ask for. Now, it’s your job to roll up your sleeves and clean up someone else’s mess.
 	/// </summary>
 	/// <name>[WE] Adopted Town 1 - Hard</name>
 	/// <type>AdoptedTownEffectModel</type>
-	WE_Adopted_Town_1_Hard,
+	WE_Adopted_Town_1_Hard = 4,
 
 
 	//
@@ -57,7 +64,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Altar Activation</name>
 	/// <type>AltarActivationEffectModel</type>
-	Altar_Activation,
+	Altar_Activation = 5,
 
 
 	//
@@ -69,7 +76,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Port Blueprint From Category Pick</name>
 	/// <type>BlueprintFromCategoryPickEffectModel</type>
-	Port_Blueprint_From_Category_Pick,
+	Port_Blueprint_From_Category_Pick = 6,
 
 
 	//
@@ -81,7 +88,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Corruption Per Removed Cyst -50</name>
 	/// <type>BonusCorruptionPerRemovedCystEffectModel</type>
-	Corruption_Per_Removed_Cyst_Minus50,
+	Corruption_Per_Removed_Cyst_Minus50 = 7,
 
 
 	//
@@ -93,14 +100,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Bonus Global Reputation Treshold Increase 1</name>
 	/// <type>BonusGlobalReputationTresholdIncreaseEffectModel</type>
-	Bonus_Global_Reputation_Treshold_Increase_1,
+	Bonus_Global_Reputation_Treshold_Increase_1 = 8,
 
 	/// <summary>
 	/// Malcontents - You took a very peculiar group of settlers with you. They seem perpetually dissatisfied. The Resolve threshold at which each species starts producing Reputation increases by 1 more point for every Reputation Point they generate.
 	/// </summary>
 	/// <name>[Mod] Global Reputation Treshold Increase</name>
 	/// <type>BonusGlobalReputationTresholdIncreaseEffectModel</type>
-	Mod_Global_Reputation_Treshold_Increase,
+	Mod_Global_Reputation_Treshold_Increase = 9,
 
 
 	//
@@ -112,7 +119,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Mod] Less Hearth Range</name>
 	/// <type>BonusHearthRangeEffectModel</type>
-	Mod_Less_Hearth_Range,
+	Mod_Less_Hearth_Range = 10,
 
 
 	//
@@ -124,7 +131,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Half Reputation From Orders</name>
 	/// <type>BonusReputationFromSourceRateEffectModel</type>
-	Half_Reputation_From_Orders,
+	Half_Reputation_From_Orders = 11,
 
 
 	//
@@ -136,21 +143,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Mod] Lower Impatience Reduction</name>
 	/// <type>BonusReputationPenaltyPerReputationEffectModel</type>
-	Mod_Lower_Impatience_Reduction,
+	Mod_Lower_Impatience_Reduction = 12,
 
 	/// <summary>
 	/// Politically Outmaneuvered - Your rivals in the court are making sure all your deeds are discredited. Impatience falls by 0.5 points less for every Reputation Point you gain.
 	/// </summary>
 	/// <name>[Mod] Politically Outmaneuvered</name>
 	/// <type>BonusReputationPenaltyPerReputationEffectModel</type>
-	Mod_Politically_Outmaneuvered,
+	Mod_Politically_Outmaneuvered = 13,
 
 	/// <summary>
 	/// No contact - Harsh weather conditions make it impossible to reach the Citadel. Gaining Reputation doesn't lower Impatience.
 	/// </summary>
 	/// <name>SE No Impatience Reduction</name>
 	/// <type>BonusReputationPenaltyPerReputationEffectModel</type>
-	SE_No_Impatience_Reduction,
+	SE_No_Impatience_Reduction = 14,
 
 
 	//
@@ -162,19 +169,19 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[PerkCrafter] Sacrifice Stacks</name>
 	/// <type>BonusSacrificeStacksEffectModel</type>
-	PerkCrafter_Sacrifice_Stacks,
+	PerkCrafter_Sacrifice_Stacks = 15,
 
 	/// <summary></summary>
 	/// <name>Sacrifice Stack +1</name>
 	/// <type>BonusSacrificeStacksEffectModel</type>
-	Sacrifice_Stack_Plus1,
+	Sacrifice_Stack_Plus1 = 16,
 
 	/// <summary>
 	/// Unearthly Element - The firekeeper's power weakens in the face of an otherworldly force. The maximum number of sacrifice stacks in the Ancient Hearth is lowered by 1.
 	/// </summary>
 	/// <name>SE Unearthly Element</name>
 	/// <type>BonusSacrificeStacksEffectModel</type>
-	SE_Unearthly_Element,
+	SE_Unearthly_Element = 17,
 
 
 	//
@@ -184,28 +191,28 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Makeshift Extractor - Tank Capacity</name>
 	/// <type>BonusWaterTanksCapacityEffectModel</type>
-	Makeshift_Extractor_Tank_Capacity,
+	Makeshift_Extractor_Tank_Capacity = 18,
 
 	/// <summary>
 	/// Makeshift Water Tank - Increases the tank capacity for every type of rainwater by 100.
 	/// </summary>
 	/// <name>Tank Capacity - Child</name>
 	/// <type>BonusWaterTanksCapacityEffectModel</type>
-	Tank_Capacity_Child,
+	Tank_Capacity_Child = 19,
 
 	/// <summary>
 	/// Rainwater Storage - Frogs love to bathe. They use specially treated and purified rainwater to do so. Increases the tank capacity for each type of rainwater by 50.
 	/// </summary>
 	/// <name>Tank Capacity - Frog</name>
 	/// <type>BonusWaterTanksCapacityEffectModel</type>
-	Tank_Capacity_Frog,
+	Tank_Capacity_Frog = 20,
 
 	/// <summary>
 	/// Makeshift Water Tank - Increases the tank capacity for every type of rainwater by 50.
 	/// </summary>
 	/// <name>Tank Capacity - Trader</name>
 	/// <type>BonusWaterTanksCapacityEffectModel</type>
-	Tank_Capacity_Trader,
+	Tank_Capacity_Trader = 21,
 
 
 	//
@@ -217,525 +224,568 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Advanced Rain Collector Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Advanced_Rain_Collector_Blueprint,
+	Advanced_Rain_Collector_Blueprint = 22,
 
 	/// <summary>
-	/// Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Alchemist Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Alchemist_Blueprint,
+	Alchemist_Blueprint = 23,
 
 	/// <summary>
 	/// Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
 	/// </summary>
 	/// <name>Altar Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Altar_Blueprint,
+	Altar_Blueprint = 24,
 
 	/// <summary>
-	/// Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Apothecary Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Apothecary_Blueprint,
+	Apothecary_Blueprint = 25,
 
 	/// <summary>
-	/// Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Artisan Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Artisan_Blueprint,
+	Artisan_Blueprint = 26,
 
 	/// <summary>
-	/// Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Bakery Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Bakery_Blueprint,
+	Bakery_Blueprint = 27,
 
 	/// <summary>
 	/// Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 	/// </summary>
 	/// <name>Bath House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Bath_House_Blueprint,
+	Bath_House_Blueprint = 28,
 
 	/// <summary>
-	/// Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Beanery Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Beanery_Blueprint,
+	Beanery_Blueprint = 29,
 
 	/// <summary>
 	/// Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Beaver House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Beaver_House_Blueprint,
+	Beaver_House_Blueprint = 30,
 
 	/// <summary>
 	/// Royal Archaeologists - Every viceroy embarking on an expedition to the Scarlet Orchard is assigned a royal archaeologist. You gain access to a new essential building: Archaeologist's Office.
 	/// </summary>
 	/// <name>[Biome] Moorlands - Archaeologist Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Biome_Moorlands_Archaeologist_Blueprint,
+	Biome_Moorlands_Archaeologist_Blueprint = 31,
 
 	/// <summary>
 	/// Strider Port - Your settlement begins on the coast of this strange land, near an ancient Strider Port. Use it to send out expeditions in search of blueprints and treasure. However, you will receive fewer blueprints from Reputation.
 	/// </summary>
 	/// <name>[Biome] Striders Port Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Biome_Striders_Port_Blueprint,
+	Biome_Striders_Port_Blueprint = 32,
 
 	/// <summary>
 	/// Forsaken Altar - A specialized building dedicated to fighting Blightrot. Blight Fighters will prepare "blight fuel" Purging Fire during drizzle and clearance seasons, and use it to burn Blightrot Cysts during the storm.
 	/// </summary>
 	/// <name>Blight Post Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Blight_Post_Blueprint,
+	Blight_Post_Blueprint = 33,
 
 	/// <summary>
-	/// Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Brewery Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Brewery_Blueprint,
+	Brewery_Blueprint = 34,
 
 	/// <summary>
-	/// Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Brick Oven Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Brick_Oven_Blueprint,
+	Brick_Oven_Blueprint = 35,
 
 	/// <summary>
-	/// Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Brickyard Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Brickyard_Blueprint,
+	Brickyard_Blueprint = 36,
 
 	/// <summary>
-	/// Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Butcher Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Butcher_Blueprint,
+	Butcher_Blueprint = 37,
 
 	/// <summary>
-	/// Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cannery Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Cannery_Blueprint,
+	Cannery_Blueprint = 38,
 
 	/// <summary>
-	/// Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Carpenter Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Carpenter_Blueprint,
+	Carpenter_Blueprint = 39,
 
 	/// <summary>
-	/// Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cellar Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Cellar_Blueprint,
+	Cellar_Blueprint = 40,
 
 	/// <summary>
 	/// Clay Pit - Uses Clearance Water to produce goods regardless of the season. Must be placed on fertile soil. Can produce:  [mat raw] clay Clay (grade2), [mat raw] reeds Reed (grade2), [mat raw] resin Resin (grade2)
 	/// </summary>
 	/// <name>Clay Pit Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Clay_Pit_Blueprint,
+	Clay_Pit_Blueprint = 41,
 
 	/// <summary>
-	/// Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Cobbler Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Cobbler_Blueprint,
+	Cobbler_Blueprint = 42,
 
 	/// <summary>
 	/// Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
 	/// </summary>
 	/// <name>Common Hall Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Common_Hall_Blueprint,
+	Common_Hall_Blueprint = 43,
 
 	/// <summary>
-	/// Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cookhouse Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Cookhouse_Blueprint,
+	Cookhouse_Blueprint = 44,
 
 	/// <summary>
-	/// Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Cooperage Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Cooperage_Blueprint,
+	Cooperage_Blueprint = 45,
 
 	/// <summary>
-	/// Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0). Can use: "[water] storm water" Storm Water.
+	/// <p>Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Crude Workstation Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Crude_Workstation_Blueprint,
+	Crude_Workstation_Blueprint = 46,
 
 	/// <summary>
-	/// Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Distillery Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Distillery_Blueprint,
+	Distillery_Blueprint = 47,
 
 	/// <summary>
-	/// Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Druid Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Druid_Blueprint,
+	Druid_Blueprint = 48,
 
 	/// <summary>
 	/// Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 	/// </summary>
 	/// <name>Explorers Lodge Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Explorers_Lodge_Blueprint,
+	Explorers_Lodge_Blueprint = 49,
 
 	/// <summary>
 	/// Homestead - Uses a large area of nearby farm fields to grow  [food raw] grain Grain (grade3), [mat raw] plant fibre Plant Fiber (grade3), [food raw] vegetables Vegetables (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Farm Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Farm_Blueprint,
+	Farm_Blueprint = 50,
 
 	/// <summary>
-	/// Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3). Can use: "[water] storm water" Storm Water.
+	/// <p>Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Finesmith Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Finesmith_Blueprint,
+	Finesmith_Blueprint = 51,
 
 	/// <summary>
 	/// Fishing Hut - An advanced fishing hut. Can fish in large fishing ponds in addition to small ones. Can catch:  [food raw] fish Fish (grade2), [mat raw] scales Scales (grade2), [mat raw] algae Algae (grade2).
 	/// </summary>
 	/// <name>Fishing Hut Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Fishing_Hut_Blueprint,
+	Fishing_Hut_Blueprint = 52,
 
 	/// <summary>
 	/// Foragers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] grain Grain (grade2), [food raw] roots Roots (grade2), [food raw] vegetables Vegetables (grade2).
 	/// </summary>
 	/// <name>Forager's Camp Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Foragers_Camp_Blueprint,
+	Foragers_Camp_Blueprint = 53,
 
 	/// <summary>
 	/// Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 	/// </summary>
 	/// <name>Forum Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Forum_Blueprint,
+	Forum_Blueprint = 54,
 
 	/// <summary>
 	/// Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Frog House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Frog_House_Blueprint,
+	Frog_House_Blueprint = 55,
 
 	/// <summary>
-	/// Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Furnace Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Furnace_Blueprint,
+	Furnace_Blueprint = 56,
 
 	/// <summary>
-	/// Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Granary Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Granary_Blueprint,
+	Granary_Blueprint = 57,
 
 	/// <summary>
 	/// Greenhouse - Uses Drizzle Water to grow crops regardless of the season. Must be placed on fertile soil. Can produce:  [food raw] mushrooms Mushrooms (grade2), [food raw] herbs Herbs (grade2)
 	/// </summary>
 	/// <name>Greenhouse Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Greenhouse_Blueprint,
+	Greenhouse_Blueprint = 58,
 
 	/// <summary>
-	/// Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Grill Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Grill_Blueprint,
+	Grill_Blueprint = 59,
 
 	/// <summary>
 	/// Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 	/// </summary>
 	/// <name>Grove Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Grove_Blueprint,
+	Grove_Blueprint = 60,
 
 	/// <summary>
 	/// Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.
 	/// </summary>
 	/// <name>Guild House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Guild_House_Blueprint,
+	Guild_House_Blueprint = 61,
 
 	/// <summary>
 	/// Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade1), [food raw] herbs Herbs (grade2).
 	/// </summary>
 	/// <name>Herb Garden Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Herb_Garden_Blueprint,
+	Herb_Garden_Blueprint = 62,
 
 	/// <summary>
 	/// Herbalists' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] herbs Herbs (grade2), [food raw] berries Berries (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Herbalist Camp Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Herbalist_Camp_Blueprint,
+	Herbalist_Camp_Blueprint = 63,
 
 	/// <summary>
 	/// Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Human House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Human_House_Blueprint,
+	Human_House_Blueprint = 64,
 
 	/// <summary>
 	/// Forsaken Altar - A small storage for "blight fuel" Purging Fire. Blight Fighters will use it to restock their fuel when fighting Blightrot in the storm.
 	/// </summary>
 	/// <name>Hydrant Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Hydrant_Blueprint,
+	Hydrant_Blueprint = 65,
 
 	/// <summary>
-	/// Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Kiln Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Kiln_Blueprint,
+	Kiln_Blueprint = 66,
 
 	/// <summary>
-	/// Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Leatherworks Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Leatherworks_Blueprint,
+	Leatherworks_Blueprint = 67,
 
 	/// <summary>
 	/// Library - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 	/// </summary>
 	/// <name>Library Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Library_Blueprint,
+	Library_Blueprint = 68,
 
 	/// <summary>
 	/// Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Lizard House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Lizard_House_Blueprint,
+	Lizard_House_Blueprint = 69,
 
 	/// <summary>
-	/// Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Lumbermill Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Lumbermill_Blueprint,
+	Lumbermill_Blueprint = 70,
 
 	/// <summary>
-	/// Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Manufactory Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Manufactory_Blueprint,
+	Manufactory_Blueprint = 71,
 
 	/// <summary>
 	/// Market - A place where villagers can fulfill their need for: Leisure,  Treatment. Passive effects: Market Carts.
 	/// </summary>
 	/// <name>Market Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Market_Blueprint,
+	Market_Blueprint = 72,
 
 	/// <summary>
-	/// Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Mill Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Mill_Blueprint,
+	Mill_Blueprint = 73,
 
 	/// <summary>
 	/// Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 	/// </summary>
 	/// <name>Monastery Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Monastery_Blueprint,
+	Monastery_Blueprint = 74,
 
 	/// <summary>
-	/// Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Pantry Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Pantry_Blueprint,
+	Pantry_Blueprint = 75,
 
 	/// <summary>
 	/// Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
 	/// </summary>
 	/// <name>Plantation Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Plantation_Blueprint,
+	Plantation_Blueprint = 76,
 
 	/// <summary>
-	/// Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Press Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Press_Blueprint,
+	Press_Blueprint = 77,
 
 	/// <summary>
-	/// Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Provisioner Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Provisioner_Blueprint,
+	Provisioner_Blueprint = 78,
 
 	/// <summary>
-	/// Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Ranch Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Ranch_Blueprint,
+	Ranch_Blueprint = 79,
 
 	/// <summary>
-	/// Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Scribe Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Scribe_Blueprint,
+	Scribe_Blueprint = 80,
 
 	/// <summary>
 	/// Beacon Tower - A powerful, ancient structure that allows you to summon aid directly from the Citadel. Grants access to three types of temporary support abilities.
 	/// </summary>
 	/// <name>Sealed Biome Shrine Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Sealed_Biome_Shrine_Blueprint,
+	Sealed_Biome_Shrine_Blueprint = 81,
 
 	/// <summary>
-	/// Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Sewer Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Sewer_Blueprint,
+	Sewer_Blueprint = 82,
 
 	/// <summary>
 	/// Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade1), [food raw] grain Grain (grade2).
 	/// </summary>
 	/// <name>SmallFarm Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	SmallFarm_Blueprint,
+	SmallFarm_Blueprint = 83,
 
 	/// <summary>
-	/// Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Smelter Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Smelter_Blueprint,
+	Smelter_Blueprint = 84,
 
 	/// <summary>
-	/// Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Smithy Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Smithy_Blueprint,
+	Smithy_Blueprint = 85,
 
 	/// <summary>
-	/// Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Smokehouse Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Smokehouse_Blueprint,
+	Smokehouse_Blueprint = 86,
 
 	/// <summary>
-	/// Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Stamping Mill Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Stamping_Mill_Blueprint,
+	Stamping_Mill_Blueprint = 87,
 
 	/// <summary>
-	/// Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Supplier Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Supplier_Blueprint,
+	Supplier_Blueprint = 88,
 
 	/// <summary>
 	/// Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
 	/// </summary>
 	/// <name>Tavern Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Tavern_Blueprint,
+	Tavern_Blueprint = 89,
 
 	/// <summary>
-	/// Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Tea House Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Tea_House_Blueprint,
+	Tea_House_Blueprint = 90,
 
 	/// <summary>
 	/// Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
 	/// </summary>
 	/// <name>Temple Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Temple_Blueprint,
+	Temple_Blueprint = 91,
 
 	/// <summary>
-	/// Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Tinctury Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Tinctury_Blueprint,
+	Tinctury_Blueprint = 92,
 
 	/// <summary>
-	/// Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Tinkerer Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Tinkerer_Blueprint,
+	Tinkerer_Blueprint = 93,
 
 	/// <summary>
-	/// Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Toolshop Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Toolshop_Blueprint,
+	Toolshop_Blueprint = 94,
 
 	/// <summary>
 	/// Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).
 	/// </summary>
 	/// <name>Trapper's Camp Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Trappers_Camp_Blueprint,
+	Trappers_Camp_Blueprint = 95,
 
 	/// <summary>
-	/// Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Weaver Blueprint</name>
 	/// <type>BuildingEffectModel</type>
-	Weaver_Blueprint,
+	Weaver_Blueprint = 96,
 
 
 	//
@@ -747,31 +797,31 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>2 Hauling Carts in Main Warehouse</name>
 	/// <type>BuildingPerkEffectModel</type>
-	_2_Hauling_Carts_In_Main_Warehouse,
+	_2_Hauling_Carts_In_Main_Warehouse = 97,
 
 	/// <summary>
 	/// Hauling Cart - An automated rainpunk cart will be assigned to every warehouse in the settlement to help transport resources between buildings.
 	/// </summary>
 	/// <name>Hauling Cart in All Warehouses - main</name>
 	/// <type>BuildingPerkEffectModel</type>
-	Hauling_Cart_In_All_Warehouses_Main,
+	Hauling_Cart_In_All_Warehouses_Main = 98,
 
 	/// <summary>
 	/// Hauling Cart - An automated rainpunk cart will be assigned to every warehouse in the settlement to help transport resources between buildings.
 	/// </summary>
 	/// <name>Hauling Cart in All Warehouses - small</name>
 	/// <type>BuildingPerkEffectModel</type>
-	Hauling_Cart_In_All_Warehouses_Small,
+	Hauling_Cart_In_All_Warehouses_Small = 99,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Fewer Housing Spots - child - Big Shelter</name>
 	/// <type>BuildingPerkEffectModel</type>
-	PerkCrafter_Fewer_Housing_Spots_Child_Big_Shelter,
+	PerkCrafter_Fewer_Housing_Spots_Child_Big_Shelter = 100,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Fewer Housing Spots - child - Shelter</name>
 	/// <type>BuildingPerkEffectModel</type>
-	PerkCrafter_Fewer_Housing_Spots_Child_Shelter,
+	PerkCrafter_Fewer_Housing_Spots_Child_Shelter = 101,
 
 
 	//
@@ -783,536 +833,536 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Apothecary +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Apothecary_Plus50,
+	Apothecary_Plus50 = 102,
 
 	/// <summary>
 	/// Reinforced Stoves - +50% to amount of goods produced in the Bakery.
 	/// </summary>
 	/// <name>Bakery +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Bakery_Plus50,
+	Bakery_Plus50 = 103,
 
 	/// <summary>
 	/// Efficient Brewing - +50% to amount of goods produced in the Flawless Brewery.
 	/// </summary>
 	/// <name>Brewery Haunted +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Brewery_Haunted_Plus50,
+	Brewery_Haunted_Plus50 = 104,
 
 	/// <summary>
 	/// Advanced Brewing - +60% to amount of goods produced in the Flawless Brewery.
 	/// </summary>
 	/// <name>Brewery Haunted +60</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Brewery_Haunted_Plus60,
+	Brewery_Haunted_Plus60 = 105,
 
 	/// <summary>
 	/// Efficient Brewing - +50% to amount of goods produced in the Brewery.
 	/// </summary>
 	/// <name>Brewery +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Brewery_Plus50,
+	Brewery_Plus50 = 106,
 
 	/// <summary>
 	/// Advanced Brewing - +60% to amount of goods produced in the Brewery.
 	/// </summary>
 	/// <name>Brewery +60</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Brewery_Plus60,
+	Brewery_Plus60 = 107,
 
 	/// <summary>
 	/// Meat Cleavers - +50% to amount of goods produced in the Butcher.
 	/// </summary>
 	/// <name>Butcher +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Butcher_Plus50,
+	Butcher_Plus50 = 108,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Clay Pit.
 	/// </summary>
 	/// <name>Clay Pit -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Clay_Pit_Minus50,
+	Clay_Pit_Minus50 = 109,
 
 	/// <summary></summary>
 	/// <name>Clay Pit +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Clay_Pit_Plus100,
+	Clay_Pit_Plus100 = 110,
 
 	/// <summary></summary>
 	/// <name>Clay Pit +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Clay_Pit_Plus150,
+	Clay_Pit_Plus150 = 111,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Clay Pit.
 	/// </summary>
 	/// <name>Clay Pit +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Clay_Pit_Plus50,
+	Clay_Pit_Plus50 = 112,
 
 	/// <summary>
 	/// Reinforced Stoves - +50% to amount of goods produced in the Clothier.
 	/// </summary>
 	/// <name>Clothier +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Clothier_Plus50,
+	Clothier_Plus50 = 113,
 
 	/// <summary>
 	/// Workstation Upgrade - +100% to amount of goods produced in the Crude Workstation.
 	/// </summary>
 	/// <name>Crude Workstation +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Crude_Workstation_Plus100,
+	Crude_Workstation_Plus100 = 114,
 
 	/// <summary>
 	/// Workstation Upgrade - +50% to amount of goods produced in the Crude Workstation.
 	/// </summary>
 	/// <name>Crude Workstation +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Crude_Workstation_Plus50,
+	Crude_Workstation_Plus50 = 115,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Homestead.
 	/// </summary>
 	/// <name>Farm -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Farm_Minus50,
+	Farm_Minus50 = 116,
 
 	/// <summary>
 	/// Obsidian Tools - +100% to amount of goods produced in the Homestead.
 	/// </summary>
 	/// <name>Farm +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Farm_Plus100,
+	Farm_Plus100 = 117,
 
 	/// <summary>
 	/// Obsidian Tools - +150% to amount of goods produced in the Homestead.
 	/// </summary>
 	/// <name>Farm +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Farm_Plus150,
+	Farm_Plus150 = 118,
 
 	/// <summary>
 	/// Obsidian Tools - +50% to amount of goods produced in the Homestead.
 	/// </summary>
 	/// <name>Farm +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Farm_Plus50,
+	Farm_Plus50 = 119,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Foragers' Camp.
 	/// </summary>
 	/// <name>Foragers Camp +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Foragers_Camp_Plus100,
+	Foragers_Camp_Plus100 = 120,
 
 	/// <summary>
 	/// Reinforced Tools - Foragers' Camp
 	/// </summary>
 	/// <name>Foragers Camp +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Foragers_Camp_Plus50,
+	Foragers_Camp_Plus50 = 121,
 
 	/// <summary>
 	/// Reinforced Tools - Small Foragers' Camp
 	/// </summary>
 	/// <name>Foragers Camp Primitive +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Foragers_Camp_Primitive_Plus50,
+	Foragers_Camp_Primitive_Plus50 = 122,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Greenhouse.
 	/// </summary>
 	/// <name>Greenhouse -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Greenhouse_Minus50,
+	Greenhouse_Minus50 = 123,
 
 	/// <summary></summary>
 	/// <name>Greenhouse +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Greenhouse_Plus100,
+	Greenhouse_Plus100 = 124,
 
 	/// <summary></summary>
 	/// <name>Greenhouse +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Greenhouse_Plus150,
+	Greenhouse_Plus150 = 125,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Greenhouse.
 	/// </summary>
 	/// <name>Greenhouse +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Greenhouse_Plus50,
+	Greenhouse_Plus50 = 126,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Forester's Hut.
 	/// </summary>
 	/// <name>Grove -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Grove_Minus50,
+	Grove_Minus50 = 127,
 
 	/// <summary></summary>
 	/// <name>Grove +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Grove_Plus100,
+	Grove_Plus100 = 128,
 
 	/// <summary></summary>
 	/// <name>Grove +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Grove_Plus150,
+	Grove_Plus150 = 129,
 
 	/// <summary>
 	/// Industrialized Agriculture - +50% to amount of goods produced in the Forester's Hut.
 	/// </summary>
 	/// <name>Grove +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Grove_Plus50,
+	Grove_Plus50 = 130,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Harvesters' Camp.
 	/// </summary>
 	/// <name>Harvester Camp +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Harvester_Camp_Plus100,
+	Harvester_Camp_Plus100 = 131,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Harvesters' Camp.
 	/// </summary>
 	/// <name>Harvester Camp +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Harvester_Camp_Plus50,
+	Harvester_Camp_Plus50 = 132,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Minus50,
+	Herb_Garden_Minus50 = 133,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Hallowed Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden -50 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Minus50_Haunted,
+	Herb_Garden_Minus50_Haunted = 134,
 
 	/// <summary></summary>
 	/// <name>Herb Garden +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus100,
+	Herb_Garden_Plus100 = 135,
 
 	/// <summary></summary>
 	/// <name>Herb Garden +100 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus100_Haunted,
+	Herb_Garden_Plus100_Haunted = 136,
 
 	/// <summary></summary>
 	/// <name>Herb Garden +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus150,
+	Herb_Garden_Plus150 = 137,
 
 	/// <summary></summary>
 	/// <name>Herb Garden +150 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus150_Haunted,
+	Herb_Garden_Plus150_Haunted = 138,
 
 	/// <summary>
 	/// Advanced Herbalism - +25% to amount of goods produced in the Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden +25</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus25,
+	Herb_Garden_Plus25 = 139,
 
 	/// <summary>
 	/// Advanced Herbalism - +25% to amount of goods produced in the Hallowed Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden +25 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus25_Haunted,
+	Herb_Garden_Plus25_Haunted = 140,
 
 	/// <summary>
 	/// Advanced Herbalism - +50% to amount of goods produced in the Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus50,
+	Herb_Garden_Plus50 = 141,
 
 	/// <summary>
 	/// Advanced Herbalism - +50% to amount of goods produced in the Hallowed Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden +50 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herb_Garden_Plus50_Haunted,
+	Herb_Garden_Plus50_Haunted = 142,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Herbalists' Camp.
 	/// </summary>
 	/// <name>Herbalist Camp +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herbalist_Camp_Plus100,
+	Herbalist_Camp_Plus100 = 143,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Herbalists' Camp.
 	/// </summary>
 	/// <name>Herbalist Camp +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Herbalist_Camp_Plus50,
+	Herbalist_Camp_Plus50 = 144,
 
 	/// <summary>
 	/// Worker Mobilization - +50% to amount of goods produced in the Makeshift Post.
 	/// </summary>
 	/// <name>Makeshift Post  +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Makeshift_Post_Plus50,
+	Makeshift_Post_Plus50 = 145,
 
 	/// <summary>
 	/// Rainpunk Drills - +100% to amount of goods produced in the Mine.
 	/// </summary>
 	/// <name>Mine +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Mine_Plus100,
+	Mine_Plus100 = 146,
 
 	/// <summary>
 	/// Rainpunk Drills - +30% to amount of goods produced in the Mine.
 	/// </summary>
 	/// <name>Mine +30</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Mine_Plus30,
+	Mine_Plus30 = 147,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Plantation.
 	/// </summary>
 	/// <name>Plantation -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Plantation_Minus50,
+	Plantation_Minus50 = 148,
 
 	/// <summary></summary>
 	/// <name>Plantation +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Plantation_Plus100,
+	Plantation_Plus100 = 149,
 
 	/// <summary></summary>
 	/// <name>Plantation +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Plantation_Plus150,
+	Plantation_Plus150 = 150,
 
 	/// <summary>
 	/// Large Baskets - +25% to amount of goods produced in the Plantation.
 	/// </summary>
 	/// <name>Plantation +25</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Plantation_Plus25,
+	Plantation_Plus25 = 151,
 
 	/// <summary>
 	/// Large Baskets - +50% to amount of goods produced in the Plantation.
 	/// </summary>
 	/// <name>Plantation +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Plantation_Plus50,
+	Plantation_Plus50 = 152,
 
 	/// <summary>
 	/// Reinforced Stoves - +50% to amount of goods produced in the Provisioner.
 	/// </summary>
 	/// <name>Provisioner +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Provisioner_Plus50,
+	Provisioner_Plus50 = 153,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (Forager)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_Forager,
+	SE_Nodes_Bonuses_Forager = 154,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (Harvester)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_Harvester,
+	SE_Nodes_Bonuses_Harvester = 155,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (Herbalist)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_Herbalist,
+	SE_Nodes_Bonuses_Herbalist = 156,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (P Forager)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_P_Forager,
+	SE_Nodes_Bonuses_P_Forager = 157,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (P Herbalist)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_P_Herbalist,
+	SE_Nodes_Bonuses_P_Herbalist = 158,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (P Trapper)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_P_Trapper,
+	SE_Nodes_Bonuses_P_Trapper = 159,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (Stonecutter)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_Stonecutter,
+	SE_Nodes_Bonuses_Stonecutter = 160,
 
 	/// <summary>
 	/// Untapped Wealth
 	/// </summary>
 	/// <name>SE Nodes Bonuses (Trapper)</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Nodes_Bonuses_Trapper,
+	SE_Nodes_Bonuses_Trapper = 161,
 
 	/// <summary>
 	/// Exposed Resources - The ground is soft, and soaked with the rain's essence. Mines produce 50% more goods during drizzle season.
 	/// </summary>
 	/// <name>SE Productive Mine</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Productive_Mine,
+	SE_Productive_Mine = 162,
 
 	/// <summary>
 	/// Intensive Mutations - Living organisms in this region are mutated, and much larger than in other places. Doubles the amount of secondary resources gathered from trees.
 	/// </summary>
 	/// <name>SE Woodcutters Camp Extra Only +100 [Intensive Mutations]</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SE_Woodcutters_Camp_Extra_Only_Plus100_Intensive_Mutations,
+	SE_Woodcutters_Camp_Extra_Only_Plus100_Intensive_Mutations = 163,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm -50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Minus50,
+	SmallFarm_Minus50 = 164,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Hallowed Small Farm.
 	/// </summary>
 	/// <name>SmallFarm -50 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Minus50_Haunted,
+	SmallFarm_Minus50_Haunted = 165,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus100,
+	SmallFarm_Plus100 = 166,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Hallowed Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +100 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus100_Haunted,
+	SmallFarm_Plus100_Haunted = 167,
 
 	/// <summary>
 	/// Reinforced Tools - +150% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +150</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus150,
+	SmallFarm_Plus150 = 168,
 
 	/// <summary>
 	/// Reinforced Tools - +150% to amount of goods produced in the Hallowed Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +150 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus150_Haunted,
+	SmallFarm_Plus150_Haunted = 169,
 
 	/// <summary>
 	/// Old Ghran's Technique - +25% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +25</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus25,
+	SmallFarm_Plus25 = 170,
 
 	/// <summary>
 	/// Old Ghran's Technique - +25% to amount of goods produced in the Hallowed Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +25 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus25_Haunted,
+	SmallFarm_Plus25_Haunted = 171,
 
 	/// <summary>
 	/// Farming Tools - +50% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus50,
+	SmallFarm_Plus50 = 172,
 
 	/// <summary>
 	/// Farming Tools - +50% to amount of goods produced in the Hallowed Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +50 Haunted</name>
 	/// <type>BuildingProductionEffectModel</type>
-	SmallFarm_Plus50_Haunted,
+	SmallFarm_Plus50_Haunted = 173,
 
 	/// <summary>
 	/// +100% to amount of goods produced in the Smithy.
 	/// </summary>
 	/// <name>Smithy +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Smithy_Plus100,
+	Smithy_Plus100 = 174,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Stonecutters' Camp.
 	/// </summary>
 	/// <name>Stonecutters Camp +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Stonecutters_Camp_Plus100,
+	Stonecutters_Camp_Plus100 = 175,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Stonecutters' Camp.
 	/// </summary>
 	/// <name>Stonecutters Camp +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Stonecutters_Camp_Plus50,
+	Stonecutters_Camp_Plus50 = 176,
 
 	/// <summary>
 	/// Reinforced Stoves - +50% to amount of goods produced in the Supplier.
 	/// </summary>
 	/// <name>Supplier +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Supplier_Plus50,
+	Supplier_Plus50 = 177,
 
 	/// <summary>
 	/// Reinforced Tools - +100% to amount of goods produced in the Trappers' Camp.
 	/// </summary>
 	/// <name>Trappers Camp +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Trappers_Camp_Plus100,
+	Trappers_Camp_Plus100 = 178,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Trappers' Camp.
 	/// </summary>
 	/// <name>Trappers Camp +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Trappers_Camp_Plus50,
+	Trappers_Camp_Plus50 = 179,
 
 	/// <summary>
 	/// Woodcutter's Tools - +100% to amount of goods produced in the Woodcutters' Camp.
 	/// </summary>
 	/// <name>Woodcutters Camp +100</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Woodcutters_Camp_Plus100,
+	Woodcutters_Camp_Plus100 = 180,
 
 	/// <summary>
 	/// Reinforced Tools - +50% to amount of goods produced in the Woodcutters' Camp.
 	/// </summary>
 	/// <name>Woodcutters Camp +50</name>
 	/// <type>BuildingProductionEffectModel</type>
-	Woodcutters_Camp_Plus50,
+	Woodcutters_Camp_Plus50 = 181,
 
 
 	//
@@ -1324,7 +1374,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] No Goods Refund</name>
 	/// <type>BuildingsRefundRateEffectModel</type>
-	Map_Mod_No_Goods_Refund,
+	Map_Mod_No_Goods_Refund = 182,
 
 
 	//
@@ -1336,7 +1386,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Bigger Storage</name>
 	/// <type>BuildingsStorageGlobalCapacityEffectModel</type>
-	Bigger_Storage,
+	Bigger_Storage = 183,
 
 
 	//
@@ -1346,59 +1396,59 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Extra Consumption +100</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	Extra_Consumption_Plus100,
+	Extra_Consumption_Plus100 = 184,
 
 	/// <summary></summary>
 	/// <name>Extra Consumption +25</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	Extra_Consumption_Plus25,
+	Extra_Consumption_Plus25 = 185,
 
 	/// <summary></summary>
 	/// <name>Extra Consumption +50</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	Extra_Consumption_Plus50,
+	Extra_Consumption_Plus50 = 186,
 
 	/// <summary>
 	/// Consumerism - Villagers have forgotten what a modest life looks like. They want to enjoy life to the fullest. Villagers have a 50% chance to consume double the amount of luxury goods.
 	/// </summary>
 	/// <name>[Mod] Higher Needs Consumption Rate</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	Mod_Higher_Needs_Consumption_Rate,
+	Mod_Higher_Needs_Consumption_Rate = 187,
 
 	/// <summary>
 	/// Parasites - One of the villagers was sick, and infected the rest of the settlement with a parasite. All villagers have a 50% chance of eating twice as much during their break.
 	/// </summary>
 	/// <name>[Mod] Parasites</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	Mod_Parasites,
+	Mod_Parasites = 188,
 
 	/// <summary>
 	/// Villagers have a 10% higher chance of consuming double the food during a break.
 	/// </summary>
 	/// <name>[PerkCrafter] Higher Food Consumption</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	PerkCrafter_Higher_Food_Consumption,
+	PerkCrafter_Higher_Food_Consumption = 189,
 
 	/// <summary>
 	/// Villagers have a 10% higher chance of consuming double the service goods.
 	/// </summary>
 	/// <name>[PerkCrafter] Higher Services Consumption</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	PerkCrafter_Higher_Services_Consumption,
+	PerkCrafter_Higher_Services_Consumption = 190,
 
 	/// <summary>
 	/// Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level).
 	/// </summary>
 	/// <name>SE Food Consumption</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	SE_Food_Consumption,
+	SE_Food_Consumption = 191,
 
 	/// <summary>
 	/// Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level).
 	/// </summary>
 	/// <name>SE Service Waste</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
-	SE_Service_Waste,
+	SE_Service_Waste = 192,
 
 
 	//
@@ -1408,14 +1458,14 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Chance for no consumption 10</name>
 	/// <type>ChanceForNoConsumptionEffectModel</type>
-	Chance_For_No_Consumption_10,
+	Chance_For_No_Consumption_10 = 193,
 
 	/// <summary>
 	/// Settler's Luck - Villagers have a 35% chance of not consuming food during a break.
 	/// </summary>
 	/// <name>[Diff] Lower Food Consumption</name>
 	/// <type>ChanceForNoConsumptionEffectModel</type>
-	Diff_Lower_Food_Consumption,
+	Diff_Lower_Food_Consumption = 194,
 
 
 	//
@@ -1427,19 +1477,19 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Charm Villagers</name>
 	/// <type>CharmVillagersEffectModel</type>
-	Charm_Villagers,
+	Charm_Villagers = 195,
 
 	/// <summary>
 	/// Charm 2 villagers
 	/// </summary>
 	/// <name>Charm Villagers Effect Model</name>
 	/// <type>CharmVillagersEffectModel</type>
-	Charm_Villagers_Effect_Model,
+	Charm_Villagers_Effect_Model = 196,
 
 	/// <summary></summary>
 	/// <name>Charm Villagers - Keep</name>
 	/// <type>CharmVillagersEffectModel</type>
-	Charm_Villagers_Keep,
+	Charm_Villagers_Keep = 197,
 
 
 	//
@@ -1451,7 +1501,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Blightrot Cloning</name>
 	/// <type>CloningEffectModel</type>
-	Blightrot_Cloning,
+	Blightrot_Cloning = 198,
 
 
 	//
@@ -1463,1040 +1513,1040 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>All Camps Unlock</name>
 	/// <type>CompositeEffectModel</type>
-	All_Camps_Unlock,
+	All_Camps_Unlock = 199,
 
 	/// <summary>
 	/// 50
 	/// </summary>
 	/// <name>All Waters Per Min</name>
 	/// <type>CompositeEffectModel</type>
-	All_Waters_Per_Min,
+	All_Waters_Per_Min = 200,
 
 	/// <summary>
 	/// Survivor Bonding (Stormforged) - The people in your settlement have survived many hardships, bringing them closer together (+25% villager speed, 3 Global Resolve).
 	/// </summary>
 	/// <name>[Altar] AncientGate_Hardships</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_AncientGate_Hardships,
+	Altar_AncientGate_Hardships = 201,
 
 	/// <summary>
 	/// Back to Nature (Stormforged) - An old, forbidden ritual. Gain +150% more yield in all buildings that use fertile soil.
 	/// </summary>
 	/// <name>[Altar] Back To Nature</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Back_To_Nature,
+	Altar_Back_To_Nature = 202,
 
 	/// <summary>
 	/// Cheap Construction (Stormforged) - All buildings cost 50% less.
 	/// </summary>
 	/// <name>[Altar] Construction cost for nodes</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Construction_Cost_For_Nodes,
+	Altar_Construction_Cost_For_Nodes = 203,
 
 	/// <summary>
 	/// Forge Trip Hammer (Stormforged) - Powerful and precise machinery. "[mat processed] parts" Parts (grade3) can be produced in the Smithy and +100% to amount of goods produced in the Smithy.
 	/// </summary>
 	/// <name>[Altar] Forge Trip Hammer</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Forge_Trip_Hammer,
+	Altar_Forge_Trip_Hammer = 204,
 
 	/// <summary>
 	/// Advanced Fuel (Stormforged) - All fuel recipes are +50% faster and produce +33% more goods.
 	/// </summary>
 	/// <name>[Altar] Fuel Recipes Rate</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Fuel_Recipes_Rate,
+	Altar_Fuel_Recipes_Rate = 205,
 
 	/// <summary>
 	/// Secret Techniques of the Firekeeper (Stormforged) - An old manuscript detailing long-forgotten burning rites. Fuel consumption in Hearths is decreased by 33%. Resources you sacrifice in the Ancient Hearth burn for 25% longer.
 	/// </summary>
 	/// <name>[Altar] FuelConsumption -25</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_FuelConsumption_Minus25,
+	Altar_FuelConsumption_Minus25 = 206,
 
 	/// <summary>
 	/// Crowded Houses (Stormforged) - All houses have room for 1 more villager, and the time between breaks for workers increases by +25%.
 	/// </summary>
 	/// <name>[Altar] Houses +1 for Break Time</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Houses_Plus1_For_Break_Time,
+	Altar_Houses_Plus1_For_Break_Time = 207,
 
 	/// <summary>
 	/// Hunter-Gatherers (Stormforged) - All gathering camp production is increased by 100%.
 	/// </summary>
 	/// <name>[Altar] HunterGatherers</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_HunterGatherers,
+	Altar_HunterGatherers = 208,
 
 	/// <summary>
 	/// Flame Amulets (Stormforged) - An artifact infused with the power of the Holy Flame. Hostility from woodcutters is decreased by 8. Woodcutters have a +20% chance of producing twice the normal yield.
 	/// </summary>
 	/// <name>[Altar] LessHostilityPerWoodcutter</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_LessHostilityPerWoodcutter,
+	Altar_LessHostilityPerWoodcutter = 209,
 
 	/// <summary>
 	/// Ancient Stabilizer (Stormforged) - A strange relic that fits into the Hearth. +1 to "[mat raw] wood" Wood production. Fuel consumption in Hearths is decreased by 20%.
 	/// </summary>
 	/// <name>[Altar] Longer Storm for Wood Production</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Longer_Storm_For_Wood_Production,
+	Altar_Longer_Storm_For_Wood_Production = 210,
 
 	/// <summary>
 	/// Metallurgic Proficiency (Stormforged) - Increases the production speed of Copper Bars, Crystalized Dew, and all recipes that use metal ingots by 66%.+1 to "[metal] copper bar" copper bar and "[metal] crystalized dew" crystalized dew production.
 	/// </summary>
 	/// <name>[Altar] Metal Production Speed Boost</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Metal_Production_Speed_Boost,
+	Altar_Metal_Production_Speed_Boost = 211,
 
 	/// <summary>
 	/// Mushroom Seedlings (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>[Altar] Mushrooms in Farms</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Mushrooms_In_Farms,
+	Altar_Mushrooms_In_Farms = 212,
 
 	/// <summary>
 	/// Crowded Caravan (Stormforged) - Each newcomer group has 3 additional villagers. New villagers bring 50% more goods with them.
 	/// </summary>
 	/// <name>[Altar] NewNewcomersBonus_Random</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_NewNewcomersBonus_Random,
+	Altar_NewNewcomersBonus_Random = 213,
 
 	/// <summary>
 	/// Export Specialization (Stormforged) - Gain +2 to production yields for all packs of goods. All packs of goods are produced 50% faster.
 	/// </summary>
 	/// <name>[Altar] Packs of Goods +1</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Packs_Of_Goods_Plus1,
+	Altar_Packs_Of_Goods_Plus1 = 214,
 
 	/// <summary>
 	/// Export Contract (Stormforged) - Increases the production yield of packs of goods by +100%. Gain 2 additional active trade route slots.
 	/// </summary>
 	/// <name>[Altar] PacksForResolveRep</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_PacksForResolveRep,
+	Altar_PacksForResolveRep = 215,
 
 	/// <summary>
 	/// Firekeeper's Prayer (Stormforged) - Glade event work speed increased by 30%. Resources you sacrifice in the Ancient Hearth burn for 30% longer.
 	/// </summary>
 	/// <name>[Altar] Relic time reduction</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Relic_Time_Reduction,
+	Altar_Relic_Time_Reduction = 216,
 
 	/// <summary>
 	/// Generous Rations (Stormforged) - Global Resolve is increased by 5, and villagers have a +10% chance of not consuming food during a break.
 	/// </summary>
 	/// <name>[Altar] Resolve for consumption</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Resolve_For_Consumption,
+	Altar_Resolve_For_Consumption = 217,
 
 	/// <summary>
 	/// Stormwalker Training (Stormforged) - Your villagers learn how to travel the wilderness from the very best - the Royal Stormwalkers. Trade route caravans travel faster by 40%. Traders will arrive 33% quicker.
 	/// </summary>
 	/// <name>[Altar] Route Less Travel Time</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Route_Less_Travel_Time,
+	Altar_Route_Less_Travel_Time = 218,
 
 	/// <summary>
 	/// Trade Logs (Stormforged) - Detailed notes on different traders and their wares. Gain 2 additional active trade route slots. Traders will arrive +33% quicker and have +1 more cornerstones on sale.
 	/// </summary>
 	/// <name>[Altar] Trading Packs</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Trading_Packs,
+	Altar_Trading_Packs = 219,
 
 	/// <summary>
 	/// Lost in the Wilds (Stormforged) - Gain one villager every time you discover a new glade. Villagers add less Hostility (-1).
 	/// </summary>
 	/// <name>[Altar] Villager for glade</name>
 	/// <type>CompositeEffectModel</type>
-	Altar_Villager_For_Glade,
+	Altar_Villager_For_Glade = 220,
 
 	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together (+10% villager speed, 1 Global Resolve).
 	/// </summary>
 	/// <name>AncientGate_Hardships</name>
 	/// <type>CompositeEffectModel</type>
-	AncientGate_Hardships,
+	AncientGate_Hardships = 221,
 
 	/// <summary>
 	/// Barrel Schematics - "[vessel] barrels" Barrels (grade2) can now be produced in the Lumber Mill and Smithy.
 	/// </summary>
 	/// <name>Barrel Recipes</name>
 	/// <type>CompositeEffectModel</type>
-	Barrel_Recipes,
+	Barrel_Recipes = 222,
 
 	/// <summary>
 	/// Reward_BiomeEffect_Blueprints_Name - Reward_BiomeEffect_Blueprints_Desc
 	/// </summary>
 	/// <name>[Biome] Bay Blueprints</name>
 	/// <type>CompositeEffectModel</type>
-	Biome_Bay_Blueprints,
+	Biome_Bay_Blueprints = 223,
 
 	/// <summary>
 	/// Strider Port - Your settlement begins on the coast of this strange land, near an ancient Strider Port. Use it to send out expeditions in search of blueprints and treasure. However, you will receive fewer blueprints from Reputation.
 	/// </summary>
 	/// <name>[Biome] Bay Port</name>
 	/// <type>CompositeEffectModel</type>
-	Biome_Bay_Port,
+	Biome_Bay_Port = 224,
 
 	/// <summary>
 	/// Overgrown Vegetation - The flora in this region is bizarrely mutated. Overgrown trees with a lot more resource charges can be found in the forest.
 	/// </summary>
 	/// <name>[BIOME] Big Trees</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Big_Trees,
+	BIOME_Big_Trees = 225,
 
 	/// <summary>
 	/// Cursed Battlefield - The forest has reshaped itself. It is impossible to recognize the danger of the glades, which are now all of even size.
 	/// </summary>
 	/// <name>[BIOME] Cursed Glades</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Cursed_Glades,
+	BIOME_Cursed_Glades = 226,
 
 	/// <summary>
 	/// Diverse Flora - Vegetation here mutates into unique strands. Each type of tree provides distinct bonus resources.
 	/// </summary>
 	/// <name>[BIOME] Diverse Flora</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Diverse_Flora,
+	BIOME_Diverse_Flora = 227,
 
 	/// <summary>
 	/// Restless Spirits - This land has seen a lot of bloodshed during the Great Civil War. Restless Spirits can be found in the forest.
 	/// </summary>
 	/// <name>[Biome] Ghosts in Cursed Woodlands</name>
 	/// <type>CompositeEffectModel</type>
-	Biome_Ghosts_In_Cursed_Woodlands,
+	Biome_Ghosts_In_Cursed_Woodlands = 228,
 
 	/// <summary>
 	/// Giant Organisms - The Marshlands are home to enormous lifeforms. Giant gathering nodes can be found in Forbidden Glades ("forbidden"). Each glade will have a different node.
 	/// </summary>
 	/// <name>[BIOME] Giant Organisms</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Giant_Organisms,
+	BIOME_Giant_Organisms = 229,
 
 	/// <summary>
 	/// Buried Mysteries - A lush and exotic land, filled with prehistoric remains. Ancient excavation sites can be found here.
 	/// </summary>
 	/// <name>[Biome] Moorlands - glades</name>
 	/// <type>CompositeEffectModel</type>
-	Biome_Moorlands_Glades,
+	Biome_Moorlands_Glades = 230,
 
 	/// <summary>
 	/// Beacon Tower - A blueprint given to you by the Queen herself. This powerful ancient structure will allow you to summon aid directly from the Citadel.
 	/// </summary>
 	/// <name>[BIOME] Sealed Biome</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Sealed_Biome,
+	BIOME_Sealed_Biome = 231,
 
 	/// <summary></summary>
 	/// <name>[BIOME] Shard 2 - composite</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Shard_2_Composite,
+	BIOME_Shard_2_Composite = 232,
 
 	/// <summary></summary>
 	/// <name>[BIOME] Shard 3 - composite</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Shard_3_Composite,
+	BIOME_Shard_3_Composite = 233,
 
 	/// <summary></summary>
 	/// <name>[BIOME] Shard 4 - composite</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Shard_4_Composite,
+	BIOME_Shard_4_Composite = 234,
 
 	/// <summary>
 	/// Deeply Hidden Riches - You have found all available "[valuable] thunderblight shard" Thunderblight Shards.
 	/// </summary>
 	/// <name>[Biome] Shards for Relics 4</name>
 	/// <type>CompositeEffectModel</type>
-	Biome_Shards_For_Relics_4,
+	Biome_Shards_For_Relics_4 = 235,
 
 	/// <summary>
 	/// Abyssal Revenge - Are those... faces in the trees? Woodcutters don't increase Hostility, but every 10 felled trees add 2 Hostility points.
 	/// </summary>
 	/// <name>[BIOME] Tree Hostility</name>
 	/// <type>CompositeEffectModel</type>
-	BIOME_Tree_Hostility,
+	BIOME_Tree_Hostility = 236,
 
 	/// <summary>
 	/// Gift of the Woodlands - The Royal Woodlands are very lush and rich in timber. Trees give more "[mat raw] wood" wood.
 	/// </summary>
 	/// <name>[Biome] Wood in Woodlands</name>
 	/// <type>CompositeEffectModel</type>
-	Biome_Wood_In_Woodlands,
+	Biome_Wood_In_Woodlands = 237,
 
 	/// <summary>
 	/// Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 	/// </summary>
 	/// <name>Biscuit Recipes</name>
 	/// <type>CompositeEffectModel</type>
-	Biscuit_Recipes,
+	Biscuit_Recipes = 238,
 
 	/// <summary>
 	/// Blight Filter - A crystalline filter designed to mitigate the negative environmental impact of infused rainwater. Blightrot Cysts appear 50% slower when using rain engines, but Reputation from Resolve is generated 90% slower for the next 2 Reputation Points.
 	/// </summary>
 	/// <name>Blight Rate for Resolve Reputation</name>
 	/// <type>CompositeEffectModel</type>
-	Blight_Rate_For_Resolve_Reputation,
+	Blight_Rate_For_Resolve_Reputation = 239,
 
 	/// <summary>
 	/// Blightrot Outbreak - The explosion of the machine will not only destroy everything within a 10 field radius, but will also cause 5 Blightrot Cysts to spawn in the settlement.
 	/// </summary>
 	/// <name>Blightrot Outbreak</name>
 	/// <type>CompositeEffectModel</type>
-	Blightrot_Outbreak,
+	Blightrot_Outbreak = 240,
 
 	/// <summary>
 	/// Efficient Brewing - +50% to amount of goods produced in the Brewery.
 	/// </summary>
 	/// <name>Brewery +50 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	Brewery_Plus50_Composite,
+	Brewery_Plus50_Composite = 241,
 
 	/// <summary>
 	/// Advanced Brewing - +60% to amount of goods produced in the Brewery.
 	/// </summary>
 	/// <name>Brewery +60 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	Brewery_Plus60_Composite,
+	Brewery_Plus60_Composite = 242,
 
 	/// <summary>
 	/// Rain Pumps - Brewery production is 50% quicker.
 	/// </summary>
 	/// <name>Brewery Speed +50 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	Brewery_Speed_Plus50_Composite,
+	Brewery_Speed_Plus50_Composite = 243,
 
 	/// <summary>
 	/// Chest of Farming Tools - Reward_BeaconEffect_FarmingBoost_Desc
 	/// </summary>
 	/// <name>[BT] Increased farm production - child</name>
 	/// <type>CompositeEffectModel</type>
-	BT_Increased_Farm_Production_Child,
+	BT_Increased_Farm_Production_Child = 244,
 
 	/// <summary>
 	/// Reckless Plunder - Increases the chance of doubling the loot from abandoned caches by 100% (this doesn't apply to perks and blueprints), but newly discovered gathering nodes have fewer charges (5 charges to small gathering nodes, 15 charges to large gathering nodes).
 	/// </summary>
 	/// <name>Cache Rewards for Nodes</name>
 	/// <type>CompositeEffectModel</type>
-	Cache_Rewards_For_Nodes,
+	Cache_Rewards_For_Nodes = 245,
 
 	/// <summary>
 	/// Cheap Construction - All buildings cost 40% less, but every newly discovered resource node has 5 fewer charges.
 	/// </summary>
 	/// <name>Construction cost for nodes</name>
 	/// <type>CompositeEffectModel</type>
-	Construction_Cost_For_Nodes,
+	Construction_Cost_For_Nodes = 246,
 
 	/// <summary>
 	/// Without Restrictions - Villagers have a +10% higher chance of producing double yields, but consumption control is disabled.
 	/// </summary>
 	/// <name>Consumption Control for Extra Production</name>
 	/// <type>CompositeEffectModel</type>
-	Consumption_Control_For_Extra_Production,
+	Consumption_Control_For_Extra_Production = 247,
 
 	/// <summary>
 	/// Copper Extractor - Machinery specialized in extracting copper from petrified trees. Gain 1 "[metal] copper ore" Copper Ore for every 5 "[mat raw] wood" Wood produced. All "[metal] crystalized dew" Crystalized Dew production is reduced by 1 (whether from gathering, farming, or production).
 	/// </summary>
 	/// <name>Copper For Trees [Parent]</name>
 	/// <type>CompositeEffectModel</type>
-	Copper_For_Trees_Parent,
+	Copper_For_Trees_Parent = 248,
 
 	/// <summary>
 	/// Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
 	/// </summary>
 	/// <name>[Diff] Altar</name>
 	/// <type>CompositeEffectModel</type>
-	Diff_Altar,
+	Diff_Altar = 249,
 
 	/// <summary>
 	/// Blightrot & Corruption - Pollution from industrial production feeds the growth of Blightrot Cysts. Deploy Blight Fighters to prevent your Hearths from becoming corrupted during the storm.
 	/// </summary>
 	/// <name>[Diff] Blightrot</name>
 	/// <type>CompositeEffectModel</type>
-	Diff_Blightrot,
+	Diff_Blightrot = 250,
 
 	/// <summary></summary>
 	/// <name>[Diff] No Blightrot</name>
 	/// <type>CompositeEffectModel</type>
-	Diff_No_Blightrot,
+	Diff_No_Blightrot = 251,
 
 	/// <summary>
 	/// Worker's Rations - All workers have a +10% higher chance of producing double yields, but they also have a +20% higher chance of consuming twice as much food during a break.
 	/// </summary>
 	/// <name>Extra Prod for consumption</name>
 	/// <type>CompositeEffectModel</type>
-	Extra_Prod_For_Consumption,
+	Extra_Prod_For_Consumption = 252,
 
 	/// <summary>
 	/// Rooty Ground - Strange roots spread across the land. "[mat raw] wood" Wood production is increased by +1, but harvesting and planting are 25% slower.
 	/// </summary>
 	/// <name>Farming -25 for Wood +1</name>
 	/// <type>CompositeEffectModel</type>
-	Farming_Minus25_For_Wood_Plus1,
+	Farming_Minus25_For_Wood_Plus1 = 253,
 
 	/// <summary>
 	/// Haste Makes Waste - Scouts work 50% faster on Dangerous Glade Events, but there’s a 50% chance that one of them will die.
 	/// </summary>
 	/// <name>Faster Event Working Time for death</name>
 	/// <type>CompositeEffectModel</type>
-	Faster_Event_Working_Time_For_Death,
+	Faster_Event_Working_Time_For_Death = 254,
 
 	/// <summary>
 	/// Wide Nets - More durable and much wider nets. Fishing speed is increased by 25%.
 	/// </summary>
 	/// <name>Fishing Huts Speed</name>
 	/// <type>CompositeEffectModel</type>
-	Fishing_Huts_Speed,
+	Fishing_Huts_Speed = 255,
 
 	/// <summary>
 	/// Termite Infestation - +50% to amount of goods produced in the Foragers' Camp and Small Foragers' Camp.
 	/// </summary>
 	/// <name>Foragers Camp +50 Composite</name>
 	/// <type>CompositeEffectModel</type>
-	Foragers_Camp_Plus50_Composite,
+	Foragers_Camp_Plus50_Composite = 256,
 
 	/// <summary>
 	/// Forge Trip Hammer - Powerful and precise machinery. "[mat processed] parts" Parts (grade3) can be produced in the Smithy.
 	/// </summary>
 	/// <name>Forge Trip Hammer</name>
 	/// <type>CompositeEffectModel</type>
-	Forge_Trip_Hammer,
+	Forge_Trip_Hammer = 257,
 
 	/// <summary>
 	/// Forest Affinity - Fox firekeepers have an unusual ability to calm the forest. Hostility from opened glades is lowered by 2 each.
 	/// </summary>
 	/// <name>Fox Hostility Hearth Bonus</name>
 	/// <type>CompositeEffectModel</type>
-	Fox_Hostility_Hearth_Bonus,
+	Fox_Hostility_Hearth_Bonus = 258,
 
 	/// <summary>
 	/// Travel Rations - With provisions, haulers don't have to return to the Hearth as often. Increases time between breaks for haulers by +50%.
 	/// </summary>
 	/// <name>Hauler Break Interval</name>
 	/// <type>CompositeEffectModel</type>
-	Hauler_Break_Interval,
+	Hauler_Break_Interval = 259,
 
 	/// <summary>
 	/// Specialized Workwear - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 	/// </summary>
 	/// <name>Hauler Speed</name>
 	/// <type>CompositeEffectModel</type>
-	Hauler_Speed,
+	Hauler_Speed = 260,
 
 	/// <summary>
 	/// Hauling Cart - An automated rainpunk cart will be assigned to every warehouse in the settlement to help transport resources between buildings.
 	/// </summary>
 	/// <name>Hauling Cart in All Warehouses</name>
 	/// <type>CompositeEffectModel</type>
-	Hauling_Cart_In_All_Warehouses,
+	Hauling_Cart_In_All_Warehouses = 261,
 
 	/// <summary>
 	/// Advanced Herbalism - +25% to amount of goods produced in the Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden +25 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	Herb_Garden_Plus25_Composite,
+	Herb_Garden_Plus25_Composite = 262,
 
 	/// <summary>
 	/// Advanced Herbalism - +50% to amount of goods produced in the Herb Garden.
 	/// </summary>
 	/// <name>Herb Garden +50 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	Herb_Garden_Plus50_Composite,
+	Herb_Garden_Plus50_Composite = 263,
 
 	/// <summary>
 	/// Crowded Houses - All houses have room for 1 more villager.
 	/// </summary>
 	/// <name>Houses +1 for Break Time</name>
 	/// <type>CompositeEffectModel</type>
-	Houses_Plus1_For_Break_Time,
+	Houses_Plus1_For_Break_Time = 264,
 
 	/// <summary>
 	/// District (Level 3) - The town is booming with activity, and industry thrives. Workers have a 10% higher chance of producing double yields, and global Resolve is increased by 1. The Ancient Hearth's resistance to corruption is increased by 150.
 	/// </summary>
 	/// <name>[Hub] Extra Production Chance - Composite</name>
 	/// <type>CompositeEffectModel</type>
-	Hub_Extra_Production_Chance_Composite,
+	Hub_Extra_Production_Chance_Composite = 265,
 
 	/// <summary>
 	/// Neighborhood (Level 2) - Some viceroys say aesthetics don't matter out in the wilds, but you know better than that. Global production speed is increased by 10% and global Resolve is increased by 1. The Ancient Hearth's resistance to corruption is increased by 150.
 	/// </summary>
 	/// <name>[Hub] Production Speed - Composite</name>
 	/// <type>CompositeEffectModel</type>
-	Hub_Production_Speed_Composite,
+	Hub_Production_Speed_Composite = 266,
 
 	/// <summary>
 	/// Encampment (Level 1) - Gathered around the blazing fire, folks keep each other's spirits high. Global Resolve is increased by 1 and the Ancient Hearth's resistance to corruption is increased by 150.
 	/// </summary>
 	/// <name>[Hub] Resolve - Composite</name>
 	/// <type>CompositeEffectModel</type>
-	Hub_Resolve_Composite,
+	Hub_Resolve_Composite = 267,
 
 	/// <summary>
 	/// Hunter-Gatherers - All gathering camp production is increased by 100%, but all buildings that use fertile soil have their yields decreased by 50%.
 	/// </summary>
 	/// <name>HunterGatherers</name>
 	/// <type>CompositeEffectModel</type>
-	HunterGatherers,
+	HunterGatherers = 268,
 
 	/// <summary>
 	/// Blight Incantation - A powerful, necrotic curse. Burning Blightrot Cysts takes 10 more seconds. Hostility is increased by +15 points for every Wildfire Essence stored in the settlement's Warehouse.
 	/// </summary>
 	/// <name>Incantation</name>
 	/// <type>CompositeEffectModel</type>
-	Incantation,
+	Incantation = 269,
 
 	/// <summary>
 	/// Stormbird's Anger - Disturbing the Stormbird's nest will instantly summon a storm, which will continue until your scouts have finished working on the event. (Active only when the corresponding Glade Event is being worked on, but canceling the work will not stop the storm)
 	/// </summary>
 	/// <name>Instant Storm effect</name>
 	/// <type>CompositeEffectModel</type>
-	Instant_Storm_Effect,
+	Instant_Storm_Effect = 270,
 
 	/// <summary>
 	/// Ancient Ways - The ancient Lizard clans are excellent survivalists. They have mastered hunting and foraging like no others. All gathering camps produce a +100% greater yield. This bonus does not affect woodcutters and fishers.
 	/// </summary>
 	/// <name>Institution Camps Production</name>
 	/// <type>CompositeEffectModel</type>
-	Institution_Camps_Production,
+	Institution_Camps_Production = 271,
 
 	/// <summary>
 	/// Carnivorous Tradition - Lizard tribes have a long tradition of both animal husbandry and meat preparation. All meat-based complex foods (jerky, skewers, pies, paste) give 2 more Resolve.
 	/// </summary>
 	/// <name>Institution More Resolve From Meat</name>
 	/// <type>CompositeEffectModel</type>
-	Institution_More_Resolve_From_Meat,
+	Institution_More_Resolve_From_Meat = 272,
 
 	/// <summary>
 	/// Sacrament of the Flame - Effect_InstitutionSlowerSacrafice_Description
 	/// </summary>
 	/// <name>Institution Temple Burn Rate</name>
 	/// <type>CompositeEffectModel</type>
-	Institution_Temple_Burn_Rate,
+	Institution_Temple_Burn_Rate = 273,
 
 	/// <summary>
 	/// Ancient Stabilizer - A strange relic that fits into the Hearth. Wood production is increased by +2, but the storm will last 40% longer.
 	/// </summary>
 	/// <name>Longer Storm for Wood Production</name>
 	/// <type>CompositeEffectModel</type>
-	Longer_Storm_For_Wood_Production,
+	Longer_Storm_For_Wood_Production = 274,
 
 	/// <summary>
 	/// Fishmen Rituals - Heavy clouds are gathering around the Sacrifice Totem. The storm’s duration is increased by +100%, while drizzle and clearance seasons are decreased by –50%.
 	/// </summary>
 	/// <name>Longer Storm Rain Totem</name>
 	/// <type>CompositeEffectModel</type>
-	Longer_Storm_Rain_Totem,
+	Longer_Storm_Rain_Totem = 275,
 
 	/// <summary>
 	/// Groundwater Extraction - Gain 10 "[water] clearance water" Clearance Water per minute. Increases the tank capacity for every type of rainwater by +50.
 	/// </summary>
 	/// <name>Makeshift Extractor - Water Per Minute And Tank</name>
 	/// <type>CompositeEffectModel</type>
-	Makeshift_Extractor_Water_Per_Minute_And_Tank,
+	Makeshift_Extractor_Water_Per_Minute_And_Tank = 276,
 
 	/// <summary>
 	/// Flooded Mines - This region was heavily exploited by other viceroys. Hostility doesn't grow with each passing year, but you'll gain 2/3/4/6 more Hostility Points per villager.
 	/// </summary>
 	/// <name>[Map Mod] Hostility People</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_Hostility_People,
+	Map_Mod_Hostility_People = 277,
 
 	/// <summary>
 	/// Monastery of the Holy Flame - The Monks of the Holy Flame are a fanatically egalitarian order. You cannot forbid consumption, or favor any species.
 	/// </summary>
 	/// <name>[Map Mod] No Control</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_No_Control,
+	Map_Mod_No_Control = 278,
 
 	/// <summary>
 	/// Watchtower - The Royal Guard is watching over this region. Discovering glades doesn't increase Hostility.
 	/// </summary>
 	/// <name>[Map Mod] No Hostility</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_No_Hostility,
+	Map_Mod_No_Hostility = 279,
 
 	/// <summary>
 	/// Forsaken Gods Temple - Due to a strange curse, villagers with low Resolve can't leave the settlement. None of your villagers will generate Reputation from Resolve.
 	/// </summary>
 	/// <name>[Map Mod] No Leaving</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_No_Leaving,
+	Map_Mod_No_Leaving = 280,
 
 	/// <summary>
 	/// Overgrown Library - A remnant of a bygone era, when royal archivists themselves ventured out into the wilderness in search of knowledge. One of your starting blueprint choices is replaced by a Wildcard (you can choose one blueprint from all unlocked blueprints).
 	/// </summary>
 	/// <name>[Map Mod] Overgrown Library</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_Overgrown_Library,
+	Map_Mod_Overgrown_Library = 281,
 
 	/// <summary>
 	/// Petrified Necropolis - Rocks in this region have a very peculiar shape. And they smell funny... Dead villagers turn to stone. Gain 5 "[food raw] meat" Meat for every 10 Stone and Clay produced.
 	/// </summary>
 	/// <name>[Map Mod] Petrified Necropolis</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_Petrified_Necropolis,
+	Map_Mod_Petrified_Necropolis = 282,
 
 	/// <summary>
 	/// Ruins - This region was settled very frequently in the past. The chance of finding ruins in glades is much higher.
 	/// </summary>
 	/// <name>[Map Mod] Ruins</name>
 	/// <type>CompositeEffectModel</type>
-	Map_Mod_Ruins,
+	Map_Mod_Ruins = 283,
 
 	/// <summary>
 	/// Metallurgic Proficiency - Increases the production speed of Copper Bars, Crystalized Dew, and all recipes that use metal ingots by +33%.
 	/// </summary>
 	/// <name>Metalurgic Proficiency 33</name>
 	/// <type>CompositeEffectModel</type>
-	Metalurgic_Proficiency_33,
+	Metalurgic_Proficiency_33 = 284,
 
 	/// <summary>
 	/// Advent of Flame - A sacred period for all members of the Church. Start with the Temple Blueprint. Impatience grows 4% slower for each person that has their religion need fulfilled.
 	/// </summary>
 	/// <name>[Mod] Advent of Flame</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Advent_Of_Flame,
+	Mod_Advent_Of_Flame = 285,
 
 	/// <summary>
 	/// Sinister Blight - The Blightrot's impact is stronger. Cyst generation rate is increased by +100%, the Hearth corrupts +50% quicker than normal, and all effects that spawn Blightrot now add twice as many Cysts.
 	/// </summary>
 	/// <name>[Mod] Blightrot Medium</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Blightrot_Medium,
+	Mod_Blightrot_Medium = 286,
 
 	/// <summary>
 	/// Calm Lands - The forest seems to have been soothed. Opening glades no longer increases Hostility.
 	/// </summary>
 	/// <name>[Mod] Calm Lands</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Calm_Lands,
+	Mod_Calm_Lands = 287,
 
 	/// <summary>
 	/// Land Tax - Taking advantage of the riches of this new land will cost you. You must pay 2 "[valuable] amber" Amber every time you discover a Small Glade, and 6 "[valuable] amber" Amber every time you discover a Dangerous ("dangerous") or Forbidden Glade ("forbidden") . Otherwise, 2 villagers will be recalled to the Citadel.
 	/// </summary>
 	/// <name>[Mod] Exploration Tax - Composite</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Exploration_Tax_Composite,
+	Mod_Exploration_Tax_Composite = 288,
 
 	/// <summary>
 	/// Hard Times - The Queen has decided to entrust you with the most difficult orders, as you are one of her most experienced viceroys.
 	/// </summary>
 	/// <name>[Mod] Hard Orders Only</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Hard_Orders_Only,
+	Mod_Hard_Orders_Only = 289,
 
 	/// <summary>
 	/// Missing Crude Workstation - Some half-witted fool lost the blueprint for the Crude Workstation. Start without the Crude Workstation, but with 15 of each building material.
 	/// </summary>
 	/// <name>[Mod] No Crude Workstation</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_No_Crude_Workstation,
+	Mod_No_Crude_Workstation = 290,
 
 	/// <summary>
 	/// Unfavorable Weather - Due to extremely unfavorable conditions in these lands, there is no positive Forest Mystery.
 	/// </summary>
 	/// <name>[Mod] No Positive Seasonal Effects</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_No_Positive_Seasonal_Effects,
+	Mod_No_Positive_Seasonal_Effects = 291,
 
 	/// <summary>
 	/// Prestigious Expedition - Only the best viceroys can embark on a Prestigious Expedition. You'll need to earn 4 additional Reputation Points to win. Reputation rewards are distributed differently, and Orders are harder.
 	/// </summary>
 	/// <name>[Mod] Reputation Changes</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Reputation_Changes,
+	Mod_Reputation_Changes = 292,
 
 	/// <summary>
 	/// Scavenging Party - The caravan is prepared for all conditions. Start with all advanced gathering camps and fishing huts unlocked.
 	/// </summary>
 	/// <name>[Mod] Scavenging Party</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Scavenging_Party,
+	Mod_Scavenging_Party = 293,
 
 	/// <summary>
 	/// Third Party - The forest is more inviting than usual, but there seems to be something extremely oppressive in this region. Hostility gained by exploring glades reduces by 5, while each year gives an extra 20 Hostility.
 	/// </summary>
 	/// <name>[Mod] Third Party</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Third_Party,
+	Mod_Third_Party = 294,
 
 	/// <summary>
 	/// Wine Shortage - The Smoldering City is running low on wine, and demand is soaring. Start with the Cellar Blueprint. The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 70 "[needs] wine" Wine produced.
 	/// </summary>
 	/// <name>[Mod] Wine Shortage</name>
 	/// <type>CompositeEffectModel</type>
-	Mod_Wine_Shortage,
+	Mod_Wine_Shortage = 295,
 
 	/// <summary>
 	/// Bandit Camp - Traders are afraid, and will not visit this area. Neither trading nor trade routes are available.
 	/// </summary>
 	/// <name>ModifierEffect_TradeBlock_Composite</name>
 	/// <type>CompositeEffectModel</type>
-	ModifierEffect_TradeBlock_Composite,
+	ModifierEffect_TradeBlock_Composite = 296,
 
 	/// <summary>
 	/// Infestation - Blightrot becomes extremely aggressive. 8 Blightrot Cysts will spawn in the settlement. Each cyst increases Hostility by +10 points.
 	/// </summary>
 	/// <name>Mole Infestation Composite</name>
 	/// <type>CompositeEffectModel</type>
-	Mole_Infestation_Composite,
+	Mole_Infestation_Composite = 297,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. All woodcutters, fishermen, and gatherers get a ‑18 penalty to Resolve.
 	/// </summary>
 	/// <name>MoleResolvePenalty - hard</name>
 	/// <type>CompositeEffectModel</type>
-	MoleResolvePenalty_Hard,
+	MoleResolvePenalty_Hard = 298,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. All woodcutters, fishermen, and gatherers get a ‑22 penalty to Resolve.
 	/// </summary>
 	/// <name>MoleResolvePenalty - impossible</name>
 	/// <type>CompositeEffectModel</type>
-	MoleResolvePenalty_Impossible,
+	MoleResolvePenalty_Impossible = 299,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. All woodcutters, fishermen, and gatherers get a ‑16 penalty to Resolve.
 	/// </summary>
 	/// <name>MoleResolvePenalty - normal</name>
 	/// <type>CompositeEffectModel</type>
-	MoleResolvePenalty_Normal,
+	MoleResolvePenalty_Normal = 300,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. All woodcutters, fishermen, and gatherers get a ‑20 penalty to Resolve.
 	/// </summary>
 	/// <name>MoleResolvePenalty - very hard</name>
 	/// <type>CompositeEffectModel</type>
-	MoleResolvePenalty_Very_Hard,
+	MoleResolvePenalty_Very_Hard = 301,
 
 	/// <summary>
 	/// Obelisk - Making the right offering at the Obelisk reduces Hostility by ‑10 and increases the Ancient Hearth's resistance by +100.
 	/// </summary>
 	/// <name>Monolith hostility</name>
 	/// <type>CompositeEffectModel</type>
-	Monolith_Hostility,
+	Monolith_Hostility = 302,
 
 	/// <summary>
 	/// Market Shift Plan - Big strategic changes always come with an adjustment period. Every neighboring town offers +2 more trade routes, but no trader will arrive in your settlement until you complete at least 3 trade routes. Traders currently staying in the settlement will leave immediately.
 	/// </summary>
 	/// <name>More Trade Offers</name>
 	/// <type>CompositeEffectModel</type>
-	More_Trade_Offers,
+	More_Trade_Offers = 303,
 
 	/// <summary>
 	/// Mushroom Seedlings - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Farms</name>
 	/// <type>CompositeEffectModel</type>
-	Mushrooms_In_Farms,
+	Mushrooms_In_Farms = 304,
 
 	/// <summary>
 	/// Furniture - Some much needed furnishings. Adds an additional +1 to Resolve for villagers with a home. (This effect is applied to villagers during their break)
 	/// </summary>
 	/// <name>NeedPerk Housing Resolve - Composite</name>
 	/// <type>CompositeEffectModel</type>
-	NeedPerk_Housing_Resolve_Composite,
+	NeedPerk_Housing_Resolve_Composite = 305,
 
 	/// <summary>
 	/// Rainpunk Noria - A rainpunk waterwheel makes life on farms easier. Planting and harvesting are 30% faster.
 	/// </summary>
 	/// <name>Noria plant and harvest</name>
 	/// <type>CompositeEffectModel</type>
-	Noria_Plant_And_Harvest,
+	Noria_Plant_And_Harvest = 306,
 
 	/// <summary>
 	/// Overexploitation - Global gathering speed is increased by 30%, and newly discovered gathering nodes have more charges (+10 charges to small gathering nodes, +25 charges to large gathering nodes). For every 40 gathering node charges used, 1 Blightrot Cyst(s) will spawn.
 	/// </summary>
 	/// <name>Overexploitation</name>
 	/// <type>CompositeEffectModel</type>
-	Overexploitation,
+	Overexploitation = 307,
 
 	/// <summary>
 	/// Overflow - The broken machine is pumping rainwater into our tanks at an excessive speed, producing 50 water per minute. However, if the water level in the tanks reaches its maximum capacity, an overcharge will occur every 120 seconds, causing the death of 1 villager.
 	/// </summary>
 	/// <name>Overflow</name>
 	/// <type>CompositeEffectModel</type>
-	Overflow,
+	Overflow = 308,
 
 	/// <summary>
 	/// Export Specialization - Gain +1 to production yields for all packs of goods.
 	/// </summary>
 	/// <name>Packs of Goods +1</name>
 	/// <type>CompositeEffectModel</type>
-	Packs_Of_Goods_Plus1,
+	Packs_Of_Goods_Plus1 = 309,
 
 	/// <summary>
 	/// Export Specialization - Gain +2 to production yields for all packs of goods.
 	/// </summary>
 	/// <name>Packs of Goods +2</name>
 	/// <type>CompositeEffectModel</type>
-	Packs_Of_Goods_Plus2,
+	Packs_Of_Goods_Plus2 = 310,
 
 	/// <summary>
 	/// Export Contract - Increases the production yield of packs of goods by +50%. Gain 1 additional active trade route slot.
 	/// </summary>
 	/// <name>PacksForResolveRep</name>
 	/// <type>CompositeEffectModel</type>
-	PacksForResolveRep,
+	PacksForResolveRep = 311,
 
 	/// <summary>
 	/// +2 to "[needs] boots" boots and "[needs] coats" coats production.
 	/// </summary>
 	/// <name>[PerkCrafter] Boots and Coats +2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Boots_And_Coats_Plus2,
+	PerkCrafter_Boots_And_Coats_Plus2 = 312,
 
 	/// <summary>
 	/// -1 housing spot in shelters and big shelters.
 	/// </summary>
 	/// <name>[PerkCrafter] Fewer Housing Spots</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Fewer_Housing_Spots,
+	PerkCrafter_Fewer_Housing_Spots = 313,
 
 	/// <summary>
 	/// Gatherers move 10% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Gatherers Speed 10</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Gatherers_Speed_10,
+	PerkCrafter_Gatherers_Speed_10 = 314,
 
 	/// <summary>
 	/// Gatherers move 15% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Gatherers Speed 15</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Gatherers_Speed_15,
+	PerkCrafter_Gatherers_Speed_15 = 315,
 
 	/// <summary>
 	/// Gatherers move 5% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Gatherers Speed 5</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Gatherers_Speed_5,
+	PerkCrafter_Gatherers_Speed_5 = 316,
 
 	/// <summary>
 	/// +2 to "[food processed] jerky" jerky and "[food processed] skewers" skewers production.
 	/// </summary>
 	/// <name>[PerkCrafter] Jerky and Skewers +2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Jerky_And_Skewers_Plus2,
+	PerkCrafter_Jerky_And_Skewers_Plus2 = 317,
 
 	/// <summary>
 	/// Fulfilled biscuit and pie needs give 2 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Biscuits and Pie 2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_More_Resolve_From_Biscuits_And_Pie_2,
+	PerkCrafter_More_Resolve_From_Biscuits_And_Pie_2 = 318,
 
 	/// <summary>
 	/// Fulfilled religion and treatment needs give 2 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Religion and Treatment 2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2,
+	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2 = 319,
 
 	/// <summary>
 	/// Planting and harvesting speeds are increased by 10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed 10</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_10,
+	PerkCrafter_Planting_And_Harvesting_Speed_10 = 320,
 
 	/// <summary>
 	/// Planting and harvesting speeds are increased by 15%.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed 15</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_15,
+	PerkCrafter_Planting_And_Harvesting_Speed_15 = 321,
 
 	/// <summary>
 	/// Planting and harvesting speeds are increased by 5%.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed 5</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_5,
+	PerkCrafter_Planting_And_Harvesting_Speed_5 = 322,
 
 	/// <summary>
 	/// +2 to "[food processed] porridge" porridge and "[food processed] paste" paste production.
 	/// </summary>
 	/// <name>[PerkCrafter] Porridge and Paste +2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Porridge_And_Paste_Plus2,
+	PerkCrafter_Porridge_And_Paste_Plus2 = 323,
 
 	/// <summary>
 	/// +2 to "[needs] scrolls" scrolls and "[needs] incense" incense production.
 	/// </summary>
 	/// <name>[PerkCrafter] Scrolls and Incense +2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Scrolls_And_Incense_Plus2,
+	PerkCrafter_Scrolls_And_Incense_Plus2 = 324,
 
 	/// <summary>
 	/// +2 to "[needs] wine" wine and "[needs] ale" ale production.
 	/// </summary>
 	/// <name>[PerkCrafter] Wine and Ale +2</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_Wine_And_Ale_Plus2,
+	PerkCrafter_Wine_And_Ale_Plus2 = 325,
 
 	/// <summary>
 	/// Queen's Sailors - The storm wasn't gentle, even to a royal-flagged ship. When this effect is active, Hostility is increased by +110, but each ongoing trade route decreases Hostility by ‑40.
 	/// </summary>
 	/// <name>Queens Sailors</name>
 	/// <type>CompositeEffectModel</type>
-	Queens_Sailors,
+	Queens_Sailors = 326,
 
 	/// <summary>
 	/// Firekeeper's Prayer - Glade event work speed increased by 30%. Resources you sacrifice in the Ancient Hearth burn 25% quicker.
 	/// </summary>
 	/// <name>Relic time reduction</name>
 	/// <type>CompositeEffectModel</type>
-	Relic_Time_Reduction,
+	Relic_Time_Reduction = 327,
 
 	/// <summary>
 	/// Generous Rations - Global Resolve is increased by 5, but the chance of villagers consuming twice the amount of food during a break is increased by +50%.
 	/// </summary>
 	/// <name>Resolve for consumption</name>
 	/// <type>CompositeEffectModel</type>
-	Resolve_For_Consumption,
+	Resolve_For_Consumption = 328,
 
 	/// <summary>
 	/// Royal Guard Training - The Crown sends two Royal Guards to your village. Instead of simply brawling, villagers will now train under them. Fulfilling the need for brawling grants an additional +5 to Resolve, but attacking a trader will result in you getting 2 extra Impatience Points.
 	/// </summary>
 	/// <name>Royal Guard Training</name>
 	/// <type>CompositeEffectModel</type>
-	Royal_Guard_Training,
+	Royal_Guard_Training = 329,
 
 	/// <summary>
 	/// Untapped Wealth - Gatherers bring back twice the amount of secondary resources when collecting from gathering nodes.
 	/// </summary>
 	/// <name>SE Nodes Bonuses</name>
 	/// <type>CompositeEffectModel</type>
-	SE_Nodes_Bonuses,
+	SE_Nodes_Bonuses = 330,
 
 	/// <summary>
 	/// Regrowth - Plants seem to grow exceptionally quickly after the storm. All buildings that use fertile soil produce +50% more goods during the drizzle, and all crops planted during the drizzle will yield +50% more when collected during clearance season.
 	/// </summary>
 	/// <name>SE Productive Farms in Drizzle</name>
 	/// <type>CompositeEffectModel</type>
-	SE_Productive_Farms_In_Drizzle,
+	SE_Productive_Farms_In_Drizzle = 331,
 
 	/// <summary>
 	/// Rotting Wood - The rain is causing the trees to rot and fall apart. Woodcutters fell trees 50% faster, but have a +100% chance of destroying their yield.
 	/// </summary>
 	/// <name>SE Rotting Wood</name>
 	/// <type>CompositeEffectModel</type>
-	SE_Rotting_Wood,
+	SE_Rotting_Wood = 332,
 
 	/// <summary>
 	/// Termite Infestation - Harvesting and planting are –50% slower.
 	/// </summary>
 	/// <name>Slow Farming Termites - normal</name>
 	/// <type>CompositeEffectModel</type>
-	Slow_Farming_Termites_Normal,
+	Slow_Farming_Termites_Normal = 333,
 
 	/// <summary>
 	/// Old Ghran's Technique - +25% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +25 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	SmallFarm_Plus25_Composite,
+	SmallFarm_Plus25_Composite = 334,
 
 	/// <summary>
 	/// Farming Tools - +50% to amount of goods produced in the Small Farm.
 	/// </summary>
 	/// <name>SmallFarm +50 (Composite)</name>
 	/// <type>CompositeEffectModel</type>
-	SmallFarm_Plus50_Composite,
+	SmallFarm_Plus50_Composite = 335,
 
 	/// <summary>
 	/// Plague of Blindness - When they lost their sight, they lost all hope along with it. All villagers move +50% slower and have a +50% chance of destroying a production yield.
 	/// </summary>
 	/// <name>TEST Plague of Blindness</name>
 	/// <type>CompositeEffectModel</type>
-	TEST_Plague_Of_Blindness,
+	TEST_Plague_Of_Blindness = 336,
 
 	/// <summary>
 	/// Plague of Darkness - Some say this is the beginning of the end. The storm season is +100% longer, and sacrificing goods at the Ancient Hearth is banned.
 	/// </summary>
 	/// <name>TEST Plague of Darkness</name>
 	/// <type>CompositeEffectModel</type>
-	TEST_Plague_Of_Darkness,
+	TEST_Plague_Of_Darkness = 337,
 
 	/// <summary>
 	/// Plague of Malady - The Sealed Ones have inflicted a mysterious disease on the settlement. Villagers take 50% longer rests and have a +100% higher chance of consuming twice as much food during a break.
 	/// </summary>
 	/// <name>TEST Plague of Malady</name>
 	/// <type>CompositeEffectModel</type>
-	TEST_Plague_Of_Malady,
+	TEST_Plague_Of_Malady = 338,
 
 	/// <summary>
 	/// Plague of Mosquitoes - The sky turns black with a swarm of mosquitoes. Bitten villagers can't focus on work. Global production speed is 50% slower.
 	/// </summary>
 	/// <name>TEST Plague of Mosquito</name>
 	/// <type>CompositeEffectModel</type>
-	TEST_Plague_Of_Mosquito,
+	TEST_Plague_Of_Mosquito = 339,
 
 	/// <summary>
 	/// Deserted Caravans - Global production speed is 33% faster, but traders will arrive 50% slower.
 	/// </summary>
 	/// <name>Trade Block for Production Speed</name>
 	/// <type>CompositeEffectModel</type>
-	Trade_Block_For_Production_Speed,
+	Trade_Block_For_Production_Speed = 340,
 
 	/// <summary>
 	/// Trade Logs - Detailed notes on different traders and their wares. Gain 1 additional active trade route slot. Traders will arrive 25% quicker.
 	/// </summary>
 	/// <name>Trading Packs</name>
 	/// <type>CompositeEffectModel</type>
-	Trading_Packs,
+	Trading_Packs = 341,
 
 	/// <summary></summary>
 	/// <name>[U][B] Planting And Harvesting Speed</name>
 	/// <type>CompositeEffectModel</type>
-	UB_Planting_And_Harvesting_Speed,
+	UB_Planting_And_Harvesting_Speed = 342,
 
 	/// <summary>
 	/// Ominous Whispers - Strange voices can be heard from the sealed vault. All woodcutters and gatherers get a ‑12 penalty to Resolve.
 	/// </summary>
 	/// <name>VaultResolvePenalty - normal</name>
 	/// <type>CompositeEffectModel</type>
-	VaultResolvePenalty_Normal,
+	VaultResolvePenalty_Normal = 343,
 
 	/// <summary>
 	/// Guild's Sigil - A ring given only to the closest friends of the Merchant Guild. Traders will arrive 25% faster, and perks and blueprints will cost 25% less Amber.
 	/// </summary>
 	/// <name>[WE] Crashed Airship Bonus</name>
 	/// <type>CompositeEffectModel</type>
-	WE_Crashed_Airship_Bonus,
+	WE_Crashed_Airship_Bonus = 344,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	/// </summary>
 	/// <name>[WE] Fallen Viceroy Commemoration Composite</name>
 	/// <type>CompositeEffectModel</type>
-	WE_Fallen_Viceroy_Commemoration_Composite,
+	WE_Fallen_Viceroy_Commemoration_Composite = 345,
 
 	/// <summary>
 	/// Roaming Swarm - An angry swarm of giant beasts roams the forest around the settlement, and no messenger dares to cross it. Orders are disabled and traders will arrive 50% slower.
 	/// </summary>
 	/// <name>[WE] Roaming Shelled Mosquitos</name>
 	/// <type>CompositeEffectModel</type>
-	WE_Roaming_Shelled_Mosquitos,
+	WE_Roaming_Shelled_Mosquitos = 346,
 
 	/// <summary>
 	/// Woodcutter's Prayer - If you want to take, you first must give. +1 to "[mat raw] wood" Wood production. Lose all stored fuel upon picking this cornerstone.
 	/// </summary>
 	/// <name>Woodcutters Prayer</name>
 	/// <type>CompositeEffectModel</type>
-	Woodcutters_Prayer,
+	Woodcutters_Prayer = 347,
 
 	/// <summary>
 	/// Sloppy Woodcutting - Woodcutting speed is increased by +100%, but fuel consumption in Hearths is increased by 200%.
 	/// </summary>
 	/// <name>Woodcutting For Fuel</name>
 	/// <type>CompositeEffectModel</type>
-	Woodcutting_For_Fuel,
+	Woodcutting_For_Fuel = 348,
 
 
 	//
@@ -2506,26 +2556,26 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Construction Cost -33</name>
 	/// <type>ConstructionCostEffectModel</type>
-	Construction_Cost_Minus33,
+	Construction_Cost_Minus33 = 349,
 
 	/// <summary>
 	/// 40%
 	/// </summary>
 	/// <name>Construction Cost -40</name>
 	/// <type>ConstructionCostEffectModel</type>
-	Construction_Cost_Minus40,
+	Construction_Cost_Minus40 = 350,
 
 	/// <summary></summary>
 	/// <name>Construction Cost -50</name>
 	/// <type>ConstructionCostEffectModel</type>
-	Construction_Cost_Minus50,
+	Construction_Cost_Minus50 = 351,
 
 	/// <summary>
 	/// Wet Soil - It's particularly hard to build anything in this region. Buildings require 50% more materials.
 	/// </summary>
 	/// <name>[Mod] Wet Soil</name>
 	/// <type>ConstructionCostEffectModel</type>
-	Mod_Wet_Soil,
+	Mod_Wet_Soil = 352,
 
 
 	//
@@ -2537,12 +2587,12 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Construction Speed 50</name>
 	/// <type>ConstructionRateEffectModel</type>
-	Construction_Speed_50,
+	Construction_Speed_50 = 353,
 
 	/// <summary></summary>
 	/// <name>Construction Speed Slower 25</name>
 	/// <type>ConstructionRateEffectModel</type>
-	Construction_Speed_Slower_25,
+	Construction_Speed_Slower_25 = 354,
 
 
 	//
@@ -2554,14 +2604,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Consumption Control Block - Without Restrictions</name>
 	/// <type>ConsumptionControlBlockEffectModel</type>
-	Consumption_Control_Block_Without_Restrictions,
+	Consumption_Control_Block_Without_Restrictions = 355,
 
 	/// <summary>
 	/// Monastery of the Holy Flame - The Monks of the Holy Flame are a fanatically egalitarian order. You cannot forbid consumption, or favor any species.
 	/// </summary>
 	/// <name>[Map Mod] Consumption Control Block</name>
 	/// <type>ConsumptionControlBlockEffectModel</type>
-	Map_Mod_Consumption_Control_Block,
+	Map_Mod_Consumption_Control_Block = 356,
 
 
 	//
@@ -2573,28 +2623,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] Cornerstone Reroll</name>
 	/// <type>CornerstonesRerollsEffectModel</type>
-	Altar_Cornerstone_Reroll,
+	Altar_Cornerstone_Reroll = 357,
 
 	/// <summary>
 	/// Royal Permit - Gain 1 additional cornerstone reroll charge.
 	/// </summary>
 	/// <name>Cornerstone Reroll +1</name>
 	/// <type>CornerstonesRerollsEffectModel</type>
-	Cornerstone_Reroll_Plus1,
+	Cornerstone_Reroll_Plus1 = 358,
 
 	/// <summary>
 	/// Lucky Charm - A strange talisman made from an extremely rare gemstone - blue Amber. Grants 1 additional cornerstone reroll charge.
 	/// </summary>
 	/// <name>Cornerstone Reroll - Trader</name>
 	/// <type>CornerstonesRerollsEffectModel</type>
-	Cornerstone_Reroll_Trader,
+	Cornerstone_Reroll_Trader = 359,
 
 	/// <summary>
 	/// Royal Permit - Our Queen's benevolence knows no bounds. Gain 3 additional cornerstone reroll charges.
 	/// </summary>
 	/// <name>[Embark] Cornerstone Reroll +3</name>
 	/// <type>CornerstonesRerollsEffectModel</type>
-	Embark_Cornerstone_Reroll_Plus3,
+	Embark_Cornerstone_Reroll_Plus3 = 360,
 
 
 	//
@@ -2606,7 +2656,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Destroy All Crops</name>
 	/// <type>CropsWitherEffectModel</type>
-	Destroy_All_Crops,
+	Destroy_All_Crops = 361,
 
 
 	//
@@ -2618,7 +2668,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Cysts Activation</name>
 	/// <type>CystsActivationEffectModel</type>
-	Cysts_Activation,
+	Cysts_Activation = 362,
 
 
 	//
@@ -2628,33 +2678,33 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Cysts Faster Burning 5</name>
 	/// <type>CystsBonusBurningTimeEffectModel</type>
-	Cysts_Faster_Burning_5,
+	Cysts_Faster_Burning_5 = 363,
 
 	/// <summary>
 	/// Effective Parasite - The Blightrot feeds on the tree's valuable nutrients, making new cysts much more resilient. Cysts burn for 5 seconds longer.
 	/// </summary>
 	/// <name>Cysts Longer Burning 5</name>
 	/// <type>CystsBonusBurningTimeEffectModel</type>
-	Cysts_Longer_Burning_5,
+	Cysts_Longer_Burning_5 = 364,
 
 	/// <summary></summary>
 	/// <name>Incantation Cysts Longer Burning 10</name>
 	/// <type>CystsBonusBurningTimeEffectModel</type>
-	Incantation_Cysts_Longer_Burning_10,
+	Incantation_Cysts_Longer_Burning_10 = 365,
 
 	/// <summary>
 	/// Burning a cyst takes 5 seconds longer.
 	/// </summary>
 	/// <name>[PerkCrafter] Longer Cyst Burning</name>
 	/// <type>CystsBonusBurningTimeEffectModel</type>
-	PerkCrafter_Longer_Cyst_Burning,
+	PerkCrafter_Longer_Cyst_Burning = 366,
 
 	/// <summary>
 	/// Absorption - Blightrot Cysts consume the storm's energy and become more resilient. Burning cysts takes 5 seconds longer.
 	/// </summary>
 	/// <name>SE Resistant Cysts</name>
 	/// <type>CystsBonusBurningTimeEffectModel</type>
-	SE_Resistant_Cysts,
+	SE_Resistant_Cysts = 367,
 
 
 	//
@@ -2666,21 +2716,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Dangerous Glades Info Block Mistworm</name>
 	/// <type>DangerousGladesInfoBlockEffectModel</type>
-	Dangerous_Glades_Info_Block_Mistworm,
+	Dangerous_Glades_Info_Block_Mistworm = 368,
 
 	/// <summary>
 	/// Haunted Forest - Sometimes, viceroys condemn their people to a terrible fate... Dangerous and Forbidden Glade warnings are disabled.
 	/// </summary>
 	/// <name>[Map Mod] No Glade Info</name>
 	/// <type>DangerousGladesInfoBlockEffectModel</type>
-	Map_Mod_No_Glade_Info,
+	Map_Mod_No_Glade_Info = 369,
 
 	/// <summary>
 	/// Haunted Forest - The forest is shrouded in a thick miasma, making it impossible to see past the trees (Dangerous and Forbidden Glade warnings disabled).
 	/// </summary>
 	/// <name>[Mod] Dangerous Glades Info Block</name>
 	/// <type>DangerousGladesInfoBlockEffectModel</type>
-	Mod_Dangerous_Glades_Info_Block,
+	Mod_Dangerous_Glades_Info_Block = 370,
 
 
 	//
@@ -2692,66 +2742,66 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Blight Rate for Resolve Reputation - Blight Rate -50</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	Blight_Rate_For_Resolve_Reputation_Blight_Rate_Minus50,
+	Blight_Rate_For_Resolve_Reputation_Blight_Rate_Minus50 = 371,
 
 	/// <summary></summary>
 	/// <name>Engines Blight Rate +20</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	Engines_Blight_Rate_Plus20,
+	Engines_Blight_Rate_Plus20 = 372,
 
 	/// <summary></summary>
 	/// <name>Engines Blight Rate +25</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	Engines_Blight_Rate_Plus25,
+	Engines_Blight_Rate_Plus25 = 373,
 
 	/// <summary>
 	/// Engine Corrosion - Contaminated liquid gets inside Rain Engines through underground pipes. Using water in Rain Engines generates Blightrot Cysts 50% quicker.
 	/// </summary>
 	/// <name>Engines Blight Rate +50</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	Engines_Blight_Rate_Plus50,
+	Engines_Blight_Rate_Plus50 = 374,
 
 	/// <summary>
 	/// Using rain engines generates Blightrot Cysts 10% slower.
 	/// </summary>
 	/// <name>[PerkCrafter] Cyst Generation Rate 10</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	PerkCrafter_Cyst_Generation_Rate_10,
+	PerkCrafter_Cyst_Generation_Rate_10 = 375,
 
 	/// <summary>
 	/// Using rain engines generates Blightrot Cysts 15% slower.
 	/// </summary>
 	/// <name>[PerkCrafter] Cyst Generation Rate 15</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	PerkCrafter_Cyst_Generation_Rate_15,
+	PerkCrafter_Cyst_Generation_Rate_15 = 376,
 
 	/// <summary>
 	/// Using rain engines generates Blightrot Cysts 5% slower.
 	/// </summary>
 	/// <name>[PerkCrafter] Cyst Generation Rate 5</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	PerkCrafter_Cyst_Generation_Rate_5,
+	PerkCrafter_Cyst_Generation_Rate_5 = 377,
 
 	/// <summary>
 	/// Natural Filtration - Using Rain Engines causes a lot less Blightrot contamination due to the natural filtration processes of the surrounding vegetation. Blightrot Cysts grow 50% slower when using Rain Engines.
 	/// </summary>
 	/// <name>SE Low Engines Blight Rate</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	SE_Low_Engines_Blight_Rate,
+	SE_Low_Engines_Blight_Rate = 378,
 
 	/// <summary>
 	/// Plague of Corrupted Water - The rainwater has become contaminated, so rainpunk machinery is now even more hazardous. Using rainwater in rain engines generates Blightrot cysts 100% quicker.
 	/// </summary>
 	/// <name>TEST Plague of Corrupted Water</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	TEST_Plague_Of_Corrupted_Water,
+	TEST_Plague_Of_Corrupted_Water = 379,
 
 	/// <summary>
 	/// Manned Lookout - Blight Fighters regularly inspect production buildings. The use of water in Rain Engines generates Blightrot Cysts 10% slower for every Blight Fighter in a building with this upgrade.
 	/// </summary>
 	/// <name>[U][BP] Cyst Generation Rate - child</name>
 	/// <type>EnginesBlightRateEffectModel</type>
-	UBP_Cyst_Generation_Rate_Child,
+	UBP_Cyst_Generation_Rate_Child = 380,
 
 
 	//
@@ -2763,42 +2813,42 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Mole Earthquake</name>
 	/// <type>ExplosionEffectModel</type>
-	Mole_Earthquake,
+	Mole_Earthquake = 381,
 
 	/// <summary>
 	/// Magical Explosion - The core of the machinery is unstable, and could explode at any minute. Destroys everything within a 18 field radius.
 	/// </summary>
 	/// <name>Rainpunk Explosion - Big</name>
 	/// <type>ExplosionEffectModel</type>
-	Rainpunk_Explosion_Big,
+	Rainpunk_Explosion_Big = 382,
 
 	/// <summary>
 	/// 10
 	/// </summary>
 	/// <name>Rainpunk Explosion - Noxious</name>
 	/// <type>ExplosionEffectModel</type>
-	Rainpunk_Explosion_Noxious,
+	Rainpunk_Explosion_Noxious = 383,
 
 	/// <summary>
 	/// Magical Explosion - The core of the machinery is unstable, and could explode at any minute. Destroys everything within a 10 field radius.
 	/// </summary>
 	/// <name>Rainpunk Explosion - Small</name>
 	/// <type>ExplosionEffectModel</type>
-	Rainpunk_Explosion_Small,
+	Rainpunk_Explosion_Small = 384,
 
 	/// <summary>
 	/// Discharge - The core of the machinery is unstable and will release a small discharge before the main explosion. Destroys gathering nodes and trees, and kills villagers within a 5 field radius.
 	/// </summary>
 	/// <name>Rainpunk Explosion - Smallest</name>
 	/// <type>ExplosionEffectModel</type>
-	Rainpunk_Explosion_Smallest,
+	Rainpunk_Explosion_Smallest = 385,
 
 	/// <summary>
 	/// Small Miasma Cloud - A thick, spreading cloud of miasma. It kills every living being within a radius of 20 fields.
 	/// </summary>
 	/// <name>Sealed Vault Explosion</name>
 	/// <type>ExplosionEffectModel</type>
-	Sealed_Vault_Explosion,
+	Sealed_Vault_Explosion = 386,
 
 
 	//
@@ -2810,14 +2860,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>More Trade Offers - Extra Trade Routes</name>
 	/// <type>ExtendTradeRoutesEffectModel</type>
-	More_Trade_Offers_Extra_Trade_Routes,
+	More_Trade_Offers_Extra_Trade_Routes = 387,
 
 	/// <summary>
 	/// More trade offers - Extends available trade offers by 1 in each neighboring town
 	/// </summary>
 	/// <name>TEMP Extend Trade Routes Effect Model</name>
 	/// <type>ExtendTradeRoutesEffectModel</type>
-	TEMP_Extend_Trade_Routes_Effect_Model,
+	TEMP_Extend_Trade_Routes_Effect_Model = 388,
 
 
 	//
@@ -2827,7 +2877,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Bait Production +1</name>
 	/// <type>ExtraBaitProductionEffectModel</type>
-	Bait_Production_Plus1,
+	Bait_Production_Plus1 = 389,
 
 
 	//
@@ -2839,21 +2889,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Archeology Extra Cornerstone</name>
 	/// <type>ExtraCornerstonePickEffectModel</type>
-	Archeology_Extra_Cornerstone,
+	Archeology_Extra_Cornerstone = 390,
 
 	/// <summary>
 	/// Effect_PortExtraCornerstone_Name - Effect_PortExtraCornerstone_Desc
 	/// </summary>
 	/// <name>Port Extra Cornerstone</name>
 	/// <type>ExtraCornerstonePickEffectModel</type>
-	Port_Extra_Cornerstone,
+	Port_Extra_Cornerstone = 391,
 
 	/// <summary>
 	/// Gift of the Seal Keeper - After obtaining a Guardian part, you will be able to choose an Epic Cornerstone offered by the Seal Keeper.
 	/// </summary>
 	/// <name>Seal Extra Cornerstone</name>
 	/// <type>ExtraCornerstonePickEffectModel</type>
-	Seal_Extra_Cornerstone,
+	Seal_Extra_Cornerstone = 392,
 
 
 	//
@@ -2863,45 +2913,45 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Extra Glade - Moorlands Dangerous</name>
 	/// <type>ExtraGladeEffectModel</type>
-	Extra_Glade_Moorlands_Dangerous,
+	Extra_Glade_Moorlands_Dangerous = 393,
 
 	/// <summary></summary>
 	/// <name>Extra Glade - Moorlands Forbidden</name>
 	/// <type>ExtraGladeEffectModel</type>
-	Extra_Glade_Moorlands_Forbidden,
+	Extra_Glade_Moorlands_Forbidden = 394,
 
 	/// <summary></summary>
 	/// <name>Extra Glade - Moorlands Normal</name>
 	/// <type>ExtraGladeEffectModel</type>
-	Extra_Glade_Moorlands_Normal,
+	Extra_Glade_Moorlands_Normal = 395,
 
 	/// <summary>
 	/// Hidden Seal - A broken Ancient Seal is hidden somewhere in the forest. To find it, you must first look for clues in the surrounding glades. Its mere presence in this land summons foul plagues upon your settlement during the storm (they are active only during the storm).
 	/// </summary>
 	/// <name>Extra Glade - Seal</name>
 	/// <type>ExtraGladeEffectModel</type>
-	Extra_Glade_Seal,
+	Extra_Glade_Seal = 396,
 
 	/// <summary>
 	/// ModifierEffect_AncientGate_Name - ModifierEffect_AncientGate_Desc
 	/// </summary>
 	/// <name>ModifierEffect_AncientGate</name>
 	/// <type>ExtraGladeEffectModel</type>
-	ModifierEffect_AncientGate,
+	ModifierEffect_AncientGate = 397,
 
 	/// <summary>
 	/// Ruins - This region was settled very frequently in the past. The chance of finding ruins in glades is much higher.
 	/// </summary>
 	/// <name>ModifierEffect_RuinedSettlement_Dangerous</name>
 	/// <type>ExtraGladeEffectModel</type>
-	ModifierEffect_RuinedSettlement_Dangerous,
+	ModifierEffect_RuinedSettlement_Dangerous = 398,
 
 	/// <summary>
 	/// Ruins - This region was settled very frequently in the past. The chance of finding ruins in glades is much higher.
 	/// </summary>
 	/// <name>ModifierEffect_RuinedSettlement_Forbidden</name>
 	/// <type>ExtraGladeEffectModel</type>
-	ModifierEffect_RuinedSettlement_Forbidden,
+	ModifierEffect_RuinedSettlement_Forbidden = 399,
 
 
 	//
@@ -2913,28 +2963,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Archeology Extra Blueprint</name>
 	/// <type>ExtraReputationPickEffectModel</type>
-	Archeology_Extra_Blueprint,
+	Archeology_Extra_Blueprint = 400,
 
 	/// <summary>
 	/// Budget Cuts - The Queen has visited the Obsidian Archives in person, and was dissatisfied with the amount of funding spent on expeditions. You have one fewer initial blueprint.
 	/// </summary>
 	/// <name>[Mod] Fewer Initial Blueprints</name>
 	/// <type>ExtraReputationPickEffectModel</type>
-	Mod_Fewer_Initial_Blueprints,
+	Mod_Fewer_Initial_Blueprints = 401,
 
 	/// <summary>
 	/// Budget Cuts - The Queen has visited the Obsidian Archives in person, and was dissatisfied with the amount of funding spent on expeditions. You have one fewer initial blueprint.
 	/// </summary>
 	/// <name>[Mod] Fewer Initial Blueprints - Overgrown Library</name>
 	/// <type>ExtraReputationPickEffectModel</type>
-	Mod_Fewer_Initial_Blueprints_Overgrown_Library,
+	Mod_Fewer_Initial_Blueprints_Overgrown_Library = 402,
 
 	/// <summary>
 	/// Queen's Support - This expedition is of special interest to the crown. You gain an extra blueprint choice at the beginning of the game.
 	/// </summary>
 	/// <name>[Mod] Queens Support</name>
 	/// <type>ExtraReputationPickEffectModel</type>
-	Mod_Queens_Support,
+	Mod_Queens_Support = 403,
 
 
 	//
@@ -2944,17 +2994,17 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Spawn Trader - The Hermit</name>
 	/// <type>ExtraTraderEffectModel</type>
-	Spawn_Trader_The_Hermit,
+	Spawn_Trader_The_Hermit = 404,
 
 	/// <summary></summary>
 	/// <name>Spawn Trader - The Seer</name>
 	/// <type>ExtraTraderEffectModel</type>
-	Spawn_Trader_The_Seer,
+	Spawn_Trader_The_Seer = 405,
 
 	/// <summary></summary>
 	/// <name>Spawn Trader - The Shaman</name>
 	/// <type>ExtraTraderEffectModel</type>
-	Spawn_Trader_The_Shaman,
+	Spawn_Trader_The_Shaman = 406,
 
 
 	//
@@ -2964,7 +3014,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>[Map Mod] Favoring Block</name>
 	/// <type>FavoringBlockEffectModel</type>
-	Map_Mod_Favoring_Block,
+	Map_Mod_Favoring_Block = 407,
 
 
 	//
@@ -2974,96 +3024,96 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>FuelConsumption 200</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_200,
+	FuelConsumption_200 = 408,
 
 	/// <summary>
 	/// Pragmatic Frugality - Beaver firekeepers know a lot about different burning techniques. Fuel consumption in Hearths is decreased by 20%.
 	/// </summary>
 	/// <name>FuelConsumption_HearthEffect_Beaver</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_HearthEffect_Beaver,
+	FuelConsumption_HearthEffect_Beaver = 409,
 
 	/// <summary>
 	/// Secret Techniques of the Firekeeper - Fuel consumption in Hearths is decreased by 20%.
 	/// </summary>
 	/// <name>FuelConsumption -20</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Minus20,
+	FuelConsumption_Minus20 = 410,
 
 	/// <summary>
 	/// Secret Techniques of the Firekeeper - An old manuscript detailing long-forgotten burning rites. Fuel consumption in Hearths is decreased by 25%.
 	/// </summary>
 	/// <name>FuelConsumption -25</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Minus25,
+	FuelConsumption_Minus25 = 411,
 
 	/// <summary>
 	/// Secret Techniques of the Firekeeper - An old manuscript detailing long-forgotten burning rites. Fuel consumption in Hearths is decreased by 33%.
 	/// </summary>
 	/// <name>FuelConsumption -33</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Minus33,
+	FuelConsumption_Minus33 = 412,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel consumption in Hearths is increased by 150%.
 	/// </summary>
 	/// <name>FuelConsumption +150 Wildfire</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Plus150_Wildfire,
+	FuelConsumption_Plus150_Wildfire = 413,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel consumption in Hearths is increased by 200%.
 	/// </summary>
 	/// <name>FuelConsumption +200 Wildfire</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Plus200_Wildfire,
+	FuelConsumption_Plus200_Wildfire = 414,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel consumption in Hearths is increased by 250%.
 	/// </summary>
 	/// <name>FuelConsumption +250 Wildfire</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Plus250_Wildfire,
+	FuelConsumption_Plus250_Wildfire = 415,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel consumption in Hearths is increased by 300%.
 	/// </summary>
 	/// <name>FuelConsumption +300 Wildfire</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Plus300_Wildfire,
+	FuelConsumption_Plus300_Wildfire = 416,
 
 	/// <summary>
 	/// Fickle Flame - The miasma is getting closer and closer to the center of the settlement... Fuel consumption in Hearths is increased by 33%.
 	/// </summary>
 	/// <name>FuelConsumption +33</name>
 	/// <type>FuelRateEffectModel</type>
-	FuelConsumption_Plus33,
+	FuelConsumption_Plus33 = 417,
 
 	/// <summary></summary>
 	/// <name>Institution Slower Burn Rate</name>
 	/// <type>FuelRateEffectModel</type>
-	Institution_Slower_Burn_Rate,
+	Institution_Slower_Burn_Rate = 418,
 
 	/// <summary>
 	/// Fuel consumption in Hearths is increased by 20%.
 	/// </summary>
 	/// <name>[PerkCrafter] Fuel Consumption</name>
 	/// <type>FuelRateEffectModel</type>
-	PerkCrafter_Fuel_Consumption,
+	PerkCrafter_Fuel_Consumption = 419,
 
 	/// <summary>
 	/// Piercing Winds - Extremely strong winds make it difficult to sustain the Holy Flame. Fuel consumption in Hearths is increased by 200%.
 	/// </summary>
 	/// <name>SE FuelRate</name>
 	/// <type>FuelRateEffectModel</type>
-	SE_FuelRate,
+	SE_FuelRate = 420,
 
 	/// <summary>
 	/// Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level.
 	/// </summary>
 	/// <name>SE FuelRateHostility</name>
 	/// <type>FuelRateEffectModel</type>
-	SE_FuelRateHostility,
+	SE_FuelRateHostility = 421,
 
 
 	//
@@ -3075,28 +3125,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] Killed for GladeInfo</name>
 	/// <type>GladeInfoEffectModel</type>
-	Altar_Killed_For_GladeInfo,
+	Altar_Killed_For_GladeInfo = 422,
 
 	/// <summary>
 	/// Mist Piercers (Stormforged) - You can see the content of undiscovered glades.
 	/// </summary>
 	/// <name>[Altar] Mists Piercers</name>
 	/// <type>GladeInfoEffectModel</type>
-	Altar_Mists_Piercers,
+	Altar_Mists_Piercers = 423,
 
 	/// <summary>
 	/// You can see the content of undiscovered glades.
 	/// </summary>
 	/// <name>Generic Glade Info</name>
 	/// <type>GladeInfoEffectModel</type>
-	Generic_Glade_Info,
+	Generic_Glade_Info = 424,
 
 	/// <summary>
 	/// Guild's Logbook - You can see the content of undiscovered glades.
 	/// </summary>
 	/// <name>[WE] Glade Info</name>
 	/// <type>GladeInfoEffectModel</type>
-	WE_Glade_Info,
+	WE_Glade_Info = 425,
 
 
 	//
@@ -3106,52 +3156,52 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Global Capacity 10</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	Global_Capacity_10,
+	Global_Capacity_10 = 426,
 
 	/// <summary></summary>
 	/// <name>Global Capacity 3</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	Global_Capacity_3,
+	Global_Capacity_3 = 427,
 
 	/// <summary></summary>
 	/// <name>Global Capacity 5</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	Global_Capacity_5,
+	Global_Capacity_5 = 428,
 
 	/// <summary>
 	/// Light as a Feather - Harpy firekeepers can teach villagers how to be more nimble and agile. Global carrying capacity is increased by 5.
 	/// </summary>
 	/// <name>Harpy Global Capacity</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	Harpy_Global_Capacity,
+	Harpy_Global_Capacity = 429,
 
 	/// <summary>
 	/// Market Carts - Small wooden carts, perfect for transporting goods. Global carrying capacity is increased by 10.
 	/// </summary>
 	/// <name>Institution Global Capacity</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	Institution_Global_Capacity,
+	Institution_Global_Capacity = 430,
 
 	/// <summary>
 	/// Worker carrying capacity is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Global Capacity 1</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	PerkCrafter_Global_Capacity_1,
+	PerkCrafter_Global_Capacity_1 = 431,
 
 	/// <summary>
 	/// Worker carrying capacity is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Global Capacity 2</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	PerkCrafter_Global_Capacity_2,
+	PerkCrafter_Global_Capacity_2 = 432,
 
 	/// <summary>
 	/// Worker carrying capacity is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Global Capacity 3</name>
 	/// <type>GlobalCapacityEffectModel</type>
-	PerkCrafter_Global_Capacity_3,
+	PerkCrafter_Global_Capacity_3 = 433,
 
 
 	//
@@ -3161,105 +3211,105 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Archeology Global Extra Production</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Archeology_Global_Extra_Production,
+	Archeology_Global_Extra_Production = 434,
 
 	/// <summary>
 	/// Inspiring Pressure - The forest is as scary as it is beautiful. Villagers have a 3% higher chance of producing double yields for each Hostility level.
 	/// </summary>
 	/// <name>[BIOME] Inspiring Pressure</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	BIOME_Inspiring_Pressure,
+	BIOME_Inspiring_Pressure = 435,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +10</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus10,
+	Global_Extra_Prod_Plus10 = 436,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +15</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus15,
+	Global_Extra_Prod_Plus15 = 437,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +20</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus20,
+	Global_Extra_Prod_Plus20 = 438,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +25</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus25,
+	Global_Extra_Prod_Plus25 = 439,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +30</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus30,
+	Global_Extra_Prod_Plus30 = 440,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +33</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus33,
+	Global_Extra_Prod_Plus33 = 441,
 
 	/// <summary></summary>
 	/// <name>Global Extra Prod +5</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Global_Extra_Prod_Plus5,
+	Global_Extra_Prod_Plus5 = 442,
 
 	/// <summary>
 	/// District (Level 3) - The town is booming with activity, and industry thrives.
 	/// </summary>
 	/// <name>[Hub] Extra Production Chance</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Hub_Extra_Production_Chance,
+	Hub_Extra_Production_Chance = 443,
 
 	/// <summary>
 	/// Public Performances - Whether it's theater or martial arts, there's an inspiring show for everyone. The chance of producing double yields is increased by 15%.
 	/// </summary>
 	/// <name>Institution Global Extra Production</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	Institution_Global_Extra_Production,
+	Institution_Global_Extra_Production = 444,
 
 	/// <summary>
 	/// Workers have a 10% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Double Prod Chance 10</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	PerkCrafter_Double_Prod_Chance_10,
+	PerkCrafter_Double_Prod_Chance_10 = 445,
 
 	/// <summary>
 	/// Workers have a 3% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Double Prod Chance 3</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	PerkCrafter_Double_Prod_Chance_3,
+	PerkCrafter_Double_Prod_Chance_3 = 446,
 
 	/// <summary>
 	/// Workers have a 4% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Double Prod Chance 4</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	PerkCrafter_Double_Prod_Chance_4,
+	PerkCrafter_Double_Prod_Chance_4 = 447,
 
 	/// <summary>
 	/// Workers have a 6% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Double Prod Chance 6</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	PerkCrafter_Double_Prod_Chance_6,
+	PerkCrafter_Double_Prod_Chance_6 = 448,
 
 	/// <summary>
 	/// Workers have a 7% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Double Prod Chance 7</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	PerkCrafter_Double_Prod_Chance_7,
+	PerkCrafter_Double_Prod_Chance_7 = 449,
 
 	/// <summary>
 	/// Prayer - A prayer to the Sacred Flame and the Queen herself. Workers have a 5% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[TW] Global Extra Prod</name>
 	/// <type>GlobalExtraProductionChanceEffectModel</type>
-	TW_Global_Extra_Prod,
+	TW_Global_Extra_Prod = 450,
 
 
 	//
@@ -3271,7 +3321,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Chance For No Production Plague</name>
 	/// <type>GlobalNoProductionChanceEffectModel</type>
-	Chance_For_No_Production_Plague,
+	Chance_For_No_Production_Plague = 451,
 
 
 	//
@@ -3283,117 +3333,117 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BT] Global Production Rate - child</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	BT_Global_Production_Rate_Child,
+	BT_Global_Production_Rate_Child = 452,
 
 	/// <summary>
 	/// Plague of Mosquitoes - The sky turns black with a swarm of mosquitoes. Bitten villagers can't focus on work. Global production speed is 50% slower.
 	/// </summary>
 	/// <name>Global Prod Speed -50 (plague)</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Prod_Speed_Minus50_plague,
+	Global_Prod_Speed_Minus50_plague = 453,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 10</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_10,
+	Global_Production_Faster_10 = 454,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 15</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_15,
+	Global_Production_Faster_15 = 455,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 20</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_20,
+	Global_Production_Faster_20 = 456,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 25</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_25,
+	Global_Production_Faster_25 = 457,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 30</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_30,
+	Global_Production_Faster_30 = 458,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 33</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_33,
+	Global_Production_Faster_33 = 459,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 40</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_40,
+	Global_Production_Faster_40 = 460,
 
 	/// <summary>
 	/// +5% to global production speed.
 	/// </summary>
 	/// <name>Global Production Faster 5</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_5,
+	Global_Production_Faster_5 = 461,
 
 	/// <summary></summary>
 	/// <name>Global Production Faster 50</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Global_Production_Faster_50,
+	Global_Production_Faster_50 = 462,
 
 	/// <summary>
 	/// Sacrifice Oil - Global production speed increased by 25%.
 	/// </summary>
 	/// <name>[Hearth] Production Speed</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Hearth_Production_Speed,
+	Hearth_Production_Speed = 463,
 
 	/// <summary>
 	/// Neighborhood (Level 2) - Even in such a harsh environment, there is still room for beauty.
 	/// </summary>
 	/// <name>[Hub] Production Speed</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Hub_Production_Speed,
+	Hub_Production_Speed = 464,
 
 	/// <summary>
 	/// Good Health - Regular baths improve everyone's well-being. Global production rate is 25% faster.
 	/// </summary>
 	/// <name>Institution Global Production Rate</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	Institution_Global_Production_Rate,
+	Institution_Global_Production_Rate = 465,
 
 	/// <summary>
 	/// Global production speed is increased by 10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Global Production Faster 10</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	PerkCrafter_Global_Production_Faster_10,
+	PerkCrafter_Global_Production_Faster_10 = 466,
 
 	/// <summary>
 	/// Global production speed is increased by 15%.
 	/// </summary>
 	/// <name>[PerkCrafter] Global Production Faster 15</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	PerkCrafter_Global_Production_Faster_15,
+	PerkCrafter_Global_Production_Faster_15 = 467,
 
 	/// <summary>
 	/// Global production speed is increased by 5%.
 	/// </summary>
 	/// <name>[PerkCrafter] Global Production Faster 5</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	PerkCrafter_Global_Production_Faster_5,
+	PerkCrafter_Global_Production_Faster_5 = 468,
 
 	/// <summary>
 	/// Overheating - Global production speed is 33% slower.
 	/// </summary>
 	/// <name>SE Global Production Speed -15</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	SE_Global_Production_Speed_Minus15,
+	SE_Global_Production_Speed_Minus15 = 469,
 
 	/// <summary>
 	/// Petrified Egg - No Stormbird will ever hatch from this egg, but it's still crackling with energy. Global production speed is 15% faster.
 	/// </summary>
 	/// <name>[WE] Petrified Egg</name>
 	/// <type>GlobalProductionRateEffectModel</type>
-	WE_Petrified_Egg,
+	WE_Petrified_Egg = 470,
 
 
 	//
@@ -3405,483 +3455,483 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Agriculture Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Agriculture_Penalty,
+	Agriculture_Penalty = 471,
 
 	/// <summary>
 	/// Small Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Ancient Artifact 1</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Ancient_Artifact_1,
+	Ancient_Artifact_1 = 472,
 
 	/// <summary>
 	/// Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+2 to Global Resolve)
 	/// </summary>
 	/// <name>Ancient Artifact 2</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Ancient_Artifact_2,
+	Ancient_Artifact_2 = 473,
 
 	/// <summary>
 	/// Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>Ancient Artifact 3</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Ancient_Artifact_3,
+	Ancient_Artifact_3 = 474,
 
 	/// <summary>
 	/// Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>Ancient Artifact 3 Tutorial</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Ancient_Artifact_3_Tutorial,
+	Ancient_Artifact_3_Tutorial = 475,
 
 	/// <summary>
 	/// Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>[BIOME] Storm Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	BIOME_Storm_Penalty,
+	BIOME_Storm_Penalty = 476,
 
 	/// <summary>
 	/// Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>[BIOME] Tut 1 Storm Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	BIOME_Tut_1_Storm_Penalty,
+	BIOME_Tut_1_Storm_Penalty = 477,
 
 	/// <summary>
 	/// Blood Flower - The odor of Blood Flowers is making people feel sick. (‑3 to Global Resolve)
 	/// </summary>
 	/// <name>Blightrot Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Blightrot_Resolve,
+	Blightrot_Resolve = 478,
 
 	/// <summary>
 	/// Chaos - Harmony has been disturbed. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Chaos</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Chaos,
+	Chaos = 479,
 
 	/// <summary>
 	/// City Renown - The city is becoming known among folk as a great place to live. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>City Renown</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	City_Renown,
+	City_Renown = 480,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them. (‑6 to Global Resolve)
 	/// </summary>
 	/// <name>Convicts - hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Convicts_Hard,
+	Convicts_Hard = 481,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them. (‑8 to Global Resolve)
 	/// </summary>
 	/// <name>Convicts - impossible</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Convicts_Impossible,
+	Convicts_Impossible = 482,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Convicts - normal</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Convicts_Normal,
+	Convicts_Normal = 483,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them. (‑7 to Global Resolve)
 	/// </summary>
 	/// <name>Convicts - very hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Convicts_Very_Hard,
+	Convicts_Very_Hard = 484,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives. (‑6 to Global Resolve)
 	/// </summary>
 	/// <name>DarkGateResolve - hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	DarkGateResolve_Hard,
+	DarkGateResolve_Hard = 485,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives. (‑10 to Global Resolve)
 	/// </summary>
 	/// <name>DarkGateResolve - impossible</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	DarkGateResolve_Impossible,
+	DarkGateResolve_Impossible = 486,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>DarkGateResolve - normal</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	DarkGateResolve_Normal,
+	DarkGateResolve_Normal = 487,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives. (‑8 to Global Resolve)
 	/// </summary>
 	/// <name>DarkGateResolve - very hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	DarkGateResolve_Very_Hard,
+	DarkGateResolve_Very_Hard = 488,
 
 	/// <summary>
 	/// Explorers' Boredom - Who would have thought that great explorers are not so great at planting mushrooms? (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Explorers Boredom</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Explorers_Boredom,
+	Explorers_Boredom = 489,
 
 	/// <summary>
 	/// Exploration Expedition - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia. (+5 to Global Resolve)
 	/// </summary>
 	/// <name>Exploring Expedition - Resolve Bonus Effect</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Exploring_Expedition_Resolve_Bonus_Effect,
+	Exploring_Expedition_Resolve_Bonus_Effect = 490,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T1_Hard,
+	Fear_Of_The_Wilds_T1_Hard = 491,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑6 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - impossible</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T1_Impossible,
+	Fear_Of_The_Wilds_T1_Impossible = 492,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑3 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - normal</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T1_Normal,
+	Fear_Of_The_Wilds_T1_Normal = 493,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - very hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T1_Very_Hard,
+	Fear_Of_The_Wilds_T1_Very_Hard = 494,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑6 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T2_Hard,
+	Fear_Of_The_Wilds_T2_Hard = 495,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑8 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - impossible</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T2_Impossible,
+	Fear_Of_The_Wilds_T2_Impossible = 496,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - normal</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T2_Normal,
+	Fear_Of_The_Wilds_T2_Normal = 497,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan. (‑7 to Global Resolve)
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - very hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fear_Of_The_Wilds_T2_Very_Hard,
+	Fear_Of_The_Wilds_T2_Very_Hard = 498,
 
 	/// <summary>
 	/// Creeping Fishmen - Something is observing the villagers from the edge of the woods. (‑2 to Global Resolve)
 	/// </summary>
 	/// <name>Fishmen Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Fishmen_Resolve,
+	Fishmen_Resolve = 499,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Penalty - hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Forsaken_Crypt_Resolve_Penalty_Hard,
+	Forsaken_Crypt_Resolve_Penalty_Hard = 500,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers. (‑6 to Global Resolve)
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Penalty - impossible</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Forsaken_Crypt_Resolve_Penalty_Impossible,
+	Forsaken_Crypt_Resolve_Penalty_Impossible = 501,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers. (‑3 to Global Resolve)
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Penalty - normal</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Forsaken_Crypt_Resolve_Penalty_Normal,
+	Forsaken_Crypt_Resolve_Penalty_Normal = 502,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Penalty - very hard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Forsaken_Crypt_Resolve_Penalty_Very_Hard,
+	Forsaken_Crypt_Resolve_Penalty_Very_Hard = 503,
 
 	/// <summary>
 	/// Foul Taste - Food tastes terrible due to contaminants from a leaking cauldron. (‑8 to Global Resolve)
 	/// </summary>
 	/// <name>Foul Taste</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Foul_Taste,
+	Foul_Taste = 504,
 
 	/// <summary>
 	/// Frightening Visions - Villagers are haunted by terrifying visions. (‑3 to Global Resolve)
 	/// </summary>
 	/// <name>Frightening Visions Resolve Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Frightening_Visions_Resolve_Penalty,
+	Frightening_Visions_Resolve_Penalty = 505,
 
 	/// <summary>
 	/// Generous Rations - A surplus of food makes the villagers happy. (+5 to Global Resolve)
 	/// </summary>
 	/// <name>Generous Rations</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Generous_Rations,
+	Generous_Rations = 506,
 
 	/// <summary>
 	/// Sacred Pyre - Lizard firekeepers are very adept at ancient rites. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>GlobalResolve_HearthEffect_Lizard</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	GlobalResolve_HearthEffect_Lizard,
+	GlobalResolve_HearthEffect_Lizard = 507,
 
 	/// <summary>
 	/// Harmony - When your villagers' needs are met, Harmony is fostered. (+2 to Global Resolve)
 	/// </summary>
 	/// <name>Harmony Altar Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Harmony_Altar_Resolve,
+	Harmony_Altar_Resolve = 508,
 
 	/// <summary>
 	/// Encampment (Level 1) - Gathered around the blazing fire, folks keep each other's spirits high. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>[Hub] Resolve T1</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Hub_Resolve_T1,
+	Hub_Resolve_T1 = 509,
 
 	/// <summary>
 	/// Neighborhood (Level 2) - Even in such a harsh environment, there is still room for beauty. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>[Hub] Resolve T2</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Hub_Resolve_T2,
+	Hub_Resolve_T2 = 510,
 
 	/// <summary>
 	/// District (Level 3) - The town is booming with activity, and industry thrives. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>[Hub] Resolve T3</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Hub_Resolve_T3,
+	Hub_Resolve_T3 = 511,
 
 	/// <summary>
 	/// Gleeman's Tales - Every evening, a Gleeman tells stories about past glories, and times before the Great Civil War. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>Institution Global Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Institution_Global_Resolve,
+	Institution_Global_Resolve = 512,
 
 	/// <summary>
 	/// Long Live the Queen - Villagers admire the Queen's greatness. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Long Live the Queen</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Long_Live_The_Queen,
+	Long_Live_The_Queen = 513,
 
 	/// <summary>
 	/// Forsaken Gods Temple - ModifierEffect_TempleResolve_Desc (‑1 to Global Resolve)
 	/// </summary>
 	/// <name>[Map Mod] Resolve Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Map_Mod_Resolve_Penalty,
+	Map_Mod_Resolve_Penalty = 514,
 
 	/// <summary>
 	/// Greater Threat - Villagers don't approve of discovering Dangerous ("dangerous") and Forbidden Glades ("forbidden") during the storm. (‑2 to Global Resolve)
 	/// </summary>
 	/// <name>Opened Dang Glades reduces Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Opened_Dang_Glades_Reduces_Resolve,
+	Opened_Dang_Glades_Reduces_Resolve = 515,
 
 	/// <summary>
 	/// Rebellious Spirit - The people are feeling oddly rebellious. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Rebelious Spirit</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Rebelious_Spirit,
+	Rebelious_Spirit = 516,
 
 	/// <summary>
 	/// Woodcutter's Song - The woodcutters' song lifts people's spirits. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>Resolve for Glade - Resolve Bonus Effect</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Resolve_For_Glade_Resolve_Bonus_Effect,
+	Resolve_For_Glade_Resolve_Bonus_Effect = 517,
 
 	/// <summary>
 	/// The Crown Chronicles - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Resolve - Institution Resolve for Ruins</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Resolve_Institution_Resolve_For_Ruins,
+	Resolve_Institution_Resolve_For_Ruins = 518,
 
 	/// <summary>
 	/// The Guild's Welfare - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Resolve - Institution Resolve for Sales</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Resolve_Institution_Resolve_For_Sales,
+	Resolve_Institution_Resolve_For_Sales = 519,
 
 	/// <summary>
 	/// Prosperous Archaeology - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Resolve - Resolve for chests</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Resolve_Resolve_For_Chests,
+	Resolve_Resolve_For_Chests = 520,
 
 	/// <summary>
 	/// Prosperous Settlement - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Resolve - Resolve for sales</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Resolve_Resolve_For_Sales,
+	Resolve_Resolve_For_Sales = 521,
 
 	/// <summary>
 	/// Friendly Relations - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Resolve - Resolve for Standing</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Resolve_Resolve_For_Standing,
+	Resolve_Resolve_For_Standing = 522,
 
 	/// <summary>
 	/// Converted Totem of Denial - A Totem of Denial cleansed by the Holy Flame. Grants a Global Resolve bonus. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>SacrificeTotemPositive</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	SacrificeTotemPositive,
+	SacrificeTotemPositive = 523,
 
 	/// <summary>
 	/// Creeping Shadows - People fear the unknown during the storm. (‑10 to Global Resolve)
 	/// </summary>
 	/// <name>SE Creeping Shadows - Resolve Penalty Effect</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	SE_Creeping_Shadows_Resolve_Penalty_Effect,
+	SE_Creeping_Shadows_Resolve_Penalty_Effect = 524,
 
 	/// <summary>
 	/// Devastating Storms - The rampaging storm stifles the spirit of all living creatures. (‑20 to Global Resolve)
 	/// </summary>
 	/// <name>SE Devastating Storms</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	SE_Devastating_Storms,
+	SE_Devastating_Storms = 525,
 
 	/// <summary>
 	/// Saturated Air - A pleasant, earthy scent is in the air. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>SE Resolve for Water - Global Resolve Effect</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	SE_Resolve_For_Water_Global_Resolve_Effect,
+	SE_Resolve_For_Water_Global_Resolve_Effect = 526,
 
 	/// <summary>
 	/// Cloudburst - The heavy rain is unbearable. (‑6 to Global Resolve)
 	/// </summary>
 	/// <name>SE Storm Clothes - Resolve Penalty Effect</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	SE_Storm_Clothes_Resolve_Penalty_Effect,
+	SE_Storm_Clothes_Resolve_Penalty_Effect = 527,
 
 	/// <summary>
 	/// Stag's Blessing - The forest god has blessed your villagers. This day will be remembered for generations. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Stag Blessing</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Stag_Blessing,
+	Stag_Blessing = 528,
 
 	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Survivor Bonding</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Survivor_Bonding,
+	Survivor_Bonding = 529,
 
 	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together. (+3 to Global Resolve)
 	/// </summary>
 	/// <name>Survivor Bonding - Altar</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Survivor_Bonding_Altar,
+	Survivor_Bonding_Altar = 530,
 
 	/// <summary>
 	/// Stonetooth Swarm - Agitated termites can be a real nuisance. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Termites Resolve - normal</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Termites_Resolve_Normal,
+	Termites_Resolve_Normal = 531,
 
 	/// <summary>
 	/// Plague of Snakes - Villagers are horrified by the sight of venomous snakes on the roads. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>TEST Plague of Snakes</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	TEST_Plague_Of_Snakes,
+	TEST_Plague_Of_Snakes = 532,
 
 	/// <summary>
 	/// Tales of Discovery - Tales of distant lands and brave explorers. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Trade - Explorer Tales</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Trade_Explorer_Tales,
+	Trade_Explorer_Tales = 533,
 
 	/// <summary>
 	/// Spices from the Citadel - Spices from the Smoldering City - a favorite of Humans and Lizardfolk. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Trade - Spices from the Capital</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Trade_Spices_From_The_Capital,
+	Trade_Spices_From_The_Capital = 534,
 
 	/// <summary>
 	/// Tale - Not as good as the Gleeman's Tale, but it did its job. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>[TW] Global Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	TW_Global_Resolve,
+	TW_Global_Resolve = 535,
 
 	/// <summary>
 	/// Vitality - Well-nourished villagers enjoy their good health. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Vitality</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Vitality,
+	Vitality = 536,
 
 	/// <summary>
 	/// Wealth - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Wealth</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Wealth,
+	Wealth = 537,
 
 	/// <summary>
 	/// Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>Worse Storms for Hostility Consequence Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Worse_Storms_For_Hostility_Consequence_Resolve,
+	Worse_Storms_For_Hostility_Consequence_Resolve = 538,
 
 	/// <summary>
 	/// Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement. (‑4 to Global Resolve)
 	/// </summary>
 	/// <name>Worse Storms for Hostility Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
-	Worse_Storms_For_Hostility_Resolve,
+	Worse_Storms_For_Hostility_Resolve = 539,
 
 
 	//
@@ -3893,4004 +3943,4004 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Ale 10</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_10,
+	Ale_10 = 540,
 
 	/// <summary>
 	/// Barrels of Ale - 15 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 15</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_15,
+	Ale_15 = 541,
 
 	/// <summary>
 	/// Barrels of Ale - 20 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 20</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_20,
+	Ale_20 = 542,
 
 	/// <summary>
 	/// Barrels of Ale - 30 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 30</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_30,
+	Ale_30 = 543,
 
 	/// <summary>
 	/// Barrels of Ale - 35 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 35</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_35,
+	Ale_35 = 544,
 
 	/// <summary>
 	/// Barrels of Ale - 40 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 40</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_40,
+	Ale_40 = 545,
 
 	/// <summary>
 	/// Barrels of Ale - 5 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 5</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_5,
+	Ale_5 = 546,
 
 	/// <summary>
 	/// Barrels of Ale - 50 "[needs] ale" Ale
 	/// </summary>
 	/// <name>Ale 50</name>
 	/// <type>GoodsEffectModel</type>
-	Ale_50,
+	Ale_50 = 547,
 
 	/// <summary>
 	/// Bundle of Algae - 10 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 10</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_10,
+	Algae_10 = 548,
 
 	/// <summary>
 	/// Bundle of Algae - 15 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 15</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_15,
+	Algae_15 = 549,
 
 	/// <summary>
 	/// Bundle of Algae - 20 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 20</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_20,
+	Algae_20 = 550,
 
 	/// <summary>
 	/// Bundle of Algae - 25 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 25</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_25,
+	Algae_25 = 551,
 
 	/// <summary>
 	/// Bundle of Algae - 30 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 30</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_30,
+	Algae_30 = 552,
 
 	/// <summary>
 	/// Bundle of Algae - 35 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 35</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_35,
+	Algae_35 = 553,
 
 	/// <summary>
 	/// Bundle of Algae - 40 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 40</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_40,
+	Algae_40 = 554,
 
 	/// <summary>
 	/// Bundle of Algae - 45 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 45</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_45,
+	Algae_45 = 555,
 
 	/// <summary>
 	/// Bundle of Algae - 5 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 5</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_5,
+	Algae_5 = 556,
 
 	/// <summary>
 	/// Bundle of Algae - 50 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 50</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_50,
+	Algae_50 = 557,
 
 	/// <summary>
 	/// Bundle of Algae - 55 "[mat raw] algae" Algae
 	/// </summary>
 	/// <name>Algae 55</name>
 	/// <type>GoodsEffectModel</type>
-	Algae_55,
+	Algae_55 = 558,
 
 	/// <summary>
 	/// Amber Pouch - 1 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 1</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_1,
+	Amber_1 = 559,
 
 	/// <summary>
 	/// Amber Pouch - 10 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 10</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_10,
+	Amber_10 = 560,
 
 	/// <summary>
 	/// Amber Pouch - 12 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 12</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_12,
+	Amber_12 = 561,
 
 	/// <summary>
 	/// Amber Pouch - 15 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 15</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_15,
+	Amber_15 = 562,
 
 	/// <summary>
 	/// Amber Pouch - 2 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 2</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_2,
+	Amber_2 = 563,
 
 	/// <summary>
 	/// Amber Pouch - 20 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 20</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_20,
+	Amber_20 = 564,
 
 	/// <summary>
 	/// Amber Pouch - 25 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 25</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_25,
+	Amber_25 = 565,
 
 	/// <summary>
 	/// Amber Pouch - 3 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 3</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_3,
+	Amber_3 = 566,
 
 	/// <summary>
 	/// Amber Pouch - 30 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 30</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_30,
+	Amber_30 = 567,
 
 	/// <summary>
 	/// Amber Pouch - 35 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 35</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_35,
+	Amber_35 = 568,
 
 	/// <summary>
 	/// Amber Pouch - 2 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 4</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_4,
+	Amber_4 = 569,
 
 	/// <summary>
 	/// Amber Pouch - 40 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 40</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_40,
+	Amber_40 = 570,
 
 	/// <summary>
 	/// Amber Pouch - 45 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 45</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_45,
+	Amber_45 = 571,
 
 	/// <summary>
 	/// Amber Pouch - 5 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 5</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_5,
+	Amber_5 = 572,
 
 	/// <summary>
 	/// Amber Pouch - 50 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 50</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_50,
+	Amber_50 = 573,
 
 	/// <summary>
 	/// Amber Pouch - 55 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 55</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_55,
+	Amber_55 = 574,
 
 	/// <summary>
 	/// Amber Pouch - 60 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 60</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_60,
+	Amber_60 = 575,
 
 	/// <summary>
 	/// Amber Pouch - 7 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 7</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_7,
+	Amber_7 = 576,
 
 	/// <summary>
 	/// Amber Pouch - 70 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 70</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_70,
+	Amber_70 = 577,
 
 	/// <summary>
 	/// Amber Pouch - 8 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 8</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_8,
+	Amber_8 = 578,
 
 	/// <summary>
 	/// Amber Pouch - 80 "[valuable] amber" Amber
 	/// </summary>
 	/// <name>Amber 80</name>
 	/// <type>GoodsEffectModel</type>
-	Amber_80,
+	Amber_80 = 579,
 
 	/// <summary>
 	/// Chest of Ancient Tablets - 1 "[valuable] ancient tablet" Ancient Tablet
 	/// </summary>
 	/// <name>Ancient Tablet 1</name>
 	/// <type>GoodsEffectModel</type>
-	Ancient_Tablet_1,
+	Ancient_Tablet_1 = 580,
 
 	/// <summary>
 	/// Chest of Ancient Tablets - 8 "[valuable] ancient tablet" Ancient Tablet
 	/// </summary>
 	/// <name>Ancient Tablet 10</name>
 	/// <type>GoodsEffectModel</type>
-	Ancient_Tablet_10,
+	Ancient_Tablet_10 = 581,
 
 	/// <summary>
 	/// Chest of Ancient Tablets - 2 "[valuable] ancient tablet" Ancient Tablet
 	/// </summary>
 	/// <name>Ancient Tablet 2</name>
 	/// <type>GoodsEffectModel</type>
-	Ancient_Tablet_2,
+	Ancient_Tablet_2 = 582,
 
 	/// <summary>
 	/// Chest of Ancient Tablets - 3 "[valuable] ancient tablet" Ancient Tablet
 	/// </summary>
 	/// <name>Ancient Tablet 3</name>
 	/// <type>GoodsEffectModel</type>
-	Ancient_Tablet_3,
+	Ancient_Tablet_3 = 583,
 
 	/// <summary>
 	/// Chest of Ancient Tablets - 5 "[valuable] ancient tablet" Ancient Tablet
 	/// </summary>
 	/// <name>Ancient Tablet 5</name>
 	/// <type>GoodsEffectModel</type>
-	Ancient_Tablet_5,
+	Ancient_Tablet_5 = 584,
 
 	/// <summary>
 	/// Chest of Ancient Tablets - 8 "[valuable] ancient tablet" Ancient Tablet
 	/// </summary>
 	/// <name>Ancient Tablet 8</name>
 	/// <type>GoodsEffectModel</type>
-	Ancient_Tablet_8,
+	Ancient_Tablet_8 = 585,
 
 	/// <summary>
 	/// Artifacts - 1 "_meta artifacts" Artifacts
 	/// </summary>
 	/// <name>Artifacts 1</name>
 	/// <type>GoodsEffectModel</type>
-	Artifacts_1,
+	Artifacts_1 = 586,
 
 	/// <summary>
 	/// Artifacts - 10 "_meta artifacts" Artifacts
 	/// </summary>
 	/// <name>Artifacts 10</name>
 	/// <type>GoodsEffectModel</type>
-	Artifacts_10,
+	Artifacts_10 = 587,
 
 	/// <summary>
 	/// Artifacts - 2 "_meta artifacts" Artifacts
 	/// </summary>
 	/// <name>Artifacts 2</name>
 	/// <type>GoodsEffectModel</type>
-	Artifacts_2,
+	Artifacts_2 = 588,
 
 	/// <summary>
 	/// Artifacts - 3 "_meta artifacts" Artifacts
 	/// </summary>
 	/// <name>Artifacts 3</name>
 	/// <type>GoodsEffectModel</type>
-	Artifacts_3,
+	Artifacts_3 = 589,
 
 	/// <summary>
 	/// Artifacts - 4 "_meta artifacts" Artifacts
 	/// </summary>
 	/// <name>Artifacts 4</name>
 	/// <type>GoodsEffectModel</type>
-	Artifacts_4,
+	Artifacts_4 = 590,
 
 	/// <summary>
 	/// Artifacts - 5 "_meta artifacts" Artifacts
 	/// </summary>
 	/// <name>Artifacts 5</name>
 	/// <type>GoodsEffectModel</type>
-	Artifacts_5,
+	Artifacts_5 = 591,
 
 	/// <summary>
 	/// Barrels - 1 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 1</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_1,
+	Barrels_1 = 592,
 
 	/// <summary>
 	/// Barrels - 15 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 15</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_15,
+	Barrels_15 = 593,
 
 	/// <summary>
 	/// Barrels - 2 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 2</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_2,
+	Barrels_2 = 594,
 
 	/// <summary>
 	/// Barrels - 20 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 20</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_20,
+	Barrels_20 = 595,
 
 	/// <summary>
 	/// Barrels - 25 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 25</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_25,
+	Barrels_25 = 596,
 
 	/// <summary>
 	/// Barrels - 3 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 3</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_3,
+	Barrels_3 = 597,
 
 	/// <summary>
 	/// Barrels - 30 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 30</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_30,
+	Barrels_30 = 598,
 
 	/// <summary>
 	/// Barrels - 35 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 35</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_35,
+	Barrels_35 = 599,
 
 	/// <summary>
 	/// Barrels - 4 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 4</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_4,
+	Barrels_4 = 600,
 
 	/// <summary>
 	/// Barrels - 40 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 40</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_40,
+	Barrels_40 = 601,
 
 	/// <summary>
 	/// Barrels - 5 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 5</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_5,
+	Barrels_5 = 602,
 
 	/// <summary>
 	/// Barrels - 50 "[vessel] barrels" Barrels
 	/// </summary>
 	/// <name>Barrels 50</name>
 	/// <type>GoodsEffectModel</type>
-	Barrels_50,
+	Barrels_50 = 603,
 
 	/// <summary>
 	/// Basket of Berries - 10 "[food raw] berries" Berries
 	/// </summary>
 	/// <name>Berries 10</name>
 	/// <type>GoodsEffectModel</type>
-	Berries_10,
+	Berries_10 = 604,
 
 	/// <summary>
 	/// Basket of Berries - 20 "[food raw] berries" Berries
 	/// </summary>
 	/// <name>Berries 20</name>
 	/// <type>GoodsEffectModel</type>
-	Berries_20,
+	Berries_20 = 605,
 
 	/// <summary>
 	/// Basket of Berries - 25 "[food raw] berries" Berries
 	/// </summary>
 	/// <name>Berries 25</name>
 	/// <type>GoodsEffectModel</type>
-	Berries_25,
+	Berries_25 = 606,
 
 	/// <summary>
 	/// Basket of Berries - 30 "[food raw] berries" Berries
 	/// </summary>
 	/// <name>Berries 30</name>
 	/// <type>GoodsEffectModel</type>
-	Berries_30,
+	Berries_30 = 607,
 
 	/// <summary>
 	/// Basket of Berries - 40 "[food raw] berries" Berries
 	/// </summary>
 	/// <name>Berries 40</name>
 	/// <type>GoodsEffectModel</type>
-	Berries_40,
+	Berries_40 = 608,
 
 	/// <summary>
 	/// Basket of Berries - 50 "[food raw] berries" Berries
 	/// </summary>
 	/// <name>Berries 50</name>
 	/// <type>GoodsEffectModel</type>
-	Berries_50,
+	Berries_50 = 609,
 
 	/// <summary>
 	/// Basket of Biscuits - 10 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 10</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_10,
+	Biscuits_10 = 610,
 
 	/// <summary>
 	/// Basket of Biscuits - 15 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 15</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_15,
+	Biscuits_15 = 611,
 
 	/// <summary>
 	/// Basket of Biscuits - 20 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 20</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_20,
+	Biscuits_20 = 612,
 
 	/// <summary>
 	/// Basket of Biscuits - 25 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 25</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_25,
+	Biscuits_25 = 613,
 
 	/// <summary>
 	/// Basket of Biscuits - 30 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 30</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_30,
+	Biscuits_30 = 614,
 
 	/// <summary>
 	/// Basket of Biscuits - 40 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 40</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_40,
+	Biscuits_40 = 615,
 
 	/// <summary>
 	/// Basket of Biscuits - 60 "[food processed] biscuits" Biscuits
 	/// </summary>
 	/// <name>Biscuits 60</name>
 	/// <type>GoodsEffectModel</type>
-	Biscuits_60,
+	Biscuits_60 = 616,
 
 	/// <summary>
 	/// Box of Boots - 10 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 10</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_10,
+	Boots_10 = 617,
 
 	/// <summary>
 	/// Box of Boots - 15 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 15</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_15,
+	Boots_15 = 618,
 
 	/// <summary>
 	/// Box of Boots - 20 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 20</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_20,
+	Boots_20 = 619,
 
 	/// <summary>
 	/// Box of Boots - 25 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 25</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_25,
+	Boots_25 = 620,
 
 	/// <summary>
 	/// Box of Boots - 30 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 30</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_30,
+	Boots_30 = 621,
 
 	/// <summary>
 	/// Box of Boots - 35 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 35</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_35,
+	Boots_35 = 622,
 
 	/// <summary>
 	/// Box of Boots - 40 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 40</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_40,
+	Boots_40 = 623,
 
 	/// <summary>
 	/// Box of Boots - 45 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 45</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_45,
+	Boots_45 = 624,
 
 	/// <summary>
 	/// Box of Boots - 5 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 5</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_5,
+	Boots_5 = 625,
 
 	/// <summary>
 	/// Box of Boots - 50 "[needs] boots" Boots
 	/// </summary>
 	/// <name>Boots 50</name>
 	/// <type>GoodsEffectModel</type>
-	Boots_50,
+	Boots_50 = 626,
 
 	/// <summary>
 	/// Crate of Bricks - 10 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 10</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_10,
+	Bricks_10 = 627,
 
 	/// <summary>
 	/// Crate of Bricks - 15 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 15</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_15,
+	Bricks_15 = 628,
 
 	/// <summary>
 	/// Crate of Bricks - 2 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 2</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_2,
+	Bricks_2 = 629,
 
 	/// <summary>
 	/// Crate of Bricks - 20 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 20</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_20,
+	Bricks_20 = 630,
 
 	/// <summary>
 	/// Crate of Bricks - 25 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 25</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_25,
+	Bricks_25 = 631,
 
 	/// <summary>
 	/// Crate of Bricks - 30 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 30</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_30,
+	Bricks_30 = 632,
 
 	/// <summary>
 	/// Crate of Bricks - 4 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 4</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_4,
+	Bricks_4 = 633,
 
 	/// <summary>
 	/// Crate of Bricks - 5 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 5</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_5,
+	Bricks_5 = 634,
 
 	/// <summary>
 	/// Crate of Bricks - 8 "[mat processed] bricks" Bricks
 	/// </summary>
 	/// <name>Bricks 8</name>
 	/// <type>GoodsEffectModel</type>
-	Bricks_8,
+	Bricks_8 = 635,
 
 	/// <summary>
 	/// Box of Grain - 40 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>[BT] Grain 40</name>
 	/// <type>GoodsEffectModel</type>
-	BT_Grain_40,
+	BT_Grain_40 = 636,
 
 	/// <summary>
 	/// Pack of Meat - 30 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>[BT] Moth Larvae Meat 30</name>
 	/// <type>GoodsEffectModel</type>
-	BT_Moth_Larvae_Meat_30,
+	BT_Moth_Larvae_Meat_30 = 637,
 
 	/// <summary>
 	/// Crate of Clay - 10 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 10</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_10,
+	Clay_10 = 638,
 
 	/// <summary>
 	/// Crate of Clay - 15 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 15</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_15,
+	Clay_15 = 639,
 
 	/// <summary>
 	/// Crate of Clay - 20 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 20</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_20,
+	Clay_20 = 640,
 
 	/// <summary>
 	/// Crate of Clay - 25 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 25</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_25,
+	Clay_25 = 641,
 
 	/// <summary>
 	/// Crate of Clay - 30 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 30</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_30,
+	Clay_30 = 642,
 
 	/// <summary>
 	/// Crate of Clay - 35 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 35</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_35,
+	Clay_35 = 643,
 
 	/// <summary>
 	/// Crate of Clay - 40 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 40</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_40,
+	Clay_40 = 644,
 
 	/// <summary>
 	/// Crate of Clay - 5 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 5</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_5,
+	Clay_5 = 645,
 
 	/// <summary>
 	/// Crate of Clay - 50 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 50</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_50,
+	Clay_50 = 646,
 
 	/// <summary>
 	/// Crate of Clay - 8 "[mat raw] clay" Clay
 	/// </summary>
 	/// <name>Clay 8</name>
 	/// <type>GoodsEffectModel</type>
-	Clay_8,
+	Clay_8 = 647,
 
 	/// <summary>
 	/// Clearance Water - 5 "[water] clearance water" Clearance Water
 	/// </summary>
 	/// <name>Clearance Water 5</name>
 	/// <type>GoodsEffectModel</type>
-	Clearance_Water_5,
+	Clearance_Water_5 = 648,
 
 	/// <summary>
 	/// Chest of Coal - 10 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 10</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_10,
+	Coal_10 = 649,
 
 	/// <summary>
 	/// Chest of Coal - 15 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 15</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_15,
+	Coal_15 = 650,
 
 	/// <summary>
 	/// Chest of Coal - 20 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 20</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_20,
+	Coal_20 = 651,
 
 	/// <summary>
 	/// Chest of Coal - 25 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 25</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_25,
+	Coal_25 = 652,
 
 	/// <summary>
 	/// Chest of Coal - 30 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 30</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_30,
+	Coal_30 = 653,
 
 	/// <summary>
 	/// Chest of Coal - 40 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 40</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_40,
+	Coal_40 = 654,
 
 	/// <summary>
 	/// Chest of Coal - 50 "[crafting] coal" Coal
 	/// </summary>
 	/// <name>Coal 50</name>
 	/// <type>GoodsEffectModel</type>
-	Coal_50,
+	Coal_50 = 655,
 
 	/// <summary>
 	/// Bundle of Coats - 10 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 10</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_10,
+	Coats_10 = 656,
 
 	/// <summary>
 	/// Bundle of Coats - 15 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 15</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_15,
+	Coats_15 = 657,
 
 	/// <summary>
 	/// Bundle of Coats - 20 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 20</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_20,
+	Coats_20 = 658,
 
 	/// <summary>
 	/// Bundle of Coats - 25 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 25</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_25,
+	Coats_25 = 659,
 
 	/// <summary>
 	/// Bundle of Coats - 35 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 35</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_35,
+	Coats_35 = 660,
 
 	/// <summary>
 	/// Bundle of Coats - 40 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 40</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_40,
+	Coats_40 = 661,
 
 	/// <summary>
 	/// Bundle of Coats - 5 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 5</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_5,
+	Coats_5 = 662,
 
 	/// <summary>
 	/// Bundle of Coats - 50 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 50</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_50,
+	Coats_50 = 663,
 
 	/// <summary>
 	/// Bundle of Coats - Gain 50 "[needs] coats" Coats
 	/// </summary>
 	/// <name>Coats 50 - Harpy Passive</name>
 	/// <type>GoodsEffectModel</type>
-	Coats_50_Harpy_Passive,
+	Coats_50_Harpy_Passive = 664,
 
 	/// <summary>
 	/// Copper Bars - 1 "[metal] copper bar" Copper Bars
 	/// </summary>
 	/// <name>Copper Bar 1</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Bar_1,
+	Copper_Bar_1 = 665,
 
 	/// <summary>
 	/// Copper Bars - 10 "[metal] copper bar" Copper Bars
 	/// </summary>
 	/// <name>Copper Bar 10</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Bar_10,
+	Copper_Bar_10 = 666,
 
 	/// <summary>
 	/// Copper Bars - 15 "[metal] copper bar" Copper Bars
 	/// </summary>
 	/// <name>Copper Bar 15</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Bar_15,
+	Copper_Bar_15 = 667,
 
 	/// <summary>
 	/// Copper Bars - 20 "[metal] copper bar" Copper Bars
 	/// </summary>
 	/// <name>Copper Bar 20</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Bar_20,
+	Copper_Bar_20 = 668,
 
 	/// <summary>
 	/// Copper Bars - 30 "[metal] copper bar" Copper Bars
 	/// </summary>
 	/// <name>Copper Bar 30</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Bar_30,
+	Copper_Bar_30 = 669,
 
 	/// <summary>
 	/// Copper Bars - 30 "[metal] copper bar" Copper Bars
 	/// </summary>
 	/// <name>Copper Bar 40</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Bar_40,
+	Copper_Bar_40 = 670,
 
 	/// <summary>
 	/// Crate of Copper Ore - 1 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 1</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_1,
+	Copper_Ore_1 = 671,
 
 	/// <summary>
 	/// Crate of Copper Ore - 10 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 10</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_10,
+	Copper_Ore_10 = 672,
 
 	/// <summary>
 	/// Crate of Copper Ore - 15 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 15</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_15,
+	Copper_Ore_15 = 673,
 
 	/// <summary>
 	/// Crate of Copper Ore - 20 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 20</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_20,
+	Copper_Ore_20 = 674,
 
 	/// <summary>
 	/// Crate of Copper Ore - 30 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 30</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_30,
+	Copper_Ore_30 = 675,
 
 	/// <summary>
 	/// Crate of Copper Ore - 40 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 40</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_40,
+	Copper_Ore_40 = 676,
 
 	/// <summary>
 	/// Crate of Copper Ore - 5 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 5</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_5,
+	Copper_Ore_5 = 677,
 
 	/// <summary>
 	/// Crate of Copper Ore - 50 "[metal] copper ore" Copper Ore
 	/// </summary>
 	/// <name>Copper Ore 50</name>
 	/// <type>GoodsEffectModel</type>
-	Copper_Ore_50,
+	Copper_Ore_50 = 678,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 1 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 1</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_1,
+	Crystalized_Dew_1 = 679,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 10 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 10</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_10,
+	Crystalized_Dew_10 = 680,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 15 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 15</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_15,
+	Crystalized_Dew_15 = 681,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 2 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 2</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_2,
+	Crystalized_Dew_2 = 682,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 20 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 20</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_20,
+	Crystalized_Dew_20 = 683,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 25 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 25</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_25,
+	Crystalized_Dew_25 = 684,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 30 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 30</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_30,
+	Crystalized_Dew_30 = 685,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 4 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 4</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_4,
+	Crystalized_Dew_4 = 686,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 40 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 40</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_40,
+	Crystalized_Dew_40 = 687,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 5 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 5</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_5,
+	Crystalized_Dew_5 = 688,
 
 	/// <summary>
 	/// Box of Crystalized Dew - 8 "[metal] crystalized dew" Crystalized Dew
 	/// </summary>
 	/// <name>Crystalized Dew 8</name>
 	/// <type>GoodsEffectModel</type>
-	Crystalized_Dew_8,
+	Crystalized_Dew_8 = 689,
 
 	/// <summary>
 	/// Basket of Eggs - 20 "[food raw] eggs" Eggs
 	/// </summary>
 	/// <name>Eggs 20</name>
 	/// <type>GoodsEffectModel</type>
-	Eggs_20,
+	Eggs_20 = 690,
 
 	/// <summary>
 	/// Basket of Eggs - 25 "[food raw] eggs" Eggs
 	/// </summary>
 	/// <name>Eggs 25</name>
 	/// <type>GoodsEffectModel</type>
-	Eggs_25,
+	Eggs_25 = 691,
 
 	/// <summary>
 	/// Basket of Eggs - 30 "[food raw] eggs" Eggs
 	/// </summary>
 	/// <name>Eggs 30</name>
 	/// <type>GoodsEffectModel</type>
-	Eggs_30,
+	Eggs_30 = 692,
 
 	/// <summary>
 	/// Basket of Eggs - 40 "[food raw] eggs" Eggs
 	/// </summary>
 	/// <name>Eggs 40</name>
 	/// <type>GoodsEffectModel</type>
-	Eggs_40,
+	Eggs_40 = 693,
 
 	/// <summary>
 	/// Basket of Eggs - 5 "[food raw] eggs" Eggs
 	/// </summary>
 	/// <name>Eggs 5</name>
 	/// <type>GoodsEffectModel</type>
-	Eggs_5,
+	Eggs_5 = 694,
 
 	/// <summary>
 	/// Basket of Eggs - 50 "[food raw] eggs" Eggs
 	/// </summary>
 	/// <name>Eggs 50</name>
 	/// <type>GoodsEffectModel</type>
-	Eggs_50,
+	Eggs_50 = 695,
 
 	/// <summary>
 	/// Bundle of Fabric - 10 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 10</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_10,
+	Fabric_10 = 696,
 
 	/// <summary>
 	/// Bundle of Fabric - 15 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 15</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_15,
+	Fabric_15 = 697,
 
 	/// <summary>
 	/// Bundle of Fabric - 2 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 2</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_2,
+	Fabric_2 = 698,
 
 	/// <summary>
 	/// Bundle of Fabric - 20 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 20</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_20,
+	Fabric_20 = 699,
 
 	/// <summary>
 	/// Bundle of Fabric - 30 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 30</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_30,
+	Fabric_30 = 700,
 
 	/// <summary>
 	/// Bundle of Fabric - 4 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 4</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_4,
+	Fabric_4 = 701,
 
 	/// <summary>
 	/// Bundle of Fabric - 40 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 40</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_40,
+	Fabric_40 = 702,
 
 	/// <summary>
 	/// Bundle of Fabric - 5 "[mat processed] fabric" Fabric
 	/// </summary>
 	/// <name>Fabric 5</name>
 	/// <type>GoodsEffectModel</type>
-	Fabric_5,
+	Fabric_5 = 703,
 
 	/// <summary>
 	/// Basket of Fish - 10 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 10</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_10,
+	Fish_10 = 704,
 
 	/// <summary>
 	/// Basket of Fish - 15 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 15</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_15,
+	Fish_15 = 705,
 
 	/// <summary>
 	/// Basket of Fish - 20 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 20</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_20,
+	Fish_20 = 706,
 
 	/// <summary>
 	/// Basket of Fish - 25 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 25</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_25,
+	Fish_25 = 707,
 
 	/// <summary>
 	/// Basket of Fish - 30 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 30</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_30,
+	Fish_30 = 708,
 
 	/// <summary>
 	/// Basket of Fish - 35 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 35</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_35,
+	Fish_35 = 709,
 
 	/// <summary>
 	/// Basket of Fish - 40 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 40</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_40,
+	Fish_40 = 710,
 
 	/// <summary>
 	/// Basket of Fish - 45 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 45</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_45,
+	Fish_45 = 711,
 
 	/// <summary>
 	/// Basket of Fish - 5 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 5</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_5,
+	Fish_5 = 712,
 
 	/// <summary>
 	/// Basket of Fish - 50 "[food raw] fish" Fish
 	/// </summary>
 	/// <name>Fish 50</name>
 	/// <type>GoodsEffectModel</type>
-	Fish_50,
+	Fish_50 = 713,
 
 	/// <summary>
 	/// Sacks of Flour - 10 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 10</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_10,
+	Flour_10 = 714,
 
 	/// <summary>
 	/// Sacks of Flour - 20 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 20</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_20,
+	Flour_20 = 715,
 
 	/// <summary>
 	/// Sacks of Flour - 25 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 25</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_25,
+	Flour_25 = 716,
 
 	/// <summary>
 	/// Sacks of Flour - 30 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 30</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_30,
+	Flour_30 = 717,
 
 	/// <summary>
 	/// Sacks of Flour - 35 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 35</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_35,
+	Flour_35 = 718,
 
 	/// <summary>
 	/// Sacks of Flour - 35 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 40</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_40,
+	Flour_40 = 719,
 
 	/// <summary>
 	/// Sacks of Flour - 45 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 45</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_45,
+	Flour_45 = 720,
 
 	/// <summary>
 	/// Sacks of Flour - 45 "[crafting] flour" Flour
 	/// </summary>
 	/// <name>Flour 50</name>
 	/// <type>GoodsEffectModel</type>
-	Flour_50,
+	Flour_50 = 721,
 
 	/// <summary>
 	/// Food Stockpiles - 1 "_meta food stockpiles" Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles 1</name>
 	/// <type>GoodsEffectModel</type>
-	Food_Stockpiles_1,
+	Food_Stockpiles_1 = 722,
 
 	/// <summary>
 	/// Food Stockpiles - 10 "_meta food stockpiles" Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles 10</name>
 	/// <type>GoodsEffectModel</type>
-	Food_Stockpiles_10,
+	Food_Stockpiles_10 = 723,
 
 	/// <summary>
 	/// Food Stockpiles - 2 "_meta food stockpiles" Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles 2</name>
 	/// <type>GoodsEffectModel</type>
-	Food_Stockpiles_2,
+	Food_Stockpiles_2 = 724,
 
 	/// <summary>
 	/// Food Stockpiles - 3 "_meta food stockpiles" Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles 3</name>
 	/// <type>GoodsEffectModel</type>
-	Food_Stockpiles_3,
+	Food_Stockpiles_3 = 725,
 
 	/// <summary>
 	/// Food Stockpiles - 4 "_meta food stockpiles" Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles 4</name>
 	/// <type>GoodsEffectModel</type>
-	Food_Stockpiles_4,
+	Food_Stockpiles_4 = 726,
 
 	/// <summary>
 	/// Food Stockpiles - 5 "_meta food stockpiles" Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles 5</name>
 	/// <type>GoodsEffectModel</type>
-	Food_Stockpiles_5,
+	Food_Stockpiles_5 = 727,
 
 	/// <summary>
 	/// Oil Vessels - 10 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Glow Oil 10</name>
 	/// <type>GoodsEffectModel</type>
-	Glow_Oil_10,
+	Glow_Oil_10 = 728,
 
 	/// <summary>
 	/// Oil Vessels - 15 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Glow Oil 15</name>
 	/// <type>GoodsEffectModel</type>
-	Glow_Oil_15,
+	Glow_Oil_15 = 729,
 
 	/// <summary>
 	/// Oil Vessels - 20 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Glow Oil 20</name>
 	/// <type>GoodsEffectModel</type>
-	Glow_Oil_20,
+	Glow_Oil_20 = 730,
 
 	/// <summary>
 	/// Oil Vessels - 3 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Glow Oil 3</name>
 	/// <type>GoodsEffectModel</type>
-	Glow_Oil_3,
+	Glow_Oil_3 = 731,
 
 	/// <summary>
 	/// Oil Vessels - 30 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Glow Oil 30</name>
 	/// <type>GoodsEffectModel</type>
-	Glow_Oil_30,
+	Glow_Oil_30 = 732,
 
 	/// <summary>
 	/// Oil Vessels - 40 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Glow Oil 40</name>
 	/// <type>GoodsEffectModel</type>
-	Glow_Oil_40,
+	Glow_Oil_40 = 733,
 
 	/// <summary>
 	/// Box of Grain - 15 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>Grain 15</name>
 	/// <type>GoodsEffectModel</type>
-	Grain_15,
+	Grain_15 = 734,
 
 	/// <summary>
 	/// Box of Grain - 20 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>Grain 20</name>
 	/// <type>GoodsEffectModel</type>
-	Grain_20,
+	Grain_20 = 735,
 
 	/// <summary>
 	/// Box of Grain - 30 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>Grain 30</name>
 	/// <type>GoodsEffectModel</type>
-	Grain_30,
+	Grain_30 = 736,
 
 	/// <summary>
 	/// Box of Grain - 40 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>Grain 40</name>
 	/// <type>GoodsEffectModel</type>
-	Grain_40,
+	Grain_40 = 737,
 
 	/// <summary>
 	/// Box of Grain - 50 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>Grain 50</name>
 	/// <type>GoodsEffectModel</type>
-	Grain_50,
+	Grain_50 = 738,
 
 	/// <summary>
 	/// Box of Grain - 60 "[food raw] grain" Grain
 	/// </summary>
 	/// <name>Grain 60</name>
 	/// <type>GoodsEffectModel</type>
-	Grain_60,
+	Grain_60 = 739,
 
 	/// <summary>
 	/// Wildfire Essence - 1 "hearth parts" Wildfire Essence
 	/// </summary>
 	/// <name>Hearth Parts 1</name>
 	/// <type>GoodsEffectModel</type>
-	Hearth_Parts_1,
+	Hearth_Parts_1 = 740,
 
 	/// <summary>
 	/// Wildfire Essence - 2 "hearth parts" Wildfire Essence
 	/// </summary>
 	/// <name>Hearth Parts 2</name>
 	/// <type>GoodsEffectModel</type>
-	Hearth_Parts_2,
+	Hearth_Parts_2 = 741,
 
 	/// <summary>
 	/// Wildfire Essence - 3 "hearth parts" Wildfire Essence
 	/// </summary>
 	/// <name>Hearth Parts 3</name>
 	/// <type>GoodsEffectModel</type>
-	Hearth_Parts_3,
+	Hearth_Parts_3 = 742,
 
 	/// <summary>
 	/// Wildfire Essence - 4 "hearth parts" Wildfire Essence
 	/// </summary>
 	/// <name>Hearth Parts 4</name>
 	/// <type>GoodsEffectModel</type>
-	Hearth_Parts_4,
+	Hearth_Parts_4 = 743,
 
 	/// <summary>
 	/// Wildfire Essence - 5 "hearth parts" Wildfire Essence
 	/// </summary>
 	/// <name>Hearth Parts 5</name>
 	/// <type>GoodsEffectModel</type>
-	Hearth_Parts_5,
+	Hearth_Parts_5 = 744,
 
 	/// <summary>
 	/// Wildfire Essence - 6 "hearth parts" Wildfire Essence
 	/// </summary>
 	/// <name>Hearth Parts 6</name>
 	/// <type>GoodsEffectModel</type>
-	Hearth_Parts_6,
+	Hearth_Parts_6 = 745,
 
 	/// <summary>
 	/// Bundle of Herbs - 10 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 10</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_10,
+	Herbs_10 = 746,
 
 	/// <summary>
 	/// Bundle of Herbs - 15 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 15</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_15,
+	Herbs_15 = 747,
 
 	/// <summary>
 	/// Bundle of Herbs - 30 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 30</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_30,
+	Herbs_30 = 748,
 
 	/// <summary>
 	/// Bundle of Herbs - 40 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 40</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_40,
+	Herbs_40 = 749,
 
 	/// <summary>
 	/// Bundle of Herbs - 5 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 5</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_5,
+	Herbs_5 = 750,
 
 	/// <summary>
 	/// Bundle of Herbs - 50 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 50</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_50,
+	Herbs_50 = 751,
 
 	/// <summary>
 	/// Bundle of Herbs - 60 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 60</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_60,
+	Herbs_60 = 752,
 
 	/// <summary>
 	/// Bundle of Herbs - 70 "[food raw] herbs" Herbs
 	/// </summary>
 	/// <name>Herbs 70</name>
 	/// <type>GoodsEffectModel</type>
-	Herbs_70,
+	Herbs_70 = 753,
 
 	/// <summary>
 	/// Vessel of Incense - 12 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 12</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_12,
+	Incense_12 = 754,
 
 	/// <summary>
 	/// Vessel of Incense - 15 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 15</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_15,
+	Incense_15 = 755,
 
 	/// <summary>
 	/// Vessel of Incense - 25 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 25</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_25,
+	Incense_25 = 756,
 
 	/// <summary>
 	/// Vessel of Incense - 3 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 3</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_3,
+	Incense_3 = 757,
 
 	/// <summary>
 	/// Vessel of Incense - 30 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 30</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_30,
+	Incense_30 = 758,
 
 	/// <summary>
 	/// Vessel of Incense - 40 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 40</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_40,
+	Incense_40 = 759,
 
 	/// <summary>
 	/// Vessel of Incense - 5 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 5</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_5,
+	Incense_5 = 760,
 
 	/// <summary>
 	/// Vessel of Incense - 8 "[needs] incense" Incense
 	/// </summary>
 	/// <name>Incense 8</name>
 	/// <type>GoodsEffectModel</type>
-	Incense_8,
+	Incense_8 = 761,
 
 	/// <summary>
 	/// Vials of Pigment - 10 "[crafting] dye" Dye
 	/// </summary>
 	/// <name>Ink 10</name>
 	/// <type>GoodsEffectModel</type>
-	Ink_10,
+	Ink_10 = 762,
 
 	/// <summary>
 	/// Vials of Pigment - 16 "[crafting] dye" Dye
 	/// </summary>
 	/// <name>Ink 16</name>
 	/// <type>GoodsEffectModel</type>
-	Ink_16,
+	Ink_16 = 763,
 
 	/// <summary>
 	/// Vials of Pigment - 25 "[crafting] dye" Dye
 	/// </summary>
 	/// <name>Ink 25</name>
 	/// <type>GoodsEffectModel</type>
-	Ink_25,
+	Ink_25 = 764,
 
 	/// <summary>
 	/// Vials of Pigment - 35 "[crafting] dye" Dye
 	/// </summary>
 	/// <name>Ink 35</name>
 	/// <type>GoodsEffectModel</type>
-	Ink_35,
+	Ink_35 = 765,
 
 	/// <summary>
 	/// Vials of Pigment - 40 "[crafting] dye" Dye
 	/// </summary>
 	/// <name>Ink 40</name>
 	/// <type>GoodsEffectModel</type>
-	Ink_40,
+	Ink_40 = 766,
 
 	/// <summary>
 	/// Vials of Pigment - 5 "[crafting] dye" Dye
 	/// </summary>
 	/// <name>Ink 5</name>
 	/// <type>GoodsEffectModel</type>
-	Ink_5,
+	Ink_5 = 767,
 
 	/// <summary>
 	/// An Insect - 1 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 1</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_1,
+	Insects_1 = 768,
 
 	/// <summary>
 	/// An Insect - 10 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 10</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_10,
+	Insects_10 = 769,
 
 	/// <summary>
 	/// Basket of Insects - 150 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 150</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_150,
+	Insects_150 = 770,
 
 	/// <summary>
 	/// An Insect - 2 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 2</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_2,
+	Insects_2 = 771,
 
 	/// <summary>
 	/// An Insect - 20 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 20</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_20,
+	Insects_20 = 772,
 
 	/// <summary>
 	/// Basket of Insects - 30 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 30</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_30,
+	Insects_30 = 773,
 
 	/// <summary>
 	/// Basket of Insects - 40 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 40</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_40,
+	Insects_40 = 774,
 
 	/// <summary>
 	/// An Insect - 5 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 5</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_5,
+	Insects_5 = 775,
 
 	/// <summary>
 	/// Basket of Insects - 50 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 50</name>
 	/// <type>GoodsEffectModel</type>
-	Insects_50,
+	Insects_50 = 776,
 
 	/// <summary>
 	/// Basket of Jerky - 10 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 10</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_10,
+	Jerky_10 = 777,
 
 	/// <summary>
 	/// Basket of Jerky - 15 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 15</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_15,
+	Jerky_15 = 778,
 
 	/// <summary>
 	/// Basket of Jerky - 20 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 20</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_20,
+	Jerky_20 = 779,
 
 	/// <summary>
 	/// Basket of Jerky - 25 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 25</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_25,
+	Jerky_25 = 780,
 
 	/// <summary>
 	/// Basket of Jerky - 30 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 30</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_30,
+	Jerky_30 = 781,
 
 	/// <summary>
 	/// Basket of Jerky - 40 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 40</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_40,
+	Jerky_40 = 782,
 
 	/// <summary>
 	/// Basket of Jerky - 5 "[food processed] jerky" Jerky
 	/// </summary>
 	/// <name>Jerky 5</name>
 	/// <type>GoodsEffectModel</type>
-	Jerky_5,
+	Jerky_5 = 783,
 
 	/// <summary>
 	/// Bundle of Leather - 10 "[mat raw] leather" Leather
 	/// </summary>
 	/// <name>Leather 10</name>
 	/// <type>GoodsEffectModel</type>
-	Leather_10,
+	Leather_10 = 784,
 
 	/// <summary>
 	/// Bundle of Leather - 20 "[mat raw] leather" Leather
 	/// </summary>
 	/// <name>Leather 20</name>
 	/// <type>GoodsEffectModel</type>
-	Leather_20,
+	Leather_20 = 785,
 
 	/// <summary>
 	/// Bundle of Leather - 30 "[mat raw] leather" Leather
 	/// </summary>
 	/// <name>Leather 30</name>
 	/// <type>GoodsEffectModel</type>
-	Leather_30,
+	Leather_30 = 786,
 
 	/// <summary>
 	/// Bundle of Leather - 40 "[mat raw] leather" Leather
 	/// </summary>
 	/// <name>Leather 40</name>
 	/// <type>GoodsEffectModel</type>
-	Leather_40,
+	Leather_40 = 787,
 
 	/// <summary>
 	/// Bundle of Leather - 5 "[mat raw] leather" Leather
 	/// </summary>
 	/// <name>Leather 5</name>
 	/// <type>GoodsEffectModel</type>
-	Leather_5,
+	Leather_5 = 788,
 
 	/// <summary>
 	/// Machinery - 1 "_meta machinery" Machinery
 	/// </summary>
 	/// <name>Machinery 1</name>
 	/// <type>GoodsEffectModel</type>
-	Machinery_1,
+	Machinery_1 = 789,
 
 	/// <summary>
 	/// Machinery - 10 "_meta machinery" Machinery
 	/// </summary>
 	/// <name>Machinery 10</name>
 	/// <type>GoodsEffectModel</type>
-	Machinery_10,
+	Machinery_10 = 790,
 
 	/// <summary>
 	/// Machinery - 2 "_meta machinery" Machinery
 	/// </summary>
 	/// <name>Machinery 2</name>
 	/// <type>GoodsEffectModel</type>
-	Machinery_2,
+	Machinery_2 = 791,
 
 	/// <summary>
 	/// Machinery - 3 "_meta machinery" Machinery
 	/// </summary>
 	/// <name>Machinery 3</name>
 	/// <type>GoodsEffectModel</type>
-	Machinery_3,
+	Machinery_3 = 792,
 
 	/// <summary>
 	/// Machinery - 4 "_meta machinery" Machinery
 	/// </summary>
 	/// <name>Machinery 4</name>
 	/// <type>GoodsEffectModel</type>
-	Machinery_4,
+	Machinery_4 = 793,
 
 	/// <summary>
 	/// Machinery - 5 "_meta machinery" Machinery
 	/// </summary>
 	/// <name>Machinery 5</name>
 	/// <type>GoodsEffectModel</type>
-	Machinery_5,
+	Machinery_5 = 794,
 
 	/// <summary>
 	/// Box of Tools - 10 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 10</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_10,
+	Metal_Tools_10 = 795,
 
 	/// <summary>
 	/// Box of Tools - Gain 10 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 10 - Lizard Passive</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_10_Lizard_Passive,
+	Metal_Tools_10_Lizard_Passive = 796,
 
 	/// <summary>
 	/// Box of Tools - 12 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 12</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_12,
+	Metal_Tools_12 = 797,
 
 	/// <summary>
 	/// Box of Tools - 15 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 15</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_15,
+	Metal_Tools_15 = 798,
 
 	/// <summary>
 	/// Box of Tools - 20 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 20</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_20,
+	Metal_Tools_20 = 799,
 
 	/// <summary>
 	/// Box of Tools - 24 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 24</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_24,
+	Metal_Tools_24 = 800,
 
 	/// <summary>
 	/// Box of Tools - 3 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 3</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_3,
+	Metal_Tools_3 = 801,
 
 	/// <summary>
 	/// Box of Tools - 30 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 30</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_30,
+	Metal_Tools_30 = 802,
 
 	/// <summary>
 	/// Box of Tools - 34 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 34</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_34,
+	Metal_Tools_34 = 803,
 
 	/// <summary>
 	/// Box of Tools - 4 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 4</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_4,
+	Metal_Tools_4 = 804,
 
 	/// <summary>
 	/// Box of Tools - 40 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 40</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_40,
+	Metal_Tools_40 = 805,
 
 	/// <summary>
 	/// Box of Tools - 5 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 5</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_5,
+	Metal_Tools_5 = 806,
 
 	/// <summary>
 	/// Box of Tools - 6 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 6</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_6,
+	Metal_Tools_6 = 807,
 
 	/// <summary>
 	/// Box of Tools - 7 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 7</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_7,
+	Metal_Tools_7 = 808,
 
 	/// <summary>
 	/// Box of Tools - 8 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 8</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_8,
+	Metal_Tools_8 = 809,
 
 	/// <summary>
 	/// Box of Tools - 9 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 9</name>
 	/// <type>GoodsEffectModel</type>
-	Metal_Tools_9,
+	Metal_Tools_9 = 810,
 
 	/// <summary>
 	/// Pack of Mushrooms - 10 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 10</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_10,
+	Milk_cap_Mushroom_10 = 811,
 
 	/// <summary>
 	/// Pack of Mushrooms - 15 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 15</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_15,
+	Milk_cap_Mushroom_15 = 812,
 
 	/// <summary>
 	/// Pack of Mushrooms - 20 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 20</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_20,
+	Milk_cap_Mushroom_20 = 813,
 
 	/// <summary>
 	/// Pack of Mushrooms - 3 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 3</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_3,
+	Milk_cap_Mushroom_3 = 814,
 
 	/// <summary>
 	/// Pack of Mushrooms - 30 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 30</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_30,
+	Milk_cap_Mushroom_30 = 815,
 
 	/// <summary>
 	/// Pack of Mushrooms - 40 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 40</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_40,
+	Milk_cap_Mushroom_40 = 816,
 
 	/// <summary>
 	/// Pack of Mushrooms - 5 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 5</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_5,
+	Milk_cap_Mushroom_5 = 817,
 
 	/// <summary>
 	/// Pack of Mushrooms - 50 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 50</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_50,
+	Milk_cap_Mushroom_50 = 818,
 
 	/// <summary>
 	/// Pack of Mushrooms - 60 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 60</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_60,
+	Milk_cap_Mushroom_60 = 819,
 
 	/// <summary>
 	/// Pack of Mushrooms - 8 "[food raw] mushrooms" Mushrooms
 	/// </summary>
 	/// <name>Milk-cap Mushroom 8</name>
 	/// <type>GoodsEffectModel</type>
-	Milk_cap_Mushroom_8,
+	Milk_cap_Mushroom_8 = 820,
 
 	/// <summary>
 	/// Pack of Meat - 10 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 10</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_10,
+	Moth_Larvae_Meat_10 = 821,
 
 	/// <summary>
 	/// Pack of Meat - 15 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 15</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_15,
+	Moth_Larvae_Meat_15 = 822,
 
 	/// <summary>
 	/// Pack of Meat - 20 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 20</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_20,
+	Moth_Larvae_Meat_20 = 823,
 
 	/// <summary>
 	/// Pack of Meat - 25 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 25</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_25,
+	Moth_Larvae_Meat_25 = 824,
 
 	/// <summary>
 	/// Pack of Meat - 30 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 30</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_30,
+	Moth_Larvae_Meat_30 = 825,
 
 	/// <summary>
 	/// Pack of Meat - 40 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 40</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_40,
+	Moth_Larvae_Meat_40 = 826,
 
 	/// <summary>
 	/// Pack of Meat - 5 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 5</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_5,
+	Moth_Larvae_Meat_5 = 827,
 
 	/// <summary>
 	/// Pack of Meat - 50 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 50</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_50,
+	Moth_Larvae_Meat_50 = 828,
 
 	/// <summary>
 	/// Pack of Meat - 6 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 6</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_6,
+	Moth_Larvae_Meat_6 = 829,
 
 	/// <summary>
 	/// Pack of Meat - 60 "[food raw] meat" Meat
 	/// </summary>
 	/// <name>Moth Larvae Meat 60</name>
 	/// <type>GoodsEffectModel</type>
-	Moth_Larvae_Meat_60,
+	Moth_Larvae_Meat_60 = 830,
 
 	/// <summary>
 	/// Oil Vessels - 10 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 10</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_10,
+	Oil_10 = 831,
 
 	/// <summary>
 	/// Oil Vessels - 15 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 15</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_15,
+	Oil_15 = 832,
 
 	/// <summary>
 	/// Oil Vessels - 2 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 2</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_2,
+	Oil_2 = 833,
 
 	/// <summary>
 	/// Oil Vessels - 20 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 20</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_20,
+	Oil_20 = 834,
 
 	/// <summary>
 	/// Oil Vessels - 3 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 3</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_3,
+	Oil_3 = 835,
 
 	/// <summary>
 	/// Oil Vessels - 30 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 30</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_30,
+	Oil_30 = 836,
 
 	/// <summary>
 	/// Oil Vessels - 40 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 40</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_40,
+	Oil_40 = 837,
 
 	/// <summary>
 	/// Oil Vessels - 5 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 5</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_5,
+	Oil_5 = 838,
 
 	/// <summary>
 	/// Oil Vessels - 50 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 50</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_50,
+	Oil_50 = 839,
 
 	/// <summary>
 	/// Oil Vessels - 6 "[crafting] oil" Oil
 	/// </summary>
 	/// <name>Oil 6</name>
 	/// <type>GoodsEffectModel</type>
-	Oil_6,
+	Oil_6 = 840,
 
 	/// <summary>
 	/// Packs of Building Materials - 1 "[packs] pack of building materials" Pack of Building Materials
 	/// </summary>
 	/// <name>Pack of Building Materials 1</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Building_Materials_1,
+	Pack_Of_Building_Materials_1 = 841,
 
 	/// <summary>
 	/// Packs of Building Materials - 10 "[packs] pack of building materials" Pack of Building Materials
 	/// </summary>
 	/// <name>Pack of Building Materials 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Building_Materials_10,
+	Pack_Of_Building_Materials_10 = 842,
 
 	/// <summary>
 	/// Packs of Building Materials - 12 "[packs] pack of building materials" Pack of Building Materials
 	/// </summary>
 	/// <name>Pack of Building Materials 12</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Building_Materials_12,
+	Pack_Of_Building_Materials_12 = 843,
 
 	/// <summary>
 	/// Packs of Building Materials - 15 "[packs] pack of building materials" Pack of Building Materials
 	/// </summary>
 	/// <name>Pack of Building Materials 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Building_Materials_15,
+	Pack_Of_Building_Materials_15 = 844,
 
 	/// <summary>
 	/// Packs of Building Materials - 5 "[packs] pack of building materials" Pack of Building Materials
 	/// </summary>
 	/// <name>Pack of Building Materials 5</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Building_Materials_5,
+	Pack_Of_Building_Materials_5 = 845,
 
 	/// <summary>
 	/// Packs of Building Materials - 8 "[packs] pack of building materials" Pack of Building Materials
 	/// </summary>
 	/// <name>Pack of Building Materials 8</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Building_Materials_8,
+	Pack_Of_Building_Materials_8 = 846,
 
 	/// <summary>
 	/// Packs of Crops - 1 "[packs] pack of crops" Pack of Crops
 	/// </summary>
 	/// <name>Pack of Crops 1</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Crops_1,
+	Pack_Of_Crops_1 = 847,
 
 	/// <summary>
 	/// Packs of Crops - 10 "[packs] pack of crops" Pack of Crops
 	/// </summary>
 	/// <name>Pack of Crops 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Crops_10,
+	Pack_Of_Crops_10 = 848,
 
 	/// <summary>
 	/// Packs of Crops - 15 "[packs] pack of crops" Pack of Crops
 	/// </summary>
 	/// <name>Pack of Crops 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Crops_15,
+	Pack_Of_Crops_15 = 849,
 
 	/// <summary>
 	/// Packs of Crops - 5 "[packs] pack of crops" Pack of Crops
 	/// </summary>
 	/// <name>Pack of Crops 5</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Crops_5,
+	Pack_Of_Crops_5 = 850,
 
 	/// <summary>
 	/// Packs of Provisions - 1 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 1</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_1,
+	Pack_Of_Provisions_1 = 851,
 
 	/// <summary>
 	/// Packs of Provisions - 10 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_10,
+	Pack_Of_Provisions_10 = 852,
 
 	/// <summary>
 	/// Packs of Provisions - 15 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_15,
+	Pack_Of_Provisions_15 = 853,
 
 	/// <summary>
 	/// Packs of Provisions - 2 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 2</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_2,
+	Pack_Of_Provisions_2 = 854,
 
 	/// <summary>
 	/// Packs of Provisions - 3 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 3</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_3,
+	Pack_Of_Provisions_3 = 855,
 
 	/// <summary>
 	/// Packs of Provisions - 5 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 5</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_5,
+	Pack_Of_Provisions_5 = 856,
 
 	/// <summary>
 	/// Packs of Provisions - 6 "[packs] pack of provisions" Pack of Provisions
 	/// </summary>
 	/// <name>Pack of Provisions 6</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Provisions_6,
+	Pack_Of_Provisions_6 = 857,
 
 	/// <summary>
 	/// Pack of Trade Goods - 10 "[packs] pack of trade goods" Pack of Trade Goods
 	/// </summary>
 	/// <name>Pack of Trade Good 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Trade_Good_10,
+	Pack_Of_Trade_Good_10 = 858,
 
 	/// <summary>
 	/// Pack of Trade Goods - 15 "[packs] pack of trade goods" Pack of Trade Goods
 	/// </summary>
 	/// <name>Pack of Trade Good 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Trade_Good_15,
+	Pack_Of_Trade_Good_15 = 859,
 
 	/// <summary>
 	/// Pack of Trade Goods - 6 "[packs] pack of trade goods" Pack of Trade Goods
 	/// </summary>
 	/// <name>Pack of Trade Good 6</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Trade_Good_6,
+	Pack_Of_Trade_Good_6 = 860,
 
 	/// <summary>
 	/// Pack of Luxury Goods - 10 "[packs] pack of luxury goods" Pack of Luxury Goods
 	/// </summary>
 	/// <name>Pack of Valuables 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Valuables_10,
+	Pack_Of_Valuables_10 = 861,
 
 	/// <summary>
 	/// Pack of Luxury Goods - 15 "[packs] pack of luxury goods" Pack of Luxury Goods
 	/// </summary>
 	/// <name>Pack of Valuables 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Valuables_15,
+	Pack_Of_Valuables_15 = 862,
 
 	/// <summary>
 	/// Pack of Luxury Goods - 5 "[packs] pack of luxury goods" Pack of Luxury Goods
 	/// </summary>
 	/// <name>Pack of Valuables 5</name>
 	/// <type>GoodsEffectModel</type>
-	Pack_Of_Valuables_5,
+	Pack_Of_Valuables_5 = 863,
 
 	/// <summary>
 	/// Bundle of Scrolls - 10 "[needs] scrolls" Scrolls
 	/// </summary>
 	/// <name>Paper 10</name>
 	/// <type>GoodsEffectModel</type>
-	Paper_10,
+	Paper_10 = 864,
 
 	/// <summary>
 	/// Bundle of Scrolls - 25 "[needs] scrolls" Scrolls
 	/// </summary>
 	/// <name>Paper 25</name>
 	/// <type>GoodsEffectModel</type>
-	Paper_25,
+	Paper_25 = 865,
 
 	/// <summary>
 	/// Bundle of Scrolls - 30 "[needs] scrolls" Scrolls
 	/// </summary>
 	/// <name>Paper 30</name>
 	/// <type>GoodsEffectModel</type>
-	Paper_30,
+	Paper_30 = 866,
 
 	/// <summary>
 	/// Bundle of Scrolls - 40 "[needs] scrolls" Scrolls
 	/// </summary>
 	/// <name>Paper 40</name>
 	/// <type>GoodsEffectModel</type>
-	Paper_40,
+	Paper_40 = 867,
 
 	/// <summary>
 	/// Parts - 1 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 1</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_1,
+	Parts_1 = 868,
 
 	/// <summary>
 	/// Parts - 10 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 10</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_10,
+	Parts_10 = 869,
 
 	/// <summary>
 	/// Parts - 12 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 12</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_12,
+	Parts_12 = 870,
 
 	/// <summary>
 	/// Parts - 14 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 14</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_14,
+	Parts_14 = 871,
 
 	/// <summary>
 	/// Parts - 15 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 15</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_15,
+	Parts_15 = 872,
 
 	/// <summary>
 	/// Parts - 2 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 2</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_2,
+	Parts_2 = 873,
 
 	/// <summary>
 	/// Parts - 20 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 20</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_20,
+	Parts_20 = 874,
 
 	/// <summary>
 	/// Parts - 3 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 3</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_3,
+	Parts_3 = 875,
 
 	/// <summary>
 	/// Parts - 4 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 4</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_4,
+	Parts_4 = 876,
 
 	/// <summary>
 	/// Parts - 5 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 5</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_5,
+	Parts_5 = 877,
 
 	/// <summary>
 	/// Parts - 8 "[mat processed] parts" Parts
 	/// </summary>
 	/// <name>Parts 8</name>
 	/// <type>GoodsEffectModel</type>
-	Parts_8,
+	Parts_8 = 878,
 
 	/// <summary>
 	/// Bowl of Paste - 10 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 10</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_10,
+	Paste_10 = 879,
 
 	/// <summary>
 	/// Bowl of Paste - 15 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 15</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_15,
+	Paste_15 = 880,
 
 	/// <summary>
 	/// Bowl of Paste - 20 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 20</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_20,
+	Paste_20 = 881,
 
 	/// <summary>
 	/// Bowl of Paste - 25 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 25</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_25,
+	Paste_25 = 882,
 
 	/// <summary>
 	/// Bowl of Paste - 30 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 30</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_30,
+	Paste_30 = 883,
 
 	/// <summary>
 	/// Bowl of Paste - 35 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 35</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_35,
+	Paste_35 = 884,
 
 	/// <summary>
 	/// Bowl of Paste - 40 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 40</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_40,
+	Paste_40 = 885,
 
 	/// <summary>
 	/// Bowl of Paste - 45 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 45</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_45,
+	Paste_45 = 886,
 
 	/// <summary>
 	/// Bowl of Paste - 50 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 50</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_50,
+	Paste_50 = 887,
 
 	/// <summary>
 	/// Bowl of Paste - 55 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 55</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_55,
+	Paste_55 = 888,
 
 	/// <summary>
 	/// Bowl of Paste - 60 "[food processed] paste" Paste
 	/// </summary>
 	/// <name>Paste 60</name>
 	/// <type>GoodsEffectModel</type>
-	Paste_60,
+	Paste_60 = 889,
 
 	/// <summary>
 	/// Gain 10 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 10</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_10,
+	PerkCrafter_Amber_10 = 890,
 
 	/// <summary>
 	/// Gain 12 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 12</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_12,
+	PerkCrafter_Amber_12 = 891,
 
 	/// <summary>
 	/// Gain 15 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_15,
+	PerkCrafter_Amber_15 = 892,
 
 	/// <summary>
 	/// Gain 4 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 4</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_4,
+	PerkCrafter_Amber_4 = 893,
 
 	/// <summary>
 	/// Gain 5 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 5</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_5,
+	PerkCrafter_Amber_5 = 894,
 
 	/// <summary>
 	/// Gain 6 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 6</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_6,
+	PerkCrafter_Amber_6 = 895,
 
 	/// <summary>
 	/// Gain 7 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 7</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_7,
+	PerkCrafter_Amber_7 = 896,
 
 	/// <summary>
 	/// Gain 8 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[PerkCrafter] Amber 8</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Amber_8,
+	PerkCrafter_Amber_8 = 897,
 
 	/// <summary>
 	/// Gain 15 "[vessel] barrels" Barrels.
 	/// </summary>
 	/// <name>[PerkCrafter] Barrels 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Barrels_15,
+	PerkCrafter_Barrels_15 = 898,
 
 	/// <summary>
 	/// Gain 25 "[vessel] barrels" Barrels.
 	/// </summary>
 	/// <name>[PerkCrafter] Barrels 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Barrels_25,
+	PerkCrafter_Barrels_25 = 899,
 
 	/// <summary>
 	/// Gain 35 "[vessel] barrels" Barrels.
 	/// </summary>
 	/// <name>[PerkCrafter] Barrels 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Barrels_35,
+	PerkCrafter_Barrels_35 = 900,
 
 	/// <summary>
 	/// Gain 15 "[food processed] biscuits" Biscuits.
 	/// </summary>
 	/// <name>[PerkCrafter] Biscuits 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Biscuits_15,
+	PerkCrafter_Biscuits_15 = 901,
 
 	/// <summary>
 	/// Gain 25 "[food processed] biscuits" Biscuits.
 	/// </summary>
 	/// <name>[PerkCrafter] Biscuits 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Biscuits_25,
+	PerkCrafter_Biscuits_25 = 902,
 
 	/// <summary>
 	/// Gain 35 "[food processed] biscuits" Biscuits.
 	/// </summary>
 	/// <name>[PerkCrafter] Biscuits 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Biscuits_35,
+	PerkCrafter_Biscuits_35 = 903,
 
 	/// <summary>
 	/// Gain 15 "[crafting] coal" Coal.
 	/// </summary>
 	/// <name>[PerkCrafter] Coal 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Coal_15,
+	PerkCrafter_Coal_15 = 904,
 
 	/// <summary>
 	/// Gain 25 "[crafting] coal" Coal.
 	/// </summary>
 	/// <name>[PerkCrafter] Coal 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Coal_25,
+	PerkCrafter_Coal_25 = 905,
 
 	/// <summary>
 	/// Gain 35 "[crafting] coal" Coal.
 	/// </summary>
 	/// <name>[PerkCrafter] Coal 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Coal_35,
+	PerkCrafter_Coal_35 = 906,
 
 	/// <summary>
 	/// Gain 10 "[metal] copper ore" Copper Ore.
 	/// </summary>
 	/// <name>[PerkCrafter] Copper Ore 10</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Copper_Ore_10,
+	PerkCrafter_Copper_Ore_10 = 907,
 
 	/// <summary>
 	/// Gain 15 "[metal] copper ore" Copper Ore.
 	/// </summary>
 	/// <name>[PerkCrafter] Copper Ore 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Copper_Ore_15,
+	PerkCrafter_Copper_Ore_15 = 908,
 
 	/// <summary>
 	/// Gain 20 "[metal] copper ore" Copper Ore.
 	/// </summary>
 	/// <name>[PerkCrafter] Copper Ore 20</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Copper_Ore_20,
+	PerkCrafter_Copper_Ore_20 = 909,
 
 	/// <summary>
 	/// Gain 25 "[metal] copper ore" Copper Ore.
 	/// </summary>
 	/// <name>[PerkCrafter] Copper Ore 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Copper_Ore_25,
+	PerkCrafter_Copper_Ore_25 = 910,
 
 	/// <summary>
 	/// Gain 35 "[metal] copper ore" Copper Ore.
 	/// </summary>
 	/// <name>[PerkCrafter] Copper Ore 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Copper_Ore_35,
+	PerkCrafter_Copper_Ore_35 = 911,
 
 	/// <summary>
 	/// Gain 15 "[food raw] grain" Grain.
 	/// </summary>
 	/// <name>[PerkCrafter] Grain 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Grain_15,
+	PerkCrafter_Grain_15 = 912,
 
 	/// <summary>
 	/// Gain 25 "[food raw] grain" Grain.
 	/// </summary>
 	/// <name>[PerkCrafter] Grain 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Grain_25,
+	PerkCrafter_Grain_25 = 913,
 
 	/// <summary>
 	/// Gain 35 "[food raw] grain" Grain.
 	/// </summary>
 	/// <name>[PerkCrafter] Grain 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Grain_35,
+	PerkCrafter_Grain_35 = 914,
 
 	/// <summary>
 	/// Gain 15 "[needs] incense" Incense.
 	/// </summary>
 	/// <name>[PerkCrafter] Incense 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Incense_15,
+	PerkCrafter_Incense_15 = 915,
 
 	/// <summary>
 	/// Gain 25 "[needs] incense" Incense.
 	/// </summary>
 	/// <name>[PerkCrafter] Incense 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Incense_25,
+	PerkCrafter_Incense_25 = 916,
 
 	/// <summary>
 	/// Gain 35 "[needs] incense" Incense.
 	/// </summary>
 	/// <name>[PerkCrafter] Incense 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Incense_35,
+	PerkCrafter_Incense_35 = 917,
 
 	/// <summary>
 	/// Gain 15 "[crafting] oil" Oil.
 	/// </summary>
 	/// <name>[PerkCrafter] Oil 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Oil_15,
+	PerkCrafter_Oil_15 = 918,
 
 	/// <summary>
 	/// Gain 25 "[crafting] oil" Oil.
 	/// </summary>
 	/// <name>[PerkCrafter] Oil 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Oil_25,
+	PerkCrafter_Oil_25 = 919,
 
 	/// <summary>
 	/// Gain 35 "[crafting] oil" Oil.
 	/// </summary>
 	/// <name>[PerkCrafter] Oil 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Oil_35,
+	PerkCrafter_Oil_35 = 920,
 
 	/// <summary>
 	/// Gain 2 "[mat processed] parts" Parts.
 	/// </summary>
 	/// <name>[PerkCrafter] Parts 2</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Parts_2,
+	PerkCrafter_Parts_2 = 921,
 
 	/// <summary>
 	/// Gain 3 "[mat processed] parts" Parts.
 	/// </summary>
 	/// <name>[PerkCrafter] Parts 3</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Parts_3,
+	PerkCrafter_Parts_3 = 922,
 
 	/// <summary>
 	/// Gain 4 "[mat processed] parts" Parts.
 	/// </summary>
 	/// <name>[PerkCrafter] Parts 4</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Parts_4,
+	PerkCrafter_Parts_4 = 923,
 
 	/// <summary>
 	/// Gain 5 "[mat processed] parts" Parts.
 	/// </summary>
 	/// <name>[PerkCrafter] Parts 5</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Parts_5,
+	PerkCrafter_Parts_5 = 924,
 
 	/// <summary>
 	/// Gain 15 "[food processed] pie" Pie.
 	/// </summary>
 	/// <name>[PerkCrafter] Pie 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Pie_15,
+	PerkCrafter_Pie_15 = 925,
 
 	/// <summary>
 	/// Gain 25 "[food processed] pie" Pie.
 	/// </summary>
 	/// <name>[PerkCrafter] Pie 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Pie_25,
+	PerkCrafter_Pie_25 = 926,
 
 	/// <summary>
 	/// Gain 35 "[food processed] pie" Pie.
 	/// </summary>
 	/// <name>[PerkCrafter] Pie 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Pie_35,
+	PerkCrafter_Pie_35 = 927,
 
 	/// <summary>
 	/// Gain 10 "[packs] pack of provisions" Pack of Provisions.
 	/// </summary>
 	/// <name>[PerkCrafter] Provisions 10</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Provisions_10,
+	PerkCrafter_Provisions_10 = 928,
 
 	/// <summary>
 	/// Gain 12 "[packs] pack of provisions" Pack of Provisions.
 	/// </summary>
 	/// <name>[PerkCrafter] Provisions 12</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Provisions_12,
+	PerkCrafter_Provisions_12 = 929,
 
 	/// <summary>
 	/// Gain 4 "[packs] pack of provisions" Pack of Provisions.
 	/// </summary>
 	/// <name>[PerkCrafter] Provisions 4</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Provisions_4,
+	PerkCrafter_Provisions_4 = 930,
 
 	/// <summary>
 	/// Gain 7 "[packs] pack of provisions" Pack of Provisions.
 	/// </summary>
 	/// <name>[PerkCrafter] Provisions 7</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Provisions_7,
+	PerkCrafter_Provisions_7 = 931,
 
 	/// <summary>
 	/// Gain 10 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 10</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_10,
+	PerkCrafter_Purging_Fire_10 = 932,
 
 	/// <summary>
 	/// Gain 12 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 12</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_12,
+	PerkCrafter_Purging_Fire_12 = 933,
 
 	/// <summary>
 	/// Gain 15 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_15,
+	PerkCrafter_Purging_Fire_15 = 934,
 
 	/// <summary>
 	/// Gain 4 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 4</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_4,
+	PerkCrafter_Purging_Fire_4 = 935,
 
 	/// <summary>
 	/// Gain 5 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 5</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_5,
+	PerkCrafter_Purging_Fire_5 = 936,
 
 	/// <summary>
 	/// Gain 6 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 6</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_6,
+	PerkCrafter_Purging_Fire_6 = 937,
 
 	/// <summary>
 	/// Gain 7 "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[PerkCrafter] Purging Fire 7</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Purging_Fire_7,
+	PerkCrafter_Purging_Fire_7 = 938,
 
 	/// <summary>
 	/// Gain 20 "[mat raw] resin" Resin.
 	/// </summary>
 	/// <name>[PerkCrafter] Resin 20</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Resin_20,
+	PerkCrafter_Resin_20 = 939,
 
 	/// <summary>
 	/// Gain 30 "[mat raw] resin" Resin.
 	/// </summary>
 	/// <name>[PerkCrafter] Resin 30</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Resin_30,
+	PerkCrafter_Resin_30 = 940,
 
 	/// <summary>
 	/// Gain 40 "[mat raw] resin" Resin.
 	/// </summary>
 	/// <name>[PerkCrafter] Resin 40</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Resin_40,
+	PerkCrafter_Resin_40 = 941,
 
 	/// <summary>
 	/// Gain 15 "[crafting] sea marrow" Sea Marrow.
 	/// </summary>
 	/// <name>[PerkCrafter] Sea Marrow 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Sea_Marrow_15,
+	PerkCrafter_Sea_Marrow_15 = 942,
 
 	/// <summary>
 	/// Gain 20 "[crafting] sea marrow" Sea Marrow.
 	/// </summary>
 	/// <name>[PerkCrafter] Sea Marrow 20</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Sea_Marrow_20,
+	PerkCrafter_Sea_Marrow_20 = 943,
 
 	/// <summary>
 	/// Gain 25 "[crafting] sea marrow" Sea Marrow.
 	/// </summary>
 	/// <name>[PerkCrafter] Sea Marrow 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Sea_Marrow_25,
+	PerkCrafter_Sea_Marrow_25 = 944,
 
 	/// <summary>
 	/// Gain 30 "[crafting] sea marrow" Sea Marrow.
 	/// </summary>
 	/// <name>[PerkCrafter] Sea Marrow 30</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Sea_Marrow_30,
+	PerkCrafter_Sea_Marrow_30 = 945,
 
 	/// <summary>
 	/// Gain 35 "[crafting] sea marrow" Sea Marrow.
 	/// </summary>
 	/// <name>[PerkCrafter] Sea Marrow 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Sea_Marrow_35,
+	PerkCrafter_Sea_Marrow_35 = 946,
 
 	/// <summary>
 	/// Gain 1 "[valuable] ancient tablet" Ancient Tablet.
 	/// </summary>
 	/// <name>[PerkCrafter] Tablet 1</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tablet_1,
+	PerkCrafter_Tablet_1 = 947,
 
 	/// <summary>
 	/// Gain 2 "[valuable] ancient tablet" Ancient Tablet.
 	/// </summary>
 	/// <name>[PerkCrafter] Tablet 2</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tablet_2,
+	PerkCrafter_Tablet_2 = 948,
 
 	/// <summary>
 	/// Gain 3 "[valuable] ancient tablet" Ancient Tablet.
 	/// </summary>
 	/// <name>[PerkCrafter] Tablet 3</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tablet_3,
+	PerkCrafter_Tablet_3 = 949,
 
 	/// <summary>
 	/// Gain 4 "[valuable] ancient tablet" Ancient Tablet.
 	/// </summary>
 	/// <name>[PerkCrafter] Tablet 4</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tablet_4,
+	PerkCrafter_Tablet_4 = 950,
 
 	/// <summary>
 	/// Gain 10 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 10</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_10,
+	PerkCrafter_Tools_10 = 951,
 
 	/// <summary>
 	/// Gain 12 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 12</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_12,
+	PerkCrafter_Tools_12 = 952,
 
 	/// <summary>
 	/// Gain 2 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 2</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_2,
+	PerkCrafter_Tools_2 = 953,
 
 	/// <summary>
 	/// Gain 3 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 3</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_3,
+	PerkCrafter_Tools_3 = 954,
 
 	/// <summary>
 	/// Gain 4 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 4</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_4,
+	PerkCrafter_Tools_4 = 955,
 
 	/// <summary>
 	/// Gain 5 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 5</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_5,
+	PerkCrafter_Tools_5 = 956,
 
 	/// <summary>
 	/// Gain 7 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 7</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_7,
+	PerkCrafter_Tools_7 = 957,
 
 	/// <summary>
 	/// Gain 8 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[PerkCrafter] Tools 8</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Tools_8,
+	PerkCrafter_Tools_8 = 958,
 
 	/// <summary>
 	/// Gain 15 "[needs] training gear" Training Gear.
 	/// </summary>
 	/// <name>[PerkCrafter] Training Gear 15</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Training_Gear_15,
+	PerkCrafter_Training_Gear_15 = 959,
 
 	/// <summary>
 	/// Gain 25 "[needs] training gear" Training Gear.
 	/// </summary>
 	/// <name>[PerkCrafter] Training Gear 25</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Training_Gear_25,
+	PerkCrafter_Training_Gear_25 = 960,
 
 	/// <summary>
 	/// Gain 35 "[needs] training gear" Training Gear.
 	/// </summary>
 	/// <name>[PerkCrafter] Training Gear 35</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Training_Gear_35,
+	PerkCrafter_Training_Gear_35 = 961,
 
 	/// <summary>
 	/// Gain 1 "hearth parts" Wildfire Essence.
 	/// </summary>
 	/// <name>[PerkCrafter] Wildfire Essence 1</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Wildfire_Essence_1,
+	PerkCrafter_Wildfire_Essence_1 = 962,
 
 	/// <summary>
 	/// Gain 2 "hearth parts" Wildfire Essence.
 	/// </summary>
 	/// <name>[PerkCrafter] Wildfire Essence 2</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Wildfire_Essence_2,
+	PerkCrafter_Wildfire_Essence_2 = 963,
 
 	/// <summary>
 	/// Gain 3 "hearth parts" Wildfire Essence.
 	/// </summary>
 	/// <name>[PerkCrafter] Wildfire Essence 3</name>
 	/// <type>GoodsEffectModel</type>
-	PerkCrafter_Wildfire_Essence_3,
+	PerkCrafter_Wildfire_Essence_3 = 964,
 
 	/// <summary>
 	/// Pickled Goods - 15 "[food processed] pickled goods" Pickled Goods
 	/// </summary>
 	/// <name>Pickled Goods 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pickled_Goods_15,
+	Pickled_Goods_15 = 965,
 
 	/// <summary>
 	/// Pickled Goods - 20 "[food processed] pickled goods" Pickled Goods
 	/// </summary>
 	/// <name>Pickled Goods 20</name>
 	/// <type>GoodsEffectModel</type>
-	Pickled_Goods_20,
+	Pickled_Goods_20 = 966,
 
 	/// <summary>
 	/// Pickled Goods - 30 "[food processed] pickled goods" Pickled Goods
 	/// </summary>
 	/// <name>Pickled Goods 30</name>
 	/// <type>GoodsEffectModel</type>
-	Pickled_Goods_30,
+	Pickled_Goods_30 = 967,
 
 	/// <summary>
 	/// Pickled Goods - 40 "[food processed] pickled goods" Pickled Goods
 	/// </summary>
 	/// <name>Pickled Goods 40</name>
 	/// <type>GoodsEffectModel</type>
-	Pickled_Goods_40,
+	Pickled_Goods_40 = 968,
 
 	/// <summary>
 	/// Pickled Goods - 60 "[food processed] pickled goods" Pickled Goods
 	/// </summary>
 	/// <name>Pickled Goods 60</name>
 	/// <type>GoodsEffectModel</type>
-	Pickled_Goods_60,
+	Pickled_Goods_60 = 969,
 
 	/// <summary>
 	/// Basket of Pies - 20 "[food processed] pie" Pie
 	/// </summary>
 	/// <name>Pie 20</name>
 	/// <type>GoodsEffectModel</type>
-	Pie_20,
+	Pie_20 = 970,
 
 	/// <summary>
 	/// Basket of Pies - 25 "[food processed] pie" Pie
 	/// </summary>
 	/// <name>Pie 25</name>
 	/// <type>GoodsEffectModel</type>
-	Pie_25,
+	Pie_25 = 971,
 
 	/// <summary>
 	/// Basket of Pies - 30 "[food processed] pie" Pie
 	/// </summary>
 	/// <name>Pie 30</name>
 	/// <type>GoodsEffectModel</type>
-	Pie_30,
+	Pie_30 = 972,
 
 	/// <summary>
 	/// Basket of Pies - 40 "[food processed] pie" Pie
 	/// </summary>
 	/// <name>Pie 40</name>
 	/// <type>GoodsEffectModel</type>
-	Pie_40,
+	Pie_40 = 973,
 
 	/// <summary>
 	/// Pipes - 10 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pipes_10,
+	Pipes_10 = 974,
 
 	/// <summary>
 	/// Pipes - 15 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 15</name>
 	/// <type>GoodsEffectModel</type>
-	Pipes_15,
+	Pipes_15 = 975,
 
 	/// <summary>
 	/// Pipes - 20 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 20</name>
 	/// <type>GoodsEffectModel</type>
-	Pipes_20,
+	Pipes_20 = 976,
 
 	/// <summary>
 	/// Pipes - 4 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 4</name>
 	/// <type>GoodsEffectModel</type>
-	Pipes_4,
+	Pipes_4 = 977,
 
 	/// <summary>
 	/// Pipes - 5 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 5</name>
 	/// <type>GoodsEffectModel</type>
-	Pipes_5,
+	Pipes_5 = 978,
 
 	/// <summary>
 	/// Pipes - 8 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 8</name>
 	/// <type>GoodsEffectModel</type>
-	Pipes_8,
+	Pipes_8 = 979,
 
 	/// <summary>
 	/// Box of Planks - 10 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 10</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_10,
+	Planks_10 = 980,
 
 	/// <summary>
 	/// Box of Planks - 15 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 15</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_15,
+	Planks_15 = 981,
 
 	/// <summary>
 	/// Box of Planks - 2 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 2</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_2,
+	Planks_2 = 982,
 
 	/// <summary>
 	/// Box of Planks - 20 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 20</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_20,
+	Planks_20 = 983,
 
 	/// <summary>
 	/// Box of Planks - 25 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 25</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_25,
+	Planks_25 = 984,
 
 	/// <summary>
 	/// Box of Planks - 3 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 3</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_3,
+	Planks_3 = 985,
 
 	/// <summary>
 	/// Box of Planks - 30 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 30</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_30,
+	Planks_30 = 986,
 
 	/// <summary>
 	/// Box of Planks - 5 "[mat processed] planks" Planks
 	/// </summary>
 	/// <name>Planks 5</name>
 	/// <type>GoodsEffectModel</type>
-	Planks_5,
+	Planks_5 = 987,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 10 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 10</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_10,
+	Plant_Fiber_10 = 988,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 15 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 15</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_15,
+	Plant_Fiber_15 = 989,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 20 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 20</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_20,
+	Plant_Fiber_20 = 990,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 25 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 25</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_25,
+	Plant_Fiber_25 = 991,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 30 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 30</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_30,
+	Plant_Fiber_30 = 992,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 35 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 35</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_35,
+	Plant_Fiber_35 = 993,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 4 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 4</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_4,
+	Plant_Fiber_4 = 994,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 40 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 40</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_40,
+	Plant_Fiber_40 = 995,
 
 	/// <summary>
 	/// Bundle of Plant Fiber - 50 "[mat raw] plant fibre" Plant Fiber
 	/// </summary>
 	/// <name>Plant Fiber 50</name>
 	/// <type>GoodsEffectModel</type>
-	Plant_Fiber_50,
+	Plant_Fiber_50 = 996,
 
 	/// <summary>
 	/// Box of Porridge - 10 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 10</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_10,
+	Porridge_10 = 997,
 
 	/// <summary>
 	/// Box of Porridge - 15 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 15</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_15,
+	Porridge_15 = 998,
 
 	/// <summary>
 	/// Box of Porridge - 20 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 20</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_20,
+	Porridge_20 = 999,
 
 	/// <summary>
 	/// Box of Porridge - 25 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 25</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_25,
+	Porridge_25 = 1000,
 
 	/// <summary>
 	/// Box of Porridge - 30 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 30</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_30,
+	Porridge_30 = 1001,
 
 	/// <summary>
 	/// Box of Porridge - 40 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 40</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_40,
+	Porridge_40 = 1002,
 
 	/// <summary>
 	/// Box of Porridge - 50 "[food processed] porridge" Porridge
 	/// </summary>
 	/// <name>Porridge 50</name>
 	/// <type>GoodsEffectModel</type>
-	Porridge_50,
+	Porridge_50 = 1003,
 
 	/// <summary>
 	/// Box of Pottery - 10 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 10</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_10,
+	Pottery_10 = 1004,
 
 	/// <summary>
 	/// Box of Pottery - 20 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 20</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_20,
+	Pottery_20 = 1005,
 
 	/// <summary>
 	/// Box of Pottery - 3 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 3</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_3,
+	Pottery_3 = 1006,
 
 	/// <summary>
 	/// Box of Pottery - 30 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 30</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_30,
+	Pottery_30 = 1007,
 
 	/// <summary>
 	/// Box of Pottery - 35 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 35</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_35,
+	Pottery_35 = 1008,
 
 	/// <summary>
 	/// Box of Pottery - 40 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 40</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_40,
+	Pottery_40 = 1009,
 
 	/// <summary>
 	/// Box of Pottery - 5 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 5</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_5,
+	Pottery_5 = 1010,
 
 	/// <summary>
 	/// Box of Pottery - 6 "[vessel] pottery" Pottery
 	/// </summary>
 	/// <name>Pottery 6</name>
 	/// <type>GoodsEffectModel</type>
-	Pottery_6,
+	Pottery_6 = 1011,
 
 	/// <summary>
 	/// Purging Fire - 10 "blight fuel" Purging Fire
 	/// </summary>
 	/// <name>Queens Gift 10</name>
 	/// <type>GoodsEffectModel</type>
-	Queens_Gift_10,
+	Queens_Gift_10 = 1012,
 
 	/// <summary>
 	/// Purging Fire - 15 "blight fuel" Purging Fire
 	/// </summary>
 	/// <name>Queens Gift 15</name>
 	/// <type>GoodsEffectModel</type>
-	Queens_Gift_15,
+	Queens_Gift_15 = 1013,
 
 	/// <summary>
 	/// Purging Fire - 5 "blight fuel" Purging Fire
 	/// </summary>
 	/// <name>Queens Gift 5</name>
 	/// <type>GoodsEffectModel</type>
-	Queens_Gift_5,
+	Queens_Gift_5 = 1014,
 
 	/// <summary>
 	/// Bundle of Reeds - 10 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 10</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_10,
+	Reeds_10 = 1015,
 
 	/// <summary>
 	/// Bundle of Reeds - 15 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 15</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_15,
+	Reeds_15 = 1016,
 
 	/// <summary>
 	/// Bundle of Reeds - 20 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 20</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_20,
+	Reeds_20 = 1017,
 
 	/// <summary>
 	/// Bundle of Reeds - 25 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 25</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_25,
+	Reeds_25 = 1018,
 
 	/// <summary>
 	/// Bundle of Reeds - 30 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 30</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_30,
+	Reeds_30 = 1019,
 
 	/// <summary>
 	/// Bundle of Reeds - 35 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 35</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_35,
+	Reeds_35 = 1020,
 
 	/// <summary>
 	/// Bundle of Reeds - 40 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 40</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_40,
+	Reeds_40 = 1021,
 
 	/// <summary>
 	/// Bundle of Reeds - 5 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 5</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_5,
+	Reeds_5 = 1022,
 
 	/// <summary>
 	/// Bundle of Reeds - 50 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 50</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_50,
+	Reeds_50 = 1023,
 
 	/// <summary>
 	/// Bundle of Reeds - 8 "[mat raw] reeds" Reed
 	/// </summary>
 	/// <name>Reeds 8</name>
 	/// <type>GoodsEffectModel</type>
-	Reeds_8,
+	Reeds_8 = 1024,
 
 	/// <summary>
 	/// Resin - 10 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 10</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_10,
+	Resin_10 = 1025,
 
 	/// <summary>
 	/// Resin - 15 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 15</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_15,
+	Resin_15 = 1026,
 
 	/// <summary>
 	/// Resin - 2 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 2</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_2,
+	Resin_2 = 1027,
 
 	/// <summary>
 	/// Resin - 20 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 20</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_20,
+	Resin_20 = 1028,
 
 	/// <summary>
 	/// Resin - 25 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 25</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_25,
+	Resin_25 = 1029,
 
 	/// <summary>
 	/// Resin - 30 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 30</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_30,
+	Resin_30 = 1030,
 
 	/// <summary>
 	/// Resin - 4 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 4</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_4,
+	Resin_4 = 1031,
 
 	/// <summary>
 	/// Resin - 40 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 40</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_40,
+	Resin_40 = 1032,
 
 	/// <summary>
 	/// Resin - 6 "[mat raw] resin" Resin
 	/// </summary>
 	/// <name>Resin 6</name>
 	/// <type>GoodsEffectModel</type>
-	Resin_6,
+	Resin_6 = 1033,
 
 	/// <summary>
 	/// Pack of Roots - 10 "[food raw] roots" Roots
 	/// </summary>
 	/// <name>Roots 10</name>
 	/// <type>GoodsEffectModel</type>
-	Roots_10,
+	Roots_10 = 1034,
 
 	/// <summary>
 	/// Pack of Roots - 15 "[food raw] roots" Roots
 	/// </summary>
 	/// <name>Roots 15</name>
 	/// <type>GoodsEffectModel</type>
-	Roots_15,
+	Roots_15 = 1035,
 
 	/// <summary>
 	/// Pack of Roots - 20 "[food raw] roots" Roots
 	/// </summary>
 	/// <name>Roots 20</name>
 	/// <type>GoodsEffectModel</type>
-	Roots_20,
+	Roots_20 = 1036,
 
 	/// <summary>
 	/// Pack of Roots - 30 "[food raw] roots" Roots
 	/// </summary>
 	/// <name>Roots 30</name>
 	/// <type>GoodsEffectModel</type>
-	Roots_30,
+	Roots_30 = 1037,
 
 	/// <summary>
 	/// Pack of Roots - 40 "[food raw] roots" Roots
 	/// </summary>
 	/// <name>Roots 40</name>
 	/// <type>GoodsEffectModel</type>
-	Roots_40,
+	Roots_40 = 1038,
 
 	/// <summary>
 	/// Pack of Roots - 50 "[food raw] roots" Roots
 	/// </summary>
 	/// <name>Roots 50</name>
 	/// <type>GoodsEffectModel</type>
-	Roots_50,
+	Roots_50 = 1039,
 
 	/// <summary>
 	/// Barrel of Salt - 30 "[crafting] salt" Salt
 	/// </summary>
 	/// <name>Salt 30</name>
 	/// <type>GoodsEffectModel</type>
-	Salt_30,
+	Salt_30 = 1040,
 
 	/// <summary>
 	/// Barrel of Salt - 35 "[crafting] salt" Salt
 	/// </summary>
 	/// <name>Salt 35</name>
 	/// <type>GoodsEffectModel</type>
-	Salt_35,
+	Salt_35 = 1041,
 
 	/// <summary>
 	/// Barrel of Salt - 40 "[crafting] salt" Salt
 	/// </summary>
 	/// <name>Salt 40</name>
 	/// <type>GoodsEffectModel</type>
-	Salt_40,
+	Salt_40 = 1042,
 
 	/// <summary>
 	/// Box of Scales - 10 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 10</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_10,
+	Scales_10 = 1043,
 
 	/// <summary>
 	/// Box of Scales - 15 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 15</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_15,
+	Scales_15 = 1044,
 
 	/// <summary>
 	/// Box of Scales - 20 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 20</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_20,
+	Scales_20 = 1045,
 
 	/// <summary>
 	/// Box of Scales - 25 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 25</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_25,
+	Scales_25 = 1046,
 
 	/// <summary>
 	/// Box of Scales - 30 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 30</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_30,
+	Scales_30 = 1047,
 
 	/// <summary>
 	/// Box of Scales - 35 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 35</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_35,
+	Scales_35 = 1048,
 
 	/// <summary>
 	/// Box of Scales - 40 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 40</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_40,
+	Scales_40 = 1049,
 
 	/// <summary>
 	/// Box of Scales - 45 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 45</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_45,
+	Scales_45 = 1050,
 
 	/// <summary>
 	/// Box of Scales - 5 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 5</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_5,
+	Scales_5 = 1051,
 
 	/// <summary>
 	/// Box of Scales - 50 "[mat raw] scales" Scales
 	/// </summary>
 	/// <name>Scales 50</name>
 	/// <type>GoodsEffectModel</type>
-	Scales_50,
+	Scales_50 = 1052,
 
 	/// <summary>
 	/// Gift from the Woods - These seem to be the ideal conditions in which to create Amber. Gain 5 "[valuable] amber" Amber every drizzle season, plus an additional 5 "[valuable] amber" Amber for each Hostility level reached.
 	/// </summary>
 	/// <name>SE Gift from the Woods</name>
 	/// <type>GoodsEffectModel</type>
-	SE_Gift_From_The_Woods,
+	SE_Gift_From_The_Woods = 1053,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 10 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 10</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_10,
+	Sea_Marrow_10 = 1054,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 15 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 15</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_15,
+	Sea_Marrow_15 = 1055,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 20 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 20</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_20,
+	Sea_Marrow_20 = 1056,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 25 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 25</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_25,
+	Sea_Marrow_25 = 1057,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 30 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 30</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_30,
+	Sea_Marrow_30 = 1058,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 40 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 40</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_40,
+	Sea_Marrow_40 = 1059,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 5 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 5</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_5,
+	Sea_Marrow_5 = 1060,
 
 	/// <summary>
 	/// Crate of Sea Marrow - 50 "[crafting] sea marrow" Sea Marrow
 	/// </summary>
 	/// <name>Sea Marrow 50</name>
 	/// <type>GoodsEffectModel</type>
-	Sea_Marrow_50,
+	Sea_Marrow_50 = 1061,
 
 	/// <summary>
 	/// Pack of Skewers - 10 "[food processed] skewers" Skewers
 	/// </summary>
 	/// <name>Skewers 10</name>
 	/// <type>GoodsEffectModel</type>
-	Skewers_10,
+	Skewers_10 = 1062,
 
 	/// <summary>
 	/// Pack of Skewers - 20 "[food processed] skewers" Skewers
 	/// </summary>
 	/// <name>Skewers 20</name>
 	/// <type>GoodsEffectModel</type>
-	Skewers_20,
+	Skewers_20 = 1063,
 
 	/// <summary>
 	/// Pack of Skewers - 25 "[food processed] skewers" Skewers
 	/// </summary>
 	/// <name>Skewers 25</name>
 	/// <type>GoodsEffectModel</type>
-	Skewers_25,
+	Skewers_25 = 1064,
 
 	/// <summary>
 	/// Pack of Skewers - 30 "[food processed] skewers" Skewers
 	/// </summary>
 	/// <name>Skewers 30</name>
 	/// <type>GoodsEffectModel</type>
-	Skewers_30,
+	Skewers_30 = 1065,
 
 	/// <summary>
 	/// Pack of Skewers - 40 "[food processed] skewers" Skewers
 	/// </summary>
 	/// <name>Skewers 40</name>
 	/// <type>GoodsEffectModel</type>
-	Skewers_40,
+	Skewers_40 = 1066,
 
 	/// <summary>
 	/// Crate of Tea - 10 "[needs] tea" Tea
 	/// </summary>
 	/// <name>Tea 10</name>
 	/// <type>GoodsEffectModel</type>
-	Tea_10,
+	Tea_10 = 1067,
 
 	/// <summary>
 	/// Crate of Tea - 20 "[needs] tea" Tea
 	/// </summary>
 	/// <name>Tea 20</name>
 	/// <type>GoodsEffectModel</type>
-	Tea_20,
+	Tea_20 = 1068,
 
 	/// <summary>
 	/// Crate of Tea - 25 "[needs] tea" Tea
 	/// </summary>
 	/// <name>Tea 25</name>
 	/// <type>GoodsEffectModel</type>
-	Tea_25,
+	Tea_25 = 1069,
 
 	/// <summary>
 	/// Crate of Tea - 30 "[needs] tea" Tea
 	/// </summary>
 	/// <name>Tea 30</name>
 	/// <type>GoodsEffectModel</type>
-	Tea_30,
+	Tea_30 = 1070,
 
 	/// <summary>
 	/// Crate of Tea - 40 "[needs] tea" Tea
 	/// </summary>
 	/// <name>Tea 40</name>
 	/// <type>GoodsEffectModel</type>
-	Tea_40,
+	Tea_40 = 1071,
 
 	/// <summary>
 	/// Thunderblight Shard - 1 "[valuable] thunderblight shard" Thunderblight Shard
 	/// </summary>
 	/// <name>Thunderblight Shard 1</name>
 	/// <type>GoodsEffectModel</type>
-	Thunderblight_Shard_1,
+	Thunderblight_Shard_1 = 1072,
 
 	/// <summary>
 	/// Training Gear - 20 "[needs] training gear" Training Gear
 	/// </summary>
 	/// <name>Training Gear 20</name>
 	/// <type>GoodsEffectModel</type>
-	Training_Gear_20,
+	Training_Gear_20 = 1073,
 
 	/// <summary>
 	/// Training Gear - 30 "[needs] training gear" Training Gear
 	/// </summary>
 	/// <name>Training Gear 30</name>
 	/// <type>GoodsEffectModel</type>
-	Training_Gear_30,
+	Training_Gear_30 = 1074,
 
 	/// <summary>
 	/// Training Gear - 40 "[needs] training gear" Training Gear
 	/// </summary>
 	/// <name>Training Gear 40</name>
 	/// <type>GoodsEffectModel</type>
-	Training_Gear_40,
+	Training_Gear_40 = 1075,
 
 	/// <summary>
 	/// Crate of Vegetables - 30 "[food raw] vegetables" Vegetables
 	/// </summary>
 	/// <name>Vegetables 30</name>
 	/// <type>GoodsEffectModel</type>
-	Vegetables_30,
+	Vegetables_30 = 1076,
 
 	/// <summary>
 	/// Crate of Vegetables - 40 "[food raw] vegetables" Vegetables
 	/// </summary>
 	/// <name>Vegetables 40</name>
 	/// <type>GoodsEffectModel</type>
-	Vegetables_40,
+	Vegetables_40 = 1077,
 
 	/// <summary>
 	/// Crate of Vegetables - 50 "[food raw] vegetables" Vegetables
 	/// </summary>
 	/// <name>Vegetables 50</name>
 	/// <type>GoodsEffectModel</type>
-	Vegetables_50,
+	Vegetables_50 = 1078,
 
 	/// <summary>
 	/// Crate of Vegetables - 40 "[food raw] vegetables" Vegetables
 	/// </summary>
 	/// <name>Vegetables 60</name>
 	/// <type>GoodsEffectModel</type>
-	Vegetables_60,
+	Vegetables_60 = 1079,
 
 	/// <summary>
 	/// Crate of Waterskins - 10 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 10</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_10,
+	Waterskins_10 = 1080,
 
 	/// <summary>
 	/// Crate of Waterskins - 15 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 15</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_15,
+	Waterskins_15 = 1081,
 
 	/// <summary>
 	/// Crate of Waterskins - 20 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 20</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_20,
+	Waterskins_20 = 1082,
 
 	/// <summary>
 	/// Crate of Waterskins - 30 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 30</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_30,
+	Waterskins_30 = 1083,
 
 	/// <summary>
 	/// Crate of Waterskins - 40 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 40</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_40,
+	Waterskins_40 = 1084,
 
 	/// <summary>
 	/// Crate of Waterskins - 5 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 5</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_5,
+	Waterskins_5 = 1085,
 
 	/// <summary>
 	/// Crate of Waterskins - 50 "[vessel] waterskin" Waterskins
 	/// </summary>
 	/// <name>Waterskins 50</name>
 	/// <type>GoodsEffectModel</type>
-	Waterskins_50,
+	Waterskins_50 = 1086,
 
 	/// <summary>
 	/// Crate of Stone - 10 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 10</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_10,
+	Wetstone_10 = 1087,
 
 	/// <summary>
 	/// Crate of Stone - 15 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 15</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_15,
+	Wetstone_15 = 1088,
 
 	/// <summary>
 	/// Crate of Stone - 20 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 20</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_20,
+	Wetstone_20 = 1089,
 
 	/// <summary>
 	/// Crate of Stone - 25 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 25</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_25,
+	Wetstone_25 = 1090,
 
 	/// <summary>
 	/// Crate of Stone - 30 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 30</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_30,
+	Wetstone_30 = 1091,
 
 	/// <summary>
 	/// Crate of Stone - 35 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 35</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_35,
+	Wetstone_35 = 1092,
 
 	/// <summary>
 	/// Crate of Stone - 40 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 40</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_40,
+	Wetstone_40 = 1093,
 
 	/// <summary>
 	/// Crate of Stone - 5 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 5</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_5,
+	Wetstone_5 = 1094,
 
 	/// <summary>
 	/// Crate of Stone - 50 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 50</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_50,
+	Wetstone_50 = 1095,
 
 	/// <summary>
 	/// Crate of Stone - 8 "[mat raw] stone" Stone
 	/// </summary>
 	/// <name>Wetstone 8</name>
 	/// <type>GoodsEffectModel</type>
-	Wetstone_8,
+	Wetstone_8 = 1096,
 
 	/// <summary>
 	/// Barrels of Wine - 10 "[needs] wine" Wine
 	/// </summary>
 	/// <name>Wine 10</name>
 	/// <type>GoodsEffectModel</type>
-	Wine_10,
+	Wine_10 = 1097,
 
 	/// <summary>
 	/// Barrels of Wine - 20 "[needs] wine" Wine
 	/// </summary>
 	/// <name>Wine 20</name>
 	/// <type>GoodsEffectModel</type>
-	Wine_20,
+	Wine_20 = 1098,
 
 	/// <summary>
 	/// Barrels of Wine - 3 "[needs] wine" Wine
 	/// </summary>
 	/// <name>Wine 3</name>
 	/// <type>GoodsEffectModel</type>
-	Wine_3,
+	Wine_3 = 1099,
 
 	/// <summary>
 	/// Barrels of Wine - 30 "[needs] wine" Wine
 	/// </summary>
 	/// <name>Wine 30</name>
 	/// <type>GoodsEffectModel</type>
-	Wine_30,
+	Wine_30 = 1100,
 
 	/// <summary>
 	/// Barrels of Wine - 40 "[needs] wine" Wine
 	/// </summary>
 	/// <name>Wine 40</name>
 	/// <type>GoodsEffectModel</type>
-	Wine_40,
+	Wine_40 = 1101,
 
 	/// <summary>
 	/// Crate of Wood - 10 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 10</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_10,
+	Wood_10 = 1102,
 
 	/// <summary>
 	/// Crate of Wood - 100 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 100</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_100,
+	Wood_100 = 1103,
 
 	/// <summary>
 	/// Crate of Wood - 15 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 15</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_15,
+	Wood_15 = 1104,
 
 	/// <summary>
 	/// Crate of Wood - 20 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 20</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_20,
+	Wood_20 = 1105,
 
 	/// <summary>
 	/// Crate of Wood - 30 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 30</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_30,
+	Wood_30 = 1106,
 
 	/// <summary>
 	/// Crate of Wood - 40 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 40</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_40,
+	Wood_40 = 1107,
 
 	/// <summary>
 	/// Crate of Wood - 5 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 5</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_5,
+	Wood_5 = 1108,
 
 	/// <summary>
 	/// Crate of Wood - 50 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 50</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_50,
+	Wood_50 = 1109,
 
 	/// <summary>
 	/// Crate of Wood - 60 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 60</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_60,
+	Wood_60 = 1110,
 
 	/// <summary>
 	/// Crate of Wood - 70 "[mat raw] wood" Wood
 	/// </summary>
 	/// <name>Wood 70</name>
 	/// <type>GoodsEffectModel</type>
-	Wood_70,
+	Wood_70 = 1111,
 
 
 	//
@@ -7902,658 +7952,658 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Ale 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Ale_3pm,
+	Ale_3pm = 1112,
 
 	/// <summary>
 	/// Ale Delivery Line - 5 "[needs] ale" Ale per minute.
 	/// </summary>
 	/// <name>Ale 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Ale_5pm,
+	Ale_5pm = 1113,
 
 	/// <summary>
 	/// Amber Tax - 3 "[valuable] amber" Amber per minute.
 	/// </summary>
 	/// <name>Amber 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Amber_3pm,
+	Amber_3pm = 1114,
 
 	/// <summary>
 	/// Amber Tax - 3 "[valuable] amber" Amber per minute
 	/// </summary>
 	/// <name>Amber 3pm Blight</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Amber_3pm_Blight,
+	Amber_3pm_Blight = 1115,
 
 	/// <summary>
 	/// Amber Tax - 5 "[valuable] amber" Amber per minute.
 	/// </summary>
 	/// <name>Amber 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Amber_5pm,
+	Amber_5pm = 1116,
 
 	/// <summary>
 	/// Barrel Delivery Line - 3 "[vessel] barrels" Barrels per minute.
 	/// </summary>
 	/// <name>Barrels 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Barrels_3pm,
+	Barrels_3pm = 1117,
 
 	/// <summary>
 	/// Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute.
 	/// </summary>
 	/// <name>Barrels 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Barrels_5pm,
+	Barrels_5pm = 1118,
 
 	/// <summary>
 	/// Berry Delivery Line - 10 "[food raw] berries" Berries per minute.
 	/// </summary>
 	/// <name>Berries 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Berries_10pm,
+	Berries_10pm = 1119,
 
 	/// <summary>
 	/// Berry Delivery Line - 5 "[food raw] berries" Berries per minute.
 	/// </summary>
 	/// <name>Berries 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Berries_5pm,
+	Berries_5pm = 1120,
 
 	/// <summary>
 	/// Biscuit Delivery Line - 3 "[food processed] biscuits" Biscuits per minute.
 	/// </summary>
 	/// <name>Biscuits 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Biscuits_3pm,
+	Biscuits_3pm = 1121,
 
 	/// <summary>
 	/// Biscuit Delivery Line - 5 "[food processed] biscuits" Biscuits per minute.
 	/// </summary>
 	/// <name>Biscuits 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Biscuits_5pm,
+	Biscuits_5pm = 1122,
 
 	/// <summary>
 	/// Clay Delivery Line - 10 "[mat raw] clay" Clay per minute.
 	/// </summary>
 	/// <name>Clay 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Clay_10pm,
+	Clay_10pm = 1123,
 
 	/// <summary>
 	/// Clay Delivery Line - 3 "[mat raw] clay" Clay per minute.
 	/// </summary>
 	/// <name>Clay 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Clay_3pm,
+	Clay_3pm = 1124,
 
 	/// <summary>
 	/// Clay Delivery Line - 5 "[mat raw] clay" Clay per minute.
 	/// </summary>
 	/// <name>Clay 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Clay_5pm,
+	Clay_5pm = 1125,
 
 	/// <summary>
 	/// Coal Delivery Line - 10 "[crafting] coal" Coal per minute.
 	/// </summary>
 	/// <name>Coal 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Coal_10pm,
+	Coal_10pm = 1126,
 
 	/// <summary>
 	/// Coal Delivery Line - 3 "[crafting] coal" Coal per minute.
 	/// </summary>
 	/// <name>Coal 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Coal_3pm,
+	Coal_3pm = 1127,
 
 	/// <summary>
 	/// Coal Delivery Line - 5 "[crafting] coal" Coal per minute.
 	/// </summary>
 	/// <name>Coal 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Coal_5pm,
+	Coal_5pm = 1128,
 
 	/// <summary>
 	/// Coat Delivery Line - 10 "[needs] coats" Coats per minute.
 	/// </summary>
 	/// <name>Coats 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Coats_10pm,
+	Coats_10pm = 1129,
 
 	/// <summary>
 	/// Coat Delivery Line - 3 "[needs] coats" Coats per minute.
 	/// </summary>
 	/// <name>Coats 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Coats_3pm,
+	Coats_3pm = 1130,
 
 	/// <summary>
 	/// Coat Delivery Line - 5 "[needs] coats" Coats per minute.
 	/// </summary>
 	/// <name>Coats 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Coats_5pm,
+	Coats_5pm = 1131,
 
 	/// <summary>
 	/// Metal Delivery Line - 2 "[metal] copper bar" Copper Bars per minute.
 	/// </summary>
 	/// <name>Copper Bars 2pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Copper_Bars_2pm,
+	Copper_Bars_2pm = 1132,
 
 	/// <summary>
 	/// Metal Delivery Line - 3 "[metal] copper bar" Copper Bars per minute.
 	/// </summary>
 	/// <name>Copper Bars 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Copper_Bars_3pm,
+	Copper_Bars_3pm = 1133,
 
 	/// <summary>
 	/// Metal Delivery Line - 4 "[metal] copper bar" Copper Bars per minute.
 	/// </summary>
 	/// <name>Copper Bars 4pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Copper_Bars_4pm,
+	Copper_Bars_4pm = 1134,
 
 	/// <summary>
 	/// Metal Delivery Line - 5 "[metal] copper bar" Copper Bars per minute.
 	/// </summary>
 	/// <name>Copper Bars 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Copper_Bars_5pm,
+	Copper_Bars_5pm = 1135,
 
 	/// <summary>
 	/// Ore Delivery Line - 10 "[metal] copper ore" Copper Ore per minute.
 	/// </summary>
 	/// <name>Copper Ore 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Copper_Ore_10pm,
+	Copper_Ore_10pm = 1136,
 
 	/// <summary>
 	/// Ore Delivery Line - 5 "[metal] copper ore" Copper Ore per minute.
 	/// </summary>
 	/// <name>Copper Ore 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Copper_Ore_5pm,
+	Copper_Ore_5pm = 1137,
 
 	/// <summary>
 	/// Egg Delivery Line - 10 "[food raw] eggs" Eggs per minute.
 	/// </summary>
 	/// <name>Eggs 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Eggs_10pm,
+	Eggs_10pm = 1138,
 
 	/// <summary>
 	/// Egg Delivery Line - 15 "[food raw] eggs" Eggs per minute.
 	/// </summary>
 	/// <name>Eggs 15pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Eggs_15pm,
+	Eggs_15pm = 1139,
 
 	/// <summary>
 	/// Egg Delivery Line - 3 "[food raw] eggs" Eggs per minute.
 	/// </summary>
 	/// <name>Eggs 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Eggs_3pm,
+	Eggs_3pm = 1140,
 
 	/// <summary>
 	/// Nest Eggs - Eggs laid by a tamed Stormbird. 5 "[food raw] eggs" Eggs per minute.
 	/// </summary>
 	/// <name>Eggs 5pm Stormbird</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Eggs_5pm_Stormbird,
+	Eggs_5pm_Stormbird = 1141,
 
 	/// <summary>
 	/// Fiber Delivery Line - 10 "[mat raw] plant fibre" Plant Fiber per minute.
 	/// </summary>
 	/// <name>Fiber 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Fiber_10pm,
+	Fiber_10pm = 1142,
 
 	/// <summary>
 	/// Fiber Delivery Line - 15 "[mat raw] plant fibre" Plant Fiber per minute.
 	/// </summary>
 	/// <name>Fiber 15pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Fiber_15pm,
+	Fiber_15pm = 1143,
 
 	/// <summary>
 	/// Fiber Delivery Line - 3 "[mat raw] plant fibre" Plant Fiber per minute.
 	/// </summary>
 	/// <name>Fiber 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Fiber_3pm,
+	Fiber_3pm = 1144,
 
 	/// <summary>
 	/// Fiber Delivery Line - 5 "[mat raw] plant fibre" Plant Fiber per minute.
 	/// </summary>
 	/// <name>Fiber 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Fiber_5pm,
+	Fiber_5pm = 1145,
 
 	/// <summary>
 	/// Fish Delivery Line - 5 "[food raw] fish" Fish per minute.
 	/// </summary>
 	/// <name>Fish 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Fish_5pm,
+	Fish_5pm = 1146,
 
 	/// <summary>
 	/// Flour Delivery Line - 3 "[crafting] flour" Flour per minute.
 	/// </summary>
 	/// <name>Flour 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Flour_3pm,
+	Flour_3pm = 1147,
 
 	/// <summary>
 	/// Flour Delivery Line - 5 "[crafting] flour" Flour per minute.
 	/// </summary>
 	/// <name>Flour 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Flour_5pm,
+	Flour_5pm = 1148,
 
 	/// <summary>
 	/// Grain Delivery Line - 10 "[food raw] grain" Grain per minute.
 	/// </summary>
 	/// <name>Grain 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Grain_10pm,
+	Grain_10pm = 1149,
 
 	/// <summary>
 	/// Grain Delivery Line - 15 "[food raw] grain" Grain per minute.
 	/// </summary>
 	/// <name>Grain 15pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Grain_15pm,
+	Grain_15pm = 1150,
 
 	/// <summary>
 	/// Grain Delivery Line - 3 "[food raw] grain" Grain per minute.
 	/// </summary>
 	/// <name>Grain 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Grain_3pm,
+	Grain_3pm = 1151,
 
 	/// <summary>
 	/// Grain Delivery Line - 5 "[food raw] grain" Grain per minute.
 	/// </summary>
 	/// <name>Grain 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Grain_5pm,
+	Grain_5pm = 1152,
 
 	/// <summary>
 	/// Herb Delivery Line - 10 "[food raw] herbs" Herbs per minute.
 	/// </summary>
 	/// <name>Herbs 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Herbs_10pm,
+	Herbs_10pm = 1153,
 
 	/// <summary>
 	/// Herb Delivery Line - 2 "[food raw] herbs" Herbs per minute.
 	/// </summary>
 	/// <name>Herbs 2pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Herbs_2pm,
+	Herbs_2pm = 1154,
 
 	/// <summary>
 	/// Herb Delivery Line - 5 "[food raw] herbs" Herbs per minute.
 	/// </summary>
 	/// <name>Herbs 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Herbs_5pm,
+	Herbs_5pm = 1155,
 
 	/// <summary>
 	/// Incense Delivery Line - 3 "[needs] incense" Incense per minute.
 	/// </summary>
 	/// <name>Incense 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Incense_3pm,
+	Incense_3pm = 1156,
 
 	/// <summary>
 	/// Incense Delivery Line - 5 "[needs] incense" Incense per minute.
 	/// </summary>
 	/// <name>Incense 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Incense_5pm,
+	Incense_5pm = 1157,
 
 	/// <summary>
 	/// Termite Nest - 3 "[food raw] insects" Insects per minute.
 	/// </summary>
 	/// <name>Insects 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Insects_3pm,
+	Insects_3pm = 1158,
 
 	/// <summary>
 	/// Insect Delivery Line - 5 "[food raw] insects" Insects per minute.
 	/// </summary>
 	/// <name>Insects 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Insects_5pm,
+	Insects_5pm = 1159,
 
 	/// <summary>
 	/// Termite Nest - 5 "[food raw] insects" Insects per minute.
 	/// </summary>
 	/// <name>Insects 5pm - Termite Nest</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Insects_5pm_Termite_Nest,
+	Insects_5pm_Termite_Nest = 1160,
 
 	/// <summary>
 	/// Jerky Delivery Line - 3 "[food processed] jerky" Jerky per minute.
 	/// </summary>
 	/// <name>Jerky 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Jerky_3pm,
+	Jerky_3pm = 1161,
 
 	/// <summary>
 	/// Jerky Delivery Line - 5 "[food processed] jerky" Jerky per minute.
 	/// </summary>
 	/// <name>Jerky 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Jerky_5pm,
+	Jerky_5pm = 1162,
 
 	/// <summary>
 	/// Leather Delivery Line - 10 "[mat raw] leather" Leather per minute.
 	/// </summary>
 	/// <name>Leather 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Leather_10pm,
+	Leather_10pm = 1163,
 
 	/// <summary>
 	/// Leather Delivery Line - 5 "[mat raw] leather" Leather per minute.
 	/// </summary>
 	/// <name>Leather 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Leather_5pm,
+	Leather_5pm = 1164,
 
 	/// <summary>
 	/// Scroll Delivery Line - 3 "[needs] scrolls" Scrolls per minute.
 	/// </summary>
 	/// <name>Manuscripts (paper) 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Manuscripts_paper_3pm,
+	Manuscripts_paper_3pm = 1165,
 
 	/// <summary>
 	/// Scroll Delivery Line - 5 "[needs] scrolls" Scrolls per minute.
 	/// </summary>
 	/// <name>Manuscripts (paper) 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Manuscripts_paper_5pm,
+	Manuscripts_paper_5pm = 1166,
 
 	/// <summary>
 	/// Meat Delivery Line - 10 "[food raw] meat" Meat per minute.
 	/// </summary>
 	/// <name>Meat 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Meat_10pm,
+	Meat_10pm = 1167,
 
 	/// <summary>
 	/// Meat Delivery Line - 5 "[food raw] meat" Meat per minute.
 	/// </summary>
 	/// <name>Meat 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Meat_5pm,
+	Meat_5pm = 1168,
 
 	/// <summary>
 	/// Mushroom Delivery Line - 10 "[food raw] mushrooms" Mushrooms per minute.
 	/// </summary>
 	/// <name>Mushrooms 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Mushrooms_10pm,
+	Mushrooms_10pm = 1169,
 
 	/// <summary>
 	/// Mushroom Delivery Line - 5 "[food raw] mushrooms" Mushrooms per minute.
 	/// </summary>
 	/// <name>Mushrooms 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Mushrooms_5pm,
+	Mushrooms_5pm = 1170,
 
 	/// <summary>
 	/// Oil Delivery Line - 10 "[crafting] oil" Oil per minute.
 	/// </summary>
 	/// <name>Oil 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Oil_10pm,
+	Oil_10pm = 1171,
 
 	/// <summary>
 	/// Oil Delivery Line - 5 "[crafting] oil" Oil per minute.
 	/// </summary>
 	/// <name>Oil 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Oil_5pm,
+	Oil_5pm = 1172,
 
 	/// <summary>
 	/// Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute.
 	/// </summary>
 	/// <name>Pickled goods 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Pickled_Goods_3pm,
+	Pickled_Goods_3pm = 1173,
 
 	/// <summary>
 	/// Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute.
 	/// </summary>
 	/// <name>Pickled goods 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Pickled_Goods_5pm,
+	Pickled_Goods_5pm = 1174,
 
 	/// <summary>
 	/// Pie Delivery Line - 3 "[food processed] pie" Pie per minute.
 	/// </summary>
 	/// <name>Pie 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Pie_3pm,
+	Pie_3pm = 1175,
 
 	/// <summary>
 	/// Pie Delivery Line - 5 "[food processed] pie" Pie per minute.
 	/// </summary>
 	/// <name>Pie 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Pie_5pm,
+	Pie_5pm = 1176,
 
 	/// <summary>
 	/// Pottery Delivery Line - 5 "[vessel] pottery" Pottery per minute.
 	/// </summary>
 	/// <name>Pottery 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Pottery_5pm,
+	Pottery_5pm = 1177,
 
 	/// <summary>
 	/// Reed Delivery Line - 10 "[mat raw] reeds" Reed per minute.
 	/// </summary>
 	/// <name>Reeds 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Reeds_10pm,
+	Reeds_10pm = 1178,
 
 	/// <summary>
 	/// Reed Delivery Line - 5 "[mat raw] reeds" Reed per minute.
 	/// </summary>
 	/// <name>Reeds 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Reeds_5pm,
+	Reeds_5pm = 1179,
 
 	/// <summary>
 	/// Resin Delivery Line - 3 "[mat raw] resin" Resin per minute.
 	/// </summary>
 	/// <name>Resin 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Resin_3pm,
+	Resin_3pm = 1180,
 
 	/// <summary>
 	/// Resin Delivery Line - 3 "[mat raw] resin" Resin per minute.
 	/// </summary>
 	/// <name>Resin 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Resin_5pm,
+	Resin_5pm = 1181,
 
 	/// <summary>
 	/// Root Delivery Line - 10 "[food raw] roots" Roots per minute.
 	/// </summary>
 	/// <name>Roots 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Roots_10pm,
+	Roots_10pm = 1182,
 
 	/// <summary>
 	/// Root Delivery Line - 3 "[food raw] roots" Roots per minute.
 	/// </summary>
 	/// <name>Roots 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Roots_3pm,
+	Roots_3pm = 1183,
 
 	/// <summary>
 	/// Root Delivery Line - 5 "[food raw] roots" Roots per minute.
 	/// </summary>
 	/// <name>Roots 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Roots_5pm,
+	Roots_5pm = 1184,
 
 	/// <summary>
 	/// Sea Marrow Delivery Line - 3 "[crafting] sea marrow" Sea Marrow per minute.
 	/// </summary>
 	/// <name>Sea Marrow 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Sea_Marrow_3pm,
+	Sea_Marrow_3pm = 1185,
 
 	/// <summary>
 	/// Converted Fishmen Lighthouse - 5 "[crafting] sea marrow" Sea Marrow per minute.
 	/// </summary>
 	/// <name>Sea Marrow 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Sea_Marrow_5pm,
+	Sea_Marrow_5pm = 1186,
 
 	/// <summary>
 	/// Skewers Delivery Line - 3 "[food processed] skewers" Skewers per minute.
 	/// </summary>
 	/// <name>Skewers 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Skewers_3pm,
+	Skewers_3pm = 1187,
 
 	/// <summary>
 	/// Skewers Delivery Line - 5 "[food processed] skewers" Skewers per minute.
 	/// </summary>
 	/// <name>Skewers 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Skewers_5pm,
+	Skewers_5pm = 1188,
 
 	/// <summary>
 	/// Stone Delivery Line - 10 "[mat raw] stone" Stone per minute.
 	/// </summary>
 	/// <name>Stone 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Stone_10pm,
+	Stone_10pm = 1189,
 
 	/// <summary>
 	/// Stone Delivery Line - 3 "[mat raw] stone" Stone per minute.
 	/// </summary>
 	/// <name>Stone 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Stone_3pm,
+	Stone_3pm = 1190,
 
 	/// <summary>
 	/// Stone Delivery Line - 5 "[mat raw] stone" Stone per minute.
 	/// </summary>
 	/// <name>Stone 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Stone_5pm,
+	Stone_5pm = 1191,
 
 	/// <summary>
 	/// Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute.
 	/// </summary>
 	/// <name>[T] Barrels 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	T_Barrels_5pm,
+	T_Barrels_5pm = 1192,
 
 	/// <summary>
 	/// Tea Delivery Line - 3 "[needs] tea" Tea per minute.
 	/// </summary>
 	/// <name>Tea 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Tea_3pm,
+	Tea_3pm = 1193,
 
 	/// <summary>
 	/// Tea Delivery Line - 5 "[needs] tea" Tea per minute.
 	/// </summary>
 	/// <name>Tea 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Tea_5pm,
+	Tea_5pm = 1194,
 
 	/// <summary>
 	/// Tool Delivery Line - 2 "[tools] simple tools" Tools per minute.
 	/// </summary>
 	/// <name>Tools 2pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Tools_2pm,
+	Tools_2pm = 1195,
 
 	/// <summary>
 	/// Tool Delivery Line - 4 "[tools] simple tools" Tools per minute.
 	/// </summary>
 	/// <name>Tools 4pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Tools_4pm,
+	Tools_4pm = 1196,
 
 	/// <summary>
 	/// Training Gear Delivery Line - 3 "[needs] training gear" Training Gear per minute.
 	/// </summary>
 	/// <name>Training Gear 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Training_Gear_3pm,
+	Training_Gear_3pm = 1197,
 
 	/// <summary>
 	/// Training Gear Delivery Line - 5 "[needs] training gear" Training Gear per minute.
 	/// </summary>
 	/// <name>Training Gear 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Training_Gear_5pm,
+	Training_Gear_5pm = 1198,
 
 	/// <summary>
 	/// Vegetable Delivery Line - 10 "[food raw] vegetables" Vegetables per minute.
 	/// </summary>
 	/// <name>Vegetables 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Vegetables_10pm,
+	Vegetables_10pm = 1199,
 
 	/// <summary>
 	/// Vegetable Delivery Line - 3 "[food raw] vegetables" Vegetables per minute.
 	/// </summary>
 	/// <name>Vegetables 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Vegetables_3pm,
+	Vegetables_3pm = 1200,
 
 	/// <summary>
 	/// Vegetable Delivery Line - 5 "[food raw] vegetables" Vegetables per minute.
 	/// </summary>
 	/// <name>Vegetables 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Vegetables_5pm,
+	Vegetables_5pm = 1201,
 
 	/// <summary>
 	/// Waterskin Delivery Line - 3 "[vessel] waterskin" Waterskins per minute.
 	/// </summary>
 	/// <name>Waterskins 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Waterskins_3pm,
+	Waterskins_3pm = 1202,
 
 	/// <summary>
 	/// Waterskin Delivery Line - 5 "[vessel] waterskin" Waterskins per minute.
 	/// </summary>
 	/// <name>Waterskins 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Waterskins_5pm,
+	Waterskins_5pm = 1203,
 
 	/// <summary>
 	/// Wine Delivery Line - 3 "[needs] wine" Wine per minute.
 	/// </summary>
 	/// <name>Wine 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Wine_3pm,
+	Wine_3pm = 1204,
 
 	/// <summary>
 	/// Wine Delivery Line - 5 "[needs] wine" Wine per minute.
 	/// </summary>
 	/// <name>Wine 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
-	Wine_5pm,
+	Wine_5pm = 1205,
 
 
 	//
@@ -8565,1651 +8615,1651 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Ale +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ale_Plus1,
+	Ale_Plus1 = 1206,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[needs] ale" Ale production. Gain an additional "[needs] ale" Ale every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ale +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ale_Plus2,
+	Ale_Plus2 = 1207,
 
 	/// <summary>
 	/// Bigger Barrels - +3 to "[needs] ale" Ale production. Gain an additional "[needs] ale" Ale every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ale +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ale_Plus3,
+	Ale_Plus3 = 1208,
 
 	/// <summary>
 	/// Bigger Barrels - +5 to "[needs] ale" Ale production. Gain an additional "[needs] ale" Ale every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ale +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ale_Plus5,
+	Ale_Plus5 = 1209,
 
 	/// <summary>
 	/// Microfilter Net - +1 to "[mat raw] algae" Algae production. Gain an additional "[mat raw] algae" Algae every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Algae +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Algae_Plus1,
+	Algae_Plus1 = 1210,
 
 	/// <summary></summary>
 	/// <name>Bait +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Bait_Plus1,
+	Bait_Plus1 = 1211,
 
 	/// <summary>
 	/// Advanced Coopering - +1 to "[vessel] barrels" Barrels production. Gain an additional "[vessel] barrels" Barrels every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Barrels +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Barrels_Plus1,
+	Barrels_Plus1 = 1212,
 
 	/// <summary>
 	/// Advanced Coopering - +2 to "[vessel] barrels" Barrels production. Gain an additional "[vessel] barrels" Barrels every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Barrels +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Barrels_Plus2,
+	Barrels_Plus2 = 1213,
 
 	/// <summary>
 	/// Advanced Coopering - +3 to "[vessel] barrels" Barrels production. Gain an additional "[vessel] barrels" Barrels every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Barrels +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Barrels_Plus3,
+	Barrels_Plus3 = 1214,
 
 	/// <summary>
 	/// Advanced Coopering - +5 to "[vessel] barrels" Barrels production. Gain an additional "[vessel] barrels" Barrels every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Barrels +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Barrels_Plus5,
+	Barrels_Plus5 = 1215,
 
 	/// <summary>
 	/// Large Berry Baskets - +1 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Berries +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Berries_Plus1,
+	Berries_Plus1 = 1216,
 
 	/// <summary>
 	/// Large Berry Baskets - +2 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Berries +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Berries_Plus2,
+	Berries_Plus2 = 1217,
 
 	/// <summary>
 	/// Large Berry Baskets - +3 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Berries +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Berries_Plus3,
+	Berries_Plus3 = 1218,
 
 	/// <summary>
 	/// Large Berry Baskets - +5 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Berries +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Berries_Plus5,
+	Berries_Plus5 = 1219,
 
 	/// <summary>
 	/// Bigger Pans - +1 to "[food processed] biscuits" Biscuits production. Gain an additional "[food processed] biscuits" Biscuits every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Biscuits +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Biscuits_Plus1,
+	Biscuits_Plus1 = 1220,
 
 	/// <summary>
 	/// Bigger Pans - +2 to "[food processed] biscuits" Biscuits production. Gain an additional "[food processed] biscuits" Biscuits every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Biscuits +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Biscuits_Plus2,
+	Biscuits_Plus2 = 1221,
 
 	/// <summary>
 	/// Bigger Pans - +3 to "[food processed] biscuits" Biscuits production. Gain an additional "[food processed] biscuits" Biscuits every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Biscuits +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Biscuits_Plus3,
+	Biscuits_Plus3 = 1222,
 
 	/// <summary>
 	/// Bigger Pans - +5 to "[food processed] biscuits" Biscuits production. Gain an additional "[food processed] biscuits" Biscuits every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Biscuits +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Biscuits_Plus5,
+	Biscuits_Plus5 = 1223,
 
 	/// <summary>
 	/// Fuel Mix - +1 to "blight fuel" Purging Fire production. Gain an additional "blight fuel" Purging Fire every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Blight Fuel +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Blight_Fuel_Plus1,
+	Blight_Fuel_Plus1 = 1224,
 
 	/// <summary>
 	/// Fuel Mix - +2 to "blight fuel" Purging Fire production. Gain an additional "blight fuel" Purging Fire every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Blight Fuel +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Blight_Fuel_Plus2,
+	Blight_Fuel_Plus2 = 1225,
 
 	/// <summary>
 	/// Fuel Mix - +3 to "blight fuel" Purging Fire production. Gain an additional "blight fuel" Purging Fire every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Blight Fuel +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Blight_Fuel_Plus3,
+	Blight_Fuel_Plus3 = 1226,
 
 	/// <summary>
 	/// Fuel Mix - +5 to "blight fuel" Purging Fire production. Gain an additional "blight fuel" Purging Fire every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Blight Fuel +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Blight_Fuel_Plus5,
+	Blight_Fuel_Plus5 = 1227,
 
 	/// <summary>
 	/// Shoe Mold - +2 to "[needs] boots" Boots production. Gain an additional "[needs] boots" Boots every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Boots +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Boots_Plus2,
+	Boots_Plus2 = 1228,
 
 	/// <summary>
 	/// Reinforced Brick Mold - +1 to "[mat processed] bricks" Bricks production. Gain an additional "[mat processed] bricks" Bricks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Bricks +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Bricks_Plus1,
+	Bricks_Plus1 = 1229,
 
 	/// <summary>
 	/// Reinforced Brick Mold - +2 to "[mat processed] bricks" Bricks production. Gain an additional "[mat processed] bricks" Bricks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Bricks +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Bricks_Plus2,
+	Bricks_Plus2 = 1230,
 
 	/// <summary>
 	/// Reinforced Brick Mold - +3 to "[mat processed] bricks" Bricks production. Gain an additional "[mat processed] bricks" Bricks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Bricks +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Bricks_Plus3,
+	Bricks_Plus3 = 1231,
 
 	/// <summary>
 	/// Reinforced Brick Mold - +5 to "[mat processed] bricks" Bricks production. Gain an additional "[mat processed] bricks" Bricks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Bricks +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Bricks_Plus5,
+	Bricks_Plus5 = 1232,
 
 	/// <summary>
 	/// Steel Shovels - +1 to "[mat raw] clay" Clay production. Gain an additional "[mat raw] clay" Clay every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Clay +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Clay_Plus1,
+	Clay_Plus1 = 1233,
 
 	/// <summary>
 	/// Steel Shovels - +2 to "[mat raw] clay" Clay production. Gain an additional "[mat raw] clay" Clay every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Clay +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Clay_Plus2,
+	Clay_Plus2 = 1234,
 
 	/// <summary>
 	/// Steel Shovels - +3 to "[mat raw] clay" Clay production. Gain an additional "[mat raw] clay" Clay every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Clay +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Clay_Plus3,
+	Clay_Plus3 = 1235,
 
 	/// <summary>
 	/// Steel Shovels - +5 to "[mat raw] clay" Clay production. Gain an additional "[mat raw] clay" Clay every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Clay +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Clay_Plus5,
+	Clay_Plus5 = 1236,
 
 	/// <summary>
 	/// Specialized Mining - +1 to "[crafting] coal" Coal production. Gain an additional "[crafting] coal" Coal every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coal +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coal_Plus1,
+	Coal_Plus1 = 1237,
 
 	/// <summary>
 	/// Specialized Mining - +2 to "[crafting] coal" Coal production. Gain an additional "[crafting] coal" Coal every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coal +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coal_Plus2,
+	Coal_Plus2 = 1238,
 
 	/// <summary>
 	/// Specialized Mining - +3 to "[crafting] coal" Coal production. Gain an additional "[crafting] coal" Coal every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coal +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coal_Plus3,
+	Coal_Plus3 = 1239,
 
 	/// <summary>
 	/// Specialized Mining - +5 to "[crafting] coal" Coal production. Gain an additional "[crafting] coal" Coal every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coal +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coal_Plus5,
+	Coal_Plus5 = 1240,
 
 	/// <summary>
 	/// Ancient Sewing Technique - +1 to "[needs] coats" Coats production. Gain an additional "[needs] coats" Coats every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coats +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coats_Plus1,
+	Coats_Plus1 = 1241,
 
 	/// <summary>
 	/// Ancient Sewing Technique - +2 to "[needs] coats" Coats production. Gain an additional "[needs] coats" Coats every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coats +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coats_Plus2,
+	Coats_Plus2 = 1242,
 
 	/// <summary>
 	/// Ancient Sewing Technique - +3 to "[needs] coats" Coats production. Gain an additional "[needs] coats" Coats every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coats +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coats_Plus3,
+	Coats_Plus3 = 1243,
 
 	/// <summary>
 	/// Ancient Sewing Technique - +5 to "[needs] coats" Coats production. Gain an additional "[needs] coats" Coats every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Coats +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Coats_Plus5,
+	Coats_Plus5 = 1244,
 
 	/// <summary>
 	/// Advanced Smelting - +1 to "[metal] copper bar" Copper Bars production. Gain an additional "[metal] copper bar" Copper Bars every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Bar +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Bar_Plus1,
+	Copper_Bar_Plus1 = 1245,
 
 	/// <summary>
 	/// Advanced Smelting - +2 to "[metal] copper bar" Copper Bars production. Gain an additional "[metal] copper bar" Copper Bars every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Bar +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Bar_Plus2,
+	Copper_Bar_Plus2 = 1246,
 
 	/// <summary>
 	/// Advanced Smelting - +3 to "[metal] copper bar" Copper Bars production. Gain an additional "[metal] copper bar" Copper Bars every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Bar +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Bar_Plus3,
+	Copper_Bar_Plus3 = 1247,
 
 	/// <summary>
 	/// Advanced Smelting - +5 to "[metal] copper bar" Copper Bars production. Gain an additional "[metal] copper bar" Copper Bars every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Bar +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Bar_Plus5,
+	Copper_Bar_Plus5 = 1248,
 
 	/// <summary>
 	/// Steel Drills - +1 to "[metal] copper ore" Copper Ore production. Gain an additional "[metal] copper ore" Copper Ore every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Ore +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Ore_Plus1,
+	Copper_Ore_Plus1 = 1249,
 
 	/// <summary>
 	/// Steel Drills - +2 to "[metal] copper ore" Copper Ore production. Gain an additional "[metal] copper ore" Copper Ore every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Ore +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Ore_Plus2,
+	Copper_Ore_Plus2 = 1250,
 
 	/// <summary>
 	/// Steel Drills - +3 to "[metal] copper ore" Copper Ore production. Gain an additional "[metal] copper ore" Copper Ore every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Ore +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Ore_Plus3,
+	Copper_Ore_Plus3 = 1251,
 
 	/// <summary>
 	/// Steel Drills - +5 to "[metal] copper ore" Copper Ore production. Gain an additional "[metal] copper ore" Copper Ore every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Ore +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Ore_Plus5,
+	Copper_Ore_Plus5 = 1252,
 
 	/// <summary>
 	/// Advanced Smithing - +1 to "[tools] simple tools" Tools production. Gain an additional "[tools] simple tools" Tools every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Tools +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Tools_Plus1,
+	Copper_Tools_Plus1 = 1253,
 
 	/// <summary>
 	/// Advanced Smithing - +1 to "[tools] simple tools" Tools production
 	/// </summary>
 	/// <name>Copper Tools +1 - in hook</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Tools_Plus1_In_Hook,
+	Copper_Tools_Plus1_In_Hook = 1254,
 
 	/// <summary>
 	/// Advanced Smithing - +2 to "[tools] simple tools" Tools production. Gain an additional "[tools] simple tools" Tools every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Tools +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Tools_Plus2,
+	Copper_Tools_Plus2 = 1255,
 
 	/// <summary>
 	/// Advanced Smithing - +3 to "[tools] simple tools" Tools production. Gain an additional "[tools] simple tools" Tools every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Tools +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Tools_Plus3,
+	Copper_Tools_Plus3 = 1256,
 
 	/// <summary>
 	/// Advanced Smithing - +5 to "[tools] simple tools" Tools production. Gain an additional "[tools] simple tools" Tools every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Copper Tools +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Copper_Tools_Plus5,
+	Copper_Tools_Plus5 = 1257,
 
 	/// <summary>
 	/// Crystal Growth - All "[metal] crystalized dew" Crystalized Dew production is reduced by 1 (whether from gathering, farming, or production).
 	/// </summary>
 	/// <name>Crystalized Dew -1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Crystalized_Dew_Minus1,
+	Crystalized_Dew_Minus1 = 1258,
 
 	/// <summary>
 	/// Crystal Growth - +1 to "[metal] crystalized dew" Crystalized Dew production. Gain an additional "[metal] crystalized dew" Crystalized Dew every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Crystalized Dew +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Crystalized_Dew_Plus1,
+	Crystalized_Dew_Plus1 = 1259,
 
 	/// <summary>
 	/// Crystal Growth - +2 to "[metal] crystalized dew" Crystalized Dew production. Gain an additional "[metal] crystalized dew" Crystalized Dew every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Crystalized Dew +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Crystalized_Dew_Plus2,
+	Crystalized_Dew_Plus2 = 1260,
 
 	/// <summary>
 	/// Crystal Growth - +3 to "[metal] crystalized dew" Crystalized Dew production. Gain an additional "[metal] crystalized dew" Crystalized Dew every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Crystalized Dew +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Crystalized_Dew_Plus3,
+	Crystalized_Dew_Plus3 = 1261,
 
 	/// <summary>
 	/// Crystal Growth - +5 to "[metal] crystalized dew" Crystalized Dew production. Gain an additional "[metal] crystalized dew" Crystalized Dew every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Crystalized Dew +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Crystalized_Dew_Plus5,
+	Crystalized_Dew_Plus5 = 1262,
 
 	/// <summary>
 	/// Egg Containers - +1 to "[food raw] eggs" Eggs production. Gain an additional "[food raw] eggs" Eggs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Eggs +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Eggs_Plus1,
+	Eggs_Plus1 = 1263,
 
 	/// <summary>
 	/// Egg Containers - +2 to "[food raw] eggs" Eggs production. Gain an additional "[food raw] eggs" Eggs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Eggs +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Eggs_Plus2,
+	Eggs_Plus2 = 1264,
 
 	/// <summary>
 	/// Egg Containers - +3 to "[food raw] eggs" Eggs production. Gain an additional "[food raw] eggs" Eggs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Eggs +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Eggs_Plus3,
+	Eggs_Plus3 = 1265,
 
 	/// <summary>
 	/// Egg Containers - +5 to "[food raw] eggs" Eggs production. Gain an additional "[food raw] eggs" Eggs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Eggs +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Eggs_Plus5,
+	Eggs_Plus5 = 1266,
 
 	/// <summary>
 	/// Reinforced Needles - +1 to "[mat processed] fabric" Fabric production. Gain an additional "[mat processed] fabric" Fabric every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Fabric +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Fabric_Plus1,
+	Fabric_Plus1 = 1267,
 
 	/// <summary>
 	/// Reinforced Needles - +2 to "[mat processed] fabric" Fabric production. Gain an additional "[mat processed] fabric" Fabric every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Fabric +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Fabric_Plus2,
+	Fabric_Plus2 = 1268,
 
 	/// <summary>
 	/// Reinforced Needles - +3 to "[mat processed] fabric" Fabric production. Gain an additional "[mat processed] fabric" Fabric every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Fabric +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Fabric_Plus3,
+	Fabric_Plus3 = 1269,
 
 	/// <summary>
 	/// Reinforced Needles - +5 to "[mat processed] fabric" Fabric production. Gain an additional "[mat processed] fabric" Fabric every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Fabric +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Fabric_Plus5,
+	Fabric_Plus5 = 1270,
 
 	/// <summary>
 	/// Chum Bucket - +1 to "[food raw] fish" Fish production. Gain an additional "[food raw] fish" Fish every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Fish +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Fish_Plus1,
+	Fish_Plus1 = 1271,
 
 	/// <summary>
 	/// Heavy Millstone - +1 to "[crafting] flour" Flour production. Gain an additional "[crafting] flour" Flour every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Flour +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Flour_Plus1,
+	Flour_Plus1 = 1272,
 
 	/// <summary>
 	/// Heavy Millstone - +2 to "[crafting] flour" Flour production. Gain an additional "[crafting] flour" Flour every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Flour +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Flour_Plus2,
+	Flour_Plus2 = 1273,
 
 	/// <summary>
 	/// Heavy Millstone - +3 to "[crafting] flour" Flour production. Gain an additional "[crafting] flour" Flour every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Flour +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Flour_Plus3,
+	Flour_Plus3 = 1274,
 
 	/// <summary>
 	/// Heavy Millstone - +5 to "[crafting] flour" Flour production. Gain an additional "[crafting] flour" Flour every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Flour +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Flour_Plus5,
+	Flour_Plus5 = 1275,
 
 	/// <summary>
 	/// Mold Supply - +1 to "[food raw] grain" Grain production. Gain an additional "[food raw] grain" Grain every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Grain +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Grain_Plus1,
+	Grain_Plus1 = 1276,
 
 	/// <summary>
 	/// Mold Supply - +2 to "[food raw] grain" Grain production. Gain an additional "[food raw] grain" Grain every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Grain +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Grain_Plus2,
+	Grain_Plus2 = 1277,
 
 	/// <summary>
 	/// Mold Supply - +3 to "[food raw] grain" Grain production. Gain an additional "[food raw] grain" Grain every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Grain +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Grain_Plus3,
+	Grain_Plus3 = 1278,
 
 	/// <summary>
 	/// Mold Supply - +5 to "[food raw] grain" Grain production. Gain an additional "[food raw] grain" Grain every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Grain +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Grain_Plus5,
+	Grain_Plus5 = 1279,
 
 	/// <summary>
 	/// Sharp Sickles - +1 to "[food raw] herbs" Herbs production. Gain an additional "[food raw] herbs" Herbs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Herbs +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Herbs_Plus1,
+	Herbs_Plus1 = 1280,
 
 	/// <summary>
 	/// Sharp Sickles - +2 to "[food raw] herbs" Herbs production. Gain an additional "[food raw] herbs" Herbs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Herbs +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Herbs_Plus2,
+	Herbs_Plus2 = 1281,
 
 	/// <summary>
 	/// Sharp Sickles - +3 to "[food raw] herbs" Herbs production. Gain an additional "[food raw] herbs" Herbs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Herbs +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Herbs_Plus3,
+	Herbs_Plus3 = 1282,
 
 	/// <summary>
 	/// Sharp Sickles - +5 to "[food raw] herbs" Herbs production. Gain an additional "[food raw] herbs" Herbs every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Herbs +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Herbs_Plus5,
+	Herbs_Plus5 = 1283,
 
 	/// <summary>
 	/// Vessel of Incense - +1 to "[needs] incense" Incense production. Gain an additional "[needs] incense" Incense every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Incense +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Incense_Plus1,
+	Incense_Plus1 = 1284,
 
 	/// <summary>
 	/// Vessel of Incense - +2 to "[needs] incense" Incense production. Gain an additional "[needs] incense" Incense every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Incense +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Incense_Plus2,
+	Incense_Plus2 = 1285,
 
 	/// <summary>
 	/// Vessel of Incense - +3 to "[needs] incense" Incense production. Gain an additional "[needs] incense" Incense every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Incense +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Incense_Plus3,
+	Incense_Plus3 = 1286,
 
 	/// <summary>
 	/// Vessel of Incense - +5 to "[needs] incense" Incense production. Gain an additional "[needs] incense" Incense every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Incense +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Incense_Plus5,
+	Incense_Plus5 = 1287,
 
 	/// <summary>
 	/// Big Phials - +1 to "[crafting] dye" Dye production. Gain an additional "[crafting] dye" Dye every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ink +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ink_Plus1,
+	Ink_Plus1 = 1288,
 
 	/// <summary>
 	/// Big Phials - +2 to "[crafting] dye" Dye production. Gain an additional "[crafting] dye" Dye every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ink +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ink_Plus2,
+	Ink_Plus2 = 1289,
 
 	/// <summary>
 	/// Big Phials - +3 to "[crafting] dye" Dye production. Gain an additional "[crafting] dye" Dye every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ink +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ink_Plus3,
+	Ink_Plus3 = 1290,
 
 	/// <summary>
 	/// Big Phials - +5 to "[crafting] dye" Dye production. Gain an additional "[crafting] dye" Dye every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Ink +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Ink_Plus5,
+	Ink_Plus5 = 1291,
 
 	/// <summary>
 	/// Insect Lure - +1 to "[food raw] insects" Insects production. Gain an additional "[food raw] insects" Insects every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Insects +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Insects_Plus1,
+	Insects_Plus1 = 1292,
 
 	/// <summary>
 	/// Insect Lure - +2 to "[food raw] insects" Insects production. Gain an additional "[food raw] insects" Insects every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Insects +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Insects_Plus2,
+	Insects_Plus2 = 1293,
 
 	/// <summary>
 	/// Insect Lure - +3 to "[food raw] insects" Insects production. Gain an additional "[food raw] insects" Insects every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Insects +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Insects_Plus3,
+	Insects_Plus3 = 1294,
 
 	/// <summary>
 	/// Insect Lure - +5 to "[food raw] insects" Insects production. Gain an additional "[food raw] insects" Insects every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Insects +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Insects_Plus5,
+	Insects_Plus5 = 1295,
 
 	/// <summary>
 	/// Salted Jerky - +1 to "[food processed] jerky" Jerky production. Gain an additional "[food processed] jerky" Jerky every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Jerky +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Jerky_Plus1,
+	Jerky_Plus1 = 1296,
 
 	/// <summary>
 	/// Salted Jerky - +2 to "[food processed] jerky" Jerky production. Gain an additional "[food processed] jerky" Jerky every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Jerky +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Jerky_Plus2,
+	Jerky_Plus2 = 1297,
 
 	/// <summary>
 	/// Salted Jerky - +3 to "[food processed] jerky" Jerky production. Gain an additional "[food processed] jerky" Jerky every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Jerky +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Jerky_Plus3,
+	Jerky_Plus3 = 1298,
 
 	/// <summary>
 	/// Salted Jerky - +5 to "[food processed] jerky" Jerky production. Gain an additional "[food processed] jerky" Jerky every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Jerky +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Jerky_Plus5,
+	Jerky_Plus5 = 1299,
 
 	/// <summary>
 	/// Tanning Racks - +1 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Leather +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Leather_Plus1,
+	Leather_Plus1 = 1300,
 
 	/// <summary>
 	/// Tanning Racks - +2 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Leather +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Leather_Plus2,
+	Leather_Plus2 = 1301,
 
 	/// <summary>
 	/// Tanning Racks - +3 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Leather +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Leather_Plus3,
+	Leather_Plus3 = 1302,
 
 	/// <summary>
 	/// Tanning Racks - +5 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Leather +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Leather_Plus5,
+	Leather_Plus5 = 1303,
 
 	/// <summary>
 	/// Nets - +1 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Meat +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Meat_Plus1,
+	Meat_Plus1 = 1304,
 
 	/// <summary>
 	/// Nets - +2 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Meat +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Meat_Plus2,
+	Meat_Plus2 = 1305,
 
 	/// <summary>
 	/// Nets - +3 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Meat +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Meat_Plus3,
+	Meat_Plus3 = 1306,
 
 	/// <summary>
 	/// Nets - +5 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Meat +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Meat_Plus5,
+	Meat_Plus5 = 1307,
 
 	/// <summary>
 	/// Fungal Growth - +1 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Mushroom +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Mushroom_Plus1,
+	Mushroom_Plus1 = 1308,
 
 	/// <summary>
 	/// Fungal Growth - +2 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Mushroom +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Mushroom_Plus2,
+	Mushroom_Plus2 = 1309,
 
 	/// <summary>
 	/// Fungal Growth - +3 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Mushroom +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Mushroom_Plus3,
+	Mushroom_Plus3 = 1310,
 
 	/// <summary>
 	/// Fungal Growth - +5 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Mushroom +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Mushroom_Plus5,
+	Mushroom_Plus5 = 1311,
 
 	/// <summary>
 	/// Heavy Press - +1 to "[crafting] oil" Oil production. Gain an additional "[crafting] oil" Oil every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Oil +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Oil_Plus1,
+	Oil_Plus1 = 1312,
 
 	/// <summary>
 	/// Heavy Press - +2 to "[crafting] oil" Oil production. Gain an additional "[crafting] oil" Oil every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Oil +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Oil_Plus2,
+	Oil_Plus2 = 1313,
 
 	/// <summary>
 	/// Heavy Press - +3 to "[crafting] oil" Oil production. Gain an additional "[crafting] oil" Oil every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Oil +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Oil_Plus3,
+	Oil_Plus3 = 1314,
 
 	/// <summary>
 	/// Heavy Press - +5 to "[crafting] oil" Oil production. Gain an additional "[crafting] oil" Oil every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Oil +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Oil_Plus5,
+	Oil_Plus5 = 1315,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Building_Materials_Plus1,
+	Pack_Of_Building_Materials_Plus1 = 1316,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Building_Materials_Plus2,
+	Pack_Of_Building_Materials_Plus2 = 1317,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Building_Materials_Plus3,
+	Pack_Of_Building_Materials_Plus3 = 1318,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials +4</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Building_Materials_Plus4,
+	Pack_Of_Building_Materials_Plus4 = 1319,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Building_Materials_Plus5,
+	Pack_Of_Building_Materials_Plus5 = 1320,
 
 	/// <summary>
 	/// Industrialized Farming - +1 to "[packs] pack of crops" Pack of Crops production. Gain an additional "[packs] pack of crops" Pack of Crops every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pack of Crops +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Crops_Plus1,
+	Pack_Of_Crops_Plus1 = 1321,
 
 	/// <summary>
 	/// Industrialized Farming - +2 to "[packs] pack of crops" Pack of Crops production. Gain an additional "[packs] pack of crops" Pack of Crops every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pack of Crops +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Crops_Plus2,
+	Pack_Of_Crops_Plus2 = 1322,
 
 	/// <summary>
 	/// Industrialized Farming - +3 to "[packs] pack of crops" Pack of Crops production. Gain an additional "[packs] pack of crops" Pack of Crops every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pack of Crops +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Crops_Plus3,
+	Pack_Of_Crops_Plus3 = 1323,
 
 	/// <summary>
 	/// Industrialized Farming - +4 to "[packs] pack of crops" Pack of Crops production. Gain an additional "[packs] pack of crops" Pack of Crops every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pack of Crops +4</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Crops_Plus4,
+	Pack_Of_Crops_Plus4 = 1324,
 
 	/// <summary>
 	/// Industrialized Farming - +5 to "[packs] pack of crops" Pack of Crops production. Gain an additional "[packs] pack of crops" Pack of Crops every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pack of Crops +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Crops_Plus5,
+	Pack_Of_Crops_Plus5 = 1325,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Luxury_Plus1,
+	Pack_Of_Luxury_Plus1 = 1326,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Luxury_Plus2,
+	Pack_Of_Luxury_Plus2 = 1327,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Luxury_Plus3,
+	Pack_Of_Luxury_Plus3 = 1328,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Luxury_Plus5,
+	Pack_Of_Luxury_Plus5 = 1329,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Provisions_Plus1,
+	Pack_Of_Provisions_Plus1 = 1330,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Provisions_Plus2,
+	Pack_Of_Provisions_Plus2 = 1331,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Provisions_Plus3,
+	Pack_Of_Provisions_Plus3 = 1332,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Provisions_Plus5,
+	Pack_Of_Provisions_Plus5 = 1333,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Trade_Goods_Plus1,
+	Pack_Of_Trade_Goods_Plus1 = 1334,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Trade_Goods_Plus2,
+	Pack_Of_Trade_Goods_Plus2 = 1335,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Trade_Goods_Plus3,
+	Pack_Of_Trade_Goods_Plus3 = 1336,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pack_Of_Trade_Goods_Plus5,
+	Pack_Of_Trade_Goods_Plus5 = 1337,
 
 	/// <summary>
 	/// Advanced Press - +1 to "[needs] scrolls" Scrolls production. Gain an additional "[needs] scrolls" Scrolls every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Paper +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Paper_Plus1,
+	Paper_Plus1 = 1338,
 
 	/// <summary>
 	/// Advanced Press - +2 to "[needs] scrolls" Scrolls production. Gain an additional "[needs] scrolls" Scrolls every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Paper +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Paper_Plus2,
+	Paper_Plus2 = 1339,
 
 	/// <summary>
 	/// Advanced Press - +3 to "[needs] scrolls" Scrolls production. Gain an additional "[needs] scrolls" Scrolls every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Paper +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Paper_Plus3,
+	Paper_Plus3 = 1340,
 
 	/// <summary>
 	/// Advanced Press - +5 to "[needs] scrolls" Scrolls production. Gain an additional "[needs] scrolls" Scrolls every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Paper +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Paper_Plus5,
+	Paper_Plus5 = 1341,
 
 	/// <summary>
 	/// Steel Grater - +2 to "[food processed] paste" Paste production. Gain an additional "[food processed] paste" Paste every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Paste +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Paste_Plus2,
+	Paste_Plus2 = 1342,
 
 	/// <summary>
 	/// +2 to "[needs] coats" Coats production.
 	/// </summary>
 	/// <name>[PerkCrafter] Boots and Coats +2 - child (coats)</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Boots_And_Coats_Plus2_Child_coats,
+	PerkCrafter_Boots_And_Coats_Plus2_Child_coats = 1343,
 
 	/// <summary>
 	/// +1 to "[needs] boots" Boots production.
 	/// </summary>
 	/// <name>[PerkCrafter] Boots +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Boots_Plus1,
+	PerkCrafter_Boots_Plus1 = 1344,
 
 	/// <summary>
 	/// +2 to "[needs] boots" Boots production.
 	/// </summary>
 	/// <name>[PerkCrafter] Boots +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Boots_Plus2,
+	PerkCrafter_Boots_Plus2 = 1345,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[food processed] skewers" Skewers production.
 	/// </summary>
 	/// <name>[PerkCrafter] Jerky and Skewers +2 - child (skewers)</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Jerky_And_Skewers_Plus2_Child_skewers,
+	PerkCrafter_Jerky_And_Skewers_Plus2_Child_skewers = 1346,
 
 	/// <summary>
 	/// Bigger Barrels - +1 to "[food processed] jerky" Jerky production.
 	/// </summary>
 	/// <name>[PerkCrafter] Jerky +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Jerky_Plus1,
+	PerkCrafter_Jerky_Plus1 = 1347,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[food processed] jerky" Jerky production.
 	/// </summary>
 	/// <name>[PerkCrafter] Jerky +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Jerky_Plus2,
+	PerkCrafter_Jerky_Plus2 = 1348,
 
 	/// <summary>
 	/// -2 to "[food processed] pickled goods" Pickled Goods production.
 	/// </summary>
 	/// <name>[PerkCrafter] Pickled Goods -2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Pickled_Goods_Minus2,
+	PerkCrafter_Pickled_Goods_Minus2 = 1349,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[needs] ale" Ale production. Gain an additional "[needs] ale" Ale every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[PerkCrafter] Porridge and Paste +2 - child (porridge)</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Porridge_And_Paste_Plus2_Child_porridge,
+	PerkCrafter_Porridge_And_Paste_Plus2_Child_porridge = 1350,
 
 	/// <summary>
 	/// Bigger Barrels - +1 to "[food processed] porridge" Porridge production.
 	/// </summary>
 	/// <name>[PerkCrafter] Porridge +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Porridge_Plus1,
+	PerkCrafter_Porridge_Plus1 = 1351,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[food processed] porridge" Porridge production.
 	/// </summary>
 	/// <name>[PerkCrafter] Porridge +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Porridge_Plus2,
+	PerkCrafter_Porridge_Plus2 = 1352,
 
 	/// <summary>
 	/// +2 to "[needs] incense" Incense production.
 	/// </summary>
 	/// <name>[PerkCrafter] Scrolls and Incense +2 - child (incense)</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Scrolls_And_Incense_Plus2_Child_incense,
+	PerkCrafter_Scrolls_And_Incense_Plus2_Child_incense = 1353,
 
 	/// <summary>
 	/// +1 to "[needs] scrolls" Scrolls production.
 	/// </summary>
 	/// <name>[PerkCrafter] Scrolls +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Scrolls_Plus1,
+	PerkCrafter_Scrolls_Plus1 = 1354,
 
 	/// <summary>
 	/// +2 to "[needs] scrolls" Scrolls production.
 	/// </summary>
 	/// <name>[PerkCrafter] Scrolls +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Scrolls_Plus2,
+	PerkCrafter_Scrolls_Plus2 = 1355,
 
 	/// <summary>
 	/// -2 to "[needs] tea" Tea production.
 	/// </summary>
 	/// <name>[PerkCrafter] Tea -2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Tea_Minus2,
+	PerkCrafter_Tea_Minus2 = 1356,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[needs] ale" Ale production. Gain an additional "[needs] ale" Ale every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[PerkCrafter] Wine and Ale +2 - child (ale)</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Wine_And_Ale_Plus2_Child_ale,
+	PerkCrafter_Wine_And_Ale_Plus2_Child_ale = 1357,
 
 	/// <summary>
 	/// Bigger Barrels - +1 to "[needs] wine" Wine production.
 	/// </summary>
 	/// <name>[PerkCrafter] Wine +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Wine_Plus1,
+	PerkCrafter_Wine_Plus1 = 1358,
 
 	/// <summary>
 	/// Bigger Barrels - +2 to "[needs] wine" Wine production.
 	/// </summary>
 	/// <name>[PerkCrafter] Wine +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	PerkCrafter_Wine_Plus2,
+	PerkCrafter_Wine_Plus2 = 1359,
 
 	/// <summary>
 	/// Pickle Jars - +1 to "[food processed] pickled goods" Pickled Goods production. Gain an additional "[food processed] pickled goods" Pickled Goods every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pickled Goods +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pickled_Goods_Plus1,
+	Pickled_Goods_Plus1 = 1360,
 
 	/// <summary>
 	/// Pickle Jars - +2 to "[food processed] pickled goods" Pickled Goods production. Gain an additional "[food processed] pickled goods" Pickled Goods every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pickled Goods +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pickled_Goods_Plus2,
+	Pickled_Goods_Plus2 = 1361,
 
 	/// <summary>
 	/// Pickle Jars - +3 to "[food processed] pickled goods" Pickled Goods production. Gain an additional "[food processed] pickled goods" Pickled Goods every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pickled Goods +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pickled_Goods_Plus3,
+	Pickled_Goods_Plus3 = 1362,
 
 	/// <summary>
 	/// Pickle Jars - +5 to "[food processed] pickled goods" Pickled Goods production. Gain an additional "[food processed] pickled goods" Pickled Goods every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pickled Goods +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pickled_Goods_Plus5,
+	Pickled_Goods_Plus5 = 1363,
 
 	/// <summary>
 	/// Bigger Ovens - +1 to "[food processed] pie" Pie production. Gain an additional "[food processed] pie" Pie every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pie +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pie_Plus1,
+	Pie_Plus1 = 1364,
 
 	/// <summary>
 	/// Bigger Ovens - +2 to "[food processed] pie" Pie production. Gain an additional "[food processed] pie" Pie every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pie +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pie_Plus2,
+	Pie_Plus2 = 1365,
 
 	/// <summary>
 	/// Bigger Ovens - +3 to "[food processed] pie" Pie production. Gain an additional "[food processed] pie" Pie every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pie +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pie_Plus3,
+	Pie_Plus3 = 1366,
 
 	/// <summary>
 	/// Bigger Ovens - +5 to "[food processed] pie" Pie production. Gain an additional "[food processed] pie" Pie every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pie +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pie_Plus5,
+	Pie_Plus5 = 1367,
 
 	/// <summary>
 	/// Stamping Die - +1 to "[mat processed] pipe" Pipes production. Gain an additional "[mat processed] pipe" Pipes every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pipes +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pipes_Plus1,
+	Pipes_Plus1 = 1368,
 
 	/// <summary>
 	/// Reinforced Saw Blades - +1 to "[mat processed] planks" Planks production. Gain an additional "[mat processed] planks" Planks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Planks +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Planks_Plus1,
+	Planks_Plus1 = 1369,
 
 	/// <summary>
 	/// Reinforced Saw Blades - +2 to "[mat processed] planks" Planks production. Gain an additional "[mat processed] planks" Planks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Planks +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Planks_Plus2,
+	Planks_Plus2 = 1370,
 
 	/// <summary>
 	/// Reinforced Saw Blades - +3 to "[mat processed] planks" Planks production. Gain an additional "[mat processed] planks" Planks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Planks +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Planks_Plus3,
+	Planks_Plus3 = 1371,
 
 	/// <summary>
 	/// Reinforced Saw Blades - +5 to "[mat processed] planks" Planks production. Gain an additional "[mat processed] planks" Planks every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Planks +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Planks_Plus5,
+	Planks_Plus5 = 1372,
 
 	/// <summary>
 	/// Rich in Fiber - +1 to "[mat raw] plant fibre" Plant Fiber production. Gain an additional "[mat raw] plant fibre" Plant Fiber every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Plant Fibre +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Plant_Fibre_Plus1,
+	Plant_Fibre_Plus1 = 1373,
 
 	/// <summary>
 	/// Rich in Fiber - +2 to "[mat raw] plant fibre" Plant Fiber production. Gain an additional "[mat raw] plant fibre" Plant Fiber every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Plant Fibre +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Plant_Fibre_Plus2,
+	Plant_Fibre_Plus2 = 1374,
 
 	/// <summary>
 	/// Rich in Fiber - +3 to "[mat raw] plant fibre" Plant Fiber production. Gain an additional "[mat raw] plant fibre" Plant Fiber every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Plant Fibre +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Plant_Fibre_Plus3,
+	Plant_Fibre_Plus3 = 1375,
 
 	/// <summary>
 	/// Rich in Fiber - +5 to "[mat raw] plant fibre" Plant Fiber production. Gain an additional "[mat raw] plant fibre" Plant Fiber every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Plant Fibre +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Plant_Fibre_Plus5,
+	Plant_Fibre_Plus5 = 1376,
 
 	/// <summary>
 	/// Puffed Grain - +1 to "[food processed] porridge" Porridge production. Gain an additional "[food processed] porridge" Porridge every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Porridge +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Porridge_Plus1,
+	Porridge_Plus1 = 1377,
 
 	/// <summary>
 	/// Puffed Grain - +2 to "[food processed] porridge" Porridge production. Gain an additional "[food processed] porridge" Porridge every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Porridge +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Porridge_Plus2,
+	Porridge_Plus2 = 1378,
 
 	/// <summary>
 	/// Puffed Grain - +3 to "[food processed] porridge" Porridge production. Gain an additional "[food processed] porridge" Porridge every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Porridge +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Porridge_Plus3,
+	Porridge_Plus3 = 1379,
 
 	/// <summary>
 	/// Puffed Grain - +4 to "[food processed] porridge" Porridge production. Gain an additional "[food processed] porridge" Porridge every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Porridge +4</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Porridge_Plus4,
+	Porridge_Plus4 = 1380,
 
 	/// <summary>
 	/// Puffed Grain - +5 to "[food processed] porridge" Porridge production. Gain an additional "[food processed] porridge" Porridge every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Porridge +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Porridge_Plus5,
+	Porridge_Plus5 = 1381,
 
 	/// <summary>
 	/// Rain-Powered Pottery Wheel - +1 to "[vessel] pottery" Pottery production. Gain an additional "[vessel] pottery" Pottery every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pottery +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pottery_Plus1,
+	Pottery_Plus1 = 1382,
 
 	/// <summary>
 	/// Rain-Powered Pottery Wheel - +2 to "[vessel] pottery" Pottery production. Gain an additional "[vessel] pottery" Pottery every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pottery +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pottery_Plus2,
+	Pottery_Plus2 = 1383,
 
 	/// <summary>
 	/// Rain-Powered Pottery Wheel - +3 to "[vessel] pottery" Pottery production. Gain an additional "[vessel] pottery" Pottery every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pottery +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pottery_Plus3,
+	Pottery_Plus3 = 1384,
 
 	/// <summary>
 	/// Rain-Powered Pottery Wheel - +5 to "[vessel] pottery" Pottery production. Gain an additional "[vessel] pottery" Pottery every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Pottery +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Pottery_Plus5,
+	Pottery_Plus5 = 1385,
 
 	/// <summary>
 	/// Leather Gloves - +1 to "[mat raw] reeds" Reed production. Gain an additional "[mat raw] reeds" Reed every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Reed +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Reed_Plus1,
+	Reed_Plus1 = 1386,
 
 	/// <summary>
 	/// Leather Gloves - +2 to "[mat raw] reeds" Reed production. Gain an additional "[mat raw] reeds" Reed every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Reed +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Reed_Plus2,
+	Reed_Plus2 = 1387,
 
 	/// <summary>
 	/// Leather Gloves - +3 to "[mat raw] reeds" Reed production. Gain an additional "[mat raw] reeds" Reed every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Reed +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Reed_Plus3,
+	Reed_Plus3 = 1388,
 
 	/// <summary>
 	/// Leather Gloves - +5 to "[mat raw] reeds" Reed production. Gain an additional "[mat raw] reeds" Reed every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Reed +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Reed_Plus5,
+	Reed_Plus5 = 1389,
 
 	/// <summary>
 	/// Bleeding Trees - +1 to "[mat raw] resin" Resin production. Gain an additional "[mat raw] resin" Resin every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Resin +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Resin_Plus1,
+	Resin_Plus1 = 1390,
 
 	/// <summary>
 	/// Bleeding Trees - +2 to "[mat raw] resin" Resin production. Gain an additional "[mat raw] resin" Resin every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Resin +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Resin_Plus2,
+	Resin_Plus2 = 1391,
 
 	/// <summary>
 	/// Bleeding Trees - +3 to "[mat raw] resin" Resin production. Gain an additional "[mat raw] resin" Resin every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Resin +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Resin_Plus3,
+	Resin_Plus3 = 1392,
 
 	/// <summary>
 	/// Bleeding Trees - +5 to "[mat raw] resin" Resin production. Gain an additional "[mat raw] resin" Resin every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Resin +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Resin_Plus5,
+	Resin_Plus5 = 1393,
 
 	/// <summary>
 	/// Steel Penknives - +1 to "[food raw] roots" Roots production. Gain an additional "[food raw] roots" Roots every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Roots +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Roots_Plus1,
+	Roots_Plus1 = 1394,
 
 	/// <summary>
 	/// Steel Penknives - +2 to "[food raw] roots" Roots production. Gain an additional "[food raw] roots" Roots every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Roots +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Roots_Plus2,
+	Roots_Plus2 = 1395,
 
 	/// <summary>
 	/// Steel Penknives - +3 to "[food raw] roots" Roots production. Gain an additional "[food raw] roots" Roots every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Roots +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Roots_Plus3,
+	Roots_Plus3 = 1396,
 
 	/// <summary>
 	/// Steel Penknives - +5 to "[food raw] roots" Roots production. Gain an additional "[food raw] roots" Roots every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Roots +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Roots_Plus5,
+	Roots_Plus5 = 1397,
 
 	/// <summary>
 	/// Salt Pick - +1 to "[crafting] salt" Salt production. Gain an additional "[crafting] salt" Salt every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Salt +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Salt_Plus1,
+	Salt_Plus1 = 1398,
 
 	/// <summary>
 	/// Fish Scaler - +1 to "[mat raw] scales" Scales production. Gain an additional "[mat raw] scales" Scales every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Scales +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Scales_Plus1,
+	Scales_Plus1 = 1399,
 
 	/// <summary>
 	/// Berry New Year - +3 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Berries +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Berries_Plus3,
+	SE_Berries_Plus3 = 1400,
 
 	/// <summary>
 	/// Heavy Drops - +3 to "[water] drizzle water" Drizzle Water production. Gain an additional "[water] drizzle water" Drizzle Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Drizzle Water +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Drizzle_Water_Plus3,
+	SE_Drizzle_Water_Plus3 = 1401,
 
 	/// <summary>
 	/// Fish Flood - +3 to "[food raw] fish" Fish production. Gain an additional "[food raw] fish" Fish every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Fish +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Fish_Plus3,
+	SE_Fish_Plus3 = 1402,
 
 	/// <summary>
 	/// Shedding Season - +3 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Leather +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Leather_Plus3,
+	SE_Leather_Plus3 = 1403,
 
 	/// <summary>
 	/// Mating Season - +3 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Meat +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Meat_Plus3,
+	SE_Meat_Plus3 = 1404,
 
 	/// <summary>
 	/// Mushrooms After Rain - +3 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Mushroom +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Mushroom_Plus3,
+	SE_Mushroom_Plus3 = 1405,
 
 	/// <summary>
 	/// Heavy Drops - +5 to "[mat raw] sparkdew" Sparkdew production. Gain an additional "[mat raw] sparkdew" Sparkdew every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>SE Sparkdew +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	SE_Sparkdew_Plus5,
+	SE_Sparkdew_Plus5 = 1406,
 
 	/// <summary>
 	/// Fossil Leaching - +1 to "[crafting] sea marrow" Sea Marrow production. Gain an additional "[crafting] sea marrow" Sea Marrow every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Sea Marrow +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Sea_Marrow_Plus1,
+	Sea_Marrow_Plus1 = 1407,
 
 	/// <summary>
 	/// Fossil Leaching - +2 to "[crafting] sea marrow" Sea Marrow production. Gain an additional "[crafting] sea marrow" Sea Marrow every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Sea Marrow +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Sea_Marrow_Plus2,
+	Sea_Marrow_Plus2 = 1408,
 
 	/// <summary>
 	/// Fossil Leaching - +3 to "[crafting] sea marrow" Sea Marrow production. Gain an additional "[crafting] sea marrow" Sea Marrow every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Sea Marrow +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Sea_Marrow_Plus3,
+	Sea_Marrow_Plus3 = 1409,
 
 	/// <summary>
 	/// Fossil Leaching - +5 to "[crafting] sea marrow" Sea Marrow production. Gain an additional "[crafting] sea marrow" Sea Marrow every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Sea Marrow +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Sea_Marrow_Plus5,
+	Sea_Marrow_Plus5 = 1410,
 
 	/// <summary>
 	/// Bigger Grill - +1 to "[food processed] skewers" Skewers production. Gain an additional "[food processed] skewers" Skewers every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Skewers +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Skewers_Plus1,
+	Skewers_Plus1 = 1411,
 
 	/// <summary>
 	/// Bigger Grill - +2 to "[food processed] skewers" Skewers production. Gain an additional "[food processed] skewers" Skewers every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Skewers +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Skewers_Plus2,
+	Skewers_Plus2 = 1412,
 
 	/// <summary>
 	/// Bigger Grill - +3 to "[food processed] skewers" Skewers production. Gain an additional "[food processed] skewers" Skewers every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Skewers +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Skewers_Plus3,
+	Skewers_Plus3 = 1413,
 
 	/// <summary>
 	/// Bigger Grill - +5 to "[food processed] skewers" Skewers production. Gain an additional "[food processed] skewers" Skewers every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Skewers +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Skewers_Plus5,
+	Skewers_Plus5 = 1414,
 
 	/// <summary>
 	/// Steel Pickaxes - +1 to "[mat raw] stone" Stone production. Gain an additional "[mat raw] stone" Stone every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Stone +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Stone_Plus1,
+	Stone_Plus1 = 1415,
 
 	/// <summary>
 	/// Steel Pickaxes - +2 to "[mat raw] stone" Stone production. Gain an additional "[mat raw] stone" Stone every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Stone +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Stone_Plus2,
+	Stone_Plus2 = 1416,
 
 	/// <summary>
 	/// Steel Pickaxes - +3 to "[mat raw] stone" Stone production. Gain an additional "[mat raw] stone" Stone every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Stone +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Stone_Plus3,
+	Stone_Plus3 = 1417,
 
 	/// <summary>
 	/// Steel Pickaxes - +5 to "[mat raw] stone" Stone production. Gain an additional "[mat raw] stone" Stone every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Stone +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Stone_Plus5,
+	Stone_Plus5 = 1418,
 
 	/// <summary>
 	/// Rainwater Condenser - +1 to "[water] storm water" Storm Water production. Gain an additional "[water] storm water" Storm Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Storm Water +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Storm_Water_Plus1,
+	Storm_Water_Plus1 = 1419,
 
 	/// <summary>
 	/// Rainwater Condenser - +2 to "[water] storm water" Storm Water production. Gain an additional "[water] storm water" Storm Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Storm Water +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Storm_Water_Plus2,
+	Storm_Water_Plus2 = 1420,
 
 	/// <summary>
 	/// Rainwater Condenser - +3 to "[water] storm water" Storm Water production. Gain an additional "[water] storm water" Storm Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Storm Water +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Storm_Water_Plus3,
+	Storm_Water_Plus3 = 1421,
 
 	/// <summary>
 	/// Rainwater Condenser - +4 to "[water] storm water" Storm Water production. Gain an additional "[water] storm water" Storm Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Storm Water +4</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Storm_Water_Plus4,
+	Storm_Water_Plus4 = 1422,
 
 	/// <summary>
 	/// Rainwater Condenser - +5 to "[water] storm water" Storm Water production. Gain an additional "[water] storm water" Storm Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Storm Water +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Storm_Water_Plus5,
+	Storm_Water_Plus5 = 1423,
 
 	/// <summary>
 	/// Tea Infuser - +1 to "[needs] tea" Tea production. Gain an additional "[needs] tea" Tea every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Tea +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Tea_Plus1,
+	Tea_Plus1 = 1424,
 
 	/// <summary>
 	/// Tea Infuser - +2 to "[needs] tea" Tea production. Gain an additional "[needs] tea" Tea every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Tea +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Tea_Plus2,
+	Tea_Plus2 = 1425,
 
 	/// <summary>
 	/// Tea Infuser - +3 to "[needs] tea" Tea production. Gain an additional "[needs] tea" Tea every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Tea +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Tea_Plus3,
+	Tea_Plus3 = 1426,
 
 	/// <summary>
 	/// Tea Infuser - +5 to "[needs] tea" Tea production. Gain an additional "[needs] tea" Tea every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Tea +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Tea_Plus5,
+	Tea_Plus5 = 1427,
 
 	/// <summary>
 	/// Woodworking Tools - +1 to "[needs] training gear" Training Gear production. Gain an additional "[needs] training gear" Training Gear every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Training Gear +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Training_Gear_Plus1,
+	Training_Gear_Plus1 = 1428,
 
 	/// <summary>
 	/// Woodworking Tools - +2 to "[needs] training gear" Training Gear production. Gain an additional "[needs] training gear" Training Gear every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Training Gear +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Training_Gear_Plus2,
+	Training_Gear_Plus2 = 1429,
 
 	/// <summary>
 	/// Woodworking Tools - +3 to "[needs] training gear" Training Gear production. Gain an additional "[needs] training gear" Training Gear every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Training Gear +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Training_Gear_Plus3,
+	Training_Gear_Plus3 = 1430,
 
 	/// <summary>
 	/// Woodworking Tools - +5 to "[needs] training gear" Training Gear production. Gain an additional "[needs] training gear" Training Gear every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Training Gear +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Training_Gear_Plus5,
+	Training_Gear_Plus5 = 1431,
 
 	/// <summary>
 	/// Giant Vegetables - +1 to "[food raw] vegetables" Vegetables production. Gain an additional "[food raw] vegetables" Vegetables every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Vegetables +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Vegetables_Plus1,
+	Vegetables_Plus1 = 1432,
 
 	/// <summary>
 	/// Giant Vegetables - +2 to "[food raw] vegetables" Vegetables production. Gain an additional "[food raw] vegetables" Vegetables every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Vegetables +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Vegetables_Plus2,
+	Vegetables_Plus2 = 1433,
 
 	/// <summary>
 	/// Giant Vegetables - +3 to "[food raw] vegetables" Vegetables production. Gain an additional "[food raw] vegetables" Vegetables every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Vegetables +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Vegetables_Plus3,
+	Vegetables_Plus3 = 1434,
 
 	/// <summary>
 	/// Giant Vegetables - +5 to "[food raw] vegetables" Vegetables production. Gain an additional "[food raw] vegetables" Vegetables every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Vegetables +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Vegetables_Plus5,
+	Vegetables_Plus5 = 1435,
 
 	/// <summary>
 	/// Advanced Leatherworking - +1 to "[vessel] waterskin" Waterskins production. Gain an additional "[vessel] waterskin" Waterskins every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Waterskins +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Waterskins_Plus1,
+	Waterskins_Plus1 = 1436,
 
 	/// <summary>
 	/// Advanced Leatherworking - +2 to "[vessel] waterskin" Waterskins production. Gain an additional "[vessel] waterskin" Waterskins every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Waterskins +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Waterskins_Plus2,
+	Waterskins_Plus2 = 1437,
 
 	/// <summary>
 	/// Advanced Leatherworking - +3 to "[vessel] waterskin" Waterskins production. Gain an additional "[vessel] waterskin" Waterskins every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Waterskins +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Waterskins_Plus3,
+	Waterskins_Plus3 = 1438,
 
 	/// <summary>
 	/// Advanced Leatherworking - +5 to "[vessel] waterskin" Waterskins production. Gain an additional "[vessel] waterskin" Waterskins every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Waterskins +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Waterskins_Plus5,
+	Waterskins_Plus5 = 1439,
 
 	/// <summary>
 	/// Advanced Filters - +1 to "[needs] wine" Wine production. Gain an additional "[needs] wine" Wine every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Wine +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wine_Plus1,
+	Wine_Plus1 = 1440,
 
 	/// <summary>
 	/// Advanced Filters - +2 to "[needs] wine" Wine production. Gain an additional "[needs] wine" Wine every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Wine +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wine_Plus2,
+	Wine_Plus2 = 1441,
 
 	/// <summary>
 	/// Advanced Filters - +3 to "[needs] wine" Wine production. Gain an additional "[needs] wine" Wine every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Wine +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wine_Plus3,
+	Wine_Plus3 = 1442,
 
 	/// <summary>
 	/// Advanced Filters - +5 to "[needs] wine" Wine production. Gain an additional "[needs] wine" Wine every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Wine +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wine_Plus5,
+	Wine_Plus5 = 1443,
 
 	/// <summary>
 	/// Steel Axes - +1 to "[mat raw] wood" Wood production.
 	/// </summary>
 	/// <name>Wood +1</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wood_Plus1,
+	Wood_Plus1 = 1444,
 
 	/// <summary>
 	/// Steel Axes - +2 to "[mat raw] wood" Wood production. Gain an additional "[mat raw] wood" Wood every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Wood +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wood_Plus2,
+	Wood_Plus2 = 1445,
 
 	/// <summary>
 	/// Steel Axes - +3 to "[mat raw] wood" Wood production. Gain an additional "[mat raw] wood" Wood every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Wood +3</name>
 	/// <type>GoodsRawProductionEffectModel</type>
-	Wood_Plus3,
+	Wood_Plus3 = 1446,
 
 
 	//
@@ -10219,7 +10269,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Frog Add Grace Period</name>
 	/// <type>GracePeriodEffectModel</type>
-	Frog_Add_Grace_Period,
+	Frog_Add_Grace_Period = 1447,
 
 
 	//
@@ -10231,14 +10281,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>ModifierEffect_AdditionalGrass</name>
 	/// <type>GrassAmountEffectModel</type>
-	ModifierEffect_AdditionalGrass,
+	ModifierEffect_AdditionalGrass = 1448,
 
 	/// <summary>
 	/// Barren Lands - The soil is too acidic. There is no fertile soil anywhere in this region.
 	/// </summary>
 	/// <name>ModifierEffect_NoGrass</name>
 	/// <type>GrassAmountEffectModel</type>
-	ModifierEffect_NoGrass,
+	ModifierEffect_NoGrass = 1449,
 
 
 	//
@@ -10250,98 +10300,98 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BIOME] HarvestingRate +10</name>
 	/// <type>HarvestingRateEffectModel</type>
-	BIOME_HarvestingRate_Plus10,
+	BIOME_HarvestingRate_Plus10 = 1450,
 
 	/// <summary>
 	/// Slow Harvest - Harvesting crops is 25% faster.
 	/// </summary>
 	/// <name>HarvestingRate -25</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Minus25,
+	HarvestingRate_Minus25 = 1451,
 
 	/// <summary>
 	/// Slow Harvest - Harvesting crops is 50% faster.
 	/// </summary>
 	/// <name>HarvestingRate -50</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Minus50,
+	HarvestingRate_Minus50 = 1452,
 
 	/// <summary>
 	/// Slow Harvest - Harvesting crops is 60% faster.
 	/// </summary>
 	/// <name>HarvestingRate -60</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Minus60,
+	HarvestingRate_Minus60 = 1453,
 
 	/// <summary>
 	/// Slow Harvest - Harvesting crops is 70% faster.
 	/// </summary>
 	/// <name>HarvestingRate -70</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Minus70,
+	HarvestingRate_Minus70 = 1454,
 
 	/// <summary>
 	/// Slow Harvest - Harvesting crops is 80% faster.
 	/// </summary>
 	/// <name>HarvestingRate -80</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Minus80,
+	HarvestingRate_Minus80 = 1455,
 
 	/// <summary>
 	/// Quick Harvest - Harvesting crops is 100% faster.
 	/// </summary>
 	/// <name>HarvestingRate +100</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Plus100,
+	HarvestingRate_Plus100 = 1456,
 
 	/// <summary>
 	/// Obsidian Sickles - Harvesting crops is 25% faster.
 	/// </summary>
 	/// <name>HarvestingRate +25</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Plus25,
+	HarvestingRate_Plus25 = 1457,
 
 	/// <summary>
 	/// Obsidian Sickles - Harvesting crops is 30% faster.
 	/// </summary>
 	/// <name>HarvestingRate +30</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Plus30,
+	HarvestingRate_Plus30 = 1458,
 
 	/// <summary>
 	/// Obsidian Sickles - Harvesting crops is 5% faster.
 	/// </summary>
 	/// <name>HarvestingRate +5</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Plus5,
+	HarvestingRate_Plus5 = 1459,
 
 	/// <summary>
 	/// Quick Harvest - Harvesting crops is 50% faster.
 	/// </summary>
 	/// <name>HarvestingRate +50</name>
 	/// <type>HarvestingRateEffectModel</type>
-	HarvestingRate_Plus50,
+	HarvestingRate_Plus50 = 1460,
 
 	/// <summary>
 	/// Harvesting crops is 10% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed - child (Harvesting 10)</name>
 	/// <type>HarvestingRateEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_10,
+	PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_10 = 1461,
 
 	/// <summary>
 	/// Harvesting crops is 15% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed - child (Harvesting 15)</name>
 	/// <type>HarvestingRateEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_15,
+	PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_15 = 1462,
 
 	/// <summary>
 	/// Harvesting crops is 5% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed - child (Harvesting 5)</name>
 	/// <type>HarvestingRateEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_5,
+	PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_5 = 1463,
 
 
 	//
@@ -10353,63 +10403,63 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BT] Hearth Bonus HP - child</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	BT_Hearth_Bonus_HP_Child,
+	BT_Hearth_Bonus_HP_Child = 1464,
 
 	/// <summary>
 	/// Ancient Stabilizer - The Ancient Hearth's resistance to corruption is increased by 100.
 	/// </summary>
 	/// <name>Hearth Bonus HP +100</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	Hearth_Bonus_HP_Plus100,
+	Hearth_Bonus_HP_Plus100 = 1465,
 
 	/// <summary>
 	/// The Ancient Hearth's resistance to corruption is increased by 150.
 	/// </summary>
 	/// <name>Hearth Bonus HP +150</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	Hearth_Bonus_HP_Plus150,
+	Hearth_Bonus_HP_Plus150 = 1466,
 
 	/// <summary>
 	/// The Ancient Hearth's resistance to corruption is increased by 250.
 	/// </summary>
 	/// <name>Hearth Bonus HP +250</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	Hearth_Bonus_HP_Plus250,
+	Hearth_Bonus_HP_Plus250 = 1467,
 
 	/// <summary>
 	/// The Ancient Hearth's resistance to corruption is increased by 50.
 	/// </summary>
 	/// <name>Hearth Bonus HP +50</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	Hearth_Bonus_HP_Plus50,
+	Hearth_Bonus_HP_Plus50 = 1468,
 
 	/// <summary>
 	/// Obsidian Runestone - A complicated runic structure, designed to shield the hearth from corruption. The Ancient Hearth's resistance to corruption is increased by 400.
 	/// </summary>
 	/// <name>Hearth HP 500 - HP Bonus</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	Hearth_HP_500_HP_Bonus,
+	Hearth_HP_500_HP_Bonus = 1469,
 
 	/// <summary>
 	/// The Ancient Hearth's resistance to corruption is increased by 100.
 	/// </summary>
 	/// <name>Hearth Less HP -100</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	Hearth_Less_HP_Minus100,
+	Hearth_Less_HP_Minus100 = 1470,
 
 	/// <summary>
 	/// The Ancient Hearth's resistance is decreased by 300.
 	/// </summary>
 	/// <name>[PerkCrafter] Hearth HP</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	PerkCrafter_Hearth_HP,
+	PerkCrafter_Hearth_HP = 1471,
 
 	/// <summary>
 	/// Leakage - The cover of the Ancient Hearth has been damaged due to an exceptionally strong storm. The Hearth's resistance has decreased by 300.
 	/// </summary>
 	/// <name>SE Weakend Ancient Hearth</name>
 	/// <type>HearthBonusHPEffectModel</type>
-	SE_Weakend_Ancient_Hearth,
+	SE_Weakend_Ancient_Hearth = 1472,
 
 
 	//
@@ -10421,19 +10471,19 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Hearth Corruption Rate -10</name>
 	/// <type>HearthCorruptionRateEffectModel</type>
-	Hearth_Corruption_Rate_Minus10,
+	Hearth_Corruption_Rate_Minus10 = 1473,
 
 	/// <summary></summary>
 	/// <name>Hearth Corruption Rate +30</name>
 	/// <type>HearthCorruptionRateEffectModel</type>
-	Hearth_Corruption_Rate_Plus30,
+	Hearth_Corruption_Rate_Plus30 = 1474,
 
 	/// <summary>
 	/// Straight to the Hearth - Your settlement's strongest and weakest point has become a direct target for the Blightrot. Corruption in the Ancient Hearth grows 50% quicker.
 	/// </summary>
 	/// <name>Hearth Corruption Rate +50</name>
 	/// <type>HearthCorruptionRateEffectModel</type>
-	Hearth_Corruption_Rate_Plus50,
+	Hearth_Corruption_Rate_Plus50 = 1475,
 
 
 	//
@@ -10443,84 +10493,84 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Institution Slower Sacrafice</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Institution_Slower_Sacrafice,
+	Institution_Slower_Sacrafice = 1476,
 
 	/// <summary>
 	/// Hearth Defect - The Ancient Hearth seems to have a defect. No matter how hard the firekeeper tries, sacrificed resources are burning 35% quicker.
 	/// </summary>
 	/// <name>[Mod] Faster Fuel Sacrafice</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Mod_Faster_Fuel_Sacrafice,
+	Mod_Faster_Fuel_Sacrafice = 1477,
 
 	/// <summary>
 	/// Resources sacrificed in the Hearth burn 33% quicker.
 	/// </summary>
 	/// <name>[PerkCrafter] Sacrifice Cost</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	PerkCrafter_Sacrifice_Cost,
+	PerkCrafter_Sacrifice_Cost = 1478,
 
 	/// <summary>
 	/// Resources you sacrifice in the Ancient Hearth burn 25% quicker.
 	/// </summary>
 	/// <name>Sacrifice Cost 20 Shorter</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_20_Shorter,
+	Sacrifice_Cost_20_Shorter = 1479,
 
 	/// <summary>
 	/// Resources you sacrifice in the Ancient Hearth burn for 25% longer.
 	/// </summary>
 	/// <name>Sacrifice Cost 25 Longer</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_25_Longer,
+	Sacrifice_Cost_25_Longer = 1480,
 
 	/// <summary>
 	/// Resources you sacrifice in the Ancient Hearth burn 25% quicker.
 	/// </summary>
 	/// <name>Sacrifice Cost 25 Shorter</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_25_Shorter,
+	Sacrifice_Cost_25_Shorter = 1481,
 
 	/// <summary>
 	/// Fiery Wrath - Resources you sacrifice in the Ancient Hearth burn 3% longer for every Impatience Point you have.
 	/// </summary>
 	/// <name>Sacrifice Cost 3 Longer</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_3_Longer,
+	Sacrifice_Cost_3_Longer = 1482,
 
 	/// <summary>
 	/// Resources you sacrifice in the Ancient Hearth burn for 30% longer.
 	/// </summary>
 	/// <name>Sacrifice Cost 30 Longer</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_30_Longer,
+	Sacrifice_Cost_30_Longer = 1483,
 
 	/// <summary>
 	/// Resources you sacrifice in the Ancient Hearth burn for 33% longer.
 	/// </summary>
 	/// <name>Sacrifice Cost 33 Longer</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_33_Longer,
+	Sacrifice_Cost_33_Longer = 1484,
 
 	/// <summary>
 	/// Fiery Wrath - Resources you sacrifice in the Ancient Hearth burn 5% longer for every Impatience Point you have.
 	/// </summary>
 	/// <name>Sacrifice Cost 5 Longer</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_5_Longer,
+	Sacrifice_Cost_5_Longer = 1485,
 
 	/// <summary>
 	/// Resources you sacrifice in the Ancient Hearth burn for 50% longer.
 	/// </summary>
 	/// <name>Sacrifice Cost 50 Longer</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	Sacrifice_Cost_50_Longer,
+	Sacrifice_Cost_50_Longer = 1486,
 
 	/// <summary>
 	/// Faint Flame - Strong gusts of wind strike the Holy Flame. Resources you sacrifice in the Ancient Hearth burn 40% quicker.
 	/// </summary>
 	/// <name>SE Sacrifice more in Storm</name>
 	/// <type>HearthSacraficeTimeEffectModel</type>
-	SE_Sacrifice_More_In_Storm,
+	SE_Sacrifice_More_In_Storm = 1487,
 
 
 	//
@@ -10532,28 +10582,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Hearth Sacrifice Block</name>
 	/// <type>HearthSacrificeBlockEffectModel</type>
-	Hearth_Sacrifice_Block,
+	Hearth_Sacrifice_Block = 1488,
 
 	/// <summary>
 	/// Baptism of Fire - While the Hearth is corrupted, you’re unable to sacrifice resources.
 	/// </summary>
 	/// <name>Hearth Sacrifice Block - Baptism of Fire</name>
 	/// <type>HearthSacrificeBlockEffectModel</type>
-	Hearth_Sacrifice_Block_Baptism_Of_Fire,
+	Hearth_Sacrifice_Block_Baptism_Of_Fire = 1489,
 
 	/// <summary>
 	/// Plague of Darkness
 	/// </summary>
 	/// <name>Hearth Sacrifice Block - Plague of Darkness</name>
 	/// <type>HearthSacrificeBlockEffectModel</type>
-	Hearth_Sacrifice_Block_Plague_Of_Darkness,
+	Hearth_Sacrifice_Block_Plague_Of_Darkness = 1490,
 
 	/// <summary>
 	/// Cursed Rain - It's no use making sacrifices during the storm here.
 	/// </summary>
 	/// <name>SE Hearth Sacrifice Block</name>
 	/// <type>HearthSacrificeBlockEffectModel</type>
-	SE_Hearth_Sacrifice_Block,
+	SE_Hearth_Sacrifice_Block = 1491,
 
 
 	//
@@ -10565,7 +10615,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Algae Sacrifice Recipe</name>
 	/// <type>HearthSacrificeRecipeEffectModel</type>
-	Algae_Sacrifice_Recipe,
+	Algae_Sacrifice_Recipe = 1492,
 
 
 	//
@@ -10579,7 +10629,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Killed Scout (VillagersDeathEffectModel)</hookedEffect_1>
-	_1_Killed_For_Glade_Event,
+	_1_Killed_For_Glade_Event = 1493,
 
 	/// <summary>
 	/// Over-Diligent Woodworkers - Some woodworkers just can't stop working. Gain 3 "[vessel] barrels" Barrels for every 10 "[mat processed] planks" Planks produced.
@@ -10588,7 +10638,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[mat processed] planks" Planks (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Barrels 3 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Barrels,
+	Accidental_Barrels = 1494,
 
 	/// <summary>
 	/// Repurposed Clay - Nothing goes to waste. Gain 2 "[mat processed] bricks" Bricks for every 10 "[vessel] pottery" Pottery produced.
@@ -10597,7 +10647,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[vessel] pottery" Pottery (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Bricks 2 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Bricks,
+	Accidental_Bricks = 1495,
 
 	/// <summary>
 	/// Accumulated Dew - Gain 2 "[metal] crystalized dew" Crystalized Dew for every 10 "[food raw] berries" Berries produced.
@@ -10606,7 +10656,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food raw] berries" Berries (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Crystalized Dew 2 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Crystalized_Dew,
+	Accidental_Crystalized_Dew = 1496,
 
 	/// <summary>
 	/// Chicken or Egg? - Gain 1 Harpy for every 25 "[food raw] eggs" Eggs produced.
@@ -10615,7 +10665,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>25 "[food raw] eggs" Eggs (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Harpy 1 (NewVillagersEffectModel)</hookedEffect_1>
-	Accidental_Harpy,
+	Accidental_Harpy = 1497,
 
 	/// <summary>
 	/// Sahilda's Secret Cookbook - Top 10 tips on how to cook more efficiently - by Sahilda. Gain 10 "[food processed] jerky" Jerky for every 10 "[food processed] pie" Pie produced.
@@ -10624,7 +10674,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food processed] pie" Pie (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Jerky 10 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Jerky,
+	Accidental_Jerky = 1498,
 
 	/// <summary>
 	/// Surprise Child - Gain 1 Lizard for every 25 "[food raw] eggs" Eggs produced.
@@ -10633,7 +10683,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>25 "[food raw] eggs" Eggs (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Lizard 1 (NewVillagersEffectModel)</hookedEffect_1>
-	Accidental_Lizard,
+	Accidental_Lizard = 1499,
 
 	/// <summary>
 	/// Small Press - A useful mill upgrade. Gain 3 "[crafting] oil" Oil for every 10 "[crafting] flour" Flour produced.
@@ -10642,7 +10692,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[crafting] flour" Flour (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Oil 3 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Oil,
+	Accidental_Oil = 1500,
 
 	/// <summary>
 	/// Dye Extractor - Gain 5 "[crafting] dye" Dye for every 10 "[food raw] insects" Insects produced.
@@ -10651,7 +10701,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food raw] insects" Insects (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Ink 5 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Pigment,
+	Accidental_Pigment = 1501,
 
 	/// <summary>
 	/// Peasant Supplies - Receive 3 "[packs] pack of provisions" Pack of Provisions for every new villager.
@@ -10660,7 +10710,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (VillagersAmountHook)</hooks_1>
 	/// <hookedEffect_1>Pack of Provisions 3 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Provisions,
+	Accidental_Provisions = 1502,
 
 	/// <summary>
 	/// Zhorg's Secret Ingredient - A mysterious ingredient discovered by the famous chef and businessman Zhorg. Gain 10 "[food processed] skewers" Skewers for every 10 "[food processed] pickled goods" Pickled Goods produced.
@@ -10669,7 +10719,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food processed] pickled goods" Pickled Goods (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Skewers 10 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Skewers,
+	Accidental_Skewers = 1503,
 
 	/// <summary>
 	/// Dual Brewing Tools - A set of specialized alchemical tools. Gain 3 "[needs] wine" Wine for every 15 "[needs] ale" Ale produced.
@@ -10678,7 +10728,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>15 "[needs] ale" Ale (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Wine 3 (GoodsEffectModel)</hookedEffect_1>
-	Accidental_Wine,
+	Accidental_Wine = 1504,
 
 	/// <summary>
 	/// Alarm Bells - The Brass Order's newest invention. All workers have a +5% higher chance of producing double yields for every 110 points of expected corruption per minute in the Ancient Hearth.
@@ -10687,7 +10737,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ExpectedRawCorruptionHook)</hooks_1>
 	/// <hookedEffect_1>Global Extra Prod +5 (GlobalExtraProductionChanceEffectModel)</hookedEffect_1>
-	Alarm_Bells,
+	Alarm_Bells = 1505,
 
 	/// <summary>
 	/// Overwhelmed Gatherers - Gathering speed is decreased by 50% until you use up at least 250 gathering node charges. Source: Master Blueprint.
@@ -10696,7 +10746,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>All Camps Unlock - Slow Gathering (RecipesTagProductionRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (DepositChargeUsedHook)</removalHook_1>
-	All_Camps_Unlock_Slow_Gathering_Holder,
+	All_Camps_Unlock_Slow_Gathering_Holder = 1506,
 
 	/// <summary>
 	/// Over-Diligent Woodworkers (Stormforged) - Some woodworkers just can't stop working. Gain 5 "[vessel] barrels" Barrels for every 5 "[mat processed] planks" Planks produced.
@@ -10705,7 +10755,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>5 "[mat processed] planks" Planks (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Barrels 5 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Accidental_Barrels,
+	Altar_Accidental_Barrels = 1507,
 
 	/// <summary>
 	/// Small Press (Stormforged) - A useful mill upgrade. Gain 5 "[crafting] oil" Oil for every 10 "[crafting] flour" Flour produced.
@@ -10714,7 +10764,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[crafting] flour" Flour (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Oil 5 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Accidental_Oil,
+	Altar_Accidental_Oil = 1508,
 
 	/// <summary>
 	/// Dye Extractor (Stormforged) - Gain 10 "[crafting] dye" Dye for every 10 "[food raw] insects" Insects produced. +1 to "[food raw] insects" Insects production. Gain an additional "[food raw] insects" Insects every yield (from gathering, farming, fishing, or production).
@@ -10724,7 +10774,7 @@ public enum EffectTypes
 	/// <hooks_1>10 "[food raw] insects" Insects (GoodProducedHook)</hooks_1>
 	/// <instantEffect_1>Insects +1 (GoodsRawProductionEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Ink 10 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Accidental_Pigment,
+	Altar_Accidental_Pigment = 1509,
 
 	/// <summary>
 	/// Alarm Bells (Stormforged) - The Brass Order's newest invention. All workers have a +10% higher chance of producing double yields for every 100 points of expected corruption per minute in the Ancient Hearth.
@@ -10733,7 +10783,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ExpectedRawCorruptionHook)</hooks_1>
 	/// <hookedEffect_1>Global Extra Prod +10 (GlobalExtraProductionChanceEffectModel)</hookedEffect_1>
-	Altar_Alarm_Bells,
+	Altar_Alarm_Bells = 1510,
 
 	/// <summary>
 	/// Deep Pockets (Stormforged) - Receive 15 "[valuable] amber" Amber for every 3 completed trade routes.
@@ -10742,7 +10792,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeRouteCollectedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 15 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Amber_For_Trade_Routes,
+	Altar_Amber_For_Trade_Routes = 1511,
 
 	/// <summary>
 	/// Vineyard Town (Stormforged) - The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 50 "[needs] wine" Wine produced.
@@ -10751,7 +10801,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[needs] wine" Wine (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Wine Beavers (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Altar_Beaver_Resolve_For_Wine_Prod,
+	Altar_Beaver_Resolve_For_Wine_Prod = 1512,
 
 	/// <summary>
 	/// Blood Price Contract (Stormforged) - A shady, but lucrative deal. Gain 20 "[valuable] amber" Amber and 1 "[valuable] ancient tablet" Ancient Tablet every time a villager dies or leaves.
@@ -10761,7 +10811,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Amber 20 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Ancient Tablet 1 (GoodsEffectModel)</hookedEffect_2>
-	Altar_Blood_Price,
+	Altar_Blood_Price = 1513,
 
 	/// <summary>
 	/// Cannibalism (Stormforged) - Gain 40 "[food raw] meat" Meat and 20 "[food processed] jerky" Jerky every time a villager dies or leaves.
@@ -10771,7 +10821,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Moth Larvae Meat 40 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Jerky 20 (GoodsEffectModel)</hookedEffect_2>
-	Altar_Cannibalism,
+	Altar_Cannibalism = 1514,
 
 	/// <summary>
 	/// Copper Extractor (Stormforged) - Machinery specialized in extracting copper from petrified trees. Gain 1 "[metal] copper bar" Copper Bars for every 15 "[mat raw] wood" Wood produced.
@@ -10780,7 +10830,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>15 "[mat raw] wood" Wood (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Copper Bar 1 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Copper_For_Each_Tree,
+	Altar_Copper_For_Each_Tree = 1515,
 
 	/// <summary>
 	/// Forsaken Seal (Stormforged) - An artifact of the Forsaken Gods. Gain one cornerstone reroll charge at the beginning of each storm.
@@ -10789,7 +10839,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>[Altar] Cornerstone Reroll (CornerstonesRerollsEffectModel)</hookedEffect_1>
-	Altar_Cornerstone_Reroll_Each_Year,
+	Altar_Cornerstone_Reroll_Each_Year = 1516,
 
 	/// <summary>
 	/// Leftover Crops (Stormforged) - Gain 1 "[packs] pack of crops" Pack of Crops and 1 "[packs] pack of provisions" Pack of Provisions for every 12 "[food raw] herbs" Herbs produced.
@@ -10799,7 +10849,7 @@ public enum EffectTypes
 	/// <hooks_1>12 "[food raw] herbs" Herbs (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Pack of Crops 1 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Pack of Provisions 1 (GoodsEffectModel)</hookedEffect_2>
-	Altar_Crops_For_Grain,
+	Altar_Crops_For_Grain = 1517,
 
 	/// <summary>
 	/// Tea Specialization (Stormforged) - The settlement specializes in cosmetic production. Gain +1 to Harpy Resolve for every 50 "[needs] tea" Tea produced.
@@ -10808,7 +10858,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[needs] tea" Tea (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Tea Harpies (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Altar_Harpy_Resolve_For_Tea_Prod,
+	Altar_Harpy_Resolve_For_Tea_Prod = 1518,
 
 	/// <summary>
 	/// Spices (Stormforged) - "[food raw] herbs" Herb and "[food raw] roots" Root production is increased by +1 for every 50 "[food processed] biscuits" Biscuits produced.
@@ -10818,7 +10868,7 @@ public enum EffectTypes
 	/// <hooks_1>50 "[food processed] biscuits" Biscuits (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Herbs +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Roots +1 (GoodsRawProductionEffectModel)</hookedEffect_2>
-	Altar_Herb_Production_For_Biscuits,
+	Altar_Herb_Production_For_Biscuits = 1519,
 
 	/// <summary>
 	/// Queen's Gift (Stormforged) - A mysterious amber orb with a magical flame trapped within. Increases the Ancient Hearth's resistance by 250 for every woodcutter in your settlement.
@@ -10827,7 +10877,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hearth Bonus HP +250 (HearthBonusHPEffectModel)</hookedEffect_1>
-	Altar_HP_For_Impatience,
+	Altar_HP_For_Impatience = 1520,
 
 	/// <summary>
 	/// Generous Gifts (Stormforged) - Wealthy settlements attract wealthy settlers. Newcomers bring 75% more goods with them for every Hearth level gained.
@@ -10836,7 +10886,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>1 (HubLeveledUpHook)</hooks_1>
 	/// <hookedEffect_1>Newcomer Goods +75 (NewcommersGoodsRateEffectModel)</hookedEffect_1>
-	Altar_Hubs_For_Newcomer_Goods,
+	Altar_Hubs_For_Newcomer_Goods = 1521,
 
 	/// <summary>
 	/// Religious Settlement (Stormforged) - The settlement specializes in incense production. Gain +1 to Human Resolve for every 50 "[needs] incense" Incense produced.
@@ -10845,7 +10895,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[needs] incense" Incense (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Incense Humans (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Altar_Human_Resolve_For_Incense_Prod,
+	Altar_Human_Resolve_For_Incense_Prod = 1522,
 
 	/// <summary>
 	/// Woodpecker Technique (Stormforged) - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
@@ -10854,7 +10904,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>[Altar] Insect for tree - child (HookedEffectModel)</hookedEffect_1>
-	Altar_Insect_For_Tree,
+	Altar_Insect_For_Tree = 1523,
 
 	/// <summary>
 	/// Woodpecker Technique - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
@@ -10863,7 +10913,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Insects 5 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Insect_For_Tree_Child,
+	Altar_Insect_For_Tree_Child = 1524,
 
 	/// <summary>
 	/// Training Grounds (Stormforged) - The settlement specializes in training gear production. Gain +1 to Lizard Resolve for every 50 "[needs] training gear" Training Gear produced.
@@ -10872,7 +10922,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[needs] training gear" Training Gear (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Training Gear Lizards (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Altar_Lizard_Resolve_For_Training_Gear_Prod,
+	Altar_Lizard_Resolve_For_Training_Gear_Prod = 1525,
 
 	/// <summary>
 	/// Firelink Ritual (Stormforged) - There is nothing the forest hates more than fire. Every villager with their need for religion fulfilled decreases the forest’s Hostility by 10.
@@ -10881,7 +10931,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -10 (HostilityEffectModel)</hookedEffect_1>
-	Altar_Lower_Hostility_For_Religion,
+	Altar_Lower_Hostility_For_Religion = 1526,
 
 	/// <summary>
 	/// Moldy Grain Seeds (Stormforged) - A new type of grain. Gain 8 "[food raw] mushrooms" Mushrooms for every 10 "[food raw] grain" Grain produced.
@@ -10890,7 +10940,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food raw] grain" Grain (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Milk-cap Mushroom 8 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Mold_Grain,
+	Altar_Mold_Grain = 1527,
 
 	/// <summary>
 	/// Blight Incantation - A powerful, necrotic curse. Burning Blightrot Cysts takes +15 more seconds. Hostility is increased by "hearth parts" Wildfire Essence points for every Wildfire Essence stored in the settlement's Warehouse.
@@ -10899,7 +10949,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>"hearth parts" Wildfire Essence (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +15 (HostilityEffectModel)</hookedEffect_1>
-	Altar_Of_Decay_Negative,
+	Altar_Of_Decay_Negative = 1528,
 
 	/// <summary>
 	/// Free Samples (Stormforged) - Gain 2 "[mat processed] parts" Parts every time you sell goods worth 15 Amber.
@@ -10908,7 +10958,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <hookedEffect_1>Parts 2 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Parts_For_Trade,
+	Altar_Parts_For_Trade = 1529,
 
 	/// <summary>
 	/// Rebellious Spirit (Stormforged) - The people are feeling oddly rebellious. Gain +1 Global Resolve for every 1 Impatience Point.
@@ -10918,7 +10968,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (ReputationPenaltyGainedHook)</hooks_1>
 	/// <instantEffect_1>Royal Guard Attack Unlock (TraderAttackUnlockEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Rebelious Spirit (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Altar_Resolve_For_Impatience,
+	Altar_Resolve_For_Impatience = 1530,
 
 	/// <summary>
 	/// Force of Nature (Stormforged) - The forest and the everlasting rain are connected somehow. Gain +5 to Storm Water production for every 2 Woodcutters in your settlement. Increases the tank capacity for every type of rainwater by +100 (one time only).
@@ -10928,7 +10978,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <instantEffect_1>Tank Capacity - Child (BonusWaterTanksCapacityEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Storm Water +5 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Altar_Storm_Water_For_Woodcutters,
+	Altar_Storm_Water_For_Woodcutters = 1531,
 
 	/// <summary>
 	/// Hidden Reward (Stormforged) - Gain 1 "[valuable] ancient tablet" Ancient Tablet for every 1 completed Glade Event.
@@ -10937,7 +10987,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Ancient Tablet 1 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Tablets_For_Events,
+	Altar_Tablets_For_Events = 1532,
 
 	/// <summary>
 	/// Bone Tools (Stormforged) - Gain 6 "[tools] simple tools" Tools every time a villager leaves or dies.
@@ -10946,7 +10996,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Metal Tools 6 (GoodsEffectModel)</hookedEffect_1>
-	Altar_Tools_For_Death,
+	Altar_Tools_For_Death = 1533,
 
 	/// <summary>
 	/// Improvised Tools (Stormforged) - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 15 "[tools] simple tools" Tools.
@@ -10955,7 +11005,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Tools for glade - child - altar (HookedEffectModel)</hookedEffect_1>
-	Altar_Tools_For_Glade,
+	Altar_Tools_For_Glade = 1534,
 
 	/// <summary>
 	/// Urban Planning (Stormforged) - For every 6 completed trade routes, all houses will have room for one more person.
@@ -10964,7 +11014,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeRouteCollectedHook)</hooks_1>
 	/// <hookedEffect_1>Houses Global Capacity +1 (HousesGlobalBonusCapacityEffectModel)</hookedEffect_1>
-	Altar_Trade_Routes_For_Housing_Spots,
+	Altar_Trade_Routes_For_Housing_Spots = 1535,
 
 	/// <summary>
 	/// No Quality Control (Stormforged) - Gain +2 to wood production. After each storm, all stored wood is removed, and you get 150 "[food raw] insects" Insects in return.
@@ -10975,7 +11025,7 @@ public enum EffectTypes
 	/// <instantEffect_1>Wood +2 (GoodsRawProductionEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Insects 150 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Wood Removed (RemoveGoodsByCategoryEffectModel)</hookedEffect_2>
-	Altar_Wood_Plus2_For_Insects,
+	Altar_Wood_Plus2_For_Insects = 1536,
 
 	/// <summary>
 	/// Prayer Book (Stormforged) - Scouts work 20% faster on Glade Events for every firekeeper assigned to a Hearth.
@@ -10984,7 +11034,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Relic Working TIme -20 (RelicsWorkingTimeRateEffectModel)</hookedEffect_1>
-	Altar_Working_Time_For_Firekeeper,
+	Altar_Working_Time_For_Firekeeper = 1537,
 
 	/// <summary>
 	/// Scientific Grant - The Queen has decided to reward you for your exceptional achievements in science. Gain 20 "[valuable] amber" Amber for every completed stage of an archaeological discovery (excavation, conservation, reconstruction).
@@ -10993,7 +11043,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 20 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Archeology,
+	Amber_For_Archeology = 1538,
 
 	/// <summary>
 	/// Stormwalker Tax - A joint venture with the Stormwalker Guild can be very profitable. You gain 15 "[valuable] amber" Amber every time you accept a newcomer group from the Citadel, but you’ll lose all stored Amber upon choosing this cornerstone.
@@ -11003,7 +11053,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (NewcomersAcceptedHook)</hooks_1>
 	/// <instantEffect_1>Remove Amber (RemoveGoodsByCategoryEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Amber 15 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Newcomers,
+	Amber_For_Newcomers = 1539,
 
 	/// <summary>
 	/// Golden Marrow - Some fossils contain valuable surprises. Gain 2 "[valuable] amber" Amber for every 20 "[crafting] sea marrow" Sea Marrow produced.
@@ -11012,7 +11062,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>20 "[crafting] sea marrow" Sea Marrow (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 2 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Sea_Marrow,
+	Amber_For_Sea_Marrow = 1540,
 
 	/// <summary>
 	/// Value Added Tax - Gain 2 "[valuable] amber" Amber for every 6 "[packs] pack of trade goods" Pack of Trade Goods produced.
@@ -11021,7 +11071,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>6 "[packs] pack of trade goods" Pack of Trade Goods (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 2 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Trade_Packs,
+	Amber_For_Trade_Packs = 1541,
 
 	/// <summary>
 	/// Deep Pockets - Receive 10 "[valuable] amber" Amber for every 5 completed trade routes.
@@ -11030,7 +11080,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeRouteCollectedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 10 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Trade_Routes,
+	Amber_For_Trade_Routes = 1542,
 
 	/// <summary>
 	/// Bed and Breakfast - This time, it's the guild who’s going to pay you, not the other way around. Gain 10 "[valuable] amber" Amber every time a trader arrives.
@@ -11039,7 +11089,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (TraderArrivalHook)</hooks_1>
 	/// <hookedEffect_1>Amber 10 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Trader_Visit,
+	Amber_For_Trader_Visit = 1543,
 
 	/// <summary>
 	/// Counterfeit Amber - Apparently, there is a technique for extracting crystals similar to Amber from rainwater. Gain 10 "[valuable] amber" Amber every time you use 50 units of water in Rain Engines, but traders will have 1 less perk or blueprint for sale.
@@ -11049,7 +11099,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (WaterUsedHook)</hooks_1>
 	/// <instantEffect_1>Less Trader Merch (TraderMerchAmountEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Amber 10 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Water,
+	Amber_For_Water = 1544,
 
 	/// <summary>
 	/// Lumber Tax - Gain 1 "[valuable] amber" Amber for every 50 "[mat raw] wood" Wood produced.
@@ -11058,7 +11108,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[mat raw] wood" Wood (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 1 (GoodsEffectModel)</hookedEffect_1>
-	Amber_For_Wood,
+	Amber_For_Wood = 1545,
 
 	/// <summary>
 	/// Respected Business Partner - Traders value your efforts in keeping the region safe. Amber is worth +10% more for every completed Dangerous and Forbidden Glade Event.
@@ -11067,7 +11117,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Amber Worth Bit More (TraderGoodSellPriceEffectModel)</hookedEffect_1>
-	Amber_Worth_More_For_Relics,
+	Amber_Worth_More_For_Relics = 1546,
 
 	/// <summary>
 	/// Luxury Tax - Amber is worth +5% more for every 2 villagers with the need for luxury fulfilled.
@@ -11076,7 +11126,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Amber Worth 5 More (TraderGoodSellPriceEffectModel)</hookedEffect_1>
-	AmberForLuxury,
+	AmberForLuxury = 1547,
 
 	/// <summary>
 	/// From the Ashes - An odd talisman made from the talons of a phoenix. Gain 2 "hearth parts" Wildfire Essence for every 2 completed Dangerous or Forbidden Glade Events.
@@ -11085,7 +11135,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Hearth Parts 2 (GoodsEffectModel)</hookedEffect_1>
-	Artifact_For_Dangerous_Relic,
+	Artifact_For_Dangerous_Relic = 1548,
 
 	/// <summary>
 	/// Back to Nature - An old, forbidden ritual. Increases yields by 100% in all buildings that use fertile soil. You will lose all stored food (cooked and raw) upon choosing this cornerstone.
@@ -11102,7 +11152,7 @@ public enum EffectTypes
 	/// <instantEffect_8>SmallFarm +100 Haunted (BuildingProductionEffectModel)</instantEffect_8>
 	/// <instantEffect_9>Herb Garden +100 Haunted (BuildingProductionEffectModel)</instantEffect_9>
 	/// <instantEffect_10>Mistworm All Food Lost (RemoveGoodsByCategoryEffectModel)</instantEffect_10>
-	Back_To_Nature,
+	Back_To_Nature = 1549,
 
 	/// <summary>
 	/// Fish Scraps - For every 10 units of "[food raw] fish" Fish and "[mat raw] scales" Scales used in crafting, gain +1 to bait production when converting a "[packs] pack of crops" pack of crops into ground bait in a fishing hut.
@@ -11111,7 +11161,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (IngredientUsedByListHook)</hooks_1>
 	/// <hookedEffect_1>Bait Production +1 (ExtraBaitProductionEffectModel)</hookedEffect_1>
-	Bait_For_Crafting,
+	Bait_For_Crafting = 1550,
 
 	/// <summary>
 	/// Vineyard Town - The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 70 "[needs] wine" Wine produced.
@@ -11120,7 +11170,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>70 "[needs] wine" Wine (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Wine Beavers (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Beaver_Resolve_For_Wine_Prod,
+	Beaver_Resolve_For_Wine_Prod = 1551,
 
 	/// <summary>
 	/// Gift of the Depths - After using bait 150 times in your fishing huts, you will unlock the ability to sacrifice "[mat raw] algae" algae in the Ancient Hearth to reduce Hostility.
@@ -11130,7 +11180,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (BaitUsedHook)</hooks_1>
 	/// <hookedEffect_1>Algae Sacrifice Recipe (HearthSacrificeRecipeEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (BaitUsedHook)</removalHook_1>
-	BIOME_AlgaeSacrifice,
+	BIOME_AlgaeSacrifice = 1552,
 
 	/// <summary>
 	/// Royal Mining Operation - The Crown is investing heavily in the region's industrial development. For every 80 units of "[crafting] coal" Coal, "[metal] copper ore" Copper Ore, and "[crafting] salt" Salt used in crafting, an automated rainpunk cart will be assigned to one of your warehouses.
@@ -11140,7 +11190,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (IngredientUsedByListHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Storage Automaton (SpawnStorageAutomatonEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (BaitUsedHook)</removalHook_1>
-	BIOME_Carts_For_Using_Ore,
+	BIOME_Carts_For_Using_Ore = 1553,
 
 	/// <summary>
 	/// Inspiring Pressure - The forest is as scary as it is beautiful. Villagers have a 3% higher chance of producing double yields for each Hostility level.
@@ -11149,7 +11199,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HostilityLevelChangedHook)</hooks_1>
 	/// <hookedEffect_1>[BIOME] Inspiring Pressure (GlobalExtraProductionChanceEffectModel)</hookedEffect_1>
-	BIOME_Inspiring_Pressure_Holder,
+	BIOME_Inspiring_Pressure_Holder = 1554,
 
 	/// <summary>
 	/// Gathering Knowledge - The Marshlands are a gatherer's paradise. Gathering speed is increased by 10% for every 2 workers assigned to gathering camps.
@@ -11158,7 +11208,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>[Biome] Gatherer Production Speed (RecipesTagProductionRateEffectModel)</hookedEffect_1>
-	BIOME_Marshlands_Camps_Speed,
+	BIOME_Marshlands_Camps_Speed = 1555,
 
 	/// <summary>
 	/// Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 40 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
@@ -11168,7 +11218,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (OreChargeUsedHook)</hooks_1>
 	/// <hookedEffect_1>[BIOME] Shard 2 - composite (CompositeEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (OreChargeUsedHook)</removalHook_1>
-	BIOME_Shards_For_Relics_1,
+	BIOME_Shards_For_Relics_1 = 1556,
 
 	/// <summary>
 	/// Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 80 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
@@ -11178,7 +11228,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (OreChargeUsedHook)</hooks_1>
 	/// <hookedEffect_1>[BIOME] Shard 3 - composite (CompositeEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (OreChargeUsedHook)</removalHook_1>
-	BIOME_Shards_For_Relics_2,
+	BIOME_Shards_For_Relics_2 = 1557,
 
 	/// <summary>
 	/// Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 120 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
@@ -11188,7 +11238,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (OreChargeUsedHook)</hooks_1>
 	/// <hookedEffect_1>[BIOME] Shard 4 - composite (CompositeEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (OreChargeUsedHook)</removalHook_1>
-	BIOME_Shards_For_Relics_3,
+	BIOME_Shards_For_Relics_3 = 1558,
 
 	/// <summary>
 	/// Unbearable Smell - Reputation from Resolve is generated 90% slower for the next 2 Reputation Points (source: Blight Filter).
@@ -11197,7 +11247,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>Blight Rate for Resolve Reputation - No Rep From Resolve (ResolveToReputationRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (ReputationGainedHook)</removalHook_1>
-	Blight_Rate_For_Resolve_Reputation_No_Rep_From_Resolve_Holder,
+	Blight_Rate_For_Resolve_Reputation_No_Rep_From_Resolve_Holder = 1559,
 
 	/// <summary>
 	/// Overcharged Rainpunk Technology - The corrupting power of the rain is seeping through the Rainpunk machinery. Every 110 seconds, a Blood Flower will appear near the Rainpunk Foundry.
@@ -11206,7 +11256,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Blightrot Around - Rainpunk Foundry (SpawnBuildingNearbyEffectModel)</hookedEffect_1>
-	Blightrot_Over_Time_Rainpunk_Foundry_Hard,
+	Blightrot_Over_Time_Rainpunk_Foundry_Hard = 1560,
 
 	/// <summary>
 	/// Overcharged Rainpunk Technology - The corrupting power of the rain is seeping through the Rainpunk machinery. Every 90 seconds, a Blood Flower will appear near the Rainpunk Foundry.
@@ -11215,7 +11265,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Blightrot Around - Rainpunk Foundry (SpawnBuildingNearbyEffectModel)</hookedEffect_1>
-	Blightrot_Over_Time_Rainpunk_Foundry_Impossible,
+	Blightrot_Over_Time_Rainpunk_Foundry_Impossible = 1561,
 
 	/// <summary>
 	/// Overcharged Rainpunk Technology - The corrupting power of the rain is seeping through the Rainpunk machinery. Every 120 seconds, a Blood Flower will appear near the Rainpunk Foundry.
@@ -11224,7 +11274,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Blightrot Around - Rainpunk Foundry (SpawnBuildingNearbyEffectModel)</hookedEffect_1>
-	Blightrot_Over_Time_Rainpunk_Foundry_Normal,
+	Blightrot_Over_Time_Rainpunk_Foundry_Normal = 1562,
 
 	/// <summary>
 	/// Overcharged Rainpunk Technology - The corrupting power of the rain is seeping through the Rainpunk machinery. Every 100 seconds, a Blood Flower will appear near the Rainpunk Foundry.
@@ -11233,7 +11283,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Blightrot Around - Rainpunk Foundry (SpawnBuildingNearbyEffectModel)</hookedEffect_1>
-	Blightrot_Over_Time_Rainpunk_Foundry_Very_Hard,
+	Blightrot_Over_Time_Rainpunk_Foundry_Very_Hard = 1563,
 
 	/// <summary>
 	/// Blood Price Contract - A shady, but lucrative deal. Gain 10 "[valuable] amber" Amber every time a villager dies or leaves.
@@ -11242,7 +11292,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Amber 10 (GoodsEffectModel)</hookedEffect_1>
-	Blood_Price,
+	Blood_Price = 1564,
 
 	/// <summary>
 	/// Song of Haste - An energetic, inspiring melody. Global production rate is +50% faster for the duration of this season.
@@ -11251,7 +11301,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Global Production Rate - child (GlobalProductionRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonChangeHook)</removalHook_1>
-	BT_Global_Production_Rate,
+	BT_Global_Production_Rate = 1565,
 
 	/// <summary>
 	/// Miracle of Strength - A powerful connection between the settlement's Hearth and the Citadel. The Ancient Hearth's resistance to corruption is increased by 1500 for the duration of this season.
@@ -11260,7 +11310,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Hearth Bonus HP - child (HearthBonusHPEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonChangeHook)</removalHook_1>
-	BT_Hearth_Bonus_HP,
+	BT_Hearth_Bonus_HP = 1566,
 
 	/// <summary>
 	/// Chest of Farming Tools - A special delivery from the First Dawn Company. All buildings using fertile soil produce +50% more goods. This effect lasts 3 seasons (including the current season) and must be active during planting to affect harvested crops.
@@ -11269,7 +11319,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Increased farm production - child (CompositeEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonsAmountHook)</removalHook_1>
-	BT_Increased_Farm_Production,
+	BT_Increased_Farm_Production = 1567,
 
 	/// <summary>
 	/// Miracle of Peace - A sign from the Queen herself. Hostility is decreased by 100 for the duration of this season.
@@ -11278,7 +11328,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Lower Hostility - child (HostilityEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonChangeHook)</removalHook_1>
-	BT_Lower_Hostility,
+	BT_Lower_Hostility = 1568,
 
 	/// <summary>
 	/// Miracle of Agility - Looking in the direction of the Citadel, one can see a hopeful glow on the horizon. Scouts work 50% faster on Glade Events for the duration of this season.
@@ -11287,7 +11337,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Relic Working TIme - child (RelicsWorkingTimeRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonChangeHook)</removalHook_1>
-	BT_Relic_Working_TIme,
+	BT_Relic_Working_TIme = 1569,
 
 	/// <summary>
 	/// Song of Hope - A peaceful song of hope. Villagers with low Resolve will leave the town 50% slower for the duration of this season.
@@ -11296,7 +11346,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Slower Leaving - child (LeavingRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonChangeHook)</removalHook_1>
-	BT_Slower_Leaving,
+	BT_Slower_Leaving = 1570,
 
 	/// <summary>
 	/// Song of Prosperity - The clang of a golden bell. All trade routes are 100% faster for the duration of this season.
@@ -11305,7 +11355,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[BT] Trade Routes Bonus - child (TradeRoutesSpeedEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (SeasonChangeHook)</removalHook_1>
-	BT_Trade_Routes_Bonus,
+	BT_Trade_Routes_Bonus = 1571,
 
 	/// <summary>
 	/// Carpenter's Tools - Additional tools allow for increased yields. Gain 1 "[packs] pack of building materials" Pack of Building Materials for every 10 "[mat processed] planks" Planks produced.
@@ -11314,7 +11364,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[mat processed] planks" Planks (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Pack of Building Materials 1 (GoodsEffectModel)</hookedEffect_1>
-	Building_Materials_For_Planks,
+	Building_Materials_For_Planks = 1572,
 
 	/// <summary>
 	/// Cannibalism - Gain 40 "[food raw] meat" Meat every time a villager dies or leaves.
@@ -11323,7 +11373,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Moth Larvae Meat 40 (GoodsEffectModel)</hookedEffect_1>
-	Cannibalism,
+	Cannibalism = 1573,
 
 	/// <summary>
 	/// Burnt to a Crisp - Gain 20 "[crafting] coal" Coal for every 3 burned Blightrot Cysts.
@@ -11332,7 +11382,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (CystRemovedHook)</hooks_1>
 	/// <hookedEffect_1>Coal 20 (GoodsEffectModel)</hookedEffect_1>
-	Coal_For_Cysts,
+	Coal_For_Cysts = 1574,
 
 	/// <summary>
 	/// Converted Altar of Decay - A place for forbidden, necrotic rituals. Hostility is reduced by ‑20 points for every villager that leaves the settlement or dies.
@@ -11341,7 +11391,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -20 (HostilityEffectModel)</hookedEffect_1>
-	Converted_Altar_Of_Decay,
+	Converted_Altar_Of_Decay = 1575,
 
 	/// <summary>
 	/// Salvaging Tools - Caches discovered in glades can now be salvaged. Every time you open or send an Abandoned Cache to the Citadel, you gain 10 "[metal] copper ore" Copper Ore and 30 "[mat raw] wood" Wood.
@@ -11351,7 +11401,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Copper Ore 10 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Wood 30 (GoodsEffectModel)</hookedEffect_2>
-	Copper_And_Wood_For_Chests,
+	Copper_And_Wood_For_Chests = 1576,
 
 	/// <summary>
 	/// Copper Extractor - Machinery specialized in extracting copper from petrified trees. Gain 1 "[metal] copper ore" Copper Ore for every 5 "[mat raw] wood" Wood produced.
@@ -11360,7 +11410,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>5 "[mat raw] wood" Wood (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Copper Ore 1 (GoodsEffectModel)</hookedEffect_1>
-	Copper_For_Each_Tree,
+	Copper_For_Each_Tree = 1577,
 
 	/// <summary>
 	/// Mark of the Sealed Ones - A faint image of an underwater landscape shimmers inside the ancient jewel. While the Ancient Hearth is being corrupted, resources sacrificed within it burn 50% longer.
@@ -11369,7 +11419,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (OngoingHearthCorruptionHook)</hooks_1>
 	/// <hookedEffect_1>Sacrifice Cost 50 Longer (HearthSacraficeTimeEffectModel)</hookedEffect_1>
-	Corrupted_Sacrifice,
+	Corrupted_Sacrifice = 1578,
 
 	/// <summary>
 	/// Leftover Crops - Gain 2 "[packs] pack of provisions" Pack of Provisions for every 10 "[food raw] herbs" Herbs produced.
@@ -11378,7 +11428,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food raw] herbs" Herbs (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Pack of Provisions 2 (GoodsEffectModel)</hookedEffect_1>
-	Crops_For_Grain,
+	Crops_For_Grain = 1579,
 
 	/// <summary>
 	/// Small Distillery - The fresh resin still glows softly with the rain's essence. Gain 4 "[metal] crystalized dew" Crystalized Dew for every 20 "[mat raw] resin" Resin produced.
@@ -11387,14 +11437,14 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>20 "[mat raw] resin" Resin (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Crystalized Dew 4 (GoodsEffectModel)</hookedEffect_1>
-	Crystaline_Water,
+	Crystaline_Water = 1580,
 
 	/// <summary></summary>
 	/// <name>Cysts for Glades</name>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Cysts 1 - Tree (SpawnCystsEffectModel)</hookedEffect_1>
-	Cysts_For_Glades,
+	Cysts_For_Glades = 1581,
 
 	/// <summary>
 	/// 1
@@ -11403,7 +11453,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HostilityLevelChangedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Cysts 1 - hostility (SpawnCystsEffectModel)</hookedEffect_1>
-	Cysts_For_Hostility,
+	Cysts_For_Hostility = 1582,
 
 	/// <summary>
 	/// Blightrot Pruner - Blightrot spores aren't technically eggs, but they taste the same. You gain 5 "[food raw] eggs" Eggs when a Blightrot Cyst appears in your settlement.
@@ -11412,7 +11462,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (CystsAmountHook)</hooks_1>
 	/// <hookedEffect_1>Eggs 5 (GoodsEffectModel)</hookedEffect_1>
-	Eggs_For_Cysts,
+	Eggs_For_Cysts = 1583,
 
 	/// <summary>
 	/// Exploration Training - Rigorous training has made your scouts exceptionally efficient. For every 5 villagers with the need for brawling fulfilled, the chance of doubling event loot is increased by +20% (this doesn't apply to perks and blueprints).
@@ -11421,7 +11471,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Relics Chance for Extra Reward 20 (RelicsExtraRewardsChanceEffectModel)</hookedEffect_1>
-	EventsRewardsForBloodthirst,
+	EventsRewardsForBloodthirst = 1584,
 
 	/// <summary>
 	/// Frightening Visions - Horrific phantoms appear before the villagers. Get -3 to Global Resolve every 60 seconds.
@@ -11430,7 +11480,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Frightening Visions Resolve Penalty (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Every_Sec_Global_Resolve_Hard,
+	Every_Sec_Global_Resolve_Hard = 1585,
 
 	/// <summary>
 	/// Frightening Visions - Horrific phantoms appear before the villagers. Get -3 to Global Resolve every 45 seconds.
@@ -11439,7 +11489,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Frightening Visions Resolve Penalty (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Every_Sec_Global_Resolve_Impossible,
+	Every_Sec_Global_Resolve_Impossible = 1586,
 
 	/// <summary>
 	/// Frightening Visions - Horrific phantoms appear before the villagers. Get -3 to Global Resolve every 60 seconds.
@@ -11448,7 +11498,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Frightening Visions Resolve Penalty (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Every_Sec_Global_Resolve_Normal,
+	Every_Sec_Global_Resolve_Normal = 1587,
 
 	/// <summary>
 	/// Frightening Visions - Horrific phantoms appear before the villagers. Get -3 to Global Resolve every 60 seconds.
@@ -11457,7 +11507,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Frightening Visions Resolve Penalty (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Every_Sec_Global_Resolve_Very_Hard,
+	Every_Sec_Global_Resolve_Very_Hard = 1588,
 
 	/// <summary>
 	/// Whispering Tombs - Some secrets are better left untold. Get 20 Hostility every 60 seconds.
@@ -11466,7 +11516,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility 20 (HostilityEffectModel)</hookedEffect_1>
-	Every_Sec_Hostility,
+	Every_Sec_Hostility = 1589,
 
 	/// <summary>
 	/// Exploration Contract - The Royal Academy wants a detailed map of the region, and will supply anyone willing to help. Gain 20 "[mat raw] reeds" Reed and 20 "[mat raw] clay" Clay for each discovered glade.
@@ -11476,7 +11526,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Reeds 20 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Clay 20 (GoodsEffectModel)</hookedEffect_2>
-	Exploration_Contract,
+	Exploration_Contract = 1590,
 
 	/// <summary>
 	/// Exploration Expedition - You took some of the best explorers from the Smoldering City with you. Global Resolve is boosted by +5 for 180 seconds every time a new glade is discovered, but woodcutting is 33% slower until you open at least 2 glades.
@@ -11486,7 +11536,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <instantEffect_1>Exploring Expedition - Slower Woodcutting - Holder (HookedEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Exploring Expedition - Resolve Bonus Effect - Holder (HookedEffectModel)</hookedEffect_1>
-	Exploring_Expedition,
+	Exploring_Expedition = 1591,
 
 	/// <summary>
 	/// Joy Of Discovery - Global Resolve is increased by 5 for 180 seconds due to a recently discovered glade (source: Exploration Expedition).
@@ -11495,7 +11545,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>Exploring Expedition - Resolve Bonus Effect (GlobalResolveEffectEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	Exploring_Expedition_Resolve_Bonus_Effect_Holder,
+	Exploring_Expedition_Resolve_Bonus_Effect_Holder = 1592,
 
 	/// <summary>
 	/// Joy Of Discovery - Woodcutting speed is decreased by 33% until you discover at least 2 glades (source: Exploration Expedition).
@@ -11504,7 +11554,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>TreeCutting -33 (ProductionRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GladeDiscoveredHook)</removalHook_1>
-	Exploring_Expedition_Slower_Woodcutting_Holder,
+	Exploring_Expedition_Slower_Woodcutting_Holder = 1593,
 
 	/// <summary>
 	/// Forbidden Seal Shard (Stormforged) - It was not you who removed this fragment, weakening the ancient seal - but you would still be executed on the spot if someone was to find it in your possession. Every Glade Event solved by making a decision marked as Corruption increases the chance of workers producing double yields by +5%.
@@ -11513,7 +11563,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Global Extra Prod +5 (GlobalExtraProductionChanceEffectModel)</hookedEffect_1>
-	Extra_Production_For_Corruption_Points,
+	Extra_Production_For_Corruption_Points = 1594,
 
 	/// <summary>
 	/// Ancient Practices - Archaeologists have learned a lot about a long-lost culture by examining old ruins. All workers get a +10% higher chance of producing double yields for every 2 completed Dangerous and Forbidden Glade Events.
@@ -11522,7 +11572,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Archeology Global Extra Production (GlobalExtraProductionChanceEffectModel)</hookedEffect_1>
-	Extra_Production_For_Relics_Resolved,
+	Extra_Production_For_Relics_Resolved = 1595,
 
 	/// <summary>
 	/// Family Gratitude - Relatives of your villagers send gifts for treating their family members well. Get 40 "[vessel] waterskin" Waterskins for every full Reputation Point obtained through high Resolve.
@@ -11531,7 +11581,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ReputationGainedHook)</hooks_1>
 	/// <hookedEffect_1>Waterskins 40 (GoodsEffectModel)</hookedEffect_1>
-	Families_Gratitude,
+	Families_Gratitude = 1596,
 
 	/// <summary>
 	/// Pocket Knives - Handy tools for cutting stems and leaves. Gain 4 "[mat raw] plant fibre" Plant Fiber for every 12 "[food raw] vegetables" Vegetables produced.
@@ -11540,7 +11590,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>12 "[food raw] vegetables" Vegetables (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Plant Fiber 4 (GoodsEffectModel)</hookedEffect_1>
-	Fiber_For_Vegetables,
+	Fiber_For_Vegetables = 1597,
 
 	/// <summary>
 	/// Rain Sorcery - A powerful spell that feeds on the insatiable anger of the forest. Hostility is increased by +50 for every scout in your settlement. This includes idle scouts and workers assigned to this event.
@@ -11549,7 +11599,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +50 (HostilityEffectModel)</hookedEffect_1>
-	Fishmen_Soothsayer_Curse_BloodFlower,
+	Fishmen_Soothsayer_Curse_BloodFlower = 1598,
 
 	/// <summary>
 	/// Blood Sorcery - The comforts of the civilized world are disgustingly unnatural to the Fishmen. Every time 10 Complex Food, Clothing, or Service needs are fulfilled, 2 random villagers are killed.
@@ -11558,7 +11608,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedSatisfiedByListHook)</hooks_1>
 	/// <hookedEffect_1>Random Killed 2 - Blood Missiles (VillagersDeathMissileEffectModel)</hookedEffect_1>
-	Fishmen_Soothsayer_Curse_Hostility,
+	Fishmen_Soothsayer_Curse_Hostility = 1599,
 
 	/// <summary>
 	/// Fishmen Traps - Trying to enter the Fishmen cave triggers hidden traps. A Fishmen Totem spawns every 60 seconds.
@@ -11567,7 +11617,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Fishmen Totem - Fishmen Cave (SpawnBuildingNearbyEffectModel)</hookedEffect_1>
-	Fishmens_Traps,
+	Fishmens_Traps = 1600,
 
 	/// <summary>
 	/// Cooking Steam - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by +15% for every 50 units of Drizzle Water stored.
@@ -11576,7 +11626,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Food prod speed +10 (RecipesTagProductionRateEffectModel)</hookedEffect_1>
-	Food_Production_For_Engines,
+	Food_Production_For_Engines = 1601,
 
 	/// <summary>
 	/// Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Every discovered Forbidden Glade lowers the Hostility gained from Dangerous and Forbidden Glades by 2, and from small glades by 1.
@@ -11586,7 +11636,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Forbidden for Hostility - Lower Glades - Dangerous (HostilitySourceChangeEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Forbidden for Hostility - Lower Glades - Small (HostilitySourceChangeEffectModel)</hookedEffect_2>
-	Forbidden_For_Hostility,
+	Forbidden_For_Hostility = 1602,
 
 	/// <summary>
 	/// Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Completing a Forbidden Glade Event reduces the Hostility gained from Dangerous ("dangerous") and Forbidden Glades ("forbidden") by 2, and from Small Glades by 1.
@@ -11596,7 +11646,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Forbidden for Hostility - Lower Glades - Dangerous (HostilitySourceChangeEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Forbidden for Hostility - Lower Glades - Small (HostilitySourceChangeEffectModel)</hookedEffect_2>
-	Forbidden_For_Hostility_NEW,
+	Forbidden_For_Hostility_NEW = 1603,
 
 	/// <summary>
 	/// Friend or Foe - The forest is merciless to those who exploit it. To protect itself, it may even sometimes ally with the Blightrot. Every 120 seconds, Blightrot Cysts (1) are spawned for each earned Hostility level.
@@ -11605,7 +11655,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Cysts For Hostility (HookedEffectModel)</hookedEffect_1>
-	Friend_Or_Foe,
+	Friend_Or_Foe = 1604,
 
 	/// <summary>
 	/// Borrowed Time - The Queen looks more favorably upon a city represented by such distinguished ambassadors. Each fully upgraded house will grant you 10 seconds of Grace Period after the Queen’s Impatience reaches its maximum threshold.
@@ -11614,7 +11664,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HouseFullyUpgradedHook)</hooks_1>
 	/// <hookedEffect_1>Frog Add Grace Period (GracePeriodEffectModel)</hookedEffect_1>
-	Frog_Adding_Grace_Period,
+	Frog_Adding_Grace_Period = 1605,
 
 	/// <summary>
 	/// Strength in Numbers - The storm seems less threatening in a well-populated settlement. Global Resolve drops 2% slower for every Frog villager.
@@ -11623,7 +11673,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RaceAmountHook)</hooks_1>
 	/// <hookedEffect_1>Higher Villagers Resilience 2 (ResolveNegativeChangeRateEffectModel)</hookedEffect_1>
-	Frog_Adding_Resilliance,
+	Frog_Adding_Resilliance = 1606,
 
 	/// <summary>
 	/// Overzealous Architects - Driven by boundless ambition, Frog architects can't resist sketching plans even in their spare time. For every 5 fully upgraded Frog Houses, you will receive a random blueprint. After 4 blueprints, this cornerstone will disappear.
@@ -11633,7 +11683,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (HouseFullyUpgradedHook)</hooks_1>
 	/// <hookedEffect_1>Random Blueprint Reward (RandomBlueprintEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (HouseFullyUpgradedHook)</removalHook_1>
-	Frog_Blueprints_For_Upgrades,
+	Frog_Blueprints_For_Upgrades = 1607,
 
 	/// <summary>
 	/// City of Wonders - Members of the Frog clan flock to your settlement. Gain 1 Frog villager for every 2 house upgrades.
@@ -11642,7 +11692,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HouseUpgradedHook)</hooks_1>
 	/// <hookedEffect_1>Frog 1 (NewVillagersEffectModel)</hookedEffect_1>
-	Frog_For_Upgrade,
+	Frog_For_Upgrade = 1608,
 
 	/// <summary>
 	/// Grain Bags - Specialized grain farming techniques. "[food raw] grain" Grain production increases by +1 every 25 times it's produced.
@@ -11651,7 +11701,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Grain +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Grain_Specialization,
+	Grain_Specialization = 1609,
 
 	/// <summary>
 	/// Growth Medium - The Blightrot inside the Rainpunk Cauldron feeds on everything it encounters. For every 20 food produced, 2 Blightrot Cysts are spawned in the settlement.
@@ -11660,7 +11710,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GoodProducedByCategoryHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Cysts 2 - cauldron (SpawnCystsEffectModel)</hookedEffect_1>
-	Growth_Medium_Cysts_For_Food,
+	Growth_Medium_Cysts_For_Food = 1610,
 
 	/// <summary>
 	/// Tea Specialization - The settlement specializes in cosmetic production. Gain +1 to Harpy Resolve for every 70 "[needs] tea" Tea produced.
@@ -11669,7 +11719,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>70 "[needs] tea" Tea (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Tea Harpies (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Harpy_Resolve_For_Tea_Prod,
+	Harpy_Resolve_For_Tea_Prod = 1611,
 
 	/// <summary>
 	/// Spices - "[food raw] herbs" Herb and "[food raw] roots" Root production is increased by +1 for every 75 "[food processed] biscuits" Biscuits produced.
@@ -11679,7 +11729,7 @@ public enum EffectTypes
 	/// <hooks_1>75 "[food processed] biscuits" Biscuits (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Herbs +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Roots +1 (GoodsRawProductionEffectModel)</hookedEffect_2>
-	Herb_Production_For_Biscuits,
+	Herb_Production_For_Biscuits = 1612,
 
 	/// <summary>
 	/// Hidden from the Queen - The crown doesn't need to know everything. There is no Impatience penalty when villagers leave or die, but Impatience will grow 600% faster, starting from Drizzle year 9.
@@ -11689,7 +11739,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (YearChangeHook)</hooks_1>
 	/// <instantEffect_1>VillagerDeathEffectBlock (VillagerDeathEffectBlockEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Hidden From The Queen - Impatience (ReputationPenaltyRateEffectModel)</hookedEffect_1>
-	Hidden_From_The_Queen,
+	Hidden_From_The_Queen = 1613,
 
 	/// <summary>
 	/// Queen's Sailors - The storm wasn't gentle, even to a royal-flagged ship. When this effect is active, Hostility is increased by ‑40, but each ongoing trade route decreases Hostility by 1.
@@ -11698,7 +11748,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ActiveTradeRoutesHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -40 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Active_Routes,
+	Hostility_For_Active_Routes = 1614,
 
 	/// <summary>
 	/// Silent Looting - Your scouts have learned how to be cautious when looting abandoned caches. Every time you open or send an Abandoned Cache to the Citadel, Hostility is lowered by 15 points.
@@ -11707,14 +11757,14 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -15 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Caches,
+	Hostility_For_Caches = 1615,
 
 	/// <summary></summary>
 	/// <name>Hostility for Cysts</name>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (CystsAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +5 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Cysts,
+	Hostility_For_Cysts = 1616,
 
 	/// <summary>
 	/// Calming the Forest - One who lives in harmony with himself lives in harmony with all. Every Glade Event solved by making a decision marked as Empathy lowers Hostility by 40.
@@ -11723,7 +11773,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -40 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Dangerous_Relics,
+	Hostility_For_Dangerous_Relics = 1617,
 
 	/// <summary>
 	/// Small Altar Box - The forest requires sacrifices. Hostility is reduced by 15 every time 2 villagers die.
@@ -11732,7 +11782,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -15 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Death,
+	Hostility_For_Death = 1618,
 
 	/// <summary>
 	/// Cold Flame - A blinding light is aimed directly at the settlement's Hearths, turning the Holy Fire into a cold flame. Hostility is increased by 100 for each Firekeeper in the settlement.
@@ -11741,7 +11791,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +100 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Firekeeper_Lighthouse_Strong,
+	Hostility_For_Firekeeper_Lighthouse_Strong = 1619,
 
 	/// <summary>
 	/// Lesser Cold Flame - A blinding light is aimed directly at the settlement's Hearths, turning the Holy Fire into a cold flame. Hostility is increased by 50 for each Firekeeper in the settlement.
@@ -11750,7 +11800,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +50 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Firekeeper_Lighthouse_Weak,
+	Hostility_For_Firekeeper_Lighthouse_Weak = 1620,
 
 	/// <summary>
 	/// Frequent Patrols - Every Glade Event solved by making a decision marked as Loyalty lowers Hostility by 10.
@@ -11759,7 +11809,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -10 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Relics,
+	Hostility_For_Relics = 1621,
 
 	/// <summary>
 	/// Baptism of Fire - Every 3 burnt Blightrot Cysts lowers Hostility by 10.
@@ -11769,7 +11819,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (CystRemovedHook)</hooks_1>
 	/// <instantEffect_1>Sacrifice Block during Corruption (HookedEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Hostility -10 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Removed_Cysts,
+	Hostility_For_Removed_Cysts = 1622,
 
 	/// <summary>
 	/// Protected Trade - The forest recedes, as heavily guarded trade caravans pour into the settlement. Hostility is reduced by 15 points every time you sell goods worth 30 Amber, but Complex Food needs grant 1 less Resolve Point.
@@ -11785,7 +11835,7 @@ public enum EffectTypes
 	/// <instantEffect_6>Less Resolve from Paste (ResolveEffectBonusResolveEffectModel)</instantEffect_6>
 	/// <instantEffect_7>Less Resolve from Pickled Goods (ResolveEffectBonusResolveEffectModel)</instantEffect_7>
 	/// <hookedEffect_1>Hostility -15 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Sales,
+	Hostility_For_Sales = 1623,
 
 	/// <summary>
 	/// Decryption - Archaeologists have learned how to decipher ancient tablets, and can now use that knowledge to appease the angry forest. You get ‑10 Hostility for every "[valuable] ancient tablet" Ancient Tablet in your settlement's Warehouse. 
@@ -11794,7 +11844,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>"[valuable] ancient tablet" Ancient Tablet (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -10 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Tablets,
+	Hostility_For_Tablets = 1624,
 
 	/// <summary>
 	/// Disturbing the Dead - Woodcutting angers the dead. Hostility increases by +5 points for every 4 fallen trees.
@@ -11803,7 +11853,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility Tree (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Trees_DarkGate_Hard,
+	Hostility_For_Trees_DarkGate_Hard = 1625,
 
 	/// <summary>
 	/// Disturbing the Dead - Woodcutting angers the dead. Hostility increases by +5 points for every 2 fallen trees.
@@ -11812,7 +11862,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility Tree (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Trees_DarkGate_Impossible,
+	Hostility_For_Trees_DarkGate_Impossible = 1626,
 
 	/// <summary>
 	/// Disturbing the Dead - Woodcutting angers the dead. Hostility increases by +5 points for every 5 fallen trees.
@@ -11821,7 +11871,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility Tree (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Trees_DarkGate_Normal,
+	Hostility_For_Trees_DarkGate_Normal = 1627,
 
 	/// <summary>
 	/// Disturbing the Dead - Woodcutting angers the dead. Hostility increases by +5 points for every 3 fallen trees.
@@ -11830,7 +11880,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility Tree (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Trees_DarkGate_Very_Hard,
+	Hostility_For_Trees_DarkGate_Very_Hard = 1628,
 
 	/// <summary>
 	/// Calming Water - Rainwater seems to soothe the forest. Hostility is reduced by 10 points every time you use 150 units of water in Rain Engines.
@@ -11839,7 +11889,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WaterUsedHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -10 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_For_Water,
+	Hostility_For_Water = 1629,
 
 	/// <summary>
 	/// Blazing Amber - Cursed amber crystals burn in our vaults. Hostility increases by +5 for every 30 "[valuable] amber" Amber in the settlement's Warehouse.
@@ -11848,7 +11898,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>30 "[valuable] amber" Amber (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +5 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_Penalty_For_Amber,
+	Hostility_Penalty_For_Amber = 1630,
 
 	/// <summary>
 	/// Infestation - Blightrot becomes extremely aggressive. 1 Blightrot Cysts will spawn in the settlement. Each cyst increases Hostility by +10 points.
@@ -11857,7 +11907,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (CystsAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +10 (HostilityEffectModel)</hookedEffect_1>
-	Hostility_Per_Cyst_Mole,
+	Hostility_Per_Cyst_Mole = 1631,
 
 	/// <summary>
 	/// +15
@@ -11866,7 +11916,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Hostility +15 (HostilityEffectModel)</hookedEffect_1>
-	HostilityEachYear,
+	HostilityEachYear = 1632,
 
 	/// <summary>
 	/// Queen's Gift - A mysterious amber orb with a magical flame trapped within. Increases the Ancient Hearth's resistance by 150 for every woodcutter in your settlement.
@@ -11875,7 +11925,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Hearth Bonus HP +150 (HearthBonusHPEffectModel)</hookedEffect_1>
-	HP_For_Impatience,
+	HP_For_Impatience = 1633,
 
 	/// <summary>
 	/// Safe Haven - Hostility is reduced by 40 for every Hearth upgraded to: Neighborhood (Level 2) (or higher).
@@ -11884,7 +11934,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Neighborhood (Level 2) (HubLeveledUpHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -40 (HostilityEffectModel)</hookedEffect_1>
-	Hubs_For_Hostility,
+	Hubs_For_Hostility = 1634,
 
 	/// <summary>
 	/// Generous Gifts - Wealthy settlements attract wealthy settlers. Newcomers bring 40% more goods with them for every Hearth level gained.
@@ -11893,7 +11943,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>{1} (HubLeveledUpHook)</hooks_1>
 	/// <hookedEffect_1>Newcomer Goods +40 (NewcommersGoodsRateEffectModel)</hookedEffect_1>
-	Hubs_For_Newcomer_Goods,
+	Hubs_For_Newcomer_Goods = 1635,
 
 	/// <summary>
 	/// Religious Settlement - The settlement specializes in incense production. Gain +1 to Human Resolve for every 70 "[needs] incense" Incense produced.
@@ -11902,7 +11952,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>70 "[needs] incense" Incense (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Incense Humans (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Human_Resolve_For_Incense_Prod,
+	Human_Resolve_For_Incense_Prod = 1636,
 
 	/// <summary>
 	/// Badge of Courage - A famous Viceroy emblem passed down from generation to generation. Discovering a glade during the storm lowers Impatience by -0.5.
@@ -11911,7 +11961,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Impatience For Glade - child (HookedEffectModel)</hookedEffect_1>
-	Impatience_For_Glade,
+	Impatience_For_Glade = 1637,
 
 	/// <summary>
 	/// -0.5
@@ -11920,7 +11970,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>0_5 Reputation Penalty - Minus (ReputationPenaltyEffectModel)</hookedEffect_1>
-	Impatience_For_Glade_Child,
+	Impatience_For_Glade_Child = 1638,
 
 	/// <summary>
 	/// Fragrant Roots - Gain 3 "[needs] incense" Incense for every 10 "[food raw] roots" Roots produced.
@@ -11929,7 +11979,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food raw] roots" Roots (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Incense 3 (GoodsEffectModel)</hookedEffect_1>
-	Incense_For_Roots,
+	Incense_For_Roots = 1639,
 
 	/// <summary>
 	/// Blight Extractor - A curious invention used for extracting Amber from Blightrot Cysts. Every completely infected building (100% Blightrot) generates 3 "[valuable] amber" Amber per minute, but also adds +5 Hostility.
@@ -11939,7 +11989,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (BuildingsWithBlightLevelHook)</hooks_1>
 	/// <hookedEffect_1>Amber 3pm Blight (GoodsPerMinEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Hostility +5 (HostilityEffectModel)</hookedEffect_2>
-	Infected_Building_Production_For_Hostility,
+	Infected_Building_Production_For_Hostility = 1640,
 
 	/// <summary>
 	/// Woodpecker Technique - Gain 2 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
@@ -11948,7 +11998,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Insect for tree - child (HookedEffectModel)</hookedEffect_1>
-	Insect_For_Tree,
+	Insect_For_Tree = 1641,
 
 	/// <summary>
 	/// Woodpecker Technique - Gain 2 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
@@ -11957,7 +12007,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Insects 2 (GoodsEffectModel)</hookedEffect_1>
-	Insect_For_Tree_Child,
+	Insect_For_Tree_Child = 1642,
 
 	/// <summary>
 	/// Insect Traps - Insect traps let you catch any insects feeding on mushrooms. Gain 1 "[food raw] insects" Insects for every 2 "[food raw] mushrooms" Mushrooms produced.
@@ -11966,7 +12016,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>2 "[food raw] mushrooms" Mushrooms (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Insects 1 (GoodsEffectModel)</hookedEffect_1>
-	Insect_Traps,
+	Insect_Traps = 1643,
 
 	/// <summary>
 	/// The Crown Chronicles - A generation that ignores its history has no past and no future. Gain +1 to Global Resolve for each rebuilt or salvaged ruin found in glades (the bonus is added retroactively).
@@ -11975,7 +12025,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve - Institution Resolve for Ruins (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Institution_Resolve_For_Ruins,
+	Institution_Resolve_For_Ruins = 1644,
 
 	/// <summary>
 	/// The Guild's Welfare - According to custom, a small part of the Amber that goes through each guild should be repaid to support the locals. Gain +1 to Global Resolve every time you sell goods worth 75 "[valuable] amber" Amber (the bonus will be added retroactively).
@@ -11984,7 +12034,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <hookedEffect_1>Resolve - Institution Resolve for Sales (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Institution_Resolve_For_Sales,
+	Institution_Resolve_For_Sales = 1645,
 
 	/// <summary>
 	/// Sacrament of the Flame - There can be nothing more sacred than a flame in a world soaked with rain. For every 200 seconds spent sacrificing goods in the Ancient Hearth, Hostility is reduced by 25 (the bonus is added retroactively). Sacrificing multiple resources at the same time will progress this effect's timer faster.
@@ -11993,7 +12043,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GoodsSacrificedInTimeHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -25 (HostilityEffectModel)</hookedEffect_1>
-	Institution_Temple_Hostility_For_Sacrifice,
+	Institution_Temple_Hostility_For_Sacrifice = 1646,
 
 	/// <summary>
 	/// Kelpie's Charm - Villagers are under the spell of the Kelpie, controlled like marionettes. Every 90 seconds, 2 random villagers stop working and blindly walk toward the Kelpie where they hallucinate until the effect is gone.
@@ -12002,7 +12052,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Charm Villagers (CharmVillagersEffectModel)</hookedEffect_1>
-	Kelpie_Charm,
+	Kelpie_Charm = 1647,
 
 	/// <summary>
 	/// Ancient Pact - The cost of knowledge can be very high. You can see the content of undiscovered glades, but discovering Dangerous ("dangerous") or Forbidden Glades ("forbidden") kills 1 villager.
@@ -12012,7 +12062,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <instantEffect_1>Generic Glade Info (GladeInfoEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Sacrificed 1 (VillagersDeathEffectModel)</hookedEffect_1>
-	Killed_For_GladeInfo,
+	Killed_For_GladeInfo = 1648,
 
 	/// <summary>
 	/// Ancient Pact
@@ -12021,7 +12071,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WaterTankFullHook)</hooks_1>
 	/// <hookedEffect_1>Sacrificed 1 Noxious Machinery (VillagersDeathEffectModel)</hookedEffect_1>
-	Killed_For_Water,
+	Killed_For_Water = 1649,
 
 	/// <summary>
 	/// Training Grounds - The settlement specializes in training gear production. Gain +1 to Lizard Resolve for every 70 "[needs] training gear" Training Gear produced.
@@ -12030,7 +12080,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>70 "[needs] training gear" Training Gear (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Training Gear Lizards (RaceResolveEffectEffectModel)</hookedEffect_1>
-	Lizard_Resolve_For_Training_Gear_Prod,
+	Lizard_Resolve_For_Training_Gear_Prod = 1650,
 
 	/// <summary>
 	/// Local Taxes - Villagers are willing to give you their very last piece of Amber just for a pint of decent ale. Gain 12 "[valuable] amber" Amber for every 50 "[needs] ale" Ale produced.
@@ -12039,7 +12089,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[needs] ale" Ale (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Amber 12 (GoodsEffectModel)</hookedEffect_1>
-	Local_Taxes,
+	Local_Taxes = 1651,
 
 	/// <summary>
 	/// Consecrated Scrolls - Learning from the consecrated scrolls allows us to better understand the threats we're facing. Every 2 villagers with the need for education fulfilled decreases the forest’s Hostility by ‑10.
@@ -12048,7 +12098,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -10 (HostilityEffectModel)</hookedEffect_1>
-	Lower_Hostility_For_Education,
+	Lower_Hostility_For_Education = 1652,
 
 	/// <summary>
 	/// Firelink Ritual - There is nothing the forest hates more than fire. Every villager with their need for religion fulfilled decreases the forest’s Hostility by 5.
@@ -12057,7 +12107,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Hostility -5 (HostilityEffectModel)</hookedEffect_1>
-	Lower_Hostility_For_Religion,
+	Lower_Hostility_For_Religion = 1653,
 
 	/// <summary>
 	/// Lost Supplies - An unusual amount of supplies can be found in some glades. Gain 40 "[food raw] meat" Meat and 40 "[food raw] grain" Grain for each completed Dangerous or Forbidden Glade Event.
@@ -12067,7 +12117,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Moth Larvae Meat 40 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Grain 40 (GoodsEffectModel)</hookedEffect_2>
-	Meat_And_Grain_For_Events,
+	Meat_And_Grain_For_Events = 1654,
 
 	/// <summary>
 	/// Meat Specialization - You've managed to enlist some excellent hunters. "[food raw] meat" Meat production increases by +1 every 25 times it's produced.
@@ -12076,7 +12126,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>25 "[food raw] meat" Meat (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Meat +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Meat_Specialization,
+	Meat_Specialization = 1655,
 
 	/// <summary>
 	/// Mist Piercers - You are allowed to use the legendary Mist Piercers. With such a rare gift at your disposal, the Queen's expectations are high. The content of glades will be revealed, but each discovered glade increases the Queen’s Impatience by 0.5.
@@ -12086,7 +12136,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <instantEffect_1>Generic Glade Info (GladeInfoEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>0_5 Reputation Penalty (ReputationPenaltyEffectModel)</hookedEffect_1>
-	Mists_Piercers,
+	Mists_Piercers = 1656,
 
 	/// <summary>
 	/// Royal Tax - The Crown requires you to contribute to the Royal Treasury. At the end of each Drizzle season, you will be asked to pay 1 "[valuable] amber" Amber for every 3 villagers in your settlement. If you don't, 2 people will leave.
@@ -12095,7 +12145,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Amber Payment - Payment (PaymentEffectModel)</hookedEffect_1>
-	Mod_Amber_Payment,
+	Mod_Amber_Payment = 1657,
 
 	/// <summary>
 	/// Blight Swarm - Large swarms of Blightrot migrate across the realm. Every third Clearance season, 5 Blightrot Cysts will appear in the settlement.
@@ -12104,7 +12154,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Cysts 5 - mod (SpawnCystsEffectModel)</hookedEffect_1>
-	Mod_Cysts_Spawn,
+	Mod_Cysts_Spawn = 1658,
 
 	/// <summary>
 	/// Land Tax - 6
@@ -12113,7 +12163,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>[Mod] Exploration Tax - Amber Payment (PaymentEffectModel)</hookedEffect_1>
-	Mod_Exploration_Tax,
+	Mod_Exploration_Tax = 1659,
 
 	/// <summary>
 	/// Land Tax - 2
@@ -12122,7 +12172,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>[Mod] Exploration Tax - Amber Payment - small (PaymentEffectModel)</hookedEffect_1>
-	Mod_Exploration_Tax_Small,
+	Mod_Exploration_Tax_Small = 1660,
 
 	/// <summary>
 	/// Gathering Storm - A mysterious force is drawing in heavy clouds. Every year, the storm lasts +10% longer.
@@ -12131,7 +12181,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (YearChangeHook)</hooks_1>
 	/// <hookedEffect_1>Longer Storm +10 (SeasonLengthEffectModel)</hookedEffect_1>
-	Mod_Gathering_Storm,
+	Mod_Gathering_Storm = 1661,
 
 	/// <summary>
 	/// Guild's Disfavor - The growing power of the Guild hasn't gone unnoticed. The Queen's Impatience grows by 1 every time goods worth 20 Amber are sold.
@@ -12140,7 +12190,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <hookedEffect_1>1 Reputation Penalty (ReputationPenaltyEffectModel)</hookedEffect_1>
-	Mod_Guilds_Disfavor,
+	Mod_Guilds_Disfavor = 1662,
 
 	/// <summary>
 	/// Land of Greed - The strange totem causes you to only focus on your wealth... And the Crown is worried. Impatience grows 50% quicker, but every ongoing trade route reduces the Impatience generation speed by –20%.
@@ -12150,7 +12200,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (ActiveTradeRoutesHook)</hooks_1>
 	/// <instantEffect_1>Land of Greed - ReputationPenaltyRatePlus50 (ReputationPenaltyRateEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Land of Greed - ReputationPenaltyRateMinus20 (ReputationPenaltyRateEffectModel)</hookedEffect_1>
-	Mod_Land_Of_Greed,
+	Mod_Land_Of_Greed = 1663,
 
 	/// <summary>
 	/// Ominous Presence - Something strange is trapped beneath the ground. Gain twice the Hostility each year, but every time a villager dies or leaves, Hostility decreases by 15 points.
@@ -12160,7 +12210,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <instantEffect_1>[Map Mod] More Hostility Yearly (HostilitySourceChangeEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Hostility -15 (HostilityEffectModel)</hookedEffect_1>
-	Mod_Ominous_Presence,
+	Mod_Ominous_Presence = 1664,
 
 	/// <summary>
 	/// Gain 5 "[food raw] meat" Meat for every 10 Stone and Clay produced.
@@ -12169,7 +12219,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GoodProducedByListHook)</hooks_1>
 	/// <hookedEffect_1>Moth Larvae Meat 5 (GoodsEffectModel)</hookedEffect_1>
-	Mod_Petrified_Necropolis_Meat_For_Stone_And_Clay,
+	Mod_Petrified_Necropolis_Meat_For_Stone_And_Clay = 1665,
 
 	/// <summary>
 	/// Every time a villager dies you get 20 "[mat raw] stone" Stone.
@@ -12178,7 +12228,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Wetstone 20 (GoodsEffectModel)</hookedEffect_1>
-	Mod_Petrified_Necropolis_Stone_For_Death,
+	Mod_Petrified_Necropolis_Stone_For_Death = 1666,
 
 	/// <summary>
 	/// Moldy Grain Seeds - A new type of grain. Gain 3 "[food raw] mushrooms" Mushrooms for every 10 "[food raw] grain" Grain produced.
@@ -12187,7 +12237,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[food raw] grain" Grain (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Milk-cap Mushroom 3 (GoodsEffectModel)</hookedEffect_1>
-	Mold_Grain,
+	Mold_Grain = 1667,
 
 	/// <summary>
 	/// Adjustment Period - No trader will arrive in your settlement until you complete at least 3 trade routes. Traders currently staying in the settlement will leave immediately (source: Market Shift Plan).
@@ -12196,7 +12246,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>More Trade Offers - Trader Block (TradeBlockEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (TradeRouteCollectedHook)</removalHook_1>
-	More_Trade_Offers_Trader_Block_Holder,
+	More_Trade_Offers_Trader_Block_Holder = 1668,
 
 	/// <summary>
 	/// Fungal Guide - Ancient mushroom farming techniques are described within. "[food raw] mushrooms" Mushroom production increases by +1 every 25 times it's produced.
@@ -12205,14 +12255,14 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>25 "[food raw] mushrooms" Mushrooms (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Mushroom +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Mushroom_Specialization,
+	Mushroom_Specialization = 1669,
 
 	/// <summary></summary>
 	/// <name>[Need] Coats Storm Resolve</name>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>More Resolve from Coats (ResolveEffectBonusResolveEffectModel)</hookedEffect_1>
-	Need_Coats_Storm_Resolve,
+	Need_Coats_Storm_Resolve = 1670,
 
 	/// <summary>
 	/// Economic Migration - Rumor has it that your settlement is one of the wealthiest in the realm. Newcomers will arrive 15% quicker and bring 10% more goods for every 1 level of standing you have with other settlements on trade routes.
@@ -12222,7 +12272,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (TradeTownStandingLeveledUpHook)</hooks_1>
 	/// <hookedEffect_1>Newcomers Faster 15 (NewcomersIntervalRateEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Newcomer Goods +10 (NewcommersGoodsRateEffectModel)</hookedEffect_2>
-	Newcomer_Rate_For_Trade_Routes,
+	Newcomer_Rate_For_Trade_Routes = 1671,
 
 	/// <summary>
 	/// The Night's Embrace - The settlement is slowly engulfed in darkness. Each Blightrot Cyst increases Hostility by +5 points during the storm.
@@ -12231,7 +12281,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Hostility for Cysts (HookedEffectModel)</hookedEffect_1>
-	Nights_Embrace,
+	Nights_Embrace = 1672,
 
 	/// <summary>
 	/// Overflow - The machine is somehow connected with the settlement's underground pipe system. You lose 4 units of a random type of rainwater every 10 seconds. Every 120 seconds, 2 Blightrot Cysts are spawned in the settlement.
@@ -12241,7 +12291,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <instantEffect_1>NoxiousMachinery_RemoveWaterOverTime - hard (RemoveGoodsInTimeEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Spawn Cysts 2 - machinery (SpawnCystsEffectModel)</hookedEffect_1>
-	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Hard,
+	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Hard = 1673,
 
 	/// <summary>
 	/// Overflow - The machine is somehow connected with the settlement's underground pipe system. You lose 4 units of a random type of rainwater every 6 seconds. Every 120 seconds, 2 Blightrot Cysts are spawned in the settlement.
@@ -12251,7 +12301,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <instantEffect_1>NoxiousMachinery_RemoveWaterOverTime - impossible (RemoveGoodsInTimeEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Spawn Cysts 2 - machinery (SpawnCystsEffectModel)</hookedEffect_1>
-	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Impossible,
+	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Impossible = 1674,
 
 	/// <summary>
 	/// Overflow - The machine is somehow connected with the settlement's underground pipe system. You lose 4 units of a random type of rainwater every 12 seconds. Every 120 seconds, 2 Blightrot Cysts are spawned in the settlement.
@@ -12261,7 +12311,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <instantEffect_1>NoxiousMachinery_RemoveWaterOverTime - normal (RemoveGoodsInTimeEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Spawn Cysts 2 - machinery (SpawnCystsEffectModel)</hookedEffect_1>
-	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Normal,
+	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Normal = 1675,
 
 	/// <summary>
 	/// Overflow - The machine is somehow connected with the settlement's underground pipe system. You lose 4 units of a random type of rainwater every 8 seconds. Every 120 seconds, 2 Blightrot Cysts are spawned in the settlement.
@@ -12271,7 +12321,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <instantEffect_1>NoxiousMachinery_RemoveWaterOverTime - very hard (RemoveGoodsInTimeEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Spawn Cysts 2 - machinery (SpawnCystsEffectModel)</hookedEffect_1>
-	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Very_Hard,
+	Noxious_Machinery_Water_Remove_And_Spawn_Cyst_Very_Hard = 1676,
 
 	/// <summary>
 	/// For every 40 gathering node charges used, 1 Blightrot Cyst(s) will spawn.
@@ -12280,7 +12330,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (DepositChargeUsedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Cysts 1 - overexploitation (SpawnCystsEffectModel)</hookedEffect_1>
-	Overexploitation_Cyst_For_Node,
+	Overexploitation_Cyst_For_Node = 1677,
 
 	/// <summary>
 	/// Free Samples - Gain 1 "[mat processed] parts" Parts every time you sell goods worth 25 Amber.
@@ -12289,7 +12339,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <hookedEffect_1>Parts 1 (GoodsEffectModel)</hookedEffect_1>
-	Parts_For_Trade,
+	Parts_For_Trade = 1678,
 
 	/// <summary>
 	/// Filling Dish - "[food processed] porridge" Porridge production increases by +1 for every 150 units of "[water] drizzle water" Drizzle Water produced.
@@ -12298,7 +12348,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Porridge +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Porridge_Prod_For_Water,
+	Porridge_Prod_For_Water = 1679,
 
 	/// <summary>
 	/// Archaeological Tools - Glades are examined more carefully. Gain 20 "[vessel] pottery" Pottery every time you discover a new glade.
@@ -12307,7 +12357,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Pottery 20 (GoodsEffectModel)</hookedEffect_1>
-	Pottery_For_Glade,
+	Pottery_For_Glade = 1680,
 
 	/// <summary>
 	/// Prayers - Impatience grows 4% slower for each person that has their religion need fulfilled.
@@ -12316,7 +12366,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>ReputationPenaltyRate 4 (ReputationPenaltyRateEffectModel)</hookedEffect_1>
-	Prayers,
+	Prayers = 1681,
 
 	/// <summary>
 	/// Work Safety Guide - A standardized set of rules. Every villager with their need for education fulfilled increases global production speed by 5%.
@@ -12325,7 +12375,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Global Production Faster 5 (GlobalProductionRateEffectModel)</hookedEffect_1>
-	ProdSpeedForEducation,
+	ProdSpeedForEducation = 1682,
 
 	/// <summary>
 	/// Gathering Tools - Vital equipment when exploring the wilds. Gain 6 "[packs] pack of provisions" Pack of Provisions every time you discover a new glade.
@@ -12334,7 +12384,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Pack of Provisions 6 (GoodsEffectModel)</hookedEffect_1>
-	Provisions_For_Glade,
+	Provisions_For_Glade = 1683,
 
 	/// <summary>
 	/// Seized Inheritance - The property of the deceased is seized for the benefit of the whole settlement. Gain 20 random goods every time a villager dies.
@@ -12343,7 +12393,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>20 Random Goods (RandomGoodsEffectModel)</hookedEffect_1>
-	Random_Goods_For_Dearth,
+	Random_Goods_For_Dearth = 1684,
 
 	/// <summary>
 	/// Trade Hub - The settlement is known for being a major trade hub in the region. Gain 1 Reputation Point every time you sell goods worth 60 Amber, but fulfilling Orders awards 50% less Reputation.
@@ -12353,7 +12403,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <instantEffect_1>Half Reputation From Orders (BonusReputationFromSourceRateEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>1 Reputation Trade (ReputationEffectModel)</hookedEffect_1>
-	Reputation_From_Trade,
+	Reputation_From_Trade = 1685,
 
 	/// <summary>
 	/// Ale and Hearty - Reputation generated through high Resolve grows +20% faster for every 2 villagers with the need for leisure fulfilled.
@@ -12362,7 +12412,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedFulfilledHook)</hooks_1>
 	/// <hookedEffect_1>Resolve To Reputation +20 (ResolveToReputationRateEffectModel)</hookedEffect_1>
-	ReputationForLuxury,
+	ReputationForLuxury = 1686,
 
 	/// <summary>
 	/// Prosperous Archaeology - The people are invigorated by every discovered cache. Every time you open or send 2 Abandoned Caches to the Citadel, you gain +1 to Global Resolve.
@@ -12371,7 +12421,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve - Resolve for chests (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Chests,
+	Resolve_For_Chests = 1687,
 
 	/// <summary>
 	/// Vitality - A rich diet is beneficial for your villagers' health. Gain +1 to Global Resolve for every 200 times any complex food need is fulfilled (the bonus is added retroactively).
@@ -12380,7 +12430,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NeedSatisfiedByListHook)</hooks_1>
 	/// <hookedEffect_1>Vitality (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Complex_Food,
+	Resolve_For_Complex_Food = 1688,
 
 	/// <summary>
 	/// Woodcutter's Song - It's off to work we go. For every 20 felled trees, Global Resolve is increased by 3 for 120 seconds.
@@ -12389,7 +12439,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for Glade - Resolve Bonus Effect - Holder (HookedEffectModel)</hookedEffect_1>
-	Resolve_For_Glade,
+	Resolve_For_Glade = 1689,
 
 	/// <summary>
 	/// Inspiring Work - Global Resolve is increased by 3 for 120 seconds due to recently felled trees (source: Woodcutter's Song).
@@ -12398,7 +12448,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>Resolve for Glade - Resolve Bonus Effect (GlobalResolveEffectEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	Resolve_For_Glade_Resolve_Bonus_Effect_Holder,
+	Resolve_For_Glade_Resolve_Bonus_Effect_Holder = 1690,
 
 	/// <summary>
 	/// Rebellious Spirit - The people are feeling oddly rebellious. Gain +1 Global Resolve for every 2 Impatience Points. Every time a villager leaves or dies, Impatience is increased by an additional 0.2 points.
@@ -12408,7 +12458,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (ReputationPenaltyGainedHook)</hooks_1>
 	/// <instantEffect_1>Additional Impatience for Death (AdditionalDeathEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Rebelious Spirit (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Impatience,
+	Resolve_For_Impatience = 1691,
 
 	/// <summary>
 	/// Long Live the Queen - Villagers tell stories of the Queen's unparalleled power. Global Resolve grows by 1 for every 3 Reputation Points gained.
@@ -12417,7 +12467,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ReputationGainedHook)</hooks_1>
 	/// <hookedEffect_1>Long Live the Queen (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Reputation,
+	Resolve_For_Reputation = 1692,
 
 	/// <summary>
 	/// Prosperous Settlement - Gain +1 to Global Resolve every time you sell goods worth 50 "[valuable] amber" Amber, but scouts work 10% slower on Glade Events.
@@ -12427,7 +12477,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <instantEffect_1>Relic Working TIme +10 (RelicsWorkingTimeRateEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Resolve - Resolve for sales (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Sales,
+	Resolve_For_Sales = 1693,
 
 	/// <summary>
 	/// Converted Harmony Spirit Altar - When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve.
@@ -12436,7 +12486,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (UniqueBuildingsOwnedHook)</hooks_1>
 	/// <hookedEffect_1>Harmony Altar Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Services,
+	Resolve_For_Services = 1694,
 
 	/// <summary>
 	/// Friendly Relations - Boosts Global Resolve by 1 for every 3 levels of standing with other settlements in trade routes.
@@ -12445,7 +12495,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeTownStandingLeveledUpHook)</hooks_1>
 	/// <hookedEffect_1>Resolve - Resolve for Standing (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Standing,
+	Resolve_For_Standing = 1695,
 
 	/// <summary>
 	/// Frequent Caravans - The Crown is very forgiving - as long as the goods keep flowing. Impatience grows 30% slower for 180 seconds every time you finish a trade route.
@@ -12454,7 +12504,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeRouteCollectedHook)</hooks_1>
 	/// <hookedEffect_1>Resolve for started Route - impatience slower - Holder (HookedEffectModel)</hookedEffect_1>
-	Resolve_For_Started_Route,
+	Resolve_For_Started_Route = 1696,
 
 	/// <summary>
 	/// Bustling Town - Impatience is growing 30% slower for 180 seconds due to a recently finished trade route (source: Frequent Caravans).
@@ -12463,7 +12513,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>Resolve for started Route - impatience slower (ReputationPenaltyRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	Resolve_For_Started_Route_Impatience_Slower_Holder,
+	Resolve_For_Started_Route_Impatience_Slower_Holder = 1697,
 
 	/// <summary>
 	/// Creeping Fishmen - With each fallen tree, the Fishmen grow closer. Global Resolve is hit by a -2 penalty for every 7 fallen trees.
@@ -12472,7 +12522,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Fishmen Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Trees_Fishmen_Hard,
+	Resolve_For_Trees_Fishmen_Hard = 1698,
 
 	/// <summary>
 	/// Creeping Fishmen - With each fallen tree, the Fishmen grow closer. Global Resolve is hit by a -2 penalty for every 5 fallen trees.
@@ -12481,7 +12531,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Fishmen Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Trees_Fishmen_Impossible,
+	Resolve_For_Trees_Fishmen_Impossible = 1699,
 
 	/// <summary>
 	/// Creeping Fishmen - With each fallen tree, the Fishmen grow closer. Global Resolve is hit by a -2 penalty for every 8 fallen trees.
@@ -12490,7 +12540,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Fishmen Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Trees_Fishmen_Normal,
+	Resolve_For_Trees_Fishmen_Normal = 1700,
 
 	/// <summary>
 	/// Creeping Fishmen - With each fallen tree, the Fishmen grow closer. Global Resolve is hit by a -2 penalty for every 6 fallen trees.
@@ -12499,7 +12549,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Fishmen Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_For_Trees_Fishmen_Very_Hard,
+	Resolve_For_Trees_Fishmen_Very_Hard = 1701,
 
 	/// <summary>
 	/// Robbed Dead - The scent of your wealth makes the robbed spirit angry. You get -4 to Global Resolve for every 10 "[valuable] amber" Amber in the settlement's Warehouses.
@@ -12508,7 +12558,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[valuable] amber" Amber (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Forsaken Crypt Resolve Penalty - hard (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_Penalty_For_Every_10_Amber_Hard,
+	Resolve_Penalty_For_Every_10_Amber_Hard = 1702,
 
 	/// <summary>
 	/// Robbed Dead - The scent of your wealth makes the robbed spirit angry. You get -6 to Global Resolve for every 10 "[valuable] amber" Amber in the settlement's Warehouses.
@@ -12517,7 +12567,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[valuable] amber" Amber (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Forsaken Crypt Resolve Penalty - impossible (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_Penalty_For_Every_10_Amber_Impossible,
+	Resolve_Penalty_For_Every_10_Amber_Impossible = 1703,
 
 	/// <summary>
 	/// Robbed Dead - The scent of your wealth makes the robbed spirit angry. You get -3 to Global Resolve for every 10 "[valuable] amber" Amber in the settlement's Warehouses.
@@ -12526,7 +12576,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[valuable] amber" Amber (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Forsaken Crypt Resolve Penalty - normal (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_Penalty_For_Every_10_Amber_Normal,
+	Resolve_Penalty_For_Every_10_Amber_Normal = 1704,
 
 	/// <summary>
 	/// Robbed Dead - The scent of your wealth makes the robbed spirit angry. You get -5 to Global Resolve for every 10 "[valuable] amber" Amber in the settlement's Warehouses.
@@ -12535,7 +12585,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[valuable] amber" Amber (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Forsaken Crypt Resolve Penalty - very hard (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Resolve_Penalty_For_Every_10_Amber_Very_Hard,
+	Resolve_Penalty_For_Every_10_Amber_Very_Hard = 1705,
 
 	/// <summary>
 	/// Grubbing Tools - A set of tools designed for grubbing tree stumps. Gain 15 "[food raw] roots" Roots every time you discover a new glade.
@@ -12544,7 +12594,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Roots 15 (GoodsEffectModel)</hookedEffect_1>
-	Root_For_Every_Glade,
+	Root_For_Every_Glade = 1706,
 
 	/// <summary>
 	/// Baptism of Fire - While the Hearth is corrupted, you’re unable to sacrifice resources.
@@ -12553,7 +12603,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (OngoingHearthCorruptionHook)</hooks_1>
 	/// <hookedEffect_1>Hearth Sacrifice Block - Baptism of Fire (HearthSacrificeBlockEffectModel)</hookedEffect_1>
-	Sacrifice_Block_During_Corruption,
+	Sacrifice_Block_During_Corruption = 1707,
 
 	/// <summary>
 	/// Fiery Wrath - Resources you sacrifice in the Ancient Hearth burn 5% longer for every Impatience Point you have.
@@ -12562,7 +12612,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ReputationPenaltyGainedHook)</hooks_1>
 	/// <hookedEffect_1>Sacrifice Cost 5 Longer (HearthSacraficeTimeEffectModel)</hookedEffect_1>
-	Sacrifice_Cost_For_Impatience,
+	Sacrifice_Cost_For_Impatience = 1708,
 
 	/// <summary>
 	/// Firekeeper Letters - The exchange of knowledge between firekeepers can be very beneficial. The maximum number of sacrifice stacks in the Ancient Hearth is increased by +1 for every 2 ongoing trade routes.
@@ -12571,7 +12621,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ActiveTradeRoutesHook)</hooks_1>
 	/// <hookedEffect_1>Sacrifice Stack +1 (BonusSacrificeStacksEffectModel)</hookedEffect_1>
-	Sacrifice_Stack_For_Route,
+	Sacrifice_Stack_For_Route = 1709,
 
 	/// <summary>
 	/// Royal Funding - The Queen's generosity knows no limits. Gain 2 "[valuable] amber" Amber every time you sell goods worth 10 Amber.
@@ -12580,7 +12630,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TraderValueSoldHook)</hooks_1>
 	/// <hookedEffect_1>Amber 2 (GoodsEffectModel)</hookedEffect_1>
-	SE_Amber_For_Trade,
+	SE_Amber_For_Trade = 1710,
 
 	/// <summary>
 	/// Golden Dust - Some raindrops seem to have a golden hue. Gain 5 "[water] clearance water" Clearance Water for every 10 "[water] drizzle water" Drizzle Water gathered.
@@ -12589,7 +12639,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[water] drizzle water" Drizzle Water (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Clearance Water 5 (GoodsEffectModel)</hookedEffect_1>
-	SE_Clearance_For_Drizzle,
+	SE_Clearance_For_Drizzle = 1711,
 
 	/// <summary>
 	/// Unyielding Corruption - The spreading corruption strikes fear into the hearts of your villagers. No amount of assurance or flattery can change that. Favoring is unavailable while the Hearth is being corrupted.
@@ -12598,7 +12648,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (OngoingHearthCorruptionHook)</hooks_1>
 	/// <hookedEffect_1>[Map Mod] Favoring Block (FavoringBlockEffectModel)</hookedEffect_1>
-	SE_Corruption_Favoring_Block,
+	SE_Corruption_Favoring_Block = 1712,
 
 	/// <summary>
 	/// Creeping Shadows - Discovering a glade during the storm will decrease Global Resolve by -10 for 3 minutes.
@@ -12607,7 +12657,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>SE Creeping Shadows - Resolve Penalty Effect - Holder (HookedEffectModel)</hookedEffect_1>
-	SE_Creeping_Shadows,
+	SE_Creeping_Shadows = 1713,
 
 	/// <summary>
 	/// Shadowy Figure - Global Resolve is decreased by -10 for 180 seconds due to a recently discovered glade (source: Creeping Shadows).
@@ -12616,7 +12666,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>SE Creeping Shadows - Resolve Penalty Effect (GlobalResolveEffectEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	SE_Creeping_Shadows_Resolve_Penalty_Effect_Holder,
+	SE_Creeping_Shadows_Resolve_Penalty_Effect_Holder = 1714,
 
 	/// <summary>
 	/// Cricket Mating Grounds - The clearings are abuzz with the sound of crickets. Gain 30 "[food raw] insects" Insects for each discovered glade.
@@ -12625,7 +12675,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Insects 30 (GoodsEffectModel)</hookedEffect_1>
-	SE_Cricket_Mating_Grounds,
+	SE_Cricket_Mating_Grounds = 1715,
 
 	/// <summary>
 	/// Spreading Contamination - Blightrot contaminates everything you send to the Citadel. During the storm, the Queen's Impatience grows 5% faster for every Blightrot Cyst in your settlement.
@@ -12634,7 +12684,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (CystsAmountHook)</hooks_1>
 	/// <hookedEffect_1>ReputationPenaltyRate 5 (ReputationPenaltyRateEffectModel)</hookedEffect_1>
-	SE_Cysts_Generate_Impatience_In_Storm,
+	SE_Cysts_Generate_Impatience_In_Storm = 1716,
 
 	/// <summary>
 	/// Greater Threat - During the storm, receive -2 to Global Resolve for every Dangerous ("dangerous") and Forbidden Glade ("forbidden") discovered since the beginning of the settlement.
@@ -12643,7 +12693,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>Missing key (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Opened Dang Glades reduces Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	SE_Dang_Glades_Reduces_Resolve_In_Storm,
+	SE_Dang_Glades_Reduces_Resolve_In_Storm = 1717,
 
 	/// <summary>
 	/// Blightrot Infection - Villagers report feeling sick, especially during the storm. When a villager leaves or dies, 2 Blightrot Cysts will appear in the settlement. 
@@ -12652,7 +12702,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>SE Spawn Cysts 2 - Villagers (SpawnCystsEffectModel)</hookedEffect_1>
-	SE_Death_Blightrot,
+	SE_Death_Blightrot = 1718,
 
 	/// <summary>
 	/// Soil Reclamation - The soil becomes saturated with the rain's essence during drizzle season. Gathering nodes depleted during the drizzle spawn fertile soil.
@@ -12661,7 +12711,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (DepositDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Small Patch (SpawnFertileSoilAroundEffectModel)</hookedEffect_1>
-	SE_Fertile_Nodes,
+	SE_Fertile_Nodes = 1719,
 
 	/// <summary>
 	/// Forgiving Crown - Gain one free cornerstone reroll for every Reputation Point gained during drizzle season.
@@ -12670,7 +12720,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ReputationPointGainedHook)</hooks_1>
 	/// <hookedEffect_1>Cornerstone Reroll +1 (CornerstonesRerollsEffectModel)</hookedEffect_1>
-	SE_Gift_For_Reputation,
+	SE_Gift_For_Reputation = 1720,
 
 	/// <summary>
 	/// Gentle Dawn - New year, new challenges. You gain a +10% bonus to planting speed during Drizzle season for every small glade you discover (as well as your starting glade).
@@ -12679,7 +12729,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>PlantingRate +10 (PlantingRateEffectModel)</hookedEffect_1>
-	SE_Glades_Resolve_In_Drizzle,
+	SE_Glades_Resolve_In_Drizzle = 1721,
 
 	/// <summary>
 	/// Forest Offerings - It seems some inhabitants of the forest are grateful for your efforts. During drizzle season, every Dangerous or Forbidden Glade Event you complete will give you 40 random raw food.
@@ -12688,7 +12738,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>30 Random Raw Food (RandomGoodsEffectModel)</hookedEffect_1>
-	SE_Goods_For_Solved_Relics,
+	SE_Goods_For_Solved_Relics = 1722,
 
 	/// <summary>
 	/// TODO NAME - TODO DESC
@@ -12697,7 +12747,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (DepositDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Small Patch (SpawnFertileSoilAroundEffectModel)</hookedEffect_1>
-	SE_Grass_Around_Removed_Deposits,
+	SE_Grass_Around_Removed_Deposits = 1723,
 
 	/// <summary>
 	/// Unyielding Corruption - The next newcomer group from the Citadel will arrive 33% slower because of a missed payment (source: Shifting Paths).
@@ -12706,7 +12756,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>Newcomers Slower 33 (NewcomersIntervalRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>Missing key (NewcomersAcceptedHook)</removalHook_1>
-	SE_Late_Newcomers_Child,
+	SE_Late_Newcomers_Child = 1724,
 
 	/// <summary>
 	/// Lost Newcomers - If you don't deliver the required goods, the next newcomer group from the Citadel will arrive 33% slower.
@@ -12714,7 +12764,7 @@ public enum EffectTypes
 	/// <name>[SE] Late Newcomers - holder</name>
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>[SE] Late Newcomers - child (HookedEffectModel)</instantEffect_1>
-	SE_Late_Newcomers_Holder,
+	SE_Late_Newcomers_Holder = 1725,
 
 	/// <summary>
 	/// Rotten Rain - The rain carries a strange, rotten pollen with it. A Blood Flower will spawn somewhere in the settlement every 90 seconds.
@@ -12723,7 +12773,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Spawn Blood Flower Near Hearth (SpawnBuildingAroundHearth)</hookedEffect_1>
-	SE_Living_Farmfield,
+	SE_Living_Farmfield = 1726,
 
 	/// <summary>
 	/// Marrow Growth - Small pockets of bone marrow form in the ground and on trees. Gain 5 "[crafting] sea marrow" Sea Marrow for every 5 "[crafting] coal" Coal produced during drizzle season.
@@ -12732,7 +12782,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>5 "[crafting] coal" Coal (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Sea Marrow 5 (GoodsEffectModel)</hookedEffect_1>
-	SE_Marrow_Mine,
+	SE_Marrow_Mine = 1727,
 
 	/// <summary>
 	/// Vanishing Water - Infused rainwater slowly evaporates. You lose 1 unit of a random type of water for every 2 units of water used in Rain Engines. 
@@ -12741,7 +12791,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WaterUsedHook)</hooks_1>
 	/// <hookedEffect_1>Water Lost (RemoveGoodsByCategoryEffectModel)</hookedEffect_1>
-	SE_More_Water_Consumption,
+	SE_More_Water_Consumption = 1728,
 
 	/// <summary>
 	/// Bleeding Trees - A red, sticky substance is oozing out from beneath the tree bark. Gain 2 "[mat raw] resin" Resin every time woodcutters cut down a tree.
@@ -12750,7 +12800,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <hookedEffect_1>Resin 2 (GoodsEffectModel)</hookedEffect_1>
-	SE_Resin_For_Wood,
+	SE_Resin_For_Wood = 1729,
 
 	/// <summary>
 	/// Saturated Air - A pleasant, earthy scent is in the air. Gain +1 to Global Resolve for every 30 units of water used in Rain Engines.
@@ -12759,7 +12809,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WaterUsedHook)</hooks_1>
 	/// <hookedEffect_1>SE Resolve for Water - Global Resolve Effect (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	SE_Resolve_For_Water,
+	SE_Resolve_For_Water = 1730,
 
 	/// <summary>
 	/// Resisting Flora - The trees seem to come to life during the storm... Woodcutting is –90% slower, but each fallen tree gives 5 "[food raw] meat" Meat.
@@ -12769,7 +12819,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (NaturalResourceDepletedHook)</hooks_1>
 	/// <instantEffect_1>SE TreeCutting -90 (ProductionRateEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Moth Larvae Meat 5 (GoodsEffectModel)</hookedEffect_1>
-	SE_Slow_Woodcutting_For_Meat,
+	SE_Slow_Woodcutting_For_Meat = 1731,
 
 	/// <summary>
 	/// Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event completed during drizzle season.
@@ -12778,7 +12828,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>0_5 Reputation Exploration - Seasonal Effect (ReputationEffectModel)</hookedEffect_1>
-	SE_Spring_Events,
+	SE_Spring_Events = 1732,
 
 	/// <summary>
 	/// Finders Keepers - After each storm, caravans find countless goods scattered along their routes. Every trade route you complete during drizzle season will give you 5 random packs of goods.
@@ -12787,7 +12837,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeRouteCollectedHook)</hooks_1>
 	/// <hookedEffect_1>5 Random Packs (RandomGoodsEffectModel)</hookedEffect_1>
-	SE_Spring_Routes,
+	SE_Spring_Routes = 1733,
 
 	/// <summary>
 	/// Soaked Clothes - Global Resolve is decreased by -6 for 120 seconds due to a missed payment (source: Cloudburst).
@@ -12796,7 +12846,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>SE Storm Clothes - Resolve Penalty Effect (GlobalResolveEffectEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	SE_Storm_Clothes_Resolve_Penalty_Effect_Holder,
+	SE_Storm_Clothes_Resolve_Penalty_Effect_Holder = 1734,
 
 	/// <summary>
 	/// Thunder - A terrifying sound from a raging sky. Every 50 seconds, 3 buildings are destroyed by lightning.
@@ -12805,7 +12855,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>SE Remove Buildings 3 (RemoveBuildingEffectModel)</hookedEffect_1>
-	SE_Thunder,
+	SE_Thunder = 1735,
 
 	/// <summary>
 	/// Sunken Bones - Thorough research has shown that marine remains can be found near copper veins in this land. Gain 10 "[crafting] sea marrow" Sea Marrow for every 10 "[metal] copper ore" Copper Ore produced.
@@ -12814,7 +12864,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[metal] copper ore" Copper Ore (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Sea Marrow 10 (GoodsEffectModel)</hookedEffect_1>
-	Sea_Marrow_For_Copper,
+	Sea_Marrow_For_Copper = 1736,
 
 	/// <summary>
 	/// Hidden Mystery - Scouts from the royal guard have been called to search glades for traces of Sealed Spiders. Gain 1 "[valuable] ancient tablet" Ancient Tablet for every 2 discovered glades.
@@ -12823,7 +12873,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Ancient Tablet 1 (GoodsEffectModel)</hookedEffect_1>
-	Spider_Tablets_For_Glades,
+	Spider_Tablets_For_Glades = 1737,
 
 	/// <summary>
 	/// Force of Nature - The forest and the everlasting rain are connected somehow. Gain +3 to Storm Water production for every 2 Woodcutters in your settlement. Increases the tank capacity for every type of rainwater by +50 (one time only).
@@ -12833,7 +12883,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <instantEffect_1>Tank Capacity - Trader (BonusWaterTanksCapacityEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Storm Water +3 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Storm_Water_For_Woodcutters,
+	Storm_Water_For_Woodcutters = 1738,
 
 	/// <summary>
 	/// Stormbird's Cry - An angry stormbird mother is following your caravan. Gain -2 to Global Resolve during the storm.
@@ -12842,7 +12892,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Stormbird Egg - Global Resolve Penalty (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Stormbird_Egg_Additional_Resolve_In_Storm,
+	Stormbird_Egg_Additional_Resolve_In_Storm = 1739,
 
 	/// <summary>
 	/// Hidden Reward - Gain 1 "[valuable] ancient tablet" Ancient Tablet for every 2 completed Glade Events.
@@ -12851,7 +12901,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (RelicResolvedHook)</hooks_1>
 	/// <hookedEffect_1>Ancient Tablet 1 (GoodsEffectModel)</hookedEffect_1>
-	Tablets_For_Events,
+	Tablets_For_Events = 1740,
 
 	/// <summary>
 	/// Plague of Death - The Sealed Ones are thirsty for blood. Discover 2 Dangerous ("dangerous") or Forbidden Glades ("forbidden") during this storm. If you don't, 3 villagers will be killed in the coming drizzle season.
@@ -12861,7 +12911,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Sacrificed 3 - Plague of Death (VillagersDeathEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (GladeDiscoveredHook)</removalHook_1>
-	TEST_Plague_Of_Death,
+	TEST_Plague_Of_Death = 1741,
 
 	/// <summary>
 	/// Bone Tools - Gain 3 "[tools] simple tools" Tools every time a villager leaves or dies.
@@ -12870,7 +12920,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Metal Tools 3 (GoodsEffectModel)</hookedEffect_1>
-	Tools_For_Death,
+	Tools_For_Death = 1742,
 
 	/// <summary>
 	/// Improvised Tools - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 10 "[tools] simple tools" Tools.
@@ -12879,7 +12929,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Tools for glade - child (HookedEffectModel)</hookedEffect_1>
-	Tools_For_Glade,
+	Tools_For_Glade = 1743,
 
 	/// <summary>
 	/// Discovering a glade grants 10 "[tools] simple tools" Tools
@@ -12888,7 +12938,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Metal Tools 10 (GoodsEffectModel)</hookedEffect_1>
-	Tools_For_Glade_Child,
+	Tools_For_Glade_Child = 1744,
 
 	/// <summary>
 	/// Discovering a glade grants 15 "[tools] simple tools" Tools
@@ -12897,7 +12947,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Metal Tools 15 (GoodsEffectModel)</hookedEffect_1>
-	Tools_For_Glade_Child_Altar,
+	Tools_For_Glade_Child_Altar = 1745,
 
 	/// <summary>
 	/// Forbidden Tools - All metal is permeated with malevolent magic from the forest. Every 2 Hostility levels grant +1 to "[tools] simple tools" Tools production.
@@ -12906,7 +12956,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HostilityLevelChangedHook)</hooks_1>
 	/// <hookedEffect_1>Copper Tools +1 - in hook (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Tools_For_Hostility,
+	Tools_For_Hostility = 1746,
 
 	/// <summary>
 	/// Full Stock - A Warehouse full of provisions makes it easier to prepare your caravans. Trade routes are faster by 5% for every 10 "[packs] pack of provisions" Pack of Provisions in your settlement's Warehouses.
@@ -12915,7 +12965,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>10 "[packs] pack of provisions" Pack of Provisions (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Route Less Travel Time 5 (TradeRoutesSpeedEffectModel)</hookedEffect_1>
-	Trade_Route_Speed_For_Packs,
+	Trade_Route_Speed_For_Packs = 1747,
 
 	/// <summary>
 	/// Urban Planning - For every 10 completed trade routes, all houses will have room for one more person.
@@ -12924,7 +12974,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (TradeRouteCollectedHook)</hooks_1>
 	/// <hookedEffect_1>Houses Global Capacity +1 (HousesGlobalBonusCapacityEffectModel)</hookedEffect_1>
-	Trade_Routes_For_Housing_Spots,
+	Trade_Routes_For_Housing_Spots = 1748,
 
 	/// <summary>
 	/// Writing Desk - While the Guild is not exclusively a Beaver organization, almost every adult Beaver belongs to it. All trade routes are 5% faster for every villager living in a house with this upgrade.
@@ -12933,7 +12983,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Route Less Travel Time 5 (TradeRoutesSpeedEffectModel)</hookedEffect_1>
-	UB_Beaver_Houses_Unique_Bonus,
+	UB_Beaver_Houses_Unique_Bonus = 1749,
 
 	/// <summary>
 	/// Lichen - While Foxes are as mortal as any other species, there are no Fox graves to be found anywhere. Scouts work 2% faster on glade events for every villager living in a house with this upgrade.
@@ -12942,7 +12992,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Relic Working TIme -2 (RelicsWorkingTimeRateEffectModel)</hookedEffect_1>
-	UB_Fox_Houses_Unique_Bonus,
+	UB_Fox_Houses_Unique_Bonus = 1750,
 
 	/// <summary>
 	/// Workbench - An essential piece of furniture in every Frog household. Building material recipes have a 3% higher chance of producing extra resources for each villager living in a house with this upgrade.
@@ -12951,7 +13001,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Building Mat Crit +3 (RecipesTagExtraProductionChanceEffectModel)</hookedEffect_1>
-	UB_Frog_House_Bonus_Building_Mat_Crit,
+	UB_Frog_House_Bonus_Building_Mat_Crit = 1751,
 
 	/// <summary>
 	/// Drafting Table - Frogs are natural architects. They are said to have designed most of the Smoldering City. Building materials are produced 3% faster for each villager living in a house with this upgrade.
@@ -12960,7 +13010,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Building Mat Speed +3 (RecipesTagProductionRateEffectModel)</hookedEffect_1>
-	UB_Frog_House_Bonus_Building_Mat_Speed,
+	UB_Frog_House_Bonus_Building_Mat_Speed = 1752,
 
 	/// <summary>
 	/// Water Pipeline - An advanced system of pipes connecting buildings that use rainwater. The "Low Strain" bonus from Rain Engines grants an additional +1 to Resolve for every 2 villagers living in a house with this upgrade.
@@ -12969,7 +13019,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>More Resolve for Rainpunk (ResolveEffectBonusResolveEffectModel)</hookedEffect_1>
-	UB_Frog_House_Bonus_More_Resolve_From_Rainpunk,
+	UB_Frog_House_Bonus_More_Resolve_From_Rainpunk = 1753,
 
 	/// <summary>
 	/// Atrium - Frogs form very tight-knit communities and highly value their social status. Each newcomer group has 1 additional villager for every 2 villagers living in a house with this upgrade.
@@ -12978,7 +13028,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>NewNewcomersBonus_Random 1 (NewcomersBonusEffectModel)</hookedEffect_1>
-	UB_Frog_House_Bonus_Newcomer_Bonus,
+	UB_Frog_House_Bonus_Newcomer_Bonus = 1754,
 
 	/// <summary>
 	/// Storage Room - Although Frogs are generally considered to be greedy, they can sometimes be generous. At the start of each drizzle season, gain 1 "[packs] pack of building materials" Pack of Building Materials for each villager living in a house with this upgrade.
@@ -12987,7 +13037,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>[U][B] Frog House Bonus - Packs Each Year - Child (HookedEffectModel)</hookedEffect_1>
-	UB_Frog_House_Bonus_Packs_Each_Year,
+	UB_Frog_House_Bonus_Packs_Each_Year = 1755,
 
 	/// <summary>
 	/// Storage Room - 1 "[packs] pack of building materials" Pack of Building Materials
@@ -12996,7 +13046,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Pack of Building Materials 1 (GoodsEffectModel)</hookedEffect_1>
-	UB_Frog_House_Bonus_Packs_Each_Year_Child,
+	UB_Frog_House_Bonus_Packs_Each_Year_Child = 1756,
 
 	/// <summary>
 	/// Canopy - In the final days of the Great Civil War, before peace was declared, there were no more than three hundred Harpies left alive. Each villager living in a house with this upgrade increases the production speed of recipes that use or make fabric by 5%.
@@ -13005,7 +13055,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Fabric or Coat Speed +5 (RecipesTagProductionRateEffectModel)</hookedEffect_1>
-	UB_Harpy_Houses_Unique_Bonus,
+	UB_Harpy_Houses_Unique_Bonus = 1757,
 
 	/// <summary>
 	/// Toolshed - The love of farming is perhaps the last thing that reminds Humans of their long-fallen kingdoms. Global planting and harvesting speeds are increased by +5% for every villager living in a house with this upgrade.
@@ -13014,7 +13064,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>[U][B] Planting And Harvesting Speed (CompositeEffectModel)</hookedEffect_1>
-	UB_Human_Houses_Unique_Bonus,
+	UB_Human_Houses_Unique_Bonus = 1758,
 
 	/// <summary>
 	/// Cellar - Some say that if it weren't for the Queen's sudden appearance, the Lizard clans would've eventually beaten the other species in the Great Civil War. Global gathering speed is increased by +5% for every villager living in a house with this upgrade.
@@ -13023,7 +13073,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerHousedInUpgradedHouseHook)</hooks_1>
 	/// <hookedEffect_1>Gathering Speed +5 (RecipesTagProductionRateEffectModel)</hookedEffect_1>
-	UB_Lizard_Houses_Unique_Bonus,
+	UB_Lizard_Houses_Unique_Bonus = 1759,
 
 	/// <summary>
 	/// Manned Lookout - Blight Fighters regularly inspect production buildings. The use of water in Rain Engines generates Blightrot Cysts 10% slower for every Blight Fighter in a building with this upgrade.
@@ -13032,7 +13082,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WorkerInUpgradedBuildingHook)</hooks_1>
 	/// <hookedEffect_1>[U][BP] Cyst Generation Rate - child (EnginesBlightRateEffectModel)</hookedEffect_1>
-	UBP_Global_Cyst_Generation_Rate_Parent,
+	UBP_Global_Cyst_Generation_Rate_Parent = 1760,
 
 	/// <summary>
 	/// Lost in the Wilds - Gain one villager every time you discover a new glade.
@@ -13041,7 +13091,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>NewRandomVillagers (NewRandomVillagersEffectModel)</hookedEffect_1>
-	Villager_For_Glade,
+	Villager_For_Glade = 1761,
 
 	/// <summary>
 	/// From the Shadows - Confused, empty-eyed creatures emerge from the Hearth. Every time Voice of the Sealed Ones triggers after the Hearth reaches 100% Corruption, 3 new villagers appear in the settlement.
@@ -13050,7 +13100,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HearthCorruptedHook)</hooks_1>
 	/// <hookedEffect_1>NewRandomVillagers 3 (NewRandomVillagersEffectModel)</hookedEffect_1>
-	Villagers_For_Corruption,
+	Villagers_For_Corruption = 1762,
 
 	/// <summary>
 	/// Voice of the Forest - Trees communicate with each other through their roots, making the forest aware of your every move. Spawns 1 Blightrot Cysts every 120 seconds for every 2 Dangerous ("dangerous") or Forbidden Glade ("forbidden") discovered.
@@ -13059,7 +13109,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GameTimePassedHook)</hooks_1>
 	/// <hookedEffect_1>Cysts for Glades (HookedEffectModel)</hookedEffect_1>
-	Voice_Of_The_Forest,
+	Voice_Of_The_Forest = 1763,
 
 	/// <summary>
 	/// Book of Water - All recipes using rainwater have a 5% higher chance of producing double yields with every 60 Fish, Scales, or Algae produced.
@@ -13068,7 +13118,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GoodProducedByListHook)</hooks_1>
 	/// <hookedEffect_1>Water Recipes Crit +3 (RecipesTagExtraProductionChanceEffectModel)</hookedEffect_1>
-	Water_Crit_For_Fishing,
+	Water_Crit_For_Fishing = 1764,
 
 	/// <summary>
 	/// Reward_WaterskinsForLeather_Name - Reward_WaterskinsForLeather_Desc
@@ -13077,7 +13127,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>50 "[mat raw] leather" Leather (GoodProducedHook)</hooks_1>
 	/// <hookedEffect_1>Waterskins +1 (GoodsRawProductionEffectModel)</hookedEffect_1>
-	Waterskins_For_Leather,
+	Waterskins_For_Leather = 1765,
 
 	/// <summary>
 	/// Cloaked Wanderer's Vengeance - At the beginning of year 8, the Cloaked Wanderer will have his revenge, killing 8 villagers.
@@ -13086,7 +13136,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (YearChangeHook)</hooks_1>
 	/// <hookedEffect_1>[WE] Random Killed - Cloaked Wanderer (VillagersDeathMissileEffectModel)</hookedEffect_1>
-	WE_Cloaked_Wanderer_Vengeance,
+	WE_Cloaked_Wanderer_Vengeance = 1766,
 
 	/// <summary>
 	/// Desecrator - Gain +50 Hostility (Hostility scales based on difficulty). For every 90 seconds spent sacrificing goods in the Ancient Hearth, a villager dies. Sacrificing multiple resources at the same time will progress this effect's timer faster.
@@ -13096,7 +13146,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GoodsSacrificedInTimeHook)</hooks_1>
 	/// <instantEffect_1>Hostility +50 (HostilityEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>[WE] Desecrator Villager Death (VillagersDeathEffectModel)</hookedEffect_1>
-	WE_Desecrator,
+	WE_Desecrator = 1767,
 
 	/// <summary>
 	/// Scientific Agreement - You signed a very strange deal with the smuggler. You can choose one blueprint from all unlocked blueprints every time 12 villagers die.
@@ -13105,7 +13155,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (VillagerDeathHook)</hooks_1>
 	/// <hookedEffect_1>Wildcard Pick Trader (WildcardPickEffectModel)</hookedEffect_1>
-	Wildcard_For_Death,
+	Wildcard_For_Death = 1768,
 
 	/// <summary>
 	/// No Quality Control - Gain +2 to wood production. After each storm, all stored wood is removed, and you get 50 "[food raw] insects" Insects in return.
@@ -13116,7 +13166,7 @@ public enum EffectTypes
 	/// <instantEffect_1>Wood +2 (GoodsRawProductionEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Insects 50 (GoodsEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Wood Removed (RemoveGoodsByCategoryEffectModel)</hookedEffect_2>
-	Wood_Plus2_For_Insects,
+	Wood_Plus2_For_Insects = 1769,
 
 	/// <summary>
 	/// Driving Water - Water is not only used to power engines. Woodcutting speed will increase by +10% for every 150 units of water used in Rain Engines.
@@ -13125,7 +13175,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WaterUsedHook)</hooks_1>
 	/// <hookedEffect_1>Lumber Speed +10 (ProductionRateEffectModel)</hookedEffect_1>
-	Woodcutting_Speed_For_Water,
+	Woodcutting_Speed_For_Water = 1770,
 
 	/// <summary>
 	/// Ancient Strength - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry +4 additional items and move 7% faster for every 2 "[valuable] ancient tablet" Ancient Tablet in the settlement's Warehouses.
@@ -13135,7 +13185,7 @@ public enum EffectTypes
 	/// <hooks_1>"[valuable] ancient tablet" Ancient Tablet (GoodStoredAmountHook)</hooks_1>
 	/// <hookedEffect_1>Scout +3 (ProfessionCapacityEffectModel)</hookedEffect_1>
 	/// <hookedEffect_2>Scout Speed +5 (ProfessionSpeedEffectModel)</hookedEffect_2>
-	Workers_Carry_More_For_Tablets,
+	Workers_Carry_More_For_Tablets = 1771,
 
 	/// <summary>
 	/// Farsight - Scouting ahead makes it easier to prepare for the worst. Discovering a small glade increases the working speed of scouts investigating Dangerous or Forbidden Glade Events by 50% for 180 seconds.
@@ -13145,7 +13195,7 @@ public enum EffectTypes
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
 	/// <hookedEffect_1>Working Speed For Small Glade - Relic Working Speed - Holder (HookedEffectModel)</hookedEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	Working_Speed_For_Small_Glade,
+	Working_Speed_For_Small_Glade = 1772,
 
 	/// <summary>
 	/// Reconnaissance - Scout working speed on Dangerous and Forbidden Glade Events is increased by 50% for 180 seconds due to a recently discovered small glade (source: Farsight).
@@ -13154,7 +13204,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <instantEffect_1>Working Speed For Small Glade - Relic Working Speed (RelicsWorkingTimeRateEffectModel)</instantEffect_1>
 	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
-	Working_Speed_For_Small_Glade_Relic_Working_Speed_Holder,
+	Working_Speed_For_Small_Glade_Relic_Working_Speed_Holder = 1773,
 
 	/// <summary>
 	/// Prayer Book - Scouts work 10% faster on Glade Events for every firekeeper assigned to a Hearth.
@@ -13163,7 +13213,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ProfessionTagAmountHook)</hooks_1>
 	/// <hookedEffect_1>Relic Working TIme -10 (RelicsWorkingTimeRateEffectModel)</hookedEffect_1>
-	Working_Time_For_Firekeeper,
+	Working_Time_For_Firekeeper = 1774,
 
 	/// <summary>
 	/// Carved in Stone - Secret methods of dealing with threats are engraved in Ancient Tablets. Scouts work 10% faster on Glade Events for every 2 Reputation Points gained from completed Glade Events.
@@ -13172,7 +13222,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (ReputationGainedHook)</hooks_1>
 	/// <hookedEffect_1>Relic Working TIme -10 (RelicsWorkingTimeRateEffectModel)</hookedEffect_1>
-	Working_Time_For_Tablets,
+	Working_Time_For_Tablets = 1775,
 
 	/// <summary>
 	/// Growing Darkness - Villagers get a -4 penalty to their Resolve for each Hostility level.
@@ -13181,7 +13231,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HostilityLevelChangedHook)</hooks_1>
 	/// <hookedEffect_1>Worse Storms for Hostility Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Worse_Storms_For_Hostility,
+	Worse_Storms_For_Hostility = 1776,
 
 	/// <summary>
 	/// Violent Dusk - Villagers get a -4 penalty to their Resolve for each Hostility level.
@@ -13190,7 +13240,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HostilityLevelChangedHook)</hooks_1>
 	/// <hookedEffect_1>Worse Storms for Hostility Consequence Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Worse_Storms_For_Hostility_Permanent,
+	Worse_Storms_For_Hostility_Permanent = 1777,
 
 	/// <summary>
 	/// Growing Darkness - Villagers get a -4 penalty to their Resolve for each Hostility level.
@@ -13199,7 +13249,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (HostilityLevelChangedHook)</hooks_1>
 	/// <hookedEffect_1>Worse Storms for Hostility Resolve (GlobalResolveEffectEffectModel)</hookedEffect_1>
-	Worse_Storms_For_Hostility_Working,
+	Worse_Storms_For_Hostility_Working = 1778,
 
 	/// <summary>
 	/// Violent Dusk - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement. Villagers get a -4 penalty to their Resolve during each storm. Multiplies with Hostility level.
@@ -13208,7 +13258,7 @@ public enum EffectTypes
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (SeasonChangeHook)</hooks_1>
 	/// <hookedEffect_1>Worse Storms for Hostility - Permanent (HookedEffectModel)</hookedEffect_1>
-	Worse_Storms_Hook_Permanent,
+	Worse_Storms_Hook_Permanent = 1779,
 
 
 	//
@@ -13220,253 +13270,253 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BT] Lower Hostility - child</name>
 	/// <type>HostilityEffectModel</type>
-	BT_Lower_Hostility_Child,
+	BT_Lower_Hostility_Child = 1780,
 
 	/// <summary>
 	/// Sacrifice Algae - Hostility reduced by 60.
 	/// </summary>
 	/// <name>[Hearth] Algae Hostility Reduction</name>
 	/// <type>HostilityEffectModel</type>
-	Hearth_Algae_Hostility_Reduction,
+	Hearth_Algae_Hostility_Reduction = 1781,
 
 	/// <summary>
 	/// Sacrifice Coal - Hostility reduced by 80.
 	/// </summary>
 	/// <name>[Hearth] High Hostility Reduction</name>
 	/// <type>HostilityEffectModel</type>
-	Hearth_High_Hostility_Reduction,
+	Hearth_High_Hostility_Reduction = 1782,
 
 	/// <summary>
 	/// Sacrifice Wood - Hostility reduced by 50.
 	/// </summary>
 	/// <name>[Hearth] Low Hostility Reduction</name>
 	/// <type>HostilityEffectModel</type>
-	Hearth_Low_Hostility_Reduction,
+	Hearth_Low_Hostility_Reduction = 1783,
 
 	/// <summary></summary>
 	/// <name>Hostility 1</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_1,
+	Hostility_1 = 1784,
 
 	/// <summary></summary>
 	/// <name>Hostility 20</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_20,
+	Hostility_20 = 1785,
 
 	/// <summary>
 	/// Ways of the Forest - A book by the renowned Stormwalker, Pervun Runebeak. Lowers Hostility by 50 points.
 	/// </summary>
 	/// <name>Hostility Lower 50</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Lower_50,
+	Hostility_Lower_50 = 1786,
 
 	/// <summary>
 	/// Ways of the Forest - A book by the renowned Stormwalker, Pervun Runebeak. Lowers Hostility by 75 points.
 	/// </summary>
 	/// <name>Hostility Lower 75</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Lower_75,
+	Hostility_Lower_75 = 1787,
 
 	/// <summary></summary>
 	/// <name>Hostility -10</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus10,
+	Hostility_Minus10 = 1788,
 
 	/// <summary></summary>
 	/// <name>Hostility -15</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus15,
+	Hostility_Minus15 = 1789,
 
 	/// <summary></summary>
 	/// <name>Hostility -20</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus20,
+	Hostility_Minus20 = 1790,
 
 	/// <summary></summary>
 	/// <name>Hostility -25</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus25,
+	Hostility_Minus25 = 1791,
 
 	/// <summary></summary>
 	/// <name>Hostility -30</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus30,
+	Hostility_Minus30 = 1792,
 
 	/// <summary></summary>
 	/// <name>Hostility -35</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus35,
+	Hostility_Minus35 = 1793,
 
 	/// <summary></summary>
 	/// <name>Hostility -40</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus40,
+	Hostility_Minus40 = 1794,
 
 	/// <summary></summary>
 	/// <name>Hostility -5</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus5,
+	Hostility_Minus5 = 1795,
 
 	/// <summary></summary>
 	/// <name>Hostility -50</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Minus50,
+	Hostility_Minus50 = 1796,
 
 	/// <summary>
 	/// Rage of the Forest - The forest’s Hostility is temporarily increased by 100 points.
 	/// </summary>
 	/// <name>Hostility +1</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus1,
+	Hostility_Plus1 = 1797,
 
 	/// <summary></summary>
 	/// <name>Hostility +10</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus10,
+	Hostility_Plus10 = 1798,
 
 	/// <summary>
 	/// 10
 	/// </summary>
 	/// <name>Hostility +10 - Fishmen</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus10_Fishmen,
+	Hostility_Plus10_Fishmen = 1799,
 
 	/// <summary></summary>
 	/// <name>Hostility +100</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus100,
+	Hostility_Plus100 = 1800,
 
 	/// <summary></summary>
 	/// <name>Hostility +110</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus110,
+	Hostility_Plus110 = 1801,
 
 	/// <summary></summary>
 	/// <name>Hostility +15</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus15,
+	Hostility_Plus15 = 1802,
 
 	/// <summary>
 	/// High Voltage - The forest’s Hostility is temporarily increased by 200 points.
 	/// </summary>
 	/// <name>Hostility +2</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus2,
+	Hostility_Plus2 = 1803,
 
 	/// <summary>
 	/// Fishmen Totem - The forest’s Hostility is temporarily increased by 20 points.
 	/// </summary>
 	/// <name>Hostility +20</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus20,
+	Hostility_Plus20 = 1804,
 
 	/// <summary></summary>
 	/// <name>Hostility +30</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus30,
+	Hostility_Plus30 = 1805,
 
 	/// <summary></summary>
 	/// <name>Hostility +5</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus5,
+	Hostility_Plus5 = 1806,
 
 	/// <summary>
 	/// Darkest Shadows - The offended ghost has brought misfortune upon you. Hostility is increased by 50.
 	/// </summary>
 	/// <name>Hostility +50</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus50,
+	Hostility_Plus50 = 1807,
 
 	/// <summary>
 	/// 50
 	/// </summary>
 	/// <name>Hostility +50 - Fishmen</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus50_Fishmen,
+	Hostility_Plus50_Fishmen = 1808,
 
 	/// <summary>
 	/// Enemy of the Forest - The forest saw what you did, and it remembers. Hostility is increased by 20.
 	/// </summary>
 	/// <name>Hostility +50 - Glade Trader</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Plus50_Glade_Trader,
+	Hostility_Plus50_Glade_Trader = 1809,
 
 	/// <summary>
 	/// Rage of the Forest - The forest’s Hostility is temporarily increased by 5 points.
 	/// </summary>
 	/// <name>Hostility Tree</name>
 	/// <type>HostilityEffectModel</type>
-	Hostility_Tree,
+	Hostility_Tree = 1810,
 
 	/// <summary>
 	/// The Green Brew - Gentle vapors seem to soothe the wilderness. Hostility is decreased by 100.
 	/// </summary>
 	/// <name>Institution Lower Hostility</name>
 	/// <type>HostilityEffectModel</type>
-	Institution_Lower_Hostility,
+	Institution_Lower_Hostility = 1811,
 
 	/// <summary>
 	/// Ancient Battleground - This land was once the place of a mythical battle. You start with 50/75/100/150 Hostility points.
 	/// </summary>
 	/// <name>[Map Mod] Initial Hostility</name>
 	/// <type>HostilityEffectModel</type>
-	Map_Mod_Initial_Hostility,
+	Map_Mod_Initial_Hostility = 1812,
 
 	/// <summary>
 	/// Memory of the Forest - Other viceroys tried to settle here before, and the forest still remembers their presence. Start with 50 Hostility points.
 	/// </summary>
 	/// <name>[Mod] Memory of the Forest</name>
 	/// <type>HostilityEffectModel</type>
-	Mod_Memory_Of_The_Forest,
+	Mod_Memory_Of_The_Forest = 1813,
 
 	/// <summary>
 	/// Hostility is reduced by 10 points.
 	/// </summary>
 	/// <name>[PerkCrafter] Hostility -10</name>
 	/// <type>HostilityEffectModel</type>
-	PerkCrafter_Hostility_Minus10,
+	PerkCrafter_Hostility_Minus10 = 1814,
 
 	/// <summary>
 	/// Hostility is reduced by 15 points.
 	/// </summary>
 	/// <name>[PerkCrafter] Hostility -15</name>
 	/// <type>HostilityEffectModel</type>
-	PerkCrafter_Hostility_Minus15,
+	PerkCrafter_Hostility_Minus15 = 1815,
 
 	/// <summary>
 	/// Hostility is reduced by 20 points.
 	/// </summary>
 	/// <name>[PerkCrafter] Hostility -20</name>
 	/// <type>HostilityEffectModel</type>
-	PerkCrafter_Hostility_Minus20,
+	PerkCrafter_Hostility_Minus20 = 1816,
 
 	/// <summary>
 	/// Hostility is reduced by 5 points.
 	/// </summary>
 	/// <name>[PerkCrafter] Hostility -5</name>
 	/// <type>HostilityEffectModel</type>
-	PerkCrafter_Hostility_Minus5,
+	PerkCrafter_Hostility_Minus5 = 1817,
 
 	/// <summary>
 	/// Converted Rain Totem - Hostility is decreased by 50.
 	/// </summary>
 	/// <name>Rain Totem Lower Hostility</name>
 	/// <type>HostilityEffectModel</type>
-	Rain_Totem_Lower_Hostility,
+	Rain_Totem_Lower_Hostility = 1818,
 
 	/// <summary>
 	/// Distant Howling - The trees seem to move closer and closer... Hostility is increased by 10 points.
 	/// </summary>
 	/// <name>[TW] Hostility</name>
 	/// <type>HostilityEffectModel</type>
-	TW_Hostility,
+	TW_Hostility = 1819,
 
 	/// <summary>
 	/// Unleashed Beast - A free-roaming warbeast will make the forest even more dangerous. Hostility of the Forest increases by 80.
 	/// </summary>
 	/// <name>War Beast Hostility</name>
 	/// <type>HostilityEffectModel</type>
-	War_Beast_Hostility,
+	War_Beast_Hostility = 1820,
 
 
 	//
@@ -13476,133 +13526,133 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Forbidden for Hostility - Lower Glades - Dangerous</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Forbidden_For_Hostility_Lower_Glades_Dangerous,
+	Forbidden_For_Hostility_Lower_Glades_Dangerous = 1821,
 
 	/// <summary></summary>
 	/// <name>Forbidden for Hostility - Lower Glades - Small</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Forbidden_For_Hostility_Lower_Glades_Small,
+	Forbidden_For_Hostility_Lower_Glades_Small = 1822,
 
 	/// <summary>
 	/// Dark Mist - A dark mist shrouds the menacing forest. Hostility from opened Dangerous Glades ("dangerous") is increased by 2.
 	/// </summary>
 	/// <name>Higher Hostility Glades - Dangerous</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Higher_Hostility_Glades_Dangerous,
+	Higher_Hostility_Glades_Dangerous = 1823,
 
 	/// <summary></summary>
 	/// <name>Higher New Year</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Higher_New_Year,
+	Higher_New_Year = 1824,
 
 	/// <summary>
 	/// Flame Amulets - An artifact infused with the power of the Holy Flame. Hostility from woodcutters is decreased by 4.
 	/// </summary>
 	/// <name>LessHostilityPerWoodcutter</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	LessHostilityPerWoodcutter,
+	LessHostilityPerWoodcutter = 1825,
 
 	/// <summary>
 	/// Flame Amulets - An artifact infused with the power of the Holy Flame. Hostility from woodcutters is decreased by 8.
 	/// </summary>
 	/// <name>LessHostilityPerWoodcutter 8</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	LessHostilityPerWoodcutter_8,
+	LessHostilityPerWoodcutter_8 = 1826,
 
 	/// <summary></summary>
 	/// <name>Lower Glades</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Lower_Glades,
+	Lower_Glades = 1827,
 
 	/// <summary></summary>
 	/// <name>Lower Glades - Dangerous</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Lower_Glades_Dangerous,
+	Lower_Glades_Dangerous = 1828,
 
 	/// <summary></summary>
 	/// <name>Lower Glades Fox - Dangerous</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Lower_Glades_Fox_Dangerous,
+	Lower_Glades_Fox_Dangerous = 1829,
 
 	/// <summary></summary>
 	/// <name>Lower Glades Fox - Forbidden</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Lower_Glades_Fox_Forbidden,
+	Lower_Glades_Fox_Forbidden = 1830,
 
 	/// <summary></summary>
 	/// <name>Lower Glades Fox - Small</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Lower_Glades_Fox_Small,
+	Lower_Glades_Fox_Small = 1831,
 
 	/// <summary>
 	/// Villagers add less Hostility (-1).
 	/// </summary>
 	/// <name>Lower Hostility for people</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Lower_Hostility_For_People,
+	Lower_Hostility_For_People = 1832,
 
 	/// <summary>
 	/// The forest seems to have been soothed. Opening glades no longer increases Hostility.
 	/// </summary>
 	/// <name>[Map Mod] More Hostility People</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Map_Mod_More_Hostility_People,
+	Map_Mod_More_Hostility_People = 1833,
 
 	/// <summary>
 	/// The forest seems to have been soothed. Opening glades no longer increases Hostility.
 	/// </summary>
 	/// <name>[Map Mod] More Hostility Yearly</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Map_Mod_More_Hostility_Yearly,
+	Map_Mod_More_Hostility_Yearly = 1834,
 
 	/// <summary>
 	/// The forest seems to have been soothed. Opening glades no longer increases Hostility.
 	/// </summary>
 	/// <name>[Map Mod] No Hostility Year</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Map_Mod_No_Hostility_Year,
+	Map_Mod_No_Hostility_Year = 1835,
 
 	/// <summary>
 	/// Calm Lands - The forest seems to have been soothed. Opening glades no longer increases Hostility.
 	/// </summary>
 	/// <name>[Mod] Calm Lands - Dangerous Glades</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Mod_Calm_Lands_Dangerous_Glades,
+	Mod_Calm_Lands_Dangerous_Glades = 1836,
 
 	/// <summary>
 	/// Calm Lands - The forest seems to have been soothed. Opening glades no longer increases Hostility.
 	/// </summary>
 	/// <name>[Mod] Calm Lands - Regular Glades</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	Mod_Calm_Lands_Regular_Glades,
+	Mod_Calm_Lands_Regular_Glades = 1837,
 
 	/// <summary>
 	/// Cold Flame - A blinding light is aimed directly at the settlement's Hearths, turning the Holy Fire into a cold flame. Hostility is increased by 100 for each Firekeeper in the settlement.
 	/// </summary>
 	/// <name>MoreHostilityPerHearth</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	MoreHostilityPerHearth,
+	MoreHostilityPerHearth = 1838,
 
 	/// <summary>
 	/// Cold Flame - A blinding light is aimed directly at the settlement's Hearths, turning the Holy Fire into a cold flame. Hostility is increased by 50 for each Firekeeper in the settlement.
 	/// </summary>
 	/// <name>MoreHostilityPerHearth_Weak</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	MoreHostilityPerHearth_Weak,
+	MoreHostilityPerHearth_Weak = 1839,
 
 	/// <summary>
 	/// Discovered Dangerous Glades give 2 more Hostility.
 	/// </summary>
 	/// <name>[PerkCrafter] More Hostility For Glades</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	PerkCrafter_More_Hostility_For_Glades,
+	PerkCrafter_More_Hostility_For_Glades = 1840,
 
 	/// <summary>
 	/// Plague of the Dark Forest - The Sealed Ones incite the forest to become even more sinister. Hostility from discovered Dangerous ("dangerous") and Forbidden Glades ("forbidden") is increased by 5.
 	/// </summary>
 	/// <name>TEST Plague of the Forest</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
-	TEST_Plague_Of_The_Forest,
+	TEST_Plague_Of_The_Forest = 1841,
 
 
 	//
@@ -13614,14 +13664,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Houses Global Capacity +1</name>
 	/// <type>HousesGlobalBonusCapacityEffectModel</type>
-	Houses_Global_Capacity_Plus1,
+	Houses_Global_Capacity_Plus1 = 1842,
 
 	/// <summary>
 	/// Degradation - Petrified wooden structures are slowly degrading. All homes can house 1 fewer resident.
 	/// </summary>
 	/// <name>Petrified Tree - Houses Global Capacity -1</name>
 	/// <type>HousesGlobalBonusCapacityEffectModel</type>
-	Petrified_Tree_Houses_Global_Capacity_Minus1,
+	Petrified_Tree_Houses_Global_Capacity_Minus1 = 1843,
 
 
 	//
@@ -13633,14 +13683,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Diff] Hunger Multiplier</name>
 	/// <type>HungerMultiplierEffectModel</type>
-	Diff_Hunger_Multiplier,
+	Diff_Hunger_Multiplier = 1844,
 
 	/// <summary>
 	/// Hunger Storm - Missing even a single meal in this harsh climate can be deadly. If villagers don't have anything to eat during a break, they will gain two stacks of the Hunger effect.
 	/// </summary>
 	/// <name>SE Hunger Storm</name>
 	/// <type>HungerMultiplierEffectModel</type>
-	SE_Hunger_Storm,
+	SE_Hunger_Storm = 1845,
 
 
 	//
@@ -13650,7 +13700,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>[Map Mod] Leaving Block</name>
 	/// <type>LeavingBlockEffectModel</type>
-	Map_Mod_Leaving_Block,
+	Map_Mod_Leaving_Block = 1846,
 
 
 	//
@@ -13662,28 +13712,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BT] Slower Leaving - child</name>
 	/// <type>LeavingRateEffectModel</type>
-	BT_Slower_Leaving_Child,
+	BT_Slower_Leaving_Child = 1847,
 
 	/// <summary>
 	/// Regular Baths - Every evening, villagers gather to talk, bathe, and strengthen their bonds with one another. Villagers with low resolve will leave the town 30% slower.
 	/// </summary>
 	/// <name>Institution Slower Leaving</name>
 	/// <type>LeavingRateEffectModel</type>
-	Institution_Slower_Leaving,
+	Institution_Slower_Leaving = 1848,
 
 	/// <summary>
 	/// Higher Standards - Villagers are less understanding than they used to be. They’re probably getting a bit spoiled by now. Villagers are 100% faster to leave if they have low Resolve.
 	/// </summary>
 	/// <name>[Mod] Faster Leaving</name>
 	/// <type>LeavingRateEffectModel</type>
-	Mod_Faster_Leaving,
+	Mod_Faster_Leaving = 1849,
 
 	/// <summary>
 	/// Inspiring Speech - The Council can be very persuasive. Villagers with low Resolve will leave the town 20% slower.
 	/// </summary>
 	/// <name>[TW] Slower Leaving</name>
 	/// <type>LeavingRateEffectModel</type>
-	TW_Slower_Leaving,
+	TW_Slower_Leaving = 1850,
 
 
 	//
@@ -13695,7 +13745,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Racial Locate Grass</name>
 	/// <type>LocateGrassEffectModel</type>
-	Racial_Locate_Grass,
+	Racial_Locate_Grass = 1851,
 
 
 	//
@@ -13707,7 +13757,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Racial Locate Ruin</name>
 	/// <type>LocateRelicByTagEffectModel</type>
-	Racial_Locate_Ruin,
+	Racial_Locate_Ruin = 1852,
 
 
 	//
@@ -13719,7 +13769,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Locate Springs</name>
 	/// <type>LocateSpringEffectModel</type>
-	Locate_Springs,
+	Locate_Springs = 1853,
 
 
 	//
@@ -13729,22 +13779,22 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Lock Blightpost</name>
 	/// <type>LockBuildingEffectModel</type>
-	Lock_Blightpost,
+	Lock_Blightpost = 1854,
 
 	/// <summary></summary>
 	/// <name>Lock Crude Workstation</name>
 	/// <type>LockBuildingEffectModel</type>
-	Lock_Crude_Workstation,
+	Lock_Crude_Workstation = 1855,
 
 	/// <summary></summary>
 	/// <name>Lock Hydrant</name>
 	/// <type>LockBuildingEffectModel</type>
-	Lock_Hydrant,
+	Lock_Hydrant = 1856,
 
 	/// <summary></summary>
 	/// <name>Lock Trading Post</name>
 	/// <type>LockBuildingEffectModel</type>
-	Lock_Trading_Post,
+	Lock_Trading_Post = 1857,
 
 
 	//
@@ -13754,22 +13804,22 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Lock Unlocked Essentials - Tutorial I</name>
 	/// <type>LockUnlockedEssentialBuildingsEffectModel</type>
-	Lock_Unlocked_Essentials_Tutorial_I,
+	Lock_Unlocked_Essentials_Tutorial_I = 1858,
 
 	/// <summary></summary>
 	/// <name>Lock Unlocked Essentials - Tutorial II</name>
 	/// <type>LockUnlockedEssentialBuildingsEffectModel</type>
-	Lock_Unlocked_Essentials_Tutorial_II,
+	Lock_Unlocked_Essentials_Tutorial_II = 1859,
 
 	/// <summary></summary>
 	/// <name>Lock Unlocked Essentials - Tutorial III</name>
 	/// <type>LockUnlockedEssentialBuildingsEffectModel</type>
-	Lock_Unlocked_Essentials_Tutorial_III,
+	Lock_Unlocked_Essentials_Tutorial_III = 1860,
 
 	/// <summary></summary>
 	/// <name>Lock Unlocked Essentials - Tutorial IV</name>
 	/// <type>LockUnlockedEssentialBuildingsEffectModel</type>
-	Lock_Unlocked_Essentials_Tutorial_IV,
+	Lock_Unlocked_Essentials_Tutorial_IV = 1861,
 
 
 	//
@@ -13781,21 +13831,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>City Score - 30</name>
 	/// <type>MerchantsReproachEffectModel</type>
-	City_Score_30,
+	City_Score_30 = 1862,
 
 	/// <summary>
 	/// Bad Reputation - News of your terrible deed has spread quickly. Wealthier traders are avoiding your settlement.
 	/// </summary>
 	/// <name>City Score - 50</name>
 	/// <type>MerchantsReproachEffectModel</type>
-	City_Score_50,
+	City_Score_50 = 1863,
 
 	/// <summary>
 	/// Bad Reputation - News of your terrible deed has spread quickly. Wealthier traders are avoiding your settlement.
 	/// </summary>
 	/// <name>City Score - 70</name>
 	/// <type>MerchantsReproachEffectModel</type>
-	City_Score_70,
+	City_Score_70 = 1864,
 
 
 	//
@@ -13807,7 +13857,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] Move</name>
 	/// <type>MovingAllBuildingsEnabledEffectModel</type>
-	Map_Mod_Move,
+	Map_Mod_Move = 1865,
 
 
 	//
@@ -13819,96 +13869,96 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>FallenViceroyCommemoration Beaver Housing</name>
 	/// <type>NeedPerkEffectModel</type>
-	FallenViceroyCommemoration_Beaver_Housing,
+	FallenViceroyCommemoration_Beaver_Housing = 1866,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	/// </summary>
 	/// <name>FallenViceroyCommemoration Foxes Housing</name>
 	/// <type>NeedPerkEffectModel</type>
-	FallenViceroyCommemoration_Foxes_Housing,
+	FallenViceroyCommemoration_Foxes_Housing = 1867,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	/// </summary>
 	/// <name>FallenViceroyCommemoration Frogs Housing</name>
 	/// <type>NeedPerkEffectModel</type>
-	FallenViceroyCommemoration_Frogs_Housing,
+	FallenViceroyCommemoration_Frogs_Housing = 1868,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	/// </summary>
 	/// <name>FallenViceroyCommemoration Harpy Housing</name>
 	/// <type>NeedPerkEffectModel</type>
-	FallenViceroyCommemoration_Harpy_Housing,
+	FallenViceroyCommemoration_Harpy_Housing = 1869,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	/// </summary>
 	/// <name>FallenViceroyCommemoration Humans Housing</name>
 	/// <type>NeedPerkEffectModel</type>
-	FallenViceroyCommemoration_Humans_Housing,
+	FallenViceroyCommemoration_Humans_Housing = 1870,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 	/// </summary>
 	/// <name>FallenViceroyCommemoration Lizards Housing</name>
 	/// <type>NeedPerkEffectModel</type>
-	FallenViceroyCommemoration_Lizards_Housing,
+	FallenViceroyCommemoration_Lizards_Housing = 1871,
 
 	/// <summary>
 	/// Spiced Ale - Spiced ale is even better than regular ale. Additional +5 to Resolve when under the effect of "[needs] ale" leisure.
 	/// </summary>
 	/// <name>NeedPerk Ale Resolve</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Ale_Resolve,
+	NeedPerk_Ale_Resolve = 1872,
 
 	/// <summary>
 	/// Biscuit Diet - A farmer's favorite food. Farmers have a +75% chance of producing double yields when under the effect of "[food processed] biscuits" biscuits.
 	/// </summary>
 	/// <name>NeedPerk Biscuit Farmers</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Biscuit_Farmers,
+	NeedPerk_Biscuit_Farmers = 1873,
 
 	/// <summary>
 	/// Drying Boards - A clever invention that makes it easier to dry clothes. Time between breaks is increased by +10% for villagers with the need for "[needs] coats" coats fulfilled.
 	/// </summary>
 	/// <name>NeedPerk Coats Breaks</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Coats_Breaks,
+	NeedPerk_Coats_Breaks = 1874,
 
 	/// <summary>
 	/// Working Hard and Smart - A motivational pamphlet. Has a 10% chance of producing double yields when under the effect of "[needs] scrolls" education.
 	/// </summary>
 	/// <name>NeedPerk Education Production</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Education_Production,
+	NeedPerk_Education_Production = 1875,
 
 	/// <summary>
 	/// Furniture - Some much needed furnishings. Adds an additional +1 to Resolve for villagers with a home.
 	/// </summary>
 	/// <name>NeedPerk Housing Resolve</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Housing_Resolve,
+	NeedPerk_Housing_Resolve = 1876,
 
 	/// <summary>
 	/// Furniture - Some much needed furnishings. Adds an additional +1 to Resolve for villagers with a home.
 	/// </summary>
 	/// <name>NeedPerk Housing Resolve - Frogs</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Housing_Resolve_Frogs,
+	NeedPerk_Housing_Resolve_Frogs = 1877,
 
 	/// <summary>
 	/// Well-Rested Workers - Just. The. Right. Amount. Villagers with the leisure need fulfilled have a +25% chance of doubling their yields.
 	/// </summary>
 	/// <name>NeedPerk Leisure Production</name>
 	/// <type>NeedPerkEffectModel</type>
-	NeedPerk_Leisure_Production,
+	NeedPerk_Leisure_Production = 1878,
 
 	/// <summary></summary>
 	/// <name>Royal Guard Training - NeedPerk</name>
 	/// <type>NeedPerkEffectModel</type>
-	Royal_Guard_Training_NeedPerk,
+	Royal_Guard_Training_NeedPerk = 1879,
 
 
 	//
@@ -13920,28 +13970,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>LessNewNewcomers_Random</name>
 	/// <type>NewcomersBonusEffectModel</type>
-	LessNewNewcomers_Random,
+	LessNewNewcomers_Random = 1880,
 
 	/// <summary>
 	/// Crowded Caravan - Each newcomer group has 2 additional villagers.
 	/// </summary>
 	/// <name>NewNewcomersBonus_Random</name>
 	/// <type>NewcomersBonusEffectModel</type>
-	NewNewcomersBonus_Random,
+	NewNewcomersBonus_Random = 1881,
 
 	/// <summary>
 	/// Each newcomer group has 1 additional villagers.
 	/// </summary>
 	/// <name>NewNewcomersBonus_Random 1</name>
 	/// <type>NewcomersBonusEffectModel</type>
-	NewNewcomersBonus_Random_1,
+	NewNewcomersBonus_Random_1 = 1882,
 
 	/// <summary>
 	/// Each newcomer group has 3 additional villagers.
 	/// </summary>
 	/// <name>NewNewcomersBonus_Random 3</name>
 	/// <type>NewcomersBonusEffectModel</type>
-	NewNewcomersBonus_Random_3,
+	NewNewcomersBonus_Random_3 = 1883,
 
 
 	//
@@ -13953,31 +14003,31 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Frog Newcomer Bonus</name>
 	/// <type>NewcomersIntervalRateEffectModel</type>
-	Frog_Newcomer_Bonus,
+	Frog_Newcomer_Bonus = 1884,
 
 	/// <summary></summary>
 	/// <name>Newcomers Faster 15</name>
 	/// <type>NewcomersIntervalRateEffectModel</type>
-	Newcomers_Faster_15,
+	Newcomers_Faster_15 = 1885,
 
 	/// <summary></summary>
 	/// <name>Newcomers Faster 20</name>
 	/// <type>NewcomersIntervalRateEffectModel</type>
-	Newcomers_Faster_20,
+	Newcomers_Faster_20 = 1886,
 
 	/// <summary>
 	/// Shifting Paths
 	/// </summary>
 	/// <name>Newcomers Slower 33</name>
 	/// <type>NewcomersIntervalRateEffectModel</type>
-	Newcomers_Slower_33,
+	Newcomers_Slower_33 = 1887,
 
 	/// <summary>
 	/// Reward_PerkCrafter_NewcomerArrivalRate_Desc
 	/// </summary>
 	/// <name>[PerkCrafter] Newcomer Arrival Rate 5</name>
 	/// <type>NewcomersIntervalRateEffectModel</type>
-	PerkCrafter_Newcomer_Arrival_Rate_5,
+	PerkCrafter_Newcomer_Arrival_Rate_5 = 1888,
 
 
 	//
@@ -13989,49 +14039,49 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Extra Beaver Newcommers</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Extra_Beaver_Newcommers,
+	Extra_Beaver_Newcommers = 1889,
 
 	/// <summary>
 	/// Fox Friendship - 2 additional Foxes will come with each group of newcomers.
 	/// </summary>
 	/// <name>Extra Fox Newcommers</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Extra_Fox_Newcommers,
+	Extra_Fox_Newcommers = 1890,
 
 	/// <summary>
 	/// Frog Friendship - 2 additional Frogs will come with each group of newcomers.
 	/// </summary>
 	/// <name>Extra Frog Newcommers</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Extra_Frog_Newcommers,
+	Extra_Frog_Newcommers = 1891,
 
 	/// <summary>
 	/// Harpy Friendship - 2 additional Harpies will come with each group of newcomers.
 	/// </summary>
 	/// <name>Extra Harpy Newcommers</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Extra_Harpy_Newcommers,
+	Extra_Harpy_Newcommers = 1892,
 
 	/// <summary>
 	/// Human Friendship - 2 additional Humans will come with each group of newcomers.
 	/// </summary>
 	/// <name>Extra Human Newcommers</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Extra_Human_Newcommers,
+	Extra_Human_Newcommers = 1893,
 
 	/// <summary>
 	/// Lizard Friendship - 2 additional Lizards will come with each group of newcomers.
 	/// </summary>
 	/// <name>Extra Lizard Newcommers</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Extra_Lizard_Newcommers,
+	Extra_Lizard_Newcommers = 1894,
 
 	/// <summary>
 	/// Human Influx - 2 additional Humans will come with each group of newcomers.
 	/// </summary>
 	/// <name>[Mod] Human Influx</name>
 	/// <type>NewcomersRaceBonusEffectModel</type>
-	Mod_Human_Influx,
+	Mod_Human_Influx = 1895,
 
 
 	//
@@ -14043,49 +14093,49 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Newcomer Goods +10</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	Newcomer_Goods_Plus10,
+	Newcomer_Goods_Plus10 = 1896,
 
 	/// <summary>
 	/// New villagers bring 20% more goods with them.
 	/// </summary>
 	/// <name>Newcomer Goods +20</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	Newcomer_Goods_Plus20,
+	Newcomer_Goods_Plus20 = 1897,
 
 	/// <summary>
 	/// New villagers bring 25% more goods with them.
 	/// </summary>
 	/// <name>Newcomer Goods +25</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	Newcomer_Goods_Plus25,
+	Newcomer_Goods_Plus25 = 1898,
 
 	/// <summary>
 	/// New villagers bring 40% more goods with them.
 	/// </summary>
 	/// <name>Newcomer Goods +40</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	Newcomer_Goods_Plus40,
+	Newcomer_Goods_Plus40 = 1899,
 
 	/// <summary>
 	/// New villagers bring 50% more goods with them.
 	/// </summary>
 	/// <name>Newcomer Goods +50</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	Newcomer_Goods_Plus50,
+	Newcomer_Goods_Plus50 = 1900,
 
 	/// <summary>
 	/// New villagers bring 75% more goods with them.
 	/// </summary>
 	/// <name>Newcomer Goods +75</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	Newcomer_Goods_Plus75,
+	Newcomer_Goods_Plus75 = 1901,
 
 	/// <summary>
 	/// Newcomers bring 50% fewer goods.
 	/// </summary>
 	/// <name>[PerkCrafter] Less Newcomer Goods</name>
 	/// <type>NewcommersGoodsRateEffectModel</type>
-	PerkCrafter_Less_Newcomer_Goods,
+	PerkCrafter_Less_Newcomer_Goods = 1902,
 
 
 	//
@@ -14095,49 +14145,49 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>NewRandomVillagers</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers,
+	NewRandomVillagers = 1903,
 
 	/// <summary>
 	/// Villagers - A group of 10 villagers.
 	/// </summary>
 	/// <name>NewRandomVillagers 10</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers_10,
+	NewRandomVillagers_10 = 1904,
 
 	/// <summary>
 	/// Villagers - A group of 2 villagers.
 	/// </summary>
 	/// <name>NewRandomVillagers 2</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers_2,
+	NewRandomVillagers_2 = 1905,
 
 	/// <summary>
 	/// Villagers - A group of 3 villagers.
 	/// </summary>
 	/// <name>NewRandomVillagers 3</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers_3,
+	NewRandomVillagers_3 = 1906,
 
 	/// <summary>
 	/// Villagers - A group of 4 villagers.
 	/// </summary>
 	/// <name>NewRandomVillagers 4</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers_4,
+	NewRandomVillagers_4 = 1907,
 
 	/// <summary>
 	/// Villagers - A group of 5 villagers.
 	/// </summary>
 	/// <name>NewRandomVillagers 5</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers_5,
+	NewRandomVillagers_5 = 1908,
 
 	/// <summary>
 	/// Villagers - A group of 6 villagers.
 	/// </summary>
 	/// <name>NewRandomVillagers 6</name>
 	/// <type>NewRandomVillagersEffectModel</type>
-	NewRandomVillagers_6,
+	NewRandomVillagers_6 = 1909,
 
 
 	//
@@ -14149,210 +14199,210 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Beaver 1</name>
 	/// <type>NewVillagersEffectModel</type>
-	Beaver_1,
+	Beaver_1 = 1910,
 
 	/// <summary>
 	/// Group of Beavers - 2 Beavers will join the settlement.
 	/// </summary>
 	/// <name>Beaver 2</name>
 	/// <type>NewVillagersEffectModel</type>
-	Beaver_2,
+	Beaver_2 = 1911,
 
 	/// <summary>
 	/// Group of Beavers - 3 Beavers will join the settlement.
 	/// </summary>
 	/// <name>Beaver 3</name>
 	/// <type>NewVillagersEffectModel</type>
-	Beaver_3,
+	Beaver_3 = 1912,
 
 	/// <summary>
 	/// Group of Beavers - 4 Beavers will join the settlement.
 	/// </summary>
 	/// <name>Beaver 4</name>
 	/// <type>NewVillagersEffectModel</type>
-	Beaver_4,
+	Beaver_4 = 1913,
 
 	/// <summary>
 	/// Group of Beavers - 5 Beavers will join the settlement.
 	/// </summary>
 	/// <name>Beaver 5</name>
 	/// <type>NewVillagersEffectModel</type>
-	Beaver_5,
+	Beaver_5 = 1914,
 
 	/// <summary>
 	/// Fox - 1 Fox will join the settlement.
 	/// </summary>
 	/// <name>Foxes 1</name>
 	/// <type>NewVillagersEffectModel</type>
-	Foxes_1,
+	Foxes_1 = 1915,
 
 	/// <summary>
 	/// Group of Foxes - 2 Foxes will join the settlement.
 	/// </summary>
 	/// <name>Foxes 2</name>
 	/// <type>NewVillagersEffectModel</type>
-	Foxes_2,
+	Foxes_2 = 1916,
 
 	/// <summary>
 	/// Group of Foxes - 3 Foxes will join the settlement.
 	/// </summary>
 	/// <name>Foxes 3</name>
 	/// <type>NewVillagersEffectModel</type>
-	Foxes_3,
+	Foxes_3 = 1917,
 
 	/// <summary>
 	/// Group of Foxes - 4 Foxes will join the settlement.
 	/// </summary>
 	/// <name>Foxes 4</name>
 	/// <type>NewVillagersEffectModel</type>
-	Foxes_4,
+	Foxes_4 = 1918,
 
 	/// <summary>
 	/// Group of Foxes - 5 Foxes will join the settlement.
 	/// </summary>
 	/// <name>Foxes 5</name>
 	/// <type>NewVillagersEffectModel</type>
-	Foxes_5,
+	Foxes_5 = 1919,
 
 	/// <summary>
 	/// Frog - 1 Frog will join the settlement.
 	/// </summary>
 	/// <name>Frog 1</name>
 	/// <type>NewVillagersEffectModel</type>
-	Frog_1,
+	Frog_1 = 1920,
 
 	/// <summary>
 	/// Group of Frogs - 2 Frogs will join the settlement.
 	/// </summary>
 	/// <name>Frog 2</name>
 	/// <type>NewVillagersEffectModel</type>
-	Frog_2,
+	Frog_2 = 1921,
 
 	/// <summary>
 	/// Group of Frogs - 3 Frogs will join the settlement.
 	/// </summary>
 	/// <name>Frog 3</name>
 	/// <type>NewVillagersEffectModel</type>
-	Frog_3,
+	Frog_3 = 1922,
 
 	/// <summary>
 	/// Group of Frogs - 4 Frogs will join the settlement.
 	/// </summary>
 	/// <name>Frog 4</name>
 	/// <type>NewVillagersEffectModel</type>
-	Frog_4,
+	Frog_4 = 1923,
 
 	/// <summary>
 	/// Group of Frogs - 5 Frogs will join the settlement.
 	/// </summary>
 	/// <name>Frog 5</name>
 	/// <type>NewVillagersEffectModel</type>
-	Frog_5,
+	Frog_5 = 1924,
 
 	/// <summary>
 	/// Harpy - 1 Harpy will join the settlement.
 	/// </summary>
 	/// <name>Harpy 1</name>
 	/// <type>NewVillagersEffectModel</type>
-	Harpy_1,
+	Harpy_1 = 1925,
 
 	/// <summary>
 	/// Group of Harpies - 2 Harpies will join the settlement.
 	/// </summary>
 	/// <name>Harpy 2</name>
 	/// <type>NewVillagersEffectModel</type>
-	Harpy_2,
+	Harpy_2 = 1926,
 
 	/// <summary>
 	/// Group of Harpies - 3 Harpies will join the settlement.
 	/// </summary>
 	/// <name>Harpy 3</name>
 	/// <type>NewVillagersEffectModel</type>
-	Harpy_3,
+	Harpy_3 = 1927,
 
 	/// <summary>
 	/// Group of Harpies - 3 Harpies will join the settlement.
 	/// </summary>
 	/// <name>Harpy 4</name>
 	/// <type>NewVillagersEffectModel</type>
-	Harpy_4,
+	Harpy_4 = 1928,
 
 	/// <summary>
 	/// Group of Harpies - 5 Harpies will join the settlement.
 	/// </summary>
 	/// <name>Harpy 5</name>
 	/// <type>NewVillagersEffectModel</type>
-	Harpy_5,
+	Harpy_5 = 1929,
 
 	/// <summary>
 	/// Human - 1 Human will join the settlement.
 	/// </summary>
 	/// <name>Human 1</name>
 	/// <type>NewVillagersEffectModel</type>
-	Human_1,
+	Human_1 = 1930,
 
 	/// <summary>
 	/// Group of Humans - 2 Humans will join the settlement.
 	/// </summary>
 	/// <name>Human 2</name>
 	/// <type>NewVillagersEffectModel</type>
-	Human_2,
+	Human_2 = 1931,
 
 	/// <summary>
 	/// Group of Humans - 3 Humans will join the settlement.
 	/// </summary>
 	/// <name>Human 3</name>
 	/// <type>NewVillagersEffectModel</type>
-	Human_3,
+	Human_3 = 1932,
 
 	/// <summary>
 	/// Group of Humans - 3 Humans will join the settlement.
 	/// </summary>
 	/// <name>Human 4</name>
 	/// <type>NewVillagersEffectModel</type>
-	Human_4,
+	Human_4 = 1933,
 
 	/// <summary>
 	/// Group of Humans - 5 Humans will join the settlement.
 	/// </summary>
 	/// <name>Human 5</name>
 	/// <type>NewVillagersEffectModel</type>
-	Human_5,
+	Human_5 = 1934,
 
 	/// <summary>
 	/// Lizard - 1 Lizard will join the settlement.
 	/// </summary>
 	/// <name>Lizard 1</name>
 	/// <type>NewVillagersEffectModel</type>
-	Lizard_1,
+	Lizard_1 = 1935,
 
 	/// <summary>
 	/// Group of Lizards - 2 Lizards will join the settlement.
 	/// </summary>
 	/// <name>Lizard 2</name>
 	/// <type>NewVillagersEffectModel</type>
-	Lizard_2,
+	Lizard_2 = 1936,
 
 	/// <summary>
 	/// Group of Lizards - 3 Lizards will join the settlement.
 	/// </summary>
 	/// <name>Lizard 3</name>
 	/// <type>NewVillagersEffectModel</type>
-	Lizard_3,
+	Lizard_3 = 1937,
 
 	/// <summary>
 	/// Group of Lizards - 3 Lizards will join the settlement.
 	/// </summary>
 	/// <name>Lizard 4</name>
 	/// <type>NewVillagersEffectModel</type>
-	Lizard_4,
+	Lizard_4 = 1938,
 
 	/// <summary>
 	/// Group of Lizards - 5 Lizards will join the settlement.
 	/// </summary>
 	/// <name>Lizard 5</name>
 	/// <type>NewVillagersEffectModel</type>
-	Lizard_5,
+	Lizard_5 = 1939,
 
 
 	//
@@ -14364,14 +14414,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] No Orders</name>
 	/// <type>OrdersBlockEffectModel</type>
-	Map_Mod_No_Orders,
+	Map_Mod_No_Orders = 1940,
 
 	/// <summary>
 	/// Sabotage - Someone, or something, is disrupting communication with the Citadel. Orders are disabled.
 	/// </summary>
 	/// <name>[Mod] Orders Block</name>
 	/// <type>OrdersBlockEffectModel</type>
-	Mod_Orders_Block,
+	Mod_Orders_Block = 1941,
 
 
 	//
@@ -14383,21 +14433,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] 3 Order Picks</name>
 	/// <type>OrdersBonusOptionsEffectModel</type>
-	Map_Mod_3_Order_Picks,
+	Map_Mod_3_Order_Picks = 1942,
 
 	/// <summary>
 	/// The Generous Envoy - You have preferential treatment in the Queen's Court. The pool of order choices will increase by 1.
 	/// </summary>
 	/// <name>[Mod] 3 Order Picks</name>
 	/// <type>OrdersBonusOptionsEffectModel</type>
-	Mod_3_Order_Picks,
+	Mod_3_Order_Picks = 1943,
 
 	/// <summary>
 	/// Under the Queen's Gaze - The Queen is taking a close interest in your endeavors. You only get one non-timed order to choose from with each envoy visit.
 	/// </summary>
 	/// <name>[Mod] No Order Picks</name>
 	/// <type>OrdersBonusOptionsEffectModel</type>
-	Mod_No_Order_Picks,
+	Mod_No_Order_Picks = 1944,
 
 
 	//
@@ -14409,7 +14459,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] Bonus Timed Orders</name>
 	/// <type>OrdersBonusTimedAmountEffectModel</type>
-	Map_Mod_Bonus_Timed_Orders,
+	Map_Mod_Bonus_Timed_Orders = 1945,
 
 
 	//
@@ -14419,28 +14469,28 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>[Biome] Same Size Glades</name>
 	/// <type>OverrideMapGenerationEffectModel</type>
-	Biome_Same_Size_Glades,
+	Biome_Same_Size_Glades = 1946,
 
 	/// <summary>
 	/// Dangerous Lands - Only Dangerous Glades can be found in this region.
 	/// </summary>
 	/// <name>[Map Mod] Dangerous Lands</name>
 	/// <type>OverrideMapGenerationEffectModel</type>
-	Map_Mod_Dangerous_Lands,
+	Map_Mod_Dangerous_Lands = 1947,
 
 	/// <summary>
 	/// Forbidden Lands - Only Forbidden Glades can be found in this region.
 	/// </summary>
 	/// <name>[Map Mod] Forbidden Lands</name>
 	/// <type>OverrideMapGenerationEffectModel</type>
-	Map_Mod_Forbidden_Lands,
+	Map_Mod_Forbidden_Lands = 1948,
 
 	/// <summary>
 	/// Untamed Wilds - Nobody has settled in this region for multiple cycles. Every Dangerous and Forbidden Glade contains two threats instead of one (except glades with Archaeological Discoveries in the Scarlet Orchard).
 	/// </summary>
 	/// <name>[Map Mod] Untamed Wilds</name>
 	/// <type>OverrideMapGenerationEffectModel</type>
-	Map_Mod_Untamed_Wilds,
+	Map_Mod_Untamed_Wilds = 1949,
 
 
 	//
@@ -14452,7 +14502,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Pause Block</name>
 	/// <type>PauseBlockEffectModel</type>
-	Pause_Block,
+	Pause_Block = 1950,
 
 
 	//
@@ -14464,70 +14514,70 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Amber Payment - Payment</name>
 	/// <type>PaymentEffectModel</type>
-	Amber_Payment_Payment,
+	Amber_Payment_Payment = 1951,
 
 	/// <summary>
 	/// Land Tax (big glade) - You discovered a Dangerous ("dangerous") or Forbidden Glade ("forbidden"). The Crown requires you to pay 6 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[Mod] Exploration Tax - Amber Payment</name>
 	/// <type>PaymentEffectModel</type>
-	Mod_Exploration_Tax_Amber_Payment,
+	Mod_Exploration_Tax_Amber_Payment = 1952,
 
 	/// <summary>
 	/// Land Tax (small glade) - You discovered a small glade. The Crown requires you to pay 2 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[Mod] Exploration Tax - Amber Payment - small</name>
 	/// <type>PaymentEffectModel</type>
-	Mod_Exploration_Tax_Amber_Payment_Small,
+	Mod_Exploration_Tax_Amber_Payment_Small = 1953,
 
 	/// <summary>
 	/// Unnatural Erosion - The wind and rain in this region seem more destructive than usual. Pay 5 "[crafting] oil" Oil with each storm (multiplied by the number of years played). If you don't, 2 random gathering nodes will be destroyed.
 	/// </summary>
 	/// <name>SE Destroy Nodes</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Destroy_Nodes,
+	SE_Destroy_Nodes = 1954,
 
 	/// <summary>
 	/// Shifting Paths - The road to the village is long and winding, so some newcomers need a bit of extra motivation. Pay 2 "[packs] pack of crops" Pack of Crops with each storm (multiplied by the number of years played). If you don't, the next newcomer group will arrive 50% slower.
 	/// </summary>
 	/// <name>SE Late Newcomers</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Late_Newcomers,
+	SE_Late_Newcomers = 1955,
 
 	/// <summary>
 	/// Devastation - The storm in this region is extremely violent. Once this effect is activated, you'll have to pay 1 "[packs] pack of building materials" Pack of Building Materials (multiplied by the number of years). If you don't, 3 buildings in your settlement will become ruins.
 	/// </summary>
 	/// <name>SE Lightning</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Lightning,
+	SE_Lightning = 1956,
 
 	/// <summary>
 	/// Rotten Vapors - Machinery has to be cleaned with specially prepared Drizzle Water. Otherwise, Blightrot will spread. Once this effect activates, you have to pay 5 "[water] drizzle water" Drizzle Water (multiplied by the number of years). If you don't, 3 Blightrot Cysts will spawn in your settlement.
 	/// </summary>
 	/// <name>SE Overheating - Sparkdew Payment</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Overheating_Sparkdew_Payment,
+	SE_Overheating_Sparkdew_Payment = 1957,
 
 	/// <summary>
 	/// Cloudburst - Even the hardiest villagers need some sort of cover in this weather. Once this effect activates, every villager in your settlement will ask you for 1 "[needs] coats" Coats. If you can't provide the goods, Global Resolve will be lowered by -6 for 2 minutes.
 	/// </summary>
 	/// <name>SE Storm Clothes</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Storm_Clothes,
+	SE_Storm_Clothes = 1958,
 
 	/// <summary>
 	/// Vassal Tax - Due to this region's location, the Crown requires you to pay 5 "[valuable] amber" Amber with each storm (multiplied by the number of years played). If you don't, you will get 1 Impatience point.
 	/// </summary>
 	/// <name>SE Vassal Tax - Amber Payment</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Vassal_Tax_Amber_Payment,
+	SE_Vassal_Tax_Amber_Payment = 1959,
 
 	/// <summary>
 	/// Sacred Flame Rituals - Only the Sacred Flame can protect the settlement from the darkness surrounding it. Pay 3 "[mat raw] wood" Wood for every villager in your settlement. If you don't pay for all of them, 2 people will leave.
 	/// </summary>
 	/// <name>SE Wood for Villagers - Payment</name>
 	/// <type>PaymentEffectModel</type>
-	SE_Wood_For_Villagers_Payment,
+	SE_Wood_For_Villagers_Payment = 1960,
 
 
 	//
@@ -14539,105 +14589,105 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed - child (Planting 10)</name>
 	/// <type>PlantingRateEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_Child_Planting_10,
+	PerkCrafter_Planting_And_Harvesting_Speed_Child_Planting_10 = 1961,
 
 	/// <summary>
 	/// Planting crops is 15% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed - child (Planting 15)</name>
 	/// <type>PlantingRateEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_Child_Planting_15,
+	PerkCrafter_Planting_And_Harvesting_Speed_Child_Planting_15 = 1962,
 
 	/// <summary>
 	/// Planting crops is 5% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Planting and Harvesting Speed - child (Planting 5)</name>
 	/// <type>PlantingRateEffectModel</type>
-	PerkCrafter_Planting_And_Harvesting_Speed_Child_Planting_5,
+	PerkCrafter_Planting_And_Harvesting_Speed_Child_Planting_5 = 1963,
 
 	/// <summary>
 	/// Slow Planting - Planting crops is 25% faster.
 	/// </summary>
 	/// <name>PlantingRate -25</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Minus25,
+	PlantingRate_Minus25 = 1964,
 
 	/// <summary>
 	/// Slow Planting - Planting crops is 50% faster.
 	/// </summary>
 	/// <name>PlantingRate -50</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Minus50,
+	PlantingRate_Minus50 = 1965,
 
 	/// <summary>
 	/// Slow Planting - Planting crops is 60% faster.
 	/// </summary>
 	/// <name>PlantingRate -60</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Minus60,
+	PlantingRate_Minus60 = 1966,
 
 	/// <summary>
 	/// Slow Planting - Planting crops is 70% faster.
 	/// </summary>
 	/// <name>PlantingRate -70</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Minus70,
+	PlantingRate_Minus70 = 1967,
 
 	/// <summary>
 	/// Slow Planting - Planting crops is 80% faster.
 	/// </summary>
 	/// <name>PlantingRate -80</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Minus80,
+	PlantingRate_Minus80 = 1968,
 
 	/// <summary>
 	/// Seed Pouch - Planting crops is 10% faster.
 	/// </summary>
 	/// <name>PlantingRate +10</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus10,
+	PlantingRate_Plus10 = 1969,
 
 	/// <summary>
 	/// Fertilizer - Planting crops is 100% faster.
 	/// </summary>
 	/// <name>PlantingRate +100</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus100,
+	PlantingRate_Plus100 = 1970,
 
 	/// <summary>
 	/// Seed Pouch - Planting crops is 25% faster.
 	/// </summary>
 	/// <name>PlantingRate +25</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus25,
+	PlantingRate_Plus25 = 1971,
 
 	/// <summary>
 	/// Fertilizer - Planting crops is 30% faster.
 	/// </summary>
 	/// <name>PlantingRate +30</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus30,
+	PlantingRate_Plus30 = 1972,
 
 	/// <summary>
 	/// Seed Pouch - Planting crops is 5% faster.
 	/// </summary>
 	/// <name>PlantingRate +5</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus5,
+	PlantingRate_Plus5 = 1973,
 
 	/// <summary>
 	/// Quick Planting - Planting crops is 50% faster.
 	/// </summary>
 	/// <name>PlantingRate +50</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus50,
+	PlantingRate_Plus50 = 1974,
 
 	/// <summary>
 	/// Fertilizer - Planting crops is 75% faster.
 	/// </summary>
 	/// <name>PlantingRate +75</name>
 	/// <type>PlantingRateEffectModel</type>
-	PlantingRate_Plus75,
+	PlantingRate_Plus75 = 1975,
 
 
 	//
@@ -14649,148 +14699,148 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Bakery Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Bakery_Speed_Plus50,
+	Bakery_Speed_Plus50 = 1976,
 
 	/// <summary>
 	/// Blight Post production is 50% quicker.
 	/// </summary>
 	/// <name>Blight Post Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Blight_Post_Speed_Plus50,
+	Blight_Post_Speed_Plus50 = 1977,
 
 	/// <summary>
 	/// Rain Pumps - Flawless Brewery production is 50% quicker.
 	/// </summary>
 	/// <name>Brewery Speed Haunted +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Brewery_Speed_Haunted_Plus50,
+	Brewery_Speed_Haunted_Plus50 = 1978,
 
 	/// <summary>
 	/// Rain Pumps - Brewery production is 50% quicker.
 	/// </summary>
 	/// <name>Brewery Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Brewery_Speed_Plus50,
+	Brewery_Speed_Plus50 = 1979,
 
 	/// <summary>
 	/// Cookhouse production is 50% quicker.
 	/// </summary>
 	/// <name>Cookhouse Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Cookhouse_Speed_Plus50,
+	Cookhouse_Speed_Plus50 = 1980,
 
 	/// <summary>
 	/// Carpenter's Tools - Building materials are the foundation of every settlement. Production is 50% quicker in the building: Crude Workstation.
 	/// </summary>
 	/// <name>Crude Workstation Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Crude_Workstation_Speed_Plus50,
+	Crude_Workstation_Speed_Plus50 = 1981,
 
 	/// <summary>
 	/// Wide Nets - Small Fishing Hut production is 25% quicker.
 	/// </summary>
 	/// <name>Fishing Hut Primitive Speed +25</name>
 	/// <type>ProductionRateEffectModel</type>
-	Fishing_Hut_Primitive_Speed_Plus25,
+	Fishing_Hut_Primitive_Speed_Plus25 = 1982,
 
 	/// <summary>
 	/// Wide Nets - Fishing Hut production is 25% quicker.
 	/// </summary>
 	/// <name>Fishing Hut Speed +25</name>
 	/// <type>ProductionRateEffectModel</type>
-	Fishing_Hut_Speed_Plus25,
+	Fishing_Hut_Speed_Plus25 = 1983,
 
 	/// <summary>
 	/// Woodcutting is a lot easier. Woodcutters' Camp production is 50% quicker.
 	/// </summary>
 	/// <name>Lumber Speed -50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Lumber_Speed_Minus50,
+	Lumber_Speed_Minus50 = 1984,
 
 	/// <summary>
 	/// Driving Water - Woodcutting is a lot easier. Woodcutters' Camp production is 10% quicker.
 	/// </summary>
 	/// <name>Lumber Speed +10</name>
 	/// <type>ProductionRateEffectModel</type>
-	Lumber_Speed_Plus10,
+	Lumber_Speed_Plus10 = 1985,
 
 	/// <summary>
 	/// Reinforced Axes - Woodcutting is a lot easier. Woodcutters' Camp production is 15% quicker.
 	/// </summary>
 	/// <name>Lumber Speed +15</name>
 	/// <type>ProductionRateEffectModel</type>
-	Lumber_Speed_Plus15,
+	Lumber_Speed_Plus15 = 1986,
 
 	/// <summary>
 	/// Reinforced Axes - Woodcutting is a lot easier. Woodcutters' Camp production is 30% quicker.
 	/// </summary>
 	/// <name>Lumber Speed +30</name>
 	/// <type>ProductionRateEffectModel</type>
-	Lumber_Speed_Plus30,
+	Lumber_Speed_Plus30 = 1987,
 
 	/// <summary>
 	/// Reinforced Axes - Woodcutting is a lot easier. Woodcutters' Camp production is 35% quicker.
 	/// </summary>
 	/// <name>Lumber Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Lumber_Speed_Plus50,
+	Lumber_Speed_Plus50 = 1988,
 
 	/// <summary></summary>
 	/// <name>Mine Speed +100</name>
 	/// <type>ProductionRateEffectModel</type>
-	Mine_Speed_Plus100,
+	Mine_Speed_Plus100 = 1989,
 
 	/// <summary>
 	/// Stonewood Infestation - The trees are much sturdier here. Cutting them down takes a lot more time.
 	/// </summary>
 	/// <name>ModifierEffect_TreeCuttingTime</name>
 	/// <type>ProductionRateEffectModel</type>
-	ModifierEffect_TreeCuttingTime,
+	ModifierEffect_TreeCuttingTime = 1990,
 
 	/// <summary>
 	/// Petrification - A petrified tree is radiating its sickness onto the entire forest. Tree felling is 50% slower.
 	/// </summary>
 	/// <name>Petrified Tree Cutting Speed - normal</name>
 	/// <type>ProductionRateEffectModel</type>
-	Petrified_Tree_Cutting_Speed_Normal,
+	Petrified_Tree_Cutting_Speed_Normal = 1991,
 
 	/// <summary></summary>
 	/// <name>SE TreeCutting -90</name>
 	/// <type>ProductionRateEffectModel</type>
-	SE_TreeCutting_Minus90,
+	SE_TreeCutting_Minus90 = 1992,
 
 	/// <summary>
 	/// Rotting Wood - The rain is causing the trees to rot and fall apart. Woodcutters fell trees Woodcutters' Camp faster, but have a 50% chance of destroying their yield.
 	/// </summary>
 	/// <name>SEC Lumber Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	SEC_Lumber_Speed_Plus50,
+	SEC_Lumber_Speed_Plus50 = 1993,
 
 	/// <summary>
 	/// Smithy production is 50% quicker.
 	/// </summary>
 	/// <name>Smithy Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Smithy_Speed_Plus50,
+	Smithy_Speed_Plus50 = 1994,
 
 	/// <summary>
 	/// Flavour Enhancer - Smokehouse production is 50% quicker.
 	/// </summary>
 	/// <name>Smokehouse Speed +50</name>
 	/// <type>ProductionRateEffectModel</type>
-	Smokehouse_Speed_Plus50,
+	Smokehouse_Speed_Plus50 = 1995,
 
 	/// <summary></summary>
 	/// <name>TreeCutting 200</name>
 	/// <type>ProductionRateEffectModel</type>
-	TreeCutting_200,
+	TreeCutting_200 = 1996,
 
 	/// <summary>
 	/// Exploration Expedition
 	/// </summary>
 	/// <name>TreeCutting -33</name>
 	/// <type>ProductionRateEffectModel</type>
-	TreeCutting_Minus33,
+	TreeCutting_Minus33 = 1997,
 
 
 	//
@@ -14802,119 +14852,119 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Builder +1</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Builder_Plus1,
+	Builder_Plus1 = 1998,
 
 	/// <summary>
 	/// Builder's Pack - Any Builder can carry 10 additional items.
 	/// </summary>
 	/// <name>Builder +10</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Builder_Plus10,
+	Builder_Plus10 = 1999,
 
 	/// <summary>
 	/// Builder's Pack - Any Builder can carry 15 additional items.
 	/// </summary>
 	/// <name>Builder +15</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Builder_Plus15,
+	Builder_Plus15 = 2000,
 
 	/// <summary>
 	/// Builder's Pack - Any Builder can carry 5 additional items.
 	/// </summary>
 	/// <name>Builder +5</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Builder_Plus5,
+	Builder_Plus5 = 2001,
 
 	/// <summary>
 	/// Farmer's Pack - Any Farmer can carry 10 additional items.
 	/// </summary>
 	/// <name>Farmer +10</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Farmer_Plus10,
+	Farmer_Plus10 = 2002,
 
 	/// <summary>
 	/// Farmer's Pack - Any Farmer can carry 15 additional items.
 	/// </summary>
 	/// <name>Farmer +15</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Farmer_Plus15,
+	Farmer_Plus15 = 2003,
 
 	/// <summary>
 	/// Farmer's Pack - Any Farmer can carry 5 additional items.
 	/// </summary>
 	/// <name>Farmer +5</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Farmer_Plus5,
+	Farmer_Plus5 = 2004,
 
 	/// <summary>
 	/// Safety Ropes - A set of strong ropes to secure any shipment. Haulers can carry 5 more goods at once.
 	/// </summary>
 	/// <name>Hauler +5</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Hauler_Plus5,
+	Hauler_Plus5 = 2005,
 
 	/// <summary>
 	/// Scout's Pack - Workers assigned to Glade Events can carry 10 more items.
 	/// </summary>
 	/// <name>Scout +10</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Scout_Plus10,
+	Scout_Plus10 = 2006,
 
 	/// <summary>
 	/// Scout's Pack - Workers assigned to Glade Events can carry 15 more items.
 	/// </summary>
 	/// <name>Scout +15</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Scout_Plus15,
+	Scout_Plus15 = 2007,
 
 	/// <summary>
 	/// Scout's Pack - Workers assigned to Glade Events can carry 4 more items.
 	/// </summary>
 	/// <name>Scout +3</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Scout_Plus3,
+	Scout_Plus3 = 2008,
 
 	/// <summary>
 	/// Scout's Pack - Workers assigned to Glade Events can carry 5 more items.
 	/// </summary>
 	/// <name>Scout +5</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Scout_Plus5,
+	Scout_Plus5 = 2009,
 
 	/// <summary>
 	/// Lightweight Wood - The evaporating rainwater has made the wood a lot lighter in this region. Woodcutters can carry 10 more goods in drizzle season.
 	/// </summary>
 	/// <name>SE Woodcuters +10</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	SE_Woodcuters_Plus10,
+	SE_Woodcuters_Plus10 = 2010,
 
 	/// <summary>
 	/// Any Builder can carry 2 additional item.
 	/// </summary>
 	/// <name>[U][B] Frog House Bonus - Builder Carry Capacity</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	UB_Frog_House_Bonus_Builder_Carry_Capacity,
+	UB_Frog_House_Bonus_Builder_Carry_Capacity = 2011,
 
 	/// <summary>
 	/// Light Timber - Any Woodcutter can carry 10 additional items.
 	/// </summary>
 	/// <name>Woodcuters +10</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Woodcuters_Plus10,
+	Woodcuters_Plus10 = 2012,
 
 	/// <summary>
 	/// Light Timber - Any Woodcutter can carry 15 additional items.
 	/// </summary>
 	/// <name>Woodcuters +15</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Woodcuters_Plus15,
+	Woodcuters_Plus15 = 2013,
 
 	/// <summary>
 	/// Light Timber - Any Woodcutter can carry 5 additional items.
 	/// </summary>
 	/// <name>Woodcuters +5</name>
 	/// <type>ProfessionCapacityEffectModel</type>
-	Woodcuters_Plus5,
+	Woodcuters_Plus5 = 2014,
 
 
 	//
@@ -14924,82 +14974,82 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Forager - 10</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Forager_10,
+	PerkCrafter_Gatherers_Speed_Child_Forager_10 = 2015,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Forager - 15</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Forager_15,
+	PerkCrafter_Gatherers_Speed_Child_Forager_15 = 2016,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Forager - 5</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Forager_5,
+	PerkCrafter_Gatherers_Speed_Child_Forager_5 = 2017,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Harvester - 10</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Harvester_10,
+	PerkCrafter_Gatherers_Speed_Child_Harvester_10 = 2018,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Harvester - 15</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Harvester_15,
+	PerkCrafter_Gatherers_Speed_Child_Harvester_15 = 2019,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Harvester - 5</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Harvester_5,
+	PerkCrafter_Gatherers_Speed_Child_Harvester_5 = 2020,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Herbalist - 10</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Herbalist_10,
+	PerkCrafter_Gatherers_Speed_Child_Herbalist_10 = 2021,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Herbalist - 15</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Herbalist_15,
+	PerkCrafter_Gatherers_Speed_Child_Herbalist_15 = 2022,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Herbalist - 5</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Herbalist_5,
+	PerkCrafter_Gatherers_Speed_Child_Herbalist_5 = 2023,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Stonecutter - 10</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Stonecutter_10,
+	PerkCrafter_Gatherers_Speed_Child_Stonecutter_10 = 2024,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Stonecutter - 15</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Stonecutter_15,
+	PerkCrafter_Gatherers_Speed_Child_Stonecutter_15 = 2025,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Stonecutter - 5</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Stonecutter_5,
+	PerkCrafter_Gatherers_Speed_Child_Stonecutter_5 = 2026,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Trapper - 10</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Trapper_10,
+	PerkCrafter_Gatherers_Speed_Child_Trapper_10 = 2027,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Trapper - 15</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Trapper_15,
+	PerkCrafter_Gatherers_Speed_Child_Trapper_15 = 2028,
 
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Gatherers Speed - child - Trapper - 5</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	PerkCrafter_Gatherers_Speed_Child_Trapper_5,
+	PerkCrafter_Gatherers_Speed_Child_Trapper_5 = 2029,
 
 	/// <summary></summary>
 	/// <name>Scout Speed +5</name>
 	/// <type>ProfessionSpeedEffectModel</type>
-	Scout_Speed_Plus5,
+	Scout_Speed_Plus5 = 2030,
 
 
 	//
@@ -15011,371 +15061,371 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Battleground Beaver - hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Beaver_Hard,
+	Battleground_Beaver_Hard = 2031,
 
 	/// <summary>
 	/// Fallen Beavers - Seeing their fallen kin has taken its toll on the villagers. (‑12 to Beavers Resolve)
 	/// </summary>
 	/// <name>Battleground Beaver - impossible</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Beaver_Impossible,
+	Battleground_Beaver_Impossible = 2032,
 
 	/// <summary>
 	/// Fallen Beavers - Seeing their fallen kin has taken its toll on the villagers. (‑6 to Beavers Resolve)
 	/// </summary>
 	/// <name>Battleground Beaver - normal</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Beaver_Normal,
+	Battleground_Beaver_Normal = 2033,
 
 	/// <summary>
 	/// Fallen Beavers - Seeing their fallen kin has taken its toll on the villagers. (‑10 to Beavers Resolve)
 	/// </summary>
 	/// <name>Battleground Beaver - very hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Beaver_Very_Hard,
+	Battleground_Beaver_Very_Hard = 2034,
 
 	/// <summary>
 	/// Fallen Foxes - Seeing their fallen kin has taken its toll on the villagers. (‑8 to Foxes Resolve)
 	/// </summary>
 	/// <name>Battleground Fox - hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Fox_Hard,
+	Battleground_Fox_Hard = 2035,
 
 	/// <summary>
 	/// Fallen Foxes - Seeing their fallen kin has taken its toll on the villagers. (‑12 to Foxes Resolve)
 	/// </summary>
 	/// <name>Battleground Fox - impossible</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Fox_Impossible,
+	Battleground_Fox_Impossible = 2036,
 
 	/// <summary>
 	/// Fallen Foxes - Seeing their fallen kin has taken its toll on the villagers. (‑6 to Foxes Resolve)
 	/// </summary>
 	/// <name>Battleground Fox - normal</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Fox_Normal,
+	Battleground_Fox_Normal = 2037,
 
 	/// <summary>
 	/// Fallen Foxes - Seeing their fallen kin has taken its toll on the villagers. (‑10 to Foxes Resolve)
 	/// </summary>
 	/// <name>Battleground Fox - very hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Fox_Very_Hard,
+	Battleground_Fox_Very_Hard = 2038,
 
 	/// <summary>
 	/// Fallen Frogs - Seeing their fallen kin has taken its toll on the villagers. (‑8 to Frogs Resolve)
 	/// </summary>
 	/// <name>Battleground Frog - hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Frog_Hard,
+	Battleground_Frog_Hard = 2039,
 
 	/// <summary>
 	/// Fallen Frogs - Seeing their fallen kin has taken its toll on the villagers. (‑12 to Frogs Resolve)
 	/// </summary>
 	/// <name>Battleground Frog - impossible</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Frog_Impossible,
+	Battleground_Frog_Impossible = 2040,
 
 	/// <summary>
 	/// Fallen Frogs - Seeing their fallen kin has taken its toll on the villagers. (‑6 to Frogs Resolve)
 	/// </summary>
 	/// <name>Battleground Frog - normal</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Frog_Normal,
+	Battleground_Frog_Normal = 2041,
 
 	/// <summary>
 	/// Fallen Frogs - Seeing their fallen kin has taken its toll on the villagers. (‑10 to Frogs Resolve)
 	/// </summary>
 	/// <name>Battleground Frog - very hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Frog_Very_Hard,
+	Battleground_Frog_Very_Hard = 2042,
 
 	/// <summary>
 	/// Fallen Harpy Scientists - Seeing their fallen kin has taken its toll on the villagers. (‑8 to Harpies Resolve)
 	/// </summary>
 	/// <name>Battleground Harpy - hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Harpy_Hard,
+	Battleground_Harpy_Hard = 2043,
 
 	/// <summary>
 	/// Fallen Harpy Scientists - Seeing their fallen kin has taken its toll on the villagers. (‑12 to Harpies Resolve)
 	/// </summary>
 	/// <name>Battleground Harpy - impossible</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Harpy_Impossible,
+	Battleground_Harpy_Impossible = 2044,
 
 	/// <summary>
 	/// Fallen Harpy Scientists - Seeing their fallen kin has taken its toll on the villagers. (‑6 to Harpies Resolve)
 	/// </summary>
 	/// <name>Battleground Harpy - normal</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Harpy_Normal,
+	Battleground_Harpy_Normal = 2045,
 
 	/// <summary>
 	/// Fallen Harpy Scientists - Seeing their fallen kin has taken its toll on the villagers. (‑10 to Harpies Resolve)
 	/// </summary>
 	/// <name>Battleground Harpy - very hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Harpy_Very_Hard,
+	Battleground_Harpy_Very_Hard = 2046,
 
 	/// <summary>
 	/// Fallen Humans - Seeing their fallen kin has taken its toll on the villagers. (‑8 to Humans Resolve)
 	/// </summary>
 	/// <name>Battleground Human - hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Human_Hard,
+	Battleground_Human_Hard = 2047,
 
 	/// <summary>
 	/// Fallen Humans - Seeing their fallen kin has taken its toll on the villagers. (‑12 to Humans Resolve)
 	/// </summary>
 	/// <name>Battleground Human - impossible</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Human_Impossible,
+	Battleground_Human_Impossible = 2048,
 
 	/// <summary>
 	/// Fallen Humans - Seeing their fallen kin has taken its toll on the villagers. (‑6 to Humans Resolve)
 	/// </summary>
 	/// <name>Battleground Human - normal</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Human_Normal,
+	Battleground_Human_Normal = 2049,
 
 	/// <summary>
 	/// Fallen Humans - Seeing their fallen kin has taken its toll on the villagers. (‑10 to Humans Resolve)
 	/// </summary>
 	/// <name>Battleground Human - very hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Human_Very_Hard,
+	Battleground_Human_Very_Hard = 2050,
 
 	/// <summary>
 	/// Fallen Lizards - Seeing their fallen kin has taken its toll on the villagers. (‑8 to Lizards Resolve)
 	/// </summary>
 	/// <name>Battleground Lizard - hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Lizard_Hard,
+	Battleground_Lizard_Hard = 2051,
 
 	/// <summary>
 	/// Fallen Lizards - Seeing their fallen kin has taken its toll on the villagers. (‑12 to Lizards Resolve)
 	/// </summary>
 	/// <name>Battleground Lizard - impossible</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Lizard_Impossible,
+	Battleground_Lizard_Impossible = 2052,
 
 	/// <summary>
 	/// Fallen Lizards - Seeing their fallen kin has taken its toll on the villagers. (‑6 to Lizards Resolve)
 	/// </summary>
 	/// <name>Battleground Lizard - normal</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Lizard_Normal,
+	Battleground_Lizard_Normal = 2053,
 
 	/// <summary>
 	/// Fallen Lizards - Seeing their fallen kin has taken its toll on the villagers. (‑10 to Lizards Resolve)
 	/// </summary>
 	/// <name>Battleground Lizard - very hard</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Battleground_Lizard_Very_Hard,
+	Battleground_Lizard_Very_Hard = 2054,
 
 	/// <summary>
 	/// Beaver Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Beaver clan remembers your help. (+3 to Beavers Resolve)
 	/// </summary>
 	/// <name>Beaver Faction Support</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Beaver_Faction_Support,
+	Beaver_Faction_Support = 2055,
 
 	/// <summary>
 	/// Fox Pack Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Fox tribe remembers your help. (+3 to Foxes Resolve)
 	/// </summary>
 	/// <name>Fox Faction Support</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Fox_Faction_Support,
+	Fox_Faction_Support = 2056,
 
 	/// <summary>
 	/// Frog Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Frogs remember your help. (+3 to Frogs Resolve)
 	/// </summary>
 	/// <name>Frog Faction Support</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Frog_Faction_Support,
+	Frog_Faction_Support = 2057,
 
 	/// <summary>
 	/// Harpy Clan Support - The Flock was neutral during the Great Civil War, but you've proven your worth to them now. (+3 to Harpies Resolve)
 	/// </summary>
 	/// <name>Harpy Faction Support</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Harpy_Faction_Support,
+	Harpy_Faction_Support = 2058,
 
 	/// <summary>
 	/// Unique Ally - An exceptionally strong bond has developed between the Harpies and the Stormbird. They look very pleased to be in its presence. (+3 to Harpies Resolve)
 	/// </summary>
 	/// <name>Harpy Stormbird Resolve</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Harpy_Stormbird_Resolve,
+	Harpy_Stormbird_Resolve = 2059,
 
 	/// <summary>
 	/// Human Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Humans remember your help. (+3 to Humans Resolve)
 	/// </summary>
 	/// <name>Human Faction Support</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Human_Faction_Support,
+	Human_Faction_Support = 2060,
 
 	/// <summary>
 	/// Lizard Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Lizard elders remember your help. (+3 to Lizards Resolve)
 	/// </summary>
 	/// <name>Lizard Faction Support</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Lizard_Faction_Support,
+	Lizard_Faction_Support = 2061,
 
 	/// <summary>
 	/// Beaver Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Beaver Resolve +1</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Beaver_Resolve_Plus1,
+	PerkCrafter_Beaver_Resolve_Plus1 = 2062,
 
 	/// <summary>
 	/// Beaver Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Beaver Resolve +2</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Beaver_Resolve_Plus2,
+	PerkCrafter_Beaver_Resolve_Plus2 = 2063,
 
 	/// <summary>
 	/// Beaver Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Beaver Resolve +3</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Beaver_Resolve_Plus3,
+	PerkCrafter_Beaver_Resolve_Plus3 = 2064,
 
 	/// <summary>
 	/// Fox Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Fox Resolve +1</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Fox_Resolve_Plus1,
+	PerkCrafter_Fox_Resolve_Plus1 = 2065,
 
 	/// <summary>
 	/// Fox Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Fox Resolve +2</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Fox_Resolve_Plus2,
+	PerkCrafter_Fox_Resolve_Plus2 = 2066,
 
 	/// <summary>
 	/// Fox Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Fox Resolve +3</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Fox_Resolve_Plus3,
+	PerkCrafter_Fox_Resolve_Plus3 = 2067,
 
 	/// <summary>
 	/// Frog Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Frog Resolve +1</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Frog_Resolve_Plus1,
+	PerkCrafter_Frog_Resolve_Plus1 = 2068,
 
 	/// <summary>
 	/// Frog Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Frog Resolve +2</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Frog_Resolve_Plus2,
+	PerkCrafter_Frog_Resolve_Plus2 = 2069,
 
 	/// <summary>
 	/// Frog Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Frog Resolve +3</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Frog_Resolve_Plus3,
+	PerkCrafter_Frog_Resolve_Plus3 = 2070,
 
 	/// <summary>
 	/// Harpy Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Harpy Resolve +1</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Harpy_Resolve_Plus1,
+	PerkCrafter_Harpy_Resolve_Plus1 = 2071,
 
 	/// <summary>
 	/// Harpy Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Harpy Resolve +2</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Harpy_Resolve_Plus2,
+	PerkCrafter_Harpy_Resolve_Plus2 = 2072,
 
 	/// <summary>
 	/// Harpy Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Harpy Resolve +3</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Harpy_Resolve_Plus3,
+	PerkCrafter_Harpy_Resolve_Plus3 = 2073,
 
 	/// <summary>
 	/// Human Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Human Resolve +1</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Human_Resolve_Plus1,
+	PerkCrafter_Human_Resolve_Plus1 = 2074,
 
 	/// <summary>
 	/// Human Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Human Resolve +2</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Human_Resolve_Plus2,
+	PerkCrafter_Human_Resolve_Plus2 = 2075,
 
 	/// <summary>
 	/// Human Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Human Resolve +3</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Human_Resolve_Plus3,
+	PerkCrafter_Human_Resolve_Plus3 = 2076,
 
 	/// <summary>
 	/// Lizard Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Lizard Resolve +1</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Lizard_Resolve_Plus1,
+	PerkCrafter_Lizard_Resolve_Plus1 = 2077,
 
 	/// <summary>
 	/// Lizard Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Lizard Resolve +2</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Lizard_Resolve_Plus2,
+	PerkCrafter_Lizard_Resolve_Plus2 = 2078,
 
 	/// <summary>
 	/// Lizard Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Lizard Resolve +3</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	PerkCrafter_Lizard_Resolve_Plus3,
+	PerkCrafter_Lizard_Resolve_Plus3 = 2079,
 
 	/// <summary>
 	/// Sweet Aroma - A sweet aroma is spreading around the settlement. It seems to be making the Humans feel content. (+1 to Humans Resolve)
 	/// </summary>
 	/// <name>Resolve for Incense Humans</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Resolve_For_Incense_Humans,
+	Resolve_For_Incense_Humans = 2080,
 
 	/// <summary>
 	/// Health Infusion - High tea production is boosting Harpies' morale. (+1 to Harpies Resolve)
 	/// </summary>
 	/// <name>Resolve for Tea Harpies</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Resolve_For_Tea_Harpies,
+	Resolve_For_Tea_Harpies = 2081,
 
 	/// <summary>
 	/// Armed to the Teeth - A settlement specialized in training gear production makes Lizards feel safe. (+1 to Lizards Resolve)
 	/// </summary>
 	/// <name>Resolve for Training Gear Lizards</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Resolve_For_Training_Gear_Lizards,
+	Resolve_For_Training_Gear_Lizards = 2082,
 
 	/// <summary>
 	/// Vineyard Town - The settlement specializes in wine production, and Beavers love that. (+1 to Beavers Resolve)
 	/// </summary>
 	/// <name>Resolve for Wine Beavers</name>
 	/// <type>RaceResolveEffectEffectModel</type>
-	Resolve_For_Wine_Beavers,
+	Resolve_For_Wine_Beavers = 2083,
 
 
 	//
@@ -15385,7 +15435,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Random Blueprint Reward</name>
 	/// <type>RandomBlueprintEffectModel</type>
-	Random_Blueprint_Reward,
+	Random_Blueprint_Reward = 2084,
 
 
 	//
@@ -15395,157 +15445,157 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>20 Random Goods</name>
 	/// <type>RandomGoodsEffectModel</type>
-	_20_Random_Goods,
+	_20_Random_Goods = 2085,
 
 	/// <summary></summary>
 	/// <name>30 Random Raw Food</name>
 	/// <type>RandomGoodsEffectModel</type>
-	_30_Random_Raw_Food,
+	_30_Random_Raw_Food = 2086,
 
 	/// <summary>
 	/// Finders Keepers
 	/// </summary>
 	/// <name>5 Random Packs</name>
 	/// <type>RandomGoodsEffectModel</type>
-	_5_Random_Packs,
+	_5_Random_Packs = 2087,
 
 	/// <summary>
 	/// Gain 15 random complex food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Complex Food 15</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Complex_Food_15,
+	PerkCrafter_Random_Complex_Food_15 = 2088,
 
 	/// <summary>
 	/// Gain 20 random complex food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Complex Food 20</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Complex_Food_20,
+	PerkCrafter_Random_Complex_Food_20 = 2089,
 
 	/// <summary>
 	/// Gain 25 random complex food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Complex Food 25</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Complex_Food_25,
+	PerkCrafter_Random_Complex_Food_25 = 2090,
 
 	/// <summary>
 	/// Gain 35 random complex food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Complex Food 35</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Complex_Food_35,
+	PerkCrafter_Random_Complex_Food_35 = 2091,
 
 	/// <summary>
 	/// Gain 15 random raw food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Food 15</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Food_15,
+	PerkCrafter_Random_Raw_Food_15 = 2092,
 
 	/// <summary>
 	/// Gain 20 random raw food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Food 20</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Food_20,
+	PerkCrafter_Random_Raw_Food_20 = 2093,
 
 	/// <summary>
 	/// Gain 25 random raw food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Food 25</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Food_25,
+	PerkCrafter_Random_Raw_Food_25 = 2094,
 
 	/// <summary>
 	/// Gain 30 random raw food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Food 30</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Food_30,
+	PerkCrafter_Random_Raw_Food_30 = 2095,
 
 	/// <summary>
 	/// Gain 35 random raw food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Food 35</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Food_35,
+	PerkCrafter_Random_Raw_Food_35 = 2096,
 
 	/// <summary>
 	/// Gain 40 random raw food items.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Food 40</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Food_40,
+	PerkCrafter_Random_Raw_Food_40 = 2097,
 
 	/// <summary>
 	/// Gain 15 random building material ingredients.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Resorces 15</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Resorces_15,
+	PerkCrafter_Random_Raw_Resorces_15 = 2098,
 
 	/// <summary>
 	/// Gain 20 random building material ingredients.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Resorces 20</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Resorces_20,
+	PerkCrafter_Random_Raw_Resorces_20 = 2099,
 
 	/// <summary>
 	/// Gain 25 random building material ingredients.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Resorces 25</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Resorces_25,
+	PerkCrafter_Random_Raw_Resorces_25 = 2100,
 
 	/// <summary>
 	/// Gain 30 random building material ingredients.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Resorces 30</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Resorces_30,
+	PerkCrafter_Random_Raw_Resorces_30 = 2101,
 
 	/// <summary>
 	/// Gain 35 random building material ingredients.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Resorces 35</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Resorces_35,
+	PerkCrafter_Random_Raw_Resorces_35 = 2102,
 
 	/// <summary>
 	/// Gain 40 random building material ingredients.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Raw Resorces 40</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Raw_Resorces_40,
+	PerkCrafter_Random_Raw_Resorces_40 = 2103,
 
 	/// <summary>
 	/// Gain 15 random service goods.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Service Goods 15</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Service_Goods_15,
+	PerkCrafter_Random_Service_Goods_15 = 2104,
 
 	/// <summary>
 	/// Gain 25 random service goods.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Service Goods 25</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Service_Goods_25,
+	PerkCrafter_Random_Service_Goods_25 = 2105,
 
 	/// <summary>
 	/// Gain 35 random service goods.
 	/// </summary>
 	/// <name>[PerkCrafter] Random Service Goods 35</name>
 	/// <type>RandomGoodsEffectModel</type>
-	PerkCrafter_Random_Service_Goods_35,
+	PerkCrafter_Random_Service_Goods_35 = 2106,
 
 	/// <summary></summary>
 	/// <name>Random Thunderblight Shard</name>
 	/// <type>RandomGoodsEffectModel</type>
-	Random_Thunderblight_Shard,
+	Random_Thunderblight_Shard = 2107,
 
 
 	//
@@ -15557,77 +15607,77 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] Overexploitation</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	Altar_Overexploitation,
+	Altar_Overexploitation = 2108,
 
 	/// <summary>
 	/// Rich Wilderness - Newly discovered gathering nodes have more charges: +5 for small ones, and +20 for large ones.
 	/// </summary>
 	/// <name>[Mod] RawDepositsCharges_10</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	Mod_RawDepositsCharges_10,
+	Mod_RawDepositsCharges_10 = 2109,
 
 	/// <summary>
 	/// +10 charges to newly discovered gathering nodes.
 	/// </summary>
 	/// <name>[PerkCrafter] Node Charges 10</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	PerkCrafter_Node_Charges_10,
+	PerkCrafter_Node_Charges_10 = 2110,
 
 	/// <summary>
 	/// +4 charges to newly discovered gathering nodes.
 	/// </summary>
 	/// <name>[PerkCrafter] Node Charges 4</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	PerkCrafter_Node_Charges_4,
+	PerkCrafter_Node_Charges_4 = 2111,
 
 	/// <summary>
 	/// +6 charges to newly discovered gathering nodes.
 	/// </summary>
 	/// <name>[PerkCrafter] Node Charges 6</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	PerkCrafter_Node_Charges_6,
+	PerkCrafter_Node_Charges_6 = 2112,
 
 	/// <summary>
 	/// +7 charges to newly discovered gathering nodes.
 	/// </summary>
 	/// <name>[PerkCrafter] Node Charges 7</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	PerkCrafter_Node_Charges_7,
+	PerkCrafter_Node_Charges_7 = 2113,
 
 	/// <summary>
 	/// 5 charges to small gathering nodes, 15 charges to large gathering nodes
 	/// </summary>
 	/// <name>Raw Deposit Charges -15</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	Raw_Deposit_Charges_Minus15,
+	Raw_Deposit_Charges_Minus15 = 2114,
 
 	/// <summary>
 	/// 5
 	/// </summary>
 	/// <name>Raw Deposit Charges -5</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	Raw_Deposit_Charges_Minus5,
+	Raw_Deposit_Charges_Minus5 = 2115,
 
 	/// <summary>
 	/// Rich Glades - Newly discovered gathering nodes have more charges: +5 for small ones, and +15 for large ones.
 	/// </summary>
 	/// <name>RawDepositsCharges_10</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	RawDepositsCharges_10,
+	RawDepositsCharges_10 = 2116,
 
 	/// <summary>
 	/// +10 charges to small gathering nodes, +25 charges to large gathering nodes
 	/// </summary>
 	/// <name>RawDepositsCharges_20</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	RawDepositsCharges_20,
+	RawDepositsCharges_20 = 2117,
 
 	/// <summary>
 	/// Wild Growth - Small, energizing drops cause uncontrollable growth in certain species. All gathering nodes discovered during drizzle season have more charges: +2 to small ones, and +10 to large ones.
 	/// </summary>
 	/// <name>SE RawDepositsCharges</name>
 	/// <type>RawDepositsChargesEffectModel</type>
-	SE_RawDepositsCharges,
+	SE_RawDepositsCharges = 2118,
 
 
 	//
@@ -15639,175 +15689,175 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Barrels in Lumber Mill</name>
 	/// <type>RecipeEffectModel</type>
-	Barrels_In_Lumber_Mill,
+	Barrels_In_Lumber_Mill = 2119,
 
 	/// <summary>
 	/// Barrel Schematics - "[vessel] barrels" Barrels (grade2) can now be produced in the Lumber Mill and Smithy.
 	/// </summary>
 	/// <name>Barrels in Smithy</name>
 	/// <type>RecipeEffectModel</type>
-	Barrels_In_Smithy,
+	Barrels_In_Smithy = 2120,
 
 	/// <summary>
 	/// Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 	/// </summary>
 	/// <name>Biscuits in Kiln</name>
 	/// <type>RecipeEffectModel</type>
-	Biscuits_In_Kiln,
+	Biscuits_In_Kiln = 2121,
 
 	/// <summary>
 	/// Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 	/// </summary>
 	/// <name>Biscuits in Rain Mill</name>
 	/// <type>RecipeEffectModel</type>
-	Biscuits_In_Rain_Mill,
+	Biscuits_In_Rain_Mill = 2122,
 
 	/// <summary>
 	/// Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 	/// </summary>
 	/// <name>Biscuits in Rain Mill Haunted</name>
 	/// <type>RecipeEffectModel</type>
-	Biscuits_In_Rain_Mill_Haunted,
+	Biscuits_In_Rain_Mill_Haunted = 2123,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Grove</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Grove,
+	Mushrooms_In_Grove = 2124,
 
 	/// <summary>
 	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Grove - Altar</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Grove_Altar,
+	Mushrooms_In_Grove_Altar = 2125,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Herb Garden</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Herb_Garden,
+	Mushrooms_In_Herb_Garden = 2126,
 
 	/// <summary>
 	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Herb Garden - Altar</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Herb_Garden_Altar,
+	Mushrooms_In_Herb_Garden_Altar = 2127,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Herb Garden Haunted</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Herb_Garden_Haunted,
+	Mushrooms_In_Herb_Garden_Haunted = 2128,
 
 	/// <summary>
 	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Herb Garden Haunted - Altar</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Herb_Garden_Haunted_Altar,
+	Mushrooms_In_Herb_Garden_Haunted_Altar = 2129,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Plantation</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Plantation,
+	Mushrooms_In_Plantation = 2130,
 
 	/// <summary>
 	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in Plantation - Altar</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_Plantation_Altar,
+	Mushrooms_In_Plantation_Altar = 2131,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in SmallFarm</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_SmallFarm,
+	Mushrooms_In_SmallFarm = 2132,
 
 	/// <summary>
 	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in SmallFarm - Altar</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_SmallFarm_Altar,
+	Mushrooms_In_SmallFarm_Altar = 2133,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in SmallFarm Haunted</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_SmallFarm_Haunted,
+	Mushrooms_In_SmallFarm_Haunted = 2134,
 
 	/// <summary>
 	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 	/// </summary>
 	/// <name>Mushrooms in SmallFarm Haunted - Altar</name>
 	/// <type>RecipeEffectModel</type>
-	Mushrooms_In_SmallFarm_Haunted_Altar,
+	Mushrooms_In_SmallFarm_Haunted_Altar = 2135,
 
 	/// <summary>
 	/// Forge Trip Hammer - "[mat processed] parts" Parts (grade3) can be produced at the Crude Workstation
 	/// </summary>
 	/// <name>Parts in Crude Workshop</name>
 	/// <type>RecipeEffectModel</type>
-	Parts_In_Crude_Workshop,
+	Parts_In_Crude_Workshop = 2136,
 
 	/// <summary>
 	/// Forge Trip Hammer - "[mat processed] parts" Parts (grade3) can be produced in the Smithy
 	/// </summary>
 	/// <name>Parts in Smithy</name>
 	/// <type>RecipeEffectModel</type>
-	Parts_In_Smithy,
+	Parts_In_Smithy = 2137,
 
 	/// <summary>
 	/// Soft Stems - The grain stalks have grown soft because of the air’s humidity. During drizzle season, workers in the Harvesters' Camp can gather "[food raw] grain" grain (grade2) from grain nodes.
 	/// </summary>
 	/// <name>SE Grain in Harvester</name>
 	/// <type>RecipeEffectModel</type>
-	SE_Grain_In_Harvester,
+	SE_Grain_In_Harvester = 2138,
 
 	/// <summary>
 	/// Steel Mattocks - "[mat raw] stone" Stone (grade2) can now be produced in the Clay Pit.
 	/// </summary>
 	/// <name>Stone in Clay Pit</name>
 	/// <type>RecipeEffectModel</type>
-	Stone_In_Clay_Pit,
+	Stone_In_Clay_Pit = 2139,
 
 	/// <summary>
 	/// Trade Pack Instructions - "[packs] pack of trade goods" packs of trade goods (grade1) can now be produced in the Brickyard and Clothier.
 	/// </summary>
 	/// <name>Trade Pack in Brickyard</name>
 	/// <type>RecipeEffectModel</type>
-	Trade_Pack_In_Brickyard,
+	Trade_Pack_In_Brickyard = 2140,
 
 	/// <summary>
 	/// Trade Pack Instructions - "[packs] pack of trade goods" packs of trade goods (grade1) can now be produced in the Brickyard and Clothier.
 	/// </summary>
 	/// <name>Trade Pack in Clothier</name>
 	/// <type>RecipeEffectModel</type>
-	Trade_Pack_In_Clothier,
+	Trade_Pack_In_Clothier = 2141,
 
 	/// <summary>
 	/// Better Packaging - "[packs] pack of trade goods" packs of trade goods (grade2) can be produced at the Makeshift Post.
 	/// </summary>
 	/// <name>Trade Pack in Makeshift Post</name>
 	/// <type>RecipeEffectModel</type>
-	Trade_Pack_In_Makeshift_Post,
+	Trade_Pack_In_Makeshift_Post = 2142,
 
 	/// <summary>
 	/// Moss Broccoli Seeds - "[food raw] vegetables" Vegetables (grade2) can now be produced in the Greenhouse.
 	/// </summary>
 	/// <name>Vegetables in Greenhouse</name>
 	/// <type>RecipeEffectModel</type>
-	Vegetables_In_Greenhouse,
+	Vegetables_In_Greenhouse = 2143,
 
 
 	//
@@ -15817,129 +15867,129 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Building Mat Crit +3</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	Building_Mat_Crit_Plus3,
+	Building_Mat_Crit_Plus3 = 2144,
 
 	/// <summary></summary>
 	/// <name>Mine Crit +3</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	Mine_Crit_Plus3,
+	Mine_Crit_Plus3 = 2145,
 
 	/// <summary>
 	/// Workers have a 12% higher chance of producing double building materials.
 	/// </summary>
 	/// <name>[PerkCrafter] Building Mat Extra Prod Chance 12</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Building_Mat_Extra_Prod_Chance_12,
+	PerkCrafter_Building_Mat_Extra_Prod_Chance_12 = 2146,
 
 	/// <summary>
 	/// Workers have a 4% higher chance of producing double building materials.
 	/// </summary>
 	/// <name>[PerkCrafter] Building Mat Extra Prod Chance 4</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Building_Mat_Extra_Prod_Chance_4,
+	PerkCrafter_Building_Mat_Extra_Prod_Chance_4 = 2147,
 
 	/// <summary>
 	/// Workers have a 5% higher chance of producing double building materials.
 	/// </summary>
 	/// <name>[PerkCrafter] Building Mat Extra Prod Chance 5</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Building_Mat_Extra_Prod_Chance_5,
+	PerkCrafter_Building_Mat_Extra_Prod_Chance_5 = 2148,
 
 	/// <summary>
 	/// Workers have a 7% higher chance of producing double building materials.
 	/// </summary>
 	/// <name>[PerkCrafter] Building Mat Extra Prod Chance 7</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Building_Mat_Extra_Prod_Chance_7,
+	PerkCrafter_Building_Mat_Extra_Prod_Chance_7 = 2149,
 
 	/// <summary>
 	/// Workers have a 8% higher chance of producing double building materials.
 	/// </summary>
 	/// <name>[PerkCrafter] Building Mat Extra Prod Chance 8</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Building_Mat_Extra_Prod_Chance_8,
+	PerkCrafter_Building_Mat_Extra_Prod_Chance_8 = 2150,
 
 	/// <summary>
 	/// Farms have a 10% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Farms Extra Prod Chance 10</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Farms_Extra_Prod_Chance_10,
+	PerkCrafter_Farms_Extra_Prod_Chance_10 = 2151,
 
 	/// <summary>
 	/// Farms have a 12% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Farms Extra Prod Chance 12</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Farms_Extra_Prod_Chance_12,
+	PerkCrafter_Farms_Extra_Prod_Chance_12 = 2152,
 
 	/// <summary>
 	/// Farms have a 4% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Farms Extra Prod Chance 4</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Farms_Extra_Prod_Chance_4,
+	PerkCrafter_Farms_Extra_Prod_Chance_4 = 2153,
 
 	/// <summary>
 	/// Farms have a 5% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Farms Extra Prod Chance 5</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Farms_Extra_Prod_Chance_5,
+	PerkCrafter_Farms_Extra_Prod_Chance_5 = 2154,
 
 	/// <summary>
 	/// Farms have a 7% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Farms Extra Prod Chance 7</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Farms_Extra_Prod_Chance_7,
+	PerkCrafter_Farms_Extra_Prod_Chance_7 = 2155,
 
 	/// <summary>
 	/// Farms have a 8% higher chance of producing double yields.
 	/// </summary>
 	/// <name>[PerkCrafter] Farms Extra Prod Chance 8</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Farms_Extra_Prod_Chance_8,
+	PerkCrafter_Farms_Extra_Prod_Chance_8 = 2156,
 
 	/// <summary>
 	/// Workers have a 12% higher chance of producing double "[metal] copper bar" copper bars and "[metal] crystalized dew" crystalized dew.
 	/// </summary>
 	/// <name>[PerkCrafter] Metal Extra Prod Chance 12</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Metal_Extra_Prod_Chance_12,
+	PerkCrafter_Metal_Extra_Prod_Chance_12 = 2157,
 
 	/// <summary>
 	/// Workers have a 4% higher chance of producing double "[metal] copper bar" copper bars and "[metal] crystalized dew" crystalized dew.
 	/// </summary>
 	/// <name>[PerkCrafter] Metal Extra Prod Chance 4</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Metal_Extra_Prod_Chance_4,
+	PerkCrafter_Metal_Extra_Prod_Chance_4 = 2158,
 
 	/// <summary>
 	/// Workers have a 5% higher chance of producing double "[metal] copper bar" copper bars and "[metal] crystalized dew" crystalized dew.
 	/// </summary>
 	/// <name>[PerkCrafter] Metal Extra Prod Chance 5</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Metal_Extra_Prod_Chance_5,
+	PerkCrafter_Metal_Extra_Prod_Chance_5 = 2159,
 
 	/// <summary>
 	/// Workers have a 7% higher chance of producing double "[metal] copper bar" copper bars and "[metal] crystalized dew" crystalized dew.
 	/// </summary>
 	/// <name>[PerkCrafter] Metal Extra Prod Chance 7</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Metal_Extra_Prod_Chance_7,
+	PerkCrafter_Metal_Extra_Prod_Chance_7 = 2160,
 
 	/// <summary>
 	/// Workers have a 8% higher chance of producing double "[metal] copper bar" copper bars and "[metal] crystalized dew" crystalized dew.
 	/// </summary>
 	/// <name>[PerkCrafter] Metal Extra Prod Chance 8</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	PerkCrafter_Metal_Extra_Prod_Chance_8,
+	PerkCrafter_Metal_Extra_Prod_Chance_8 = 2161,
 
 	/// <summary></summary>
 	/// <name>Water Recipes Crit +3</name>
 	/// <type>RecipesTagExtraProductionChanceEffectModel</type>
-	Water_Recipes_Crit_Plus3,
+	Water_Recipes_Crit_Plus3 = 2162,
 
 
 	//
@@ -15951,57 +16001,57 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Gatherers Prod +50</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	Gatherers_Prod_Plus50,
+	Gatherers_Prod_Plus50 = 2163,
 
 	/// <summary></summary>
 	/// <name>More Fuel Produced</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	More_Fuel_Produced,
+	More_Fuel_Produced = 2164,
 
 	/// <summary></summary>
 	/// <name>More Packs Produced</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	More_Packs_Produced,
+	More_Packs_Produced = 2165,
 
 	/// <summary></summary>
 	/// <name>More Packs Produced 100</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	More_Packs_Produced_100,
+	More_Packs_Produced_100 = 2166,
 
 	/// <summary>
 	/// Acid Rain - The rain dissolves some of the resources transported to your Warehouse. Recipes producing building materials yield 50% fewer goods.
 	/// </summary>
 	/// <name>SE Building Materials Prod Penalty</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	SE_Building_Materials_Prod_Penalty,
+	SE_Building_Materials_Prod_Penalty = 2167,
 
 	/// <summary>
 	/// Rich Branches - Production in all gathering camps is increased by 100%.
 	/// </summary>
 	/// <name>SE Gatherers Prod +100</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	SE_Gatherers_Prod_Plus100,
+	SE_Gatherers_Prod_Plus100 = 2168,
 
 	/// <summary>
 	/// Corrosive Rainfall - Acid rain is slowly eating away at all metal objects. Producing Copper Bars, Crystalized Dew, and all goods that use metal ingots yields 50% fewer goods.
 	/// </summary>
 	/// <name>SE Metal Prod Penalty</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	SE_Metal_Prod_Penalty,
+	SE_Metal_Prod_Penalty = 2169,
 
 	/// <summary>
 	/// Involuntary Sacrifice - Recipes producing building materials and packs of goods give 50% less yield.
 	/// </summary>
 	/// <name>Temple Building Production Yield</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	Temple_Building_Production_Yield,
+	Temple_Building_Production_Yield = 2170,
 
 	/// <summary>
 	/// Involuntary Sacrifice - Recipes producing building materials and packs of goods give 50% less yield.
 	/// </summary>
 	/// <name>Temple Packs Production Yield</name>
 	/// <type>RecipesTagProductionEffectModel</type>
-	Temple_Packs_Production_Yield,
+	Temple_Packs_Production_Yield = 2171,
 
 
 	//
@@ -16013,226 +16063,226 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>All Camps Unlock - Slow Fishing</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	All_Camps_Unlock_Slow_Fishing,
+	All_Camps_Unlock_Slow_Fishing = 2172,
 
 	/// <summary>
 	/// Master Blueprint
 	/// </summary>
 	/// <name>All Camps Unlock - Slow Gathering</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	All_Camps_Unlock_Slow_Gathering,
+	All_Camps_Unlock_Slow_Gathering = 2173,
 
 	/// <summary>
 	/// Camps Speed - An ominous aura is enveloping the forest. Gathering and woodcutting speeds are decreased by 10%.
 	/// </summary>
 	/// <name>[Biome] Gatherer Production Speed</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Biome_Gatherer_Production_Speed,
+	Biome_Gatherer_Production_Speed = 2174,
 
 	/// <summary></summary>
 	/// <name>Building Mat Speed +3</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Building_Mat_Speed_Plus3,
+	Building_Mat_Speed_Plus3 = 2175,
 
 	/// <summary></summary>
 	/// <name>Fabric or Coat Speed +5</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Fabric_Or_Coat_Speed_Plus5,
+	Fabric_Or_Coat_Speed_Plus5 = 2176,
 
 	/// <summary>
 	/// Cooking Steam - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by {0} for every {1} units of Drizzle Water stored.
 	/// </summary>
 	/// <name>Food prod speed +10</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Prod_Speed_Plus10,
+	Food_Prod_Speed_Plus10 = 2177,
 
 	/// <summary>
 	/// Contaminated Food - All food production (both raw and cooked) is 60% slower.
 	/// </summary>
 	/// <name>Food Production Speed -60</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Minus60,
+	Food_Production_Speed_Minus60 = 2178,
 
 	/// <summary>
 	/// Contaminated Food - All food production (both raw and cooked) is 70% slower.
 	/// </summary>
 	/// <name>Food Production Speed -70</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Minus70,
+	Food_Production_Speed_Minus70 = 2179,
 
 	/// <summary>
 	/// Contaminated Food - All food production (both raw and cooked) is 80% slower.
 	/// </summary>
 	/// <name>Food Production Speed -80</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Minus80,
+	Food_Production_Speed_Minus80 = 2180,
 
 	/// <summary>
 	/// Contaminated Food - All food production (both raw and cooked) is 90% slower.
 	/// </summary>
 	/// <name>Food Production Speed -90</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Minus90,
+	Food_Production_Speed_Minus90 = 2181,
 
 	/// <summary>
 	/// Viceroy's Survival Guide - A handy set of notes on how to survive in the wilderness, written by an anonymous viceroy. Increases global food production speed by 20%.
 	/// </summary>
 	/// <name>Food Production Speed +20</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Plus20,
+	Food_Production_Speed_Plus20 = 2182,
 
 	/// <summary>
 	/// Viceroy's Survival Guide - A handy set of notes on how to survive in the wilderness, written by an anonymous viceroy. Increases global food production speed by 33%.
 	/// </summary>
 	/// <name>Food Production Speed +33</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Plus33,
+	Food_Production_Speed_Plus33 = 2183,
 
 	/// <summary>
 	/// Viceroy's Survival Guide - A handy set of notes on how to survive in the wilderness, written by an anonymous viceroy. Increases global food production speed by 50%.
 	/// </summary>
 	/// <name>Food Production Speed +50</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Food_Production_Speed_Plus50,
+	Food_Production_Speed_Plus50 = 2184,
 
 	/// <summary>
 	/// Advanced Fuel - All fuel recipes are 33% faster.
 	/// </summary>
 	/// <name>Fuel Recipes Rate 33</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Fuel_Recipes_Rate_33,
+	Fuel_Recipes_Rate_33 = 2185,
 
 	/// <summary>
 	/// Advanced Fuel - All fuel recipes are 50% faster.
 	/// </summary>
 	/// <name>Fuel Recipes Rate 50</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Fuel_Recipes_Rate_50,
+	Fuel_Recipes_Rate_50 = 2186,
 
 	/// <summary>
 	/// Advanced Fuel - All fuel recipes are 66% faster.
 	/// </summary>
 	/// <name>Fuel Recipes Rate 66</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Fuel_Recipes_Rate_66,
+	Fuel_Recipes_Rate_66 = 2187,
 
 	/// <summary></summary>
 	/// <name>Gathering Speed +30</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Gathering_Speed_Plus30,
+	Gathering_Speed_Plus30 = 2188,
 
 	/// <summary></summary>
 	/// <name>Gathering Speed +5</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Gathering_Speed_Plus5,
+	Gathering_Speed_Plus5 = 2189,
 
 	/// <summary></summary>
 	/// <name>Metal Production Speed Boost 33</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Metal_Production_Speed_Boost_33,
+	Metal_Production_Speed_Boost_33 = 2190,
 
 	/// <summary>
 	/// Metallurgic Proficiency - Increases the production speed of Copper Bars, Crystalized Dew, and all recipes that use metal ingots by 66%.
 	/// </summary>
 	/// <name>Metal Production Speed Boost 66</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Metal_Production_Speed_Boost_66,
+	Metal_Production_Speed_Boost_66 = 2191,
 
 	/// <summary>
 	/// No Cooking Utensils - The caravan lost someone on the way, who unfortunately was carrying all the cooking equipment. All food recipes are 50% slower.
 	/// </summary>
 	/// <name>[Mod] Low Food Production Speed</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Mod_Low_Food_Production_Speed,
+	Mod_Low_Food_Production_Speed = 2192,
 
 	/// <summary>
 	/// Metallurgic Experts - The caravan is composed of the finest smiths the Crown can spare. Increases the production speed of "[metal] copper bar" copper bars, "[metal] crystalized dew" crystalized dew, and all recipes that use metal ingots by 100%.
 	/// </summary>
 	/// <name>[Mod] Metal Production Speed 100</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Mod_Metal_Production_Speed_100,
+	Mod_Metal_Production_Speed_100 = 2193,
 
 	/// <summary></summary>
 	/// <name>Ore Production Speed Boost 33</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Ore_Production_Speed_Boost_33,
+	Ore_Production_Speed_Boost_33 = 2194,
 
 	/// <summary>
 	/// Metallurgic Proficiency - Increases the production speed of Copper Bars, Crystalized Dew, and all recipes that use metal ingots by 66%.
 	/// </summary>
 	/// <name>Ore Production Speed Boost 66</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Ore_Production_Speed_Boost_66,
+	Ore_Production_Speed_Boost_66 = 2195,
 
 	/// <summary>
 	/// Quick Deliveries - All packs of goods are produced 33% faster.
 	/// </summary>
 	/// <name>Packs Production Speed Boost 33</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Packs_Production_Speed_Boost_33,
+	Packs_Production_Speed_Boost_33 = 2196,
 
 	/// <summary>
 	/// All packs of goods are produced 50% faster.
 	/// </summary>
 	/// <name>Packs Production Speed Boost 50</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Packs_Production_Speed_Boost_50,
+	Packs_Production_Speed_Boost_50 = 2197,
 
 	/// <summary>
 	/// Quick Deliveries - All packs of goods are produced 66% faster.
 	/// </summary>
 	/// <name>Packs Production Speed Boost 66</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	Packs_Production_Speed_Boost_66,
+	Packs_Production_Speed_Boost_66 = 2198,
 
 	/// <summary>
 	/// Complex food production speed is increased by 10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Complex Food Prod Speed 10</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	PerkCrafter_Complex_Food_Prod_Speed_10,
+	PerkCrafter_Complex_Food_Prod_Speed_10 = 2199,
 
 	/// <summary>
 	/// Complex food production speed is increased by 15%.
 	/// </summary>
 	/// <name>[PerkCrafter] Complex Food Prod Speed 15</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	PerkCrafter_Complex_Food_Prod_Speed_15,
+	PerkCrafter_Complex_Food_Prod_Speed_15 = 2200,
 
 	/// <summary>
 	/// Complex food production speed is increased by 5%.
 	/// </summary>
 	/// <name>[PerkCrafter] Complex Food Prod Speed 5</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	PerkCrafter_Complex_Food_Prod_Speed_5,
+	PerkCrafter_Complex_Food_Prod_Speed_5 = 2201,
 
 	/// <summary>
 	/// Salty Breeze - The salty air makes it easier to preserve food. Food production speed is increased by 80% during drizzle season.
 	/// </summary>
 	/// <name>SE Fast Food</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	SE_Fast_Food,
+	SE_Fast_Food = 2202,
 
 	/// <summary>
 	/// Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% for each Hostility level.
 	/// </summary>
 	/// <name>SE Food Production Speed -15</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	SE_Food_Production_Speed_Minus15,
+	SE_Food_Production_Speed_Minus15 = 2203,
 
 	/// <summary>
 	/// Quaking Bog - The ground is moving and swaying from all the rainwater it’s absorbed. Gathering speed is decreased by 50%.
 	/// </summary>
 	/// <name>SE Gatherer Production Speed -50</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	SE_Gatherer_Production_Speed_Minus50,
+	SE_Gatherer_Production_Speed_Minus50 = 2204,
 
 	/// <summary>
 	/// Fruitful Season - The forest's fruits are so ripe, they almost fall into the basket on their own. Gathering speed is increased by 50%.
 	/// </summary>
 	/// <name>SE Gatherer Production Speed +50</name>
 	/// <type>RecipesTagProductionRateEffectModel</type>
-	SE_Gatherer_Production_Speed_Plus50,
+	SE_Gatherer_Production_Speed_Plus50 = 2205,
 
 
 	//
@@ -16244,52 +16294,52 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] Fedora Hat</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	Altar_Fedora_Hat,
+	Altar_Fedora_Hat = 2206,
 
 	/// <summary>
 	/// Old Fedora Hat - An old inscription on the bottom of the hat says: "Fortune and glory". Increases the chance of doubling event loot by 50% (this doesn't apply to perks and blueprints).
 	/// </summary>
 	/// <name>Fedora Hat</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	Fedora_Hat,
+	Fedora_Hat = 2207,
 
 	/// <summary>
 	/// 10% higher chance of doubling event loot (except perks and blueprints).
 	/// </summary>
 	/// <name>[PerkCrafter] Relics Chance for Extra Reward 10</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	PerkCrafter_Relics_Chance_For_Extra_Reward_10,
+	PerkCrafter_Relics_Chance_For_Extra_Reward_10 = 2208,
 
 	/// <summary>
 	/// 15% higher chance of doubling event loot (except perks and blueprints).
 	/// </summary>
 	/// <name>[PerkCrafter] Relics Chance for Extra Reward 15</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	PerkCrafter_Relics_Chance_For_Extra_Reward_15,
+	PerkCrafter_Relics_Chance_For_Extra_Reward_15 = 2209,
 
 	/// <summary>
 	/// 5% higher chance of doubling event loot (except perks and blueprints).
 	/// </summary>
 	/// <name>[PerkCrafter] Relics Chance for Extra Reward 5</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	PerkCrafter_Relics_Chance_For_Extra_Reward_5,
+	PerkCrafter_Relics_Chance_For_Extra_Reward_5 = 2210,
 
 	/// <summary></summary>
 	/// <name>Relics Chance for Extra Reward 100</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	Relics_Chance_For_Extra_Reward_100,
+	Relics_Chance_For_Extra_Reward_100 = 2211,
 
 	/// <summary></summary>
 	/// <name>Relics Chance for Extra Reward 20</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	Relics_Chance_For_Extra_Reward_20,
+	Relics_Chance_For_Extra_Reward_20 = 2212,
 
 	/// <summary>
 	/// Scavenging Season - The drizzle in this region is very mild, making it the perfect season for looting. Increases the chance of doubling loot from events solved during the drizzle by 25% (this doesn't apply to perks and blueprints).
 	/// </summary>
 	/// <name>[SE] More event goods</name>
 	/// <type>RelicsExtraRewardsChanceEffectModel</type>
-	SE_More_Event_Goods,
+	SE_More_Event_Goods = 2213,
 
 
 	//
@@ -16301,126 +16351,126 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BT] Relic Working TIme - child</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	BT_Relic_Working_TIme_Child,
+	BT_Relic_Working_TIme_Child = 2214,
 
 	/// <summary>
 	/// Scout's Toolbox - Scouts can open chests 40% faster.
 	/// </summary>
 	/// <name>Chest Working Time -30</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Chest_Working_Time_Minus30,
+	Chest_Working_Time_Minus30 = 2215,
 
 	/// <summary></summary>
 	/// <name>Dangerous Relic Working TIme -50</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Dangerous_Relic_Working_TIme_Minus50,
+	Dangerous_Relic_Working_TIme_Minus50 = 2216,
 
 	/// <summary></summary>
 	/// <name>Dangerous Relic Working TIme +50</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Dangerous_Relic_Working_TIme_Plus50,
+	Dangerous_Relic_Working_TIme_Plus50 = 2217,
 
 	/// <summary>
 	/// Lucky Talisman - A necklace made out of tiny bones. Scouts work 10% faster on Glade Events.
 	/// </summary>
 	/// <name>Event Time Reduction 10</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Event_Time_Reduction_10,
+	Event_Time_Reduction_10 = 2218,
 
 	/// <summary>
 	/// Sacrifice Sea Marrow - Glade event work speed increased by 25%.
 	/// </summary>
 	/// <name>[Hearth] Relic Working Time -20</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Hearth_Relic_Working_Time_Minus20,
+	Hearth_Relic_Working_Time_Minus20 = 2219,
 
 	/// <summary>
 	/// Mesmerizing Light - A strange and evil light is coming from the top of the lighthouse. It mesmerizes the settlement's scouts, causing them to work 20% slower on Glade Events.
 	/// </summary>
 	/// <name>Lighthouse Scouts Curse</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Lighthouse_Scouts_Curse,
+	Lighthouse_Scouts_Curse = 2220,
 
 	/// <summary>
 	/// Procrastination - Villagers are reluctant to venture into Dangerous Glades. Scouts work 33% slower on Glade Events.
 	/// </summary>
 	/// <name>[Mod] Longer Relics Working Time</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Mod_Longer_Relics_Working_Time,
+	Mod_Longer_Relics_Working_Time = 2221,
 
 	/// <summary>
 	/// Scouts work 10% faster on Glade Events.
 	/// </summary>
 	/// <name>[PerkCrafter] Scout Working Speed 10</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	PerkCrafter_Scout_Working_Speed_10,
+	PerkCrafter_Scout_Working_Speed_10 = 2222,
 
 	/// <summary>
 	/// Scouts work 12% faster on Glade Events.
 	/// </summary>
 	/// <name>[PerkCrafter] Scout Working Speed 12</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	PerkCrafter_Scout_Working_Speed_12,
+	PerkCrafter_Scout_Working_Speed_12 = 2223,
 
 	/// <summary>
 	/// Scouts work 4% faster on Glade Events.
 	/// </summary>
 	/// <name>[PerkCrafter] Scout Working Speed 4</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	PerkCrafter_Scout_Working_Speed_4,
+	PerkCrafter_Scout_Working_Speed_4 = 2224,
 
 	/// <summary>
 	/// Scouts work 7% faster on Glade Events.
 	/// </summary>
 	/// <name>[PerkCrafter] Scout Working Speed 7</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	PerkCrafter_Scout_Working_Speed_7,
+	PerkCrafter_Scout_Working_Speed_7 = 2225,
 
 	/// <summary></summary>
 	/// <name>Relic Working TIme -10</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Relic_Working_TIme_Minus10,
+	Relic_Working_TIme_Minus10 = 2226,
 
 	/// <summary></summary>
 	/// <name>Relic Working TIme -2</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Relic_Working_TIme_Minus2,
+	Relic_Working_TIme_Minus2 = 2227,
 
 	/// <summary></summary>
 	/// <name>Relic Working TIme -20</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Relic_Working_TIme_Minus20,
+	Relic_Working_TIme_Minus20 = 2228,
 
 	/// <summary>
 	/// Glade event work speed increased by 30%.
 	/// </summary>
 	/// <name>Relic Working TIme -25</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Relic_Working_TIme_Minus25,
+	Relic_Working_TIme_Minus25 = 2229,
 
 	/// <summary></summary>
 	/// <name>Relic Working TIme -7</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Relic_Working_TIme_Minus7,
+	Relic_Working_TIme_Minus7 = 2230,
 
 	/// <summary></summary>
 	/// <name>Relic Working TIme +10</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Relic_Working_TIme_Plus10,
+	Relic_Working_TIme_Plus10 = 2231,
 
 	/// <summary>
 	/// Ghastly Chant - An eerie, mesmerizing melody. Scouts work 10% slower on Glade Events.
 	/// </summary>
 	/// <name>[TW] Longer Relics Working Time</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	TW_Longer_Relics_Working_Time,
+	TW_Longer_Relics_Working_Time = 2232,
 
 	/// <summary>
 	/// Farsight
 	/// </summary>
 	/// <name>Working Speed For Small Glade - Relic Working Speed</name>
 	/// <type>RelicsWorkingTimeRateEffectModel</type>
-	Working_Speed_For_Small_Glade_Relic_Working_Speed,
+	Working_Speed_For_Small_Glade_Relic_Working_Speed = 2233,
 
 
 	//
@@ -16432,26 +16482,26 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Remove Buildings Thunder</name>
 	/// <type>RemoveBuildingEffectModel</type>
-	Remove_Buildings_Thunder,
+	Remove_Buildings_Thunder = 2234,
 
 	/// <summary></summary>
 	/// <name>SE Remove Buildings 3</name>
 	/// <type>RemoveBuildingEffectModel</type>
-	SE_Remove_Buildings_3,
+	SE_Remove_Buildings_3 = 2235,
 
 	/// <summary>
 	/// Collapse - If you don't deliver the required goods, 3 buildings will turn into ruins.
 	/// </summary>
 	/// <name>SE Remove Buildings3</name>
 	/// <type>RemoveBuildingEffectModel</type>
-	SE_Remove_Buildings3,
+	SE_Remove_Buildings3 = 2236,
 
 	/// <summary>
 	/// Plague of Thunderstorms - Sinister storm clouds are approaching relentlessly, with bolts of lightning lacerating the sky. Lightning will turn 3 buildings into ruins.
 	/// </summary>
 	/// <name>TEST Plague of Thunderstorm</name>
 	/// <type>RemoveBuildingEffectModel</type>
-	TEST_Plague_Of_Thunderstorm,
+	TEST_Plague_Of_Thunderstorm = 2237,
 
 
 	//
@@ -16463,115 +16513,115 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Ghost Amber Tablets Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Amber_Tablets_Lost,
+	Ghost_Amber_Tablets_Lost = 2238,
 
 	/// <summary>
 	/// Scarlet Tears - Pain and suffering speak through the phantoms of the past. Destroys all stored Biscuits, Jerky, Pickled Goods, Pie, Skewers, Porridge, Paste.
 	/// </summary>
 	/// <name>Ghost Complex Food Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Complex_Food_Lost,
+	Ghost_Complex_Food_Lost = 2239,
 
 	/// <summary>
 	/// Scarlet Tears - Pain and suffering speak through the phantoms of the past. Destroys all stored Sea Marrow, Oil, Coal.
 	/// </summary>
 	/// <name>Ghost Fuel Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Fuel_Lost,
+	Ghost_Fuel_Lost = 2240,
 
 	/// <summary>
 	/// Scarlet Tears - Pain and suffering speak through the phantoms of the past. Destroys all stored Ale, Coats, Incense, Training Gear, Wine, Scrolls, Tea, Boots.
 	/// </summary>
 	/// <name>Ghost Needs Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Needs_Lost,
+	Ghost_Needs_Lost = 2241,
 
 	/// <summary>
 	/// Scarlet Tears - Pain and suffering speak through the phantoms of the past. Destroys 6 stored "[mat processed] parts" parts.
 	/// </summary>
 	/// <name>Ghost Parts Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Parts_Lost,
+	Ghost_Parts_Lost = 2242,
 
 	/// <summary>
 	/// Scarlet Tears - Pain and suffering speak through the phantoms of the past. Destroys all stored Berries, Eggs, Insects, Meat, Mushrooms, Roots, Vegetables, Fish.
 	/// </summary>
 	/// <name>Ghost Raw Food Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Raw_Food_Lost,
+	Ghost_Raw_Food_Lost = 2243,
 
 	/// <summary>
 	/// Scarlet Tears - Pain and suffering speak through the phantoms of the past. Destroys all stored Tools.
 	/// </summary>
 	/// <name>Ghost Tools Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Ghost_Tools_Lost,
+	Ghost_Tools_Lost = 2244,
 
 	/// <summary>
 	/// Mistworm Infestation - Where there is one mistworm, soon many more will follow. Destroys all stored food (both raw and cooked).
 	/// </summary>
 	/// <name>Mistworm All Food Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Mistworm_All_Food_Lost,
+	Mistworm_All_Food_Lost = 2245,
 
 	/// <summary></summary>
 	/// <name>Remove Amber</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Remove_Amber,
+	Remove_Amber = 2246,
 
 	/// <summary>
 	/// Buried Riches - What was once taken must now be given back. All stored "[valuable] amber" Amber and "[needs] wine" Wine will be lost.
 	/// </summary>
 	/// <name>Remove Amber and Wine</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Remove_Amber_And_Wine,
+	Remove_Amber_And_Wine = 2247,
 
 	/// <summary>
 	/// Forced Sacrifice - The Temple demands offerings. Destroys all trade goods in the Warehouse (packs of goods, Amber, Ancient Tablets).
 	/// </summary>
 	/// <name>Temple All Luxury Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Temple_All_Luxury_Lost,
+	Temple_All_Luxury_Lost = 2248,
 
 	/// <summary>
 	/// Agitated Swarm - Nothing can stop a hungry stonetooth termite swarm from feeding. Destroys all stored building materials (bricks, fabric, planks).
 	/// </summary>
 	/// <name>Termites Materials Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Termites_Materials_Lost,
+	Termites_Materials_Lost = 2249,
 
 	/// <summary>
 	/// Petrified Wood - The sickness of the petrified tree spreads throughout the settlement. Destroys all stored wood (planks, wood).
 	/// </summary>
 	/// <name>Tree Wood Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Tree_Wood_Lost,
+	Tree_Wood_Lost = 2250,
 
 	/// <summary></summary>
 	/// <name>Water Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Water_Lost,
+	Water_Lost = 2251,
 
 	/// <summary>
 	/// Storm Ant Column - Your entire food supply was dumped to distract the Storm Ants. Removes all food at the beginning of the game.
 	/// </summary>
 	/// <name>[WE] Remove All Food</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	WE_Remove_All_Food,
+	WE_Remove_All_Food = 2252,
 
 	/// <summary>
 	/// Combustion - The mere presence of a fire spirit can cause spontaneous combustion in its vicinity. Destroys all stored fuel (Coal, Oil, Wood, Sea Marrow).
 	/// </summary>
 	/// <name>Wildfire Fuel Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Wildfire_Fuel_Lost,
+	Wildfire_Fuel_Lost = 2253,
 
 	/// <summary>
 	/// The mere presence of a fire spirit can cause spontaneous combustion in its vicinity. Destroys all stored fuel (Wood).
 	/// </summary>
 	/// <name>Wood Removed</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
-	Wood_Removed,
+	Wood_Removed = 2254,
 
 
 	//
@@ -16583,161 +16633,161 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Blightrot_RemoveFoodOverTime - hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Blightrot_RemoveFoodOverTime_Hard,
+	Blightrot_RemoveFoodOverTime_Hard = 2255,
 
 	/// <summary>
 	/// Decaying Food - Cooked and raw food in the Warehouse is disappearing at a rate of 2 items every 6 seconds.
 	/// </summary>
 	/// <name>Blightrot_RemoveFoodOverTime - impossible</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Blightrot_RemoveFoodOverTime_Impossible,
+	Blightrot_RemoveFoodOverTime_Impossible = 2256,
 
 	/// <summary>
 	/// Decaying Food - Cooked and raw food in the Warehouse is disappearing at a rate of 2 items every 12 seconds.
 	/// </summary>
 	/// <name>Blightrot_RemoveFoodOverTime - normal</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Blightrot_RemoveFoodOverTime_Normal,
+	Blightrot_RemoveFoodOverTime_Normal = 2257,
 
 	/// <summary>
 	/// Decaying Food - Cooked and raw food in the Warehouse is disappearing at a rate of 2 items every 8 seconds.
 	/// </summary>
 	/// <name>Blightrot_RemoveFoodOverTime - very hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Blightrot_RemoveFoodOverTime_Very_Hard,
+	Blightrot_RemoveFoodOverTime_Very_Hard = 2258,
 
 	/// <summary>
 	/// Hungry Mistworm - Cooked and raw food in the Warehouse is disappearing at a rate of 4 items every 10 seconds.
 	/// </summary>
 	/// <name>Mistworm_RemoveFoodOverTime_Hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Mistworm_RemoveFoodOverTime_Hard,
+	Mistworm_RemoveFoodOverTime_Hard = 2259,
 
 	/// <summary>
 	/// Hungry Mistworm - Cooked and raw food in the Warehouse is disappearing at a rate of 6 items every 10 seconds.
 	/// </summary>
 	/// <name>Mistworm_RemoveFoodOverTime_Impossible</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Mistworm_RemoveFoodOverTime_Impossible,
+	Mistworm_RemoveFoodOverTime_Impossible = 2260,
 
 	/// <summary>
 	/// Hungry Mistworm - Cooked and raw food in the Warehouse is disappearing at a rate of 3 items every 10 seconds.
 	/// </summary>
 	/// <name>Mistworm_RemoveFoodOverTime_Normal</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Mistworm_RemoveFoodOverTime_Normal,
+	Mistworm_RemoveFoodOverTime_Normal = 2261,
 
 	/// <summary>
 	/// Hungry Mistworm - Cooked and raw food in the Warehouse is disappearing at a rate of 5 items every 10 seconds.
 	/// </summary>
 	/// <name>Mistworm_RemoveFoodOverTime_VeryHard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Mistworm_RemoveFoodOverTime_VeryHard,
+	Mistworm_RemoveFoodOverTime_VeryHard = 2262,
 
 	/// <summary>
 	/// You lose 4 units of a random type of rainwater every 10 seconds
 	/// </summary>
 	/// <name>NoxiousMachinery_RemoveWaterOverTime - hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	NoxiousMachinery_RemoveWaterOverTime_Hard,
+	NoxiousMachinery_RemoveWaterOverTime_Hard = 2263,
 
 	/// <summary>
 	/// You lose 4 units of a random type of rainwater every 6 seconds
 	/// </summary>
 	/// <name>NoxiousMachinery_RemoveWaterOverTime - impossible</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	NoxiousMachinery_RemoveWaterOverTime_Impossible,
+	NoxiousMachinery_RemoveWaterOverTime_Impossible = 2264,
 
 	/// <summary>
 	/// You lose 4 units of a random type of rainwater every 12 seconds
 	/// </summary>
 	/// <name>NoxiousMachinery_RemoveWaterOverTime - normal</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	NoxiousMachinery_RemoveWaterOverTime_Normal,
+	NoxiousMachinery_RemoveWaterOverTime_Normal = 2265,
 
 	/// <summary>
 	/// You lose 4 units of a random type of rainwater every 8 seconds
 	/// </summary>
 	/// <name>NoxiousMachinery_RemoveWaterOverTime - very hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	NoxiousMachinery_RemoveWaterOverTime_Very_Hard,
+	NoxiousMachinery_RemoveWaterOverTime_Very_Hard = 2266,
 
 	/// <summary>
 	/// Thieving Fishmen - Cooked and raw food in the Warehouse is disappearing at a rate of 4 items every 10 seconds.
 	/// </summary>
 	/// <name>Outpost_RemoveFoodOverTime - hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Outpost_RemoveFoodOverTime_Hard,
+	Outpost_RemoveFoodOverTime_Hard = 2267,
 
 	/// <summary>
 	/// Thieving Fishmen - Cooked and raw food in the Warehouse is disappearing at a rate of 6 items every 10 seconds.
 	/// </summary>
 	/// <name>Outpost_RemoveFoodOverTime - impossible</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Outpost_RemoveFoodOverTime_Impossible,
+	Outpost_RemoveFoodOverTime_Impossible = 2268,
 
 	/// <summary>
 	/// Thieving Fishmen - Cooked and raw food in the Warehouse is disappearing at a rate of 3 items every 10 seconds.
 	/// </summary>
 	/// <name>Outpost_RemoveFoodOverTime - normal</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Outpost_RemoveFoodOverTime_Normal,
+	Outpost_RemoveFoodOverTime_Normal = 2269,
 
 	/// <summary>
 	/// Thieving Fishmen - Cooked and raw food in the Warehouse is disappearing at a rate of 5 items every 10 seconds.
 	/// </summary>
 	/// <name>Outpost_RemoveFoodOverTime - very hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Outpost_RemoveFoodOverTime_Very_Hard,
+	Outpost_RemoveFoodOverTime_Very_Hard = 2270,
 
 	/// <summary>
 	/// Plague of Fire - Even the eternal rain cannot stop the ghastly fires coming from the abyss. Fuel in the settlement's warehouses is disappearing at a rate of 2 units every 10 seconds.
 	/// </summary>
 	/// <name>TEST Plague of Fire</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	TEST_Plague_Of_Fire,
+	TEST_Plague_Of_Fire = 2271,
 
 	/// <summary>
 	/// Plague of Rats - A horde of ravenous rats crawls out of the uncovered seal. Any cooked or raw food in the settlement's warehouses disappears at a rate of 2 items every 10 seconds.
 	/// </summary>
 	/// <name>TEST Plague of Rats - Food</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	TEST_Plague_Of_Rats_Food,
+	TEST_Plague_Of_Rats_Food = 2272,
 
 	/// <summary>
 	/// Poisoned Wind - Cooked and raw food in the Warehouse is disappearing at a rate of 1 items every 30 seconds.
 	/// </summary>
 	/// <name>[TW] RemoveFoodOverTime</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	TW_RemoveFoodOverTime,
+	TW_RemoveFoodOverTime = 2273,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel in the settlement's Warehouses is disappearing at a rate of 3 items every 15 seconds.
 	/// </summary>
 	/// <name>Wildfire_RemoveFuelOverTime - hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Wildfire_RemoveFuelOverTime_Hard,
+	Wildfire_RemoveFuelOverTime_Hard = 2274,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel in the settlement's Warehouses is disappearing at a rate of 5 items every 15 seconds.
 	/// </summary>
 	/// <name>Wildfire_RemoveFuelOverTime - impossible</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Wildfire_RemoveFuelOverTime_Impossible,
+	Wildfire_RemoveFuelOverTime_Impossible = 2275,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel in the settlement's Warehouses is disappearing at a rate of 2 items every 15 seconds.
 	/// </summary>
 	/// <name>Wildfire_RemoveFuelOverTime - normal</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Wildfire_RemoveFuelOverTime_Normal,
+	Wildfire_RemoveFuelOverTime_Normal = 2276,
 
 	/// <summary>
 	/// Wildfire Presence - Fuel in the settlement's Warehouses is disappearing at a rate of 4 items every 15 seconds.
 	/// </summary>
 	/// <name>Wildfire_RemoveFuelOverTime - very hard</name>
 	/// <type>RemoveGoodsInTimeEffectModel</type>
-	Wildfire_RemoveFuelOverTime_Very_Hard,
+	Wildfire_RemoveFuelOverTime_Very_Hard = 2277,
 
 
 	//
@@ -16749,14 +16799,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>CaptainCurse</name>
 	/// <type>RemoveRandomCornerstonesEffectModel</type>
-	CaptainCurse,
+	CaptainCurse = 2278,
 
 	/// <summary>
 	/// Stag's Echo - The roar of a captured Stag echoes mightily through the forest. One random Cornerstone in your possession is destroyed.
 	/// </summary>
 	/// <name>Remove one cornerstone Stag</name>
 	/// <type>RemoveRandomCornerstonesEffectModel</type>
-	Remove_One_Cornerstone_Stag,
+	Remove_One_Cornerstone_Stag = 2279,
 
 
 	//
@@ -16768,7 +16818,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Remove Chests From Glades</name>
 	/// <type>RemoveRelicsByTagEffectModel</type>
-	Remove_Chests_From_Glades,
+	Remove_Chests_From_Glades = 2280,
 
 
 	//
@@ -16780,14 +16830,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Ghost Remove Self</name>
 	/// <type>RemoveSelfEffectModel</type>
-	Ghost_Remove_Self,
+	Ghost_Remove_Self = 2281,
 
 	/// <summary>
 	/// Escape - When the specified time is up, the Treasure Stag will disappear into the forest.
 	/// </summary>
 	/// <name>Treasure Stag Remove Self</name>
 	/// <type>RemoveSelfEffectModel</type>
-	Treasure_Stag_Remove_Self,
+	Treasure_Stag_Remove_Self = 2282,
 
 
 	//
@@ -16799,21 +16849,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[PerkCrafter] Remove Deposit</name>
 	/// <type>RemoveVisibleDepositsEffectModel</type>
-	PerkCrafter_Remove_Deposit,
+	PerkCrafter_Remove_Deposit = 2283,
 
 	/// <summary>
 	/// Sinkhole - If you don't deliver the required goods, the ground will swallow up 2 random gathering nodes.
 	/// </summary>
 	/// <name>SE Remove Nodes - child</name>
 	/// <type>RemoveVisibleDepositsEffectModel</type>
-	SE_Remove_Nodes_Child,
+	SE_Remove_Nodes_Child = 2284,
 
 	/// <summary>
 	/// Plague of Locusts - Destroys 6 random gathering nodes.
 	/// </summary>
 	/// <name>TEST Plague of Locusts</name>
 	/// <type>RemoveVisibleDepositsEffectModel</type>
-	TEST_Plague_Of_Locusts,
+	TEST_Plague_Of_Locusts = 2285,
 
 
 	//
@@ -16825,903 +16875,957 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Replace Angry Ghost Chest</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Angry_Ghost_Chest,
+	Replace_Angry_Ghost_Chest = 2286,
 
 	/// <summary>
 	/// Decay - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
 	/// </summary>
 	/// <name>Replace Blightrot</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Blightrot,
+	Replace_Blightrot = 2287,
 
 	/// <summary>
 	/// Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
 	/// </summary>
 	/// <name>Replace Building Advanced Rain Catcher</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Advanced_Rain_Catcher,
+	Replace_Building_Advanced_Rain_Catcher = 2288,
 
 	/// <summary>
-	/// Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Alchemist</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Alchemist,
+	Replace_Building_Alchemist = 2289,
 
 	/// <summary>
-	/// Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Apotchecary</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Apotchecary,
+	Replace_Building_Apotchecary = 2290,
 
 	/// <summary>
-	/// Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Artisan</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Artisan,
+	Replace_Building_Artisan = 2291,
 
 	/// <summary>
-	/// Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Bakery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Bakery,
+	Replace_Building_Bakery = 2292,
 
 	/// <summary>
 	/// Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 	/// </summary>
 	/// <name>Replace Building Bath House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Bath_House,
+	Replace_Building_Bath_House = 2293,
 
 	/// <summary>
-	/// Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Beanery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Beanery,
+	Replace_Building_Beanery = 2294,
 
 	/// <summary>
 	/// Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Beaver House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Beaver_House,
+	Replace_Building_Beaver_House = 2295,
 
 	/// <summary>
 	/// Big Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 6 residents.
 	/// </summary>
 	/// <name>Replace Building Big Shelter</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Big_Shelter,
+	Replace_Building_Big_Shelter = 2296,
 
 	/// <summary>
-	/// Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Brewery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Brewery,
+	Replace_Building_Brewery = 2297,
 
 	/// <summary>
-	/// Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Brick Oven</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Brick_Oven,
+	Replace_Building_Brick_Oven = 2298,
 
 	/// <summary>
-	/// Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Brickyard</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Brickyard,
+	Replace_Building_Brickyard = 2299,
 
 	/// <summary>
-	/// Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Butcher</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Butcher,
+	Replace_Building_Butcher = 2300,
 
 	/// <summary>
-	/// Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Cannery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Cannery,
+	Replace_Building_Cannery = 2301,
 
 	/// <summary>
-	/// Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Carpenter</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Carpenter,
+	Replace_Building_Carpenter = 2302,
 
 	/// <summary>
-	/// Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Cellar</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Cellar,
+	Replace_Building_Cellar = 2303,
 
 	/// <summary>
 	/// Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
 	/// </summary>
 	/// <name>Replace Building Clan Hall</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Clan_Hall,
+	Replace_Building_Clan_Hall = 2304,
 
 	/// <summary>
 	/// Clay Pit - Uses Clearance Water to produce goods regardless of the season. Must be placed on fertile soil. Can produce:  [mat raw] clay Clay (grade2), [mat raw] reeds Reed (grade2), [mat raw] resin Resin (grade2)
 	/// </summary>
 	/// <name>Replace Building Clay Pit</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Clay_Pit,
+	Replace_Building_Clay_Pit = 2305,
 
 	/// <summary>
-	/// Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Cobbler</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Cobbler,
+	Replace_Building_Cobbler = 2306,
 
 	/// <summary>
-	/// Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Cookhouse</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Cookhouse,
+	Replace_Building_Cookhouse = 2307,
 
 	/// <summary>
-	/// Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Cooperage</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Cooperage,
+	Replace_Building_Cooperage = 2308,
 
 	/// <summary>
-	/// Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0). Can use: "[water] storm water" Storm Water.
+	/// <p>Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Crude Workstation</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Crude_Workstation,
+	Replace_Building_Crude_Workstation = 2309,
 
 	/// <summary>
-	/// Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Distillery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Distillery,
+	Replace_Building_Distillery = 2310,
 
 	/// <summary>
-	/// Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Druid</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Druid,
+	Replace_Building_Druid = 2311,
 
 	/// <summary>
 	/// Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 	/// </summary>
 	/// <name>Replace Building Explorers Lodge</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Explorers_Lodge,
+	Replace_Building_Explorers_Lodge = 2312,
 
 	/// <summary>
 	/// Homestead - Uses a large area of nearby farm fields to grow  [food raw] grain Grain (grade3), [mat raw] plant fibre Plant Fiber (grade3), [food raw] vegetables Vegetables (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Replace Building Farm</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Farm,
+	Replace_Building_Farm = 2313,
 
 	/// <summary>
-	/// Field Kitchen - Can produce:  [food processed] skewers Skewers (grade0), [food processed] paste Paste (grade0), [food processed] biscuits Biscuits (grade0), [food processed] pickled goods Pickled Goods (grade0). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Field Kitchen - Can produce:  [food processed] skewers Skewers (grade0), [food processed] paste Paste (grade0), [food processed] biscuits Biscuits (grade0), [food processed] pickled goods Pickled Goods (grade0).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Field Kitchen</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Field_Kitchen,
+	Replace_Building_Field_Kitchen = 2314,
 
 	/// <summary>
-	/// Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3). Can use: "[water] storm water" Storm Water.
+	/// <p>Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Finesmith</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Finesmith,
+	Replace_Building_Finesmith = 2315,
 
 	/// <summary>
 	/// Fishing Hut - An advanced fishing hut. Can fish in large fishing ponds in addition to small ones. Can catch:  [food raw] fish Fish (grade2), [mat raw] scales Scales (grade2), [mat raw] algae Algae (grade2).
 	/// </summary>
 	/// <name>Replace Building Fishing Hut</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Fishing_Hut,
+	Replace_Building_Fishing_Hut = 2316,
 
 	/// <summary>
 	/// Fishing Hut - A crude version of a normal fishing hut. It's slower, and can only fish in small fishing ponds. Can catch:  [food raw] fish Fish (grade1), [mat raw] scales Scales (grade1), [mat raw] algae Algae (grade1).
 	/// </summary>
 	/// <name>Replace Building Fishing Hut Primitive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Fishing_Hut_Primitive,
+	Replace_Building_Fishing_Hut_Primitive = 2317,
 
 	/// <summary>
 	/// Foragers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] grain Grain (grade2), [food raw] roots Roots (grade2), [food raw] vegetables Vegetables (grade2).
 	/// </summary>
 	/// <name>Replace Building Foragers Camp</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Foragers_Camp,
+	Replace_Building_Foragers_Camp = 2318,
 
 	/// <summary>
 	/// Small Foragers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] grain Grain (grade1), [food raw] roots Roots (grade1), [food raw] vegetables Vegetables (grade1).
 	/// </summary>
 	/// <name>Replace Building Foragers Camp Primitive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Foragers_Camp_Primitive,
+	Replace_Building_Foragers_Camp_Primitive = 2319,
 
 	/// <summary>
 	/// Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 	/// </summary>
 	/// <name>Replace Building Forum</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Forum,
+	Replace_Building_Forum = 2320,
 
 	/// <summary>
 	/// Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Fox House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Fox_House,
+	Replace_Building_Fox_House = 2321,
 
 	/// <summary>
 	/// Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Frog House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Frog_House,
+	Replace_Building_Frog_House = 2322,
 
 	/// <summary>
-	/// Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Furnace</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Furnace,
+	Replace_Building_Furnace = 2323,
 
 	/// <summary>
-	/// Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Granary</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Granary,
+	Replace_Building_Granary = 2324,
 
 	/// <summary>
 	/// Greenhouse - Uses Drizzle Water to grow crops regardless of the season. Must be placed on fertile soil. Can produce:  [food raw] mushrooms Mushrooms (grade2), [food raw] herbs Herbs (grade2)
 	/// </summary>
 	/// <name>Replace Building Greenhouse</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Greenhouse,
+	Replace_Building_Greenhouse = 2325,
 
 	/// <summary>
-	/// Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Grill</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Grill,
+	Replace_Building_Grill = 2326,
 
 	/// <summary>
 	/// Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 	/// </summary>
 	/// <name>Replace Building Grove</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Grove,
+	Replace_Building_Grove = 2327,
 
 	/// <summary>
 	/// Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.
 	/// </summary>
 	/// <name>Replace Building Guild House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Guild_House,
+	Replace_Building_Guild_House = 2328,
 
 	/// <summary>
 	/// Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Harpy House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Harpy_House,
+	Replace_Building_Harpy_House = 2329,
 
 	/// <summary>
 	/// Harvesters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] plant fibre Plant Fiber (grade2), [mat raw] reeds Reed (grade2), [mat raw] leather Leather (grade2).
 	/// </summary>
 	/// <name>Replace Building Harvester Camp</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Harvester_Camp,
+	Replace_Building_Harvester_Camp = 2330,
 
 	/// <summary>
 	/// Purified Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Haunted Beaver House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Beaver_House,
+	Replace_Building_Haunted_Beaver_House = 2331,
 
 	/// <summary>
-	/// Flawless Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade3), [packs] pack of crops Pack of Crops (grade3). Has improved production.Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Flawless Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade3), [packs] pack of crops Pack of Crops (grade3). Has improved production.</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Brewery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Brewery,
+	Replace_Building_Haunted_Brewery = 2332,
 
 	/// <summary>
-	/// Flawless Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade3), [packs] pack of provisions Pack of Provisions (grade3). Has improved production.Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Flawless Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade3), [packs] pack of provisions Pack of Provisions (grade3). Has improved production.</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Cellar</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Cellar,
+	Replace_Building_Haunted_Cellar = 2333,
 
 	/// <summary>
-	/// Flawless Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade3), [packs] pack of luxury goods Pack of Luxury Goods (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+	/// <p>Flawless Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade3), [packs] pack of luxury goods Pack of Luxury Goods (grade3). Has improved production.</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Cooperage</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Cooperage,
+	Replace_Building_Haunted_Cooperage = 2334,
 
 	/// <summary>
-	/// Flawless Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade3), [needs] coats Coats (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+	/// <p>Flawless Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade3), [needs] coats Coats (grade3). Has improved production.</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Druid</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Druid,
+	Replace_Building_Haunted_Druid = 2335,
 
 	/// <summary>
 	/// Purified Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Haunted Fox House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Fox_House,
+	Replace_Building_Haunted_Fox_House = 2336,
 
 	/// <summary>
 	/// Purified Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Haunted Frog House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Frog_House,
+	Replace_Building_Haunted_Frog_House = 2337,
 
 	/// <summary>
 	/// Holy Guild House - A place where villagers can fulfill their need for:  Luxury,  Education. Has an additional effect. Passive effects: Guild House, The Guild's Welfare.
 	/// </summary>
 	/// <name>Replace Building Haunted Guild House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Guild_House,
+	Replace_Building_Haunted_Guild_House = 2338,
 
 	/// <summary>
 	/// Purified Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Haunted Harpy House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Harpy_House,
+	Replace_Building_Haunted_Harpy_House = 2339,
 
 	/// <summary>
 	/// Hallowed Herb Garden - Building_HerbGarden_Desc
 	/// </summary>
 	/// <name>Replace Building Haunted Herb Garden</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Herb_Garden,
+	Replace_Building_Haunted_Herb_Garden = 2340,
 
 	/// <summary>
 	/// Purified Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Haunted Human House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Human_House,
+	Replace_Building_Haunted_Human_House = 2341,
 
 	/// <summary>
-	/// Flawless Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade3), [needs] training gear Training Gear (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+	/// <p>Flawless Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade3), [needs] training gear Training Gear (grade3). Has improved production.</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Leatherworks</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Leatherworks,
+	Replace_Building_Haunted_Leatherworks = 2342,
 
 	/// <summary>
 	/// Purified Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Haunted Lizard House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Lizard_House,
+	Replace_Building_Haunted_Lizard_House = 2343,
 
 	/// <summary>
 	/// Holy Market - A place where villagers can fulfill their need for:  Leisure,  Treatment. Has an additional effect. Passive effects: Ale and Hearty, Market Carts.
 	/// </summary>
 	/// <name>Replace Building Haunted Market</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Market,
+	Replace_Building_Haunted_Market = 2344,
 
 	/// <summary>
-	/// Flawless Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade3), [food processed] paste Paste (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+	/// <p>Flawless Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade3), [food processed] paste Paste (grade3). Has improved production.</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Rainmill</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Rainmill,
+	Replace_Building_Haunted_Rainmill = 2345,
 
 	/// <summary>
 	/// Hallowed Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade3), [food raw] grain Grain (grade3). Has improved efficiency and more worker slots.
 	/// </summary>
 	/// <name>Replace Building Haunted SmallFarm</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_SmallFarm,
+	Replace_Building_Haunted_SmallFarm = 2346,
 
 	/// <summary>
-	/// Flawless Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade3), [food processed] pie Pie (grade3). Can use: "[water] storm water" Storm Water.
+	/// <p>Flawless Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade3), [food processed] pie Pie (grade3).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Haunted Smelter</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Smelter,
+	Replace_Building_Haunted_Smelter = 2347,
 
 	/// <summary>
 	/// Holy Temple - A place where villagers can fulfill their need for:  Religion,  Education. Has an additional effect. Passive effects: Sacrament of the Flame, Consecrated Scrolls.
 	/// </summary>
 	/// <name>Replace Building Haunted Temple</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Haunted_Temple,
+	Replace_Building_Haunted_Temple = 2348,
 
 	/// <summary>
 	/// Ancient Hearth - Reduces Hostility and serves as a meeting place. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will use another Hearth instead. Can't be built too close to other Hearths.
 	/// </summary>
 	/// <name>Replace Building Hearth</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Hearth,
+	Replace_Building_Hearth = 2349,
 
 	/// <summary>
 	/// Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade1), [food raw] herbs Herbs (grade2).
 	/// </summary>
 	/// <name>Replace Building Herb Garden</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Herb_Garden,
+	Replace_Building_Herb_Garden = 2350,
 
 	/// <summary>
 	/// Herbalists' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] herbs Herbs (grade2), [food raw] berries Berries (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Replace Building Herbalist Camp</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Herbalist_Camp,
+	Replace_Building_Herbalist_Camp = 2351,
 
 	/// <summary>
 	/// Small Herbalists' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] herbs Herbs (grade1), [food raw] berries Berries (grade1), [food raw] mushrooms Mushrooms (grade1).
 	/// </summary>
 	/// <name>Replace Building Herbalist Camp Primitive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Herbalist_Camp_Primitive,
+	Replace_Building_Herbalist_Camp_Primitive = 2352,
 
 	/// <summary>
 	/// Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Human House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Human_House,
+	Replace_Building_Human_House = 2353,
 
 	/// <summary>
-	/// Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Kiln</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Kiln,
+	Replace_Building_Kiln = 2354,
 
 	/// <summary>
-	/// Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Leatherworks</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Leatherworks,
+	Replace_Building_Leatherworks = 2355,
 
 	/// <summary>
 	/// Library - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 	/// </summary>
 	/// <name>Replace Building Library</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Library,
+	Replace_Building_Library = 2356,
 
 	/// <summary>
 	/// Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Replace Building Lizard House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Lizard_House,
+	Replace_Building_Lizard_House = 2357,
 
 	/// <summary>
-	/// Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Lumbermill</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Lumbermill,
+	Replace_Building_Lumbermill = 2358,
 
 	/// <summary>
-	/// Makeshift Post - Can produce:  [packs] pack of crops Pack of Crops (grade0), [packs] pack of provisions Pack of Provisions (grade0), [packs] pack of building materials Pack of Building Materials (grade0). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Makeshift Post - Can produce:  [packs] pack of crops Pack of Crops (grade0), [packs] pack of provisions Pack of Provisions (grade0), [packs] pack of building materials Pack of Building Materials (grade0).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Makeshift Post</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Makeshift_Post,
+	Replace_Building_Makeshift_Post = 2359,
 
 	/// <summary>
-	/// Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Manufactory</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Manufactory,
+	Replace_Building_Manufactory = 2360,
 
 	/// <summary>
 	/// Market - A place where villagers can fulfill their need for: Leisure,  Treatment. Passive effects: Market Carts.
 	/// </summary>
 	/// <name>Replace Building Market</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Market,
+	Replace_Building_Market = 2361,
 
 	/// <summary>
 	/// Mine - Can only be placed on coal, copper, or salt veins. Can produce:  [crafting] coal Coal (grade2), [metal] copper ore Copper Ore (grade2), [crafting] salt Salt (grade2).
 	/// </summary>
 	/// <name>Replace Building Mine</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Mine,
+	Replace_Building_Mine = 2362,
 
 	/// <summary>
 	/// Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 	/// </summary>
 	/// <name>Replace Building Monastery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Monastery,
+	Replace_Building_Monastery = 2363,
 
 	/// <summary>
-	/// Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Pantry</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Pantry,
+	Replace_Building_Pantry = 2364,
 
 	/// <summary>
 	/// Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
 	/// </summary>
 	/// <name>Replace Building Plantation</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Plantation,
+	Replace_Building_Plantation = 2365,
 
 	/// <summary>
-	/// Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Press</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Press,
+	Replace_Building_Press = 2366,
 
 	/// <summary>
-	/// Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Provisioner</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Provisioner,
+	Replace_Building_Provisioner = 2367,
 
 	/// <summary>
 	/// Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Replace Building Rain Catcher</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Rain_Catcher,
+	Replace_Building_Rain_Catcher = 2368,
 
 	/// <summary>
-	/// Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Rainmill</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Rainmill,
+	Replace_Building_Rainmill = 2369,
 
 	/// <summary>
-	/// Rainpunk Foundry - A very advanced piece of technology. Can produce  [mat processed] parts Parts (grade3), hearth parts Wildfire Essence (grade3). Can use: "[water] storm water" Storm Water.
+	/// <p>Rainpunk Foundry - A very advanced piece of technology. Can produce  [mat processed] parts Parts (grade3), hearth parts Wildfire Essence (grade3).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Rainpunk Foundry</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Rainpunk_Foundry,
+	Replace_Building_Rainpunk_Foundry = 2370,
 
 	/// <summary>
-	/// Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Ranch</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Ranch,
+	Replace_Building_Ranch = 2371,
 
 	/// <summary>
-	/// Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Scribe</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Scribe,
+	Replace_Building_Scribe = 2372,
 
 	/// <summary>
-	/// Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Sewer</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Sewer,
+	Replace_Building_Sewer = 2373,
 
 	/// <summary>
 	/// Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 3 residents.
 	/// </summary>
 	/// <name>Replace Building Shelter</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Shelter,
+	Replace_Building_Shelter = 2374,
 
 	/// <summary>
 	/// Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade1), [food raw] grain Grain (grade2).
 	/// </summary>
 	/// <name>Replace Building SmallFarm</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_SmallFarm,
+	Replace_Building_SmallFarm = 2375,
 
 	/// <summary>
-	/// Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1). Can use: "[water] storm water" Storm Water.
+	/// <p>Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Smelter</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Smelter,
+	Replace_Building_Smelter = 2376,
 
 	/// <summary>
-	/// Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Smithy</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Smithy,
+	Replace_Building_Smithy = 2377,
 
 	/// <summary>
-	/// Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Smokehouse</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Smokehouse,
+	Replace_Building_Smokehouse = 2378,
 
 	/// <summary>
-	/// Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Stamping Mill</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Stamping_Mill,
+	Replace_Building_Stamping_Mill = 2379,
 
 	/// <summary>
 	/// Stonecutters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] stone Stone (grade2), [mat raw] clay Clay (grade2), [crafting] sea marrow Sea Marrow (grade2).
 	/// </summary>
 	/// <name>Replace Building Stonecutters Camp</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Stonecutters_Camp,
+	Replace_Building_Stonecutters_Camp = 2380,
 
 	/// <summary>
 	/// Small Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
 	/// </summary>
 	/// <name>Replace Building Storage</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Storage,
+	Replace_Building_Storage = 2381,
 
 	/// <summary>
-	/// Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Supplier</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Supplier,
+	Replace_Building_Supplier = 2382,
 
 	/// <summary>
 	/// Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
 	/// </summary>
 	/// <name>Replace Building Tavern</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Tavern,
+	Replace_Building_Tavern = 2383,
 
 	/// <summary>
 	/// Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Religion. Passive effects: Vitality.
 	/// </summary>
 	/// <name>Replace Building Tea Doctor</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Tea_Doctor,
+	Replace_Building_Tea_Doctor = 2384,
 
 	/// <summary>
-	/// Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Tea House</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Tea_House,
+	Replace_Building_Tea_House = 2385,
 
 	/// <summary>
 	/// Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
 	/// </summary>
 	/// <name>Replace Building Temple</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Temple,
+	Replace_Building_Temple = 2386,
 
 	/// <summary>
-	/// Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1). Can use: "[water] drizzle water" Drizzle Water.
+	/// <p>Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).</p>
+	/// <p>Can use: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Replace Building Tinctury</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Tinctury,
+	Replace_Building_Tinctury = 2387,
 
 	/// <summary>
-	/// Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Tinkerer</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Tinkerer,
+	Replace_Building_Tinkerer = 2388,
 
 	/// <summary>
-	/// Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2). Can use: "[water] storm water" Storm Water.
+	/// <p>Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Toolshop</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Toolshop,
+	Replace_Building_Toolshop = 2389,
 
 	/// <summary>
 	/// Trading Post - Traders from the Smoldering City can station here and offer their wares.
 	/// </summary>
 	/// <name>Replace Building TradingPost</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_TradingPost,
+	Replace_Building_TradingPost = 2390,
 
 	/// <summary>
 	/// Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).
 	/// </summary>
 	/// <name>Replace Building Trappers Camp</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Trappers_Camp,
+	Replace_Building_Trappers_Camp = 2391,
 
 	/// <summary>
 	/// Small Trappers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] meat Meat (grade1), [food raw] insects Insects (grade1), [food raw] eggs Eggs (grade1).
 	/// </summary>
 	/// <name>Replace Building Trappers Camp Primitive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Trappers_Camp_Primitive,
+	Replace_Building_Trappers_Camp_Primitive = 2392,
 
 	/// <summary>
-	/// Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+	/// <p>Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1).</p>
+	/// <p>Can use: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Replace Building Weaver</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Weaver,
+	Replace_Building_Weaver = 2393,
 
 	/// <summary>
 	/// Woodcutters' Camp - Starting point for woodcutters going out into the wild to cut down trees.
 	/// </summary>
 	/// <name>Replace Building Woodcutters Camp</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Woodcutters_Camp,
+	Replace_Building_Woodcutters_Camp = 2394,
 
 	/// <summary>
-	/// Workshop - Can produce:  [mat processed] planks Planks (grade2), [mat processed] fabric Fabric (grade2), [mat processed] bricks Bricks (grade2), [mat processed] pipe Pipes (grade0). Can use: "[water] storm water" Storm Water.
+	/// <p>Workshop - Can produce:  [mat processed] planks Planks (grade2), [mat processed] fabric Fabric (grade2), [mat processed] bricks Bricks (grade2), [mat processed] pipe Pipes (grade0).</p>
+	/// <p>Can use: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Replace Building Workshop</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Building_Workshop,
+	Replace_Building_Workshop = 2395,
 
 	/// <summary>
 	/// Decay - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
 	/// </summary>
 	/// <name>Replace Calm Ghost Chest</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Calm_Ghost_Chest,
+	Replace_Calm_Ghost_Chest = 2396,
 
 	/// <summary>
-	/// Converted Altar of Decay - <color=#D6E54A>Harmony.</color> Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves.
+	/// Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves.
 	/// </summary>
 	/// <name>Replace Decay Altar</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Decay_Altar,
+	Replace_Decay_Altar = 2397,
 
 	/// <summary>
-	/// Termite Nest - <color=#D6E54A>Harmony.</color> A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 "[crafting] sea marrow" Sea Marrow per minute. Counts as 16 decorations of its type.
+	/// Termite Nest - Harmony. A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 "[crafting] sea marrow" Sea Marrow per minute. Counts as 16 decorations of its type.
 	/// </summary>
 	/// <name>Replace Fishmen Lighthouse</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Fishmen_Lighthouse,
+	Replace_Fishmen_Lighthouse = 2398,
 
 	/// <summary>
-	/// Makeshift Extractor - <color=#8AAFFD>Aesthetics.</color> A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute.
+	/// Makeshift Extractor - Aesthetics. A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute.
 	/// </summary>
 	/// <name>Replace Fuming Machinery</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Fuming_Machinery,
+	Replace_Fuming_Machinery = 2399,
 
 	/// <summary>
-	/// Converted Harmony Spirit Altar - <color=#D6E54A>Harmony.</color> When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
+	/// Converted Harmony Spirit Altar - Harmony. When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Replace Harmony Altar</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Harmony_Altar,
+	Replace_Harmony_Altar = 2400,
 
 	/// <summary>
-	/// Obelisk - <color=#8AAFFD>Aesthetics.</color> The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
+	/// Obelisk - Aesthetics. The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
 	/// </summary>
 	/// <name>Replace Monolith</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Monolith,
+	Replace_Monolith = 2401,
 
 	/// <summary>
-	/// Converted Rain Totem - <color=#D6E54A>Harmony.</color> The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
+	/// Converted Rain Totem - Harmony. The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Replace Rain Totem</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Rain_Totem,
+	Replace_Rain_Totem = 2402,
 
 	/// <summary>
-	/// Converted Totem of Denial - <color=#D6E54A>Harmony.</color> Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
+	/// Converted Totem of Denial - Harmony. Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Replace Sacrifice Totem</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Sacrifice_Totem,
+	Replace_Sacrifice_Totem = 2403,
 
 	/// <summary>
-	/// Tamed Stormbird - <color=#D6E54A>Harmony.</color> The nest of a tamed Stormbird. It provides 5 "[food raw] eggs" Eggs per minute and increases Harpy Resolve by +3.
+	/// Tamed Stormbird - Harmony. The nest of a tamed Stormbird. It provides 5 "[food raw] eggs" Eggs per minute and increases Harpy Resolve by +3.
 	/// </summary>
 	/// <name>Replace Stormbird</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Stormbird,
+	Replace_Stormbird = 2404,
 
 	/// <summary>
-	/// Termite Nest - <color=#D6E54A>Harmony.</color> A contained stonetooth termite burrow. Provides 5 "[food raw] insects" Insects per minute. Counts as 4 decorations of its type.
+	/// Termite Nest - Harmony. A contained stonetooth termite burrow. Provides 5 "[food raw] insects" Insects per minute. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Replace Termite Burrow</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_Termite_Burrow,
+	Replace_Termite_Burrow = 2405,
 
 	/// <summary>
 	/// Excavation  - The first stage of the process. The ancient skeleton has to be unearthed.
 	/// </summary>
 	/// <name>Replace With Scorpion 2</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Scorpion_2,
+	Replace_With_Scorpion_2 = 2406,
 
 	/// <summary>
 	/// Conservation - Archaeologists carefully excavate and conserve the skeleton.
 	/// </summary>
 	/// <name>Replace With Scorpion 3</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Scorpion_3,
+	Replace_With_Scorpion_3 = 2407,
 
 	/// <summary>
-	/// Reconstruction - <color=#D6E54A>Harmony.</color> The reconstructed skeleton of an ancient species of scorpion. Increases Global Resolve for Reputation Points gained. Counts as 9 decorations of its type.
+	/// Reconstruction - Harmony. The reconstructed skeleton of an ancient species of scorpion. Increases Global Resolve for Reputation Points gained. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Replace With Scorpion Positive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Scorpion_Positive,
+	Replace_With_Scorpion_Positive = 2408,
 
 	/// <summary>
 	/// Excavation  - The first stage of the process. The ancient skeleton has to be unearthed.
 	/// </summary>
 	/// <name>Replace With Snake 2</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Snake_2,
+	Replace_With_Snake_2 = 2409,
 
 	/// <summary>
 	/// Conservation - Archaeologists carefully excavate and conserve the skeleton.
 	/// </summary>
 	/// <name>Replace With Snake 3</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Snake_3,
+	Replace_With_Snake_3 = 2410,
 
 	/// <summary>
-	/// Reconstruction - <color=#D6E54A>Harmony.</color> The reconstructed skeleton of an ancient species of snake. Grants "[crafting] sea marrow" sea marrow for "[metal] copper ore" copper ore production. Counts as 9 decorations of its type.
+	/// Reconstruction - Harmony. The reconstructed skeleton of an ancient species of snake. Grants "[crafting] sea marrow" sea marrow for "[metal] copper ore" copper ore production. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Replace With Snake Positive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Snake_Positive,
+	Replace_With_Snake_Positive = 2411,
 
 	/// <summary>
 	/// Excavation  - The first stage of the process. The ancient skeleton has to be unearthed.
 	/// </summary>
 	/// <name>Replace With Spider 2</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Spider_2,
+	Replace_With_Spider_2 = 2412,
 
 	/// <summary>
 	/// Conservation - Archaeologists carefully excavate and conserve the skeleton.
 	/// </summary>
 	/// <name>Replace With Spider 3</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Spider_3,
+	Replace_With_Spider_3 = 2413,
 
 	/// <summary>
-	/// Reconstruction - <color=#D6E54A>Harmony.</color> The reconstructed skeleton of an ancient species of spider.  Grants "[valuable] ancient tablet" ancient tablets for any discovered glades. Counts as 9 decorations of its type.
+	/// Reconstruction - Harmony. The reconstructed skeleton of an ancient species of spider.  Grants "[valuable] ancient tablet" ancient tablets for any discovered glades. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Replace With Spider Positive</name>
 	/// <type>ReplaceBuildingEffectModel</type>
-	Replace_With_Spider_Positive,
+	Replace_With_Spider_Positive = 2414,
 
 
 	//
@@ -17733,21 +17837,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Biome] Replace Initial Glade - Forge</name>
 	/// <type>ReplaceInitialGladeEffectModel</type>
-	Biome_Replace_Initial_Glade_Forge,
+	Biome_Replace_Initial_Glade_Forge = 2415,
 
 	/// <summary>
 	/// Strider Port - Your settlement begins on the coast of this strange land, near an ancient Strider Port. Use it to send out expeditions in search of blueprints and treasure. However, you will receive fewer blueprints from Reputation.
 	/// </summary>
 	/// <name>[Biome] Replace Initial Glade - Port</name>
 	/// <type>ReplaceInitialGladeEffectModel</type>
-	Biome_Replace_Initial_Glade_Port,
+	Biome_Replace_Initial_Glade_Port = 2416,
 
 	/// <summary>
 	/// Abandoned Settlement - Another Viceroy tried to settle this area, but unfortunately failed... You start with a small destroyed settlement in your initial glade.
 	/// </summary>
 	/// <name>[Mod] Replace Initial Glade - Ruins</name>
 	/// <type>ReplaceInitialGladeEffectModel</type>
-	Mod_Replace_Initial_Glade_Ruins,
+	Mod_Replace_Initial_Glade_Ruins = 2417,
 
 
 	//
@@ -17759,77 +17863,77 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>0_5 Reputation Donation</name>
 	/// <type>ReputationEffectModel</type>
-	_0_5_Reputation_Donation,
+	_0_5_Reputation_Donation = 2418,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 0.5. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>0_5 Reputation Exploration</name>
 	/// <type>ReputationEffectModel</type>
-	_0_5_Reputation_Exploration,
+	_0_5_Reputation_Exploration = 2419,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 0.5. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>0_5 Reputation Exploration - Seasonal Effect</name>
 	/// <type>ReputationEffectModel</type>
-	_0_5_Reputation_Exploration_Seasonal_Effect,
+	_0_5_Reputation_Exploration_Seasonal_Effect = 2420,
 
 	/// <summary>
 	/// Generous Donation - Reputation: 0.75. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>0_75 Reputation Donation</name>
 	/// <type>ReputationEffectModel</type>
-	_0_75_Reputation_Donation,
+	_0_75_Reputation_Donation = 2421,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 0.75. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>0_75 Reputation Exploration</name>
 	/// <type>ReputationEffectModel</type>
-	_0_75_Reputation_Exploration,
+	_0_75_Reputation_Exploration = 2422,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 1. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>1 Reputation Exploration</name>
 	/// <type>ReputationEffectModel</type>
-	_1_Reputation_Exploration,
+	_1_Reputation_Exploration = 2423,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 1. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>1 Reputation Exploration - Stormbird</name>
 	/// <type>ReputationEffectModel</type>
-	_1_Reputation_Exploration_Stormbird,
+	_1_Reputation_Exploration_Stormbird = 2424,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 1. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>1 Reputation Order</name>
 	/// <type>ReputationEffectModel</type>
-	_1_Reputation_Order,
+	_1_Reputation_Order = 2425,
 
 	/// <summary>
 	/// Reward_1ReputationPort_Name - Reputation: 1. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>1 Reputation Port</name>
 	/// <type>ReputationEffectModel</type>
-	_1_Reputation_Port,
+	_1_Reputation_Port = 2426,
 
 	/// <summary>
 	/// Queen's Grace - Reputation: 1. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>1 Reputation Trade</name>
 	/// <type>ReputationEffectModel</type>
-	_1_Reputation_Trade,
+	_1_Reputation_Trade = 2427,
 
 	/// <summary>
 	/// The Queen's Respect - You receive exceptionally high praise from the Queen. Gain 2 Reputation Points. Every full Reputation Point you acquire lowers Impatience.
 	/// </summary>
 	/// <name>3 Reputation Exploration</name>
 	/// <type>ReputationEffectModel</type>
-	_3_Reputation_Exploration,
+	_3_Reputation_Exploration = 2428,
 
 
 	//
@@ -17841,199 +17945,199 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>0_2 Reputation Penalty</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_0_2_Reputation_Penalty,
+	_0_2_Reputation_Penalty = 2429,
 
 	/// <summary>
 	/// 0.5
 	/// </summary>
 	/// <name>0_5 Reputation Penalty</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_0_5_Reputation_Penalty,
+	_0_5_Reputation_Penalty = 2430,
 
 	/// <summary>
 	/// Filthy Trick - The Crown won't tolerate this level of incompetence when dealing with the Blightrot. You receive 0.5 Impatience Points.
 	/// </summary>
 	/// <name>0_5 Reputation Penalty - Corrupted Caravan</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_0_5_Reputation_Penalty_Corrupted_Caravan,
+	_0_5_Reputation_Penalty_Corrupted_Caravan = 2431,
 
 	/// <summary>
 	/// Disappointment - The ghosts are disappointed in you. You receive 0.5 Impatience Points.
 	/// </summary>
 	/// <name>0_5 Reputation Penalty - Ghost</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_0_5_Reputation_Penalty_Ghost,
+	_0_5_Reputation_Penalty_Ghost = 2432,
 
 	/// <summary>
 	/// Cowardice - The Crown is disappointed in your cowardice. The knowledge obtained from the captain's maps would have been a valuable treasure for the Queen. You receive 0.5 Impatience Points.
 	/// </summary>
 	/// <name>0_5 Reputation Penalty - Merchant Ship Wreck</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_0_5_Reputation_Penalty_Merchant_Ship_Wreck,
+	_0_5_Reputation_Penalty_Merchant_Ship_Wreck = 2433,
 
 	/// <summary>
 	/// -0.5
 	/// </summary>
 	/// <name>0_5 Reputation Penalty - Minus</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_0_5_Reputation_Penalty_Minus,
+	_0_5_Reputation_Penalty_Minus = 2434,
 
 	/// <summary></summary>
 	/// <name>1 Reputation Penalty</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty,
+	_1_Reputation_Penalty = 2435,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Caravan</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Caravan,
+	_1_Reputation_Penalty_Caravan = 2436,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Convicts</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Convicts,
+	_1_Reputation_Penalty_Convicts = 2437,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Corupted Caravan</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Corupted_Caravan,
+	_1_Reputation_Penalty_Corupted_Caravan = 2438,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Decay Altar</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Decay_Altar,
+	_1_Reputation_Penalty_Decay_Altar = 2439,
 
 	/// <summary>
 	/// Infamy - Somehow, word of your decision has spread and reached the Queen. Viceroy executions are quite rare, but not as rare as you might hope. Gain 1 Impatience Point.
 	/// </summary>
 	/// <name>1 Reputation Penalty Decision</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Decision,
+	_1_Reputation_Penalty_Decision = 2440,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Fishmen Cave</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Fishmen_Cave,
+	_1_Reputation_Penalty_Fishmen_Cave = 2441,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Fishmen Lighthouse</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Fishmen_Lighthouse,
+	_1_Reputation_Penalty_Fishmen_Lighthouse = 2442,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Fishmen Soothsyer</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Fishmen_Soothsyer,
+	_1_Reputation_Penalty_Fishmen_Soothsyer = 2443,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Forsaken Crypt</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Forsaken_Crypt,
+	_1_Reputation_Penalty_Forsaken_Crypt = 2444,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Harmony Spirit Altar</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Harmony_Spirit_Altar,
+	_1_Reputation_Penalty_Harmony_Spirit_Altar = 2445,
 
 	/// <summary>
 	/// Irresponsible Archaeology - The crown doesn't like you tinkering with ancient relics. Impatience grows 1 faster.
 	/// </summary>
 	/// <name>1 Reputation Penalty - Sealed Tomb</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Sealed_Tomb,
+	_1_Reputation_Penalty_Sealed_Tomb = 2446,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Stormbird</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Stormbird,
+	_1_Reputation_Penalty_Stormbird = 2447,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Totem</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Totem,
+	_1_Reputation_Penalty_Totem = 2448,
 
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
 	/// <name>1 Reputation Penalty - Trader Cementary</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Trader_Cementary,
+	_1_Reputation_Penalty_Trader_Cementary = 2449,
 
 	/// <summary>
 	/// Queen's Wrath (Vassal Tax) - If you don't pay the tax, you will gain 1 Impatience Point.
 	/// </summary>
 	/// <name>1 Reputation Penalty - Vassal Tax</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_1_Reputation_Penalty_Vassal_Tax,
+	_1_Reputation_Penalty_Vassal_Tax = 2450,
 
 	/// <summary>
 	/// Queen's Wrath - 2 Impatience Points
 	/// </summary>
 	/// <name>2 Reputation Penalty</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_2_Reputation_Penalty,
+	_2_Reputation_Penalty = 2451,
 
 	/// <summary>
 	/// Queen's Wrath - Somehow, word of your decision has spread and reached the Queen. Viceroy executions are quite rare, but not as rare as you might hope. Gain 2 Impatience Points.
 	/// </summary>
 	/// <name>2 Reputation Penalty Decision</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_2_Reputation_Penalty_Decision,
+	_2_Reputation_Penalty_Decision = 2452,
 
 	/// <summary>
 	/// Queen's Wrath - 3 Impatience Points
 	/// </summary>
 	/// <name>3 Reputation Penalty</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	_3_Reputation_Penalty,
+	_3_Reputation_Penalty = 2453,
 
 	/// <summary>
 	/// Sparkdew Crystals - The crown warned you not to settle near giant Sparkdew Crystals. Start with 6 Impatience.
 	/// </summary>
 	/// <name>[Map Mod] Initial Impatience</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	Map_Mod_Initial_Impatience,
+	Map_Mod_Initial_Impatience = 2454,
 
 	/// <summary>
 	/// Disgrace - Somewhat... “unorthodox” culinary practices in one of your previous settlements have been brought to the Queen's attention. Start with 8 Impatience.
 	/// </summary>
 	/// <name>[Mod] Disgrace</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	Mod_Disgrace,
+	Mod_Disgrace = 2455,
 
 	/// <summary>
 	/// Gain 3 Impatience Points.
 	/// </summary>
 	/// <name>[PerkCrafter] Impatience</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	PerkCrafter_Impatience,
+	PerkCrafter_Impatience = 2456,
 
 	/// <summary></summary>
 	/// <name>Villager Death Reputation Penalty</name>
 	/// <type>ReputationPenaltyEffectModel</type>
-	Villager_Death_Reputation_Penalty,
+	Villager_Death_Reputation_Penalty = 2457,
 
 
 	//
@@ -18043,116 +18147,116 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Hidden From The Queen - Impatience</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	Hidden_From_The_Queen_Impatience,
+	Hidden_From_The_Queen_Impatience = 2458,
 
 	/// <summary></summary>
 	/// <name>Land of Greed - ReputationPenaltyRateMinus20</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	Land_Of_Greed_ReputationPenaltyRateMinus20,
+	Land_Of_Greed_ReputationPenaltyRateMinus20 = 2459,
 
 	/// <summary></summary>
 	/// <name>Land of Greed - ReputationPenaltyRatePlus50</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	Land_Of_Greed_ReputationPenaltyRatePlus50,
+	Land_Of_Greed_ReputationPenaltyRatePlus50 = 2460,
 
 	/// <summary>
 	/// Impatience grows 15% quicker.
 	/// </summary>
 	/// <name>[PerkCrafter] Impatience Rate</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	PerkCrafter_Impatience_Rate,
+	PerkCrafter_Impatience_Rate = 2461,
 
 	/// <summary></summary>
 	/// <name>ReputationPenaltyRate 15</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_15,
+	ReputationPenaltyRate_15 = 2462,
 
 	/// <summary></summary>
 	/// <name>ReputationPenaltyRate 4</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_4,
+	ReputationPenaltyRate_4 = 2463,
 
 	/// <summary></summary>
 	/// <name>ReputationPenaltyRate 5</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_5,
+	ReputationPenaltyRate_5 = 2464,
 
 	/// <summary>
 	/// Beacon - Human firekeepers create a special link with the Citadel. Impatience grows 25% slower.
 	/// </summary>
 	/// <name>ReputationPenaltyRate_HearthEffect_Human</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_HearthEffect_Human,
+	ReputationPenaltyRate_HearthEffect_Human = 2465,
 
 	/// <summary>
 	/// Irresponsible Archaeology - The crown doesn't like you tinkering with ancient relics. Impatience grows 100% faster.
 	/// </summary>
 	/// <name>ReputationPenaltyRate Vault 100</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_Vault_100,
+	ReputationPenaltyRate_Vault_100 = 2466,
 
 	/// <summary>
 	/// Irresponsible Archaeology - The crown doesn't like you tinkering with ancient relics. Impatience grows 125% faster.
 	/// </summary>
 	/// <name>ReputationPenaltyRate Vault 125</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_Vault_125,
+	ReputationPenaltyRate_Vault_125 = 2467,
 
 	/// <summary>
 	/// Irresponsible Archaeology - The crown doesn't like you tinkering with ancient relics. Impatience grows 150% faster.
 	/// </summary>
 	/// <name>ReputationPenaltyRate Vault 150</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_Vault_150,
+	ReputationPenaltyRate_Vault_150 = 2468,
 
 	/// <summary>
 	/// Irresponsible Archaeology - The crown doesn't like you tinkering with ancient relics. Impatience grows 175% faster.
 	/// </summary>
 	/// <name>ReputationPenaltyRate Vault 175</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	ReputationPenaltyRate_Vault_175,
+	ReputationPenaltyRate_Vault_175 = 2469,
 
 	/// <summary>
 	/// Frequent Caravans
 	/// </summary>
 	/// <name>Resolve for started Route - impatience slower</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	Resolve_For_Started_Route_Impatience_Slower,
+	Resolve_For_Started_Route_Impatience_Slower = 2470,
 
 	/// <summary>
 	/// Vassal Tax - Impatience grows 33% faster.
 	/// </summary>
 	/// <name>SE ReputationPenaltyRate 100</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	SE_ReputationPenaltyRate_100,
+	SE_ReputationPenaltyRate_100 = 2471,
 
 	/// <summary>
 	/// Important Matters - Impatience grows 70% slower during drizzle season. The Queen seems to be preoccupied with more pressing matters.
 	/// </summary>
 	/// <name>SE ReputationPenaltyRate 25</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	SE_ReputationPenaltyRate_25,
+	SE_ReputationPenaltyRate_25 = 2472,
 
 	/// <summary>
 	/// Effect_TW_ImpatienceRate_Name - Effect_TW_ImpatienceRate_Desc
 	/// </summary>
 	/// <name>[TW] ReputationPenaltyRate</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	TW_ReputationPenaltyRate,
+	TW_ReputationPenaltyRate = 2473,
 
 	/// <summary>
 	/// Irresponsible Gamble - The Crown disapproves of your behavior. Impatience grows 40% quicker.
 	/// </summary>
 	/// <name>[WE] ReputationPenaltyRate 30</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	WE_ReputationPenaltyRate_30,
+	WE_ReputationPenaltyRate_30 = 2474,
 
 	/// <summary>
 	/// Insane Gamble - The Crown is furious that you are gambling with forbidden relics. Impatience grows 65% quicker.
 	/// </summary>
 	/// <name>[WE] ReputationPenaltyRate 50</name>
 	/// <type>ReputationPenaltyRateEffectModel</type>
-	WE_ReputationPenaltyRate_50,
+	WE_ReputationPenaltyRate_50 = 2475,
 
 
 	//
@@ -18164,14 +18268,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Mod] Fewer Blueprints Options</name>
 	/// <type>ReputationRewardsBonusOptionsEffectModel</type>
-	Mod_Fewer_Blueprints_Options,
+	Mod_Fewer_Blueprints_Options = 2476,
 
 	/// <summary>
 	/// Stingy Archivist - The Obsidian Archivist assigned to your village is particularly stingy. There is only one blueprint to choose from.
 	/// </summary>
 	/// <name>[Mod] Stingy Archivist</name>
 	/// <type>ReputationRewardsBonusOptionsEffectModel</type>
-	Mod_Stingy_Archivist,
+	Mod_Stingy_Archivist = 2477,
 
 
 	//
@@ -18183,14 +18287,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Mod] Higher Blueprints Reroll Cost</name>
 	/// <type>ReputationRewardsRerollCostEffectModel</type>
-	Mod_Higher_Blueprints_Reroll_Cost,
+	Mod_Higher_Blueprints_Reroll_Cost = 2478,
 
 	/// <summary>
 	/// The Eremite's Way - A thought provoking piece on dealing with life's toughest decisions. Blueprint rerolls cost 10 less Amber.
 	/// </summary>
 	/// <name>[WE] Lower Blueprints Reroll Cost</name>
 	/// <type>ReputationRewardsRerollCostEffectModel</type>
-	WE_Lower_Blueprints_Reroll_Cost,
+	WE_Lower_Blueprints_Reroll_Cost = 2479,
 
 
 	//
@@ -18202,154 +18306,154 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Less Resolve from Biscuits</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Biscuits,
+	Less_Resolve_From_Biscuits = 2480,
 
 	/// <summary>
 	/// Changes favoring by -1.
 	/// </summary>
 	/// <name>Less Resolve from Jerky</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Jerky,
+	Less_Resolve_From_Jerky = 2481,
 
 	/// <summary>
 	/// Changes favoring by -1.
 	/// </summary>
 	/// <name>Less Resolve from Paste</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Paste,
+	Less_Resolve_From_Paste = 2482,
 
 	/// <summary>
 	/// Changes favoring by -1.
 	/// </summary>
 	/// <name>Less Resolve from Pickled Goods</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Pickled_Goods,
+	Less_Resolve_From_Pickled_Goods = 2483,
 
 	/// <summary>
 	/// Changes favoring by -1.
 	/// </summary>
 	/// <name>Less Resolve from Pie</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Pie,
+	Less_Resolve_From_Pie = 2484,
 
 	/// <summary>
 	/// Changes favoring by -1.
 	/// </summary>
 	/// <name>Less Resolve from Porridge</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Porridge,
+	Less_Resolve_From_Porridge = 2485,
 
 	/// <summary>
 	/// Changes favoring by -1.
 	/// </summary>
 	/// <name>Less Resolve from Skewers</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	Less_Resolve_From_Skewers,
+	Less_Resolve_From_Skewers = 2486,
 
 	/// <summary>
 	/// Long Term Contract - Workers who are assigned to a workplace that matches their comfort specialization receive an additional +2 Resolve from the "Comfortable" effect.
 	/// </summary>
 	/// <name>More Resolve for Comfortable</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_For_Comfortable,
+	More_Resolve_For_Comfortable = 2487,
 
 	/// <summary>
 	/// Water Pipeline
 	/// </summary>
 	/// <name>More Resolve for Rainpunk</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_For_Rainpunk,
+	More_Resolve_For_Rainpunk = 2488,
 
 	/// <summary>
 	/// Changes favoring by 3.
 	/// </summary>
 	/// <name>More Resolve from Coats</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_From_Coats,
+	More_Resolve_From_Coats = 2489,
 
 	/// <summary>
 	/// Changes favoring by 2.
 	/// </summary>
 	/// <name>More Resolve from Jerky</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_From_Jerky,
+	More_Resolve_From_Jerky = 2490,
 
 	/// <summary>
 	/// Changes favoring by 2.
 	/// </summary>
 	/// <name>More Resolve from Paste</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_From_Paste,
+	More_Resolve_From_Paste = 2491,
 
 	/// <summary>
 	/// Changes favoring by 2.
 	/// </summary>
 	/// <name>More Resolve from Pie</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_From_Pie,
+	More_Resolve_From_Pie = 2492,
 
 	/// <summary>
 	/// Changes favoring by 2.
 	/// </summary>
 	/// <name>More Resolve from Skewers</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	More_Resolve_From_Skewers,
+	More_Resolve_From_Skewers = 2493,
 
 	/// <summary>
 	/// The Negligence penalty for unfavored species increases by -2.
 	/// </summary>
 	/// <name>[PerkCrafter] Expensive Favoring</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_Expensive_Favoring,
+	PerkCrafter_Expensive_Favoring = 2494,
 
 	/// <summary>
 	/// The need for basic housing grants -1 less Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] Less Resolve From Shelter</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_Less_Resolve_From_Shelter,
+	PerkCrafter_Less_Resolve_From_Shelter = 2495,
 
 	/// <summary>
 	/// The fulfilled biscuit need gives 1 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Biscuits 1</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Biscuits_1,
+	PerkCrafter_More_Resolve_From_Biscuits_1 = 2496,
 
 	/// <summary>
 	/// The fulfilled biscuit need gives 2 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Biscuits 2</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Biscuits_2,
+	PerkCrafter_More_Resolve_From_Biscuits_2 = 2497,
 
 	/// <summary>
 	/// Reward_PerkCrafter_MoreResolveForPaste_Desc
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Biscutis and Pie 2 - child (pie)</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Biscutis_And_Pie_2_Child_pie,
+	PerkCrafter_More_Resolve_From_Biscutis_And_Pie_2_Child_pie = 2498,
 
 	/// <summary>
 	/// The fulfilled religion need gives 1 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Religion 1</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_1,
+	PerkCrafter_More_Resolve_From_Religion_1 = 2499,
 
 	/// <summary>
 	/// The fulfilled religion need gives 2 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Religion 2</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_2,
+	PerkCrafter_More_Resolve_From_Religion_2 = 2500,
 
 	/// <summary>
 	/// The fulfilled religion need gives 2 more Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] More Resolve from Religion and Treatment 2 - child (treatment)</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2_Child_treatment,
+	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2_Child_treatment = 2501,
 
 
 	//
@@ -18359,26 +18463,26 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Higher Villagers Resilience 2</name>
 	/// <type>ResolveNegativeChangeRateEffectModel</type>
-	Higher_Villagers_Resilience_2,
+	Higher_Villagers_Resilience_2 = 2502,
 
 	/// <summary></summary>
 	/// <name>Higher Villagers Resilience 30</name>
 	/// <type>ResolveNegativeChangeRateEffectModel</type>
-	Higher_Villagers_Resilience_30,
+	Higher_Villagers_Resilience_30 = 2503,
 
 	/// <summary>
 	/// Sensitivity - All species become less Resilient. Resolve drops 500% faster.
 	/// </summary>
 	/// <name>Resilience Resolve Drops Faster</name>
 	/// <type>ResolveNegativeChangeRateEffectModel</type>
-	Resilience_Resolve_Drops_Faster,
+	Resilience_Resolve_Drops_Faster = 2504,
 
 	/// <summary>
 	/// Aura of Fear - The dark skies above the settlement awaken a primal fear in all villagers. During the storm, all species' Resolve drops 100% faster.
 	/// </summary>
 	/// <name>SE Resolve Fast Drop in Storm</name>
 	/// <type>ResolveNegativeChangeRateEffectModel</type>
-	SE_Resolve_Fast_Drop_In_Storm,
+	SE_Resolve_Fast_Drop_In_Storm = 2505,
 
 
 	//
@@ -18390,49 +18494,49 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Blight Rate for Resolve Reputation - No Rep From Resolve</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Blight_Rate_For_Resolve_Reputation_No_Rep_From_Resolve,
+	Blight_Rate_For_Resolve_Reputation_No_Rep_From_Resolve = 2506,
 
 	/// <summary></summary>
 	/// <name>[Map Mod] No Reputation from Resolve</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Map_Mod_No_Reputation_From_Resolve,
+	Map_Mod_No_Reputation_From_Resolve = 2507,
 
 	/// <summary></summary>
 	/// <name>Resolve To Reputation -50</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Resolve_To_Reputation_Minus50,
+	Resolve_To_Reputation_Minus50 = 2508,
 
 	/// <summary></summary>
 	/// <name>Resolve To Reputation -75</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Resolve_To_Reputation_Minus75,
+	Resolve_To_Reputation_Minus75 = 2509,
 
 	/// <summary></summary>
 	/// <name>Resolve To Reputation -80</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Resolve_To_Reputation_Minus80,
+	Resolve_To_Reputation_Minus80 = 2510,
 
 	/// <summary></summary>
 	/// <name>Resolve To Reputation +20</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Resolve_To_Reputation_Plus20,
+	Resolve_To_Reputation_Plus20 = 2511,
 
 	/// <summary></summary>
 	/// <name>Resolve To Reputation +5</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Resolve_To_Reputation_Plus5,
+	Resolve_To_Reputation_Plus5 = 2512,
 
 	/// <summary></summary>
 	/// <name>Resolve To Reputation +50</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	Resolve_To_Reputation_Plus50,
+	Resolve_To_Reputation_Plus50 = 2513,
 
 	/// <summary>
 	/// Warm Welcome - Increases Reputation gained from Resolve by 100%.
 	/// </summary>
 	/// <name>SE Resolve To Reputation +100 [Warm Welcome]</name>
 	/// <type>ResolveToReputationRateEffectModel</type>
-	SE_Resolve_To_Reputation_Plus100_Warm_Welcome,
+	SE_Resolve_To_Reputation_Plus100_Warm_Welcome = 2514,
 
 
 	//
@@ -18444,21 +18548,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Black Stag Reward Chase</name>
 	/// <type>RewardChaseEffectModel</type>
-	Black_Stag_Reward_Chase,
+	Black_Stag_Reward_Chase = 2515,
 
 	/// <summary>
 	/// Into the Mists - The treasure stag escapes to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"), hiding from mortal sight.
 	/// </summary>
 	/// <name>Gold Stag Reward Chase</name>
 	/// <type>RewardChaseEffectModel</type>
-	Gold_Stag_Reward_Chase,
+	Gold_Stag_Reward_Chase = 2516,
 
 	/// <summary>
 	/// Into the Mists - The treasure stag escapes to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"), hiding from mortal sight.
 	/// </summary>
 	/// <name>White Stag Reward Chase</name>
 	/// <type>RewardChaseEffectModel</type>
-	White_Stag_Reward_Chase,
+	White_Stag_Reward_Chase = 2517,
 
 
 	//
@@ -18470,112 +18574,112 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Black Stag Reward Catch</name>
 	/// <type>RewardsPackEffectModel</type>
-	Black_Stag_Reward_Catch,
+	Black_Stag_Reward_Catch = 2518,
 
 	/// <summary>
 	/// Gift of Gratitude - In return for letting it go, the Black Treasure Stag offers you one random legendary Cornerstone.
 	/// </summary>
 	/// <name>Black Stag Reward Release</name>
 	/// <type>RewardsPackEffectModel</type>
-	Black_Stag_Reward_Release,
+	Black_Stag_Reward_Release = 2519,
 
 	/// <summary>
 	/// Cursed Treasure - You will take all of the treasure, but the forest will curse your riches for robbing one of its ancient spirits.
 	/// </summary>
 	/// <name>Gold Stag Reward Catch</name>
 	/// <type>RewardsPackEffectModel</type>
-	Gold_Stag_Reward_Catch,
+	Gold_Stag_Reward_Catch = 2520,
 
 	/// <summary>
 	/// Gift of Gratitude - The Golden Treasure Stag will share some of its riches with you.
 	/// </summary>
 	/// <name>Gold Stag Reward Release</name>
 	/// <type>RewardsPackEffectModel</type>
-	Gold_Stag_Reward_Release,
+	Gold_Stag_Reward_Release = 2521,
 
 	/// <summary>
 	/// Big Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Big</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Big,
+	Rewards_Pack_Big = 2522,
 
 	/// <summary>
 	/// Big Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Big 1</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Big_1,
+	Rewards_Pack_Big_1 = 2523,
 
 	/// <summary>
 	/// Medium Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Medium</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Medium,
+	Rewards_Pack_Medium = 2524,
 
 	/// <summary>
 	/// Medium Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Medium 1</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Medium_1,
+	Rewards_Pack_Medium_1 = 2525,
 
 	/// <summary>
 	/// Epic Sunken Treasure - An old, heavy treasure chest covered in algae.
 	/// </summary>
 	/// <name>Rewards Pack Port - Epic</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Port_Epic,
+	Rewards_Pack_Port_Epic = 2526,
 
 	/// <summary>
 	/// Legendary Sunken Treasure - An old, heavy treasure chest covered in algae.
 	/// </summary>
 	/// <name>Rewards Pack Port - Legendary</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Port_Legendary,
+	Rewards_Pack_Port_Legendary = 2527,
 
 	/// <summary>
 	/// Rare Sunken Treasure - An old, heavy treasure chest covered in algae.
 	/// </summary>
 	/// <name>Rewards Pack Port - Rare</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Port_Rare,
+	Rewards_Pack_Port_Rare = 2528,
 
 	/// <summary>
 	/// Uncommon Sunken Treasure - An old, heavy treasure chest covered in algae.
 	/// </summary>
 	/// <name>Rewards Pack Port - Uncommon</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Port_Uncommon,
+	Rewards_Pack_Port_Uncommon = 2529,
 
 	/// <summary>
 	/// Small Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Small</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Small,
+	Rewards_Pack_Small = 2530,
 
 	/// <summary>
 	/// Small Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Small 1</name>
 	/// <type>RewardsPackEffectModel</type>
-	Rewards_Pack_Small_1,
+	Rewards_Pack_Small_1 = 2531,
 
 	/// <summary>
 	/// Cursed Treasure - Capturing the mythical White Stag for the Queen will earn you reputation and fame, but the forest will remember this insult.
 	/// </summary>
 	/// <name>White Stag Reward Catch</name>
 	/// <type>RewardsPackEffectModel</type>
-	White_Stag_Reward_Catch,
+	White_Stag_Reward_Catch = 2532,
 
 	/// <summary>
 	/// Gift of Gratitude - The Royal Treasure Stag offers a moderate increase to your reputation. You will gain the favor of the spirits, which will please your villagers.
 	/// </summary>
 	/// <name>White Stag Reward Release</name>
 	/// <type>RewardsPackEffectModel</type>
-	White_Stag_Reward_Release,
+	White_Stag_Reward_Release = 2533,
 
 
 	//
@@ -18587,7 +18691,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Flooding Remove Roads</name>
 	/// <type>RoadsFloodEffectModel</type>
-	Flooding_Remove_Roads,
+	Flooding_Remove_Roads = 2534,
 
 
 	//
@@ -18599,7 +18703,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>SaveVillagersForAncientTablets</name>
 	/// <type>SaveVillagerForGoodsEffectModel</type>
-	SaveVillagersForAncientTablets,
+	SaveVillagersForAncientTablets = 2535,
 
 
 	//
@@ -18611,28 +18715,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Fishmen Higher Negative Mysteries</name>
 	/// <type>SeasonalEffectsMinHostilityChangeEffectModel</type>
-	Fishmen_Higher_Negative_Mysteries,
+	Fishmen_Higher_Negative_Mysteries = 2536,
 
 	/// <summary>
 	/// Airbender - Storm clouds seem softer. All Negative Forest Mysteries require a higher Hostility level (+1) to activate during the Storm.
 	/// </summary>
 	/// <name>Fishmen Lower Negative Mysteries</name>
 	/// <type>SeasonalEffectsMinHostilityChangeEffectModel</type>
-	Fishmen_Lower_Negative_Mysteries,
+	Fishmen_Lower_Negative_Mysteries = 2537,
 
 	/// <summary>
 	/// Negative Forest Mysteries require a lower Hostility level (-1) to activate during the Storm.
 	/// </summary>
 	/// <name>[PerkCrafter] Negative Seasonal Effects Sooner</name>
 	/// <type>SeasonalEffectsMinHostilityChangeEffectModel</type>
-	PerkCrafter_Negative_Seasonal_Effects_Sooner,
+	PerkCrafter_Negative_Seasonal_Effects_Sooner = 2538,
 
 	/// <summary>
 	/// Plague of Mysteries - The Sealed Ones possess the power to control almost everything. Negative Forest Mysteries require a lower Hostility level (-3) to activate during the storm.
 	/// </summary>
 	/// <name>TEST Plague of Mysteries</name>
 	/// <type>SeasonalEffectsMinHostilityChangeEffectModel</type>
-	TEST_Plague_Of_Mysteries,
+	TEST_Plague_Of_Mysteries = 2539,
 
 
 	//
@@ -18644,21 +18748,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] One Perk</name>
 	/// <type>SeasonalRewardsBonusOptionsEffectModel</type>
-	Map_Mod_One_Perk,
+	Map_Mod_One_Perk = 2540,
 
 	/// <summary>
 	/// Restrictions - The Royal Envoy comes to you with bad news. The Queen has restricted your cornerstone choices by 2.
 	/// </summary>
 	/// <name>[Mod] Fewer Cornerstones Options</name>
 	/// <type>SeasonalRewardsBonusOptionsEffectModel</type>
-	Mod_Fewer_Cornerstones_Options,
+	Mod_Fewer_Cornerstones_Options = 2541,
 
 	/// <summary>
 	/// The Other Settlement - This time, it's you who is at the end of the envoy's tour. There is only one cornerstone to choose from.
 	/// </summary>
 	/// <name>[Mod] The Other Settlement</name>
 	/// <type>SeasonalRewardsBonusOptionsEffectModel</type>
-	Mod_The_Other_Settlement,
+	Mod_The_Other_Settlement = 2542,
 
 
 	//
@@ -18668,7 +18772,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>New Season Change Block Effect Model</name>
 	/// <type>SeasonChangeBlockEffectModel</type>
-	New_Season_Change_Block_Effect_Model,
+	New_Season_Change_Block_Effect_Model = 2543,
 
 
 	//
@@ -18678,7 +18782,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>New Season Change Effect Model</name>
 	/// <type>SeasonChangeEffectModel</type>
-	New_Season_Change_Effect_Model,
+	New_Season_Change_Effect_Model = 2544,
 
 
 	//
@@ -18690,92 +18794,92 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Longer Clearance +25</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Longer_Clearance_Plus25,
+	Longer_Clearance_Plus25 = 2545,
 
 	/// <summary>
 	/// Drizzle Totem - +25% to Drizzle duration.
 	/// </summary>
 	/// <name>Longer Drizzle +25</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Longer_Drizzle_Plus25,
+	Longer_Drizzle_Plus25 = 2546,
 
 	/// <summary></summary>
 	/// <name>Longer Storm +10</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Longer_Storm_Plus10,
+	Longer_Storm_Plus10 = 2547,
 
 	/// <summary></summary>
 	/// <name>Longer Storm +100</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Longer_Storm_Plus100,
+	Longer_Storm_Plus100 = 2548,
 
 	/// <summary></summary>
 	/// <name>Longer Storm +40</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Longer_Storm_Plus40,
+	Longer_Storm_Plus40 = 2549,
 
 	/// <summary></summary>
 	/// <name>[Map Mod] Longer Storm 5</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Map_Mod_Longer_Storm_5,
+	Map_Mod_Longer_Storm_5 = 2550,
 
 	/// <summary>
 	/// Crumbling Seal - One of the seals is loosening its grip, leaking darkness upon this land. Storm season lasts 100% longer.
 	/// </summary>
 	/// <name>[Mod] Longer Storm</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Mod_Longer_Storm,
+	Mod_Longer_Storm = 2551,
 
 	/// <summary>
 	/// Weather Anomaly - Something is wrong with the weather patterns in this area. +100% to Storm duration.
 	/// </summary>
 	/// <name>ModifierEffect_LongStorm</name>
 	/// <type>SeasonLengthEffectModel</type>
-	ModifierEffect_LongStorm,
+	ModifierEffect_LongStorm = 2552,
 
 	/// <summary>
 	/// The storm lasts 20% longer.
 	/// </summary>
 	/// <name>[PerkCrafter] Longer Storm</name>
 	/// <type>SeasonLengthEffectModel</type>
-	PerkCrafter_Longer_Storm,
+	PerkCrafter_Longer_Storm = 2553,
 
 	/// <summary></summary>
 	/// <name>Rain Totem Longer Storm</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Rain_Totem_Longer_Storm,
+	Rain_Totem_Longer_Storm = 2554,
 
 	/// <summary></summary>
 	/// <name>Rain Totem Shorter Clearance</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Rain_Totem_Shorter_Clearance,
+	Rain_Totem_Shorter_Clearance = 2555,
 
 	/// <summary></summary>
 	/// <name>Rain Totem Shorter Drizzle</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Rain_Totem_Shorter_Drizzle,
+	Rain_Totem_Shorter_Drizzle = 2556,
 
 	/// <summary></summary>
 	/// <name>Shorter Storm 25</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Shorter_Storm_25,
+	Shorter_Storm_25 = 2557,
 
 	/// <summary></summary>
 	/// <name>Shorter Storm 33</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Shorter_Storm_33,
+	Shorter_Storm_33 = 2558,
 
 	/// <summary></summary>
 	/// <name>Shorter Storm 50</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Shorter_Storm_50,
+	Shorter_Storm_50 = 2559,
 
 	/// <summary>
 	/// Storm Shield - -15% to Storm duration.
 	/// </summary>
 	/// <name>Shorter Storm -15</name>
 	/// <type>SeasonLengthEffectModel</type>
-	Shorter_Storm_Minus15,
+	Shorter_Storm_Minus15 = 2560,
 
 
 	//
@@ -18785,14 +18889,14 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Spawn Blood Flower Near Hearth</name>
 	/// <type>SpawnBuildingAroundHearth</type>
-	Spawn_Blood_Flower_Near_Hearth,
+	Spawn_Blood_Flower_Near_Hearth = 2561,
 
 	/// <summary>
 	/// Plague of Fishmen - Fishmen will summon 1 Dangerous or Forbidden Glade Event near the Ancient Hearth.
 	/// </summary>
 	/// <name>TEST Plague of Fishmen</name>
 	/// <type>SpawnBuildingAroundHearth</type>
-	TEST_Plague_Of_Fishmen,
+	TEST_Plague_Of_Fishmen = 2562,
 
 
 	//
@@ -18804,47 +18908,47 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Spawn 3 Fishmen Totems - Fishmen Cave</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_3_Fishmen_Totems_Fishmen_Cave,
+	Spawn_3_Fishmen_Totems_Fishmen_Cave = 2563,
 
 	/// <summary>
 	/// Decay - Spawns 2 to 3 Blood Flowers.
 	/// </summary>
 	/// <name>Spawn Blightrot Around - Battleground</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_Blightrot_Around_Battleground,
+	Spawn_Blightrot_Around_Battleground = 2564,
 
 	/// <summary>
 	/// Life from Beneath - Rotten matter creeps up from underneath the Burial Site. Spawns 6 Blood Flowers.
 	/// </summary>
 	/// <name>Spawn Blightrot Around - Burial Site</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_Blightrot_Around_Burial_Site,
+	Spawn_Blightrot_Around_Burial_Site = 2565,
 
 	/// <summary>
 	/// Decay - 2
 	/// </summary>
 	/// <name>Spawn Blightrot Around - Fishmen</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_Blightrot_Around_Fishmen,
+	Spawn_Blightrot_Around_Fishmen = 2566,
 
 	/// <summary></summary>
 	/// <name>Spawn Blightrot Around - Rainpunk Foundry</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_Blightrot_Around_Rainpunk_Foundry,
+	Spawn_Blightrot_Around_Rainpunk_Foundry = 2567,
 
 	/// <summary>
 	/// Decay - The remains of the royal guard begin to decay. Spawns between 4 and 6 Blood Flowers upon activation.
 	/// </summary>
 	/// <name>Spawn Blightrot Around - War Beast</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_Blightrot_Around_War_Beast,
+	Spawn_Blightrot_Around_War_Beast = 2568,
 
 	/// <summary>
 	/// Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
 	/// </summary>
 	/// <name>Spawn Fishmen Totem - Fishmen Cave</name>
 	/// <type>SpawnBuildingNearbyEffectModel</type>
-	Spawn_Fishmen_Totem_Fishmen_Cave,
+	Spawn_Fishmen_Totem_Fishmen_Cave = 2569,
 
 
 	//
@@ -18856,14 +18960,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[PerkCrafter] Totem On Death</name>
 	/// <type>SpawnBuildingOnDeathEffectModel</type>
-	PerkCrafter_Totem_On_Death,
+	PerkCrafter_Totem_On_Death = 2570,
 
 	/// <summary>
 	/// Death and Decay - This damp and rotting landscape is the perfect breeding ground for sickness. Every villager that dies during the storm instantly turns into a Blood Flower.
 	/// </summary>
 	/// <name>SE Spawn Blightrot on Death</name>
 	/// <type>SpawnBuildingOnDeathEffectModel</type>
-	SE_Spawn_Blightrot_On_Death,
+	SE_Spawn_Blightrot_On_Death = 2571,
 
 
 	//
@@ -18873,7 +18977,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Spawn Living Matter On Farmfield</name>
 	/// <type>SpawnBuildingOnFarmfieldEffectModel</type>
-	Spawn_Living_Matter_On_Farmfield,
+	Spawn_Living_Matter_On_Farmfield = 2572,
 
 
 	//
@@ -18885,63 +18989,63 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>SE Overheating - Spawn Cysts</name>
 	/// <type>SpawnCystsEffectModel</type>
-	SE_Overheating_Spawn_Cysts,
+	SE_Overheating_Spawn_Cysts = 2573,
 
 	/// <summary>
 	/// Blight from the Sky - Blightrot seems to grow uncontrollably quickly in this region. Every storm season, 1 Blightrot Cysts appear in the settlement (multiplied by the number of years that have passed).
 	/// </summary>
 	/// <name>SE Spawn Cysts 2</name>
 	/// <type>SpawnCystsEffectModel</type>
-	SE_Spawn_Cysts_2,
+	SE_Spawn_Cysts_2 = 2574,
 
 	/// <summary></summary>
 	/// <name>SE Spawn Cysts 2 - Villagers</name>
 	/// <type>SpawnCystsEffectModel</type>
-	SE_Spawn_Cysts_2_Villagers,
+	SE_Spawn_Cysts_2_Villagers = 2575,
 
 	/// <summary>
 	/// 1
 	/// </summary>
 	/// <name>Spawn Cysts 1 - hostility</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_1_Hostility,
+	Spawn_Cysts_1_Hostility = 2576,
 
 	/// <summary>
 	/// 1
 	/// </summary>
 	/// <name>Spawn Cysts 1 - overexploitation</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_1_Overexploitation,
+	Spawn_Cysts_1_Overexploitation = 2577,
 
 	/// <summary></summary>
 	/// <name>Spawn Cysts 1 - Tree</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_1_Tree,
+	Spawn_Cysts_1_Tree = 2578,
 
 	/// <summary></summary>
 	/// <name>Spawn Cysts 10 - mole</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_10_Mole,
+	Spawn_Cysts_10_Mole = 2579,
 
 	/// <summary></summary>
 	/// <name>Spawn Cysts 2 - cauldron</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_2_Cauldron,
+	Spawn_Cysts_2_Cauldron = 2580,
 
 	/// <summary></summary>
 	/// <name>Spawn Cysts 2 - machinery</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_2_Machinery,
+	Spawn_Cysts_2_Machinery = 2581,
 
 	/// <summary></summary>
 	/// <name>Spawn Cysts 5 - machinery</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_5_Machinery,
+	Spawn_Cysts_5_Machinery = 2582,
 
 	/// <summary></summary>
 	/// <name>Spawn Cysts 5 - mod</name>
 	/// <type>SpawnCystsEffectModel</type>
-	Spawn_Cysts_5_Mod,
+	Spawn_Cysts_5_Mod = 2583,
 
 
 	//
@@ -18953,7 +19057,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Mod] Petrified Necropolis - Spawn Deposit On Death</name>
 	/// <type>SpawnDepositOnDeathEffectModel</type>
-	Mod_Petrified_Necropolis_Spawn_Deposit_On_Death,
+	Mod_Petrified_Necropolis_Spawn_Deposit_On_Death = 2584,
 
 
 	//
@@ -18965,27 +19069,27 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Spawn Ferile Soil Around - Cauldron</name>
 	/// <type>SpawnFertileSoilAroundEffectModel</type>
-	Spawn_Ferile_Soil_Around_Cauldron,
+	Spawn_Ferile_Soil_Around_Cauldron = 2585,
 
 	/// <summary></summary>
 	/// <name>Spawn Patch Haunted Ruins</name>
 	/// <type>SpawnFertileSoilAroundEffectModel</type>
-	Spawn_Patch_Haunted_Ruins,
+	Spawn_Patch_Haunted_Ruins = 2586,
 
 	/// <summary></summary>
 	/// <name>Spawn Patch Homestead Ruin</name>
 	/// <type>SpawnFertileSoilAroundEffectModel</type>
-	Spawn_Patch_Homestead_Ruin,
+	Spawn_Patch_Homestead_Ruin = 2587,
 
 	/// <summary></summary>
 	/// <name>Spawn Patch Ruins</name>
 	/// <type>SpawnFertileSoilAroundEffectModel</type>
-	Spawn_Patch_Ruins,
+	Spawn_Patch_Ruins = 2588,
 
 	/// <summary></summary>
 	/// <name>Spawn Small Patch</name>
 	/// <type>SpawnFertileSoilAroundEffectModel</type>
-	Spawn_Small_Patch,
+	Spawn_Small_Patch = 2589,
 
 
 	//
@@ -18997,21 +19101,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Rainpuink Drill - Spawn Ore Around - Coal</name>
 	/// <type>SpawnOreAroundEffectModel</type>
-	Rainpuink_Drill_Spawn_Ore_Around_Coal,
+	Rainpuink_Drill_Spawn_Ore_Around_Coal = 2590,
 
 	/// <summary>
 	/// Geological Survey - After carefully studying this strange piece of machinery, we can use it to our advantage. Spawns 2 to 3 copper ore veins nearby.
 	/// </summary>
 	/// <name>Rainpuink Drill - Spawn Ore Around - Copper</name>
 	/// <type>SpawnOreAroundEffectModel</type>
-	Rainpuink_Drill_Spawn_Ore_Around_Copper,
+	Rainpuink_Drill_Spawn_Ore_Around_Copper = 2591,
 
 	/// <summary>
 	/// Geological Survey - After carefully studying this strange piece of machinery, we can use it to our advantage. Spawns 2 to 3 salt veins nearby.
 	/// </summary>
 	/// <name>Rainpuink Drill - Spawn Ore Around - Salt</name>
 	/// <type>SpawnOreAroundEffectModel</type>
-	Rainpuink_Drill_Spawn_Ore_Around_Salt,
+	Rainpuink_Drill_Spawn_Ore_Around_Salt = 2592,
 
 
 	//
@@ -19023,7 +19127,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Spawn Random Spring</name>
 	/// <type>SpawnSpringEffectModel</type>
-	Spawn_Random_Spring,
+	Spawn_Random_Spring = 2593,
 
 
 	//
@@ -19033,7 +19137,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Spawn Storage Automaton</name>
 	/// <type>SpawnStorageAutomatonEffectModel</type>
-	Spawn_Storage_Automaton,
+	Spawn_Storage_Automaton = 2594,
 
 
 	//
@@ -19045,28 +19149,28 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Effect_CaravanTradeBlock</name>
 	/// <type>TradeBlockEffectModel</type>
-	Effect_CaravanTradeBlock,
+	Effect_CaravanTradeBlock = 2595,
 
 	/// <summary>
 	/// Deserted Caravans - Traders are afraid, and will not visit this area. Neither trading nor trade routes are available.
 	/// </summary>
 	/// <name>Effect_DesertedCaravans</name>
 	/// <type>TradeBlockEffectModel</type>
-	Effect_DesertedCaravans,
+	Effect_DesertedCaravans = 2596,
 
 	/// <summary>
 	/// Bandit Camp - Traders are afraid, and will not visit this area. Neither trading nor trade routes are available.
 	/// </summary>
 	/// <name>ModifierEffect_TradeBlock</name>
 	/// <type>TradeBlockEffectModel</type>
-	ModifierEffect_TradeBlock,
+	ModifierEffect_TradeBlock = 2597,
 
 	/// <summary>
 	/// Market Shift Plan
 	/// </summary>
 	/// <name>More Trade Offers - Trader Block</name>
 	/// <type>TradeBlockEffectModel</type>
-	More_Trade_Offers_Trader_Block,
+	More_Trade_Offers_Trader_Block = 2598,
 
 
 	//
@@ -19076,7 +19180,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Trader Assault - 2 more Impatience</name>
 	/// <type>TraderAssaultExtraConsequenceEffectModel</type>
-	Trader_Assault_2_More_Impatience,
+	Trader_Assault_2_More_Impatience = 2599,
 
 
 	//
@@ -19088,7 +19192,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Map Mod] Trader Attack</name>
 	/// <type>TraderAttackPenaltiesBlockEffectModel</type>
-	Map_Mod_Trader_Attack,
+	Map_Mod_Trader_Attack = 2600,
 
 
 	//
@@ -19098,7 +19202,7 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Royal Guard Attack Unlock</name>
 	/// <type>TraderAttackUnlockEffectModel</type>
-	Royal_Guard_Attack_Unlock,
+	Royal_Guard_Attack_Unlock = 2601,
 
 
 	//
@@ -19110,19 +19214,19 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Mod] Higher Traders Prices</name>
 	/// <type>TraderGlobalSellPriceEffectModel</type>
-	Mod_Higher_Traders_Prices,
+	Mod_Higher_Traders_Prices = 2602,
 
 	/// <summary></summary>
 	/// <name>Trader Prices Lower -5</name>
 	/// <type>TraderGlobalSellPriceEffectModel</type>
-	Trader_Prices_Lower_Minus5,
+	Trader_Prices_Lower_Minus5 = 2603,
 
 	/// <summary>
 	/// Tit for Tat - A quick cover-up of this crime will prevent any serious consequences. Otherwise, the Merchant Guild will retaliate. All your goods are worth 50% less to traders.
 	/// </summary>
 	/// <name>Traders Prices +50</name>
 	/// <type>TraderGlobalSellPriceEffectModel</type>
-	Traders_Prices_Plus50,
+	Traders_Prices_Plus50 = 2604,
 
 
 	//
@@ -19134,83 +19238,83 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Amber Curse</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Amber_Curse,
+	Amber_Curse = 2605,
 
 	/// <summary></summary>
 	/// <name>Amber Worth 5 More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Amber_Worth_5_More,
+	Amber_Worth_5_More = 2606,
 
 	/// <summary></summary>
 	/// <name>Amber Worth Bit More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Amber_Worth_Bit_More,
+	Amber_Worth_Bit_More = 2607,
 
 	/// <summary>
 	/// Enriched Amber - A golden, sticky substance. It glows when it touches Amber ("[valuable] amber" Amber is now worth 25% more to traders).
 	/// </summary>
 	/// <name>Amber Worth More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Amber_Worth_More,
+	Amber_Worth_More = 2608,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Worth More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Building_Worth_More,
+	Pack_Of_Building_Worth_More = 2609,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Worth More 33</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Building_Worth_More_33,
+	Pack_Of_Building_Worth_More_33 = 2610,
 
 	/// <summary>
 	/// Tight Packaging - "[packs] pack of crops" Packs of crops are worth 20% more.
 	/// </summary>
 	/// <name>Pack of Crops Worth More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Crops_Worth_More,
+	Pack_Of_Crops_Worth_More = 2611,
 
 	/// <summary></summary>
 	/// <name>Pack of Crops Worth More 1</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Crops_Worth_More_1,
+	Pack_Of_Crops_Worth_More_1 = 2612,
 
 	/// <summary></summary>
 	/// <name>Pack of Crops Worth More 33</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Crops_Worth_More_33,
+	Pack_Of_Crops_Worth_More_33 = 2613,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury Worth More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Luxury_Worth_More,
+	Pack_Of_Luxury_Worth_More = 2614,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury Worth More 33</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Luxury_Worth_More_33,
+	Pack_Of_Luxury_Worth_More_33 = 2615,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions Worth More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Provisions_Worth_More,
+	Pack_Of_Provisions_Worth_More = 2616,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions Worth More 33</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Provisions_Worth_More_33,
+	Pack_Of_Provisions_Worth_More_33 = 2617,
 
 	/// <summary>
 	/// Value Added Tax - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 25% more when sold through trade routes or directly to traders.
 	/// </summary>
 	/// <name>Pack of Trade Goods Worth More</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Trade_Goods_Worth_More,
+	Pack_Of_Trade_Goods_Worth_More = 2618,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods Worth More 33</name>
 	/// <type>TraderGoodSellPriceEffectModel</type>
-	Pack_Of_Trade_Goods_Worth_More_33,
+	Pack_Of_Trade_Goods_Worth_More_33 = 2619,
 
 
 	//
@@ -19222,49 +19326,49 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Institution Trader Interval +50</name>
 	/// <type>TraderIntervalEffectModel</type>
-	Institution_Trader_Interval_Plus50,
+	Institution_Trader_Interval_Plus50 = 2620,
 
 	/// <summary>
 	/// Clear Skies - Increases the speed at which traders arrive by 300%.
 	/// </summary>
 	/// <name>SE Trader Interval +300 [Clear Skies]</name>
 	/// <type>TraderIntervalEffectModel</type>
-	SE_Trader_Interval_Plus300_Clear_Skies,
+	SE_Trader_Interval_Plus300_Clear_Skies = 2621,
 
 	/// <summary>
 	/// Infamous Viceroy - Traders will avoid this settlement if possible and will arrive 50% slower.
 	/// </summary>
 	/// <name>Trader Interval -50</name>
 	/// <type>TraderIntervalEffectModel</type>
-	Trader_Interval_Minus50,
+	Trader_Interval_Minus50 = 2622,
 
 	/// <summary>
 	/// Beneficial Agreement - Traders will arrive 15% quicker.
 	/// </summary>
 	/// <name>Trader Interval +15</name>
 	/// <type>TraderIntervalEffectModel</type>
-	Trader_Interval_Plus15,
+	Trader_Interval_Plus15 = 2623,
 
 	/// <summary>
 	/// Trade Contract - Traders will arrive 25% quicker.
 	/// </summary>
 	/// <name>Trader Interval +25</name>
 	/// <type>TraderIntervalEffectModel</type>
-	Trader_Interval_Plus25,
+	Trader_Interval_Plus25 = 2624,
 
 	/// <summary>
 	/// Traders will arrive 33% quicker.
 	/// </summary>
 	/// <name>Trader Interval +33</name>
 	/// <type>TraderIntervalEffectModel</type>
-	Trader_Interval_Plus33,
+	Trader_Interval_Plus33 = 2625,
 
 	/// <summary>
 	/// Traders will arrive 50% quicker.
 	/// </summary>
 	/// <name>Tut III Faster Traders</name>
 	/// <type>TraderIntervalEffectModel</type>
-	Tut_III_Faster_Traders,
+	Tut_III_Faster_Traders = 2626,
 
 
 	//
@@ -19276,12 +19380,12 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Extra Trader Merch</name>
 	/// <type>TraderMerchAmountEffectModel</type>
-	Extra_Trader_Merch,
+	Extra_Trader_Merch = 2627,
 
 	/// <summary></summary>
 	/// <name>Less Trader Merch</name>
 	/// <type>TraderMerchAmountEffectModel</type>
-	Less_Trader_Merch,
+	Less_Trader_Merch = 2628,
 
 
 	//
@@ -19291,14 +19395,14 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Merchandise Price Reduction Effect Model</name>
 	/// <type>TraderMerchandisePriceReductionEffectModel</type>
-	Merchandise_Price_Reduction_Effect_Model,
+	Merchandise_Price_Reduction_Effect_Model = 2629,
 
 	/// <summary>
 	/// Perks and blueprints sold by traders are 20% more expensive.
 	/// </summary>
 	/// <name>[PerkCrafter] Trader Merch More Expensive</name>
 	/// <type>TraderMerchandisePriceReductionEffectModel</type>
-	PerkCrafter_Trader_Merch_More_Expensive,
+	PerkCrafter_Trader_Merch_More_Expensive = 2630,
 
 
 	//
@@ -19310,14 +19414,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>TradeRoutePlus1</name>
 	/// <type>TradeRoutesAmountEffectModel</type>
-	TradeRoutePlus1,
+	TradeRoutePlus1 = 2631,
 
 	/// <summary>
 	/// Gain 2 additional active trade route slots.
 	/// </summary>
 	/// <name>TradeRoutePlus2</name>
 	/// <type>TradeRoutesAmountEffectModel</type>
-	TradeRoutePlus2,
+	TradeRoutePlus2 = 2632,
 
 
 	//
@@ -19329,33 +19433,33 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] Trade Routes Bonus Fuel</name>
 	/// <type>TradeRoutesBonusFuelEffectModel</type>
-	Altar_Trade_Routes_Bonus_Fuel,
+	Altar_Trade_Routes_Bonus_Fuel = 2633,
 
 	/// <summary>
 	/// Travel cost of trade routes is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Trade Route Fuel</name>
 	/// <type>TradeRoutesBonusFuelEffectModel</type>
-	PerkCrafter_Trade_Route_Fuel,
+	PerkCrafter_Trade_Route_Fuel = 2634,
 
 	/// <summary>
 	/// Flooded Roads - As a result of heavy rainfall, during the storm, the travel cost of trade routes increases by 2.
 	/// </summary>
 	/// <name>SE Trade Routes Costs More in Storm</name>
 	/// <type>TradeRoutesBonusFuelEffectModel</type>
-	SE_Trade_Routes_Costs_More_In_Storm,
+	SE_Trade_Routes_Costs_More_In_Storm = 2635,
 
 	/// <summary>
 	/// Tightened Belt - Travel cost on trade routes is reduced by 1. Doesn't apply to routes already in progress. This effect scales along with the quantity of goods exported.
 	/// </summary>
 	/// <name>Trade Routes Bonus Fuel</name>
 	/// <type>TradeRoutesBonusFuelEffectModel</type>
-	Trade_Routes_Bonus_Fuel,
+	Trade_Routes_Bonus_Fuel = 2636,
 
 	/// <summary></summary>
 	/// <name>Trade Routes More Expensive</name>
 	/// <type>TradeRoutesBonusFuelEffectModel</type>
-	Trade_Routes_More_Expensive,
+	Trade_Routes_More_Expensive = 2637,
 
 
 	//
@@ -19367,14 +19471,14 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] More Amber from Routes</name>
 	/// <type>TradeRoutesBonusRewardsEffectModel</type>
-	Altar_More_Amber_From_Routes,
+	Altar_More_Amber_From_Routes = 2638,
 
 	/// <summary>
 	/// Trade Negotiations - Trade routes are worth 1 more "[valuable] amber" Amber. Doesn't apply to routes already in progress. This effect scales along with the quantity of goods exported.
 	/// </summary>
 	/// <name>More Amber from Routes</name>
 	/// <type>TradeRoutesBonusRewardsEffectModel</type>
-	More_Amber_From_Routes,
+	More_Amber_From_Routes = 2639,
 
 
 	//
@@ -19386,54 +19490,54 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[BT] Trade Routes Bonus - child</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	BT_Trade_Routes_Bonus_Child,
+	BT_Trade_Routes_Bonus_Child = 2640,
 
 	/// <summary>
 	/// Trade routes are 10% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Trade Route Speed 10</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	PerkCrafter_Trade_Route_Speed_10,
+	PerkCrafter_Trade_Route_Speed_10 = 2641,
 
 	/// <summary>
 	/// Trade routes are 15% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Trade Route Speed 15</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	PerkCrafter_Trade_Route_Speed_15,
+	PerkCrafter_Trade_Route_Speed_15 = 2642,
 
 	/// <summary>
 	/// Trade routes are 20% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Trade Route Speed 20</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	PerkCrafter_Trade_Route_Speed_20,
+	PerkCrafter_Trade_Route_Speed_20 = 2643,
 
 	/// <summary>
 	/// Trade routes are 5% faster.
 	/// </summary>
 	/// <name>[PerkCrafter] Trade Route Speed 5</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	PerkCrafter_Trade_Route_Speed_5,
+	PerkCrafter_Trade_Route_Speed_5 = 2644,
 
 	/// <summary>
 	/// Stormwalker Training - Your villagers learn how to travel the wilderness from the very best - the Royal Stormwalkers. All trade routes are faster by 40%.
 	/// </summary>
 	/// <name>Route Less Travel Time</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	Route_Less_Travel_Time,
+	Route_Less_Travel_Time = 2645,
 
 	/// <summary></summary>
 	/// <name>Route Less Travel Time 33</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	Route_Less_Travel_Time_33,
+	Route_Less_Travel_Time_33 = 2646,
 
 	/// <summary>
 	/// Stormwalker Training - Your villagers learn how to travel the wilderness from the very best - the Royal Stormwalkers. All trade routes are faster by 5%.
 	/// </summary>
 	/// <name>Route Less Travel Time 5</name>
 	/// <type>TradeRoutesSpeedEffectModel</type>
-	Route_Less_Travel_Time_5,
+	Route_Less_Travel_Time_5 = 2647,
 
 
 	//
@@ -19445,7 +19549,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Tutorial Death Missile</name>
 	/// <type>TutorialDeathMissileEffectModel</type>
-	Tutorial_Death_Missile,
+	Tutorial_Death_Missile = 2648,
 
 
 	//
@@ -19457,21 +19561,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>[Altar] Hidden From The Queen</name>
 	/// <type>VillagerDeathEffectBlockEffectModel</type>
-	Altar_Hidden_From_The_Queen,
+	Altar_Hidden_From_The_Queen = 2649,
 
 	/// <summary>
 	/// Dark Secret - Suspiciously little news from your settlement reaches the Citadel. Impatience doesn't grow when villagers leave or die.
 	/// </summary>
 	/// <name>[Mod] VillagerDeathEffectBlock</name>
 	/// <type>VillagerDeathEffectBlockEffectModel</type>
-	Mod_VillagerDeathEffectBlock,
+	Mod_VillagerDeathEffectBlock = 2650,
 
 	/// <summary>
 	/// Hidden from the Queen - The crown doesn't need to know everything. Impatience doesn't grow when villagers leave or die.
 	/// </summary>
 	/// <name>VillagerDeathEffectBlock</name>
 	/// <type>VillagerDeathEffectBlockEffectModel</type>
-	VillagerDeathEffectBlock,
+	VillagerDeathEffectBlock = 2651,
 
 
 	//
@@ -19481,22 +19585,22 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Break Time -3</name>
 	/// <type>VillagersBreakTimeRateEffectModel</type>
-	Break_Time_Minus3,
+	Break_Time_Minus3 = 2652,
 
 	/// <summary></summary>
 	/// <name>Break Time -50</name>
 	/// <type>VillagersBreakTimeRateEffectModel</type>
-	Break_Time_Minus50,
+	Break_Time_Minus50 = 2653,
 
 	/// <summary></summary>
 	/// <name>Break Time +25</name>
 	/// <type>VillagersBreakTimeRateEffectModel</type>
-	Break_Time_Plus25,
+	Break_Time_Plus25 = 2654,
 
 	/// <summary></summary>
 	/// <name>Break Time +50</name>
 	/// <type>VillagersBreakTimeRateEffectModel</type>
-	Break_Time_Plus50,
+	Break_Time_Plus50 = 2655,
 
 
 	//
@@ -19506,62 +19610,62 @@ public enum EffectTypes
 	/// <summary></summary>
 	/// <name>Killed Scout</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Killed_Scout,
+	Killed_Scout = 2656,
 
 	/// <summary>
 	/// 2 villagers die.
 	/// </summary>
 	/// <name>[PerkCrafter] Killed Villagers</name>
 	/// <type>VillagersDeathEffectModel</type>
-	PerkCrafter_Killed_Villagers,
+	PerkCrafter_Killed_Villagers = 2657,
 
 	/// <summary>
 	/// Death from Beyond - Old tales talk of horrific, bloodthirsty apparitions emerging from beyond Dark Gates. Kills 10 random villagers.
 	/// </summary>
 	/// <name>Random Killed 10</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Random_Killed_10,
+	Random_Killed_10 = 2658,
 
 	/// <summary>
 	/// Forbidden Ritual - Horrible sacrifices are offered to the creatures trapped beneath the ancient seals. Perhaps this will keep them at rest for a while longer. Pray this never reaches the Queen's ears. Kills 1 random villager.
 	/// </summary>
 	/// <name>Relic Ritual 1</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Relic_Ritual_1,
+	Relic_Ritual_1 = 2659,
 
 	/// <summary>
 	/// Forbidden Ritual - Horrible sacrifices are offered to the creatures trapped beneath the ancient seals. Perhaps this will keep them at rest for a while longer. Pray this never reaches the Queen's ears. Kills 1 random villager.
 	/// </summary>
 	/// <name>Relic Ritual 2</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Relic_Ritual_2,
+	Relic_Ritual_2 = 2660,
 
 	/// <summary></summary>
 	/// <name>Sacrificed 1</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Sacrificed_1,
+	Sacrificed_1 = 2661,
 
 	/// <summary></summary>
 	/// <name>Sacrificed 1 Noxious Machinery</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Sacrificed_1_Noxious_Machinery,
+	Sacrificed_1_Noxious_Machinery = 2662,
 
 	/// <summary></summary>
 	/// <name>Sacrificed 3 - Plague of Death</name>
 	/// <type>VillagersDeathEffectModel</type>
-	Sacrificed_3_Plague_Of_Death,
+	Sacrificed_3_Plague_Of_Death = 2663,
 
 	/// <summary>
 	/// Grim Fate - The forest will claim a villager's life during each storm (multiplied by the number of years that have passed).
 	/// </summary>
 	/// <name>SE Grim Fate</name>
 	/// <type>VillagersDeathEffectModel</type>
-	SE_Grim_Fate,
+	SE_Grim_Fate = 2664,
 
 	/// <summary></summary>
 	/// <name>[WE] Desecrator Villager Death</name>
 	/// <type>VillagersDeathEffectModel</type>
-	WE_Desecrator_Villager_Death,
+	WE_Desecrator_Villager_Death = 2665,
 
 
 	//
@@ -19573,84 +19677,84 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Beavers Killed 3 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Beavers_Killed_3_Missiles,
+	Beavers_Killed_3_Missiles = 2666,
 
 	/// <summary>
 	/// Blood for Blood - The Restless Spirits want revenge, or they will never find peace. Kills 3 villagers (Foxes).
 	/// </summary>
 	/// <name>Foxes Killed 3 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Foxes_Killed_3_Missiles,
+	Foxes_Killed_3_Missiles = 2667,
 
 	/// <summary>
 	/// Blood for Blood - The Restless Spirits want revenge, or they will never find peace. Kills 3 villagers (Harpies).
 	/// </summary>
 	/// <name>Harpies Killed 3 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Harpies_Killed_3_Missiles,
+	Harpies_Killed_3_Missiles = 2668,
 
 	/// <summary>
 	/// Blood for Blood - The Restless Spirits want revenge, or they will never find peace. Kills 3 villagers (Humans).
 	/// </summary>
 	/// <name>Humans Killed 3 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Humans_Killed_3_Missiles,
+	Humans_Killed_3_Missiles = 2669,
 
 	/// <summary>
 	/// Blood for Blood - The Restless Spirits want revenge, or they will never find peace. Kills 3 villagers (Lizards).
 	/// </summary>
 	/// <name>Lizards Killed 3 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Lizards_Killed_3_Missiles,
+	Lizards_Killed_3_Missiles = 2670,
 
 	/// <summary>
 	/// 2
 	/// </summary>
 	/// <name>Random Killed 2 - Blood Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Random_Killed_2_Blood_Missiles,
+	Random_Killed_2_Blood_Missiles = 2671,
 
 	/// <summary>
 	/// Watery Grave - The kelpie's eerie howl warns the villagers of a great threat. Summons a deadly wave that pulls 2 villagers underwater, drowning them.
 	/// </summary>
 	/// <name>Random Killed 2 - Kelpie Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Random_Killed_2_Kelpie_Missiles,
+	Random_Killed_2_Kelpie_Missiles = 2672,
 
 	/// <summary>
 	/// 2
 	/// </summary>
 	/// <name>Random Killed 2 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Random_Killed_2_Missiles,
+	Random_Killed_2_Missiles = 2673,
 
 	/// <summary>
 	/// Voice of the Sealed Ones - The corruption weakens the Holy Flame's protective power and faint whispers from beyond turn into terrifying screams. Kills 3 random villagers.
 	/// </summary>
 	/// <name>Random Killed 3 - Corruption</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Random_Killed_3_Corruption,
+	Random_Killed_3_Corruption = 2674,
 
 	/// <summary>
 	/// Curse of the Forefathers - Disturbing the ruins of the Great Civilization can have grave consequences. Kills 3 random villagers.
 	/// </summary>
 	/// <name>Random Killed 3 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Random_Killed_3_Missiles,
+	Random_Killed_3_Missiles = 2675,
 
 	/// <summary>
 	/// Curse of the Forefathers - Disturbing the ruins of the Great Civilization can have grave consequences. Kills 5 random villagers.
 	/// </summary>
 	/// <name>Random Killed 5 - Missiles</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	Random_Killed_5_Missiles,
+	Random_Killed_5_Missiles = 2676,
 
 	/// <summary>
 	/// Cloaked Wanderer's Vengeance
 	/// </summary>
 	/// <name>[WE] Random Killed - Cloaked Wanderer</name>
 	/// <type>VillagersDeathMissileEffectModel</type>
-	WE_Random_Killed_Cloaked_Wanderer,
+	WE_Random_Killed_Cloaked_Wanderer = 2677,
 
 
 	//
@@ -19662,7 +19766,7 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>VillagerFoodEffect Poisoned Food</name>
 	/// <type>VillagersFoodPerkEffectModel</type>
-	VillagerFoodEffect_Poisoned_Food,
+	VillagerFoodEffect_Poisoned_Food = 2678,
 
 
 	//
@@ -19674,21 +19778,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Amber Payment - Villagers Leaving</name>
 	/// <type>VillagersLeavingEffectModel</type>
-	Amber_Payment_Villagers_Leaving,
+	Amber_Payment_Villagers_Leaving = 2679,
 
 	/// <summary>
 	/// Recall (Land Tax) - If you don't pay the tax, the Crown will recall 2 villagers back to the Citadel.
 	/// </summary>
 	/// <name>Exploration Tax - Villagers Leaving</name>
 	/// <type>VillagersLeavingEffectModel</type>
-	Exploration_Tax_Villagers_Leaving,
+	Exploration_Tax_Villagers_Leaving = 2680,
 
 	/// <summary>
 	/// Disappearance - If you don't deliver the required goods for the sacrifice, 2 villagers will disappear.
 	/// </summary>
 	/// <name>SE Wood Payment - Villagers Leaving</name>
 	/// <type>VillagersLeavingEffectModel</type>
-	SE_Wood_Payment_Villagers_Leaving,
+	SE_Wood_Payment_Villagers_Leaving = 2681,
 
 
 	//
@@ -19700,47 +19804,47 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Global Chance of Death</name>
 	/// <type>VillagersPerkEffectModel</type>
-	Global_Chance_Of_Death,
+	Global_Chance_Of_Death = 2682,
 
 	/// <summary></summary>
 	/// <name>Houses +1 - break time</name>
 	/// <type>VillagersPerkEffectModel</type>
-	Houses_Plus1_Break_Time,
+	Houses_Plus1_Break_Time = 2683,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval 10</name>
 	/// <type>VillagersPerkEffectModel</type>
-	PerkCrafter_Break_Interval_10,
+	PerkCrafter_Break_Interval_10 = 2684,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval 12</name>
 	/// <type>VillagersPerkEffectModel</type>
-	PerkCrafter_Break_Interval_12,
+	PerkCrafter_Break_Interval_12 = 2685,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +4%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval 4</name>
 	/// <type>VillagersPerkEffectModel</type>
-	PerkCrafter_Break_Interval_4,
+	PerkCrafter_Break_Interval_4 = 2686,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +7%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval 7</name>
 	/// <type>VillagersPerkEffectModel</type>
-	PerkCrafter_Break_Interval_7,
+	PerkCrafter_Break_Interval_7 = 2687,
 
 	/// <summary>
 	/// Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
 	/// </summary>
 	/// <name>SE Longer Break Interval</name>
 	/// <type>VillagersPerkEffectModel</type>
-	SE_Longer_Break_Interval,
+	SE_Longer_Break_Interval = 2688,
 
 
 	//
@@ -19752,68 +19856,68 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>0_10 On Roads</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	_0_10_On_Roads,
+	_0_10_On_Roads = 2689,
 
 	/// <summary></summary>
 	/// <name>0_25 On Roads</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	_0_25_On_Roads,
+	_0_25_On_Roads = 2690,
 
 	/// <summary>
 	/// Curse of Weakness - Villagers move 30% slower.
 	/// </summary>
 	/// <name>Rain Totem Slow</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	Rain_Totem_Slow,
+	Rain_Totem_Slow = 2691,
 
 	/// <summary>
 	/// Muddy Ground - Villagers' speed off-road is decreased by 30%.
 	/// </summary>
 	/// <name>SE M0_60 Off Roads [Muddy Ground]</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	SE_M0_60_Off_Roads_Muddy_Ground,
+	SE_M0_60_Off_Roads_Muddy_Ground = 2692,
 
 	/// <summary>
 	/// Settlement Map - Villagers move 10% quicker.
 	/// </summary>
 	/// <name>VillagerSpeed10</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	VillagerSpeed10,
+	VillagerSpeed10 = 2693,
 
 	/// <summary>
 	/// Settlement Map - Villagers move 15% quicker.
 	/// </summary>
 	/// <name>VillagerSpeed15</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	VillagerSpeed15,
+	VillagerSpeed15 = 2694,
 
 	/// <summary>
 	/// Villagers move 25% quicker.
 	/// </summary>
 	/// <name>VillagerSpeed25</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	VillagerSpeed25,
+	VillagerSpeed25 = 2695,
 
 	/// <summary>
 	/// Settlement Map - Villagers move 30% quicker.
 	/// </summary>
 	/// <name>VillagerSpeed30</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	VillagerSpeed30,
+	VillagerSpeed30 = 2696,
 
 	/// <summary>
 	/// Curse of Weakness - Villagers move 25% slower.
 	/// </summary>
 	/// <name>VillagersSlow20</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	VillagersSlow20,
+	VillagersSlow20 = 2697,
 
 	/// <summary>
 	/// Plague of Blindness - Villagers move 30% slower.
 	/// </summary>
 	/// <name>VillagersSlow30 Plague</name>
 	/// <type>VillagersSpeedEffectModel</type>
-	VillagersSlow30_Plague,
+	VillagersSlow30_Plague = 2698,
 
 
 	//
@@ -19825,31 +19929,31 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Clearence water 50 pm</name>
 	/// <type>WaterPerMinEffectModel</type>
-	Clearence_Water_50_Pm,
+	Clearence_Water_50_Pm = 2699,
 
 	/// <summary></summary>
 	/// <name>Drizzle water 50 pm</name>
 	/// <type>WaterPerMinEffectModel</type>
-	Drizzle_Water_50_Pm,
+	Drizzle_Water_50_Pm = 2700,
 
 	/// <summary>
 	/// Groundwater Extraction - Gain 10 "[water] clearance water" Clearance Water per minute.
 	/// </summary>
 	/// <name>Makeshift Extractor - Clearance Water per minute</name>
 	/// <type>WaterPerMinEffectModel</type>
-	Makeshift_Extractor_Clearance_Water_Per_Minute,
+	Makeshift_Extractor_Clearance_Water_Per_Minute = 2701,
 
 	/// <summary>
 	/// Drizzle Anomaly - The rain seems to fall... slower. Gain 15 "[water] drizzle water" Drizzle Water per minute during the drizzle.
 	/// </summary>
 	/// <name>[SE] Drizzle Water per minute</name>
 	/// <type>WaterPerMinEffectModel</type>
-	SE_Drizzle_Water_Per_Minute,
+	SE_Drizzle_Water_Per_Minute = 2702,
 
 	/// <summary></summary>
 	/// <name>Storm water 50 pm</name>
 	/// <type>WaterPerMinEffectModel</type>
-	Storm_Water_50_Pm,
+	Storm_Water_50_Pm = 2703,
 
 
 	//
@@ -19861,21 +19965,21 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Wildcard Pick Cornerstone</name>
 	/// <type>WildcardPickEffectModel</type>
-	Wildcard_Pick_Cornerstone,
+	Wildcard_Pick_Cornerstone = 2704,
 
 	/// <summary>
 	/// Summoned Smuggler (Stormforged) - Somehow, the priestess knows the smuggler... and can summon him for a price. You can choose two blueprints from all unlocked blueprints.
 	/// </summary>
 	/// <name>Wildcard Pick Cursed</name>
 	/// <type>WildcardPickEffectModel</type>
-	Wildcard_Pick_Cursed,
+	Wildcard_Pick_Cursed = 2705,
 
 	/// <summary>
 	/// Contraband - Let's hope the Queen doesn't find out. You can choose one blueprint from all unlocked blueprints.
 	/// </summary>
 	/// <name>Wildcard Pick Trader</name>
 	/// <type>WildcardPickEffectModel</type>
-	Wildcard_Pick_Trader,
+	Wildcard_Pick_Trader = 2706,
 
 
 	//
@@ -19887,354 +19991,354 @@ public enum EffectTypes
 	/// </summary>
 	/// <name>Blight Fighter Speed</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Blight_Fighter_Speed,
+	Blight_Fighter_Speed = 2707,
 
 	/// <summary>
 	/// Reward_WorkplacePerk_ExtremeNoise_Desc
 	/// </summary>
 	/// <name>Extreme Noise in Crude Workstation</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Extreme_Noise_In_Crude_Workstation,
+	Extreme_Noise_In_Crude_Workstation = 2708,
 
 	/// <summary>
 	/// Lightweight Axes - Woodcutters move +20% faster.
 	/// </summary>
 	/// <name>Faster Woodcutters</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Faster_Woodcutters,
+	Faster_Woodcutters = 2709,
 
 	/// <summary></summary>
 	/// <name>Forced Improvisation</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Forced_Improvisation,
+	Forced_Improvisation = 2710,
 
 	/// <summary>
 	/// Travel Rations - With provisions, haulers don't have to return to the Hearth as often. Increases time between breaks for haulers by +50%.
 	/// </summary>
 	/// <name>Hauler Break Interval - main storage</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Hauler_Break_Interval_Main_Storage,
+	Hauler_Break_Interval_Main_Storage = 2711,
 
 	/// <summary>
 	/// Travel Rations - With provisions, haulers don't have to return to the Hearth as often. Increases time between breaks for haulers by +50%.
 	/// </summary>
 	/// <name>Hauler Break Interval - small storage</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Hauler_Break_Interval_Small_Storage,
+	Hauler_Break_Interval_Small_Storage = 2712,
 
 	/// <summary>
 	/// Specialized Workwear - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 	/// </summary>
 	/// <name>Hauler Speed - main storage</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Hauler_Speed_Main_Storage,
+	Hauler_Speed_Main_Storage = 2713,
 
 	/// <summary>
 	/// Specialized Workwear - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 	/// </summary>
 	/// <name>Hauler Speed - small storage</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Hauler_Speed_Small_Storage,
+	Hauler_Speed_Small_Storage = 2714,
 
 	/// <summary>
 	/// Flame Amulets - Woodcutters have a +20% chance of producing twice the normal yield.
 	/// </summary>
 	/// <name>LessHostilityPerMiner- Proficiency 1</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	LessHostilityPerMiner_Proficiency_1,
+	LessHostilityPerMiner_Proficiency_1 = 2715,
 
 	/// <summary>
 	/// Flame Amulets - Woodcutters have a +20% chance of producing twice the normal yield.
 	/// </summary>
 	/// <name>LessHostilityPerWoodcutter - Proficiency</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	LessHostilityPerWoodcutter_Proficiency,
+	LessHostilityPerWoodcutter_Proficiency = 2716,
 
 	/// <summary></summary>
 	/// <name>Mole_FisherResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_FisherResolvePenalty_Hard,
+	Mole_FisherResolvePenalty_Hard = 2717,
 
 	/// <summary></summary>
 	/// <name>Mole_FisherResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_FisherResolvePenalty_Impossible,
+	Mole_FisherResolvePenalty_Impossible = 2718,
 
 	/// <summary></summary>
 	/// <name>Mole_FisherResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_FisherResolvePenalty_Normal,
+	Mole_FisherResolvePenalty_Normal = 2719,
 
 	/// <summary></summary>
 	/// <name>Mole_FisherResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_FisherResolvePenalty_VeryHard,
+	Mole_FisherResolvePenalty_VeryHard = 2720,
 
 	/// <summary></summary>
 	/// <name>Mole_ForagersResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_ForagersResolvePenalty_Hard,
+	Mole_ForagersResolvePenalty_Hard = 2721,
 
 	/// <summary></summary>
 	/// <name>Mole_ForagersResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_ForagersResolvePenalty_Impossible,
+	Mole_ForagersResolvePenalty_Impossible = 2722,
 
 	/// <summary></summary>
 	/// <name>Mole_ForagersResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_ForagersResolvePenalty_Normal,
+	Mole_ForagersResolvePenalty_Normal = 2723,
 
 	/// <summary></summary>
 	/// <name>Mole_ForagersResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_ForagersResolvePenalty_VeryHard,
+	Mole_ForagersResolvePenalty_VeryHard = 2724,
 
 	/// <summary></summary>
 	/// <name>Mole_HarvesterResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HarvesterResolvePenalty_Hard,
+	Mole_HarvesterResolvePenalty_Hard = 2725,
 
 	/// <summary></summary>
 	/// <name>Mole_HarvesterResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HarvesterResolvePenalty_Impossible,
+	Mole_HarvesterResolvePenalty_Impossible = 2726,
 
 	/// <summary></summary>
 	/// <name>Mole_HarvesterResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HarvesterResolvePenalty_Normal,
+	Mole_HarvesterResolvePenalty_Normal = 2727,
 
 	/// <summary></summary>
 	/// <name>Mole_HarvesterResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HarvesterResolvePenalty_VeryHard,
+	Mole_HarvesterResolvePenalty_VeryHard = 2728,
 
 	/// <summary></summary>
 	/// <name>Mole_HerablistResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HerablistResolvePenalty_Hard,
+	Mole_HerablistResolvePenalty_Hard = 2729,
 
 	/// <summary></summary>
 	/// <name>Mole_HerablistResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HerablistResolvePenalty_Impossible,
+	Mole_HerablistResolvePenalty_Impossible = 2730,
 
 	/// <summary></summary>
 	/// <name>Mole_HerablistResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HerablistResolvePenalty_Normal,
+	Mole_HerablistResolvePenalty_Normal = 2731,
 
 	/// <summary></summary>
 	/// <name>Mole_HerablistResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_HerablistResolvePenalty_VeryHard,
+	Mole_HerablistResolvePenalty_VeryHard = 2732,
 
 	/// <summary></summary>
 	/// <name>Mole_PimitiveTrapperPenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PimitiveTrapperPenalty_VeryHard,
+	Mole_PimitiveTrapperPenalty_VeryHard = 2733,
 
 	/// <summary></summary>
 	/// <name>Mole_PimitiveTrapperResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PimitiveTrapperResolvePenalty_Hard,
+	Mole_PimitiveTrapperResolvePenalty_Hard = 2734,
 
 	/// <summary></summary>
 	/// <name>Mole_PimitiveTrapperResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PimitiveTrapperResolvePenalty_Impossible,
+	Mole_PimitiveTrapperResolvePenalty_Impossible = 2735,
 
 	/// <summary></summary>
 	/// <name>Mole_PimitiveTrapperResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PimitiveTrapperResolvePenalty_Normal,
+	Mole_PimitiveTrapperResolvePenalty_Normal = 2736,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveFisherResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveFisherResolvePenalty_Hard,
+	Mole_PrimitiveFisherResolvePenalty_Hard = 2737,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveFisherResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveFisherResolvePenalty_Impossible,
+	Mole_PrimitiveFisherResolvePenalty_Impossible = 2738,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveFisherResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveFisherResolvePenalty_Normal,
+	Mole_PrimitiveFisherResolvePenalty_Normal = 2739,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveFisherResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveFisherResolvePenalty_VeryHard,
+	Mole_PrimitiveFisherResolvePenalty_VeryHard = 2740,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveForagerResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveForagerResolvePenalty_Hard,
+	Mole_PrimitiveForagerResolvePenalty_Hard = 2741,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveForagerResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveForagerResolvePenalty_Impossible,
+	Mole_PrimitiveForagerResolvePenalty_Impossible = 2742,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveForagerResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveForagerResolvePenalty_Normal,
+	Mole_PrimitiveForagerResolvePenalty_Normal = 2743,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveForagerResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveForagerResolvePenalty_VeryHard,
+	Mole_PrimitiveForagerResolvePenalty_VeryHard = 2744,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveHerbalistResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveHerbalistResolvePenalty_Hard,
+	Mole_PrimitiveHerbalistResolvePenalty_Hard = 2745,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveHerbalistResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveHerbalistResolvePenalty_Impossible,
+	Mole_PrimitiveHerbalistResolvePenalty_Impossible = 2746,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveHerbalistResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveHerbalistResolvePenalty_Normal,
+	Mole_PrimitiveHerbalistResolvePenalty_Normal = 2747,
 
 	/// <summary></summary>
 	/// <name>Mole_PrimitiveHerbalistResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_PrimitiveHerbalistResolvePenalty_VeryHard,
+	Mole_PrimitiveHerbalistResolvePenalty_VeryHard = 2748,
 
 	/// <summary></summary>
 	/// <name>Mole_StonecuttersResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_StonecuttersResolvePenalty_Hard,
+	Mole_StonecuttersResolvePenalty_Hard = 2749,
 
 	/// <summary></summary>
 	/// <name>Mole_StonecuttersResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_StonecuttersResolvePenalty_Impossible,
+	Mole_StonecuttersResolvePenalty_Impossible = 2750,
 
 	/// <summary></summary>
 	/// <name>Mole_StonecuttersResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_StonecuttersResolvePenalty_Normal,
+	Mole_StonecuttersResolvePenalty_Normal = 2751,
 
 	/// <summary></summary>
 	/// <name>Mole_StonecuttersResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_StonecuttersResolvePenalty_VeryHard,
+	Mole_StonecuttersResolvePenalty_VeryHard = 2752,
 
 	/// <summary></summary>
 	/// <name>Mole_TrappersResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_TrappersResolvePenalty_Hard,
+	Mole_TrappersResolvePenalty_Hard = 2753,
 
 	/// <summary></summary>
 	/// <name>Mole_TrappersResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_TrappersResolvePenalty_Impossible,
+	Mole_TrappersResolvePenalty_Impossible = 2754,
 
 	/// <summary></summary>
 	/// <name>Mole_TrappersResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_TrappersResolvePenalty_Normal,
+	Mole_TrappersResolvePenalty_Normal = 2755,
 
 	/// <summary></summary>
 	/// <name>Mole_TrappersResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_TrappersResolvePenalty_VeryHard,
+	Mole_TrappersResolvePenalty_VeryHard = 2756,
 
 	/// <summary></summary>
 	/// <name>Mole_WoodcuttersResolvePenalty_Hard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_WoodcuttersResolvePenalty_Hard,
+	Mole_WoodcuttersResolvePenalty_Hard = 2757,
 
 	/// <summary></summary>
 	/// <name>Mole_WoodcuttersResolvePenalty_Impossible</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_WoodcuttersResolvePenalty_Impossible,
+	Mole_WoodcuttersResolvePenalty_Impossible = 2758,
 
 	/// <summary></summary>
 	/// <name>Mole_WoodcuttersResolvePenalty_Normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_WoodcuttersResolvePenalty_Normal,
+	Mole_WoodcuttersResolvePenalty_Normal = 2759,
 
 	/// <summary></summary>
 	/// <name>Mole_WoodcuttersResolvePenalty_VeryHard</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Mole_WoodcuttersResolvePenalty_VeryHard,
+	Mole_WoodcuttersResolvePenalty_VeryHard = 2760,
 
 	/// <summary>
 	/// Rotting Wood - Villagers with this effect have a +100% chance of destroying the yield with each production cycle.
 	/// </summary>
 	/// <name>Rotting Wood Workplace</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Rotting_Wood_Workplace,
+	Rotting_Wood_Workplace = 2761,
 
 	/// <summary>
 	/// Hot Springs - Rainwater Geysers produce pleasant heat in their vicinity. Geyser Pump Operators get +10 to Resolve.
 	/// </summary>
 	/// <name>SE Hot Springs</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	SE_Hot_Springs,
+	SE_Hot_Springs = 2762,
 
 	/// <summary>
 	/// Horrors from Beneath - Strange voices call out from the depths. Villagers working in Mines get -10 to Resolve during the storm.
 	/// </summary>
 	/// <name>SE Mine in Storm</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	SE_Mine_In_Storm,
+	SE_Mine_In_Storm = 2763,
 
 	/// <summary></summary>
 	/// <name>Vault_ForagersResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_ForagersResolvePenalty_normal,
+	Vault_ForagersResolvePenalty_normal = 2764,
 
 	/// <summary></summary>
 	/// <name>Vault_HarvesterResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_HarvesterResolvePenalty_normal,
+	Vault_HarvesterResolvePenalty_normal = 2765,
 
 	/// <summary></summary>
 	/// <name>Vault_HerablistResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_HerablistResolvePenalty_normal,
+	Vault_HerablistResolvePenalty_normal = 2766,
 
 	/// <summary></summary>
 	/// <name>Vault_PrimitiveForagerResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_PrimitiveForagerResolvePenalty_normal,
+	Vault_PrimitiveForagerResolvePenalty_normal = 2767,
 
 	/// <summary></summary>
 	/// <name>Vault_PrimitiveHerbalistResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_PrimitiveHerbalistResolvePenalty_normal,
+	Vault_PrimitiveHerbalistResolvePenalty_normal = 2768,
 
 	/// <summary></summary>
 	/// <name>Vault_PrimitiveTrapperResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_PrimitiveTrapperResolvePenalty_normal,
+	Vault_PrimitiveTrapperResolvePenalty_normal = 2769,
 
 	/// <summary></summary>
 	/// <name>Vault_StonecuttersResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_StonecuttersResolvePenalty_normal,
+	Vault_StonecuttersResolvePenalty_normal = 2770,
 
 	/// <summary></summary>
 	/// <name>Vault_TrappersResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_TrappersResolvePenalty_normal,
+	Vault_TrappersResolvePenalty_normal = 2771,
 
 	/// <summary></summary>
 	/// <name>Vault_WoodcuttersResolvePenalty_normal</name>
 	/// <type>WorkplacePerkEffectModel</type>
-	Vault_WoodcuttersResolvePenalty_normal,
+	Vault_WoodcuttersResolvePenalty_normal = 2772,
 
 
 
@@ -20451,80 +20555,80 @@ public static class EffectTypesExtensions
 
 		// BuildingEffectModel
 		{ EffectTypes.Advanced_Rain_Collector_Blueprint, "Advanced Rain Collector Blueprint" },                                                                                 // Forsaken Altar - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
-		{ EffectTypes.Alchemist_Blueprint, "Alchemist Blueprint" },                                                                                                             // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Alchemist_Blueprint, "Alchemist Blueprint" },                                                                                                             // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Altar_Blueprint, "Altar Blueprint" },                                                                                                                     // Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
-		{ EffectTypes.Apothecary_Blueprint, "Apothecary Blueprint" },                                                                                                           // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Artisan_Blueprint, "Artisan Blueprint" },                                                                                                                 // Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Bakery_Blueprint, "Bakery Blueprint" },                                                                                                                   // Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Apothecary_Blueprint, "Apothecary Blueprint" },                                                                                                           // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Artisan_Blueprint, "Artisan Blueprint" },                                                                                                                 // Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Bakery_Blueprint, "Bakery Blueprint" },                                                                                                                   // Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Bath_House_Blueprint, "Bath House Blueprint" },                                                                                                           // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
-		{ EffectTypes.Beanery_Blueprint, "Beanery Blueprint" },                                                                                                                 // Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Beanery_Blueprint, "Beanery Blueprint" },                                                                                                                 // Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Beaver_House_Blueprint, "Beaver House Blueprint" },                                                                                                       // Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 2 inhabitants.
 		{ EffectTypes.Biome_Moorlands_Archaeologist_Blueprint, "[Biome] Moorlands - Archaeologist Blueprint" },                                                                 // Royal Archaeologists - Every viceroy embarking on an expedition to the Scarlet Orchard is assigned a royal archaeologist. You gain access to a new essential building: Archaeologist's Office.
 		{ EffectTypes.Biome_Striders_Port_Blueprint, "[Biome] Striders Port Blueprint" },                                                                                       // Strider Port - Your settlement begins on the coast of this strange land, near an ancient Strider Port. Use it to send out expeditions in search of blueprints and treasure. However, you will receive fewer blueprints from Reputation.
 		{ EffectTypes.Blight_Post_Blueprint, "Blight Post Blueprint" },                                                                                                         // Forsaken Altar - A specialized building dedicated to fighting Blightrot. Blight Fighters will prepare "blight fuel" Purging Fire during drizzle and clearance seasons, and use it to burn Blightrot Cysts during the storm.
-		{ EffectTypes.Brewery_Blueprint, "Brewery Blueprint" },                                                                                                                 // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Brick_Oven_Blueprint, "Brick Oven Blueprint" },                                                                                                           // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Brickyard_Blueprint, "Brickyard Blueprint" },                                                                                                             // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Butcher_Blueprint, "Butcher Blueprint" },                                                                                                                 // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Cannery_Blueprint, "Cannery Blueprint" },                                                                                                                 // Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Carpenter_Blueprint, "Carpenter Blueprint" },                                                                                                             // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Cellar_Blueprint, "Cellar Blueprint" },                                                                                                                   // Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Brewery_Blueprint, "Brewery Blueprint" },                                                                                                                 // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Brick_Oven_Blueprint, "Brick Oven Blueprint" },                                                                                                           // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Brickyard_Blueprint, "Brickyard Blueprint" },                                                                                                             // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Butcher_Blueprint, "Butcher Blueprint" },                                                                                                                 // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Cannery_Blueprint, "Cannery Blueprint" },                                                                                                                 // Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Carpenter_Blueprint, "Carpenter Blueprint" },                                                                                                             // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Cellar_Blueprint, "Cellar Blueprint" },                                                                                                                   // Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Clay_Pit_Blueprint, "Clay Pit Blueprint" },                                                                                                               // Clay Pit - Uses Clearance Water to produce goods regardless of the season. Must be placed on fertile soil. Can produce:  [mat raw] clay Clay (grade2), [mat raw] reeds Reed (grade2), [mat raw] resin Resin (grade2)
-		{ EffectTypes.Cobbler_Blueprint, "Cobbler Blueprint" },                                                                                                                 // Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Cobbler_Blueprint, "Cobbler Blueprint" },                                                                                                                 // Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Common_Hall_Blueprint, "Common Hall Blueprint" },                                                                                                         // Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
-		{ EffectTypes.Cookhouse_Blueprint, "Cookhouse Blueprint" },                                                                                                             // Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Cooperage_Blueprint, "Cooperage Blueprint" },                                                                                                             // Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Crude_Workstation_Blueprint, "Crude Workstation Blueprint" },                                                                                             // Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Distillery_Blueprint, "Distillery Blueprint" },                                                                                                           // Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Druid_Blueprint, "Druid Blueprint" },                                                                                                                     // Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Cookhouse_Blueprint, "Cookhouse Blueprint" },                                                                                                             // Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Cooperage_Blueprint, "Cooperage Blueprint" },                                                                                                             // Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Crude_Workstation_Blueprint, "Crude Workstation Blueprint" },                                                                                             // Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Distillery_Blueprint, "Distillery Blueprint" },                                                                                                           // Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Druid_Blueprint, "Druid Blueprint" },                                                                                                                     // Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Explorers_Lodge_Blueprint, "Explorers Lodge Blueprint" },                                                                                                 // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ EffectTypes.Farm_Blueprint, "Farm Blueprint" },                                                                                                                       // Homestead - Uses a large area of nearby farm fields to grow  [food raw] grain Grain (grade3), [mat raw] plant fibre Plant Fiber (grade3), [food raw] vegetables Vegetables (grade2), [food raw] mushrooms Mushrooms (grade2).
-		{ EffectTypes.Finesmith_Blueprint, "Finesmith Blueprint" },                                                                                                             // Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Finesmith_Blueprint, "Finesmith Blueprint" },                                                                                                             // Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Fishing_Hut_Blueprint, "Fishing Hut Blueprint" },                                                                                                         // Fishing Hut - An advanced fishing hut. Can fish in large fishing ponds in addition to small ones. Can catch:  [food raw] fish Fish (grade2), [mat raw] scales Scales (grade2), [mat raw] algae Algae (grade2).
 		{ EffectTypes.Foragers_Camp_Blueprint, "Forager's Camp Blueprint" },                                                                                                    // Foragers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] grain Grain (grade2), [food raw] roots Roots (grade2), [food raw] vegetables Vegetables (grade2).
 		{ EffectTypes.Forum_Blueprint, "Forum Blueprint" },                                                                                                                     // Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 		{ EffectTypes.Frog_House_Blueprint, "Frog House Blueprint" },                                                                                                           // Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 2 inhabitants.
-		{ EffectTypes.Furnace_Blueprint, "Furnace Blueprint" },                                                                                                                 // Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Granary_Blueprint, "Granary Blueprint" },                                                                                                                 // Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Furnace_Blueprint, "Furnace Blueprint" },                                                                                                                 // Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Granary_Blueprint, "Granary Blueprint" },                                                                                                                 // Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Greenhouse_Blueprint, "Greenhouse Blueprint" },                                                                                                           // Greenhouse - Uses Drizzle Water to grow crops regardless of the season. Must be placed on fertile soil. Can produce:  [food raw] mushrooms Mushrooms (grade2), [food raw] herbs Herbs (grade2)
-		{ EffectTypes.Grill_Blueprint, "Grill Blueprint" },                                                                                                                     // Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Grill_Blueprint, "Grill Blueprint" },                                                                                                                     // Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Grove_Blueprint, "Grove Blueprint" },                                                                                                                     // Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 		{ EffectTypes.Guild_House_Blueprint, "Guild House Blueprint" },                                                                                                         // Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.
 		{ EffectTypes.Herb_Garden_Blueprint, "Herb Garden Blueprint" },                                                                                                         // Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade1), [food raw] herbs Herbs (grade2).
 		{ EffectTypes.Herbalist_Camp_Blueprint, "Herbalist Camp Blueprint" },                                                                                                   // Herbalists' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] herbs Herbs (grade2), [food raw] berries Berries (grade2), [food raw] mushrooms Mushrooms (grade2).
 		{ EffectTypes.Human_House_Blueprint, "Human House Blueprint" },                                                                                                         // Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 2 inhabitants.
 		{ EffectTypes.Hydrant_Blueprint, "Hydrant Blueprint" },                                                                                                                 // Forsaken Altar - A small storage for "blight fuel" Purging Fire. Blight Fighters will use it to restock their fuel when fighting Blightrot in the storm.
-		{ EffectTypes.Kiln_Blueprint, "Kiln Blueprint" },                                                                                                                       // Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Leatherworks_Blueprint, "Leatherworks Blueprint" },                                                                                                       // Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Kiln_Blueprint, "Kiln Blueprint" },                                                                                                                       // Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Leatherworks_Blueprint, "Leatherworks Blueprint" },                                                                                                       // Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Library_Blueprint, "Library Blueprint" },                                                                                                                 // Library - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 		{ EffectTypes.Lizard_House_Blueprint, "Lizard House Blueprint" },                                                                                                       // Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 2 inhabitants.
-		{ EffectTypes.Lumbermill_Blueprint, "Lumbermill Blueprint" },                                                                                                           // Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Manufactory_Blueprint, "Manufactory Blueprint" },                                                                                                         // Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Lumbermill_Blueprint, "Lumbermill Blueprint" },                                                                                                           // Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Manufactory_Blueprint, "Manufactory Blueprint" },                                                                                                         // Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Market_Blueprint, "Market Blueprint" },                                                                                                                   // Market - A place where villagers can fulfill their need for: Leisure,  Treatment. Passive effects: Market Carts.
-		{ EffectTypes.Mill_Blueprint, "Mill Blueprint" },                                                                                                                       // Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Mill_Blueprint, "Mill Blueprint" },                                                                                                                       // Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Monastery_Blueprint, "Monastery Blueprint" },                                                                                                             // Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
-		{ EffectTypes.Pantry_Blueprint, "Pantry Blueprint" },                                                                                                                   // Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Pantry_Blueprint, "Pantry Blueprint" },                                                                                                                   // Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Plantation_Blueprint, "Plantation Blueprint" },                                                                                                           // Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
-		{ EffectTypes.Press_Blueprint, "Press Blueprint" },                                                                                                                     // Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Provisioner_Blueprint, "Provisioner Blueprint" },                                                                                                         // Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Ranch_Blueprint, "Ranch Blueprint" },                                                                                                                     // Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Scribe_Blueprint, "Scribe Blueprint" },                                                                                                                   // Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Press_Blueprint, "Press Blueprint" },                                                                                                                     // Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Provisioner_Blueprint, "Provisioner Blueprint" },                                                                                                         // Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Ranch_Blueprint, "Ranch Blueprint" },                                                                                                                     // Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Scribe_Blueprint, "Scribe Blueprint" },                                                                                                                   // Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Sealed_Biome_Shrine_Blueprint, "Sealed Biome Shrine Blueprint" },                                                                                         // Beacon Tower - A powerful, ancient structure that allows you to summon aid directly from the Citadel. Grants access to three types of temporary support abilities.
-		{ EffectTypes.Sewer_Blueprint, "Sewer Blueprint" },                                                                                                                     // Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Sewer_Blueprint, "Sewer Blueprint" },                                                                                                                     // Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.SmallFarm_Blueprint, "SmallFarm Blueprint" },                                                                                                             // Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade1), [food raw] grain Grain (grade2).
-		{ EffectTypes.Smelter_Blueprint, "Smelter Blueprint" },                                                                                                                 // Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Smithy_Blueprint, "Smithy Blueprint" },                                                                                                                   // Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Smokehouse_Blueprint, "Smokehouse Blueprint" },                                                                                                           // Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Stamping_Mill_Blueprint, "Stamping Mill Blueprint" },                                                                                                     // Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Supplier_Blueprint, "Supplier Blueprint" },                                                                                                               // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Smelter_Blueprint, "Smelter Blueprint" },                                                                                                                 // Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Smithy_Blueprint, "Smithy Blueprint" },                                                                                                                   // Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Smokehouse_Blueprint, "Smokehouse Blueprint" },                                                                                                           // Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Stamping_Mill_Blueprint, "Stamping Mill Blueprint" },                                                                                                     // Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Supplier_Blueprint, "Supplier Blueprint" },                                                                                                               // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Tavern_Blueprint, "Tavern Blueprint" },                                                                                                                   // Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
-		{ EffectTypes.Tea_House_Blueprint, "Tea House Blueprint" },                                                                                                             // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Tea_House_Blueprint, "Tea House Blueprint" },                                                                                                             // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Temple_Blueprint, "Temple Blueprint" },                                                                                                                   // Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
-		{ EffectTypes.Tinctury_Blueprint, "Tinctury Blueprint" },                                                                                                               // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Tinkerer_Blueprint, "Tinkerer Blueprint" },                                                                                                               // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Toolshop_Blueprint, "Toolshop Blueprint" },                                                                                                               // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Tinctury_Blueprint, "Tinctury Blueprint" },                                                                                                               // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Tinkerer_Blueprint, "Tinkerer Blueprint" },                                                                                                               // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Toolshop_Blueprint, "Toolshop Blueprint" },                                                                                                               // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Trappers_Camp_Blueprint, "Trapper's Camp Blueprint" },                                                                                                    // Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).
-		{ EffectTypes.Weaver_Blueprint, "Weaver Blueprint" },                                                                                                                   // Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Weaver_Blueprint, "Weaver Blueprint" },                                                                                                                   // Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1).  Can use: "[water] clearance water" Clearance Water.
 
 		// BuildingPerkEffectModel
 		{ EffectTypes._2_Hauling_Carts_In_Main_Warehouse, "2 Hauling Carts in Main Warehouse" },                                                                                // Dual Carriage System - Two rainpunk hauling carts will be assigned to the Main Warehouse to help transport resources between buildings.
@@ -22903,33 +23007,33 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Replace_Angry_Ghost_Chest, "Replace Angry Ghost Chest" },                                                                                                 // Ghost Chest - The spirit will reward you for fulfilling its last wish. The contents of the chest are unknown.
 		{ EffectTypes.Replace_Blightrot, "Replace Blightrot" },                                                                                                                 // Decay - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
 		{ EffectTypes.Replace_Building_Advanced_Rain_Catcher, "Replace Building Advanced Rain Catcher" },                                                                       // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
-		{ EffectTypes.Replace_Building_Alchemist, "Replace Building Alchemist" },                                                                                               // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Apotchecary, "Replace Building Apotchecary" },                                                                                           // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Artisan, "Replace Building Artisan" },                                                                                                   // Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Bakery, "Replace Building Bakery" },                                                                                                     // Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Alchemist, "Replace Building Alchemist" },                                                                                               // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Apotchecary, "Replace Building Apotchecary" },                                                                                           // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Artisan, "Replace Building Artisan" },                                                                                                   // Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Bakery, "Replace Building Bakery" },                                                                                                     // Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Bath_House, "Replace Building Bath House" },                                                                                             // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
-		{ EffectTypes.Replace_Building_Beanery, "Replace Building Beanery" },                                                                                                   // Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Beanery, "Replace Building Beanery" },                                                                                                   // Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Beaver_House, "Replace Building Beaver House" },                                                                                         // Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 2 inhabitants.
 		{ EffectTypes.Replace_Building_Big_Shelter, "Replace Building Big Shelter" },                                                                                           // Big Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 6 residents.
-		{ EffectTypes.Replace_Building_Brewery, "Replace Building Brewery" },                                                                                                   // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Brick_Oven, "Replace Building Brick Oven" },                                                                                             // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Brickyard, "Replace Building Brickyard" },                                                                                               // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Butcher, "Replace Building Butcher" },                                                                                                   // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Cannery, "Replace Building Cannery" },                                                                                                   // Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Carpenter, "Replace Building Carpenter" },                                                                                               // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Cellar, "Replace Building Cellar" },                                                                                                     // Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Brewery, "Replace Building Brewery" },                                                                                                   // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Brick_Oven, "Replace Building Brick Oven" },                                                                                             // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Brickyard, "Replace Building Brickyard" },                                                                                               // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Butcher, "Replace Building Butcher" },                                                                                                   // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Cannery, "Replace Building Cannery" },                                                                                                   // Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Carpenter, "Replace Building Carpenter" },                                                                                               // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Cellar, "Replace Building Cellar" },                                                                                                     // Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Clan_Hall, "Replace Building Clan Hall" },                                                                                               // Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
 		{ EffectTypes.Replace_Building_Clay_Pit, "Replace Building Clay Pit" },                                                                                                 // Clay Pit - Uses Clearance Water to produce goods regardless of the season. Must be placed on fertile soil. Can produce:  [mat raw] clay Clay (grade2), [mat raw] reeds Reed (grade2), [mat raw] resin Resin (grade2)
-		{ EffectTypes.Replace_Building_Cobbler, "Replace Building Cobbler" },                                                                                                   // Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Cookhouse, "Replace Building Cookhouse" },                                                                                               // Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Cooperage, "Replace Building Cooperage" },                                                                                               // Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Crude_Workstation, "Replace Building Crude Workstation" },                                                                               // Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Distillery, "Replace Building Distillery" },                                                                                             // Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Druid, "Replace Building Druid" },                                                                                                       // Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Cobbler, "Replace Building Cobbler" },                                                                                                   // Cobbler - Can produce:  [needs] boots Boots (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [crafting] dye Dye (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Cookhouse, "Replace Building Cookhouse" },                                                                                               // Cookhouse - Can produce:  [food processed] skewers Skewers (grade2), [food processed] biscuits Biscuits (grade2), [food processed] porridge Porridge (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Cooperage, "Replace Building Cooperage" },                                                                                               // Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Crude_Workstation, "Replace Building Crude Workstation" },                                                                               // Crude Workstation - Can produce:  [mat processed] planks Planks (grade0), [mat processed] fabric Fabric (grade0), [mat processed] bricks Bricks (grade0), [mat processed] pipe Pipes (grade0).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Distillery, "Replace Building Distillery" },                                                                                             // Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Druid, "Replace Building Druid" },                                                                                                       // Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Explorers_Lodge, "Replace Building Explorers Lodge" },                                                                                   // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ EffectTypes.Replace_Building_Farm, "Replace Building Farm" },                                                                                                         // Homestead - Uses a large area of nearby farm fields to grow  [food raw] grain Grain (grade3), [mat raw] plant fibre Plant Fiber (grade3), [food raw] vegetables Vegetables (grade2), [food raw] mushrooms Mushrooms (grade2).
-		{ EffectTypes.Replace_Building_Field_Kitchen, "Replace Building Field Kitchen" },                                                                                       // Field Kitchen - Can produce:  [food processed] skewers Skewers (grade0), [food processed] paste Paste (grade0), [food processed] biscuits Biscuits (grade0), [food processed] pickled goods Pickled Goods (grade0). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Finesmith, "Replace Building Finesmith" },                                                                                               // Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Field_Kitchen, "Replace Building Field Kitchen" },                                                                                       // Field Kitchen - Can produce:  [food processed] skewers Skewers (grade0), [food processed] paste Paste (grade0), [food processed] biscuits Biscuits (grade0), [food processed] pickled goods Pickled Goods (grade0).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Finesmith, "Replace Building Finesmith" },                                                                                               // Finesmith - Can produce:  [valuable] amber Amber (grade3), [tools] simple tools Tools (grade3).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Building_Fishing_Hut, "Replace Building Fishing Hut" },                                                                                           // Fishing Hut - An advanced fishing hut. Can fish in large fishing ponds in addition to small ones. Can catch:  [food raw] fish Fish (grade2), [mat raw] scales Scales (grade2), [mat raw] algae Algae (grade2).
 		{ EffectTypes.Replace_Building_Fishing_Hut_Primitive, "Replace Building Fishing Hut Primitive" },                                                                       // Fishing Hut - A crude version of a normal fishing hut. It's slower, and can only fish in small fishing ponds. Can catch:  [food raw] fish Fish (grade1), [mat raw] scales Scales (grade1), [mat raw] algae Algae (grade1).
 		{ EffectTypes.Replace_Building_Foragers_Camp, "Replace Building Foragers Camp" },                                                                                       // Foragers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] grain Grain (grade2), [food raw] roots Roots (grade2), [food raw] vegetables Vegetables (grade2).
@@ -22937,98 +23041,98 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Replace_Building_Forum, "Replace Building Forum" },                                                                                                       // Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 		{ EffectTypes.Replace_Building_Fox_House, "Replace Building Fox House" },                                                                                               // Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 2 inhabitants.
 		{ EffectTypes.Replace_Building_Frog_House, "Replace Building Frog House" },                                                                                             // Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 2 inhabitants.
-		{ EffectTypes.Replace_Building_Furnace, "Replace Building Furnace" },                                                                                                   // Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Granary, "Replace Building Granary" },                                                                                                   // Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Furnace, "Replace Building Furnace" },                                                                                                   // Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Granary, "Replace Building Granary" },                                                                                                   // Granary - Can produce:  [food processed] pickled goods Pickled Goods (grade2), [mat processed] fabric Fabric (grade2), [packs] pack of crops Pack of Crops (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Greenhouse, "Replace Building Greenhouse" },                                                                                             // Greenhouse - Uses Drizzle Water to grow crops regardless of the season. Must be placed on fertile soil. Can produce:  [food raw] mushrooms Mushrooms (grade2), [food raw] herbs Herbs (grade2)
-		{ EffectTypes.Replace_Building_Grill, "Replace Building Grill" },                                                                                                       // Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Grill, "Replace Building Grill" },                                                                                                       // Grill - Can produce:  [food processed] skewers Skewers (grade3), [food processed] paste Paste (grade2), [metal] copper bar Copper Bars (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Grove, "Replace Building Grove" },                                                                                                       // Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 		{ EffectTypes.Replace_Building_Guild_House, "Replace Building Guild House" },                                                                                           // Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.
 		{ EffectTypes.Replace_Building_Harpy_House, "Replace Building Harpy House" },                                                                                           // Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 2 inhabitants.
 		{ EffectTypes.Replace_Building_Harvester_Camp, "Replace Building Harvester Camp" },                                                                                     // Harvesters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] plant fibre Plant Fiber (grade2), [mat raw] reeds Reed (grade2), [mat raw] leather Leather (grade2).
 		{ EffectTypes.Replace_Building_Haunted_Beaver_House, "Replace Building Haunted Beaver House" },                                                                         // Purified Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 6 inhabitants.
-		{ EffectTypes.Replace_Building_Haunted_Brewery, "Replace Building Haunted Brewery" },                                                                                   // Flawless Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade3), [packs] pack of crops Pack of Crops (grade3). Has improved production.Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Haunted_Cellar, "Replace Building Haunted Cellar" },                                                                                     // Flawless Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade3), [packs] pack of provisions Pack of Provisions (grade3). Has improved production.Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Haunted_Cooperage, "Replace Building Haunted Cooperage" },                                                                               // Flawless Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade3), [packs] pack of luxury goods Pack of Luxury Goods (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Haunted_Druid, "Replace Building Haunted Druid" },                                                                                       // Flawless Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade3), [needs] coats Coats (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Haunted_Brewery, "Replace Building Haunted Brewery" },                                                                                   // Flawless Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade3), [packs] pack of crops Pack of Crops (grade3). Has improved production. Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Haunted_Cellar, "Replace Building Haunted Cellar" },                                                                                     // Flawless Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade3), [packs] pack of provisions Pack of Provisions (grade3). Has improved production. Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Haunted_Cooperage, "Replace Building Haunted Cooperage" },                                                                               // Flawless Cooperage - Can produce:  [vessel] barrels Barrels (grade3), [needs] coats Coats (grade3), [packs] pack of luxury goods Pack of Luxury Goods (grade3). Has improved production. Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Haunted_Druid, "Replace Building Haunted Druid" },                                                                                       // Flawless Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade3), [needs] coats Coats (grade3). Has improved production. Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Haunted_Fox_House, "Replace Building Haunted Fox House" },                                                                               // Purified Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 6 inhabitants.
 		{ EffectTypes.Replace_Building_Haunted_Frog_House, "Replace Building Haunted Frog House" },                                                                             // Purified Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 6 inhabitants.
 		{ EffectTypes.Replace_Building_Haunted_Guild_House, "Replace Building Haunted Guild House" },                                                                           // Holy Guild House - A place where villagers can fulfill their need for:  Luxury,  Education. Has an additional effect. Passive effects: Guild House, The Guild's Welfare.
 		{ EffectTypes.Replace_Building_Haunted_Harpy_House, "Replace Building Haunted Harpy House" },                                                                           // Purified Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 6 inhabitants.
 		{ EffectTypes.Replace_Building_Haunted_Herb_Garden, "Replace Building Haunted Herb Garden" },                                                                           // Hallowed Herb Garden - Building_HerbGarden_Desc
 		{ EffectTypes.Replace_Building_Haunted_Human_House, "Replace Building Haunted Human House" },                                                                           // Purified Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 6 inhabitants.
-		{ EffectTypes.Replace_Building_Haunted_Leatherworks, "Replace Building Haunted Leatherworks" },                                                                         // Flawless Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade3), [needs] training gear Training Gear (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Haunted_Leatherworks, "Replace Building Haunted Leatherworks" },                                                                         // Flawless Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade3), [needs] training gear Training Gear (grade3). Has improved production. Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Haunted_Lizard_House, "Replace Building Haunted Lizard House" },                                                                         // Purified Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 6 inhabitants.
 		{ EffectTypes.Replace_Building_Haunted_Market, "Replace Building Haunted Market" },                                                                                     // Holy Market - A place where villagers can fulfill their need for:  Leisure,  Treatment. Has an additional effect. Passive effects: Ale and Hearty, Market Carts.
-		{ EffectTypes.Replace_Building_Haunted_Rainmill, "Replace Building Haunted Rainmill" },                                                                                 // Flawless Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade3), [food processed] paste Paste (grade3). Has improved production.Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Haunted_Rainmill, "Replace Building Haunted Rainmill" },                                                                                 // Flawless Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade3), [food processed] paste Paste (grade3). Has improved production. Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Haunted_SmallFarm, "Replace Building Haunted SmallFarm" },                                                                               // Hallowed Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade3), [food raw] grain Grain (grade3). Has improved efficiency and more worker slots.
-		{ EffectTypes.Replace_Building_Haunted_Smelter, "Replace Building Haunted Smelter" },                                                                                   // Flawless Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade3), [food processed] pie Pie (grade3). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Haunted_Smelter, "Replace Building Haunted Smelter" },                                                                                   // Flawless Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade3), [food processed] pie Pie (grade3).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Building_Haunted_Temple, "Replace Building Haunted Temple" },                                                                                     // Holy Temple - A place where villagers can fulfill their need for:  Religion,  Education. Has an additional effect. Passive effects: Sacrament of the Flame, Consecrated Scrolls.
 		{ EffectTypes.Replace_Building_Hearth, "Replace Building Hearth" },                                                                                                     // Ancient Hearth - Reduces Hostility and serves as a meeting place. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will use another Hearth instead. Can't be built too close to other Hearths.
 		{ EffectTypes.Replace_Building_Herb_Garden, "Replace Building Herb Garden" },                                                                                           // Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade1), [food raw] herbs Herbs (grade2).
 		{ EffectTypes.Replace_Building_Herbalist_Camp, "Replace Building Herbalist Camp" },                                                                                     // Herbalists' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] herbs Herbs (grade2), [food raw] berries Berries (grade2), [food raw] mushrooms Mushrooms (grade2).
 		{ EffectTypes.Replace_Building_Herbalist_Camp_Primitive, "Replace Building Herbalist Camp Primitive" },                                                                 // Small Herbalists' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] herbs Herbs (grade1), [food raw] berries Berries (grade1), [food raw] mushrooms Mushrooms (grade1).
 		{ EffectTypes.Replace_Building_Human_House, "Replace Building Human House" },                                                                                           // Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 2 inhabitants.
-		{ EffectTypes.Replace_Building_Kiln, "Replace Building Kiln" },                                                                                                         // Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Leatherworks, "Replace Building Leatherworks" },                                                                                         // Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Kiln, "Replace Building Kiln" },                                                                                                         // Kiln - Can produce:  [crafting] coal Coal (grade3), [mat processed] bricks Bricks (grade1), [food processed] jerky Jerky (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Leatherworks, "Replace Building Leatherworks" },                                                                                         // Leatherworker - Can produce:  [vessel] waterskin Waterskins (grade3), [needs] boots Boots (grade2), [needs] training gear Training Gear (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Library, "Replace Building Library" },                                                                                                   // Library - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 		{ EffectTypes.Replace_Building_Lizard_House, "Replace Building Lizard House" },                                                                                         // Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 2 inhabitants.
-		{ EffectTypes.Replace_Building_Lumbermill, "Replace Building Lumbermill" },                                                                                             // Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Makeshift_Post, "Replace Building Makeshift Post" },                                                                                     // Makeshift Post - Can produce:  [packs] pack of crops Pack of Crops (grade0), [packs] pack of provisions Pack of Provisions (grade0), [packs] pack of building materials Pack of Building Materials (grade0). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Manufactory, "Replace Building Manufactory" },                                                                                           // Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Lumbermill, "Replace Building Lumbermill" },                                                                                             // Lumber Mill - Can produce:  [mat processed] planks Planks (grade3), [needs] scrolls Scrolls (grade1), [packs] pack of trade goods Pack of Trade Goods (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Makeshift_Post, "Replace Building Makeshift Post" },                                                                                     // Makeshift Post - Can produce:  [packs] pack of crops Pack of Crops (grade0), [packs] pack of provisions Pack of Provisions (grade0), [packs] pack of building materials Pack of Building Materials (grade0).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Manufactory, "Replace Building Manufactory" },                                                                                           // Manufactory - Can produce:  [mat processed] fabric Fabric (grade2), [vessel] barrels Barrels (grade2), [crafting] dye Dye (grade2).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Building_Market, "Replace Building Market" },                                                                                                     // Market - A place where villagers can fulfill their need for: Leisure,  Treatment. Passive effects: Market Carts.
 		{ EffectTypes.Replace_Building_Mine, "Replace Building Mine" },                                                                                                         // Mine - Can only be placed on coal, copper, or salt veins. Can produce:  [crafting] coal Coal (grade2), [metal] copper ore Copper Ore (grade2), [crafting] salt Salt (grade2).
 		{ EffectTypes.Replace_Building_Monastery, "Replace Building Monastery" },                                                                                               // Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
-		{ EffectTypes.Replace_Building_Pantry, "Replace Building Pantry" },                                                                                                     // Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Pantry, "Replace Building Pantry" },                                                                                                     // Pantry - Can produce:  [food processed] porridge Porridge (grade2), [food processed] pie Pie (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Plantation, "Replace Building Plantation" },                                                                                             // Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
-		{ EffectTypes.Replace_Building_Press, "Replace Building Press" },                                                                                                       // Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Provisioner, "Replace Building Provisioner" },                                                                                           // Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Press, "Replace Building Press" },                                                                                                       // Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Provisioner, "Replace Building Provisioner" },                                                                                           // Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Rain_Catcher, "Replace Building Rain Catcher" },                                                                                         // Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
-		{ EffectTypes.Replace_Building_Rainmill, "Replace Building Rainmill" },                                                                                                 // Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Rainpunk_Foundry, "Replace Building Rainpunk Foundry" },                                                                                 // Rainpunk Foundry - A very advanced piece of technology. Can produce  [mat processed] parts Parts (grade3), hearth parts Wildfire Essence (grade3). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Ranch, "Replace Building Ranch" },                                                                                                       // Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Scribe, "Replace Building Scribe" },                                                                                                     // Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1). Can use: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Sewer, "Replace Building Sewer" },                                                                                                       // Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Rainmill, "Replace Building Rainmill" },                                                                                                 // Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Rainpunk_Foundry, "Replace Building Rainpunk Foundry" },                                                                                 // Rainpunk Foundry - A very advanced piece of technology. Can produce  [mat processed] parts Parts (grade3), hearth parts Wildfire Essence (grade3).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Ranch, "Replace Building Ranch" },                                                                                                       // Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Scribe, "Replace Building Scribe" },                                                                                                     // Scribe - Can produce:  [needs] scrolls Scrolls (grade3), [packs] pack of trade goods Pack of Trade Goods (grade2), [needs] ale Ale (grade1).  Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Sewer, "Replace Building Sewer" },                                                                                                       // Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Shelter, "Replace Building Shelter" },                                                                                                   // Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 3 residents.
 		{ EffectTypes.Replace_Building_SmallFarm, "Replace Building SmallFarm" },                                                                                               // Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade1), [food raw] grain Grain (grade2).
-		{ EffectTypes.Replace_Building_Smelter, "Replace Building Smelter" },                                                                                                   // Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Smithy, "Replace Building Smithy" },                                                                                                     // Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Smokehouse, "Replace Building Smokehouse" },                                                                                             // Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Stamping_Mill, "Replace Building Stamping Mill" },                                                                                       // Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Smelter, "Replace Building Smelter" },                                                                                                   // Smelter - Can produce:  [metal] copper bar Copper Bars (grade3), [needs] training gear Training Gear (grade2), [food processed] pie Pie (grade1).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Smithy, "Replace Building Smithy" },                                                                                                     // Smithy - Can produce:  [tools] simple tools Tools (grade2), [mat processed] pipe Pipes (grade2), [packs] pack of trade goods Pack of Trade Goods (grade2).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Smokehouse, "Replace Building Smokehouse" },                                                                                             // Smokehouse - Can produce:  [food processed] jerky Jerky (grade3), [vessel] pottery Pottery (grade1), [needs] incense Incense (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Stamping_Mill, "Replace Building Stamping Mill" },                                                                                       // Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Stonecutters_Camp, "Replace Building Stonecutters Camp" },                                                                               // Stonecutters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] stone Stone (grade2), [mat raw] clay Clay (grade2), [crafting] sea marrow Sea Marrow (grade2).
 		{ EffectTypes.Replace_Building_Storage, "Replace Building Storage" },                                                                                                   // Small Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
-		{ EffectTypes.Replace_Building_Supplier, "Replace Building Supplier" },                                                                                                 // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Supplier, "Replace Building Supplier" },                                                                                                 // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Tavern, "Replace Building Tavern" },                                                                                                     // Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
 		{ EffectTypes.Replace_Building_Tea_Doctor, "Replace Building Tea Doctor" },                                                                                             // Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Religion. Passive effects: Vitality.
-		{ EffectTypes.Replace_Building_Tea_House, "Replace Building Tea House" },                                                                                               // Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1). Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Tea_House, "Replace Building Tea House" },                                                                                               // Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1).  Can use: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Temple, "Replace Building Temple" },                                                                                                     // Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
-		{ EffectTypes.Replace_Building_Tinctury, "Replace Building Tinctury" },                                                                                                 // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1). Can use: "[water] drizzle water" Drizzle Water.
-		{ EffectTypes.Replace_Building_Tinkerer, "Replace Building Tinkerer" },                                                                                                 // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2). Can use: "[water] storm water" Storm Water.
-		{ EffectTypes.Replace_Building_Toolshop, "Replace Building Toolshop" },                                                                                                 // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Tinctury, "Replace Building Tinctury" },                                                                                                 // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).  Can use: "[water] drizzle water" Drizzle Water.
+		{ EffectTypes.Replace_Building_Tinkerer, "Replace Building Tinkerer" },                                                                                                 // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).  Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Toolshop, "Replace Building Toolshop" },                                                                                                 // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Building_TradingPost, "Replace Building TradingPost" },                                                                                           // Trading Post - Traders from the Smoldering City can station here and offer their wares.
 		{ EffectTypes.Replace_Building_Trappers_Camp, "Replace Building Trappers Camp" },                                                                                       // Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).
 		{ EffectTypes.Replace_Building_Trappers_Camp_Primitive, "Replace Building Trappers Camp Primitive" },                                                                   // Small Trappers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] meat Meat (grade1), [food raw] insects Insects (grade1), [food raw] eggs Eggs (grade1).
-		{ EffectTypes.Replace_Building_Weaver, "Replace Building Weaver" },                                                                                                     // Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1). Can use: "[water] clearance water" Clearance Water.
+		{ EffectTypes.Replace_Building_Weaver, "Replace Building Weaver" },                                                                                                     // Weaver - Can produce:  [mat processed] fabric Fabric (grade3), [needs] boots Boots (grade1), [needs] training gear Training Gear (grade1).  Can use: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Woodcutters_Camp, "Replace Building Woodcutters Camp" },                                                                                 // Woodcutters' Camp - Starting point for woodcutters going out into the wild to cut down trees.
-		{ EffectTypes.Replace_Building_Workshop, "Replace Building Workshop" },                                                                                                 // Workshop - Can produce:  [mat processed] planks Planks (grade2), [mat processed] fabric Fabric (grade2), [mat processed] bricks Bricks (grade2), [mat processed] pipe Pipes (grade0). Can use: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Workshop, "Replace Building Workshop" },                                                                                                 // Workshop - Can produce:  [mat processed] planks Planks (grade2), [mat processed] fabric Fabric (grade2), [mat processed] bricks Bricks (grade2), [mat processed] pipe Pipes (grade0).  Can use: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Calm_Ghost_Chest, "Replace Calm Ghost Chest" },                                                                                                   // Decay - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
-		{ EffectTypes.Replace_Decay_Altar, "Replace Decay Altar" },                                                                                                             // Converted Altar of Decay - <color=#D6E54A>Harmony.</color> Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves.
-		{ EffectTypes.Replace_Fishmen_Lighthouse, "Replace Fishmen Lighthouse" },                                                                                               // Termite Nest - <color=#D6E54A>Harmony.</color> A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 "[crafting] sea marrow" Sea Marrow per minute. Counts as 16 decorations of its type.
-		{ EffectTypes.Replace_Fuming_Machinery, "Replace Fuming Machinery" },                                                                                                   // Makeshift Extractor - <color=#8AAFFD>Aesthetics.</color> A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute.
-		{ EffectTypes.Replace_Harmony_Altar, "Replace Harmony Altar" },                                                                                                         // Converted Harmony Spirit Altar - <color=#D6E54A>Harmony.</color> When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
-		{ EffectTypes.Replace_Monolith, "Replace Monolith" },                                                                                                                   // Obelisk - <color=#8AAFFD>Aesthetics.</color> The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
-		{ EffectTypes.Replace_Rain_Totem, "Replace Rain Totem" },                                                                                                               // Converted Rain Totem - <color=#D6E54A>Harmony.</color> The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
-		{ EffectTypes.Replace_Sacrifice_Totem, "Replace Sacrifice Totem" },                                                                                                     // Converted Totem of Denial - <color=#D6E54A>Harmony.</color> Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
-		{ EffectTypes.Replace_Stormbird, "Replace Stormbird" },                                                                                                                 // Tamed Stormbird - <color=#D6E54A>Harmony.</color> The nest of a tamed Stormbird. It provides 5 "[food raw] eggs" Eggs per minute and increases Harpy Resolve by +3.
-		{ EffectTypes.Replace_Termite_Burrow, "Replace Termite Burrow" },                                                                                                       // Termite Nest - <color=#D6E54A>Harmony.</color> A contained stonetooth termite burrow. Provides 5 "[food raw] insects" Insects per minute. Counts as 4 decorations of its type.
+		{ EffectTypes.Replace_Decay_Altar, "Replace Decay Altar" },                                                                                                             // Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves.
+		{ EffectTypes.Replace_Fishmen_Lighthouse, "Replace Fishmen Lighthouse" },                                                                                               // Termite Nest - Harmony. A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 "[crafting] sea marrow" Sea Marrow per minute. Counts as 16 decorations of its type.
+		{ EffectTypes.Replace_Fuming_Machinery, "Replace Fuming Machinery" },                                                                                                   // Makeshift Extractor - Aesthetics. A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute.
+		{ EffectTypes.Replace_Harmony_Altar, "Replace Harmony Altar" },                                                                                                         // Converted Harmony Spirit Altar - Harmony. When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
+		{ EffectTypes.Replace_Monolith, "Replace Monolith" },                                                                                                                   // Obelisk - Aesthetics. The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
+		{ EffectTypes.Replace_Rain_Totem, "Replace Rain Totem" },                                                                                                               // Converted Rain Totem - Harmony. The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
+		{ EffectTypes.Replace_Sacrifice_Totem, "Replace Sacrifice Totem" },                                                                                                     // Converted Totem of Denial - Harmony. Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
+		{ EffectTypes.Replace_Stormbird, "Replace Stormbird" },                                                                                                                 // Tamed Stormbird - Harmony. The nest of a tamed Stormbird. It provides 5 "[food raw] eggs" Eggs per minute and increases Harpy Resolve by +3.
+		{ EffectTypes.Replace_Termite_Burrow, "Replace Termite Burrow" },                                                                                                       // Termite Nest - Harmony. A contained stonetooth termite burrow. Provides 5 "[food raw] insects" Insects per minute. Counts as 4 decorations of its type.
 		{ EffectTypes.Replace_With_Scorpion_2, "Replace With Scorpion 2" },                                                                                                     // Excavation  - The first stage of the process. The ancient skeleton has to be unearthed.
 		{ EffectTypes.Replace_With_Scorpion_3, "Replace With Scorpion 3" },                                                                                                     // Conservation - Archaeologists carefully excavate and conserve the skeleton.
-		{ EffectTypes.Replace_With_Scorpion_Positive, "Replace With Scorpion Positive" },                                                                                       // Reconstruction - <color=#D6E54A>Harmony.</color> The reconstructed skeleton of an ancient species of scorpion. Increases Global Resolve for Reputation Points gained. Counts as 9 decorations of its type.
+		{ EffectTypes.Replace_With_Scorpion_Positive, "Replace With Scorpion Positive" },                                                                                       // Reconstruction - Harmony. The reconstructed skeleton of an ancient species of scorpion. Increases Global Resolve for Reputation Points gained. Counts as 9 decorations of its type.
 		{ EffectTypes.Replace_With_Snake_2, "Replace With Snake 2" },                                                                                                           // Excavation  - The first stage of the process. The ancient skeleton has to be unearthed.
 		{ EffectTypes.Replace_With_Snake_3, "Replace With Snake 3" },                                                                                                           // Conservation - Archaeologists carefully excavate and conserve the skeleton.
-		{ EffectTypes.Replace_With_Snake_Positive, "Replace With Snake Positive" },                                                                                             // Reconstruction - <color=#D6E54A>Harmony.</color> The reconstructed skeleton of an ancient species of snake. Grants "[crafting] sea marrow" sea marrow for "[metal] copper ore" copper ore production. Counts as 9 decorations of its type.
+		{ EffectTypes.Replace_With_Snake_Positive, "Replace With Snake Positive" },                                                                                             // Reconstruction - Harmony. The reconstructed skeleton of an ancient species of snake. Grants "[crafting] sea marrow" sea marrow for "[metal] copper ore" copper ore production. Counts as 9 decorations of its type.
 		{ EffectTypes.Replace_With_Spider_2, "Replace With Spider 2" },                                                                                                         // Excavation  - The first stage of the process. The ancient skeleton has to be unearthed.
 		{ EffectTypes.Replace_With_Spider_3, "Replace With Spider 3" },                                                                                                         // Conservation - Archaeologists carefully excavate and conserve the skeleton.
-		{ EffectTypes.Replace_With_Spider_Positive, "Replace With Spider Positive" },                                                                                           // Reconstruction - <color=#D6E54A>Harmony.</color> The reconstructed skeleton of an ancient species of spider.  Grants "[valuable] ancient tablet" ancient tablets for any discovered glades. Counts as 9 decorations of its type.
+		{ EffectTypes.Replace_With_Spider_Positive, "Replace With Spider Positive" },                                                                                           // Reconstruction - Harmony. The reconstructed skeleton of an ancient species of spider.  Grants "[valuable] ancient tablet" ancient tablets for any discovered glades. Counts as 9 decorations of its type.
 
 		// ReplaceInitialGladeEffectModel
 		{ EffectTypes.Biome_Replace_Initial_Glade_Forge, "[Biome] Replace Initial Glade - Forge" },                                                                             // Cornerstone Forge - There's an ancient forge in this region that allows its users to create cornerstones. However, you will receive no Epic cornerstones in years 3, 5, and 7.

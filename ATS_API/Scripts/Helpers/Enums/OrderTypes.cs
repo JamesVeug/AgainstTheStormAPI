@@ -7,2277 +7,2284 @@ using Eremite.Model.Orders;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum OrderTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown OrderTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no OrderTypes. Typically, seen if nothing is defined or failed to parse a string to a OrderTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Essence of Wealth
 	/// </summary>
 	/// <name>Amber and Luxury LOW</name>
-	Amber_And_Luxury_LOW,
+	Amber_And_Luxury_LOW = 1,
 
 	/// <summary>
 	/// Crystal Feathers
 	/// </summary>
 	/// <name>Amber Transaction</name>
-	Amber_Transaction,
+	Amber_Transaction = 2,
 
 	/// <summary>
 	/// Crystal Feathers
 	/// </summary>
 	/// <name>Amber Transaction HIGH</name>
-	Amber_Transaction_HIGH,
+	Amber_Transaction_HIGH = 3,
 
 	/// <summary>
 	/// Crystal Feathers
 	/// </summary>
 	/// <name>Amber Transaction LOW</name>
-	Amber_Transaction_LOW,
+	Amber_Transaction_LOW = 4,
 
 	/// <summary>
 	/// Forbidden Essence
 	/// </summary>
 	/// <name>Ancient Tablets</name>
-	Ancient_Tablets,
+	Ancient_Tablets = 5,
 
 	/// <summary>
 	/// Forbidden Essence
 	/// </summary>
 	/// <name>Ancient Tablets HIGH</name>
-	Ancient_Tablets_HIGH,
+	Ancient_Tablets_HIGH = 6,
 
 	/// <summary>
 	/// Forbidden Essence
 	/// </summary>
 	/// <name>Ancient Tablets LOW</name>
-	Ancient_Tablets_LOW,
+	Ancient_Tablets_LOW = 7,
 
 	/// <summary>
 	/// Heart of the Forest
 	/// </summary>
 	/// <name>Caches</name>
-	Caches,
+	Caches = 8,
 
 	/// <summary>
 	/// Heart of the Forest
 	/// </summary>
 	/// <name>Caches HIGH</name>
-	Caches_HIGH,
+	Caches_HIGH = 9,
 
 	/// <summary>
 	/// Heart of the Forest
 	/// </summary>
 	/// <name>Caches LOW</name>
-	Caches_LOW,
+	Caches_LOW = 10,
 
 	/// <summary>
 	/// Essence of Corruption
 	/// </summary>
 	/// <name>CystsBurned</name>
-	CystsBurned,
+	CystsBurned = 11,
 
 	/// <summary>
 	/// Heart of Amber
 	/// </summary>
 	/// <name>Deliver Packs</name>
-	Deliver_Packs,
+	Deliver_Packs = 12,
 
 	/// <summary>
 	/// Heart of Amber
 	/// </summary>
 	/// <name>Deliver Packs HIGH</name>
-	Deliver_Packs_HIGH,
+	Deliver_Packs_HIGH = 13,
 
 	/// <summary>
 	/// Heart of Amber
 	/// </summary>
 	/// <name>Deliver Packs LOW</name>
-	Deliver_Packs_LOW,
+	Deliver_Packs_LOW = 14,
 
 	/// <summary>
 	/// Metal Feathers
 	/// </summary>
 	/// <name>Deliver Tools</name>
-	Deliver_Tools,
+	Deliver_Tools = 15,
 
 	/// <summary>
 	/// Metal Feathers
 	/// </summary>
 	/// <name>Deliver Tools HIGH</name>
-	Deliver_Tools_HIGH,
+	Deliver_Tools_HIGH = 16,
 
 	/// <summary>
 	/// Stormbird Feathers
 	/// </summary>
 	/// <name>Discover Forbidden LOW</name>
-	Discover_Forbidden_LOW,
+	Discover_Forbidden_LOW = 17,
 
 	/// <summary>
 	/// Mechanical Heart
 	/// </summary>
 	/// <name>Engines Connected</name>
-	Engines_Connected,
+	Engines_Connected = 18,
 
 	/// <summary>
 	/// Mechanical Heart
 	/// </summary>
 	/// <name>Engines Connected HIGH</name>
-	Engines_Connected_HIGH,
+	Engines_Connected_HIGH = 19,
 
 	/// <summary>
 	/// Heart of the Ancient Flame
 	/// </summary>
 	/// <name>Heart Parts and Sacrifice LOW</name>
-	Heart_Parts_And_Sacrifice_LOW,
+	Heart_Parts_And_Sacrifice_LOW = 20,
 
 	/// <summary>
 	/// Amber Trade
 	/// </summary>
 	/// <name>I Amber</name>
-	I_Amber,
+	I_Amber = 21,
 
 	/// <summary>
 	/// Call to Arms
 	/// </summary>
 	/// <name>I Blighfuel</name>
-	I_Blighfuel,
+	I_Blighfuel = 22,
 
 	/// <summary>
 	/// Blue Metal
 	/// </summary>
 	/// <name>I Blue Metal</name>
-	I_Blue_Metal,
+	I_Blue_Metal = 23,
 
 	/// <summary>
 	/// Botanist
 	/// </summary>
 	/// <name>I Botanist</name>
-	I_Botanist,
+	I_Botanist = 24,
 
 	/// <summary>
 	/// Clearing Glades
 	/// </summary>
 	/// <name>I Clearing Glades</name>
-	I_Clearing_Glades,
+	I_Clearing_Glades = 25,
 
 	/// <summary>
 	/// Rain Protection
 	/// </summary>
 	/// <name>I Clothing</name>
-	I_Clothing,
+	I_Clothing = 26,
 
 	/// <summary>
 	/// The Purge
 	/// </summary>
 	/// <name>I Cysts</name>
-	I_Cysts,
+	I_Cysts = 27,
 
 	/// <summary>
 	/// Cyst Cultivation
 	/// </summary>
 	/// <name>I Cysts amount</name>
-	I_Cysts_Amount,
+	I_Cysts_Amount = 28,
 
 	/// <summary>
 	/// Egg Collection
 	/// </summary>
 	/// <name>I Eggs</name>
-	I_Eggs,
+	I_Eggs = 29,
 
 	/// <summary>
 	/// Start Your Engines
 	/// </summary>
 	/// <name>I Engines</name>
-	I_Engines,
+	I_Engines = 30,
 
 	/// <summary>
 	/// Farm Life
 	/// </summary>
 	/// <name>I Farm Life</name>
-	I_Farm_Life,
+	I_Farm_Life = 31,
 
 	/// <summary>
 	/// Foragers' Camp
 	/// </summary>
 	/// <name>I Foragers Camp</name>
-	I_Foragers_Camp,
+	I_Foragers_Camp = 32,
 
 	/// <summary>
 	/// Funding the Expedition
 	/// </summary>
 	/// <name>I Funding the Expedition</name>
-	I_Funding_The_Expedition,
+	I_Funding_The_Expedition = 33,
 
 	/// <summary>
 	/// Garden Life
 	/// </summary>
 	/// <name>I Garden Life</name>
-	I_Garden_Life,
+	I_Garden_Life = 34,
 
 	/// <summary>
 	/// Herbalist
 	/// </summary>
 	/// <name>I Herbalist</name>
-	I_Herbalist,
+	I_Herbalist = 35,
 
 	/// <summary>
 	/// No Place Like Home
 	/// </summary>
 	/// <name>I Houses</name>
-	I_Houses,
+	I_Houses = 36,
 
 	/// <summary>
 	/// Safe Place
 	/// </summary>
 	/// <name>I Houses v2</name>
-	I_Houses_V2,
+	I_Houses_V2 = 37,
 
 	/// <summary>
 	/// Hunters
 	/// </summary>
 	/// <name>I Hunters</name>
-	I_Hunters,
+	I_Hunters = 38,
 
 	/// <summary>
 	/// Meat Lover
 	/// </summary>
 	/// <name>I Jerky</name>
-	I_Jerky,
+	I_Jerky = 39,
 
 	/// <summary>
 	/// Metal Veins
 	/// </summary>
 	/// <name>I Metal Veins</name>
-	I_Metal_Veins,
+	I_Metal_Veins = 40,
 
 	/// <summary>
 	/// Raising the Stakes
 	/// </summary>
 	/// <name>I Multiply Routes</name>
-	I_Multiply_Routes,
+	I_Multiply_Routes = 41,
 
 	/// <summary>
 	/// Hydraulics
 	/// </summary>
 	/// <name>I Pipes</name>
-	I_Pipes,
+	I_Pipes = 42,
 
 	/// <summary>
 	/// Healthy Breakfast
 	/// </summary>
 	/// <name>I Porridge</name>
-	I_Porridge,
+	I_Porridge = 43,
 
 	/// <summary>
 	/// Beginner Engineer
 	/// </summary>
 	/// <name>I Pump</name>
-	I_Pump,
+	I_Pump = 44,
 
 	/// <summary>
 	/// Ranch Life
 	/// </summary>
 	/// <name>I Ranch Life</name>
-	I_Ranch_Life,
+	I_Ranch_Life = 45,
 
 	/// <summary>
 	/// The Guild
 	/// </summary>
 	/// <name>I Resolve Beavers</name>
-	I_Resolve_Beavers,
+	I_Resolve_Beavers = 46,
 
 	/// <summary>
 	/// The Pack
 	/// </summary>
 	/// <name>I Resolve Foxes</name>
-	I_Resolve_Foxes,
+	I_Resolve_Foxes = 47,
 
 	/// <summary>
 	/// The Collegium
 	/// </summary>
 	/// <name>I Resolve Frogs</name>
-	I_Resolve_Frogs,
+	I_Resolve_Frogs = 48,
 
 	/// <summary>
 	/// The Flock
 	/// </summary>
 	/// <name>I Resolve Harpies</name>
-	I_Resolve_Harpies,
+	I_Resolve_Harpies = 49,
 
 	/// <summary>
 	/// People's Resolve
 	/// </summary>
 	/// <name>I Resolve Humans</name>
-	I_Resolve_Humans,
+	I_Resolve_Humans = 50,
 
 	/// <summary>
 	/// The Clan
 	/// </summary>
 	/// <name>I Resolve Lizards</name>
-	I_Resolve_Lizards,
+	I_Resolve_Lizards = 51,
 
 	/// <summary>
 	/// Lost in the Woods
 	/// </summary>
 	/// <name>I Ruins</name>
-	I_Ruins,
+	I_Ruins = 52,
 
 	/// <summary>
 	/// Salt Miner
 	/// </summary>
 	/// <name>I Salt</name>
-	I_Salt,
+	I_Salt = 53,
 
 	/// <summary>
 	/// Barbecue
 	/// </summary>
 	/// <name>I Skewers</name>
-	I_Skewers,
+	I_Skewers = 54,
 
 	/// <summary>
 	/// Problem Solver
 	/// </summary>
 	/// <name>I Solve Any Relic</name>
-	I_Solve_Any_Relic,
+	I_Solve_Any_Relic = 55,
 
 	/// <summary>
 	/// Tick Tock
 	/// </summary>
 	/// <name>I Solve Dangerous Relic</name>
-	I_Solve_Dangerous_Relic,
+	I_Solve_Dangerous_Relic = 56,
 
 	/// <summary>
 	/// Basic Ingredient
 	/// </summary>
 	/// <name>I Storm Water</name>
-	I_Storm_Water,
+	I_Storm_Water = 57,
 
 	/// <summary>
 	/// Joyful Beavers
 	/// </summary>
 	/// <name>I TO Beaver Resolve</name>
-	I_TO_Beaver_Resolve,
+	I_TO_Beaver_Resolve = 58,
 
 	/// <summary>
 	/// Zealous Scouts
 	/// </summary>
 	/// <name>I TO Dangerous Relics</name>
-	I_TO_Dangerous_Relics,
+	I_TO_Dangerous_Relics = 59,
 
 	/// <summary>
 	/// Joyful Foxes
 	/// </summary>
 	/// <name>I TO Fox Resolve</name>
-	I_TO_Fox_Resolve,
+	I_TO_Fox_Resolve = 60,
 
 	/// <summary>
 	/// Joyful Frogs
 	/// </summary>
 	/// <name>I TO Frog Resolve</name>
-	I_TO_Frog_Resolve,
+	I_TO_Frog_Resolve = 61,
 
 	/// <summary>
 	/// Joyful Harpies
 	/// </summary>
 	/// <name>I TO Harpy Resolve</name>
-	I_TO_Harpy_Resolve,
+	I_TO_Harpy_Resolve = 62,
 
 	/// <summary>
 	/// Speedy Real Estate
 	/// </summary>
 	/// <name>I TO HUB</name>
-	I_TO_HUB,
+	I_TO_HUB = 63,
 
 	/// <summary>
 	/// Joyful Humans
 	/// </summary>
 	/// <name>I TO Human Resolve</name>
-	I_TO_Human_Resolve,
+	I_TO_Human_Resolve = 64,
 
 	/// <summary>
 	/// Joyful Lizards
 	/// </summary>
 	/// <name>I TO Lizard Resolve</name>
-	I_TO_Lizard_Resolve,
+	I_TO_Lizard_Resolve = 65,
 
 	/// <summary>
 	/// Hurried Expedition
 	/// </summary>
 	/// <name>I TO Relic Resolve</name>
-	I_TO_Relic_Resolve,
+	I_TO_Relic_Resolve = 66,
 
 	/// <summary>
 	/// Call of the Ruins
 	/// </summary>
 	/// <name>I TO Ruins and Glades</name>
-	I_TO_Ruins_And_Glades,
+	I_TO_Ruins_And_Glades = 67,
 
 	/// <summary>
 	/// Quick Transaction
 	/// </summary>
 	/// <name>I TO Sold Amber</name>
-	I_TO_Sold_Amber,
+	I_TO_Sold_Amber = 68,
 
 	/// <summary>
 	/// Impetuous Explorer
 	/// </summary>
 	/// <name>I TO Solve Relics</name>
-	I_TO_Solve_Relics,
+	I_TO_Solve_Relics = 69,
 
 	/// <summary>
 	/// Supply Thy Neighbor
 	/// </summary>
 	/// <name>I TO Trade Routes With Value</name>
-	I_TO_Trade_Routes_With_Value,
+	I_TO_Trade_Routes_With_Value = 70,
 
 	/// <summary>
 	/// Businessman
 	/// </summary>
 	/// <name>I Trade Routes</name>
-	I_Trade_Routes,
+	I_Trade_Routes = 71,
 
 	/// <summary>
 	/// Booming Economy
 	/// </summary>
 	/// <name>I Trader Value Sold</name>
-	I_Trader_Value_Sold,
+	I_Trader_Value_Sold = 72,
 
 	/// <summary>
 	/// Water Extraction
 	/// </summary>
 	/// <name>I Upgrade Pump</name>
-	I_Upgrade_Pump,
+	I_Upgrade_Pump = 73,
 
 	/// <summary>
 	/// Fill the Engines
 	/// </summary>
 	/// <name>I Water</name>
-	I_Water,
+	I_Water = 74,
 
 	/// <summary>
 	/// Exploration
 	/// </summary>
 	/// <name>IA Glades</name>
-	IA_Glades,
+	IA_Glades = 75,
 
 	/// <summary>
 	/// Shelters
 	/// </summary>
 	/// <name>IA Shelters</name>
-	IA_Shelters,
+	IA_Shelters = 76,
 
 	/// <summary>
 	/// Housing Estate
 	/// </summary>
 	/// <name>IA TO Build Shelters</name>
-	IA_TO_Build_Shelters,
+	IA_TO_Build_Shelters = 77,
 
 	/// <summary>
 	/// Distant Journey
 	/// </summary>
 	/// <name>IA TO Discover Glades</name>
-	IA_TO_Discover_Glades,
+	IA_TO_Discover_Glades = 78,
 
 	/// <summary>
 	/// Woodcutters
 	/// </summary>
 	/// <name>IA Woodcutters Camp</name>
-	IA_Woodcutters_Camp,
+	IA_Woodcutters_Camp = 79,
 
 	/// <summary>
 	/// The Grove
 	/// </summary>
 	/// <name>IB Beavers</name>
-	IB_Beavers,
+	IB_Beavers = 80,
 
 	/// <summary>
 	/// Big Delivery
 	/// </summary>
 	/// <name>IB Building Packs</name>
-	IB_Building_Packs,
+	IB_Building_Packs = 81,
 
 	/// <summary>
 	/// Camps
 	/// </summary>
 	/// <name>IB Camps</name>
-	IB_Camps,
+	IB_Camps = 82,
 
 	/// <summary>
 	/// Rich Harvest
 	/// </summary>
 	/// <name>IB Crops</name>
-	IB_Crops,
+	IB_Crops = 83,
 
 	/// <summary>
 	/// People of the Forest
 	/// </summary>
 	/// <name>IB Foxes</name>
-	IB_Foxes,
+	IB_Foxes = 84,
 
 	/// <summary>
 	/// Architects
 	/// </summary>
 	/// <name>IB Frogs</name>
-	IB_Frogs,
+	IB_Frogs = 85,
 
 	/// <summary>
 	/// The Nest
 	/// </summary>
 	/// <name>IB Harpies</name>
-	IB_Harpies,
+	IB_Harpies = 86,
 
 	/// <summary>
 	/// Help From the Queen
 	/// </summary>
 	/// <name>IB Humans</name>
-	IB_Humans,
+	IB_Humans = 87,
 
 	/// <summary>
 	/// Trappers
 	/// </summary>
 	/// <name>IB Lizards</name>
-	IB_Lizards,
+	IB_Lizards = 88,
 
 	/// <summary>
 	/// Basic Logistics
 	/// </summary>
 	/// <name>IB Paths</name>
-	IB_Paths,
+	IB_Paths = 89,
 
 	/// <summary>
 	/// Delivery
 	/// </summary>
 	/// <name>IB Provisions and Crops</name>
-	IB_Provisions_And_Crops,
+	IB_Provisions_And_Crops = 90,
 
 	/// <summary>
 	/// Relics
 	/// </summary>
 	/// <name>IB Tablet</name>
-	IB_Tablet,
+	IB_Tablet = 91,
 
 	/// <summary>
 	/// Three Packs
 	/// </summary>
 	/// <name>IB Three Packs</name>
-	IB_Three_Packs,
+	IB_Three_Packs = 92,
 
 	/// <summary>
 	/// Quick Packaging
 	/// </summary>
 	/// <name>IB TO Three Packs</name>
-	IB_TO_Three_Packs,
+	IB_TO_Three_Packs = 93,
 
 	/// <summary>
 	/// Trading Post
 	/// </summary>
 	/// <name>IB Trading Post</name>
-	IB_Trading_Post,
+	IB_Trading_Post = 94,
 
 	/// <summary>
 	/// Wood Delivery
 	/// </summary>
 	/// <name>IB Wood</name>
-	IB_Wood,
+	IB_Wood = 95,
 
 	/// <summary>
 	/// Advanced Trading
 	/// </summary>
 	/// <name>II Advanced Trading</name>
-	II_Advanced_Trading,
+	II_Advanced_Trading = 96,
 
 	/// <summary>
 	/// Aid For the Beaver Clan
 	/// </summary>
 	/// <name>II Aid for the Beaver Faction</name>
-	II_Aid_For_The_Beaver_Faction,
+	II_Aid_For_The_Beaver_Faction = 97,
 
 	/// <summary>
 	/// Aid for the Fox Pack
 	/// </summary>
 	/// <name>II Aid for the Fox Faction</name>
-	II_Aid_For_The_Fox_Faction,
+	II_Aid_For_The_Fox_Faction = 98,
 
 	/// <summary>
 	/// Aid for the Frog Clan
 	/// </summary>
 	/// <name>II Aid for the Frog Faction</name>
-	II_Aid_For_The_Frog_Faction,
+	II_Aid_For_The_Frog_Faction = 99,
 
 	/// <summary>
 	/// Aiding the Flock
 	/// </summary>
 	/// <name>II Aid for the Harpy Faction</name>
-	II_Aid_For_The_Harpy_Faction,
+	II_Aid_For_The_Harpy_Faction = 100,
 
 	/// <summary>
 	/// Aid for the Human Clan
 	/// </summary>
 	/// <name>II Aid for the Human Faction</name>
-	II_Aid_For_The_Human_Faction,
+	II_Aid_For_The_Human_Faction = 101,
 
 	/// <summary>
 	/// Aid for the Lizard Clan
 	/// </summary>
 	/// <name>II Aid for the Lizard Faction</name>
-	II_Aid_For_The_Lizard_Faction,
+	II_Aid_For_The_Lizard_Faction = 102,
 
 	/// <summary>
 	/// Pottery and Wine
 	/// </summary>
 	/// <name>II Artisan</name>
-	II_Artisan,
+	II_Artisan = 103,
 
 	/// <summary>
 	/// Beaver Influx
 	/// </summary>
 	/// <name>II Beaver Influx</name>
-	II_Beaver_Influx,
+	II_Beaver_Influx = 104,
 
 	/// <summary>
 	/// Beaver Population
 	/// </summary>
 	/// <name>II Beaver Population</name>
-	II_Beaver_Population,
+	II_Beaver_Population = 105,
 
 	/// <summary>
 	/// Fighting the Storm
 	/// </summary>
 	/// <name>II Blight Post</name>
-	II_Blight_Post,
+	II_Blight_Post = 106,
 
 	/// <summary>
 	/// Happy Brewing
 	/// </summary>
 	/// <name>II Brewery</name>
-	II_Brewery,
+	II_Brewery = 107,
 
 	/// <summary>
 	/// Clothing the People
 	/// </summary>
 	/// <name>II Coats</name>
-	II_Coats,
+	II_Coats = 108,
 
 	/// <summary>
 	/// Restoration
 	/// </summary>
 	/// <name>II Convert</name>
-	II_Convert,
+	II_Convert = 109,
 
 	/// <summary>
 	/// Advanced Farming
 	/// </summary>
 	/// <name>II Crops</name>
-	II_Crops,
+	II_Crops = 110,
 
 	/// <summary>
 	/// Firestarter
 	/// </summary>
 	/// <name>II Cysts</name>
-	II_Cysts,
+	II_Cysts = 111,
 
 	/// <summary>
 	/// Risky Expedition
 	/// </summary>
 	/// <name>II Dangerous Glades</name>
-	II_Dangerous_Glades,
+	II_Dangerous_Glades = 112,
 
 	/// <summary>
 	/// Rain Engines
 	/// </summary>
 	/// <name>II Engines</name>
-	II_Engines,
+	II_Engines = 113,
 
 	/// <summary>
 	/// Algal Bloom
 	/// </summary>
 	/// <name>II Fishing Trial M S NB</name>
-	II_Fishing_Trial_M_S_NB,
+	II_Fishing_Trial_M_S_NB = 114,
 
 	/// <summary>
 	/// Scaling Up
 	/// </summary>
 	/// <name>II Fishing Trial RW CF S</name>
-	II_Fishing_Trial_RW_CF_S,
+	II_Fishing_Trial_RW_CF_S = 115,
 
 	/// <summary>
 	/// Out Fishing
 	/// </summary>
 	/// <name>II Fishing Trial SO M CRW NB</name>
-	II_Fishing_Trial_SO_M_CRW_NB,
+	II_Fishing_Trial_SO_M_CRW_NB = 116,
 
 	/// <summary>
 	/// Fox Influx
 	/// </summary>
 	/// <name>II Fox Influx</name>
-	II_Fox_Influx,
+	II_Fox_Influx = 117,
 
 	/// <summary>
 	/// Fox Population
 	/// </summary>
 	/// <name>II Fox Population</name>
-	II_Fox_Population,
+	II_Fox_Population = 118,
 
 	/// <summary>
 	/// Frog Influx
 	/// </summary>
 	/// <name>II Frog Influx</name>
-	II_Frog_Influx,
+	II_Frog_Influx = 119,
 
 	/// <summary>
 	/// Frog Population
 	/// </summary>
 	/// <name>II Frog Population</name>
-	II_Frog_Population,
+	II_Frog_Population = 120,
 
 	/// <summary>
 	/// Important Delivery
 	/// </summary>
 	/// <name>II Fuel and Building</name>
-	II_Fuel_And_Building,
+	II_Fuel_And_Building = 121,
 
 	/// <summary>
 	/// Into the Wilds
 	/// </summary>
 	/// <name>II Glades</name>
-	II_Glades,
+	II_Glades = 122,
 
 	/// <summary>
 	/// Into the Unknown
 	/// </summary>
 	/// <name>II Glades in Time</name>
-	II_Glades_In_Time,
+	II_Glades_In_Time = 123,
 
 	/// <summary>
 	/// Happy Beavers
 	/// </summary>
 	/// <name>II Happy Beavers</name>
-	II_Happy_Beavers,
+	II_Happy_Beavers = 124,
 
 	/// <summary>
 	/// Happy Foxes
 	/// </summary>
 	/// <name>II Happy Foxes</name>
-	II_Happy_Foxes,
+	II_Happy_Foxes = 125,
 
 	/// <summary>
 	/// Happy Frogs
 	/// </summary>
 	/// <name>II Happy Frogs</name>
-	II_Happy_Frogs,
+	II_Happy_Frogs = 126,
 
 	/// <summary>
 	/// Happy Harpies
 	/// </summary>
 	/// <name>II Happy Harpies</name>
-	II_Happy_Harpies,
+	II_Happy_Harpies = 127,
 
 	/// <summary>
 	/// Happy Humans
 	/// </summary>
 	/// <name>II Happy Humans</name>
-	II_Happy_Humans,
+	II_Happy_Humans = 128,
 
 	/// <summary>
 	/// Happy Lizards
 	/// </summary>
 	/// <name>II Happy Lizards</name>
-	II_Happy_Lizards,
+	II_Happy_Lizards = 129,
 
 	/// <summary>
 	/// Harpy Influx
 	/// </summary>
 	/// <name>II Harpy Influx</name>
-	II_Harpy_Influx,
+	II_Harpy_Influx = 130,
 
 	/// <summary>
 	/// Harpy Population
 	/// </summary>
 	/// <name>II Harpy Population</name>
-	II_Harpy_Population,
+	II_Harpy_Population = 131,
 
 	/// <summary>
 	/// More Houses
 	/// </summary>
 	/// <name>II Human Houses</name>
-	II_Human_Houses,
+	II_Human_Houses = 132,
 
 	/// <summary>
 	/// Human Influx
 	/// </summary>
 	/// <name>II Human Influx</name>
-	II_Human_Influx,
+	II_Human_Influx = 133,
 
 	/// <summary>
 	/// Human Population
 	/// </summary>
 	/// <name>II Human Population</name>
-	II_Human_Population,
+	II_Human_Population = 134,
 
 	/// <summary>
 	/// Meat Diet
 	/// </summary>
 	/// <name>II Jerky</name>
-	II_Jerky,
+	II_Jerky = 135,
 
 	/// <summary>
 	/// Meat Treats
 	/// </summary>
 	/// <name>II Jerky For Time</name>
-	II_Jerky_For_Time,
+	II_Jerky_For_Time = 136,
 
 	/// <summary>
 	/// Lizard Influx
 	/// </summary>
 	/// <name>II Lizard Influx</name>
-	II_Lizard_Influx,
+	II_Lizard_Influx = 137,
 
 	/// <summary>
 	/// Lizard Population
 	/// </summary>
 	/// <name>II Lizard Population</name>
-	II_Lizard_Population,
+	II_Lizard_Population = 138,
 
 	/// <summary>
 	/// Luxurious Delivery
 	/// </summary>
 	/// <name>II Luxury Packs</name>
-	II_Luxury_Packs,
+	II_Luxury_Packs = 139,
 
 	/// <summary>
 	/// Building Materials
 	/// </summary>
 	/// <name>II Means of Production</name>
-	II_Means_Of_Production,
+	II_Means_Of_Production = 140,
 
 	/// <summary>
 	/// Stacking Amber
 	/// </summary>
 	/// <name>II Multiply Routes</name>
-	II_Multiply_Routes,
+	II_Multiply_Routes = 141,
 
 	/// <summary>
 	/// Feast
 	/// </summary>
 	/// <name>II Offering Butcher</name>
-	II_Offering_Butcher,
+	II_Offering_Butcher = 142,
 
 	/// <summary>
 	/// Outposts
 	/// </summary>
 	/// <name>II Outpost</name>
-	II_Outpost,
+	II_Outpost = 143,
 
 	/// <summary>
 	/// Infrastructure
 	/// </summary>
 	/// <name>II Paths</name>
-	II_Paths,
+	II_Paths = 144,
 
 	/// <summary>
 	/// Population Influx
 	/// </summary>
 	/// <name>II Population Influx</name>
-	II_Population_Influx,
+	II_Population_Influx = 145,
 
 	/// <summary>
 	/// Water Delivery
 	/// </summary>
 	/// <name>II Rainwater</name>
-	II_Rainwater,
+	II_Rainwater = 146,
 
 	/// <summary>
 	/// Profit Margin
 	/// </summary>
 	/// <name>II Route Value</name>
-	II_Route_Value,
+	II_Route_Value = 147,
 
 	/// <summary>
 	/// Seller
 	/// </summary>
 	/// <name>II Routes</name>
-	II_Routes,
+	II_Routes = 148,
 
 	/// <summary>
 	/// Sacrificing
 	/// </summary>
 	/// <name>II Sacrifice</name>
-	II_Sacrifice,
+	II_Sacrifice = 149,
 
 	/// <summary>
 	/// Making Connections
 	/// </summary>
 	/// <name>II Standing</name>
-	II_Standing,
+	II_Standing = 150,
 
 	/// <summary>
 	/// Ancient Artifacts
 	/// </summary>
 	/// <name>II Tablets</name>
-	II_Tablets,
+	II_Tablets = 151,
 
 	/// <summary>
 	/// Work Break
 	/// </summary>
 	/// <name>II TO Cut NOTrees</name>
-	II_TO_Cut_NOTrees,
+	II_TO_Cut_NOTrees = 152,
 
 	/// <summary>
 	/// Need for Timber
 	/// </summary>
 	/// <name>II TO Cut Trees</name>
-	II_TO_Cut_Trees,
+	II_TO_Cut_Trees = 153,
 
 	/// <summary>
 	/// Adventurous Viceroy
 	/// </summary>
 	/// <name>II TO Discover Dangerous Glades</name>
-	II_TO_Discover_Dangerous_Glades,
+	II_TO_Discover_Dangerous_Glades = 154,
 
 	/// <summary>
 	/// Forager's Trial
 	/// </summary>
 	/// <name>II TO Forager Trial - CRW AT</name>
-	II_TO_Forager_Trial_CRW_AT,
+	II_TO_Forager_Trial_CRW_AT = 155,
 
 	/// <summary>
 	/// Forager's Trial
 	/// </summary>
 	/// <name>II TO Forager Trial - RW</name>
-	II_TO_Forager_Trial_RW,
+	II_TO_Forager_Trial_RW = 156,
 
 	/// <summary>
 	/// Forager's Trial
 	/// </summary>
 	/// <name>II TO Forager Trial - SO</name>
-	II_TO_Forager_Trial_SO,
+	II_TO_Forager_Trial_SO = 157,
 
 	/// <summary>
 	/// Stonecutter's Trial
 	/// </summary>
 	/// <name>II TO Gathering Stone</name>
-	II_TO_Gathering_Stone,
+	II_TO_Gathering_Stone = 158,
 
 	/// <summary>
 	/// Venturesome Leader
 	/// </summary>
 	/// <name>II TO Glades Discovery</name>
-	II_TO_Glades_Discovery,
+	II_TO_Glades_Discovery = 159,
 
 	/// <summary>
 	/// Herbalist's Trial
 	/// </summary>
 	/// <name>II TO Herbalist Trial - CRW</name>
-	II_TO_Herbalist_Trial_CRW,
+	II_TO_Herbalist_Trial_CRW = 160,
 
 	/// <summary>
 	/// Herbalist's Trial
 	/// </summary>
 	/// <name>II TO Herbalist Trial - RW SF</name>
-	II_TO_Herbalist_Trial_RW_SF,
+	II_TO_Herbalist_Trial_RW_SF = 161,
 
 	/// <summary>
 	/// Herbalist's Trial
 	/// </summary>
 	/// <name>II TO Herbalist Trial - SO</name>
-	II_TO_Herbalist_Trial_SO,
+	II_TO_Herbalist_Trial_SO = 162,
 
 	/// <summary>
 	/// Beaver Colony
 	/// </summary>
 	/// <name>II TO Homes for Beavers</name>
-	II_TO_Homes_For_Beavers,
+	II_TO_Homes_For_Beavers = 163,
 
 	/// <summary>
 	/// Homes For Foxes
 	/// </summary>
 	/// <name>II TO Homes for Foxes</name>
-	II_TO_Homes_For_Foxes,
+	II_TO_Homes_For_Foxes = 164,
 
 	/// <summary>
 	/// Frog Colony
 	/// </summary>
 	/// <name>II TO Homes for Frogs</name>
-	II_TO_Homes_For_Frogs,
+	II_TO_Homes_For_Frogs = 165,
 
 	/// <summary>
 	/// Harpy Colony
 	/// </summary>
 	/// <name>II TO Homes for Harpies</name>
-	II_TO_Homes_For_Harpies,
+	II_TO_Homes_For_Harpies = 166,
 
 	/// <summary>
 	/// Human Colony
 	/// </summary>
 	/// <name>II TO Homes for Humans</name>
-	II_TO_Homes_For_Humans,
+	II_TO_Homes_For_Humans = 167,
 
 	/// <summary>
 	/// Lizard Colony
 	/// </summary>
 	/// <name>II TO Homes for Lizards</name>
-	II_TO_Homes_For_Lizards,
+	II_TO_Homes_For_Lizards = 168,
 
 	/// <summary>
 	/// Outpost
 	/// </summary>
 	/// <name>II TO HUBs</name>
-	II_TO_HUBs,
+	II_TO_HUBs = 169,
 
 	/// <summary>
 	/// Efficiency Test
 	/// </summary>
 	/// <name>II TO Lumbermill</name>
-	II_TO_Lumbermill,
+	II_TO_Lumbermill = 170,
 
 	/// <summary>
 	/// Sacrificial Ceremony
 	/// </summary>
 	/// <name>II TO Sacrificies</name>
-	II_TO_Sacrificies,
+	II_TO_Sacrificies = 171,
 
 	/// <summary>
 	/// Trapper's Trial
 	/// </summary>
 	/// <name>II TO Trappers Trial - CF SF</name>
-	II_TO_Trappers_Trial_CF_SF,
+	II_TO_Trappers_Trial_CF_SF = 172,
 
 	/// <summary>
 	/// Trapper's Trial
 	/// </summary>
 	/// <name>II TO Trappers Trial - RW M</name>
-	II_TO_Trappers_Trial_RW_M,
+	II_TO_Trappers_Trial_RW_M = 173,
 
 	/// <summary>
 	/// Trade Connections
 	/// </summary>
 	/// <name>II Trade Connections</name>
-	II_Trade_Connections,
+	II_Trade_Connections = 174,
 
 	/// <summary>
 	/// Rainpunk Engineer
 	/// </summary>
 	/// <name>II Use Water</name>
-	II_Use_Water,
+	II_Use_Water = 175,
 
 	/// <summary>
 	/// Royal Gardens
 	/// </summary>
 	/// <name>III Aesthethics</name>
-	III_Aesthethics,
+	III_Aesthethics = 176,
 
 	/// <summary>
 	/// Cups and Glasses
 	/// </summary>
 	/// <name>III Ale and Tavern</name>
-	III_Ale_And_Tavern,
+	III_Ale_And_Tavern = 177,
 
 	/// <summary>
 	/// Charity Fair
 	/// </summary>
 	/// <name>III Amber and Market</name>
-	III_Amber_And_Market,
+	III_Amber_And_Market = 178,
 
 	/// <summary>
 	/// Lost Knowledge
 	/// </summary>
 	/// <name>III Ancient Tablets</name>
-	III_Ancient_Tablets,
+	III_Ancient_Tablets = 179,
 
 	/// <summary>
 	/// Archaeology
 	/// </summary>
 	/// <name>III Archaeology</name>
-	III_Archaeology,
+	III_Archaeology = 180,
 
 	/// <summary>
 	/// Beaver Relatives
 	/// </summary>
 	/// <name>III Beaver Relatives</name>
-	III_Beaver_Relatives,
+	III_Beaver_Relatives = 181,
 
 	/// <summary>
 	/// Building the Citadel
 	/// </summary>
 	/// <name>III Building Packs</name>
-	III_Building_Packs,
+	III_Building_Packs = 182,
 
 	/// <summary>
 	/// New Clothes
 	/// </summary>
 	/// <name>III Coats NeedForTime</name>
-	III_Coats_NeedForTime,
+	III_Coats_NeedForTime = 183,
 
 	/// <summary>
 	/// Industry
 	/// </summary>
 	/// <name>III Copper</name>
-	III_Copper,
+	III_Copper = 184,
 
 	/// <summary>
 	/// Profitable Trade
 	/// </summary>
 	/// <name>III Costly Route</name>
-	III_Costly_Route,
+	III_Costly_Route = 185,
 
 	/// <summary>
 	/// Pyromania
 	/// </summary>
 	/// <name>III Cysts</name>
-	III_Cysts,
+	III_Cysts = 186,
 
 	/// <summary>
 	/// Agriculture
 	/// </summary>
 	/// <name>III Farmfields</name>
-	III_Farmfields,
+	III_Farmfields = 187,
 
 	/// <summary>
 	/// The Forum
 	/// </summary>
 	/// <name>III Forum</name>
-	III_Forum,
+	III_Forum = 188,
 
 	/// <summary>
 	/// Fox Relatives
 	/// </summary>
 	/// <name>III Fox Relatives</name>
-	III_Fox_Relatives,
+	III_Fox_Relatives = 189,
 
 	/// <summary>
 	/// Frog Relatives
 	/// </summary>
 	/// <name>III Frog Relatives</name>
-	III_Frog_Relatives,
+	III_Frog_Relatives = 190,
 
 	/// <summary>
 	/// Upgraded Living
 	/// </summary>
 	/// <name>III Frog Upgrades</name>
-	III_Frog_Upgrades,
+	III_Frog_Upgrades = 191,
 
 	/// <summary>
 	/// Trailblazing
 	/// </summary>
 	/// <name>III Glades</name>
-	III_Glades,
+	III_Glades = 192,
 
 	/// <summary>
 	/// Hasty Explorer
 	/// </summary>
 	/// <name>III Glades in Time</name>
-	III_Glades_In_Time,
+	III_Glades_In_Time = 193,
 
 	/// <summary>
 	/// Harpy Relatives
 	/// </summary>
 	/// <name>III Harpy Relatives</name>
-	III_Harpy_Relatives,
+	III_Harpy_Relatives = 194,
 
 	/// <summary>
 	/// Cleanliness
 	/// </summary>
 	/// <name>III Higene</name>
-	III_Higene,
+	III_Higene = 195,
 
 	/// <summary>
 	/// Advanced District
 	/// </summary>
 	/// <name>III Hub</name>
-	III_Hub,
+	III_Hub = 196,
 
 	/// <summary>
 	/// Human Relatives
 	/// </summary>
 	/// <name>III Human Relatives</name>
-	III_Human_Relatives,
+	III_Human_Relatives = 197,
 
 	/// <summary>
 	/// Basic Rights
 	/// </summary>
 	/// <name>III Leisure for Time</name>
-	III_Leisure_For_Time,
+	III_Leisure_For_Time = 198,
 
 	/// <summary>
 	/// Lizard Relatives
 	/// </summary>
 	/// <name>III Lizard Relatives</name>
-	III_Lizard_Relatives,
+	III_Lizard_Relatives = 199,
 
 	/// <summary>
 	/// Lost in the Woods
 	/// </summary>
 	/// <name>III Lost Villagers</name>
-	III_Lost_Villagers,
+	III_Lost_Villagers = 200,
 
 	/// <summary>
 	/// Luxury
 	/// </summary>
 	/// <name>III Luxury</name>
-	III_Luxury,
+	III_Luxury = 201,
 
 	/// <summary>
 	/// Rations for the Citadel
 	/// </summary>
 	/// <name>III Provisions and Crops</name>
-	III_Provisions_And_Crops,
+	III_Provisions_And_Crops = 202,
 
 	/// <summary>
 	/// Water Industry
 	/// </summary>
 	/// <name>III Pump Upgrade</name>
-	III_Pump_Upgrade,
+	III_Pump_Upgrade = 203,
 
 	/// <summary>
 	/// Advanced Logistics
 	/// </summary>
 	/// <name>III Rain Collector</name>
-	III_Rain_Collector,
+	III_Rain_Collector = 204,
 
 	/// <summary>
 	/// Religion
 	/// </summary>
 	/// <name>III Religion</name>
-	III_Religion,
+	III_Religion = 205,
 
 	/// <summary>
 	/// Beaver Resolve
 	/// </summary>
 	/// <name>III Resolve Beavers</name>
-	III_Resolve_Beavers,
+	III_Resolve_Beavers = 206,
 
 	/// <summary>
 	/// Fox Villagers
 	/// </summary>
 	/// <name>III Resolve Foxes</name>
-	III_Resolve_Foxes,
+	III_Resolve_Foxes = 207,
 
 	/// <summary>
 	/// Frog Resolve
 	/// </summary>
 	/// <name>III Resolve Frogs</name>
-	III_Resolve_Frogs,
+	III_Resolve_Frogs = 208,
 
 	/// <summary>
 	/// Harpy Villagers
 	/// </summary>
 	/// <name>III Resolve Harpies</name>
-	III_Resolve_Harpies,
+	III_Resolve_Harpies = 209,
 
 	/// <summary>
 	/// Human Villagers
 	/// </summary>
 	/// <name>III Resolve Humans</name>
-	III_Resolve_Humans,
+	III_Resolve_Humans = 210,
 
 	/// <summary>
 	/// Lizard Villagers
 	/// </summary>
 	/// <name>III Resolve Lizards</name>
-	III_Resolve_Lizards,
+	III_Resolve_Lizards = 211,
 
 	/// <summary>
 	/// Fair Exchange
 	/// </summary>
 	/// <name>III Route Value</name>
-	III_Route_Value,
+	III_Route_Value = 212,
 
 	/// <summary>
 	/// Export
 	/// </summary>
 	/// <name>III Routes</name>
-	III_Routes,
+	III_Routes = 213,
 
 	/// <summary>
 	/// Income Tax
 	/// </summary>
 	/// <name>III Routes And Amber</name>
-	III_Routes_And_Amber,
+	III_Routes_And_Amber = 214,
 
 	/// <summary>
 	/// Aesthetics
 	/// </summary>
 	/// <name>III Royal Gardens</name>
-	III_Royal_Gardens,
+	III_Royal_Gardens = 215,
 
 	/// <summary>
 	/// Ruins
 	/// </summary>
 	/// <name>III Ruins</name>
-	III_Ruins,
+	III_Ruins = 216,
 
 	/// <summary>
 	/// Salty Delivery
 	/// </summary>
 	/// <name>III Salt</name>
-	III_Salt,
+	III_Salt = 217,
 
 	/// <summary>
 	/// Brotherhood
 	/// </summary>
 	/// <name>III Scrolls and Temple</name>
-	III_Scrolls_And_Temple,
+	III_Scrolls_And_Temple = 218,
 
 	/// <summary>
 	/// Gifts for the Queen
 	/// </summary>
 	/// <name>III Send to Citadel</name>
-	III_Send_To_Citadel,
+	III_Send_To_Citadel = 219,
 
 	/// <summary>
 	/// Healing
 	/// </summary>
 	/// <name>III Service Harpy</name>
-	III_Service_Harpy,
+	III_Service_Harpy = 220,
 
 	/// <summary>
 	/// Religious Rites
 	/// </summary>
 	/// <name>III Service Human</name>
-	III_Service_Human,
+	III_Service_Human = 221,
 
 	/// <summary>
 	/// Arena
 	/// </summary>
 	/// <name>III Service Lizard</name>
-	III_Service_Lizard,
+	III_Service_Lizard = 222,
 
 	/// <summary>
 	/// Serving Ale
 	/// </summary>
 	/// <name>III Serving Ale</name>
-	III_Serving_Ale,
+	III_Serving_Ale = 223,
 
 	/// <summary>
 	/// Open or send caches
 	/// </summary>
 	/// <name>III Solve Chests</name>
-	III_Solve_Chests,
+	III_Solve_Chests = 224,
 
 	/// <summary>
 	/// Profitable Caution
 	/// </summary>
 	/// <name>III Solve Dangerous Relic</name>
-	III_Solve_Dangerous_Relic,
+	III_Solve_Dangerous_Relic = 225,
 
 	/// <summary>
 	/// Good Friends
 	/// </summary>
 	/// <name>III Standing</name>
-	III_Standing,
+	III_Standing = 226,
 
 	/// <summary>
 	/// Basic Packages
 	/// </summary>
 	/// <name>III TO Basic Packs</name>
-	III_TO_Basic_Packs,
+	III_TO_Basic_Packs = 227,
 
 	/// <summary>
 	/// Building Rush
 	/// </summary>
 	/// <name>III TO Building Packs</name>
-	III_TO_Building_Packs,
+	III_TO_Building_Packs = 228,
 
 	/// <summary>
 	/// Chest Chaser
 	/// </summary>
 	/// <name>III TO Chest Chaser</name>
-	III_TO_Chest_Chaser,
+	III_TO_Chest_Chaser = 229,
 
 	/// <summary>
 	/// Foolhardy Man
 	/// </summary>
 	/// <name>III TO Dangerous Stuff</name>
-	III_TO_Dangerous_Stuff,
+	III_TO_Dangerous_Stuff = 230,
 
 	/// <summary>
 	/// Coal Fever
 	/// </summary>
 	/// <name>III TO Digging Coal</name>
-	III_TO_Digging_Coal,
+	III_TO_Digging_Coal = 231,
 
 	/// <summary>
 	/// Copper Fever
 	/// </summary>
 	/// <name>III TO Digging Ore</name>
-	III_TO_Digging_Ore,
+	III_TO_Digging_Ore = 232,
 
 	/// <summary>
 	/// Salt Fever
 	/// </summary>
 	/// <name>III TO Digging Salt</name>
-	III_TO_Digging_Salt,
+	III_TO_Digging_Salt = 233,
 
 	/// <summary>
 	/// Let It Rain
 	/// </summary>
 	/// <name>III TO Engines and Water</name>
-	III_TO_Engines_And_Water,
+	III_TO_Engines_And_Water = 234,
 
 	/// <summary>
 	/// Disturbing the Ancients
 	/// </summary>
 	/// <name>III TO Explore and Deliver</name>
-	III_TO_Explore_And_Deliver,
+	III_TO_Explore_And_Deliver = 235,
 
 	/// <summary>
 	/// Devilish Curiosity
 	/// </summary>
 	/// <name>III TO Forbidden Glade</name>
-	III_TO_Forbidden_Glade,
+	III_TO_Forbidden_Glade = 236,
 
 	/// <summary>
 	/// Forest Fascination
 	/// </summary>
 	/// <name>III TO Glades and Tools</name>
-	III_TO_Glades_And_Tools,
+	III_TO_Glades_And_Tools = 237,
 
 	/// <summary>
 	/// Wealthy Trader
 	/// </summary>
 	/// <name>III TO Rich Trader</name>
-	III_TO_Rich_Trader,
+	III_TO_Rich_Trader = 238,
 
 	/// <summary>
 	/// Into the Ruins
 	/// </summary>
 	/// <name>III TO Ruins and Planks</name>
-	III_TO_Ruins_And_Planks,
+	III_TO_Ruins_And_Planks = 239,
 
 	/// <summary>
 	/// Bling-Bling
 	/// </summary>
 	/// <name>III TO Shiny</name>
-	III_TO_Shiny,
+	III_TO_Shiny = 240,
 
 	/// <summary>
 	/// Thirsty Trader
 	/// </summary>
 	/// <name>III TO Thirsty Trader</name>
-	III_TO_Thirsty_Trader,
+	III_TO_Thirsty_Trader = 241,
 
 	/// <summary>
 	/// The Source
 	/// </summary>
 	/// <name>III TO Water Used</name>
-	III_TO_Water_Used,
+	III_TO_Water_Used = 242,
 
 	/// <summary>
 	/// Trade and Industry
 	/// </summary>
 	/// <name>III Trade and Spark</name>
-	III_Trade_And_Spark,
+	III_Trade_And_Spark = 243,
 
 	/// <summary>
 	/// Trading Goods
 	/// </summary>
 	/// <name>III TradePacks</name>
-	III_TradePacks,
+	III_TradePacks = 244,
 
 	/// <summary>
 	/// Booming Economy
 	/// </summary>
 	/// <name>III Trader Value Sold</name>
-	III_Trader_Value_Sold,
+	III_Trader_Value_Sold = 245,
 
 	/// <summary>
 	/// Lumps of Coal
 	/// </summary>
 	/// <name>III Upgrade Mine - Coal</name>
-	III_Upgrade_Mine_Coal,
+	III_Upgrade_Mine_Coal = 246,
 
 	/// <summary>
 	/// Ore Mining
 	/// </summary>
 	/// <name>III Upgrade Mine - Copper</name>
-	III_Upgrade_Mine_Copper,
+	III_Upgrade_Mine_Copper = 247,
 
 	/// <summary>
 	/// Power of the Storm
 	/// </summary>
 	/// <name>III Use Blue Water</name>
-	III_Use_Blue_Water,
+	III_Use_Blue_Water = 248,
 
 	/// <summary>
 	/// Power of the Drizzle
 	/// </summary>
 	/// <name>III Use Green Water</name>
-	III_Use_Green_Water,
+	III_Use_Green_Water = 249,
 
 	/// <summary>
 	/// Power of the Clearance
 	/// </summary>
 	/// <name>III Use Yellow Water</name>
-	III_Use_Yellow_Water,
+	III_Use_Yellow_Water = 250,
 
 	/// <summary>
 	/// Luxury Goods
 	/// </summary>
 	/// <name>III Valuables</name>
-	III_Valuables,
+	III_Valuables = 251,
 
 	/// <summary>
 	/// Varied Delivery
 	/// </summary>
 	/// <name>III Varied Delivery</name>
-	III_Varied_Delivery,
+	III_Varied_Delivery = 252,
 
 	/// <summary>
 	/// Liquid Luck
 	/// </summary>
 	/// <name>III Wine and Guild House</name>
-	III_Wine_And_Guild_House,
+	III_Wine_And_Guild_House = 253,
 
 	/// <summary>
 	/// Folks Gotta Eat!
 	/// </summary>
 	/// <name>IV 2 Complex Food for Time</name>
-	IV_2_Complex_Food_For_Time,
+	IV_2_Complex_Food_For_Time = 254,
 
 	/// <summary>
 	/// Pyromancer
 	/// </summary>
 	/// <name>IV Cysts</name>
-	IV_Cysts,
+	IV_Cysts = 255,
 
 	/// <summary>
 	/// Playing With Fire
 	/// </summary>
 	/// <name>IV Dangerous Glades</name>
-	IV_Dangerous_Glades,
+	IV_Dangerous_Glades = 256,
 
 	/// <summary>
 	/// All at Once
 	/// </summary>
 	/// <name>IV Glades in Time</name>
-	IV_Glades_In_Time,
+	IV_Glades_In_Time = 257,
 
 	/// <summary>
 	/// Peddler
 	/// </summary>
 	/// <name>IV Peddler</name>
-	IV_Peddler,
+	IV_Peddler = 258,
 
 	/// <summary>
 	/// Infused Rainwater
 	/// </summary>
 	/// <name>IV Rainwater</name>
-	IV_Rainwater,
+	IV_Rainwater = 259,
 
 	/// <summary>
 	/// The Cult of Fire
 	/// </summary>
 	/// <name>IV Religion for Time</name>
-	IV_Religion_For_Time,
+	IV_Religion_For_Time = 260,
 
 	/// <summary>
 	/// Export Hub
 	/// </summary>
 	/// <name>IV Route Value</name>
-	IV_Route_Value,
+	IV_Route_Value = 261,
 
 	/// <summary>
 	/// Trade Baron
 	/// </summary>
 	/// <name>IV Routes</name>
-	IV_Routes,
+	IV_Routes = 262,
 
 	/// <summary>
 	/// Fearless
 	/// </summary>
 	/// <name>IV TO Fearless</name>
-	IV_TO_Fearless,
+	IV_TO_Fearless = 263,
 
 	/// <summary>
 	/// Ultimate Challenge
 	/// </summary>
 	/// <name>IV TO Forbidden Glade</name>
-	IV_TO_Forbidden_Glade,
+	IV_TO_Forbidden_Glade = 264,
 
 	/// <summary>
 	/// Greedy Merchant
 	/// </summary>
 	/// <name>IV TO Greedy Merchant</name>
-	IV_TO_Greedy_Merchant,
+	IV_TO_Greedy_Merchant = 265,
 
 	/// <summary>
 	/// Trading Master
 	/// </summary>
 	/// <name>IV TO Trading Master</name>
-	IV_TO_Trading_Master,
+	IV_TO_Trading_Master = 266,
 
 	/// <summary>
 	/// Trade and Luxury
 	/// </summary>
 	/// <name>IV Trade and Luxury Packs</name>
-	IV_Trade_And_Luxury_Packs,
+	IV_Trade_And_Luxury_Packs = 267,
 
 	/// <summary>
 	/// Rainpunk Enthusiast
 	/// </summary>
 	/// <name>IV Use Water</name>
-	IV_Use_Water,
+	IV_Use_Water = 268,
 
 	/// <summary>
 	/// Funding an Outpost
 	/// </summary>
 	/// <name>IVA Building and Crops Packs</name>
-	IVA_Building_And_Crops_Packs,
+	IVA_Building_And_Crops_Packs = 269,
 
 	/// <summary>
 	/// Focus on Farming
 	/// </summary>
 	/// <name>IVA Farmfields</name>
-	IVA_Farmfields,
+	IVA_Farmfields = 270,
 
 	/// <summary>
 	/// Luxuries for the Citadel
 	/// </summary>
 	/// <name>IVA Luxury Goods</name>
-	IVA_Luxury_Goods,
+	IVA_Luxury_Goods = 271,
 
 	/// <summary>
 	/// Master of Exploration
 	/// </summary>
 	/// <name>IVA Master of Exploration</name>
-	IVA_Master_Of_Exploration,
+	IVA_Master_Of_Exploration = 272,
 
 	/// <summary>
 	/// Advanced Outposts
 	/// </summary>
 	/// <name>IVA Outpost</name>
-	IVA_Outpost,
+	IVA_Outpost = 273,
 
 	/// <summary>
 	/// Pastries
 	/// </summary>
 	/// <name>IVA Pastries</name>
-	IVA_Pastries,
+	IVA_Pastries = 274,
 
 	/// <summary>
 	/// Serving the People
 	/// </summary>
 	/// <name>IVA Serving the People</name>
-	IVA_Serving_The_People,
+	IVA_Serving_The_People = 275,
 
 	/// <summary>
 	/// Stone Roads
 	/// </summary>
 	/// <name>IVA Stone Roads</name>
-	IVA_Stone_Roads,
+	IVA_Stone_Roads = 276,
 
 	/// <summary>
 	/// Deeper into the Wilds
 	/// </summary>
 	/// <name>IVA Tablets</name>
-	IVA_Tablets,
+	IVA_Tablets = 277,
 
 	/// <summary>
 	/// Great Expansion
 	/// </summary>
 	/// <name>IVA TO Bonfire</name>
-	IVA_TO_Bonfire,
+	IVA_TO_Bonfire = 278,
 
 	/// <summary>
 	/// Advanced Cuisine
 	/// </summary>
 	/// <name>IVA TO Cooking</name>
-	IVA_TO_Cooking,
+	IVA_TO_Cooking = 279,
 
 	/// <summary>
 	/// Time of Courage
 	/// </summary>
 	/// <name>IVA TO Glades Tablets Relics</name>
-	IVA_TO_Glades_Tablets_Relics,
+	IVA_TO_Glades_Tablets_Relics = 280,
 
 	/// <summary>
 	/// Large Parcel
 	/// </summary>
 	/// <name>IVA TO Packing</name>
-	IVA_TO_Packing,
+	IVA_TO_Packing = 281,
 
 	/// <summary>
 	/// Ravenous Axes
 	/// </summary>
 	/// <name>IVA TO Wood and Packs</name>
-	IVA_TO_Wood_And_Packs,
+	IVA_TO_Wood_And_Packs = 282,
 
 	/// <summary>
 	/// Goods for the Citadel
 	/// </summary>
 	/// <name>IVA Trade Goods</name>
-	IVA_Trade_Goods,
+	IVA_Trade_Goods = 283,
 
 	/// <summary>
 	/// Wood and Provisions
 	/// </summary>
 	/// <name>IVA Wood</name>
-	IVA_Wood,
+	IVA_Wood = 284,
 
 	/// <summary>
 	/// Beaver Majority
 	/// </summary>
 	/// <name>IVB Beaver Majority</name>
-	IVB_Beaver_Majority,
+	IVB_Beaver_Majority = 285,
 
 	/// <summary>
 	/// Brawling
 	/// </summary>
 	/// <name>IVB Brawling</name>
-	IVB_Brawling,
+	IVB_Brawling = 286,
 
 	/// <summary>
 	/// Builder's Tools
 	/// </summary>
 	/// <name>IVB Builders Tools</name>
-	IVB_Builders_Tools,
+	IVB_Builders_Tools = 287,
 
 	/// <summary>
 	/// Knowledge
 	/// </summary>
 	/// <name>IVB Education</name>
-	IVB_Education,
+	IVB_Education = 288,
 
 	/// <summary>
 	/// Fox Majority
 	/// </summary>
 	/// <name>IVB Fox Majority</name>
-	IVB_Fox_Majority,
+	IVB_Fox_Majority = 289,
 
 	/// <summary>
 	/// Frog Majority
 	/// </summary>
 	/// <name>IVB Frog Majority</name>
-	IVB_Frog_Majority,
+	IVB_Frog_Majority = 290,
 
 	/// <summary>
 	/// Harpy Majority
 	/// </summary>
 	/// <name>IVB Harpy Majority</name>
-	IVB_Harpy_Majority,
+	IVB_Harpy_Majority = 291,
 
 	/// <summary>
 	/// Human Majority
 	/// </summary>
 	/// <name>IVB Human Majority</name>
-	IVB_Human_Majority,
+	IVB_Human_Majority = 292,
 
 	/// <summary>
 	/// Leisure
 	/// </summary>
 	/// <name>IVB Leisure</name>
-	IVB_Leisure,
+	IVB_Leisure = 293,
 
 	/// <summary>
 	/// Lizard Majority
 	/// </summary>
 	/// <name>IVB Lizard Majority</name>
-	IVB_Lizard_Majority,
+	IVB_Lizard_Majority = 294,
 
 	/// <summary>
 	/// Rainproof Coats
 	/// </summary>
 	/// <name>IVB Rainproof Coats</name>
-	IVB_Rainproof_Coats,
+	IVB_Rainproof_Coats = 295,
 
 	/// <summary>
 	/// Expensive Delivery
 	/// </summary>
 	/// <name>IVB Rich Delivery</name>
-	IVB_Rich_Delivery,
+	IVB_Rich_Delivery = 296,
 
 	/// <summary>
 	/// Construction Work
 	/// </summary>
 	/// <name>IVB TO Building Tools</name>
-	IVB_TO_Building_Tools,
+	IVB_TO_Building_Tools = 297,
 
 	/// <summary>
 	/// Technological Progress
 	/// </summary>
 	/// <name>IVB TO Engines Amount</name>
-	IVB_TO_Engines_Amount,
+	IVB_TO_Engines_Amount = 298,
 
 	/// <summary>
 	/// Food Provision
 	/// </summary>
 	/// <name>IVB TO Food Provision</name>
-	IVB_TO_Food_Provision,
+	IVB_TO_Food_Provision = 299,
 
 	/// <summary>
 	/// Travel Rations
 	/// </summary>
 	/// <name>IVB Travel Rations</name>
-	IVB_Travel_Rations,
+	IVB_Travel_Rations = 300,
 
 	/// <summary>
 	/// Utopia
 	/// </summary>
 	/// <name>IVB Utopia</name>
-	IVB_Utopia,
+	IVB_Utopia = 301,
 
 	/// <summary>
 	/// Queen's Feathers
 	/// </summary>
 	/// <name>Needs Served</name>
-	Needs_Served,
+	Needs_Served = 302,
 
 	/// <summary>
 	/// Queen's Feathers
 	/// </summary>
 	/// <name>Needs Served HIGH</name>
-	Needs_Served_HIGH,
+	Needs_Served_HIGH = 303,
 
 	/// <summary>
 	/// Queen's Feathers
 	/// </summary>
 	/// <name>Needs Served LOW</name>
-	Needs_Served_LOW,
+	Needs_Served_LOW = 304,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Assault Trader</name>
-	R_Ghost_Assault_Trader,
+	R_Ghost_Assault_Trader = 305,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Cut Trees</name>
-	R_Ghost_Cut_Trees,
+	R_Ghost_Cut_Trees = 306,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Decorations Aesthetics</name>
-	R_Ghost_Decorations_Aesthetics,
+	R_Ghost_Decorations_Aesthetics = 307,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Decorations Harmony</name>
-	R_Ghost_Decorations_Harmony,
+	R_Ghost_Decorations_Harmony = 308,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Discover DangGlades</name>
-	R_Ghost_Discover_DangGlades,
+	R_Ghost_Discover_DangGlades = 309,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Discover DangGlades in Time</name>
-	R_Ghost_Discover_DangGlades_In_Time,
+	R_Ghost_Discover_DangGlades_In_Time = 310,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Engines</name>
-	R_Ghost_Engines,
+	R_Ghost_Engines = 311,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Beavers</name>
-	R_Ghost_Forbid_Needs_Beavers,
+	R_Ghost_Forbid_Needs_Beavers = 312,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Foxes</name>
-	R_Ghost_Forbid_Needs_Foxes,
+	R_Ghost_Forbid_Needs_Foxes = 313,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Harpies</name>
-	R_Ghost_Forbid_Needs_Harpies,
+	R_Ghost_Forbid_Needs_Harpies = 314,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Humans</name>
-	R_Ghost_Forbid_Needs_Humans,
+	R_Ghost_Forbid_Needs_Humans = 315,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Lizards</name>
-	R_Ghost_Forbid_Needs_Lizards,
+	R_Ghost_Forbid_Needs_Lizards = 316,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Generate Cysts</name>
-	R_Ghost_Generate_Cysts,
+	R_Ghost_Generate_Cysts = 317,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Hostility High</name>
-	R_Ghost_Hostility_High,
+	R_Ghost_Hostility_High = 318,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Hostility Low</name>
-	R_Ghost_Hostility_Low,
+	R_Ghost_Hostility_Low = 319,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Housing Needs</name>
-	R_Ghost_Housing_Needs,
+	R_Ghost_Housing_Needs = 320,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost HUBs upgrade</name>
-	R_Ghost_HUBs_Upgrade,
+	R_Ghost_HUBs_Upgrade = 321,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Human Houses</name>
-	R_Ghost_Human_Houses,
+	R_Ghost_Human_Houses = 322,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Keep Goods</name>
-	R_Ghost_Keep_Goods,
+	R_Ghost_Keep_Goods = 323,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Keep Villagers</name>
-	R_Ghost_Keep_Villagers,
+	R_Ghost_Keep_Villagers = 324,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Leisure</name>
-	R_Ghost_Leisure,
+	R_Ghost_Leisure = 325,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Luxury</name>
-	R_Ghost_Luxury,
+	R_Ghost_Luxury = 326,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Rebuild Ruins</name>
-	R_Ghost_Rebuild_Ruins,
+	R_Ghost_Rebuild_Ruins = 327,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Religion</name>
-	R_Ghost_Religion,
+	R_Ghost_Religion = 328,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Remove Cysts</name>
-	R_Ghost_Remove_Cysts,
+	R_Ghost_Remove_Cysts = 329,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Resolve Foxes</name>
-	R_Ghost_Resolve_Foxes,
+	R_Ghost_Resolve_Foxes = 330,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Resolve Harpies</name>
-	R_Ghost_Resolve_Harpies,
+	R_Ghost_Resolve_Harpies = 331,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Resolve Lizards</name>
-	R_Ghost_Resolve_Lizards,
+	R_Ghost_Resolve_Lizards = 332,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Sacrifice Goods</name>
-	R_Ghost_Sacrifice_Goods,
+	R_Ghost_Sacrifice_Goods = 333,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Salvage Ruins</name>
-	R_Ghost_Salvage_Ruins,
+	R_Ghost_Salvage_Ruins = 334,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Send Goods to Citadel</name>
-	R_Ghost_Send_Goods_To_Citadel,
+	R_Ghost_Send_Goods_To_Citadel = 335,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Service Needs</name>
-	R_Ghost_Service_Needs,
+	R_Ghost_Service_Needs = 336,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Solve DangRelics</name>
-	R_Ghost_Solve_DangRelics,
+	R_Ghost_Solve_DangRelics = 337,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Starve Beavers</name>
-	R_Ghost_Starve_Beavers,
+	R_Ghost_Starve_Beavers = 338,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Starve Humans</name>
-	R_Ghost_Starve_Humans,
+	R_Ghost_Starve_Humans = 339,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Trade Routes</name>
-	R_Ghost_Trade_Routes,
+	R_Ghost_Trade_Routes = 340,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Trade Routes with Value</name>
-	R_Ghost_Trade_Routes_With_Value,
+	R_Ghost_Trade_Routes_With_Value = 341,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Trade Routes with Value Many</name>
-	R_Ghost_Trade_Routes_With_Value_Many,
+	R_Ghost_Trade_Routes_With_Value_Many = 342,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Upgrade Houses</name>
-	R_Ghost_Upgrade_Houses,
+	R_Ghost_Upgrade_Houses = 343,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Use Water</name>
-	R_Ghost_Use_Water,
+	R_Ghost_Use_Water = 344,
 
 	/// <summary>
 	/// Blood of the Stag
 	/// </summary>
 	/// <name>Rep from Events</name>
-	Rep_From_Events,
+	Rep_From_Events = 345,
 
 	/// <summary>
 	/// Blood of the Stag
 	/// </summary>
 	/// <name>Rep from Events HIGH</name>
-	Rep_From_Events_HIGH,
+	Rep_From_Events_HIGH = 346,
 
 	/// <summary>
 	/// Blood of the Stag
 	/// </summary>
 	/// <name>Rep from Events LOW</name>
-	Rep_From_Events_LOW,
+	Rep_From_Events_LOW = 347,
 
 	/// <summary>
 	/// Mortal Blood
 	/// </summary>
 	/// <name>Rep from Resolve</name>
-	Rep_From_Resolve,
+	Rep_From_Resolve = 348,
 
 	/// <summary>
 	/// Mortal Blood
 	/// </summary>
 	/// <name>Rep from Resolve HIGH</name>
-	Rep_From_Resolve_HIGH,
+	Rep_From_Resolve_HIGH = 349,
 
 	/// <summary>
 	/// Mortal Blood
 	/// </summary>
 	/// <name>Rep from Resolve LOW</name>
-	Rep_From_Resolve_LOW,
+	Rep_From_Resolve_LOW = 350,
 
 	/// <summary>
 	/// Fire Essence
 	/// </summary>
 	/// <name>Resolve</name>
-	Resolve,
+	Resolve = 351,
 
 	/// <summary>
 	/// Fire Essence
 	/// </summary>
 	/// <name>Resolve HIGH</name>
-	Resolve_HIGH,
+	Resolve_HIGH = 352,
 
 	/// <summary>
 	/// Fire Essence
 	/// </summary>
 	/// <name>Resolve LOW</name>
-	Resolve_LOW,
+	Resolve_LOW = 353,
 
 	/// <summary>
 	/// Golden Blood
 	/// </summary>
 	/// <name>Standing</name>
-	Standing,
+	Standing = 354,
 
 	/// <summary>
 	/// Golden Blood
 	/// </summary>
 	/// <name>Standing HIGH</name>
-	Standing_HIGH,
+	Standing_HIGH = 355,
 
 	/// <summary>
 	/// Brewing Ale
 	/// </summary>
 	/// <name>T II Brewery</name>
-	T_II_Brewery,
+	T_II_Brewery = 356,
 
 	/// <summary>
 	/// Farming
 	/// </summary>
 	/// <name>T II Farm</name>
-	T_II_Farm,
+	T_II_Farm = 357,
 
 	/// <summary>
 	/// Provisions
 	/// </summary>
 	/// <name>T II Provisions</name>
-	T_II_Provisions,
+	T_II_Provisions = 358,
 
 	/// <summary>
 	/// High Society
 	/// </summary>
 	/// <name>T II Resolve</name>
-	T_II_Resolve,
+	T_II_Resolve = 359,
 
 	/// <summary>
 	/// Smokehouse
 	/// </summary>
 	/// <name>T II Smokehouse</name>
-	T_II_Smokehouse,
+	T_II_Smokehouse = 360,
 
 	/// <summary>
 	/// A Place for Rest
 	/// </summary>
 	/// <name>T II Tavern</name>
-	T_II_Tavern,
+	T_II_Tavern = 361,
 
 	/// <summary>
 	/// First Yield
 	/// </summary>
 	/// <name>T II Trapper</name>
-	T_II_Trapper,
+	T_II_Trapper = 362,
 
 	/// <summary>
 	/// Home & Hearth
 	/// </summary>
 	/// <name>T II Woodcutters Camp</name>
-	T_II_Woodcutters_Camp,
+	T_II_Woodcutters_Camp = 363,
 
 	/// <summary>
 	/// Get Rich
 	/// </summary>
 	/// <name>T III Amber</name>
-	T_III_Amber,
+	T_III_Amber = 364,
 
 	/// <summary>
 	/// High Resolve
 	/// </summary>
 	/// <name>T III Beavers Resolve</name>
-	T_III_Beavers_Resolve,
+	T_III_Beavers_Resolve = 365,
 
 	/// <summary>
 	/// Collecting Berries
 	/// </summary>
 	/// <name>T III Berries</name>
-	T_III_Berries,
+	T_III_Berries = 366,
 
 	/// <summary>
 	/// Happy Meal
 	/// </summary>
 	/// <name>T III Food</name>
-	T_III_Food,
+	T_III_Food = 367,
 
 	/// <summary>
 	/// Fulfilling Needs
 	/// </summary>
 	/// <name>T III Guild House</name>
-	T_III_Guild_House,
+	T_III_Guild_House = 368,
 
 	/// <summary>
 	/// Buying & Selling
 	/// </summary>
 	/// <name>T III Packs</name>
-	T_III_Packs,
+	T_III_Packs = 369,
 
 	/// <summary>
 	/// Catching Rainwater
 	/// </summary>
 	/// <name>T III Rain</name>
-	T_III_Rain,
+	T_III_Rain = 370,
 
 	/// <summary>
 	/// Surviving Requires Sacrifice
 	/// </summary>
 	/// <name>T III Sacrifice</name>
-	T_III_Sacrifice,
+	T_III_Sacrifice = 371,
 
 	/// <summary>
 	/// Traders & Currency
 	/// </summary>
 	/// <name>T III Trading Post</name>
-	T_III_Trading_Post,
+	T_III_Trading_Post = 372,
 
 	/// <summary>
 	/// Winemaking
 	/// </summary>
 	/// <name>T III Wine</name>
-	T_III_Wine,
+	T_III_Wine = 373,
 
 	/// <summary>
 	/// Blight Fighters
 	/// </summary>
 	/// <name>T IV Blightpost</name>
-	T_IV_Blightpost,
+	T_IV_Blightpost = 374,
 
 	/// <summary>
 	/// Finders Keepers
 	/// </summary>
 	/// <name>T IV Caches</name>
-	T_IV_Caches,
+	T_IV_Caches = 375,
 
 	/// <summary>
 	/// Stay in Shape
 	/// </summary>
 	/// <name>T IV Clan Hall</name>
-	T_IV_Clan_Hall,
+	T_IV_Clan_Hall = 376,
 
 	/// <summary>
 	/// Rainpunk Technology
 	/// </summary>
 	/// <name>T IV Engines</name>
-	T_IV_Engines,
+	T_IV_Engines = 377,
 
 	/// <summary>
 	/// Forbidden Fruit
 	/// </summary>
 	/// <name>T IV Frobidden</name>
-	T_IV_Frobidden,
+	T_IV_Frobidden = 378,
 
 	/// <summary>
 	/// Metallurgy
 	/// </summary>
 	/// <name>T IV Metal</name>
-	T_IV_Metal,
+	T_IV_Metal = 379,
 
 	/// <summary>
 	/// Mining Basics
 	/// </summary>
 	/// <name>T IV Mine</name>
-	T_IV_Mine,
+	T_IV_Mine = 380,
 
 	/// <summary>
 	/// Pipe Manufacturing
 	/// </summary>
 	/// <name>T IV Pipes</name>
-	T_IV_Pipes,
+	T_IV_Pipes = 381,
 
 	/// <summary>
 	/// Water Extraction
 	/// </summary>
 	/// <name>T IV Pump</name>
-	T_IV_Pump,
+	T_IV_Pump = 382,
 
 	/// <summary>
 	/// Effects of Technology
 	/// </summary>
 	/// <name>T IV Water & Cysts</name>
-	T_IV_Water_And_Cysts,
+	T_IV_Water_And_Cysts = 383,
 
 	/// <summary>
 	/// Building Blocks
 	/// </summary>
 	/// <name>TI Building Blocks</name>
-	TI_Building_Blocks,
+	TI_Building_Blocks = 384,
 
 	/// <summary>
 	/// Ancient Tablets
 	/// </summary>
 	/// <name>TI Deep Exploration</name>
-	TI_Deep_Exploration,
+	TI_Deep_Exploration = 385,
 
 	/// <summary>
 	/// Food Supplies
 	/// </summary>
 	/// <name>TI Forager</name>
-	TI_Forager,
+	TI_Forager = 386,
 
 	/// <summary>
 	/// Exploring the Wilds
 	/// </summary>
 	/// <name>TI Glades</name>
-	TI_Glades,
+	TI_Glades = 387,
 
 	/// <summary>
 	/// Harvesters' Camp
 	/// </summary>
 	/// <name>TI Scavenger</name>
-	TI_Scavenger,
+	TI_Scavenger = 388,
 
 	/// <summary>
 	/// Stonecutters' Camp
 	/// </summary>
 	/// <name>TI Stonecutter</name>
-	TI_Stonecutter,
+	TI_Stonecutter = 389,
 
 	/// <summary>
 	/// Woodcutters' Camps
 	/// </summary>
 	/// <name>TI Woodcutters Camp</name>
-	TI_Woodcutters_Camp,
+	TI_Woodcutters_Camp = 390,
 
 	/// <summary>
 	/// Golden Blood
 	/// </summary>
 	/// <name>Trade Packs and Perks LOW</name>
-	Trade_Packs_And_Perks_LOW,
+	Trade_Packs_And_Perks_LOW = 391,
 
 
 

@@ -7,119 +7,126 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum NaturalResourceTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown NaturalResourceTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no NaturalResourceTypes. Typically, seen if nothing is defined or failed to parse a string to a NaturalResourceTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 	/// </summary>
 	/// <name>Bay Tree 1</name>
-	Bay_Tree_1,
+	Bay_Tree_1 = 1,
 
 	/// <summary>
 	/// Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 	/// </summary>
 	/// <name>Bay Tree 2</name>
-	Bay_Tree_2,
+	Bay_Tree_2 = 2,
 
 	/// <summary>
 	/// Crimsonreach Tree - A mineralized coral tree.
 	/// </summary>
 	/// <name>CoralForest_Crimsonreach</name>
-	CoralForest_Crimsonreach,
+	CoralForest_Crimsonreach = 3,
 
 	/// <summary>
 	/// Musselsprout Tree - The unusually hard bark conceals soft, fleshy tissue.
 	/// </summary>
 	/// <name>CoralForest_Musselsprout</name>
-	CoralForest_Musselsprout,
+	CoralForest_Musselsprout = 4,
 
 	/// <summary>
 	/// Plateleaf Tree - A species of plant rarely seen above water.
 	/// </summary>
 	/// <name>CoralForest_Plateleaf</name>
-	CoralForest_Plateleaf,
+	CoralForest_Plateleaf = 5,
 
 	/// <summary>
 	/// Dying Tree - A bare, rotting tree infested with grubs.
 	/// </summary>
 	/// <name>Cursed Tree</name>
-	Cursed_Tree,
+	Cursed_Tree = 6,
 
 	/// <summary>
 	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
 	/// </summary>
 	/// <name>Last Biome 1</name>
-	Last_Biome_1,
+	Last_Biome_1 = 7,
 
 	/// <summary>
 	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
 	/// </summary>
 	/// <name>Last Biome 2</name>
-	Last_Biome_2,
+	Last_Biome_2 = 8,
 
 	/// <summary>
 	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
 	/// </summary>
 	/// <name>Last Biome 3</name>
-	Last_Biome_3,
+	Last_Biome_3 = 9,
 
 	/// <summary>
 	/// Overgrown Abyssal Tree - A giant, bizarre growth... it's bigger than the other trees in the area.
 	/// </summary>
 	/// <name>Last Biome 4</name>
-	Last_Biome_4,
+	Last_Biome_4 = 10,
 
 	/// <summary>
 	/// Coppervein Tree - A scarlet tree covered in enormous thorns.
 	/// </summary>
 	/// <name>Moorlands Tree</name>
-	Moorlands_Tree,
+	Moorlands_Tree = 11,
 
 	/// <summary>
 	/// Coppervein Tree - A scarlet tree covered in enormous thorns.
 	/// </summary>
 	/// <name>Moorlands Tree 2</name>
-	Moorlands_Tree_2,
+	Moorlands_Tree_2 = 12,
 
 	/// <summary>
 	/// Mushwood - A giant fungal tree covered in a leathery bark.
 	/// </summary>
 	/// <name>Mushroom Tree Bugs</name>
-	Mushroom_Tree_Bugs,
+	Mushroom_Tree_Bugs = 13,
 
 	/// <summary>
 	/// Mushwood - A giant fungal tree covered in a leathery bark.
 	/// </summary>
 	/// <name>Mushroom Tree Classic</name>
-	Mushroom_Tree_Classic,
+	Mushroom_Tree_Classic = 14,
 
 	/// <summary>
 	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
 	/// </summary>
 	/// <name>Sealed Tree</name>
-	Sealed_Tree,
+	Sealed_Tree = 15,
 
 	/// <summary>
 	/// Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
 	/// </summary>
 	/// <name>Wasteland Tree 1</name>
-	Wasteland_Tree_1,
+	Wasteland_Tree_1 = 16,
 
 	/// <summary>
 	/// Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
 	/// </summary>
 	/// <name>Wasteland Tree 2</name>
-	Wasteland_Tree_2,
+	Wasteland_Tree_2 = 17,
 
 	/// <summary>
 	/// Lush Tree - A perfect source of wood.
 	/// </summary>
 	/// <name>Woodlands Tree</name>
-	Woodlands_Tree,
+	Woodlands_Tree = 18,
 
 
 

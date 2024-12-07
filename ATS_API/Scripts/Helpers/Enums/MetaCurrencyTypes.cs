@@ -7,29 +7,36 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum MetaCurrencyTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown MetaCurrencyTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no MetaCurrencyTypes. Typically, seen if nothing is defined or failed to parse a string to a MetaCurrencyTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Artifacts
 	/// </summary>
 	/// <name>Artifacts</name>
-	Artifacts,
+	Artifacts = 1,
 
 	/// <summary>
 	/// Food Stockpiles
 	/// </summary>
 	/// <name>Food Stockpiles</name>
-	Food_Stockpiles,
+	Food_Stockpiles = 2,
 
 	/// <summary>
 	/// Machinery
 	/// </summary>
 	/// <name>Machinery</name>
-	Machinery,
+	Machinery = 3,
 
 
 

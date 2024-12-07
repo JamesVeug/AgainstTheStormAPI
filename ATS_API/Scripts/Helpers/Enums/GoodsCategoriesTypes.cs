@@ -7,53 +7,60 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum GoodsCategoriesTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown GoodsCategoriesTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no GoodsCategoriesTypes. Typically, seen if nothing is defined or failed to parse a string to a GoodsCategoriesTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Building Materials - {0} to expand category
 	/// </summary>
 	/// <name>Building Materials</name>
-	Building_Materials,
+	Building_Materials = 1,
 
 	/// <summary>
 	/// Consumable Items - {0} to expand category
 	/// </summary>
 	/// <name>Consumable Items</name>
-	Consumable_Items,
+	Consumable_Items = 2,
 
 	/// <summary>
 	/// Crafting Resources - {0} to expand category
 	/// </summary>
 	/// <name>Crafting</name>
-	Crafting,
+	Crafting = 3,
 
 	/// <summary>
 	/// Food - {0} to expand category
 	/// </summary>
 	/// <name>Food</name>
-	Food,
+	Food = 4,
 
 	/// <summary>
 	/// Fuel & Exploration - {0} to expand category
 	/// </summary>
 	/// <name>Fuel</name>
-	Fuel,
+	Fuel = 5,
 
 	/// <summary>
 	/// Others - {0} to expand category
 	/// </summary>
 	/// <name>Others</name>
-	Others,
+	Others = 6,
 
 	/// <summary>
 	/// Trade Goods - {0} to expand category
 	/// </summary>
 	/// <name>Trade Goods</name>
-	Trade_Goods,
+	Trade_Goods = 7,
 
 
 

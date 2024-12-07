@@ -7,107 +7,114 @@ using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum BuildingTagTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown BuildingTagTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no BuildingTagTypes. Typically, seen if nothing is defined or failed to parse a string to a BuildingTagTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Alchemy ("alchemy")
 	/// </summary>
 	/// <name>Alchemy</name>
-	Alchemy,
+	Alchemy = 1,
 
 	/// <summary>
 	/// Meat production ("meat")
 	/// </summary>
 	/// <name>Animals</name>
-	Animals,
+	Animals = 2,
 
 	/// <summary>
 	/// Brewing ("brewing")
 	/// </summary>
 	/// <name>Brewing</name>
-	Brewing,
+	Brewing = 3,
 
 	/// <summary>
 	/// Tailoring ("cloth")
 	/// </summary>
 	/// <name>Cloth</name>
-	Cloth,
+	Cloth = 4,
 
 	/// <summary>
 	/// Blightrot ("cysts")
 	/// </summary>
 	/// <name>Cysts</name>
-	Cysts,
+	Cysts = 5,
 
 	/// <summary>
 	/// Farming ("farming")
 	/// </summary>
 	/// <name>Farming</name>
-	Farming,
+	Farming = 6,
 
 	/// <summary>
 	/// Forest ("foxforest")
 	/// </summary>
 	/// <name>Forest</name>
-	Forest,
+	Forest = 7,
 
 	/// <summary></summary>
 	/// <name>Hearth_Beavers</name>
-	Hearth_Beavers,
+	Hearth_Beavers = 8,
 
 	/// <summary></summary>
 	/// <name>Hearth_Foxes</name>
-	Hearth_Foxes,
+	Hearth_Foxes = 9,
 
 	/// <summary></summary>
 	/// <name>Hearth_Frogs</name>
-	Hearth_Frogs,
+	Hearth_Frogs = 10,
 
 	/// <summary></summary>
 	/// <name>Hearth_Harpies</name>
-	Hearth_Harpies,
+	Hearth_Harpies = 11,
 
 	/// <summary></summary>
 	/// <name>Hearth_Humans</name>
-	Hearth_Humans,
+	Hearth_Humans = 12,
 
 	/// <summary></summary>
 	/// <name>Hearth_Lizards</name>
-	Hearth_Lizards,
+	Hearth_Lizards = 13,
 
 	/// <summary>
 	/// Rainwater ("rainwater")
 	/// </summary>
 	/// <name>Rainwater</name>
-	Rainwater,
+	Rainwater = 14,
 
 	/// <summary>
 	/// Masonry ("stone")
 	/// </summary>
 	/// <name>Stone</name>
-	Stone,
+	Stone = 15,
 
 	/// <summary>
 	/// Engineering ("tech")
 	/// </summary>
 	/// <name>Tech</name>
-	Tech,
+	Tech = 16,
 
 	/// <summary>
 	/// Warmth ("fire")
 	/// </summary>
 	/// <name>Warmth</name>
-	Warmth,
+	Warmth = 17,
 
 	/// <summary>
 	/// Woodworking ("wood")
 	/// </summary>
 	/// <name>Wood</name>
-	Wood,
+	Wood = 18,
 
 
 

@@ -7,479 +7,486 @@ using Eremite.Characters.Villagers;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum VillagerPerkTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown VillagerPerkTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no VillagerPerkTypes. Typically, seen if nothing is defined or failed to parse a string to a VillagerPerkTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Acidic Environment - Working in a loud environment is really taxing. (‑10 to Global Resolve)
 	/// </summary>
 	/// <name>Acidic Environment</name>
-	Acidic_Environment,
+	Acidic_Environment = 1,
 
 	/// <summary>
 	/// Acidic Environment - Working in a loud environment is really taxing. (‑20 to Global Resolve)
 	/// </summary>
 	/// <name>Acidic Environment Blightrot</name>
-	Acidic_Environment_Blightrot,
+	Acidic_Environment_Blightrot = 2,
 
 	/// <summary>
 	/// Fading - Villagers with this effect have a +5% chance of perishing every 30 seconds.
 	/// </summary>
 	/// <name>Blight Death Chance</name>
-	Blight_Death_Chance,
+	Blight_Death_Chance = 3,
 
 	/// <summary>
 	/// Pollen - Blightrot Cysts produce strange pollen that affects the craftsmen in this building. Workers move +20% faster.
 	/// </summary>
 	/// <name>Blight_Faster_Move</name>
-	Blight_Faster_Move,
+	Blight_Faster_Move = 4,
 
 	/// <summary>
 	/// Mobile Sparkcasters - A more compact version of the famous Blight Fighter flamethrower. Blight Fighters assigned to this Blight Post move +30% faster.
 	/// </summary>
 	/// <name>Blight Fighter Speed - Speed Increase</name>
-	Blight_Fighter_Speed_Speed_Increase,
+	Blight_Fighter_Speed_Speed_Increase = 5,
 
 	/// <summary>
 	/// Shaky Hands - Villagers with this effect have a +20% chance of destroying the yield with each production cycle.
 	/// </summary>
 	/// <name>Blight No Production</name>
-	Blight_No_Production,
+	Blight_No_Production = 6,
 
 	/// <summary>
 	/// Hypnosis - The presence of Blightrot Cysts creates a strange aura within the building. Workers have a +25% chance of doubling their production.
 	/// </summary>
 	/// <name>Blight_Production_Boost</name>
-	Blight_Production_Boost,
+	Blight_Production_Boost = 7,
 
 	/// <summary>
 	/// Kelpie's Charm - The villager is under the river kelpie's spell, and cannot work until the event is completed.
 	/// </summary>
 	/// <name>Charm Status</name>
-	Charm_Status,
+	Charm_Status = 8,
 
 	/// <summary>
 	/// Distracted - Villagers with this effect have a +20% chance of destroying the yield with each production cycle.
 	/// </summary>
 	/// <name>cMdlt_Distracted_ColdFront</name>
-	cMdlt_Distracted_ColdFront,
+	cMdlt_Distracted_ColdFront = 9,
 
 	/// <summary>
 	/// Distracted - Villagers with this effect have a +20% chance of destroying the yield with each production cycle.
 	/// </summary>
 	/// <name>cMdlt_Distracted_StrangeLights</name>
-	cMdlt_Distracted_StrangeLights,
+	cMdlt_Distracted_StrangeLights = 10,
 
 	/// <summary>
 	/// Energized - Villagers with this effect move +20% faster.
 	/// </summary>
 	/// <name>cMdlt_Energized_FreshBreeze</name>
-	cMdlt_Energized_FreshBreeze,
+	cMdlt_Energized_FreshBreeze = 11,
 
 	/// <summary>
 	/// Energized - Villagers with this effect move +20% faster.
 	/// </summary>
 	/// <name>cMdlt_Energized_InvigoratingWinds</name>
-	cMdlt_Energized_InvigoratingWinds,
+	cMdlt_Energized_InvigoratingWinds = 12,
 
 	/// <summary>
 	/// Fading - Villagers with this effect have a +5% chance of perishing every 15 seconds.
 	/// </summary>
 	/// <name>cMdlt_Fading_ColdSnap</name>
-	cMdlt_Fading_ColdSnap,
+	cMdlt_Fading_ColdSnap = 13,
 
 	/// <summary>
 	/// Fading - Villagers with this effect have a +5% chance of perishing every 15 seconds.
 	/// </summary>
 	/// <name>cMdlt_Fading_DeadlyLights</name>
-	cMdlt_Fading_DeadlyLights,
+	cMdlt_Fading_DeadlyLights = 14,
 
 	/// <summary>
 	/// Fading - Villagers with this effect have a +5% chance of perishing every 15 seconds.
 	/// </summary>
 	/// <name>cMdlt_Fading_EerieSong</name>
-	cMdlt_Fading_EerieSong,
+	cMdlt_Fading_EerieSong = 15,
 
 	/// <summary>
 	/// Fading - Villagers with this effect have a +5% chance of perishing every 15 seconds.
 	/// </summary>
 	/// <name>cMdlt_Fading_Hailstorm</name>
-	cMdlt_Fading_Hailstorm,
+	cMdlt_Fading_Hailstorm = 16,
 
 	/// <summary>
 	/// Fading - Villagers with this effect have a +5% chance of perishing every 15 seconds.
 	/// </summary>
 	/// <name>cMdlt_FadingToxicRain</name>
-	cMdlt_FadingToxicRain,
+	cMdlt_FadingToxicRain = 17,
 
 	/// <summary>
 	/// Focused - Villagers with this effect have a +20% chance of doubling the yield with each production cycle.
 	/// </summary>
 	/// <name>cMdlt_Focused_StrangeVisions</name>
-	cMdlt_Focused_StrangeVisions,
+	cMdlt_Focused_StrangeVisions = 18,
 
 	/// <summary>
 	/// Focused - Villagers with this effect have a +20% chance of doubling the yield with each production cycle.
 	/// </summary>
 	/// <name>cMdlt_Focused_SunFestivities</name>
-	cMdlt_Focused_SunFestivities,
+	cMdlt_Focused_SunFestivities = 19,
 
 	/// <summary>
 	/// Frustrated - Villagers with this effect have a -2 penalty to their Resolve. (A stack of this effect is added every 60 seconds)
 	/// </summary>
 	/// <name>cMdlt_Frustrated_Melanchory</name>
-	cMdlt_Frustrated_Melanchory,
+	cMdlt_Frustrated_Melanchory = 20,
 
 	/// <summary>
 	/// Frustrated - Villagers with this effect have a -2 penalty to their Resolve. (A stack of this effect is added every 60 seconds)
 	/// </summary>
 	/// <name>cMdlt_Frustrated_Swarms</name>
-	cMdlt_Frustrated_Swarms,
+	cMdlt_Frustrated_Swarms = 21,
 
 	/// <summary>
 	/// Gluttonous - Villagers with this effect have a +50% chance of consuming double the amount of food during a break.
 	/// </summary>
 	/// <name>cMdlt_Gluttonous_ColdSnap</name>
-	cMdlt_Gluttonous_ColdSnap,
+	cMdlt_Gluttonous_ColdSnap = 22,
 
 	/// <summary>
 	/// Gluttonous - Villagers with this effect have a +50% chance of consuming double the amount of food during a break.
 	/// </summary>
 	/// <name>cMdlt_Gluttonous_Downpour</name>
-	cMdlt_Gluttonous_Downpour,
+	cMdlt_Gluttonous_Downpour = 23,
 
 	/// <summary>
 	/// Danger - Homeless villagers have a +10% chance of dying every 60 seconds during the storm.
 	/// </summary>
 	/// <name>cMdlt_HomelessDeath10_RegularRain</name>
-	cMdlt_HomelessDeath10_RegularRain,
+	cMdlt_HomelessDeath10_RegularRain = 24,
 
 	/// <summary>
 	/// Drenched - Villagers with this effect have a -5 penalty to their Resolve. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>cMdlt_LowResolve_Cloudburst</name>
-	cMdlt_LowResolve_Cloudburst,
+	cMdlt_LowResolve_Cloudburst = 25,
 
 	/// <summary>
 	/// Drenched - Villagers with this effect have a -5 penalty to their Resolve. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>cMdlt_LowResolve_HomelessInStorm</name>
-	cMdlt_LowResolve_HomelessInStorm,
+	cMdlt_LowResolve_HomelessInStorm = 26,
 
 	/// <summary>
 	/// Motivated - Villagers with this effect have a +1 boost to their Resolve. (A stack of this effect is added every 60 seconds)
 	/// </summary>
 	/// <name>cMdlt_Motivated_Aurora</name>
-	cMdlt_Motivated_Aurora,
+	cMdlt_Motivated_Aurora = 27,
 
 	/// <summary>
 	/// Motivated - Villagers with this effect have a +1 boost to their Resolve. (A stack of this effect is added every 60 seconds)
 	/// </summary>
 	/// <name>cMdlt_Motivated_EuphoricVapours</name>
-	cMdlt_Motivated_EuphoricVapours,
+	cMdlt_Motivated_EuphoricVapours = 28,
 
 	/// <summary>
 	/// Motivated - Villagers with this effect have a +1 boost to their Resolve. (A stack of this effect is added every 60 seconds)
 	/// </summary>
 	/// <name>cMdlt_Motivated_Swarms</name>
-	cMdlt_Motivated_Swarms,
+	cMdlt_Motivated_Swarms = 29,
 
 	/// <summary>
 	/// Exhausted - Villagers with this effect move –40% slower.
 	/// </summary>
 	/// <name>cMdlt_Slowed_BitterRain</name>
-	cMdlt_Slowed_BitterRain,
+	cMdlt_Slowed_BitterRain = 30,
 
 	/// <summary>
 	/// Exhausted - Villagers with this effect move –40% slower.
 	/// </summary>
 	/// <name>cMdlt_Slowed_Fog</name>
-	cMdlt_Slowed_Fog,
+	cMdlt_Slowed_Fog = 31,
 
 	/// <summary>
 	/// Stagnant - Villagers with this effect take 200% longer breaks.
 	/// </summary>
 	/// <name>cMdlt_Stagnant_Eclipse</name>
-	cMdlt_Stagnant_Eclipse,
+	cMdlt_Stagnant_Eclipse = 32,
 
 	/// <summary>
 	/// Stagnant - Time between breaks is reduced by –33% for villagers with this effect.
 	/// </summary>
 	/// <name>cMdlt_Stagnant_Eclipse_NEW</name>
-	cMdlt_Stagnant_Eclipse_NEW,
+	cMdlt_Stagnant_Eclipse_NEW = 33,
 
 	/// <summary>
 	/// Stagnant - Villagers with this effect take 200% longer breaks.
 	/// </summary>
 	/// <name>cMdlt_Stagnant_NauseousSpores</name>
-	cMdlt_Stagnant_NauseousSpores,
+	cMdlt_Stagnant_NauseousSpores = 34,
 
 	/// <summary>
 	/// Stagnant - Time between breaks is reduced by –33% for villagers with this effect.
 	/// </summary>
 	/// <name>cMdlt_Stagnant_NauseousSpores_NEW</name>
-	cMdlt_Stagnant_NauseousSpores_NEW,
+	cMdlt_Stagnant_NauseousSpores_NEW = 35,
 
 	/// <summary>
 	/// Comfortable - This worker gains +5 to their Resolve. (+5 to Global Resolve)
 	/// </summary>
 	/// <name>Comfortable Job</name>
-	Comfortable_Job,
+	Comfortable_Job = 36,
 
 	/// <summary>
 	/// Extreme Noise - Working in a loud environment is really taxing. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Extreme Noise</name>
-	Extreme_Noise,
+	Extreme_Noise = 37,
 
 	/// <summary>
 	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve. (+2 to Global Resolve)
 	/// </summary>
 	/// <name>FallenViceroyCommemoration</name>
-	FallenViceroyCommemoration,
+	FallenViceroyCommemoration = 38,
 
 	/// <summary>
 	/// Farmer's Diet - Farmers have a +75% chance of producing double yields when under the effect of "[food processed] biscuits" biscuits.
 	/// </summary>
 	/// <name>FarmersDiet</name>
-	FarmersDiet,
+	FarmersDiet = 39,
 
 	/// <summary>
 	/// Lightweight Axes - Woodcutters move +20% faster.
 	/// </summary>
 	/// <name>Faster Woocutters</name>
-	Faster_Woocutters,
+	Faster_Woocutters = 40,
 
 	/// <summary>
 	/// Forced Improvisation - Working in a loud environment is really taxing. (‑5 to Global Resolve)
 	/// </summary>
 	/// <name>Forced Improvisation</name>
-	Forced_Improvisation,
+	Forced_Improvisation = 41,
 
 	/// <summary>
 	/// Furniture - Adds an additional +1 to Resolve for villagers with a home. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>Furniture</name>
-	Furniture,
+	Furniture = 42,
 
 	/// <summary>
 	/// Overtime - Results matter more than your villagers’ health. Increases global production speed by 120, but villagers have a +1% chance of dying every 120 seconds.
 	/// </summary>
 	/// <name>Global Chance of Death</name>
-	Global_Chance_Of_Death,
+	Global_Chance_Of_Death = 43,
 
 	/// <summary>
 	/// Travel Rations - With provisions, haulers don't have to return to the Hearth as often. Increases time between breaks for haulers by +50%.
 	/// </summary>
 	/// <name>Hauler Break Interval - villager perk</name>
-	Hauler_Break_Interval_Villager_Perk,
+	Hauler_Break_Interval_Villager_Perk = 44,
 
 	/// <summary>
 	/// HaulerUpgrade_Speed_Name - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 	/// </summary>
 	/// <name>Hauler Speed - villager perk</name>
-	Hauler_Speed_Villager_Perk,
+	Hauler_Speed_Villager_Perk = 45,
 
 	/// <summary>
 	/// Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
 	/// </summary>
 	/// <name>Houses +1 - break time - child</name>
-	Houses_Plus1_Break_Time_Child,
+	Houses_Plus1_Break_Time_Child = 46,
 
 	/// <summary>
 	/// Ballmer Peak - Villagers with the leisure need fulfilled have a +25% chance of doubling their yields.
 	/// </summary>
 	/// <name>Leisure Worker</name>
-	Leisure_Worker,
+	Leisure_Worker = 47,
 
 	/// <summary>
 	/// Flame Amulets - Woodcutters have a +20% chance of producing twice the normal yield.
 	/// </summary>
 	/// <name>LessHostilityPerWoodcutter - Proficiency</name>
-	LessHostilityPerWoodcutter_Proficiency,
+	LessHostilityPerWoodcutter_Proficiency = 48,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. (‑18 to Global Resolve)
 	/// </summary>
 	/// <name>MoleResolvePenalty - hard</name>
-	MoleResolvePenalty_Hard,
+	MoleResolvePenalty_Hard = 49,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. (‑22 to Global Resolve)
 	/// </summary>
 	/// <name>MoleResolvePenalty - impossible</name>
-	MoleResolvePenalty_Impossible,
+	MoleResolvePenalty_Impossible = 50,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. (‑16 to Global Resolve)
 	/// </summary>
 	/// <name>MoleResolvePenalty - normal</name>
-	MoleResolvePenalty_Normal,
+	MoleResolvePenalty_Normal = 51,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods. (‑20 to Global Resolve)
 	/// </summary>
 	/// <name>MoleResolvePenalty - very hard</name>
-	MoleResolvePenalty_Very_Hard,
+	MoleResolvePenalty_Very_Hard = 52,
 
 	/// <summary>
 	/// Boots - Increases movement speed by +15%.
 	/// </summary>
 	/// <name>[N] Need Villagers Speed Bonus</name>
-	N_Need_Villagers_Speed_Bonus,
+	N_Need_Villagers_Speed_Bonus = 53,
 
 	/// <summary>
 	/// Full Belly - This worker has a +5% higher chance of producing double yields for each Complex Food need met.
 	/// </summary>
 	/// <name>Need Complex Food Extra Production</name>
-	Need_Complex_Food_Extra_Production,
+	Need_Complex_Food_Extra_Production = 54,
 
 	/// <summary>
 	/// High Motivation - This worker has a +10% higher chance of producing double yields for each Complex Food need met.
 	/// </summary>
 	/// <name>Need Service Goods Extra Production</name>
-	Need_Service_Goods_Extra_Production,
+	Need_Service_Goods_Extra_Production = 55,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 10</name>
-	PerkCrafter_Break_Interval_Child_10,
+	PerkCrafter_Break_Interval_Child_10 = 56,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +12%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 12</name>
-	PerkCrafter_Break_Interval_Child_12,
+	PerkCrafter_Break_Interval_Child_12 = 57,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +4%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 4</name>
-	PerkCrafter_Break_Interval_Child_4,
+	PerkCrafter_Break_Interval_Child_4 = 58,
 
 	/// <summary>
 	/// The time interval between breaks is increased by +7%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 7</name>
-	PerkCrafter_Break_Interval_Child_7,
+	PerkCrafter_Break_Interval_Child_7 = 59,
 
 	/// <summary>
 	/// Poisoned Food - Fishmen are small and cunning enough to sneak into a settlement and poison the food supply. Villagers have a +25% chance of death after eating.
 	/// </summary>
 	/// <name>Poisoned Food Instant</name>
-	Poisoned_Food_Instant,
+	Poisoned_Food_Instant = 60,
 
 	/// <summary>
 	/// Proficiency - This worker has a +10% chance of doubling their yield.
 	/// </summary>
 	/// <name>Proficiency</name>
-	Proficiency,
+	Proficiency = 61,
 
 	/// <summary>
 	/// Proficiency - This worker has a +40% chance of doubling their yield.
 	/// </summary>
 	/// <name>Proficiency Blightrot</name>
-	Proficiency_Blightrot,
+	Proficiency_Blightrot = 62,
 
 	/// <summary>
 	/// Low Strain - Work is much easier with Rain Engines on (+5 to Resolve).
 	/// </summary>
 	/// <name>Rainpunk Comfortable</name>
-	Rainpunk_Comfortable,
+	Rainpunk_Comfortable = 63,
 
 	/// <summary>
 	/// Rotting Wood - Villagers with this effect have a +100% chance of destroying the yield with each production cycle.
 	/// </summary>
 	/// <name>RottingWoodDestroyYield</name>
-	RottingWoodDestroyYield,
+	RottingWoodDestroyYield = 64,
 
 	/// <summary>
 	/// Royal Guard Training - The Crown sends two Royal Guards to your village. Instead of simply brawling, villagers will now train under them.  (+5 to Global Resolve)
 	/// </summary>
 	/// <name>Royal Guard Training - Resolve Reward</name>
-	Royal_Guard_Training_Resolve_Reward,
+	Royal_Guard_Training_Resolve_Reward = 65,
 
 	/// <summary>
 	/// Hot Springs - The warmth around the hot geyser improves the mood of the Pump Operators. (+10 to Global Resolve)
 	/// </summary>
 	/// <name>SE Hot Springs (Villager Resolve Effect)</name>
-	SE_Hot_Springs_Villager_Resolve_Effect,
+	SE_Hot_Springs_Villager_Resolve_Effect = 66,
 
 	/// <summary>
 	/// Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
 	/// </summary>
 	/// <name>SE Longer Break Interval - child</name>
-	SE_Longer_Break_Interval_Child,
+	SE_Longer_Break_Interval_Child = 67,
 
 	/// <summary>
 	/// Horrors from Beneath - A strange chant is frightening the villagers. (‑10 to Global Resolve)
 	/// </summary>
 	/// <name>SE Mine in Storm (Villager Resolve Effect)</name>
-	SE_Mine_In_Storm_Villager_Resolve_Effect,
+	SE_Mine_In_Storm_Villager_Resolve_Effect = 68,
 
 	/// <summary>
 	/// Shaky Hands - Discovering the remains of a caravan has caused unrest in the settlement. All villagers have a +30% chance of destroying a production yield.
 	/// </summary>
 	/// <name>Shaky Hands</name>
-	Shaky_Hands,
+	Shaky_Hands = 69,
 
 	/// <summary>
 	/// Drying Boards - Time between breaks is increased by +10% for villagers with the need for "[needs] coats" coats fulfilled.
 	/// </summary>
 	/// <name>Shorter Break NEW</name>
-	Shorter_Break_NEW,
+	Shorter_Break_NEW = 70,
 
 	/// <summary>
 	/// Reward_Composite_SickTrees_Name - Villagers with this effect have a +40% chance of destroying the yield with each production cycle.
 	/// </summary>
 	/// <name>SickTreesDestroyYield</name>
-	SickTreesDestroyYield,
+	SickTreesDestroyYield = 71,
 
 	/// <summary>
 	/// Working Hard and Smart - Has a 10% chance of producing double yields when under the effect of "[needs] scrolls" education.
 	/// </summary>
 	/// <name>Smart Worker</name>
-	Smart_Worker,
+	Smart_Worker = 72,
 
 	/// <summary>
 	/// Spiced Ale - Additional +5 to Resolve when under the effect of "[needs] ale" leisure. (+5 to Global Resolve)
 	/// </summary>
 	/// <name>Spiced Ale</name>
-	Spiced_Ale,
+	Spiced_Ale = 73,
 
 	/// <summary>
 	/// Indoor Pool - This seemingly extravagant luxury is something that Frogs need to survive. (+2 to Global Resolve)
 	/// </summary>
 	/// <name>[U] Frog Houses Bonus Resolve</name>
-	U_Frog_Houses_Bonus_Resolve,
+	U_Frog_Houses_Bonus_Resolve = 74,
 
 	/// <summary>
 	/// Stove - A small reminder of the Holy Flame. (+1 to Global Resolve)
 	/// </summary>
 	/// <name>[U] Houses Bonus Resolve</name>
-	U_Houses_Bonus_Resolve,
+	U_Houses_Bonus_Resolve = 75,
 
 	/// <summary>
 	/// Soft Beds - Villagers living in a house with this upgrade move +15% faster.
 	/// </summary>
 	/// <name>[U] Houses Villagers Speed Bonus</name>
-	U_Houses_Villagers_Speed_Bonus,
+	U_Houses_Villagers_Speed_Bonus = 76,
 
 	/// <summary>
 	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑12 to Global Resolve)
 	/// </summary>
 	/// <name>VaultResolvePenalty - normal</name>
-	VaultResolvePenalty_Normal,
+	VaultResolvePenalty_Normal = 77,
 
 	/// <summary>
 	/// Drying Boards - Time between breaks is increased by 10000% for villagers with the need for "[needs] coats" coats fulfilled.
 	/// </summary>
 	/// <name>Very Long Breaks</name>
-	Very_Long_Breaks,
+	Very_Long_Breaks = 78,
 
 
 

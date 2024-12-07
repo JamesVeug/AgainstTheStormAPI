@@ -7,485 +7,492 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum ProfessionTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown ProfessionTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no ProfessionTypes. Typically, seen if nothing is defined or failed to parse a string to a ProfessionTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Alchemist
 	/// </summary>
 	/// <name>Alchemist</name>
-	Alchemist,
+	Alchemist = 1,
 
 	/// <summary>
 	/// Apothecary
 	/// </summary>
 	/// <name>Apothecary</name>
-	Apothecary,
+	Apothecary = 2,
 
 	/// <summary>
 	/// Artisan
 	/// </summary>
 	/// <name>Artisan</name>
-	Artisan,
+	Artisan = 3,
 
 	/// <summary>
 	/// Baker
 	/// </summary>
 	/// <name>Baker</name>
-	Baker,
+	Baker = 4,
 
 	/// <summary>
 	/// Bath House Worker
 	/// </summary>
 	/// <name>Bath House worker</name>
-	Bath_House_Worker,
+	Bath_House_Worker = 5,
 
 	/// <summary>
 	/// Beanery Worker
 	/// </summary>
 	/// <name>Beanery Worker</name>
-	Beanery_Worker,
+	Beanery_Worker = 6,
 
 	/// <summary>
 	/// Blight Fighter
 	/// </summary>
 	/// <name>BlightFighter</name>
-	BlightFighter,
+	BlightFighter = 7,
 
 	/// <summary>
 	/// Brewer
 	/// </summary>
 	/// <name>Brewery Worker</name>
-	Brewery_Worker,
+	Brewery_Worker = 8,
 
 	/// <summary>
 	/// Brickyard Worker
 	/// </summary>
 	/// <name>Brickyard Worker</name>
-	Brickyard_Worker,
+	Brickyard_Worker = 9,
 
 	/// <summary>
 	/// Builder
 	/// </summary>
 	/// <name>Builder</name>
-	Builder,
+	Builder = 10,
 
 	/// <summary>
 	/// Cook
 	/// </summary>
 	/// <name>Butcher</name>
-	Butcher,
+	Butcher = 11,
 
 	/// <summary>
 	/// Cannery Worker
 	/// </summary>
 	/// <name>Cannery Worker</name>
-	Cannery_Worker,
+	Cannery_Worker = 12,
 
 	/// <summary>
 	/// Carpenter
 	/// </summary>
 	/// <name>Carpenter</name>
-	Carpenter,
+	Carpenter = 13,
 
 	/// <summary>
 	/// Cellar Worker
 	/// </summary>
 	/// <name>Cellar worker</name>
-	Cellar_Worker,
+	Cellar_Worker = 14,
 
 	/// <summary>
 	/// Clan Steward
 	/// </summary>
 	/// <name>Clan Mamber</name>
-	Clan_Mamber,
+	Clan_Mamber = 15,
 
 	/// <summary>
 	/// Clay Pit Digger
 	/// </summary>
 	/// <name>Clay Pit Workshop Worker</name>
-	Clay_Pit_Workshop_Worker,
+	Clay_Pit_Workshop_Worker = 16,
 
 	/// <summary>
 	/// Clay Pit Digger
 	/// </summary>
 	/// <name>Claypit Digger</name>
-	Claypit_Digger,
+	Claypit_Digger = 17,
 
 	/// <summary>
 	/// Cobbler
 	/// </summary>
 	/// <name>Cobbler</name>
-	Cobbler,
+	Cobbler = 18,
 
 	/// <summary>
 	/// Cook
 	/// </summary>
 	/// <name>Cook</name>
-	Cook,
+	Cook = 19,
 
 	/// <summary>
 	/// Cooper
 	/// </summary>
 	/// <name>Cooper</name>
-	Cooper,
+	Cooper = 20,
 
 	/// <summary>
 	/// Craftsman
 	/// </summary>
 	/// <name>Craftsman</name>
-	Craftsman,
+	Craftsman = 21,
 
 	/// <summary>
 	/// Distillery Worker
 	/// </summary>
 	/// <name>Distillery Worker</name>
-	Distillery_Worker,
+	Distillery_Worker = 22,
 
 	/// <summary>
 	/// Druid
 	/// </summary>
 	/// <name>Druid</name>
-	Druid,
+	Druid = 23,
 
 	/// <summary>
 	/// Explorer
 	/// </summary>
 	/// <name>Explorer</name>
-	Explorer,
+	Explorer = 24,
 
 	/// <summary>
 	/// Factory Worker
 	/// </summary>
 	/// <name>Factory Worker</name>
-	Factory_Worker,
+	Factory_Worker = 25,
 
 	/// <summary>
 	/// Farmer
 	/// </summary>
 	/// <name>Farmer</name>
-	Farmer,
+	Farmer = 26,
 
 	/// <summary>
 	/// Finesmith
 	/// </summary>
 	/// <name>Finesmith</name>
-	Finesmith,
+	Finesmith = 27,
 
 	/// <summary>
 	/// Firekeeper
 	/// </summary>
 	/// <name>FireKeeper</name>
-	FireKeeper,
+	FireKeeper = 28,
 
 	/// <summary>
 	/// Fisherman
 	/// </summary>
 	/// <name>Fisherman</name>
-	Fisherman,
+	Fisherman = 29,
 
 	/// <summary>
 	/// Forager
 	/// </summary>
 	/// <name>Forager</name>
-	Forager,
+	Forager = 30,
 
 	/// <summary>
 	/// Furnace Worker
 	/// </summary>
 	/// <name>Furnace worker</name>
-	Furnace_Worker,
+	Furnace_Worker = 31,
 
 	/// <summary>
 	/// Pump Operator
 	/// </summary>
 	/// <name>Geologist</name>
-	Geologist,
+	Geologist = 32,
 
 	/// <summary>
 	/// Granary Worker
 	/// </summary>
 	/// <name>Granary worker</name>
-	Granary_Worker,
+	Granary_Worker = 33,
 
 	/// <summary>
 	/// Greenhouse Worker
 	/// </summary>
 	/// <name>Greenhouse Worker</name>
-	Greenhouse_Worker,
+	Greenhouse_Worker = 34,
 
 	/// <summary>
 	/// Greenhouse Worker
 	/// </summary>
 	/// <name>Greenhouse Workshop Worker</name>
-	Greenhouse_Workshop_Worker,
+	Greenhouse_Workshop_Worker = 35,
 
 	/// <summary>
 	/// Grill Worker
 	/// </summary>
 	/// <name>Grill Worker</name>
-	Grill_Worker,
+	Grill_Worker = 36,
 
 	/// <summary>
 	/// Guild Member
 	/// </summary>
 	/// <name>Guild member</name>
-	Guild_Member,
+	Guild_Member = 37,
 
 	/// <summary>
 	/// Harvester
 	/// </summary>
 	/// <name>Harvester</name>
-	Harvester,
+	Harvester = 38,
 
 	/// <summary>
 	/// Hauler
 	/// </summary>
 	/// <name>Hauler</name>
-	Hauler,
+	Hauler = 39,
 
 	/// <summary>
 	/// Herbalist
 	/// </summary>
 	/// <name>Herbalist</name>
-	Herbalist,
+	Herbalist = 40,
 
 	/// <summary>
 	/// Kiln Worker
 	/// </summary>
 	/// <name>Kiln worker</name>
-	Kiln_Worker,
+	Kiln_Worker = 41,
 
 	/// <summary>
 	/// Leatherworker
 	/// </summary>
 	/// <name>Leatherworker</name>
-	Leatherworker,
+	Leatherworker = 42,
 
 	/// <summary>
 	/// Librarian
 	/// </summary>
 	/// <name>Librarian</name>
-	Librarian,
+	Librarian = 43,
 
 	/// <summary>
 	/// Lumber Mill Worker
 	/// </summary>
 	/// <name>Lumbermill worker</name>
-	Lumbermill_Worker,
+	Lumbermill_Worker = 44,
 
 	/// <summary>
 	/// Manufactory Worker
 	/// </summary>
 	/// <name>Manufacturer</name>
-	Manufacturer,
+	Manufacturer = 45,
 
 	/// <summary>
 	/// Miller
 	/// </summary>
 	/// <name>Mill worker</name>
-	Mill_Worker,
+	Mill_Worker = 46,
 
 	/// <summary>
 	/// Miner
 	/// </summary>
 	/// <name>Miner</name>
-	Miner,
+	Miner = 47,
 
 	/// <summary>
 	/// Monk
 	/// </summary>
 	/// <name>Monk</name>
-	Monk,
+	Monk = 48,
 
 	/// <summary>
 	/// Supplier
 	/// </summary>
 	/// <name>Outfitter</name>
-	Outfitter,
+	Outfitter = 49,
 
 	/// <summary>
 	/// Brick Oven Worker
 	/// </summary>
 	/// <name>Oven worker</name>
-	Oven_Worker,
+	Oven_Worker = 50,
 
 	/// <summary>
 	/// Pantry Worker
 	/// </summary>
 	/// <name>Pantry worker</name>
-	Pantry_Worker,
+	Pantry_Worker = 51,
 
 	/// <summary>
 	/// Press Worker
 	/// </summary>
 	/// <name>Press Worker</name>
-	Press_Worker,
+	Press_Worker = 52,
 
 	/// <summary>
 	/// Priest
 	/// </summary>
 	/// <name>Priest</name>
-	Priest,
+	Priest = 53,
 
 	/// <summary>
 	/// Provisioner
 	/// </summary>
 	/// <name>Provisioner</name>
-	Provisioner,
+	Provisioner = 54,
 
 	/// <summary>
 	/// Rain Collector Worker
 	/// </summary>
 	/// <name>Rain Catcher Worker</name>
-	Rain_Catcher_Worker,
+	Rain_Catcher_Worker = 55,
 
 	/// <summary>
 	/// Rain Collector Worker
 	/// </summary>
 	/// <name>Rain Collector Worker</name>
-	Rain_Collector_Worker,
+	Rain_Collector_Worker = 56,
 
 	/// <summary>
 	/// Rancher
 	/// </summary>
 	/// <name>Rancher</name>
-	Rancher,
+	Rancher = 57,
 
 	/// <summary>
 	/// Scavenger
 	/// </summary>
 	/// <name>Scavenger</name>
-	Scavenger,
+	Scavenger = 58,
 
 	/// <summary>
 	/// Scout
 	/// </summary>
 	/// <name>Scout</name>
-	Scout,
+	Scout = 59,
 
 	/// <summary>
 	/// Scribe
 	/// </summary>
 	/// <name>Scribe</name>
-	Scribe,
+	Scribe = 60,
 
 	/// <summary>
 	/// Seller
 	/// </summary>
 	/// <name>Seller</name>
-	Seller,
+	Seller = 61,
 
 	/// <summary>
 	/// Clothier
 	/// </summary>
 	/// <name>Sewer</name>
-	Sewer,
+	Sewer = 62,
 
 	/// <summary>
 	/// Smelter
 	/// </summary>
 	/// <name>Smelter</name>
-	Smelter,
+	Smelter = 63,
 
 	/// <summary>
 	/// Smith
 	/// </summary>
 	/// <name>Smith</name>
-	Smith,
+	Smith = 64,
 
 	/// <summary>
 	/// Smokehouse Worker
 	/// </summary>
 	/// <name>Smokehouse worker</name>
-	Smokehouse_Worker,
+	Smokehouse_Worker = 65,
 
 	/// <summary>
 	/// Speaker
 	/// </summary>
 	/// <name>Speaker</name>
-	Speaker,
+	Speaker = 66,
 
 	/// <summary>
 	/// Stamping Mill Worker
 	/// </summary>
 	/// <name>Stamping Mill Worker</name>
-	Stamping_Mill_Worker,
+	Stamping_Mill_Worker = 67,
 
 	/// <summary>
 	/// Dockworker
 	/// </summary>
 	/// <name>Stevedore</name>
-	Stevedore,
+	Stevedore = 68,
 
 	/// <summary>
 	/// Stonecutter
 	/// </summary>
 	/// <name>Stonecutter</name>
-	Stonecutter,
+	Stonecutter = 69,
 
 	/// <summary>
 	/// Supplier
 	/// </summary>
 	/// <name>Supplier</name>
-	Supplier,
+	Supplier = 70,
 
 	/// <summary>
 	/// Teadoctor
 	/// </summary>
 	/// <name>Teadoctor</name>
-	Teadoctor,
+	Teadoctor = 71,
 
 	/// <summary>
 	/// Teahouse Worker
 	/// </summary>
 	/// <name>Teahouse Worker</name>
-	Teahouse_Worker,
+	Teahouse_Worker = 72,
 
 	/// <summary>
 	/// Tinctury Worker
 	/// </summary>
 	/// <name>Tinctury Worker</name>
-	Tinctury_Worker,
+	Tinctury_Worker = 73,
 
 	/// <summary>
 	/// Tinkerer
 	/// </summary>
 	/// <name>Tinkerer</name>
-	Tinkerer,
+	Tinkerer = 74,
 
 	/// <summary>
 	/// Toolshop Worker
 	/// </summary>
 	/// <name>Toolshop Worker</name>
-	Toolshop_Worker,
+	Toolshop_Worker = 75,
 
 	/// <summary>
 	/// Trapper
 	/// </summary>
 	/// <name>Trapper</name>
-	Trapper,
+	Trapper = 76,
 
 	/// <summary>
 	/// Waiter
 	/// </summary>
 	/// <name>Waiter</name>
-	Waiter,
+	Waiter = 77,
 
 	/// <summary>
 	/// Weaver
 	/// </summary>
 	/// <name>Weaver</name>
-	Weaver,
+	Weaver = 78,
 
 	/// <summary>
 	/// Woodcutter
 	/// </summary>
 	/// <name>Woodcutter</name>
-	Woodcutter,
+	Woodcutter = 79,
 
 
 

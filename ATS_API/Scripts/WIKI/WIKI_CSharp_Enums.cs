@@ -63,7 +63,7 @@ public partial class WIKI
                             {
                                 if (pair.Value != ">Missing key<")
                                 {
-                                    locale[pair.Key] = CleanComment(pair.Value.Replace("\n", ""));
+                                    locale[pair.Key] = CleanComment(pair.Value);
                                 }
                             }
                         }
@@ -116,18 +116,44 @@ public partial class WIKI
         int EnumCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length));
         int DictionaryCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length + b.name.Length));
 
-        string GetEnumLine((string name, string enu, Dictionary<string, string> locale) a, string group)
+        string GetEnumLine((string name, string enu, Dictionary<string, string> locale) a, string group, int enumValue)
         {
             if (a.locale.Count == 0)
             {
-                return "\t" + a.enu + ",\n";
+                return "\t" + a.enu + " = " + enumValue + ",\n";
             }
 
             string text = "";
             if (a.locale.TryGetValue("summary", out string summary) && !string.IsNullOrEmpty(summary))
             {
+                string cleanComment = CleanComment(summary);
+                if (cleanComment.Contains("\n"))
+                {
+                    string sentence = "";
+                    for (var i = 0; i < cleanComment.Split('\n').Length; i++)
+                    {
+                        string s = cleanComment.Split('\n')[i].Trim();
+                        if (string.IsNullOrEmpty(s))
+                        {
+                            continue;
+                        }
+
+                        if (sentence.Length > 0)
+                        {
+                            sentence += "</p>\n";
+                        }
+                        
+                        sentence += "\t/// <p>" + s;
+                    }
+                    cleanComment = sentence + "</p>";
+                    // cleanComment = "<p>" + cleanComment.Replace("\n", "</p>\n\t/// <p>") + "</p>";
+                }
+                else
+                {
+                    cleanComment = "\t/// " + cleanComment;
+                }
                 text = "\t/// <summary>\n" +
-                       "\t/// " + CleanComment(summary) + "\n" +
+                       cleanComment + "\n" +
                        "\t/// </summary>\n";
             }
             else
@@ -148,7 +174,7 @@ public partial class WIKI
             // if(group != "__default")
             //     text += $"\t/// <group>{group}</group>\n";
 
-            return text + "\t" + a.enu + ",\n";
+            return text + "\t" + a.enu + " = " + enumValue + ",\n";
         }
 
         string ToDictionaryRow((string name, string enu, Dictionary<string, string> locale) a)
@@ -157,7 +183,7 @@ public partial class WIKI
             string s = "\t\t{ " + EnumName + "." + a.Item2 + ", \"" + a.Item1 + "\" }, ";
             if (a.locale.TryGetValue("summary", out string summary) && !string.IsNullOrEmpty(summary))
             {
-                s += new string(' ', extraCharactersBeforeLocale) + "// " + summary;
+                s += new string(' ', extraCharactersBeforeLocale) + "// " + CleanComment(summary).Replace("\n", " ");
             }
 
             return s;
@@ -165,6 +191,7 @@ public partial class WIKI
 
         string enumLines = "";
         string dictionaryLines = "";
+        int enumValue = 1; // First custom enum starts at 1
         foreach (string group in sortedGroups)
         {
             List<(string name, string enu, Dictionary<string, string> locale)> groupList = sorted[group];
@@ -176,7 +203,7 @@ public partial class WIKI
                 dictionaryLines += $"\n\t\t// {group}\n";
             }
 
-            enumLines += string.Join("\n", groupList.Select(a=>GetEnumLine(a,group))) + "\n";
+            enumLines += string.Join("\n", groupList.Select(a=>GetEnumLine(a,group, enumValue++))) + "\n";
             dictionaryLines += string.Join("\n", groupList.Select(ToDictionaryRow)) + "\n";
         }
 
@@ -221,9 +248,10 @@ public partial class WIKI
 
     private static string ParseTag(string s)
     {
-        // <b> </b>
+        // <b> /b>
         // <sprite name=X>
         // <sprite name=X align=left>
+        // <color=#FF0000> /color>
         
         int tagNameStartIndex = 1;
         if (s[1] == '/')
@@ -231,13 +259,18 @@ public partial class WIKI
             tagNameStartIndex++;
         }
         
-        int tagNameEndIndex = s.IndexOf(" ", tagNameStartIndex);
+        int tagNameEndIndex = s.IndexOf(" ");
         if (tagNameEndIndex == -1)
         {
-            tagNameEndIndex = s.IndexOf(">", tagNameStartIndex);
+            tagNameEndIndex = s.IndexOf(">");
         }
         
         string tagName = s.Substring(tagNameStartIndex, tagNameEndIndex - tagNameStartIndex);
+        int tagEquals = tagName.IndexOf("=");
+        if (tagEquals != -1)
+        {
+            tagName = tagName.Substring(0, tagEquals);
+        }
         
         Dictionary<string, string> args = new();
         
@@ -260,6 +293,19 @@ public partial class WIKI
         {
             string spriteName = args["name"];
             return spriteName; // TODO: Find display name instead
+        }
+        else if (tagName == "color")
+        {
+            return ""; // Hex does not work so just remove it
+        }
+        else if (tagName == "b" || tagName == "i" || tagName == "u")
+        {
+            return s; // Don't change this tag!
+        }
+        else
+        {
+            string argString = string.Join(", ", args.Select(a => a.Key + "=" + a.Value));
+            Plugin.Log.LogInfo("Unhandled tag: '" + tagName + "' with args: '" + argString + "'");
         }
         
         return s;

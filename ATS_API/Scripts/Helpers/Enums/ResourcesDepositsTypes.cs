@@ -7,275 +7,282 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum ResourcesDepositsTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown ResourcesDepositsTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no ResourcesDepositsTypes. Typically, seen if nothing is defined or failed to parse a string to a ResourcesDepositsTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Ancient Proto Wheat - A wild type of grain, mutated by an invasive species of fungi. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Infinite Node Grain</name>
-	Marsh_Infinite_Node_Grain,
+	Marsh_Infinite_Node_Grain = 1,
 
 	/// <summary>
 	/// Dead Leviathan - A giant, dead beast. How did it get here? Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Infinite Node Meat</name>
-	Marsh_Infinite_Node_Meat,
+	Marsh_Infinite_Node_Meat = 2,
 
 	/// <summary>
 	/// Giant Proto Fungus - An ancient and mysterious organism. Proto fungi are sometimes referred to as the living and breathing hearts of the Marshlands. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Infinite Node Mushrooms</name>
-	Marsh_Infinite_Node_Mushrooms,
+	Marsh_Infinite_Node_Mushrooms = 3,
 
 	/// <summary>
 	/// Leech Broodmother (Large) - A dead leech broodmother. It has a strong, and somewhat sweet smell. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Big Reptile Nest - Big</name>
-	Marsh_Node_Big_Reptile_Nest_Big,
+	Marsh_Node_Big_Reptile_Nest_Big = 4,
 
 	/// <summary>
 	/// Leech Broodmother (Small) - A dead leech broodmother. It has a strong, and somewhat sweet smell. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Big Reptile Nest - Small</name>
-	Marsh_Node_Big_Reptile_Nest_Small,
+	Marsh_Node_Big_Reptile_Nest_Small = 5,
 
 	/// <summary>
 	/// Wormtongue Nest (Large) - A nest full of tasty wormtongues. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Insect Nest - Big</name>
-	Marsh_Node_Insect_Nest_Big,
+	Marsh_Node_Insect_Nest_Big = 6,
 
 	/// <summary>
 	/// Wormtongue Nest (Small) - A nest full of tasty wormtongues. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Insect Nest - Small</name>
-	Marsh_Node_Insect_Nest_Small,
+	Marsh_Node_Insect_Nest_Small = 7,
 
 	/// <summary>
 	/// Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Mushroom Deposit - Big</name>
-	Marsh_Node_Mushroom_Deposit_Big,
+	Marsh_Node_Mushroom_Deposit_Big = 8,
 
 	/// <summary>
 	/// Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Mushroom Deposit - Small</name>
-	Marsh_Node_Mushroom_Deposit_Small,
+	Marsh_Node_Mushroom_Deposit_Small = 9,
 
 	/// <summary>
 	/// Snake Nest (Large) - A dangerous, but rich source of food and leather. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Small Reptile Nest - Big</name>
-	Marsh_Node_Small_Reptile_Nest_Big,
+	Marsh_Node_Small_Reptile_Nest_Big = 10,
 
 	/// <summary>
 	/// Snake Nest (Small) - A dangerous, but rich source of food and leather. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Small Reptile Nest - Small</name>
-	Marsh_Node_Small_Reptile_Nest_Small,
+	Marsh_Node_Small_Reptile_Nest_Small = 11,
 
 	/// <summary>
 	/// Overgrown Stone Node (Large) - Stones weathered by the everlasting rain, covered with moss. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Stone Deposit - Big</name>
-	Marsh_Node_Stone_Deposit_Big,
+	Marsh_Node_Stone_Deposit_Big = 12,
 
 	/// <summary>
 	/// Overgrown Stone Node (Small) - Stones weathered by the everlasting rain, covered with moss. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Marsh Node Stone Deposit - Small</name>
-	Marsh_Node_Stone_Deposit_Small,
+	Marsh_Node_Stone_Deposit_Small = 13,
 
 	/// <summary>
 	/// Herb Node (Large) - A dense shrub, full of many useful plant species. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Moor Node Herbs - Big</name>
-	Moor_Node_Herbs_Big,
+	Moor_Node_Herbs_Big = 14,
 
 	/// <summary>
 	/// Herb Node (Small) - A dense shrub, full of many useful plant species. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Moor Node Herbs - Small</name>
-	Moor_Node_Herbs_Small,
+	Moor_Node_Herbs_Small = 15,
 
 	/// <summary>
 	/// Reed Field (Large) - A very common plant, it thrives thanks to the magical rain. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Moor Node Reed Deposit - Big</name>
-	Moor_Node_Reed_Deposit_Big,
+	Moor_Node_Reed_Deposit_Big = 16,
 
 	/// <summary>
 	/// Reed Field (Small) - A very common plant, it thrives thanks to the magical rain. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Moor Node Reed Deposit - Small</name>
-	Moor_Node_Reed_Deposit_Small,
+	Moor_Node_Reed_Deposit_Small = 17,
 
 	/// <summary>
 	/// Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Moor Node Swamp Wheat - Big</name>
-	Moor_Node_Swamp_Wheat_Big,
+	Moor_Node_Swamp_Wheat_Big = 18,
 
 	/// <summary>
 	/// Swamp Wheat Field (Small) - A plant species that’s right at home in the swamp. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Moor Node Swamp Wheat - Small</name>
-	Moor_Node_Swamp_Wheat_Small,
+	Moor_Node_Swamp_Wheat_Small = 19,
 
 	/// <summary>
 	/// Clay Node (Large) - Soil infused with the essence of the rain. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Clay Deposit - Big</name>
-	Universal_Node_Clay_Deposit_Big,
+	Universal_Node_Clay_Deposit_Big = 20,
 
 	/// <summary>
 	/// Clay Node (Small) - Soil infused with the essence of the rain. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Clay Deposit - Small</name>
-	Universal_Node_Clay_Deposit_Small,
+	Universal_Node_Clay_Deposit_Small = 21,
 
 	/// <summary>
 	/// Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Dewberries - Big</name>
-	Universal_Node_Dewberries_Big,
+	Universal_Node_Dewberries_Big = 22,
 
 	/// <summary>
 	/// Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Dewberries - Small</name>
-	Universal_Node_Dewberries_Small,
+	Universal_Node_Dewberries_Small = 23,
 
 	/// <summary>
 	/// Water Strider Molt (Large) - A leathery exoskeleton left behind by a juvenile water strider. It's better to collect the skin this way than to come across a live, wild specimen. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Leather - Big</name>
-	Universal_Node_Leather_Big,
+	Universal_Node_Leather_Big = 24,
 
 	/// <summary>
 	/// Water Strider Molt (Small) - A leathery exoskeleton left behind by a juvenile water strider. It's better to collect the skin this way than to come across a live, wild specimen. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Leather - Small</name>
-	Universal_Node_Leather_Small,
+	Universal_Node_Leather_Small = 25,
 
 	/// <summary>
 	/// Bleeding Tooth Mushroom (Large) - A resilient species that grows on marshy soil. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Mushroom Deposit - Big</name>
-	Universal_Node_Mushroom_Deposit_Big,
+	Universal_Node_Mushroom_Deposit_Big = 26,
 
 	/// <summary>
 	/// Bleeding Tooth Mushroom (Small) - A resilient species that grows on marshy soil. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Mushroom Deposit - Small</name>
-	Universal_Node_Mushroom_Deposit_Small,
+	Universal_Node_Mushroom_Deposit_Small = 27,
 
 	/// <summary>
 	/// Root Node (Large) - A tangled net of living vines. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Root Deposit - Big</name>
-	Universal_Node_Root_Deposit_Big,
+	Universal_Node_Root_Deposit_Big = 28,
 
 	/// <summary>
 	/// Root Node (Small) - A tangled net of living vines. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Root Deposit - Small</name>
-	Universal_Node_Root_Deposit_Small,
+	Universal_Node_Root_Deposit_Small = 29,
 
 	/// <summary>
 	/// Sea Marrow Node (Large) - Ancient fossils, rich in resources. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Sea Marrow Deposit - Big</name>
-	Universal_Node_Sea_Marrow_Deposit_Big,
+	Universal_Node_Sea_Marrow_Deposit_Big = 30,
 
 	/// <summary>
 	/// Sea Marrow Node (Small) - Ancient fossils, rich in resources. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Sea Marrow Deposit - Small</name>
-	Universal_Node_Sea_Marrow_Deposit_Small,
+	Universal_Node_Sea_Marrow_Deposit_Small = 31,
 
 	/// <summary>
 	/// Stone Node (Large) - Stones, weathered by the everlasting rain. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Stone Deposit - Big</name>
-	Universal_Node_Stone_Deposit_Big,
+	Universal_Node_Stone_Deposit_Big = 32,
 
 	/// <summary>
 	/// Stone Node (Small) - Stones, weathered by the everlasting rain. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Stone Deposit - Small</name>
-	Universal_Node_Stone_Deposit_Small,
+	Universal_Node_Stone_Deposit_Small = 33,
 
 	/// <summary>
 	/// Stone Node (Small) - Stones, weathered by the everlasting rain. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Stone Deposit - Small - Petrified Necropolis</name>
-	Universal_Node_Stone_Deposit_Small_Petrified_Necropolis,
+	Universal_Node_Stone_Deposit_Small_Petrified_Necropolis = 34,
 
 	/// <summary>
 	/// Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Stormbird Nest - Big</name>
-	Universal_Node_Stormbird_Nest_Big,
+	Universal_Node_Stormbird_Nest_Big = 35,
 
 	/// <summary>
 	/// Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Universal Node Stormbird Nest - Small</name>
-	Universal_Node_Stormbird_Nest_Small,
+	Universal_Node_Stormbird_Nest_Small = 36,
 
 	/// <summary>
 	/// Flax Field (Large) - Resilient plants that are perfect for cloth-making. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Flax - Big</name>
-	Wood_Node_Flax_Big,
+	Wood_Node_Flax_Big = 37,
 
 	/// <summary>
 	/// Flax Field (Small) - Resilient plants that are perfect for cloth-making. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Flax - Small</name>
-	Wood_Node_Flax_Small,
+	Wood_Node_Flax_Small = 38,
 
 	/// <summary>
 	/// Moss Broccoli Patch (Large) - An edible and tasty type of moss. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Moss Broccoli - Big</name>
-	Wood_Node_Moss_Broccoli_Big,
+	Wood_Node_Moss_Broccoli_Big = 39,
 
 	/// <summary>
 	/// Moss Broccoli Patch (Small) - An edible and tasty type of moss. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Moss Broccoli - Small</name>
-	Wood_Node_Moss_Broccoli_Small,
+	Wood_Node_Moss_Broccoli_Small = 40,
 
 	/// <summary>
 	/// Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Snail Broodmother - Big</name>
-	Wood_Node_Snail_Broodmother_Big,
+	Wood_Node_Snail_Broodmother_Big = 41,
 
 	/// <summary>
 	/// Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Snail Broodmother - Small</name>
-	Wood_Node_Snail_Broodmother_Small,
+	Wood_Node_Snail_Broodmother_Small = 42,
 
 	/// <summary>
 	/// Wormtongue Nest (Large) - A nest full of tasty wormtongues. Requires a gathering camp with a grade2 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Wormtongue Nest - Big</name>
-	Wood_Node_Wormtongue_Nest_Big,
+	Wood_Node_Wormtongue_Nest_Big = 43,
 
 	/// <summary>
 	/// Wormtongue Nest (Small) - A nest full of tasty wormtongues. Requires a gathering camp with a grade1 recipe or better.
 	/// </summary>
 	/// <name>Wood Node Wormtongue Nest - Small</name>
-	Wood_Node_Wormtongue_Nest_Small,
+	Wood_Node_Wormtongue_Nest_Small = 44,
 
 
 

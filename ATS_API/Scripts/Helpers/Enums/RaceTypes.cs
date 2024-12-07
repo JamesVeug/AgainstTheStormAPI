@@ -7,47 +7,54 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum RaceTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown RaceTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no RaceTypes. Typically, seen if nothing is defined or failed to parse a string to a RaceTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Beaver - Beavers are hardworking and honest, but also quite demanding. They are gifted woodworkers ("wood") and enjoy engineering ("tech"). Beavers are also known for their innate talent for salesmanship.
 	/// </summary>
 	/// <name>Beaver</name>
-	Beaver,
+	Beaver = 1,
 
 	/// <summary>
 	/// Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts ("foxforest") and feel comfortable working in buildings infested with Blightrot ("cysts"). They are highly susceptible to starvation, yet are immune to Hostility.
 	/// </summary>
 	/// <name>Foxes</name>
-	Foxes,
+	Foxes = 2,
 
 	/// <summary>
 	/// Frog - A dignified and proud people with a unique affinity for wealth, renowned for their exceptional skills in architecture and their love of water. Shelters do not satisfy them - they require pools of water to feel truly at home. Frogs are skilled masons ("stone") and love working with rainwater ("rainwater").
 	/// </summary>
 	/// <name>Frog</name>
-	Frog,
+	Frog = 3,
 
 	/// <summary>
 	/// Harpy - Harpies are a noble and fragile species, with a primal, aggressive side to them. They have lost their ability to fly due to centuries of exposure to the rain. They excel at alchemy ("alchemy") and love to work with cloth ("cloth").
 	/// </summary>
 	/// <name>Harpy</name>
-	Harpy,
+	Harpy = 4,
 
 	/// <summary>
 	/// Human - Humans are a very adaptable species, but they are also very susceptible to the rain. They rely heavily on special clothing, such as their famous rain shells, to keep them dry. Humans are adept at farming ("farming") and really enjoy brewing ("brewing").
 	/// </summary>
 	/// <name>Human</name>
-	Human,
+	Human = 5,
 
 	/// <summary>
 	/// Lizard - Lizards are a very resilient species, but their cold-blooded nature makes them more dependent on fire than any other species. They are very distrustful and religiously believe that true bonds are only forged in battle. They are very good with animals and meat production ("meat"), and prefer to work in warm environments ("fire").
 	/// </summary>
 	/// <name>Lizard</name>
-	Lizard,
+	Lizard = 6,
 
 
 

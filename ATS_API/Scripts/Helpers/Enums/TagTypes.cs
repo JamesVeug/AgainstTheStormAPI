@@ -7,145 +7,152 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum TagTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown TagTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
 	
-	Aggregation_Tag_Caches,
+	/// <summary>
+    /// Placeholder for no TagTypes. Typically, seen if nothing is defined or failed to parse a string to a TagTypes.
+    /// </summary>
+	None = 0,
+	
+	Aggregation_Tag_Caches = 1,
 
-	Aggregation_Tag_Camps,
+	Aggregation_Tag_Camps = 2,
 
-	Aggregation_Tag_Dangerous_Events,
+	Aggregation_Tag_Dangerous_Events = 3,
 
-	Aggregation_Tag_Drills,
+	Aggregation_Tag_Drills = 4,
 
-	Aggregation_Tag_Excavation,
+	Aggregation_Tag_Excavation = 5,
 
-	Aggregation_Tag_Ghosts,
+	Aggregation_Tag_Ghosts = 6,
 
-	Aggregation_Tag_Haunted_Ruin_Beaver_House,
+	Aggregation_Tag_Haunted_Ruin_Beaver_House = 7,
 
-	Aggregation_Tag_Haunted_Ruin_Brewery,
+	Aggregation_Tag_Haunted_Ruin_Brewery = 8,
 
-	Aggregation_Tag_Haunted_Ruin_Cellar,
+	Aggregation_Tag_Haunted_Ruin_Cellar = 9,
 
-	Aggregation_Tag_Haunted_Ruin_Cooperage,
+	Aggregation_Tag_Haunted_Ruin_Cooperage = 10,
 
-	Aggregation_Tag_Haunted_Ruin_Druid,
+	Aggregation_Tag_Haunted_Ruin_Druid = 11,
 
-	Aggregation_Tag_Haunted_Ruin_Fox_House,
+	Aggregation_Tag_Haunted_Ruin_Fox_House = 12,
 
-	Aggregation_Tag_Haunted_Ruin_Frog_House,
+	Aggregation_Tag_Haunted_Ruin_Frog_House = 13,
 
-	Aggregation_Tag_Haunted_Ruin_Guild_House,
+	Aggregation_Tag_Haunted_Ruin_Guild_House = 14,
 
-	Aggregation_Tag_Haunted_Ruin_Harpy_House,
+	Aggregation_Tag_Haunted_Ruin_Harpy_House = 15,
 
-	Aggregation_Tag_Haunted_Ruin_Herb_Garden,
+	Aggregation_Tag_Haunted_Ruin_Herb_Garden = 16,
 
-	Aggregation_Tag_Haunted_Ruin_Human_House,
+	Aggregation_Tag_Haunted_Ruin_Human_House = 17,
 
-	Aggregation_Tag_Haunted_Ruin_Leatherworks,
+	Aggregation_Tag_Haunted_Ruin_Leatherworks = 18,
 
-	Aggregation_Tag_Haunted_Ruin_Lizard_House,
+	Aggregation_Tag_Haunted_Ruin_Lizard_House = 19,
 
-	Aggregation_Tag_Haunted_Ruin_Market,
+	Aggregation_Tag_Haunted_Ruin_Market = 20,
 
-	Aggregation_Tag_Haunted_Ruin_Rainmill,
+	Aggregation_Tag_Haunted_Ruin_Rainmill = 21,
 
-	Aggregation_Tag_Haunted_Ruin_SmallFarm,
+	Aggregation_Tag_Haunted_Ruin_SmallFarm = 22,
 
-	Aggregation_Tag_Haunted_Ruin_Smelter,
+	Aggregation_Tag_Haunted_Ruin_Smelter = 23,
 
-	Aggregation_Tag_Haunted_Ruin_Temple,
+	Aggregation_Tag_Haunted_Ruin_Temple = 24,
 
-	Aggregation_Tag_Hearths,
+	Aggregation_Tag_Hearths = 25,
 
-	Aggregation_Tag_Ruins,
+	Aggregation_Tag_Ruins = 26,
 
-	Aggregation_Tag_Storages,
+	Aggregation_Tag_Storages = 27,
 
-	Building_Material_Tag,
+	Building_Material_Tag = 28,
 
-	Complex_Food_Tag,
+	Complex_Food_Tag = 29,
 
-	Copper_Bar_And_Crystalized_Tag,
+	Copper_Bar_And_Crystalized_Tag = 30,
 
-	Fabric_Tag,
+	Fabric_Tag = 31,
 
-	Farm_Recipe_Tag,
+	Farm_Recipe_Tag = 32,
 
-	Fishing_Tag,
+	Fishing_Tag = 33,
 
-	Food_Tag,
+	Food_Tag = 34,
 
-	Fuel_Tag,
+	Fuel_Tag = 35,
 
-	Gatherer_Hut_Tag,
+	Gatherer_Hut_Tag = 36,
 
-	Gathering_Tag,
+	Gathering_Tag = 37,
 
-	Metal_Tag,
+	Metal_Tag = 38,
 
-	N_FirstGameResultDialog,
+	N_FirstGameResultDialog = 39,
 
-	N_Initiation,
+	N_Initiation = 40,
 
-	N_IronmanMid,
+	N_IronmanMid = 41,
 
-	N_IronmanPostSeal,
+	N_IronmanPostSeal = 42,
 
-	N_IronmanPreSeal,
+	N_IronmanPreSeal = 43,
 
-	N_IronmanStart,
+	N_IronmanStart = 44,
 
-	Ore_Tag,
+	Ore_Tag = 45,
 
-	Packs_Tag,
+	Packs_Tag = 46,
 
-	Recipe_With_Water_Tag,
+	Recipe_With_Water_Tag = 47,
 
-	Relic_Archeology,
+	Relic_Archeology = 48,
 
-	Relic_Chest,
+	Relic_Chest = 49,
 
-	Tag_Beaver,
+	Tag_Beaver = 50,
 
-	Tag_Blight,
+	Tag_Blight = 51,
 
-	Tag_Event_Send_To_Citadel_Reward,
+	Tag_Event_Send_To_Citadel_Reward = 52,
 
-	Tag_Fox,
+	Tag_Fox = 53,
 
-	Tag_Frog,
+	Tag_Frog = 54,
 
-	Tag_Harpy,
+	Tag_Harpy = 55,
 
-	Tag_Human,
+	Tag_Human = 56,
 
-	Tag_Lizzard,
+	Tag_Lizzard = 57,
 
-	Tag_Metal_Bars_In_Recipe,
+	Tag_Metal_Bars_In_Recipe = 58,
 
-	Tag_Profession_Blight_Fighters,
+	Tag_Profession_Blight_Fighters = 59,
 
-	Tag_Profession_Firekeeper,
+	Tag_Profession_Firekeeper = 60,
 
-	Tag_Profession_Miner,
+	Tag_Profession_Miner = 61,
 
-	Tag_Profession_Scout,
+	Tag_Profession_Scout = 62,
 
-	Tag_Profession_Woodcutter,
+	Tag_Profession_Woodcutter = 63,
 
-	Tag_Rainpunk,
+	Tag_Rainpunk = 64,
 
-	Tag_Requires_Fertile_Soil,
+	Tag_Requires_Fertile_Soil = 65,
 
-	Tag_Storage_Haulers,
+	Tag_Storage_Haulers = 66,
 
-	Tag_Trade,
+	Tag_Trade = 67,
 
 
 

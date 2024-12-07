@@ -7,143 +7,150 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum NeedTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown NeedTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no NeedTypes. Typically, seen if nothing is defined or failed to parse a string to a NeedTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Basic Housing - Most species require at least basic shelter from the constant rainfall and gusting winds.
 	/// </summary>
 	/// <name>Any Housing</name>
-	Any_Housing,
+	Any_Housing = 1,
 
 	/// <summary>
 	/// Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Beaver Housing</name>
-	Beaver_Housing,
+	Beaver_Housing = 2,
 
 	/// <summary>
 	/// Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Biscuits</name>
-	Biscuits,
+	Biscuits = 3,
 
 	/// <summary>
 	/// Brawling - This need is fulfilled in: Clan Hall, Forum, Explorers' Lodge. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Bloodthirst</name>
-	Bloodthirst,
+	Bloodthirst = 4,
 
 	/// <summary>
 	/// Boots - This need is fulfilled at the Hearth. It requires "[needs] boots" boots. Satisfying this need grants a movement speed bonus.
 	/// </summary>
 	/// <name>Boots</name>
-	Boots,
+	Boots = 5,
 
 	/// <summary>
 	/// Coats - This need is fulfilled at the Hearth. It requires "[needs] coats" coats. Satisfying this need grants a Resolve bonus during the storm.
 	/// </summary>
 	/// <name>Clothes</name>
-	Clothes,
+	Clothes = 6,
 
 	/// <summary>
 	/// Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Explorers' Lodge. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Education</name>
-	Education,
+	Education = 7,
 
 	/// <summary>
 	/// Fox Housing - Foxes prefer to live in wooden, well camouflaged houses. Fox Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Fox Housing</name>
-	Fox_Housing,
+	Fox_Housing = 8,
 
 	/// <summary>
 	/// Frog Housing - Frogs are at home in water. Frog Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Frog Housing</name>
-	Frog_Housing,
+	Frog_Housing = 9,
 
 	/// <summary>
 	/// Harpy Housing - Harpies prefer to live in well-lit, spacious homes. Harpy Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Harpy Housing</name>
-	Harpy_Housing,
+	Harpy_Housing = 10,
 
 	/// <summary>
 	/// Human Housing - Humans prefer to live in solid, safe homes. Human Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Human Housing</name>
-	Human_Housing,
+	Human_Housing = 11,
 
 	/// <summary>
 	/// Jerky - This need is fulfilled at the Hearth. It requires "[food processed] jerky" jerky. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Jerky</name>
-	Jerky,
+	Jerky = 12,
 
 	/// <summary>
 	/// Leisure - This need is fulfilled in: Tavern, Monastery, Market. It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Leasiure</name>
-	Leasiure,
+	Leasiure = 13,
 
 	/// <summary>
 	/// Lizard Housing - Lizards prefer to live in warm, dry homes. Lizard Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Lizard Housing</name>
-	Lizard_Housing,
+	Lizard_Housing = 14,
 
 	/// <summary>
 	/// Luxury - This need is fulfilled in: Tavern, Holy Guild House, Forum, Guild House. It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Luxury</name>
-	Luxury,
+	Luxury = 15,
 
 	/// <summary>
 	/// Paste - This need is fulfilled at the Hearth. It requires "[food processed] paste" paste. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Paste</name>
-	Paste,
+	Paste = 16,
 
 	/// <summary>
 	/// Pickled Goods - This need is fulfilled at the Hearth. It requires "[food processed] pickled goods" pickled goods. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Pickled Goods</name>
-	Pickled_Goods,
+	Pickled_Goods = 17,
 
 	/// <summary>
 	/// Pie - This need is fulfilled at the Hearth. It requires "[food processed] pie" pie. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Pie</name>
-	Pie,
+	Pie = 18,
 
 	/// <summary>
 	/// Porridge - This need is fulfilled at the Hearth. It requires "[food processed] porridge" porridge. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Porridge</name>
-	Porridge,
+	Porridge = 19,
 
 	/// <summary>
 	/// Religion - This need is fulfilled in: Temple, Monastery, Tea Doctor. It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Religion</name>
-	Religion,
+	Religion = 20,
 
 	/// <summary>
 	/// Skewers - This need is fulfilled at the Hearth. It requires "[food processed] skewers" skewers. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Skewer</name>
-	Skewer,
+	Skewer = 21,
 
 	/// <summary>
 	/// Treatment - This need is fulfilled in: Market, Tea Doctor, Bath House. It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Treatment</name>
-	Treatment,
+	Treatment = 22,
 
 
 

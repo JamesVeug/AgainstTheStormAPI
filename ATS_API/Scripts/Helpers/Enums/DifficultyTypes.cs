@@ -7,179 +7,186 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum DifficultyTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown DifficultyTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no DifficultyTypes. Typically, seen if nothing is defined or failed to parse a string to a DifficultyTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Tutorial - Blightrot & Corruption
 	/// </summary>
 	/// <name>Tutorial IV Difficulty</name>
-	Tutorial_IV_Difficulty,
+	Tutorial_IV_Difficulty = 1,
 
 	/// <summary>
 	/// Tutorial - Villagers eat less food.
 	/// </summary>
 	/// <name>Tutorial III Difficulty</name>
-	Tutorial_III_Difficulty,
+	Tutorial_III_Difficulty = 2,
 
 	/// <summary>
 	/// Tutorial - No additional modifiers
 	/// </summary>
 	/// <name>Tutorial II Difficulty</name>
-	Tutorial_II_Difficulty,
+	Tutorial_II_Difficulty = 3,
 
 	/// <summary>
 	/// Tutorial - No additional modifiers
 	/// </summary>
 	/// <name>Tutorial I Difficulty</name>
-	Tutorial_I_Difficulty,
+	Tutorial_I_Difficulty = 4,
 
 	/// <summary>
 	/// Settler - Villagers eat less food.
 	/// </summary>
 	/// <name>0 Normal</name>
-	Normal,
+	Normal = 5,
 
 	/// <summary>
 	/// Pioneer - More Reputation required to win.
 	/// </summary>
 	/// <name>1 Hard</name>
-	Hard,
+	Hard = 6,
 
 	/// <summary>
 	/// Veteran - Blightrot & Corruption
 	/// </summary>
 	/// <name>2 Very Hard</name>
-	Very_Hard,
+	Very_Hard = 7,
 
 	/// <summary>
 	/// Viceroy - Blightrot & Corruption
 	/// </summary>
 	/// <name>3 Impossible</name>
-	Impossible,
+	Impossible = 8,
 
 	/// <summary>
 	/// Prestige 1 - More Reputation required and harder Orders.
 	/// </summary>
 	/// <name>4 Ascension I</name>
-	Ascension_I,
+	Ascension_I = 9,
 
 	/// <summary>
 	/// Prestige 2 - The storm lasts longer.
 	/// </summary>
 	/// <name>5 Ascension II</name>
-	Ascension_II,
+	Ascension_II = 10,
 
 	/// <summary>
 	/// Prestige 3 - Blightrot appears every third Clearance season.
 	/// </summary>
 	/// <name>6 Ascension III</name>
-	Ascension_III,
+	Ascension_III = 11,
 
 	/// <summary>
 	/// Prestige 4 - Blueprint rerolls cost more.
 	/// </summary>
 	/// <name>7 Ascension IV</name>
-	Ascension_IV,
+	Ascension_IV = 12,
 
 	/// <summary>
 	/// Prestige 5 - Villagers with low Resolve leave faster.
 	/// </summary>
 	/// <name>8 Ascension V</name>
-	Ascension_V,
+	Ascension_V = 13,
 
 	/// <summary>
 	/// Prestige 6 - Buildings cost more.
 	/// </summary>
 	/// <name>9 Ascension VI</name>
-	Ascension_VI,
+	Ascension_VI = 14,
 
 	/// <summary>
 	/// Prestige 7 - Higher food consumption.
 	/// </summary>
 	/// <name>10 Ascension VII</name>
-	Ascension_VII,
+	Ascension_VII = 15,
 
 	/// <summary>
 	/// Prestige 8 - Villagers consume more luxury goods.
 	/// </summary>
 	/// <name>11 Ascension VIII</name>
-	Ascension_VIII,
+	Ascension_VIII = 16,
 
 	/// <summary>
 	/// Prestige 9 - Villagers work slower on Events.
 	/// </summary>
 	/// <name>12 Ascension IX</name>
-	Ascension_IX,
+	Ascension_IX = 17,
 
 	/// <summary>
 	/// Prestige 10 - Goods are worth less to traders.
 	/// </summary>
 	/// <name>13 Ascension X</name>
-	Ascension_X,
+	Ascension_X = 18,
 
 	/// <summary>
 	/// Prestige 11 - Blightrot has a stronger impact.
 	/// </summary>
 	/// <name>14 Ascension XI</name>
-	Ascension_XI,
+	Ascension_XI = 19,
 
 	/// <summary>
 	/// Prestige 12 - Fewer blueprints to choose from.
 	/// </summary>
 	/// <name>15 Ascension XII</name>
-	Ascension_XII,
+	Ascension_XII = 20,
 
 	/// <summary>
 	/// Prestige 13 - Fewer cornerstone choices.
 	/// </summary>
 	/// <name>16 Ascension XIII</name>
-	Ascension_XIII,
+	Ascension_XIII = 21,
 
 	/// <summary>
 	/// Prestige 14 - Impatience falls less on gaining Reputation.
 	/// </summary>
 	/// <name>17 Ascension XIV</name>
-	Ascension_XIV,
+	Ascension_XIV = 22,
 
 	/// <summary>
 	/// Prestige 15 - More Resolve needed to gain Reputation.
 	/// </summary>
 	/// <name>18 Ascension XV</name>
-	Ascension_XV,
+	Ascension_XV = 23,
 
 	/// <summary>
 	/// Prestige 16 - One fewer blueprint to begin with.
 	/// </summary>
 	/// <name>19 Ascension XVI</name>
-	Ascension_XVI,
+	Ascension_XVI = 24,
 
 	/// <summary>
 	/// Prestige 17 - Stronger hunger penalty.
 	/// </summary>
 	/// <name>20 Ascension XVII</name>
-	Ascension_XVII,
+	Ascension_XVII = 25,
 
 	/// <summary>
 	/// Prestige 18 - Sacrifices in the Hearth cost more.
 	/// </summary>
 	/// <name>21 Ascension XVIII</name>
-	Ascension_XVIII,
+	Ascension_XVIII = 26,
 
 	/// <summary>
 	/// Prestige 19 - Fee for each discovered glade.
 	/// </summary>
 	/// <name>22 Ascension XIX</name>
-	Ascension_XIX,
+	Ascension_XIX = 27,
 
 	/// <summary>
 	/// Prestige 20 - Higher penalty for losing villagers.
 	/// </summary>
 	/// <name>23 Ascension XX</name>
-	Ascension_XX,
+	Ascension_XX = 28,
 
 
 

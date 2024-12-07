@@ -7,131 +7,138 @@ using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum BuildingCategoriesTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown BuildingCategoriesTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no BuildingCategoriesTypes. Typically, seen if nothing is defined or failed to parse a string to a BuildingCategoriesTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// City Buildings
 	/// </summary>
 	/// <name>City Buildings</name>
-	City_Buildings,
+	City_Buildings = 1,
 
 	/// <summary>
 	/// Rec
 	/// </summary>
 	/// <name>Debug Nodes</name>
-	Debug_Nodes,
+	Debug_Nodes = 2,
 
 	/// <summary>
 	/// Decorations
 	/// </summary>
 	/// <name>Decorations</name>
-	Decorations,
+	Decorations = 3,
 
 	/// <summary>
 	/// Glade Event
 	/// </summary>
 	/// <name>Event</name>
-	Event,
+	Event = 4,
 
 	/// <summary>
 	/// Battlefield Spirit
 	/// </summary>
 	/// <name>Event Ghost</name>
-	Event_Ghost,
+	Event_Ghost = 5,
 
 	/// <summary>
 	/// Food Production
 	/// </summary>
 	/// <name>Food Production</name>
-	Food_Production,
+	Food_Production = 6,
 
 	/// <summary>
 	/// Housing
 	/// </summary>
 	/// <name>Housing</name>
-	Housing,
+	Housing = 7,
 
 	/// <summary>
 	/// Industry
 	/// </summary>
 	/// <name>Industry</name>
-	Industry,
+	Industry = 8,
 
 	/// <summary>
 	/// Lore Tablet I
 	/// </summary>
 	/// <name>Lore Tablet 1</name>
-	Lore_Tablet_1,
+	Lore_Tablet_1 = 9,
 
 	/// <summary>
 	/// Lore Tablet II
 	/// </summary>
 	/// <name>Lore Tablet 2</name>
-	Lore_Tablet_2,
+	Lore_Tablet_2 = 10,
 
 	/// <summary>
 	/// Lore Tablet III
 	/// </summary>
 	/// <name>Lore Tablet 3</name>
-	Lore_Tablet_3,
+	Lore_Tablet_3 = 11,
 
 	/// <summary>
 	/// Lore Tablet IV
 	/// </summary>
 	/// <name>Lore Tablet 4</name>
-	Lore_Tablet_4,
+	Lore_Tablet_4 = 12,
 
 	/// <summary>
 	/// Lore Tablet V
 	/// </summary>
 	/// <name>Lore Tablet 5</name>
-	Lore_Tablet_5,
+	Lore_Tablet_5 = 13,
 
 	/// <summary>
 	/// Lore Tablet VI
 	/// </summary>
 	/// <name>Lore Tablet 6</name>
-	Lore_Tablet_6,
+	Lore_Tablet_6 = 14,
 
 	/// <summary>
 	/// Lore Tablet VII
 	/// </summary>
 	/// <name>Lore Tablet 7</name>
-	Lore_Tablet_7,
+	Lore_Tablet_7 = 15,
 
 	/// <summary>
 	/// Ancient Relic
 	/// </summary>
 	/// <name>Relics</name>
-	Relics,
+	Relics = 16,
 
 	/// <summary>
 	/// Resource Gathering
 	/// </summary>
 	/// <name>Resource Gathering</name>
-	Resource_Gathering,
+	Resource_Gathering = 17,
 
 	/// <summary>
 	/// Roads
 	/// </summary>
 	/// <name>Roads</name>
-	Roads,
+	Roads = 18,
 
 	/// <summary>
 	/// Ruin
 	/// </summary>
 	/// <name>Ruins</name>
-	Ruins,
+	Ruins = 19,
 
 	/// <summary>
 	/// City Buildings
 	/// </summary>
 	/// <name>Tutorial - invisible</name>
-	Tutorial_Invisible,
+	Tutorial_Invisible = 20,
 
 
 

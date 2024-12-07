@@ -7,29 +7,36 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum OreTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown OreTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no OreTypes. Typically, seen if nothing is defined or failed to parse a string to a OreTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Coal Vein - An effective source of fuel.
 	/// </summary>
 	/// <name>Coal Ore</name>
-	Coal_Ore,
+	Coal_Ore = 1,
 
 	/// <summary>
 	/// Copper Vein - A soft and malleable metal, resistant to rain.
 	/// </summary>
 	/// <name>Copper Ore</name>
-	Copper_Ore,
+	Copper_Ore = 2,
 
 	/// <summary>
 	/// Salt Vein - A valuable and highly absorbent mineral.
 	/// </summary>
 	/// <name>Salt Ore</name>
-	Salt_Ore,
+	Salt_Ore = 3,
 
 
 

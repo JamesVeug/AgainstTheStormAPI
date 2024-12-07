@@ -7,89 +7,96 @@ using Eremite.WorldMap;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum BiomeTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown BiomeTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no BiomeTypes. Typically, seen if nothing is defined or failed to parse a string to a BiomeTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Coastal Grove - These lands have been underwater for centuries, allowing a dense forest of algae to flourish. The surrounding seawater has almost completely cut off the area from the rest of the kingdom, leaving the nearby marshes almost untouched and full of the remains of ancient settlements.
 	/// </summary>
 	/// <name>Bay</name>
-	Bay,
+	Bay = 1,
 
 	/// <summary>
 	/// Citadel
 	/// </summary>
 	/// <name>Capital</name>
-	Capital,
+	Capital = 2,
 
 	/// <summary>
 	/// Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
 	/// </summary>
 	/// <name>Coral Forest</name>
-	Coral_Forest,
+	Coral_Forest = 3,
 
 	/// <summary>
 	/// Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
 	/// </summary>
 	/// <name>Cursed Royal Woodlands</name>
-	Cursed_Royal_Woodlands,
+	Cursed_Royal_Woodlands = 4,
 
 	/// <summary>
 	/// Scarlet Orchard - A beautiful yet dangerous land that is colored a strange shade of crimson. It's called the Herb Garden of the Kingdom due to its abundance of herbs, berries, and roots.
 	/// </summary>
 	/// <name>Moorlands</name>
-	Moorlands,
+	Moorlands = 5,
 
 	/// <summary>
 	/// Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
 	/// </summary>
 	/// <name>Royal Woodlands</name>
-	Royal_Woodlands,
+	Royal_Woodlands = 6,
 
 	/// <summary>
 	/// Sealed Forest - Somewhere in this thick and dark forest, an ancient seal is hidden. Even the Ancients, in all their might and glory, couldn't defeat the creatures slumbering below - so they just imprisoned them. Over millennia, their sinister power gradually seeped to the surface, infecting the fauna and flora of this region. Viceroys don't embark here to establish settlements or gain reputation - their main goal is simply to find and close the seal.
 	/// </summary>
 	/// <name>Sealed Biome</name>
-	Sealed_Biome,
+	Sealed_Biome = 7,
 
 	/// <summary>
 	/// Marshlands - A harsh and cold land that has been claimed by many different, and extremely resilient species of fungi. The ground here is extremely hard and rocky, making it difficult to farm. This region is most famous for the giant organisms that can be found in its forests.
 	/// </summary>
 	/// <name>The Marshlands</name>
-	The_Marshlands,
+	The_Marshlands = 8,
 
 	/// <summary>
 	/// Tutorial - Tutorial
 	/// </summary>
 	/// <name>Tutorial I</name>
-	Tutorial_I,
+	Tutorial_I = 9,
 
 	/// <summary>
 	/// Tutorial - Tutorial
 	/// </summary>
 	/// <name>Tutorial II</name>
-	Tutorial_II,
+	Tutorial_II = 10,
 
 	/// <summary>
 	/// Tutorial - Tutorial
 	/// </summary>
 	/// <name>Tutorial III</name>
-	Tutorial_III,
+	Tutorial_III = 11,
 
 	/// <summary>
 	/// Tutorial - Tutorial
 	/// </summary>
 	/// <name>Tutorial IV</name>
-	Tutorial_IV,
+	Tutorial_IV = 12,
 
 	/// <summary>
 	/// Ashen Thicket - Once a thriving forest of giant ashen trees, this land has been ravaged by relentless industrial exploitation and heavy mining, all driven by the lure of Thunderblight Shards - magically charged amber crystals used to craft cornerstones.
 	/// </summary>
 	/// <name>Wasteland</name>
-	Wasteland,
+	Wasteland = 13,
 
 
 

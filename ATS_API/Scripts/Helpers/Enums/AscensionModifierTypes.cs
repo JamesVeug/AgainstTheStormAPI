@@ -7,165 +7,172 @@ using Eremite.Model;
 
 namespace ATS_API.Helpers;
 
-// Generated using Version 1.5.5R
+// Generated using Version 1.5.6R
 public enum AscensionModifierTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown AscensionModifierTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no AscensionModifierTypes. Typically, seen if nothing is defined or failed to parse a string to a AscensionModifierTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// The Queen's People - For the Queen, nothing is more important than her people. Losing villagers will add 0.5 more points to her Impatience.
 	/// </summary>
 	/// <name>[Mod] Additional Impatience for Death</name>
-	Additional_Impatience_For_Death,
+	Additional_Impatience_For_Death = 1,
 
 	/// <summary>
 	/// Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
 	/// </summary>
 	/// <name>[Diff] Altar</name>
-	Ascension_All_Altar,
+	Ascension_All_Altar = 2,
 
 	/// <summary>
 	/// Sinister Blight - The Blightrot's impact is stronger. Cyst generation rate is increased by +100%, the Hearth corrupts +50% quicker than normal, and all effects that spawn Blightrot now add twice as many Cysts.
 	/// </summary>
 	/// <name>[Mod] Blightrot Medium</name>
-	Blightrot_Medium_Difficulty,
+	Blightrot_Medium_Difficulty = 3,
 
 	/// <summary>
 	/// Blight Swarm - Large swarms of Blightrot migrate across the realm. Every third Clearance season, 5 Blightrot Cysts will appear in the settlement.
 	/// </summary>
 	/// <name>[Mod] Cysts Spawn</name>
-	Blightrot_Spawn,
+	Blightrot_Spawn = 4,
 
 	/// <summary>
 	/// Land Tax - Taking advantage of the riches of this new land will cost you. You must pay 2 "[valuable] amber" Amber every time you discover a Small Glade, and 6 "[valuable] amber" Amber every time you discover a Dangerous ("dangerous") or Forbidden Glade ("forbidden") . Otherwise, 2 villagers will be recalled to the Citadel.
 	/// </summary>
 	/// <name>[Mod] Exploration Tax - Composite</name>
-	Exploration_Tax,
+	Exploration_Tax = 5,
 
 	/// <summary>
 	/// Hearth Defect - The Ancient Hearth seems to have a defect. No matter how hard the firekeeper tries, sacrificed resources are burning 35% quicker.
 	/// </summary>
 	/// <name>[Mod] Faster Fuel Sacrafice</name>
-	Faster_Fuel_Sacrifice,
+	Faster_Fuel_Sacrifice = 6,
 
 	/// <summary>
 	/// Higher Standards - Villagers are less understanding than they used to be. They’re probably getting a bit spoiled by now. Villagers are 100% faster to leave if they have low Resolve.
 	/// </summary>
 	/// <name>[Mod] Faster Leaving</name>
-	FasterLeaving,
+	FasterLeaving = 7,
 
 	/// <summary>
 	/// Less is More - The greedy Royal Archivist sold most of the blueprints to traders and fled the Citadel. You have 2 fewer blueprint choices.
 	/// </summary>
 	/// <name>[Mod] Fewer Blueprints Options</name>
-	Fewer_Blueprints_Options,
+	Fewer_Blueprints_Options = 8,
 
 	/// <summary>
 	/// Restrictions - The Royal Envoy comes to you with bad news. The Queen has restricted your cornerstone choices by 2.
 	/// </summary>
 	/// <name>[Mod] Fewer Cornerstones Options</name>
-	Fewer_Cornerstones_Options,
+	Fewer_Cornerstones_Options = 9,
 
 	/// <summary>
 	/// Budget Cuts - The Queen has visited the Obsidian Archives in person, and was dissatisfied with the amount of funding spent on expeditions. You have one fewer initial blueprint.
 	/// </summary>
 	/// <name>[Mod] Fewer Initial Blueprints</name>
-	Fewer_Initial_Blueprints,
+	Fewer_Initial_Blueprints = 10,
 
 	/// <summary>
 	/// Malcontents - You took a very peculiar group of settlers with you. They seem perpetually dissatisfied. The Resolve threshold at which each species starts producing Reputation increases by 1 more point for every Reputation Point they generate.
 	/// </summary>
 	/// <name>[Mod] Global Reputation Treshold Increase</name>
-	Global_Reputation_Treshold_Increase,
+	Global_Reputation_Treshold_Increase = 11,
 
 	/// <summary>
 	/// Hard Times - The Queen has decided to entrust you with the most difficult orders, as you are one of her most experienced viceroys.
 	/// </summary>
 	/// <name>[Mod] Hard Orders Only</name>
-	Hard_Orders_Only,
+	Hard_Orders_Only = 12,
 
 	/// <summary>
 	/// Expensive Lottery - The Archivist assigned to your settlement is fiercely loyal to the Royal Court, so bribing him will be more expensive. Blueprint rerolls cost 10 Amber more.
 	/// </summary>
 	/// <name>[Mod] Higher Blueprints Reroll Cost</name>
-	Higher_Blueprints_Reroll_Cost,
+	Higher_Blueprints_Reroll_Cost = 13,
 
 	/// <summary>
 	/// Consumerism - Villagers have forgotten what a modest life looks like. They want to enjoy life to the fullest. Villagers have a 50% chance to consume double the amount of luxury goods.
 	/// </summary>
 	/// <name>[Mod] Higher Needs Consumption Rate</name>
-	Higher_Needs_Consumption_Rate,
+	Higher_Needs_Consumption_Rate = 14,
 
 	/// <summary>
 	/// Guild of Traders, or Thieves? - Traders gossip about you doing pretty well lately. All your goods are worth 50% less to traders.
 	/// </summary>
 	/// <name>[Mod] Higher Traders Prices</name>
-	Higher_Traders_Prices,
+	Higher_Traders_Prices = 15,
 
 	/// <summary>
 	/// Famine Outbreaks - Famine outbreaks in your previous settlements have made the villagers particularly sensitive to food shortages. Every time villagers have nothing to eat during a break, they will gain two stacks of the Hunger effect instead of one.
 	/// </summary>
 	/// <name>[Diff] Hunger Multiplier</name>
-	Hunger_Multiplier_Effects,
+	Hunger_Multiplier_Effects = 16,
 
 	/// <summary>
 	/// Procrastination - Villagers are reluctant to venture into Dangerous Glades. Scouts work 33% slower on Glade Events.
 	/// </summary>
 	/// <name>[Mod] Longer Relics Working Time</name>
-	Longer_Relics_Working_Time,
+	Longer_Relics_Working_Time = 17,
 
 	/// <summary>
 	/// Crumbling Seal - One of the seals is loosening its grip, leaking darkness upon this land. Storm season lasts 100% longer.
 	/// </summary>
 	/// <name>[Mod] Longer Storm</name>
-	Longer_Storm,
+	Longer_Storm = 18,
 
 	/// <summary>
 	/// Settler's Luck - Villagers have a 35% chance of not consuming food during a break.
 	/// </summary>
 	/// <name>[Diff] Lower Food Consumption</name>
-	Low_Difficulty_Chance_For_No_Consumption,
+	Low_Difficulty_Chance_For_No_Consumption = 19,
 
 	/// <summary>
 	/// Higher Expectations - The Queen expects a lot from a viceroy of your rank. Impatience falls by 0.5 points less for every Reputation Point you gain.
 	/// </summary>
 	/// <name>[Mod] Lower Impatience Reduction</name>
-	Lower_Impatience_Reduction,
+	Lower_Impatience_Reduction = 20,
 
 	/// <summary>
 	/// Parasites - One of the villagers was sick, and infected the rest of the settlement with a parasite. All villagers have a 50% chance of eating twice as much during their break.
 	/// </summary>
 	/// <name>[Mod] Parasites</name>
-	Parasites,
+	Parasites = 21,
 
 	/// <summary>
 	/// Blightrot & Corruption - Pollution from industrial production feeds the growth of Blightrot Cysts. Deploy Blight Fighters to prevent your Hearths from becoming corrupted during the storm.
 	/// </summary>
 	/// <name>[Diff] Blightrot</name>
-	Pre_Ascension_All_Blight,
+	Pre_Ascension_All_Blight = 22,
 
 	/// <summary></summary>
 	/// <name>[Diff] No Blightrot</name>
-	Pre_Ascension_Normal_And_Hard_No_Blight,
+	Pre_Ascension_Normal_And_Hard_No_Blight = 23,
 
 	/// <summary>
 	/// Prestigious Expedition - Only the best viceroys can embark on a Prestigious Expedition. You'll need to earn 4 additional Reputation Points to win. Reputation rewards are distributed differently, and Orders are harder.
 	/// </summary>
 	/// <name>[Mod] Reputation Changes</name>
-	Reputation_Changes,
+	Reputation_Changes = 24,
 
 	/// <summary>
 	/// Prestigious Expedition - Only the best viceroys can embark on a Prestigious Expedition. You'll need to earn 4 additional Reputation Points to win. Reputation rewards are distributed differently, and Orders are harder.
 	/// </summary>
 	/// <name>[Mod] Reputation Changes</name>
-	Reputation_Changes_Hard,
+	Reputation_Changes_Hard = 25,
 
 	/// <summary>
 	/// Wet Soil - It's particularly hard to build anything in this region. Buildings require 50% more materials.
 	/// </summary>
 	/// <name>[Mod] Wet Soil</name>
-	Wet_Soil,
+	Wet_Soil = 26,
 
 
 

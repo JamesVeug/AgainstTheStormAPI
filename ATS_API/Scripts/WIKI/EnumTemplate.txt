@@ -9,8 +9,15 @@ namespace ATS_API.Helpers;
 {CLASS_HEADER}
 public enum {CLASSNAME}
 {
+    /// <summary>
+    /// Placeholder for an unknown {CLASSNAME}. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no {CLASSNAME}. Typically, seen if nothing is defined or failed to parse a string to a {CLASSNAME}.
+    /// </summary>
+	None = 0,
 	
 {ENUMS}
 

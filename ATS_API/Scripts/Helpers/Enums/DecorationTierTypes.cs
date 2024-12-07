@@ -10,26 +10,33 @@ namespace ATS_API.Helpers;
 // Generated using Version 1.5.6R
 public enum DecorationTierTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown DecorationTierTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no DecorationTierTypes. Typically, seen if nothing is defined or failed to parse a string to a DecorationTierTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Comfort
 	/// </summary>
 	/// <name>DecorationTier 1</name>
-	DecorationTier_1,
+	DecorationTier_1 = 1,
 
 	/// <summary>
 	/// Aesthetics
 	/// </summary>
 	/// <name>DecorationTier 2</name>
-	DecorationTier_2,
+	DecorationTier_2 = 2,
 
 	/// <summary>
 	/// Harmony
 	/// </summary>
 	/// <name>DecorationTier 3</name>
-	DecorationTier_3,
+	DecorationTier_3 = 3,
 
 
 
