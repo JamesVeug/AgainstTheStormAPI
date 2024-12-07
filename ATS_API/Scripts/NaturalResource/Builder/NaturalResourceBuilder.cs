@@ -1,4 +1,7 @@
 ﻿using ATS_API.Helpers;
+using Eremite.Model.Sound;
+using Eremite.Sound;
+using UnityEngine;
 
 namespace ATS_API.NaturalResource;
 
@@ -52,6 +55,32 @@ public partial class NaturalResourceBuilder
     public NaturalResourceBuilder AddPrefab(NaturalResourcePrefabBuilder naturalResourcePrefab)
     {
         newModel.Prefabs.Add(naturalResourcePrefab);
+        return this;
+    }
+    
+    public NaturalResourceBuilder AddGatherSound(string soundFile, float volume=1f, float pitch=1f, float randomVolume=0f, float randomPitch=0.04f, int maxSoundsInOnePlace=3, int weight=1, bool stopOnPause=false)
+    {
+        AudioClip audioPath = AudioHelpers.LoadAudioClip(guid, soundFile);
+        if (audioPath == null)
+        {
+            return this;
+        }
+        
+        SoundModel soundModel = audioPath.ToSoundModel(volume, pitch, randomVolume, randomPitch, maxSoundsInOnePlace, weight, stopOnPause);
+        newModel.GatheringSounds.Add(soundModel);
+        return this;
+    }
+    
+    public NaturalResourceBuilder AddFallSound(string soundFile, float volume=1f, float pitch=1f, float randomVolume=0f, float randomPitch=0.04f, int maxSoundsInOnePlace=3, int weight=1, bool stopOnPause=false)
+    {
+        AudioClip audioPath = AudioHelpers.LoadAudioClip(guid, soundFile);
+        if (audioPath == null)
+        {
+            return this;
+        }
+        
+        SoundModel soundModel = audioPath.ToSoundModel(volume, pitch, randomVolume, randomPitch, maxSoundsInOnePlace, weight, stopOnPause);
+        newModel.FallSounds.Add(soundModel);
         return this;
     }
 }

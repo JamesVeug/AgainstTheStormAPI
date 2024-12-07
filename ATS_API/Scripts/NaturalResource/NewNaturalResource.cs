@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Helpers;
 using Eremite.Model;
+using Eremite.Model.Sound;
+using UnityEngine;
 
 namespace ATS_API.NaturalResource;
 
@@ -23,6 +25,8 @@ public class NewNaturalResource : ASyncable<NaturalResourceModel>
     public int ProductionAmount = 1;
     
     public List<ExtraProducedGood> ExtraProducedGoods = new List<ExtraProducedGood>();
+    public List<SoundModel> GatheringSounds = new List<SoundModel>();
+    public List<SoundModel> FallSounds = new List<SoundModel>();
     
     public List<NaturalResourcePrefabBuilder> Prefabs = new();
 
@@ -53,8 +57,28 @@ public class NewNaturalResource : ASyncable<NaturalResourceModel>
 
         NaturalResourceModel template = NaturalResourceTypes.Woodlands_Tree.ToNaturalResourceModel();
         Model.label = template.label;
-        Model.gatheringSound = template.gatheringSound;
-        Model.finalSound = template.finalSound;
+
+        if (GatheringSounds.NullOrEmpty())
+        {
+            Model.gatheringSound = template.gatheringSound;
+        }
+        else
+        {
+            Model.gatheringSound = ScriptableObject.CreateInstance<SoundRef>();
+            Model.gatheringSound.sounds = GatheringSounds.ToArray();
+            Model.gatheringSound.useWieghts = true;
+        }
+        
+        if (FallSounds.NullOrEmpty())
+        {
+            Model.gatheringSound = template.finalSound;
+        }
+        else
+        {
+            Model.finalSound = ScriptableObject.CreateInstance<SoundRef>();
+            Model.finalSound.sounds = FallSounds.ToArray();
+            Model.finalSound.useWieghts = true;
+        }
         
         return true;
     }
