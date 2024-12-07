@@ -38,7 +38,12 @@ public static class AudioHelpers
     internal static string GetAudioPath(string filename)
     {
         string[] files = Directory.GetFiles(Paths.PluginPath, filename, SearchOption.AllDirectories);
-        return files.FirstOrDefault();
+        string firstFile = files.FirstOrDefault();
+        if (string.IsNullOrEmpty(firstFile))
+        {
+	        Plugin.Log.LogError($"Couldn't find file {filename} in plugin directory.");
+        }
+        return firstFile;
     }
 
     internal static AudioType GetAudioType(string filename)
@@ -60,12 +65,10 @@ public static class AudioHelpers
             path = GetAudioPath(path);
         }
 
-        string filename = Path.GetFileName(path);
         AudioType audioType = GetAudioType(path);
-
         if (audioType == AudioType.UNKNOWN)
         {
-            Plugin.Log.LogError($"Couldn't load file {filename ?? "(null)"} as AudioClip. AudioType is unknown.");
+            Plugin.Log.LogError($"Couldn't load file {path} as AudioClip. AudioType is unknown.");
             return null;
         }
 
@@ -95,7 +98,7 @@ public static class AudioHelpers
 
             if (www.isNetworkError || www.isHttpError)
             {
-                Plugin.Log.LogError($"Couldn't load file \'{filename ?? "(null)"}\' as AudioClip!");
+                Plugin.Log.LogError($"Couldn't load file \'{path}\' as AudioClip!");
                 Plugin.Log.LogError(www.error);
                 return null;
             }
