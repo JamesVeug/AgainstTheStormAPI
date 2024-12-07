@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using BepInEx;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace ATS_API.Helpers;
 
@@ -46,18 +48,18 @@ public static class AssetBundleHelper
         {
             var files = Directory.GetFiles(Paths.PluginPath, pathToAssetBundle, SearchOption.AllDirectories);
             if (files.Length < 1)
-                throw new FileNotFoundException($"Could not find relative artwork file!\nFile name: {pathToAssetBundle}", pathToAssetBundle);
+                throw new FileNotFoundException($"Could not find relative artwork file!\nFile name: {pathToAssetBundle}\n" + Environment.StackTrace, pathToAssetBundle);
 
             fullPath = files[0];
         }
 
         if (!File.Exists(fullPath))
-            throw new FileNotFoundException($"Absolute path to artwork file does not exist!\nFile name: {pathToAssetBundle}", fullPath);
+            throw new FileNotFoundException($"Absolute path to artwork file does not exist!\nFile name: {pathToAssetBundle}\n" + Environment.StackTrace, fullPath);
         
         AssetBundle = AssetBundle.LoadFromFile(fullPath);
         if (AssetBundle == null)
         {
-            Plugin.Log.LogError($"Tried getting asset bundle at path: '{fullPath}' but failed! Is the path wrong?");
+            Plugin.Log.LogError($"Tried getting asset bundle at path: '{fullPath}' but failed! Is the path wrong?\n" + Environment.StackTrace);
             return false;
         }
 
@@ -68,7 +70,7 @@ public static class AssetBundleHelper
     {
         if (bundle == null)
         {
-            Plugin.Log.LogError($"Tried getting prefab from {prefabName} but the assetbundle is null!");
+            Plugin.Log.LogError($"Tried getting prefab from {prefabName} but the assetbundle is null!\n" + Environment.StackTrace);
             prefab = default(T);
             return false;
         }
@@ -77,11 +79,11 @@ public static class AssetBundleHelper
         prefab = bundle.LoadAsset<T>(prefabName);
 
         // Unload bundle but don't unload the assets
-        bundle.Unload(false);
+        // bundle.Unload(false);
 
         if (prefab == null)
         {
-            Plugin.Log.LogError($"Tried getting prefab '{prefabName}' from asset bundle but failed! Is the prefab name or type wrong?");
+            Plugin.Log.LogError($"Tried getting prefab '{prefabName}' from asset bundle but failed! Is the prefab name or type wrong?\n" + Environment.StackTrace);
             return false;
         }
 
@@ -93,7 +95,7 @@ public static class AssetBundleHelper
         AssetBundle bundle = AssetBundle.LoadFromFile(pathToAssetBundle);
         if (bundle == null)
         {
-            Plugin.Log.LogError($"Tried getting asset bundle at path: '{pathToAssetBundle}' but failed! Is the path wrong?");
+            Plugin.Log.LogError($"Tried getting asset bundle at path: '{pathToAssetBundle}' but failed! Is the path wrong?\n" + Environment.StackTrace);
             prefab = default(T);
             return false;
         }
@@ -102,11 +104,11 @@ public static class AssetBundleHelper
         prefab = bundle.LoadAsset<T>(prefabName);
 
         // Unload bundle but don't unload the assets
-        bundle.Unload(false);
+        // bundle.Unload(false);
 
         if (prefab == null)
         {
-            Plugin.Log.LogError($"Tried getting prefab '{prefabName}' from asset bundle at path: '{pathToAssetBundle}' but failed! Is the prefab name or type wrong?");
+            Plugin.Log.LogError($"Tried getting prefab '{prefabName}' from asset bundle at path: '{pathToAssetBundle}' but failed! Is the prefab name or type wrong?\n" + Environment.StackTrace);
             return false;
         }
 
@@ -118,7 +120,7 @@ public static class AssetBundleHelper
         AssetBundle bundle = AssetBundle.LoadFromMemory(resources);
         if (bundle == null)
         {
-            Plugin.Log.LogError($"Tried getting asset bundle from bytes but failed! Is the path wrong?");
+            Plugin.Log.LogError($"Tried getting asset bundle from bytes but failed! Is the path wrong?\n" + Environment.StackTrace);
             prefab = default(T);
             return false;
         }
@@ -127,11 +129,11 @@ public static class AssetBundleHelper
         prefab = bundle.LoadAsset<T>(prefabName);
 
         // Unload bundle but don't unload the assets
-        bundle.Unload(false);
+        // bundle.Unload(false);
 
         if (prefab == null)
         {
-            Plugin.Log.LogError($"Tried getting prefab '{prefabName}' from asset bundle from bytes' but failed! Is the prefab name or type wrong?");
+            Plugin.Log.LogError($"Tried getting prefab '{prefabName}' from asset bundle from bytes' but failed! Is the prefab name or type wrong?\n" + Environment.StackTrace);
             return false;
         }
 
