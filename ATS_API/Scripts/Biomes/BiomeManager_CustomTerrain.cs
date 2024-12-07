@@ -62,24 +62,28 @@ public static partial class BiomeManager
         {
             Plugin.Log.LogInfo($"Setting terrainBaseTexture for {newBiome.biomeModel.name}");
             material.SetTexture("_RedTexture", newBiome.terrainBaseTexture);
+            material.SetVector("_RedTextureUV", newBiome.terrainBaseTextureUVSize);
         }
         
         if(newBiome.terrainOverlayTexture != null)
         {
             Plugin.Log.LogInfo($"Setting terrainOverlayTexture for {newBiome.biomeModel.name}");
             material.SetTexture("_GreenTexture", newBiome.terrainOverlayTexture);
+            material.SetVector("_GreenTextureUV", newBiome.terrainOverlayTextureUVSize);
         }
         
         if(newBiome.terrainCliffsTexture != null)
         {
             Plugin.Log.LogInfo($"Setting terrainCliffsTexture for {newBiome.biomeModel.name}");
             material.SetTexture("_BlueTexture", newBiome.terrainCliffsTexture);
+            material.SetVector("_BlueTextureUV", newBiome.terrainCliffsTextureUVSize);
         }
         
         if(newBiome.terrainSeaBedTexture != null)
         {
             Plugin.Log.LogInfo($"Setting terrainSeaBedTexture for {newBiome.biomeModel.name}");
             material.SetTexture("_BottomTexture", newBiome.terrainSeaBedTexture);
+            material.SetVector("_BottomTexture2D", newBiome.terrainSeaBedTextureUVSize);
         }
         
         if(newBiome.terrainBlendTexture != null)
