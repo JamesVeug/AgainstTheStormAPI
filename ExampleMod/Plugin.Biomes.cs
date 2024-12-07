@@ -30,7 +30,7 @@ public partial class Plugin
         builder.SetSeasonDuration(SeasonTypes.Drizzle, 120);
         builder.SetDeclinedSeasonalRewardsReward(GoodsTypes.Valuable_Ancient_Tablet, 2);
 
-        // newcomers
+        // Newcomers
         builder.SetNewcomerInterval(300);
         builder.SetNewcomerAmountOfGoods(1, 4);
         builder.AddNewcomerRace(RaceTypes.Beaver, 50);
@@ -52,8 +52,13 @@ public partial class Plugin
         builder.AddEffect(DiamondHunterBuilder.EffectType);
 
         // Terrain
-        builder.SetWaterTexture("desertWorldWater.png");
-
+        MaskedTerrain maskedTerrain = builder.CreateTerrain<MaskedTerrain>(); // Create a terrain and use red/green/blue to and overlay it with images.
+        maskedTerrain.SetWaterTexture("desertWorldWater.png");
+        maskedTerrain.SetTerrainBaseTexture("terrainBase.png");
+        maskedTerrain.SetTerrainOverlayTexture("terrainOverlay.png");
+        maskedTerrain.SetTerrainCliffTexture("terrainCliff.png");
+        maskedTerrain.SetTerrainOverlayTexture("terrainBlend.png");
+        
         // Trees / natural resources
         builder.AddNaturalResource(NaturalResourceTypes.Cursed_Tree,
             horizontalTreshold: 0.2f,

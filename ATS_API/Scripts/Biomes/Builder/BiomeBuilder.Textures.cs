@@ -5,68 +5,35 @@ namespace ATS_API.Biomes;
 
 public partial class BiomeBuilder
 {
-    public void SetIcon(string iconImage)
+    public BiomeBuilder SetIcon(string iconImage)
     {
         SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.BiomeIcon));
+        return this;
     }
 
-    public void SetIcon(Texture2D texture2D)
+    public BiomeBuilder SetIcon(Texture2D texture2D)
     {
         SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.BiomeIcon));
+        return this;
     }
 
-    public void SetIcon(Sprite sprite)
+    public BiomeBuilder SetIcon(Sprite sprite)
     {
         newModel.icon = sprite;
         TextMeshProManager.Add(newModel.icon.texture, newModel.name);
+        return this;
     }
 
-    public void SetWorldMapTexture(string worldMapImage)
+    public BiomeBuilder SetWorldMapTexture(string worldMapImage)
     {
         SetWorldMapTexture(TextureHelper.GetImageAsTexture(worldMapImage));
+        return this;
     }
 
-    public void SetWorldMapTexture(Texture2D texture2D)
+    public BiomeBuilder SetWorldMapTexture(Texture2D texture2D)
     {
         newBiome.worldMapTexture = texture2D;
         TextMeshProManager.Add(newModel.icon.texture, newModel.name);
-    }
-
-    public void SetTerrainSeabedTexture(string seabedTexture, int uvWidth = 100, int uvHeight = 100)
-    {
-        newBiome.terrainSeaBedTexture = TextureHelper.GetImageAsTexture(seabedTexture);
-        newBiome.terrainSeaBedTexture.wrapMode = TextureWrapMode.Repeat;
-        newBiome.terrainSeaBedTextureUVSize = new Vector2(uvWidth, uvHeight);
-    }
-    
-    public void SetTerrainBlendTexture(string blendTexture)
-    {
-        newBiome.terrainBlendTexture = TextureHelper.GetImageAsTexture(blendTexture);
-    }
-    
-    public void SetTerrainBaseTexture(string baseTexture, int uvWidth = 100, int uvHeight = 100)
-    {
-        newBiome.terrainBaseTexture = TextureHelper.GetImageAsTexture(baseTexture);
-        newBiome.terrainBaseTexture.wrapMode = TextureWrapMode.Repeat;
-        newBiome.terrainBaseTextureUVSize = new Vector2(uvWidth, uvHeight);
-    }
-    
-    public void SetTerrainOverlayTexture(string overlayTexture, int uvWidth = 100, int uvHeight = 100)
-    {
-        newBiome.terrainOverlayTexture = TextureHelper.GetImageAsTexture(overlayTexture);
-        newBiome.terrainOverlayTexture.wrapMode = TextureWrapMode.Repeat;
-        newBiome.terrainOverlayTextureUVSize = new Vector2(uvWidth, uvHeight);
-    }
-    
-    public void SetTerrainCliffTexture(string cliffsTexture, int uvWidth = 100, int uvHeight = 100)
-    {
-        newBiome.terrainCliffsTexture = TextureHelper.GetImageAsTexture(cliffsTexture);
-        newBiome.terrainCliffsTexture.wrapMode = TextureWrapMode.Repeat;
-        newBiome.terrainCliffsTextureUVSize = new Vector2(uvWidth, uvHeight);
-    }
-    
-    public void SetWaterTexture(string waterTexture)
-    {
-        newBiome.waterTexture = TextureHelper.GetImageAsTexture(waterTexture);
+        return this;
     }
 }

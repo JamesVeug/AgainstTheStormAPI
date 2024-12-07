@@ -69,16 +69,7 @@ public class NewBiome : ASyncable<BiomeModel>
     public string rawName;
 
     public Texture2D worldMapTexture;
-    public Texture2D terrainSeaBedTexture = Placeholders.BlackTexture;
-    public Vector2 terrainSeaBedTextureUVSize = new Vector2(100, 100);
-    public Texture2D terrainBlendTexture = null;
-    public Texture2D terrainBaseTexture;
-    public Vector2 terrainBaseTextureUVSize = new Vector2(100, 100);
-    public Texture2D terrainOverlayTexture;
-    public Vector2 terrainOverlayTextureUVSize = new Vector2(100, 100);
-    public Texture2D terrainCliffsTexture;
-    public Vector2 terrainCliffsTextureUVSize = new Vector2(100, 100);
-    public Texture2D waterTexture;
+    public ACustomTerrain ACustomTerrain;
     
     public StormFX stormFX = new StormFX();
     

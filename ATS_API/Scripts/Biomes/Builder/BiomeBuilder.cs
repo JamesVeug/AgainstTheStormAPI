@@ -1,10 +1,8 @@
-﻿using System.Linq;
+﻿using System;
 using ATS_API.Helpers;
 using ATS_API.Localization;
-using Eremite.Model;
 using Eremite.Model.Configs.CustomGame;
 using Eremite.WorldMap;
-using UnityEngine;
 
 namespace ATS_API.Biomes;
 
@@ -119,5 +117,12 @@ public partial class BiomeBuilder
     {
         newBiome.effects.Add(effect);
         return this;
+    }
+
+    public T CreateTerrain<T>() where T : ACustomTerrain
+    {
+        T terrain = (T)Activator.CreateInstance(typeof(T), new object[]{guid, name});
+        newBiome.ACustomTerrain = terrain;
+        return terrain;
     }
 }
