@@ -23,6 +23,14 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
     protected readonly string m_guid;
     protected readonly string m_name;
     
+    public BuildingBuilder(T model)
+    {
+        m_newData = NewBuildingData.FromModel(model);
+        m_buildingModel = model;
+        m_guid = m_newData.Guid;
+        m_name = model.name;
+    }
+    
     public BuildingBuilder(string guid, string name, BuildingBehaviourTypes behaviour, string iconPath)
     {
         m_guid = guid;
@@ -128,7 +136,7 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
     /// </summary>
     public void SetDefaultVisualIcon(string spritePath)
     {
-        var visualData = new BuildingVisualData();
+        BuildingVisualData visualData = new BuildingVisualData();
         visualData.Icon = TextureHelper.GetImageAsSprite(spritePath, TextureHelper.SpriteType.BuildingDefaultModelDisplayIcon);
         
         m_newData.VisualData = visualData;

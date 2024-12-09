@@ -77,7 +77,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
     {
         base.PostSync();
         
-        if(BuildingModel is HouseModel houseModel)
+        if (BuildingModel is HouseModel houseModel)
         {
             HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
             houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
@@ -109,6 +109,18 @@ public class NewBuildingData : ASyncable<BuildingModel>
 
     private bool SetupPrefab()
     {
+        if (VisualData == null)
+        {
+            // No visuals to setup
+            if (BuildingModel.Prefab == null)
+            {
+                Plugin.Log.LogError($"Building {BuildingModel.name} has no prefab and no visuals to setup!");
+                return false;
+            }
+            
+            return true;
+        }
+        
         if (VisualData.Prefab != null)
         {
             // Already setup????
@@ -122,6 +134,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             Plugin.Log.LogError($"Custom prefab for building {BuildingModel.name} is null! Has Custom prefab: {CustomPrefab != null}");
             return false;
         }
+        
         GameObject root = Object.Instantiate(prefab, BuildingManager.PrefabContainer);
         if (Behaviour == BuildingBehaviourTypes.Workshop)
         {
@@ -169,7 +182,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
         else if (Behaviour == BuildingBehaviourTypes.House)
         {
             HouseModel houseModel = BuildingModel as HouseModel;
-            HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             try
@@ -216,5 +228,22 @@ public class NewBuildingData : ASyncable<BuildingModel>
         }
 
         return true;
+    }
+
+    public static NewBuildingData FromModel<T>(T model) where T : BuildingModel
+    {
+        NewBuildingData buildingData = BuildingManager.NewBuildings.FirstOrDefault(a => a.BuildingModel == model);
+        if (buildingData != null)
+        {
+            return buildingData;
+        }
+        
+        buildingData = new NewBuildingData();
+        buildingData.BuildingModel = model;
+        buildingData.Guid = "";
+        buildingData.Name = model.name;
+        buildingData.ID = model.name.ToBuildingTypes();
+        
+        return buildingData;
     }
 }

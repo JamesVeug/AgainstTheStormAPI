@@ -14,6 +14,11 @@ public class DecorationBuildingBuilder : BuildingBuilder<DecorationModel>
         public DecorationTierTypes Tier;
     }
     
+    public DecorationBuildingBuilder(DecorationModel model) : base(model)
+    {
+        metaData = new MetaData();
+    }
+    
     public DecorationBuildingBuilder(string guid, string name, string iconPath, DecorationTierTypes tier) : base(guid, name, BuildingBehaviourTypes.Decoration, iconPath)
     {
         // Set Category to Housing

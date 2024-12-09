@@ -17,6 +17,12 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
 
     private MetaData metaData;
     
+    
+    public WorkshopBuildingBuilder(WorkshopModel model) : base(model)
+    {
+        metaData = new MetaData();
+    }
+    
     public WorkshopBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, BuildingBehaviourTypes.Workshop, iconPath)
     {
         metaData = new MetaData();
