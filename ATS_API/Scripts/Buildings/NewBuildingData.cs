@@ -91,15 +91,15 @@ public class NewBuildingData : ASyncable<BuildingModel>
             if ((decorationModel.description == null || decorationModel.description.key == Placeholders.DescriptionKey) 
                 && decorationModel.tier != null)
             {
-                if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.DecorationTier_1)
+                if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.Comfort)
                 {
                     decorationModel.description = "Building_Decoration_Comfort_Desc".ToLocaText();
                 }
-                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.DecorationTier_2)
+                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.Aesthetics)
                 {
                     decorationModel.description = "Building_Decoration_Aesthetics_Desc".ToLocaText();
                 }
-                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.DecorationTier_3)
+                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.Harmony)
                 {
                     decorationModel.description = "Building_Decoration_Harmony_Desc".ToLocaText();
                 }

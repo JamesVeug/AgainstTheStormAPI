@@ -320,7 +320,6 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("WorkshopTypes", "SO.Settings.workshops", SO.Settings.workshops, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("DecorationTierTypes", "SO.Settings.decorationsTiers", SO.Settings.decorationsTiers, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("NeedTypes", "SO.Settings.Needs", SO.Settings.Needs, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("GoodsCategoriesTypes", "SO.Settings.GoodsCategories", SO.Settings.GoodsCategories, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
@@ -328,6 +327,8 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("TagTypes", "SO.Settings.tags", SO.Settings.tags, a=>a.Name, null, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("TraderTypes", "SO.Settings.traders", SO.Settings.traders, a=>a.Name, NameAndDescription, ["Eremite.Model.Trade"]);
+
+        CreateEnumTypesCSharpScript("DecorationTierTypes", "SO.Settings.decorationsTiers", SO.Settings.decorationsTiers, a=>a.Name, NameAndDescription, ["Eremite.Buildings"], GetPredefinedDecorationEnumNames);
 
         Func<EffectModel, string> effectGroup = EffectGroup;
         CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, EffectComment, ["Eremite.Model"], groupEnumsBy:effectGroup);
@@ -347,6 +348,20 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+    }
+
+    private static string GetPredefinedDecorationEnumNames(string s)
+    {
+        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        dictionary["DecorationTier 1"] = "Comfort";
+        dictionary["DecorationTier 2"] = "Aesthetics";
+        dictionary["DecorationTier 3"] = "Harmony";
+        
+        if (dictionary.TryGetValue(s, out string value))
+        {
+            return value;
+        }
+        return s.ToEnumString();
     }
 
     public static void CreateAllPrefabEnumTypes(string csExportPath)

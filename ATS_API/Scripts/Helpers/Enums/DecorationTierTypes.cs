@@ -21,22 +21,22 @@ public enum DecorationTierTypes
 	None = 0,
 	
 	/// <summary>
-	/// Comfort
-	/// </summary>
-	/// <name>DecorationTier 1</name>
-	DecorationTier_1 = 1,
-
-	/// <summary>
 	/// Aesthetics
 	/// </summary>
 	/// <name>DecorationTier 2</name>
-	DecorationTier_2 = 2,
+	Aesthetics = 1,
+
+	/// <summary>
+	/// Comfort
+	/// </summary>
+	/// <name>DecorationTier 1</name>
+	Comfort = 2,
 
 	/// <summary>
 	/// Harmony
 	/// </summary>
 	/// <name>DecorationTier 3</name>
-	DecorationTier_3 = 3,
+	Harmony = 3,
 
 
 
@@ -62,7 +62,7 @@ public static class DecorationTierTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every DecorationTierTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return DecorationTierTypes.DecorationTier_1 in the enum and log an error.
+	/// If no name is found, it will return DecorationTierTypes.Aesthetics in the enum and log an error.
 	/// </summary>
 	public static string ToName(this DecorationTierTypes type)
 	{
@@ -72,7 +72,7 @@ public static class DecorationTierTypesExtensions
 		}
 
 		Plugin.Log.LogError($"Cannot find name of DecorationTierTypes: " + type + "\n" + Environment.StackTrace);
-		return TypeToInternalName[DecorationTierTypes.DecorationTier_1];
+		return TypeToInternalName[DecorationTierTypes.Aesthetics];
 	}
 	
 	/// <summary>
@@ -207,9 +207,9 @@ public static class DecorationTierTypesExtensions
 	
 	internal static readonly Dictionary<DecorationTierTypes, string> TypeToInternalName = new()
 	{
-		{ DecorationTierTypes.DecorationTier_1, "DecorationTier 1" }, // Comfort
-		{ DecorationTierTypes.DecorationTier_2, "DecorationTier 2" }, // Aesthetics
-		{ DecorationTierTypes.DecorationTier_3, "DecorationTier 3" }, // Harmony
+		{ DecorationTierTypes.Aesthetics, "DecorationTier 2" }, // Aesthetics
+		{ DecorationTierTypes.Comfort, "DecorationTier 1" },    // Comfort
+		{ DecorationTierTypes.Harmony, "DecorationTier 3" },    // Harmony
 
 	};
 }
