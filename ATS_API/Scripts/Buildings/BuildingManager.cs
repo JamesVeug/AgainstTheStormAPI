@@ -19,6 +19,7 @@ public partial class BuildingManager
     
     private static ArraySync<BuildingModel, NewBuildingData> s_buildings = new("New Buildings");
     private static ArraySync<BuildingTagModel, NewBuildingTagModel> s_buildingTags = new("New Buildings Tags");
+    private static HashSet<NewBuildingData> s_dirtyBuildings = new HashSet<NewBuildingData>();
 
     private static Transform s_prefabContainer;
     private static Dictionary<BuildingBehaviourTypes, GameObject> m_visualData = new();
@@ -124,6 +125,15 @@ public partial class BuildingManager
 
         Settings settings = SO.Settings;
         s_buildings.Sync(ref settings.Buildings, settings.buildingsCache, s_newBuildings, a=>a.BuildingModel);
+
+        foreach (NewBuildingData data in s_dirtyBuildings)
+        {
+            if (!data.Sync())
+            {
+                continue;
+            }
+            Plugin.PostTick += data.PostSync;
+        }
     }
 
     private static void SyncBuildingTags()
@@ -132,6 +142,11 @@ public partial class BuildingManager
         
         Settings settings = SO.Settings;
         s_buildingTags.Sync(ref settings.buildingsTags, settings.buildingsTagsCache, s_newBuildingTags, a=>a.Model);
+    }
+
+    internal static void QueueSync(NewBuildingData model)
+    {
+        s_dirtyBuildings.Add(model);
     }
 
     internal static void Instantiate()

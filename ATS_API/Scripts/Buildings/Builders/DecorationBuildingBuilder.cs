@@ -17,6 +17,7 @@ public class DecorationBuildingBuilder : BuildingBuilder<DecorationModel>
     public DecorationBuildingBuilder(DecorationModel model) : base(model)
     {
         metaData = new MetaData();
+        m_newData.Behaviour = BuildingBehaviourTypes.Decoration;
     }
     
     public DecorationBuildingBuilder(string guid, string name, string iconPath, DecorationTierTypes tier) : base(guid, name, BuildingBehaviourTypes.Decoration, iconPath)

@@ -18,6 +18,7 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
     public HouseBuildingBuilder(HouseModel model) : base(model)
     {
         metaData = new MetaData();
+        m_newData.Behaviour = BuildingBehaviourTypes.House;
     }
     
     public HouseBuildingBuilder(string guid, string name, string iconPath, int housingPlaces) : base(guid, name, BuildingBehaviourTypes.House, iconPath)

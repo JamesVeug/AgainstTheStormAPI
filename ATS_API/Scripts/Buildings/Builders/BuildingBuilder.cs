@@ -29,6 +29,8 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
         m_buildingModel = model;
         m_guid = m_newData.Guid;
         m_name = model.name;
+        
+        BuildingManager.QueueSync(m_newData);
     }
     
     public BuildingBuilder(string guid, string name, BuildingBehaviourTypes behaviour, string iconPath)
