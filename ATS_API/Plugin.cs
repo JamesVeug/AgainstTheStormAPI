@@ -136,9 +136,8 @@ internal class Plugin : BaseUnityPlugin
         RaceNeedManager.Instantiate();
         MetaRewardManager.Instantiate();
             
-        // DumpPerksToJSON(MB.Settings.Relics, "Relics");
-        // DumpPerksToJSON(MB.Settings.orders, "Orders");
-        // DumpGoodsToJSON(MB.Settings.Goods, "Goods");
+        // Invoke events
+        EventBus.InvokeInitReferences();
     }
         
     [HarmonyPatch(typeof(MetaStateService), nameof(MetaStateService.CheckForInitialLevel))]
@@ -169,9 +168,9 @@ internal class Plugin : BaseUnityPlugin
         // Too difficult to predict when GameController will exist and I can hook observers to it
         // So just use Harmony and save us all some time. This method will run after every game start
         var isNewGame = MB.GameSaveService.IsNewGame();
-        Instance.Logger.LogInfo($"Entered a game. Is this a new game: {isNewGame}.");
-        // TextMeshProManager.Instantiate();
-        // WIKI.DumpEffectsJSON();
+        
+        // Invoke events
+        EventBus.InvokeStartGame(isNewGame);
     }
 
     [HarmonyPatch(typeof(GameContentService), nameof(GameContentService.GetOptionalBuildings))]
