@@ -5,6 +5,7 @@ using UnityEngine.Pool;
 using Eremite;
 {USINGS}
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
 {CLASS_HEADER}
 public enum {CLASSNAME}
@@ -21,23 +22,25 @@ public enum {CLASSNAME}
 	
 {ENUMS}
 
+    /// <summary>
+    /// The total number of vanilla {CLASSNAME} in the game.
+    /// </summary>
 	MAX = {TOTAL_ENUMS}
 }
 
+/// <summary>
+/// Extension methods for the {CLASSNAME} enum to simplify getting and converting data to various types.
+/// </summary>
 public static class {CLASSNAME}Extensions
 {
-	private static {CLASSNAME}[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded {CLASSNAME}.
+	/// </summary>
 	public static {CLASSNAME}[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new {CLASSNAME}[{TOTAL_ENUMS}];
-			for (int i = 0; i < {TOTAL_ENUMS}; i++)
-			{
-				s_All[i] = ({CLASSNAME})(i+1);
-			}
-		}
-		return s_All;
+		{CLASSNAME}[] all = new {CLASSNAME}[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

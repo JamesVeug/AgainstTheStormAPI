@@ -104,7 +104,9 @@ public partial class WIKI
         string fullModelName = typeof(T).FullName;
         string modelName = typeof(T).Name;
         string version = Application.version;
-        string header = "// Generated using Version " + version;
+        string header = "/// <summary>\n" +
+                        "/// Generated using Version " + version + "\n" +
+                        "/// </summary>\n";
         string firstEnum = sorted[sortedGroups[0]][0].enu;
 
         string usings = ""; // end with \n IF we have any usings
