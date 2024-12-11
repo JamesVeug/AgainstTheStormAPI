@@ -1,3 +1,7 @@
+# 3.x.x
+- Added Tiny hearth decoration
+- Added Dead Male Human decoration
+
 # 3.0.0
 - Bumped ATS version to 1.5.5R
 - Added a custom Biome

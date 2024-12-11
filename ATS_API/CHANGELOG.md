@@ -1,3 +1,27 @@
+# 3.x.x
+- Buildings
+  - Added support for custom decorations
+  - Added support to BuildingBuilders to change tile size
+    - Only 1x1 and 2x2 tested
+  - Added first pass support to modify existing builds
+- Biomes
+  - Added Gather and Fall sound support for NaturalResources
+  - Added custom terrain support for biomes
+    - Placeholder Masked type to overlay textures easily
+    - Custom terrain handling support
+  - Added support to set fertile amount text
+  - Added support to set how much soil is in a biome (Only 0 nullifies it atm)
+- Enum helpers
+  - Added WorkshopTypes enum
+  - Added DecorationTierTypes enum
+  - Added line breaks to summary
+  - Added integer value to all enums
+  - Updated to v1.5.6R (Safe)
+- Other
+  - Added EventBus to reduce mods needing to patch the same method over and over again
+  - Fixed AssetBundlerHelper unloading a bundler after extracting something once
+  - Improved logging when failing to load sounds
+
 # 3.0.1
 - Bumped ATS version to 1.5.6R
 - Added more support for WorkshopRecipeBuilder
