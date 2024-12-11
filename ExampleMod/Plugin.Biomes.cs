@@ -28,7 +28,7 @@ public partial class Plugin
         builder.SetSeasonDuration(SeasonTypes.Storm, 30);
         builder.SetSeasonDuration(SeasonTypes.Clearance, 240);
         builder.SetSeasonDuration(SeasonTypes.Drizzle, 120);
-        builder.SetDeclinedSeasonalRewardsReward(GoodsTypes.Valuable_Ancient_Tablet, 2);
+        builder.SetDeclinedSeasonalRewardsReward(GoodsTypes.Valuable_Ancient_Tablet, 1);
 
         // Newcomers
         builder.SetNewcomerInterval(300);
