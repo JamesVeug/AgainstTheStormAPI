@@ -132,7 +132,7 @@ public class NewBiome : ASyncable<BiomeModel>
             duration = 240
         });
         
-        declineSeasonRewardsReward.goodType = GoodsTypes.Mat_Raw_Wood;
+        declineSeasonRewardsReward.goodType = GoodsTypes.Valuable_Amber;
         declineSeasonRewardsReward.amount = 1;
     }
 
