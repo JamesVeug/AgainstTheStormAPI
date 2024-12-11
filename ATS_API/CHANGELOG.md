@@ -19,6 +19,7 @@
   - Updated to v1.5.6R (Safe)
 - Other
   - Added EventBus to reduce mods needing to patch the same method over and over again
+  - Added support for custom Decoration Tiers
   - Fixed AssetBundlerHelper unloading a bundler after extracting something once
   - Improved logging when failing to load sounds
 

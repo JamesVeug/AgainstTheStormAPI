@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using ATS_API.Biomes;
 using ATS_API.Buildings;
+using ATS_API.Decorations;
 using ATS_API.Difficulties;
 using ATS_API.Effects;
 using ATS_API.Goods;
@@ -92,6 +93,7 @@ internal class Plugin : BaseUnityPlugin
 
         Hotkeys.Update();
         
+        DecorationManager.Tick();
         DifficultyManager.Tick();
         GoodsManager.Tick();
         EffectManager.Tick();
@@ -122,6 +124,7 @@ internal class Plugin : BaseUnityPlugin
     {
         LocalizationManager.Instantiate();
         
+        DecorationManager.Instantiate();
         DifficultyManager.Instantiate();
         RecipeManager.Instantiate();
         GoodsManager.Instantiate();
