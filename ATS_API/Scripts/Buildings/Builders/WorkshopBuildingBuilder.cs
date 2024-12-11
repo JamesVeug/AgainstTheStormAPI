@@ -10,9 +10,9 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
 {
     public class MetaData
     {
-        public List<WorkshopRecipeBuilder> Builders = new List<WorkshopRecipeBuilder>();
-        public List<WorkshopRecipeModel> Recipes = new List<WorkshopRecipeModel>();
-        public List<RaceTypes[]> WorkPlaces = new List<RaceTypes[]>();
+        public List<WorkshopRecipeBuilder> Builders = null;
+        public List<WorkshopRecipeModel> Recipes = null;
+        public List<RaceTypes[]> WorkPlaces = null;
     }
 
     private MetaData metaData;
@@ -21,6 +21,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
     public WorkshopBuildingBuilder(WorkshopModel model) : base(model)
     {
         metaData = new MetaData();
+        m_newData.MetaData = metaData;
         m_newData.Behaviour = BuildingBehaviourTypes.Workshop;
     }
     
@@ -44,18 +45,21 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
     public WorkshopRecipeBuilder CreateRecipe(string good, int amount, int productionTime, Grade grade)
     {
         WorkshopRecipeBuilder recipeBuilder = new WorkshopRecipeBuilder(GUID, Name + "_" + good, good, amount, productionTime, grade);
+        metaData.Builders ??= new List<WorkshopRecipeBuilder>();
         metaData.Builders.Add(recipeBuilder);
         return recipeBuilder;
     }
     
     public WorkshopRecipeBuilder AddRecipe(WorkshopRecipeBuilder recipeBuilder)
     {
+        metaData.Builders ??= new List<WorkshopRecipeBuilder>();
         metaData.Builders.Add(recipeBuilder);
         return recipeBuilder;
     }
 
     public void AddRecipe(WorkshopRecipeModel recipe)
     {
+        metaData.Recipes ??= new List<WorkshopRecipeModel>();
         metaData.Recipes.Add(recipe);
     }
     
@@ -68,16 +72,19 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
             races[j++] = (RaceTypes)i;
         }
 
+        metaData.WorkPlaces ??= new List<RaceTypes[]>();
         metaData.WorkPlaces.Add(races);
     }
     
     public void AddWorkPlace(RaceTypes race)
     {
+        metaData.WorkPlaces ??= new List<RaceTypes[]>();
         metaData.WorkPlaces.Add([race]);
     }
     
     public void AddWorkPlace(params RaceTypes[] races)
     {
+        metaData.WorkPlaces ??= new List<RaceTypes[]>();
         metaData.WorkPlaces.Add(races);
     }
     

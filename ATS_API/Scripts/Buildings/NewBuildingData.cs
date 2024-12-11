@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Helpers;
 using ATS_API.Localization;
+using ATS_API.Recipes.Builders;
 using Eremite.Buildings;
 using Eremite.MapObjects;
 using Eremite.Model;
@@ -23,8 +24,8 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public object MetaData;
     public List<NameToAmount> RequiredGoods = new List<NameToAmount>();
     public NameToAmount MoveCost;
-    public ProfessionTypes Profession;
-    public BuildingCategoriesTypes Category = BuildingCategoriesTypes.Industry;
+    public ProfessionTypes Profession = ProfessionTypes.Unknown;
+    public BuildingCategoriesTypes Category = BuildingCategoriesTypes.Unknown;
     public List<TagTypes> UsabilityTags = new List<TagTypes>();
     public List<BuildingTagTypes> Tags = new List<BuildingTagTypes>();
     public GameObject CustomPrefab;
@@ -58,8 +59,11 @@ public class NewBuildingData : ASyncable<BuildingModel>
         {
             BuildingModel.tags = Tags.ToBuildingTagModelArray();
         }
-        
-        BuildingModel.category = Category.ToBuildingCategoryModel();
+
+        if (Category != BuildingCategoriesTypes.Unknown)
+        {
+            BuildingModel.category = Category.ToBuildingCategoryModel();
+        }
 
         try
         {
@@ -127,7 +131,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             return true;
         }
   
-        // Plugin.Log.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
+        Plugin.Log.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
         GameObject prefab = CustomPrefab == null ? BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon) : CustomPrefab;
         if (prefab == null)
         {
@@ -138,14 +142,18 @@ public class NewBuildingData : ASyncable<BuildingModel>
         GameObject root = Object.Instantiate(prefab, BuildingManager.PrefabContainer);
         if (Behaviour == BuildingBehaviourTypes.Workshop)
         {
-            // Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
-            WorkshopModel workshopModel = BuildingModel as WorkshopModel;
+            if (BuildingModel is not WorkshopModel workshopModel)
+            {
+                Plugin.Log.LogError($"Building {BuildingModel.name} is not a WorkshopModel!");
+                return false;
+            }
+            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             try
             {
-                // Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
+                Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
                 BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(root, workshopModel, VisualData.Icon, AnimHookType.Construction);
             } 
             catch (Exception e)
@@ -155,28 +163,51 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 return false;
             }
 
+            Plugin.Log.LogInfo($"Prefab initialized for {BuildingModel.name} is root null? {root == null} is VisualData null? {VisualData == null} is MetaData null? {MetaData == null}");
             Workshop workshop = root.GetComponent<Workshop>();
             VisualData.Prefab = workshop;
         
             // Data
-            // Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
+            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.prefab = workshop;
-            workshopModel.recipes = metaData.Recipes.Concat(metaData.Builders.Select(a=>a.Build())).ToArray();
-            workshopModel.profession = Profession.ToProfessionModel();
 
-            // Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
-            workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
-            for (int i = 0; i < metaData.WorkPlaces.Count; i++)
+            if (metaData.Recipes != null || metaData.Builders != null)
             {
-                var allowedRaces = metaData.WorkPlaces[i];
-                
-                WorkplaceModel workplace = new WorkplaceModel();
-                workplace.allowedRaces = new RaceModel[allowedRaces.Length];
-                for (int j = 0; j < allowedRaces.Length; j++)
+                IEnumerable<WorkshopRecipeModel> recipes = metaData.Recipes ?? new List<WorkshopRecipeModel>();
+                IEnumerable<WorkshopRecipeBuilder> builders = metaData.Builders ?? new List<WorkshopRecipeBuilder>();
+                workshopModel.recipes = recipes.Concat(builders.Select(a => a.Build())).ToArray();
+            }
+            else if (workshopModel.recipes == null)
+            {
+                workshopModel.recipes = new WorkshopRecipeModel[0];
+            }
+
+            if (Profession != ProfessionTypes.Unknown)
+            {
+                workshopModel.profession = Profession.ToProfessionModel();
+            }
+
+            Plugin.Log.LogInfo($"Setting up workplaces for workshop {BuildingModel.name}");
+            if (metaData.WorkPlaces != null)
+            {
+                workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
+                for (int i = 0; i < metaData.WorkPlaces.Count; i++)
                 {
-                    workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
+                    var allowedRaces = metaData.WorkPlaces[i];
+
+                    WorkplaceModel workplace = new WorkplaceModel();
+                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
+                    for (int j = 0; j < allowedRaces.Length; j++)
+                    {
+                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
+                    }
+
+                    workshopModel.workplaces[i] = workplace;
                 }
-                workshopModel.workplaces[i] = workplace;
+            }
+            else if (workshopModel.workplaces == null)
+            {
+                workshopModel.workplaces = new WorkplaceModel[0];
             }
         }
         else if (Behaviour == BuildingBehaviourTypes.House)
