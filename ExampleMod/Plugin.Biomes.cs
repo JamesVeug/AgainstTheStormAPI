@@ -58,6 +58,9 @@ public partial class Plugin
         maskedTerrain.SetTerrainOverlayTexture("terrainOverlay.png");
         maskedTerrain.SetTerrainCliffTexture("terrainCliff.png");
         maskedTerrain.SetTerrainOverlayTexture("terrainBlend.png");
+
+        // Soil
+        builder.SetSoilText(BiomeBuilder.SoilGrade.Small);
         
         // Trees / natural resources
         builder.AddNaturalResource(NaturalResourceTypes.Cursed_Tree,

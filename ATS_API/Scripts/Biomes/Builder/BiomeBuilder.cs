@@ -3,6 +3,7 @@ using ATS_API.Helpers;
 using ATS_API.Localization;
 using Eremite.Model.Configs.CustomGame;
 using Eremite.WorldMap;
+using UnityEngine;
 
 namespace ATS_API.Biomes;
 
@@ -25,7 +26,7 @@ public partial class BiomeBuilder
         
         newModel.displayName = Placeholders.DisplayName; // Royal Woodlands
         newModel.description = Placeholders.Description; // "The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.",
-        newModel.soilGrade = "Biome_SoilGrade_Medium".ToLocaText();
+        newModel.soilGrade = "".ToLocaText();
         newModel.size = "Biome_Size_Medium".ToLocaText();
 
         newModel.isTutorialBiome = false;

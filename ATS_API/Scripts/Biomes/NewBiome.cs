@@ -72,6 +72,7 @@ public class NewBiome : ASyncable<BiomeModel>
     public ACustomTerrain ACustomTerrain;
     
     public StormFX stormFX = new StormFX();
+    public float soilAmount = 1f;
     
     public MetaCurrencyTypes baseMetaCurrency = MetaCurrencyTypes.Food_Stockpiles;
     public int baseMetaCurrencyAmount = 2;
