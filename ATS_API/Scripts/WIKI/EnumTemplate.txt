@@ -10,21 +10,21 @@ namespace ATS_API.Helpers;
 {CLASS_HEADER}
 public enum {CLASSNAME}
 {
-    /// <summary>
-    /// Placeholder for an unknown {CLASSNAME}. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown {CLASSNAME}. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no {CLASSNAME}. Typically, seen if nothing is defined or failed to parse a string to a {CLASSNAME}.
-    /// </summary>
+	/// Placeholder for no {CLASSNAME}. Typically, seen if nothing is defined or failed to parse a string to a {CLASSNAME}.
+	/// </summary>
 	None = 0,
 	
 {ENUMS}
 
-    /// <summary>
-    /// The total number of vanilla {CLASSNAME} in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla {CLASSNAME} in the game.
+	/// </summary>
 	MAX = {TOTAL_ENUMS}
 }
 
@@ -39,8 +39,8 @@ public static class {CLASSNAME}Extensions
 	public static {CLASSNAME}[] All()
 	{
 		{CLASSNAME}[] all = new {CLASSNAME}[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -96,12 +96,12 @@ public static class {CLASSNAME}Extensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a {MODELNAME} associated with the given {CLASSNAME}.
-    /// {MODELNAME} contain all the data that will be used in the game.
-    /// Every {MODELNAME} should have a unique name as to distinguish it from others.
-    /// If no {MODELNAME} is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a {MODELNAME} associated with the given {CLASSNAME}.
+	/// {MODELNAME} contain all the data that will be used in the game.
+	/// Every {MODELNAME} should have a unique name as to distinguish it from others.
+	/// If no {MODELNAME} is found, it will return null and log an error.
+	/// </summary>
 	public static {FULLMODELNAME} To{MODELNAME}(this {CLASSNAME} types)
 	{
 		return types.ToName().To{MODELNAME}();
