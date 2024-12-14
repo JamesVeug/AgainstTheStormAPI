@@ -1,6 +1,7 @@
 # 3.x.x
 - Buildings
   - Added support for custom decorations
+  - Added support for custom decoration tiers
   - Added support to BuildingBuilders to change tile size
     - Only 1x1 and 2x2 tested
   - Added first pass support to modify existing builds
@@ -14,12 +15,12 @@
 - Enum helpers
   - Added WorkshopTypes enum
   - Added DecorationTierTypes enum
-  - Added line breaks to summary
-  - Added integer value to all enums
+  - Added more comments overall and line breaks to summary
+  - Added integer value to all enums (Except EffectResolveTypes)
+  - Fixed .All() not including custom enums
   - Updated to v1.5.6R (Safe)
 - Other
-  - Added EventBus to reduce mods needing to patch the same method over and over again
-  - Added support for custom Decoration Tiers
+  - Added EventBus to store various events to reduce mods needing to patch the same method over and over again
   - Fixed AssetBundlerHelper unloading a bundler after extracting something once
   - Improved logging when failing to load sounds
 

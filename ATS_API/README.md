@@ -1,6 +1,7 @@
 # Against The Storm API
 
-This mod is designed to be used in conjunction with other mods that wish to add new content to the game. It provides a number of useful functions for adding new things to the game in a way that takes away the struggles of understanding the code base and more.
+This mod is designed to be used in conjunction with other mods that wish to add new content to the game. 
+It provides a number of useful functions for adding new things to the game in a way that takes away the struggles of understanding the code base and more.
 
 Against the Storm is a deeply complex game with tricky to navigate code for the average person. Also with the game being regular updated it's impossible to know what the devs will change in code which can result in your mod breaking and requiring you to manually fix and reupload it.
 
@@ -32,7 +33,7 @@ The API works as an in-between of your mod and the game by supplying helper meth
 ## Help
 
 ### Example Mod
-The API is worked on alongside the Example Mod mod which contains at least 1 of every new feature in the API to ensure everything is working as we expect.
+The API is worked alongside the Example Mod mod which contains at least 1 of every new feature in the API to ensure everything is working as we expect.
 
 You're encouraged to view all the code and copy+paste anything you require into your own mod.
 
@@ -60,7 +61,10 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Perks/Cornerstones
 - New Traders
 - New Orders (Minimal)
-- New Buildings (Minimal)
+- New Buildings
+  - House
+  - Workshop
+  - Decoration (+Custom tier support)
 - New Recipes
 - New Races (Experimental)
 - New Difficulties
@@ -72,7 +76,7 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 
 ## Other stuff added
 - Any options/configs that mods add can be modified in the options menu of the game.
-- Enums that list everything in the game, so you can easily see what items/orders exist and get their data without hassle.
+- [Enums](https://github.com/JamesVeug/AgainstTheStormAPI/tree/master/ATS_API/Scripts/Helpers/Enums) that list everything in the game, so you can easily see what items/orders exist and get their data without hassle.
 
 ## API Localization
 The API contains text that is needed for custom message popups, missing content added by mods and others. The text has been google translated by default to other languages. 
@@ -81,3 +85,10 @@ If you'd like to help translate the text to your language please reach out on th
 
 ## Contributors
 - JamesGames
+
+
+## Special Thanks
+- TelHurin (Eremite Games)
+- Shush
+- ElenaRoan
+- f⑨
