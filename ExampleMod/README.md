@@ -16,6 +16,7 @@ For more help/guids/examples checkout the modding discord.
 - 1 New Difficulty (P21)
 - 2 new Embark good rewards 
 - 2 new Embark effect rewards 
+- 2 new Decorations
 
 ## How to install
 
@@ -43,3 +44,4 @@ For more help/guids/examples checkout the modding discord.
 - JamesGames
 - ElenaRoan
 - \[Chaos\]
+- Em I3ei5hk0

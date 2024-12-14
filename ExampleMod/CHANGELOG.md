@@ -1,6 +1,7 @@
-# 3.x.x
+# 3.1.0
 - Added Tiny hearth decoration
 - Added Dead Male Human decoration
+- Reduced reward when declining season reward to 1 tablet instead of 2
 
 # 3.0.0
 - Bumped ATS version to 1.5.5R
