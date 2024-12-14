@@ -4,22 +4,14 @@ namespace ATS_API.Helpers;
 
 public static class EventBus
 {
-    public static event Action OnInitReferences;
-    public static event Action<bool> OnStartGame;
+    /// <summary>
+    /// Invoked when Against the Storm starts and all the data has been initialized.
+    /// </summary>
+    public static readonly SafeAction OnInitReferences = new SafeAction();
     
-    internal static void InvokeInitReferences()
-    {
-        if (OnInitReferences != null)
-        {
-            OnInitReferences?.Invoke();
-        }
-    }
-    
-    internal static void InvokeStartGame(bool isNewGame)
-    {
-        if (OnStartGame != null)
-        {
-            OnStartGame?.Invoke(isNewGame);
-        }
-    }
+    /// <summary>
+    /// Invoked when the player enters a settlement.
+    /// </summary>
+    /// <Arg1>True if the player just started a new game</Arg1>
+    public static readonly SafeAction<bool> OnStartGame = new SafeAction<bool>();
 }

@@ -35,6 +35,58 @@ public class SafeAction
     }
 }
 
+public class SafeAction<T>
+{
+    private List<Action<T>> _actions = new List<Action<T>>();
+    
+    public void AddListener(Action<T> action)
+    {
+        _actions.Add(action);
+    }
+    
+    public void RemoveListener(Action<T> action)
+    {
+        _actions.Remove(action);
+    }
+    
+    public void Invoke(T t)
+    {
+        foreach (Action<T> action in _actions)
+        {
+            try
+            {
+                action.Invoke(t);
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+            }
+        }
+    }
+    
+    public async UniTask<bool> Invoke(T t, Func<Exception, UniTask<bool>> OnException)
+    {
+        foreach (Action<T> action in _actions)
+        {
+            try
+            {
+                action.Invoke(t);
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                bool uniTask = await OnException.Invoke(e);
+                if (!uniTask)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+}
+
 public class SafeAction<T,Y>
 {
     private List<Action<T,Y>> _actions = new List<Action<T, Y>>();

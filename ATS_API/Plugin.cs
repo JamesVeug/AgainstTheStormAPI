@@ -140,7 +140,7 @@ internal class Plugin : BaseUnityPlugin
         MetaRewardManager.Instantiate();
             
         // Invoke events
-        EventBus.InvokeInitReferences();
+        EventBus.OnInitReferences.Invoke();
     }
         
     [HarmonyPatch(typeof(MetaStateService), nameof(MetaStateService.CheckForInitialLevel))]
@@ -173,7 +173,7 @@ internal class Plugin : BaseUnityPlugin
         var isNewGame = MB.GameSaveService.IsNewGame();
         
         // Invoke events
-        EventBus.InvokeStartGame(isNewGame);
+        EventBus.OnStartGame.Invoke(isNewGame);
     }
 
     [HarmonyPatch(typeof(GameContentService), nameof(GameContentService.GetOptionalBuildings))]
