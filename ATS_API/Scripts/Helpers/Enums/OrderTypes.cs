@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model.Orders;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum OrderTypes
 {
     /// <summary>
@@ -2288,23 +2291,25 @@ public enum OrderTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla OrderTypes in the game.
+    /// </summary>
 	MAX = 391
 }
 
+/// <summary>
+/// Extension methods for the OrderTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class OrderTypesExtensions
 {
-	private static OrderTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded OrderTypes.
+	/// </summary>
 	public static OrderTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new OrderTypes[391];
-			for (int i = 0; i < 391; i++)
-			{
-				s_All[i] = (OrderTypes)(i+1);
-			}
-		}
-		return s_All;
+		OrderTypes[] all = new OrderTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

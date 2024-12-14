@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum NaturalResourceTypes
 {
     /// <summary>
@@ -130,23 +133,25 @@ public enum NaturalResourceTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla NaturalResourceTypes in the game.
+    /// </summary>
 	MAX = 18
 }
 
+/// <summary>
+/// Extension methods for the NaturalResourceTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class NaturalResourceTypesExtensions
 {
-	private static NaturalResourceTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded NaturalResourceTypes.
+	/// </summary>
 	public static NaturalResourceTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new NaturalResourceTypes[18];
-			for (int i = 0; i < 18; i++)
-			{
-				s_All[i] = (NaturalResourceTypes)(i+1);
-			}
-		}
-		return s_All;
+		NaturalResourceTypes[] all = new NaturalResourceTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

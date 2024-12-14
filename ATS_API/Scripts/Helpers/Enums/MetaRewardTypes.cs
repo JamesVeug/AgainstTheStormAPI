@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model.Meta;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum MetaRewardTypes
 {
     /// <summary>
@@ -2416,23 +2419,25 @@ public enum MetaRewardTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla MetaRewardTypes in the game.
+    /// </summary>
 	MAX = 399
 }
 
+/// <summary>
+/// Extension methods for the MetaRewardTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class MetaRewardTypesExtensions
 {
-	private static MetaRewardTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded MetaRewardTypes.
+	/// </summary>
 	public static MetaRewardTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new MetaRewardTypes[399];
-			for (int i = 0; i < 399; i++)
-			{
-				s_All[i] = (MetaRewardTypes)(i+1);
-			}
-		}
-		return s_All;
+		MetaRewardTypes[] all = new MetaRewardTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

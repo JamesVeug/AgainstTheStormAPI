@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum TagTypes
 {
     /// <summary>
@@ -156,23 +159,25 @@ public enum TagTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla TagTypes in the game.
+    /// </summary>
 	MAX = 67
 }
 
+/// <summary>
+/// Extension methods for the TagTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class TagTypesExtensions
 {
-	private static TagTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded TagTypes.
+	/// </summary>
 	public static TagTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new TagTypes[67];
-			for (int i = 0; i < 67; i++)
-			{
-				s_All[i] = (TagTypes)(i+1);
-			}
-		}
-		return s_All;
+		TagTypes[] all = new TagTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

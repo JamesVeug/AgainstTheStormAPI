@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum RaceTypes
 {
     /// <summary>
@@ -58,23 +61,25 @@ public enum RaceTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla RaceTypes in the game.
+    /// </summary>
 	MAX = 6
 }
 
+/// <summary>
+/// Extension methods for the RaceTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class RaceTypesExtensions
 {
-	private static RaceTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded RaceTypes.
+	/// </summary>
 	public static RaceTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new RaceTypes[6];
-			for (int i = 0; i < 6; i++)
-			{
-				s_All[i] = (RaceTypes)(i+1);
-			}
-		}
-		return s_All;
+		RaceTypes[] all = new RaceTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

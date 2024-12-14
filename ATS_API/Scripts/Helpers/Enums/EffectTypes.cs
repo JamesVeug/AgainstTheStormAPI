@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum EffectTypes
 {
     /// <summary>
@@ -20342,23 +20345,25 @@ public enum EffectTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla EffectTypes in the game.
+    /// </summary>
 	MAX = 2772
 }
 
+/// <summary>
+/// Extension methods for the EffectTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class EffectTypesExtensions
 {
-	private static EffectTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded EffectTypes.
+	/// </summary>
 	public static EffectTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new EffectTypes[2772];
-			for (int i = 0; i < 2772; i++)
-			{
-				s_All[i] = (EffectTypes)(i+1);
-			}
-		}
-		return s_All;
+		EffectTypes[] all = new EffectTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

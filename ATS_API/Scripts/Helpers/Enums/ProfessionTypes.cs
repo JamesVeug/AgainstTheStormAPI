@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum ProfessionTypes
 {
     /// <summary>
@@ -496,23 +499,25 @@ public enum ProfessionTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla ProfessionTypes in the game.
+    /// </summary>
 	MAX = 79
 }
 
+/// <summary>
+/// Extension methods for the ProfessionTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class ProfessionTypesExtensions
 {
-	private static ProfessionTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded ProfessionTypes.
+	/// </summary>
 	public static ProfessionTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new ProfessionTypes[79];
-			for (int i = 0; i < 79; i++)
-			{
-				s_All[i] = (ProfessionTypes)(i+1);
-			}
-		}
-		return s_All;
+		ProfessionTypes[] all = new ProfessionTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

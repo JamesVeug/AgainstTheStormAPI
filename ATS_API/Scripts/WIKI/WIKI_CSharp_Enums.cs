@@ -113,7 +113,7 @@ public partial class WIKI
         string version = Application.version;
         string header = "/// <summary>\n" +
                         "/// Generated using Version " + version + "\n" +
-                        "/// </summary>\n";
+                        "/// </summary>";
         string firstEnum = sorted[sortedGroups[0]][0].enu;
 
         string usings = ""; // end with \n IF we have any usings

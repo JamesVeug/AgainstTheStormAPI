@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum SimpleSeasonalEffectTypes
 {
     /// <summary>
@@ -472,23 +475,25 @@ public enum SimpleSeasonalEffectTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla SimpleSeasonalEffectTypes in the game.
+    /// </summary>
 	MAX = 75
 }
 
+/// <summary>
+/// Extension methods for the SimpleSeasonalEffectTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class SimpleSeasonalEffectTypesExtensions
 {
-	private static SimpleSeasonalEffectTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded SimpleSeasonalEffectTypes.
+	/// </summary>
 	public static SimpleSeasonalEffectTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new SimpleSeasonalEffectTypes[75];
-			for (int i = 0; i < 75; i++)
-			{
-				s_All[i] = (SimpleSeasonalEffectTypes)(i+1);
-			}
-		}
-		return s_All;
+		SimpleSeasonalEffectTypes[] all = new SimpleSeasonalEffectTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

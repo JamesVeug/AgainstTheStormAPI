@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum GoodsTypes
 {
     /// <summary>
@@ -509,23 +512,25 @@ public enum GoodsTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla GoodsTypes in the game.
+    /// </summary>
 	MAX = 72
 }
 
+/// <summary>
+/// Extension methods for the GoodsTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class GoodsTypesExtensions
 {
-	private static GoodsTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded GoodsTypes.
+	/// </summary>
 	public static GoodsTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new GoodsTypes[72];
-			for (int i = 0; i < 72; i++)
-			{
-				s_All[i] = (GoodsTypes)(i+1);
-			}
-		}
-		return s_All;
+		GoodsTypes[] all = new GoodsTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

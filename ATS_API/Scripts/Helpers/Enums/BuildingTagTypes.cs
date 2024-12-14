@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum BuildingTagTypes
 {
     /// <summary>
@@ -118,23 +121,25 @@ public enum BuildingTagTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla BuildingTagTypes in the game.
+    /// </summary>
 	MAX = 18
 }
 
+/// <summary>
+/// Extension methods for the BuildingTagTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class BuildingTagTypesExtensions
 {
-	private static BuildingTagTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded BuildingTagTypes.
+	/// </summary>
 	public static BuildingTagTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new BuildingTagTypes[18];
-			for (int i = 0; i < 18; i++)
-			{
-				s_All[i] = (BuildingTagTypes)(i+1);
-			}
-		}
-		return s_All;
+		BuildingTagTypes[] all = new BuildingTagTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum NeedTypes
 {
     /// <summary>
@@ -154,23 +157,25 @@ public enum NeedTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla NeedTypes in the game.
+    /// </summary>
 	MAX = 22
 }
 
+/// <summary>
+/// Extension methods for the NeedTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class NeedTypesExtensions
 {
-	private static NeedTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded NeedTypes.
+	/// </summary>
 	public static NeedTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new NeedTypes[22];
-			for (int i = 0; i < 22; i++)
-			{
-				s_All[i] = (NeedTypes)(i+1);
-			}
-		}
-		return s_All;
+		NeedTypes[] all = new NeedTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

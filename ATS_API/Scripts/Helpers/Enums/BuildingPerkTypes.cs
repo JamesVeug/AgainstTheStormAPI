@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum BuildingPerkTypes
 {
     /// <summary>
@@ -344,23 +347,25 @@ public enum BuildingPerkTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla BuildingPerkTypes in the game.
+    /// </summary>
 	MAX = 54
 }
 
+/// <summary>
+/// Extension methods for the BuildingPerkTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class BuildingPerkTypesExtensions
 {
-	private static BuildingPerkTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded BuildingPerkTypes.
+	/// </summary>
 	public static BuildingPerkTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new BuildingPerkTypes[54];
-			for (int i = 0; i < 54; i++)
-			{
-				s_All[i] = (BuildingPerkTypes)(i+1);
-			}
-		}
-		return s_All;
+		BuildingPerkTypes[] all = new BuildingPerkTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

@@ -6,12 +6,22 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.5R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum ResolveEffectTypes
 {
+    /// <summary>
+    /// Placeholder for an unknown ResolveEffectTypes. Typically, seen if a method failed to find some data .
+    /// </summary>
 	Unknown = -1,
-	None,
+	
+	/// <summary>
+    /// Placeholder for no ResolveEffectTypes. Typically, seen if nothing is defined or failed to parse a string to a ResolveEffectTypes.
+    /// </summary>
+	None = 0,
 	
 	/// <summary>
 	/// Acidic Environment - Working in a loud environment is really taxing.
@@ -1064,24 +1074,26 @@ public enum ResolveEffectTypes
 	Worse_Storms_For_Hostility_Resolve_Penalty,
 
 
-
+    /// <summary>
+    /// The total number of vanilla ResolveEffectTypes in the game.
+    /// </summary>
 	MAX = 175
 }
 
+/// <summary>
+/// Extension methods for the ResolveEffectTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class ResolveEffectTypesExtensions
 {
 	private static ResolveEffectTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded ResolveEffectTypes.
+	/// </summary>
 	public static ResolveEffectTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new ResolveEffectTypes[175];
-			for (int i = 0; i < 175; i++)
-			{
-				s_All[i] = (ResolveEffectTypes)(i+1);
-			}
-		}
-		return s_All;
+		ResolveEffectTypes[] all = new ResolveEffectTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum ResourcesDepositsTypes
 {
     /// <summary>
@@ -286,23 +289,25 @@ public enum ResourcesDepositsTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla ResourcesDepositsTypes in the game.
+    /// </summary>
 	MAX = 44
 }
 
+/// <summary>
+/// Extension methods for the ResourcesDepositsTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class ResourcesDepositsTypesExtensions
 {
-	private static ResourcesDepositsTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded ResourcesDepositsTypes.
+	/// </summary>
 	public static ResourcesDepositsTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new ResourcesDepositsTypes[44];
-			for (int i = 0; i < 44; i++)
-			{
-				s_All[i] = (ResourcesDepositsTypes)(i+1);
-			}
-		}
-		return s_All;
+		ResourcesDepositsTypes[] all = new ResourcesDepositsTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

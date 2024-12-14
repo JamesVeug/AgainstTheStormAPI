@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model.Trade;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum TraderTypes
 {
     /// <summary>
@@ -88,23 +91,25 @@ public enum TraderTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla TraderTypes in the game.
+    /// </summary>
 	MAX = 11
 }
 
+/// <summary>
+/// Extension methods for the TraderTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class TraderTypesExtensions
 {
-	private static TraderTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded TraderTypes.
+	/// </summary>
 	public static TraderTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new TraderTypes[11];
-			for (int i = 0; i < 11; i++)
-			{
-				s_All[i] = (TraderTypes)(i+1);
-			}
-		}
-		return s_All;
+		TraderTypes[] all = new TraderTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

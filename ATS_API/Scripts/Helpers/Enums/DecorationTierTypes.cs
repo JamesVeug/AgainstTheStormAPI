@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum DecorationTierTypes
 {
     /// <summary>
@@ -40,23 +43,25 @@ public enum DecorationTierTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla DecorationTierTypes in the game.
+    /// </summary>
 	MAX = 3
 }
 
+/// <summary>
+/// Extension methods for the DecorationTierTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class DecorationTierTypesExtensions
 {
-	private static DecorationTierTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded DecorationTierTypes.
+	/// </summary>
 	public static DecorationTierTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new DecorationTierTypes[3];
-			for (int i = 0; i < 3; i++)
-			{
-				s_All[i] = (DecorationTierTypes)(i+1);
-			}
-		}
-		return s_All;
+		DecorationTierTypes[] all = new DecorationTierTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

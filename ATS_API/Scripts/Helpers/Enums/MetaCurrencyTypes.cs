@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum MetaCurrencyTypes
 {
     /// <summary>
@@ -40,23 +43,25 @@ public enum MetaCurrencyTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla MetaCurrencyTypes in the game.
+    /// </summary>
 	MAX = 3
 }
 
+/// <summary>
+/// Extension methods for the MetaCurrencyTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class MetaCurrencyTypesExtensions
 {
-	private static MetaCurrencyTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded MetaCurrencyTypes.
+	/// </summary>
 	public static MetaCurrencyTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new MetaCurrencyTypes[3];
-			for (int i = 0; i < 3; i++)
-			{
-				s_All[i] = (MetaCurrencyTypes)(i+1);
-			}
-		}
-		return s_All;
+		MetaCurrencyTypes[] all = new MetaCurrencyTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

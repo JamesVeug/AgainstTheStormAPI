@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Characters.Villagers;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum VillagerPerkTypes
 {
     /// <summary>
@@ -490,23 +493,25 @@ public enum VillagerPerkTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla VillagerPerkTypes in the game.
+    /// </summary>
 	MAX = 78
 }
 
+/// <summary>
+/// Extension methods for the VillagerPerkTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class VillagerPerkTypesExtensions
 {
-	private static VillagerPerkTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded VillagerPerkTypes.
+	/// </summary>
 	public static VillagerPerkTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new VillagerPerkTypes[78];
-			for (int i = 0; i < 78; i++)
-			{
-				s_All[i] = (VillagerPerkTypes)(i+1);
-			}
-		}
-		return s_All;
+		VillagerPerkTypes[] all = new VillagerPerkTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

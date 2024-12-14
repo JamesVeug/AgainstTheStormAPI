@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum BuildingCategoriesTypes
 {
     /// <summary>
@@ -142,23 +145,25 @@ public enum BuildingCategoriesTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla BuildingCategoriesTypes in the game.
+    /// </summary>
 	MAX = 20
 }
 
+/// <summary>
+/// Extension methods for the BuildingCategoriesTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class BuildingCategoriesTypesExtensions
 {
-	private static BuildingCategoriesTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded BuildingCategoriesTypes.
+	/// </summary>
 	public static BuildingCategoriesTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new BuildingCategoriesTypes[20];
-			for (int i = 0; i < 20; i++)
-			{
-				s_All[i] = (BuildingCategoriesTypes)(i+1);
-			}
-		}
-		return s_All;
+		BuildingCategoriesTypes[] all = new BuildingCategoriesTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

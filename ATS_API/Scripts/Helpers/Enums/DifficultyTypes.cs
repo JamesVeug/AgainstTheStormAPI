@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum DifficultyTypes
 {
     /// <summary>
@@ -190,23 +193,25 @@ public enum DifficultyTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla DifficultyTypes in the game.
+    /// </summary>
 	MAX = 28
 }
 
+/// <summary>
+/// Extension methods for the DifficultyTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class DifficultyTypesExtensions
 {
-	private static DifficultyTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded DifficultyTypes.
+	/// </summary>
 	public static DifficultyTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new DifficultyTypes[28];
-			for (int i = 0; i < 28; i++)
-			{
-				s_All[i] = (DifficultyTypes)(i+1);
-			}
-		}
-		return s_All;
+		DifficultyTypes[] all = new DifficultyTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum RelicTypes
 {
     /// <summary>
@@ -2020,23 +2023,25 @@ public enum RelicTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla RelicTypes in the game.
+    /// </summary>
 	MAX = 333
 }
 
+/// <summary>
+/// Extension methods for the RelicTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class RelicTypesExtensions
 {
-	private static RelicTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded RelicTypes.
+	/// </summary>
 	public static RelicTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new RelicTypes[333];
-			for (int i = 0; i < 333; i++)
-			{
-				s_All[i] = (RelicTypes)(i+1);
-			}
-		}
-		return s_All;
+		RelicTypes[] all = new RelicTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Buildings;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum WorkshopTypes
 {
     /// <summary>
@@ -412,23 +415,25 @@ public enum WorkshopTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla WorkshopTypes in the game.
+    /// </summary>
 	MAX = 56
 }
 
+/// <summary>
+/// Extension methods for the WorkshopTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class WorkshopTypesExtensions
 {
-	private static WorkshopTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded WorkshopTypes.
+	/// </summary>
 	public static WorkshopTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new WorkshopTypes[56];
-			for (int i = 0; i < 56; i++)
-			{
-				s_All[i] = (WorkshopTypes)(i+1);
-			}
-		}
-		return s_All;
+		WorkshopTypes[] all = new WorkshopTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

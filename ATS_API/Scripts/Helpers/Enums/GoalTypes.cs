@@ -6,8 +6,11 @@ using Eremite;
 using Eremite.Model.Goals;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum GoalTypes
 {
     /// <summary>
@@ -1414,23 +1417,25 @@ public enum GoalTypes
 
 
 
+    /// <summary>
+    /// The total number of vanilla GoalTypes in the game.
+    /// </summary>
 	MAX = 232
 }
 
+/// <summary>
+/// Extension methods for the GoalTypes enum to simplify getting and converting data to various types.
+/// </summary>
 public static class GoalTypesExtensions
 {
-	private static GoalTypes[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded GoalTypes.
+	/// </summary>
 	public static GoalTypes[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new GoalTypes[232];
-			for (int i = 0; i < 232; i++)
-			{
-				s_All[i] = (GoalTypes)(i+1);
-			}
-		}
-		return s_All;
+		GoalTypes[] all = new GoalTypes[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>

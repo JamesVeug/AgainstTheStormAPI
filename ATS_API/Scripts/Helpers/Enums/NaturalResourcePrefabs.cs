@@ -5,8 +5,11 @@ using UnityEngine.Pool;
 using Eremite;
 
 namespace ATS_API.Helpers;
+// ReSharper disable All
 
-// Generated using Version 1.5.6R
+/// <summary>
+/// Generated using Version 1.5.6R
+/// </summary>
 public enum NaturalResourcePrefabs
 {
     /// <summary>
@@ -351,23 +354,25 @@ public enum NaturalResourcePrefabs
 
 
 
+    /// <summary>
+    /// The total number of vanilla NaturalResourcePrefabs in the game.
+    /// </summary>
 	MAX = 55
 }
 
+/// <summary>
+/// Extension methods for the NaturalResourcePrefabs enum to simplify getting and converting data to various types.
+/// </summary>
 public static class NaturalResourcePrefabsExtensions
 {
-	private static NaturalResourcePrefabs[] s_All = null;
+	/// <summary>
+	/// Returns an array of all vanilla and modded NaturalResourcePrefabs.
+	/// </summary>
 	public static NaturalResourcePrefabs[] All()
 	{
-		if (s_All == null)
-		{
-			s_All = new NaturalResourcePrefabs[55];
-			for (int i = 0; i < 55; i++)
-			{
-				s_All[i] = (NaturalResourcePrefabs)(i+1);
-			}
-		}
-		return s_All;
+		NaturalResourcePrefabs[] all = new NaturalResourcePrefabs[TypeToInternalName.Count];
+        TypeToInternalName.Keys.CopyTo(all, 0);
+        return all;
 	}
 	
 	/// <summary>
