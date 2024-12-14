@@ -63,7 +63,14 @@ public partial class WIKI
                             {
                                 if (pair.Value != ">Missing key<")
                                 {
-                                    locale[pair.Key] = CleanComment(pair.Value);
+                                    if (pair.Key == "name")
+                                    {
+                                        locale[pair.Key] = pair.Value;
+                                    }
+                                    else
+                                    {
+                                        locale[pair.Key] = CleanComment(pair.Value);
+                                    }
                                 }
                             }
                         }
