@@ -57,7 +57,7 @@ public partial class Plugin
         maskedTerrain.SetTerrainBaseTexture("terrainBase.png");
         maskedTerrain.SetTerrainOverlayTexture("terrainOverlay.png");
         maskedTerrain.SetTerrainCliffTexture("terrainCliff.png");
-        maskedTerrain.SetTerrainOverlayTexture("terrainBlend.png");
+        maskedTerrain.SetTerrainBlendTexture("terrainBlend.png");
 
         // Soil
         builder.SetSoilText(BiomeBuilder.SoilGrade.Small);
