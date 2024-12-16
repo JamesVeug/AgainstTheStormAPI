@@ -10,7 +10,6 @@ public partial class Plugin
     private void CreateDecorations()
     {
         var tinyHearth = new DecorationBuildingBuilder(PluginInfo.PLUGIN_GUID, "TinyHearth", "TinyHearth.png", DecorationTierTypes.Aesthetics);
-        tinyHearth.SetDefaultVisualIcon("TinyHearthDisplay.png");
         tinyHearth.SetDisplayName("Tiny Hearth");
         tinyHearth.SetLabel("Decorations");
         tinyHearth.AddRequiredGoods((9, GoodsTypes.Mat_Processed_Planks));
@@ -18,7 +17,6 @@ public partial class Plugin
         tinyHearth.SetCustomModel(TinyHearthAssetBundle.LoadAsset<GameObject>("TinyHearth"));
         
         var humanMaleDead = new DecorationBuildingBuilder(PluginInfo.PLUGIN_GUID, "HumanMaleDead", "HumanMaleDead.png", DecorationTierTypes.Harmony);
-        humanMaleDead.SetDefaultVisualIcon("HumanMaleDeadDisplay.png");
         humanMaleDead.SetDisplayName("Dead Human Male");
         humanMaleDead.SetLabel("Decorations");
         humanMaleDead.AddRequiredGoods((5, GoodsTypes.Food_Raw_Meat));
