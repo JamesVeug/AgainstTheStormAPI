@@ -158,6 +158,7 @@ public static class TextureHelper
     public static Sprite ConvertTexture(this Texture2D texture, SpriteType spriteType, FilterMode filterMode = FilterMode.Point)
     {
         texture.filterMode = filterMode;
+        
         Sprite retval = Sprite.Create(texture, SPRITE_RECTS[spriteType], SPRITE_PIVOTS[spriteType]);
         retval.name = texture.name;
         return retval;
@@ -186,8 +187,11 @@ public static class TextureHelper
     /// <returns>A sprite containing the image file on disk.</returns>
     public static Sprite GetImageAsSprite(string pathCardArt, SpriteType spriteType, FilterMode filterMode = FilterMode.Point)
     {
-        return GetImageAsTexture(pathCardArt).ConvertTexture(spriteType, filterMode);
+        Texture2D texture = GetImageAsTexture(pathCardArt);
+        VerifyTexture(texture, spriteType);
+        return texture.ConvertTexture(spriteType, filterMode);
     }
+
     /// <summary>
     /// Converts an artwork file stored as a resource in an assembly file to a Sprite that conforms to the expectations for the given sprite type.
     /// </summary>
@@ -198,7 +202,18 @@ public static class TextureHelper
     /// <returns>A sprite containing the image file from the assembly.</returns>
     public static Sprite GetImageAsSprite(string pathCardArt, Assembly target, SpriteType spriteType, FilterMode filterMode = FilterMode.Point)
     {
-        return GetImageAsTexture(pathCardArt, target).ConvertTexture(spriteType, filterMode);
+        Texture2D texture = GetImageAsTexture(pathCardArt, target);
+        VerifyTexture(texture, spriteType);
+        return texture.ConvertTexture(spriteType, filterMode);
+    }
+
+    private static void VerifyTexture(Texture2D texture, SpriteType spriteType)
+    {
+        Rect rect = SPRITE_RECTS[spriteType];
+        if (texture.width != rect.width || texture.height != rect.height)
+        {
+            Plugin.Log.LogWarning($"Texture dimensions for {texture.name} should be {rect.width}x{rect.height} but instead it is {texture.width}x{texture.height}.");
+        }
     }
 
     /// <summary>

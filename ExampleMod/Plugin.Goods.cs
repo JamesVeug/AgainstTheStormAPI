@@ -41,7 +41,7 @@ public partial class Plugin
         kiwiFruit.SetDisplayName("Kiwi Fruit");
         kiwiFruit.SetDisplayName("Киви", SystemLanguage.Russian);
         kiwiFruit.SetDescription("Sour and sweet fruit that's great for a snack. Eat with a spoon.");
-        kiwiFruit.SetDescription("Кислые и сладкие фрукты, которые отлично подходят для перекуса. Ешьте ложкой.");
+        kiwiFruit.SetDescription("Кислые и сладкие фрукты, которые отлично подходят для перекуса. Ешьте ложкой.", SystemLanguage.Russian);
         kiwiFruit.SetCategory("Food");
         kiwiFruit.SetTraderSellValue(2.5f);
         kiwiFruit.CanBeSoldToPlayer(30, 5.0f);

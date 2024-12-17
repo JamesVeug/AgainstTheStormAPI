@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ATS_API.Helpers;
 using ATS_API.Localization;
+using Eremite.Buildings;
 using Eremite.Model;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ namespace ATS_API.Decorations;
 
 public class DecorationTierBuilder
 {
+    public DecorationTier Model => newTier.Model;
+    public DecorationTierTypes ID => newTier.ID;
+    
     private readonly NewDecorationTier newTier;
     private readonly string guid;
     private readonly string rawName;
@@ -22,16 +26,25 @@ public class DecorationTierBuilder
         this.guid = guid;
     }
     
+    /// <summary>
+    /// 128x128 icon
+    /// </summary>
     public DecorationTierBuilder SetIcon(string iconImage)
     {
         return SetIcon(TextureHelper.GetImageAsSprite(iconImage, TextureHelper.SpriteType.DecorationTierIcon));
     }
 
+    /// <summary>
+    /// 128x128 icon
+    /// </summary>
     public DecorationTierBuilder SetIcon(Texture2D texture2D)
     {
         return SetIcon(texture2D.ConvertTexture(TextureHelper.SpriteType.DecorationTierIcon));
     }
     
+    /// <summary>
+    /// 128x128 icon
+    /// </summary>
     public DecorationTierBuilder SetIcon(Sprite sprite)
     {
         newTier.Model.icon = sprite;
