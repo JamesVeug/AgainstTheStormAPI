@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using ATS_API.Helpers;
 using Cysharp.Threading.Tasks;
+using Eremite;
 using UnityEngine;
 
 namespace ATS_API.SaveLoading;
@@ -12,7 +13,7 @@ public static partial class ModdedSaveManager
     internal static Dictionary<string, ModSaveData> ModGuidToDataLookup => m_ModSaveData;
     
     // %userprofile%\AppData\LocalLow\Eremite Games\Against the Storm\
-    public static readonly string PathToSaveFile = Path.Combine(Application.persistentDataPath);
+    public static string PathToSaveFile => SO.ProfilesService.GetProfileFolderPath();
 
     private static readonly Dictionary<string, ModSaveData> m_ModSaveData = new Dictionary<string, ModSaveData>();
 
