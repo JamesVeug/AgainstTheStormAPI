@@ -83,11 +83,6 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     /// <param name="args">The arguments defining the text source and effect index mappings.</param>
     public void SetDescriptionArgs(params (TextArgType type, int sourceIndex)[] args)
     {
-        if (args == null)
-        {
-            m_effectModel.formatDescription = false;
-            return;
-        }
         m_effectModel.formatDescription = true;
         m_effectModel.dynamicDescriptionArgs = args.ToTextArgArray();
     }
@@ -119,21 +114,12 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     /// This is not a text preview. But it usually used for the visual preview of a range in the scene.
     /// </summary>
     /// <param name="index">
-    /// A negative index indicates that the composite effect has no preview action. 
-    /// The preview action will be disabled.
-    /// A non-negative index specifies the sub-effect to be used as the composite effect's preview action.
+    /// index of sub-effect
     /// </param>
     public void SetNestedPreviewActionIndex(int index)
     {
-        if (index < 0)
-        {
-            m_effectModel.hasNestedPreview = false;
-        }
-        else
-        {
-            m_effectModel.hasNestedPreview = true;
-            m_effectModel.nestedPreviewIndex = index;
-        }
+        m_effectModel.hasNestedPreview = true;
+        m_effectModel.nestedPreviewIndex = index;
     }
 
     /// <summary>
@@ -141,21 +127,12 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     /// This text usually shows up as a suffix of the description text when it presents as an option in the cornerstone reward.
     /// </summary>
     /// <param name="index">
-    /// A negative index indicates that the composite effect has no retroactive preview. 
-    /// The retroactive preview will be disabled.
-    /// A non-negative index specifies the sub-effect to be used as the composite effect's retroactive preview.
+    /// index of sub-effect
     /// </param>
     public void SetNestedRetroactiveIndex(int index)
     {
-        if (index < 0)
-        {
-            m_effectModel.hasNestedRetroactivePreview = false;
-        }
-        else
-        {
-            m_effectModel.hasNestedRetroactivePreview = true;
-            m_effectModel.nestedRetroactivePreviewEffectIndex = index;
-        }
+        m_effectModel.hasNestedRetroactivePreview = true;
+        m_effectModel.nestedRetroactivePreviewEffectIndex = index;
     }
 
     /// <summary>
@@ -164,46 +141,29 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     /// It will show as a tooltip below the effect description.
     /// </summary>
     /// <param name="index">
-    /// A negative index indicates that the composite effect has no preview texts. 
-    /// The preview texts will be disabled.
-    /// A non-negative index specifies the sub-effect to be used as the composite effect's preview texts.
+    /// index of sub-effect
     /// </param>
     public void SetNestedPreviewIndex(int index)
     {
-        if (index < 0)
-        {
-            m_effectModel.hasNestedStatePreview = false;
-        }
-        else
-        {
-            m_effectModel.hasNestedStatePreview = true;
-            m_effectModel.nestedStatePreviewEffectIndex = index;
-        }
+        m_effectModel.hasNestedStatePreview = true;
+        m_effectModel.nestedStatePreviewEffectIndex = index;
     }
 
     /// <summary>
     /// Specifies which sub-effect's amount to be used for the composite effect amount.
     /// This impacts the result of <see cref="EffectModel.GetAmountText"/>
     /// It may also provide an additional visual text on the icon, like +5% or +1.
-    /// Note: If you invoke this with non-negative index, 
+    /// Note:
     /// it will automatically ignore the text setted in <see cref="SetAmountText"/>
     /// They are conflicted, only one of the method can be chosen for the amount text
     /// </summary>
     /// <param name="index">
-    /// A negative index indicates that the composite effect has no amount text.
-    /// A non-negative index specifies the sub-effect to be used as the composite effect's amount text.
+    /// index of sub-effect
     /// </param>
     public void SetNestedAmountIndex(int index)
     {
-        if (index < 0)
-        {
-            m_effectModel.hasNestedAmount = false;
-        }
-        else
-        {
-            m_effectModel.hasNestedAmount = true;
-            m_effectModel.nestedAmountEffectIndex = index;
-        }
+        m_effectModel.hasNestedAmount = true;
+        m_effectModel.nestedAmountEffectIndex = index;
     }
 
     /// <summary>
@@ -228,20 +188,12 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     /// This might be useful for some formatted texts.
     /// </summary>
     /// <param name="index">
-    /// A negative index indicates that the composite effect has no int amount.
-    /// A non-negative index specifies the sub-effect to be used as the composite effect's int amount.
+    /// index of sub-effect
     /// </param>
     public void SetNestedIntAmountIndex(int index)
     {
-        if (index < 0)
-        {
-            m_effectModel.hasNestedIntAmount = false;
-        }
-        else
-        {
-            m_effectModel.hasNestedIntAmount = true;
-            m_effectModel.nestedIntAmountEffectIndex = index;
-        }
+        m_effectModel.hasNestedIntAmount = true;
+        m_effectModel.nestedIntAmountEffectIndex = index;
     }
 
     /// <summary>
@@ -250,20 +202,12 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     /// This might be useful for some formatted texts.
     /// </summary>
     /// <param name="index">
-    /// A negative index indicates that the composite effect has no float amount.
-    /// A non-negative index specifies the sub-effect to be used as the composite effect's float amount.
+    /// index of sub-effect
     /// </param>
     public void SetNestedFloatAmountIndex(int index)
     {
-        if (index < 0)
-        {
-            m_effectModel.hasNestedFloatAmount = false;
-        }
-        else
-        {
-            m_effectModel.hasNestedFloatAmount = true;
-            m_effectModel.nestedFloatAmountEffectIndex = index;
-        }
+        m_effectModel.hasNestedFloatAmount = true;
+        m_effectModel.nestedFloatAmountEffectIndex = index;
     }
 
     /// <summary>
