@@ -108,7 +108,7 @@ public partial class Plugin
     {
         AggregateProductivityBuilder = new CompositeEffectBuilder(PluginInfo.PLUGIN_GUID, "AggregateProductivity", "ModdingTools.png"); //Need to change the image
         AggregateProductivityBuilder.SetPositive(true);
-        AggregateProductivityBuilder.SetRarity(EffectRarity.Epic);
+        AggregateProductivityBuilder.SetRarity(EffectRarity.Legendary);
         AggregateProductivityBuilder.SetObtainedAsCornerstone();
         AggregateProductivityBuilder.SetAvailableInAllBiomesAndSeasons();
         AggregateProductivityBuilder.SetDrawLimit(1);

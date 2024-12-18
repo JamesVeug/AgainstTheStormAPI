@@ -3,17 +3,23 @@ using Eremite.Model;
 using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Helpers;
+using System;
 
 namespace ATS_API.Effects;
 
 /// <summary>
 /// This will build <see cref="CompositeEffectModel"/>.
-/// <see cref="CompositeEffectModel"/> can hold multiple effects.
-/// When players obtain the composite effect, they will obtain all effects in the composite effect.
+/// A <see cref="CompositeEffectModel"/> can contain multiple effects.
+/// When players acquire the composite effect, they will receive all the individual effects contained within it.
 /// </summary>
 public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
 {
-
+    /// <summary>
+    /// Create with the basic information
+    /// </summary>
+    /// <param name="guid">Mod guid</param>
+    /// <param name="name">Effect program name</param>
+    /// <param name="iconPath">icon path</param>
     public CompositeEffectBuilder(string guid, string name, string iconPath) : base(guid, name, iconPath)
     {
         m_effectModel.anyNestedToFit = false;
@@ -67,13 +73,14 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     }
 
     /// <summary>
-    /// Set description args.
-    /// `TextArgType type` indicates the text source.
-    /// `int sourceIndex` indicates the index of source effect.
-    /// Each `(TextArgType type, int sourceIndex)` means
-    /// the {i_th} text is assigned with Effects[sourceIndex]'s corresponding value.
+    /// Sets the description arguments for the text effect.
+    /// The composite effect description comprises of text and amount information from its sub-effects. 
+    /// The <see cref="TextArgType"/> parameter specifies the source of the text from the sub-effect,
+    /// and the <see cref="int"/> parameter indicates the index of the source sub-effect.
+    /// Each tuple <c>(TextArgType type, int sourceIndex)</c> will assign the i-th text placeholder <c>{}</c>
+    /// to the corresponding value of <c>effects[sourceIndex]</c>, based on the specified text source defined by <see cref="TextArgType"/>.
     /// </summary>
-    /// <param name="args"></param>
+    /// <param name="args">The arguments defining the text source and effect index mappings.</param>
     public void SetDescriptionArgs(params (TextArgType type, int sourceIndex)[] args)
     {
         if (args == null)
@@ -85,6 +92,10 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
         m_effectModel.dynamicDescriptionArgs = args.ToTextArgArray();
     }
 
+    /// <summary>
+    /// Set description args.
+    /// </summary>
+    /// <param name="args"></param>
     public void SetDescriptionArgs(TextArg[] args)
     {
         m_effectModel.formatDescription = args != null;
@@ -103,6 +114,15 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
         m_effectModel.anyNestedToFit = value;
     }
 
+    /// <summary>
+    /// Specifies which sub-effect's preview action to be used for the composite effect preview action.
+    /// This is not a text preview. But it usually used for the visual preview of a range in the scene.
+    /// </summary>
+    /// <param name="index">
+    /// A negative index indicates that the composite effect has no preview action. 
+    /// The preview action will be disabled.
+    /// A non-negative index specifies the sub-effect to be used as the composite effect's preview action.
+    /// </param>
     public void SetNestedPreviewActionIndex(int index)
     {
         if (index < 0)
@@ -117,17 +137,15 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
     }
 
     /// <summary>
-    /// This indicates which effect we should use for the composite effect retroactive preview.
-    /// If you do not want to provide a retroactive nested preview,
-    /// pass a negative index to disable the preview like this: 
-    /// `SetNestedRetroactivePreviewIndex(-1);`
+    /// Specifies which sub-effect's retroactive preview to be used for the composite effect retroactive preview.
+    /// This text usually shows up as a suffix of the description text when it presents as an option in the cornerstone reward.
     /// </summary>
     /// <param name="index">
-    /// if the index is negative, it indicates the 
-    /// composite effect do not use retroactive preview. 
-    /// Otherwise the index indicates we use which sub-effect
-    /// as the composite effect retroactive preview </param>
-    public void SetNestedRetroactivePreviewIndex(int index)
+    /// A negative index indicates that the composite effect has no retroactive preview. 
+    /// The retroactive preview will be disabled.
+    /// A non-negative index specifies the sub-effect to be used as the composite effect's retroactive preview.
+    /// </param>
+    public void SetNestedRetroactiveIndex(int index)
     {
         if (index < 0)
         {
@@ -140,6 +158,16 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
         }
     }
 
+    /// <summary>
+    /// Specifies which sub-effect's preview texts to be used for the composite effect preview texts.
+    /// This text usually shows up when the player hover on the effect icon.
+    /// It will show as a tooltip below the effect description.
+    /// </summary>
+    /// <param name="index">
+    /// A negative index indicates that the composite effect has no preview texts. 
+    /// The preview texts will be disabled.
+    /// A non-negative index specifies the sub-effect to be used as the composite effect's preview texts.
+    /// </param>
     public void SetNestedPreviewIndex(int index)
     {
         if (index < 0)
@@ -153,6 +181,18 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
         }
     }
 
+    /// <summary>
+    /// Specifies which sub-effect's amount to be used for the composite effect amount.
+    /// This impacts the result of <see cref="EffectModel.GetAmountText"/>
+    /// It may also provide an additional visual text on the icon, like +5% or +1.
+    /// Note: If you invoke this with non-negative index, 
+    /// it will automatically ignore the text setted in <see cref="SetAmountText"/>
+    /// They are conflicted, only one of the method can be chosen for the amount text
+    /// </summary>
+    /// <param name="index">
+    /// A negative index indicates that the composite effect has no amount text.
+    /// A non-negative index specifies the sub-effect to be used as the composite effect's amount text.
+    /// </param>
     public void SetNestedAmountIndex(int index)
     {
         if (index < 0)
@@ -166,6 +206,31 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
         }
     }
 
+    /// <summary>
+    /// Assign a fixed text amount to the effect.
+    /// When you use this function, it will disable nested amount.
+    /// It is conflict with <see cref="SetNestedAmountIndex"/>, 
+    /// only one of the method can be chosen for the amount text.
+    /// This impacts the result of <see cref="EffectModel.GetAmountText"/>
+    /// It may also provide an additional visual text on the icon, like +5% or +1.
+    /// </summary>
+    /// <param name="text">
+    /// </param>
+    public void SetAmountText(string text)
+    {
+        m_effectModel.hasNestedAmount = false;
+        m_effectModel.amountText = text;
+    }
+
+    /// <summary>
+    /// Specifies which sub-effect's int amount to be used for the composite effect int amount.
+    /// This impacts the result of <see cref="EffectModel.GetIntAmount"/>
+    /// This might be useful for some formatted texts.
+    /// </summary>
+    /// <param name="index">
+    /// A negative index indicates that the composite effect has no int amount.
+    /// A non-negative index specifies the sub-effect to be used as the composite effect's int amount.
+    /// </param>
     public void SetNestedIntAmountIndex(int index)
     {
         if (index < 0)
@@ -179,6 +244,15 @@ public class CompositeEffectBuilder : EffectBuilder<CompositeEffectModel>
         }
     }
 
+    /// <summary>
+    /// Specifies which sub-effect's float amount to be used for the composite effect float amount.
+    /// This impacts the result of <see cref="EffectModel.GetFloatAmount"/>
+    /// This might be useful for some formatted texts.
+    /// </summary>
+    /// <param name="index">
+    /// A negative index indicates that the composite effect has no float amount.
+    /// A non-negative index specifies the sub-effect to be used as the composite effect's float amount.
+    /// </param>
     public void SetNestedFloatAmountIndex(int index)
     {
         if (index < 0)
