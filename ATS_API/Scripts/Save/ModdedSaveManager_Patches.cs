@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ATS_API.Helpers;
 using Cysharp.Threading.Tasks;
 using Eremite.Controller.Generator;
 using Eremite.Services;
@@ -57,6 +58,8 @@ public static partial class ModdedSaveManager
         {
             data.Value.CurrentCycle = new SaveData();
         }
+
+        EventBus.OnCycleEnded.Invoke();
     }
     
     [HarmonyPatch(typeof(GameLoader), nameof(GameLoader.StartNewGame))]
