@@ -1,4 +1,8 @@
-﻿using Eremite;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Eremite;
+using Eremite.Tools.Runtime;
 using QFSW.QC;
 using UnityEngine;
 
@@ -75,6 +79,29 @@ namespace ATS_API.Scripts.DeveloperConsole
             }
 
             return s_cachedQuantumConsole;
+        }
+        
+        public static void ExportAllCommands()
+        {
+            // Find all methods with Command attribute
+            var types = typeof(QuantumConsoleInputLocker).Assembly.GetTypes();
+            var methods = types.SelectMany(t => t.GetMethods())
+                .Where(m => m.GetCustomAttributes(typeof(CommandAttribute), false).Length > 0)
+                .SelectMany(m => m.GetCustomAttributes(typeof(CommandAttribute), false))
+                .Cast<CommandAttribute>()
+                .OrderBy(a=>a.Alias)
+                .ToArray();
+            
+            // Export all commands to a .table file
+            string path = Path.Combine(Plugin.ExportPath, "WIKI", "QuantumConsoleCommands.md");
+            List<string> keys = new List<string>() { "command", "description" };
+            MDFileTableBuilder tableBuilder = new MDFileTableBuilder(path, keys);
+            foreach (CommandAttribute commandAttribute in methods)
+            {
+                tableBuilder.AddData(commandAttribute.Alias, commandAttribute.Description);
+            }
+            tableBuilder.ExportAsFile();
+
         }
     }
 }

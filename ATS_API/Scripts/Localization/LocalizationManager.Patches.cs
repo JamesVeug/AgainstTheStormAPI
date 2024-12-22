@@ -36,6 +36,7 @@ public static partial class LocalizationManager
         if (Configs.ExportCSVs)
         {
             WIKI.ExportCSVs();
+            WIKI.ExportMDs();
         }
     }
 

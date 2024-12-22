@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ATS_API.Scripts.DeveloperConsole;
 using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
@@ -23,6 +24,13 @@ public partial class WIKI
         ExportRelicsAsCSV();
         ExportOrdersAsCSV();
         Plugin.Log.LogInfo("Exporting CSVs... Done!");
+    }
+
+    public static void ExportMDs()
+    {
+        Plugin.Log.LogInfo("Exporting MDs...");
+        DeveloperConsole.ExportAllCommands();
+        Plugin.Log.LogInfo("Exporting MDs... Done!");
     }
 
     private static void ExportOrdersAsCSV()
