@@ -29,6 +29,7 @@ public partial class WIKI
     public static void ExportMDs()
     {
         Plugin.Log.LogInfo("Exporting MDs...");
+        ExportEffectInfo();
         DeveloperConsole.ExportAllCommands();
         Plugin.Log.LogInfo("Exporting MDs... Done!");
     }
