@@ -106,7 +106,7 @@ public partial class Plugin
 
     private void CreateAggregateProductivityBuilder()
     {
-        AggregateProductivityBuilder = new CompositeEffectBuilder(PluginInfo.PLUGIN_GUID, "AggregateProductivity", "ModdingTools.png"); //Need to change the image
+        AggregateProductivityBuilder = new CompositeEffectBuilder(PluginInfo.PLUGIN_GUID, "AggregateProductivity", "AggregateProductivity.png");
         AggregateProductivityBuilder.SetPositive(true);
         AggregateProductivityBuilder.SetRarity(EffectRarity.Legendary);
         AggregateProductivityBuilder.SetObtainedAsCornerstone();
