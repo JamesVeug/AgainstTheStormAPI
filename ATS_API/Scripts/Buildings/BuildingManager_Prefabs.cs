@@ -18,6 +18,7 @@ public partial class BuildingManager
         public Vector3 unconstructedPosition;
         public Vector3 constructedPosition;
         
+        public ParticleSystem dustPrefab;
         public Vector2 buildingRising;
         public Vector2 scaffoldingDropping;
         public Vector2 dustRange;
@@ -27,36 +28,76 @@ public partial class BuildingManager
         public Vector2 scaffoldingRising;
     }
     
-    private static ScaffoldingData TileSize1x1ScaffoldingData => new ScaffoldingData
+    private static Dictionary<Vector2Int, BuildingTypes> SimpleConstructionAnimatorBuildings = new Dictionary<Vector2Int, BuildingTypes>
     {
-        maxSize = 1,
-        levels = 1,
-        
-        unconstructedPosition = new Vector3(0, -1, 0),
-        constructedPosition = new Vector3(0, 0, 0),
-        
-        buildingRising = new Vector2(0.3f, 0.8f),
-        scaffoldingDropping = new Vector2(0.8f, 1f),
-        dustRange = new Vector2(0.01f, 0.8f),
-        scaffoldingPosition = new Vector3(0f, -0.1f, 0f),
-        scaffoldingDroppedPosition = new Vector3(0f, -0.5f, 0f),
-        scaffoldingRising = new Vector2(0, 0.3f),
-        
-        ScaffoldingPrefab = BuildingTypes.Pipe.ToBuildingModel().Prefab.GetComponent<SimpleConstructionAnimator>().scaffoldingPrefab
+        { new Vector2Int(1, 1), BuildingTypes.Bank },
+        { new Vector2Int(2, 1), BuildingTypes.Lore_Tablet_1 },
+        { new Vector2Int(1, 2), BuildingTypes.Lore_Tablet_1 },
+        { new Vector2Int(2, 2), BuildingTypes.Rain_Totem_Positive },
+        { new Vector2Int(1, 3), BuildingTypes.Gate },
+        { new Vector2Int(3, 1), BuildingTypes.Gate },
+        { new Vector2Int(3, 3), BuildingTypes.Archaeology_Scorpion_Positive },
+        { new Vector2Int(4, 4), BuildingTypes.Fishmen_Lighthouse_Positive },
     };
     
-    private static ScaffoldingData TileSize2x2ScaffoldingData => new ScaffoldingData
+    private static Dictionary<Vector2Int, BuildingTypes> ScaffoldingConstructionAnimatorBuildings = new Dictionary<Vector2Int, BuildingTypes>
     {
-        maxSize = 2,
-        buildingRising = new Vector2(0.3f, 0.8f),
-        
-        unconstructedPosition = new Vector3(0, -3, 0),
-        constructedPosition = new Vector3(0, 0, 0),
-        levels = 3,
-        scaffoldingRising = new Vector2(0, 0.3f),
-        
-        ScaffoldingPrefab = BuildingTypes.Workshop.ToBuildingModel().Prefab.GetComponent<ScaffoldingConstructionAnimator>().scaffoldingPrefab
+        { new Vector2Int(1, 1), BuildingTypes.Blightrot_Clone },
+        { new Vector2Int(2, 1), BuildingTypes.RewardChest_T2 },
+        { new Vector2Int(1, 2), BuildingTypes.RewardChest_T2 },
+        { new Vector2Int(2, 2), BuildingTypes.Temporary_Engineering_Station },
+        { new Vector2Int(2, 3), BuildingTypes.Haunted_Ruined_Cooperage },
+        { new Vector2Int(3, 2), BuildingTypes.Haunted_Ruined_Cooperage },
+        { new Vector2Int(3, 3), BuildingTypes.Archeology_Office },
+        { new Vector2Int(3, 4), BuildingTypes.AncientTemple },
+        { new Vector2Int(4, 3), BuildingTypes.Feast_Hall_Funeral_Event_1 },
+        { new Vector2Int(4, 4), BuildingTypes.Biome_Perk_Crafter },
+        { new Vector2Int(5, 5), BuildingTypes.DebugNode_Marshlands_InfiniteMeat },
+        { new Vector2Int(6, 6), BuildingTypes.Seal_High_Diff },
     };
+    
+    private static ScaffoldingData CopySimpleConstructionAnimator(BuildingTypes types)
+    {
+        SimpleConstructionAnimator template = types.ToBuildingModel().Prefab.SafeGetComponent<SimpleConstructionAnimator>();
+        return new ScaffoldingData
+        {
+            maxSize = 1,
+            levels = 1,
+
+            unconstructedPosition = template.unconstructedPosition,
+            constructedPosition = template.constructedPosition,
+
+            buildingRising = template.buildingRising,
+            scaffoldingDropping = template.scaffoldingDropping,
+            dustPrefab = template.dustPrefab,
+            dustRange = template.dustRange,
+            scaffoldingPosition = template.scaffoldingPositon,
+            scaffoldingDroppedPosition = template.scaffoldingDroppedPositon,
+
+            ScaffoldingPrefab = template.scaffoldingPrefab
+        };
+    }
+    
+    private static ScaffoldingData CopyScaffoldingConstructionAnimator(BuildingTypes types)
+    {
+        ScaffoldingConstructionAnimator template = types.ToBuildingModel().Prefab.GetComponent<ScaffoldingConstructionAnimator>();
+        return new ScaffoldingData
+        {
+            maxSize = 2,
+
+            unconstructedPosition = new Vector3(0, -3, 0),
+            constructedPosition = new Vector3(0, 0, 0),
+            dustPrefab = template.dustPrefab,
+            
+            ScaffoldingPrefab = template.scaffoldingPrefab,
+            // ScaffoldingParent
+            levels = template.levels,
+
+            scaffoldingRising = template.scaffoldingRising,
+            scaffoldingDropping = template.scaffoldingDropping,
+            dustRange = template.dustRange,
+        };
+    }
 
     private static ConstructionAnimator AddScaffoldingConstructionAnimator(GameObject prefab, BuildingView view, ScaffoldingData scaffoldingData)
     {
@@ -104,6 +145,27 @@ public partial class BuildingManager
         return constructionAnimator;
     }  
     
+    private static ScaffoldingData GetScaffoldingData(int width, int height, bool simple)
+    {
+        Vector2Int size = new Vector2Int(width, height);
+        if (simple)
+        {
+            if (!SimpleConstructionAnimatorBuildings.TryGetValue(size, out BuildingTypes building))
+            {
+                building = SimpleConstructionAnimatorBuildings[new Vector2Int(1, 1)];
+            }
+            return CopySimpleConstructionAnimator(building);
+        }
+        else
+        {
+            if (!ScaffoldingConstructionAnimatorBuildings.TryGetValue(size, out BuildingTypes building))
+            {
+                building = ScaffoldingConstructionAnimatorBuildings[new Vector2Int(2, 2)];
+            }
+            return CopyScaffoldingConstructionAnimator(building);
+        }
+    }
+    
     
     /// <summary>
     /// NOTE: Only works for Workshop types atm
@@ -127,16 +189,17 @@ public partial class BuildingManager
         V view = prefab.AddComponent<V>();
         
         int maxTileSize = Mathf.Max(buildingModel.size.x, buildingModel.size.y);
-        ScaffoldingData scaffoldingData = maxTileSize == 1 ? TileSize1x1ScaffoldingData : TileSize2x2ScaffoldingData;
         
         // Plugin.Log.LogInfo($"Starting Scaffolding");
         ConstructionAnimator constructionAnimator = null;
         if (maxTileSize == 1)
         {
+            ScaffoldingData scaffoldingData = GetScaffoldingData(buildingModel.size.x, buildingModel.size.y, true);
             constructionAnimator = AddSimpleConstructionAnimator(prefab, view, scaffoldingData);
         }
         else
         {
+            ScaffoldingData scaffoldingData = GetScaffoldingData(buildingModel.size.x, buildingModel.size.y, false);
             constructionAnimator = AddScaffoldingConstructionAnimator(prefab, view, scaffoldingData);
         }
 

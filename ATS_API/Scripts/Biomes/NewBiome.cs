@@ -56,12 +56,6 @@ public class NewBiome : ASyncable<BiomeModel>
         public List<EffectTypes> GuaranteedEffects = new List<EffectTypes>();
         public List<WeightedEffectType> Effects = new List<WeightedEffectType>();
     }
-
-    public class StormFX
-    {
-        public Material RaindropMaterial;
-        public Texture2D RaindropTextureOverride;
-    }
     
     public BiomeModel biomeModel;
     public BiomeTypes id;
@@ -71,7 +65,7 @@ public class NewBiome : ASyncable<BiomeModel>
     public Texture2D worldMapTexture;
     public ACustomTerrain ACustomTerrain;
     
-    public StormFX stormFX = new StormFX();
+    public GameObject rainPrefab;
     public float soilAmount = 1f;
     
     public MetaCurrencyTypes baseMetaCurrency = MetaCurrencyTypes.Food_Stockpiles;

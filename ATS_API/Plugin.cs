@@ -15,6 +15,7 @@ using ATS_API.Needs;
 using ATS_API.Orders;
 using ATS_API.Races;
 using ATS_API.Recipes;
+using ATS_API.Scripts.DeveloperConsole;
 using ATS_API.Traders;
 using BepInEx;
 using BepInEx.Logging;
@@ -70,13 +71,8 @@ internal class Plugin : BaseUnityPlugin
         PrefabContainer = new GameObject("ATS_API_PrefabContainer").transform;
         PrefabContainer.SetParent(transform);
         PrefabContainer.SetActive(false);
-        
-        // Hotkeys.RegisterKey("Reset Trader", KeyCode.F1, () =>
-        // {
-        //     Logger.LogInfo($"Resetting trader!");
-        //     TradeService tradeService = (TradeService)GameMB.TradeService;
-        //     tradeService.Leave();
-        // });
+
+        DeveloperConsole.Initialize();
 
         AssetBundleHelper.TryLoadAssetBundleFromFile("ats_api", out ATS_API_Bundle);
         AssetBundleHelper.TryLoadAssetBundleFromFile("customterrain", out ATS_API_TerrainBundle);

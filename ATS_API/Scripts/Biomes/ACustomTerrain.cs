@@ -1,8 +1,10 @@
-﻿
-using System;
+﻿using System;
 using ATS_API.Helpers;
 using Eremite.Controller.Events;
+using Eremite.Services;
+using Eremite.View.Cameras;
 using Eremite.WorldMap;
+using HarmonyLib;
 using UnityEngine;
 
 namespace ATS_API.Biomes;
@@ -22,16 +24,23 @@ public abstract class ACustomTerrain
     }
 
     public abstract void Generate(BiomeModel biomeModel, Transform parent);
+
+    public virtual Material GetFogMaterial(Material gladesFog)
+    {
+        return gladesFog;
+    }
 }
 
 /// <summary>
 /// Loads a custom terrain for the biome
 /// The terrain uses a red/blue/green texture and blends textures over
 /// </summary>
+[HarmonyPatch]
 public class MaskedTerrain : ACustomTerrain
 {
     public Texture2D terrainBlendTexture = null;
     public Texture2D waterTexture;
+    public Texture2D fogTexture;
     
     public Texture2D terrainSeaBedTexture = Placeholders.BlackTexture;
     public Vector2 terrainSeaBedTextureUVSize = new Vector2(100, 100);
@@ -95,6 +104,11 @@ public class MaskedTerrain : ACustomTerrain
         waterTexture = TextureHelper.GetImageAsTexture(waterTexturePath);
     }
     
+    public void SetFogTexture(string fogTexturePath)
+    {
+        fogTexture = TextureHelper.GetImageAsTexture(fogTexturePath);
+    }
+    
     public override void Generate(BiomeModel biomeModel, Transform parent)
     {
         GameObject instantiate = GameObject.Instantiate((GameObject)prefab);
@@ -145,5 +159,35 @@ public class MaskedTerrain : ACustomTerrain
             waterMaterial.SetTexture("Texture2D_10557134404e44b38e6556f3c2d3fddb", waterTexture);
             meshRenderer.material = waterMaterial;
         }
+    }
+
+    public override Material GetFogMaterial(Material gladesFog)
+    {
+        if (fogTexture == null)
+        {
+            return gladesFog;
+        }
+        
+        Material newFogMaterial = new Material(gladesFog);
+        newFogMaterial.SetTexture("_Fog_Texture", fogTexture);
+        return newFogMaterial;
+    }
+
+    [HarmonyPatch(typeof(FogAnimator), nameof(FogAnimator.CreateMaterials))]
+    [HarmonyPostfix]
+    private static void Test(FogAnimator __instance)
+    {
+        BiomeTypes biomeTypes = Serviceable.StateService.Conditions.biomeName.ToBiomeTypes();
+        if (!BiomeManager.NewBiomeLookup.TryGetValue(biomeTypes, out NewBiome newBiome))
+        {
+            return;
+        }
+        
+        if (newBiome.ACustomTerrain == null)
+        {
+            return;
+        }
+
+        __instance.gladesFog = newBiome.ACustomTerrain.GetFogMaterial(__instance.gladesFog);
     }
 }
