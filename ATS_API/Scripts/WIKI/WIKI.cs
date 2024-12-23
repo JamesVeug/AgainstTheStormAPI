@@ -33,16 +33,17 @@ public partial class WIKI
         }
     }
 
-    public static void ExportWikiInformation()
+    public static void ExportEffectInfo()
     {
         Assembly assembly = typeof(HookLogic).Assembly;
-
-        // string effectTemplate =
-        //     File.ReadAllText(
-        //         "C:\\GitProjects\\ATS_API\\ATS_API\\Scripts\\Effects\\EffectFactory\\EffectFactory_Template.txt");
         
-        string s = "|Effect Name|Is Perk";
-        s += "\n|---|---|\n";
+        //
+        // All EffectModel types
+        //
+        
+        string effectsPath = Path.Combine(Plugin.ExportPath, "WIKI", "Effects.md");
+        List<string> effectsKeys = new List<string>(){"Type", "Is Perk"};
+        MDFileTableBuilder effectsBuilder = new MDFileTableBuilder(effectsPath, effectsKeys);
         foreach (Type type in assembly.GetTypes().Where(a => a.IsSubclassOf(typeof(EffectModel))).OrderBy(a=>a.Name))
         {
             if (type.IsAbstract) 
@@ -51,18 +52,25 @@ public partial class WIKI
             ScriptableObject scriptableObject = ScriptableObject.CreateInstance(type);
             PropertyInfo property = scriptableObject.GetType().GetProperty("IsPerk");
             bool isPerk = (bool)property.GetMethod.Invoke(scriptableObject, null);
-            s += "|" + type.Name + "|" + isPerk + "|\n";
+            effectsBuilder.AddData(type.Name, isPerk.ToString());
         }
-        // Instance.Logger.LogInfo($"EffectModels: {s}");
-        File.WriteAllText("C:\\GitProjects\\ATS_API\\ATS_API\\WIKI\\EFFECTS.md", s);
+        effectsBuilder.ExportAsFile();
         
-        s = "|Hook Name|";
-        s += "\n|---|\n";
+        
+        //
+        // All HookLogic types
+        //
+        
+        string hooksPath = Path.Combine(Plugin.ExportPath, "WIKI", "HookLogic.md");
+        List<string> hooksKeys = new List<string>(){"Type"};
+        MDFileTableBuilder hooksBuilder = new MDFileTableBuilder(hooksPath, hooksKeys);
         foreach (Type type in assembly.GetTypes().Where(a => a.IsSubclassOf(typeof(HookLogic))).OrderBy(a=>a.Name))
         {
-            s += "|" + type.Name + "|\n";
+            if (type.IsAbstract) 
+                continue;
+            
+            hooksBuilder.AddData(type.Name);
         }
-        // Instance.Logger.LogInfo($"HookLogics: {s}");
-        File.WriteAllText("C:\\GitProjects\\ATS_API\\ATS_API\\WIKI\\HOOKS.md", s);
+        hooksBuilder.ExportAsFile();
     }
 }
