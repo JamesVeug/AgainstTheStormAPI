@@ -1,3 +1,7 @@
+# 3.2.1
+- Fixed endless loading screen when leaving a game
+- Fixed endless loading screen when loading the world map with a missing biome.
+
 # 3.2.0
 ## Added
   - General
