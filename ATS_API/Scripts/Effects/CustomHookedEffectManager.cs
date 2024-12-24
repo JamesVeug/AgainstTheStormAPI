@@ -65,9 +65,9 @@ public class CustomHookedEffectManager
     [HarmonyPostfix]
     private static void HookedEffectsController_OnDestroy_PostPatch(HookedEffectsController __instance)
     {
-        foreach(IHookMonitor monitor in s_newHookLogics.Values )
+        foreach(var monitor in s_newHookLogics.Values )
         {
-            monitor.Dispose();
+            monitor.Monitor?.Dispose();
         }
     }
 

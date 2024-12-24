@@ -1,3 +1,10 @@
+# 3.2.0
+- Updated to API 3.2.0
+- Added more needs for the Axolotl (Thanks Cookiefox!)
+- Added new effect (Aggregate Productivity) (Thanks Forwindz!)
+- Fixed Dry Lands terrain broken
+- Fixed Kiwi Fruit showing in Russian when playing in english
+
 # 3.1.0
 - Added Tiny hearth decoration
 - Added Dead Male Human decoration
