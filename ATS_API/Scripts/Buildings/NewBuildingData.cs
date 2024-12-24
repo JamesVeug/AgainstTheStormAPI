@@ -29,6 +29,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public List<TagTypes> UsabilityTags = new List<TagTypes>();
     public List<BuildingTagTypes> Tags = new List<BuildingTagTypes>();
     public GameObject CustomPrefab;
+    public BuildingConstructionAnimationData BuildingConstructionAnimationData;
 
     public override bool Sync()
     {
@@ -154,7 +155,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             try
             {
                 Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
-                BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(root, workshopModel, VisualData.Icon, AnimHookType.Construction);
+                BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(root, workshopModel, VisualData.Icon, BuildingConstructionAnimationData, AnimHookType.Construction);
             } 
             catch (Exception e)
             {
@@ -217,7 +218,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             // Visuals
             try
             {
-                BuildingManager.InitializePrefab<House, HouseView, HouseModel>(root, houseModel, VisualData.Icon, AnimHookType.Construction);
+                BuildingManager.InitializePrefab<House, HouseView, HouseModel>(root, houseModel, VisualData.Icon, BuildingConstructionAnimationData, AnimHookType.Construction);
             }
             catch (Exception e)
             {
@@ -238,7 +239,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             // Visuals
             try
             {
-                BuildingManager.InitializePrefab<Decoration, DecorationView, DecorationModel>(root, decorationModel, VisualData.Icon, AnimHookType.Construction);
+                BuildingManager.InitializePrefab<Decoration, DecorationView, DecorationModel>(root, decorationModel, VisualData.Icon, BuildingConstructionAnimationData, AnimHookType.Construction);
             }
             catch (Exception e)
             {

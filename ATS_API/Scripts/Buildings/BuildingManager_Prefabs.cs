@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using ATS_API.Helpers;
 using Eremite.Buildings;
 using Eremite.MapObjects;
@@ -10,23 +11,6 @@ namespace ATS_API.Buildings;
 
 public partial class BuildingManager
 {
-    private class ScaffoldingData
-    {
-        public GameObject ScaffoldingPrefab { get; set; }
-        
-        public int maxSize;
-        public Vector3 unconstructedPosition;
-        public Vector3 constructedPosition;
-        
-        public ParticleSystem dustPrefab;
-        public Vector2 buildingRising;
-        public Vector2 scaffoldingDropping;
-        public Vector2 dustRange;
-        public Vector3 scaffoldingPosition;
-        public Vector2 scaffoldingDroppedPosition;
-        public int levels;
-        public Vector2 scaffoldingRising;
-    }
     
     private static Dictionary<Vector2Int, BuildingTypes> SimpleConstructionAnimatorBuildings = new Dictionary<Vector2Int, BuildingTypes>
     {
@@ -56,37 +40,39 @@ public partial class BuildingManager
         { new Vector2Int(6, 6), BuildingTypes.Seal_High_Diff },
     };
     
-    private static ScaffoldingData CopySimpleConstructionAnimator(BuildingTypes types)
+    private static BuildingConstructionAnimationData CopySimpleConstructionAnimator(BuildingTypes types)
     {
         SimpleConstructionAnimator template = types.ToBuildingModel().Prefab.SafeGetComponent<SimpleConstructionAnimator>();
-        return new ScaffoldingData
+        return new BuildingConstructionAnimationData
         {
-            maxSize = 1,
+            SimpleScaffolding = true,
             levels = 1,
 
             unconstructedPosition = template.unconstructedPosition,
             constructedPosition = template.constructedPosition,
+            dustPrefab = template.dustPrefab,
 
+            ScaffoldingPrefab = template.scaffoldingPrefab,
+            // ScaffoldingParent
+                
             buildingRising = template.buildingRising,
             scaffoldingDropping = template.scaffoldingDropping,
-            dustPrefab = template.dustPrefab,
             dustRange = template.dustRange,
             scaffoldingPosition = template.scaffoldingPositon,
             scaffoldingDroppedPosition = template.scaffoldingDroppedPositon,
 
-            ScaffoldingPrefab = template.scaffoldingPrefab
         };
     }
     
-    private static ScaffoldingData CopyScaffoldingConstructionAnimator(BuildingTypes types)
+    private static BuildingConstructionAnimationData CopyScaffoldingConstructionAnimator(BuildingTypes types)
     {
         ScaffoldingConstructionAnimator template = types.ToBuildingModel().Prefab.GetComponent<ScaffoldingConstructionAnimator>();
-        return new ScaffoldingData
+        return new BuildingConstructionAnimationData
         {
-            maxSize = 2,
-
-            unconstructedPosition = new Vector3(0, -3, 0),
-            constructedPosition = new Vector3(0, 0, 0),
+            SimpleScaffolding = false,
+            
+            unconstructedPosition = template.unconstructedPosition,
+            constructedPosition = template.constructedPosition,
             dustPrefab = template.dustPrefab,
             
             ScaffoldingPrefab = template.scaffoldingPrefab,
@@ -94,58 +80,69 @@ public partial class BuildingManager
             levels = template.levels,
 
             scaffoldingRising = template.scaffoldingRising,
+            buildingRising = template.buildingRising,
             scaffoldingDropping = template.scaffoldingDropping,
             dustRange = template.dustRange,
         };
     }
 
-    private static ConstructionAnimator AddScaffoldingConstructionAnimator(GameObject prefab, BuildingView view, ScaffoldingData scaffoldingData)
+    /// <summary>
+    /// Build the construction animator for the building
+    /// Assume ScaffoldData and all its fields are NOT null 
+    /// </summary>
+    [SuppressMessage("ReSharper", "PossibleInvalidOperationException")]
+    private static ConstructionAnimator AddScaffoldingConstructionAnimator(GameObject prefab, BuildingView view, BuildingConstructionAnimationData animationData)
     {
-        BuildingModel buildingModelTemplate = BuildingTypes.Workshop.ToBuildingModel();
-        Building buildingTemplate = buildingModelTemplate.Prefab;
-        
         var constructionAnimator = prefab.AddComponent<ScaffoldingConstructionAnimator>();
-        constructionAnimator.scaffoldingParent = Util.FindChildRecursive(prefab.transform, "ToRotate");
         view.constructionAnimator = constructionAnimator;
+
+        Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
+        constructionAnimator.buildingParent = toRotate.GetChild(0);
+        constructionAnimator.unconstructedPosition = animationData.unconstructedPosition.Value;
+        constructionAnimator.constructedPosition = animationData.constructedPosition.Value;
+        constructionAnimator.dustPrefab = animationData.dustPrefab;
         
-        constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer") ?? constructionAnimator.scaffoldingParent;
-        constructionAnimator.unconstructedPosition = scaffoldingData.unconstructedPosition;
-        constructionAnimator.constructedPosition = scaffoldingData.constructedPosition;
-        constructionAnimator.dustPrefab = buildingTemplate.GetComponent<ScaffoldingConstructionAnimator>().dustPrefab;
-        constructionAnimator.scaffoldingPrefab = scaffoldingData.ScaffoldingPrefab;
-        constructionAnimator.levels = scaffoldingData.levels;
-        constructionAnimator.scaffoldingRising = scaffoldingData.scaffoldingRising;
-        constructionAnimator.buildingRising = scaffoldingData.buildingRising;
-        constructionAnimator.scaffoldingDropping = scaffoldingData.scaffoldingDropping;
-        constructionAnimator.dustRange = scaffoldingData.dustRange;
+        constructionAnimator.scaffoldingPrefab = animationData.ScaffoldingPrefab;
+        constructionAnimator.scaffoldingParent = toRotate;
+        constructionAnimator.levels = animationData.levels.Value;
+        
+        constructionAnimator.scaffoldingRising = animationData.scaffoldingRising.Value;
+        constructionAnimator.buildingRising = animationData.buildingRising.Value;
+        constructionAnimator.scaffoldingDropping = animationData.scaffoldingDropping.Value;
+        constructionAnimator.dustRange = animationData.dustRange.Value;
         
         return constructionAnimator;
     }
     
-    private static ConstructionAnimator AddSimpleConstructionAnimator(GameObject prefab, BuildingView view, ScaffoldingData scaffoldingData)
+    /// <summary>
+    /// Build the construction animator for the building
+    /// Assume ScaffoldData and all its fields are NOT null 
+    /// </summary>
+    [SuppressMessage("ReSharper", "PossibleInvalidOperationException")]
+    private static ConstructionAnimator AddSimpleConstructionAnimator(GameObject prefab, BuildingView view, BuildingConstructionAnimationData animationData)
     {
-        BuildingModel buildingModelTemplate = BuildingTypes.Pipe.ToBuildingModel();
-        Building buildingTemplate = buildingModelTemplate.Prefab;
-        
         var constructionAnimator = prefab.AddComponent<SimpleConstructionAnimator>();
-        constructionAnimator.scaffoldingParent = Util.FindChildRecursive(prefab.transform, "ToRotate");
         view.constructionAnimator = constructionAnimator;
         
-        constructionAnimator.buildingParent = constructionAnimator.scaffoldingParent.Find("BuildingContainer") ?? constructionAnimator.scaffoldingParent;
-        constructionAnimator.unconstructedPosition = scaffoldingData.unconstructedPosition;
-        constructionAnimator.constructedPosition = scaffoldingData.constructedPosition;
-        constructionAnimator.dustPrefab = buildingTemplate.GetComponent<SimpleConstructionAnimator>().dustPrefab;
-        constructionAnimator.scaffoldingPrefab = scaffoldingData.ScaffoldingPrefab;
-        constructionAnimator.buildingRising = scaffoldingData.buildingRising;
-        constructionAnimator.scaffoldingDropping = scaffoldingData.scaffoldingDropping;
-        constructionAnimator.dustRange = scaffoldingData.dustRange;
-        constructionAnimator.scaffoldingPositon = scaffoldingData.scaffoldingPosition;
-        constructionAnimator.scaffoldingDroppedPositon = scaffoldingData.scaffoldingDroppedPosition;
+        Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
+        constructionAnimator.buildingParent = toRotate.GetChild(0);
+        constructionAnimator.unconstructedPosition = animationData.unconstructedPosition.Value;
+        constructionAnimator.constructedPosition = animationData.constructedPosition.Value;
+        constructionAnimator.dustPrefab = animationData.dustPrefab;
+        
+        constructionAnimator.scaffoldingPrefab = animationData.ScaffoldingPrefab;
+        constructionAnimator.scaffoldingParent = toRotate;
+        
+        constructionAnimator.buildingRising = animationData.buildingRising.Value;
+        constructionAnimator.scaffoldingDropping = animationData.scaffoldingDropping.Value;
+        constructionAnimator.dustRange = animationData.dustRange.Value;
+        constructionAnimator.scaffoldingPositon = animationData.scaffoldingPosition.Value;
+        constructionAnimator.scaffoldingDroppedPositon = animationData.scaffoldingDroppedPosition.Value;
         
         return constructionAnimator;
     }  
     
-    private static ScaffoldingData GetScaffoldingData(int width, int height, bool simple)
+    private static BuildingConstructionAnimationData GetScaffoldingData(int width, int height, bool simple)
     {
         Vector2Int size = new Vector2Int(width, height);
         if (simple)
@@ -170,7 +167,7 @@ public partial class BuildingManager
     /// <summary>
     /// NOTE: Only works for Workshop types atm
     /// </summary>
-    internal static void InitializePrefab<B, V, M>(GameObject prefab, M buildingModel, Sprite displayIcon, AnimHookType villagerAnimationType = AnimHookType.Construction)
+    internal static void InitializePrefab<B, V, M>(GameObject prefab, M buildingModel, Sprite displayIcon, BuildingConstructionAnimationData buildingConstructionAnimationData = null, AnimHookType villagerAnimationType = AnimHookType.Construction)
         where B : Building
         where V : BuildingView
         where M : BuildingModel
@@ -188,23 +185,13 @@ public partial class BuildingManager
         // Plugin.Log.LogInfo($"Starting View");
         V view = prefab.AddComponent<V>();
         
-        int maxTileSize = Mathf.Max(buildingModel.size.x, buildingModel.size.y);
-        
         // Plugin.Log.LogInfo($"Starting Scaffolding");
-        ConstructionAnimator constructionAnimator = null;
-        if (maxTileSize == 1)
-        {
-            ScaffoldingData scaffoldingData = GetScaffoldingData(buildingModel.size.x, buildingModel.size.y, true);
-            constructionAnimator = AddSimpleConstructionAnimator(prefab, view, scaffoldingData);
-        }
-        else
-        {
-            ScaffoldingData scaffoldingData = GetScaffoldingData(buildingModel.size.x, buildingModel.size.y, false);
-            constructionAnimator = AddScaffoldingConstructionAnimator(prefab, view, scaffoldingData);
-        }
+        ConstructionAnimator constructionAnimator = AddScaffolding(prefab, buildingModel, buildingConstructionAnimationData, view);
 
+        Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
+        
         // Plugin.Log.LogInfo($"Starting AnimationsHooks");
-        Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks", false);
+        Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks", true);
         if (animationsHooks != null)
         {
             // Plugin.Log.LogInfo($"Starting AnimationsHooks 2");
@@ -221,10 +208,38 @@ public partial class BuildingManager
             
             // Plugin.Log.LogInfo($"Starting AnimationsHooks 6");
             building.villagersPositioner.hooks = animationsHooks.GetComponentsInChildren<AnimationHook>();
+            if (building.villagersPositioner.hooks.Length == 0)
+            {
+                Plugin.Log.LogWarning($"No AnimationHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temp");
+                GameObject newAnimationHook = new GameObject("AnimationHook");
+                newAnimationHook.transform.SetParent(animationsHooks.transform);
+                newAnimationHook.transform.localPosition = Vector3.zero;
+                newAnimationHook.transform.localRotation = Quaternion.identity;
+                newAnimationHook.transform.localScale = Vector3.one;
+                AnimationHook hook = newAnimationHook.AddComponent<AnimationHook>();
+                hook.type = villagerAnimationType;
+                
+                building.villagersPositioner.hooks = newAnimationHook.GetComponentsInChildren<AnimationHook>();
+            }
+        }
+        else
+        {
+            Plugin.Log.LogError($"No AnimationsHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
+            GameObject newAnimationsHooks = new GameObject("AnimationsHooks");
+            newAnimationsHooks.transform.SetParent(toRotate.transform);
+            
+            GameObject newAnimationHook = new GameObject("AnimationHook");
+            newAnimationHook.transform.SetParent(newAnimationsHooks.transform);
+            newAnimationHook.transform.localPosition = Vector3.zero;
+            newAnimationHook.transform.localRotation = Quaternion.identity;
+            newAnimationHook.transform.localScale = Vector3.one;
+            AnimationHook hook = newAnimationHook.AddComponent<AnimationHook>();
+            hook.type = villagerAnimationType;
+            
+            building.villagersPositioner = newAnimationsHooks.AddComponent<VillagersPositioner>();
         }
 
 
-        Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
         Transform buildingContent = toRotate.GetChild(0);
         if (building is Camp camp)
         {
@@ -244,7 +259,7 @@ public partial class BuildingManager
         }
         else if (building is Workshop workshop)
         {
-            // Plugin.Log.LogInfo($"Starting workshop");
+            Plugin.Log.LogInfo($"{buildingModel.name} Starting workshop");
             workshop.productionStorage = prefab.AddComponent<BuildingStorage>();
             workshop.ingredientsStorage = prefab.AddComponent<BuildingIngredientsStorage>();
             workshop.model = buildingModel as WorkshopModel;
@@ -396,6 +411,49 @@ public partial class BuildingManager
         if (Util.TryFindChildRecursive(prefab.transform, "BuildingDisplayIcon", out SpriteRenderer renderer, false))
         {
             renderer.sprite = displayIcon;
+        }
+    }
+
+    private static ConstructionAnimator AddScaffolding(GameObject prefab, BuildingModel buildingModel, BuildingConstructionAnimationData buildingConstructionAnimationData, BuildingView view)
+    {
+        int maxTileSize = Mathf.Max(buildingModel.size.x, buildingModel.size.y);
+
+        // Get template data in case the data provdided is missing values
+        BuildingConstructionAnimationData templateData = null;
+        if (maxTileSize == 1)
+        {
+            if (!SimpleConstructionAnimatorBuildings.TryGetValue(buildingModel.size, out BuildingTypes building))
+            {
+                building = SimpleConstructionAnimatorBuildings[new Vector2Int(1, 1)];
+            }
+            templateData = CopySimpleConstructionAnimator(building);
+        }
+        else
+        {
+            if (!ScaffoldingConstructionAnimatorBuildings.TryGetValue(buildingModel.size, out BuildingTypes building))
+            {
+                building = ScaffoldingConstructionAnimatorBuildings[new Vector2Int(2, 2)];
+            }
+            templateData = CopyScaffoldingConstructionAnimator(building);
+        }
+
+        if (buildingConstructionAnimationData == null)
+        {
+            buildingConstructionAnimationData = templateData;
+        }
+        else
+        {
+            // Copy over nulls
+            buildingConstructionAnimationData.ReplaceNulls(templateData);
+        }
+
+        if (templateData.SimpleScaffolding.HasValue && templateData.SimpleScaffolding.Value)
+        {
+            return AddSimpleConstructionAnimator(prefab, view, buildingConstructionAnimationData);
+        }
+        else
+        {
+            return AddScaffoldingConstructionAnimator(prefab, view, buildingConstructionAnimationData);
         }
     }
 

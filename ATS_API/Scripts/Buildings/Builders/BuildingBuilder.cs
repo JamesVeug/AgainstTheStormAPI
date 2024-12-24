@@ -235,6 +235,11 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
         }
         m_buildingModel.footprintMap.fields = fields;
     }
+    
+    public void SetScaffoldingData(BuildingConstructionAnimationData data)
+    {
+        m_newData.BuildingConstructionAnimationData = data;
+    }
 }
 
 
