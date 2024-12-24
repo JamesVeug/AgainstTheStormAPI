@@ -39,8 +39,16 @@ public abstract class ACustomTerrain
 public class MaskedTerrain : ACustomTerrain
 {
     public Texture2D terrainBlendTexture = null;
+    
     public Texture2D waterTexture;
-    public Texture2D fogTexture;
+    public Vector2? texture1Speed;
+    public Vector2? texture2Speed;
+    public float? noiseSpeed;
+    public float? rippleSpeed;
+    private bool dirtyWater;
+    
+    public Texture2D fogBottomTexture;
+    public Texture2D fogTopTexture;
     
     public Texture2D terrainSeaBedTexture = Placeholders.BlackTexture;
     public Vector2 terrainSeaBedTextureUVSize = new Vector2(100, 100);
@@ -102,11 +110,22 @@ public class MaskedTerrain : ACustomTerrain
     public void SetWaterTexture(string waterTexturePath)
     {
         waterTexture = TextureHelper.GetImageAsTexture(waterTexturePath);
+        dirtyWater = true;
+    }
+
+    public void SetWaterSpeed(Vector2? texture1Speed=null, Vector2? texture2Speed=null, float? noiseSpeed=null, float? rippleSpeed=null)
+    {
+        this.texture1Speed = texture1Speed; 
+        this.texture2Speed = texture2Speed; 
+        this.noiseSpeed = noiseSpeed; 
+        this.rippleSpeed = rippleSpeed;
+        dirtyWater = true;
     }
     
-    public void SetFogTexture(string fogTexturePath)
+    public void SetFogTexture(string bottomTexture, string topTexture)
     {
-        fogTexture = TextureHelper.GetImageAsTexture(fogTexturePath);
+        fogBottomTexture = TextureHelper.GetImageAsTexture(bottomTexture);
+        fogTopTexture = TextureHelper.GetImageAsTexture(topTexture);
     }
     
     public override void Generate(BiomeModel biomeModel, Transform parent)
@@ -119,57 +138,72 @@ public class MaskedTerrain : ACustomTerrain
         Material material = instantiate.SafeGetComponent<MeshRenderer>().material;
         if(terrainBaseTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainBaseTexture for {biomeModel.name}");
             material.SetTexture("_RedTexture", terrainBaseTexture);
             material.SetVector("_RedTextureUV", terrainBaseTextureUVSize);
         }
         
         if(terrainOverlayTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainOverlayTexture for {biomeModel.name}");
             material.SetTexture("_GreenTexture", terrainOverlayTexture);
             material.SetVector("_GreenTextureUV", terrainOverlayTextureUVSize);
         }
         
         if(terrainCliffsTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainCliffsTexture for {biomeModel.name}");
             material.SetTexture("_BlueTexture", terrainCliffsTexture);
             material.SetVector("_BlueTextureUV", terrainCliffsTextureUVSize);
         }
         
         if(terrainSeaBedTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainSeaBedTexture for {biomeModel.name}");
             material.SetTexture("_BottomTexture", terrainSeaBedTexture);
             material.SetVector("_BottomTexture2D", terrainSeaBedTextureUVSize);
         }
         
         if(terrainBlendTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainBlendTexture for {biomeModel.name}");
             material.SetTexture("_BlendTexture", terrainBlendTexture);
         }
         
-        if(waterTexture != null)
+        if(dirtyWater)
         {
-            Plugin.Log.LogInfo($"Setting water texture for {biomeModel.name}");
             MeshRenderer meshRenderer = parent.SafeGetComponentInChildren<FloodController>(true).SafeGetComponent<MeshRenderer>();
             Material waterMaterial = new Material(meshRenderer.material);
-            waterMaterial.SetTexture("Texture2D_10557134404e44b38e6556f3c2d3fddb", waterTexture);
+            if (waterTexture != null)
+            {
+                waterMaterial.SetTexture("Texture2D_10557134404e44b38e6556f3c2d3fddb", waterTexture);
+            }
+            if (texture1Speed.HasValue)
+            {
+                waterMaterial.SetVector("Vector2_5f98e6e881f34829ae95d4c7a44671b9", texture1Speed.Value);
+            }
+            if (texture2Speed.HasValue)
+            {
+                waterMaterial.SetVector("Vector2_1", texture2Speed.Value);
+            }
+            if (noiseSpeed.HasValue)
+            {
+                waterMaterial.SetFloat("Vector1_df789418b15a49fca75f3a1795d5a046", noiseSpeed.Value);
+            }
+            if (rippleSpeed.HasValue)
+            {
+                waterMaterial.SetFloat("Vector1_3c3c63c5b95743d0bdcd385c02edb973", rippleSpeed.Value);
+            }
+
             meshRenderer.material = waterMaterial;
         }
     }
 
     public override Material GetFogMaterial(Material gladesFog)
     {
-        if (fogTexture == null)
+        if (fogTopTexture == null && fogBottomTexture == null)
         {
             return gladesFog;
         }
         
         Material newFogMaterial = new Material(gladesFog);
-        newFogMaterial.SetTexture("_Fog_Texture", fogTexture);
+        newFogMaterial.SetTexture("_Fog_Texture", fogBottomTexture == null ? gladesFog.GetTexture("_Fog_Texture") : fogBottomTexture);
+        // newFogMaterial.SetTexture("_MainTex", fogTopTexture == null ? gladesFog.GetTexture("_MainTex") : fogTopTexture);
         return newFogMaterial;
     }
 
