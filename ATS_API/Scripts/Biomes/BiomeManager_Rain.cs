@@ -4,6 +4,7 @@ using Eremite;
 using Eremite.Controller.Generator;
 using Eremite.Services;
 using Eremite.View.Cameras;
+using Eremite.View.Utils;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -50,6 +51,11 @@ public static partial class BiomeManager
             rain.transform.localScale = rainDrops.transform.localScale;
             rain.SetActive(true);
             rain.name = rainDrops.gameObject.name;
+            if (!rain.TryGetComponent(out ScreenParticleScaler _))
+            {
+                ScreenParticleScaler scaler = rain.AddComponent<ScreenParticleScaler>();
+                scaler.Reset(); // Assigns particleSystem to the particle field
+            }
             GameObject.Destroy(rainDrops.gameObject);
             Plugin.Log.LogInfo("Raindrops changed!");
         }

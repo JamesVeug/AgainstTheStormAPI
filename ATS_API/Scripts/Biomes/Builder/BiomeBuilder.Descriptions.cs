@@ -1,4 +1,5 @@
-﻿using ATS_API.Localization;
+﻿using System;
+using ATS_API.Localization;
 using Eremite.Model;
 using UnityEngine;
 
@@ -107,6 +108,7 @@ public partial class BiomeBuilder
     public BiomeBuilder SetTownDescriptionKey(LocaText locaText)
     {
         newModel.townDescription = locaText;
+        Plugin.Log.LogInfo("townDescription set to " + newModel.townDescription.key + "\n" + Environment.StackTrace);
         return this;
     }
 
