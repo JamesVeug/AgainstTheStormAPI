@@ -224,7 +224,7 @@ public partial class BuildingManager
         }
         else
         {
-            Plugin.Log.LogError($"No AnimationsHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
+            Plugin.Log.LogWarning($"No AnimationsHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
             GameObject newAnimationsHooks = new GameObject("AnimationsHooks");
             newAnimationsHooks.transform.SetParent(toRotate.transform);
             
@@ -259,7 +259,7 @@ public partial class BuildingManager
         }
         else if (building is Workshop workshop)
         {
-            Plugin.Log.LogInfo($"{buildingModel.name} Starting workshop");
+            // Plugin.Log.LogInfo($"{buildingModel.name} Starting workshop");
             workshop.productionStorage = prefab.AddComponent<BuildingStorage>();
             workshop.ingredientsStorage = prefab.AddComponent<BuildingIngredientsStorage>();
             workshop.model = buildingModel as WorkshopModel;

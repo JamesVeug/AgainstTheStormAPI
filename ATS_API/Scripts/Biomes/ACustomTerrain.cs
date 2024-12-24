@@ -138,41 +138,35 @@ public class MaskedTerrain : ACustomTerrain
         Material material = instantiate.SafeGetComponent<MeshRenderer>().material;
         if(terrainBaseTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainBaseTexture for {biomeModel.name}");
             material.SetTexture("_RedTexture", terrainBaseTexture);
             material.SetVector("_RedTextureUV", terrainBaseTextureUVSize);
         }
         
         if(terrainOverlayTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainOverlayTexture for {biomeModel.name}");
             material.SetTexture("_GreenTexture", terrainOverlayTexture);
             material.SetVector("_GreenTextureUV", terrainOverlayTextureUVSize);
         }
         
         if(terrainCliffsTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainCliffsTexture for {biomeModel.name}");
             material.SetTexture("_BlueTexture", terrainCliffsTexture);
             material.SetVector("_BlueTextureUV", terrainCliffsTextureUVSize);
         }
         
         if(terrainSeaBedTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainSeaBedTexture for {biomeModel.name}");
             material.SetTexture("_BottomTexture", terrainSeaBedTexture);
             material.SetVector("_BottomTexture2D", terrainSeaBedTextureUVSize);
         }
         
         if(terrainBlendTexture != null)
         {
-            Plugin.Log.LogInfo($"Setting terrainBlendTexture for {biomeModel.name}");
             material.SetTexture("_BlendTexture", terrainBlendTexture);
         }
         
         if(dirtyWater)
         {
-            Plugin.Log.LogInfo($"Changing water texture for {biomeModel.name}");
             MeshRenderer meshRenderer = parent.SafeGetComponentInChildren<FloodController>(true).SafeGetComponent<MeshRenderer>();
             Material waterMaterial = new Material(meshRenderer.material);
             if (waterTexture != null)
