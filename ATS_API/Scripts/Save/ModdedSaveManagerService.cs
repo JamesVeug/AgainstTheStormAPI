@@ -22,11 +22,32 @@ internal class ModdedSaveManagerService : Service
     public static ModdedSaveManagerService Instance { get; private set; }
 
     public static Dictionary<string, SafeAction<ModSaveData, SaveFileState>> LoadedSaveDataListeners = new();
+    public static Dictionary<string, SafeAction<ModSaveData>> ResetCycleSaveDataListeners = new();
+    public static Dictionary<string, SafeAction<ModSaveData>> ResetSettlementSaveDataListeners = new();
+    public static Dictionary<string, SafeAction<ModSaveData>> PreSaveSaveDataListeners = new();
     public static Dictionary<string, SafeFunc<ErrorData, UniTask<ModSaveData>>> ErrorHandlers = new();
     
     public override UniTask OnLoading()
     {
         return LoadAllSaves();
+    }
+
+    public static void InvokeModSaveDataListeners(Dictionary<string, SafeAction<ModSaveData>> dictionaryListeners)
+    {
+        foreach (KeyValuePair<string, SafeAction<ModSaveData>> pair in dictionaryListeners)
+        {
+            string modGUID = pair.Key;
+            SafeAction<ModSaveData> listeners = pair.Value;
+            ModSaveData data = ModdedSaveManager.ModGuidToDataLookup[modGUID];
+            listeners.Invoke(
+            data,
+                (Exception e) =>
+                {
+                    Plugin.Log.LogError($"Encounter error when try to invoke callback of {modGUID}");
+                    Plugin.Log.LogError(e);
+                    return true;
+                });
+        }
     }
 
     private async UniTask LoadAllSaves()
@@ -186,8 +207,29 @@ internal class ModdedSaveManagerService : Service
         return new IService[] { SO.Services.SavesIOService, SO.Services.TextsService };
     }
 
+    public async void SaveModdedData(string guid)
+    {
+        ModSaveData data = ModdedSaveManager.GetSaveData(guid);
+        if (PreSaveSaveDataListeners.TryGetValue(guid, out SafeAction<ModSaveData> listeners))
+        {
+            listeners.Invoke(
+                data,
+                    (Exception e) =>
+                    {
+                        Plugin.Log.LogError($"Encounter error when try to invoke callback of {guid}");
+                        Plugin.Log.LogError(e);
+                        return true;
+                    });
+        }
+        string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+        string fullFilePath = Path.Combine(ModdedSaveManager.PathToSaveFile, $"{CleanGuid(guid)}.moddedsave");
+        SaveFile(fullFilePath, json);
+        Plugin.Log.LogInfo($"Saved modded data for {guid}");
+    }
+
     public void SaveAllModdedData()
     {
+        InvokeModSaveDataListeners(PreSaveSaveDataListeners);
         foreach (KeyValuePair<string, ModSaveData> kvp in ModdedSaveManager.ModGuidToDataLookup)
         {
             string guid = kvp.Key;
