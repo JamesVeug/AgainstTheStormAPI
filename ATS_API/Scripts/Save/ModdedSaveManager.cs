@@ -42,6 +42,11 @@ public static partial class ModdedSaveManager
         ModdedSaveManagerService.Instance.SaveAllModdedData();
     }
 
+    public static void SaveModdedData(string guid)
+    {
+        ModdedSaveManagerService.Instance.SaveModdedData(guid);
+    }
+
     public static void ListenForLoadedSaveData(string guid, Action<ModSaveData, SaveFileState> callback)
     {
         if (!ModdedSaveManagerService.LoadedSaveDataListeners.TryGetValue(guid, out SafeAction<ModSaveData, SaveFileState> listeners))
@@ -60,7 +65,37 @@ public static partial class ModdedSaveManager
             listeners.RemoveListener(callback);
         }
     }
-    
+
+    public static void ListenForResetCycleSaveData(string guid, Action<ModSaveData> callback)
+    {
+        AddListener(guid, callback, ModdedSaveManagerService.ResetCycleSaveDataListeners);
+    }
+
+    public static void StopListeningForResetCycleSaveData(string guid, Action<ModSaveData> callback)
+    {
+        StopListener(guid, callback, ModdedSaveManagerService.ResetCycleSaveDataListeners);
+    }
+
+    public static void ListenForResetSettlementSaveData(string guid, Action<ModSaveData> callback)
+    {
+        AddListener(guid, callback, ModdedSaveManagerService.ResetSettlementSaveDataListeners);
+    }
+
+    public static void StopListeningForResetSettlementSaveData(string guid, Action<ModSaveData> callback)
+    {
+        StopListener(guid, callback, ModdedSaveManagerService.ResetSettlementSaveDataListeners);
+    }
+
+    public static void ListenForPreSaveSaveData(string guid, Action<ModSaveData> callback)
+    {
+        AddListener(guid, callback, ModdedSaveManagerService.PreSaveSaveDataListeners);
+    }
+
+    public static void StopListeningForPreSaveSaveData(string guid, Action<ModSaveData> callback)
+    {
+        StopListener(guid, callback, ModdedSaveManagerService.PreSaveSaveDataListeners);
+    }
+
     public static void AddErrorHandler(string guid, Func<ErrorData, UniTask<ModSaveData>> handler)
     {
         if (!ModdedSaveManagerService.ErrorHandlers.TryGetValue(guid, out SafeFunc<ErrorData, UniTask<ModSaveData>> handlers))
@@ -77,6 +112,25 @@ public static partial class ModdedSaveManager
         if (ModdedSaveManagerService.ErrorHandlers.TryGetValue(guid, out SafeFunc<ErrorData, UniTask<ModSaveData>> handlers))
         {
             handlers.RemoveListener(handler);
+        }
+    }
+
+    private static void AddListener(string guid, Action<ModSaveData> callback, Dictionary<string, SafeAction<ModSaveData>> eventCallbacks)
+    {
+        if (!eventCallbacks.TryGetValue(guid, out SafeAction<ModSaveData> listeners))
+        {
+            listeners = new SafeAction<ModSaveData>();
+            eventCallbacks[guid] = listeners;
+        }
+
+        listeners.AddListener(callback);
+    }
+
+    private static void StopListener(string guid, Action<ModSaveData> callback, Dictionary<string, SafeAction<ModSaveData>> eventCallbacks)
+    {
+        if (eventCallbacks.TryGetValue(guid, out SafeAction<ModSaveData> listeners))
+        {
+            listeners.RemoveListener(callback);
         }
     }
 }
