@@ -4,7 +4,8 @@ using Eremite.Model;
 using Eremite.Model.Effects;
 using Eremite.Model.Effects.Hooked;
 using UnityEngine;
-using TextArgType = Eremite.Model.Effects.Hooked.TextArgType;
+using HookedTextArgType = Eremite.Model.Effects.Hooked.TextArgType;
+using CompositeTextArgType = Eremite.Model.Effects.TextArgType; // note: these two TextArgType are different!
 
 namespace ExampleMod;
 
@@ -12,12 +13,14 @@ public partial class Plugin
 {
     public HookedEffectBuilder ModdingToolsBuilder;
     public HookedEffectBuilder DiamondHunterBuilder;
+    public CompositeEffectBuilder AggregateProductivityBuilder;
 
     private void CreateCornerstones()
     {
         CreateModdingToolsCornerstone();
         CreateGoodsRawProductionCornerstone();
         CreateGoodEveryYearProductionCornerstone();
+        CreateAggregateProductivityBuilder();
     }
 
     private void CreateModdingToolsCornerstone()
@@ -35,7 +38,7 @@ public partial class Plugin
                                 "Every {0} new Villagers gain +{1} Global Resolve.");
         
         
-        ModdingToolsBuilder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), (SourceType.HookedEffect, TextArgType.Amount, 0));
+        ModdingToolsBuilder.SetDescriptionArgs((SourceType.Hook, HookedTextArgType.Amount, 0), (SourceType.HookedEffect, HookedTextArgType.Amount, 0));
         ModdingToolsBuilder.SetPreviewDescription("+{0} Global Resolve");
         ModdingToolsBuilder.SetPreviewDescriptionArgs((HookedStateTextArg.HookedStateTextSource.TotalGainIntFromHooked, 0));
 
@@ -49,7 +52,7 @@ public partial class Plugin
         
         // Localization
         ModdingToolsBuilder.SetDisplayName("模组工具", SystemLanguage.ChineseSimplified);
-        ModdingToolsBuilder.SetDescription("模组制作者已经组装了新的工具，吸引了新的人才。每 {0} 个新村民获得 +{1} 全局决心。", SystemLanguage.ChineseSimplified);
+        ModdingToolsBuilder.SetDescription("模组制作者已经组装了新的工具，吸引了新的人才。每到来 {0} 个新村民会获得 +{1} 满意度。", SystemLanguage.ChineseSimplified);
         
         ModdingToolsBuilder.SetDisplayName("Outils de modding", SystemLanguage.French);
         ModdingToolsBuilder.SetDescription("Les moddeurs ont assemblé de nouveaux outils qui attirent de nouveaux talents. Chaque {0} nouveaux villageois gagnent +{1} de résolution globale.", SystemLanguage.French);
@@ -83,9 +86,13 @@ public partial class Plugin
         DiamondHunterBuilder.SetDisplayName("Diamond Hunter");
         DiamondHunterBuilder.SetDescription("You hire an obsessed miner that has a serious problem for hunting for diamonds. " +
                                "At the beginning of every {0} season gain +{1} {2}s");
-        DiamondHunterBuilder.SetDescriptionArgs((SourceType.Hook, TextArgType.Amount, 0), 
-            (SourceType.HookedEffect, TextArgType.Amount, 0), 
-            (SourceType.HookedEffect, TextArgType.DisplayName, 0));
+        DiamondHunterBuilder.SetDescriptionArgs((SourceType.Hook, HookedTextArgType.Amount, 0), 
+            (SourceType.HookedEffect, HookedTextArgType.Amount, 0), 
+            (SourceType.HookedEffect, HookedTextArgType.DisplayName, 0));
+
+        // The nested amount will show up on the icon
+        // It is also a good way to provide necessary amount information to your composite cornerstone.
+        DiamondHunterBuilder.SetNestedAmount(SourceType.HookedEffect, HookedTextArgType.Amount, 0);
 
         // Add last so if anything is missing it uses the main effects description/name/icon
         DiamondHunterBuilder.AddHook(HookFactory.OnNewSeason(SeasonTypes.Drizzle, 1));
@@ -95,5 +102,29 @@ public partial class Plugin
         giveDiamondEffect.SetDescription("A shiny gem that is used for crafting and trading.");
         giveDiamondEffect.SetGood(1, diamonds.Name);
         DiamondHunterBuilder.AddHookedEffect(giveDiamondEffect.EffectModel);
+    }
+
+    private void CreateAggregateProductivityBuilder()
+    {
+        AggregateProductivityBuilder = new CompositeEffectBuilder(PluginInfo.PLUGIN_GUID, "AggregateProductivity", "AggregateProductivity.png");
+        AggregateProductivityBuilder.SetPositive(true);
+        AggregateProductivityBuilder.SetRarity(EffectRarity.Legendary);
+        AggregateProductivityBuilder.SetObtainedAsCornerstone();
+        AggregateProductivityBuilder.SetAvailableInAllBiomesAndSeasons();
+        AggregateProductivityBuilder.SetDrawLimit(1);
+        AggregateProductivityBuilder.SetLabel("API");
+        AggregateProductivityBuilder.SetAnyNestedToFit(true);
+        AggregateProductivityBuilder.SetShowEffectAsPerks(false);
+
+        // Add two effects
+        AggregateProductivityBuilder.AddEffects([ModdingToolsBuilder.EffectModel, DiamondHunterBuilder.EffectModel]);
+
+        AggregateProductivityBuilder.SetDisplayName("Aggregate Productivity");
+        AggregateProductivityBuilder.SetDescription("Modders composite everything together. " +
+                                "{0} And you will obtain {1} mystery good bonus sometimes.");
+        // We use first effect's descrption for {0}, and second effect's GetAmount() for {1}.
+        AggregateProductivityBuilder.SetDescriptionArgs((CompositeTextArgType.Description, 0), (CompositeTextArgType.Amount, 1));
+        // Use the first effect's preview as preview text
+        AggregateProductivityBuilder.SetNestedPreviewIndex(0);
     }
 }
