@@ -202,7 +202,7 @@ public class MaskedTerrain : ACustomTerrain
 
     public override Material GetFogMaterial(Material gladesFog)
     {
-        if (fogTexture == null)
+        if (fogTopTexture == null && fogBottomTexture == null)
         {
             return gladesFog;
         }

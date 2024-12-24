@@ -158,7 +158,7 @@ public class NewBiome : ASyncable<BiomeModel>
         {
             // Add 1 map so we can apply changes to it when we instantiate it.
             // NOTE: Ideally we should have our own prefab of a map to randomize but this is a good start.
-            biomeModel.maps = new MapData[]{templateModel.maps[1]};
+            biomeModel.maps = new MapData[]{templateModel.maps.First(a=>a.name == "Forest Map 01")};
         }
         
         if(biomeModel.baseMetaCurrency == null)
