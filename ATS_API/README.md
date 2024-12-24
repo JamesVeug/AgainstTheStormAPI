@@ -5,10 +5,10 @@ It provides a number of useful functions for adding new things to the game in a 
 
 Against the Storm is a deeply complex game with tricky to navigate code for the average person. Also with the game being regular updated it's impossible to know what the devs will change in code which can result in your mod breaking and requiring you to manually fix and reupload it.
 
-The API works as an in-between of your mod and the game by supplying helper methods that create new content and insert it into the game accordingly. This means that if the game updates and breaks your mod, the API will be updated to fix it and require little to no support from your end. (fingers crossed)
 
 ![alt text](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/Github/CustomKeyBindings.png?raw=true "Custom Keybindings")
 ![alt text](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/Github/ModsTab.png?raw=true "Mods tab for adjustable values")
+![alt text](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/Github/ConsoleExample.png?raw=true "Developer Console available form the menu")
 
 
 ## How to install
@@ -57,6 +57,7 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 
 
 ## Support added for
+- Enabling the Developer Quantum Console within the options menu
 - New Goods (items that can be traded/sold, food & fuel)
 - New Perks/Cornerstones
 - New Traders
@@ -69,7 +70,7 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
 - New Races (Experimental)
 - New Difficulties
 - New MetaRewards (Goods and Effects when embarking)
-- New Biomes (Minimal)
+- New Biomes
 - Localization for all of the above
 - Custom Hotkeys (Saving and rebinding included)
 - Custom Save/Load system
@@ -85,10 +86,10 @@ If you'd like to help translate the text to your language please reach out on th
 
 ## Contributors
 - JamesGames
+- Forwindz
 
 
 ## Special Thanks
 - TelHurin (Eremite Games)
 - Shush
 - ElenaRoan
-- f⑨
