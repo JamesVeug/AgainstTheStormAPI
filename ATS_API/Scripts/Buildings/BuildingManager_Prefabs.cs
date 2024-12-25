@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using ATS_API.Helpers;
+using Eremite;
 using Eremite.Buildings;
 using Eremite.MapObjects;
 using Eremite.MapTools;
@@ -181,6 +182,17 @@ public partial class BuildingManager
         // Plugin.Log.LogInfo($"Starting Building");
         B building = prefab.AddComponent<B>();
         building.entrance = Util.FindChildRecursive(prefab.transform, "Entrance");
+        if (building.entrance == null)
+        {
+            Plugin.Log.LogWarning($"No entrance found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
+            GameObject newEntrance = new GameObject("Entrance");
+            newEntrance.transform.SetParent(prefab.transform);
+            newEntrance.transform.localPosition = new Vector3(0, 0, 0);
+            newEntrance.transform.localRotation = Quaternion.identity;
+            newEntrance.transform.localScale = new Vector3(1, 1, 1);
+            building.entrance = newEntrance.transform;
+        }
+        building.entrance.SetActive(false);
 
         // Plugin.Log.LogInfo($"Starting View");
         V view = prefab.AddComponent<V>();
@@ -278,24 +290,15 @@ public partial class BuildingManager
 
         // Plugin.Log.LogInfo($"Starting SpritesLayout");
         view.rotationParent = toRotate;
-        view.uiParent = GameObject.Instantiate(workshopTemplate.view.uiParent, prefab.transform).transform;
-        SpritesLayout layout = view.uiParent.gameObject.GetComponent<SpritesLayout>();
-        view.iconsLayout = layout;
-        // layout.padding = 0.2f;
-        // layout.iconSize = 0.7f;
-        // layout.elements = new GameObject[view.uiParent.childCount];
-        // int i = 0;
-        // foreach (Transform child in view.uiParent)
-        // {
-        //     layout.elements[i++] = child.gameObject;
-        // }
+        view.uiParent = SetUpUI<B, V, M>(building, buildingModel, toRotate, workshopTemplate, view);
+        
+        
 
         // Plugin.Log.LogInfo($"Starting icons");
         view.entranceIcon = Util.FindChildRecursive(view.rotationParent, "Entrance").gameObject;
         view.noBuildersIcon = Util.FindChildRecursive(view.uiParent, "NoBuildersIcon").gameObject;
         view.sleepingIcon = Util.FindChildRecursive(view.uiParent, "SleepingIcon").gameObject;
         view.noGoodsIcon = Util.FindChildRecursive(view.uiParent, "NoGoodsIcon").gameObject;
-        view.iconsLayout = layout;
 
         // Plugin.Log.LogInfo($"Starting panelBackgroundSound");
         view.panelBackgroundSound = buildingTemplate.BuildingView.panelBackgroundSound; // TODO: Customize
@@ -412,6 +415,50 @@ public partial class BuildingManager
         {
             renderer.sprite = displayIcon;
         }
+    }
+
+    private static Transform SetUpUI<B, V, M>(B building, M buildingModel, Transform toRotate,
+        Workshop workshopTemplate, V view) 
+        where B : Building 
+        where V : BuildingView 
+        where M : BuildingModel
+    {
+        Transform ui = GameObject.Instantiate(workshopTemplate.view.uiParent, building.transform).transform;
+        float x = buildingModel.size.x * 0.5f;
+        float y = 1.7f;
+        float z = buildingModel.size.y * 0.5f;
+        ui.localPosition = new Vector3(x, y, z);
+        
+        SpritesLayout layout = ui.gameObject.GetComponent<SpritesLayout>();
+        view.iconsLayout = layout;
+        
+        Transform entranceIcon = building.entrance.FindChild("Icon", false);
+        if (entranceIcon == null)
+        {
+            Transform icon = workshopTemplate.entrance.FindChild("Icon");
+            if (icon != null)
+            {
+                GameObject newIcon = GameObject.Instantiate(icon.gameObject, building.entrance);
+                newIcon.transform.localPosition = new Vector3(0, 0, 0);
+                newIcon.transform.localRotation = Quaternion.Euler(90, 0, -90);
+                newIcon.transform.localScale = new Vector3(1.45f, 1.25f, 1f);
+                newIcon.SetActive(true);
+                Plugin.Log.LogInfo("Clone entrance icon: " + newIcon.FullName());
+            }
+            else
+            {
+                Plugin.Log.LogWarning(
+                    $"No entrance icon found for building {buildingModel.name} and prefab {workshopTemplate.name}! Adding temporary!");
+            }
+        }
+
+        // Plugin.Log.LogInfo($"Starting icons");
+        view.entranceIcon = Util.FindChildRecursive(view.rotationParent, "Entrance").gameObject;
+        view.noBuildersIcon = Util.FindChildRecursive(ui, "NoBuildersIcon").gameObject;
+        view.sleepingIcon = Util.FindChildRecursive(ui, "SleepingIcon").gameObject;
+        view.noGoodsIcon = Util.FindChildRecursive(ui, "NoGoodsIcon").gameObject;
+
+        return ui;
     }
 
     private static ConstructionAnimator AddScaffolding(GameObject prefab, BuildingModel buildingModel, BuildingConstructionAnimationData buildingConstructionAnimationData, BuildingView view)
