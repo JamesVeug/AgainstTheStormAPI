@@ -46,6 +46,7 @@ internal class Plugin : BaseUnityPlugin
     public static Plugin Instance;
     public static ManualLogSource Log;
     private Harmony harmony;
+    public static Logger LoggerTemp;
     
     internal static AssetBundle ATS_API_Bundle;
     internal static AssetBundle ATS_API_TerrainBundle;
@@ -58,6 +59,7 @@ internal class Plugin : BaseUnityPlugin
         
         Instance = this;
         Log = Logger;
+        LoggerTemp = new Logger(Logger);
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
         
         PluginDirectory = Info.Location.Replace("API.dll", "");
