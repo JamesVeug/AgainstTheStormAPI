@@ -13,6 +13,12 @@ public static class Keys
     public static readonly string Close_Key = "Common_Close"; // Close
     public static readonly string Yes_Key = "Common_Close"; // Yes
     
+    // Other Against the storm keys
+    public static readonly string BiomeEffect = "Label_BiomeEffect"; // Biome Effect
+    public static readonly string Decoration = "Label_BuildingDisplayLabel_Decoration"; // Decoration
+    public static readonly string House = "Label_BuildingDisplayLabel_House"; // House
+    public static readonly string ProductionBuilding = "Label_BuildingDisplayLabel_ProductionBuilding"; // Production Building
+    
     // API constants
     public static readonly string GUID = "API_GUID"; // GUID
     public static readonly string Dependencies = "API_Dependencies"; // Dependencies

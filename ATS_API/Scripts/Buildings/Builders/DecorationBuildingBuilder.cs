@@ -1,4 +1,5 @@
 ﻿using ATS_API.Helpers;
+using ATS_API.Localization;
 using Eremite.Buildings;
 using UnityEngine;
 
@@ -30,6 +31,7 @@ public class DecorationBuildingBuilder : BuildingBuilder<DecorationModel>
         m_newData.MetaData = metaData;
         m_newData.Category = BuildingCategoriesTypes.Decorations;
         
+        m_buildingModel.displayLabel = Keys.Decoration.ToLabelModel();
         m_buildingModel.levels = [];
         m_buildingModel.forceOwnConstructionGoods = true;
         m_buildingModel.hasDecorationTier = true;

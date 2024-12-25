@@ -85,6 +85,11 @@ public partial class EffectBuilder<T> : IEffectBuilder where T : EffectModel
     {
         m_effectModel.label = LocalizationManager.ToLabelModel(m_guid, m_name, "label", labelModel, systemLanguage);
     }
+    
+    public void SetLabelKey(string key)
+    {
+        m_effectModel.label = key.ToLabelModel();
+    }
 
     public void SetDisplayName(string displayName, SystemLanguage systemLanguage = SystemLanguage.English)
     {

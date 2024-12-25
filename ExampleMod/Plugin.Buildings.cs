@@ -22,7 +22,6 @@ public partial class Plugin
         house.SetDefaultVisualIcon("TestBuildingDisplayIcon.png");
         house.SetDisplayName("SkyScraper");
         house.SetDescription("A tall building to house many people that need to be close to their work. Has to be built near a Hearth. Can house 9 residents.");
-        house.SetLabel("Housing");
         house.SetAllHousingRaces();
         house.AddServedNeeds(NeedTypes.Any_Housing);
         house.AddRequiredGoods((8, GoodsTypes.Mat_Processed_Planks));
@@ -34,7 +33,6 @@ public partial class Plugin
         axolotlHouse.SetDefaultVisualIcon("AxolotlHouseDisplayIcon.png");
         axolotlHouse.SetDisplayName("Axolotl House");
         axolotlHouse.SetDescription("Building specifically made for Axolotls. Has to be built near a Hearth. Can house 2 residents.");
-        axolotlHouse.SetLabel("Housing");
         axolotlHouse.AddServedNeeds(NeedTypes.Any_Housing);
         axolotlHouse.AddRequiredGoods((2, GoodsTypes.Mat_Processed_Fabric), (2, GoodsTypes.Mat_Raw_Stone));
     }
@@ -45,7 +43,6 @@ public partial class Plugin
         burgerJoint.SetCustomModel(ExampleModAssetBundle.LoadAsset<GameObject>("BorgorKing"));
         burgerJoint.SetDisplayName("Borgor King");
         burgerJoint.SetDescription("The best Borgors in town!");
-        burgerJoint.SetLabel("Fast Food");
         burgerJoint.SetMoveCost(1, GoodsTypes.Valuable_Amber); // optional
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
