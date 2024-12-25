@@ -178,9 +178,6 @@ public partial class BuildingManager
         {
             return;
         }
-        Logger.Assert(buildingModelTemplate != null, "Building model template is null!");
-        Logger.Assert(buildingTemplate != null, "Building template is null!");
-        Logger.Assert(blightCyst != null, "blightCyst is null!");
 
         // Plugin.Log.LogInfo($"Starting Building");
         B building = prefab.AddComponent<B>();
@@ -480,13 +477,6 @@ public partial class BuildingManager
         where V : BuildingView 
         where M : BuildingModel
     {
-        Logger.Assert(building != null, "building is null!");
-        Logger.Assert(buildingModel != null, "buildingModel is null!");
-        Logger.Assert(workshopTemplate != null, "workshopTemplate is null!");
-        Logger.Assert(view != null, "view is null!");
-        Logger.Assert(animationData != null, "animationData is null!");
-        
-        
         Transform ui = GameObject.Instantiate(workshopTemplate.BuildingView.uiParent, building.transform).transform;
         float x = buildingModel.size.x * 0.5f;
         float y = Mathf.Abs(animationData.unconstructedPosition.Value.y); // unconstructedPosition should never be null! 
