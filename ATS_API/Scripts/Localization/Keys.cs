@@ -18,6 +18,8 @@ public static class Keys
     public static readonly string Decoration = "Label_BuildingDisplayLabel_Decoration"; // Decoration
     public static readonly string House = "Label_BuildingDisplayLabel_House"; // House
     public static readonly string ProductionBuilding = "Label_BuildingDisplayLabel_ProductionBuilding"; // Production Building
+    public static readonly string WorldMapModifier = "Label_MapModifier"; // World Map Modifier
+    public static readonly string Perk = "Label_Reward_Perk"; // Perk
     
     // API constants
     public static readonly string GUID = "API_GUID"; // GUID
