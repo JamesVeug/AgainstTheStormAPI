@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Biomes;
 using ATS_API.Helpers;
 using Eremite;
@@ -36,9 +37,7 @@ public static partial class EffectManager
     public static NewEffectData CreateEffect<T>(string guid, string name) where T : EffectModel
     {
         T data = ScriptableObject.CreateInstance<T>();
-        data.name = guid + "_" + name;
-        
-        return AddEffect(guid, data.name, data, null);
+        return AddEffect(guid, name, data, null);
     }
 
     public static bool GetOrCreateEffect<T>(string guid, string name, out NewEffectData effect) where T : EffectModel
@@ -57,14 +56,14 @@ public static partial class EffectManager
     public static NewResolveEffectData CreateResolveEffect<T>(string guid, string name) where T : ResolveEffectModel
     {
         T data = ScriptableObject.CreateInstance<T>();
-        data.name = guid + "_" + name;
         return AddResolveEffect(guid, name, data);
     }
 
     public static NewEffectData AddEffect<T>(string guid, string name, T model, Availability availability) where T : EffectModel
     {
         s_dirty = true;
-        
+        model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newEffects.Any(a=>a.EffectModel.name == model.name), $"Adding Effect with name {model.name} that already exists!");
         
         EffectTypes id = GUIDManager.Get<EffectTypes>(guid, name);
         EffectTypesExtensions.TypeToInternalName[id] = model.name;
@@ -85,6 +84,8 @@ public static partial class EffectManager
     public static NewResolveEffectData AddResolveEffect(string guid, string name, ResolveEffectModel model)
     {
         s_dirty = true;
+        model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newResolveEffects.Any(a=>a.Model.name == model.name), $"Adding ResolveEffect with name {model.name} that already exists!");
         
         ResolveEffectTypes id = GUIDManager.Get<ResolveEffectTypes>(guid, name);
         ResolveEffectTypesExtensions.TypeToInternalName[id] = model.name;

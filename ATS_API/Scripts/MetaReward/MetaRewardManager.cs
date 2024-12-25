@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -32,6 +33,7 @@ public partial class MetaRewardManager
     public static NewMetaRewardData Add(string guid, string name, MetaRewardModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newMetaRewards.Any(a=>a.Model.name == model.name), $"Adding MetaRewardModel with name {model.name} that already exists!");
         
         MetaRewardTypes id = GUIDManager.Get<MetaRewardTypes>(guid, name);
         MetaRewardTypesExtensions.TypeToInternalName[id] = model.name;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
@@ -45,7 +46,6 @@ public partial class BuildingManager
     public static NewBuildingData CreateBuilding<T>(string guid, string name, BuildingBehaviourTypes behaviour) where T : BuildingModel
     {
         T data = ScriptableObject.CreateInstance<T>();
-        data.name = guid + "_" + name;
         
         NewBuildingData newBuilding = AddBuilding(guid, name, data, behaviour);
         
@@ -59,6 +59,8 @@ public partial class BuildingManager
     public static NewBuildingData AddBuilding<T>(string guid, string name, T model, BuildingBehaviourTypes behaviour) where T : BuildingModel
     {
         s_dirty = true;
+        model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newBuildings.Any(a=>a.BuildingModel.name == model.name), $"Adding Building with name {model.name} that already exists!");
 
         BuildingTypes id = GUIDManager.Get<BuildingTypes>(guid, name);
         BuildingTypesExtensions.TypeToInternalName[id] = model.name;
@@ -90,6 +92,9 @@ public partial class BuildingManager
         BuildingTagTypes id = GUIDManager.Get<BuildingTagTypes>(guid, name);
         BuildingTagTypesExtensions.TypeToInternalName[id] = tag.name;
         NewBuildingTagModel newTag = new NewBuildingTagModel(id, tag);
+        
+        
+        APILogger.IsFalse(s_newBuildingTags.Any(a=>a.Model.name == tag.name), $"Adding BuildingTag with name {tag.name} that already exists!");
         s_newBuildingTags.Add(newTag);
         
         s_dirty = true;

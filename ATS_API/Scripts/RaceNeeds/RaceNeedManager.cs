@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -29,6 +30,8 @@ public static class RaceNeedManager
     private static CustomRaceNeed Add(string guid, string name, NeedModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_NewRaceNeeds.Any(a=>a.NeedModel.name == model.name), $"Adding RaceNeed with name {model.name} that already exists!");
+        
         NeedTypes id = GUIDManager.Get<NeedTypes>(guid, name);
         NeedTypesExtensions.TypeToInternalName[id] = model.name;
         CustomRaceNeed customRaceTrader = new CustomRaceNeed()

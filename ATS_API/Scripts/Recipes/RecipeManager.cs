@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
@@ -25,19 +26,18 @@ public static partial class RecipeManager
     public static INewRecipeData CreateRecipe<T>(string guid, string name) where T : RecipeModel
     {
         T data = ScriptableObject.CreateInstance<T>();
-        data.name = guid + "_" + name;
-        
-        return AddRecipe(guid, data.name, data);
+        return AddRecipe(guid, name, data);
     }
     
     public static INewRecipeData AddRecipe<T>(string guid, string name, T model) where T : RecipeModel
     {
         s_dirty = true;
-
+        model.name = guid + "_" + name;
 
         INewRecipeData data = null;
         if (model is WorkshopRecipeModel workshopRecipeModel)
         {
+            APILogger.IsFalse(s_newWorkshopRecipes.Any(a=>a.RecipeModel.name == model.name), $"Adding WorkshopRecipeModel with name {model.name} that already exists!");
             var item = new NewWorkshopRecipeData()
             {
                 Guid = guid,
@@ -53,11 +53,14 @@ public static partial class RecipeManager
                 Name = name,
                 RecipeModel = model,
             };
+            
+            APILogger.IsFalse(s_newRecipes.Any(a=>a.RecipeModel.name == model.name), $"Adding RecipeModel with name {model.name} that already exists!");
             s_newRecipes.Add(basicItem);
             data = item;
         }
         else
         {
+            APILogger.IsFalse(s_newRecipes.Any(a=>a.RecipeModel.name == model.name), $"Adding RecipeModel with name {model.name} that already exists!");
             var item = new NewRecipeData()
             {
                 Guid = guid,

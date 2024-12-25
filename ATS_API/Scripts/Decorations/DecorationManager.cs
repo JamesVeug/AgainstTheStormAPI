@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
@@ -31,6 +32,7 @@ public static class DecorationManager
     public static NewDecorationTier AddDecorationTier(string guid, string name, DecorationTier decorationTier)
     {
         decorationTier.name = guid + "_" + name;
+        APILogger.IsFalse(s_NewDecorationTiers.Any(a=>a.Model.name == decorationTier.name), $"Adding DecorationTier with name {decorationTier.name} that already exists!");
         
         DecorationTierTypes id = GUIDManager.Get<DecorationTierTypes>(guid, name);
         DecorationTierTypesExtensions.TypeToInternalName[id] = decorationTier.name;

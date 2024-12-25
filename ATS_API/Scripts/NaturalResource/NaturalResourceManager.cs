@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -60,6 +61,7 @@ public static class NaturalResourceManager
     public static NewNaturalResource Add(string guid, string name, NaturalResourceModel NaturalResourceModel)
     {
         NaturalResourceModel.name = guid + "_" + name;
+        APILogger.IsFalse(s_newNaturalResource.Any(a=>a.Model.name == NaturalResourceModel.name), $"Adding NaturalResource with name {NaturalResourceModel.name} that already exists!");
         
         NaturalResourceTypes id = GUIDManager.Get<NaturalResourceTypes>(guid, name);
         NaturalResourceTypesExtensions.TypeToInternalName[id] = NaturalResourceModel.name;

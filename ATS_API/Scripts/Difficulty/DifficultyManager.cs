@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -32,6 +33,7 @@ public static class DifficultyManager
     public static NewDifficulty Add(string guid, string name, DifficultyModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newDifficulties.Any(a=>a.difficultyModel.name == model.name), $"Adding DecorationTier with name {model.name} that already exists!");
         
         DifficultyTypes id = GUIDManager.Get<DifficultyTypes>(guid, name);
         DifficultyTypesExtensions.TypeToInternalName[id] = model.name;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Biomes;
 using ATS_API.Goods;
 using ATS_API.Helpers;
@@ -35,6 +36,8 @@ public static partial class TraderManager
     private static CustomTrader Add(string guid, string name, TraderModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newTraders.Any(a=>a.TraderModel.name == model.name), $"Adding TraderModel with name {model.name} that already exists!");
+        
         TraderTypes id = GUIDManager.Get<TraderTypes>(guid, name);
         CustomTrader customTrader = new CustomTrader()
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -72,6 +73,8 @@ public static class RaceManager
     private static NewRaceData Add(string guid, string name, RaceModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newRaces.Any(a=>a.RaceModel.name == model.name), $"Adding Race with name {model.name} that already exists!");
+        
         RaceTypes id = GUIDManager.Get<RaceTypes>(guid, name);
         RaceTypesExtensions.TypeToInternalName[id] = model.name;
         NewRaceData newTrader = new NewRaceData()
