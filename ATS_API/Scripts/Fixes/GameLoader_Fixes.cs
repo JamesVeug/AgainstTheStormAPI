@@ -50,11 +50,11 @@ internal class GameLoader_Fixes
                 else if(EffectManager.PreviouslyNamedAs.TryGetValue(pair.Key, out string newKey))
                 {
                     clone.Add(newKey, pair.Value);
-                    Plugin.Log.LogError($"Found missing resolve effect: {pair.Key} when loading save! Replacing with {newKey}");
+                    APILogger.LogError($"Found missing resolve effect: {pair.Key} when loading save! Replacing with {newKey}");
                 }
                 else
                 {
-                    Plugin.Log.LogError($"Found missing resolve effect: {pair.Key} when loading save! Removing from state.");
+                    APILogger.LogError($"Found missing resolve effect: {pair.Key} when loading save! Removing from state.");
                 }
             }
             
@@ -66,19 +66,19 @@ internal class GameLoader_Fixes
         {
             if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, perkName))
             {
-                Plugin.Log.LogError($"Found missing perk: {perkName} when loading save! Removing from state.");
+                APILogger.LogError($"Found missing perk: {perkName} when loading save! Removing from state.");
                 __instance.state.effects.perks.Remove(perkName);
             }
         }
 
         // Remove all effects
-        Plugin.Log.LogInfo("Removing all effects from state.");
+        APILogger.LogInfo("Removing all effects from state.");
         for (var i = __instance.state.hookedEffects.activeEffects.Count - 1; i >= 0; i--)
         {
             var activeEffect = __instance.state.hookedEffects.activeEffects[i];
             if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.model))
             {
-                Plugin.Log.LogError($"Found missing active effect: {activeEffect.model} when loading save! Removing from state.");
+                APILogger.LogError($"Found missing active effect: {activeEffect.model} when loading save! Removing from state.");
                 __instance.state.hookedEffects.activeEffects.RemoveAt(i);
             }
         }
@@ -87,7 +87,7 @@ internal class GameLoader_Fixes
             var activeEffect = __instance.state.hookedEffects.toAdd[i];
             if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.model))
             {
-                Plugin.Log.LogError($"Found missing toAdd effect: {activeEffect.model} when loading save! Removing from state.");
+                APILogger.LogError($"Found missing toAdd effect: {activeEffect.model} when loading save! Removing from state.");
                 __instance.state.hookedEffects.toAdd.RemoveAt(i);
             }
         }
@@ -96,7 +96,7 @@ internal class GameLoader_Fixes
             var activeEffect = __instance.state.hookedEffects.toRemove[i];
             if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.Key))
             {
-                Plugin.Log.LogError($"Found missing toRemove effect: {activeEffect.Key} when loading save! Removing from state.");
+                APILogger.LogError($"Found missing toRemove effect: {activeEffect.Key} when loading save! Removing from state.");
                 __instance.state.hookedEffects.toRemove.RemoveAt(i);
             }
         }
@@ -106,7 +106,7 @@ internal class GameLoader_Fixes
         {
             if (!__instance.state.actors.currentRacesResolve.TryGetValue(race.name, out _))
             {
-                Plugin.Log.LogWarning($"New race {race.name} has been added to existing save. Setting resolve to 0.");
+                APILogger.LogWarning($"New race {race.name} has been added to existing save. Setting resolve to 0.");
                 __instance.state.actors.currentRacesResolve[race.name] = 0;
             }
         }

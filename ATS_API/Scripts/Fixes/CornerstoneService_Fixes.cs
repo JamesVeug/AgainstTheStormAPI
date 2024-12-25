@@ -46,7 +46,7 @@ internal class CornerstoneService_Fixes
     {
         if (model != null)
         {
-            Plugin.Log.LogInfo($"??? SeasonRewardModel is not null: {model}");
+            APILogger.LogInfo($"??? SeasonRewardModel is not null: {model}");
             return model;
         }
 
@@ -68,7 +68,7 @@ internal class CornerstoneService_Fixes
 
         // TODO: Be more clever about how we get the reward. This is only an issue on the first cornerstones of the game
         SeasonRewardModel seasonRewardModel = rewards[0];
-        Plugin.Log.LogInfo($"\"??? Replaced null SeasonRewardModel with null?: {seasonRewardModel == null}");
+        APILogger.LogInfo($"\"??? Replaced null SeasonRewardModel with null?: {seasonRewardModel == null}");
         return seasonRewardModel;
     }
 }

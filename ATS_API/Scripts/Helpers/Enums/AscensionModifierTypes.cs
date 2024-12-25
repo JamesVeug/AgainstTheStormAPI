@@ -212,7 +212,7 @@ public static class AscensionModifierTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of AscensionModifierTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of AscensionModifierTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[AscensionModifierTypes.Additional_Impatience_For_Death];
 	}
 	
@@ -231,7 +231,7 @@ public static class AscensionModifierTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find AscensionModifierTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find AscensionModifierTypes with name: " + name + "\n" + Environment.StackTrace);
 		return AscensionModifierTypes.Unknown;
 	}
 	
@@ -249,7 +249,7 @@ public static class AscensionModifierTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find AscensionModifierModel for AscensionModifierTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find AscensionModifierModel for AscensionModifierTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

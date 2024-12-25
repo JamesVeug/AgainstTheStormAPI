@@ -26,7 +26,7 @@ public static partial class LocalizationManager
         if (Configs.ExportEnumTypes )
         {
             string csExportPath = Plugin.ExportPath;
-            Plugin.Log.LogMessage($"Exporting enums to {csExportPath}");
+            APILogger.LogInfo($"Exporting enums to {csExportPath}");
             
             WIKI.CreateAllEnumTypes(Path.Combine(csExportPath, "Enums"));
             WIKI.CreateAllPrefabEnumTypes(Path.Combine(csExportPath, "Enums"));
@@ -44,7 +44,7 @@ public static partial class LocalizationManager
     [HarmonyPostfix]
     private static void PostChangeLanguage(string language)
     {
-        Plugin.Log.LogMessage($"Changed language to {language}");
+        APILogger.LogInfo($"Changed language to {language}");
         SystemLanguage systemLanguage = CodeToLanguage(language);
         foreach (KeyValuePair<string,Dictionary<SystemLanguage,string>> pair in s_newStrings)
         {
@@ -59,13 +59,13 @@ public static partial class LocalizationManager
             string configLanguageCode = configLanguage.code;
             if (!IsLanguageCodeSupported(configLanguage.code))
             {
-                Plugin.Log.LogWarning($"Language {configLanguageCode} is not supported by the API");
+                APILogger.LogWarning($"Language {configLanguageCode} is not supported by the API");
             }
 
             string culture = configLanguage.culture;
             if (!IsCultureCodeSupported(culture))
             {
-                Plugin.Log.LogWarning($"Culture {culture} is not supported by the API");
+                APILogger.LogWarning($"Culture {culture} is not supported by the API");
             }
         }
 
@@ -73,12 +73,12 @@ public static partial class LocalizationManager
         {
             if (!__instance.Config.languages.Any(x => x.code == languageData.Code))
             {
-                Plugin.Log.LogWarning($"Language with culture code {languageData.CultureCode} is not present in the game with its code");
+                APILogger.LogWarning($"Language with culture code {languageData.CultureCode} is not present in the game with its code");
             }
 
             if (!__instance.Config.languages.Any(x => x.culture == languageData.CultureCode))
             {
-                Plugin.Log.LogWarning($"Language with CultureCode {languageData.CultureCode} is not present in the game with its culture code");
+                APILogger.LogWarning($"Language with CultureCode {languageData.CultureCode} is not present in the game with its culture code");
             }
         }
     }

@@ -254,7 +254,7 @@ public class GoodsBuilder
     /// <param name="amount">How much will be rewarded if kept</param>
     public void AddRelicKeepRewardChance(int chance, int amount)
     {
-        Assert.IsTrue(chance >= 1 && chance <= 100, "Relic Chance Chance must be between 1 and 100!");
+        APILogger.IsTrue(chance >= 1 && chance <= 100, "Relic Chance Chance must be between 1 and 100!");
         string effectName = name + "_RelicKeepEffect_" + (newModel.RelicRewards.Count + 1);
         var effect = CreateGoodEffect<GoodsEffectModel>(guid, effectName, newModel.goodModel, amount, out _);
         
@@ -265,7 +265,7 @@ public class GoodsBuilder
         {
             RelicGoodEffect = tableEntity,
         });
-        Plugin.Log.LogInfo($"Effect {effectName} created");
+        APILogger.LogInfo($"Effect {effectName} created");
     }
 
     public static T CreateGoodEffect<T>(string guid, string name, GoodModel goodModel, int gainAmount, out NewEffectData effect) where T : GoodsEffectModel

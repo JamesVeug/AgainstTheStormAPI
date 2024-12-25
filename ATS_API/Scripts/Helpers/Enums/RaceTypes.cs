@@ -94,7 +94,7 @@ public static class RaceTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of RaceTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of RaceTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[RaceTypes.Beaver];
 	}
 	
@@ -113,7 +113,7 @@ public static class RaceTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find RaceTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find RaceTypes with name: " + name + "\n" + Environment.StackTrace);
 		return RaceTypes.Unknown;
 	}
 	
@@ -131,7 +131,7 @@ public static class RaceTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find RaceModel for RaceTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find RaceModel for RaceTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

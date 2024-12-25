@@ -28,7 +28,7 @@ public partial class WIKI
     
     public static void DumpGoodsToJSON(GoodModel[] effectModels, string key)
     {
-        Plugin.Log.LogInfo($"Exporting {effectModels.Length} goods to JSON.");
+        APILogger.LogInfo($"Exporting {effectModels.Length} goods to JSON.");
         foreach (var model in effectModels)
         {
             try
@@ -74,12 +74,12 @@ public partial class WIKI
                 // Write to file
                 File.WriteAllText(path, json.JSON);
 
-                Plugin.Log.LogInfo($"Exported {model.Name}'s SubObjects {json.SubObjects.Count} to JSON.");
+                APILogger.LogInfo($"Exported {model.Name}'s SubObjects {json.SubObjects.Count} to JSON.");
                 foreach (JSONSerializer.UnityObjectConverter.SubObjects subObject in json.SubObjects)
                 {
                     string subPath = Path.Combine(Plugin.PluginDirectory, "Exports", "Assets",
                         model.name + "_" + subObject.Path);
-                    Plugin.Log.LogInfo($"- {subPath}");
+                    APILogger.LogInfo($"- {subPath}");
 
                     // Create directory if it doesn't exist
                     string subDirectory = Path.GetDirectoryName(subPath);
@@ -96,15 +96,15 @@ public partial class WIKI
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError("Failed to dump good to JSON: " + model.Name);
-                Plugin.Log.LogError(e);
+                APILogger.LogError("Failed to dump good to JSON: " + model.Name);
+                APILogger.LogError(e);
             }
         }
     }
 
     public static void DumpEffectsJSON<T>(T[] effectModels, string key, Func<T, string> nameGetter) where T : Object
     {
-        Plugin.Log.LogInfo($"Exporting {effectModels.Length} goods to JSON.");
+        APILogger.LogInfo($"Exporting {effectModels.Length} goods to JSON.");
         foreach (var model in effectModels)
         {
             string modelName = nameGetter.Invoke(model);
@@ -123,11 +123,11 @@ public partial class WIKI
                 // Write to file
                 File.WriteAllText(path, json.JSON);
                     
-                Plugin.Log.LogInfo($"Exported {modelName}'s SubObjects {json.SubObjects.Count} to JSON.");
+                APILogger.LogInfo($"Exported {modelName}'s SubObjects {json.SubObjects.Count} to JSON.");
                 foreach (JSONSerializer.UnityObjectConverter.SubObjects subObject in json.SubObjects)
                 {
                     string subPath = Path.Combine(Plugin.PluginDirectory, "Exports", "Assets", modelName + "_" + subObject.Path);
-                    Plugin.Log.LogInfo($"- {subPath}");
+                    APILogger.LogInfo($"- {subPath}");
                         
                     // Create directory if it doesn't exist
                     string subDirectory = Path.GetDirectoryName(subPath);
@@ -144,8 +144,8 @@ public partial class WIKI
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError("Failed to dump good to JSON: " + model.name + " " + modelName);
-                Plugin.Log.LogError(e);
+                APILogger.LogError("Failed to dump good to JSON: " + model.name + " " + modelName);
+                APILogger.LogError(e);
             }
         }
     }

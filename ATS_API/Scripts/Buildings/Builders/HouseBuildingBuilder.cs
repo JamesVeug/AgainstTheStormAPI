@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ATS_API.Helpers;
+using ATS_API.Localization;
 using Eremite.Buildings;
 
 
@@ -30,6 +31,7 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
         m_newData.MetaData = metaData;
         m_newData.Category = BuildingCategoriesTypes.Housing;
         
+        m_buildingModel.displayLabel = Keys.House.ToLabelModel();
         m_buildingModel.housingPlaces = housingPlaces;
         m_buildingModel.level = 2;
         m_buildingModel.levels = [];

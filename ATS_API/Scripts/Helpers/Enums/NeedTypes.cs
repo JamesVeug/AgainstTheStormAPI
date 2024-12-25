@@ -190,7 +190,7 @@ public static class NeedTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of NeedTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of NeedTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[NeedTypes.Any_Housing];
 	}
 	
@@ -209,7 +209,7 @@ public static class NeedTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find NeedTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find NeedTypes with name: " + name + "\n" + Environment.StackTrace);
 		return NeedTypes.Unknown;
 	}
 	
@@ -227,7 +227,7 @@ public static class NeedTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find NeedModel for NeedTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find NeedModel for NeedTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

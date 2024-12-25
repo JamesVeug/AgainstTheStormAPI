@@ -18,7 +18,6 @@ using ATS_API.Recipes;
 using ATS_API.Scripts.DeveloperConsole;
 using ATS_API.Traders;
 using BepInEx;
-using BepInEx.Logging;
 using HarmonyLib;
 using Eremite;
 using Eremite.Buildings;
@@ -44,7 +43,6 @@ internal class Plugin : BaseUnityPlugin
     }
         
     public static Plugin Instance;
-    public static ManualLogSource Log;
     private Harmony harmony;
     
     internal static AssetBundle ATS_API_Bundle;
@@ -54,16 +52,16 @@ internal class Plugin : BaseUnityPlugin
 
     private void Awake()
     {
+        APILogger.logger = Logger;
         Logger.LogInfo($"Against the Storm v{Application.version}");
         
         Instance = this;
-        Log = Logger;
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
         
         PluginDirectory = Info.Location.Replace("API.dll", "");
 
         string expectedUnityVersion = "2021.3.27f1";
-        Assert.IsEqual(Application.unityVersion, expectedUnityVersion, $"The Unity Version has changed! Expected: {expectedUnityVersion}, Got: {Application.unityVersion}");
+        APILogger.IsEqual(Application.unityVersion, expectedUnityVersion, $"The Unity Version has changed! Expected: {expectedUnityVersion}, Got: {Application.unityVersion}");
 
         // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
         gameObject.hideFlags = HideFlags.HideAndDontSave;

@@ -157,12 +157,12 @@ public static class JSONSerializer
     
     private static void Error(object sender, ErrorEventArgs e)
     {
-        Plugin.Log.LogError(e.ErrorContext.Error.Message);
+        APILogger.LogError(e.ErrorContext.Error.Message);
     }
         
     public static void DumpPerksToJSON<T>(T[] effectModels, string key) where T : SO
     {
-        Plugin.Log.LogInfo($"Exporting {effectModels.Length} to JSON.");
+        APILogger.LogInfo($"Exporting {effectModels.Length} to JSON.");
         foreach (var model in effectModels)
         {
             try
@@ -180,11 +180,11 @@ public static class JSONSerializer
                 // Write to file
                 File.WriteAllText(path, json.JSON);
                     
-                Plugin.Log.LogInfo($"Exported {model.Name}'s SubObjects {json.SubObjects.Count} to JSON.");
+                APILogger.LogInfo($"Exported {model.Name}'s SubObjects {json.SubObjects.Count} to JSON.");
                 foreach (JSONSerializer.UnityObjectConverter.SubObjects subObject in json.SubObjects)
                 {
                     string subPath = Path.Combine(Plugin.PluginDirectory, "Exports", "Assets", model.name + "_" + subObject.Path);
-                    Plugin.Log.LogInfo($"- {subPath}");
+                    APILogger.LogInfo($"- {subPath}");
                         
                     // Create directory if it doesn't exist
                     string subDirectory = Path.GetDirectoryName(subPath);
@@ -201,8 +201,8 @@ public static class JSONSerializer
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError("Failed to dump good to JSON: " + model.Name);
-                Plugin.Log.LogError(e);
+                APILogger.LogError("Failed to dump good to JSON: " + model.Name);
+                APILogger.LogError(e);
             }
         }
     }

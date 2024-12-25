@@ -68,7 +68,7 @@ internal class ModdedSaveManagerService : Service
                     ModSaveData saveData = (ModSaveData)saveDataJObject.ToObject(typeof(ModSaveData));
                     ModdedSaveManager.ModGuidToDataLookup[guid] = saveData;
                     dataLoaded = true;
-                    Plugin.Log.LogInfo($"Loaded save file {saveFilePath}");
+                    APILogger.LogInfo($"Loaded save file {saveFilePath}");
                     
                     // Tell any listeners (the mod) that we loaded the data
                     // If the listener throws an exception handle that too
@@ -84,8 +84,8 @@ internal class ModdedSaveManagerService : Service
                     
                     // Something went wrong when loading the file
                     // As the user what they want to do (Use backup, Delete, Go to the discord)
-                    Plugin.Log.LogError($"Failed to load save file {saveFilePath}");
-                    Plugin.Log.LogError(e);
+                    APILogger.LogError($"Failed to load save file {saveFilePath}");
+                    APILogger.LogError(e);
 
                     // See if a mod wants to handle the error themselves.
                     if(ErrorHandlers.TryGetValue(guid, out SafeFunc<ErrorData, UniTask<ModSaveData>> errorHandler))
@@ -99,7 +99,7 @@ internal class ModdedSaveManagerService : Service
                         ModSaveData value = await errorHandler.Invoke(errorData);
                         if (value != null)
                         {
-                            Plugin.Log.LogInfo($"Manually Handled save file {saveFilePath}");
+                            APILogger.LogInfo($"Manually Handled save file {saveFilePath}");
                             ModdedSaveManager.ModGuidToDataLookup[guid] = value;
                             await Callback(guid, callback, value, SaveFileState.LoadedFile);
                             continue;
@@ -119,7 +119,7 @@ internal class ModdedSaveManagerService : Service
 
             // If the file doesn't exist, create a new one
             // If the listener throws an exception handle that too
-            Plugin.Log.LogInfo($"Creating new save file for {guid}");
+            APILogger.LogInfo($"Creating new save file for {guid}");
             ModSaveData data = new ModSaveData(guid);
             ModdedSaveManager.ModGuidToDataLookup[guid] = data;
             await Callback(guid, callback, data, SaveFileState.NewFile);
@@ -238,7 +238,7 @@ internal class ModdedSaveManagerService : Service
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
             string fullFilePath = Path.Combine(ModdedSaveManager.PathToSaveFile, $"{CleanGuid(guid)}.moddedsave");
             SaveFile(fullFilePath, json);
-            Plugin.Log.LogInfo($"Saved modded data for {guid}");
+            APILogger.LogInfo($"Saved modded data for {guid}");
         }
     }
     

@@ -119,7 +119,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
             // No visuals to setup
             if (BuildingModel.Prefab == null)
             {
-                Plugin.Log.LogError($"Building {BuildingModel.name} has no prefab and no visuals to setup!");
+                APILogger.LogError($"Building {BuildingModel.name} has no prefab and no visuals to setup!");
                 return false;
             }
             
@@ -132,11 +132,11 @@ public class NewBuildingData : ASyncable<BuildingModel>
             return true;
         }
   
-        Plugin.Log.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
+        APILogger.LogInfo($"Setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
         GameObject prefab = CustomPrefab == null ? BuildingManager.GetDefaultVisualData(Behaviour, VisualData.Icon) : CustomPrefab;
         if (prefab == null)
         {
-            Plugin.Log.LogError($"Custom prefab for building {BuildingModel.name} is null! Has Custom prefab: {CustomPrefab != null}");
+            APILogger.LogError($"Custom prefab for building {BuildingModel.name} is null! Has Custom prefab: {CustomPrefab != null}");
             return false;
         }
         
@@ -145,16 +145,16 @@ public class NewBuildingData : ASyncable<BuildingModel>
         {
             if (BuildingModel is not WorkshopModel workshopModel)
             {
-                Plugin.Log.LogError($"Building {BuildingModel.name} is not a WorkshopModel!");
+                APILogger.LogError($"Building {BuildingModel.name} is not a WorkshopModel!");
                 return false;
             }
-            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
+            APILogger.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             try
             {
-                Plugin.Log.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
+                APILogger.LogInfo($"Initializing prefab for workshop {BuildingModel.name}");
                 BuildingManager.InitializePrefab<Workshop, WorkshopView, WorkshopModel>(root, workshopModel, VisualData.Icon, BuildingConstructionAnimationData, AnimHookType.Construction);
             } 
             catch (Exception e)
@@ -164,12 +164,12 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 return false;
             }
 
-            Plugin.Log.LogInfo($"Prefab initialized for {BuildingModel.name} is root null? {root == null} is VisualData null? {VisualData == null} is MetaData null? {MetaData == null}");
+            APILogger.LogInfo($"Prefab initialized for {BuildingModel.name} is root null? {root == null} is VisualData null? {VisualData == null} is MetaData null? {MetaData == null}");
             Workshop workshop = root.GetComponent<Workshop>();
             VisualData.Prefab = workshop;
         
             // Data
-            Plugin.Log.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
+            APILogger.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.prefab = workshop;
 
             if (metaData.Recipes != null || metaData.Builders != null)
@@ -188,7 +188,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 workshopModel.profession = Profession.ToProfessionModel();
             }
 
-            Plugin.Log.LogInfo($"Setting up workplaces for workshop {BuildingModel.name}");
+            APILogger.LogInfo($"Setting up workplaces for workshop {BuildingModel.name}");
             if (metaData.WorkPlaces != null)
             {
                 workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
@@ -255,7 +255,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
         }
         else
         { 
-            Plugin.Log.LogError($"Building type {Behaviour} for buildings not implemented yet!");
+            APILogger.LogError($"Building type {Behaviour} for buildings not implemented yet!");
             return false;
         }
 

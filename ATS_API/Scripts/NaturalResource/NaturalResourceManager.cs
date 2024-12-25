@@ -100,7 +100,7 @@ public static class NaturalResourceManager
             return;
         }
 
-        Plugin.Log.LogInfo("NaturalResourceManager.Sync: " + s_newNaturalResource.Count + " new NaturalResource");
+        APILogger.LogInfo("NaturalResourceManager.Sync: " + s_newNaturalResource.Count + " new NaturalResource");
 
         
         Settings settings = SO.Settings;

@@ -21,7 +21,7 @@ internal class WorldField_Fixes
     {
         if(!MB.Settings.biomesCache.Contains(MB.Settings.biomes, state.biome))
         {
-            Plugin.Log.LogWarning($"Biome {state.biome} not found in BiomesCache. Replacing with Royal Woodlands.");
+            APILogger.LogWarning($"Biome {state.biome} not found in BiomesCache. Replacing with Royal Woodlands.");
             state.biome = BiomeTypes.Royal_Woodlands.ToName();
         }
 

@@ -41,7 +41,7 @@ public static class AudioHelpers
         string firstFile = files.FirstOrDefault();
         if (string.IsNullOrEmpty(firstFile))
         {
-	        Plugin.Log.LogError($"Couldn't find file {filename} in plugin directory.");
+	        APILogger.LogError($"Couldn't find file {filename} in plugin directory.");
         }
         return firstFile;
     }
@@ -68,7 +68,7 @@ public static class AudioHelpers
         AudioType audioType = GetAudioType(path);
         if (audioType == AudioType.UNKNOWN)
         {
-            Plugin.Log.LogError($"Couldn't load file {path} as AudioClip. AudioType is unknown.");
+            APILogger.LogError($"Couldn't load file {path} as AudioClip. AudioType is unknown.");
             return null;
         }
 
@@ -98,8 +98,8 @@ public static class AudioHelpers
 
             if (www.isNetworkError || www.isHttpError)
             {
-                Plugin.Log.LogError($"Couldn't load file \'{path}\' as AudioClip!");
-                Plugin.Log.LogError(www.error);
+                APILogger.LogError($"Couldn't load file \'{path}\' as AudioClip!");
+                APILogger.LogError(www.error);
                 return null;
             }
             else
@@ -107,7 +107,7 @@ public static class AudioHelpers
                 AudioClip audioClip = DownloadHandlerAudioClip.GetContent(www);
                 if (audioClip != null)
                 {
-                    // Plugin.Log.LogInfo($"Loaded \'{filename}\' as AudioClip. AudioType: {audioType}");
+                    // Logger.LogInfo($"Loaded \'{filename}\' as AudioClip. AudioType: {audioType}");
                     audioClip.name = $"{guid}_{filename}";
                 }
                 return audioClip;

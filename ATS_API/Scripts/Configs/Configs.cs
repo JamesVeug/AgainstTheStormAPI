@@ -16,6 +16,16 @@ internal static class Configs
         }
     }
     
+    public static APILogger.APILogLevel APILogLevel
+    {
+        get => m_LogLevel.Value;
+        set
+        {
+            m_LogLevel.Value = value;
+            Plugin.Instance.Config.Save();
+        }
+    }
+    
     public static bool ExportEnumTypes
     {
         get => m_ExportEnumTypes.Value;
@@ -40,6 +50,13 @@ internal static class Configs
         "When set to true the QuantumConsole that the ATS developers use will be available to be used in the game via F1 by default.\n" +
         "See KeyBindings tab in the games Options menu to changed the hotkey.");
 
+    private static ConfigEntry<APILogger.APILogLevel> m_LogLevel = Bind("General", "Log Level", APILogger.APILogLevel.Info, 
+        "Set how much logging you want to see in the console. The higher the level the more you will see.\n" +
+        "Errors - Only show errors\n" +
+        "Warnings - Show errors and warnings\n" +
+        "Info - Show errors, warnings and info\n" +
+        "Debug - Show all logs including debug logs");
+    
     private static ConfigEntry<bool> m_ExportEnumTypes = Bind("Exporting", "Export Enum classes", false, 
         "When set to true the API will export all types of data as .cs files when the game opens for the API to use in the project.\n" +
         "The files will be exported to 'BepInEx/plugins/ATS_API_Devs-API/Exports'");

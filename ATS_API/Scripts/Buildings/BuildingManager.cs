@@ -72,7 +72,7 @@ public partial class BuildingManager
             Behaviour = behaviour
         };
         s_newBuildings.Add(item);
-        Plugin.Log.LogInfo($"Added new building {name} with guid {guid} name: {(model == null ? "null" : model.name)}");
+        APILogger.LogInfo($"Added new building {name} with guid {guid} name: {(model == null ? "null" : model.name)}");
         
         return item;
     }
@@ -93,7 +93,7 @@ public partial class BuildingManager
         s_newBuildingTags.Add(newTag);
         
         s_dirty = true;
-        Plugin.Log.LogInfo($"Added new building tag {name} with guid {guid} name");
+        APILogger.LogInfo($"Added new building tag {name} with guid {guid} name");
         
         return newTag;
     }
@@ -106,7 +106,7 @@ public partial class BuildingManager
             prefab = Plugin.ATS_API_Bundle.LoadAsset<GameObject>(prefabName);
             if (prefab == null)
             {
-                Plugin.Log.LogError($"Could not find prefab {prefabName} for behaviour {behaviourTypes}");
+                APILogger.LogError($"Could not find prefab {prefabName} for behaviour {behaviourTypes}");
                 return null;
             }
 
@@ -121,7 +121,7 @@ public partial class BuildingManager
     
     private static void SyncBuildings()
     {
-        Plugin.Log.LogInfo($"Syncing {s_newBuildings.Count} new buildings");
+        APILogger.LogInfo($"Syncing {s_newBuildings.Count} new buildings");
 
         Settings settings = SO.Settings;
         s_buildings.Sync(ref settings.Buildings, settings.buildingsCache, s_newBuildings, a=>a.BuildingModel);
@@ -138,7 +138,7 @@ public partial class BuildingManager
 
     private static void SyncBuildingTags()
     {
-        Plugin.Log.LogInfo($"Syncing {s_newBuildingTags.Count} new building tags");
+        APILogger.LogInfo($"Syncing {s_newBuildingTags.Count} new building tags");
         
         Settings settings = SO.Settings;
         s_buildingTags.Sync(ref settings.buildingsTags, settings.buildingsTagsCache, s_newBuildingTags, a=>a.Model);

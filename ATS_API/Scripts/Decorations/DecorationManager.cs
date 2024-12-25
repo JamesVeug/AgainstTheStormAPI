@@ -71,7 +71,7 @@ public static class DecorationManager
             return;
         }
 
-        Plugin.Log.LogInfo("DecorationManager.Sync: " + s_NewDecorationTiers.Count + " new decorationTiers");
+        APILogger.LogInfo("DecorationManager.Sync: " + s_NewDecorationTiers.Count + " new decorationTiers");
         
         Settings settings = SO.Settings;
         s_tiers.Sync(ref settings.decorationsTiers, settings.decorationsTiersCache, s_NewDecorationTiers, a => a.Model);

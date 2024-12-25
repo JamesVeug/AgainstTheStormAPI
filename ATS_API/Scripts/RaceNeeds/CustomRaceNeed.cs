@@ -85,7 +85,7 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         GoodModel good = referenceGood.ToGoodModel();
         if (good == null)
         {
-            Plugin.Log.LogError($"Failed to find good {referenceGood} for need {NeedModel.name}");
+            APILogger.LogError($"Failed to find good {referenceGood} for need {NeedModel.name}");
             return;
         }
         NeedModel.referenceGood = good;

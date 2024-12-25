@@ -26,7 +26,7 @@ public static partial class LocalizationManager
         return model;
     }
 
-    public static LabelModel ToLabelModel(string keyNotText)
+    public static LabelModel ToLabelModel(this string keyNotText)
     {
         LabelModel model = ScriptableObject.CreateInstance<LabelModel>();
         model.displayName = new LocaText() { key = keyNotText };

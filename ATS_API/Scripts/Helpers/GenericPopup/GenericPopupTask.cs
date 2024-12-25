@@ -71,7 +71,7 @@ public class GenericPopupTask
     
     public async UniTask WaitForDecisionAsync(params ButtonInfo[] buttons)
     {
-        Plugin.Log.LogInfo("Waiting for decision with " + buttons.Length + " buttons");
+        APILogger.LogInfo("Waiting for decision with " + buttons.Length + " buttons");
         this.buttons.Clear();
         this.buttons.AddRange(buttons);
         decisionButton = null;

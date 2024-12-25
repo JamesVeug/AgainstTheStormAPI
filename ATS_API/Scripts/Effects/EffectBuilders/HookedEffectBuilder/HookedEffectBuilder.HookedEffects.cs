@@ -11,7 +11,7 @@ public partial class HookedEffectBuilder
     {
         T instance = ScriptableObject.CreateInstance<T>();
         AddHookedEffect(instance);
-        Plugin.Log.LogInfo("HookedEffectBuilder.NewHookedEffect: " + m_effectModel.name + " hookedEffects.Length: " + m_effectModel.hookedEffects.Length);
+        APILogger.LogInfo("HookedEffectBuilder.NewHookedEffect: " + m_effectModel.name + " hookedEffects.Length: " + m_effectModel.hookedEffects.Length);
         return instance;
     }
 

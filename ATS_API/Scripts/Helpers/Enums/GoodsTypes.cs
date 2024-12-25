@@ -545,7 +545,7 @@ public static class GoodsTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of GoodsTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of GoodsTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[GoodsTypes._Meta_Artifacts];
 	}
 	
@@ -564,7 +564,7 @@ public static class GoodsTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
 		return GoodsTypes.Unknown;
 	}
 	
@@ -582,7 +582,7 @@ public static class GoodsTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find GoodModel for GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find GoodModel for GoodsTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

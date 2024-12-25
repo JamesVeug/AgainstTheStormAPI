@@ -67,7 +67,7 @@ public static class RelicManager
             return;
         }
 
-        // Plugin.Log.LogInfo("OrdersManager.Sync: " + s_OrderModels.Count + " new orders");
+        // Logger.LogInfo("OrdersManager.Sync: " + s_OrderModels.Count + " new orders");
         //
         //
         // Settings settings = SO.Settings;
@@ -93,7 +93,7 @@ public static class RelicManager
 
                 EffectsTableEntity[] newRewards = model.RelicRewards.Select(a => a.RelicGoodEffect).ToArray();
                 ArrayExtensions.AddElements(ref table.effects, newRewards);
-                // Plugin.Log.LogInfo($"Added {newRewards.Length} new rewards to {relicModel.Name} from {model.goodModel.name}");
+                // Logger.LogInfo($"Added {newRewards.Length} new rewards to {relicModel.Name} from {model.goodModel.name}");
             }
         }
     }

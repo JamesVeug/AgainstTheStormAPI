@@ -5,7 +5,6 @@ using System.Linq;
 using ATS_API;
 using ATS_API.Helpers;
 using ATS_API.Localization;
-using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;
 using Eremite;
@@ -15,7 +14,6 @@ using Eremite.View.Popups.GameMenu;
 using Eremite.View.UI;
 using Eremite.View.Utils;
 using HarmonyLib;
-using Mono.Cecil;
 using MonoMod.Utils;
 using TMPro;
 using UnityEngine;
@@ -278,7 +276,7 @@ public static class ModMenuTab
                 }
                 else
                 {
-                    Plugin.Log.LogError($"Unsupported acceptableValues type {acceptableValues.GetType().FullName} for {entry.Definition.Key}");
+                    APILogger.LogError($"Unsupported acceptableValues type {acceptableValues.GetType().FullName} for {entry.Definition.Key}");
                 }
             }
                 
@@ -387,7 +385,7 @@ public static class ModMenuTab
         }
         else
         {
-            Plugin.Log.LogError($"Unsupported type {typeof(T).FullName} for input field!");
+            APILogger.LogError($"Unsupported type {typeof(T).FullName} for input field!");
         }
         
         GameObject clone = GameObject.Instantiate(inputFieldTemplate.transform.parent.gameObject, parent);
@@ -410,13 +408,13 @@ public static class ModMenuTab
         }
         input.onValueChanged.AddListener((value) =>
         {
-            Plugin.Log.LogInfo($"Setting {entry.Definition.Key} to {value}");
+            APILogger.LogInfo($"Setting {entry.Definition.Key} to {value}");
             entry.BoxedValue = (T)Convert.ChangeType(value, typeof(T));
         });
         
         OptionsMenuEnabled += () =>
         {
-            Plugin.Log.LogInfo($"Setting {entry.Definition.Key} to {entry.BoxedValue}");
+            APILogger.LogInfo($"Setting {entry.Definition.Key} to {entry.BoxedValue}");
             input.SetTextWithoutNotify(entry.BoxedValue?.ToString());
         };
     }

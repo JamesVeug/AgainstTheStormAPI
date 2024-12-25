@@ -29,7 +29,7 @@ public class SafeFunc<ArgType,ReturnType>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
             }
         }
 
@@ -46,7 +46,7 @@ public class SafeFunc<ArgType,ReturnType>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
                 return await OnException.Invoke(e);
             }
         }

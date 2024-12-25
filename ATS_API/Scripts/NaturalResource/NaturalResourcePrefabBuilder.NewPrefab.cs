@@ -10,7 +10,7 @@ public partial class NaturalResourcePrefabBuilder
     {
         if (!AssetBundleHelper.TryGet(bundle, prefabName, out GameObject prefabRef))
         {
-            Plugin.Log.LogError($"Failed to load prefab {prefabName} from asset bundle {bundle.name}");
+            APILogger.LogError($"Failed to load prefab {prefabName} from asset bundle {bundle.name}");
             return this;
         }
         

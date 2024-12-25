@@ -37,11 +37,11 @@ public static class Placeholders
     
     // Create new object but not new key in case someone tries changing it
     public static LocaText TownName => TownNameKey.ToLocaText();
-    public static readonly string TownNameKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "label", "Missing Town Name");
+    public static readonly string TownNameKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "townName", "Missing Town Name");
     
     // Create new object but not new key in case someone tries changing it
     public static LocaText TownDescription => TownDescriptionKey.ToLocaText();
-    public static readonly string TownDescriptionKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "label", "Missing Town Description");
+    public static readonly string TownDescriptionKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "townDescription", "Missing Town Description");
     
     public static RacialSound RacialSound(RaceModel model)
     {

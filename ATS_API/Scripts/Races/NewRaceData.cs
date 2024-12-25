@@ -53,7 +53,7 @@ public class NewRaceData : ASyncable<RaceModel>
             NeedModel needModel = need.ToNeedModel();
             if (needModel == null)
             {
-                Plugin.Log.LogError($"Failed to find need {need} for new race {RaceModel.name}");
+                APILogger.LogError($"Failed to find need {need} for new race {RaceModel.name}");
                 continue;
             }
             needModels.Add(needModel);

@@ -36,7 +36,7 @@ public class NewMetaRewardData : ASyncable<MetaRewardModel>
                 }
                 else
                 {
-                    Plugin.Log.LogError(
+                    APILogger.LogError(
                         $"Tried syncing new EmbarkGoodMetaRewardModel ({Model.name}) but GoodsTypes was not assigned!");
                 }
             }
