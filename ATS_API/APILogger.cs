@@ -104,7 +104,7 @@ internal static class APILogger
     {
         if (!condition)
         {
-            logger.LogError(message);
+            logger.LogError(message + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
     
@@ -112,7 +112,7 @@ internal static class APILogger
     {
         if (!condition)
         {
-            logger.LogError(string.Format(message, args));
+            logger.LogError(string.Format(message, args) + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
 
@@ -120,7 +120,7 @@ internal static class APILogger
     {
         if (condition)
         {
-            logger.LogError(message);
+            logger.LogError(message + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
     
@@ -128,7 +128,7 @@ internal static class APILogger
     {
         if (condition)
         {
-            logger.LogError(string.Format(message, args));
+            logger.LogError(string.Format(message, args) + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
     
@@ -136,7 +136,7 @@ internal static class APILogger
     {
         if (o != null)
         {
-            logger.LogError(message);
+            logger.LogError(message + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
     
@@ -144,7 +144,7 @@ internal static class APILogger
     {
         if (o != null)
         {
-            logger.LogError(string.Format(message, args));
+            logger.LogError(string.Format(message, args) + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
     
@@ -152,7 +152,7 @@ internal static class APILogger
     {
         if (o == null)
         {
-            logger.LogError(message);
+            logger.LogError(message + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
     
@@ -160,13 +160,13 @@ internal static class APILogger
     {
         if (o == null)
         {
-            logger.LogError(string.Format(message, args));
+            logger.LogError(string.Format(message, args) + "\n" + GetStaceTraceIgnoreLogger());
         }
     }
 
     public static void IsEqual<T>(T a, T b, string message)
     {
-        string log = $"{a} != {b}, {message}";
+        string log = $"{a} != {b}, {message}\n" + GetStaceTraceIgnoreLogger();
         if (a == null)
         {
             if (b != null)
@@ -189,7 +189,7 @@ internal static class APILogger
     
     public static void IsEqual<T>(T a, T b, string message, params object[] args)
     {
-        string log = $"{a} != {b}, {string.Format(message, args)}";
+        string log = $"{a} != {b}, {string.Format(message, args)}\n" + GetStaceTraceIgnoreLogger();
         if (a == null)
         {
             if (b != null)
@@ -212,7 +212,7 @@ internal static class APILogger
 
     public static void IsNotEqual<T>(T a, T b, string message)
     {
-        string log = $"{a} == {b}, {message}";
+        string log = $"{a} == {b}, {message}\n" + GetStaceTraceIgnoreLogger();
         if (a == null)
         {
             if (b == null)
@@ -235,7 +235,7 @@ internal static class APILogger
     
     public static void IsNotEqual<T>(T a, T b, string message, params object[] args)
     {
-        string log = $"{a} == {b}, {string.Format(message, args)}";
+        string log = $"{a} == {b}, {string.Format(message, args)}\n" + GetStaceTraceIgnoreLogger();
         if (a == null)
         {
             if (b == null)
@@ -260,6 +260,6 @@ internal static class APILogger
     {
         // Get Stacktrace and skip this class from showing in the logs
         // https://stackoverflow.com/a/76528835/3555142
-        return new StackTrace(1);
+        return new StackTrace(2);
     }
 }
