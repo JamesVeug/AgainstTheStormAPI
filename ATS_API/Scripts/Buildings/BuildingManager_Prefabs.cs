@@ -493,7 +493,7 @@ public partial class BuildingManager
             if (icon != null)
             {
                 GameObject newIcon = GameObject.Instantiate(icon.gameObject, building.entrance);
-                newIcon.transform.localPosition = new Vector3(0, 0, 0);
+                newIcon.transform.localPosition = new Vector3(0, 0, -1);
                 newIcon.transform.localRotation = Quaternion.Euler(90, 0, -90);
                 newIcon.transform.localScale = new Vector3(1.45f, 1.25f, 1f);
                 newIcon.SetActive(true);
