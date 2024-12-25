@@ -1,12 +1,15 @@
-﻿namespace ATS_API.Helpers;
+﻿using System;
 
+namespace ATS_API.Helpers;
+
+[Obsolete("Copy APILogger into your own mod. Provides MANY more helper methods like this.", true)]
 public static class Assert
 {
     public static void IsTrue(bool condition, string message)
     {
         if (!condition)
         {
-            Plugin.Log.LogError(message);
+            APILogger.LogError(message);
         }
     }
     
@@ -14,7 +17,7 @@ public static class Assert
     {
         if (!expected.Equals(actual))
         {
-            Plugin.Log.LogError($"{expected} != {actual}, {message}");
+            APILogger.LogError($"{expected} != {actual}, {message}");
         }
     }
 }

@@ -30,10 +30,10 @@ public static partial class TraderManager
     // [HarmonyPostfix]
     // private static void TraderManager_GetRangeForCurrentScore(ref TradersRange __result)
     // {
-    //     Plugin.Log.LogInfo($"Result: {__result.weights.Length}");
+    //     Logger.LogInfo($"Result: {__result.weights.Length}");
     //     foreach (TraderChance traderChance in __result.weights)
     //     {
-    //         Plugin.Log.LogInfo($"    Trader: {traderChance.trader.name}");
+    //         Logger.LogInfo($"    Trader: {traderChance.trader.name}");
     //     }
     // }
 }

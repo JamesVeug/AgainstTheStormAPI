@@ -226,7 +226,7 @@ public static class DifficultyTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of DifficultyTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of DifficultyTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[DifficultyTypes.Tutorial_IV_Difficulty];
 	}
 	
@@ -245,7 +245,7 @@ public static class DifficultyTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find DifficultyTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find DifficultyTypes with name: " + name + "\n" + Environment.StackTrace);
 		return DifficultyTypes.Unknown;
 	}
 	
@@ -263,7 +263,7 @@ public static class DifficultyTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find DifficultyModel for DifficultyTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find DifficultyModel for DifficultyTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

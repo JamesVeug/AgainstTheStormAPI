@@ -9,16 +9,16 @@ public static partial class EffectManager
     // [HarmonyPostfix]
     // private static void EffectsTable_GetRandomNames_Postfix(EffectsTable __instance, ref List<string> __result)
     // {
-    //     Plugin.Log.LogInfo("Patching EffectsTable effects " + __instance.effects.Length);
+    //     Logger.LogInfo("Patching EffectsTable effects " + __instance.effects.Length);
     //     foreach (EffectsTableEntity e in __instance.effects)
     //     {
-    //         Plugin.Log.LogInfo($"- {e.chance}% {e.effect.name}");
+    //         Logger.LogInfo($"- {e.chance}% {e.effect.name}");
     //     }
     //     
-    //     Plugin.Log.LogInfo("Patching EffectsTable result " + __result.Count);
+    //     Logger.LogInfo("Patching EffectsTable result " + __result.Count);
     //     foreach (string s in __result)
     //     {
-    //         Plugin.Log.LogInfo("- " + s);
+    //         Logger.LogInfo("- " + s);
     //     }
     // }
     
@@ -30,7 +30,7 @@ public static partial class EffectManager
     //     // __result.AddRange(s_newEffects.Select((a)=>a.EffectModel.name));
     //     // __result.AddRange(__result);
     //     // __result.AddRange(__result);
-    //     Plugin.Log.LogInfo("Patching CornerstonesService GenerateRewards " + __result.Count);
+    //     Logger.LogInfo("Patching CornerstonesService GenerateRewards " + __result.Count);
     // }
 
     // [HarmonyPatch]
@@ -38,20 +38,20 @@ public static partial class EffectManager
     // {
     //     private static MethodBase TargetMethod()
     //     {
-    //         Plugin.Log.LogInfo("Patching EffectManager EnsureCache");
+    //         Logger.LogInfo("Patching EffectManager EnsureCache");
     //         Type type = typeof(ModelCache<EffectModel>);
-    //         Plugin.Log.LogInfo("type - " + type);
+    //         Logger.LogInfo("type - " + type);
     //         MethodInfo methodInfo = type.GetMethod("EnsureCache", BindingFlags.Instance | BindingFlags.NonPublic);
-    //         Plugin.Log.LogInfo("methodInfo - " + methodInfo);
+    //         Logger.LogInfo("methodInfo - " + methodInfo);
     //         // MethodInfo genericMethod = methodInfo.MakeGenericMethod(typeof(EffectModel));
-    //         // Plugin.Log.LogInfo("genericMethod - " + genericMethod);
+    //         // Logger.LogInfo("genericMethod - " + genericMethod);
     //         return methodInfo;
     //     }
     //
     //     [HarmonyPrefix]
     //     private static void Prefix(ModelCache<EffectModel> __instance, ref EffectModel[] arr)
     //     {
-    //         Plugin.Log.LogInfo("Patching EffectManager EnsureCache Prefix " + s_newEffectsDirty + " vanilla effects: " +
+    //         Logger.LogInfo("Patching EffectManager EnsureCache Prefix " + s_newEffectsDirty + " vanilla effects: " +
     //                            arr.Length + " new effects: " + s_newEffects.Count);
     //         // Insert our new data into their cachebecause it changed
     //         if (s_newEffects.Count > 0 && (s_newEffectsDirty || __instance.cache == null))
@@ -65,7 +65,7 @@ public static partial class EffectManager
     //     [HarmonyPostfix]
     //     private static void Postfix(ModelCache<EffectModel> __instance, ref EffectModel[] arr)
     //     {
-    //         Plugin.Log.LogInfo("Patching EffectManager EnsureCache Postfix " + s_newEffectsDirty + " All effects: " +
+    //         Logger.LogInfo("Patching EffectManager EnsureCache Postfix " + s_newEffectsDirty + " All effects: " +
     //                            __instance.cache.Count);
     //     }
     // }

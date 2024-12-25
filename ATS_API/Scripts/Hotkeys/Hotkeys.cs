@@ -320,16 +320,16 @@ public static partial class Hotkeys
     
     private static void LogError(string message)
     {
-        Plugin.Log.LogError(message);
+        APILogger.LogError(message);
     }
     
     private static void LogInfo(string message)
     {
-        Plugin.Log.LogInfo(message);
+        APILogger.LogInfo(message);
     }
     
     private static void LogWarning(string message)
     {
-        Plugin.Log.LogWarning(message);
+        APILogger.LogWarning(message);
     }
 }

@@ -18,12 +18,12 @@ public static partial class BiomeManager
     [HarmonyPrefix]
     private static bool PostProcessesAnimator_SetUp(PostProcessesAnimator __instance)
     {
-        Plugin.Log.LogInfo("PostProcessesAnimator_SetUp: " + __instance.gameObject.FullName());
+        APILogger.LogInfo("PostProcessesAnimator_SetUp: " + __instance.gameObject.FullName());
         
         BiomeTypes biomeTypes = Serviceable.StateService.Conditions.biomeName.ToBiomeTypes();
         if (!NewBiomeLookup.TryGetValue(biomeTypes, out NewBiome newBiome))
         {
-            Plugin.Log.LogError($"{Serviceable.StateService.Conditions.biomeName} is not a custom biome with type: {biomeTypes} with custom biomes: {NewBiomeLookup.Count}");
+            APILogger.LogError($"{Serviceable.StateService.Conditions.biomeName} is not a custom biome with type: {biomeTypes} with custom biomes: {NewBiomeLookup.Count}");
             return true;
         }
         
@@ -41,7 +41,7 @@ public static partial class BiomeManager
         ParticleSystem rainDrops = fogAnimator.FindChild<ParticleSystem>("Rain");
         if(rainDrops == null)
         {
-            Plugin.Log.LogError("Rain particles not found!");
+            APILogger.LogError("Rain particles not found!");
         }
         else
         {
@@ -57,14 +57,14 @@ public static partial class BiomeManager
                 scaler.Reset(); // Assigns particleSystem to the particle field
             }
             GameObject.Destroy(rainDrops.gameObject);
-            Plugin.Log.LogInfo("Raindrops changed!");
+            APILogger.LogInfo("Raindrops changed!");
         }
         
         // Change Storm/Rain RainDrop
         GameObject storm = fogAnimator.FindChild("Storm");
         if(storm == null)
         {
-            Plugin.Log.LogError("Raindrops storm not found!");
+            APILogger.LogError("Raindrops storm not found!");
         }
         else
         {
@@ -76,7 +76,7 @@ public static partial class BiomeManager
             ParticleSystem stormRainDrop = storm.FindChild<ParticleSystem>("RainDrop");
             if(stormRainDrop == null)
             {
-                Plugin.Log.LogError("Storm/RainDrop storm not found!");
+                APILogger.LogError("Storm/RainDrop storm not found!");
             }
             else
             {
@@ -87,13 +87,13 @@ public static partial class BiomeManager
                 rain.SetActive(true);
                 rain.name = stormRainDrop.gameObject.name;
                 GameObject.Destroy(stormRainDrop.gameObject);
-                Plugin.Log.LogInfo("Storm/RainDrop storm changed!");
+                APILogger.LogInfo("Storm/RainDrop storm changed!");
             }
             
             ParticleSystem stormRainDrop2 = storm.FindChild<ParticleSystem>("RainDrop2");
             if(stormRainDrop2 == null)
             {
-                Plugin.Log.LogError("Storm/RainDrop2 storm not found!");
+                APILogger.LogError("Storm/RainDrop2 storm not found!");
             }
             else
             {
@@ -104,7 +104,7 @@ public static partial class BiomeManager
                 rain.SetActive(true);
                 rain.name = stormRainDrop2.gameObject.name;
                 GameObject.Destroy(stormRainDrop2.gameObject);
-                Plugin.Log.LogInfo("Storm/RainDrop2 storm changed!");
+                APILogger.LogInfo("Storm/RainDrop2 storm changed!");
             }
         }
 
@@ -114,7 +114,7 @@ public static partial class BiomeManager
         //     ParticleSystem[] children = gameObject.GetComponentsInChildren<ParticleSystem>(true);
         //     foreach (ParticleSystem child in children)
         //     {
-        //         Plugin.Log.LogInfo("Child: " + child.FullName());
+        //         Logger.LogInfo("Child: " + child.FullName());
         //     }
         // }
     }

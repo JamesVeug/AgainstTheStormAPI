@@ -64,7 +64,7 @@ public static class Util
             return component;
         }
         
-        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in {go.FullName()}!");
+        APILogger.LogError($"Could not find {typeof(T).FullName} component in {go.FullName()}!");
         return component;
     }
     
@@ -75,7 +75,7 @@ public static class Util
             return component;
         }
         
-        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in {go.FullName()}!");
+        APILogger.LogError($"Could not find {typeof(T).FullName} component in {go.FullName()}!");
         return component;
     }
     
@@ -87,7 +87,7 @@ public static class Util
             return componentInChildren;
         }
         
-        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        APILogger.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
         return componentInChildren;
     }
     
@@ -99,7 +99,7 @@ public static class Util
             return componentInChildren;
         }
         
-        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        APILogger.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
         return componentInChildren;
     }
     
@@ -111,7 +111,7 @@ public static class Util
             return componentInChildren;
         }
         
-        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        APILogger.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
         return null;
     }
     
@@ -123,7 +123,7 @@ public static class Util
             return componentInChildren;
         }
         
-        Plugin.Log.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
+        APILogger.LogError($"Could not find {typeof(T).FullName} component in children of {go.FullName()}!");
         return componentInChildren;
     }
     
@@ -137,7 +137,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
@@ -153,7 +153,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
@@ -169,7 +169,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
@@ -185,7 +185,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
@@ -201,7 +201,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
@@ -218,7 +218,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} in {t.FullName()}!");
         }
 
         return null;
@@ -239,14 +239,14 @@ public static class Util
             
             if (errorIfNotFound)
             {
-                Plugin.Log.LogError($"Found child {name} but it does not have a {typeof(T).FullName} component!");
+                APILogger.LogError($"Found child {name} but it does not have a {typeof(T).FullName} component!");
             }
             return false;
         }
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find child {name} in {t.FullName()} with component {typeof(T).FullName}!");
+            APILogger.LogError($"Could not find child {name} in {t.FullName()} with component {typeof(T).FullName}!");
         }
 
         return false;
@@ -265,7 +265,7 @@ public static class Util
 
         if (errorIfNotFound)
         {
-            Plugin.Log.LogError($"Could not find {name} gameobject in {t.FullName()}!");
+            APILogger.LogError($"Could not find {name} gameobject in {t.FullName()}!");
         }
 
         return false;

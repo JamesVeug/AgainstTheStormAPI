@@ -53,7 +53,7 @@ public static partial class BiomeManager
         s_newBiomesLookup.Add(id, newBiome);
         s_dirty = true;
 
-        Plugin.Log.LogInfo($"Added {newBiome.rawName}!");
+        APILogger.LogInfo($"Added {newBiome.rawName}!");
         return newBiome;
     }
 
@@ -87,7 +87,7 @@ public static partial class BiomeManager
         s_dirty = false;
         
         
-        Plugin.Log.LogInfo($"Syncing {s_newBiomes.Count} new biomes");
+        APILogger.LogInfo($"Syncing {s_newBiomes.Count} new biomes");
         Settings settings = SO.Settings;
         List<NewBiome> biomes = s_biomes.Sync(ref settings.biomes, settings.biomesCache, s_newBiomes, a => a.biomeModel);
 
@@ -153,7 +153,7 @@ public static partial class BiomeManager
                     weight = 100
                 };
                 ArrayExtensions.AddElement(ref range.weights, traderWeight);
-                Plugin.Log.LogInfo($"{biome.trade.name} added {modelName}!");
+                APILogger.LogInfo($"{biome.trade.name} added {modelName}!");
             }
         }
     }
@@ -192,7 +192,7 @@ public static partial class BiomeManager
         {
             seasonRewardModel.effectsTable.effects = seasonEffects.ToArray();
             // string allRewards = string.Join(", ", seasonEffects.Select(e => $"{e.effect.name} {e.chance}%"));
-            // Plugin.Log.LogInfo($"{biome.name}.{seasonRewardModel} rewards from {baseEffects.Length} to {seasonEffects.Count}");
+            // Logger.LogInfo($"{biome.name}.{seasonRewardModel} rewards from {baseEffects.Length} to {seasonEffects.Count}");
         }
     }
 }

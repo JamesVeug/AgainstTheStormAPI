@@ -77,7 +77,7 @@ public static partial class TraderManager
             return;
         }
 
-        Plugin.Log.LogInfo("TraderManager.SyncTrader: base effects, " + s_newTraders.Count + " new traders");
+        APILogger.LogInfo("TraderManager.SyncTrader: base effects, " + s_newTraders.Count + " new traders");
 
 
         Settings settings = SO.Settings;

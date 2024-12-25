@@ -148,7 +148,7 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
     {
         if(loadAsset == null)
         {
-            Plugin.Log.LogError($"Custom prefab for building {m_buildingModel.name} is null!");
+            APILogger.LogError($"Custom prefab for building {m_buildingModel.name} is null!");
             return;
         }
         

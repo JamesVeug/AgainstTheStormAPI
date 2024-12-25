@@ -44,7 +44,7 @@ public class CustomHookedEffectManager
     {
         if (s_newHookLogics.ContainsKey(hookLogicType))
         {
-            Plugin.Log.LogError($"Already Registered HookLogicType {hookLogicType}! This will overwrite the previous reg!");
+            APILogger.LogError($"Already Registered HookLogicType {hookLogicType}! This will overwrite the previous reg!");
         }
         
         NewHookLogicType newHook = new NewHookLogicType()
@@ -54,7 +54,7 @@ public class CustomHookedEffectManager
             Monitor = monitor
         };
         s_newHookLogics[hookLogicType] = newHook;
-        Plugin.Log.LogInfo($"Reg enum {hookLogicType} = {monitor.GetType().Name}");
+        APILogger.LogInfo($"Reg enum {hookLogicType} = {monitor.GetType().Name}");
     }
 
 

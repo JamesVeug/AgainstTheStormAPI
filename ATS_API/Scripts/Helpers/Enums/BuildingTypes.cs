@@ -3292,7 +3292,7 @@ public static class BuildingTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of BuildingTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BuildingTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[BuildingTypes.Advanced_Rain_Catcher];
 	}
 	
@@ -3311,7 +3311,7 @@ public static class BuildingTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find BuildingTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find BuildingTypes with name: " + name + "\n" + Environment.StackTrace);
 		return BuildingTypes.Unknown;
 	}
 	
@@ -3329,7 +3329,7 @@ public static class BuildingTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find BuildingModel for BuildingTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BuildingModel for BuildingTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

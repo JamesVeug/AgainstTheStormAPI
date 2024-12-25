@@ -27,7 +27,7 @@ public static partial class BiomeManager
         BiomeTypes biomeTypes = __instance.conditions.biomeName.ToBiomeTypes();
         if (!NewBiomeLookup.TryGetValue(biomeTypes, out NewBiome newBiome))
         {
-            // Plugin.Log.LogError($"{__instance.conditions.biomeName} is not a custom biome with type: {biomeTypes} with custom biomes: {NewBiomeLookup.Count}");
+            // Logger.LogError($"{__instance.conditions.biomeName} is not a custom biome with type: {biomeTypes} with custom biomes: {NewBiomeLookup.Count}");
             // await enumerator; // await mapData.terrain.InstantiateAsync();
             return true;
         }
@@ -43,8 +43,8 @@ public static partial class BiomeManager
         var async = mapData.terrain.InstantiateAsync();
         async.Completed += (asyncOperation) =>
         {
-            Plugin.Log.LogInfo("Terrain instantiated!");
-            Plugin.Log.LogInfo("Terrain: " + asyncOperation.Result);
+            APILogger.LogInfo("Terrain instantiated!");
+            APILogger.LogInfo("Terrain: " + asyncOperation.Result);
             map = asyncOperation.Result;
             CreateCustomTerrain(newBiome);
             // ChangeRaindrops(newBiome, map);
@@ -66,7 +66,7 @@ public static partial class BiomeManager
         {
             // NOTE: Not all biomes have GameTerrain component on them which is where active terrain comes from.
             // Without it we can't find it... at this stage so at this point everything is broken
-            Plugin.Log.LogError("Terrain not found to create custom terrain!");
+            APILogger.LogError("Terrain not found to create custom terrain!");
             return;
         }
         
@@ -75,6 +75,6 @@ public static partial class BiomeManager
         
         // Destroy terrain from the biome
         GameObject.Destroy(terrain.gameObject);
-        Plugin.Log.LogInfo("Custom terrain instantiated!");
+        APILogger.LogInfo("Custom terrain instantiated!");
     }
 }

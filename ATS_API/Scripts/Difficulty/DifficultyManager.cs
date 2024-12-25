@@ -72,7 +72,7 @@ public static class DifficultyManager
             return;
         }
 
-        Plugin.Log.LogInfo("DifficultyManager.Sync: " + s_newDifficulties.Count + " new difficulties");
+        APILogger.LogInfo("DifficultyManager.Sync: " + s_newDifficulties.Count + " new difficulties");
 
         
         Settings settings = SO.Settings;

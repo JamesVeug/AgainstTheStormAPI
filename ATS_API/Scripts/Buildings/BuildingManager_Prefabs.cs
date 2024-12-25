@@ -173,18 +173,18 @@ public partial class BuildingManager
         where V : BuildingView
         where M : BuildingModel
     {
-        // Plugin.Log.LogInfo($"Initializing prefab {prefab.name} as {typeof(B).Name} with {typeof(V).Name} and {typeof(M).Name}");
+        // Logger.LogInfo($"Initializing prefab {prefab.name} as {typeof(B).Name} with {typeof(V).Name} and {typeof(M).Name}");
         if (!GetTemplates(buildingModel, out M buildingModelTemplate, out B buildingTemplate, out BlightCyst blightCyst))
         {
             return;
         }
 
-        // Plugin.Log.LogInfo($"Starting Building");
+        // Logger.LogInfo($"Starting Building");
         B building = prefab.AddComponent<B>();
         building.entrance = Util.FindChildRecursive(prefab.transform, "Entrance");
         if (building.entrance == null)
         {
-            Plugin.Log.LogWarning($"No entrance found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
+            APILogger.LogWarning($"No entrance found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
             GameObject newEntrance = new GameObject("Entrance");
             newEntrance.transform.SetParent(prefab.transform);
             newEntrance.transform.localPosition = new Vector3(0, 0, 0);
@@ -194,35 +194,35 @@ public partial class BuildingManager
         }
         building.entrance.SetActive(false);
 
-        // Plugin.Log.LogInfo($"Starting View");
+        // Logger.LogInfo($"Starting View");
         V view = prefab.AddComponent<V>();
         
-        // Plugin.Log.LogInfo($"Starting Scaffolding");
+        // Logger.LogInfo($"Starting Scaffolding");
         ConstructionAnimator constructionAnimator = AddScaffolding(prefab, buildingModel, ref buildingConstructionAnimationData, view);
 
         Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
         
-        // Plugin.Log.LogInfo($"Starting AnimationsHooks");
+        // Logger.LogInfo($"Starting AnimationsHooks");
         Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks", true);
         if (animationsHooks != null)
         {
-            // Plugin.Log.LogInfo($"Starting AnimationsHooks 2");
+            // Logger.LogInfo($"Starting AnimationsHooks 2");
             building.villagersPositioner = animationsHooks.gameObject.AddComponent<VillagersPositioner>();
 
-            // Plugin.Log.LogInfo($"Starting AnimationsHooks 3");
+            // Logger.LogInfo($"Starting AnimationsHooks 3");
             foreach (Transform child in animationsHooks)
             {
-                // Plugin.Log.LogInfo($"Starting AnimationsHooks 4");
+                // Logger.LogInfo($"Starting AnimationsHooks 4");
                 AnimationHook hook = child.gameObject.AddComponent<AnimationHook>();
-                // Plugin.Log.LogInfo($"Starting AnimationsHooks 5");
+                // Logger.LogInfo($"Starting AnimationsHooks 5");
                 hook.type = villagerAnimationType;
             }
             
-            // Plugin.Log.LogInfo($"Starting AnimationsHooks 6");
+            // Logger.LogInfo($"Starting AnimationsHooks 6");
             building.villagersPositioner.hooks = animationsHooks.GetComponentsInChildren<AnimationHook>();
             if (building.villagersPositioner.hooks.Length == 0)
             {
-                Plugin.Log.LogWarning($"No AnimationHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temp");
+                APILogger.LogWarning($"No AnimationHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temp");
                 GameObject newAnimationHook = new GameObject("AnimationHook");
                 newAnimationHook.transform.SetParent(animationsHooks.transform);
                 newAnimationHook.transform.localPosition = Vector3.zero;
@@ -236,7 +236,7 @@ public partial class BuildingManager
         }
         else
         {
-            Plugin.Log.LogWarning($"No AnimationsHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
+            APILogger.LogWarning($"No AnimationsHooks found for building {buildingModel.name} and prefab {prefab.name}! Adding temporary!");
             GameObject newAnimationsHooks = new GameObject("AnimationsHooks");
             newAnimationsHooks.transform.SetParent(toRotate.transform);
             
@@ -262,7 +262,7 @@ public partial class BuildingManager
         }
         else if (building is House house)
         {
-            // Plugin.Log.LogInfo($"Start house");
+            // Logger.LogInfo($"Start house");
             house.state = new HouseState();
             house.model = buildingModel as HouseModel;
             house.view = view as HouseView;
@@ -271,7 +271,7 @@ public partial class BuildingManager
         }
         else if (building is Workshop workshop)
         {
-            // Plugin.Log.LogInfo($"{buildingModel.name} Starting workshop");
+            // Logger.LogInfo($"{buildingModel.name} Starting workshop");
             workshop.productionStorage = prefab.AddComponent<BuildingStorage>();
             workshop.ingredientsStorage = prefab.AddComponent<BuildingIngredientsStorage>();
             workshop.model = buildingModel as WorkshopModel;
@@ -282,20 +282,20 @@ public partial class BuildingManager
         }
         else if (building is Decoration decoration)
         {
-            // Plugin.Log.LogInfo($"Start house");
+            // Logger.LogInfo($"Start house");
             decoration.state = new DecorationState();
             decoration.model = buildingModel as DecorationModel;
             decoration.view = view as DecorationView;
         }
 
-        // Plugin.Log.LogInfo($"Starting SpritesLayout");
+        // Logger.LogInfo($"Starting SpritesLayout");
         view.rotationParent = toRotate;
         view.uiParent = SetUpUI(building, buildingModel, buildingTemplate, view, buildingConstructionAnimationData);
 
-        // Plugin.Log.LogInfo($"Starting panelBackgroundSound");
+        // Logger.LogInfo($"Starting panelBackgroundSound");
         view.panelBackgroundSound = buildingModelTemplate.Prefab.BuildingView.panelBackgroundSound; // TODO: Customize
 
-        // Plugin.Log.LogInfo($"Starting upgradeParts");
+        // Logger.LogInfo($"Starting upgradeParts");
         List<BuildingUpgradePart> upgradeParts = new List<BuildingUpgradePart>();
         int tier = 1; // Start at 1 because 0 is always active
         while (Util.TryFindChild(prefab.transform, $"Tier {tier}", out GameObject tierGameObject, false))
@@ -314,7 +314,7 @@ public partial class BuildingManager
 
         if (view is ProductionBuildingView productionView)
         {
-            // Plugin.Log.LogInfo($"Starting productionView");
+            // Logger.LogInfo($"Starting productionView");
             productionView.productonLoopSound = null;
             productionView.noWorkersIcon = Util.FindChildRecursive(view.uiParent, "NoWorkersIcon").gameObject;
             productionView.idleIcon = Util.FindChildRecursive(view.uiParent, "IdleIcon").gameObject;
@@ -355,7 +355,7 @@ public partial class BuildingManager
 
         if (view is HouseView houseView)
         {
-            // Plugin.Log.LogInfo($"Starting houseView");
+            // Logger.LogInfo($"Starting houseView");
             HouseView templateHouseView = (HouseView)buildingTemplate.BuildingView;
             
             houseView.constructionAnimator = constructionAnimator;
@@ -382,7 +382,7 @@ public partial class BuildingManager
                 noBuildersIcon = GameObject.Instantiate(templateHouseView.noBuildersIcon, view.uiParent).transform;
             }
             houseView.noBuildersIcon = noBuildersIcon.gameObject;
-            // Plugin.Log.LogInfo($"Done houseView");
+            // Logger.LogInfo($"Done houseView");
         }
         
         if (view is WorkshopView workshopView)
@@ -406,7 +406,7 @@ public partial class BuildingManager
         
         if (view is DecorationView decorationView)
         {
-            // Plugin.Log.LogInfo($"Starting DecorationView");
+            // Logger.LogInfo($"Starting DecorationView");
             DecorationView templateDecorationView = (DecorationView)buildingTemplate.BuildingView;
             
             decorationView.constructionAnimator = constructionAnimator;
@@ -425,7 +425,7 @@ public partial class BuildingManager
                 noBuildersIcon = GameObject.Instantiate(templateDecorationView.noBuildersIcon, view.uiParent).transform;
             }
             decorationView.noBuildersIcon = noBuildersIcon.gameObject;
-            // Plugin.Log.LogInfo($"Done houseView");
+            // Logger.LogInfo($"Done houseView");
         }
 
         if (Util.TryFindChildRecursive(prefab.transform, "BuildingDisplayIcon", out SpriteRenderer renderer, false))
@@ -464,7 +464,7 @@ public partial class BuildingManager
             return true;
         }
 
-        Plugin.Log.LogError($"No template found for building model {buildingModel.name}!");
+        APILogger.LogError($"No template found for building model {buildingModel.name}!");
         templateModel = null;
         buildingPrefab = default;
         blightCyst = null;
@@ -497,16 +497,16 @@ public partial class BuildingManager
                 newIcon.transform.localRotation = Quaternion.Euler(90, 0, -90);
                 newIcon.transform.localScale = new Vector3(1.45f, 1.25f, 1f);
                 newIcon.SetActive(true);
-                Plugin.Log.LogInfo("Clone entrance icon: " + newIcon.FullName());
+                APILogger.LogInfo("Clone entrance icon: " + newIcon.FullName());
             }
             else
             {
-                Plugin.Log.LogWarning(
+                APILogger.LogWarning(
                     $"No entrance icon found for building {buildingModel.name} and prefab {workshopTemplate.name}! Adding temporary!");
             }
         }
 
-        // Plugin.Log.LogInfo($"Starting icons");
+        // Logger.LogInfo($"Starting icons");
         view.entranceIcon = Util.FindChildRecursive(view.rotationParent, "Entrance").gameObject;
         view.noBuildersIcon = Util.FindChildRecursive(ui, "NoBuildersIcon").gameObject;
         view.sleepingIcon = Util.FindChildRecursive(ui, "SleepingIcon").gameObject;

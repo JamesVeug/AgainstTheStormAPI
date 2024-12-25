@@ -29,7 +29,7 @@ public static class GradeExtensions
     {
         if (!NameToGrade.TryGetValue(grade, out var goodModel))
         {
-            Plugin.Log.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + grade);
+            APILogger.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + grade);
             grade = Grade.Zero;
         }
 
@@ -45,7 +45,7 @@ public static class GradeExtensions
                 }
             }
 
-            Plugin.Log.LogError($"Cannot find RecipeGradeModel for: " + grade);
+            APILogger.LogError($"Cannot find RecipeGradeModel for: " + grade);
             return null;
         }
             

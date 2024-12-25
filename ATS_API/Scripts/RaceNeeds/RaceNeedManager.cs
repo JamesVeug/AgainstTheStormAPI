@@ -68,7 +68,7 @@ public static class RaceNeedManager
             return;
         }
 
-        Plugin.Log.LogInfo("Syncing Needs: " + s_NewRaceNeeds.Count + " new needs");
+        APILogger.LogInfo("Syncing Needs: " + s_NewRaceNeeds.Count + " new needs");
 
 
         Settings settings = SO.Settings;

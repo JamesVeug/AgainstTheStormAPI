@@ -37,7 +37,7 @@ public partial class MetaRewardManager
     {
         if (s_disabledMetaRewards.Contains(__instance))
         {
-            Plugin.Log.LogInfo($"MetaReward {__instance.name} is disabled");
+            APILogger.LogInfo($"MetaReward {__instance.name} is disabled");
             __result = false;
             return false;
         }

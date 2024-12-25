@@ -508,7 +508,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of SimpleSeasonalEffectTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of SimpleSeasonalEffectTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[SimpleSeasonalEffectTypes._TO_DELETE_SSE_FuelRate];
 	}
 	
@@ -527,7 +527,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find SimpleSeasonalEffectTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find SimpleSeasonalEffectTypes with name: " + name + "\n" + Environment.StackTrace);
 		return SimpleSeasonalEffectTypes.Unknown;
 	}
 	
@@ -545,7 +545,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find SimpleSeasonalEffectModel for SimpleSeasonalEffectTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find SimpleSeasonalEffectModel for SimpleSeasonalEffectTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

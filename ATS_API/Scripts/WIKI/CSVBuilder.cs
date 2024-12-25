@@ -80,7 +80,7 @@ public class CSVBuilder
             System.IO.Directory.CreateDirectory(directory);
         }
 
-        Plugin.Log.LogInfo("Saving CSV to: " + path);
+        APILogger.LogInfo("Saving CSV to: " + path);
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(path))
         {
             file.WriteLine(string.Join(",", orderedHeaders.Select(a=>a.Name)));

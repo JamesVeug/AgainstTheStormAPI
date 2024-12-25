@@ -322,7 +322,7 @@ public static class ResourcesDepositsTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of ResourcesDepositsTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of ResourcesDepositsTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[ResourcesDepositsTypes.Marsh_Infinite_Node_Grain];
 	}
 	
@@ -341,7 +341,7 @@ public static class ResourcesDepositsTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find ResourcesDepositsTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find ResourcesDepositsTypes with name: " + name + "\n" + Environment.StackTrace);
 		return ResourcesDepositsTypes.Unknown;
 	}
 	
@@ -359,7 +359,7 @@ public static class ResourcesDepositsTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find ResourceDepositModel for ResourcesDepositsTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find ResourceDepositModel for ResourcesDepositsTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

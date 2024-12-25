@@ -64,7 +64,7 @@ public static class OrdersManager
             return;
         }
 
-        Plugin.Log.LogInfo("OrdersManager.Sync: " + s_OrderModels.Count + " new orders");
+        APILogger.LogInfo("OrdersManager.Sync: " + s_OrderModels.Count + " new orders");
 
 
         Settings settings = SO.Settings;

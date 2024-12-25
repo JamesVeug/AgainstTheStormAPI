@@ -17,7 +17,7 @@ public static partial class ModdedSaveManager
     [HarmonyPostfix]
     private static void Post_WorldState_Save()
     {
-        Plugin.Log.LogInfo("WorldStateService changed so Saving all modded data");
+        APILogger.LogInfo("WorldStateService changed so Saving all modded data");
         // Save Cycle state
         ModdedSaveManager.SaveAllModdedData();
     }
@@ -27,7 +27,7 @@ public static partial class ModdedSaveManager
     private static async UniTask Post_GameSaveService_Save(UniTask enumerator)
     {
         await enumerator;
-        Plugin.Log.LogInfo("GameSaveService changed so Saving all modded data");
+        APILogger.LogInfo("GameSaveService changed so Saving all modded data");
 
         // Save Settlement state
         ModdedSaveManager.SaveAllModdedData();
@@ -37,7 +37,7 @@ public static partial class ModdedSaveManager
     [HarmonyPostfix]
     private static void Post_MetaStateService_Save()
     {
-        Plugin.Log.LogInfo("MetaStateService changed so Saving all modded data");
+        APILogger.LogInfo("MetaStateService changed so Saving all modded data");
         
         // Save Settlement state
         ModdedSaveManager.SaveAllModdedData();
@@ -51,7 +51,7 @@ public static partial class ModdedSaveManager
     [HarmonyPostfix]
     private static void OnCycleEnded()
     {
-        Plugin.Log.LogInfo("OnCycleEnded. Clearing cycle data from all mods");
+        APILogger.LogInfo("OnCycleEnded. Clearing cycle data from all mods");
 
         foreach (KeyValuePair<string,ModSaveData> data in ModdedSaveManager.ModGuidToDataLookup)
         {
@@ -63,7 +63,7 @@ public static partial class ModdedSaveManager
     [HarmonyPostfix]
     private static void StartNewGame()
     {
-        Plugin.Log.LogInfo("StartNewGame. Clearing settlement data from all mods");
+        APILogger.LogInfo("StartNewGame. Clearing settlement data from all mods");
 
         foreach (KeyValuePair<string,ModSaveData> data in ModdedSaveManager.ModGuidToDataLookup)
         {

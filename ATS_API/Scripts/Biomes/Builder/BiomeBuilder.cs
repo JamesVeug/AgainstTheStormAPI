@@ -45,7 +45,7 @@ public partial class BiomeBuilder
         
         // The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
         newModel.townDescription = Placeholders.TownDescription;
-        Plugin.Log.LogInfo("townDescription set to " + newModel.townDescription.key + "\n" + Environment.StackTrace);
+        APILogger.LogInfo("townDescription set to " + newModel.townDescription.key + "\n" + Environment.StackTrace);
         
         // Use the existing model if its null.
         // NOTE: This is the entire world for the biome which will need a custom solution for when the player wants to change the texutre of the ground.

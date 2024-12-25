@@ -113,7 +113,7 @@ public partial class EffectBuilder<T> : IEffectBuilder where T : EffectModel
 
     public void SetObtainedAsCornerstone(int chance = 100)
     {
-        Assert.IsTrue(chance >= 1 && chance <= 100, "Cornerstone chance must be between 1 and 100!");
+        APILogger.IsTrue(chance >= 1 && chance <= 100, "Cornerstone chance must be between 1 and 100!");
         m_newData.IsCornerstone = true;
         m_newData.Chance = chance;
     }
