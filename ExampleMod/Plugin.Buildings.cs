@@ -52,6 +52,10 @@ public partial class Plugin
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
+        burgerJoint.SetScaffoldingData(new BuildingConstructionAnimationData()
+        {
+            unconstructedPosition = new Vector3(0, -3, 0)
+        });
         
         var burgerRecipes = burgerJoint.CreateRecipe(burger.Name, 2, 126, Grade.One);
         burgerRecipes.AddTags(TagTypes.Food_Tag);
