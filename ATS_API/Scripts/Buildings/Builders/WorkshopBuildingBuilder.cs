@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ATS_API.Helpers;
+using ATS_API.Localization;
 using ATS_API.Recipes.Builders;
 using Eremite.Buildings;
 
@@ -31,8 +32,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
         m_newData.MetaData = metaData;
         m_newData.Category = BuildingCategoriesTypes.Industry;
         
-        // Set Category to Housing
-        // Set label to Housing
+        m_buildingModel.displayLabel = Keys.ProductionBuilding.ToLabelModel();
         m_buildingModel.levels = [];
         m_buildingModel.cystsAmount = 3;
     }

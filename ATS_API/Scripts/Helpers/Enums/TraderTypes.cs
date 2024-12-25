@@ -124,7 +124,7 @@ public static class TraderTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of TraderTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of TraderTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[TraderTypes.Trader_0_General];
 	}
 	
@@ -143,7 +143,7 @@ public static class TraderTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find TraderTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find TraderTypes with name: " + name + "\n" + Environment.StackTrace);
 		return TraderTypes.Unknown;
 	}
 	
@@ -161,7 +161,7 @@ public static class TraderTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find TraderModel for TraderTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find TraderModel for TraderTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

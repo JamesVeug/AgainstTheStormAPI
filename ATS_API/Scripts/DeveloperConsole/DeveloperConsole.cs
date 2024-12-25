@@ -21,20 +21,20 @@ namespace ATS_API.Scripts.DeveloperConsole
         {
             if (!Configs.DeveloperConsoleEnabled)
             {
-                Plugin.Log.LogError("Developer console is disabled in the config");
+                APILogger.LogError("Developer console is disabled in the config");
                 return;
             }
             
             if (!GameMB.IsGameActive)
             {
-                Plugin.Log.LogError("Game is not active to toggle the console");
+                APILogger.LogError("Game is not active to toggle the console");
                 return;
             }
 
             QuantumConsole console = GetQuantumConsole();
             if (console == null)
             {
-                Plugin.Log.LogError("Unable to toggle the console");
+                APILogger.LogError("Unable to toggle the console");
                 return;
             }
             
@@ -55,7 +55,7 @@ namespace ATS_API.Scripts.DeveloperConsole
                 MB.InputService.ReleaseInput(console);
             }
             
-            Plugin.Log.LogMessage("Developer console toggled to " + (console.enabled ? "enabled" : "disabled"));
+            APILogger.LogInfo("Developer console toggled to " + (console.enabled ? "enabled" : "disabled"));
         }
 
         private static QuantumConsole s_cachedQuantumConsole = null;
@@ -66,12 +66,12 @@ namespace ATS_API.Scripts.DeveloperConsole
                 s_cachedQuantumConsole = GameObject.FindObjectOfType<QuantumConsole>(true);
                 if(s_cachedQuantumConsole == null)
                 {
-                    Plugin.Log.LogError("QuantumConsole not found, creating new one");
+                    APILogger.LogError("QuantumConsole not found, creating new one");
                     s_cachedQuantumConsole = new GameObject("QuantumConsole").AddComponent<QuantumConsole>();
                 }
                 else
                 {
-                    Plugin.Log.LogMessage("QuantumConsole found");
+                    APILogger.LogInfo("QuantumConsole found");
                 }
 
                 s_ConsoleEnabled = false;

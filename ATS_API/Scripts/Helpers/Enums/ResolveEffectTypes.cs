@@ -1108,7 +1108,7 @@ public static class ResolveEffectTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of ResolveEffectTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of ResolveEffectTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[ResolveEffectTypes.Acidic_Environment];
 	}
 	
@@ -1127,7 +1127,7 @@ public static class ResolveEffectTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find ResolveEffectTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find ResolveEffectTypes with name: " + name + "\n" + Environment.StackTrace);
 		return ResolveEffectTypes.Unknown;
 	}
 	
@@ -1145,7 +1145,7 @@ public static class ResolveEffectTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find ResolveEffectModel for ResolveEffectTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find ResolveEffectModel for ResolveEffectTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

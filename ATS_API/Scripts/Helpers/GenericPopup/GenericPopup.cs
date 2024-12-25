@@ -56,7 +56,7 @@ internal partial class GenericPopup : Popup
         yield return null;
         float height = descriptionText.GetComponent<RectTransform>().sizeDelta.y;
         float diff = height - descriptionInitialHeight;
-        Plugin.Log.LogInfo("Resizing window to " + height + " and diff " + diff);
+        APILogger.LogInfo("Resizing window to " + height + " and diff " + diff);
         RectTransform rectTransform = content.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, contentInitialHeight + diff);
     }
@@ -127,7 +127,7 @@ internal partial class GenericPopup : Popup
         // descTextText += "\n\n" + GetText(APIKeys.GenericPopup_YouHaveXOptions_Key, task.buttons.Count);
         
         descriptionText.text = descTextText;
-        Plugin.Log.LogInfo("descriptionText size: " + descriptionText.fontSize);
+        APILogger.LogInfo("descriptionText size: " + descriptionText.fontSize);
         // descriptionText.alignment = TextAlignmentOptions.Left;
         
         

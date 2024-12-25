@@ -192,7 +192,7 @@ public static class TagTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of TagTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of TagTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[TagTypes.Aggregation_Tag_Caches];
 	}
 	
@@ -211,7 +211,7 @@ public static class TagTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find TagTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find TagTypes with name: " + name + "\n" + Environment.StackTrace);
 		return TagTypes.Unknown;
 	}
 	
@@ -229,7 +229,7 @@ public static class TagTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find ModelTag for TagTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find ModelTag for TagTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

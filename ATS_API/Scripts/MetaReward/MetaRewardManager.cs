@@ -57,7 +57,7 @@ public partial class MetaRewardManager
     
     private static void SyncMetaRewards()
     {
-        Plugin.Log.LogInfo($"Syncing {s_newMetaRewards.Count} new meta rewards");
+        APILogger.LogInfo($"Syncing {s_newMetaRewards.Count} new meta rewards");
 
         Settings settings = SO.Settings;
         s_metaRewards.Sync(ref settings.metaRewards, settings.metaRewardsCache, s_newMetaRewards, a=>a.Model);

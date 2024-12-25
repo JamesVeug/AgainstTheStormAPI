@@ -76,7 +76,7 @@ public static class OreTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of OreTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of OreTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[OreTypes.Coal_Ore];
 	}
 	
@@ -95,7 +95,7 @@ public static class OreTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find OreTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find OreTypes with name: " + name + "\n" + Environment.StackTrace);
 		return OreTypes.Unknown;
 	}
 	
@@ -113,7 +113,7 @@ public static class OreTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find OreModel for OreTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find OreModel for OreTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

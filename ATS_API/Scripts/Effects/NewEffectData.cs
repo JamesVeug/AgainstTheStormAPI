@@ -26,7 +26,7 @@ public class NewEffectData : ASyncable<EffectModel>
             }
             else if(MetaData != null)
             {
-                Plugin.Log.LogError($"{EffectModel.name} MetaData is not GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData");
+                APILogger.LogError($"{EffectModel.name} MetaData is not GoodsProductionEffectBuilder.GoodProductionEffectBuildMetaData");
             }
         }
         if (EffectModel is GoodsEffectModel goodsEffectModel)
@@ -37,7 +37,7 @@ public class NewEffectData : ASyncable<EffectModel>
             }
             else if(MetaData != null)
             {
-                Plugin.Log.LogError($"{EffectModel.name} MetaData is not GoodsEffectBuilder.GoodEffectBuildMetaData");
+                APILogger.LogError($"{EffectModel.name} MetaData is not GoodsEffectBuilder.GoodEffectBuildMetaData");
             }
         }
         

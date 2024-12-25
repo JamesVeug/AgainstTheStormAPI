@@ -10,7 +10,7 @@ public partial class NaturalResourcePrefabBuilder
     {
         if (!AssetBundleHelper.TryGet(bundle, prefabName, out GameObject prefabRef))
         {
-            Plugin.Log.LogError($"Failed to load prefab {prefabName} from asset bundle {bundle.name}");
+            APILogger.LogError($"Failed to load prefab {prefabName} from asset bundle {bundle.name}");
             return this;
         }
         
@@ -40,7 +40,6 @@ public partial class NaturalResourcePrefabBuilder
         NaturalResource naturalResource = prefab.GetOrAdd<NaturalResource>();
         NaturalResourceView view = prefab.GetOrAdd<NaturalResourceView>();
         Animator animator = prefab.GetOrAdd<Animator>();
-        Plugin.Log.LogInfo($"Created animator {animator} on {animator.FullName()}");
         
         GameObject deco = prefab.transform.FindChildRecursive("Deco").gameObject;
         foreach (MeshShadowController child in deco.GetComponentsInChildren<MeshShadowController>())
@@ -67,7 +66,6 @@ public partial class NaturalResourcePrefabBuilder
         view.toRotate = prefab.transform.FindChildRecursive("ToRotate");
         view.uiParent = prefab.transform.FindChildRecursive("UI");
         view.animator = animator;
-        Plugin.Log.LogInfo($"Assigned animator to view on {view.FullName()}");
         view.elements = view.toRotate.FindChildRecursive("Elements").gameObject;
         view.meshRenderers = view.elements.GetComponentsInChildren<MeshShadowController>(true);
         view.randomRotation = true;
@@ -95,7 +93,6 @@ public partial class NaturalResourcePrefabBuilder
         Animator component = m_customPrefab.GetComponent<Animator>();
         if (component.runtimeAnimatorController == null)
         {
-            Plugin.Log.LogInfo($"Syncing animator on {component.FullName()}");
             NaturalResource naturalResource = NaturalResourcePrefabs.Bay_Tree_1.ToNaturalResource();
             component.runtimeAnimatorController = naturalResource.SafeGetComponent<Animator>().runtimeAnimatorController;
         }
@@ -103,11 +100,8 @@ public partial class NaturalResourcePrefabBuilder
         NaturalResourceView view = m_customPrefab.SafeGetComponent<NaturalResourceView>();
         if (view.dustPrefab == null)
         {
-            Plugin.Log.LogInfo($"Syncing dust prefab on {view.FullName()}");
             NaturalResource naturalResource = NaturalResourcePrefabs.Bay_Tree_1.ToNaturalResource();
             view.dustPrefab = naturalResource.SafeGetComponent<NaturalResourceView>().dustPrefab;
         }
-        
-        Plugin.Log.LogInfo($"Synced Custom prefab!");
     }
 }

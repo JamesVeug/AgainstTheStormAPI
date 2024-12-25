@@ -91,7 +91,7 @@ public static class GoodsManager
             return;
         }
 
-        Plugin.Log.LogInfo("GoodsManager.Sync: " + s_newGoods.Count + " new goods");
+        APILogger.LogInfo("GoodsManager.Sync: " + s_newGoods.Count + " new goods");
 
         
         Settings settings = SO.Settings;

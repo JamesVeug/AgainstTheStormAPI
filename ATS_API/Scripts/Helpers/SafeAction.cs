@@ -29,7 +29,7 @@ public class SafeAction
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
             }
         }
     }
@@ -59,7 +59,7 @@ public class SafeAction<T>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
             }
         }
     }
@@ -74,7 +74,7 @@ public class SafeAction<T>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
                 bool uniTask = await OnException.Invoke(e);
                 if (!uniTask)
                 {
@@ -111,7 +111,7 @@ public class SafeAction<T,Y>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
             }
         }
     }
@@ -126,7 +126,7 @@ public class SafeAction<T,Y>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
                 bool uniTask = await OnException.Invoke(e);
                 if (!uniTask)
                 {

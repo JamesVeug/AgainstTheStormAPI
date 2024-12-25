@@ -532,7 +532,7 @@ public static class ProfessionTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of ProfessionTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of ProfessionTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[ProfessionTypes.Alchemist];
 	}
 	
@@ -551,7 +551,7 @@ public static class ProfessionTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find ProfessionTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find ProfessionTypes with name: " + name + "\n" + Environment.StackTrace);
 		return ProfessionTypes.Unknown;
 	}
 	
@@ -569,7 +569,7 @@ public static class ProfessionTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find ProfessionModel for ProfessionTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find ProfessionModel for ProfessionTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

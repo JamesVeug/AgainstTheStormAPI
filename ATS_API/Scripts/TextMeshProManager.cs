@@ -20,7 +20,7 @@ namespace ATS_API
             s_dirty = true;
             texture.name = imageName.ToLower();
             m_pendingSpriteAssets.Add(texture);
-            // Plugin.Log.LogInfo($"Adding {imageName} to TMP\n" + Environment.StackTrace);
+            // Logger.LogInfo($"Adding {imageName} to TMP\n" + Environment.StackTrace);
         }
 
         public static void Replace(Texture2D texture, string imageName)
@@ -28,7 +28,7 @@ namespace ATS_API
             s_dirty = true;
             texture.name = imageName.ToLower();
             m_pendingSpriteAssets.Add(texture);
-            // Plugin.Log.LogInfo($"Replacing {imageName} in TMP\n" + Environment.StackTrace);
+            // Logger.LogInfo($"Replacing {imageName} in TMP\n" + Environment.StackTrace);
         }
 
         public static void Instantiate()
@@ -51,7 +51,7 @@ namespace ATS_API
             {
                 return;
             }
-            Plugin.Log.LogInfo("Syncing TextMeshPro sprites " + m_pendingSpriteAssets.Count);
+            APILogger.LogInfo("Syncing TextMeshPro sprites " + m_pendingSpriteAssets.Count);
             
             
             // check if the asset exists in m_spriteAssets
@@ -120,7 +120,7 @@ namespace ATS_API
                     continue;
                 }
 
-                // Plugin.Log.LogInfo($"Replacing {spriteName} in Sprite Asset {asset.name}");
+                // Logger.LogInfo($"Replacing {spriteName} in Sprite Asset {asset.name}");
                 Texture2D assetSpriteSheet = (Texture2D)asset.spriteSheet;
                 if (!assetSpriteSheet.isReadable)
                 {

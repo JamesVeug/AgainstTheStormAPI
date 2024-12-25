@@ -85,6 +85,11 @@ public partial class EffectBuilder<T> : IEffectBuilder where T : EffectModel
     {
         m_effectModel.label = LocalizationManager.ToLabelModel(m_guid, m_name, "label", labelModel, systemLanguage);
     }
+    
+    public void SetLabelKey(string key)
+    {
+        m_effectModel.label = key.ToLabelModel();
+    }
 
     public void SetDisplayName(string displayName, SystemLanguage systemLanguage = SystemLanguage.English)
     {
@@ -108,7 +113,7 @@ public partial class EffectBuilder<T> : IEffectBuilder where T : EffectModel
 
     public void SetObtainedAsCornerstone(int chance = 100)
     {
-        Assert.IsTrue(chance >= 1 && chance <= 100, "Cornerstone chance must be between 1 and 100!");
+        APILogger.IsTrue(chance >= 1 && chance <= 100, "Cornerstone chance must be between 1 and 100!");
         m_newData.IsCornerstone = true;
         m_newData.Chance = chance;
     }

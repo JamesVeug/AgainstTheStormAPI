@@ -76,7 +76,7 @@ public static class DecorationTierTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of DecorationTierTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of DecorationTierTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[DecorationTierTypes.Aesthetics];
 	}
 	
@@ -95,7 +95,7 @@ public static class DecorationTierTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find DecorationTierTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find DecorationTierTypes with name: " + name + "\n" + Environment.StackTrace);
 		return DecorationTierTypes.Unknown;
 	}
 	
@@ -113,7 +113,7 @@ public static class DecorationTierTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find DecorationTier for DecorationTierTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find DecorationTier for DecorationTierTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

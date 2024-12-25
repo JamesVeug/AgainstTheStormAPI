@@ -212,7 +212,7 @@ public static class TextureHelper
         Rect rect = SPRITE_RECTS[spriteType];
         if (texture.width != rect.width || texture.height != rect.height)
         {
-            Plugin.Log.LogWarning($"Texture dimensions for {texture.name} should be {rect.width}x{rect.height} but instead it is {texture.width}x{texture.height}.");
+            APILogger.LogWarning($"Texture dimensions for {texture.name} should be {rect.width}x{rect.height} but instead it is {texture.width}x{texture.height}.");
         }
     }
 
@@ -371,7 +371,7 @@ public static class TextureHelper
             Directory.CreateDirectory(directory);
         }
                 
-        Plugin.Log.LogInfo($"Writing {fullPath}");
+        APILogger.LogInfo($"Writing {fullPath}");
         File.WriteAllBytes(fullPath, bytes);
     }
     

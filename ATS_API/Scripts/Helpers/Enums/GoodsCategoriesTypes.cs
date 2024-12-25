@@ -100,7 +100,7 @@ public static class GoodsCategoriesTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of GoodsCategoriesTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of GoodsCategoriesTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[GoodsCategoriesTypes.Building_Materials];
 	}
 	
@@ -119,7 +119,7 @@ public static class GoodsCategoriesTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find GoodsCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find GoodsCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
 		return GoodsCategoriesTypes.Unknown;
 	}
 	
@@ -137,7 +137,7 @@ public static class GoodsCategoriesTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find GoodCategoryModel for GoodsCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find GoodCategoryModel for GoodsCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

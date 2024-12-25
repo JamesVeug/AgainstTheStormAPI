@@ -2324,7 +2324,7 @@ public static class OrderTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of OrderTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of OrderTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[OrderTypes.Amber_And_Luxury_LOW];
 	}
 	
@@ -2343,7 +2343,7 @@ public static class OrderTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find OrderTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find OrderTypes with name: " + name + "\n" + Environment.StackTrace);
 		return OrderTypes.Unknown;
 	}
 	
@@ -2361,7 +2361,7 @@ public static class OrderTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find OrderModel for OrderTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find OrderModel for OrderTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

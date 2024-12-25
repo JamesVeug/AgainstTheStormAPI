@@ -148,7 +148,7 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
     {
         if(loadAsset == null)
         {
-            Plugin.Log.LogError($"Custom prefab for building {m_buildingModel.name} is null!");
+            APILogger.LogError($"Custom prefab for building {m_buildingModel.name} is null!");
             return;
         }
         
@@ -234,6 +234,11 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
             fields[i] = field;
         }
         m_buildingModel.footprintMap.fields = fields;
+    }
+    
+    public void SetScaffoldingData(BuildingConstructionAnimationData data)
+    {
+        m_newData.BuildingConstructionAnimationData = data;
     }
 }
 

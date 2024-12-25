@@ -78,7 +78,7 @@ public partial class WIKI
                     catch (Exception e)
                     {
                         // ignored
-                        Plugin.Log.LogError("Failed to get comment for " + getter + "\n" + e + "\n" + Environment.StackTrace);
+                        APILogger.LogError("Failed to get comment for " + getter + "\n" + e + "\n" + Environment.StackTrace);
                     }
                 }
 
@@ -314,7 +314,7 @@ public partial class WIKI
         else
         {
             string argString = string.Join(", ", args.Select(a => a.Key + "=" + a.Value));
-            Plugin.Log.LogInfo("Unhandled tag: '" + tagName + "' with args: '" + argString + "'");
+            APILogger.LogInfo("Unhandled tag: '" + tagName + "' with args: '" + argString + "'");
         }
         
         return s;
@@ -403,7 +403,7 @@ public partial class WIKI
         {
             // if (o is GoodModel effectModel)
             // {
-            //     Plugin.Log.LogInfo("WIKI: " + effectModel.name + " " + s);
+            //     Logger.LogInfo("WIKI: " + effectModel.name + " " + s);
             // }
         }
         

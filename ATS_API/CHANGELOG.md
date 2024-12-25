@@ -1,4 +1,27 @@
-# 3.x.x
+# 3.2.1
+- Fixed endless loading screen when leaving a game
+- Fixed endless loading screen when loading the world map with a missing biome.
+
+# 3.2.0
+## Added
+  - General
+    - Config to turn on Developer console from the menu of the game and F1 to toggle.
+    - [File that contains all developer commands in the game](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/QuantumConsoleCommands.md)
+    - CustomHookedEffectManager for custom HookLogic
+    - CompositeEffectBuilder for combining effects together
+    - More helpers and documentation for DecorationTierBuilder
+    - Warnings when providing the wrong size for a texture
+  - Biomes
+    - Support for changing glade fog color
+    - Support for custom rain
+    - Support to change speed of water
+  - Buildings
+    - Support for changing construction animation
+## Fixed
+  - Custom buildings not having scaffolding when put down
+  - [Effects.md](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/Effects.md) and [HookLogic.md](https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/HookLogic.md) missing from the project
+
+# 3.1.0
 - Buildings
   - Added support for custom decorations
   - Added support for custom decoration tiers

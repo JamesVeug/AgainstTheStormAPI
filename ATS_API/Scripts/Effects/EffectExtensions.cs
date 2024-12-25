@@ -21,7 +21,7 @@ public static class EffectExtensions
             }
             else
             {
-                Plugin.Log.LogWarning("Can't find effect " + effectName.Name);
+                APILogger.LogWarning("Can't find effect " + effectName.Name);
             }
         }
         

@@ -2056,7 +2056,7 @@ public static class RelicTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of RelicTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of RelicTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[RelicTypes.AncientBurrialGrounds];
 	}
 	
@@ -2075,7 +2075,7 @@ public static class RelicTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find RelicTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find RelicTypes with name: " + name + "\n" + Environment.StackTrace);
 		return RelicTypes.Unknown;
 	}
 	
@@ -2093,7 +2093,7 @@ public static class RelicTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find RelicModel for RelicTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find RelicModel for RelicTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

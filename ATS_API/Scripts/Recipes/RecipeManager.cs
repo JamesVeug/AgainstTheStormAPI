@@ -68,7 +68,7 @@ public static partial class RecipeManager
             s_newRecipes.Add(item);
         }
 
-        Plugin.Log.LogInfo($"Added new recipe {name} with guid {guid} name: {(model == null ? "null" : model.name)}");
+        APILogger.LogInfo($"Added new recipe {name} with guid {guid} name: {(model == null ? "null" : model.name)}");
         
         return data;
     }

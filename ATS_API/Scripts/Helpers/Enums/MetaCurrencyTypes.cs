@@ -76,7 +76,7 @@ public static class MetaCurrencyTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of MetaCurrencyTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of MetaCurrencyTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[MetaCurrencyTypes.Artifacts];
 	}
 	
@@ -95,7 +95,7 @@ public static class MetaCurrencyTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find MetaCurrencyTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find MetaCurrencyTypes with name: " + name + "\n" + Environment.StackTrace);
 		return MetaCurrencyTypes.Unknown;
 	}
 	
@@ -113,7 +113,7 @@ public static class MetaCurrencyTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find MetaCurrencyModel for MetaCurrencyTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find MetaCurrencyModel for MetaCurrencyTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

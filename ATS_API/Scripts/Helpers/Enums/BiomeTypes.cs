@@ -136,7 +136,7 @@ public static class BiomeTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of BiomeTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BiomeTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[BiomeTypes.Bay];
 	}
 	
@@ -155,7 +155,7 @@ public static class BiomeTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find BiomeTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find BiomeTypes with name: " + name + "\n" + Environment.StackTrace);
 		return BiomeTypes.Unknown;
 	}
 	
@@ -173,7 +173,7 @@ public static class BiomeTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find BiomeModel for BiomeTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BiomeModel for BiomeTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

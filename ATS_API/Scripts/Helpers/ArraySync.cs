@@ -40,7 +40,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         
         if (elementsToAdd.Count == 0)
         {
-            // Plugin.Log.LogInfo($"{m_Name} has no new elements!");
+            // Logger.LogInfo($"{m_Name} has no new elements!");
             return elementsToAdd;
         }
         
@@ -51,7 +51,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
             API syncable = elementsToAdd[i];
             ATS ats = getter(syncable);
             array[startingIndex + i] = ats;
-            // Plugin.Log.LogInfo($"{m_Name} {i} {ats}");
+            // Logger.LogInfo($"{m_Name} {i} {ats}");
         }
         
         // string result = "";
@@ -59,7 +59,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         // {
         //     result += so.name + ", ";
         // }
-        // Plugin.Log.LogInfo($"{m_Name} now has {array.Length} elements: {result}");
+        // Logger.LogInfo($"{m_Name} now has {array.Length} elements: {result}");
 
         if (settingsEffectsCache != null)
         {

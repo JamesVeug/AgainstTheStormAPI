@@ -42,7 +42,7 @@ public class NewDifficulty : ASyncable<DifficultyModel>
 
         if (closestDifficultyModel == null)
         {
-            Plugin.Log.LogError($"Could not find a difficulty model to copy from for {difficultyModel.name}");
+            APILogger.LogError($"Could not find a difficulty model to copy from for {difficultyModel.name}");
             difficultyModel.modifiers = ascensionModifiers.Select(a=>
             {
                 if(a.Model.effect == null && a.EffectTypes != EffectTypes.None)

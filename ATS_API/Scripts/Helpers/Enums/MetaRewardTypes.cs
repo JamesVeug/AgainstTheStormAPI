@@ -2452,7 +2452,7 @@ public static class MetaRewardTypesExtensions
 			return name;
 		}
 
-		Plugin.Log.LogError($"Cannot find name of MetaRewardTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of MetaRewardTypes: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[MetaRewardTypes.Artifacts_10];
 	}
 	
@@ -2471,7 +2471,7 @@ public static class MetaRewardTypesExtensions
 			}
 		}
 
-		Plugin.Log.LogWarning("Cannot find MetaRewardTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find MetaRewardTypes with name: " + name + "\n" + Environment.StackTrace);
 		return MetaRewardTypes.Unknown;
 	}
 	
@@ -2489,7 +2489,7 @@ public static class MetaRewardTypesExtensions
 			return model;
 		}
 	
-		Plugin.Log.LogError("Cannot find MetaRewardModel for MetaRewardTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find MetaRewardModel for MetaRewardTypes with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 
