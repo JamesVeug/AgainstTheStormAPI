@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using ATS_API.Helpers;
 using Eremite;
+using Eremite.Buildings;
 using Eremite.Model;
 using Eremite.Model.Effects;
 using Eremite.Model.Meta;
@@ -339,8 +340,7 @@ public partial class WIKI
 
         CreateEnumTypesCSharpScript("DecorationTierTypes", "SO.Settings.decorationsTiers", SO.Settings.decorationsTiers, a=>a.Name, NameAndDescription, ["Eremite.Buildings"], GetPredefinedDecorationEnumNames);
 
-        Func<EffectModel, string> effectGroup = EffectGroup;
-        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, EffectComment, ["Eremite.Model"], groupEnumsBy:effectGroup);
+        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, EffectComment, ["Eremite.Model"], groupEnumsBy:GroupByType);
         CreateEnumTypesCSharpScript("ResolveEffectTypes", "SO.Settings.resolveEffects", SO.Settings.resolveEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("OrderTypes", "SO.Settings.orders", SO.Settings.orders, a=>a.Name, NameAndDescription, ["Eremite.Model.Orders"]);
         CreateEnumTypesCSharpScript("BiomeTypes", "SO.Settings.biomes", SO.Settings.biomes, a=>a.Name, NameAndDescription, ["Eremite.WorldMap"]);
@@ -357,6 +357,10 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        
+        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, NameAndDescription, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
+        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
     }
 
     private static string GetPredefinedDecorationEnumNames(string s)
@@ -391,7 +395,7 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("NaturalResourcePrefabs", resourceString, resources, a=>a.name, comment, [], includeNamespaceInType:true);
     }
 
-    private static string EffectGroup(EffectModel arg)
+    private static string GroupByType(object arg)
     {
         return arg.GetType().Name;
     }
