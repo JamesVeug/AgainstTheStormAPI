@@ -136,7 +136,7 @@ public static class BiomeTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of BiomeTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BiomeTypes: " + type);
 		return TypeToInternalName[BiomeTypes.Bay];
 	}
 	
@@ -173,7 +173,7 @@ public static class BiomeTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find BiomeModel for BiomeTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BiomeModel for BiomeTypes with name: " + name);
 		return null;
 	}
 

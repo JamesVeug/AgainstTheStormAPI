@@ -64,7 +64,7 @@ public class SafeAction<T>
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
             }
         }
     }
@@ -79,7 +79,7 @@ public class SafeAction<T>
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
                 bool uniTask = await OnException.Invoke(e);
                 if (!uniTask)
                 {
@@ -101,7 +101,7 @@ public class SafeAction<T>
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
                 bool uniTask = OnException.Invoke(e);
                 if (!uniTask)
                 {
@@ -138,7 +138,7 @@ public class SafeAction<T,Y>
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
             }
         }
     }
@@ -153,7 +153,7 @@ public class SafeAction<T,Y>
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
                 bool uniTask = await OnException.Invoke(e);
                 if (!uniTask)
                 {

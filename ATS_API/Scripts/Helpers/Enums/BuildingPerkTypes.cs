@@ -380,7 +380,7 @@ public static class BuildingPerkTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of BuildingPerkTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BuildingPerkTypes: " + type);
 		return TypeToInternalName[BuildingPerkTypes.Arch_Inst_Extra_Production];
 	}
 	
@@ -417,7 +417,7 @@ public static class BuildingPerkTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find BuildingPerkModel for BuildingPerkTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BuildingPerkModel for BuildingPerkTypes with name: " + name);
 		return null;
 	}
 

@@ -76,7 +76,7 @@ public static class MetaCurrencyTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of MetaCurrencyTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of MetaCurrencyTypes: " + type);
 		return TypeToInternalName[MetaCurrencyTypes.Artifacts];
 	}
 	
@@ -113,7 +113,7 @@ public static class MetaCurrencyTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find MetaCurrencyModel for MetaCurrencyTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find MetaCurrencyModel for MetaCurrencyTypes with name: " + name);
 		return null;
 	}
 

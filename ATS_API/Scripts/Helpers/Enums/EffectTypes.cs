@@ -20378,7 +20378,7 @@ public static class EffectTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of EffectTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of EffectTypes: " + type);
 		return TypeToInternalName[EffectTypes.Additional_Impatience_For_Death];
 	}
 	
@@ -20415,7 +20415,7 @@ public static class EffectTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find EffectModel for EffectTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find EffectModel for EffectTypes with name: " + name);
 		return null;
 	}
 

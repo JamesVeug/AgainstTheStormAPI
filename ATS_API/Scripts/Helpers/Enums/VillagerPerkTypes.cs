@@ -526,7 +526,7 @@ public static class VillagerPerkTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of VillagerPerkTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of VillagerPerkTypes: " + type);
 		return TypeToInternalName[VillagerPerkTypes.Acidic_Environment];
 	}
 	
@@ -563,7 +563,7 @@ public static class VillagerPerkTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find VillagerPerkModel for VillagerPerkTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find VillagerPerkModel for VillagerPerkTypes with name: " + name);
 		return null;
 	}
 

@@ -94,7 +94,7 @@ public static class InstitutionRecipeTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of InstitutionRecipeTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of InstitutionRecipeTypes: " + type);
 		return TypeToInternalName[InstitutionRecipeTypes.Bloodthirst];
 	}
 	
@@ -131,7 +131,7 @@ public static class InstitutionRecipeTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find InstitutionRecipeModel for InstitutionRecipeTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find InstitutionRecipeModel for InstitutionRecipeTypes with name: " + name);
 		return null;
 	}
 

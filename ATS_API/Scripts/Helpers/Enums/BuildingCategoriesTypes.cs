@@ -178,7 +178,7 @@ public static class BuildingCategoriesTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of BuildingCategoriesTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BuildingCategoriesTypes: " + type);
 		return TypeToInternalName[BuildingCategoriesTypes.City_Buildings];
 	}
 	
@@ -215,7 +215,7 @@ public static class BuildingCategoriesTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find BuildingCategoryModel for BuildingCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BuildingCategoryModel for BuildingCategoriesTypes with name: " + name);
 		return null;
 	}
 

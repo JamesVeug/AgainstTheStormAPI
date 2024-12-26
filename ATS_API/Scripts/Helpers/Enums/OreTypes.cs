@@ -76,7 +76,7 @@ public static class OreTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of OreTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of OreTypes: " + type);
 		return TypeToInternalName[OreTypes.Coal_Ore];
 	}
 	
@@ -113,7 +113,7 @@ public static class OreTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find OreModel for OreTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find OreModel for OreTypes with name: " + name);
 		return null;
 	}
 

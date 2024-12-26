@@ -387,7 +387,7 @@ public static class NaturalResourcePrefabsExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of NaturalResourcePrefabs: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of NaturalResourcePrefabs: " + type);
 		return TypeToInternalName[NaturalResourcePrefabs.Bay_Tree_1];
 	}
 	
@@ -424,7 +424,7 @@ public static class NaturalResourcePrefabsExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find NaturalResource for NaturalResourcePrefabs with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find NaturalResource for NaturalResourcePrefabs with name: " + name);
 		return null;
 	}
 

@@ -154,7 +154,7 @@ public static class BuildingTagTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of BuildingTagTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BuildingTagTypes: " + type);
 		return TypeToInternalName[BuildingTagTypes.Alchemy];
 	}
 	
@@ -191,7 +191,7 @@ public static class BuildingTagTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find BuildingTagModel for BuildingTagTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BuildingTagModel for BuildingTagTypes with name: " + name);
 		return null;
 	}
 

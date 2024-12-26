@@ -40,7 +40,7 @@ public static class BuildingBehaviourTypesExtensions
             return name;
         }
 
-        APILogger.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + type + ".\n" + Environment.StackTrace);
+        APILogger.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + type + ".");
         return typeof(Eremite.Buildings.Altar);
     }
     
@@ -51,7 +51,7 @@ public static class BuildingBehaviourTypesExtensions
             return name;
         }
 
-        APILogger.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + type + ".\n" + Environment.StackTrace);
+        APILogger.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + type + ".");
         return "Altar";
     }
     
@@ -62,7 +62,7 @@ public static class BuildingBehaviourTypesExtensions
             return name;
         }
 
-        APILogger.LogError($"Cannot find prefab name for type: " + type + ".\n" + Environment.StackTrace);
+        APILogger.LogError($"Cannot find prefab name for type: " + type + ".");
         return "BuildingTemplate";
     }
 

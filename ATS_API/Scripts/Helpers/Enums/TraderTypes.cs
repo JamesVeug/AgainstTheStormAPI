@@ -124,7 +124,7 @@ public static class TraderTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of TraderTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of TraderTypes: " + type);
 		return TypeToInternalName[TraderTypes.Trader_0_General];
 	}
 	
@@ -161,7 +161,7 @@ public static class TraderTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find TraderModel for TraderTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find TraderModel for TraderTypes with name: " + name);
 		return null;
 	}
 
