@@ -99,6 +99,5 @@ public partial class Plugin
         var friesRecipe = playPen.CreateRecipe(friesNeed.ID);
         friesRecipe.AddTags(TagTypes.Food_Tag);
         friesRecipe.AddRequiredIngredients((1, fries.NewGood.id));
-
     }
 }

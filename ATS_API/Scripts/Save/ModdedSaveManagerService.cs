@@ -43,8 +43,8 @@ internal class ModdedSaveManagerService : Service
             data,
                 (Exception e) =>
                 {
-                    Plugin.Log.LogError($"Encounter error when try to invoke callback of {modGUID}");
-                    Plugin.Log.LogError(e);
+                    APILogger.LogError($"Encounter error when try to invoke callback of {modGUID}");
+                    APILogger.LogError(e);
                     return true;
                 });
         }
@@ -216,15 +216,15 @@ internal class ModdedSaveManagerService : Service
                 data,
                     (Exception e) =>
                     {
-                        Plugin.Log.LogError($"Encounter error when try to invoke callback of {guid}");
-                        Plugin.Log.LogError(e);
+                        APILogger.LogError($"Encounter error when try to invoke callback of {guid}");
+                        APILogger.LogError(e);
                         return true;
                     });
         }
         string json = JsonConvert.SerializeObject(data, Formatting.Indented);
         string fullFilePath = Path.Combine(ModdedSaveManager.PathToSaveFile, $"{CleanGuid(guid)}.moddedsave");
         SaveFile(fullFilePath, json);
-        Plugin.Log.LogInfo($"Saved modded data for {guid}");
+        APILogger.LogInfo($"Saved modded data for {guid}");
     }
 
     public void SaveAllModdedData()

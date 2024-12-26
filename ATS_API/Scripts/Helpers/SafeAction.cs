@@ -101,7 +101,7 @@ public class SafeAction<T>
             }
             catch (Exception e)
             {
-                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e + "\n" + Environment.StackTrace);
                 bool uniTask = OnException.Invoke(e);
                 if (!uniTask)
                 {
