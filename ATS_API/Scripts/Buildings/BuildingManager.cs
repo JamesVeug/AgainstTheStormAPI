@@ -137,7 +137,7 @@ public partial class BuildingManager
             {
                 continue;
             }
-            Plugin.PostTick += data.PostSync;
+            Plugin.PostTick.AddListener(data.PostSync);
         }
     }
 

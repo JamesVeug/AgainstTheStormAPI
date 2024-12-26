@@ -29,9 +29,14 @@ public class SafeAction
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
             }
         }
+    }
+
+    public void ClearListeners()
+    {
+        _actions.Clear();
     }
 }
 
