@@ -90,6 +90,28 @@ public class SafeAction<T>
 
         return true;
     }
+
+    public bool Invoke(T t, Func<Exception, bool> OnException)
+    {
+        foreach (Action<T> action in _actions)
+        {
+            try
+            {
+                action.Invoke(t);
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                bool uniTask = OnException.Invoke(e);
+                if (!uniTask)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 }
 
 public class SafeAction<T,Y>

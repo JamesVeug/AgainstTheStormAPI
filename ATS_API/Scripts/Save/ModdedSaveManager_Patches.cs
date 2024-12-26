@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ATS_API.Helpers;
 using Cysharp.Threading.Tasks;
 using Eremite.Controller.Generator;
 using Eremite.Services;
@@ -57,6 +58,10 @@ public static partial class ModdedSaveManager
         {
             data.Value.CurrentCycle = new SaveData();
         }
+        EventBus.OnCycleEnded.Invoke();
+        ModdedSaveManagerService.InvokeModSaveDataListeners(
+            ModdedSaveManagerService.ResetCycleSaveDataListeners
+            );
     }
     
     [HarmonyPatch(typeof(GameLoader), nameof(GameLoader.StartNewGame))]
@@ -69,5 +74,9 @@ public static partial class ModdedSaveManager
         {
             data.Value.CurrentSettlement = new SaveData();
         }
+        ModdedSaveManagerService.InvokeModSaveDataListeners(
+            ModdedSaveManagerService.ResetSettlementSaveDataListeners
+            );
+        ModdedSaveManager.SaveAllModdedData(); //GameSaveService.SaveState is invoked before this method being invoked, so we need to save mod data again here.
     }
 }
