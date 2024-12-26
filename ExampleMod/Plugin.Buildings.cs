@@ -49,7 +49,7 @@ public partial class Plugin
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
         burgerJoint.AddTags(BuildingTagTypes.Animals);
-        burgerJoint.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks, 10), (3, GoodsTypes.Mat_Processed_Parts));
+        burgerJoint.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks), (3, GoodsTypes.Mat_Processed_Parts));
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
