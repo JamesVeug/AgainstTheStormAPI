@@ -14,4 +14,9 @@ public static class EventBus
     /// </summary>
     /// <Arg1>True if the player just started a new game</Arg1>
     public static readonly SafeAction<bool> OnStartGame = new SafeAction<bool>();
+
+    /// <summary>
+    /// Invoked when the cycle in the world map is ended.
+    /// </summary>
+    public static readonly SafeAction OnCycleEnded = new SafeAction();
 }
