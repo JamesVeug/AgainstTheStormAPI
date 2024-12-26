@@ -31,7 +31,7 @@ internal class ModdedSaveManagerService : Service
     {
         return LoadAllSaves();
     }
-
+    
     public static void InvokeModSaveDataListeners(Dictionary<string, SafeAction<ModSaveData>> dictionaryListeners)
     {
         foreach (KeyValuePair<string, SafeAction<ModSaveData>> pair in dictionaryListeners)
@@ -48,6 +48,12 @@ internal class ModdedSaveManagerService : Service
                     return true;
                 });
         }
+    }
+    
+    public override void OnDestroy()
+    {
+        SaveAllModdedData();
+        base.OnDestroy();
     }
 
     private async UniTask LoadAllSaves()
@@ -260,9 +266,9 @@ internal class ModdedSaveManagerService : Service
             .Replace("|", "").Replace(".", "_");
     }
     
-    [HarmonyPatch(typeof(AppServices), nameof(AppServices.CreateServices))]
+    [HarmonyPatch(typeof(MetaServices), nameof(MetaServices.CreateServices))]
     [HarmonyPostfix]
-    private static void AddModdedSaveManagerAsService(AppServices __instance)
+    private static void AddModdedSaveManagerAsService(MetaServices __instance)
     {
         Instance = new ModdedSaveManagerService();
         __instance.allServices.Add(Instance);
