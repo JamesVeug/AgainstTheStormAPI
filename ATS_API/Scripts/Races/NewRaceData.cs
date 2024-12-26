@@ -24,7 +24,11 @@ public class NewRaceData : ASyncable<RaceModel>
 
     public override void PostSync()
     {
+        APILogger.IsNotNull(RaceModel, "RaceModel is null!");
+        APILogger.LogDebug($"Starting PostSync for race {RaceModel.name}");
+        
         // characteristics
+        APILogger.LogDebug($"Adding characteristics");
         RaceModel.characteristics = new RaceCharacteristicModel[characteristics.Count];
         for (int i = 0; i < characteristics.Count; i++)
         { 
@@ -44,23 +48,29 @@ public class NewRaceData : ASyncable<RaceModel>
             RaceModel.characteristics[i] = characteristicModel;
         }
         
+        APILogger.LogDebug($"Adding hunger effect");
         RaceModel.hungerEffect = HungerEffect.ToResolveEffectModel();
         
         // needs
+        APILogger.LogDebug($"Adding needs");
         List<NeedModel> needModels = new List<NeedModel>();
-        foreach (string need in needs)
+        for (int i = 0; i < needs.Count; i++)
         {
+            var need = needs[i];
+            APILogger.IsNotNull(needModels, "Need model at index " + i + " is null");
             NeedModel needModel = need.ToNeedModel();
             if (needModel == null)
             {
                 APILogger.LogError($"Failed to find need {need} for new race {RaceModel.name}");
                 continue;
             }
+
             needModels.Add(needModel);
         }
+
         RaceModel.needs = needModels.ToArray();
         
-        
+        APILogger.LogDebug($"Adding defaults");
         RaceModel template = RaceTypes.Harpy.ToRaceModel();
         if(RaceModel.femalePrefab == null)
             RaceModel.femalePrefab = template.femalePrefab;
@@ -83,6 +93,7 @@ public class NewRaceData : ASyncable<RaceModel>
         if(RaceModel.resilienceLabel == null)
             RaceModel.resilienceLabel = template.resilienceLabel;
 
+        APILogger.LogDebug($"Adding workplaces");
         if (RaceWorkPlaceAvailability.WorkPlaces.Count > 0)
         {
             foreach (BuildingModel buildingModel in SO.Settings.Buildings)
@@ -145,7 +156,7 @@ public class NewRaceData : ASyncable<RaceModel>
             }
             
             workPlaces = (WorkplaceModel[]) info.GetValue(buildingModel);
-            return true;
+            return workPlaces != null;
         }
         
         // Get all fields and check for one that is a WorkplaceModel[]
