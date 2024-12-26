@@ -1450,7 +1450,7 @@ public static class GoalTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of GoalTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of GoalTypes: " + type);
 		return TypeToInternalName[GoalTypes.Deed_Craft_Cornerstones];
 	}
 	
@@ -1487,7 +1487,7 @@ public static class GoalTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find GoalModel for GoalTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find GoalModel for GoalTypes with name: " + name);
 		return null;
 	}
 

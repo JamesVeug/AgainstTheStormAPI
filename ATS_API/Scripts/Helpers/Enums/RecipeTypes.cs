@@ -1063,7 +1063,7 @@ public static class RecipeTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of RecipeTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of RecipeTypes: " + type);
 		return TypeToInternalName[RecipeTypes.Wood];
 	}
 	
@@ -1100,7 +1100,7 @@ public static class RecipeTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find RecipeModel for RecipeTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find RecipeModel for RecipeTypes with name: " + name);
 		return null;
 	}
 

@@ -76,7 +76,7 @@ public static class DecorationTierTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of DecorationTierTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of DecorationTierTypes: " + type);
 		return TypeToInternalName[DecorationTierTypes.Aesthetics];
 	}
 	
@@ -113,7 +113,7 @@ public static class DecorationTierTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find DecorationTier for DecorationTierTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find DecorationTier for DecorationTierTypes with name: " + name);
 		return null;
 	}
 

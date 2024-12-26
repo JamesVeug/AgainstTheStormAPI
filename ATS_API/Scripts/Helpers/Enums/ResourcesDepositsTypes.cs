@@ -322,7 +322,7 @@ public static class ResourcesDepositsTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of ResourcesDepositsTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of ResourcesDepositsTypes: " + type);
 		return TypeToInternalName[ResourcesDepositsTypes.Marsh_Infinite_Node_Grain];
 	}
 	
@@ -359,7 +359,7 @@ public static class ResourcesDepositsTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find ResourceDepositModel for ResourcesDepositsTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find ResourceDepositModel for ResourcesDepositsTypes with name: " + name);
 		return null;
 	}
 

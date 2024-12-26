@@ -678,7 +678,7 @@ public static class WorkshopsRecipeTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of WorkshopsRecipeTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of WorkshopsRecipeTypes: " + type);
 		return TypeToInternalName[WorkshopsRecipeTypes._Todelete_Pack_Of_Luxury_Goods];
 	}
 	
@@ -715,7 +715,7 @@ public static class WorkshopsRecipeTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find WorkshopRecipeModel for WorkshopsRecipeTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find WorkshopRecipeModel for WorkshopsRecipeTypes with name: " + name);
 		return null;
 	}
 

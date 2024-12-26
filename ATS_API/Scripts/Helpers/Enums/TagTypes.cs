@@ -192,7 +192,7 @@ public static class TagTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of TagTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of TagTypes: " + type);
 		return TypeToInternalName[TagTypes.Aggregation_Tag_Caches];
 	}
 	
@@ -229,7 +229,7 @@ public static class TagTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find ModelTag for TagTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find ModelTag for TagTypes with name: " + name);
 		return null;
 	}
 

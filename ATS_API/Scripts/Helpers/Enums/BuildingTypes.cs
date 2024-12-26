@@ -3292,7 +3292,7 @@ public static class BuildingTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of BuildingTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of BuildingTypes: " + type);
 		return TypeToInternalName[BuildingTypes.Advanced_Rain_Catcher];
 	}
 	
@@ -3329,7 +3329,7 @@ public static class BuildingTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find BuildingModel for BuildingTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find BuildingModel for BuildingTypes with name: " + name);
 		return null;
 	}
 

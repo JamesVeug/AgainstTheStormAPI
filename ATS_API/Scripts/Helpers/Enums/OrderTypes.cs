@@ -2324,7 +2324,7 @@ public static class OrderTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of OrderTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of OrderTypes: " + type);
 		return TypeToInternalName[OrderTypes.Amber_And_Luxury_LOW];
 	}
 	
@@ -2361,7 +2361,7 @@ public static class OrderTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find OrderModel for OrderTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find OrderModel for OrderTypes with name: " + name);
 		return null;
 	}
 

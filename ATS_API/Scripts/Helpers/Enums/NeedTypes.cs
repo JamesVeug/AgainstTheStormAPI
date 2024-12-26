@@ -190,7 +190,7 @@ public static class NeedTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of NeedTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of NeedTypes: " + type);
 		return TypeToInternalName[NeedTypes.Any_Housing];
 	}
 	
@@ -227,7 +227,7 @@ public static class NeedTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find NeedModel for NeedTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find NeedModel for NeedTypes with name: " + name);
 		return null;
 	}
 

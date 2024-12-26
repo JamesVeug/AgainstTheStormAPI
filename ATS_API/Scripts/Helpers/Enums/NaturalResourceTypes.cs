@@ -166,7 +166,7 @@ public static class NaturalResourceTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of NaturalResourceTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of NaturalResourceTypes: " + type);
 		return TypeToInternalName[NaturalResourceTypes.Bay_Tree_1];
 	}
 	
@@ -203,7 +203,7 @@ public static class NaturalResourceTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find NaturalResourceModel for NaturalResourceTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find NaturalResourceModel for NaturalResourceTypes with name: " + name);
 		return null;
 	}
 

@@ -212,7 +212,7 @@ public static class AscensionModifierTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of AscensionModifierTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of AscensionModifierTypes: " + type);
 		return TypeToInternalName[AscensionModifierTypes.Additional_Impatience_For_Death];
 	}
 	
@@ -249,7 +249,7 @@ public static class AscensionModifierTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find AscensionModifierModel for AscensionModifierTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find AscensionModifierModel for AscensionModifierTypes with name: " + name);
 		return null;
 	}
 

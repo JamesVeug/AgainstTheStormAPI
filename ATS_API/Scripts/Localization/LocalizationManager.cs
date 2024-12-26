@@ -79,13 +79,13 @@ public static partial class LocalizationManager
             lines = System.IO.File.ReadAllLines(path);
             if (lines.Length < 3)
             {
-                APILogger.LogError($"Read .csv but has less than 3 lines!. The file is likely corrupt.\n" + Environment.StackTrace);
+                APILogger.LogError($"Read .csv but has less than 3 lines!. The file is likely corrupt.");
                 return;
             }
         }
         catch (Exception e)
         {
-            APILogger.LogError($"Could not read .csv from: {path}\n" + Environment.StackTrace);
+            APILogger.LogError($"Could not read .csv from: {path}");
             APILogger.LogError(e);
             return;
         }
@@ -121,7 +121,7 @@ public static partial class LocalizationManager
                 }
                 catch (Exception e)
                 {
-                    APILogger.LogError($"Error parsing line {i} column {j} in {path}. Check there's no {separator.ToLiteral()} anywhere in your code!\n" + Environment.StackTrace);
+                    APILogger.LogError($"Error parsing line {i} column {j} in {path}. Check there's no {separator.ToLiteral()} anywhere in your code!");
                     APILogger.LogError(e);
                     return;
                 }
@@ -245,7 +245,7 @@ public static partial class LocalizationManager
             }
         }
 
-        APILogger.LogError($"Could not find language code for {language}\n" + Environment.StackTrace);
+        APILogger.LogError($"Could not find language code for {language}");
         return "en";
     }
 
@@ -259,7 +259,7 @@ public static partial class LocalizationManager
             }
         }
 
-        APILogger.LogError($"Could not find language for code {code}\n" + Environment.StackTrace);
+        APILogger.LogError($"Could not find language for code {code}");
         return SystemLanguage.English;
     }
     
@@ -273,7 +273,7 @@ public static partial class LocalizationManager
             }
         }
 
-        APILogger.LogError($"Could not find language for culture code {code}\n" + Environment.StackTrace);
+        APILogger.LogError($"Could not find language for culture code {code}");
         return SystemLanguage.English;
     }
     

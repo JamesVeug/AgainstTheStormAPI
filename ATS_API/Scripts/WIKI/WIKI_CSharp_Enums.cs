@@ -79,7 +79,7 @@ public partial class WIKI
                     catch (Exception e)
                     {
                         // ignored
-                        APILogger.LogError("Failed to get comment for " + getter + "\n" + e + "\n" + Environment.StackTrace);
+                        APILogger.LogError("Failed to get comment for " + getter + "\n" + e);
                     }
                 }
 

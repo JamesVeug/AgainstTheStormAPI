@@ -70,7 +70,7 @@ public class MaskedTerrain : ACustomTerrain
         prefab = Plugin.ATS_API_TerrainBundle.LoadAsset<GameObject>("TerrainPrefab");
         if(prefab == null)
         {
-            APILogger.LogError("Could not get TerrainPrefab from API bundle for the MaskedTerrain!" + Environment.StackTrace);
+            APILogger.LogError("Could not get TerrainPrefab from API bundle for the MaskedTerrain!");
         }
     }
 

@@ -448,7 +448,7 @@ public static class WorkshopTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of WorkshopTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of WorkshopTypes: " + type);
 		return TypeToInternalName[WorkshopTypes.Alchemist_Hut];
 	}
 	
@@ -485,7 +485,7 @@ public static class WorkshopTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find WorkshopModel for WorkshopTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find WorkshopModel for WorkshopTypes with name: " + name);
 		return null;
 	}
 

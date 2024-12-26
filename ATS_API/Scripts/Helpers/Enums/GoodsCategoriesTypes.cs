@@ -100,7 +100,7 @@ public static class GoodsCategoriesTypesExtensions
 			return name;
 		}
 
-		APILogger.LogError($"Cannot find name of GoodsCategoriesTypes: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of GoodsCategoriesTypes: " + type);
 		return TypeToInternalName[GoodsCategoriesTypes.Building_Materials];
 	}
 	
@@ -137,7 +137,7 @@ public static class GoodsCategoriesTypesExtensions
 			return model;
 		}
 	
-		APILogger.LogError("Cannot find GoodCategoryModel for GoodsCategoriesTypes with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find GoodCategoryModel for GoodsCategoriesTypes with name: " + name);
 		return null;
 	}
 
