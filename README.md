@@ -27,3 +27,16 @@ If you are wanting to get started with modding the game then this mod can be cop
 If you require help with a mod, have ideas you want to share, want to report a problem or want to contribute to the modding scene you can join our discord.
 
 https://discord.com/invite/ZfVWG86gsJ
+
+## Build
+
+Before opening the solution, you need to create a file named `Directory.Path.props` in the root of the repository. This file should specify the path to your ATS game executable. Below is an example of how to set it up (the content of this file):
+```xml
+<Project>
+  <PropertyGroup>
+    <StormPath>C:\Program Files (x86)\Steam\steamapps\common\Against the Storm</StormPath>
+  </PropertyGroup>
+</Project>
+```
+Make sure to replace the StormPath value with the actual installation path of your game.
+
