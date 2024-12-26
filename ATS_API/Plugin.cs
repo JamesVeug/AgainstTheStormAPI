@@ -54,14 +54,13 @@ internal class Plugin : BaseUnityPlugin
     {
         APILogger.logger = Logger;
         Logger.LogInfo($"Against the Storm v{Application.version}");
+        APILogger.IsEqual(Application.unityVersion, "2021.3.27f1", $"The Unity Version has changed!");
         
         Instance = this;
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
         
         PluginDirectory = Info.Location.Replace("API.dll", "");
 
-        string expectedUnityVersion = "2021.3.27f1";
-        APILogger.IsEqual(Application.unityVersion, expectedUnityVersion, $"The Unity Version has changed! Expected: {expectedUnityVersion}, Got: {Application.unityVersion}");
 
         // Stops Unity from destroying it for some reason. Same as Setting the BepInEx config HideManagerGameObject to true.
         gameObject.hideFlags = HideFlags.HideAndDontSave;
