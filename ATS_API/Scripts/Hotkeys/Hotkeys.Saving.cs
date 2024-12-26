@@ -106,13 +106,8 @@ public static partial class Hotkeys
             {
                 MasterInputAsset.AddActionMap(map);
                 map.LoadBindingOverridesFromJson(modInput.bindings);
+                modNameToActionMaps[modInput.modName] = map;
             }
-            else
-            {
-                LogWarning($"Action map {map.name} already exists. Likely another mod already loaded this so your hotkeys may differ!");
-            }
-
-            modNameToActionMaps[modInput.modName] = map;
         }
         MasterInputAsset.Enable();
     }
