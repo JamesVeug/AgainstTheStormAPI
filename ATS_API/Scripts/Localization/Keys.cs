@@ -18,8 +18,11 @@ public static class Keys
     public static readonly string Decoration = "Label_BuildingDisplayLabel_Decoration"; // Decoration
     public static readonly string House = "Label_BuildingDisplayLabel_House"; // House
     public static readonly string ProductionBuilding = "Label_BuildingDisplayLabel_ProductionBuilding"; // Production Building
+    public static readonly string ServiceBuilding = "Label_BuildingDisplayLabel_ServiceBuilding"; // Service Building
     public static readonly string WorldMapModifier = "Label_MapModifier"; // World Map Modifier
     public static readonly string Perk = "Label_Reward_Perk"; // Perk
+    public static readonly string Building_GenericInstitution_Desc = "Building_GenericInstitution_Desc"; // A place where villagers can fulfill their need for:{0}
+    public static readonly string Building_GenericWorkshop_Desc = "Building_GenericWorkshop_Desc"; // Can produce: {0}. \nCan use: {1}.
     
     // API constants
     public static readonly string GUID = "API_GUID"; // GUID
