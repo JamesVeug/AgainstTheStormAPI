@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Model;
@@ -31,6 +32,8 @@ public static class OrdersManager
     private static NewOrderData Add(string guid, string name, OrderModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_OrderModels.Any(a=>a.Model.name == model.name), $"Adding Order with name {model.name} that already exists!");
+        
         NewOrderData newOrderData = new NewOrderData
         {
             Model = model,

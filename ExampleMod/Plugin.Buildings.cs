@@ -1,5 +1,6 @@
 ﻿using ATS_API.Buildings;
 using ATS_API.Helpers;
+using ATS_API.Needs;
 using Eremite.Buildings;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public partial class Plugin
         CreateWorkshop();
         CreateSkyScraperHouse();
         CreateAxolotlHouse();
+        CreateServiceBuilding();
     }
 
     private void CreateSkyScraperHouse()
@@ -47,7 +49,7 @@ public partial class Plugin
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
         burgerJoint.AddTags(BuildingTagTypes.Animals);
-        burgerJoint.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks, 10), (3, GoodsTypes.Mat_Processed_Parts));
+        burgerJoint.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks), (3, GoodsTypes.Mat_Processed_Parts));
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.AddWorkPlaceWithAllRaces();
@@ -71,5 +73,32 @@ public partial class Plugin
         colaRecipe.AddTags(TagTypes.Food_Tag);
         colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_Drizzle_Water));
         colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_Storm_Water));
+
+        burgerJoint.AddRecipe(WorkshopsRecipeTypes.Coal_T1);
+    }
+
+    private void CreateServiceBuilding()
+    {
+        var playPen = new InstitutionBuildingBuilder(PluginInfo.PLUGIN_GUID, "PlayPen", "TestBuildingIcon.png");
+        playPen.SetDefaultVisualIcon("TestBuildingDisplayIcon.png");
+        playPen.SetDisplayName("Play Pen");
+        playPen.SetMoveCost(5, GoodsTypes.Mat_Raw_Wood); // optional
+        playPen.SetProfession(ProfessionTypes.Bath_House_Worker);
+        playPen.AddTags(BuildingTagTypes.Rainwater, BuildingTagTypes.Cysts);
+        playPen.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks));
+        playPen.AddRequiredGoods((3, GoodsTypes.Mat_Processed_Fabric));
+        playPen.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Bricks));
+        playPen.AddWorkPlaceWithAllRaces();
+        playPen.AddWorkPlaceWithAllRaces();
+        playPen.AddWorkPlaceWithAllRaces();
+        playPen.AddWorkPlaceWithAllRaces();
+        playPen.AddActiveEffect(EffectTypes.Bigger_Storage, 1);
+
+        playPen.AddRecipe(InstitutionRecipeTypes.Treatment);
+        CustomRaceNeed friesNeed = RaceNeedFactory.ComplexFoodNeed(PluginInfo.PLUGIN_GUID, fries.NewGood.id, 4);
+        var friesRecipe = playPen.CreateRecipe(friesNeed.ID);
+        friesRecipe.AddTags(TagTypes.Food_Tag);
+        friesRecipe.AddRequiredIngredients((1, fries.NewGood.id));
+
     }
 }

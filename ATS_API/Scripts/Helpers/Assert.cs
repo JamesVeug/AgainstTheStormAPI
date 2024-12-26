@@ -2,7 +2,7 @@
 
 namespace ATS_API.Helpers;
 
-[Obsolete("Copy APILogger into your own mod. Provides MANY more helper methods like this.", true)]
+[Obsolete("Copy APILogger into your own mod. Provides MANY more helper methods like this.\nhttps://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/APILogger.cs")]
 public static class Assert
 {
     public static void IsTrue(bool condition, string message)

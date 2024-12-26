@@ -23,7 +23,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public BuildingBehaviourTypes Behaviour;
     public object MetaData;
     public List<NameToAmount> RequiredGoods = new List<NameToAmount>();
-    public NameToAmount MoveCost;
+    public NameToAmount MoveCost = (0, GoodsTypes.Mat_Raw_Wood.ToName());
     public ProfessionTypes Profession = ProfessionTypes.Unknown;
     public BuildingCategoriesTypes Category = BuildingCategoriesTypes.Unknown;
     public List<TagTypes> UsabilityTags = new List<TagTypes>();
@@ -81,6 +81,7 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public override void PostSync()
     {
         base.PostSync();
+        APILogger.LogDebug($"PostSync for building {BuildingModel.name}");
         
         if (BuildingModel is HouseModel houseModel)
         {
@@ -108,6 +109,115 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 {
                     decorationModel.description = "Building_Decoration_Harmony_Desc".ToLocaText();
                 }
+            }
+        }
+        
+        else if (BuildingModel is WorkshopModel workshopModel)
+        {
+            WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
+            if (metaData.Recipes != null || metaData.Builders != null || metaData.RecipeNames != null)
+            {
+                IEnumerable<WorkshopRecipeModel> recipes = metaData.Recipes ?? new List<WorkshopRecipeModel>();
+                IEnumerable<WorkshopRecipeBuilder> builders = metaData.Builders ?? new List<WorkshopRecipeBuilder>();
+                IEnumerable<string> recipeNames = metaData.RecipeNames ?? new List<string>();
+                workshopModel.recipes = recipes
+                    .Concat(recipeNames.Select(a=>a.ToWorkshopRecipeModel()))
+                    .Concat(builders.Select(a => a.Build()))
+                    .Where(a=>a != null)
+                    .ToArray();
+            }
+            else if (workshopModel.recipes == null)
+            {
+                workshopModel.recipes = new WorkshopRecipeModel[0];
+            }
+
+            if (Profession != ProfessionTypes.Unknown)
+            {
+                workshopModel.profession = Profession.ToProfessionModel();
+            }
+
+            APILogger.LogInfo($"Setting up workplaces for workshop {BuildingModel.name}");
+            if (metaData.WorkPlaces != null)
+            {
+                workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
+                for (int i = 0; i < metaData.WorkPlaces.Count; i++)
+                {
+                    var allowedRaces = metaData.WorkPlaces[i];
+
+                    WorkplaceModel workplace = new WorkplaceModel();
+                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
+                    for (int j = 0; j < allowedRaces.Length; j++)
+                    {
+                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
+                    }
+
+                    workshopModel.workplaces[i] = workplace;
+                }
+            }
+            else if (workshopModel.workplaces == null)
+            {
+                workshopModel.workplaces = new WorkplaceModel[0];
+            }
+        }
+        else if (BuildingModel is InstitutionModel institutionModel)
+        {
+            InstitutionBuildingBuilder.MetaData metaData = (InstitutionBuildingBuilder.MetaData) MetaData;
+            if (Profession != ProfessionTypes.Unknown)
+            {
+                institutionModel.profession = Profession.ToProfessionModel();
+            }
+            
+            if (metaData.Recipes != null || metaData.Builders != null || metaData.RecipeNames != null)
+            {
+                IEnumerable<InstitutionRecipeModel> recipes = metaData.Recipes ?? new List<InstitutionRecipeModel>();
+                IEnumerable<InstitutionRecipeBuilder> builders = metaData.Builders ?? new List<InstitutionRecipeBuilder>();
+                IEnumerable<string> recipeNames = metaData.RecipeNames ?? new List<string>();
+                institutionModel.recipes = recipes
+                    .Concat(recipeNames.Select(a=>a.ToInstitutionRecipeModel()))
+                    .Concat(builders.Select(a => a.Build()))
+                    .Where(a=>a != null)
+                    .ToArray();
+            }
+            else if (institutionModel.recipes == null)
+            {
+                institutionModel.recipes = new InstitutionRecipeModel[0];
+            }
+
+            APILogger.LogDebug($"Setting up workplaces");
+            if (metaData.WorkPlaces != null)
+            {
+                institutionModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
+                for (int i = 0; i < metaData.WorkPlaces.Count; i++)
+                {
+                    var allowedRaces = metaData.WorkPlaces[i];
+
+                    WorkplaceModel workplace = new WorkplaceModel();
+                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
+                    for (int j = 0; j < allowedRaces.Length; j++)
+                    {
+                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
+                    }
+
+                    institutionModel.workplaces[i] = workplace;
+                }
+            }
+            else if (institutionModel.workplaces == null)
+            {
+                institutionModel.workplaces = new WorkplaceModel[0];
+            }
+            
+            APILogger.LogDebug("Setting up activeEffects");
+            if (metaData.ActiveEffects != null)
+            {
+                institutionModel.activeEffects = metaData.ActiveEffects.Select(effectName=>new InstitutionEffectModel()
+                {
+                    minWorkers = effectName.MinWorkers,
+                    effect = effectName.Name.ToEffectModel()
+                }).Where(a=>a.effect != null).ToArray();
+            }
+            else if (institutionModel.activeEffects == null)
+            {
+                institutionModel.activeEffects = new InstitutionEffectModel[0];
             }
         }
     }
@@ -149,7 +259,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
                 return false;
             }
             APILogger.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
-            WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             try
@@ -171,45 +280,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
             // Data
             APILogger.LogInfo($"Setting up prefab for workshop {BuildingModel.name}");
             workshopModel.prefab = workshop;
-
-            if (metaData.Recipes != null || metaData.Builders != null)
-            {
-                IEnumerable<WorkshopRecipeModel> recipes = metaData.Recipes ?? new List<WorkshopRecipeModel>();
-                IEnumerable<WorkshopRecipeBuilder> builders = metaData.Builders ?? new List<WorkshopRecipeBuilder>();
-                workshopModel.recipes = recipes.Concat(builders.Select(a => a.Build())).ToArray();
-            }
-            else if (workshopModel.recipes == null)
-            {
-                workshopModel.recipes = new WorkshopRecipeModel[0];
-            }
-
-            if (Profession != ProfessionTypes.Unknown)
-            {
-                workshopModel.profession = Profession.ToProfessionModel();
-            }
-
-            APILogger.LogInfo($"Setting up workplaces for workshop {BuildingModel.name}");
-            if (metaData.WorkPlaces != null)
-            {
-                workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
-                for (int i = 0; i < metaData.WorkPlaces.Count; i++)
-                {
-                    var allowedRaces = metaData.WorkPlaces[i];
-
-                    WorkplaceModel workplace = new WorkplaceModel();
-                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
-                    for (int j = 0; j < allowedRaces.Length; j++)
-                    {
-                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
-                    }
-
-                    workshopModel.workplaces[i] = workplace;
-                }
-            }
-            else if (workshopModel.workplaces == null)
-            {
-                workshopModel.workplaces = new WorkplaceModel[0];
-            }
         }
         else if (Behaviour == BuildingBehaviourTypes.House)
         {
@@ -234,7 +304,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
         else if (Behaviour == BuildingBehaviourTypes.Decoration)
         {
             DecorationModel decorationModel = BuildingModel as DecorationModel;
-            DecorationBuildingBuilder.MetaData metaData = (DecorationBuildingBuilder.MetaData) MetaData;
             
             // Visuals
             try
@@ -252,6 +321,36 @@ public class NewBuildingData : ASyncable<BuildingModel>
             // Data
             decorationModel.prefab = decoration;
             decoration.model = decorationModel;
+        }
+        else if (Behaviour == BuildingBehaviourTypes.Institution)
+        {
+            if (BuildingModel is not InstitutionModel institutionModel)
+            {
+                APILogger.LogError($"Building {BuildingModel.name} is not a InstitutionModel!");
+                return false;
+            }
+            APILogger.LogInfo($"Setting up prefab for service {BuildingModel.name}");
+            
+            // Visuals
+            try
+            {
+                APILogger.LogInfo($"Initializing prefab for service {BuildingModel.name}");
+                BuildingManager.InitializePrefab<Institution, InstitutionView, InstitutionModel>(root, institutionModel, VisualData.Icon, BuildingConstructionAnimationData, AnimHookType.Construction);
+            } 
+            catch (Exception e)
+            {
+                Debug.LogError($"Could not set up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
+                Debug.LogError(e);
+                return false;
+            }
+
+            APILogger.LogInfo($"Prefab initialized for {BuildingModel.name} is root null? {root == null} is VisualData null? {VisualData == null} is MetaData null? {MetaData == null}");
+            Institution institution = root.GetComponent<Institution>();
+            VisualData.Prefab = institution;
+        
+            // Data
+            APILogger.LogInfo($"Setting up prefab for service {BuildingModel.name}");
+            institutionModel.prefab = institution;
         }
         else
         { 

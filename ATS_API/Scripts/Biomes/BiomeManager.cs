@@ -39,6 +39,7 @@ public static partial class BiomeManager
     public static NewBiome Add(string guid, string name, BiomeModel model)
     {
         model.name = guid + "_" + name;
+        APILogger.IsFalse(s_newBiomes.Any(a=>a.biomeModel.name == model.name), $"Adding Biome with name {model.name} that already exists!");
         
         BiomeTypes id = GUIDManager.Get<BiomeTypes>(guid, name);
         BiomeTypesExtensions.TypeToInternalName[id] = model.name;

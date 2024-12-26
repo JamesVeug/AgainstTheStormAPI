@@ -75,3 +75,6 @@ ATS_API_UNITY/fmod_editor.log
 ATS_API_UNITY/ProjectSettings/RiderScriptEditorPersistedState.asset
 ATS_API_Unity/Assets/ATS
 ATS_API_Unity/Assets/ATS.meta
+
+# Config file (Environment Path)
+Directory.Path.props

@@ -107,14 +107,35 @@ public static partial class Hotkeys
     public static Hotkey Add(string modName, Hotkey hotkey)
     {
         LogInfo($"Registering key {hotkey.keyName} with code {string.Join(",", hotkey.codes)}");
+        APILogger.IsFalse(HotKeyExists(modName, hotkey.keyName), $"Adding Hotkey with modName {modName} and keyName {hotkey.keyName} that already exists!");
+        
         if(!pendingHotkeys.TryGetValue(modName, out var hotkeys))
         {
             hotkeys = new List<Hotkey>();
             pendingHotkeys.Add(modName, hotkeys);
         }
-            
+
         hotkeys.Add(hotkey);
         return hotkey;
+    }
+
+    private static bool HotKeyExists(string modName, string hotkeyKeyName)
+    {
+        if(pendingHotkeys.TryGetValue(modName, out List<Hotkey> hotkeys))
+        {
+            if (hotkeys.Any(h => h.keyName == hotkeyKeyName))
+            {
+                return true;
+            }
+        }
+        
+        string uniqueName = modName + "_" + hotkeyKeyName;
+        if (modNameActionNameToAddedHotkey.ContainsKey(uniqueName))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private static void AddHotkey(string modName, InputActionMap actionMap, Hotkey hotkey)

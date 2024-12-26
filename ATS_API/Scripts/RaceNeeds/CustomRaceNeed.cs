@@ -13,6 +13,7 @@ public class CustomRaceNeed : ASyncable<NeedModel>
     public string guid;
     public string needName;
     
+    public VillagerPerkTypes perk = VillagerPerkTypes.None;
     public NeedTypes ID = NeedTypes.None;
     public GoodsTypes referenceGood = GoodsTypes.None;
     public BuildingTypes houseName = BuildingTypes.None;
@@ -34,6 +35,11 @@ public class CustomRaceNeed : ASyncable<NeedModel>
 
     public override void PostSync()
     {
+        if (perk != VillagerPerkTypes.None)
+        {
+            NeedModel.perk = perk.ToVillagerPerkModel();
+        }
+        
         if (referenceGood != GoodsTypes.None)
         {
             PostSyncGoodNeed();

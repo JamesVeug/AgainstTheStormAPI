@@ -29,9 +29,14 @@ public class SafeAction
             }
             catch (Exception e)
             {
-                APILogger.LogError(e + "\n" + Environment.StackTrace);
+                APILogger.LogError(e);
             }
         }
+    }
+
+    public void ClearListeners()
+    {
+        _actions.Clear();
     }
 }
 
@@ -76,6 +81,28 @@ public class SafeAction<T>
             {
                 APILogger.LogError(e + "\n" + Environment.StackTrace);
                 bool uniTask = await OnException.Invoke(e);
+                if (!uniTask)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public bool Invoke(T t, Func<Exception, bool> OnException)
+    {
+        foreach (Action<T> action in _actions)
+        {
+            try
+            {
+                action.Invoke(t);
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError(e + "\n" + Environment.StackTrace);
+                bool uniTask = OnException.Invoke(e);
                 if (!uniTask)
                 {
                     return false;

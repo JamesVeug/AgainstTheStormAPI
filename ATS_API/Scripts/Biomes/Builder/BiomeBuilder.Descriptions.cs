@@ -108,7 +108,6 @@ public partial class BiomeBuilder
     public BiomeBuilder SetTownDescriptionKey(LocaText locaText)
     {
         newModel.townDescription = locaText;
-        APILogger.LogInfo("townDescription set to " + newModel.townDescription.key + "\n" + Environment.StackTrace);
         return this;
     }
 

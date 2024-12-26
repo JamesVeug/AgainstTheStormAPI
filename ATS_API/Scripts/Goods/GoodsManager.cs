@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using ATS_API.Helpers;
 using ATS_API.Relics;
 using ATS_API.Traders;
@@ -51,6 +52,7 @@ public static class GoodsManager
     public static NewGood Add(string guid, string name, GoodModel goodModel)
     {
         goodModel.name = guid + "_" + name;
+        APILogger.IsFalse(s_newGoods.Any(a=>a.goodModel.name == goodModel.name), $"Adding Good with name {goodModel.name} that already exists!");
         
         GoodsTypes id = GUIDManager.Get<GoodsTypes>(guid, name);
         GoodsTypesExtensions.TypeToInternalName[id] = goodModel.name;

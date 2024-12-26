@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using Eremite;
 using Eremite.Buildings;
@@ -29,7 +30,7 @@ public static class GradeExtensions
     {
         if (!NameToGrade.TryGetValue(grade, out var goodModel))
         {
-            APILogger.LogError($"Cannot find name of BuildingBehaviour Eremite type: " + grade);
+            APILogger.LogWarning($"Cannot find name of Eremite type of Grade from: " + grade + "\n" + Environment.StackTrace);
             grade = Grade.Zero;
         }
 

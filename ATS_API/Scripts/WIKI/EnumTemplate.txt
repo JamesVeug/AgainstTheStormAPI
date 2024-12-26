@@ -55,7 +55,7 @@ public static class {CLASSNAME}Extensions
 			return name;
 		}
 
-		Logger.LogError($"Cannot find name of {CLASSNAME}: " + type + "\n" + Environment.StackTrace);
+		APILogger.LogError($"Cannot find name of {CLASSNAME}: " + type + "\n" + Environment.StackTrace);
 		return TypeToInternalName[{CLASSNAME}.{FIRST_ENUM}];
 	}
 	
@@ -74,7 +74,7 @@ public static class {CLASSNAME}Extensions
 			}
 		}
 
-		Logger.LogWarning("Cannot find {CLASSNAME} with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogWarning("Cannot find {CLASSNAME} with name: " + name + "\n" + Environment.StackTrace);
 		return {CLASSNAME}.Unknown;
 	}
 	
@@ -92,7 +92,7 @@ public static class {CLASSNAME}Extensions
 			return model;
 		}
 	
-		Logger.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name + "\n" + Environment.StackTrace);
+		APILogger.LogError("Cannot find {MODELNAME} for {CLASSNAME} with name: " + name + "\n" + Environment.StackTrace);
 		return null;
 	}
 

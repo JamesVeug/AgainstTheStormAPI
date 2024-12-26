@@ -17,6 +17,7 @@ public class CustomHookedEffectManager
         where M : IHookMonitor
     {
         HookLogicType id = GUIDManager.Get<HookLogicType>(guid, name);
+        APILogger.IsFalse(s_newHookLogics.ContainsKey(id), $"Adding HookLogicType with guid {guid} and name {name} that already exists!");
         NewHookLogicType newHook = new NewHookLogicType()
         {
             ID = id,
@@ -30,6 +31,7 @@ public class CustomHookedEffectManager
 
     public static NewHookLogicType NewHookLogic<T>(HookLogicType id, HookLogic hookLogic) where T : IHookMonitor, new()
     {
+        APILogger.IsFalse(s_newHookLogics.ContainsKey(id), $"Adding HookLogicType with id {id} that already exists!");
         NewHookLogicType newHook = new NewHookLogicType()
         {
             ID = id,
@@ -42,10 +44,7 @@ public class CustomHookedEffectManager
 
     public static void NewHookLogic<T>(HookLogicType hookLogicType, IHookMonitor monitor) where T : HookLogic
     {
-        if (s_newHookLogics.ContainsKey(hookLogicType))
-        {
-            APILogger.LogError($"Already Registered HookLogicType {hookLogicType}! This will overwrite the previous reg!");
-        }
+        APILogger.IsFalse(s_newHookLogics.ContainsKey(hookLogicType), $"Adding HookLogicType with id {hookLogicType} that already exists!");
         
         NewHookLogicType newHook = new NewHookLogicType()
         {

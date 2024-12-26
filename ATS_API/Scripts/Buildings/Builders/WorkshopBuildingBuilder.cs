@@ -13,6 +13,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
     {
         public List<WorkshopRecipeBuilder> Builders = null;
         public List<WorkshopRecipeModel> Recipes = null;
+        public List<string> RecipeNames = null;
         public List<RaceTypes[]> WorkPlaces = null;
     }
 
@@ -39,7 +40,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
     
     public WorkshopRecipeBuilder CreateRecipe(GoodsTypes good, int amount, int productionTime, Grade grade)
     {
-        return CreateRecipe(good.ToString(), amount, productionTime, grade);
+        return CreateRecipe(good.ToName(), amount, productionTime, grade);
     }
     
     public WorkshopRecipeBuilder CreateRecipe(string good, int amount, int productionTime, Grade grade)
@@ -55,6 +56,20 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
         metaData.Builders ??= new List<WorkshopRecipeBuilder>();
         metaData.Builders.Add(recipeBuilder);
         return recipeBuilder;
+    }
+    
+    public WorkshopBuildingBuilder AddRecipe(string recipeName)
+    {
+        metaData.RecipeNames ??= new List<string>();
+        metaData.RecipeNames.Add(recipeName);
+        return this;
+    }
+    
+    public WorkshopBuildingBuilder AddRecipe(WorkshopsRecipeTypes recipeType)
+    {
+        metaData.RecipeNames ??= new List<string>();
+        metaData.RecipeNames.Add(recipeType.ToName());
+        return this;
     }
 
     public void AddRecipe(WorkshopRecipeModel recipe)

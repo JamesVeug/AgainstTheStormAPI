@@ -31,7 +31,7 @@ namespace ATS_API;
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
 internal class Plugin : BaseUnityPlugin
 {
-    public static event Action PostTick;
+    public static SafeAction PostTick = new SafeAction();
     public static string PluginDirectory;
 
     public static string ExportPath => Path.Combine(PluginDirectory, "Exports");
@@ -105,11 +105,8 @@ internal class Plugin : BaseUnityPlugin
         LocalizationManager.Tick();
         
         // PostTick to set up links objects between each other since we can't guarantee they will be loaded in order.
-        if (PostTick != null)
-        {
-            PostTick.Invoke();
-            PostTick = null;
-        }
+        PostTick.Invoke();
+        PostTick.ClearListeners();
     }
         
     [HarmonyPatch(typeof(MainController), nameof(MainController.InitReferences))]

@@ -203,7 +203,7 @@ public partial class BuildingManager
         Transform toRotate = Util.FindChildRecursive(prefab.transform, "ToRotate");
         
         // Logger.LogInfo($"Starting AnimationsHooks");
-        Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks", true);
+        Transform animationsHooks = Util.FindChildRecursive(prefab.transform, "AnimationsHooks", false);
         if (animationsHooks != null)
         {
             // Logger.LogInfo($"Starting AnimationsHooks 2");
@@ -286,6 +286,16 @@ public partial class BuildingManager
             decoration.state = new DecorationState();
             decoration.model = buildingModel as DecorationModel;
             decoration.view = view as DecorationView;
+        }
+        else if (building is Institution institution)
+        {
+            // Logger.LogInfo($"{buildingModel.name} Starting Institution");
+            institution.storage = prefab.AddComponent<BuildingStorage>();
+            institution.model = buildingModel as InstitutionModel;
+            institution.state = new InstitutionState();
+            institution.view = view as InstitutionView;
+            institution.blight = SetupBlight(prefab, buildingContent, blightCyst);
+            institution.model.cystsAmount = institution.blight.cysts.Length;
         }
 
         // Logger.LogInfo($"Starting SpritesLayout");
@@ -427,6 +437,18 @@ public partial class BuildingManager
             decorationView.noBuildersIcon = noBuildersIcon.gameObject;
             // Logger.LogInfo($"Done houseView");
         }
+        
+        if (view is InstitutionView institutionView)
+        {
+            InstitutionView templateWorkshopView = (InstitutionView)buildingTemplate.BuildingView;
+            
+            institutionView.constructionAnimator = constructionAnimator;
+            institutionView.productonLoopSound = templateWorkshopView.productonLoopSound;
+            institutionView.noWorkersIcon = Util.FindChildRecursive(view.uiParent, "NoWorkersIcon").gameObject;
+            institutionView.idleIcon = Util.FindChildRecursive(view.uiParent, "IdleIcon").gameObject;
+            institutionView.animator = prefab.GetComponent<Animator>();
+            institutionView.planOverlay = prefab.AddComponent<SimplePlanOverlay>();
+        }
 
         if (Util.TryFindChildRecursive(prefab.transform, "BuildingDisplayIcon", out SpriteRenderer renderer, false))
         {
@@ -463,6 +485,14 @@ public partial class BuildingManager
             blightCyst = null;
             return true;
         }
+        else if (buildingModel is InstitutionModel)
+        {
+            templateModel = (M)BuildingTypes.Forum.ToBuildingModel();
+            buildingPrefab = templateModel.Prefab.SafeGetComponent<B>();
+            Institution institution = templateModel.Prefab.SafeGetComponent<Institution>();
+            blightCyst = institution.blight.cysts[0];
+            return true;
+        }
 
         APILogger.LogError($"No template found for building model {buildingModel.name}!");
         templateModel = null;
@@ -493,7 +523,7 @@ public partial class BuildingManager
             if (icon != null)
             {
                 GameObject newIcon = GameObject.Instantiate(icon.gameObject, building.entrance);
-                newIcon.transform.localPosition = new Vector3(0, 0, 0);
+                newIcon.transform.localPosition = new Vector3(0, 0, -1);
                 newIcon.transform.localRotation = Quaternion.Euler(90, 0, -90);
                 newIcon.transform.localScale = new Vector3(1.45f, 1.25f, 1f);
                 newIcon.SetActive(true);

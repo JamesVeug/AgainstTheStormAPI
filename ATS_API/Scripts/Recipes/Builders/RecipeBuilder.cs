@@ -10,7 +10,7 @@ public class RecipeBuilder<T> where T : RecipeModel
     private readonly string guid; // myGuid
     private readonly string name; // itemName
 
-    public RecipeModel RecipeModel = null;
+    public T RecipeModel = null;
     
     protected readonly List<TagTypes> Tags = new List<TagTypes>();
     protected Grade Grade;
@@ -24,14 +24,14 @@ public class RecipeBuilder<T> where T : RecipeModel
     public RecipeBuilder(string guid, string name)
     {
         m_newData = RecipeManager.CreateRecipe<T>(guid, name);
-        RecipeModel = m_newData.RecipeModel;
+        RecipeModel = (T)m_newData.RecipeModel;
     }
     
     public RecipeBuilder(string guid, string name, Grade grade)
     {
         SetGrade(grade);
         m_newData = RecipeManager.CreateRecipe<T>(guid, name);
-        RecipeModel = m_newData.RecipeModel;
+        RecipeModel = (T)m_newData.RecipeModel;
     }
     
     public RecipeBuilder<T> SetGrade(Grade grade)
@@ -70,6 +70,6 @@ public class RecipeBuilder<T> where T : RecipeModel
         RecipeModel.grade = Grade.ToModel();
         RecipeModel.tags = Tags.ToModelTagArray();
 
-        return RecipeModel as T;
+        return RecipeModel;
     }
 }
