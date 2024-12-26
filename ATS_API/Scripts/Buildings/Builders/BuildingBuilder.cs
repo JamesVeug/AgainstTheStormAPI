@@ -240,6 +240,11 @@ public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingMod
     {
         m_newData.BuildingConstructionAnimationData = data;
     }
+    
+    public void SetOrder(int order)
+    {
+        Model.order = order;
+    }
 }
 
 
