@@ -67,7 +67,7 @@ public partial class NaturalResourcePrefabBuilder
         view.uiParent = prefab.transform.FindChildRecursive("UI");
         view.animator = animator;
         view.elements = view.toRotate.FindChildRecursive("Elements").gameObject;
-        view.meshRenderers = view.elements.GetComponentsInChildren<MeshShadowController>(true);
+        view.meshRenderers = prefab.GetComponentsInChildren<MeshShadowController>(true);
         view.randomRotation = true;
         view.minScale = 0.9f;
         view.maxScale = 1.2f;

@@ -19,6 +19,9 @@ public partial class NaturalResourceBuilder
         this.guid = guid;
         this.name = name;
         newModel = NaturalResourceManager.New(guid, name);
+        newModel.Model.highlightedTreesColor = new Color(0.8313726f, 0.6392157f, 0.2f, 1);
+        newModel.Model.outOfRangeTreesColor = new Color(0.6588235f, 0.6588235f, 0.6705883f, 1);
+        newModel.Model.editorColor = new Color(0, 0.6981132f, 0.03333723f, 1);
     }
     
     public NaturalResourceBuilder SetCharges(int charges)
@@ -81,6 +84,24 @@ public partial class NaturalResourceBuilder
         
         SoundModel soundModel = audioPath.ToSoundModel(volume, pitch, randomVolume, randomPitch, maxSoundsInOnePlace, weight, stopOnPause);
         newModel.FallSounds.Add(soundModel);
+        return this;
+    }
+    
+    public NaturalResourceBuilder SetHighlightColor(Color color)
+    {
+        newModel.Model.highlightedTreesColor = color;
+        return this;
+    }
+    
+    public NaturalResourceBuilder SetOutOfRangeColor(Color color)
+    {
+        newModel.Model.outOfRangeTreesColor = color;
+        return this;
+    }
+    
+    public NaturalResourceBuilder SetEditorColor(Color color)
+    {
+        newModel.Model.editorColor = color;
         return this;
     }
 }
