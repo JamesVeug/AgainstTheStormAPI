@@ -74,28 +74,29 @@ public partial class Plugin : BaseUnityPlugin
         LocaText disableHotkey = LocalizationManager.ToLocaText(PluginInfo.PLUGIN_GUID, "showExamplePopup", "DisableButton", "Disable Hotkey");
         
         // Add a Key Binding that shows a popup when "." is pressed. Then add a button to disable the hotkey.
-        showPopupHotkey = Hotkeys.New(PluginInfo.PLUGIN_GUID, "showExamplePopup", "Show Popup", [KeyCode.KeypadPeriod], () =>
-        {
-            Log.LogInfo("Showing popup");
-            GenericPopupTask.Show(PluginInfo.PLUGIN_GUID, header, description).WaitForDecision(
-                new GenericPopupTask.ButtonInfo() {
-                    Key = Keys.Continue_Key.ToLocaText(),
-                    Type = GenericPopupTask.ButtonTypes.Normal,
-                    OnPressed = static () =>
-                    {
-                        Log.LogInfo("Okay button pressed");
-                    } 
-                },
-                new GenericPopupTask.ButtonInfo() {
-                    Key = disableHotkey,
-                    Type = GenericPopupTask.ButtonTypes.CTA,
-                    OnPressed = static () =>
-                    {
-                        Instance.showPopupHotkey.action.Disable();
-                    } 
-                }
-                );
-        });
+        // TODO: Uncomment this code to see the popup in action. Uncommented so its less annoying for players.
+        // showPopupHotkey = Hotkeys.New(PluginInfo.PLUGIN_GUID, "showExamplePopup", "Show Popup", [KeyCode.KeypadPeriod], () =>
+        // {
+        //     Log.LogInfo("Showing popup");
+        //     GenericPopupTask.Show(PluginInfo.PLUGIN_GUID, header, description).WaitForDecision(
+        //         new GenericPopupTask.ButtonInfo() {
+        //             Key = Keys.Continue_Key.ToLocaText(),
+        //             Type = GenericPopupTask.ButtonTypes.Normal,
+        //             OnPressed = static () =>
+        //             {
+        //                 Log.LogInfo("Okay button pressed");
+        //             } 
+        //         },
+        //         new GenericPopupTask.ButtonInfo() {
+        //             Key = disableHotkey,
+        //             Type = GenericPopupTask.ButtonTypes.CTA,
+        //             OnPressed = static () =>
+        //             {
+        //                 Instance.showPopupHotkey.action.Disable();
+        //             } 
+        //         }
+        //         );
+        // });
     }
 
     private void PostLoadedSaveData(ModSaveData saveData, SaveFileState saveState)
