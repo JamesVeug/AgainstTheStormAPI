@@ -27,7 +27,7 @@ public static class GoodsManager
     public static NewGood New(string guid, string name, string iconPath)
     {
         GoodModel goodModel = ScriptableObject.CreateInstance<GoodModel>();
-        goodModel.icon = TextureHelper.GetImageAsSprite(iconPath, TextureHelper.SpriteType.EffectIcon);
+        goodModel.icon = TextureHelper.GetImageAsSprite(iconPath, TextureHelper.SpriteType.GoodIcon);
         goodModel.prefab = null; // Add enum to specify what the model is? 
         goodModel.pilePrefab = null; // Add enum to specify what the model is?
         goodModel.category = null; // Change this when we sync
