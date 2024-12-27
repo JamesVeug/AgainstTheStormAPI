@@ -36,6 +36,7 @@ public partial class TraderBuilder
         m_traderModel.arrivalTime = 720;
         m_traderModel.assaultEffects = Array.Empty<EffectModel>();
         m_traderModel.assaultLockedTooltipText = new LocaText();
+        m_traderModel.assaultResultDesc = "GameUI_TraderAssaultResultPopup_Description".ToLocaText();
         
         m_traderModel.panelOpenedSound = ScriptableObject.CreateInstance<SoundRef>();
         m_traderModel.panelClosedSound = ScriptableObject.CreateInstance<SoundRef>();
