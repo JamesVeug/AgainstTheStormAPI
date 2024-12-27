@@ -1,4 +1,5 @@
 ﻿using ATS_API.Goods;
+using ATS_API.Helpers;
 using UnityEngine;
 
 namespace ExampleMod;
@@ -19,7 +20,7 @@ public partial class Plugin
         diamonds.SetDisplayName("钻石", SystemLanguage.Chinese);
         diamonds.SetDescription("Shiny and worth a lot of money. but not strong enough to be used as Armor.");
         diamonds.SetDescription("闪闪发亮，值很多钱。但强度不足以用作盔甲.", SystemLanguage.Chinese);
-        diamonds.SetCategory("Trade Goods");
+        diamonds.SetCategory(GoodsCategoriesTypes.Trade_Goods);
         diamonds.SetTraderSellValue(40);
         diamonds.CanBeSoldToPlayer(3, 35);
         diamonds.CanBeSoldToAllTraders();
@@ -31,7 +32,7 @@ public partial class Plugin
         lpg.SetDisplayName("液化石油ガス", SystemLanguage.Japanese);
         lpg.SetDescription("A clean and efficient fuel.");
         lpg.SetDescription("クリーンで効率的な燃料。", SystemLanguage.Japanese);
-        lpg.SetCategory("Fuel");
+        lpg.SetCategory(GoodsCategoriesTypes.Fuel);
         lpg.SetTraderSellValue(17f);
         lpg.CanBeSoldToPlayer(10, 29f);
         lpg.CanBeSoldToAllTraders();
@@ -42,7 +43,7 @@ public partial class Plugin
         kiwiFruit.SetDisplayName("Киви", SystemLanguage.Russian);
         kiwiFruit.SetDescription("Sour and sweet fruit that's great for a snack. Eat with a spoon.");
         kiwiFruit.SetDescription("Кислые и сладкие фрукты, которые отлично подходят для перекуса. Ешьте ложкой.", SystemLanguage.Russian);
-        kiwiFruit.SetCategory("Food");
+        kiwiFruit.SetCategory(GoodsCategoriesTypes.Food);
         kiwiFruit.SetTraderSellValue(2.5f);
         kiwiFruit.CanBeSoldToPlayer(30, 5.0f);
         kiwiFruit.CanBeSoldToAllTraders();
@@ -53,7 +54,7 @@ public partial class Plugin
         burger = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Borgor", "Burger.png");
         burger.SetDisplayName("Borgor");
         burger.SetDescription("Juicy and delicious.");
-        burger.SetCategory("Food");
+        burger.SetCategory(GoodsCategoriesTypes.Food);
         burger.SetTraderSellValue(2.5f);
         burger.CanBeSoldToPlayer(30, 5.0f);
         burger.CanBeSoldToAllTraders();
@@ -62,7 +63,7 @@ public partial class Plugin
         fries = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Fries", "Fries.png");
         fries.SetDisplayName("Fries");
         fries.SetDescription("Hot and Crispy.");
-        fries.SetCategory("Food");
+        fries.SetCategory(GoodsCategoriesTypes.Consumable_Items);
         fries.SetTraderSellValue(0.5f);
         fries.CanBeSoldToPlayer(100, 1f);
         fries.CanBeSoldToAllTraders();
@@ -71,7 +72,7 @@ public partial class Plugin
         cola = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Cola", "Cola.png");
         cola.SetDisplayName("Cola");
         cola.SetDescription("Refreshing and bubbly.");
-        cola.SetCategory("Food");
+        cola.SetCategory(GoodsCategoriesTypes.Food);
         cola.SetTraderSellValue(0.5f);
         cola.CanBeSoldToPlayer(100, 1f);
         cola.CanBeSoldToAllTraders();
