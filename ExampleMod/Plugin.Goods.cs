@@ -11,6 +11,7 @@ public partial class Plugin
     private GoodsBuilder kiwiFruit;
     private GoodsBuilder burger;
     private GoodsBuilder fries;
+    private GoodsBuilder friesWorship;
     private GoodsBuilder cola;
     
     private void CreateGoods()
@@ -67,7 +68,14 @@ public partial class Plugin
         fries.SetTraderSellValue(0.5f);
         fries.CanBeSoldToPlayer(100, 1f);
         fries.CanBeSoldToAllTraders();
-        fries.SetEatable(1);
+        
+        friesWorship = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "FriesWorshiper", "TestBuildingIcon.png");
+        friesWorship.SetDisplayName("Worship Fries Lord");
+        friesWorship.SetDescription("Villagers have consumed fries and are worshiping the fries lord.");
+        friesWorship.SetCategory(GoodsCategoriesTypes.Consumable_Items);
+        friesWorship.SetTraderSellValue(0.5f);
+        friesWorship.CanBeSoldToPlayer(100, 1f);
+        friesWorship.CanBeSoldToAllTraders();
         
         cola = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Cola", "Cola.png");
         cola.SetDisplayName("Cola");
