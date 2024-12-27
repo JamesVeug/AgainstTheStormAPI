@@ -83,7 +83,7 @@ public partial class Plugin
         var playPen = new InstitutionBuildingBuilder(PluginInfo.PLUGIN_GUID, "PlayPen", "TestBuildingIcon.png");
         playPen.SetDefaultVisualIcon("TestBuildingDisplayIcon.png");
         playPen.SetDisplayName("Play Pen");
-        playPen.SetMoveCost(5, GoodsTypes.Mat_Raw_Wood); // optional
+        playPen.SetMoveCost(5, GoodsTypes.Mat_Raw_Wood);
         playPen.SetProfession(ProfessionTypes.Bath_House_Worker);
         playPen.AddTags(BuildingTagTypes.Rainwater, BuildingTagTypes.Cysts);
         playPen.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks));
