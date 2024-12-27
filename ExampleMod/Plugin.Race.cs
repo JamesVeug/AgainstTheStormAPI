@@ -27,7 +27,7 @@ public partial class Plugin
         builder.AddGlobalCharacteristic(axolotlHouse.NewData.Tag, EffectTypes.Meat_Plus1);
         
         // Needs
-        CustomRaceNeed houseNeed = RaceNeedFactory.HousingNeed(PluginInfo.PLUGIN_GUID, builder.NewRaceData.ID, axolotlHouse.NewData.ID, 
+        CustomRaceNeed houseNeed = RaceNeedFactory.HousingNeed(PluginInfo.PLUGIN_GUID, axolotlHouse.NewData.ID, 
             "Axolotl Housing",
             "The axolotl is lentic, meaning it inhabits still-water lakes. Axolotl Houses are required to fulfill this need.",
             axolotlHouse.Model.icon,
@@ -40,7 +40,7 @@ public partial class Plugin
         builder.AddNeed(NeedTypes.Skewer);
         builder.AddNeed(NeedTypes.Treatment);
         builder.AddNeed(NeedTypes.Leasiure);
-        builder.AddNeed(NeedTypes.Religion);
+        builder.AddNeed(friesWorshiperNeed.ID);
         builder.AddNeed(NeedTypes.Luxury);
 
         // Axolotls are the only ones that can sleep in this house
