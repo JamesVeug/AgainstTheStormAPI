@@ -45,8 +45,8 @@ public partial class Plugin
         var burgerJoint = new WorkshopBuildingBuilder(PluginInfo.PLUGIN_GUID, "BurgerJoint", "BurgerJoint.png");
         burgerJoint.SetCustomModel(ExampleModAssetBundle.LoadAsset<GameObject>("BorgorKing"));
         burgerJoint.SetDisplayName("Borgor King");
-        burgerJoint.SetMoveCost(1, GoodsTypes.Valuable_Amber); // optional
         burgerJoint.SetDescriptionKey("Building_GenericWorkshop_NoWater_Desc"); // Can produce: {0}.
+        burgerJoint.SetMoveCost(1, GoodsTypes.Mat_Processed_Planks);
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
         burgerJoint.AddTags(BuildingTagTypes.Animals);
