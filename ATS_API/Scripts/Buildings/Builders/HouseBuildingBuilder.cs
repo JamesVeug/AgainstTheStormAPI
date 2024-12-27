@@ -6,7 +6,7 @@ using Eremite.Buildings;
 
 namespace ATS_API.Buildings;
 
-public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
+public class HouseBuildingBuilder : BuildingBuilder<HouseModel, NewHouseBuildingData>
 {
     private readonly MetaData metaData;
 
@@ -16,6 +16,16 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
         public List<NeedTypes> ServedNeeds = new List<NeedTypes>();
     }
     
+    protected override NewHouseBuildingData CreateNewData(string guid, string name)
+    {
+        return BuildingManager.CreateHouse(guid, name);
+    }
+
+    protected override NewHouseBuildingData GetNewData(HouseModel model)
+    {
+        return NewHouseBuildingData.FromModel(model);
+    }
+
     public HouseBuildingBuilder(HouseModel model) : base(model)
     {
         metaData = new MetaData();
@@ -23,11 +33,12 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel>
         m_newData.Behaviour = BuildingBehaviourTypes.House;
     }
     
-    public HouseBuildingBuilder(string guid, string name, string iconPath, int housingPlaces) : base(guid, name, BuildingBehaviourTypes.House, iconPath)
+    public HouseBuildingBuilder(string guid, string name, string iconPath, int housingPlaces) : base(guid, name, iconPath)
     {
         // Set Category to Housing
         // Set label to Housing
         metaData = new MetaData();
+        
         m_newData.MetaData = metaData;
         m_newData.Category = BuildingCategoriesTypes.Housing;
         

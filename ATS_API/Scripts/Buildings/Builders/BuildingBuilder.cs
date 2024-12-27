@@ -8,44 +8,50 @@ using UnityEngine;
 
 namespace ATS_API.Buildings;
 
-public partial class BuildingBuilder<T> : IBuildingBuilder where T : BuildingModel
+public abstract partial class BuildingBuilder<T, Y> : IBuildingBuilder 
+    where T : BuildingModel
+    where Y : GenericBuildingData<T>
 {
     public string Name => m_name;
     public string GUID => m_guid;
     public T BuildingModel => m_buildingModel;
     public BuildingModel Model => m_buildingModel;
-    public NewBuildingData NewData => m_newData;
+    public Y NewData => m_newData;
     public BuildingTagModel BuildingTagModel => m_buildingTagModel;
     
     private BuildingTagModel m_buildingTagModel;
-    protected readonly NewBuildingData m_newData;
+    protected Y m_newData;
     protected readonly T m_buildingModel;
     protected readonly string m_guid;
     protected readonly string m_name;
     
     public BuildingBuilder(T model)
     {
-        m_newData = NewBuildingData.FromModel(model);
+        m_newData = GetNewData(model);
         m_buildingModel = model;
         m_guid = m_newData.Guid;
         m_name = model.name;
-        
-        BuildingManager.QueueSync(m_newData);
     }
+
+    protected abstract Y GetNewData(T model);
+
+    protected abstract Y CreateNewData(string guid, string name);
     
-    public BuildingBuilder(string guid, string name, BuildingBehaviourTypes behaviour, string iconPath)
+    public BuildingBuilder(string guid, string name, string iconPath)
     {
         m_guid = guid;
         m_name = name;
 
-        m_newData = BuildingManager.CreateBuilding<T>(guid, name, behaviour);
+        m_newData = CreateNewData(guid, name);
         m_buildingModel = (T)m_newData.BuildingModel;
         m_buildingModel.displayName = Placeholders.DisplayName;
         m_buildingModel.description = Placeholders.Description;
         m_buildingModel.displayLabel = Placeholders.Label;
         m_buildingModel.icon = TextureHelper.GetImageAsSprite(iconPath, TextureHelper.SpriteType.BuildingIcon);
+        m_buildingModel.tags = [];
 
 
+        m_buildingModel.sourcePreviewMode = GoodSourcePreviewMode.Always;
         m_buildingModel.category = null; // TODO:
         m_buildingModel.requiresConstruction = true;
         m_buildingModel.refundMaterials = true;

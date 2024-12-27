@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ATS_API.Buildings;
 
-public partial class BuildingBuilder<T>
+public partial class BuildingBuilder<T,Y>
 {
     [Obsolete("Use SetDescription(description,systemLanguage) instead", true)]
     protected virtual void SetDescription(string description)

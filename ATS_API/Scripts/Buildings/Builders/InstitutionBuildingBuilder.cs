@@ -7,7 +7,7 @@ using Eremite.Buildings;
 
 namespace ATS_API.Buildings;
 
-public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel>
+public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel, NewInstitutionBuildingData>
 {
     public class MetaData
     {
@@ -26,6 +26,16 @@ public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel>
 
     private MetaData metaData;
 
+    
+    protected override NewInstitutionBuildingData CreateNewData(string guid, string name)
+    {
+        return BuildingManager.CreateInstitution(guid, name);
+    }
+
+    protected override NewInstitutionBuildingData GetNewData(InstitutionModel model)
+    {
+        return NewInstitutionBuildingData.FromModel(model);
+    }
 
     public InstitutionBuildingBuilder(InstitutionModel model) : base(model)
     {
@@ -35,7 +45,7 @@ public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel>
         m_newData.BuildingModel.description = Keys.Building_GenericInstitution_Desc.ToLocaText();
     }
 
-    public InstitutionBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, BuildingBehaviourTypes.Institution, iconPath)
+    public InstitutionBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, iconPath)
     {
         metaData = new MetaData();
         m_newData.MetaData = metaData;

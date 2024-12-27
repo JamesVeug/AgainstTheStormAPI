@@ -7,7 +7,7 @@ using Eremite.Buildings;
 
 namespace ATS_API.Buildings;
 
-public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
+public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorkshopBuildingData>
 {
     public class MetaData
     {
@@ -19,6 +19,15 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
 
     private MetaData metaData;
     
+    protected override NewWorkshopBuildingData CreateNewData(string guid, string name)
+    {
+        return BuildingManager.CreateWorkshop(guid, name);
+    }
+
+    protected override NewWorkshopBuildingData GetNewData(WorkshopModel model)
+    {
+        return NewWorkshopBuildingData.FromModel(model);
+    }
     
     public WorkshopBuildingBuilder(WorkshopModel model) : base(model)
     {
@@ -27,7 +36,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel>
         m_newData.Behaviour = BuildingBehaviourTypes.Workshop;
     }
     
-    public WorkshopBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, BuildingBehaviourTypes.Workshop, iconPath)
+    public WorkshopBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, iconPath)
     {
         metaData = new MetaData();
         m_newData.MetaData = metaData;

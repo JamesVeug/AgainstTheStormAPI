@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ATS_API.Helpers;
-using ATS_API.Localization;
-using ATS_API.Recipes.Builders;
 using Eremite.Buildings;
 using Eremite.MapObjects;
 using Eremite.Model;
@@ -12,13 +10,37 @@ using Object = UnityEngine.Object;
 
 namespace ATS_API.Buildings;
 
-public class NewBuildingData : ASyncable<BuildingModel>
+public class NewBuildingData : GenericBuildingData<BuildingModel>
+{
+    public NewBuildingData(string guid, string name, BuildingTypes id, BuildingModel model, BuildingBehaviourTypes behaviour) : base(guid, name, id, model, behaviour)
+    {
+    }
+
+    public override bool Sync()
+    {
+        // return base.Sync();
+        return true;
+    }
+
+    public override void PostSync()
+    {
+        // base.PostSync();
+    }
+}
+
+public interface IBuildingData
+{
+    bool Sync();
+    void PostSync();
+}
+
+public class GenericBuildingData<T> : ASyncable<T>, IBuildingData where T : BuildingModel
 {
     public string Guid;
     public string Name;
     public BuildingTypes ID;
     public BuildingTagTypes Tag;
-    public BuildingModel BuildingModel;
+    public T BuildingModel;
     public BuildingVisualData VisualData;
     public BuildingBehaviourTypes Behaviour;
     public object MetaData;
@@ -31,8 +53,19 @@ public class NewBuildingData : ASyncable<BuildingModel>
     public GameObject CustomPrefab;
     public BuildingConstructionAnimationData BuildingConstructionAnimationData;
 
+    public GenericBuildingData(string guid, string name, BuildingTypes id, T model, BuildingBehaviourTypes behaviour)
+    {
+        Guid = guid;
+        Name = name;
+        ID = id;
+        BuildingModel = model;
+        VisualData = null;
+        Behaviour = behaviour;
+    }
+
     public override bool Sync()
     {
+        APILogger.LogDebug($"Syncing building of type {typeof(T).Name}: {Name}");
         if (MoveCost != null)
         {
             BuildingModel.movingCost = new GoodRef()
@@ -53,13 +86,11 @@ public class NewBuildingData : ASyncable<BuildingModel>
         
         if (UsabilityTags.Count > 0)
         {
-            BuildingModel.usabilityTags = UsabilityTags.ToModelTagArray();
+            BuildingModel.usabilityTags = UsabilityTags.ToModelTagArrayNoNulls();
         }
         
-        if (Tags.Count > 0)
-        {
-            BuildingModel.tags = Tags.ToBuildingTagModelArray();
-        }
+        BuildingModel.tags = new List<BuildingTagTypes>(){Tag}.Concat(Tags).Distinct().ToBuildingTagModelArrayNoNulls();
+        APILogger.LogDebug($"Building {Name} has tags: {string.Join(", ", BuildingModel.tags.Select(a=>a.name))}");
 
         if (Category != BuildingCategoriesTypes.Unknown)
         {
@@ -75,150 +106,6 @@ public class NewBuildingData : ASyncable<BuildingModel>
             Debug.LogError($"Error while setting up prefab for building {BuildingModel.name} and behaviour {Behaviour}");
             Debug.LogError(e);
             return false;
-        }
-    }
-
-    public override void PostSync()
-    {
-        base.PostSync();
-        APILogger.LogDebug($"PostSync for building {BuildingModel.name}");
-        
-        if (BuildingModel is HouseModel houseModel)
-        {
-            HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
-            houseModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
-            houseModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
-        }
-        else if(BuildingModel is DecorationModel decorationModel)
-        {
-            DecorationBuildingBuilder.MetaData metaData = (DecorationBuildingBuilder.MetaData) MetaData;
-            decorationModel.tier = metaData.Tier.ToDecorationTier();
-            
-            if ((decorationModel.description == null || decorationModel.description.key == Placeholders.DescriptionKey) 
-                && decorationModel.tier != null)
-            {
-                if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.Comfort)
-                {
-                    decorationModel.description = "Building_Decoration_Comfort_Desc".ToLocaText();
-                }
-                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.Aesthetics)
-                {
-                    decorationModel.description = "Building_Decoration_Aesthetics_Desc".ToLocaText();
-                }
-                else if (decorationModel.tier.name.ToDecorationTierTypes() == DecorationTierTypes.Harmony)
-                {
-                    decorationModel.description = "Building_Decoration_Harmony_Desc".ToLocaText();
-                }
-            }
-        }
-        
-        else if (BuildingModel is WorkshopModel workshopModel)
-        {
-            WorkshopBuildingBuilder.MetaData metaData = (WorkshopBuildingBuilder.MetaData) MetaData;
-            if (metaData.Recipes != null || metaData.Builders != null || metaData.RecipeNames != null)
-            {
-                IEnumerable<WorkshopRecipeModel> recipes = metaData.Recipes ?? new List<WorkshopRecipeModel>();
-                IEnumerable<WorkshopRecipeBuilder> builders = metaData.Builders ?? new List<WorkshopRecipeBuilder>();
-                IEnumerable<string> recipeNames = metaData.RecipeNames ?? new List<string>();
-                workshopModel.recipes = recipes
-                    .Concat(recipeNames.Select(a=>a.ToWorkshopRecipeModel()))
-                    .Concat(builders.Select(a => a.Build()))
-                    .Where(a=>a != null)
-                    .ToArray();
-            }
-            else if (workshopModel.recipes == null)
-            {
-                workshopModel.recipes = new WorkshopRecipeModel[0];
-            }
-
-            if (Profession != ProfessionTypes.Unknown)
-            {
-                workshopModel.profession = Profession.ToProfessionModel();
-            }
-
-            APILogger.LogInfo($"Setting up workplaces for workshop {BuildingModel.name}");
-            if (metaData.WorkPlaces != null)
-            {
-                workshopModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
-                for (int i = 0; i < metaData.WorkPlaces.Count; i++)
-                {
-                    var allowedRaces = metaData.WorkPlaces[i];
-
-                    WorkplaceModel workplace = new WorkplaceModel();
-                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
-                    for (int j = 0; j < allowedRaces.Length; j++)
-                    {
-                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
-                    }
-
-                    workshopModel.workplaces[i] = workplace;
-                }
-            }
-            else if (workshopModel.workplaces == null)
-            {
-                workshopModel.workplaces = new WorkplaceModel[0];
-            }
-        }
-        else if (BuildingModel is InstitutionModel institutionModel)
-        {
-            InstitutionBuildingBuilder.MetaData metaData = (InstitutionBuildingBuilder.MetaData) MetaData;
-            if (Profession != ProfessionTypes.Unknown)
-            {
-                institutionModel.profession = Profession.ToProfessionModel();
-            }
-            
-            if (metaData.Recipes != null || metaData.Builders != null || metaData.RecipeNames != null)
-            {
-                IEnumerable<InstitutionRecipeModel> recipes = metaData.Recipes ?? new List<InstitutionRecipeModel>();
-                IEnumerable<InstitutionRecipeBuilder> builders = metaData.Builders ?? new List<InstitutionRecipeBuilder>();
-                IEnumerable<string> recipeNames = metaData.RecipeNames ?? new List<string>();
-                institutionModel.recipes = recipes
-                    .Concat(recipeNames.Select(a=>a.ToInstitutionRecipeModel()))
-                    .Concat(builders.Select(a => a.Build()))
-                    .Where(a=>a != null)
-                    .ToArray();
-            }
-            else if (institutionModel.recipes == null)
-            {
-                institutionModel.recipes = new InstitutionRecipeModel[0];
-            }
-
-            APILogger.LogDebug($"Setting up workplaces");
-            if (metaData.WorkPlaces != null)
-            {
-                institutionModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
-                for (int i = 0; i < metaData.WorkPlaces.Count; i++)
-                {
-                    var allowedRaces = metaData.WorkPlaces[i];
-
-                    WorkplaceModel workplace = new WorkplaceModel();
-                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
-                    for (int j = 0; j < allowedRaces.Length; j++)
-                    {
-                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
-                    }
-
-                    institutionModel.workplaces[i] = workplace;
-                }
-            }
-            else if (institutionModel.workplaces == null)
-            {
-                institutionModel.workplaces = new WorkplaceModel[0];
-            }
-            
-            APILogger.LogDebug("Setting up activeEffects");
-            if (metaData.ActiveEffects != null)
-            {
-                institutionModel.activeEffects = metaData.ActiveEffects.Select(effectName=>new InstitutionEffectModel()
-                {
-                    minWorkers = effectName.MinWorkers,
-                    effect = effectName.Name.ToEffectModel()
-                }).Where(a=>a.effect != null).ToArray();
-            }
-            else if (institutionModel.activeEffects == null)
-            {
-                institutionModel.activeEffects = new InstitutionEffectModel[0];
-            }
         }
     }
 
@@ -359,22 +246,5 @@ public class NewBuildingData : ASyncable<BuildingModel>
         }
 
         return true;
-    }
-
-    public static NewBuildingData FromModel<T>(T model) where T : BuildingModel
-    {
-        NewBuildingData buildingData = BuildingManager.NewBuildings.FirstOrDefault(a => a.BuildingModel == model);
-        if (buildingData != null)
-        {
-            return buildingData;
-        }
-        
-        buildingData = new NewBuildingData();
-        buildingData.BuildingModel = model;
-        buildingData.Guid = "";
-        buildingData.Name = model.name;
-        buildingData.ID = model.name.ToBuildingTypes();
-        
-        return buildingData;
     }
 }
