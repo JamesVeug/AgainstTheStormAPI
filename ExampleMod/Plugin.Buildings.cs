@@ -1,13 +1,14 @@
 ﻿using ATS_API.Buildings;
 using ATS_API.Helpers;
 using ATS_API.Needs;
-using Eremite.Buildings;
+using ATS_API.Recipes.Builders;
 using UnityEngine;
 
 namespace ExampleMod;
 
 public partial class Plugin
 {
+    private CustomRaceNeed friesWorshiperNeed;
     private HouseBuildingBuilder axolotlHouse;
 
     private void CreateBuildings()
@@ -95,9 +96,11 @@ public partial class Plugin
         playPen.AddActiveEffect(EffectTypes.Bigger_Storage, 1);
 
         playPen.AddRecipe(InstitutionRecipeTypes.Treatment);
-        CustomRaceNeed friesNeed = RaceNeedFactory.ComplexFoodNeed(PluginInfo.PLUGIN_GUID, fries.NewGood.id, 4);
-        var friesRecipe = playPen.CreateRecipe(friesNeed.ID);
-        friesRecipe.AddTags(TagTypes.Food_Tag);
-        friesRecipe.AddRequiredIngredients((1, fries.NewGood.id));
+        
+        // Give me fries, and I'll give you a worshiping good in return.
+        string description = $"It requires <sprite name=\"{fries.NewGood.goodModel.name}\"> Fries. Satisfying this need increases the chance of producing double yields.";
+        friesWorshiperNeed = RaceNeedFactory.ServiceNeed(PluginInfo.PLUGIN_GUID, fries.NewGood.id, friesWorship.NewGood.id, description, 8);
+        InstitutionRecipeBuilder friesRecipe = playPen.CreateRecipe(friesWorshiperNeed.ID);
+        friesRecipe.AddRequiredIngredients((2, fries.NewGood.id));
     }
 }
