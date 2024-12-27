@@ -32,7 +32,7 @@ public class GoodsBuilder
         newModel.Category = "Modded";
         newModel.goodModel.displayName = Placeholders.DisplayName;
         newModel.goodModel.description = Placeholders.Description;
-        newModel.goodModel.shortDescription = Placeholders.Description;
+        newModel.goodModel.shortDescription = Placeholders.ShortDescription;
     }
     
     public void SetIcon(string iconImage)
