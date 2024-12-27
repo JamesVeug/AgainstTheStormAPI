@@ -18,12 +18,12 @@ public static partial class BiomeManager
     [HarmonyPrefix]
     private static bool PostProcessesAnimator_SetUp(PostProcessesAnimator __instance)
     {
-        APILogger.LogInfo("PostProcessesAnimator_SetUp: " + __instance.gameObject.FullName());
+        APILogger.LogDebug("PostProcessesAnimator_SetUp: " + __instance.gameObject.FullName());
         
         BiomeTypes biomeTypes = Serviceable.StateService.Conditions.biomeName.ToBiomeTypes();
         if (!NewBiomeLookup.TryGetValue(biomeTypes, out NewBiome newBiome))
         {
-            APILogger.LogError($"{Serviceable.StateService.Conditions.biomeName} is not a custom biome with type: {biomeTypes} with custom biomes: {NewBiomeLookup.Count}");
+            // APILogger.LogError($"{Serviceable.StateService.Conditions.biomeName} is not a custom biome with type: {biomeTypes} with custom biomes: {NewBiomeLookup.Count}");
             return true;
         }
         
@@ -57,7 +57,7 @@ public static partial class BiomeManager
                 scaler.Reset(); // Assigns particleSystem to the particle field
             }
             GameObject.Destroy(rainDrops.gameObject);
-            APILogger.LogInfo("Raindrops changed!");
+            APILogger.LogDebug("Raindrops changed!");
         }
         
         // Change Storm/Rain RainDrop
@@ -87,7 +87,7 @@ public static partial class BiomeManager
                 rain.SetActive(true);
                 rain.name = stormRainDrop.gameObject.name;
                 GameObject.Destroy(stormRainDrop.gameObject);
-                APILogger.LogInfo("Storm/RainDrop storm changed!");
+                APILogger.LogDebug("Storm/RainDrop storm changed!");
             }
             
             ParticleSystem stormRainDrop2 = storm.FindChild<ParticleSystem>("RainDrop2");
@@ -104,7 +104,7 @@ public static partial class BiomeManager
                 rain.SetActive(true);
                 rain.name = stormRainDrop2.gameObject.name;
                 GameObject.Destroy(stormRainDrop2.gameObject);
-                APILogger.LogInfo("Storm/RainDrop2 storm changed!");
+                APILogger.LogDebug("Storm/RainDrop2 storm changed!");
             }
         }
 
@@ -114,7 +114,7 @@ public static partial class BiomeManager
         //     ParticleSystem[] children = gameObject.GetComponentsInChildren<ParticleSystem>(true);
         //     foreach (ParticleSystem child in children)
         //     {
-        //         Logger.LogInfo("Child: " + child.FullName());
+        //         Logger.LogDebug("Child: " + child.FullName());
         //     }
         // }
     }

@@ -36,11 +36,9 @@ public class NewGood : ASyncable<GoodModel>
             GoodCategoryModel modelCategory = Category.ToGoodCategoryModel();
             if (modelCategory == null)
             {
-                APILogger.LogError($"Good Category {Category} not found for good {goodModel.name}. Custom Good Categories not supported yet!");
                 modelCategory = settings.Goods[0].category;
             }
             goodModel.category = modelCategory;
-            // Logger.LogInfo($"Assigning new good {model.name} category {model.category.name}");
         }
         
         return true;

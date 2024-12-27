@@ -20,7 +20,7 @@ public static partial class EffectManager
     private static Dictionary<string, string> s_previouslyNamedAs = new Dictionary<string, string>();
     
     private static ArraySync<EffectModel, NewEffectData> s_effects = new("New Effects");
-    private static ArraySync<ResolveEffectModel, NewResolveEffectData> s_resolveEffects = new("new Resolve Effectgs");
+    private static ArraySync<ResolveEffectModel, NewResolveEffectData> s_resolveEffects = new("new Resolve Effects");
     
     private static bool s_instantiated = false;
     private static bool s_dirty = false;

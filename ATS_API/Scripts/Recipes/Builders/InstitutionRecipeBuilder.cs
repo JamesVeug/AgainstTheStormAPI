@@ -16,14 +16,14 @@ public class InstitutionRecipeBuilder : RecipeBuilder<InstitutionRecipeModel>
     {
         this.servedNeed = servedNeed;
         this.Grade = Grade.One;
-        RecipeModel.isGoodConsumed = false;
+        RecipeModel.isGoodConsumed = true;
     }
     
     public InstitutionRecipeBuilder(string guid, string name, NeedTypes servedNeed) : base(guid, name)
     {
         this.servedNeed = servedNeed.ToName();
         this.Grade = Grade.One;
-        RecipeModel.isGoodConsumed = false;
+        RecipeModel.isGoodConsumed = true;
     }
     
     public InstitutionRecipeBuilder(InstitutionRecipeModel model)
@@ -54,7 +54,6 @@ public class InstitutionRecipeBuilder : RecipeBuilder<InstitutionRecipeModel>
         APILogger.IsNotNull(servedNeed, $"ServedNeed can not be null for InstitutionRecipeModel {RecipeModel.name}");
         
         InstitutionRecipeModel model = base.Build();
-        APILogger.IsNotNull(model, $"model can not be null for InstitutionRecipeModel!");
         model.servedNeed = servedNeed.ToNeedModel();
         model.requiredGoods = new GoodsSet();
         model.requiredGoods.goods = requiredGoods.ToArrayOfGoodRefs(false);

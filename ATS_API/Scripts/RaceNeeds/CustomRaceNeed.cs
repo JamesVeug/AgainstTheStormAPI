@@ -12,26 +12,12 @@ public class CustomRaceNeed : ASyncable<NeedModel>
     public NeedModel NeedModel;
     public string guid;
     public string needName;
-    
+
+    public GoodsTypes serviceResultGood = GoodsTypes.None;
     public VillagerPerkTypes perk = VillagerPerkTypes.None;
     public NeedTypes ID = NeedTypes.None;
     public GoodsTypes referenceGood = GoodsTypes.None;
     public BuildingTypes houseName = BuildingTypes.None;
-    public RaceTypes raceName = RaceTypes.None;
-
-    public override bool Sync()
-    {
-        if (referenceGood != GoodsTypes.None)
-        {
-            return SyncComplexFoodNeed();
-        }
-        else if (houseName != BuildingTypes.None)
-        {
-            return SyncHouseNeed();
-        }
-        
-        return true;
-    }
 
     public override void PostSync()
     {
@@ -39,20 +25,19 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         {
             NeedModel.perk = perk.ToVillagerPerkModel();
         }
-        
-        if (referenceGood != GoodsTypes.None)
+
+        if (serviceResultGood != GoodsTypes.None)
         {
-            PostSyncGoodNeed();
+            PostSyncServiceNeed();
+        }
+        else if (referenceGood != GoodsTypes.None)
+        {
+            PostSyncComplexFoodNeed();
         }
         else if (houseName != BuildingTypes.None)
         {
             PostSyncHouseNeed();
         }
-    }
-
-    private bool SyncHouseNeed()
-    {
-        return true;
     }
 
     private void PostSyncHouseNeed()
@@ -74,19 +59,7 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         hearth.tags = hearth.tags.ForceAdd(houseModel.tags[0]);
     }
 
-    private bool SyncComplexFoodNeed()
-    {
-        // Category
-        if (NeedModel.category == null)
-        {
-            NeedModel jerky = NeedTypes.Jerky.ToNeedModel();
-            NeedModel.category = jerky.category;
-        }
-
-        return true;
-    }
-
-    private void PostSyncGoodNeed()
+    private void PostSyncComplexFoodNeed()
     {
         GoodModel good = referenceGood.ToGoodModel();
         if (good == null)
@@ -95,6 +68,7 @@ public class CustomRaceNeed : ASyncable<NeedModel>
             return;
         }
         NeedModel.referenceGood = good;
+        NeedModel.category = NeedTypes.Jerky.ToNeedModel().category;
         
         // "ResolveEffect_JerkyEffect_Description": "This need is fulfilled at the Hearth. It requires <sprite name=\"[food processed] jerky\"> jerky."
         var description = $"This need is fulfilled at the Hearth. It requires <sprite name=\"{good.name}\"> {good.displayName.GetText()}.";
@@ -118,6 +92,38 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         {
             string text = "Fulfill your villagers' need for eating " + good.displayName.GetText() + " {0} times.";
             presentation.orderDescription = LocalizationManager.ToLocaText(guid, needName, "orderDescription", text);
+        }
+    }
+    
+    private void PostSyncServiceNeed()
+    {
+        GoodModel good = referenceGood.ToGoodModel();
+        if (good == null)
+        {
+            APILogger.LogError($"Failed to find good {referenceGood} for need {NeedModel.name}");
+            return;
+        }
+        NeedModel.referenceGood = good;
+        NeedModel.category = NeedTypes.Leasiure.ToNeedModel().category;
+        
+        NeedModel.effect.icon = serviceResultGood.ToGoodModel().icon;
+        NeedModel.effect.displayName = serviceResultGood.ToGoodModel().displayName;
+        
+        NeedModel.equalProhibitionPenalty.icon = NeedModel.effect.icon;
+        NeedModel.unfairProhibitionPenalty.icon = NeedModel.effect.icon;
+        
+        // Presentation
+        GoodPresentationModel presentation = (GoodPresentationModel)NeedModel.presentation;
+        presentation.good = good;
+        presentation.overrideIcon = NeedModel.effect.icon;
+        if (presentation.description == null)
+        {
+            presentation.description = "Need_FormatedDescription_Generic".ToLocaText();
+            presentation.formatDescription = true;
+        }
+        if (presentation.orderDescription == null)
+        {
+            presentation.orderDescription = "Orders_Logics_FunNeed_Description".ToLocaText();
         }
     }
 }

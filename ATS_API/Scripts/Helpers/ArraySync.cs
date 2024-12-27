@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Eremite;
 using Eremite.Model;
 
@@ -40,7 +41,7 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
         
         if (elementsToAdd.Count == 0)
         {
-            // Logger.LogInfo($"{m_Name} has no new elements!");
+            APILogger.LogDebug($"{m_Name} has no new elements!");
             return elementsToAdd;
         }
         
@@ -51,15 +52,10 @@ public class ArraySync<ATS, API> where ATS : SO where API : ASyncable<ATS>
             API syncable = elementsToAdd[i];
             ATS ats = getter(syncable);
             array[startingIndex + i] = ats;
-            // Logger.LogInfo($"{m_Name} {i} {ats}");
+            APILogger.LogDebug($"{m_Name} adding {ats.name}");
         }
         
-        // string result = "";
-        // foreach (ATS so in array)
-        // {
-        //     result += so.name + ", ";
-        // }
-        // Logger.LogInfo($"{m_Name} now has {array.Length} elements: {result}");
+        // APILogger.LogDebug($"{m_Name} now has {array.Length} elements: {string.Join(",", array.Select(a=>a.name))}");
 
         if (settingsEffectsCache != null)
         {
