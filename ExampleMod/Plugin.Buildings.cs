@@ -99,7 +99,7 @@ public partial class Plugin
         
         // Give me fries, and I'll give you a worshiping good in return.
         string description = $"It requires <sprite name=\"{fries.NewGood.goodModel.name}\"> Fries. Satisfying this need increases the chance of producing double yields.";
-        friesWorshiperNeed = RaceNeedFactory.ServiceNeed(PluginInfo.PLUGIN_GUID, fries.NewGood.id, friesWorship.NewGood.id, description, 8);
+        friesWorshiperNeed = RaceNeedFactory.ServiceNeed(PluginInfo.PLUGIN_GUID, fries.NewGood.id, "TestBuildingIcon.png", "Fry Worship", description, 8);
         InstitutionRecipeBuilder friesRecipe = playPen.CreateRecipe(friesWorshiperNeed.ID);
         friesRecipe.AddRequiredIngredients((2, fries.NewGood.id));
     }

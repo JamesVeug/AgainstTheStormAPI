@@ -97,12 +97,13 @@ public static class RaceNeedFactory
         return need;
     }
     
-    public static CustomRaceNeed ServiceNeed(string guid, GoodsTypes requiredGood, GoodsTypes resultGood, string description, int resolve=4)
+    public static CustomRaceNeed ServiceNeed(string guid, GoodsTypes requiredGood, string icon, string displayName, string description, int resolve=4)
     {
         string goodName = requiredGood.ToName();
         string needName = goodName + "_serviceNeed";
         CustomRaceNeed need = RaceNeedManager.New(guid, needName);
-        need.serviceResultGood = resultGood;
+        need.serviceIcon = TextureHelper.GetImageAsSprite(icon, TextureHelper.SpriteType.GoodIcon);
+        need.serviceDisplayNameKey = LocalizationManager.NewString(guid, needName, "displayName", displayName);
         need.referenceGood = requiredGood;
         need.perk = VillagerPerkTypes.Need_Service_Goods_Extra_Production;
         

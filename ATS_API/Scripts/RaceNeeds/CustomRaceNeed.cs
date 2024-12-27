@@ -4,6 +4,7 @@ using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
 using Eremite.Model.Needs;
+using UnityEngine;
 
 namespace ATS_API.Needs;
 
@@ -13,7 +14,8 @@ public class CustomRaceNeed : ASyncable<NeedModel>
     public string guid;
     public string needName;
 
-    public GoodsTypes serviceResultGood = GoodsTypes.None;
+    public Sprite serviceIcon = null;
+    public string serviceDisplayNameKey = null;
     public VillagerPerkTypes perk = VillagerPerkTypes.None;
     public NeedTypes ID = NeedTypes.None;
     public GoodsTypes referenceGood = GoodsTypes.None;
@@ -26,7 +28,7 @@ public class CustomRaceNeed : ASyncable<NeedModel>
             NeedModel.perk = perk.ToVillagerPerkModel();
         }
 
-        if (serviceResultGood != GoodsTypes.None)
+        if (serviceIcon != null)
         {
             PostSyncServiceNeed();
         }
@@ -106,8 +108,8 @@ public class CustomRaceNeed : ASyncable<NeedModel>
         NeedModel.referenceGood = good;
         NeedModel.category = NeedTypes.Leasiure.ToNeedModel().category;
         
-        NeedModel.effect.icon = serviceResultGood.ToGoodModel().icon;
-        NeedModel.effect.displayName = serviceResultGood.ToGoodModel().displayName;
+        NeedModel.effect.icon = serviceIcon;
+        NeedModel.effect.displayName = serviceDisplayNameKey.ToLocaText();
         
         NeedModel.equalProhibitionPenalty.icon = NeedModel.effect.icon;
         NeedModel.unfairProhibitionPenalty.icon = NeedModel.effect.icon;
