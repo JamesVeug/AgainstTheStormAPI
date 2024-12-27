@@ -152,6 +152,12 @@ public class GoodsBuilder
         newModel.Category = category;
         return this;
     }
+    
+    public GoodsBuilder SetCategory(GoodsCategoriesTypes good)
+    {
+        newModel.Category = good.ToName();
+        return this;
+    }
 
     /// <summary>
     /// Meat = 1
