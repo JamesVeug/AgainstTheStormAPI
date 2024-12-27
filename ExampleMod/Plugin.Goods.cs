@@ -11,7 +11,6 @@ public partial class Plugin
     private GoodsBuilder kiwiFruit;
     private GoodsBuilder burger;
     private GoodsBuilder fries;
-    private GoodsBuilder friesWorship;
     private GoodsBuilder cola;
     
     private void CreateGoods()
@@ -31,8 +30,10 @@ public partial class Plugin
         lpg = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "LPG", "LPG.png");
         lpg.SetDisplayName("LPG");
         lpg.SetDisplayName("液化石油ガス", SystemLanguage.Japanese);
-        lpg.SetDescription("A clean and efficient fuel.");
-        lpg.SetDescription("クリーンで効率的な燃料。", SystemLanguage.Japanese);
+        lpg.SetDescription("A clean and efficient fuel. \n\n <b>Obtained in:</b> {0}");
+        lpg.SetDescription("クリーンで効率的な燃料。\n\n <b>入手場所:</b> {0}", SystemLanguage.Japanese);
+        lpg.SetShortDescription("A clean and efficient fuel.");
+        lpg.SetShortDescription("クリーンで効率的な燃料。", SystemLanguage.Japanese);
         lpg.SetCategory(GoodsCategoriesTypes.Fuel);
         lpg.SetTraderSellValue(17f);
         lpg.CanBeSoldToPlayer(10, 29f);
@@ -42,8 +43,8 @@ public partial class Plugin
         kiwiFruit = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Kiwi Fruit", "KiwiFruit.png");
         kiwiFruit.SetDisplayName("Kiwi Fruit");
         kiwiFruit.SetDisplayName("Киви", SystemLanguage.Russian);
-        kiwiFruit.SetDescription("Sour and sweet fruit that's great for a snack. Eat with a spoon.");
-        kiwiFruit.SetDescription("Кислые и сладкие фрукты, которые отлично подходят для перекуса. Ешьте ложкой.", SystemLanguage.Russian);
+        kiwiFruit.SetDescriptionKey("Good_GenericRawFood_Desc"); // Common food source.\n \n <b>Obtained in:</b> {0}
+        kiwiFruit.SetShortDescriptionKey("Good_GenericRawFood_Desc_Short"); // Common food source.,
         kiwiFruit.SetCategory(GoodsCategoriesTypes.Food);
         kiwiFruit.SetTraderSellValue(2.5f);
         kiwiFruit.CanBeSoldToPlayer(30, 5.0f);
@@ -54,7 +55,9 @@ public partial class Plugin
         
         burger = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Borgor", "Burger.png");
         burger.SetDisplayName("Borgor");
-        burger.SetDescription("Juicy and delicious.");
+        burger.SetDescription("Juicy and delicious. " +
+                              "Liked by: {2}. Villagers with a satisfied need for Borgor have an increased chance of producing double yields." +
+                              "\n\n<b>Produced in:</b> {0}");
         burger.SetCategory(GoodsCategoriesTypes.Food);
         burger.SetTraderSellValue(2.5f);
         burger.CanBeSoldToPlayer(30, 5.0f);
@@ -63,23 +66,19 @@ public partial class Plugin
         
         fries = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Fries", "Fries.png");
         fries.SetDisplayName("Fries");
-        fries.SetDescription("Hot and Crispy.");
+        fries.SetDescription("Hot and Crispy. " +
+                             "Used for Fry Worship at: {1}, by {2}. Villagers with a satisfied need for Fry Worship have a higher chance of producing double yields." +
+                             "\n\n<b>Produced in:</b> {0}");
         fries.SetCategory(GoodsCategoriesTypes.Consumable_Items);
         fries.SetTraderSellValue(0.5f);
         fries.CanBeSoldToPlayer(100, 1f);
         fries.CanBeSoldToAllTraders();
         
-        friesWorship = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "FriesWorshiper", "TestBuildingIcon.png");
-        friesWorship.SetDisplayName("Worship Fries Lord");
-        friesWorship.SetDescription("Villagers have consumed fries and are worshiping the fries lord.");
-        friesWorship.SetCategory(GoodsCategoriesTypes.Consumable_Items);
-        friesWorship.SetTraderSellValue(0.5f);
-        friesWorship.CanBeSoldToPlayer(100, 1f);
-        friesWorship.CanBeSoldToAllTraders();
-        
         cola = new GoodsBuilder(PluginInfo.PLUGIN_GUID, "Cola", "Cola.png");
         cola.SetDisplayName("Cola");
-        cola.SetDescription("Refreshing and bubbly.");
+        cola.SetDescription("Refreshing and bubbly. " +
+                            "Liked by: {2}. " +
+                            "\n\n<b>Produced in:</b> {0}");
         cola.SetCategory(GoodsCategoriesTypes.Food);
         cola.SetTraderSellValue(0.5f);
         cola.CanBeSoldToPlayer(100, 1f);

@@ -45,8 +45,8 @@ public partial class Plugin
         var burgerJoint = new WorkshopBuildingBuilder(PluginInfo.PLUGIN_GUID, "BurgerJoint", "BurgerJoint.png");
         burgerJoint.SetCustomModel(ExampleModAssetBundle.LoadAsset<GameObject>("BorgorKing"));
         burgerJoint.SetDisplayName("Borgor King");
-        burgerJoint.SetDescription("The best Borgors in town!");
         burgerJoint.SetMoveCost(1, GoodsTypes.Valuable_Amber); // optional
+        burgerJoint.SetDescriptionKey("Building_GenericWorkshop_NoWater_Desc"); // Can produce: {0}.
         burgerJoint.SetProfession(ProfessionTypes.Cook);
         burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
         burgerJoint.AddTags(BuildingTagTypes.Animals);
@@ -75,7 +75,7 @@ public partial class Plugin
         colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_Drizzle_Water));
         colaRecipe.AddRequiredIngredients((1, GoodsTypes.Water_Storm_Water));
 
-        burgerJoint.AddRecipe(WorkshopsRecipeTypes.Coal_T1);
+        burgerJoint.AddRecipe(WorkshopsRecipeTypes.Meat_workshop_T1);
     }
 
     private void CreateServiceBuilding()
