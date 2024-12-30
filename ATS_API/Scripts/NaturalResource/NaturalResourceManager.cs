@@ -47,7 +47,7 @@ public static class NaturalResourceManager
         
         model.defaultTreesColor = new Color(0, 0, 0, 0);
         model.highlightedTreesColor = new Color(0.8313726f, 0.6392157f, 0.2f, 1f);
-        model.defaultTreesColor = new Color(0.6392157f, 0.6588235f, 0.6705883f, 1f);
+        model.outOfRangeTreesColor = new Color(0.6392157f, 0.6588235f, 0.6705883f, 1f);
         model.editorColor = new Color(0f, 0.6981132f, 0.03333723f, 1f);
         model.editorShortcut = Key.Digit2;
         
