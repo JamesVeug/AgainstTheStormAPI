@@ -1,3 +1,37 @@
+# 3.3.0 (Breaks C# mods that add custom buildings)
+- Added
+  - Support for Custom Service buildings (aka Institutions)
+  - Support for Custom Service Needs
+  - Support for Custom Natural Resources to highlight when marked to be cut
+  - More localization keys from ATS to reference
+  - LogLevel config to change the level of logging form the API (Helps debugging)
+  - More enums
+    - RecipesTypes
+    - InstitutionRecipeTypes
+    - WorkshopRecipeTypes
+  - WorkshopRecipeBuilder now has methods to add recipes by WorkshopRecipeTypes or string now
+  - More callbacks for mod save system (pre-save, reset cycle/settlement).
+  - Function to set order which buildings are sorted in ui
+  - Override methods to set category of goods with an enum instead of string
+  - SetLabelKey method for EffectBuilders
+- Changed
+  - Refactored how BuildingBuilders work. **Will require recompiling your mods.**
+  - Custom Decorations start with Decoration label (localized too!)
+  - Custom Workshops start with ProductionBuilding label (localized too!)
+  - Custom Houses start with House label (localized too!)
+  - The mod save system now supports multiple profiles in the game.
+  - Swapped API to use a new intenral logger with more helpful into
+  - All managers will log an error if something has been already added.
+  - Custom goods start with placeholder shortDescriptions now
+- Fixed
+  - Missing label showing as Missing Town Description
+  - UI appearing off-center from buildings
+  - Custom Buildings missing arrow by the entrance
+  - Some hard loves causing an infinite spinner when loading the game
+  - Custom needs not having a production bonus effect when complex food is met
+  - Keybindings resetting when starting after another mod has already loaded them
+  - Unable to assault custom traders
+
 # 3.2.1
 - Fixed endless loading screen when leaving a game
 - Fixed endless loading screen when loading the world map with a missing biome.
