@@ -25,38 +25,56 @@ public enum InstitutionRecipeTypes
 	
 	/// <summary></summary>
 	/// <name>Bloodthirst</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Bloodthirst</servedNeed>
 	Bloodthirst = 1,
 
 	/// <summary></summary>
 	/// <name>Brotherhood_Free</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Bloodthirst</servedNeed>
 	Brotherhood_Free = 2,
 
 	/// <summary></summary>
 	/// <name>Education</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Education</servedNeed>
 	Education = 3,
 
 	/// <summary></summary>
 	/// <name>Education_Free</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Education</servedNeed>
 	Education_Free = 4,
 
 	/// <summary></summary>
 	/// <name>Leasiure</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Leasiure</servedNeed>
 	Leasiure = 5,
 
 	/// <summary></summary>
 	/// <name>Luxury</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Luxury</servedNeed>
 	Luxury = 6,
 
 	/// <summary></summary>
 	/// <name>Luxury_Free</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Luxury</servedNeed>
 	Luxury_Free = 7,
 
 	/// <summary></summary>
 	/// <name>Religion</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Religion</servedNeed>
 	Religion = 8,
 
 	/// <summary></summary>
 	/// <name>Treatment</name>
+	/// <grade>1</grade>
+	/// <servedNeed>Treatment</servedNeed>
 	Treatment = 9,
 
 

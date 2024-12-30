@@ -358,9 +358,54 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         
-        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, NameAndDescription, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
-        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
+        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"]);
+    }
+
+    private static Dictionary<string, string> ReceipComments(RecipeModel arg)
+    {
+        Dictionary<string,string> nameAndDescription = NameAndDescription(arg);
+        nameAndDescription["grade"] = arg.grade.level.ToString();
+        
+        if (arg is WorkshopRecipeModel workshopsRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = workshopsRecipeTypes.producedGood.good.name;
+        }
+        else if (arg is InstitutionRecipeModel institutionRecipeTypes)
+        {
+            nameAndDescription["servedNeed"] = institutionRecipeTypes.servedNeed.name;
+        }
+        else if (arg is CollectorRecipeModel collectorRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = collectorRecipeTypes.producedGood.good.name;
+        }
+        else if (arg is FarmRecipeModel farmRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = farmRecipeTypes.producedGood.good.name;
+        }
+        else if (arg is FishingHutRecipeModel fishingHutRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = fishingHutRecipeTypes.refGood.good.name;
+        }
+        else if (arg is GathererHutRecipeModel gathererHutRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = gathererHutRecipeTypes.refGood.good.name;
+        }
+        else if (arg is RainCatcherRecipeModel rainCatcherRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = rainCatcherRecipeTypes.water.good.name;
+        }
+        else if (arg is MineRecipeModel mineRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = mineRecipeTypes.producedGood.good.name;
+        }
+        else
+        {
+            APILogger.LogError("Unhandled RecipeModel type: " + arg.GetType().Name);
+        }
+        
+        return nameAndDescription;
     }
 
     private static string GetPredefinedDecorationEnumNames(string s)
