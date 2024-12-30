@@ -10,7 +10,7 @@ For more help/guids/examples checkout the modding discord.
 - 1 New Biome
 - 6 New Goods
 - 3 New Cornerstones
-- 3 New Buildings
+- 4 New Buildings
 - 1 New Trader
 - 1 New Race (Experimental)
 - 1 New Difficulty (P21)

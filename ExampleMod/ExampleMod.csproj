@@ -4,7 +4,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <AssemblyName>API_ExampleMod</AssemblyName>
         <Description>Mod used as an example of how to use all of it methods</Description>
-        <Version>3.1.0</Version>
+        <Version>3.3.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <BepInExPath>$([System.Environment]::GetFolderPath(SpecialFolder.ApplicationData))/Thunderstore Mod Manager/DataFolder/AgainstTheStorm/profiles/Default/BepInEx</BepInExPath>

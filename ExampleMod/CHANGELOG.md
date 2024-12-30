@@ -1,3 +1,17 @@
+# 3.3.0
+- Updated to API 3.3.0
+- Added Playpen service building
+- Added Fry Worship service need
+- Replaced Religion need on Axolotls with Fry Worship service need
+- Fries are no longer be eaten by villagers
+- Borgor king can now produce Meat (1 star)
+- Borgon king now says what it produces in the description
+- Borgon king now requires 1 plank to move instead of 1 amber
+- Fixed Borgor King appearing in the floor when building and icon being too low
+- All goods now have extended text saying what villagers like them, used in what buildings and produced form what.
+- Added S/L detection example. (mod save system example)
+- Removed Hotkey example since it was annoying
+
 # 3.2.0
 - Updated to API 3.2.0
 - Added more needs for the Axolotl (Thanks Cookiefox!)
