@@ -4,7 +4,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <AssemblyName>API</AssemblyName>
         <Description>Mod that adds helper methods for other mods and fixes/QOL changes for the game</Description>
-        <Version>3.3.0</Version>
+        <Version>3.3.1</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <BepInExPath>$([System.Environment]::GetFolderPath(SpecialFolder.ApplicationData))/Thunderstore Mod Manager/DataFolder/AgainstTheStorm/profiles/Default/BepInEx</BepInExPath>

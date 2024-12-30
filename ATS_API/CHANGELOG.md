@@ -1,3 +1,7 @@
+# 3.3.1
+- Fixed unmarking custom trees for cutting not removing the highlight
+- Added producedGood/need info to all recipe enums
+
 # 3.3.0 (Breaks C# mods that add custom buildings)
 - Added
   - Support for Custom Service buildings (aka Institutions)
