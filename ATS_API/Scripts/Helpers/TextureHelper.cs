@@ -101,7 +101,10 @@ public static class TextureHelper
         {
             var files = Directory.GetFiles(Paths.PluginPath, pathCardArt, SearchOption.AllDirectories);
             if (files.Length < 1)
-                throw new FileNotFoundException($"Could not find relative artwork file!\nFile name: {pathCardArt}", pathCardArt);
+            {
+                APILogger.LogError($"Could not find relative artwork file!\nFile name: {pathCardArt}", pathCardArt);
+                return null;
+            }
 
             pathCardArt = files[0];
         }
@@ -122,10 +125,14 @@ public static class TextureHelper
     {
         Texture2D texture = new(2, 2, TextureFormat.RGBA32, false);
         byte[] imgBytes = ReadArtworkFileAsBytes(pathCardArt);
-        bool isLoaded = texture.LoadImage(imgBytes);
-
-        texture.filterMode = filterMode;
-        texture.name = Path.GetFileNameWithoutExtension(pathCardArt);
+        if (imgBytes != null)
+        {
+            if (texture.LoadImage(imgBytes))
+            {
+                texture.filterMode = filterMode;
+                texture.name = Path.GetFileNameWithoutExtension(pathCardArt);
+            }
+        }
 
         return texture;
     }
