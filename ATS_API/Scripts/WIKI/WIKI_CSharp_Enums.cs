@@ -20,12 +20,14 @@ public partial class WIKI
         Func<T, string> nameGetter, Func<T, Dictionary<string, string>> comment, List<string> extraUsings = null,
         Func<string, string> enumParser = null, Func<T, string> groupEnumsBy = null, bool includeNamespaceInType=false, Func<T, int> orderBy = null)
     {
+        APILogger.LogInfo("Creating Enum: " + EnumName);
         // Quit if the directory does not exist
         if (!Directory.Exists(exportCSScriptsPath))
         {
             Directory.CreateDirectory(exportCSScriptsPath);
         }
 
+        APILogger.LogInfo("Grouping values...");
         HashSet<T> set = new(list);
         Dictionary<string, List<T>> groups = new();
         if (groupEnumsBy != null)
@@ -41,11 +43,16 @@ public partial class WIKI
                 groups[group].Add(t);
             }
         }
-        else
+        else if(set.Count > 0)
         {
             groups["__default"] = set.ToList();
         }
+        else if (set.Count == 0)
+        {
+            APILogger.LogWarning("No values found for " + EnumName);
+        }
 
+        APILogger.LogInfo("Sorting values...");
         Dictionary<string, List<(string name, string enu, Dictionary<string, string> locale)>> sorted = new();
         foreach (KeyValuePair<string, List<T>> pair in groups)
         {
@@ -107,24 +114,37 @@ public partial class WIKI
             sorted[pair.Key] = sortedList;
         }
 
+        APILogger.LogInfo("Sorting keys...");
         List<string> sortedGroups = groups.Keys.OrderBy(a => a).ToList();
 
+        APILogger.LogInfo("Creating C# file...");
         string fullModelName = typeof(T).FullName;
         string modelName = typeof(T).Name;
         string version = Application.version;
         string header = "/// <summary>\n" +
                         "/// Generated using Version " + version + "\n" +
                         "/// </summary>";
-        string firstEnum = sorted[sortedGroups[0]][0].enu;
+        string firstEnum = "None";
+        if (sortedGroups.Count > 0)
+        {
+            firstEnum = sorted[sortedGroups[0]][0].enu;
+        }
 
+        APILogger.LogInfo("Creating usings...");
         string usings = ""; // end with \n IF we have any usings
         if (extraUsings != null && extraUsings.Count > 0)
         {
             usings = string.Join("\n", extraUsings.Select(a => "using " + a + ";")) + "\n";
         }
 
-        int EnumCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length));
-        int DictionaryCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length + b.name.Length));
+        APILogger.LogInfo("Calculating character count...");
+        int EnumCharacterCount = 0;
+        int DictionaryCharacterCount = 0;
+        if(sorted.Count > 0)
+        {
+            EnumCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length));
+            DictionaryCharacterCount = sorted.Max(a => a.Value.Max(b => b.enu.Length + b.name.Length));
+        }
 
         string GetEnumLine((string name, string enu, Dictionary<string, string> locale) a, string group, int enumValue)
         {
@@ -199,6 +219,7 @@ public partial class WIKI
             return s;
         }
 
+        APILogger.LogInfo("Creating enum and dictionary lines...");
         string enumLines = "";
         string dictionaryLines = "";
         int enumValue = 1; // First custom enum starts at 1
@@ -217,6 +238,7 @@ public partial class WIKI
             dictionaryLines += string.Join("\n", groupList.Select(ToDictionaryRow)) + "\n";
         }
 
+        APILogger.LogInfo("Creating template...");
         var template = Util.ReadEmbeddedResource(typeof(WIKI).Assembly, "EnumTemplate.txt");
         string cs = template
             .Replace("{USINGS}", usings)
@@ -230,6 +252,7 @@ public partial class WIKI
             .Replace("{COLLECTION}", modelGetter)
             .Replace("{ENUM_TO_NAME}", dictionaryLines);
 
+        APILogger.LogInfo("Writing to file...");
         File.WriteAllText(Path.Combine(exportCSScriptsPath, EnumName + ".cs"), cs);
     }
 
@@ -326,10 +349,19 @@ public partial class WIKI
         exportCSScriptsPath = csExportPath;
         Func<string, string> noStartingNumbersEnum = (a) => a.ToEnumString(true);
         
-        CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameAndDescription, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("WorkshopTypes", "SO.Settings.workshops", SO.Settings.workshops, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("CollectorTypes", "SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>()", SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("FarmTypes", "SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>()", SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("FishingHutTypes", "SO.Settings.Buildings.Where(a=>a is FishingHutModel).Cast<FishingHutModel>()", SO.Settings.Buildings.Where(a=>a is FishingHutModel).Cast<FishingHutModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("GathererHutTypes", "SO.Settings.Buildings.Where(a=>a is GathererHutModel).Cast<GathererHutModel>()", SO.Settings.Buildings.Where(a=>a is GathererHutModel).Cast<GathererHutModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("InstitutionTypes", "SO.Settings.Institutions", SO.Settings.Institutions, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("MineTypes", "SO.Settings.mines", SO.Settings.mines, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("RainCatcherTypes", "SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>()", SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        
+        
+        CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("NeedTypes", "SO.Settings.Needs", SO.Settings.Needs, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("GoodsCategoriesTypes", "SO.Settings.GoodsCategories", SO.Settings.GoodsCategories, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
