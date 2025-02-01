@@ -27,6 +27,10 @@ public static class Placeholders
     public static readonly string DescriptionKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "description", "Missing Description");
     
     // Create new object but not new key in case someone tries changing it
+    public static LocaText Grade => GradeKey.ToLocaText();
+    public static readonly string GradeKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "description", "Missing Grade");
+    
+    // Create new object but not new key in case someone tries changing it
     public static LocaText ShortDescription => ShortDescriptionKey.ToLocaText();
     public static readonly string ShortDescriptionKey = LocalizationManager.NewString(PluginInfo.PLUGIN_GUID, "placeHolders", "shortDescription", "Missing Short Description");
     

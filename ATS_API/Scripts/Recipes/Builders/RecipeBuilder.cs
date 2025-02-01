@@ -7,8 +7,8 @@ namespace ATS_API.Recipes.Builders;
 
 public class RecipeBuilder<T> where T : RecipeModel
 {
-    private readonly string guid; // myGuid
-    private readonly string name; // itemName
+    protected readonly string guid; // myGuid
+    protected readonly string name; // itemName
 
     public T RecipeModel = null;
     
