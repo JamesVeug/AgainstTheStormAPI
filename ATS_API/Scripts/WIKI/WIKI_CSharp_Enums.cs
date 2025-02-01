@@ -357,6 +357,7 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("WaterTypes", "SO.Settings.Waters", SO.Settings.Waters, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         
         CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
         CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"]);
@@ -399,6 +400,10 @@ public partial class WIKI
         else if (arg is MineRecipeModel mineRecipeTypes)
         {
             nameAndDescription["producedGood"] = mineRecipeTypes.producedGood.good.name;
+        }
+        else if (arg is CampRecipeModel campRecipeTypes)
+        {
+            nameAndDescription["producedGood"] = campRecipeTypes.RefGood;
         }
         else
         {
