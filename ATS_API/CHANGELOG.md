@@ -1,3 +1,23 @@
+# 3.4.0
+- Added Recipe support for all types
+  - CampRecipe
+  - CollectorRecipe
+  - FarmRecipe (No model handling support)
+  - FishingRecipe
+  - GathererHutRecipe
+  - MineRecipe
+  - RainCatcherRecipe
+- More Enums
+  - WaterTypes
+  - CollectorTypes
+  - FarmTypes
+  - FishingHutTypes
+  - GathererHutTypes
+  - InstitutionTypes
+  - MineTypes
+  - RainCatcherTypes
+- Fixed loading a texture by path throwing an exception. Instead returns null if the file is not found.
+
 # 3.3.1
 - Fixed unmarking custom trees for cutting not removing the highlight
 - Added producedGood/need info to all recipe enums

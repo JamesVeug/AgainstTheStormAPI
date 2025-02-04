@@ -66,8 +66,9 @@ https://github.com/JamesVeug/AgainstTheStormAPI/blob/master/ATS_API/WIKI/WIKI.md
   - House
   - Workshop
   - Decoration (+Custom tier support)
+  - Institution (aka: Service buildings)
 - New Recipes
-- New Races (Experimental)
+- New Races (Minimal)
 - New Difficulties
 - New MetaRewards (Goods and Effects when embarking)
 - New Biomes
