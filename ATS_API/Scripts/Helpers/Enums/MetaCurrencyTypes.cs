@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -46,6 +47,7 @@ public enum MetaCurrencyTypes
 	/// <summary>
 	/// The total number of vanilla MetaCurrencyTypes in the game.
 	/// </summary>
+	[Obsolete("Use MetaCurrencyTypesExtensions.Count(). MetaCurrencyTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 3
 }
 
@@ -54,6 +56,14 @@ public enum MetaCurrencyTypes
 /// </summary>
 public static class MetaCurrencyTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in MetaCurrencyTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded MetaCurrencyTypes.
 	/// </summary>

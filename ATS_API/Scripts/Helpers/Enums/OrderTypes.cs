@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model.Orders;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -2294,6 +2295,7 @@ public enum OrderTypes
 	/// <summary>
 	/// The total number of vanilla OrderTypes in the game.
 	/// </summary>
+	[Obsolete("Use OrderTypesExtensions.Count(). OrderTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 391
 }
 
@@ -2302,6 +2304,14 @@ public enum OrderTypes
 /// </summary>
 public static class OrderTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in OrderTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded OrderTypes.
 	/// </summary>

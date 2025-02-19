@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -1126,6 +1127,7 @@ public enum ResolveEffectTypes
 	/// <summary>
 	/// The total number of vanilla ResolveEffectTypes in the game.
 	/// </summary>
+	[Obsolete("Use ResolveEffectTypesExtensions.Count(). ResolveEffectTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 183
 }
 
@@ -1134,6 +1136,14 @@ public enum ResolveEffectTypes
 /// </summary>
 public static class ResolveEffectTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in ResolveEffectTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded ResolveEffectTypes.
 	/// </summary>

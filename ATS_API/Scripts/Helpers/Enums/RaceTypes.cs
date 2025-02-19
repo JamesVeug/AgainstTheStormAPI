@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -64,6 +65,7 @@ public enum RaceTypes
 	/// <summary>
 	/// The total number of vanilla RaceTypes in the game.
 	/// </summary>
+	[Obsolete("Use RaceTypesExtensions.Count(). RaceTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 6
 }
 
@@ -72,6 +74,14 @@ public enum RaceTypes
 /// </summary>
 public static class RaceTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in RaceTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded RaceTypes.
 	/// </summary>

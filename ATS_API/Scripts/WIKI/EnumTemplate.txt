@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine.Pool;
 using Eremite;
 {USINGS}
-namespace ATS_API.Helpers;
+
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 {CLASS_HEADER}
 public enum {CLASSNAME}
@@ -25,6 +27,7 @@ public enum {CLASSNAME}
 	/// <summary>
 	/// The total number of vanilla {CLASSNAME} in the game.
 	/// </summary>
+	[Obsolete("Use {CLASSNAME}Extensions.Count(). {CLASSNAME}.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = {TOTAL_ENUMS}
 }
 
@@ -33,6 +36,14 @@ public enum {CLASSNAME}
 /// </summary>
 public static class {CLASSNAME}Extensions
 {
+	/// <summary>
+	/// Returns how many enum values are in {CLASSNAME}.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded {CLASSNAME}.
 	/// </summary>

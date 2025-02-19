@@ -106,9 +106,9 @@ public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel, NewI
 
     public InstitutionBuildingBuilder AddWorkPlaceWithAllRaces()
     {
-        RaceTypes[] races = new RaceTypes[(int)RaceTypes.MAX - 1];
+        RaceTypes[] races = new RaceTypes[(int)RaceTypesExtensions.Count() - 1];
         int j = 0;
-        for (int i = (int)RaceTypes.None + 1; i < (int)RaceTypes.MAX; i++)
+        for (int i = (int)RaceTypes.None + 1; i < (int)RaceTypesExtensions.Count(); i++)
         {
             races[j++] = (RaceTypes)i;
         }

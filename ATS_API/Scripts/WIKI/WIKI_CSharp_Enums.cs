@@ -134,7 +134,7 @@ public partial class WIKI
         string usings = ""; // end with \n IF we have any usings
         if (extraUsings != null && extraUsings.Count > 0)
         {
-            usings = string.Join("\n", extraUsings.Select(a => "using " + a + ";")) + "\n";
+            usings = string.Join("\n", extraUsings.Select(a => "using " + a + ";"));
         }
 
         APILogger.LogInfo("Calculating character count...");

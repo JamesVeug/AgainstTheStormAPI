@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.WorldMap;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -106,6 +107,7 @@ public enum BiomeTypes
 	/// <summary>
 	/// The total number of vanilla BiomeTypes in the game.
 	/// </summary>
+	[Obsolete("Use BiomeTypesExtensions.Count(). BiomeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 13
 }
 
@@ -114,6 +116,14 @@ public enum BiomeTypes
 /// </summary>
 public static class BiomeTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in BiomeTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded BiomeTypes.
 	/// </summary>

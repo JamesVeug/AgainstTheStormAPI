@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -160,6 +161,7 @@ public enum NeedTypes
 	/// <summary>
 	/// The total number of vanilla NeedTypes in the game.
 	/// </summary>
+	[Obsolete("Use NeedTypesExtensions.Count(). NeedTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 22
 }
 
@@ -168,6 +170,14 @@ public enum NeedTypes
 /// </summary>
 public static class NeedTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in NeedTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded NeedTypes.
 	/// </summary>

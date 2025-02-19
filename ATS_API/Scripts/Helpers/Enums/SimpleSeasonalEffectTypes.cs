@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -478,6 +479,7 @@ public enum SimpleSeasonalEffectTypes
 	/// <summary>
 	/// The total number of vanilla SimpleSeasonalEffectTypes in the game.
 	/// </summary>
+	[Obsolete("Use SimpleSeasonalEffectTypesExtensions.Count(). SimpleSeasonalEffectTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 75
 }
 
@@ -486,6 +488,14 @@ public enum SimpleSeasonalEffectTypes
 /// </summary>
 public static class SimpleSeasonalEffectTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in SimpleSeasonalEffectTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded SimpleSeasonalEffectTypes.
 	/// </summary>

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine.Pool;
 using Eremite;
 
-namespace ATS_API.Helpers;
+
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -357,6 +359,7 @@ public enum NaturalResourcePrefabs
 	/// <summary>
 	/// The total number of vanilla NaturalResourcePrefabs in the game.
 	/// </summary>
+	[Obsolete("Use NaturalResourcePrefabsExtensions.Count(). NaturalResourcePrefabs.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 55
 }
 
@@ -365,6 +368,14 @@ public enum NaturalResourcePrefabs
 /// </summary>
 public static class NaturalResourcePrefabsExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in NaturalResourcePrefabs.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded NaturalResourcePrefabs.
 	/// </summary>

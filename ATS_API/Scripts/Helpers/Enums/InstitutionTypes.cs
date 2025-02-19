@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Buildings;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -112,6 +113,7 @@ public enum InstitutionTypes
 	/// <summary>
 	/// The total number of vanilla InstitutionTypes in the game.
 	/// </summary>
+	[Obsolete("Use InstitutionTypesExtensions.Count(). InstitutionTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 14
 }
 
@@ -120,6 +122,14 @@ public enum InstitutionTypes
 /// </summary>
 public static class InstitutionTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in InstitutionTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded InstitutionTypes.
 	/// </summary>

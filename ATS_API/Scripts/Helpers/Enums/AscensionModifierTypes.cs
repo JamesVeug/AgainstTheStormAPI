@@ -5,8 +5,9 @@ using UnityEngine.Pool;
 using Eremite;
 using Eremite.Model;
 
-namespace ATS_API.Helpers;
 // ReSharper disable All
+
+namespace ATS_API.Helpers;
 
 /// <summary>
 /// Generated using Version 1.7.3R
@@ -182,6 +183,7 @@ public enum AscensionModifierTypes
 	/// <summary>
 	/// The total number of vanilla AscensionModifierTypes in the game.
 	/// </summary>
+	[Obsolete("Use AscensionModifierTypesExtensions.Count(). AscensionModifierTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
 	MAX = 26
 }
 
@@ -190,6 +192,14 @@ public enum AscensionModifierTypes
 /// </summary>
 public static class AscensionModifierTypesExtensions
 {
+	/// <summary>
+	/// Returns how many enum values are in AscensionModifierTypes.
+	/// </summary>
+	public static int Count()
+	{
+		return TypeToInternalName.Count;
+	}
+	
 	/// <summary>
 	/// Returns an array of all vanilla and modded AscensionModifierTypes.
 	/// </summary>
