@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum VillagerPerkTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown VillagerPerkTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown VillagerPerkTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no VillagerPerkTypes. Typically, seen if nothing is defined or failed to parse a string to a VillagerPerkTypes.
-    /// </summary>
+	/// Placeholder for no VillagerPerkTypes. Typically, seen if nothing is defined or failed to parse a string to a VillagerPerkTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -246,13 +246,7 @@ public enum VillagerPerkTypes
 	Extreme_Noise = 37,
 
 	/// <summary>
-	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve. (+2 to Global Resolve)
-	/// </summary>
-	/// <name>FallenViceroyCommemoration</name>
-	FallenViceroyCommemoration = 38,
-
-	/// <summary>
-	/// Farmer's Diet - Farmers have a +75% chance of producing double yields when under the effect of "[food processed] biscuits" biscuits.
+	/// Farmer's Diet - Farmers have a +100% chance of producing double yields when under the effect of "[food processed] biscuits" biscuits.
 	/// </summary>
 	/// <name>FarmersDiet</name>
 	FarmersDiet = 39,
@@ -282,7 +276,7 @@ public enum VillagerPerkTypes
 	Global_Chance_Of_Death = 43,
 
 	/// <summary>
-	/// Travel Rations - With provisions, haulers don't have to return to the Hearth as often. Increases time between breaks for haulers by +50%.
+	/// Travel Rations - With provisions, haulers don't have to return to the hearth as often. Increases the time between breaks for haulers by +50% and their carrying capacity by 5
 	/// </summary>
 	/// <name>Hauler Break Interval - villager perk</name>
 	Hauler_Break_Interval_Villager_Perk = 44,
@@ -354,25 +348,25 @@ public enum VillagerPerkTypes
 	Need_Service_Goods_Extra_Production = 55,
 
 	/// <summary>
-	/// The time interval between breaks is increased by +10%.
+	/// Good Sleep - The time interval between breaks is increased by +10%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 10</name>
 	PerkCrafter_Break_Interval_Child_10 = 56,
 
 	/// <summary>
-	/// The time interval between breaks is increased by +12%.
+	/// Good Sleep - The time interval between breaks is increased by +12%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 12</name>
 	PerkCrafter_Break_Interval_Child_12 = 57,
 
 	/// <summary>
-	/// The time interval between breaks is increased by +4%.
+	/// Good Sleep - The time interval between breaks is increased by +4%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 4</name>
 	PerkCrafter_Break_Interval_Child_4 = 58,
 
 	/// <summary>
-	/// The time interval between breaks is increased by +7%.
+	/// Good Sleep - The time interval between breaks is increased by +7%.
 	/// </summary>
 	/// <name>[PerkCrafter] Break Interval - child - 7</name>
 	PerkCrafter_Break_Interval_Child_7 = 59,
@@ -482,8 +476,26 @@ public enum VillagerPerkTypes
 	/// <summary>
 	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑12 to Global Resolve)
 	/// </summary>
+	/// <name>VaultResolvePenalty - hard</name>
+	VaultResolvePenalty_Hard = 79,
+
+	/// <summary>
+	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑16 to Global Resolve)
+	/// </summary>
+	/// <name>VaultResolvePenalty - impossible</name>
+	VaultResolvePenalty_Impossible = 80,
+
+	/// <summary>
+	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑10 to Global Resolve)
+	/// </summary>
 	/// <name>VaultResolvePenalty - normal</name>
 	VaultResolvePenalty_Normal = 77,
+
+	/// <summary>
+	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑14 to Global Resolve)
+	/// </summary>
+	/// <name>VaultResolvePenalty - very hard</name>
+	VaultResolvePenalty_Very_Hard = 81,
 
 	/// <summary>
 	/// Drying Boards - Time between breaks is increased by 10000% for villagers with the need for "[needs] coats" coats fulfilled.
@@ -493,10 +505,10 @@ public enum VillagerPerkTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla VillagerPerkTypes in the game.
-    /// </summary>
-	MAX = 78
+	/// <summary>
+	/// The total number of vanilla VillagerPerkTypes in the game.
+	/// </summary>
+	MAX = 80
 }
 
 /// <summary>
@@ -510,8 +522,8 @@ public static class VillagerPerkTypesExtensions
 	public static VillagerPerkTypes[] All()
 	{
 		VillagerPerkTypes[] all = new VillagerPerkTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -567,12 +579,12 @@ public static class VillagerPerkTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a VillagerPerkModel associated with the given VillagerPerkTypes.
-    /// VillagerPerkModel contain all the data that will be used in the game.
-    /// Every VillagerPerkModel should have a unique name as to distinguish it from others.
-    /// If no VillagerPerkModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a VillagerPerkModel associated with the given VillagerPerkTypes.
+	/// VillagerPerkModel contain all the data that will be used in the game.
+	/// Every VillagerPerkModel should have a unique name as to distinguish it from others.
+	/// If no VillagerPerkModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Characters.Villagers.VillagerPerkModel ToVillagerPerkModel(this VillagerPerkTypes types)
 	{
 		return types.ToName().ToVillagerPerkModel();
@@ -699,13 +711,12 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.cMdlt_Stagnant_NauseousSpores_NEW, "cMdlt_Stagnant_NauseousSpores_NEW" },                 // Stagnant - Time between breaks is reduced by –33% for villagers with this effect.
 		{ VillagerPerkTypes.Comfortable_Job, "Comfortable Job" },                                                     // Comfortable - This worker gains +5 to their Resolve. (+5 to Global Resolve)
 		{ VillagerPerkTypes.Extreme_Noise, "Extreme Noise" },                                                         // Extreme Noise - Working in a loud environment is really taxing. (‑5 to Global Resolve)
-		{ VillagerPerkTypes.FallenViceroyCommemoration, "FallenViceroyCommemoration" },                               // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve. (+2 to Global Resolve)
-		{ VillagerPerkTypes.FarmersDiet, "FarmersDiet" },                                                             // Farmer's Diet - Farmers have a +75% chance of producing double yields when under the effect of "[food processed] biscuits" biscuits.
+		{ VillagerPerkTypes.FarmersDiet, "FarmersDiet" },                                                             // Farmer's Diet - Farmers have a +100% chance of producing double yields when under the effect of "[food processed] biscuits" biscuits.
 		{ VillagerPerkTypes.Faster_Woocutters, "Faster Woocutters" },                                                 // Lightweight Axes - Woodcutters move +20% faster.
 		{ VillagerPerkTypes.Forced_Improvisation, "Forced Improvisation" },                                           // Forced Improvisation - Working in a loud environment is really taxing. (‑5 to Global Resolve)
 		{ VillagerPerkTypes.Furniture, "Furniture" },                                                                 // Furniture - Adds an additional +1 to Resolve for villagers with a home. (+1 to Global Resolve)
 		{ VillagerPerkTypes.Global_Chance_Of_Death, "Global Chance of Death" },                                       // Overtime - Results matter more than your villagers’ health. Increases global production speed by 120, but villagers have a +1% chance of dying every 120 seconds.
-		{ VillagerPerkTypes.Hauler_Break_Interval_Villager_Perk, "Hauler Break Interval - villager perk" },           // Travel Rations - With provisions, haulers don't have to return to the Hearth as often. Increases time between breaks for haulers by +50%.
+		{ VillagerPerkTypes.Hauler_Break_Interval_Villager_Perk, "Hauler Break Interval - villager perk" },           // Travel Rations - With provisions, haulers don't have to return to the hearth as often. Increases the time between breaks for haulers by +50% and their carrying capacity by 5
 		{ VillagerPerkTypes.Hauler_Speed_Villager_Perk, "Hauler Speed - villager perk" },                             // HaulerUpgrade_Speed_Name - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 		{ VillagerPerkTypes.Houses_Plus1_Break_Time_Child, "Houses +1 - break time - child" },                        // Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
 		{ VillagerPerkTypes.Leisure_Worker, "Leisure Worker" },                                                       // Ballmer Peak - Villagers with the leisure need fulfilled have a +25% chance of doubling their yields.
@@ -717,10 +728,10 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.N_Need_Villagers_Speed_Bonus, "[N] Need Villagers Speed Bonus" },                         // Boots - Increases movement speed by +15%.
 		{ VillagerPerkTypes.Need_Complex_Food_Extra_Production, "Need Complex Food Extra Production" },               // Full Belly - This worker has a +5% higher chance of producing double yields for each Complex Food need met.
 		{ VillagerPerkTypes.Need_Service_Goods_Extra_Production, "Need Service Goods Extra Production" },             // High Motivation - This worker has a +10% higher chance of producing double yields for each Complex Food need met.
-		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_10, "[PerkCrafter] Break Interval - child - 10" },       // The time interval between breaks is increased by +10%.
-		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_12, "[PerkCrafter] Break Interval - child - 12" },       // The time interval between breaks is increased by +12%.
-		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_4, "[PerkCrafter] Break Interval - child - 4" },         // The time interval between breaks is increased by +4%.
-		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_7, "[PerkCrafter] Break Interval - child - 7" },         // The time interval between breaks is increased by +7%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_10, "[PerkCrafter] Break Interval - child - 10" },       // Good Sleep - The time interval between breaks is increased by +10%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_12, "[PerkCrafter] Break Interval - child - 12" },       // Good Sleep - The time interval between breaks is increased by +12%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_4, "[PerkCrafter] Break Interval - child - 4" },         // Good Sleep - The time interval between breaks is increased by +4%.
+		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_7, "[PerkCrafter] Break Interval - child - 7" },         // Good Sleep - The time interval between breaks is increased by +7%.
 		{ VillagerPerkTypes.Poisoned_Food_Instant, "Poisoned Food Instant" },                                         // Poisoned Food - Fishmen are small and cunning enough to sneak into a settlement and poison the food supply. Villagers have a +25% chance of death after eating.
 		{ VillagerPerkTypes.Proficiency, "Proficiency" },                                                             // Proficiency - This worker has a +10% chance of doubling their yield.
 		{ VillagerPerkTypes.Proficiency_Blightrot, "Proficiency Blightrot" },                                         // Proficiency - This worker has a +40% chance of doubling their yield.
@@ -738,7 +749,10 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.U_Frog_Houses_Bonus_Resolve, "[U] Frog Houses Bonus Resolve" },                           // Indoor Pool - This seemingly extravagant luxury is something that Frogs need to survive. (+2 to Global Resolve)
 		{ VillagerPerkTypes.U_Houses_Bonus_Resolve, "[U] Houses Bonus Resolve" },                                     // Stove - A small reminder of the Holy Flame. (+1 to Global Resolve)
 		{ VillagerPerkTypes.U_Houses_Villagers_Speed_Bonus, "[U] Houses Villagers Speed Bonus" },                     // Soft Beds - Villagers living in a house with this upgrade move +15% faster.
-		{ VillagerPerkTypes.VaultResolvePenalty_Normal, "VaultResolvePenalty - normal" },                             // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑12 to Global Resolve)
+		{ VillagerPerkTypes.VaultResolvePenalty_Hard, "VaultResolvePenalty - hard" },                                 // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑12 to Global Resolve)
+		{ VillagerPerkTypes.VaultResolvePenalty_Impossible, "VaultResolvePenalty - impossible" },                     // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑16 to Global Resolve)
+		{ VillagerPerkTypes.VaultResolvePenalty_Normal, "VaultResolvePenalty - normal" },                             // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑10 to Global Resolve)
+		{ VillagerPerkTypes.VaultResolvePenalty_Very_Hard, "VaultResolvePenalty - very hard" },                       // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑14 to Global Resolve)
 		{ VillagerPerkTypes.Very_Long_Breaks, "Very Long Breaks" },                                                   // Drying Boards - Time between breaks is increased by 10000% for villagers with the need for "[needs] coats" coats fulfilled.
 
 	};

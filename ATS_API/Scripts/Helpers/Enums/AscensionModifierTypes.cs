@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum AscensionModifierTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown AscensionModifierTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown AscensionModifierTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no AscensionModifierTypes. Typically, seen if nothing is defined or failed to parse a string to a AscensionModifierTypes.
-    /// </summary>
+	/// Placeholder for no AscensionModifierTypes. Typically, seen if nothing is defined or failed to parse a string to a AscensionModifierTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -179,9 +179,9 @@ public enum AscensionModifierTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla AscensionModifierTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla AscensionModifierTypes in the game.
+	/// </summary>
 	MAX = 26
 }
 
@@ -196,8 +196,8 @@ public static class AscensionModifierTypesExtensions
 	public static AscensionModifierTypes[] All()
 	{
 		AscensionModifierTypes[] all = new AscensionModifierTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -253,12 +253,12 @@ public static class AscensionModifierTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a AscensionModifierModel associated with the given AscensionModifierTypes.
-    /// AscensionModifierModel contain all the data that will be used in the game.
-    /// Every AscensionModifierModel should have a unique name as to distinguish it from others.
-    /// If no AscensionModifierModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a AscensionModifierModel associated with the given AscensionModifierTypes.
+	/// AscensionModifierModel contain all the data that will be used in the game.
+	/// Every AscensionModifierModel should have a unique name as to distinguish it from others.
+	/// If no AscensionModifierModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.AscensionModifierModel ToAscensionModifierModel(this AscensionModifierTypes types)
 	{
 		return types.ToName().ToAscensionModifierModel();

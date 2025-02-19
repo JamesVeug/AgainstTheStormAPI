@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum DecorationTierTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown DecorationTierTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown DecorationTierTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no DecorationTierTypes. Typically, seen if nothing is defined or failed to parse a string to a DecorationTierTypes.
-    /// </summary>
+	/// Placeholder for no DecorationTierTypes. Typically, seen if nothing is defined or failed to parse a string to a DecorationTierTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -43,9 +43,9 @@ public enum DecorationTierTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla DecorationTierTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla DecorationTierTypes in the game.
+	/// </summary>
 	MAX = 3
 }
 
@@ -60,8 +60,8 @@ public static class DecorationTierTypesExtensions
 	public static DecorationTierTypes[] All()
 	{
 		DecorationTierTypes[] all = new DecorationTierTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -117,12 +117,12 @@ public static class DecorationTierTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a DecorationTier associated with the given DecorationTierTypes.
-    /// DecorationTier contain all the data that will be used in the game.
-    /// Every DecorationTier should have a unique name as to distinguish it from others.
-    /// If no DecorationTier is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a DecorationTier associated with the given DecorationTierTypes.
+	/// DecorationTier contain all the data that will be used in the game.
+	/// Every DecorationTier should have a unique name as to distinguish it from others.
+	/// If no DecorationTier is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Buildings.DecorationTier ToDecorationTier(this DecorationTierTypes types)
 	{
 		return types.ToName().ToDecorationTier();

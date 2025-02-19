@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum OreTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown OreTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown OreTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no OreTypes. Typically, seen if nothing is defined or failed to parse a string to a OreTypes.
-    /// </summary>
+	/// Placeholder for no OreTypes. Typically, seen if nothing is defined or failed to parse a string to a OreTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -43,9 +43,9 @@ public enum OreTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla OreTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla OreTypes in the game.
+	/// </summary>
 	MAX = 3
 }
 
@@ -60,8 +60,8 @@ public static class OreTypesExtensions
 	public static OreTypes[] All()
 	{
 		OreTypes[] all = new OreTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -117,12 +117,12 @@ public static class OreTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a OreModel associated with the given OreTypes.
-    /// OreModel contain all the data that will be used in the game.
-    /// Every OreModel should have a unique name as to distinguish it from others.
-    /// If no OreModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a OreModel associated with the given OreTypes.
+	/// OreModel contain all the data that will be used in the game.
+	/// Every OreModel should have a unique name as to distinguish it from others.
+	/// If no OreModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.OreModel ToOreModel(this OreTypes types)
 	{
 		return types.ToName().ToOreModel();

@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum SimpleSeasonalEffectTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown SimpleSeasonalEffectTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown SimpleSeasonalEffectTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no SimpleSeasonalEffectTypes. Typically, seen if nothing is defined or failed to parse a string to a SimpleSeasonalEffectTypes.
-    /// </summary>
+	/// Placeholder for no SimpleSeasonalEffectTypes. Typically, seen if nothing is defined or failed to parse a string to a SimpleSeasonalEffectTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -114,7 +114,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Cysts_Generate_Impatience_In_Storm = 15,
 
 	/// <summary>
-	/// Greater Threat - During the storm, receive -2 to Global Resolve for every Dangerous ("dangerous") and Forbidden Glade ("forbidden") discovered since the beginning of the settlement. (the penalty is added retroactively)
+	/// Greater Threat - During the storm, receive -2 to Global Resolve for every Dangerous ("dangerous") and Forbidden Glade ("forbidden") discovered since the beginning of the settlement. This penalty is retroactive.
 	/// </summary>
 	/// <name>[SSE] Dang Glades reduces resolve in Storm</name>
 	SSE_Dang_Glades_Reduces_Resolve_In_Storm = 16,
@@ -420,7 +420,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Storm_Clothes = 66,
 
 	/// <summary>
-	/// Flooded Roads - As a result of heavy rainfall, during the storm, the travel cost of trade routes increases by 2.
+	/// Flooded Roads - As a result of heavy rainfall, during the storm, the travel time of trade routes is increased by 50%.
 	/// </summary>
 	/// <name>[SSE] Trade Routes Costs More in Storm</name>
 	SSE_Trade_Routes_Costs_More_In_Storm = 67,
@@ -475,9 +475,9 @@ public enum SimpleSeasonalEffectTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla SimpleSeasonalEffectTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla SimpleSeasonalEffectTypes in the game.
+	/// </summary>
 	MAX = 75
 }
 
@@ -492,8 +492,8 @@ public static class SimpleSeasonalEffectTypesExtensions
 	public static SimpleSeasonalEffectTypes[] All()
 	{
 		SimpleSeasonalEffectTypes[] all = new SimpleSeasonalEffectTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -549,12 +549,12 @@ public static class SimpleSeasonalEffectTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a SimpleSeasonalEffectModel associated with the given SimpleSeasonalEffectTypes.
-    /// SimpleSeasonalEffectModel contain all the data that will be used in the game.
-    /// Every SimpleSeasonalEffectModel should have a unique name as to distinguish it from others.
-    /// If no SimpleSeasonalEffectModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a SimpleSeasonalEffectModel associated with the given SimpleSeasonalEffectTypes.
+	/// SimpleSeasonalEffectModel contain all the data that will be used in the game.
+	/// Every SimpleSeasonalEffectModel should have a unique name as to distinguish it from others.
+	/// If no SimpleSeasonalEffectModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.SimpleSeasonalEffectModel ToSimpleSeasonalEffectModel(this SimpleSeasonalEffectTypes types)
 	{
 		return types.ToName().ToSimpleSeasonalEffectModel();
@@ -659,7 +659,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Creeping_Shadows, "[SSE] Creeping Shadows" },                                                                              // Creeping Shadows - Discovering a glade during the storm will decrease Global Resolve by -10 for 3 minutes.
 		{ SimpleSeasonalEffectTypes.SSE_Cricket_Mating_Grounds, "[SSE] Cricket Mating Grounds" },                                                                  // Cricket Mating Grounds - The clearings are abuzz with the sound of crickets. Gain 30 "[food raw] insects" Insects for each discovered glade.
 		{ SimpleSeasonalEffectTypes.SSE_Cysts_Generate_Impatience_In_Storm, "[SSE] Cysts generate Impatience in Storm" },                                          // Spreading Contamination - Blightrot contaminates everything you send to the Citadel. During the storm, the Queen's Impatience grows 5% faster for every Blightrot Cyst in your settlement.
-		{ SimpleSeasonalEffectTypes.SSE_Dang_Glades_Reduces_Resolve_In_Storm, "[SSE] Dang Glades reduces resolve in Storm" },                                      // Greater Threat - During the storm, receive -2 to Global Resolve for every Dangerous ("dangerous") and Forbidden Glade ("forbidden") discovered since the beginning of the settlement. (the penalty is added retroactively)
+		{ SimpleSeasonalEffectTypes.SSE_Dang_Glades_Reduces_Resolve_In_Storm, "[SSE] Dang Glades reduces resolve in Storm" },                                      // Greater Threat - During the storm, receive -2 to Global Resolve for every Dangerous ("dangerous") and Forbidden Glade ("forbidden") discovered since the beginning of the settlement. This penalty is retroactive.
 		{ SimpleSeasonalEffectTypes.SSE_Death_Blightrot, "[SSE] Death Blightrot" },                                                                                // Blightrot Infection - Villagers report feeling sick, especially during the storm. When a villager leaves or dies, 2 Blightrot Cysts will appear in the settlement. 
 		{ SimpleSeasonalEffectTypes.SSE_Destroy_Nodes, "[SSE] Destroy Nodes" },                                                                                    // Unnatural Erosion - The wind and rain in this region seem more destructive than usual. Pay 5 "[crafting] oil" Oil with each storm (multiplied by the number of years played). If you don't, 2 random gathering nodes will be destroyed.
 		{ SimpleSeasonalEffectTypes.SSE_Devastating_Storms, "[SSE] Devastating Storms" },                                                                          // Devastating Storms - The rampaging storm stifles the spirit of all living creatures. (‑20 to Global Resolve)
@@ -710,7 +710,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Spring_Events, "[SSE] Spring Events" },                                                                                    // Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event completed during drizzle season.
 		{ SimpleSeasonalEffectTypes.SSE_Spring_Routes, "[SSE] Spring Routes" },                                                                                    // Finders Keepers - After each storm, caravans find countless goods scattered along their routes. Every trade route you complete during drizzle season will give you 5 random packs of goods.
 		{ SimpleSeasonalEffectTypes.SSE_Storm_Clothes, "[SSE] Storm Clothes" },                                                                                    // Cloudburst - Even the hardiest villagers need some sort of cover in this weather. Once this effect activates, every villager in your settlement will ask you for 1 "[needs] coats" Coats. If you can't provide the goods, Global Resolve will be lowered by -6 for 2 minutes.
-		{ SimpleSeasonalEffectTypes.SSE_Trade_Routes_Costs_More_In_Storm, "[SSE] Trade Routes Costs More in Storm" },                                              // Flooded Roads - As a result of heavy rainfall, during the storm, the travel cost of trade routes increases by 2.
+		{ SimpleSeasonalEffectTypes.SSE_Trade_Routes_Costs_More_In_Storm, "[SSE] Trade Routes Costs More in Storm" },                                              // Flooded Roads - As a result of heavy rainfall, during the storm, the travel time of trade routes is increased by 50%.
 		{ SimpleSeasonalEffectTypes.SSE_Trader_Interval_Plus300_Clear_Skies, "[SSE] Trader Interval +300 [Clear Skies]" },                                         // Clear Skies - Increases the speed at which traders arrive by 300%.
 		{ SimpleSeasonalEffectTypes.SSE_Unearthly_Element, "[SSE] Unearthly Element" },                                                                            // Unearthly Element - The firekeeper's power weakens in the face of an otherworldly force. The maximum number of sacrifice stacks in the Ancient Hearth is lowered by 1.
 		{ SimpleSeasonalEffectTypes.SSE_Vassal_Tax, "[SSE] Vassal Tax" },                                                                                          // Vassal Tax - Due to this region's location, the Crown requires you to pay 5 "[valuable] amber" Amber with each storm (multiplied by the number of years played). If you don't, you will get 1 Impatience point.

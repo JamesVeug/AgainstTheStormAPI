@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum OrderTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown OrderTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown OrderTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no OrderTypes. Typically, seen if nothing is defined or failed to parse a string to a OrderTypes.
-    /// </summary>
+	/// Placeholder for no OrderTypes. Typically, seen if nothing is defined or failed to parse a string to a OrderTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -330,7 +330,7 @@ public enum OrderTypes
 	I_Resolve_Lizards = 51,
 
 	/// <summary>
-	/// Lost in the Woods
+	/// Reconnaissance
 	/// </summary>
 	/// <name>I Ruins</name>
 	I_Ruins = 52,
@@ -2291,9 +2291,9 @@ public enum OrderTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla OrderTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla OrderTypes in the game.
+	/// </summary>
 	MAX = 391
 }
 
@@ -2308,8 +2308,8 @@ public static class OrderTypesExtensions
 	public static OrderTypes[] All()
 	{
 		OrderTypes[] all = new OrderTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -2365,12 +2365,12 @@ public static class OrderTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a OrderModel associated with the given OrderTypes.
-    /// OrderModel contain all the data that will be used in the game.
-    /// Every OrderModel should have a unique name as to distinguish it from others.
-    /// If no OrderModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a OrderModel associated with the given OrderTypes.
+	/// OrderModel contain all the data that will be used in the game.
+	/// Every OrderModel should have a unique name as to distinguish it from others.
+	/// If no OrderModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.Orders.OrderModel ToOrderModel(this OrderTypes types)
 	{
 		return types.ToName().ToOrderModel();
@@ -2511,7 +2511,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Resolve_Harpies, "I Resolve Harpies" },                                         // The Flock
 		{ OrderTypes.I_Resolve_Humans, "I Resolve Humans" },                                           // People's Resolve
 		{ OrderTypes.I_Resolve_Lizards, "I Resolve Lizards" },                                         // The Clan
-		{ OrderTypes.I_Ruins, "I Ruins" },                                                             // Lost in the Woods
+		{ OrderTypes.I_Ruins, "I Ruins" },                                                             // Reconnaissance
 		{ OrderTypes.I_Salt, "I Salt" },                                                               // Salt Miner
 		{ OrderTypes.I_Skewers, "I Skewers" },                                                         // Barbecue
 		{ OrderTypes.I_Solve_Any_Relic, "I Solve Any Relic" },                                         // Problem Solver

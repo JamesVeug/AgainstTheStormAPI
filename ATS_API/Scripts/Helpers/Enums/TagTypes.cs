@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum TagTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown TagTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown TagTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no TagTypes. Typically, seen if nothing is defined or failed to parse a string to a TagTypes.
-    /// </summary>
+	/// Placeholder for no TagTypes. Typically, seen if nothing is defined or failed to parse a string to a TagTypes.
+	/// </summary>
 	None = 0,
 	
 	Aggregation_Tag_Caches = 1,
@@ -121,6 +121,8 @@ public enum TagTypes
 
 	Relic_Chest = 49,
 
+	Relic_Funeral = 68,
+
 	Tag_Beaver = 50,
 
 	Tag_Blight = 51,
@@ -159,10 +161,10 @@ public enum TagTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla TagTypes in the game.
-    /// </summary>
-	MAX = 67
+	/// <summary>
+	/// The total number of vanilla TagTypes in the game.
+	/// </summary>
+	MAX = 68
 }
 
 /// <summary>
@@ -176,8 +178,8 @@ public static class TagTypesExtensions
 	public static TagTypes[] All()
 	{
 		TagTypes[] all = new TagTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -233,12 +235,12 @@ public static class TagTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a ModelTag associated with the given TagTypes.
-    /// ModelTag contain all the data that will be used in the game.
-    /// Every ModelTag should have a unique name as to distinguish it from others.
-    /// If no ModelTag is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a ModelTag associated with the given TagTypes.
+	/// ModelTag contain all the data that will be used in the game.
+	/// Every ModelTag should have a unique name as to distinguish it from others.
+	/// If no ModelTag is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.ModelTag ToModelTag(this TagTypes types)
 	{
 		return types.ToName().ToModelTag();
@@ -377,6 +379,7 @@ public static class TagTypesExtensions
 		{ TagTypes.Recipe_With_Water_Tag, "Recipe With Water Tag" }, 
 		{ TagTypes.Relic_Archeology, "[Relic] Archeology" }, 
 		{ TagTypes.Relic_Chest, "[Relic] Chest" }, 
+		{ TagTypes.Relic_Funeral, "[Relic] Funeral" }, 
 		{ TagTypes.Tag_Beaver, "[Tag] Beaver" }, 
 		{ TagTypes.Tag_Blight, "[Tag] Blight" }, 
 		{ TagTypes.Tag_Event_Send_To_Citadel_Reward, "[Tag] Event - Send To Citadel Reward" }, 

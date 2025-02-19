@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum MetaRewardTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown MetaRewardTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown MetaRewardTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no MetaRewardTypes. Typically, seen if nothing is defined or failed to parse a string to a MetaRewardTypes.
-    /// </summary>
+	/// Placeholder for no MetaRewardTypes. Typically, seen if nothing is defined or failed to parse a string to a MetaRewardTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -654,7 +654,7 @@ public enum MetaRewardTypes
 	Meta_Perk_Unlock_Back_To_Nature = 105,
 
 	/// <summary>
-	/// EffectMetaRewardModel-Fish Scraps
+	/// EffectMetaRewardModel-Repurposed Bait
 	/// </summary>
 	/// <name>Meta Perk Unlock Bait For Crafting</name>
 	Meta_Perk_Unlock_Bait_For_Crafting = 106,
@@ -826,6 +826,12 @@ public enum MetaRewardTypes
 	/// </summary>
 	/// <name>Meta Perk Unlock Lower Hostility For Religion</name>
 	Meta_Perk_Unlock_Lower_Hostility_For_Religion = 134,
+
+	/// <summary>
+	/// EffectMetaRewardModel-Lost Supplies
+	/// </summary>
+	/// <name>Meta Perk Unlock Meat and Grain for Events</name>
+	Meta_Perk_Unlock_Meat_And_Grain_For_Events = 400,
 
 	/// <summary>
 	/// EffectMetaRewardModel-Mist Piercers
@@ -2034,6 +2040,18 @@ public enum MetaRewardTypes
 	Meta_Reward_Market = 335,
 
 	/// <summary>
+	/// MenuSkinMetaRewardModel-Ashen Thicket
+	/// </summary>
+	/// <name>Meta Reward Menu Skin - Ashen Thicket</name>
+	Meta_Reward_Menu_Skin_Ashen_Thicket = 401,
+
+	/// <summary>
+	/// MenuSkinMetaRewardModel-Menu Skin: Cat Utopia
+	/// </summary>
+	/// <name>Meta Reward Menu Skin - Cat</name>
+	Meta_Reward_Menu_Skin_Cat = 402,
+
+	/// <summary>
 	/// MenuSkinMetaRewardModel-Menu Skin: Coral Forest
 	/// </summary>
 	/// <name>Meta Reward Menu Skin - Coral Forest</name>
@@ -2062,6 +2080,12 @@ public enum MetaRewardTypes
 	/// </summary>
 	/// <name>Meta Reward Menu Skin - Marshlands</name>
 	Meta_Reward_Menu_Skin_Marshlands = 340,
+
+	/// <summary>
+	/// MenuSkinMetaRewardModel-Menu Skin: Mining Colony
+	/// </summary>
+	/// <name>Meta Reward Menu Skin - Salt</name>
+	Meta_Reward_Menu_Skin_Salt = 403,
 
 	/// <summary>
 	/// MenuSkinMetaRewardModel-Menu Skin: Scarlet Orchard
@@ -2419,10 +2443,10 @@ public enum MetaRewardTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla MetaRewardTypes in the game.
-    /// </summary>
-	MAX = 399
+	/// <summary>
+	/// The total number of vanilla MetaRewardTypes in the game.
+	/// </summary>
+	MAX = 403
 }
 
 /// <summary>
@@ -2436,8 +2460,8 @@ public static class MetaRewardTypesExtensions
 	public static MetaRewardTypes[] All()
 	{
 		MetaRewardTypes[] all = new MetaRewardTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -2493,12 +2517,12 @@ public static class MetaRewardTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a MetaRewardModel associated with the given MetaRewardTypes.
-    /// MetaRewardModel contain all the data that will be used in the game.
-    /// Every MetaRewardModel should have a unique name as to distinguish it from others.
-    /// If no MetaRewardModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a MetaRewardModel associated with the given MetaRewardTypes.
+	/// MetaRewardModel contain all the data that will be used in the game.
+	/// Every MetaRewardModel should have a unique name as to distinguish it from others.
+	/// If no MetaRewardModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.Meta.MetaRewardModel ToMetaRewardModel(this MetaRewardTypes types)
 	{
 		return types.ToName().ToMetaRewardModel();
@@ -2693,7 +2717,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Perk_Unlock_Amber_For_Water, "Meta Perk Unlock Amber for Water" },                                                      // EffectMetaRewardModel-Counterfeit Amber
 		{ MetaRewardTypes.Meta_Perk_Unlock_Amber_For_Wood, "Meta Perk Unlock Amber for Wood" },                                                        // EffectMetaRewardModel-Lumber Tax
 		{ MetaRewardTypes.Meta_Perk_Unlock_Back_To_Nature, "Meta Perk Unlock Back to Nature" },                                                        // EffectMetaRewardModel-Back to Nature
-		{ MetaRewardTypes.Meta_Perk_Unlock_Bait_For_Crafting, "Meta Perk Unlock Bait For Crafting" },                                                  // EffectMetaRewardModel-Fish Scraps
+		{ MetaRewardTypes.Meta_Perk_Unlock_Bait_For_Crafting, "Meta Perk Unlock Bait For Crafting" },                                                  // EffectMetaRewardModel-Repurposed Bait
 		{ MetaRewardTypes.Meta_Perk_Unlock_Cache_Rewards_For_Nodes, "Meta Perk Unlock Cache Rewards for Nodes" },                                      // EffectMetaRewardModel-Reckless Plunder
 		{ MetaRewardTypes.Meta_Perk_Unlock_Coal_For_Cyst, "Meta Perk Unlock Coal for Cyst" },                                                          // EffectMetaRewardModel-Burnt to a Crisp
 		{ MetaRewardTypes.Meta_Perk_Unlock_Consumption_Control_For_Extra_Production, "Meta Perk Unlock Consumption Control for Extra Production" },    // EffectMetaRewardModel-Without Restrictions
@@ -2722,6 +2746,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Perk_Unlock_Insect_For_Tree, "Meta Perk Unlock Insect for tree" },                                                      // EffectMetaRewardModel-Woodpecker Technique
 		{ MetaRewardTypes.Meta_Perk_Unlock_LessHostilityPerWoodcutter, "Meta Perk Unlock LessHostilityPerWoodcutter" },                                // EffectMetaRewardModel-Flame Amulets
 		{ MetaRewardTypes.Meta_Perk_Unlock_Lower_Hostility_For_Religion, "Meta Perk Unlock Lower Hostility For Religion" },                            // EffectMetaRewardModel-Firelink Ritual
+		{ MetaRewardTypes.Meta_Perk_Unlock_Meat_And_Grain_For_Events, "Meta Perk Unlock Meat and Grain for Events" },                                  // EffectMetaRewardModel-Lost Supplies
 		{ MetaRewardTypes.Meta_Perk_Unlock_Mist_Piercers, "Meta Perk Unlock Mist Piercers" },                                                          // EffectMetaRewardModel-Mist Piercers
 		{ MetaRewardTypes.Meta_Perk_Unlock_Mold_Grain, "Meta Perk Unlock Mold Grain" },                                                                // EffectMetaRewardModel-Moldy Grain Seeds
 		{ MetaRewardTypes.Meta_Perk_Unlock_More_Amber_From_Routes, "Meta Perk Unlock More Amber from Routes" },                                        // EffectMetaRewardModel-Trade Negotiations
@@ -2923,11 +2948,14 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Lumbermill, "Meta Reward Lumbermill" },                                                                          // BuildingMetaRewardModel-Lumber Mill
 		{ MetaRewardTypes.Meta_Reward_Manufactory, "Meta Reward Manufactory" },                                                                        // BuildingMetaRewardModel-Manufactory
 		{ MetaRewardTypes.Meta_Reward_Market, "Meta Reward Market" },                                                                                  // BuildingMetaRewardModel-Market
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Ashen_Thicket, "Meta Reward Menu Skin - Ashen Thicket" },                                              // MenuSkinMetaRewardModel-Ashen Thicket
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Cat, "Meta Reward Menu Skin - Cat" },                                                                  // MenuSkinMetaRewardModel-Menu Skin: Cat Utopia
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Coral_Forest, "Meta Reward Menu Skin - Coral Forest" },                                                // MenuSkinMetaRewardModel-Menu Skin: Coral Forest
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Cursed_Royal_Woodlands, "Meta Reward Menu Skin - Cursed Royal Woodlands" },                            // MenuSkinMetaRewardModel-Menu Skin: Cursed Royal Woodlands
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Farming, "Meta Reward Menu Skin - Farming" },                                                          // MenuSkinMetaRewardModel-Menu Skin: Calm Settlement
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Industry, "Meta Reward Menu Skin - Industry" },                                                        // MenuSkinMetaRewardModel-Menu Skin: Industrial Town
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Marshlands, "Meta Reward Menu Skin - Marshlands" },                                                    // MenuSkinMetaRewardModel-Menu Skin: Marshlands
+		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Salt, "Meta Reward Menu Skin - Salt" },                                                                // MenuSkinMetaRewardModel-Menu Skin: Mining Colony
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Scarlet_Orchard, "Meta Reward Menu Skin - Scarlet Orchard" },                                          // MenuSkinMetaRewardModel-Menu Skin: Scarlet Orchard
 		{ MetaRewardTypes.Meta_Reward_Menu_Skin_Sealed_Forest, "Meta Reward Menu Skin - Sealed Forest" },                                              // MenuSkinMetaRewardModel-Menu Skin: Sealed Forest
 		{ MetaRewardTypes.Meta_Reward_Meta_Resources, "Meta Reward Meta Resources" },                                                                  // CurrencyMultiplayerMetaRewardModel-More Citadel Resources

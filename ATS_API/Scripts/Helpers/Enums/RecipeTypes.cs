@@ -9,7 +9,7 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.6.2R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum RecipeTypes
 {
@@ -31,6 +31,7 @@ public enum RecipeTypes
 	/// <summary></summary>
 	/// <name>Wood</name>
 	/// <grade>1</grade>
+	/// <producedGood>[Mat Raw] Wood</producedGood>
 	Wood = 1,
 
 

@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum ProfessionTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown ProfessionTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown ProfessionTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no ProfessionTypes. Typically, seen if nothing is defined or failed to parse a string to a ProfessionTypes.
-    /// </summary>
+	/// Placeholder for no ProfessionTypes. Typically, seen if nothing is defined or failed to parse a string to a ProfessionTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -160,6 +160,12 @@ public enum ProfessionTypes
 	/// </summary>
 	/// <name>Druid</name>
 	Druid = 23,
+
+	/// <summary>
+	/// Engineer
+	/// </summary>
+	/// <name>Engineer</name>
+	Engineer = 80,
 
 	/// <summary>
 	/// Explorer
@@ -486,6 +492,12 @@ public enum ProfessionTypes
 	Waiter = 77,
 
 	/// <summary>
+	/// Waiter
+	/// </summary>
+	/// <name>Waiter - Funeral Event</name>
+	Waiter_Funeral_Event = 81,
+
+	/// <summary>
 	/// Weaver
 	/// </summary>
 	/// <name>Weaver</name>
@@ -499,10 +511,10 @@ public enum ProfessionTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla ProfessionTypes in the game.
-    /// </summary>
-	MAX = 79
+	/// <summary>
+	/// The total number of vanilla ProfessionTypes in the game.
+	/// </summary>
+	MAX = 81
 }
 
 /// <summary>
@@ -516,8 +528,8 @@ public static class ProfessionTypesExtensions
 	public static ProfessionTypes[] All()
 	{
 		ProfessionTypes[] all = new ProfessionTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -573,12 +585,12 @@ public static class ProfessionTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a ProfessionModel associated with the given ProfessionTypes.
-    /// ProfessionModel contain all the data that will be used in the game.
-    /// Every ProfessionModel should have a unique name as to distinguish it from others.
-    /// If no ProfessionModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a ProfessionModel associated with the given ProfessionTypes.
+	/// ProfessionModel contain all the data that will be used in the game.
+	/// Every ProfessionModel should have a unique name as to distinguish it from others.
+	/// If no ProfessionModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.ProfessionModel ToProfessionModel(this ProfessionTypes types)
 	{
 		return types.ToName().ToProfessionModel();
@@ -691,6 +703,7 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Craftsman, "Craftsman" },                                   // Craftsman
 		{ ProfessionTypes.Distillery_Worker, "Distillery Worker" },                   // Distillery Worker
 		{ ProfessionTypes.Druid, "Druid" },                                           // Druid
+		{ ProfessionTypes.Engineer, "Engineer" },                                     // Engineer
 		{ ProfessionTypes.Explorer, "Explorer" },                                     // Explorer
 		{ ProfessionTypes.Factory_Worker, "Factory Worker" },                         // Factory Worker
 		{ ProfessionTypes.Farmer, "Farmer" },                                         // Farmer
@@ -745,6 +758,7 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Toolshop_Worker, "Toolshop Worker" },                       // Toolshop Worker
 		{ ProfessionTypes.Trapper, "Trapper" },                                       // Trapper
 		{ ProfessionTypes.Waiter, "Waiter" },                                         // Waiter
+		{ ProfessionTypes.Waiter_Funeral_Event, "Waiter - Funeral Event" },           // Waiter
 		{ ProfessionTypes.Weaver, "Weaver" },                                         // Weaver
 		{ ProfessionTypes.Woodcutter, "Woodcutter" },                                 // Woodcutter
 

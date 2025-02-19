@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum DifficultyTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown DifficultyTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown DifficultyTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no DifficultyTypes. Typically, seen if nothing is defined or failed to parse a string to a DifficultyTypes.
-    /// </summary>
+	/// Placeholder for no DifficultyTypes. Typically, seen if nothing is defined or failed to parse a string to a DifficultyTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -193,9 +193,9 @@ public enum DifficultyTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla DifficultyTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla DifficultyTypes in the game.
+	/// </summary>
 	MAX = 28
 }
 
@@ -210,8 +210,8 @@ public static class DifficultyTypesExtensions
 	public static DifficultyTypes[] All()
 	{
 		DifficultyTypes[] all = new DifficultyTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -267,12 +267,12 @@ public static class DifficultyTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a DifficultyModel associated with the given DifficultyTypes.
-    /// DifficultyModel contain all the data that will be used in the game.
-    /// Every DifficultyModel should have a unique name as to distinguish it from others.
-    /// If no DifficultyModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a DifficultyModel associated with the given DifficultyTypes.
+	/// DifficultyModel contain all the data that will be used in the game.
+	/// Every DifficultyModel should have a unique name as to distinguish it from others.
+	/// If no DifficultyModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.DifficultyModel ToDifficultyModel(this DifficultyTypes types)
 	{
 		return types.ToName().ToDifficultyModel();

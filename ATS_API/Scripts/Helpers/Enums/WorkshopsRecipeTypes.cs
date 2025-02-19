@@ -9,7 +9,7 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.6.2R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum WorkshopsRecipeTypes
 {

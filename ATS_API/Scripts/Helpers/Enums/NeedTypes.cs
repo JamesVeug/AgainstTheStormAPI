@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum NeedTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown NeedTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown NeedTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no NeedTypes. Typically, seen if nothing is defined or failed to parse a string to a NeedTypes.
-    /// </summary>
+	/// Placeholder for no NeedTypes. Typically, seen if nothing is defined or failed to parse a string to a NeedTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -157,9 +157,9 @@ public enum NeedTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla NeedTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla NeedTypes in the game.
+	/// </summary>
 	MAX = 22
 }
 
@@ -174,8 +174,8 @@ public static class NeedTypesExtensions
 	public static NeedTypes[] All()
 	{
 		NeedTypes[] all = new NeedTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -231,12 +231,12 @@ public static class NeedTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a NeedModel associated with the given NeedTypes.
-    /// NeedModel contain all the data that will be used in the game.
-    /// Every NeedModel should have a unique name as to distinguish it from others.
-    /// If no NeedModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a NeedModel associated with the given NeedTypes.
+	/// NeedModel contain all the data that will be used in the game.
+	/// Every NeedModel should have a unique name as to distinguish it from others.
+	/// If no NeedModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.NeedModel ToNeedModel(this NeedTypes types)
 	{
 		return types.ToName().ToNeedModel();

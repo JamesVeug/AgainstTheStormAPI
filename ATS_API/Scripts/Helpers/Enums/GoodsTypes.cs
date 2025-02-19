@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum GoodsTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown GoodsTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown GoodsTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no GoodsTypes. Typically, seen if nothing is defined or failed to parse a string to a GoodsTypes.
-    /// </summary>
+	/// Placeholder for no GoodsTypes. Typically, seen if nothing is defined or failed to parse a string to a GoodsTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -454,7 +454,7 @@ public enum GoodsTypes
 	Tools_Simple_Tools = 63,
 
 	/// <summary>
-	/// Amber - A widely accepted currency in the kingdom. Crystalized tree blood... fitting.
+	/// Amber - Crystallized resin. The main currency of the kingdom.
 	/// </summary>
 	/// <name>[Valuable] Amber</name>
 	Valuable_Amber = 64,
@@ -510,12 +510,19 @@ public enum GoodsTypes
 	/// <name>[Water] Storm Water</name>
 	Water_Storm_Water = 72,
 
+	/// <summary>
+	/// <p>Enriched Fuel - Charged rainwater sealed in a durable container. Essential for powering advanced machinery.</p>
+	/// <p><b>Produced in:</b> {0}</p>
+	/// </summary>
+	/// <name>[WE] Fuel Core</name>
+	WE_Fuel_Core = 73,
 
 
-    /// <summary>
-    /// The total number of vanilla GoodsTypes in the game.
-    /// </summary>
-	MAX = 72
+
+	/// <summary>
+	/// The total number of vanilla GoodsTypes in the game.
+	/// </summary>
+	MAX = 73
 }
 
 /// <summary>
@@ -529,8 +536,8 @@ public static class GoodsTypesExtensions
 	public static GoodsTypes[] All()
 	{
 		GoodsTypes[] all = new GoodsTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -586,12 +593,12 @@ public static class GoodsTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a GoodModel associated with the given GoodsTypes.
-    /// GoodModel contain all the data that will be used in the game.
-    /// Every GoodModel should have a unique name as to distinguish it from others.
-    /// If no GoodModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a GoodModel associated with the given GoodsTypes.
+	/// GoodModel contain all the data that will be used in the game.
+	/// Every GoodModel should have a unique name as to distinguish it from others.
+	/// If no GoodModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.GoodModel ToGoodModel(this GoodsTypes types)
 	{
 		return types.ToName().ToGoodModel();
@@ -744,7 +751,7 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes.Packs_Pack_Of_Trade_Goods, "[Packs] Pack of Trade Goods" },               // Pack of Trade Goods - Goods highly sought after by traders. Can be used to fulfill orders, or sold for a large profit.    <b>Produced in:</b> {0}
 		{ GoodsTypes.TEMP_Meta_Exp, "TEMP_Meta_Exp" }, 
 		{ GoodsTypes.Tools_Simple_Tools, "[Tools] Simple Tools" },                             // Tools - Used primarily for exploration, opening caches, and completing difficult events.    <b>Produced in:</b> {0}
-		{ GoodsTypes.Valuable_Amber, "[Valuable] Amber" },                                     // Amber - A widely accepted currency in the kingdom. Crystalized tree blood... fitting.
+		{ GoodsTypes.Valuable_Amber, "[Valuable] Amber" },                                     // Amber - Crystallized resin. The main currency of the kingdom.
 		{ GoodsTypes.Valuable_Ancient_Tablet, "[Valuable] Ancient Tablet" },                   // Ancient Tablet - Valuable sources of knowledge, highly sought after by traders and the Queen herself. They can be found in Dangerous ("dangerous") or Forbidden Glades ("forbidden").
 		{ GoodsTypes.Valuable_Thunderblight_Shard, "[Valuable] Thunderblight Shard" },         // Thunderblight Shard - A rare, lightning-infused crystal used in the creation of cornerstones. Obtained by mining in the Ashen Thicket.
 		{ GoodsTypes.Vessel_Barrels, "[Vessel] Barrels" },                                     // Barrels - Used for crafting.    <b>Produced in:</b> {0}
@@ -753,6 +760,7 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes.Water_Clearance_Water, "[Water] Clearance Water" },                       // Clearance Water - Highly concentrated yellow clearance rainwater. Used to power Rain Engines in crafting-oriented buildings.
 		{ GoodsTypes.Water_Drizzle_Water, "[Water] Drizzle Water" },                           // Drizzle Water - Highly concentrated green drizzle rainwater. Used to power Rain Engines in food-oriented buildings.
 		{ GoodsTypes.Water_Storm_Water, "[Water] Storm Water" },                               // Storm Water - Highly concentrated blue storm rainwater. Used to power Rain Engines in industry-oriented buildings.
+		{ GoodsTypes.WE_Fuel_Core, "[WE] Fuel Core" },                                         // Enriched Fuel - Charged rainwater sealed in a durable container. Essential for powering advanced machinery.  <b>Produced in:</b> {0}
 
 	};
 }

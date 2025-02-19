@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum BuildingPerkTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown BuildingPerkTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown BuildingPerkTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no BuildingPerkTypes. Typically, seen if nothing is defined or failed to parse a string to a BuildingPerkTypes.
-    /// </summary>
+	/// Placeholder for no BuildingPerkTypes. Typically, seen if nothing is defined or failed to parse a string to a BuildingPerkTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -347,9 +347,9 @@ public enum BuildingPerkTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla BuildingPerkTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla BuildingPerkTypes in the game.
+	/// </summary>
 	MAX = 54
 }
 
@@ -364,8 +364,8 @@ public static class BuildingPerkTypesExtensions
 	public static BuildingPerkTypes[] All()
 	{
 		BuildingPerkTypes[] all = new BuildingPerkTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -421,12 +421,12 @@ public static class BuildingPerkTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a BuildingPerkModel associated with the given BuildingPerkTypes.
-    /// BuildingPerkModel contain all the data that will be used in the game.
-    /// Every BuildingPerkModel should have a unique name as to distinguish it from others.
-    /// If no BuildingPerkModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a BuildingPerkModel associated with the given BuildingPerkTypes.
+	/// BuildingPerkModel contain all the data that will be used in the game.
+	/// Every BuildingPerkModel should have a unique name as to distinguish it from others.
+	/// If no BuildingPerkModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.BuildingPerkModel ToBuildingPerkModel(this BuildingPerkTypes types)
 	{
 		return types.ToName().ToBuildingPerkModel();

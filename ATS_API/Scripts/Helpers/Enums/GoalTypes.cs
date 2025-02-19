@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum GoalTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown GoalTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown GoalTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no GoalTypes. Typically, seen if nothing is defined or failed to parse a string to a GoalTypes.
-    /// </summary>
+	/// Placeholder for no GoalTypes. Typically, seen if nothing is defined or failed to parse a string to a GoalTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -462,7 +462,7 @@ public enum GoalTypes
 	Deed_Win_Scarlet_Impossible = 73,
 
 	/// <summary>
-	/// Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on the difficulty: Veteran.
+	/// Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on Veteran difficulty (or higher).
 	/// </summary>
 	/// <name>Deed Win With Ale Chain</name>
 	Deed_Win_With_Ale_Chain = 74,
@@ -546,7 +546,7 @@ public enum GoalTypes
 	Deed_Win_With_Many_Events = 87,
 
 	/// <summary>
-	/// Refinery - Win with: 1 x Mine, 1 x Smelter, 1 x Smithy, on the difficulty: Veteran.
+	/// Refinery - Win with: 1 x Mine, 1 x Smelter, 1 x Smithy, on Veteran difficulty (or higher).
 	/// </summary>
 	/// <name>Deed Win With Metal Chain</name>
 	Deed_Win_With_Metal_Chain = 88,
@@ -582,7 +582,7 @@ public enum GoalTypes
 	Deed_Win_With_Service_Needs = 93,
 
 	/// <summary>
-	/// Totem Hunter - Win with: 1 x Converted Rain Totem, 1 x Converted Totem of Denial, on the difficulty: Veteran.
+	/// Totem Hunter - Win with: 1 x Converted Rain Totem, 1 x Converted Totem of Denial, on Veteran difficulty (or higher).
 	/// </summary>
 	/// <name>Deed Win With Totems</name>
 	Deed_Win_With_Totems = 94,
@@ -684,6 +684,12 @@ public enum GoalTypes
 	H_Marhs_Meat_Depleted = 110,
 
 	/// <summary>
+	/// Cat-egorical Imperative - You must pet the cat. Awarded for petting the Elder's Cat 50 times in one game.
+	/// </summary>
+	/// <name>[H] Pet Cat</name>
+	H_Pet_Cat = 233,
+
+	/// <summary>
 	/// The Rebel - Seek adversity, and the rest will follow. Awarded for completing 6 Forbidden Events in a single game.
 	/// </summary>
 	/// <name>[H] Win Game With Many Forbidden Events Solved</name>
@@ -712,6 +718,12 @@ public enum GoalTypes
 	/// </summary>
 	/// <name>[H] Win Storm Ants Without Hunger</name>
 	H_Win_Storm_Ants_Without_Hunger = 115,
+
+	/// <summary>
+	/// Salty Player - All these flavors, and you choose to be salty. Awarded for winning a game with 999 "[crafting] salt" Salt in the Main Warehouse.
+	/// </summary>
+	/// <name>[H] Win With Salt</name>
+	H_Win_With_Salt = 234,
 
 	/// <summary>
 	/// Orders From the Queen 1 - Complete 10 orders.
@@ -1224,22 +1236,28 @@ public enum GoalTypes
 	UniqueGoal_Phase5_WinWithVaults = 200,
 
 	/// <summary>
+	/// Spectral Stag - Win the game after catching or releasing the Spectral Treasure Stag on time.
+	/// </summary>
+	/// <name>[WE] Catch Ghost Stag</name>
+	WE_Catch_Ghost_Stag = 235,
+
+	/// <summary>
 	/// Commenda Contract - Win a game before year 8 ends, after completing trade routes worth 150 "[valuable] amber" Amber in total.
 	/// </summary>
 	/// <name>[WE] Deed Complete Trade Routes Of Value In Years</name>
 	WE_Deed_Complete_Trade_Routes_Of_Value_In_Years = 201,
 
 	/// <summary>
-	/// Bankrupt Trader - Win a game with 150 Amber in your Warehouse.
+	/// Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 250 before the start of Drizzle season in year 9.
 	/// </summary>
-	/// <name>[WE] Deed Win With Amber</name>
-	WE_Deed_Win_With_Amber = 202,
+	/// <name>[WE] Deed Win With Amber - Big</name>
+	WE_Deed_Win_With_Amber_Big = 236,
 
 	/// <summary>
-	/// Bankrupt Trader - Win a game before year 8 ends, with 250 Amber in your warehouse.
+	/// Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 100 before the start of Drizzle season in year 11.
 	/// </summary>
-	/// <name>[WE] Deed Win With Amber In Years</name>
-	WE_Deed_Win_With_Amber_In_Years = 203,
+	/// <name>[WE] Deed Win With Amber - Small</name>
+	WE_Deed_Win_With_Amber_Small = 237,
 
 	/// <summary>
 	/// Obsidian Loremaster - Win a game after solving 2 Forbidden Events.
@@ -1272,10 +1290,46 @@ public enum GoalTypes
 	WE_Deed_Win_Without_Leaving = 208,
 
 	/// <summary>
-	/// Brass Order Engineers - Win a game before year 9 ends, while having 3 Hearths in your settlement upgraded to level: District (Level 3).
+	/// First Elder - Win the game after discovering 2 Dangerous or Forbidden Glades in the first year.
+	/// </summary>
+	/// <name>[WE] Discover Dangerous Glades In Years</name>
+	WE_Discover_Dangerous_Glades_In_Years = 238,
+
+	/// <summary>
+	/// Ghost Town - Win before year 8 ends, after attacking at least 3 traders.
+	/// </summary>
+	/// <name>[WE] Win With Attacked Traders</name>
+	WE_Win_With_Attacked_Traders = 239,
+
+	/// <summary>
+	/// Cloaked Wanderer - Win a game with 3 active Blood Flower clones in your settlement.
+	/// </summary>
+	/// <name>[WE] Win With Blood Flower</name>
+	WE_Win_With_Blood_Flower = 240,
+
+	/// <summary>
+	/// Brass Order Engineers - Win the game after delivering "[we] fuel core" Enriched Fuel 25 before the start of Drizzle season in year 9.
+	/// </summary>
+	/// <name>[WE] Win With Fuel Cores</name>
+	WE_Win_With_Fuel_Cores = 241,
+
+	/// <summary>
+	/// Somber Procession - Win the game after building the Feast Hall and completing the Funeral Feast event in it.
+	/// </summary>
+	/// <name>[WE] Win With Funeral Solved</name>
+	WE_Win_With_Funeral_Solved = 242,
+
+	/// <summary>
+	/// Brass Order Engineers - Win a game before year 10 ends, while having 3 Hearths in your settlement upgraded to level: District (Level 3).
 	/// </summary>
 	/// <name>[WE] Win With Hubs</name>
 	WE_Win_With_Hubs = 209,
+
+	/// <summary>
+	/// First Elder - Win the game before year 7 ends, after fulfilling 200 needs from the Services category.
+	/// </summary>
+	/// <name>[WE] Win With Needs Fulfilled</name>
+	WE_Win_With_Needs_Fulfilled = 243,
 
 	/// <summary>
 	/// Abandoned Settlement - Win a game near the Abandoned Settlement modifier.
@@ -1417,10 +1471,10 @@ public enum GoalTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla GoalTypes in the game.
-    /// </summary>
-	MAX = 232
+	/// <summary>
+	/// The total number of vanilla GoalTypes in the game.
+	/// </summary>
+	MAX = 241
 }
 
 /// <summary>
@@ -1434,8 +1488,8 @@ public static class GoalTypesExtensions
 	public static GoalTypes[] All()
 	{
 		GoalTypes[] all = new GoalTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -1491,12 +1545,12 @@ public static class GoalTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a GoalModel associated with the given GoalTypes.
-    /// GoalModel contain all the data that will be used in the game.
-    /// Every GoalModel should have a unique name as to distinguish it from others.
-    /// If no GoalModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a GoalModel associated with the given GoalTypes.
+	/// GoalModel contain all the data that will be used in the game.
+	/// Every GoalModel should have a unique name as to distinguish it from others.
+	/// If no GoalModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.Goals.GoalModel ToGoalModel(this GoalTypes types)
 	{
 		return types.ToName().ToGoalModel();
@@ -1659,7 +1713,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_On_Wednesday, "Deed Win on Wednesday" },                                                       // It's Wednesday - Win a game with Frogs on a Wednesday.
 		{ GoalTypes.Deed_Win_Queens_Hand, "Deed Win Queens Hand" },                                                         // The Queen's Hand - Complete the Queen's Hand Trial.
 		{ GoalTypes.Deed_Win_Scarlet_Impossible, "Deed Win Scarlet Impossible" },                                           // Crimson Soil - Win a game in the Scarlet Orchard biome, and on Viceroy difficulty (or higher).
-		{ GoalTypes.Deed_Win_With_Ale_Chain, "Deed Win With Ale Chain" },                                                   // Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on the difficulty: Veteran.
+		{ GoalTypes.Deed_Win_With_Ale_Chain, "Deed Win With Ale Chain" },                                                   // Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on Veteran difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_All_Needs, "Deed Win With All Needs" },                                                   // Paradise - Ensure all villagers have all their needs fulfilled simultaneously.
 		{ GoalTypes.Deed_Win_With_Amber, "Deed Win With Amber" },                                                           // Trade Connections - Win a game with 400 Amber in your Warehouse.
 		{ GoalTypes.Deed_Win_With_Beavers, "Deed Win With Beavers" },                                                       // Beaver Utopia - Win a game with 30 Beavers, 15 x Beaver House, 1 x Guild House
@@ -1673,13 +1727,13 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_With_Humans, "Deed Win With Humans" },                                                         // Human Utopia - Win a game with 30 Humans, 15 x Human House, 1 x Temple
 		{ GoalTypes.Deed_Win_With_Lizards, "Deed Win With Lizards" },                                                       // Lizard Utopia - Win a game with 30 Lizards, 15 x Lizard House, 1 x Clan Hall
 		{ GoalTypes.Deed_Win_With_Many_Events, "Deed Win With Many Events" },                                               // Efficient Explorer - Win a game after completing 25 Glade Events.
-		{ GoalTypes.Deed_Win_With_Metal_Chain, "Deed Win With Metal Chain" },                                               // Refinery - Win with: 1 x Mine, 1 x Smelter, 1 x Smithy, on the difficulty: Veteran.
+		{ GoalTypes.Deed_Win_With_Metal_Chain, "Deed Win With Metal Chain" },                                               // Refinery - Win with: 1 x Mine, 1 x Smelter, 1 x Smithy, on Veteran difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_No_Deaths_Impossible, "Deed Win With No Deaths Impossible" },                             // Tempest - Win a game with no dead villagers on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Population_And_Services, "Deed Win With Population And Services" },                       // The Marketplace - Win a game with 50 villagers, 1 x Temple, 1 x Market
 		{ GoalTypes.Deed_Win_With_Reputation_Prestige, "Deed Win With Reputation Prestige" },                               // A True Leader - Earn 18 Reputation Points through villagers’ Resolve in a single game on Prestige 1 difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Ruins, "Deed Win With Ruins" },                                                           // Ruins - Win a game after taking care of 10 ruins found in glades.
 		{ GoalTypes.Deed_Win_With_Service_Needs, "Deed Win With Service Needs" },                                           // Higher Needs - Ensure all villagers have all their Services needs fulfilled simultaneously.
-		{ GoalTypes.Deed_Win_With_Totems, "Deed Win With Totems" },                                                         // Totem Hunter - Win with: 1 x Converted Rain Totem, 1 x Converted Totem of Denial, on the difficulty: Veteran.
+		{ GoalTypes.Deed_Win_With_Totems, "Deed Win With Totems" },                                                         // Totem Hunter - Win with: 1 x Converted Rain Totem, 1 x Converted Totem of Denial, on Veteran difficulty (or higher).
 		{ GoalTypes.Deed_Win_Without_Bonus_Impossible, "Deed Win Without Bonus Impossible" },                               // Traveling Light - Win a game without taking any Embarkation Bonuses on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Without_Bonus_Prestige, "Deed Win Without Bonus Prestige" },                                   // Unnecessary Burden - Win a game without taking any Embarkation Bonuses on Prestige 10 difficulty (or higher).
 		{ GoalTypes.Deed_Win_Without_Caches, "Deed Win Without Caches" },                                                   // No Loot Boxes - Win a game without opening or sending any Abandoned Caches to the Citadel.
@@ -1696,11 +1750,13 @@ public static class GoalTypesExtensions
 		{ GoalTypes.H_Discover_First_Forbidden_Glades, "[H] Discover First Forbidden Glades" },                             // Jinxed - Ever thought of buying a lottery ticket? Awarded for stumbling upon 2 Forbidden Glades in a row at the beginning of a game in the Cursed Royal Woodlands.
 		{ GoalTypes.H_Kill_Villagers_With_Ritual, "[H] Kill Villagers With Ritual" },                                       // Chants from the Deep - <i>The moment the world remembers, it will unravel into nothingness.</i> Awarded for losing 10 villagers in a single game to the Forbidden Ritual effect.
 		{ GoalTypes.H_Marhs_Meat_Depleted, "[H] Marhs Meat Depleted" },                                                     // The Appetizer - You just had to try it, didn't you? Awarded for "naturally" depleting a Dead Leviathan gathering node.
+		{ GoalTypes.H_Pet_Cat, "[H] Pet Cat" },                                                                             // Cat-egorical Imperative - You must pet the cat. Awarded for petting the Elder's Cat 50 times in one game.
 		{ GoalTypes.H_Win_Game_With_Many_Forbidden_Events_Solved, "[H] Win Game With Many Forbidden Events Solved" },       // The Rebel - Seek adversity, and the rest will follow. Awarded for completing 6 Forbidden Events in a single game.
 		{ GoalTypes.H_Win_Game_Without_Cutting_Trees, "[H] Win Game Without Cutting Trees" },                               // Arckmage's Challenge - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree.
 		{ GoalTypes.H_Win_Games_With_Blood_Flowers_Farmed, "[H] Win Games With Blood Flowers Farmed" },                     // Crimson Farmer - It ain't much, but it's honest work. Awarded for completing a settlement after removing 20 Blood Flowers.
 		{ GoalTypes.H_Win_Highest_Difficulty_Fast, "[H] Win Highest Difficulty Fast" },                                     // Speedrun - Why even bother balancing this game? Awarded for completing a settlement in 3 years (or less), on Prestige 20 difficulty.
 		{ GoalTypes.H_Win_Storm_Ants_Without_Hunger, "[H] Win Storm Ants Without Hunger" },                                 // Not On My Watch - That was actually quite impressive! Awarded for completing the Storm Ant Column world event on Prestige 20 difficulty without any villagers suffering the hunger effect.
+		{ GoalTypes.H_Win_With_Salt, "[H] Win With Salt" },                                                                 // Salty Player - All these flavors, and you choose to be salty. Awarded for winning a game with 999 "[crafting] salt" Salt in the Main Warehouse.
 		{ GoalTypes.ScalingGoal_Phase0_CompleteOrders, "ScalingGoal_Phase0_CompleteOrders" },                               // Orders From the Queen 1 - Complete 10 orders.
 		{ GoalTypes.ScalingGoal_Phase0_GladeDiscovery, "ScalingGoal_Phase0_GladeDiscovery" },                               // Discovery 1 - Discover 10 glades.
 		{ GoalTypes.ScalingGoal_Phase0_TradeGoods, "ScalingGoal_Phase0_TradeGoods" },                                       // Rolling in Wealth 1 - Trade goods worth 50 Amber.
@@ -1786,15 +1842,22 @@ public static class GoalTypesExtensions
 		{ GoalTypes.UniqueGoal_Phase5_WinWithResolve, "UniqueGoal_Phase5_WinWithResolve" },                                 // Victory Through Prosperity - Earn 14 Reputation Points through Resolve in a single game.
 		{ GoalTypes.UniqueGoal_Phase5_WinWithTools, "UniqueGoal_Phase5_WinWithTools" },                                     // Tool Hoarder - Win a game with 20 Infused Tools in the Warehouse.
 		{ GoalTypes.UniqueGoal_Phase5_WinWithVaults, "UniqueGoal_Phase5_WinWithVaults" },                                   // Ancient Vaults - Win a game with 2 active Open Vaults on the map.
+		{ GoalTypes.WE_Catch_Ghost_Stag, "[WE] Catch Ghost Stag" },                                                         // Spectral Stag - Win the game after catching or releasing the Spectral Treasure Stag on time.
 		{ GoalTypes.WE_Deed_Complete_Trade_Routes_Of_Value_In_Years, "[WE] Deed Complete Trade Routes Of Value In Years" }, // Commenda Contract - Win a game before year 8 ends, after completing trade routes worth 150 "[valuable] amber" Amber in total.
-		{ GoalTypes.WE_Deed_Win_With_Amber, "[WE] Deed Win With Amber" },                                                   // Bankrupt Trader - Win a game with 150 Amber in your Warehouse.
-		{ GoalTypes.WE_Deed_Win_With_Amber_In_Years, "[WE] Deed Win With Amber In Years" },                                 // Bankrupt Trader - Win a game before year 8 ends, with 250 Amber in your warehouse.
+		{ GoalTypes.WE_Deed_Win_With_Amber_Big, "[WE] Deed Win With Amber - Big" },                                         // Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 250 before the start of Drizzle season in year 9.
+		{ GoalTypes.WE_Deed_Win_With_Amber_Small, "[WE] Deed Win With Amber - Small" },                                     // Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 100 before the start of Drizzle season in year 11.
 		{ GoalTypes.WE_Deed_Win_With_Forbidden_Events_Solved, "[WE] Deed Win With Forbidden Events Solved" },               // Obsidian Loremaster - Win a game after solving 2 Forbidden Events.
 		{ GoalTypes.WE_Deed_Win_With_Less_Than_3_Dang_Glades, "[WE] Deed Win With Less Than 3 Dang Glades" },               // Somber Procession - Win a game after opening no more than 1 Dangerous or Forbidden Glade.
 		{ GoalTypes.WE_Deed_Win_With_Villagers_Dying, "[WE] Deed Win With Villagers Dying" },                               // Followers of the Forsaken Gods - Win a game before year 8 ends, after 10 villagers have died.
 		{ GoalTypes.WE_Deed_Win_With_Water, "[WE] Deed Win With Water" },                                                   // Crashed Airship - Win a game before year 8 ends, with 300 Storm Water in your warehouse.
 		{ GoalTypes.WE_Deed_Win_Without_Leaving, "[WE] Deed Win Without Leaving" },                                         // Hanged Viceroy - Win a game with no villagers leaving.
-		{ GoalTypes.WE_Win_With_Hubs, "[WE] Win With Hubs" },                                                               // Brass Order Engineers - Win a game before year 9 ends, while having 3 Hearths in your settlement upgraded to level: District (Level 3).
+		{ GoalTypes.WE_Discover_Dangerous_Glades_In_Years, "[WE] Discover Dangerous Glades In Years" },                     // First Elder - Win the game after discovering 2 Dangerous or Forbidden Glades in the first year.
+		{ GoalTypes.WE_Win_With_Attacked_Traders, "[WE] Win With Attacked Traders" },                                       // Ghost Town - Win before year 8 ends, after attacking at least 3 traders.
+		{ GoalTypes.WE_Win_With_Blood_Flower, "[WE] Win With Blood Flower" },                                               // Cloaked Wanderer - Win a game with 3 active Blood Flower clones in your settlement.
+		{ GoalTypes.WE_Win_With_Fuel_Cores, "[WE] Win With Fuel Cores" },                                                   // Brass Order Engineers - Win the game after delivering "[we] fuel core" Enriched Fuel 25 before the start of Drizzle season in year 9.
+		{ GoalTypes.WE_Win_With_Funeral_Solved, "[WE] Win With Funeral Solved" },                                           // Somber Procession - Win the game after building the Feast Hall and completing the Funeral Feast event in it.
+		{ GoalTypes.WE_Win_With_Hubs, "[WE] Win With Hubs" },                                                               // Brass Order Engineers - Win a game before year 10 ends, while having 3 Hearths in your settlement upgraded to level: District (Level 3).
+		{ GoalTypes.WE_Win_With_Needs_Fulfilled, "[WE] Win With Needs Fulfilled" },                                         // First Elder - Win the game before year 7 ends, after fulfilling 200 needs from the Services category.
 		{ GoalTypes.Win_Game_With_Modifier_Abandoned_Settlement, "Win Game With Modifier - Abandoned Settlement" },         // Abandoned Settlement - Win a game near the Abandoned Settlement modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Altar, "Win Game With Modifier - Altar" },                                       // Fishmen Ritual Site - Win a game near the Fishmen Ritual Site modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Armory, "Win Game With Modifier - Armory" },                                     // Ruined Armory - Win a game near the Ruined Armory modifier.

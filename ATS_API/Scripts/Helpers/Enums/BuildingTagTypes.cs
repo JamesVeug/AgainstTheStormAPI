@@ -9,18 +9,18 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum BuildingTagTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown BuildingTagTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown BuildingTagTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no BuildingTagTypes. Typically, seen if nothing is defined or failed to parse a string to a BuildingTagTypes.
-    /// </summary>
+	/// Placeholder for no BuildingTagTypes. Typically, seen if nothing is defined or failed to parse a string to a BuildingTagTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
@@ -121,9 +121,9 @@ public enum BuildingTagTypes
 
 
 
-    /// <summary>
-    /// The total number of vanilla BuildingTagTypes in the game.
-    /// </summary>
+	/// <summary>
+	/// The total number of vanilla BuildingTagTypes in the game.
+	/// </summary>
 	MAX = 18
 }
 
@@ -138,8 +138,8 @@ public static class BuildingTagTypesExtensions
 	public static BuildingTagTypes[] All()
 	{
 		BuildingTagTypes[] all = new BuildingTagTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -195,12 +195,12 @@ public static class BuildingTagTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a BuildingTagModel associated with the given BuildingTagTypes.
-    /// BuildingTagModel contain all the data that will be used in the game.
-    /// Every BuildingTagModel should have a unique name as to distinguish it from others.
-    /// If no BuildingTagModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a BuildingTagModel associated with the given BuildingTagTypes.
+	/// BuildingTagModel contain all the data that will be used in the game.
+	/// Every BuildingTagModel should have a unique name as to distinguish it from others.
+	/// If no BuildingTagModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Buildings.BuildingTagModel ToBuildingTagModel(this BuildingTagTypes types)
 	{
 		return types.ToName().ToBuildingTagModel();

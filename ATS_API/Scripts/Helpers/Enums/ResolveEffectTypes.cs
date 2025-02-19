@@ -9,1075 +9,1124 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.5.6R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum ResolveEffectTypes
 {
-    /// <summary>
-    /// Placeholder for an unknown ResolveEffectTypes. Typically, seen if a method failed to find some data .
-    /// </summary>
+	/// <summary>
+	/// Placeholder for an unknown ResolveEffectTypes. Typically, seen if a method failed to find some data .
+	/// </summary>
 	Unknown = -1,
 	
 	/// <summary>
-    /// Placeholder for no ResolveEffectTypes. Typically, seen if nothing is defined or failed to parse a string to a ResolveEffectTypes.
-    /// </summary>
+	/// Placeholder for no ResolveEffectTypes. Typically, seen if nothing is defined or failed to parse a string to a ResolveEffectTypes.
+	/// </summary>
 	None = 0,
 	
 	/// <summary>
 	/// Acidic Environment - Working in a loud environment is really taxing.
 	/// </summary>
 	/// <name>Acidic Environment</name>
-	Acidic_Environment,
+	Acidic_Environment = 1,
 
 	/// <summary>
 	/// Acidic Environment - Working in a loud environment is really taxing.
 	/// </summary>
 	/// <name>Acidic Environment Blightrot</name>
-	Acidic_Environment_Blightrot,
+	Acidic_Environment_Blightrot = 2,
 
 	/// <summary>
 	/// Industrialized Agriculture - New farming methods are very effective, but cause a lot of pollution.
 	/// </summary>
 	/// <name>Agriculture Penalty</name>
-	Agriculture_Penalty,
+	Agriculture_Penalty = 3,
 
 	/// <summary>
 	/// Small Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 	/// </summary>
 	/// <name>Ancient Artifact 1</name>
-	Ancient_Artifact_1,
+	Ancient_Artifact_1 = 4,
 
 	/// <summary>
 	/// Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 	/// </summary>
 	/// <name>Ancient Artifact 2</name>
-	Ancient_Artifact_2,
+	Ancient_Artifact_2 = 5,
 
 	/// <summary>
 	/// Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 	/// </summary>
 	/// <name>Ancient Artifact 3</name>
-	Ancient_Artifact_3,
+	Ancient_Artifact_3 = 6,
 
 	/// <summary>
 	/// Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 	/// </summary>
 	/// <name>Ancient Artifact - weak</name>
-	Ancient_Artifact_Weak,
+	Ancient_Artifact_Weak = 7,
 
 	/// <summary>
 	/// Basic Housing - Most species require at least basic shelter from the constant rainfall and gusting winds.
 	/// </summary>
 	/// <name>Any Housing Effect</name>
-	Any_Housing_Effect,
+	Any_Housing_Effect = 8,
 
 	/// <summary>
 	/// Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	/// </summary>
 	/// <name>BattlegroundPenalty - hard</name>
-	BattlegroundPenalty_Hard,
+	BattlegroundPenalty_Hard = 9,
 
 	/// <summary>
 	/// Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	/// </summary>
 	/// <name>BattlegroundPenalty - impossible</name>
-	BattlegroundPenalty_Impossible,
+	BattlegroundPenalty_Impossible = 10,
 
 	/// <summary>
 	/// Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	/// </summary>
 	/// <name>BattlegroundPenalty - normal</name>
-	BattlegroundPenalty_Normal,
+	BattlegroundPenalty_Normal = 11,
 
 	/// <summary>
 	/// Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	/// </summary>
 	/// <name>BattlegroundPenalty - very hard</name>
-	BattlegroundPenalty_Very_Hard,
+	BattlegroundPenalty_Very_Hard = 12,
 
 	/// <summary>
 	/// Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Beaver Housing Effect</name>
-	Beaver_Housing_Effect,
+	Beaver_Housing_Effect = 13,
 
 	/// <summary>
 	/// Vineyard Town - The settlement specializes in wine production, and Beavers love that.
 	/// </summary>
 	/// <name>Beaver Resolve Wine</name>
-	Beaver_Resolve_Wine,
+	Beaver_Resolve_Wine = 14,
 
 	/// <summary>
 	/// Beavers Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Beaver clan remembers your help.
 	/// </summary>
 	/// <name>Beavers Faction Support</name>
-	Beavers_Faction_Support,
+	Beavers_Faction_Support = 15,
 
 	/// <summary>
 	/// Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Biscuits Effect</name>
-	Biscuits_Effect,
+	Biscuits_Effect = 16,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Biscuits Equal Prohibition Penalty</name>
-	Biscuits_Equal_Prohibition_Penalty,
+	Biscuits_Equal_Prohibition_Penalty = 17,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Biscuits Unfair Prohibition Penalty</name>
-	Biscuits_Unfair_Prohibition_Penalty,
+	Biscuits_Unfair_Prohibition_Penalty = 18,
 
 	/// <summary>
 	/// Blazing Fire (Coal) - A roaring magical fire purifies the forest, making the ancient hearth glow like a beacon in the darkness.
 	/// </summary>
 	/// <name>Blazing Fire (Coal)</name>
-	Blazing_Fire_Coal,
+	Blazing_Fire_Coal = 19,
 
 	/// <summary>
 	/// Blazing Fire (Oil) - A roaring magical fire purifies the forest, making the ancient hearth glow like a beacon in the darkness.
 	/// </summary>
 	/// <name>Blazing Fire (Oil)</name>
-	Blazing_Fire_Oil,
+	Blazing_Fire_Oil = 20,
 
 	/// <summary>
 	/// Blazing Fire (Sea Marrow) - A roaring magical fire purifies the forest, making the ancient hearth glow like a beacon in the darkness.
 	/// </summary>
 	/// <name>Blazing Fire (Sea Marrow)</name>
-	Blazing_Fire_Sea_Marrow,
+	Blazing_Fire_Sea_Marrow = 21,
 
 	/// <summary>
 	/// Blazing Fire (Wood) - Darkness flees before the might of the fire.
 	/// </summary>
 	/// <name>Blazing Fire (Wood)</name>
-	Blazing_Fire_Wood,
+	Blazing_Fire_Wood = 22,
 
 	/// <summary>
 	/// Blood Flower - The odor of Blood Flowers is making people feel sick.
 	/// </summary>
 	/// <name>Blightrot Resolve</name>
-	Blightrot_Resolve,
+	Blightrot_Resolve = 23,
 
 	/// <summary>
 	/// ResolveEffect_Blightrot_Name - ResolveEffect_Blightrot_Desc
 	/// </summary>
 	/// <name>Blightrot_tier2</name>
-	Blightrot_tier2,
+	Blightrot_tier2 = 24,
 
 	/// <summary>
 	/// ResolveEffect_Blightrot_Name - ResolveEffect_Blightrot_Desc
 	/// </summary>
 	/// <name>Blightrot_tier3</name>
-	Blightrot_tier3,
+	Blightrot_tier3 = 25,
 
 	/// <summary>
 	/// Brawling - Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Bloodthirst Effect</name>
-	Bloodthirst_Effect,
+	Bloodthirst_Effect = 26,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Bloodthirst Equal Prohibition Penalty</name>
-	Bloodthirst_Equal_Prohibition_Penalty,
+	Bloodthirst_Equal_Prohibition_Penalty = 27,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Bloodthirst Unfair Prohibition Penalty</name>
-	Bloodthirst_Unfair_Prohibition_Penalty,
+	Bloodthirst_Unfair_Prohibition_Penalty = 28,
 
 	/// <summary>
 	/// Boots - This need is fulfilled at the Hearth. It requires "[needs] boots" boots. Satisfying this need grants a movement speed bonus.
 	/// </summary>
 	/// <name>Boots Effect</name>
-	Boots_Effect,
+	Boots_Effect = 29,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Boots Equal Prohibition Penalty</name>
-	Boots_Equal_Prohibition_Penalty,
+	Boots_Equal_Prohibition_Penalty = 30,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Boots Unfair Prohibition Penalty</name>
-	Boots_Unfair_Prohibition_Penalty,
+	Boots_Unfair_Prohibition_Penalty = 31,
 
 	/// <summary>
 	/// Foul Taste - Food tastes terrible due to contaminants from a leaking cauldron.
 	/// </summary>
 	/// <name>Cauldron Resolve</name>
-	Cauldron_Resolve,
+	Cauldron_Resolve = 32,
 
 	/// <summary>
 	/// City Renown - The city is becoming known among folk as a great place to live.
 	/// </summary>
 	/// <name>City Renown</name>
-	City_Renown,
+	City_Renown = 33,
 
 	/// <summary>
 	/// Coats - This need is fulfilled at the Hearth. It requires "[needs] coats" coats. Satisfying this need grants a Resolve bonus during the storm.
 	/// </summary>
 	/// <name>Clothes Effect</name>
-	Clothes_Effect,
+	Clothes_Effect = 34,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Clothes Equal Prohibition Penalty</name>
-	Clothes_Equal_Prohibition_Penalty,
+	Clothes_Equal_Prohibition_Penalty = 35,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Clothes Unfair Prohibition Penalty</name>
-	Clothes_Unfair_Prohibition_Penalty,
+	Clothes_Unfair_Prohibition_Penalty = 36,
 
 	/// <summary>
 	/// Comfortable - This worker gains +5 to their Resolve.
 	/// </summary>
 	/// <name>Comfortable Job</name>
-	Comfortable_Job,
+	Comfortable_Job = 37,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them.
 	/// </summary>
 	/// <name>Convicts - hard</name>
-	Convicts_Hard,
+	Convicts_Hard = 38,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them.
 	/// </summary>
 	/// <name>Convicts - impossible</name>
-	Convicts_Impossible,
+	Convicts_Impossible = 39,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them.
 	/// </summary>
 	/// <name>Convicts - normal</name>
-	Convicts_Normal,
+	Convicts_Normal = 40,
 
 	/// <summary>
 	/// Defenseless - Villagers have heard rumors of dangerous fugitives in the area. They are worried that desperate criminals might attack them.
 	/// </summary>
 	/// <name>Convicts - very hard</name>
-	Convicts_Very_Hard,
+	Convicts_Very_Hard = 41,
 
 	/// <summary>
 	/// Greater Threat - Villagers don't approve of discovering Dangerous ("dangerous") and Forbidden Glades ("forbidden") during the storm.
 	/// </summary>
 	/// <name>Dang Glades Reduces Resolve Effect</name>
-	Dang_Glades_Reduces_Resolve_Effect,
+	Dang_Glades_Reduces_Resolve_Effect = 42,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives.
 	/// </summary>
 	/// <name>DarkGatePenalty - hard</name>
-	DarkGatePenalty_Hard,
+	DarkGatePenalty_Hard = 43,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives.
 	/// </summary>
 	/// <name>DarkGatePenalty - impossible</name>
-	DarkGatePenalty_Impossible,
+	DarkGatePenalty_Impossible = 44,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives.
 	/// </summary>
 	/// <name>DarkGatePenalty - normal</name>
-	DarkGatePenalty_Normal,
+	DarkGatePenalty_Normal = 45,
 
 	/// <summary>
 	/// Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives.
 	/// </summary>
 	/// <name>DarkGatePenalty - very hard</name>
-	DarkGatePenalty_Very_Hard,
+	DarkGatePenalty_Very_Hard = 46,
 
 	/// <summary>
 	/// Education - It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Education Effect</name>
-	Education_Effect,
+	Education_Effect = 47,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Education Equal Prohibition Penalty</name>
-	Education_Equal_Prohibition_Penalty,
+	Education_Equal_Prohibition_Penalty = 48,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Education Unfair Prohibition Penalty</name>
-	Education_Unfair_Prohibition_Penalty,
+	Education_Unfair_Prohibition_Penalty = 49,
 
 	/// <summary>
 	/// Tales of Discovery - Tales of distant lands and brave explorers.
 	/// </summary>
 	/// <name>Explorer Tales</name>
-	Explorer_Tales,
+	Explorer_Tales = 50,
 
 	/// <summary>
 	/// Explorers' Boredom - Who would have thought that great explorers are not so great at planting mushrooms?
 	/// </summary>
 	/// <name>Explorers Boredom</name>
-	Explorers_Boredom,
+	Explorers_Boredom = 51,
 
 	/// <summary>
 	/// Joy Of Discovery - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia.
 	/// </summary>
 	/// <name>Exploring Expedition - Resolve Status</name>
-	Exploring_Expedition_Resolve_Status,
+	Exploring_Expedition_Resolve_Status = 52,
 
 	/// <summary>
 	/// Extreme Noise - Working in a loud environment is really taxing.
 	/// </summary>
 	/// <name>Extreme Noise</name>
-	Extreme_Noise,
-
-	/// <summary>
-	/// Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
-	/// </summary>
-	/// <name>FallenViceroyCommemoration</name>
-	FallenViceroyCommemoration,
+	Extreme_Noise = 53,
 
 	/// <summary>
 	/// Favoring - Favoritism can be beneficial in the short term, but it's not a viable solution to the village's problems.
 	/// </summary>
 	/// <name>Favoring Effect</name>
-	Favoring_Effect,
+	Favoring_Effect = 55,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - hard</name>
-	Fear_Of_The_Wilds_T1_Hard,
+	Fear_Of_The_Wilds_T1_Hard = 56,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - impossible</name>
-	Fear_Of_The_Wilds_T1_Impossible,
+	Fear_Of_The_Wilds_T1_Impossible = 57,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - normal</name>
-	Fear_Of_The_Wilds_T1_Normal,
+	Fear_Of_The_Wilds_T1_Normal = 58,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T1 - very hard</name>
-	Fear_Of_The_Wilds_T1_Very_Hard,
+	Fear_Of_The_Wilds_T1_Very_Hard = 59,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - hard</name>
-	Fear_Of_The_Wilds_T2_Hard,
+	Fear_Of_The_Wilds_T2_Hard = 60,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - impossible</name>
-	Fear_Of_The_Wilds_T2_Impossible,
+	Fear_Of_The_Wilds_T2_Impossible = 61,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - normal</name>
-	Fear_Of_The_Wilds_T2_Normal,
+	Fear_Of_The_Wilds_T2_Normal = 62,
 
 	/// <summary>
 	/// Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 	/// </summary>
 	/// <name>Fear of the Wilds T2 - very hard</name>
-	Fear_Of_The_Wilds_T2_Very_Hard,
+	Fear_Of_The_Wilds_T2_Very_Hard = 63,
 
 	/// <summary>
 	/// Creeping Fishmen - Something is observing the villagers from the edge of the woods.
 	/// </summary>
 	/// <name>Fishmen Resolve</name>
-	Fishmen_Resolve,
+	Fishmen_Resolve = 64,
 
 	/// <summary>
 	/// Forced Improvisation - Working in a loud environment is really taxing.
 	/// </summary>
 	/// <name>Forced improvisation</name>
-	Forced_Improvisation,
+	Forced_Improvisation = 65,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers.
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Effect - hard</name>
-	Forsaken_Crypt_Resolve_Effect_Hard,
+	Forsaken_Crypt_Resolve_Effect_Hard = 66,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers.
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Effect - impossible</name>
-	Forsaken_Crypt_Resolve_Effect_Impossible,
+	Forsaken_Crypt_Resolve_Effect_Impossible = 67,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers.
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Effect - normal</name>
-	Forsaken_Crypt_Resolve_Effect_Normal,
+	Forsaken_Crypt_Resolve_Effect_Normal = 68,
 
 	/// <summary>
 	/// Robbed Dead - The ghost from the Forsaken Crypt is threatening the villagers.
 	/// </summary>
 	/// <name>Forsaken Crypt Resolve Effect - very hard</name>
-	Forsaken_Crypt_Resolve_Effect_Very_Hard,
+	Forsaken_Crypt_Resolve_Effect_Very_Hard = 69,
 
 	/// <summary>
 	/// Fox Housing - Foxes prefer to live in wooden, well camouflaged houses. Fox Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Fox Housing Effect</name>
-	Fox_Housing_Effect,
+	Fox_Housing_Effect = 70,
 
 	/// <summary>
 	/// Fox Pack Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Fox tribe remembers your help.
 	/// </summary>
 	/// <name>Foxes Faction Support</name>
-	Foxes_Faction_Support,
+	Foxes_Faction_Support = 71,
 
 	/// <summary>
 	/// Haunted - Villagers are haunted by terrifying visions.
 	/// </summary>
 	/// <name>Frightening Visions Resolve Effect</name>
-	Frightening_Visions_Resolve_Effect,
+	Frightening_Visions_Resolve_Effect = 72,
 
 	/// <summary>
 	/// Indoor Pool - This seemingly extravagant luxury is something that Frogs need to survive.
 	/// </summary>
 	/// <name>Frog Houses Bonus Resolve</name>
-	Frog_Houses_Bonus_Resolve,
+	Frog_Houses_Bonus_Resolve = 73,
 
 	/// <summary>
 	/// Frog Housing - Frogs are at home in water. Frog Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Frog Housing Effect</name>
-	Frog_Housing_Effect,
+	Frog_Housing_Effect = 74,
 
 	/// <summary>
 	/// Frog Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Frogs remember your help.
 	/// </summary>
 	/// <name>Frogs Faction Support</name>
-	Frogs_Faction_Support,
+	Frogs_Faction_Support = 75,
 
 	/// <summary>
 	/// Frustrated - Villagers with this effect have a -2 penalty to their Resolve.
 	/// </summary>
 	/// <name>Frustrated</name>
-	Frustrated,
+	Frustrated = 76,
 
 	/// <summary>
 	/// Furniture - Adds an additional +1 to Resolve for villagers with a home.
 	/// </summary>
 	/// <name>Furniture</name>
-	Furniture,
+	Furniture = 77,
 
 	/// <summary>
 	/// Generous Rations - A surplus of food makes the villagers happy.
 	/// </summary>
 	/// <name>Generous Rations</name>
-	Generous_Rations,
+	Generous_Rations = 78,
 
 	/// <summary>
 	/// Harmony - When your villagers' needs are met, Harmony is fostered.
 	/// </summary>
 	/// <name>Harmony Altar</name>
-	Harmony_Altar,
+	Harmony_Altar = 79,
 
 	/// <summary>
 	/// Chaos - Harmony has been disturbed.
 	/// </summary>
 	/// <name>Harmony Altar Chaos Resolve</name>
-	Harmony_Altar_Chaos_Resolve,
+	Harmony_Altar_Chaos_Resolve = 80,
 
 	/// <summary>
 	/// Harpy Clan Support - The Flock was neutral during the Great Civil War, but you've proven your worth to them now.
 	/// </summary>
 	/// <name>Harpy Faction Support</name>
-	Harpy_Faction_Support,
+	Harpy_Faction_Support = 81,
 
 	/// <summary>
 	/// Harpy Housing - Harpies prefer to live in well-lit, spacious homes. Harpy Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Harpy Housing Effect</name>
-	Harpy_Housing_Effect,
+	Harpy_Housing_Effect = 82,
 
 	/// <summary>
 	/// Health Infusion - High tea production is boosting Harpies' morale.
 	/// </summary>
 	/// <name>Harpy Resolve Tea</name>
-	Harpy_Resolve_Tea,
+	Harpy_Resolve_Tea = 83,
 
 	/// <summary>
 	/// Unique Ally - An exceptionally strong bond has developed between the Harpies and the Stormbird. They look very pleased to be in its presence.
 	/// </summary>
 	/// <name>Harpy Stormbird Resolve</name>
-	Harpy_Stormbird_Resolve,
+	Harpy_Stormbird_Resolve = 84,
 
 	/// <summary>
 	/// Homelessness - People need houses.
 	/// </summary>
 	/// <name>Homelessness Penalty</name>
-	Homelessness_Penalty,
+	Homelessness_Penalty = 85,
 
 	/// <summary>
 	/// Stove - A small reminder of the Holy Flame.
 	/// </summary>
 	/// <name>Houses Bonus Resolve</name>
-	Houses_Bonus_Resolve,
+	Houses_Bonus_Resolve = 86,
 
 	/// <summary>
 	/// Encampment (Level 1) - Gathered around the blazing fire, folks keep each other's spirits high.
 	/// </summary>
 	/// <name>[Hub] Hub Resolve T1</name>
-	Hub_Hub_Resolve_T1,
+	Hub_Hub_Resolve_T1 = 87,
 
 	/// <summary>
 	/// Neighborhood (Level 2) - Even in such a harsh environment, there is still room for beauty.
 	/// </summary>
 	/// <name>[Hub] Hub Resolve T2</name>
-	Hub_Hub_Resolve_T2,
+	Hub_Hub_Resolve_T2 = 88,
 
 	/// <summary>
 	/// District (Level 3) - The town is booming with activity, and industry thrives.
 	/// </summary>
 	/// <name>[Hub] Hub Resolve T3</name>
-	Hub_Hub_Resolve_T3,
+	Hub_Hub_Resolve_T3 = 89,
 
 	/// <summary>
 	/// Human Housing - Humans prefer to live in solid, safe homes. Human Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Human Housing Effect</name>
-	Human_Housing_Effect,
+	Human_Housing_Effect = 90,
 
 	/// <summary>
 	/// Sweet Aroma - A sweet aroma is spreading around the settlement. It seems to be making the Humans feel content.
 	/// </summary>
 	/// <name>Human Resolve Incense</name>
-	Human_Resolve_Incense,
+	Human_Resolve_Incense = 91,
 
 	/// <summary>
 	/// Human Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Humans remember your help.
 	/// </summary>
 	/// <name>Humans Faction Support</name>
-	Humans_Faction_Support,
+	Humans_Faction_Support = 92,
 
 	/// <summary>
 	/// Hunger - People are starving. This effect stacks every time a villager doesn't eat during a break.
 	/// </summary>
 	/// <name>Hunger Penalty</name>
-	Hunger_Penalty,
+	Hunger_Penalty = 93,
 
 	/// <summary>
 	/// Gleeman's Tales - Every evening, a Gleeman tells stories about past glories, and times before the Great Civil War.
 	/// </summary>
 	/// <name>Institution Global Resolve</name>
-	Institution_Global_Resolve,
+	Institution_Global_Resolve = 94,
 
 	/// <summary>
 	/// Jerky - This need is fulfilled at the Hearth. It requires "[food processed] jerky" jerky. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Jerky Effect</name>
-	Jerky_Effect,
+	Jerky_Effect = 95,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Jerky Equal Prohibition Penalty</name>
-	Jerky_Equal_Prohibition_Penalty,
+	Jerky_Equal_Prohibition_Penalty = 96,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Jerky Unfair Prohibition Penalty</name>
-	Jerky_Unfair_Prohibition_Penalty,
+	Jerky_Unfair_Prohibition_Penalty = 97,
 
 	/// <summary>
 	/// Leisure - It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Leasiure Effect</name>
-	Leasiure_Effect,
+	Leasiure_Effect = 98,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Leasiure Equal Prohibition Penalty</name>
-	Leasiure_Equal_Prohibition_Penalty,
+	Leasiure_Equal_Prohibition_Penalty = 99,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Leasiure Unfair Prohibition Penalty</name>
-	Leasiure_Unfair_Prohibition_Penalty,
+	Leasiure_Unfair_Prohibition_Penalty = 100,
 
 	/// <summary>
 	/// Lizard Housing - Lizards prefer to live in warm, dry homes. Lizard Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Lizard Housing Effect</name>
-	Lizard_Housing_Effect,
+	Lizard_Housing_Effect = 101,
 
 	/// <summary>
 	/// Armed to the Teeth - A settlement specialized in training gear production makes Lizards feel safe.
 	/// </summary>
 	/// <name>Lizard Resolve Training Gear</name>
-	Lizard_Resolve_Training_Gear,
+	Lizard_Resolve_Training_Gear = 102,
 
 	/// <summary>
 	/// Lizard Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Lizard elders remember your help.
 	/// </summary>
 	/// <name>Lizards Faction Support</name>
-	Lizards_Faction_Support,
+	Lizards_Faction_Support = 103,
 
 	/// <summary>
 	/// Long Live the Queen - Villagers admire the Queen's greatness.
 	/// </summary>
 	/// <name>Long Live the Queen</name>
-	Long_Live_The_Queen,
+	Long_Live_The_Queen = 104,
 
 	/// <summary>
 	/// Luxury - It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Luxury Effect</name>
-	Luxury_Effect,
+	Luxury_Effect = 105,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Luxury Equal Prohibition Penalty</name>
-	Luxury_Equal_Prohibition_Penalty,
+	Luxury_Equal_Prohibition_Penalty = 106,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Luxury Unfair Prohibition Penalty</name>
-	Luxury_Unfair_Prohibition_Penalty,
+	Luxury_Unfair_Prohibition_Penalty = 107,
 
 	/// <summary>
 	/// Forsaken Gods Temple - ModifierEffect_TempleResolve_Desc
 	/// </summary>
 	/// <name>[Map Mod] Resolve</name>
-	Map_Mod_Resolve,
+	Map_Mod_Resolve = 108,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods.
 	/// </summary>
 	/// <name>MoleResolvePenalty - hard</name>
-	MoleResolvePenalty_Hard,
+	MoleResolvePenalty_Hard = 109,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods.
 	/// </summary>
 	/// <name>MoleResolvePenalty - impossible</name>
-	MoleResolvePenalty_Impossible,
+	MoleResolvePenalty_Impossible = 110,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods.
 	/// </summary>
 	/// <name>MoleResolvePenalty - normal</name>
-	MoleResolvePenalty_Normal,
+	MoleResolvePenalty_Normal = 111,
 
 	/// <summary>
 	/// Giant Beast - Villagers are afraid of going into the woods.
 	/// </summary>
 	/// <name>MoleResolvePenalty - very hard</name>
-	MoleResolvePenalty_Very_Hard,
+	MoleResolvePenalty_Very_Hard = 112,
 
 	/// <summary>
 	/// Motivated - Villagers with this effect have a +1 boost to their Resolve.
 	/// </summary>
 	/// <name>Motivated</name>
-	Motivated,
+	Motivated = 113,
 
 	/// <summary>
 	/// Hostility of the Forest - The forest is becoming more dangerous with each passing year... the people are scared.
 	/// </summary>
 	/// <name>New Year Penalty</name>
-	New_Year_Penalty,
+	New_Year_Penalty = 114,
 
 	/// <summary>
 	/// No Hope - The fire has gone out, and darkness is spreading around the town.
 	/// </summary>
 	/// <name>No Fire Penalty</name>
-	No_Fire_Penalty,
+	No_Fire_Penalty = 115,
 
 	/// <summary>
 	/// Paste - This need is fulfilled at the Hearth. It requires "[food processed] paste" paste. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Paste Effect</name>
-	Paste_Effect,
+	Paste_Effect = 116,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Paste Equal Prohibition Penalty</name>
-	Paste_Equal_Prohibition_Penalty,
+	Paste_Equal_Prohibition_Penalty = 117,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Paste Unfair Prohibition Penalty</name>
-	Paste_Unfair_Prohibition_Penalty,
+	Paste_Unfair_Prohibition_Penalty = 118,
+
+	/// <summary>
+	/// -2 to Global Resolve.
+	/// </summary>
+	/// <name>[PerkCrafter] Resolve - child</name>
+	PerkCrafter_Resolve_Child = 176,
 
 	/// <summary>
 	/// Experimental Cornerstone Resolve - Resolve is increased by 1.
 	/// </summary>
 	/// <name>[PerkCrafter] Resolve +1</name>
-	PerkCrafter_Resolve_Plus1,
+	PerkCrafter_Resolve_Plus1 = 119,
 
 	/// <summary>
 	/// Experimental Cornerstone Resolve - Resolve is increased by 2.
 	/// </summary>
 	/// <name>[PerkCrafter] Resolve +2</name>
-	PerkCrafter_Resolve_Plus2,
+	PerkCrafter_Resolve_Plus2 = 120,
 
 	/// <summary>
 	/// Experimental Cornerstone Resolve - Resolve is increased by 3.
 	/// </summary>
 	/// <name>[PerkCrafter] Resolve +3</name>
-	PerkCrafter_Resolve_Plus3,
+	PerkCrafter_Resolve_Plus3 = 121,
 
 	/// <summary>
 	/// Pickled Goods - This need is fulfilled at the Hearth. It requires "[food processed] pickled goods" pickled goods. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Picked Goods Effect</name>
-	Picked_Goods_Effect,
+	Picked_Goods_Effect = 122,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Pickled Goods Equal Prohibition Penalty</name>
-	Pickled_Goods_Equal_Prohibition_Penalty,
+	Pickled_Goods_Equal_Prohibition_Penalty = 123,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Pickled Goods Unfair Prohibition Penalty</name>
-	Pickled_Goods_Unfair_Prohibition_Penalty,
+	Pickled_Goods_Unfair_Prohibition_Penalty = 124,
 
 	/// <summary>
 	/// Pie - This need is fulfilled at the Hearth. It requires "[food processed] pie" pie. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Pie Effect</name>
-	Pie_Effect,
+	Pie_Effect = 125,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Pie Equal Prohibition Penalty</name>
-	Pie_Equal_Prohibition_Penalty,
+	Pie_Equal_Prohibition_Penalty = 126,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Pie Unfair Prohibition Penalty</name>
-	Pie_Unfair_Prohibition_Penalty,
+	Pie_Unfair_Prohibition_Penalty = 127,
 
 	/// <summary>
 	/// Porridge - This need is fulfilled at the Hearth. It requires "[food processed] porridge" porridge. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Porridge Effect</name>
-	Porridge_Effect,
+	Porridge_Effect = 128,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Porridge Equal Prohibition Penalty</name>
-	Porridge_Equal_Prohibition_Penalty,
+	Porridge_Equal_Prohibition_Penalty = 129,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Porridge Unfair Prohibition Penalty</name>
-	Porridge_Unfair_Prohibition_Penalty,
+	Porridge_Unfair_Prohibition_Penalty = 130,
 
 	/// <summary>
 	/// Low Strain - Work is much easier with Rain Engines on
 	/// </summary>
 	/// <name>Rainpunk Comfortable</name>
-	Rainpunk_Comfortable,
+	Rainpunk_Comfortable = 131,
 
 	/// <summary>
 	/// Rebellious Spirit - The people are feeling oddly rebellious.
 	/// </summary>
 	/// <name>Rebelious Spirit</name>
-	Rebelious_Spirit,
+	Rebelious_Spirit = 132,
 
 	/// <summary>
 	/// Religion - It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Religion Effect</name>
-	Religion_Effect,
+	Religion_Effect = 133,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Religion Equal Prohibition Penalty</name>
-	Religion_Equal_Prohibition_Penalty,
+	Religion_Equal_Prohibition_Penalty = 134,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Religion Unfair Prohibition Penalty</name>
-	Religion_Unfair_Prohibition_Penalty,
+	Religion_Unfair_Prohibition_Penalty = 135,
 
 	/// <summary>
 	/// The Crown Chronicles - The people are enjoying living in a prosperous settlement.
 	/// </summary>
 	/// <name>Resolve Effect - Institution Resolve for Ruins</name>
-	Resolve_Effect_Institution_Resolve_For_Ruins,
+	Resolve_Effect_Institution_Resolve_For_Ruins = 136,
 
 	/// <summary>
 	/// The Guild's Welfare - The people are enjoying living in a prosperous settlement.
 	/// </summary>
 	/// <name>Resolve Effect - Institution Resolve for Sales</name>
-	Resolve_Effect_Institution_Resolve_For_Sales,
+	Resolve_Effect_Institution_Resolve_For_Sales = 137,
 
 	/// <summary>
 	/// Prosperous Archaeology - The people are enjoying living in a prosperous settlement.
 	/// </summary>
 	/// <name>Resolve Effect - Resolve for chests</name>
-	Resolve_Effect_Resolve_For_Chests,
+	Resolve_Effect_Resolve_For_Chests = 138,
 
 	/// <summary>
 	/// Prosperous Settlement - The people are enjoying living in a prosperous settlement.
 	/// </summary>
 	/// <name>Resolve Effect - Resolve for sales</name>
-	Resolve_Effect_Resolve_For_Sales,
+	Resolve_Effect_Resolve_For_Sales = 139,
 
 	/// <summary>
 	/// Friendly Relations - The people are enjoying living in a prosperous settlement.
 	/// </summary>
 	/// <name>Resolve Effect - Resolve for Standing</name>
-	Resolve_Effect_Resolve_For_Standing,
+	Resolve_Effect_Resolve_For_Standing = 140,
 
 	/// <summary>
 	/// Inspiring Work - The woodcutters' song lifts people's spirits.
 	/// </summary>
 	/// <name>Resolve for Glade - Resolve Status</name>
-	Resolve_For_Glade_Resolve_Status,
+	Resolve_For_Glade_Resolve_Status = 141,
 
 	/// <summary>
 	/// Sacred Pyre - Lizard firekeepers are very adept at ancient rites.
 	/// </summary>
 	/// <name>ResolveEffect_HearthEffect_Lizard</name>
-	ResolveEffect_HearthEffect_Lizard,
+	ResolveEffect_HearthEffect_Lizard = 142,
 
 	/// <summary>
 	/// Royal Guard Training - The Crown sends two Royal Guards to your village. Instead of simply brawling, villagers will now train under them. 
 	/// </summary>
 	/// <name>Royal Guard Training - Resolve Effect</name>
-	Royal_Guard_Training_Resolve_Effect,
+	Royal_Guard_Training_Resolve_Effect = 143,
 
 	/// <summary>
 	/// Converted Totem of Denial - A Totem of Denial cleansed by the Holy Flame. Grants a Global Resolve bonus.
 	/// </summary>
 	/// <name>SacrificeTotemPositive</name>
-	SacrificeTotemPositive,
+	SacrificeTotemPositive = 144,
 
 	/// <summary>
 	/// Shadowy Figure - People fear the unknown during the storm.
 	/// </summary>
 	/// <name>SE Creeping Shadows - Resolve Penalty Status</name>
-	SE_Creeping_Shadows_Resolve_Penalty_Status,
+	SE_Creeping_Shadows_Resolve_Penalty_Status = 145,
 
 	/// <summary>
 	/// Devastating Storms - The rampaging storm stifles the spirit of all living creatures.
 	/// </summary>
 	/// <name>SE Devastating Storms</name>
-	SE_Devastating_Storms,
+	SE_Devastating_Storms = 146,
 
 	/// <summary>
 	/// Hot Springs - The warmth around the hot geyser improves the mood of the Pump Operators.
 	/// </summary>
 	/// <name>SE Hot Springs (Resolve Status)</name>
-	SE_Hot_Springs_Resolve_Status,
+	SE_Hot_Springs_Resolve_Status = 147,
 
 	/// <summary>
 	/// Horrors from Beneath - A strange chant is frightening the villagers.
 	/// </summary>
 	/// <name>SE Mine in Storm (Resolve Status)</name>
-	SE_Mine_In_Storm_Resolve_Status,
+	SE_Mine_In_Storm_Resolve_Status = 148,
 
 	/// <summary>
 	/// Saturated Air - A pleasant, earthy scent is in the air.
 	/// </summary>
 	/// <name>SE Resolve for Water - Resolve Effect</name>
-	SE_Resolve_For_Water_Resolve_Effect,
+	SE_Resolve_For_Water_Resolve_Effect = 149,
 
 	/// <summary>
 	/// Cloudburst - The heavy rain is unbearable.
 	/// </summary>
 	/// <name>SE Storm Clothes - Resolve Status</name>
-	SE_Storm_Clothes_Resolve_Status,
+	SE_Storm_Clothes_Resolve_Status = 150,
 
 	/// <summary>
 	/// Skewers - This need is fulfilled at the Hearth. It requires "[food processed] skewers" skewers. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Skewer Effect</name>
-	Skewer_Effect,
+	Skewer_Effect = 151,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Skewers Equal Prohibition Penalty</name>
-	Skewers_Equal_Prohibition_Penalty,
+	Skewers_Equal_Prohibition_Penalty = 152,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Skewers Unfair Prohibition Penalty</name>
-	Skewers_Unfair_Prohibition_Penalty,
+	Skewers_Unfair_Prohibition_Penalty = 153,
 
 	/// <summary>
 	/// Spiced Ale - Additional +5 to Resolve when under the effect of "[needs] ale" leisure.
 	/// </summary>
 	/// <name>Spiced Ale</name>
-	Spiced_Ale,
+	Spiced_Ale = 154,
 
 	/// <summary>
 	/// Spices from the Citadel - Spices from the Smoldering City - a favorite of Humans and Lizardfolk.
 	/// </summary>
 	/// <name>Spices from the Capital</name>
-	Spices_From_The_Capital,
+	Spices_From_The_Capital = 155,
 
 	/// <summary>
 	/// Stag's Blessing - The forest god has blessed your villagers. This day will be remembered for generations.
 	/// </summary>
 	/// <name>Stag Blessing</name>
-	Stag_Blessing,
+	Stag_Blessing = 156,
 
 	/// <summary>
 	/// Drenched - Villagers with this effect have a -5 penalty to their Resolve.
 	/// </summary>
 	/// <name>Storm Homelessness Penalty</name>
-	Storm_Homelessness_Penalty,
+	Storm_Homelessness_Penalty = 157,
 
 	/// <summary>
 	/// Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level.
 	/// </summary>
 	/// <name>Storm Penalty</name>
-	Storm_Penalty,
+	Storm_Penalty = 158,
 
 	/// <summary>
 	/// Stormbird's Cry - Villagers report seeing a giant beast flying above the settlement during the storm.
 	/// </summary>
 	/// <name>Stormbird Egg - Resolve Effect</name>
-	Stormbird_Egg_Resolve_Effect,
+	Stormbird_Egg_Resolve_Effect = 159,
 
 	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together.
 	/// </summary>
 	/// <name>Survivor Bonding Effect</name>
-	Survivor_Bonding_Effect,
+	Survivor_Bonding_Effect = 160,
 
 	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together.
 	/// </summary>
 	/// <name>Survivor Bonding Effect - Altar</name>
-	Survivor_Bonding_Effect_Altar,
+	Survivor_Bonding_Effect_Altar = 161,
 
 	/// <summary>
 	/// Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level.
 	/// </summary>
 	/// <name>T Storm Penalty</name>
-	T_Storm_Penalty,
+	T_Storm_Penalty = 162,
 
 	/// <summary>
 	/// Stonetooth Swarm - Agitated termites can be a real nuisance.
 	/// </summary>
 	/// <name>Termites Resolve - normal</name>
-	Termites_Resolve_Normal,
+	Termites_Resolve_Normal = 163,
 
 	/// <summary>
 	/// Plague of Snakes - Villagers are horrified by the sight of venomous snakes on the roads.
 	/// </summary>
 	/// <name>TEST Plague of Snakes Resolve</name>
-	TEST_Plague_Of_Snakes_Resolve,
+	TEST_Plague_Of_Snakes_Resolve = 164,
 
 	/// <summary>
 	/// Toxic Fumes - A strange white mist is produced when using Rainpunk technology...
 	/// </summary>
 	/// <name>Toxic Fumes</name>
-	Toxic_Fumes,
+	Toxic_Fumes = 165,
 
 	/// <summary>
 	/// Treatment - It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Treatment Effect</name>
-	Treatment_Effect,
+	Treatment_Effect = 166,
 
 	/// <summary>
 	/// Rationing - No one likes being denied the fruits of their own labor.
 	/// </summary>
 	/// <name>Treatment Equal Prohibition Penalty</name>
-	Treatment_Equal_Prohibition_Penalty,
+	Treatment_Equal_Prohibition_Penalty = 167,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Treatment Unfair Prohibition Penalty</name>
-	Treatment_Unfair_Prohibition_Penalty,
+	Treatment_Unfair_Prohibition_Penalty = 168,
 
 	/// <summary>
 	/// Tale - Not as good as the Gleeman's Tale, but it did its job.
 	/// </summary>
 	/// <name>[TW] Global Resolve</name>
-	TW_Global_Resolve,
+	TW_Global_Resolve = 169,
 
 	/// <summary>
 	/// Negligence - Favoritism can be beneficial in the short term, but it's not a viable solution to the village's problems.
 	/// </summary>
 	/// <name>Unfair Treatment Penalty</name>
-	Unfair_Treatment_Penalty,
+	Unfair_Treatment_Penalty = 170,
+
+	/// <summary>
+	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault.
+	/// </summary>
+	/// <name>VaultResolvePenalty - hard</name>
+	VaultResolvePenalty_Hard = 177,
+
+	/// <summary>
+	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault.
+	/// </summary>
+	/// <name>VaultResolvePenalty - impossible</name>
+	VaultResolvePenalty_Impossible = 178,
 
 	/// <summary>
 	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault.
 	/// </summary>
 	/// <name>VaultResolvePenalty - normal</name>
-	VaultResolvePenalty_Normal,
+	VaultResolvePenalty_Normal = 171,
+
+	/// <summary>
+	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault.
+	/// </summary>
+	/// <name>VaultResolvePenalty - very hard</name>
+	VaultResolvePenalty_Very_Hard = 179,
 
 	/// <summary>
 	/// Vitality - Well-nourished villagers enjoy their good health.
 	/// </summary>
 	/// <name>Vitality</name>
-	Vitality,
+	Vitality = 172,
+
+	/// <summary>
+	/// Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+	/// </summary>
+	/// <name>[WE] Feast Hall - Funeral - Resolve Effect - 0 - normal</name>
+	WE_Feast_Hall_Funeral_Resolve_Effect_0_Normal = 180,
+
+	/// <summary>
+	/// Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+	/// </summary>
+	/// <name>[WE] Feast Hall - Funeral - Resolve Effect - 1 - hard</name>
+	WE_Feast_Hall_Funeral_Resolve_Effect_1_Hard = 181,
+
+	/// <summary>
+	/// Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+	/// </summary>
+	/// <name>[WE] Feast Hall - Funeral - Resolve Effect - 2 - very hard</name>
+	WE_Feast_Hall_Funeral_Resolve_Effect_2_Very_Hard = 182,
+
+	/// <summary>
+	/// Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+	/// </summary>
+	/// <name>[WE] Feast Hall - Funeral - Resolve Effect - 3 - impossible</name>
+	WE_Feast_Hall_Funeral_Resolve_Effect_3_Impossible = 183,
+
+	/// <summary>
+	/// The Elder's Cat - From time to time, a weary villager stops to pet the cat, finding comfort in the reminder of their true home on the slopes of Red Mountain.
+	/// </summary>
+	/// <name>[WE] First Elder Cat Resolve Effect</name>
+	WE_First_Elder_Cat_Resolve_Effect = 184,
 
 	/// <summary>
 	/// Wealth - The people are enjoying living in a prosperous settlement.
 	/// </summary>
 	/// <name>Wealth</name>
-	Wealth,
+	Wealth = 173,
 
 	/// <summary>
 	/// Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement.
 	/// </summary>
 	/// <name>Worse Storms for Hostility Consequence Resolve Penalty</name>
-	Worse_Storms_For_Hostility_Consequence_Resolve_Penalty,
+	Worse_Storms_For_Hostility_Consequence_Resolve_Penalty = 174,
 
 	/// <summary>
 	/// Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement.
 	/// </summary>
 	/// <name>Worse Storms for Hostility Resolve Penalty</name>
-	Worse_Storms_For_Hostility_Resolve_Penalty,
+	Worse_Storms_For_Hostility_Resolve_Penalty = 175,
 
 
-    /// <summary>
-    /// The total number of vanilla ResolveEffectTypes in the game.
-    /// </summary>
-	MAX = 175
+
+	/// <summary>
+	/// The total number of vanilla ResolveEffectTypes in the game.
+	/// </summary>
+	MAX = 183
 }
 
 /// <summary>
@@ -1085,15 +1134,14 @@ public enum ResolveEffectTypes
 /// </summary>
 public static class ResolveEffectTypesExtensions
 {
-	private static ResolveEffectTypes[] s_All = null;
 	/// <summary>
 	/// Returns an array of all vanilla and modded ResolveEffectTypes.
 	/// </summary>
 	public static ResolveEffectTypes[] All()
 	{
 		ResolveEffectTypes[] all = new ResolveEffectTypes[TypeToInternalName.Count];
-        TypeToInternalName.Keys.CopyTo(all, 0);
-        return all;
+		TypeToInternalName.Keys.CopyTo(all, 0);
+		return all;
 	}
 	
 	/// <summary>
@@ -1149,12 +1197,12 @@ public static class ResolveEffectTypesExtensions
 		return null;
 	}
 
-    /// <summary>
-    /// Returns a ResolveEffectModel associated with the given ResolveEffectTypes.
-    /// ResolveEffectModel contain all the data that will be used in the game.
-    /// Every ResolveEffectModel should have a unique name as to distinguish it from others.
-    /// If no ResolveEffectModel is found, it will return null and log an error.
-    /// </summary>
+	/// <summary>
+	/// Returns a ResolveEffectModel associated with the given ResolveEffectTypes.
+	/// ResolveEffectModel contain all the data that will be used in the game.
+	/// Every ResolveEffectModel should have a unique name as to distinguish it from others.
+	/// If no ResolveEffectModel is found, it will return null and log an error.
+	/// </summary>
 	public static Eremite.Model.ResolveEffectModel ToResolveEffectModel(this ResolveEffectTypes types)
 	{
 		return types.ToName().ToResolveEffectModel();
@@ -1297,7 +1345,6 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Explorers_Boredom, "Explorers Boredom" },                                                                           // Explorers' Boredom - Who would have thought that great explorers are not so great at planting mushrooms?
 		{ ResolveEffectTypes.Exploring_Expedition_Resolve_Status, "Exploring Expedition - Resolve Status" },                                     // Joy Of Discovery - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia.
 		{ ResolveEffectTypes.Extreme_Noise, "Extreme Noise" },                                                                                   // Extreme Noise - Working in a loud environment is really taxing.
-		{ ResolveEffectTypes.FallenViceroyCommemoration, "FallenViceroyCommemoration" },                                                         // Fallen Viceroy Commemoration - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ ResolveEffectTypes.Favoring_Effect, "Favoring Effect" },                                                                               // Favoring - Favoritism can be beneficial in the short term, but it's not a viable solution to the village's problems.
 		{ ResolveEffectTypes.Fear_Of_The_Wilds_T1_Hard, "Fear of the Wilds T1 - hard" },                                                         // Fear of the Wilds - People are afraid of whatever destroyed the caravan.
 		{ ResolveEffectTypes.Fear_Of_The_Wilds_T1_Impossible, "Fear of the Wilds T1 - impossible" },                                             // Fear of the Wilds - People are afraid of whatever destroyed the caravan.
@@ -1362,6 +1409,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Paste_Effect, "Paste Effect" },                                                                                     // Paste - This need is fulfilled at the Hearth. It requires "[food processed] paste" paste. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Paste_Equal_Prohibition_Penalty, "Paste Equal Prohibition Penalty" },                                               // Rationing - No one likes being denied the fruits of their own labor.
 		{ ResolveEffectTypes.Paste_Unfair_Prohibition_Penalty, "Paste Unfair Prohibition Penalty" },                                             // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
+		{ ResolveEffectTypes.PerkCrafter_Resolve_Child, "[PerkCrafter] Resolve - child" },                                                       // -2 to Global Resolve.
 		{ ResolveEffectTypes.PerkCrafter_Resolve_Plus1, "[PerkCrafter] Resolve +1" },                                                            // Experimental Cornerstone Resolve - Resolve is increased by 1.
 		{ ResolveEffectTypes.PerkCrafter_Resolve_Plus2, "[PerkCrafter] Resolve +2" },                                                            // Experimental Cornerstone Resolve - Resolve is increased by 2.
 		{ ResolveEffectTypes.PerkCrafter_Resolve_Plus3, "[PerkCrafter] Resolve +3" },                                                            // Experimental Cornerstone Resolve - Resolve is increased by 3.
@@ -1414,8 +1462,16 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Treatment_Unfair_Prohibition_Penalty, "Treatment Unfair Prohibition Penalty" },                                     // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.TW_Global_Resolve, "[TW] Global Resolve" },                                                                         // Tale - Not as good as the Gleeman's Tale, but it did its job.
 		{ ResolveEffectTypes.Unfair_Treatment_Penalty, "Unfair Treatment Penalty" },                                                             // Negligence - Favoritism can be beneficial in the short term, but it's not a viable solution to the village's problems.
+		{ ResolveEffectTypes.VaultResolvePenalty_Hard, "VaultResolvePenalty - hard" },                                                           // Ominous Whispers - Strange voices can be heard coming from the sealed vault.
+		{ ResolveEffectTypes.VaultResolvePenalty_Impossible, "VaultResolvePenalty - impossible" },                                               // Ominous Whispers - Strange voices can be heard coming from the sealed vault.
 		{ ResolveEffectTypes.VaultResolvePenalty_Normal, "VaultResolvePenalty - normal" },                                                       // Ominous Whispers - Strange voices can be heard coming from the sealed vault.
+		{ ResolveEffectTypes.VaultResolvePenalty_Very_Hard, "VaultResolvePenalty - very hard" },                                                 // Ominous Whispers - Strange voices can be heard coming from the sealed vault.
 		{ ResolveEffectTypes.Vitality, "Vitality" },                                                                                             // Vitality - Well-nourished villagers enjoy their good health.
+		{ ResolveEffectTypes.WE_Feast_Hall_Funeral_Resolve_Effect_0_Normal, "[WE] Feast Hall - Funeral - Resolve Effect - 0 - normal" },         // Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+		{ ResolveEffectTypes.WE_Feast_Hall_Funeral_Resolve_Effect_1_Hard, "[WE] Feast Hall - Funeral - Resolve Effect - 1 - hard" },             // Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+		{ ResolveEffectTypes.WE_Feast_Hall_Funeral_Resolve_Effect_2_Very_Hard, "[WE] Feast Hall - Funeral - Resolve Effect - 2 - very hard" },   // Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+		{ ResolveEffectTypes.WE_Feast_Hall_Funeral_Resolve_Effect_3_Impossible, "[WE] Feast Hall - Funeral - Resolve Effect - 3 - impossible" }, // Memorial Rite - An aura of sorrow has befallen the town, with somber chants echoing from the Feast Hall.
+		{ ResolveEffectTypes.WE_First_Elder_Cat_Resolve_Effect, "[WE] First Elder Cat Resolve Effect" },                                         // The Elder's Cat - From time to time, a weary villager stops to pet the cat, finding comfort in the reminder of their true home on the slopes of Red Mountain.
 		{ ResolveEffectTypes.Wealth, "Wealth" },                                                                                                 // Wealth - The people are enjoying living in a prosperous settlement.
 		{ ResolveEffectTypes.Worse_Storms_For_Hostility_Consequence_Resolve_Penalty, "Worse Storms for Hostility Consequence Resolve Penalty" }, // Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement.
 		{ ResolveEffectTypes.Worse_Storms_For_Hostility_Resolve_Penalty, "Worse Storms for Hostility Resolve Penalty" },                         // Growing Darkness - With its giant wings, the Stormbird can bring even more stormy clouds over the settlement.

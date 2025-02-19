@@ -9,7 +9,7 @@ namespace ATS_API.Helpers;
 // ReSharper disable All
 
 /// <summary>
-/// Generated using Version 1.6.2R
+/// Generated using Version 1.7.3R
 /// </summary>
 public enum CollectorTypes
 {
@@ -49,7 +49,7 @@ public static class CollectorTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every CollectorTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return CollectorTypes..None in the enum and log an error.
+	/// If no name is found, it will return CollectorTypes.None in the enum and log an error.
 	/// </summary>
 	public static string ToName(this CollectorTypes type)
 	{
