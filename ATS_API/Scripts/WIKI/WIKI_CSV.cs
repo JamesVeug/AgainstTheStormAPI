@@ -57,9 +57,17 @@ public partial class WIKI
             csv.AddValue("FailTime", order.timeToFail > 0 ? order.timeToFail.ToString("F2") : "", 3);
             csv.AddValue("Reputation", ((ReputationEffectModel)order.reputationReward).amount.ToString(), 4);
 
-            for (int i = 0; i < order.rewards.Length; i++)
+            for (int i = 0; i < order.rewards1.Length; i++)
             {
-                csv.AddValue("Reward_" + (i+1), order.rewards[i].name, 5 + i);
+                csv.AddValue("Reward_1_" + (i+1), order.rewards1[i].effect.Name, 10 + i);
+            }
+            for (int i = 0; i < order.rewards2.Length; i++)
+            {
+                csv.AddValue("Reward_2_" + (i+1), order.rewards2[i].effect.Name, 20 + i);
+            }
+            for (int i = 0; i < order.rewards3.Length; i++)
+            {
+                csv.AddValue("Reward_3_" + (i+1), order.rewards3[i].effect.Name, 30 + i);
             }
             csv.NextRow();
         }
