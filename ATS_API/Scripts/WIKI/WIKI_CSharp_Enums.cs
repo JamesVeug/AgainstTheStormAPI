@@ -51,7 +51,7 @@ public partial class WIKI
         {
             APILogger.LogWarning("No values found for " + EnumName);
         }
-
+        
         APILogger.LogInfo("Sorting values...");
         Dictionary<string, List<(string name, string enu, Dictionary<string, string> locale)>> sorted = new();
         foreach (KeyValuePair<string, List<T>> pair in groups)
@@ -220,9 +220,10 @@ public partial class WIKI
         }
 
         APILogger.LogInfo("Creating enum and dictionary lines...");
+        Dictionary<string, int> existingEnumValues = CalculateExistingEnumValues(EnumName);
         string enumLines = "";
         string dictionaryLines = "";
-        int enumValue = 1; // First custom enum starts at 1
+        int newEnumValue = existingEnumValues.Any() ? existingEnumValues.Count + 1 : 1; // First custom enum starts at 1 or however we already have
         foreach (string group in sortedGroups)
         {
             List<(string name, string enu, Dictionary<string, string> locale)> groupList = sorted[group];
@@ -234,7 +235,15 @@ public partial class WIKI
                 dictionaryLines += $"\n\t\t// {group}\n";
             }
 
-            enumLines += string.Join("\n", groupList.Select(a=>GetEnumLine(a,group, enumValue++))) + "\n";
+            enumLines += string.Join("\n", groupList.Select(a=>
+            {
+                if (!existingEnumValues.TryGetValue(a.enu, out int currentEnumValue))
+                {
+                    APILogger.LogInfo("New enum: " + EnumName + "." + a.enu);
+                    currentEnumValue = newEnumValue++;
+                }
+                return GetEnumLine(a, group, currentEnumValue);
+            })) + "\n";
             dictionaryLines += string.Join("\n", groupList.Select(ToDictionaryRow)) + "\n";
         }
 
@@ -254,6 +263,33 @@ public partial class WIKI
 
         APILogger.LogInfo("Writing to file...");
         File.WriteAllText(Path.Combine(exportCSScriptsPath, EnumName + ".cs"), cs);
+    }
+
+    private static Dictionary<string,int> CalculateExistingEnumValues(string enumName)
+    {
+        Type type = Type.GetType("ATS_API.Helpers." + enumName);
+        Dictionary<string, int> existingEnumValues = new();
+        if (type == null)
+        {
+            APILogger.LogWarning("Could not find enum type: " + enumName);
+            return existingEnumValues;
+        }
+
+        foreach (string name in Enum.GetNames(type))
+        {
+            int intValue = (int)Enum.Parse(type, name);
+            if (intValue > 0 && name != "MAX")
+            {
+                existingEnumValues[name] = intValue;
+            }
+        }
+
+        APILogger.LogInfo("Found enum " + enumName);
+        foreach (KeyValuePair<string,int> pair in existingEnumValues)
+        {
+            APILogger.LogInfo(" " + pair.Key + " = " + pair.Value);
+        }
+        return existingEnumValues;
     }
 
     private static string CleanComment(string text)
