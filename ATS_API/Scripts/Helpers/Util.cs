@@ -355,4 +355,36 @@ public static class Util
         
         return hierarchyPath;
     }
+    
+    public static void CompareUnityVersions(string major, string minor, string patch)
+    {
+        string expectedVersion = string.Format("{0}.{1}.{2}", major, minor, patch);
+        string currentVersion = Application.unityVersion;
+        if (currentVersion == expectedVersion)
+        {
+            APILogger.LogInfo($"Unity Version is {currentVersion}");
+            return;
+        }
+        
+        string[] split = currentVersion.Split('.');
+        string currentMajor = split[0];
+        string currentMinor = split[1];
+        string currentPatch = split[2];
+        if (currentMajor != major)
+        {
+            APILogger.LogError($"The major Unity version has changed from {expectedVersion} to {currentVersion}! This will likely have code breaking changes and also require rebuilding asset bundles with the new unity version.");
+        }
+        else if (currentMinor != minor)
+        {
+            APILogger.LogError($"The minor Unity version has changed from {expectedVersion} to {currentVersion}! This will likely have code breaking changes and also require rebuilding asset bundles with the new unity version.");
+        }
+        else if (currentPatch != patch)
+        {
+            APILogger.LogWarning($"The patch Unity version has changed from {expectedVersion} to {currentVersion}! This may have code breaking changes!");
+        }
+        else
+        {
+            APILogger.LogError($"The Unity Version has changed from {expectedVersion} to {currentVersion}!");
+        }
+    }
 }
