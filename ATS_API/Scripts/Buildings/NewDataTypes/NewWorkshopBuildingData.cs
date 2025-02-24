@@ -47,14 +47,7 @@ public class NewWorkshopBuildingData : GenericBuildingData<WorkshopModel>
                 for (int i = 0; i < metaData.WorkPlaces.Count; i++)
                 {
                     var allowedRaces = metaData.WorkPlaces[i];
-
-                    WorkplaceModel workplace = new WorkplaceModel();
-                    workplace.allowedRaces = new RaceModel[allowedRaces.Length];
-                    for (int j = 0; j < allowedRaces.Length; j++)
-                    {
-                        workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
-                    }
-
+                    WorkplaceModel workplace = allowedRaces.ToWorkplaceModel();
                     BuildingModel.workplaces[i] = workplace;
                 }
             }

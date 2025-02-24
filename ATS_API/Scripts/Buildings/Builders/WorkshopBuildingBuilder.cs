@@ -14,7 +14,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorksho
         public List<WorkshopRecipeBuilder> Builders = null;
         public List<WorkshopRecipeModel> Recipes = null;
         public List<string> RecipeNames = null;
-        public List<RaceTypes[]> WorkPlaces = null;
+        public List<RaceWorkPlaceData> WorkPlaces = null;
     }
 
     private MetaData metaData;
@@ -87,29 +87,34 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorksho
         metaData.Recipes.Add(recipe);
     }
     
-    public void AddWorkPlaceWithAllRaces()
+    public WorkshopBuildingBuilder AddWorkPlaceWithAllRaces()
     {
-        RaceTypes[] races = new RaceTypes[RaceTypesExtensions.Count() - 1];
-        int j = 0;
-        for (int i = (int)RaceTypes.None + 1; i < (int)RaceTypesExtensions.Count(); i++)
+        metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
+        metaData.WorkPlaces.Add(new RaceWorkPlaceData()
         {
-            races[j++] = (RaceTypes)i;
-        }
+            addAllRaces = true
+        });
+        return this;
+    }
 
-        metaData.WorkPlaces ??= new List<RaceTypes[]>();
-        metaData.WorkPlaces.Add(races);
-    }
-    
-    public void AddWorkPlace(RaceTypes race)
+    public WorkshopBuildingBuilder AddWorkPlace(RaceTypes race)
     {
-        metaData.WorkPlaces ??= new List<RaceTypes[]>();
-        metaData.WorkPlaces.Add([race]);
+        metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
+        metaData.WorkPlaces.Add(new RaceWorkPlaceData()
+        {
+            races = new List<RaceTypes>(){race}
+        });
+        return this;
     }
-    
-    public void AddWorkPlace(params RaceTypes[] races)
+
+    public WorkshopBuildingBuilder AddWorkPlace(params RaceTypes[] races)
     {
-        metaData.WorkPlaces ??= new List<RaceTypes[]>();
-        metaData.WorkPlaces.Add(races);
+        metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
+        metaData.WorkPlaces.Add(new RaceWorkPlaceData()
+        {
+            races = new List<RaceTypes>(races)
+        });
+        return this;
     }
     
     public void SetProfession(ProfessionTypes profession)

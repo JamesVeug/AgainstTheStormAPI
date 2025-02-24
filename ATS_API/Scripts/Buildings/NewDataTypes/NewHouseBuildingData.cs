@@ -22,7 +22,15 @@ public class NewHouseBuildingData : GenericBuildingData<HouseModel>
     {
         APILogger.LogDebug($"PostSync for building {BuildingModel.name}");
         HouseBuildingBuilder.MetaData metaData = (HouseBuildingBuilder.MetaData) MetaData;
-        BuildingModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
+        if (metaData.HouseAllRaces)
+        {
+            BuildingModel.housingRaces = RaceTypesExtensions.All().ToRaceModelArrayNoNulls();
+        }
+        else
+        {
+            BuildingModel.housingRaces = metaData.HousingRaces.ToRaceModelArray();
+        }
+
         BuildingModel.servedNeeds = metaData.ServedNeeds.ToNeedModelArray();
     }
     

@@ -45,15 +45,8 @@ public class NewInstitutionBuildingData : GenericBuildingData<InstitutionModel>
             BuildingModel.workplaces = new WorkplaceModel[metaData.WorkPlaces.Count];
             for (int i = 0; i < metaData.WorkPlaces.Count; i++)
             {
-                var allowedRaces = metaData.WorkPlaces[i];
-
-                WorkplaceModel workplace = new WorkplaceModel();
-                workplace.allowedRaces = new RaceModel[allowedRaces.Length];
-                for (int j = 0; j < allowedRaces.Length; j++)
-                {
-                    workplace.allowedRaces[j] = allowedRaces[j].ToRaceModel();
-                }
-
+                RaceWorkPlaceData workplaceData = metaData.WorkPlaces[i];
+                WorkplaceModel workplace = workplaceData.ToWorkplaceModel();
                 BuildingModel.workplaces[i] = workplace;
             }
         }

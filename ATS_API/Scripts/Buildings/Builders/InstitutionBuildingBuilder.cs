@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using ATS_API.Recipes.Builders;
@@ -7,17 +8,17 @@ using Eremite.Buildings;
 
 namespace ATS_API.Buildings;
 
-public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel, NewInstitutionBuildingData>
+public partial class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel, NewInstitutionBuildingData>
 {
-    public class MetaData
+    public partial class MetaData
     {
         public class ActiveEffect
         {
             public string Name;
             public int MinWorkers;
         }
-        
-        public List<RaceTypes[]> WorkPlaces = null;
+
+        public List<RaceWorkPlaceData> WorkPlaces = null;
         public List<InstitutionRecipeBuilder> Builders = null;
         public List<InstitutionRecipeModel> Recipes;
         public List<string> RecipeNames;
@@ -106,29 +107,31 @@ public class InstitutionBuildingBuilder : BuildingBuilder<InstitutionModel, NewI
 
     public InstitutionBuildingBuilder AddWorkPlaceWithAllRaces()
     {
-        RaceTypes[] races = new RaceTypes[(int)RaceTypesExtensions.Count() - 1];
-        int j = 0;
-        for (int i = (int)RaceTypes.None + 1; i < (int)RaceTypesExtensions.Count(); i++)
+        metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
+        metaData.WorkPlaces.Add(new RaceWorkPlaceData()
         {
-            races[j++] = (RaceTypes)i;
-        }
-
-        metaData.WorkPlaces ??= new List<RaceTypes[]>();
-        metaData.WorkPlaces.Add(races);
+            addAllRaces = true
+        });
         return this;
     }
 
     public InstitutionBuildingBuilder AddWorkPlace(RaceTypes race)
     {
-        metaData.WorkPlaces ??= new List<RaceTypes[]>();
-        metaData.WorkPlaces.Add([race]);
+        metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
+        metaData.WorkPlaces.Add(new RaceWorkPlaceData()
+        {
+            races = new List<RaceTypes>(){race}
+        });
         return this;
     }
 
     public InstitutionBuildingBuilder AddWorkPlace(params RaceTypes[] races)
     {
-        metaData.WorkPlaces ??= new List<RaceTypes[]>();
-        metaData.WorkPlaces.Add(races);
+        metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
+        metaData.WorkPlaces.Add(new RaceWorkPlaceData()
+        {
+            races = new List<RaceTypes>(races)
+        });
         return this;
     }
 

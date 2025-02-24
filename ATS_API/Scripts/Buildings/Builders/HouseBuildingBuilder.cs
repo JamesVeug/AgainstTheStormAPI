@@ -13,6 +13,7 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel, NewHouseBuilding
     public class MetaData
     {
         public List<RaceTypes> HousingRaces = new List<RaceTypes>();
+        public bool HouseAllRaces = false;
         public List<NeedTypes> ServedNeeds = new List<NeedTypes>();
     }
     
@@ -72,8 +73,7 @@ public class HouseBuildingBuilder : BuildingBuilder<HouseModel, NewHouseBuilding
     
     public HouseBuildingBuilder SetAllHousingRaces()
     {
-        metaData.HousingRaces.Clear();
-        metaData.HousingRaces.AddRange(RaceTypesExtensions.All());
+        metaData.HouseAllRaces = true;
         return this;
     }
     
