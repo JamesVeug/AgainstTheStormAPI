@@ -28,7 +28,6 @@ public class NewRaceData : ASyncable<RaceModel>
         APILogger.LogDebug($"Starting PostSync for race {RaceModel.name}");
         
         // characteristics
-        APILogger.LogDebug($"Adding characteristics");
         RaceModel.characteristics = new RaceCharacteristicModel[characteristics.Count];
         for (int i = 0; i < characteristics.Count; i++)
         { 
@@ -93,7 +92,6 @@ public class NewRaceData : ASyncable<RaceModel>
         if(RaceModel.resilienceLabel == null)
             RaceModel.resilienceLabel = template.resilienceLabel;
 
-        APILogger.LogDebug($"Adding workplaces");
         if (RaceWorkPlaceAvailability.WorkPlaces.Count > 0)
         {
             foreach (BuildingModel buildingModel in SO.Settings.Buildings)

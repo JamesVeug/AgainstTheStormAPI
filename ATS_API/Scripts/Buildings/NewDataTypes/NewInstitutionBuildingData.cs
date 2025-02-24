@@ -62,6 +62,11 @@ public class NewInstitutionBuildingData : GenericBuildingData<InstitutionModel>
             BuildingModel.workplaces = new WorkplaceModel[0];
         }
         
+        if (Profession != ProfessionTypes.Unknown)
+        {
+            BuildingModel.profession = Profession.ToProfessionModel();
+        }
+        
         APILogger.LogDebug("Setting up activeEffects");
         if (metaData.ActiveEffects != null)
         {
