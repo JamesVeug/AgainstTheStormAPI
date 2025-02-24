@@ -90,6 +90,7 @@
 | OverrideMapGenerationEffectModel | True |
 | PauseBlockEffectModel | True |
 | PaymentEffectModel | False |
+| PerkCrafterChargeEffectModel | False |
 | PlantingRateEffectModel | True |
 | ProductionRateEffectModel | True |
 | ProfessionCapacityEffectModel | True |

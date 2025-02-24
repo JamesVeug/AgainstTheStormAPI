@@ -32,6 +32,7 @@
 | NeedSatisfiedByListHook |
 | NewcomersAcceptedHook |
 | OngoingHearthCorruptionHook |
+| OrderCompletedHook |
 | OreChargeUsedHook |
 | OreDepletedHook |
 | ProfessionTagAmountHook |
@@ -43,6 +44,7 @@
 | ReputationPointGainedHook |
 | SeasonChangeHook |
 | SeasonsAmountHook |
+| SeasonStartedWithExpectedRawCorruptionHook |
 | TraderArrivalHook |
 | TradeRouteCollectedHook |
 | TradeRouteStartedHook |
