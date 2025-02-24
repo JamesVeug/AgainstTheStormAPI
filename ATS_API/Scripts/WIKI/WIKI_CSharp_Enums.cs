@@ -284,11 +284,11 @@ public partial class WIKI
             }
         }
 
-        APILogger.LogInfo("Found enum " + enumName);
-        foreach (KeyValuePair<string,int> pair in existingEnumValues)
-        {
-            APILogger.LogInfo(" " + pair.Key + " = " + pair.Value);
-        }
+        // APILogger.LogInfo("Found enum " + enumName);
+        // foreach (KeyValuePair<string,int> pair in existingEnumValues)
+        // {
+        //     APILogger.LogInfo(" " + pair.Key + " = " + pair.Value);
+        // }
         return existingEnumValues;
     }
 
