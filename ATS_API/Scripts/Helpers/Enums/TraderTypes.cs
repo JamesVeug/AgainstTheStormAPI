@@ -10,7 +10,7 @@ using Eremite.Model.Trade;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.3R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum TraderTypes
 {

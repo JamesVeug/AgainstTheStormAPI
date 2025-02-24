@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.3R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum EffectTypes
 {
@@ -3873,7 +3873,7 @@ public enum EffectTypes
 	Opened_Dang_Glades_Reduces_Resolve = 515,
 
 	/// <summary>
-	/// -2 to Global Resolve. (‑1 to Global Resolve)
+	/// Experimental Cornerstone Resolve - -2 to Global Resolve. (‑1 to Global Resolve)
 	/// </summary>
 	/// <name>[PerkCrafter] Resolve</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
@@ -8265,7 +8265,7 @@ public enum EffectTypes
 	Biscuits_5pm = 1122,
 
 	/// <summary>
-	/// Boot Delivery Line - 5 "[needs] coats" Coats per minute.
+	/// Boot Delivery Line - 5 "[needs] boots" Boots per minute.
 	/// </summary>
 	/// <name>Boots 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
@@ -9644,7 +9644,9 @@ public enum EffectTypes
 	/// <type>GoodsRawProductionEffectModel</type>
 	Pack_Of_Building_Materials_Plus1 = 1316,
 
-	/// <summary></summary>
+	/// <summary>
+	/// Building Materials - +2 to "[packs] pack of building materials" Pack of Building Materials production.
+	/// </summary>
 	/// <name>Pack of Building Materials +2</name>
 	/// <type>GoodsRawProductionEffectModel</type>
 	Pack_Of_Building_Materials_Plus2 = 1317,
@@ -21938,7 +21940,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Long_Live_The_Queen, "Long Live the Queen" },                                                                                                                     // Long Live the Queen - Villagers admire the Queen's greatness. (+1 to Global Resolve)
 		{ EffectTypes.Map_Mod_Resolve_Penalty, "[Map Mod] Resolve Penalty" },                                                                                                           // Forsaken Gods Temple - ModifierEffect_TempleResolve_Desc (‑1 to Global Resolve)
 		{ EffectTypes.Opened_Dang_Glades_Reduces_Resolve, "Opened Dang Glades reduces Resolve" },                                                                                       // Greater Threat - Villagers don't approve of discovering Dangerous ("dangerous") and Forbidden Glades ("forbidden") during the storm. (‑2 to Global Resolve)
-		{ EffectTypes.PerkCrafter_Resolve, "[PerkCrafter] Resolve" },                                                                                                                   // -2 to Global Resolve. (‑1 to Global Resolve)
+		{ EffectTypes.PerkCrafter_Resolve, "[PerkCrafter] Resolve" },                                                                                                                   // Experimental Cornerstone Resolve - -2 to Global Resolve. (‑1 to Global Resolve)
 		{ EffectTypes.Rebelious_Spirit, "Rebelious Spirit" },                                                                                                                           // Rebellious Spirit - The people are feeling oddly rebellious. (+1 to Global Resolve)
 		{ EffectTypes.Resolve_For_Glade_Resolve_Bonus_Effect, "Resolve for Glade - Resolve Bonus Effect" },                                                                             // Woodcutter's Song - The woodcutters' song lifts people's spirits. (+3 to Global Resolve)
 		{ EffectTypes.Resolve_Institution_Resolve_For_Ruins, "Resolve - Institution Resolve for Ruins" },                                                                               // The Crown Chronicles - The people are enjoying living in a prosperous settlement. (+1 to Global Resolve)
@@ -22568,7 +22570,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Berries_5pm, "Berries 5pm" },                                                                                                                                     // Berry Delivery Line - 5 "[food raw] berries" Berries per minute.
 		{ EffectTypes.Biscuits_3pm, "Biscuits 3pm" },                                                                                                                                   // Biscuit Delivery Line - 3 "[food processed] biscuits" Biscuits per minute.
 		{ EffectTypes.Biscuits_5pm, "Biscuits 5pm" },                                                                                                                                   // Biscuit Delivery Line - 5 "[food processed] biscuits" Biscuits per minute.
-		{ EffectTypes.Boots_5pm, "Boots 5pm" },                                                                                                                                         // Boot Delivery Line - 5 "[needs] coats" Coats per minute.
+		{ EffectTypes.Boots_5pm, "Boots 5pm" },                                                                                                                                         // Boot Delivery Line - 5 "[needs] boots" Boots per minute.
 		{ EffectTypes.Clay_10pm, "Clay 10pm" },                                                                                                                                         // Clay Delivery Line - 10 "[mat raw] clay" Clay per minute.
 		{ EffectTypes.Clay_3pm, "Clay 3pm" },                                                                                                                                           // Clay Delivery Line - 3 "[mat raw] clay" Clay per minute.
 		{ EffectTypes.Clay_5pm, "Clay 5pm" },                                                                                                                                           // Clay Delivery Line - 5 "[mat raw] clay" Clay per minute.
@@ -22767,7 +22769,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Oil_Plus3, "Oil +3" },                                                                                                                                            // Heavy Press - +3 to "[crafting] oil" Oil production. Gain an additional "[crafting] oil" Oil every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Oil_Plus5, "Oil +5" },                                                                                                                                            // Heavy Press - +5 to "[crafting] oil" Oil production. Gain an additional "[crafting] oil" Oil every yield (from gathering, farming, fishing, or production).
 		{ EffectTypes.Pack_Of_Building_Materials_Plus1, "Pack of Building Materials +1" }, 
-		{ EffectTypes.Pack_Of_Building_Materials_Plus2, "Pack of Building Materials +2" }, 
+		{ EffectTypes.Pack_Of_Building_Materials_Plus2, "Pack of Building Materials +2" },                                                                                              // Building Materials - +2 to "[packs] pack of building materials" Pack of Building Materials production.
 		{ EffectTypes.Pack_Of_Building_Materials_Plus3, "Pack of Building Materials +3" }, 
 		{ EffectTypes.Pack_Of_Building_Materials_Plus4, "Pack of Building Materials +4" }, 
 		{ EffectTypes.Pack_Of_Building_Materials_Plus5, "Pack of Building Materials +5" }, 

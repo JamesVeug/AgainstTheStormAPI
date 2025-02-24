@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.3R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum ResolveEffectTypes
 {
@@ -727,7 +727,7 @@ public enum ResolveEffectTypes
 	Paste_Unfair_Prohibition_Penalty = 118,
 
 	/// <summary>
-	/// -2 to Global Resolve.
+	/// Experimental Cornerstone Resolve - -2 to Global Resolve.
 	/// </summary>
 	/// <name>[PerkCrafter] Resolve - child</name>
 	PerkCrafter_Resolve_Child = 176,
@@ -1419,7 +1419,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Paste_Effect, "Paste Effect" },                                                                                     // Paste - This need is fulfilled at the Hearth. It requires "[food processed] paste" paste. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Paste_Equal_Prohibition_Penalty, "Paste Equal Prohibition Penalty" },                                               // Rationing - No one likes being denied the fruits of their own labor.
 		{ ResolveEffectTypes.Paste_Unfair_Prohibition_Penalty, "Paste Unfair Prohibition Penalty" },                                             // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
-		{ ResolveEffectTypes.PerkCrafter_Resolve_Child, "[PerkCrafter] Resolve - child" },                                                       // -2 to Global Resolve.
+		{ ResolveEffectTypes.PerkCrafter_Resolve_Child, "[PerkCrafter] Resolve - child" },                                                       // Experimental Cornerstone Resolve - -2 to Global Resolve.
 		{ ResolveEffectTypes.PerkCrafter_Resolve_Plus1, "[PerkCrafter] Resolve +1" },                                                            // Experimental Cornerstone Resolve - Resolve is increased by 1.
 		{ ResolveEffectTypes.PerkCrafter_Resolve_Plus2, "[PerkCrafter] Resolve +2" },                                                            // Experimental Cornerstone Resolve - Resolve is increased by 2.
 		{ ResolveEffectTypes.PerkCrafter_Resolve_Plus3, "[PerkCrafter] Resolve +3" },                                                            // Experimental Cornerstone Resolve - Resolve is increased by 3.
