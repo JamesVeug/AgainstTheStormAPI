@@ -1,3 +1,14 @@
+# 3.5.0
+- Works with ATS v1.7.5R
+- Enums
+  - Updated all to v1.7.5R (Safe)
+  - Deprecated .MAX enum in favor of .Count() method to prevent requiring a recompiling your mods
+- Fixed error that untiy version does not match expected version
+- Fixed Assigning a new race of villager to a new building breaking flow
+- Fixed new buildings not supporting new races when using `AddAllRaces`
+- Fixed new institution buildings not having a profession
+- Updated Wiki files
+
 # 3.4.0
 - Added Recipe support for all types
   - CampRecipe
