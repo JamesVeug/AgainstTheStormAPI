@@ -87,34 +87,31 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorksho
         metaData.Recipes.Add(recipe);
     }
     
-    public WorkshopBuildingBuilder AddWorkPlaceWithAllRaces()
+    public void AddWorkPlaceWithAllRaces()
     {
         metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
         metaData.WorkPlaces.Add(new RaceWorkPlaceData()
         {
             addAllRaces = true
         });
-        return this;
     }
 
-    public WorkshopBuildingBuilder AddWorkPlace(RaceTypes race)
+    public void AddWorkPlace(RaceTypes race)
     {
         metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
         metaData.WorkPlaces.Add(new RaceWorkPlaceData()
         {
             races = new List<RaceTypes>(){race}
         });
-        return this;
     }
 
-    public WorkshopBuildingBuilder AddWorkPlace(params RaceTypes[] races)
+    public void AddWorkPlace(params RaceTypes[] races)
     {
         metaData.WorkPlaces ??= new List<RaceWorkPlaceData>();
         metaData.WorkPlaces.Add(new RaceWorkPlaceData()
         {
             races = new List<RaceTypes>(races)
         });
-        return this;
     }
     
     public void SetProfession(ProfessionTypes profession)
