@@ -88,31 +88,21 @@ public partial class BiomeBuilder
         return SetTownName(key.ToLocaText());
     }
 
+    [Obsolete("Removed in v1.8.x", true)]
     public BiomeBuilder SetTownDescription(string description, SystemLanguage language = SystemLanguage.English)
     {
-        string key = newModel.townDescription.key;
-        if (string.IsNullOrEmpty(key) || key == Placeholders.TownDescription.key)
-        {
-            // Create a new key for this field
-            return SetTownDescriptionKey(LocalizationManager.ToLocaText(guid, name, "townDescription", description,
-                language));
-        }
-        else
-        {
-            // Replace current key
-            LocalizationManager.AddString(key, description, language);
-            return this;
-        }
-    }
-
-    public BiomeBuilder SetTownDescriptionKey(LocaText locaText)
-    {
-        newModel.townDescription = locaText;
         return this;
     }
 
+    [Obsolete("Removed in v1.8.x", true)]
+    public BiomeBuilder SetTownDescriptionKey(LocaText locaText)
+    {
+        return this;
+    }
+
+    [Obsolete("Removed in v1.8.x", true)]
     public BiomeBuilder SetTownDescriptionKey(string key)
     {
-        return SetTownDescriptionKey(key.ToLocaText());
+        return this;
     }
 }

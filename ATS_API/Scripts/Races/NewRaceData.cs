@@ -111,28 +111,6 @@ public class NewRaceData : ASyncable<RaceModel>
                         }
                     }
                 }
-                else
-                {
-                    if (!RaceWorkPlaceAvailability.HasWorkPlace(buildingModel.name))
-                    {
-                        continue;
-                    }
-
-                    if (TryGetWorkPlaceList(buildingModel, out WorkplaceModel[] workplaces))
-                    {
-                        foreach (WorkplaceModel model in workplaces)
-                        {
-                            if (!model.allowedRaces.Contains(RaceModel))
-                            {
-                                // Race not added. We need to add it
-                                RaceModel[] newRaces = new RaceModel[model.allowedRaces.Length + 1];
-                                Array.Copy(model.allowedRaces, newRaces, model.allowedRaces.Length);
-                                newRaces[newRaces.Length - 1] = RaceModel;
-                                model.allowedRaces = newRaces;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
