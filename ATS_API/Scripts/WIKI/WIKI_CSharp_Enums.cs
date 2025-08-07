@@ -391,7 +391,7 @@ public partial class WIKI
         exportCSScriptsPath = csExportPath;
         Func<string, string> noStartingNumbersEnum = (a) => a.ToEnumString(true);
         
-        CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, BuildingComment, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("WorkshopTypes", "SO.Settings.workshops", SO.Settings.workshops, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("CollectorTypes", "SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>()", SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("FarmTypes", "SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>()", SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
@@ -438,6 +438,26 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
     }
 
+    private static Dictionary<string, string> BuildingComment(BuildingModel arg)
+    {
+        if (arg == null)
+        {
+            return null;
+        }
+        
+        Dictionary<string,string> nameAndDescription = NameAndDescription(arg);
+        if (nameAndDescription == null)
+        {
+            return null;
+        }
+
+        if (arg.category != null)
+        {
+            nameAndDescription["category"] = arg.category.name;
+        }
+
+        return nameAndDescription;
+    }
     private static Dictionary<string, string> RecipeComments(RecipeModel arg)
     {
         if (arg == null)
