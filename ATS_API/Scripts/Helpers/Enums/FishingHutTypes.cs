@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum FishingHutTypes
 {
@@ -42,7 +42,7 @@ public enum FishingHutTypes
 	/// The total number of vanilla FishingHutTypes in the game.
 	/// </summary>
 	[Obsolete("Use FishingHutTypesExtensions.Count(). FishingHutTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 2
+	MAX = 3
 }
 
 /// <summary>

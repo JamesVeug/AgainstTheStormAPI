@@ -220,10 +220,10 @@ public partial class WIKI
         }
 
         APILogger.LogInfo("Creating enum and dictionary lines...");
-        Dictionary<string, int> existingEnumValues = CalculateExistingEnumValues(EnumName);
+        Dictionary<string, int> existingEnumValues = CalculateExistingEnumValues(EnumName, out int maxEnumValue);
         string enumLines = "";
         string dictionaryLines = "";
-        int newEnumValue = existingEnumValues.Any() ? existingEnumValues.Count + 1 : 1; // First custom enum starts at 1 or however we already have
+        int newEnumValue = existingEnumValues.Any() ? maxEnumValue + 1 : 1; // First custom enum starts at 1 or however we already have
         foreach (string group in sortedGroups)
         {
             List<(string name, string enu, Dictionary<string, string> locale)> groupList = sorted[group];
@@ -254,7 +254,7 @@ public partial class WIKI
             .Replace("{CLASS_HEADER}", header)
             .Replace("{CLASSNAME}", EnumName)
             .Replace("{ENUMS}", enumLines)
-            .Replace("{TOTAL_ENUMS}", set.Count.ToString())
+            .Replace("{TOTAL_ENUMS}", newEnumValue.ToString())
             .Replace("{FIRST_ENUM}", firstEnum)
             .Replace("{FULLMODELNAME}", fullModelName)
             .Replace("{MODELNAME}", modelName)
@@ -265,22 +265,28 @@ public partial class WIKI
         File.WriteAllText(Path.Combine(exportCSScriptsPath, EnumName + ".cs"), cs);
     }
 
-    private static Dictionary<string,int> CalculateExistingEnumValues(string enumName)
+    private static Dictionary<string,int> CalculateExistingEnumValues(string enumName, out int max)
     {
         Type type = Type.GetType("ATS_API.Helpers." + enumName);
         Dictionary<string, int> existingEnumValues = new();
         if (type == null)
         {
             APILogger.LogWarning("Could not find enum type: " + enumName);
+            max = 0;
             return existingEnumValues;
         }
 
+        max = 0;
         foreach (string name in Enum.GetNames(type))
         {
             int intValue = (int)Enum.Parse(type, name);
             if (intValue > 0 && name != "MAX")
             {
                 existingEnumValues[name] = intValue;
+                if (intValue > max)
+                {
+                    max = intValue;
+                }
             }
         }
 
@@ -427,47 +433,86 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         CreateEnumTypesCSharpScript("WaterTypes", "SO.Settings.Waters", SO.Settings.Waters, a=>a.Name, NameAndDescription, ["Eremite.Model"]);
         
-        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
-        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, ReceipComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
+        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
     }
 
-    private static Dictionary<string, string> ReceipComments(RecipeModel arg)
+    private static Dictionary<string, string> RecipeComments(RecipeModel arg)
     {
-        Dictionary<string,string> nameAndDescription = NameAndDescription(arg);
-        nameAndDescription["grade"] = arg.grade.level.ToString();
+        if (arg == null)
+        {
+            return null;
+        }
         
+        Dictionary<string,string> nameAndDescription = NameAndDescription(arg);
+        if (nameAndDescription == null)
+        {
+            return null;
+        }
+        
+        Debug.Log("RecipeComments for " + arg.GetType().Name);
+        
+        if (arg.grade != null)
+        {
+            nameAndDescription["grade"] = arg.grade.level.ToString();
+        }
+
         if (arg is WorkshopRecipeModel workshopsRecipeTypes)
         {
-            nameAndDescription["producedGood"] = workshopsRecipeTypes.producedGood.good.name;
+            if (workshopsRecipeTypes.producedGood != null && workshopsRecipeTypes.producedGood.good != null)
+            {
+                nameAndDescription["producedGood"] = workshopsRecipeTypes.producedGood.good.name;
+            }
         }
         else if (arg is InstitutionRecipeModel institutionRecipeTypes)
         {
-            nameAndDescription["servedNeed"] = institutionRecipeTypes.servedNeed.name;
+            if (institutionRecipeTypes.servedNeed != null)
+            {
+                nameAndDescription["servedNeed"] = institutionRecipeTypes.servedNeed.name;
+            }
         }
         else if (arg is CollectorRecipeModel collectorRecipeTypes)
         {
-            nameAndDescription["producedGood"] = collectorRecipeTypes.producedGood.good.name;
+            if (collectorRecipeTypes.producedGood != null && collectorRecipeTypes.producedGood.good != null)
+            {
+                nameAndDescription["producedGood"] = collectorRecipeTypes.producedGood.good.name;
+            }
         }
         else if (arg is FarmRecipeModel farmRecipeTypes)
         {
-            nameAndDescription["producedGood"] = farmRecipeTypes.producedGood.good.name;
+            if (farmRecipeTypes.producedGood != null && farmRecipeTypes.producedGood.good != null)
+            {
+                nameAndDescription["producedGood"] = farmRecipeTypes.producedGood.good.name;
+            }
         }
         else if (arg is FishingHutRecipeModel fishingHutRecipeTypes)
         {
-            nameAndDescription["producedGood"] = fishingHutRecipeTypes.refGood.good.name;
+            if (fishingHutRecipeTypes.refGood != null && fishingHutRecipeTypes.refGood.good != null)
+            {
+                nameAndDescription["producedGood"] = fishingHutRecipeTypes.refGood.good.name;
+            }
         }
         else if (arg is GathererHutRecipeModel gathererHutRecipeTypes)
         {
-            nameAndDescription["producedGood"] = gathererHutRecipeTypes.refGood.good.name;
+            if (gathererHutRecipeTypes.refGood != null && gathererHutRecipeTypes.refGood.good != null)
+            {
+                nameAndDescription["producedGood"] = gathererHutRecipeTypes.refGood.good.name;
+            }
         }
         else if (arg is RainCatcherRecipeModel rainCatcherRecipeTypes)
         {
-            nameAndDescription["producedGood"] = rainCatcherRecipeTypes.water.good.name;
+            if (rainCatcherRecipeTypes.water != null && rainCatcherRecipeTypes.water.good != null)
+            {
+                nameAndDescription["producedGood"] = rainCatcherRecipeTypes.water.good.name;
+            }
         }
         else if (arg is MineRecipeModel mineRecipeTypes)
         {
-            nameAndDescription["producedGood"] = mineRecipeTypes.producedGood.good.name;
+            if (mineRecipeTypes.producedGood != null && mineRecipeTypes.producedGood.good != null)
+            {
+                nameAndDescription["producedGood"] = mineRecipeTypes.producedGood.good.name;
+            }
         }
         else if (arg is CampRecipeModel campRecipeTypes)
         {

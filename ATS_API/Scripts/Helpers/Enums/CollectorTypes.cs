@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum CollectorTypes
 {
@@ -30,7 +30,7 @@ public enum CollectorTypes
 	/// The total number of vanilla CollectorTypes in the game.
 	/// </summary>
 	[Obsolete("Use CollectorTypesExtensions.Count(). CollectorTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 0
+	MAX = 1
 }
 
 /// <summary>

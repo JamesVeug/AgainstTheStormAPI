@@ -10,7 +10,7 @@ using Eremite;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum NaturalResourcePrefabs
 {
@@ -24,6 +24,30 @@ public enum NaturalResourcePrefabs
 	/// </summary>
 	None = 0,
 	
+	/// <summary>
+	/// API_ExampleMod_DryTree1 - Dry Tree
+	/// </summary>
+	/// <name>API_ExampleMod_DryTree1</name>
+	API_ExampleMod_DryTree1 = 56,
+
+	/// <summary>
+	/// API_ExampleMod_DryTree2 - Dry Tree
+	/// </summary>
+	/// <name>API_ExampleMod_DryTree2</name>
+	API_ExampleMod_DryTree2 = 57,
+
+	/// <summary>
+	/// API_ExampleMod_DryTree3 - Dry Tree
+	/// </summary>
+	/// <name>API_ExampleMod_DryTree3</name>
+	API_ExampleMod_DryTree3 = 58,
+
+	/// <summary>
+	/// API_ExampleMod_DryTree4 - Dry Tree
+	/// </summary>
+	/// <name>API_ExampleMod_DryTree4</name>
+	API_ExampleMod_DryTree4 = 59,
+
 	/// <summary>
 	/// Bay Tree 1 - Kelpwood
 	/// </summary>
@@ -59,6 +83,36 @@ public enum NaturalResourcePrefabs
 	/// </summary>
 	/// <name>Bay Tree 6</name>
 	Bay_Tree_6 = 6,
+
+	/// <summary>
+	/// Cave Tree 1 - Basalt Tree
+	/// </summary>
+	/// <name>Cave Tree 1</name>
+	Cave_Tree_1 = 60,
+
+	/// <summary>
+	/// Cave Tree 2 - Basalt Tree
+	/// </summary>
+	/// <name>Cave Tree 2</name>
+	Cave_Tree_2 = 61,
+
+	/// <summary>
+	/// Cave Tree 3 - Basalt Tree
+	/// </summary>
+	/// <name>Cave Tree 3</name>
+	Cave_Tree_3 = 62,
+
+	/// <summary>
+	/// Cave Tree 4 - Basalt Tree
+	/// </summary>
+	/// <name>Cave Tree 4</name>
+	Cave_Tree_4 = 63,
+
+	/// <summary>
+	/// Cave Tree 5 - Basalt Tree, Basalt Tree
+	/// </summary>
+	/// <name>Cave Tree 5</name>
+	Cave_Tree_5 = 64,
 
 	/// <summary>
 	/// Coral Forest Tree 3 - Crimsonreach Tree
@@ -241,6 +295,24 @@ public enum NaturalResourcePrefabs
 	Moorlands_Tree_6 = 36,
 
 	/// <summary>
+	/// Poro Biome Tree 1 - Tearsap Bamboo, Tearsap Bamboo
+	/// </summary>
+	/// <name>Poro Biome Tree 1</name>
+	Poro_Biome_Tree_1 = 65,
+
+	/// <summary>
+	/// Poro Biome Tree 2 - Tearsap Bamboo, Tearsap Bamboo
+	/// </summary>
+	/// <name>Poro Biome Tree 2</name>
+	Poro_Biome_Tree_2 = 66,
+
+	/// <summary>
+	/// Poro Biome Tree 3 - Tearsap Bamboo, Tearsap Bamboo
+	/// </summary>
+	/// <name>Poro Biome Tree 3</name>
+	Poro_Biome_Tree_3 = 67,
+
+	/// <summary>
 	/// Tree 1 - Lush Tree
 	/// </summary>
 	/// <name>Tree 1</name>
@@ -360,7 +432,7 @@ public enum NaturalResourcePrefabs
 	/// The total number of vanilla NaturalResourcePrefabs in the game.
 	/// </summary>
 	[Obsolete("Use NaturalResourcePrefabsExtensions.Count(). NaturalResourcePrefabs.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 55
+	MAX = 68
 }
 
 /// <summary>
@@ -389,7 +461,7 @@ public static class NaturalResourcePrefabsExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every NaturalResourcePrefabs should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return NaturalResourcePrefabs.Bay_Tree_1 in the enum and log an error.
+	/// If no name is found, it will return NaturalResourcePrefabs.API_ExampleMod_DryTree1 in the enum and log an error.
 	/// </summary>
 	public static string ToName(this NaturalResourcePrefabs type)
 	{
@@ -399,7 +471,7 @@ public static class NaturalResourcePrefabsExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of NaturalResourcePrefabs: " + type);
-		return TypeToInternalName[NaturalResourcePrefabs.Bay_Tree_1];
+		return TypeToInternalName[NaturalResourcePrefabs.API_ExampleMod_DryTree1];
 	}
 	
 	/// <summary>
@@ -534,61 +606,73 @@ public static class NaturalResourcePrefabsExtensions
 	
 	internal static readonly Dictionary<NaturalResourcePrefabs, string> TypeToInternalName = new()
 	{
-		{ NaturalResourcePrefabs.Bay_Tree_1, "Bay Tree 1" },                     // Bay Tree 1 - Kelpwood
-		{ NaturalResourcePrefabs.Bay_Tree_2, "Bay Tree 2" },                     // Bay Tree 2 - Kelpwood
-		{ NaturalResourcePrefabs.Bay_Tree_3, "Bay Tree 3" },                     // Bay Tree 3 - Kelpwood, Kelpwood
-		{ NaturalResourcePrefabs.Bay_Tree_4, "Bay Tree 4" },                     // Bay Tree 4 - Kelpwood
-		{ NaturalResourcePrefabs.Bay_Tree_5, "Bay Tree 5" },                     // Bay Tree 5 - Kelpwood
-		{ NaturalResourcePrefabs.Bay_Tree_6, "Bay Tree 6" },                     // Bay Tree 6 - Kelpwood, Kelpwood
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_3, "Coral Forest Tree 3" },   // Coral Forest Tree 3 - Crimsonreach Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_4, "Coral Forest Tree 4" },   // Coral Forest Tree 4 - Plateleaf Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_5, "Coral Forest Tree 5" },   // Coral Forest Tree 5 - Plateleaf Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_A1, "Coral Forest Tree A1" }, // Coral Forest Tree A1 - Musselsprout Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_A2, "Coral Forest Tree A2" }, // Coral Forest Tree A2 - Musselsprout Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_A3, "Coral Forest Tree A3" }, // Coral Forest Tree A3 - Musselsprout Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_A4, "Coral Forest Tree A4" }, // Coral Forest Tree A4 - Musselsprout Tree
-		{ NaturalResourcePrefabs.Coral_Forest_Tree_A5, "Coral Forest Tree A5" }, // Coral Forest Tree A5 - Musselsprout Tree
-		{ NaturalResourcePrefabs.Cursed_Tree_3, "Cursed Tree 3" },               // Cursed Tree 3 - Dying Tree, Abyssal Tree
-		{ NaturalResourcePrefabs.Cursed_Tree_6, "Cursed Tree 6" },               // Cursed Tree 6 - Dying Tree, Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_1, "Last Biome Tree 1" },       // Last Biome Tree 1 - Abyssal Tree, Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_2, "Last Biome Tree 2" },       // Last Biome Tree 2 - Abyssal Tree, Abyssal Tree, Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_3, "Last Biome Tree 3" },       // Last Biome Tree 3 - Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_4, "Last Biome Tree 4" },       // Last Biome Tree 4 - Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_5, "Last Biome Tree 5" },       // Last Biome Tree 5 - Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_6, "Last Biome Tree 6" },       // Last Biome Tree 6 - Overgrown Abyssal Tree
-		{ NaturalResourcePrefabs.Last_Biome_Tree_7, "Last Biome Tree 7" },       // Last Biome Tree 7 - Overgrown Abyssal Tree
-		{ NaturalResourcePrefabs.Marshlands_Tree_01, "Marshlands_Tree_01" },     // Marshlands_Tree_01 - Mushwood, Mushwood
-		{ NaturalResourcePrefabs.Marshlands_Tree_02, "Marshlands_Tree_02" },     // Marshlands_Tree_02 - Mushwood
-		{ NaturalResourcePrefabs.Marshlands_Tree_03, "Marshlands_Tree_03" },     // Marshlands_Tree_03 - Mushwood
-		{ NaturalResourcePrefabs.Marshlands_Tree_04, "Marshlands_Tree_04" },     // Marshlands_Tree_04 - Mushwood
-		{ NaturalResourcePrefabs.Marshlands_Tree_05, "Marshlands_Tree_05" },     // Marshlands_Tree_05 - Mushwood, Mushwood
-		{ NaturalResourcePrefabs.Marshlands_Tree_06, "Marshlands_Tree_06" },     // Marshlands_Tree_06 - Mushwood, Mushwood
-		{ NaturalResourcePrefabs.Marshlands_Tree_07, "Marshlands_Tree_07" },     // Marshlands_Tree_07 - Mushwood, Mushwood
-		{ NaturalResourcePrefabs.Moorlands_Tree_1, "Moorlands Tree 1" },         // Moorlands Tree 1 - Coppervein Tree
-		{ NaturalResourcePrefabs.Moorlands_Tree_2, "Moorlands Tree 2" },         // Moorlands Tree 2 - Coppervein Tree
-		{ NaturalResourcePrefabs.Moorlands_Tree_3, "Moorlands Tree 3" },         // Moorlands Tree 3 - Coppervein Tree
-		{ NaturalResourcePrefabs.Moorlands_Tree_4, "Moorlands Tree 4" },         // Moorlands Tree 4 - Coppervein Tree
-		{ NaturalResourcePrefabs.Moorlands_Tree_5, "Moorlands Tree 5" },         // Moorlands Tree 5 - Coppervein Tree
-		{ NaturalResourcePrefabs.Moorlands_Tree_6, "Moorlands Tree 6" },         // Moorlands Tree 6 - Coppervein Tree
-		{ NaturalResourcePrefabs.Tree_1, "Tree 1" },                             // Tree 1 - Lush Tree
-		{ NaturalResourcePrefabs.Tree_2, "Tree 2" },                             // Tree 2 - Lush Tree
-		{ NaturalResourcePrefabs.Tree_3, "Tree 3" },                             // Tree 3 - Lush Tree
-		{ NaturalResourcePrefabs.Tree_4, "Tree 4" },                             // Tree 4 - Lush Tree
-		{ NaturalResourcePrefabs.Tree_5, "Tree 5" },                             // Tree 5 - Lush Tree
-		{ NaturalResourcePrefabs.Tree_6, "Tree 6" },                             // Tree 6 - Lush Tree
-		{ NaturalResourcePrefabs.Tree_7, "Tree 7" },                             // Tree 7 - Lush Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_1, "Wasteland Tree 1" },         // Wasteland Tree 1 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_10, "Wasteland Tree 10" },       // Wasteland Tree 10 - Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_11, "Wasteland Tree 11" },       // Wasteland Tree 11 - Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_12, "Wasteland Tree 12" },       // Wasteland Tree 12 - Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_2, "Wasteland Tree 2" },         // Wasteland Tree 2 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_3, "Wasteland Tree 3" },         // Wasteland Tree 3 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_4, "Wasteland Tree 4" },         // Wasteland Tree 4 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_5, "Wasteland Tree 5" },         // Wasteland Tree 5 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_6, "Wasteland Tree 6" },         // Wasteland Tree 6 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_7, "Wasteland Tree 7" },         // Wasteland Tree 7 - Ashen Tree, Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_8, "Wasteland Tree 8" },         // Wasteland Tree 8 - Ashen Tree
-		{ NaturalResourcePrefabs.Wasteland_Tree_9, "Wasteland Tree 9" },         // Wasteland Tree 9 - Ashen Tree
+		{ NaturalResourcePrefabs.API_ExampleMod_DryTree1, "API_ExampleMod_DryTree1" }, // API_ExampleMod_DryTree1 - Dry Tree
+		{ NaturalResourcePrefabs.API_ExampleMod_DryTree2, "API_ExampleMod_DryTree2" }, // API_ExampleMod_DryTree2 - Dry Tree
+		{ NaturalResourcePrefabs.API_ExampleMod_DryTree3, "API_ExampleMod_DryTree3" }, // API_ExampleMod_DryTree3 - Dry Tree
+		{ NaturalResourcePrefabs.API_ExampleMod_DryTree4, "API_ExampleMod_DryTree4" }, // API_ExampleMod_DryTree4 - Dry Tree
+		{ NaturalResourcePrefabs.Bay_Tree_1, "Bay Tree 1" },                           // Bay Tree 1 - Kelpwood
+		{ NaturalResourcePrefabs.Bay_Tree_2, "Bay Tree 2" },                           // Bay Tree 2 - Kelpwood
+		{ NaturalResourcePrefabs.Bay_Tree_3, "Bay Tree 3" },                           // Bay Tree 3 - Kelpwood, Kelpwood
+		{ NaturalResourcePrefabs.Bay_Tree_4, "Bay Tree 4" },                           // Bay Tree 4 - Kelpwood
+		{ NaturalResourcePrefabs.Bay_Tree_5, "Bay Tree 5" },                           // Bay Tree 5 - Kelpwood
+		{ NaturalResourcePrefabs.Bay_Tree_6, "Bay Tree 6" },                           // Bay Tree 6 - Kelpwood, Kelpwood
+		{ NaturalResourcePrefabs.Cave_Tree_1, "Cave Tree 1" },                         // Cave Tree 1 - Basalt Tree
+		{ NaturalResourcePrefabs.Cave_Tree_2, "Cave Tree 2" },                         // Cave Tree 2 - Basalt Tree
+		{ NaturalResourcePrefabs.Cave_Tree_3, "Cave Tree 3" },                         // Cave Tree 3 - Basalt Tree
+		{ NaturalResourcePrefabs.Cave_Tree_4, "Cave Tree 4" },                         // Cave Tree 4 - Basalt Tree
+		{ NaturalResourcePrefabs.Cave_Tree_5, "Cave Tree 5" },                         // Cave Tree 5 - Basalt Tree, Basalt Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_3, "Coral Forest Tree 3" },         // Coral Forest Tree 3 - Crimsonreach Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_4, "Coral Forest Tree 4" },         // Coral Forest Tree 4 - Plateleaf Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_5, "Coral Forest Tree 5" },         // Coral Forest Tree 5 - Plateleaf Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_A1, "Coral Forest Tree A1" },       // Coral Forest Tree A1 - Musselsprout Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_A2, "Coral Forest Tree A2" },       // Coral Forest Tree A2 - Musselsprout Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_A3, "Coral Forest Tree A3" },       // Coral Forest Tree A3 - Musselsprout Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_A4, "Coral Forest Tree A4" },       // Coral Forest Tree A4 - Musselsprout Tree
+		{ NaturalResourcePrefabs.Coral_Forest_Tree_A5, "Coral Forest Tree A5" },       // Coral Forest Tree A5 - Musselsprout Tree
+		{ NaturalResourcePrefabs.Cursed_Tree_3, "Cursed Tree 3" },                     // Cursed Tree 3 - Dying Tree, Abyssal Tree
+		{ NaturalResourcePrefabs.Cursed_Tree_6, "Cursed Tree 6" },                     // Cursed Tree 6 - Dying Tree, Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_1, "Last Biome Tree 1" },             // Last Biome Tree 1 - Abyssal Tree, Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_2, "Last Biome Tree 2" },             // Last Biome Tree 2 - Abyssal Tree, Abyssal Tree, Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_3, "Last Biome Tree 3" },             // Last Biome Tree 3 - Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_4, "Last Biome Tree 4" },             // Last Biome Tree 4 - Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_5, "Last Biome Tree 5" },             // Last Biome Tree 5 - Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_6, "Last Biome Tree 6" },             // Last Biome Tree 6 - Overgrown Abyssal Tree
+		{ NaturalResourcePrefabs.Last_Biome_Tree_7, "Last Biome Tree 7" },             // Last Biome Tree 7 - Overgrown Abyssal Tree
+		{ NaturalResourcePrefabs.Marshlands_Tree_01, "Marshlands_Tree_01" },           // Marshlands_Tree_01 - Mushwood, Mushwood
+		{ NaturalResourcePrefabs.Marshlands_Tree_02, "Marshlands_Tree_02" },           // Marshlands_Tree_02 - Mushwood
+		{ NaturalResourcePrefabs.Marshlands_Tree_03, "Marshlands_Tree_03" },           // Marshlands_Tree_03 - Mushwood
+		{ NaturalResourcePrefabs.Marshlands_Tree_04, "Marshlands_Tree_04" },           // Marshlands_Tree_04 - Mushwood
+		{ NaturalResourcePrefabs.Marshlands_Tree_05, "Marshlands_Tree_05" },           // Marshlands_Tree_05 - Mushwood, Mushwood
+		{ NaturalResourcePrefabs.Marshlands_Tree_06, "Marshlands_Tree_06" },           // Marshlands_Tree_06 - Mushwood, Mushwood
+		{ NaturalResourcePrefabs.Marshlands_Tree_07, "Marshlands_Tree_07" },           // Marshlands_Tree_07 - Mushwood, Mushwood
+		{ NaturalResourcePrefabs.Moorlands_Tree_1, "Moorlands Tree 1" },               // Moorlands Tree 1 - Coppervein Tree
+		{ NaturalResourcePrefabs.Moorlands_Tree_2, "Moorlands Tree 2" },               // Moorlands Tree 2 - Coppervein Tree
+		{ NaturalResourcePrefabs.Moorlands_Tree_3, "Moorlands Tree 3" },               // Moorlands Tree 3 - Coppervein Tree
+		{ NaturalResourcePrefabs.Moorlands_Tree_4, "Moorlands Tree 4" },               // Moorlands Tree 4 - Coppervein Tree
+		{ NaturalResourcePrefabs.Moorlands_Tree_5, "Moorlands Tree 5" },               // Moorlands Tree 5 - Coppervein Tree
+		{ NaturalResourcePrefabs.Moorlands_Tree_6, "Moorlands Tree 6" },               // Moorlands Tree 6 - Coppervein Tree
+		{ NaturalResourcePrefabs.Poro_Biome_Tree_1, "Poro Biome Tree 1" },             // Poro Biome Tree 1 - Tearsap Bamboo, Tearsap Bamboo
+		{ NaturalResourcePrefabs.Poro_Biome_Tree_2, "Poro Biome Tree 2" },             // Poro Biome Tree 2 - Tearsap Bamboo, Tearsap Bamboo
+		{ NaturalResourcePrefabs.Poro_Biome_Tree_3, "Poro Biome Tree 3" },             // Poro Biome Tree 3 - Tearsap Bamboo, Tearsap Bamboo
+		{ NaturalResourcePrefabs.Tree_1, "Tree 1" },                                   // Tree 1 - Lush Tree
+		{ NaturalResourcePrefabs.Tree_2, "Tree 2" },                                   // Tree 2 - Lush Tree
+		{ NaturalResourcePrefabs.Tree_3, "Tree 3" },                                   // Tree 3 - Lush Tree
+		{ NaturalResourcePrefabs.Tree_4, "Tree 4" },                                   // Tree 4 - Lush Tree
+		{ NaturalResourcePrefabs.Tree_5, "Tree 5" },                                   // Tree 5 - Lush Tree
+		{ NaturalResourcePrefabs.Tree_6, "Tree 6" },                                   // Tree 6 - Lush Tree
+		{ NaturalResourcePrefabs.Tree_7, "Tree 7" },                                   // Tree 7 - Lush Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_1, "Wasteland Tree 1" },               // Wasteland Tree 1 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_10, "Wasteland Tree 10" },             // Wasteland Tree 10 - Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_11, "Wasteland Tree 11" },             // Wasteland Tree 11 - Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_12, "Wasteland Tree 12" },             // Wasteland Tree 12 - Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_2, "Wasteland Tree 2" },               // Wasteland Tree 2 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_3, "Wasteland Tree 3" },               // Wasteland Tree 3 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_4, "Wasteland Tree 4" },               // Wasteland Tree 4 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_5, "Wasteland Tree 5" },               // Wasteland Tree 5 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_6, "Wasteland Tree 6" },               // Wasteland Tree 6 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_7, "Wasteland Tree 7" },               // Wasteland Tree 7 - Ashen Tree, Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_8, "Wasteland Tree 8" },               // Wasteland Tree 8 - Ashen Tree
+		{ NaturalResourcePrefabs.Wasteland_Tree_9, "Wasteland Tree 9" },               // Wasteland Tree 9 - Ashen Tree
 
 	};
 }

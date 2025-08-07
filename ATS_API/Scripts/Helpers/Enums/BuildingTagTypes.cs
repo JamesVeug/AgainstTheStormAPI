@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum BuildingTagTypes
 {
@@ -49,12 +49,6 @@ public enum BuildingTagTypes
 	Cloth = 4,
 
 	/// <summary>
-	/// Blightrot ("cysts")
-	/// </summary>
-	/// <name>Cysts</name>
-	Cysts = 5,
-
-	/// <summary>
 	/// Farming ("farming")
 	/// </summary>
 	/// <name>Farming</name>
@@ -65,6 +59,16 @@ public enum BuildingTagTypes
 	/// </summary>
 	/// <name>Forest</name>
 	Forest = 7,
+
+	/// <summary>
+	/// Cooperation ("cooperation")
+	/// </summary>
+	/// <name>FoxesCooperation</name>
+	FoxesCooperation = 19,
+
+	/// <summary></summary>
+	/// <name>Hearth_Bats</name>
+	Hearth_Bats = 20,
 
 	/// <summary></summary>
 	/// <name>Hearth_Beavers</name>
@@ -89,6 +93,12 @@ public enum BuildingTagTypes
 	/// <summary></summary>
 	/// <name>Hearth_Lizards</name>
 	Hearth_Lizards = 13,
+
+	/// <summary>
+	/// Metallurgy ("metallurgy")
+	/// </summary>
+	/// <name>Metallurgy</name>
+	Metallurgy = 21,
 
 	/// <summary>
 	/// Rainwater ("rainwater")
@@ -126,7 +136,7 @@ public enum BuildingTagTypes
 	/// The total number of vanilla BuildingTagTypes in the game.
 	/// </summary>
 	[Obsolete("Use BuildingTagTypesExtensions.Count(). BuildingTagTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 18
+	MAX = 22
 }
 
 /// <summary>
@@ -300,24 +310,26 @@ public static class BuildingTagTypesExtensions
 	
 	internal static readonly Dictionary<BuildingTagTypes, string> TypeToInternalName = new()
 	{
-		{ BuildingTagTypes.Alchemy, "Alchemy" },               // Alchemy ("alchemy")
-		{ BuildingTagTypes.Animals, "Animals" },               // Meat production ("meat")
-		{ BuildingTagTypes.Brewing, "Brewing" },               // Brewing ("brewing")
-		{ BuildingTagTypes.Cloth, "Cloth" },                   // Tailoring ("cloth")
-		{ BuildingTagTypes.Cysts, "Cysts" },                   // Blightrot ("cysts")
-		{ BuildingTagTypes.Farming, "Farming" },               // Farming ("farming")
-		{ BuildingTagTypes.Forest, "Forest" },                 // Forest ("foxforest")
+		{ BuildingTagTypes.Alchemy, "Alchemy" },                   // Alchemy ("alchemy")
+		{ BuildingTagTypes.Animals, "Animals" },                   // Meat production ("meat")
+		{ BuildingTagTypes.Brewing, "Brewing" },                   // Brewing ("brewing")
+		{ BuildingTagTypes.Cloth, "Cloth" },                       // Tailoring ("cloth")
+		{ BuildingTagTypes.Farming, "Farming" },                   // Farming ("farming")
+		{ BuildingTagTypes.Forest, "Forest" },                     // Forest ("foxforest")
+		{ BuildingTagTypes.FoxesCooperation, "FoxesCooperation" }, // Cooperation ("cooperation")
+		{ BuildingTagTypes.Hearth_Bats, "Hearth_Bats" }, 
 		{ BuildingTagTypes.Hearth_Beavers, "Hearth_Beavers" }, 
 		{ BuildingTagTypes.Hearth_Foxes, "Hearth_Foxes" }, 
 		{ BuildingTagTypes.Hearth_Frogs, "Hearth_Frogs" }, 
 		{ BuildingTagTypes.Hearth_Harpies, "Hearth_Harpies" }, 
 		{ BuildingTagTypes.Hearth_Humans, "Hearth_Humans" }, 
 		{ BuildingTagTypes.Hearth_Lizards, "Hearth_Lizards" }, 
-		{ BuildingTagTypes.Rainwater, "Rainwater" },           // Rainwater ("rainwater")
-		{ BuildingTagTypes.Stone, "Stone" },                   // Masonry ("stone")
-		{ BuildingTagTypes.Tech, "Tech" },                     // Engineering ("tech")
-		{ BuildingTagTypes.Warmth, "Warmth" },                 // Warmth ("fire")
-		{ BuildingTagTypes.Wood, "Wood" },                     // Woodworking ("wood")
+		{ BuildingTagTypes.Metallurgy, "Metallurgy" },             // Metallurgy ("metallurgy")
+		{ BuildingTagTypes.Rainwater, "Rainwater" },               // Rainwater ("rainwater")
+		{ BuildingTagTypes.Stone, "Stone" },                       // Masonry ("stone")
+		{ BuildingTagTypes.Tech, "Tech" },                         // Engineering ("tech")
+		{ BuildingTagTypes.Warmth, "Warmth" },                     // Warmth ("fire")
+		{ BuildingTagTypes.Wood, "Wood" },                         // Woodworking ("wood")
 
 	};
 }

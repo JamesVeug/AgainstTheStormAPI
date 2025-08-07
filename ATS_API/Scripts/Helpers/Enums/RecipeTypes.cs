@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum RecipeTypes
 {
@@ -457,6 +457,10 @@ public enum RecipeTypes
 	//
 
 	/// <summary></summary>
+	/// <name>API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed</name>
+	API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed = 241,
+
+	/// <summary></summary>
 	/// <name>Bloodthirst</name>
 	/// <grade>1</grade>
 	/// <servedNeed>Bloodthirst</servedNeed>
@@ -584,6 +588,24 @@ public enum RecipeTypes
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Luxury Goods</producedGood>
 	_Todelete_Pack_Of_Luxury_Goods = 86,
+
+	/// <summary></summary>
+	/// <name>API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor</name>
+	API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor = 242,
+
+	/// <summary></summary>
+	/// <name>API_ExampleMod_BurgerJoint_API_ExampleMod_Cola</name>
+	API_ExampleMod_BurgerJoint_API_ExampleMod_Cola = 243,
+
+	/// <summary></summary>
+	/// <name>API_ExampleMod_BurgerJoint_API_ExampleMod_Fries</name>
+	API_ExampleMod_BurgerJoint_API_ExampleMod_Fries = 244,
+
+	/// <summary></summary>
+	/// <name>[Biome] Fuel Rod T3</name>
+	/// <grade>3</grade>
+	/// <producedGood>[Other] Fuel Rod</producedGood>
+	Biome_Fuel_Rod_T3 = 245,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Bricks T0</name>
@@ -1515,7 +1537,7 @@ public enum RecipeTypes
 	/// The total number of vanilla RecipeTypes in the game.
 	/// </summary>
 	[Obsolete("Use RecipeTypesExtensions.Count(). RecipeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 240
+	MAX = 246
 }
 
 /// <summary>
@@ -1768,6 +1790,7 @@ public static class RecipeTypesExtensions
 		{ RecipeTypes.Vegetables_T0, "Vegetables T0" }, 
 
 		// InstitutionRecipeModel
+		{ RecipeTypes.API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed, "API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed" }, 
 		{ RecipeTypes.Bloodthirst, "Bloodthirst" }, 
 		{ RecipeTypes.Brotherhood_Free, "Brotherhood_Free" }, 
 		{ RecipeTypes.Education, "Education" }, 
@@ -1793,6 +1816,10 @@ public static class RecipeTypesExtensions
 
 		// WorkshopRecipeModel
 		{ RecipeTypes._Todelete_Pack_Of_Luxury_Goods, "- todelete - Pack of Luxury Goods" }, 
+		{ RecipeTypes.API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor, "API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor" }, 
+		{ RecipeTypes.API_ExampleMod_BurgerJoint_API_ExampleMod_Cola, "API_ExampleMod_BurgerJoint_API_ExampleMod_Cola" }, 
+		{ RecipeTypes.API_ExampleMod_BurgerJoint_API_ExampleMod_Fries, "API_ExampleMod_BurgerJoint_API_ExampleMod_Fries" }, 
+		{ RecipeTypes.Biome_Fuel_Rod_T3, "[Biome] Fuel Rod T3" }, 
 		{ RecipeTypes.Building_Material_Bricks_T0, "[Building Material] Bricks T0" }, 
 		{ RecipeTypes.Building_Material_Bricks_T1, "[Building Material] Bricks T1" }, 
 		{ RecipeTypes.Building_Material_Bricks_T2, "[Building Material] Bricks T2" }, 

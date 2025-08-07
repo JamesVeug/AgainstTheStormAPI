@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum RaceTypes
 {
@@ -25,13 +25,19 @@ public enum RaceTypes
 	None = 0,
 	
 	/// <summary>
+	/// Bat - A stern and fiercely devoted people, they take pride in enduring what breaks others and cannot stand being favored. Bats excel at metallurgy ("metallurgy") but find no particular comfort in any type of work.
+	/// </summary>
+	/// <name>Bat</name>
+	Bat = 7,
+
+	/// <summary>
 	/// Beaver - Beavers are hardworking and honest, but also quite demanding. They are gifted woodworkers ("wood") and enjoy engineering ("tech"). Beavers are also known for their innate talent for salesmanship.
 	/// </summary>
 	/// <name>Beaver</name>
 	Beaver = 1,
 
 	/// <summary>
-	/// Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts ("foxforest") and feel comfortable working in buildings infested with Blightrot ("cysts"). They are highly susceptible to starvation, yet are immune to Hostility.
+	/// Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts ("foxforest") and feel comfortable cooperating with their own kind ("cooperation"). They are highly susceptible to starvation, yet are immune to Hostility.
 	/// </summary>
 	/// <name>Foxes</name>
 	Foxes = 2,
@@ -66,7 +72,7 @@ public enum RaceTypes
 	/// The total number of vanilla RaceTypes in the game.
 	/// </summary>
 	[Obsolete("Use RaceTypesExtensions.Count(). RaceTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 6
+	MAX = 8
 }
 
 /// <summary>
@@ -95,7 +101,7 @@ public static class RaceTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every RaceTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return RaceTypes.Beaver in the enum and log an error.
+	/// If no name is found, it will return RaceTypes.Bat in the enum and log an error.
 	/// </summary>
 	public static string ToName(this RaceTypes type)
 	{
@@ -105,7 +111,7 @@ public static class RaceTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of RaceTypes: " + type);
-		return TypeToInternalName[RaceTypes.Beaver];
+		return TypeToInternalName[RaceTypes.Bat];
 	}
 	
 	/// <summary>
@@ -240,8 +246,9 @@ public static class RaceTypesExtensions
 	
 	internal static readonly Dictionary<RaceTypes, string> TypeToInternalName = new()
 	{
+		{ RaceTypes.Bat, "Bat" },       // Bat - A stern and fiercely devoted people, they take pride in enduring what breaks others and cannot stand being favored. Bats excel at metallurgy ("metallurgy") but find no particular comfort in any type of work.
 		{ RaceTypes.Beaver, "Beaver" }, // Beaver - Beavers are hardworking and honest, but also quite demanding. They are gifted woodworkers ("wood") and enjoy engineering ("tech"). Beavers are also known for their innate talent for salesmanship.
-		{ RaceTypes.Foxes, "Foxes" },   // Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts ("foxforest") and feel comfortable working in buildings infested with Blightrot ("cysts"). They are highly susceptible to starvation, yet are immune to Hostility.
+		{ RaceTypes.Foxes, "Foxes" },   // Fox - Majestic and mysterious creatures, deeply connected to the forest. They have developed a symbiosis with Blightrot through their long exposure to rainwater. Foxes are skilled scouts ("foxforest") and feel comfortable cooperating with their own kind ("cooperation"). They are highly susceptible to starvation, yet are immune to Hostility.
 		{ RaceTypes.Frog, "Frog" },     // Frog - A dignified and proud people with a unique affinity for wealth, renowned for their exceptional skills in architecture and their love of water. Shelters do not satisfy them - they require pools of water to feel truly at home. Frogs are skilled masons ("stone") and love working with rainwater ("rainwater").
 		{ RaceTypes.Harpy, "Harpy" },   // Harpy - Harpies are a noble and fragile species, with a primal, aggressive side to them. They have lost their ability to fly due to centuries of exposure to the rain. They excel at alchemy ("alchemy") and love to work with cloth ("cloth").
 		{ RaceTypes.Human, "Human" },   // Human - Humans are a very adaptable species, but they are also very susceptible to the rain. They rely heavily on special clothing, such as their famous rain shells, to keep them dry. Humans are adept at farming ("farming") and really enjoy brewing ("brewing").

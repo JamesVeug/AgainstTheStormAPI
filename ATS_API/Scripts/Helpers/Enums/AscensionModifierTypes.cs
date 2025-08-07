@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum AscensionModifierTypes
 {
@@ -67,13 +67,13 @@ public enum AscensionModifierTypes
 	FasterLeaving = 7,
 
 	/// <summary>
-	/// Less is More - The greedy Royal Archivist sold most of the blueprints to traders and fled the Citadel. You have 2 fewer blueprint choices.
+	/// Less is More - The greedy Royal Archivist sold most of the blueprints to traders and fled the Citadel. You have 2 fewer blueprint choices. You can gain an additional choice by spending "[valuable] ancient tablet" Ancient Tablets.
 	/// </summary>
 	/// <name>[Mod] Fewer Blueprints Options</name>
 	Fewer_Blueprints_Options = 8,
 
 	/// <summary>
-	/// Restrictions - The Royal Envoy comes to you with bad news. The Queen has restricted your cornerstone choices by 2.
+	/// Restrictions - The Royal Envoy comes to you with bad news. The Queen has restricted your cornerstone choices by 2. You can gain an additional choice by spending "hearth parts" Wildfire Essence.
 	/// </summary>
 	/// <name>[Mod] Fewer Cornerstones Options</name>
 	Fewer_Cornerstones_Options = 9,
@@ -103,7 +103,7 @@ public enum AscensionModifierTypes
 	Higher_Blueprints_Reroll_Cost = 13,
 
 	/// <summary>
-	/// Consumerism - Villagers have forgotten what a modest life looks like. They want to enjoy life to the fullest. Villagers have a 50% chance to consume double the amount of luxury goods.
+	/// Consumerism - Villagers have forgotten what a modest life looks like. They want to enjoy life to the fullest. Villagers have a 50% chance of consuming double the amount of service goods.
 	/// </summary>
 	/// <name>[Mod] Higher Needs Consumption Rate</name>
 	Higher_Needs_Consumption_Rate = 14,
@@ -184,7 +184,7 @@ public enum AscensionModifierTypes
 	/// The total number of vanilla AscensionModifierTypes in the game.
 	/// </summary>
 	[Obsolete("Use AscensionModifierTypesExtensions.Count(). AscensionModifierTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 26
+	MAX = 27
 }
 
 /// <summary>
@@ -365,13 +365,13 @@ public static class AscensionModifierTypesExtensions
 		{ AscensionModifierTypes.Exploration_Tax, "Exploration Tax" },                                                     // Land Tax - Taking advantage of the riches of this new land will cost you. You must pay 2 "[valuable] amber" Amber every time you discover a Small Glade, and 6 "[valuable] amber" Amber every time you discover a Dangerous ("dangerous") or Forbidden Glade ("forbidden") . Otherwise, 2 villagers will be recalled to the Citadel.
 		{ AscensionModifierTypes.Faster_Fuel_Sacrifice, "Faster Fuel Sacrifice" },                                         // Hearth Defect - The Ancient Hearth seems to have a defect. No matter how hard the firekeeper tries, sacrificed resources are burning 35% quicker.
 		{ AscensionModifierTypes.FasterLeaving, "FasterLeaving" },                                                         // Higher Standards - Villagers are less understanding than they used to be. They’re probably getting a bit spoiled by now. Villagers are 100% faster to leave if they have low Resolve.
-		{ AscensionModifierTypes.Fewer_Blueprints_Options, "Fewer Blueprints Options" },                                   // Less is More - The greedy Royal Archivist sold most of the blueprints to traders and fled the Citadel. You have 2 fewer blueprint choices.
-		{ AscensionModifierTypes.Fewer_Cornerstones_Options, "Fewer Cornerstones Options" },                               // Restrictions - The Royal Envoy comes to you with bad news. The Queen has restricted your cornerstone choices by 2.
+		{ AscensionModifierTypes.Fewer_Blueprints_Options, "Fewer Blueprints Options" },                                   // Less is More - The greedy Royal Archivist sold most of the blueprints to traders and fled the Citadel. You have 2 fewer blueprint choices. You can gain an additional choice by spending "[valuable] ancient tablet" Ancient Tablets.
+		{ AscensionModifierTypes.Fewer_Cornerstones_Options, "Fewer Cornerstones Options" },                               // Restrictions - The Royal Envoy comes to you with bad news. The Queen has restricted your cornerstone choices by 2. You can gain an additional choice by spending "hearth parts" Wildfire Essence.
 		{ AscensionModifierTypes.Fewer_Initial_Blueprints, "Fewer Initial Blueprints" },                                   // Budget Cuts - The Queen has visited the Obsidian Archives in person, and was dissatisfied with the amount of funding spent on expeditions. You have one fewer initial blueprint.
 		{ AscensionModifierTypes.Global_Reputation_Treshold_Increase, "Global Reputation Treshold Increase" },             // Malcontents - You took a very peculiar group of settlers with you. They seem perpetually dissatisfied. The Resolve threshold at which each species starts producing Reputation increases by 1 more point for every Reputation Point they generate.
 		{ AscensionModifierTypes.Hard_Orders_Only, "Hard Orders Only" },                                                   // Hard Times - The Queen has decided to entrust you with the most difficult orders, as you are one of her most experienced viceroys.
 		{ AscensionModifierTypes.Higher_Blueprints_Reroll_Cost, "Higher Blueprints Reroll Cost" },                         // Expensive Lottery - The Archivist assigned to your settlement is fiercely loyal to the Royal Court, so bribing him will be more expensive. Blueprint rerolls cost 10 Amber more.
-		{ AscensionModifierTypes.Higher_Needs_Consumption_Rate, "Higher Needs Consumption Rate" },                         // Consumerism - Villagers have forgotten what a modest life looks like. They want to enjoy life to the fullest. Villagers have a 50% chance to consume double the amount of luxury goods.
+		{ AscensionModifierTypes.Higher_Needs_Consumption_Rate, "Higher Needs Consumption Rate" },                         // Consumerism - Villagers have forgotten what a modest life looks like. They want to enjoy life to the fullest. Villagers have a 50% chance of consuming double the amount of service goods.
 		{ AscensionModifierTypes.Higher_Traders_Prices, "Higher Traders Prices" },                                         // Guild of Traders, or Thieves? - Traders gossip about you doing pretty well lately. All your goods are worth 50% less to traders.
 		{ AscensionModifierTypes.Hunger_Multiplier_Effects, "Hunger Multiplier Effects" },                                 // Famine Outbreaks - Famine outbreaks in your previous settlements have made the villagers particularly sensitive to food shortages. Every time villagers have nothing to eat during a break, they will gain two stacks of the Hunger effect instead of one.
 		{ AscensionModifierTypes.Longer_Relics_Working_Time, "Longer Relics Working Time" },                               // Procrastination - Villagers are reluctant to venture into Dangerous Glades. Scouts work 33% slower on Glade Events.

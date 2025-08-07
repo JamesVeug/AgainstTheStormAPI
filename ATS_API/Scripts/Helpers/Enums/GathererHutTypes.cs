@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum GathererHutTypes
 {
@@ -78,7 +78,7 @@ public enum GathererHutTypes
 	/// The total number of vanilla GathererHutTypes in the game.
 	/// </summary>
 	[Obsolete("Use GathererHutTypesExtensions.Count(). GathererHutTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 8
+	MAX = 9
 }
 
 /// <summary>

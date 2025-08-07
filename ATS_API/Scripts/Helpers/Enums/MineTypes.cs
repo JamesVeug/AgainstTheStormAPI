@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum MineTypes
 {
@@ -36,7 +36,7 @@ public enum MineTypes
 	/// The total number of vanilla MineTypes in the game.
 	/// </summary>
 	[Obsolete("Use MineTypesExtensions.Count(). MineTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 1
+	MAX = 2
 }
 
 /// <summary>

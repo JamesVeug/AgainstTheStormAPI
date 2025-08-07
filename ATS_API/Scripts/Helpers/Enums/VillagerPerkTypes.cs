@@ -10,7 +10,7 @@ using Eremite.Characters.Villagers;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.9R
 /// </summary>
 public enum VillagerPerkTypes
 {
@@ -283,7 +283,7 @@ public enum VillagerPerkTypes
 	Hauler_Break_Interval_Villager_Perk = 44,
 
 	/// <summary>
-	/// HaulerUpgrade_Speed_Name - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
+	/// Specialized Workwear - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 	/// </summary>
 	/// <name>Hauler Speed - villager perk</name>
 	Hauler_Speed_Villager_Perk = 45,
@@ -343,7 +343,7 @@ public enum VillagerPerkTypes
 	Need_Complex_Food_Extra_Production = 54,
 
 	/// <summary>
-	/// High Motivation - This worker has a +10% higher chance of producing double yields for each Complex Food need met.
+	/// High Motivation - This worker has a +10% higher chance of producing double yields for each Service need met.
 	/// </summary>
 	/// <name>Need Service Goods Extra Production</name>
 	Need_Service_Goods_Extra_Production = 55,
@@ -475,6 +475,12 @@ public enum VillagerPerkTypes
 	U_Houses_Villagers_Speed_Bonus = 76,
 
 	/// <summary>
+	/// Logging Boots - Specially reinforced boots that are surprisingly lightweight. Woodcutters working in a camp with this upgrade move +25% faster.
+	/// </summary>
+	/// <name>[U][W] Woodcutter Speed - villager perk</name>
+	UW_Woodcutter_Speed_Villager_Perk = 82,
+
+	/// <summary>
 	/// Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑12 to Global Resolve)
 	/// </summary>
 	/// <name>VaultResolvePenalty - hard</name>
@@ -510,7 +516,7 @@ public enum VillagerPerkTypes
 	/// The total number of vanilla VillagerPerkTypes in the game.
 	/// </summary>
 	[Obsolete("Use VillagerPerkTypesExtensions.Count(). VillagerPerkTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 80
+	MAX = 83
 }
 
 /// <summary>
@@ -727,7 +733,7 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.Furniture, "Furniture" },                                                                 // Furniture - Adds an additional +1 to Resolve for villagers with a home. (+1 to Global Resolve)
 		{ VillagerPerkTypes.Global_Chance_Of_Death, "Global Chance of Death" },                                       // Overtime - Results matter more than your villagers’ health. Increases global production speed by 120, but villagers have a +1% chance of dying every 120 seconds.
 		{ VillagerPerkTypes.Hauler_Break_Interval_Villager_Perk, "Hauler Break Interval - villager perk" },           // Travel Rations - With provisions, haulers don't have to return to the hearth as often. Increases the time between breaks for haulers by +50% and their carrying capacity by 5
-		{ VillagerPerkTypes.Hauler_Speed_Villager_Perk, "Hauler Speed - villager perk" },                             // HaulerUpgrade_Speed_Name - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
+		{ VillagerPerkTypes.Hauler_Speed_Villager_Perk, "Hauler Speed - villager perk" },                             // Specialized Workwear - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 		{ VillagerPerkTypes.Houses_Plus1_Break_Time_Child, "Houses +1 - break time - child" },                        // Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
 		{ VillagerPerkTypes.Leisure_Worker, "Leisure Worker" },                                                       // Ballmer Peak - Villagers with the leisure need fulfilled have a +25% chance of doubling their yields.
 		{ VillagerPerkTypes.LessHostilityPerWoodcutter_Proficiency, "LessHostilityPerWoodcutter - Proficiency" },     // Flame Amulets - Woodcutters have a +20% chance of producing twice the normal yield.
@@ -737,7 +743,7 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.MoleResolvePenalty_Very_Hard, "MoleResolvePenalty - very hard" },                         // Giant Beast - Villagers are afraid of going into the woods. (‑20 to Global Resolve)
 		{ VillagerPerkTypes.N_Need_Villagers_Speed_Bonus, "[N] Need Villagers Speed Bonus" },                         // Boots - Increases movement speed by +15%.
 		{ VillagerPerkTypes.Need_Complex_Food_Extra_Production, "Need Complex Food Extra Production" },               // Full Belly - This worker has a +5% higher chance of producing double yields for each Complex Food need met.
-		{ VillagerPerkTypes.Need_Service_Goods_Extra_Production, "Need Service Goods Extra Production" },             // High Motivation - This worker has a +10% higher chance of producing double yields for each Complex Food need met.
+		{ VillagerPerkTypes.Need_Service_Goods_Extra_Production, "Need Service Goods Extra Production" },             // High Motivation - This worker has a +10% higher chance of producing double yields for each Service need met.
 		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_10, "[PerkCrafter] Break Interval - child - 10" },       // Good Sleep - The time interval between breaks is increased by +10%.
 		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_12, "[PerkCrafter] Break Interval - child - 12" },       // Good Sleep - The time interval between breaks is increased by +12%.
 		{ VillagerPerkTypes.PerkCrafter_Break_Interval_Child_4, "[PerkCrafter] Break Interval - child - 4" },         // Good Sleep - The time interval between breaks is increased by +4%.
@@ -759,6 +765,7 @@ public static class VillagerPerkTypesExtensions
 		{ VillagerPerkTypes.U_Frog_Houses_Bonus_Resolve, "[U] Frog Houses Bonus Resolve" },                           // Indoor Pool - This seemingly extravagant luxury is something that Frogs need to survive. (+2 to Global Resolve)
 		{ VillagerPerkTypes.U_Houses_Bonus_Resolve, "[U] Houses Bonus Resolve" },                                     // Stove - A small reminder of the Holy Flame. (+1 to Global Resolve)
 		{ VillagerPerkTypes.U_Houses_Villagers_Speed_Bonus, "[U] Houses Villagers Speed Bonus" },                     // Soft Beds - Villagers living in a house with this upgrade move +15% faster.
+		{ VillagerPerkTypes.UW_Woodcutter_Speed_Villager_Perk, "[U][W] Woodcutter Speed - villager perk" },           // Logging Boots - Specially reinforced boots that are surprisingly lightweight. Woodcutters working in a camp with this upgrade move +25% faster.
 		{ VillagerPerkTypes.VaultResolvePenalty_Hard, "VaultResolvePenalty - hard" },                                 // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑12 to Global Resolve)
 		{ VillagerPerkTypes.VaultResolvePenalty_Impossible, "VaultResolvePenalty - impossible" },                     // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑16 to Global Resolve)
 		{ VillagerPerkTypes.VaultResolvePenalty_Normal, "VaultResolvePenalty - normal" },                             // Ominous Whispers - Strange voices can be heard coming from the sealed vault. (‑10 to Global Resolve)
