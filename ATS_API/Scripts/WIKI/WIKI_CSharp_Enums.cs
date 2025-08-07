@@ -400,7 +400,7 @@ public partial class WIKI
         CreateEnumTypesCSharpScript("InstitutionTypes", "SO.Settings.Institutions", SO.Settings.Institutions, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("MineTypes", "SO.Settings.mines", SO.Settings.mines, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("RainCatcherTypes", "SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>()", SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>().ToArray(), a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
-        
+        CreateEnumTypesCSharpScript("BuildingRainpunkModelTypes", "SO.Settings.Buildings.Where(a=> a is WorkshopModel w && w.rainpunk != null).Select(a=>((WorkshopModel)a).rainpunk)", SO.Settings.Buildings.Where(a=> a is WorkshopModel w && w.rainpunk != null).Select(a=>(a as WorkshopModel).rainpunk).Distinct(), a=>a.Name, RainpunkComment, ["Eremite.Buildings"]);
         
         CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameAndDescription, ["Eremite.Buildings"]);
         CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameAndDescription, ["Eremite.Buildings"]);
@@ -458,6 +458,39 @@ public partial class WIKI
 
         return nameAndDescription;
     }
+
+    private static Dictionary<string, string> RainpunkComment(BuildingRainpunkModel arg)
+    {
+        if (arg == null)
+        {
+            return null;
+        }
+        
+        Dictionary<string,string> nameAndDescription = NameAndDescription(arg);
+        if (nameAndDescription == null)
+        {
+            return null;
+        }
+
+        if (arg.water != null)
+        {
+            nameAndDescription["water"] = arg.water.name;
+        }
+
+        var buildings = SO.Settings.Buildings.Where(a => a is WorkshopModel w && w.rainpunk == arg).Select(a => a.name);
+        if (buildings.Any())
+        {
+            var limitedBuildings = buildings.Take(5).ToList();
+            nameAndDescription["buildings"] = string.Join(", ", limitedBuildings);
+        }
+        else
+        {
+            nameAndDescription["buildings"] = "No buildings using this rainpunk";
+        }
+
+        return nameAndDescription;
+    }
+
     private static Dictionary<string, string> RecipeComments(RecipeModel arg)
     {
         if (arg == null)
