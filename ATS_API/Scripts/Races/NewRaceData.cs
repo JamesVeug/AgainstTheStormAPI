@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
+using Eremite.Model.Configs;
+using Eremite.WorldMap;
 
 namespace ATS_API.Races;
 
@@ -111,6 +114,17 @@ public class NewRaceData : ASyncable<RaceModel>
                         }
                     }
                 }
+            }
+        }
+        
+        foreach (NewcomersConfig newcomersConfig in SO.Settings.biomes.Select(a=>a.newcomers).Distinct())
+        {
+            if (newcomersConfig == null || newcomersConfig.races.All(a => a.race != RaceModel))
+            {
+                RaceChance raceChance = new RaceChance();
+                raceChance.race = RaceModel;
+                raceChance.weight = 50;
+                newcomersConfig.races = newcomersConfig.races.ForceAdd(raceChance);
             }
         }
     }
