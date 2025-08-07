@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ATS_API.Helpers;
 using ATS_API.Localization;
 using ATS_API.Recipes.Builders;
@@ -15,6 +16,7 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorksho
         public List<WorkshopRecipeModel> Recipes = null;
         public List<string> RecipeNames = null;
         public List<RaceWorkPlaceData> WorkPlaces = null;
+        public BuildingRainpunkModelTypes RainpunkModelType = BuildingRainpunkModelTypes.None;
     }
 
     private MetaData metaData;
@@ -36,17 +38,37 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorksho
         m_newData.Behaviour = BuildingBehaviourTypes.Workshop;
     }
     
-    public WorkshopBuildingBuilder(string guid, string name, string iconPath) : base(guid, name, iconPath)
+    public WorkshopBuildingBuilder(string guid, string name, string iconPath) : this(guid, name, iconPath, BuildingCategoriesTypes.Industry)
+    {
+        
+    }
+    
+    public WorkshopBuildingBuilder(string guid, string name, string iconPath, BuildingCategoriesTypes category) : base(guid, name, iconPath)
     {
         metaData = new MetaData();
+        
         m_newData.MetaData = metaData;
-        m_newData.Category = BuildingCategoriesTypes.Industry;
+        m_newData.Category = category;
+        AssignRainpunk(category);
         
         m_buildingModel.displayLabel = Keys.ProductionBuilding.ToLabelModel();
         m_buildingModel.levels = [];
         m_buildingModel.cystsAmount = 3;
     }
-    
+
+    private void AssignRainpunk(BuildingCategoriesTypes category)
+    {
+        switch (category)
+        {
+            case BuildingCategoriesTypes.Industry:
+                metaData.RainpunkModelType = BuildingRainpunkModelTypes.Crafting_Rainpunk_Module;
+                break;
+            case BuildingCategoriesTypes.Food_Production:
+                metaData.RainpunkModelType = BuildingRainpunkModelTypes.Food_Rainpunk_Module;
+                break;
+        }
+    }
+
     public WorkshopRecipeBuilder CreateRecipe(GoodsTypes good, int amount, int productionTime, Grade grade)
     {
         return CreateRecipe(good.ToName(), amount, productionTime, grade);
@@ -117,5 +139,16 @@ public class WorkshopBuildingBuilder : BuildingBuilder<WorkshopModel, NewWorksho
     public void SetProfession(ProfessionTypes profession)
     {
         m_newData.Profession = profession;
+    }
+
+    public override void SetCategory(BuildingCategoriesTypes category)
+    {
+        base.SetCategory(category);
+        AssignRainpunk(category);
+    }
+
+    public void SetRainpunk(BuildingRainpunkModelTypes rainpunk)
+    {
+        metaData.RainpunkModelType = rainpunk;
     }
 }

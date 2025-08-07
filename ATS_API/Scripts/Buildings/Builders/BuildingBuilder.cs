@@ -187,7 +187,7 @@ public abstract partial class BuildingBuilder<T, Y> : IBuildingBuilder
         m_newData.MoveCost = new NameToAmount(amount, good.ToName());
     }
     
-    public void SetCategory(BuildingCategoriesTypes category)
+    public virtual void SetCategory(BuildingCategoriesTypes category)
     {
         m_newData.Category = category;
     }
