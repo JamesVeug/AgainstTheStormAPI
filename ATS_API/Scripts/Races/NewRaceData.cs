@@ -7,6 +7,8 @@ using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
 using Eremite.Model.Configs;
+using Eremite.Model.Effects;
+using Eremite.Services;
 using Eremite.WorldMap;
 
 namespace ATS_API.Races;
@@ -126,6 +128,24 @@ public class NewRaceData : ASyncable<RaceModel>
                 raceChance.weight = 50;
                 newcomersConfig.races = newcomersConfig.races.ForceAdd(raceChance);
             }
+        }
+
+        EffectModel model = EffectTypes.R_Bats_Resolve_For_Deaths.ToEffectModel();
+        if (model != null && model is HookedEffectModel hookedModel)
+        {
+            VillagerDeathByRaceHook effectModel = hookedModel.hooks[0] as VillagerDeathByRaceHook;
+            if (effectModel != null)
+            {
+                effectModel.races = effectModel.races.ForceAdd(RaceModel);
+            }
+            else
+            {
+                APILogger.LogError($"Failed to find VillagerDeathByRaceHook in effect {EffectTypes.R_Bats_Resolve_For_Deaths}");
+            }
+        }
+        else
+        {
+            APILogger.LogError($"Failed to find effect {EffectTypes.R_Bats_Resolve_For_Deaths} for new");
         }
     }
 
