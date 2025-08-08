@@ -1,3 +1,14 @@
+# 3.6.0
+- Works with ATS v1.8.10R
+- Added rainpunk support for custom buildings (Drizzle/Clearance by default depending on category)
+- Exported enums to v1.8.10R (Safe)
+  - Added BuildingRainpunkModelTypes
+  - All enums include tag/tags and usabilityTags if relevant
+  - BuildingTypes now includes category 
+- Fixed custom races not appearing as newcomers during settlements
+- Fixed "Missing Grace" displaying instead of "Missing Description"
+- Made a bunch of methods obsolete due to the game not needing them anymore
+
 # 3.5.0
 - Works with ATS v1.7.5R
 - Enums
