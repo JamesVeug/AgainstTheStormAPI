@@ -35,6 +35,7 @@ public static class RaceManager
         RaceModel.shortDescription = Placeholders.Description;
         RaceModel.passiveEffectDesc = Placeholders.PassiveEffectDesc;
         RaceModel.resilienceLabel = Placeholders.LabelLocaText;
+        RaceModel.racialBuildings = [];
         RaceModel.characteristics = [];
         RaceModel.deathEffects = [];
         RaceModel.maleNames = ["Aiden", "Bryce", "Caleb", "Dylan", "Ethan", "Finn", "Gavin", "Hayden", "Isaac", "James", "Kai", "Liam", "Mason", "Nolan", "Owen", "Parker", "Quinn", "Ryder", "Sebastian", "Tristan", "Uriel", "Vincent", "Wyatt", "Xander", "Yuri", "Zane"];
