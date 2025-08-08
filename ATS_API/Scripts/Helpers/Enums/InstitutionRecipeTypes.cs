@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum InstitutionRecipeTypes
 {
@@ -24,10 +24,6 @@ public enum InstitutionRecipeTypes
 	/// </summary>
 	None = 0,
 	
-	/// <summary></summary>
-	/// <name>API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed</name>
-	API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed = 10,
-
 	/// <summary></summary>
 	/// <name>Bloodthirst</name>
 	/// <grade>1</grade>
@@ -88,7 +84,7 @@ public enum InstitutionRecipeTypes
 	/// The total number of vanilla InstitutionRecipeTypes in the game.
 	/// </summary>
 	[Obsolete("Use InstitutionRecipeTypesExtensions.Count(). InstitutionRecipeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 11
+	MAX = 9
 }
 
 /// <summary>
@@ -117,7 +113,7 @@ public static class InstitutionRecipeTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every InstitutionRecipeTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return InstitutionRecipeTypes.API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed in the enum and log an error.
+	/// If no name is found, it will return InstitutionRecipeTypes.Bloodthirst in the enum and log an error.
 	/// </summary>
 	public static string ToName(this InstitutionRecipeTypes type)
 	{
@@ -127,7 +123,7 @@ public static class InstitutionRecipeTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of InstitutionRecipeTypes: " + type);
-		return TypeToInternalName[InstitutionRecipeTypes.API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed];
+		return TypeToInternalName[InstitutionRecipeTypes.Bloodthirst];
 	}
 	
 	/// <summary>
@@ -262,7 +258,6 @@ public static class InstitutionRecipeTypesExtensions
 	
 	internal static readonly Dictionary<InstitutionRecipeTypes, string> TypeToInternalName = new()
 	{
-		{ InstitutionRecipeTypes.API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed, "API_ExampleMod_PlayPen_API_ExampleMod_API_ExampleMod_Fries_serviceNeed" }, 
 		{ InstitutionRecipeTypes.Bloodthirst, "Bloodthirst" }, 
 		{ InstitutionRecipeTypes.Brotherhood_Free, "Brotherhood_Free" }, 
 		{ InstitutionRecipeTypes.Education, "Education" }, 

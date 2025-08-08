@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum InstitutionTypes
 {
@@ -25,12 +25,6 @@ public enum InstitutionTypes
 	None = 0,
 	
 	/// <summary>
-	/// Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
-	/// </summary>
-	/// <name>Academy</name>
-	Academy = 15,
-
-	/// <summary>
 	/// Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 	/// </summary>
 	/// <name>Bath House</name>
@@ -41,6 +35,12 @@ public enum InstitutionTypes
 	/// </summary>
 	/// <name>Clan Hall</name>
 	Clan_Hall = 2,
+
+	/// <summary>
+	/// Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
+	/// </summary>
+	/// <name>Explorers Lodge</name>
+	Explorers_Lodge = 3,
 
 	/// <summary>
 	/// Feast Hall - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Festive Mood.
@@ -114,7 +114,7 @@ public enum InstitutionTypes
 	/// The total number of vanilla InstitutionTypes in the game.
 	/// </summary>
 	[Obsolete("Use InstitutionTypesExtensions.Count(). InstitutionTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 16
+	MAX = 14
 }
 
 /// <summary>
@@ -143,7 +143,7 @@ public static class InstitutionTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every InstitutionTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return InstitutionTypes.Academy in the enum and log an error.
+	/// If no name is found, it will return InstitutionTypes.Bath_House in the enum and log an error.
 	/// </summary>
 	public static string ToName(this InstitutionTypes type)
 	{
@@ -153,7 +153,7 @@ public static class InstitutionTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of InstitutionTypes: " + type);
-		return TypeToInternalName[InstitutionTypes.Academy];
+		return TypeToInternalName[InstitutionTypes.Bath_House];
 	}
 	
 	/// <summary>
@@ -288,9 +288,9 @@ public static class InstitutionTypesExtensions
 	
 	internal static readonly Dictionary<InstitutionTypes, string> TypeToInternalName = new()
 	{
-		{ InstitutionTypes.Academy, "Academy" },                   // Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ InstitutionTypes.Bath_House, "Bath House" },             // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 		{ InstitutionTypes.Clan_Hall, "Clan Hall" },               // Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
+		{ InstitutionTypes.Explorers_Lodge, "Explorers Lodge" },   // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ InstitutionTypes.Feast_Hall, "Feast Hall" },             // Feast Hall - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Festive Mood.
 		{ InstitutionTypes.Forum, "Forum" },                       // Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 		{ InstitutionTypes.Guild_House, "Guild House" },           // Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.

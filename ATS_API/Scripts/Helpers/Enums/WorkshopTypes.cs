@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum WorkshopTypes
 {
@@ -381,7 +381,7 @@ public enum WorkshopTypes
 	Tea_House = 51,
 
 	/// <summary>
-	/// Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done.
+	/// Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done. Can produce:  [we] fuel core Enriched Fuel (grade1)
 	/// </summary>
 	/// <name>Temporary Engineering Station</name>
 	Temporary_Engineering_Station = 57,
@@ -427,7 +427,7 @@ public enum WorkshopTypes
 	/// The total number of vanilla WorkshopTypes in the game.
 	/// </summary>
 	[Obsolete("Use WorkshopTypesExtensions.Count(). WorkshopTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 58
+	MAX = 57
 }
 
 /// <summary>
@@ -652,7 +652,7 @@ public static class WorkshopTypesExtensions
 		{ WorkshopTypes.Stamping_Mill, "Stamping Mill" },                                 // Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ WorkshopTypes.Supplier, "Supplier" },                                           // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ WorkshopTypes.Tea_House, "Tea House" },                                         // Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
-		{ WorkshopTypes.Temporary_Engineering_Station, "Temporary Engineering Station" }, // Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done.
+		{ WorkshopTypes.Temporary_Engineering_Station, "Temporary Engineering Station" }, // Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done. Can produce:  [we] fuel core Enriched Fuel (grade1)
 		{ WorkshopTypes.Tinctury, "Tinctury" },                                           // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ WorkshopTypes.Tinkerer, "Tinkerer" },                                           // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).  Rain engine: "[water] storm water" Storm Water.
 		{ WorkshopTypes.Toolshop, "Toolshop" },                                           // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).  Rain engine: "[water] storm water" Storm Water.

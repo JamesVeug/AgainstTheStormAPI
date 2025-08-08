@@ -10,7 +10,7 @@ using Eremite.Model.Goals;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum GoalTypes
 {
@@ -25,46 +25,10 @@ public enum GoalTypes
 	None = 0,
 	
 	/// <summary>
-	/// Bat Settlement - Win a game with at least 25 Bats.
-	/// </summary>
-	/// <name>Deed Bat Population</name>
-	Deed_Bat_Population = 244,
-
-	/// <summary>
-	/// Living on Credit - Buy goods worth 500 Amber on credit on the Black Market.
-	/// </summary>
-	/// <name>Deed Black Market Debt</name>
-	Deed_Black_Market_Debt = 245,
-
-	/// <summary>
-	/// Bankruptcy - Buy 100 Amber worth of goods on credit on the Black Market in one game.
-	/// </summary>
-	/// <name>Deed Black Market Debt In One Game</name>
-	Deed_Black_Market_Debt_In_One_Game = 246,
-
-	/// <summary>
-	/// Shady Dealings - Complete 50 transactions on the Black Market.
-	/// </summary>
-	/// <name>Deed Black Market Transactions</name>
-	Deed_Black_Market_Transactions = 247,
-
-	/// <summary>
 	/// The Emberwright - Create 20 experimental cornerstones in the Ashen Thicket.
 	/// </summary>
 	/// <name>Deed Craft Cornerstones</name>
 	Deed_Craft_Cornerstones = 1,
-
-	/// <summary>
-	/// Exiled - Exile 50 villagers in the Manorial Court.
-	/// </summary>
-	/// <name>Deed Exile Villagers</name>
-	Deed_Exile_Villagers = 248,
-
-	/// <summary>
-	/// The Weakest Link - Exile 15 villagers in the Manorial Court in one game.
-	/// </summary>
-	/// <name>Deed Exile Villagers In One Game</name>
-	Deed_Exile_Villagers_In_One_Game = 249,
 
 	/// <summary>
 	/// Feeling Lucky - Obtain the Rainpunk Foundry blueprint from an expedition in the Coastal Grove.
@@ -95,12 +59,6 @@ public enum GoalTypes
 	/// </summary>
 	/// <name>Deed Homestead and Foundry</name>
 	Deed_Homestead_And_Foundry = 6,
-
-	/// <summary>
-	/// Peaceful Life - Keep the Fluffbeak's well-being at 75% or higher for at least 20 minutes.
-	/// </summary>
-	/// <name>Deed Keep Poro Happy</name>
-	Deed_Keep_Poro_Happy = 250,
 
 	/// <summary>
 	/// The Adamantine Seal - Reforge the Adamantine Seal.
@@ -287,18 +245,6 @@ public enum GoalTypes
 	/// </summary>
 	/// <name>Deed Win Ashen Thicket Impossible</name>
 	Deed_Win_Ashen_Thicket_Impossible = 37,
-
-	/// <summary>
-	/// The Rocky Ravine - Win a game on the Rocky Ravine biome.
-	/// </summary>
-	/// <name>Deed Win Cave</name>
-	Deed_Win_Cave = 251,
-
-	/// <summary>
-	/// Rock and Stone - Win a game in the Rocky Ravine biome, and on Viceroy difficulty (or higher).
-	/// </summary>
-	/// <name>Deed Win Cave Impossible</name>
-	Deed_Win_Cave_Impossible = 252,
 
 	/// <summary>
 	/// The Coastal Grove - Win a game on the Coastal Grove biome.
@@ -505,18 +451,6 @@ public enum GoalTypes
 	Deed_Win_On_Wednesday = 71,
 
 	/// <summary>
-	/// The Bamboo Flats - Win a game on the Bamboo Flats biome.
-	/// </summary>
-	/// <name>Deed Win Poro</name>
-	Deed_Win_Poro = 253,
-
-	/// <summary>
-	/// Fluffbeak Paradise - Win a game in the Bamboo Flats biome, and on Viceroy difficulty (or higher).
-	/// </summary>
-	/// <name>Deed Win Poro Impossible</name>
-	Deed_Win_Poro_Impossible = 254,
-
-	/// <summary>
 	/// The Queen's Hand - Complete the Queen's Hand Trial.
 	/// </summary>
 	/// <name>Deed Win Queens Hand</name>
@@ -535,7 +469,7 @@ public enum GoalTypes
 	Deed_Win_With_Ale_Chain = 74,
 
 	/// <summary>
-	/// Paradise - Ensure all villagers have all their needs fulfilled simultaneously (requires all 3 species in the settlement).
+	/// Paradise - Ensure all villagers have all their needs fulfilled simultaneously.
 	/// </summary>
 	/// <name>Deed Win With All Needs</name>
 	Deed_Win_With_All_Needs = 75,
@@ -545,12 +479,6 @@ public enum GoalTypes
 	/// </summary>
 	/// <name>Deed Win With Amber</name>
 	Deed_Win_With_Amber = 76,
-
-	/// <summary>
-	/// Bat Utopia - Win a game with 30 Bats, 15 x Bat House, 1 x Academy
-	/// </summary>
-	/// <name>Deed Win With Bats</name>
-	Deed_Win_With_Bats = 255,
 
 	/// <summary>
 	/// Beaver Utopia - Win a game with 30 Beavers, 15 x Beaver House, 1 x Guild House
@@ -575,12 +503,6 @@ public enum GoalTypes
 	/// </summary>
 	/// <name>Deed Win With Dead Villagers Prestige</name>
 	Deed_Win_With_Dead_Villagers_Prestige = 80,
-
-	/// <summary>
-	/// Green Thumb - Win a game after building at least 40 Fertile Fields in the Bamboo Flats.
-	/// </summary>
-	/// <name>Deed Win With Fertile Fields</name>
-	Deed_Win_With_Fertile_Fields = 256,
 
 	/// <summary>
 	/// Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously.
@@ -775,7 +697,7 @@ public enum GoalTypes
 	H_Win_Game_With_Many_Forbidden_Events_Solved = 111,
 
 	/// <summary>
-	/// Arckmage's Challenge - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree (except in the Rocky Ravine).
+	/// Arckmage's Challenge - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree.
 	/// </summary>
 	/// <name>[H] Win Game Without Cutting Trees</name>
 	H_Win_Game_Without_Cutting_Trees = 112,
@@ -1327,13 +1249,13 @@ public enum GoalTypes
 	WE_Deed_Complete_Trade_Routes_Of_Value_In_Years = 201,
 
 	/// <summary>
-	/// Bankrupt Trader - Deliver 250 "[valuable] amber" Amber and win the game before the start of Drizzle season in year 9.
+	/// Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 250 before the start of Drizzle season in year 9.
 	/// </summary>
 	/// <name>[WE] Deed Win With Amber - Big</name>
 	WE_Deed_Win_With_Amber_Big = 236,
 
 	/// <summary>
-	/// Bankrupt Trader - Deliver 100 "[valuable] amber" Amber and win the game before the start of Drizzle season in year 11.
+	/// Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 100 before the start of Drizzle season in year 11.
 	/// </summary>
 	/// <name>[WE] Deed Win With Amber - Small</name>
 	WE_Deed_Win_With_Amber_Small = 237,
@@ -1381,19 +1303,13 @@ public enum GoalTypes
 	WE_Win_With_Attacked_Traders = 239,
 
 	/// <summary>
-	/// Catastrophic Experiment - Win the game after constructing and detonating a Blight Bomb.
-	/// </summary>
-	/// <name>[WE] Win With Blight Bomb Solved</name>
-	WE_Win_With_Blight_Bomb_Solved = 257,
-
-	/// <summary>
 	/// Cloaked Wanderer - Win a game with 3 active Blood Flower clones in your settlement.
 	/// </summary>
 	/// <name>[WE] Win With Blood Flower</name>
 	WE_Win_With_Blood_Flower = 240,
 
 	/// <summary>
-	/// Brass Order Engineers - Deliver 25 "[we] fuel core" Enriched Fuel and win the game before the start of Drizzle season in year 9.
+	/// Brass Order Engineers - Win the game after delivering "[we] fuel core" Enriched Fuel 25 before the start of Drizzle season in year 9.
 	/// </summary>
 	/// <name>[WE] Win With Fuel Cores</name>
 	WE_Win_With_Fuel_Cores = 241,
@@ -1451,12 +1367,6 @@ public enum GoalTypes
 	/// </summary>
 	/// <name>Win Game With Modifier - Dangerous</name>
 	Win_Game_With_Modifier_Dangerous = 215,
-
-	/// <summary>
-	/// Drylands - Win a game near the Drylands modifier.
-	/// </summary>
-	/// <name>Win Game With Modifier - Drylands</name>
-	Win_Game_With_Modifier_Drylands = 258,
 
 	/// <summary>
 	/// Forbidden Lands - Win a game near the Forbidden Lands modifier.
@@ -1531,18 +1441,6 @@ public enum GoalTypes
 	Win_Game_With_Modifier_Petrified_Necropolis = 227,
 
 	/// <summary>
-	/// Riverlands - Win a game near the Riverlands modifier.
-	/// </summary>
-	/// <name>Win Game With Modifier - Riverlands</name>
-	Win_Game_With_Modifier_Riverlands = 259,
-
-	/// <summary>
-	/// Silent Dominion - Win a game near the Silent Dominion modifier.
-	/// </summary>
-	/// <name>Win Game With Modifier - Silent Dominion</name>
-	Win_Game_With_Modifier_Silent_Dominion = 260,
-
-	/// <summary>
 	/// Statue of the Forefathers - Win a game near the Statue of the Forefathers modifier.
 	/// </summary>
 	/// <name>Win Game With Modifier - Statue</name>
@@ -1578,7 +1476,7 @@ public enum GoalTypes
 	/// The total number of vanilla GoalTypes in the game.
 	/// </summary>
 	[Obsolete("Use GoalTypesExtensions.Count(). GoalTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 261
+	MAX = 241
 }
 
 /// <summary>
@@ -1607,7 +1505,7 @@ public static class GoalTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every GoalTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return GoalTypes.Deed_Bat_Population in the enum and log an error.
+	/// If no name is found, it will return GoalTypes.Deed_Craft_Cornerstones in the enum and log an error.
 	/// </summary>
 	public static string ToName(this GoalTypes type)
 	{
@@ -1617,7 +1515,7 @@ public static class GoalTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of GoalTypes: " + type);
-		return TypeToInternalName[GoalTypes.Deed_Bat_Population];
+		return TypeToInternalName[GoalTypes.Deed_Craft_Cornerstones];
 	}
 	
 	/// <summary>
@@ -1752,19 +1650,12 @@ public static class GoalTypesExtensions
 	
 	internal static readonly Dictionary<GoalTypes, string> TypeToInternalName = new()
 	{
-		{ GoalTypes.Deed_Bat_Population, "Deed Bat Population" },                                                           // Bat Settlement - Win a game with at least 25 Bats.
-		{ GoalTypes.Deed_Black_Market_Debt, "Deed Black Market Debt" },                                                     // Living on Credit - Buy goods worth 500 Amber on credit on the Black Market.
-		{ GoalTypes.Deed_Black_Market_Debt_In_One_Game, "Deed Black Market Debt In One Game" },                             // Bankruptcy - Buy 100 Amber worth of goods on credit on the Black Market in one game.
-		{ GoalTypes.Deed_Black_Market_Transactions, "Deed Black Market Transactions" },                                     // Shady Dealings - Complete 50 transactions on the Black Market.
 		{ GoalTypes.Deed_Craft_Cornerstones, "Deed Craft Cornerstones" },                                                   // The Emberwright - Create 20 experimental cornerstones in the Ashen Thicket.
-		{ GoalTypes.Deed_Exile_Villagers, "Deed Exile Villagers" },                                                         // Exiled - Exile 50 villagers in the Manorial Court.
-		{ GoalTypes.Deed_Exile_Villagers_In_One_Game, "Deed Exile Villagers In One Game" },                                 // The Weakest Link - Exile 15 villagers in the Manorial Court in one game.
 		{ GoalTypes.Deed_Foundry_In_Bay, "Deed Foundry in Bay" },                                                           // Feeling Lucky - Obtain the Rainpunk Foundry blueprint from an expedition in the Coastal Grove.
 		{ GoalTypes.Deed_Fox_Population, "Deed Fox Population" },                                                           // Fox Settlement - Win a game with at least 25 Foxes.
 		{ GoalTypes.Deed_Frog_Population, "Deed Frog Population" },                                                         // Frog Settlement - Win a game with at least 30 Frogs.
 		{ GoalTypes.Deed_Harpy_Population, "Deed Harpy Population" },                                                       // Harpy Settlement - Win a game with at least 25 Harpies.
 		{ GoalTypes.Deed_Homestead_And_Foundry, "Deed Homestead and Foundry" },                                             // Feeling Extremely Lucky - You must have a PhD in mathematics. Awarded for obtaining the Homestead and Rainpunk Foundry blueprints from expeditions in the Coastal Grove (in one game).
-		{ GoalTypes.Deed_Keep_Poro_Happy, "Deed Keep Poro Happy" },                                                         // Peaceful Life - Keep the Fluffbeak's well-being at 75% or higher for at least 20 minutes.
 		{ GoalTypes.Deed_Reforge_Seal_Adamantine, "Deed Reforge Seal Adamantine" },                                         // The Adamantine Seal - Reforge the Adamantine Seal.
 		{ GoalTypes.Deed_Reforge_Seal_Bronze, "Deed Reforge Seal Bronze" },                                                 // The Bronze Seal - Reforge the Bronze Seal.
 		{ GoalTypes.Deed_Reforge_Seal_Cobalt, "Deed Reforge Seal Cobalt" },                                                 // The Cobalt Seal - Reforge the Cobalt Seal.
@@ -1796,8 +1687,6 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Use_Bait, "Deed Use Bait" },                                                                       // Taking the Bait - Use 500 ground bait in Fishing Huts.
 		{ GoalTypes.Deed_Win_Ashen_Thicket, "Deed Win Ashen Thicket" },                                                     // The Ashen Thicket - Win a game on the Ashen Thicket biome.
 		{ GoalTypes.Deed_Win_Ashen_Thicket_Impossible, "Deed Win Ashen Thicket Impossible" },                               // Miner's Paradise - Win a game in the Ashen Thicket biome, and on Viceroy difficulty (or higher).
-		{ GoalTypes.Deed_Win_Cave, "Deed Win Cave" },                                                                       // The Rocky Ravine - Win a game on the Rocky Ravine biome.
-		{ GoalTypes.Deed_Win_Cave_Impossible, "Deed Win Cave Impossible" },                                                 // Rock and Stone - Win a game in the Rocky Ravine biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Coastal_Grove, "Deed Win Coastal Grove" },                                                     // The Coastal Grove - Win a game on the Coastal Grove biome.
 		{ GoalTypes.Deed_Win_Coastal_Grove_Impossible, "Deed Win Coastal Grove Impossible" },                               // Salty Breeze - Win a game in the Coastal Grove biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Coral_Impossible, "Deed Win Coral Impossible" },                                               // The Reef - Win a game in the Coral Forest biome, and on Viceroy difficulty (or higher).
@@ -1832,19 +1721,15 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_Game_With_Trade_Routes, "Deed Win Game With Trade Routes" },                                   // Trade Baron - Win a game after completing 20 trade routes.
 		{ GoalTypes.Deed_Win_Marshlands_Impossible, "Deed Win Marshlands Impossible" },                                     // Deadly Spores - Win a game in the Marshlands biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_On_Wednesday, "Deed Win on Wednesday" },                                                       // It's Wednesday - Win a game with Frogs on a Wednesday.
-		{ GoalTypes.Deed_Win_Poro, "Deed Win Poro" },                                                                       // The Bamboo Flats - Win a game on the Bamboo Flats biome.
-		{ GoalTypes.Deed_Win_Poro_Impossible, "Deed Win Poro Impossible" },                                                 // Fluffbeak Paradise - Win a game in the Bamboo Flats biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Queens_Hand, "Deed Win Queens Hand" },                                                         // The Queen's Hand - Complete the Queen's Hand Trial.
 		{ GoalTypes.Deed_Win_Scarlet_Impossible, "Deed Win Scarlet Impossible" },                                           // Crimson Soil - Win a game in the Scarlet Orchard biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Ale_Chain, "Deed Win With Ale Chain" },                                                   // Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on Veteran difficulty (or higher).
-		{ GoalTypes.Deed_Win_With_All_Needs, "Deed Win With All Needs" },                                                   // Paradise - Ensure all villagers have all their needs fulfilled simultaneously (requires all 3 species in the settlement).
+		{ GoalTypes.Deed_Win_With_All_Needs, "Deed Win With All Needs" },                                                   // Paradise - Ensure all villagers have all their needs fulfilled simultaneously.
 		{ GoalTypes.Deed_Win_With_Amber, "Deed Win With Amber" },                                                           // Trade Connections - Win a game with 400 Amber in your Warehouse.
-		{ GoalTypes.Deed_Win_With_Bats, "Deed Win With Bats" },                                                             // Bat Utopia - Win a game with 30 Bats, 15 x Bat House, 1 x Academy
 		{ GoalTypes.Deed_Win_With_Beavers, "Deed Win With Beavers" },                                                       // Beaver Utopia - Win a game with 30 Beavers, 15 x Beaver House, 1 x Guild House
 		{ GoalTypes.Deed_Win_With_Caches, "Deed Win With Caches" },                                                         // Treasure - Win a game after opening or sending 20 Abandoned Caches to the Citadel.
 		{ GoalTypes.Deed_Win_With_Dead_Villagers, "Deed Win With Dead Villagers" },                                         // Devil's Bargain - Win a game after 20 villagers have died.
 		{ GoalTypes.Deed_Win_With_Dead_Villagers_Prestige, "Deed Win With Dead Villagers Prestige" },                       // High Price - Win a game after 15 villagers died, on Prestige 18 difficulty (or higher).
-		{ GoalTypes.Deed_Win_With_Fertile_Fields, "Deed Win With Fertile Fields" },                                         // Green Thumb - Win a game after building at least 40 Fertile Fields in the Bamboo Flats.
 		{ GoalTypes.Deed_Win_With_Food_Needs, "Deed Win With Food Needs" },                                                 // Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously.
 		{ GoalTypes.Deed_Win_With_Foxes, "Deed Win With Foxes" },                                                           // Fox Utopia - Win a game with 30 Foxes, 15 x Fox House, 1 x Tea Doctor
 		{ GoalTypes.Deed_Win_With_Frogs, "Deed Win With Frogs" },                                                           // Frog Utopia - Win a game with 40 Frogs, 20 x Frog House, 1 x Forum
@@ -1877,7 +1762,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.H_Marhs_Meat_Depleted, "[H] Marhs Meat Depleted" },                                                     // The Appetizer - You just had to try it, didn't you? Awarded for "naturally" depleting a Dead Leviathan gathering node.
 		{ GoalTypes.H_Pet_Cat, "[H] Pet Cat" },                                                                             // Cat-egorical Imperative - You must pet the cat. Awarded for petting the Elder's Cat 50 times in one game.
 		{ GoalTypes.H_Win_Game_With_Many_Forbidden_Events_Solved, "[H] Win Game With Many Forbidden Events Solved" },       // The Rebel - Seek adversity, and the rest will follow. Awarded for completing 6 Forbidden Events in a single game.
-		{ GoalTypes.H_Win_Game_Without_Cutting_Trees, "[H] Win Game Without Cutting Trees" },                               // Arckmage's Challenge - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree (except in the Rocky Ravine).
+		{ GoalTypes.H_Win_Game_Without_Cutting_Trees, "[H] Win Game Without Cutting Trees" },                               // Arckmage's Challenge - <i>No more cutting! That's it!</i> Awarded for completing a settlement on Prestige 20 difficulty without cutting down a single tree.
 		{ GoalTypes.H_Win_Games_With_Blood_Flowers_Farmed, "[H] Win Games With Blood Flowers Farmed" },                     // Crimson Farmer - It ain't much, but it's honest work. Awarded for completing a settlement after removing 20 Blood Flowers.
 		{ GoalTypes.H_Win_Highest_Difficulty_Fast, "[H] Win Highest Difficulty Fast" },                                     // Speedrun - Why even bother balancing this game? Awarded for completing a settlement in 3 years (or less), on Prestige 20 difficulty.
 		{ GoalTypes.H_Win_Storm_Ants_Without_Hunger, "[H] Win Storm Ants Without Hunger" },                                 // Not On My Watch - That was actually quite impressive! Awarded for completing the Storm Ant Column world event on Prestige 20 difficulty without any villagers suffering the hunger effect.
@@ -1969,8 +1854,8 @@ public static class GoalTypesExtensions
 		{ GoalTypes.UniqueGoal_Phase5_WinWithVaults, "UniqueGoal_Phase5_WinWithVaults" },                                   // Ancient Vaults - Win a game with 2 active Open Vaults on the map.
 		{ GoalTypes.WE_Catch_Ghost_Stag, "[WE] Catch Ghost Stag" },                                                         // Spectral Stag - Win the game after catching or releasing the Spectral Treasure Stag on time.
 		{ GoalTypes.WE_Deed_Complete_Trade_Routes_Of_Value_In_Years, "[WE] Deed Complete Trade Routes Of Value In Years" }, // Commenda Contract - Win a game before year 8 ends, after completing trade routes worth 150 "[valuable] amber" Amber in total.
-		{ GoalTypes.WE_Deed_Win_With_Amber_Big, "[WE] Deed Win With Amber - Big" },                                         // Bankrupt Trader - Deliver 250 "[valuable] amber" Amber and win the game before the start of Drizzle season in year 9.
-		{ GoalTypes.WE_Deed_Win_With_Amber_Small, "[WE] Deed Win With Amber - Small" },                                     // Bankrupt Trader - Deliver 100 "[valuable] amber" Amber and win the game before the start of Drizzle season in year 11.
+		{ GoalTypes.WE_Deed_Win_With_Amber_Big, "[WE] Deed Win With Amber - Big" },                                         // Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 250 before the start of Drizzle season in year 9.
+		{ GoalTypes.WE_Deed_Win_With_Amber_Small, "[WE] Deed Win With Amber - Small" },                                     // Bankrupt Trader - Win the game after delivering "[valuable] amber" Amber 100 before the start of Drizzle season in year 11.
 		{ GoalTypes.WE_Deed_Win_With_Forbidden_Events_Solved, "[WE] Deed Win With Forbidden Events Solved" },               // Obsidian Loremaster - Win a game after solving 2 Forbidden Events.
 		{ GoalTypes.WE_Deed_Win_With_Less_Than_3_Dang_Glades, "[WE] Deed Win With Less Than 3 Dang Glades" },               // Somber Procession - Win a game after opening no more than 1 Dangerous or Forbidden Glade.
 		{ GoalTypes.WE_Deed_Win_With_Villagers_Dying, "[WE] Deed Win With Villagers Dying" },                               // Followers of the Forsaken Gods - Win a game before year 8 ends, after 10 villagers have died.
@@ -1978,9 +1863,8 @@ public static class GoalTypesExtensions
 		{ GoalTypes.WE_Deed_Win_Without_Leaving, "[WE] Deed Win Without Leaving" },                                         // Hanged Viceroy - Win a game with no villagers leaving.
 		{ GoalTypes.WE_Discover_Dangerous_Glades_In_Years, "[WE] Discover Dangerous Glades In Years" },                     // First Elder - Win the game after discovering 2 Dangerous or Forbidden Glades in the first year.
 		{ GoalTypes.WE_Win_With_Attacked_Traders, "[WE] Win With Attacked Traders" },                                       // Ghost Town - Win before year 8 ends, after attacking at least 3 traders.
-		{ GoalTypes.WE_Win_With_Blight_Bomb_Solved, "[WE] Win With Blight Bomb Solved" },                                   // Catastrophic Experiment - Win the game after constructing and detonating a Blight Bomb.
 		{ GoalTypes.WE_Win_With_Blood_Flower, "[WE] Win With Blood Flower" },                                               // Cloaked Wanderer - Win a game with 3 active Blood Flower clones in your settlement.
-		{ GoalTypes.WE_Win_With_Fuel_Cores, "[WE] Win With Fuel Cores" },                                                   // Brass Order Engineers - Deliver 25 "[we] fuel core" Enriched Fuel and win the game before the start of Drizzle season in year 9.
+		{ GoalTypes.WE_Win_With_Fuel_Cores, "[WE] Win With Fuel Cores" },                                                   // Brass Order Engineers - Win the game after delivering "[we] fuel core" Enriched Fuel 25 before the start of Drizzle season in year 9.
 		{ GoalTypes.WE_Win_With_Funeral_Solved, "[WE] Win With Funeral Solved" },                                           // Somber Procession - Win the game after building the Feast Hall and completing the Funeral Feast event in it.
 		{ GoalTypes.WE_Win_With_Hubs, "[WE] Win With Hubs" },                                                               // Brass Order Engineers - Win a game before year 10 ends, while having 3 Hearths in your settlement upgraded to level: District (Level 3).
 		{ GoalTypes.WE_Win_With_Needs_Fulfilled, "[WE] Win With Needs Fulfilled" },                                         // First Elder - Win the game before year 7 ends, after fulfilling 200 needs from the Services category.
@@ -1990,7 +1874,6 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Win_Game_With_Modifier_Battleground, "Win Game With Modifier - Battleground" },                         // Ancient Battleground - Win a game near the Ancient Battleground modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Crystals, "Win Game With Modifier - Crystals" },                                 // Sparkdew Crystals - Win a game near the Sparkdew Crystals modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Dangerous, "Win Game With Modifier - Dangerous" },                               // Dangerous Lands - Win a game near the Dangerous Lands modifier.
-		{ GoalTypes.Win_Game_With_Modifier_Drylands, "Win Game With Modifier - Drylands" },                                 // Drylands - Win a game near the Drylands modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Forbidden, "Win Game With Modifier - Forbidden" },                               // Forbidden Lands - Win a game near the Forbidden Lands modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Frosts, "Win Game With Modifier - Frosts" },                                     // Frosts - Win a game near the Frosts modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Gathering_Storm, "Win Game With Modifier - Gathering Storm" },                   // Gathering Storm - Win a game near the Gathering Storm modifier.
@@ -2003,8 +1886,6 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Win_Game_With_Modifier_Outpost, "Win Game With Modifier - Outpost" },                                   // Royal Outpost - Win a game near the Royal Outpost modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Overgrown_Library, "Win Game With Modifier - Overgrown Library" },               // Overgrown Library - Win a game near the Overgrown Library modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Petrified_Necropolis, "Win Game With Modifier - Petrified Necropolis" },         // Petrified Necropolis - Win a game near the Petrified Necropolis modifier.
-		{ GoalTypes.Win_Game_With_Modifier_Riverlands, "Win Game With Modifier - Riverlands" },                             // Riverlands - Win a game near the Riverlands modifier.
-		{ GoalTypes.Win_Game_With_Modifier_Silent_Dominion, "Win Game With Modifier - Silent Dominion" },                   // Silent Dominion - Win a game near the Silent Dominion modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Statue, "Win Game With Modifier - Statue" },                                     // Statue of the Forefathers - Win a game near the Statue of the Forefathers modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Temple, "Win Game With Modifier - Temple" },                                     // Forsaken Gods Temple - Win a game near the Forsaken Gods Temple modifier.
 		{ GoalTypes.Win_Game_With_Modifier_Torrent, "Win Game With Modifier - Torrent" },                                   // Corrosive Torrent - Win a game near the Corrosive Torrent modifier.

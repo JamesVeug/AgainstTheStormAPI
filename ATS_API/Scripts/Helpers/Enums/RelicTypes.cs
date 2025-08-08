@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum RelicTypes
 {
@@ -151,18 +151,6 @@ public enum RelicTypes
 	Angry_Ghost_41 = 21,
 
 	/// <summary>
-	/// Ghost of a Corrupt Judge - They called me a tyrant for upholding order - for daring to keep the Frog scum in their place. They banished me, left me to rot, and called it justice? Hypocrites, all of them!
-	/// </summary>
-	/// <name>Angry Ghost 42</name>
-	Angry_Ghost_42 = 340,
-
-	/// <summary>
-	/// Ghost of a Royal Executioner - Fate has a cruel sense of humor - one day you're swinging the axe, the next you're kneeling at the executioner's block.
-	/// </summary>
-	/// <name>Angry Ghost 43</name>
-	Angry_Ghost_43 = 341,
-
-	/// <summary>
 	/// Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
 	/// </summary>
 	/// <name>Angry Ghost 5</name>
@@ -187,12 +175,6 @@ public enum RelicTypes
 	AngryGhostChest_T1 = 25,
 
 	/// <summary>
-	/// Fallen Bat Miners - A group of fallen Bat miners, their tools left where they dropped. It seems they were scouting for a new mining site when something struck them down. The sight of these bodies causes unrest among the Bat population.
-	/// </summary>
-	/// <name>BatBattleground_T1</name>
-	BatBattleground_T1 = 342,
-
-	/// <summary>
 	/// Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
 	/// </summary>
 	/// <name>BeaverBattleground_T1</name>
@@ -209,12 +191,6 @@ public enum RelicTypes
 	/// </summary>
 	/// <name>Black Treasure Stag</name>
 	Black_Treasure_Stag = 28,
-
-	/// <summary>
-	/// Blight Bomb - A strange humming can be heard from within the ominous device. There's nothing left to do now but detonate it... and hope the results aren't catastrophic.
-	/// </summary>
-	/// <name>Blight Bomb</name>
-	Blight_Bomb = 343,
 
 	/// <summary>
 	/// Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
@@ -341,12 +317,6 @@ public enum RelicTypes
 	/// </summary>
 	/// <name>Calm Ghost 40</name>
 	Calm_Ghost_40 = 49,
-
-	/// <summary>
-	/// Ghost of a Miner - The air turned to poison, and the dark took us all… Please, stranger - don't let this happen again.
-	/// </summary>
-	/// <name>Calm Ghost 44</name>
-	Calm_Ghost_44 = 344,
 
 	/// <summary>
 	/// Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
@@ -757,12 +727,6 @@ public enum RelicTypes
 	HarpyBattleground_T1 = 113,
 
 	/// <summary>
-	/// Haunted Bat House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	/// </summary>
-	/// <name>Haunted Ruined Bat House</name>
-	Haunted_Ruined_Bat_House = 345,
-
-	/// <summary>
 	/// Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Beaver House</name>
@@ -997,18 +961,6 @@ public enum RelicTypes
 	RewardChest_T3 = 152,
 
 	/// <summary>
-	/// Academy - A building destroyed by the storm. It can be rebuilt or salvaged.
-	/// </summary>
-	/// <name>Ruined Academy</name>
-	Ruined_Academy = 346,
-
-	/// <summary>
-	/// Academy - A building destroyed by the storm. It can be rebuilt or demolished.
-	/// </summary>
-	/// <name>Ruined Academy (no reward)</name>
-	Ruined_Academy_no_Reward = 347,
-
-	/// <summary>
 	/// Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Advanced Rain Catcher</name>
@@ -1067,18 +1019,6 @@ public enum RelicTypes
 	/// </summary>
 	/// <name>Ruined Bakery (no reward)</name>
 	Ruined_Bakery_no_Reward = 162,
-
-	/// <summary>
-	/// Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
-	/// </summary>
-	/// <name>Ruined Bat House</name>
-	Ruined_Bat_House = 348,
-
-	/// <summary>
-	/// Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
-	/// </summary>
-	/// <name>Ruined Bat House (no reward)</name>
-	Ruined_Bat_House_no_Reward = 349,
 
 	/// <summary>
 	/// Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -1301,6 +1241,18 @@ public enum RelicTypes
 	/// </summary>
 	/// <name>Ruined Druid (no reward)</name>
 	Ruined_Druid_no_Reward = 199,
+
+	/// <summary>
+	/// Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Explorers Lodge</name>
+	Ruined_Explorers_Lodge = 200,
+
+	/// <summary>
+	/// Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Explorers Lodge (no reward)</name>
+	Ruined_Explorers_Lodge_no_Reward = 201,
 
 	/// <summary>
 	/// Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -2112,7 +2064,7 @@ public enum RelicTypes
 	/// The total number of vanilla RelicTypes in the game.
 	/// </summary>
 	[Obsolete("Use RelicTypesExtensions.Count(). RelicTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 350
+	MAX = 339
 }
 
 /// <summary>
@@ -2307,17 +2259,13 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Angry_Ghost_34, "Angry Ghost 34" },                                                                   // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
 		{ RelicTypes.Angry_Ghost_4, "Angry Ghost 4" },                                                                     // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
 		{ RelicTypes.Angry_Ghost_41, "Angry Ghost 41" },                                                                   // Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
-		{ RelicTypes.Angry_Ghost_42, "Angry Ghost 42" },                                                                   // Ghost of a Corrupt Judge - They called me a tyrant for upholding order - for daring to keep the Frog scum in their place. They banished me, left me to rot, and called it justice? Hypocrites, all of them!
-		{ RelicTypes.Angry_Ghost_43, "Angry Ghost 43" },                                                                   // Ghost of a Royal Executioner - Fate has a cruel sense of humor - one day you're swinging the axe, the next you're kneeling at the executioner's block.
 		{ RelicTypes.Angry_Ghost_5, "Angry Ghost 5" },                                                                     // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
 		{ RelicTypes.Angry_Ghost_6, "Angry Ghost 6" },                                                                     // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
 		{ RelicTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                                     // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
 		{ RelicTypes.AngryGhostChest_T1, "AngryGhostChest_T1" },                                                           // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
-		{ RelicTypes.BatBattleground_T1, "BatBattleground_T1" },                                                           // Fallen Bat Miners - A group of fallen Bat miners, their tools left where they dropped. It seems they were scouting for a new mining site when something struck them down. The sight of these bodies causes unrest among the Bat population.
 		{ RelicTypes.BeaverBattleground_T1, "BeaverBattleground_T1" },                                                     // Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
 		{ RelicTypes.Black_Stag, "Black Stag" },                                                                           // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 		{ RelicTypes.Black_Treasure_Stag, "Black Treasure Stag" },                                                         // Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
-		{ RelicTypes.Blight_Bomb, "Blight Bomb" },                                                                         // Blight Bomb - A strange humming can be heard from within the ominous device. There's nothing left to do now but detonate it... and hope the results aren't catastrophic.
 		{ RelicTypes.Blightrot, "Blightrot" },                                                                             // Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
 		{ RelicTypes.Blightrot_Cauldron, "Blightrot Cauldron" },                                                           // Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
 		{ RelicTypes.Blightrot_Clone, "Blightrot - Clone" },                                                               // Blood Flower (Clone) - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
@@ -2339,7 +2287,6 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Calm_Ghost_38, "Calm Ghost 38" },                                                                     // Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
 		{ RelicTypes.Calm_Ghost_39, "Calm Ghost 39" },                                                                     // Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
 		{ RelicTypes.Calm_Ghost_40, "Calm Ghost 40" },                                                                     // Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
-		{ RelicTypes.Calm_Ghost_44, "Calm Ghost 44" },                                                                     // Ghost of a Miner - The air turned to poison, and the dark took us all… Please, stranger - don't let this happen again.
 		{ RelicTypes.Calm_Ghost_7, "Calm Ghost 7" },                                                                       // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
 		{ RelicTypes.Calm_Ghost_8, "Calm Ghost 8" },                                                                       // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
 		{ RelicTypes.CalmGhostChest_T1, "CalmGhostChest_T1" },                                                             // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
@@ -2408,7 +2355,6 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Gold_Treasure_Stag, "Gold Treasure Stag" },                                                           // Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 		{ RelicTypes.Harmony_Spirit_Altar, "Harmony Spirit Altar" },                                                       // Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
 		{ RelicTypes.HarpyBattleground_T1, "HarpyBattleground_T1" },                                                       // Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
-		{ RelicTypes.Haunted_Ruined_Bat_House, "Haunted Ruined Bat House" },                                               // Haunted Bat House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Beaver_House, "Haunted Ruined Beaver House" },                                         // Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Brewery, "Haunted Ruined Brewery" },                                                   // Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ RelicTypes.Haunted_Ruined_Cellar, "Haunted Ruined Cellar" },                                                     // Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
@@ -2448,8 +2394,6 @@ public static class RelicTypesExtensions
 		{ RelicTypes.RewardChest_T1, "RewardChest_T1" },                                                                   // Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 		{ RelicTypes.RewardChest_T2, "RewardChest_T2" },                                                                   // Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 		{ RelicTypes.RewardChest_T3, "RewardChest_T3" },                                                                   // Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
-		{ RelicTypes.Ruined_Academy, "Ruined Academy" },                                                                   // Academy - A building destroyed by the storm. It can be rebuilt or salvaged.
-		{ RelicTypes.Ruined_Academy_no_Reward, "Ruined Academy (no reward)" },                                             // Academy - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Advanced_Rain_Catcher, "Ruined Advanced Rain Catcher" },                                       // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Advanced_Rain_Catcher_no_Reward, "Ruined Advanced Rain Catcher (no reward)" },                 // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Alchemist, "Ruined Alchemist" },                                                               // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -2460,8 +2404,6 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Artisan_no_Reward, "Ruined Artisan (no reward)" },                                             // Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Bakery, "Ruined Bakery" },                                                                     // Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Bakery_no_Reward, "Ruined Bakery (no reward)" },                                               // Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
-		{ RelicTypes.Ruined_Bat_House, "Ruined Bat House" },                                                               // Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
-		{ RelicTypes.Ruined_Bat_House_no_Reward, "Ruined Bat House (no reward)" },                                         // Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Bath_House, "Ruined Bath House" },                                                             // Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Bath_House_no_Reward, "Ruined Bath House (no reward)" },                                       // Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Beanery, "Ruined Beanery" },                                                                   // Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -2499,6 +2441,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Distillery_no_Reward, "Ruined Distillery (no reward)" },                                       // Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Druid, "Ruined Druid" },                                                                       // Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Druid_no_Reward, "Ruined Druid (no reward)" },                                                 // Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Explorers_Lodge, "Ruined Explorers Lodge" },                                                   // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Explorers_Lodge_no_Reward, "Ruined Explorers Lodge (no reward)" },                             // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Farm, "Ruined Farm" },                                                                         // Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Farm_no_Reward, "Ruined Farm (no reward)" },                                                   // Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Feast_Hall_no_Reward, "Ruined Feast Hall (no reward)" },                                       // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.

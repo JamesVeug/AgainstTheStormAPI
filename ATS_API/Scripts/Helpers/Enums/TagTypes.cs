@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum TagTypes
 {
@@ -35,8 +35,6 @@ public enum TagTypes
 	Aggregation_Tag_Excavation = 5,
 
 	Aggregation_Tag_Ghosts = 6,
-
-	Aggregation_Tag_Haunted_Ruin_Bat_House = 69,
 
 	Aggregation_Tag_Haunted_Ruin_Beaver_House = 7,
 
@@ -126,8 +124,6 @@ public enum TagTypes
 
 	Relic_Funeral = 68,
 
-	Tag_Bat = 70,
-
 	Tag_Beaver = 50,
 
 	Tag_Blight = 51,
@@ -170,7 +166,7 @@ public enum TagTypes
 	/// The total number of vanilla TagTypes in the game.
 	/// </summary>
 	[Obsolete("Use TagTypesExtensions.Count(). TagTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 71
+	MAX = 68
 }
 
 /// <summary>
@@ -350,7 +346,6 @@ public static class TagTypesExtensions
 		{ TagTypes.Aggregation_Tag_Drills, "Aggregation Tag - Drills" }, 
 		{ TagTypes.Aggregation_Tag_Excavation, "Aggregation Tag - Excavation" }, 
 		{ TagTypes.Aggregation_Tag_Ghosts, "Aggregation Tag - Ghosts" }, 
-		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Bat_House, "Aggregation Tag - Haunted Ruin - Bat House" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Beaver_House, "Aggregation Tag - Haunted Ruin - Beaver House" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Brewery, "Aggregation Tag - Haunted Ruin - Brewery" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Cellar, "Aggregation Tag - Haunted Ruin - Cellar" }, 
@@ -395,7 +390,6 @@ public static class TagTypesExtensions
 		{ TagTypes.Relic_Archeology, "[Relic] Archeology" }, 
 		{ TagTypes.Relic_Chest, "[Relic] Chest" }, 
 		{ TagTypes.Relic_Funeral, "[Relic] Funeral" }, 
-		{ TagTypes.Tag_Bat, "[Tag] Bat" }, 
 		{ TagTypes.Tag_Beaver, "[Tag] Beaver" }, 
 		{ TagTypes.Tag_Blight, "[Tag] Blight" }, 
 		{ TagTypes.Tag_Event_Send_To_Citadel_Reward, "[Tag] Event - Send To Citadel Reward" }, 

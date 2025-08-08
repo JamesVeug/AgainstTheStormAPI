@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum SimpleSeasonalEffectTypes
 {
@@ -55,7 +55,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Amber_For_Trade = 5,
 
 	/// <summary>
-	/// Berry New Year - +3 to "[food raw] berries" Berries production (from gathering, farming, fishing, or production).
+	/// Berry New Year - +3 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[SSE] Berries +3</name>
 	SSE_Berries_Plus3 = 6,
@@ -145,7 +145,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Drizzle_Water_Per_Minute = 20,
 
 	/// <summary>
-	/// Heavy Drops - +3 to "[water] drizzle water" Drizzle Water production (from gathering, farming, fishing, or production).
+	/// Heavy Drops - +3 to "[water] drizzle water" Drizzle Water production. Gain an additional "[water] drizzle water" Drizzle Water every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[SSE] Drizzle Water +3</name>
 	SSE_Drizzle_Water_Plus3 = 21,
@@ -163,7 +163,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Fertile_Nodes = 23,
 
 	/// <summary>
-	/// Fish Flood - +3 to "[food raw] fish" Fish production (from gathering, farming, fishing, or production).
+	/// Fish Flood - +3 to "[food raw] fish" Fish production. Gain an additional "[food raw] fish" Fish every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[SSE] Fish +3</name>
 	SSE_Fish_Plus3 = 24,
@@ -235,7 +235,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Hunger_Storm = 35,
 
 	/// <summary>
-	/// Shedding Season - +3 to "[mat raw] leather" Leather production (from gathering, farming, fishing, or production).
+	/// Shedding Season - +3 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[SSE] Leather +3</name>
 	SSE_Leather_Plus3 = 36,
@@ -271,7 +271,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Marrow_Mine = 41,
 
 	/// <summary>
-	/// Mating Season - +3 to "[food raw] meat" Meat production (from gathering, farming, fishing, or production).
+	/// Mating Season - +3 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[SSE] Meat +3</name>
 	SSE_Meat_Plus3 = 42,
@@ -301,7 +301,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_More_Water_Consumption = 46,
 
 	/// <summary>
-	/// Mushrooms After Rain - +3 to "[food raw] mushrooms" Mushrooms production (from gathering, farming, fishing, or production).
+	/// Mushrooms After Rain - +3 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>[SSE] Mushroom +3</name>
 	SSE_Mushroom_Plus3 = 47,
@@ -403,7 +403,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Spawn_Blightrot_On_Death = 63,
 
 	/// <summary>
-	/// Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event you complete during this drizzle season.
+	/// Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event completed during drizzle season.
 	/// </summary>
 	/// <name>[SSE] Spring Events</name>
 	SSE_Spring_Events = 64,
@@ -480,7 +480,7 @@ public enum SimpleSeasonalEffectTypes
 	/// The total number of vanilla SimpleSeasonalEffectTypes in the game.
 	/// </summary>
 	[Obsolete("Use SimpleSeasonalEffectTypesExtensions.Count(). SimpleSeasonalEffectTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 76
+	MAX = 75
 }
 
 /// <summary>
@@ -659,7 +659,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes._TO_DELETE_SSE_Late_Newcomers, "_TO DELETE [SSE] Late Newcomers" },                                                            // Shifting Paths - The road to the village is long and winding, so some newcomers need a bit of extra motivation. Pay 2 "[packs] pack of crops" Pack of Crops with each storm (multiplied by the number of years played). If you don't, the next newcomer group will arrive 50% slower.
 		{ SimpleSeasonalEffectTypes._TO_DELETE_SSE_Overheating, "_TO DELETE [SSE] Overheating" },                                                                  // Rotten Vapors - Machinery has to be cleaned with specially prepared Drizzle Water. Otherwise, Blightrot will spread. Once this effect activates, you have to pay 5 "[water] drizzle water" Drizzle Water (multiplied by the number of years). If you don't, 3 Blightrot Cysts will spawn in your settlement.
 		{ SimpleSeasonalEffectTypes.SSE_Amber_For_Trade, "[SSE] Amber for Trade" },                                                                                // Royal Funding - The Queen's generosity knows no limits. Gain 2 "[valuable] amber" Amber every time you sell goods worth 10 Amber.
-		{ SimpleSeasonalEffectTypes.SSE_Berries_Plus3, "[SSE] Berries +3" },                                                                                       // Berry New Year - +3 to "[food raw] berries" Berries production (from gathering, farming, fishing, or production).
+		{ SimpleSeasonalEffectTypes.SSE_Berries_Plus3, "[SSE] Berries +3" },                                                                                       // Berry New Year - +3 to "[food raw] berries" Berries production. Gain an additional "[food raw] berries" Berries every yield (from gathering, farming, fishing, or production).
 		{ SimpleSeasonalEffectTypes.SSE_BIOME_Storm_Penalty, "[SSE] [BIOME] Storm Penalty" },                                                                      // Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level. (‑4 to Global Resolve)
 		{ SimpleSeasonalEffectTypes.SSE_BIOME_Tut_1_Storm_Penalty, "[SSE] [BIOME] Tut 1 Storm Penalty" },                                                          // Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level. (‑4 to Global Resolve)
 		{ SimpleSeasonalEffectTypes.SSE_Blightrot_Footprint_Minus50, "[SSE] Blightrot Footprint -50" },                                                            // Natural Filtration - Using Rain Engines causes a lot less Blightrot contamination due to the natural filtration processes of the surrounding vegetation. Blightrot Cysts grow 50% slower when using Rain Engines.
@@ -674,10 +674,10 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Destroy_Nodes, "[SSE] Destroy Nodes" },                                                                                    // Unnatural Erosion - The wind and rain in this region seem more destructive than usual. Pay 5 "[crafting] oil" Oil with each storm (multiplied by the number of years played). If you don't, 2 random gathering nodes will be destroyed.
 		{ SimpleSeasonalEffectTypes.SSE_Devastating_Storms, "[SSE] Devastating Storms" },                                                                          // Devastating Storms - The rampaging storm stifles the spirit of all living creatures. (‑20 to Global Resolve)
 		{ SimpleSeasonalEffectTypes.SSE_Drizzle_Water_Per_Minute, "[SSE] Drizzle Water per minute" },                                                              // Drizzle Anomaly - The rain seems to fall... slower. Gain 15 "[water] drizzle water" Drizzle Water per minute during the drizzle.
-		{ SimpleSeasonalEffectTypes.SSE_Drizzle_Water_Plus3, "[SSE] Drizzle Water +3" },                                                                           // Heavy Drops - +3 to "[water] drizzle water" Drizzle Water production (from gathering, farming, fishing, or production).
+		{ SimpleSeasonalEffectTypes.SSE_Drizzle_Water_Plus3, "[SSE] Drizzle Water +3" },                                                                           // Heavy Drops - +3 to "[water] drizzle water" Drizzle Water production. Gain an additional "[water] drizzle water" Drizzle Water every yield (from gathering, farming, fishing, or production).
 		{ SimpleSeasonalEffectTypes.SSE_Fast_Food, "[SSE] Fast Food" },                                                                                            // Salty Breeze - The salty air makes it easier to preserve food. Food production speed is increased by 80% during drizzle season.
 		{ SimpleSeasonalEffectTypes.SSE_Fertile_Nodes, "[SSE] Fertile Nodes" },                                                                                    // Soil Reclamation - The soil becomes saturated with the rain's essence during drizzle season. Gathering nodes depleted during the drizzle spawn fertile soil.
-		{ SimpleSeasonalEffectTypes.SSE_Fish_Plus3, "[SSE] Fish +3" },                                                                                             // Fish Flood - +3 to "[food raw] fish" Fish production (from gathering, farming, fishing, or production).
+		{ SimpleSeasonalEffectTypes.SSE_Fish_Plus3, "[SSE] Fish +3" },                                                                                             // Fish Flood - +3 to "[food raw] fish" Fish production. Gain an additional "[food raw] fish" Fish every yield (from gathering, farming, fishing, or production).
 		{ SimpleSeasonalEffectTypes.SSE_Food_Consumption, "[SSE] Food Consumption" },                                                                              // Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level).
 		{ SimpleSeasonalEffectTypes.SSE_Food_Production_Speed_Minus15, "[SSE] Food Production Speed -15" },                                                        // Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% for each Hostility level.
 		{ SimpleSeasonalEffectTypes.SSE_FuelRateHostility, "[SSE] FuelRateHostility" },                                                                            // Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level.
@@ -689,18 +689,18 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Goods_For_Solved_Relics, "[SSE] Goods for Solved Relics" },                                                                // Forest Offerings - It seems some inhabitants of the forest are grateful for your efforts. During drizzle season, every Dangerous or Forbidden Glade Event you complete will give you 40 random raw food.
 		{ SimpleSeasonalEffectTypes.SSE_Grim_Fate, "[SSE] Grim Fate" },                                                                                            // Grim Fate - The forest will claim a villager's life during each storm (multiplied by the number of years that have passed).
 		{ SimpleSeasonalEffectTypes.SSE_Hunger_Storm, "[SSE] Hunger Storm" },                                                                                      // Hunger Storm - Missing even a single meal in this harsh climate can be deadly. If villagers don't have anything to eat during a break, they will gain two stacks of the Hunger effect.
-		{ SimpleSeasonalEffectTypes.SSE_Leather_Plus3, "[SSE] Leather +3" },                                                                                       // Shedding Season - +3 to "[mat raw] leather" Leather production (from gathering, farming, fishing, or production).
+		{ SimpleSeasonalEffectTypes.SSE_Leather_Plus3, "[SSE] Leather +3" },                                                                                       // Shedding Season - +3 to "[mat raw] leather" Leather production. Gain an additional "[mat raw] leather" Leather every yield (from gathering, farming, fishing, or production).
 		{ SimpleSeasonalEffectTypes.SSE_Lightning, "[SSE] Lightning" },                                                                                            // Devastation - The storm in this region is extremely violent. Once this effect is activated, you'll have to pay 1 "[packs] pack of building materials" Pack of Building Materials (multiplied by the number of years). If you don't, 3 buildings in your settlement will become ruins.
 		{ SimpleSeasonalEffectTypes.SSE_Living_Farmfield, "[SSE] Living Farmfield" },                                                                              // Rotten Rain - The rain carries a strange, rotten pollen with it. A Blood Flower will spawn somewhere in the settlement every 90 seconds.
 		{ SimpleSeasonalEffectTypes.SSE_Longer_Break_Interval, "[SSE] Longer Break Interval" },                                                                    // Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
 		{ SimpleSeasonalEffectTypes.SSE_M0_60_Off_Roads_Muddy_Ground, "[SSE] M0_60 Off Roads [Muddy Ground]" },                                                    // Muddy Ground - Villagers' speed off-road is decreased by 30%.
 		{ SimpleSeasonalEffectTypes.SSE_Marrow_Mine, "[SSE] Marrow Mine" },                                                                                        // Marrow Growth - Small pockets of bone marrow form in the ground and on trees. Gain 5 "[crafting] sea marrow" Sea Marrow for every 5 "[crafting] coal" Coal produced during drizzle season.
-		{ SimpleSeasonalEffectTypes.SSE_Meat_Plus3, "[SSE] Meat +3" },                                                                                             // Mating Season - +3 to "[food raw] meat" Meat production (from gathering, farming, fishing, or production).
+		{ SimpleSeasonalEffectTypes.SSE_Meat_Plus3, "[SSE] Meat +3" },                                                                                             // Mating Season - +3 to "[food raw] meat" Meat production. Gain an additional "[food raw] meat" Meat every yield (from gathering, farming, fishing, or production).
 		{ SimpleSeasonalEffectTypes.SSE_Metal_Prod_Penalty, "[SSE] Metal Prod Penalty" },                                                                          // Corrosive Rainfall - Acid rain is slowly eating away at all metal objects. Producing Copper Bars, Crystalized Dew, and all goods that use metal ingots yields 50% fewer goods.
 		{ SimpleSeasonalEffectTypes.SSE_Mine_In_Storm, "[SSE] Mine in Storm" },                                                                                    // Horrors from Beneath - Strange voices call out from the depths. Villagers working in Mines get -10 to Resolve during the storm.
 		{ SimpleSeasonalEffectTypes.SSE_More_Event_Goods, "[SSE] More event goods" },                                                                              // Scavenging Season - The drizzle in this region is very mild, making it the perfect season for looting. Increases the chance of doubling loot from events solved during the drizzle by 25% (this doesn't apply to perks and blueprints).
 		{ SimpleSeasonalEffectTypes.SSE_More_Water_Consumption, "[SSE] More Water Consumption" },                                                                  // Vanishing Water - Infused rainwater slowly evaporates. You lose 1 unit of a random type of water for every 2 units of water used in Rain Engines. 
-		{ SimpleSeasonalEffectTypes.SSE_Mushroom_Plus3, "[SSE] Mushroom +3" },                                                                                     // Mushrooms After Rain - +3 to "[food raw] mushrooms" Mushrooms production (from gathering, farming, fishing, or production).
+		{ SimpleSeasonalEffectTypes.SSE_Mushroom_Plus3, "[SSE] Mushroom +3" },                                                                                     // Mushrooms After Rain - +3 to "[food raw] mushrooms" Mushrooms production. Gain an additional "[food raw] mushrooms" Mushrooms every yield (from gathering, farming, fishing, or production).
 		{ SimpleSeasonalEffectTypes.SSE_No_Impatience_Reduction, "[SSE] No Impatience Reduction" },                                                                // No contact - Harsh weather conditions make it impossible to reach the Citadel. Gaining Reputation doesn't lower Impatience.
 		{ SimpleSeasonalEffectTypes.SSE_Nodes_Bonuses, "[SSE] Nodes Bonuses" },                                                                                    // Untapped Wealth - Gatherers bring back twice the amount of secondary resources when collecting from gathering nodes.
 		{ SimpleSeasonalEffectTypes.SSE_Productive_Farms_In_Drizzle, "[SSE] Productive Farms in Drizzle" },                                                        // Regrowth - Plants seem to grow exceptionally quickly after the storm. All buildings that use fertile soil produce +50% more goods during the drizzle, and all crops planted during the drizzle will yield +50% more when collected during clearance season.
@@ -717,7 +717,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Sacrifice_More_In_Storm, "[SSE] Sacrifice more in Storm" },                                                                // Faint Flame - Strong gusts of wind strike the Holy Flame. Resources you sacrifice in the Ancient Hearth burn 40% quicker.
 		{ SimpleSeasonalEffectTypes.SSE_Service_Waste, "[SSE] Service Waste" },                                                                                    // Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level).
 		{ SimpleSeasonalEffectTypes.SSE_Spawn_Blightrot_On_Death, "[SSE] Spawn Blightrot on Death" },                                                              // Death and Decay - This damp and rotting landscape is the perfect breeding ground for sickness. Every villager that dies during the storm instantly turns into a Blood Flower.
-		{ SimpleSeasonalEffectTypes.SSE_Spring_Events, "[SSE] Spring Events" },                                                                                    // Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event you complete during this drizzle season.
+		{ SimpleSeasonalEffectTypes.SSE_Spring_Events, "[SSE] Spring Events" },                                                                                    // Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event completed during drizzle season.
 		{ SimpleSeasonalEffectTypes.SSE_Spring_Routes, "[SSE] Spring Routes" },                                                                                    // Finders Keepers - After each storm, caravans find countless goods scattered along their routes. Every trade route you complete during drizzle season will give you 5 random packs of goods.
 		{ SimpleSeasonalEffectTypes.SSE_Storm_Clothes, "[SSE] Storm Clothes" },                                                                                    // Cloudburst - Even the hardiest villagers need some sort of cover in this weather. Once this effect activates, every villager in your settlement will ask you for 1 "[needs] coats" Coats. If you can't provide the goods, Global Resolve will be lowered by -6 for 2 minutes.
 		{ SimpleSeasonalEffectTypes.SSE_Trade_Routes_Costs_More_In_Storm, "[SSE] Trade Routes Costs More in Storm" },                                              // Flooded Roads - As a result of heavy rainfall, during the storm, the travel time of trade routes is increased by 50%.

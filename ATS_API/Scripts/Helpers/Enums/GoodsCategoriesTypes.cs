@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum GoodsCategoriesTypes
 {
@@ -72,7 +72,7 @@ public enum GoodsCategoriesTypes
 	/// The total number of vanilla GoodsCategoriesTypes in the game.
 	/// </summary>
 	[Obsolete("Use GoodsCategoriesTypesExtensions.Count(). GoodsCategoriesTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 8
+	MAX = 7
 }
 
 /// <summary>

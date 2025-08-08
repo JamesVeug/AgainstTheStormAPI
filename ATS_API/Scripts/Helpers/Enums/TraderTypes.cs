@@ -10,7 +10,7 @@ using Eremite.Model.Trade;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum TraderTypes
 {
@@ -24,12 +24,6 @@ public enum TraderTypes
 	/// </summary>
 	None = 0,
 	
-	/// <summary>
-	/// Wild Bill - He sells common western goods, and a small number of basic blueprints and perks. Trade carefully!
-	/// </summary>
-	/// <name>API_ExampleMod_Wild Bill</name>
-	API_ExampleMod_Wild_Bill = 12,
-
 	/// <summary>
 	/// Sahilda - She might have raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
 	/// </summary>
@@ -49,19 +43,19 @@ public enum TraderTypes
 	Trader_2_Brass_Order = 3,
 
 	/// <summary>
-	/// Sothur The Ancient - He might have service goods, crafting materials, blueprints for alchemical buildings, and perks for sale. He is willing to buy packs of goods, fuel, cooked food, and service goods.
+	/// Sothur The Ancient - He might have luxury items, crafting materials, blueprints for alchemical buildings, and perks for sale. He is willing to buy packs of goods, fuel, cooked food, and luxury goods.
 	/// </summary>
 	/// <name>Trader 3 - Ancient</name>
 	Trader_3_Ancient = 4,
 
 	/// <summary>
-	/// Vliss Greybone - She might have tools, service goods, building materials, and perks for sale. She is willing to buy packs of goods, cooked food, metal, building materials, fuel, and tools.
+	/// Vliss Greybone - She might have tools, luxury items, building materials, and perks for sale. She is willing to buy packs of goods, cooked food, metal, building materials, fuel, and tools.
 	/// </summary>
 	/// <name>Trader 4 - Vanguard of the Stolen Keys</name>
 	Trader_4_Vanguard_Of_The_Stolen_Keys = 5,
 
 	/// <summary>
-	/// Sir Renwald Redmane - He might have cooked food, building materials, tools, parts, advanced blueprints, and perks for sale. He is willing to buy packs of goods, fuel, building materials, service goods, tools, and metal.
+	/// Sir Renwald Redmane - He might have cooked food, building materials, tools, parts, advanced blueprints, and perks for sale. He is willing to buy packs of goods, fuel, building materials, luxury items, tools, and metal.
 	/// </summary>
 	/// <name>Trader 5 - Royal Trading Company</name>
 	Trader_5_Royal_Trading_Company = 6,
@@ -73,16 +67,10 @@ public enum TraderTypes
 	Trader_6_Wandering_Merchant = 7,
 
 	/// <summary>
-	/// Dullahan Warlander - Dullahan might have metal, fabrics, crafting materials, and packs of goods for sale. He also sells mystery boxes. He is willing to buy packs of goods, service goods, crafting materials, cooked food, and some raw resources.
+	/// Dullahan Warlander - Dullahan might have metal, fabrics, crafting materials, and packs of goods for sale. He also sells mystery boxes. He is willing to buy packs of goods, luxury items, crafting materials, cooked food, and some raw resources.
 	/// </summary>
 	/// <name>Trader 7 - Trickster</name>
 	Trader_7_Trickster = 8,
-
-	/// <summary>
-	/// Vael - He might have clothing, cooked food, service goods, fuel, containers, metal, wildfire essence, blueprints, and perks for sale. He is willing to buy packs of goods, raw food, basic resources, metal, and some building materials.
-	/// </summary>
-	/// <name>Trader 8 - Syndicate</name>
-	Trader_8_Syndicate = 13,
 
 	/// <summary>
 	/// Alune Soulgazer
@@ -108,7 +96,7 @@ public enum TraderTypes
 	/// The total number of vanilla TraderTypes in the game.
 	/// </summary>
 	[Obsolete("Use TraderTypesExtensions.Count(). TraderTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 14
+	MAX = 11
 }
 
 /// <summary>
@@ -137,7 +125,7 @@ public static class TraderTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every TraderTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return TraderTypes.API_ExampleMod_Wild_Bill in the enum and log an error.
+	/// If no name is found, it will return TraderTypes.Trader_0_General in the enum and log an error.
 	/// </summary>
 	public static string ToName(this TraderTypes type)
 	{
@@ -147,7 +135,7 @@ public static class TraderTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of TraderTypes: " + type);
-		return TypeToInternalName[TraderTypes.API_ExampleMod_Wild_Bill];
+		return TypeToInternalName[TraderTypes.Trader_0_General];
 	}
 	
 	/// <summary>
@@ -282,16 +270,14 @@ public static class TraderTypesExtensions
 	
 	internal static readonly Dictionary<TraderTypes, string> TypeToInternalName = new()
 	{
-		{ TraderTypes.API_ExampleMod_Wild_Bill, "API_ExampleMod_Wild Bill" },                           // Wild Bill - He sells common western goods, and a small number of basic blueprints and perks. Trade carefully!
 		{ TraderTypes.Trader_0_General, "Trader 0 - General" },                                         // Sahilda - She might have raw food, basic resources, building materials, some crafting materials, and a small number of basic blueprints and perks for sale. She is willing to buy packs of goods, raw food, basic resources, and some building materials.
 		{ TraderTypes.Trader_1_First_Dawn_Company, "Trader 1 - First Dawn Company" },                   // Zhorg - He might have cooked and raw food, pottery, and tools, along with perks and blueprints tied to agriculture for sale. He is willing to buy packs of goods, raw food, building materials and some crafting materials.
 		{ TraderTypes.Trader_2_Brass_Order, "Trader 2 - Brass Order" },                                 // Old Farluf - He might have metal, fuel, tools, building materials, and a number of blueprints and perks for sale. He is willing to buy packs of goods, resources, advanced building materials, metal, and some crafting materials.
-		{ TraderTypes.Trader_3_Ancient, "Trader 3 - Ancient" },                                         // Sothur The Ancient - He might have service goods, crafting materials, blueprints for alchemical buildings, and perks for sale. He is willing to buy packs of goods, fuel, cooked food, and service goods.
-		{ TraderTypes.Trader_4_Vanguard_Of_The_Stolen_Keys, "Trader 4 - Vanguard of the Stolen Keys" }, // Vliss Greybone - She might have tools, service goods, building materials, and perks for sale. She is willing to buy packs of goods, cooked food, metal, building materials, fuel, and tools.
-		{ TraderTypes.Trader_5_Royal_Trading_Company, "Trader 5 - Royal Trading Company" },             // Sir Renwald Redmane - He might have cooked food, building materials, tools, parts, advanced blueprints, and perks for sale. He is willing to buy packs of goods, fuel, building materials, service goods, tools, and metal.
+		{ TraderTypes.Trader_3_Ancient, "Trader 3 - Ancient" },                                         // Sothur The Ancient - He might have luxury items, crafting materials, blueprints for alchemical buildings, and perks for sale. He is willing to buy packs of goods, fuel, cooked food, and luxury goods.
+		{ TraderTypes.Trader_4_Vanguard_Of_The_Stolen_Keys, "Trader 4 - Vanguard of the Stolen Keys" }, // Vliss Greybone - She might have tools, luxury items, building materials, and perks for sale. She is willing to buy packs of goods, cooked food, metal, building materials, fuel, and tools.
+		{ TraderTypes.Trader_5_Royal_Trading_Company, "Trader 5 - Royal Trading Company" },             // Sir Renwald Redmane - He might have cooked food, building materials, tools, parts, advanced blueprints, and perks for sale. He is willing to buy packs of goods, fuel, building materials, luxury items, tools, and metal.
 		{ TraderTypes.Trader_6_Wandering_Merchant, "Trader 6 - Wandering Merchant" },                   // Xiadani Stormfeather - She might have clothing, cooked food, raw materials, fuel, ancient tablets, parts, wildfire essence, blueprints, and perks for sale. She is willing to buy packs of goods, raw food, basic resources, metal, and some building materials.
-		{ TraderTypes.Trader_7_Trickster, "Trader 7 - Trickster" },                                     // Dullahan Warlander - Dullahan might have metal, fabrics, crafting materials, and packs of goods for sale. He also sells mystery boxes. He is willing to buy packs of goods, service goods, crafting materials, cooked food, and some raw resources.
-		{ TraderTypes.Trader_8_Syndicate, "Trader 8 - Syndicate" },                                     // Vael - He might have clothing, cooked food, service goods, fuel, containers, metal, wildfire essence, blueprints, and perks for sale. He is willing to buy packs of goods, raw food, basic resources, metal, and some building materials.
+		{ TraderTypes.Trader_7_Trickster, "Trader 7 - Trickster" },                                     // Dullahan Warlander - Dullahan might have metal, fabrics, crafting materials, and packs of goods for sale. He also sells mystery boxes. He is willing to buy packs of goods, luxury items, crafting materials, cooked food, and some raw resources.
 		{ TraderTypes.Trader_Glade_01, "Trader - Glade 01" },                                           // Alune Soulgazer
 		{ TraderTypes.Trader_Glade_02, "Trader - Glade 02" },                                           // Gex Runescale
 		{ TraderTypes.Trader_Glade_03, "Trader - Glade 03" },                                           // Ruenhar Blightclaw

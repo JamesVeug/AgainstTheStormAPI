@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum BuildingTypes
 {
@@ -25,31 +25,21 @@ public enum BuildingTypes
 	None = 0,
 	
 	/// <summary>
-	/// Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
-	/// </summary>
-	/// <name>Academy</name>
-	/// <category>City Buildings</category>
-	Academy = 540,
-
-	/// <summary>
 	/// Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
 	/// </summary>
 	/// <name>Advanced Rain Catcher</name>
-	/// <category>Resource Gathering</category>
 	Advanced_Rain_Catcher = 1,
 
 	/// <summary>
 	/// Garden - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Aestherics 2x2 - Garden</name>
-	/// <category>Decorations</category>
 	Aestherics_2x2_Garden = 2,
 
 	/// <summary>
 	/// Makeshift Extractor - Aesthetics. A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Aestherics 2x2 - Groundwater Extractor</name>
-	/// <category>Decorations</category>
 	Aestherics_2x2_Groundwater_Extractor = 3,
 
 	/// <summary>
@@ -57,217 +47,174 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Alchemist Hut</name>
-	/// <category>Industry</category>
 	Alchemist_Hut = 4,
 
 	/// <summary>
 	/// Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
 	/// </summary>
 	/// <name>Altar</name>
-	/// <category>City Buildings</category>
 	Altar = 5,
 
 	/// <summary>
 	/// Ancient Tombstone - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Ancient Gravestone</name>
-	/// <category>Decorations</category>
 	Ancient_Gravestone = 6,
 
 	/// <summary>
 	/// Ancient Burial Site - A strange place filled with gravestones inscribed in an ancient, long forgotten language.
 	/// </summary>
 	/// <name>AncientBurrialGrounds</name>
-	/// <category>Event</category>
 	AncientBurrialGrounds = 7,
 
 	/// <summary>
 	/// Dark Gate - A strange monument of cyclopean proportions. Heavy storm clouds seem to be gathering around the settlement.
 	/// </summary>
 	/// <name>AncientGate</name>
-	/// <category>Event</category>
 	AncientGate = 8,
 
 	/// <summary>
 	/// Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
 	/// </summary>
 	/// <name>AncientShrine_T1</name>
-	/// <category>Event</category>
 	AncientShrine_T1 = 9,
 
 	/// <summary>
 	/// Forgotten Temple of the Sun - Who would worship the sun in a world with so little sunlight?
 	/// </summary>
 	/// <name>AncientTemple</name>
-	/// <category>Event</category>
 	AncientTemple = 10,
 
 	/// <summary>
 	/// Ghost of a Blight Fighter Captain - I let us down and was defeated by the Blightrot... but you can avenge me! Kill it with fire!!!
 	/// </summary>
 	/// <name>Angry Ghost 1</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_1 = 11,
 
 	/// <summary>
 	/// Ghost of a Suppressed Rebel - I was leading a rebellion against the Queen's tyrannical rule, but the Royal Guard found us. Carry on my legacy!
 	/// </summary>
 	/// <name>Angry Ghost 10</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_10 = 12,
 
 	/// <summary>
 	/// Ghost of a Resentful Human - Humans deserve to be treated better than the others! Without us, you’d never achieve anything. If you don’t meet our basic needs, we’ll take our revenge!
 	/// </summary>
 	/// <name>Angry Ghost 14</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_14 = 13,
 
 	/// <summary>
 	/// Ghost of the Queen's Lickspittle - I challenge you, viceroy! Do you consider yourself worthy of the Queen's glance? Prove it. Time is ticking.
 	/// </summary>
 	/// <name>Angry Ghost 15</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_15 = 14,
 
 	/// <summary>
 	/// Ghost of a Lizard Leader - I'm so sick of these Beavers! They’re the bane of this kingdom! They deserve nothing but condemnation for what they did to us. I order you to torment them - or I'll do it myself!
 	/// </summary>
 	/// <name>Angry Ghost 16</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_16 = 15,
 
 	/// <summary>
 	/// Ghost of a Tortured Harpy - They took our homes and our crops. They desecrated our culture, and in the end, they took our lives. The time of contempt has come.
 	/// </summary>
 	/// <name>Angry Ghost 17</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_17 = 16,
 
 	/// <summary>
 	/// Ghost of a Beaver Engineer - These fanatics should pay for their heresies! They are dangerous, wild, and unpredictable creatures. Teach these savages, once and for all.
 	/// </summary>
 	/// <name>Angry Ghost 18</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_18 = 17,
 
 	/// <summary>
 	/// Ghost of a Poisoned Human - We will no longer tolerate those upturned beaks roaming the settlement freely. Everyone must learn the truth about how the Harpy alchemists poisoned us to seize power!
 	/// </summary>
 	/// <name>Angry Ghost 19</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_19 = 18,
 
 	/// <summary>
 	/// Ghost of a Mad Alchemist - I have studied the Blightrot all my life. Nobody believes me, but the cysts are essential for the ecosystem! Grow them and find out yourself!
 	/// </summary>
 	/// <name>Angry Ghost 2</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_2 = 19,
 
 	/// <summary>
 	/// Ghost of a Lizard Worker - Self-righteous Beavers only want to bask in the luxuries we’ve worked so hard for. Time to end this injustice!
 	/// </summary>
 	/// <name>Angry Ghost 20</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_20 = 20,
 
 	/// <summary>
 	/// Ghost of a Starved Harpy - Greedy Human farmers always want to keep all the crops for themselves. Those traitors hid everything from us, and pretended the crops were rotten!
 	/// </summary>
 	/// <name>Angry Ghost 21</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_21 = 21,
 
 	/// <summary>
 	/// Ghost of an Innkeeper - We worked so hard, and put our lives in danger every day. If you don't let your villagers rest, I will make sure your soul never finds peace.
 	/// </summary>
 	/// <name>Angry Ghost 24</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_24 = 22,
 
 	/// <summary>
 	/// Ghost of a Lizard Elder - It was them! I'm sure of it! I remember their blank, blight-tainted gaze! They ambushed me in the forest! Please, avenge me!
 	/// </summary>
 	/// <name>Angry Ghost 31</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_31 = 23,
 
 	/// <summary>
 	/// Ghost of a Lost Scout - How could I have gotten lost!? Something's not right here... You! You have to help me!
 	/// </summary>
 	/// <name>Angry Ghost 32</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_32 = 24,
 
 	/// <summary>
 	/// Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
 	/// </summary>
 	/// <name>Angry Ghost 34</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_34 = 25,
 
 	/// <summary>
 	/// Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
 	/// </summary>
 	/// <name>Angry Ghost 4</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_4 = 26,
 
 	/// <summary>
 	/// Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
 	/// </summary>
 	/// <name>Angry Ghost 41</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_41 = 27,
-
-	/// <summary>
-	/// Ghost of a Corrupt Judge - They called me a tyrant for upholding order - for daring to keep the Frog scum in their place. They banished me, left me to rot, and called it justice? Hypocrites, all of them!
-	/// </summary>
-	/// <name>Angry Ghost 42</name>
-	/// <category>Event Ghost</category>
-	Angry_Ghost_42 = 541,
-
-	/// <summary>
-	/// Ghost of a Royal Executioner - Fate has a cruel sense of humor - one day you're swinging the axe, the next you're kneeling at the executioner's block.
-	/// </summary>
-	/// <name>Angry Ghost 43</name>
-	/// <category>Event Ghost</category>
-	Angry_Ghost_43 = 542,
 
 	/// <summary>
 	/// Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
 	/// </summary>
 	/// <name>Angry Ghost 5</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_5 = 28,
 
 	/// <summary>
 	/// Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
 	/// </summary>
 	/// <name>Angry Ghost 6</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_6 = 29,
 
 	/// <summary>
 	/// Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
 	/// </summary>
 	/// <name>Angry Ghost 9</name>
-	/// <category>Event Ghost</category>
 	Angry_Ghost_9 = 30,
 
 	/// <summary>
 	/// Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
 	/// </summary>
 	/// <name>AngryGhostChest_T1</name>
-	/// <category>Event</category>
 	AngryGhostChest_T1 = 31,
 
 	/// <summary>
 	/// Anvil - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Anvil</name>
-	/// <category>Decorations</category>
 	Anvil = 32,
 
 	/// <summary>
@@ -275,42 +222,36 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Apothecary</name>
-	/// <category>Food Production</category>
 	Apothecary = 33,
 
 	/// <summary>
 	/// Ancient Arch - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 	/// </summary>
 	/// <name>Arch</name>
-	/// <category>Decorations</category>
 	Arch = 34,
 
 	/// <summary>
 	/// Smoldering Scorpion - Harmony. Legend has it that they once inhabited the top of the mountain on which the Smoldering City now stands. The Queen banished them, but it is said that some of them still hibernate somewhere on the outskirts of the kingdom.  Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Archaeology Scorpion Positive</name>
-	/// <category>Decorations</category>
 	Archaeology_Scorpion_Positive = 35,
 
 	/// <summary>
-	/// Sea Serpent - Harmony. This beast's anatomy is suited to both land and water, making it a deadly hunter of caravans and lost settlers. For some reason, its remains bear traces of Blightrot. Could it have brought this plague to the surface from the depths of the ocean? Counts as 9 decorations of its type.
+	/// Sea Serpent - Harmony. The anatomical features of this beast indicate an adaptation to life in water, as well as on land. Due to this, sea serpents are excellent hunters, preying on lonely caravans and lost settlers. The preserved remains show traces of Blightrot. Could it be that these creatures have brought this plague to the surface when emerging from the depths of the ocean? Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Archaeology Snake Positive</name>
-	/// <category>Decorations</category>
 	Archaeology_Snake_Positive = 36,
 
 	/// <summary>
-	/// Sealed Spider - Harmony. Once faithful servants of the Sealed Ones, these creatures have been imprisoned underground with their masters. Yet miners still whisper of giant spiders emerging from deep caves to prey on the unwary. Only one thing is said to frighten them - the Holy Flame. Counts as 9 decorations of its type.
+	/// Sealed Spider - Harmony. It is said that these creatures were once the faithful servants of the Sealed Ones, and like their masters, they were trapped underground for eternity. But even to this day, miners tell tales of giant spiders crawling up from deep caverns, preying on unsuspecting victims. Legend has it that these vile beasts fear only one thing - the Holy Flame. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Archaeology Spider Positive</name>
-	/// <category>Decorations</category>
 	Archaeology_Spider_Positive = 37,
 
 	/// <summary>
 	/// Archaeologist's Office - A building designed to help you study the past. Can be upgraded to locate archaeological discoveries or improve the settlement's exploration capabilities. 
 	/// </summary>
 	/// <name>Archeology office</name>
-	/// <category>City Buildings</category>
 	Archeology_Office = 38,
 
 	/// <summary>
@@ -318,7 +259,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Artisan</name>
-	/// <category>Industry</category>
 	Artisan = 39,
 
 	/// <summary>
@@ -326,183 +266,97 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Bakery</name>
-	/// <category>Food Production</category>
 	Bakery = 40,
-
-	/// <summary>
-	/// Tearsap Bamboo Sapling - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
-	/// </summary>
-	/// <name>Bamboo Plant</name>
-	/// <category>Decorations</category>
-	Bamboo_Plant = 543,
 
 	/// <summary>
 	/// Bench - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Bank</name>
-	/// <category>Decorations</category>
 	Bank = 41,
 
 	/// <summary>
 	/// Barrels - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Barrels</name>
-	/// <category>Decorations</category>
 	Barrels = 42,
-
-	/// <summary>
-	/// Ornamental Fence - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
-	/// </summary>
-	/// <name>Bat Fence</name>
-	/// <category>Decorations</category>
-	Bat_Fence = 544,
-
-	/// <summary>
-	/// Ornamental Fence Corner - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
-	/// </summary>
-	/// <name>Bat Fence Corner</name>
-	/// <category>Decorations</category>
-	Bat_Fence_Corner = 545,
-
-	/// <summary>
-	/// Bat House - A building specially designed for Bats. Must be built near a hearth. Fulfills the need for Bat Housing and can accommodate 2 inhabitants.
-	/// </summary>
-	/// <name>Bat House</name>
-	/// <category>Housing</category>
-	Bat_House = 546,
-
-	/// <summary>
-	/// Fallen Bat Miners - A group of fallen Bat miners, their tools left where they dropped. It seems they were scouting for a new mining site when something struck them down. The sight of these bodies causes unrest among the Bat population.
-	/// </summary>
-	/// <name>BatBattleground_T1</name>
-	/// <category>Event</category>
-	BatBattleground_T1 = 547,
 
 	/// <summary>
 	/// Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 	/// </summary>
 	/// <name>Bath House</name>
-	/// <category>City Buildings</category>
 	Bath_House = 43,
-
-	/// <summary>
-	/// Manorial Court - A court where villagers gather to choose the least welcome member of a given species and send them back to the Smoldering City - an act that increases the diligence of those who remain.
-	/// </summary>
-	/// <name>Bats Shrine</name>
-	/// <category>City Buildings</category>
-	Bats_Shrine = 548,
 
 	/// <summary>
 	/// <p>Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1).</p>
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Beanery</name>
-	/// <category>Food Production</category>
 	Beanery = 44,
 
 	/// <summary>
 	/// Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Beaver House</name>
-	/// <category>Housing</category>
 	Beaver_House = 45,
 
 	/// <summary>
 	/// Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
 	/// </summary>
 	/// <name>BeaverBattleground_T1</name>
-	/// <category>Event</category>
 	BeaverBattleground_T1 = 46,
 
 	/// <summary>
 	/// Big Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 6 residents.
 	/// </summary>
 	/// <name>Big Shelter</name>
-	/// <category>Housing</category>
 	Big_Shelter = 47,
-
-	/// <summary>
-	/// Black Market - With resources stretched so thin in the kingdom, the penalty for contraband is death. Yet, where there’s a need, there’s a way - the Black Amber Syndicate thrives by catering to those settling in the harshest of regions.
-	/// </summary>
-	/// <name>Biome Black Market</name>
-	/// <category>City Buildings</category>
-	Biome_Black_Market = 549,
-
-	/// <summary>
-	/// Fertile Field - An artificial patch of fertile land with a pre-built farm field on top. Leaves behind Fertile Soil when destroyed.
-	/// </summary>
-	/// <name>Biome Grass Spawner</name>
-	/// <category>Food Production</category>
-	Biome_Grass_Spawner = 550,
 
 	/// <summary>
 	/// Cornerstone Forge - An ancient forge used by the Crown for generations to craft cornerstones from Thunderblight Shards. Now it stands abandoned, its fires long cold, but its legacy still felt in the region.
 	/// </summary>
 	/// <name>Biome Perk Crafter</name>
-	/// <category>City Buildings</category>
 	Biome_Perk_Crafter = 48,
-
-	/// <summary>
-	/// Giant Fluffbeak - Fluffbeaks are gentle creatures that rarely attack unless provoked. They cannot be domesticated and freely choose which caravan to "join". Many settlements in this region have failed simply because no Fluffbeak was willing to settle nearby.
-	/// </summary>
-	/// <name>Biome Poro</name>
-	/// <category>City Buildings</category>
-	Biome_Poro = 551,
 
 	/// <summary>
 	/// Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 	/// </summary>
 	/// <name>Black Stag</name>
-	/// <category>Event</category>
 	Black_Stag = 49,
 
 	/// <summary>
 	/// Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 	/// </summary>
 	/// <name>Black Treasure Stag</name>
-	/// <category>Event</category>
 	Black_Treasure_Stag = 50,
-
-	/// <summary>
-	/// Blight Bomb - A strange humming can be heard from within the ominous device. There's nothing left to do now but detonate it... and hope the results aren't catastrophic.
-	/// </summary>
-	/// <name>Blight Bomb</name>
-	/// <category>Industry</category>
-	Blight_Bomb = 552,
 
 	/// <summary>
 	/// Blight Post - A specialized building dedicated to fighting Blightrot. Blight Fighters will prepare "blight fuel" Purging Fire during drizzle and clearance seasons, and use it to burn Blightrot Cysts during the storm.
 	/// </summary>
 	/// <name>Blight Post</name>
-	/// <category>City Buildings</category>
 	Blight_Post = 51,
 
 	/// <summary>
 	/// Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
 	/// </summary>
 	/// <name>Blightrot</name>
-	/// <category>Event</category>
 	Blightrot = 52,
 
 	/// <summary>
 	/// Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
 	/// </summary>
 	/// <name>Blightrot Cauldron</name>
-	/// <category>Event</category>
 	Blightrot_Cauldron = 53,
 
 	/// <summary>
 	/// Blood Flower (Clone) - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
 	/// </summary>
 	/// <name>Blightrot - Clone</name>
-	/// <category>Event</category>
 	Blightrot_Clone = 54,
 
 	/// <summary>
 	/// Bonfire - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Bonfire</name>
-	/// <category>Decorations</category>
 	Bonfire = 55,
 
 	/// <summary>
@@ -510,7 +364,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Brewery</name>
-	/// <category>Industry</category>
 	Brewery = 56,
 
 	/// <summary>
@@ -518,7 +371,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Brick Oven</name>
-	/// <category>Industry</category>
 	Brick_Oven = 57,
 
 	/// <summary>
@@ -526,14 +378,12 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Brickyard</name>
-	/// <category>Industry</category>
 	Brickyard = 58,
 
 	/// <summary>
 	/// Bush - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Bush</name>
-	/// <category>Decorations</category>
 	Bush = 59,
 
 	/// <summary>
@@ -541,182 +391,150 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Butcher</name>
-	/// <category>Food Production</category>
 	Butcher = 60,
 
 	/// <summary>
 	/// Cages - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Cages</name>
-	/// <category>Decorations</category>
 	Cages = 61,
 
 	/// <summary>
 	/// Ghost of a Defeated Viceroy - A long time ago, I founded a prosperous settlement. Everything was fine, until one of our scouts discovered something terrifying in the forest. Please, help restore at least a scrap of my legacy.
 	/// </summary>
 	/// <name>Calm Ghost 11</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_11 = 62,
 
 	/// <summary>
 	/// Ghost of a Druid - Many viceroys disregard nature. Don't make the same mistake. Be a good example to your people.
 	/// </summary>
 	/// <name>Calm Ghost 12</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_12 = 63,
 
 	/// <summary>
 	/// Ghost of a Royal Gardener - In these difficult times, beauty helps us forget our troubles. Decorate your village, and your villagers will thank you.
 	/// </summary>
 	/// <name>Calm Ghost 13</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_13 = 64,
 
 	/// <summary>
 	/// Ghost of a Hooded Knight - I promised my Queen that I would cleanse this forest of all the horrors that lived here. One night, my mount got frightened by the storm, and we fell into the Fishmen's nets. My mission must be completed!
 	/// </summary>
 	/// <name>Calm Ghost 22</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_22 = 65,
 
 	/// <summary>
 	/// Ghost of a Fire Priest - Spread the word about the power of the Holy Fire! Only it can save us from the storm's wrath. Gather the villagers in the chapel and pray!
 	/// </summary>
 	/// <name>Calm Ghost 23</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_23 = 66,
 
 	/// <summary>
 	/// Ghost of a Treasure Hunter - If your eyes sparkle at the sight of gold, I have an offer for you. All you have to do is prove that you are one of us, and I will give you my treasure.
 	/// </summary>
 	/// <name>Calm Ghost 25</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_25 = 67,
 
 	/// <summary>
 	/// Ghost of a Royal Architect - The foundation of success is a thriving settlement. Without solid walls, you won't survive here. Create something you can be proud of.
 	/// </summary>
 	/// <name>Calm Ghost 26</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_26 = 68,
 
 	/// <summary>
 	/// Ghost of a Worried Carter - The last thing I remember is lightning hitting my caravan. The settlements are still waiting for the goods they ordered. If you deliver them, I’ll see that you’re rewarded.
 	/// </summary>
 	/// <name>Calm Ghost 27</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_27 = 69,
 
 	/// <summary>
 	/// Ghost of a Storm Victim - Let the fire burn in the Hearth and grow in all its strength. Sacrifice your goods, and help the villagers weather the storm!
 	/// </summary>
 	/// <name>Calm Ghost 28</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_28 = 70,
 
 	/// <summary>
 	/// Ghost of a Mourning Harpy - Our flock has been in mourning for many years. We will never forget the war. Please, rekindle the hope in the Harpies' hearts.
 	/// </summary>
 	/// <name>Calm Ghost 29</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_29 = 71,
 
 	/// <summary>
 	/// Ghost of a Terrified Woodcutter - I lived in a very prosperous settlement, but our viceroy was greedy and didn't care about the forest at all! In the end, it brought doom upon us. Refrain from greed, and calm the forest.
 	/// </summary>
 	/// <name>Calm Ghost 3</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_3 = 72,
 
 	/// <summary>
 	/// Ghost of a Lizard General - My army fought bravely against all odds. Many of us paid the ultimate price. Please, show your respect to those who survived. I'll take care of the fallen.
 	/// </summary>
 	/// <name>Calm Ghost 30</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_30 = 73,
 
 	/// <summary>
 	/// Ghost of an Old Merchant - I've lived a long and prosperous life, and I've never let a business opportunity pass me by. Good deals have a nasty habit of vanishing very quickly, so seize them!
 	/// </summary>
 	/// <name>Calm Ghost 33</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_33 = 74,
 
 	/// <summary>
 	/// Ghost of a Fox Elder - The everlasting rain is a as much a gift as it is a curse. And yet it made us stronger, more resilient. Embrace it.
 	/// </summary>
 	/// <name>Calm Ghost 35</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_35 = 75,
 
 	/// <summary>
 	/// Ghost of a Teadoctor - I was a Teadoctor for years, helping my kind endure the effects of our strange illness. In the end, the disease took me. Take care of my people for me, please.
 	/// </summary>
 	/// <name>Calm Ghost 36</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_36 = 76,
 
 	/// <summary>
 	/// Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
 	/// </summary>
 	/// <name>Calm Ghost 38</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_38 = 77,
 
 	/// <summary>
 	/// Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
 	/// </summary>
 	/// <name>Calm Ghost 39</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_39 = 78,
 
 	/// <summary>
 	/// Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
 	/// </summary>
 	/// <name>Calm Ghost 40</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_40 = 79,
-
-	/// <summary>
-	/// Ghost of a Miner - The air turned to poison, and the dark took us all… Please, stranger - don't let this happen again.
-	/// </summary>
-	/// <name>Calm Ghost 44</name>
-	/// <category>Event Ghost</category>
-	Calm_Ghost_44 = 553,
 
 	/// <summary>
 	/// Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
 	/// </summary>
 	/// <name>Calm Ghost 7</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_7 = 80,
 
 	/// <summary>
 	/// Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
 	/// </summary>
 	/// <name>Calm Ghost 8</name>
-	/// <category>Event Ghost</category>
 	Calm_Ghost_8 = 81,
 
 	/// <summary>
 	/// Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
 	/// </summary>
 	/// <name>CalmGhostChest_T1</name>
-	/// <category>Event</category>
 	CalmGhostChest_T1 = 82,
 
 	/// <summary>
 	/// Small Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
 	/// </summary>
 	/// <name>Camp_T1</name>
-	/// <category>Event</category>
 	Camp_T1 = 83,
 
 	/// <summary>
 	/// Large Encampment - A destroyed camp in the wilderness. There are still survivors in the area.
 	/// </summary>
 	/// <name>Camp_T2</name>
-	/// <category>Event</category>
 	Camp_T2 = 84,
 
 	/// <summary>
@@ -724,21 +542,18 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cannery</name>
-	/// <category>Food Production</category>
 	Cannery = 85,
 
 	/// <summary>
 	/// Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
 	/// </summary>
 	/// <name>Caravan_T1</name>
-	/// <category>Event</category>
 	Caravan_T1 = 86,
 
 	/// <summary>
 	/// Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
 	/// </summary>
 	/// <name>Caravan_T2</name>
-	/// <category>Event</category>
 	Caravan_T2 = 87,
 
 	/// <summary>
@@ -746,43 +561,25 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Carpenter</name>
-	/// <category>Industry</category>
 	Carpenter = 88,
-
-	/// <summary>
-	/// Basalt Tree Sapling - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
-	/// </summary>
-	/// <name>Cave Plant</name>
-	/// <category>Decorations</category>
-	Cave_Plant = 554,
 
 	/// <summary>
 	/// <p>Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1).</p>
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cellar</name>
-	/// <category>Food Production</category>
 	Cellar = 89,
 
 	/// <summary>
 	/// Chest - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Chest</name>
-	/// <category>Decorations</category>
 	Chest = 90,
-
-	/// <summary>
-	/// Syndicate Chest - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
-	/// </summary>
-	/// <name>Chest Syndicate</name>
-	/// <category>Decorations</category>
-	Chest_Syndicate = 555,
 
 	/// <summary>
 	/// Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
 	/// </summary>
 	/// <name>Clan Hall</name>
-	/// <category>City Buildings</category>
 	Clan_Hall = 91,
 
 	/// <summary>
@@ -790,7 +587,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Clay Pit Workshop</name>
-	/// <category>Resource Gathering</category>
 	Clay_Pit_Workshop = 92,
 
 	/// <summary>
@@ -798,14 +594,12 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Clothier</name>
-	/// <category>Industry</category>
 	Clothier = 93,
 
 	/// <summary>
 	/// Saltwater Pitcher Plant - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Coastal Grove Plant</name>
-	/// <category>Decorations</category>
 	Coastal_Grove_Plant = 94,
 
 	/// <summary>
@@ -813,14 +607,12 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Cobbler</name>
-	/// <category>Industry</category>
 	Cobbler = 95,
 
 	/// <summary>
 	/// Park - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Comfort 2x2 - Park</name>
-	/// <category>Decorations</category>
 	Comfort_2x2_Park = 96,
 
 	/// <summary>
@@ -828,7 +620,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cookhouse</name>
-	/// <category>Food Production</category>
 	Cookhouse = 97,
 
 	/// <summary>
@@ -836,35 +627,30 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Cooperage</name>
-	/// <category>Industry</category>
 	Cooperage = 98,
 
 	/// <summary>
 	/// Coral Growth - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Coral Decor</name>
-	/// <category>Decorations</category>
 	Coral_Decor = 99,
 
 	/// <summary>
 	/// Fence Corner - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>CornerFence</name>
-	/// <category>Decorations</category>
 	CornerFence = 100,
 
 	/// <summary>
 	/// Corrupted Caravan - A large caravan abandoned in the woods, overgrown with Blightrot Cysts. They must have fed on the transported goods... or people.
 	/// </summary>
 	/// <name>Corrupted Caravan</name>
-	/// <category>Event</category>
 	Corrupted_Caravan = 101,
 
 	/// <summary>
 	/// Crates - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Crates</name>
-	/// <category>Decorations</category>
 	Crates = 102,
 
 	/// <summary>
@@ -872,280 +658,240 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Crude Workstation</name>
-	/// <category>Industry</category>
 	Crude_Workstation = 103,
 
 	/// <summary>
 	/// Clay Node (Large) - Soil infused with the essence of the rain.
 	/// </summary>
 	/// <name>DebugNode_ClayBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_ClayBig = 104,
 
 	/// <summary>
 	/// Clay Node (Small) - Soil infused with the essence of the rain.
 	/// </summary>
 	/// <name>DebugNode_ClaySmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_ClaySmall = 105,
 
 	/// <summary>
 	/// Dewberry Bush (Large) - Fresh and sweet berries, infused by the rain.
 	/// </summary>
 	/// <name>DebugNode_DewberryBushBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_DewberryBushBig = 106,
 
 	/// <summary>
 	/// Dewberry Bush (Small) - Fresh and sweet berries, infused by the rain.
 	/// </summary>
 	/// <name>DebugNode_DewberryBushSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_DewberryBushSmall = 107,
 
 	/// <summary>
 	/// Flax Field (Large) - Resilient plants that are perfect for cloth-making.
 	/// </summary>
 	/// <name>DebugNode_FlaxBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_FlaxBig = 108,
 
 	/// <summary>
 	/// Flax Field (Small) - Resilient plants that are perfect for cloth-making.
 	/// </summary>
 	/// <name>DebugNode_FlaxSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_FlaxSmall = 109,
 
 	/// <summary>
 	/// Herb Node (Large) - A dense shrub, full of many useful plant species.
 	/// </summary>
 	/// <name>DebugNode_HerbsBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_HerbsBig = 110,
 
 	/// <summary>
 	/// Herb Node (Small) - A dense shrub, full of many useful plant species.
 	/// </summary>
 	/// <name>DebugNode_HerbsSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_HerbsSmall = 111,
 
 	/// <summary>
 	/// Leech Broodmother (Large) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
 	/// </summary>
 	/// <name>DebugNode_LeechBroodmotherBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_LeechBroodmotherBig = 112,
 
 	/// <summary>
 	/// Leech Broodmother (Small) - A dead leech broodmother. It has a strong, and somewhat sweet smell.
 	/// </summary>
 	/// <name>DebugNode_LeechBroodmotherSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_LeechBroodmotherSmall = 113,
 
 	/// <summary>
 	/// Ancient Proto Wheat - A wild type of grain, mutated by an invasive species of fungi.
 	/// </summary>
 	/// <name>DebugNode_Marshlands_InfiniteGrain</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_Marshlands_InfiniteGrain = 114,
 
 	/// <summary>
 	/// Dead Leviathan - A giant, dead beast. How did it get here?
 	/// </summary>
 	/// <name>DebugNode_Marshlands_InfiniteMeat</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_Marshlands_InfiniteMeat = 115,
 
 	/// <summary>
 	/// Giant Proto Fungus - An ancient and mysterious organism. Proto fungi are sometimes referred to as the living and breathing hearts of the Marshlands.
 	/// </summary>
 	/// <name>DebugNode_Marshlands_InfiniteMushroom</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_Marshlands_InfiniteMushroom = 116,
 
 	/// <summary>
 	/// Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
 	/// </summary>
 	/// <name>DebugNode_MarshlandsMushroomBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_MarshlandsMushroomBig = 117,
 
 	/// <summary>
 	/// Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
 	/// </summary>
 	/// <name>DebugNode_MarshlandsMushroomSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_MarshlandsMushroomSmall = 118,
 
 	/// <summary>
 	/// Moss Broccoli Patch (Large) - An edible and tasty type of moss.
 	/// </summary>
 	/// <name>DebugNode_MossBroccoliBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_MossBroccoliBig = 119,
 
 	/// <summary>
 	/// Moss Broccoli Patch (Small) - An edible and tasty type of moss.
 	/// </summary>
 	/// <name>DebugNode_MossBroccoliSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_MossBroccoliSmall = 120,
 
 	/// <summary>
 	/// Grasscap Mushrooms (Large) - A resilient species that grows on marshy soil.
 	/// </summary>
 	/// <name>DebugNode_MushroomBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_MushroomBig = 121,
 
 	/// <summary>
 	/// Grasscap Mushrooms (Small) - A resilient species that grows on marshy soil.
 	/// </summary>
 	/// <name>DebugNode_MushroomSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_MushroomSmall = 122,
 
 	/// <summary>
 	/// Reed Field (Large) - A very common plant, it thrives thanks to the magical rain.
 	/// </summary>
 	/// <name>DebugNode_ReedBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_ReedBig = 123,
 
 	/// <summary>
 	/// Reed Field (Small) - A very common plant, it thrives thanks to the magical rain.
 	/// </summary>
 	/// <name>DebugNode_ReedSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_ReedSmall = 124,
 
 	/// <summary>
 	/// Root Node (Large) - A tangled net of living vines.
 	/// </summary>
 	/// <name>DebugNode_RootsBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_RootsBig = 125,
 
 	/// <summary>
 	/// Root Node (Small) - A tangled net of living vines.
 	/// </summary>
 	/// <name>DebugNode_RootsSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_RootsSmall = 126,
 
 	/// <summary>
 	/// Sea Marrow Node (Large) - Ancient fossils, rich in resources.
 	/// </summary>
 	/// <name>DebugNode_SeaMarrowBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SeaMarrowBig = 127,
 
 	/// <summary>
 	/// Sea Marrow Node (Small) - Ancient fossils, rich in resources.
 	/// </summary>
 	/// <name>DebugNode_SeaMarrowSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SeaMarrowSmall = 128,
 
 	/// <summary>
 	/// Slickshell Broodmother (Large) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
 	/// </summary>
 	/// <name>DebugNode_SnailBroodmotherBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SnailBroodmotherBig = 129,
 
 	/// <summary>
 	/// Slickshell Broodmother (Small) - Small slickshells are crawling out of the openings in the broodmother's shell. It's easy to collect them.
 	/// </summary>
 	/// <name>DebugNode_SnailBroodmotherSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SnailBroodmotherSmall = 130,
 
 	/// <summary>
 	/// Snake Nest (Large) - A dangerous, but rich source of food and leather.
 	/// </summary>
 	/// <name>DebugNode_SnakeNestBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SnakeNestBig = 131,
 
 	/// <summary>
 	/// Snake Nest (Small) - A dangerous, but rich source of food and leather.
 	/// </summary>
 	/// <name>DebugNode_SnakeNestSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SnakeNestSmall = 132,
 
 	/// <summary>
 	/// Stone Node (Large) - Stones, weathered by the everlasting rain.
 	/// </summary>
 	/// <name>DebugNode_StoneBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_StoneBig = 133,
 
 	/// <summary>
 	/// Stone Node (Small) - Stones, weathered by the everlasting rain.
 	/// </summary>
 	/// <name>DebugNode_StoneSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_StoneSmall = 134,
 
 	/// <summary>
 	/// Drizzlewing Nest (Large) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
 	/// </summary>
 	/// <name>DebugNode_StormbirdNestBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_StormbirdNestBig = 135,
 
 	/// <summary>
 	/// Drizzlewing Nest (Small) - An abandoned Drizzlewing nest. These small, flightless birds run away as soon as they spot another living creature nearby.
 	/// </summary>
 	/// <name>DebugNode_StormbirdNestSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_StormbirdNestSmall = 136,
 
 	/// <summary>
 	/// Swamp Wheat Field (Large) - A plant species that’s right at home in the swamp.
 	/// </summary>
 	/// <name>DebugNode_SwampWheatBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SwampWheatBig = 137,
 
 	/// <summary>
 	/// Swamp Wheat Field (Small) - A plant species that’s right at home in the swamp.
 	/// </summary>
 	/// <name>DebugNode_SwampWheatSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_SwampWheatSmall = 138,
 
 	/// <summary>
 	/// Wormtongue Nest (Large) - A nest full of tasty wormtongues.
 	/// </summary>
 	/// <name>DebugNode_WormtongueNestBig</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_WormtongueNestBig = 139,
 
 	/// <summary>
 	/// Wormtongue Nest (Small) - A nest full of tasty wormtongues.
 	/// </summary>
 	/// <name>DebugNode_WormtongueNestSmall</name>
-	/// <category>Debug Nodes</category>
 	DebugNode_WormtongueNestSmall = 140,
 
 	/// <summary>
 	/// Altar of Decay - A sinister stone structure created to worship the Blightrot. Cultists have engraved the inscription: "Nothing escapes death".
 	/// </summary>
 	/// <name>Decay Altar</name>
-	/// <category>Event</category>
 	Decay_Altar = 141,
 
 	/// <summary>
 	/// Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Decay Altar Positive</name>
-	/// <category>Decorations</category>
 	Decay_Altar_Positive = 142,
 
 	/// <summary>
@@ -1153,7 +899,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Distillery</name>
-	/// <category>Industry</category>
 	Distillery = 143,
 
 	/// <summary>
@@ -1161,56 +906,54 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Druid</name>
-	/// <category>Industry</category>
 	Druid = 144,
 
 	/// <summary>
 	/// Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
 	/// </summary>
 	/// <name>Escaped Convicts</name>
-	/// <category>Event</category>
 	Escaped_Convicts = 145,
+
+	/// <summary>
+	/// Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
+	/// </summary>
+	/// <name>Explorers Lodge</name>
+	Explorers_Lodge = 146,
 
 	/// <summary>
 	/// Farm Field - Can only be placed on fertile soil. Requires a Small Farm, Plantation, Herb Garden, Forester's Hut, or Homestead nearby to produce crops.
 	/// </summary>
 	/// <name>Farmfield</name>
-	/// <category>Food Production</category>
 	Farmfield = 147,
 
 	/// <summary>
 	/// Feast Hall - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Festive Mood.
 	/// </summary>
 	/// <name>Feast Hall</name>
-	/// <category>City Buildings</category>
 	Feast_Hall = 531,
 
 	/// <summary>
 	/// Feast Hall - The mourners gather in the Feast Hall as the Funerary Feast begins. Following tradition, the guests first partake in a meal, sharing stories and memories of their departed friend.
 	/// </summary>
 	/// <name>Feast Hall - Funeral Event 1</name>
-	/// <category>City Buildings</category>
 	Feast_Hall_Funeral_Event_1 = 532,
 
 	/// <summary>
 	/// Feast Hall - After the meal, the funeral guests partake in a customary memorial rite, guiding the soul of the departed toward its journey to a new vessel.
 	/// </summary>
 	/// <name>Feast Hall - Funeral Event 2</name>
-	/// <category>City Buildings</category>
 	Feast_Hall_Funeral_Event_2 = 533,
 
 	/// <summary>
 	/// Feast Hall - According to tradition, after the funeral feast, the family of the departed presents small gifts to the guests - tokens to help them remember the friend they have lost.
 	/// </summary>
 	/// <name>Feast Hall - Funeral Event 3</name>
-	/// <category>City Buildings</category>
 	Feast_Hall_Funeral_Event_3 = 534,
 
 	/// <summary>
 	/// Fence - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Fence</name>
-	/// <category>Decorations</category>
 	Fence = 148,
 
 	/// <summary>
@@ -1218,7 +961,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Field Kitchen</name>
-	/// <category>Food Production</category>
 	Field_Kitchen = 149,
 
 	/// <summary>
@@ -1226,77 +968,66 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Finesmith</name>
-	/// <category>Industry</category>
 	Finesmith = 150,
 
 	/// <summary>
 	/// Fire Shrine - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Fire Shrine</name>
-	/// <category>Decorations</category>
 	Fire_Shrine = 151,
 
 	/// <summary>
 	/// Fish Mount - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Fish</name>
-	/// <category>Decorations</category>
 	Fish = 152,
 
 	/// <summary>
 	/// Fishing Hut - An advanced fishing hut. Can fish in large fishing ponds in addition to small ones. Can catch:  [food raw] fish Fish (grade2), [mat raw] scales Scales (grade2), [mat raw] algae Algae (grade2).
 	/// </summary>
 	/// <name>Fishing Hut</name>
-	/// <category>Resource Gathering</category>
 	Fishing_Hut = 153,
 
 	/// <summary>
 	/// Fishmen Cave - It looks abandoned, but what if it's not? A terrible fishy smell comes from within.
 	/// </summary>
 	/// <name>Fishmen Cave</name>
-	/// <category>Event</category>
 	Fishmen_Cave = 154,
 
 	/// <summary>
 	/// Fishmen Lighthouse - Once upon a time, there must have been a coast and a harbor here. Now this place is haunted by Fishmen and the waters have withdrawn. An ominous light is coming from the top of the lighthouse.
 	/// </summary>
 	/// <name>Fishmen Lighthouse</name>
-	/// <category>Event</category>
 	Fishmen_Lighthouse = 155,
 
 	/// <summary>
 	/// Converted Fishmen Lighthouse - Harmony. A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 "[crafting] sea marrow" Sea Marrow per minute. Counts as 16 decorations of its type.
 	/// </summary>
 	/// <name>Fishmen Lighthouse Positive</name>
-	/// <category>Decorations</category>
 	Fishmen_Lighthouse_Positive = 156,
 
 	/// <summary>
 	/// Fishmen Outpost - Fishmen aren't usually a threat, but they can be a real nuisance after a while.
 	/// </summary>
 	/// <name>Fishmen Outpost</name>
-	/// <category>Event</category>
 	Fishmen_Outpost = 157,
 
 	/// <summary>
 	/// Fishman Soothsayer - An old wandering soothsayer, teeming with magic. He does not speak, though you can hear his voice. His eyes are blank, yet you can feel his gaze. He is not afraid of death, he stands by its side.
 	/// </summary>
 	/// <name>Fishmen Soothsayer</name>
-	/// <category>Event</category>
 	Fishmen_Soothsayer = 158,
 
 	/// <summary>
 	/// Fishmen Totem - A sinister structure made out of bones. Smells like Fishmen magic.
 	/// </summary>
 	/// <name>Fishmen Totem</name>
-	/// <category>Event</category>
 	Fishmen_Totem = 159,
 
 	/// <summary>
 	/// Flame Altar - A strange, ancient altar, supposedly dedicated to the Holy Flame. Grants access to temporary support abilities.
 	/// </summary>
 	/// <name>Flame Altar</name>
-	/// <category>City Buildings</category>
 	Flame_Altar = 535,
 
 	/// <summary>
@@ -1304,7 +1035,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Flawless Brewery</name>
-	/// <category>Industry</category>
 	Flawless_Brewery = 160,
 
 	/// <summary>
@@ -1312,7 +1042,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Flawless Cellar</name>
-	/// <category>Food Production</category>
 	Flawless_Cellar = 161,
 
 	/// <summary>
@@ -1320,7 +1049,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Cooperage</name>
-	/// <category>Industry</category>
 	Flawless_Cooperage = 162,
 
 	/// <summary>
@@ -1328,7 +1056,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Druid</name>
-	/// <category>Industry</category>
 	Flawless_Druid = 163,
 
 	/// <summary>
@@ -1336,7 +1063,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Leatherworks</name>
-	/// <category>Industry</category>
 	Flawless_Leatherworks = 164,
 
 	/// <summary>
@@ -1344,7 +1070,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Rain Mill</name>
-	/// <category>Food Production</category>
 	Flawless_Rain_Mill = 165,
 
 	/// <summary>
@@ -1352,98 +1077,84 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Flawless Smelter</name>
-	/// <category>Industry</category>
 	Flawless_Smelter = 166,
 
 	/// <summary>
 	/// Flower Bed - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Flower Bed</name>
-	/// <category>Decorations</category>
 	Flower_Bed = 167,
 
 	/// <summary>
 	/// Foragers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] grain Grain (grade2), [food raw] roots Roots (grade2), [food raw] vegetables Vegetables (grade2).
 	/// </summary>
 	/// <name>Forager's Camp</name>
-	/// <category>Resource Gathering</category>
 	Foragers_Camp = 168,
 
 	/// <summary>
 	/// Forsaken Crypt - The Forsaken Crypt hides a frustrated, poor spirit. This place seems to have been plundered a long time ago.
 	/// </summary>
 	/// <name>ForsakenCrypt</name>
-	/// <category>Event</category>
 	ForsakenCrypt = 169,
 
 	/// <summary>
 	/// Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 	/// </summary>
 	/// <name>Forum</name>
-	/// <category>City Buildings</category>
 	Forum = 170,
 
 	/// <summary>
 	/// Marble Fountain - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Fountain</name>
-	/// <category>Decorations</category>
 	Fountain = 171,
 
 	/// <summary>
 	/// Overgrown Fence - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Fox Fence</name>
-	/// <category>Decorations</category>
 	Fox_Fence = 172,
 
 	/// <summary>
 	/// Overgrown Fence Corner - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Fox Fence Corner</name>
-	/// <category>Decorations</category>
 	Fox_Fence_Corner = 173,
 
 	/// <summary>
 	/// Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Fox House</name>
-	/// <category>Housing</category>
 	Fox_House = 174,
 
 	/// <summary>
 	/// Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
 	/// </summary>
 	/// <name>FoxBattleground_T1</name>
-	/// <category>Event</category>
 	FoxBattleground_T1 = 175,
 
 	/// <summary>
 	/// Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Frog House</name>
-	/// <category>Housing</category>
 	Frog_House = 176,
 
 	/// <summary>
 	/// Evergreen Shrub - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Frog Tree</name>
-	/// <category>Decorations</category>
 	Frog_Tree = 177,
 
 	/// <summary>
 	/// Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
 	/// </summary>
 	/// <name>FrogBattleground_T1</name>
-	/// <category>Event</category>
 	FrogBattleground_T1 = 178,
 
 	/// <summary>
 	/// Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
 	/// </summary>
 	/// <name>Fuming Machinery</name>
-	/// <category>Event</category>
 	Fuming_Machinery = 179,
 
 	/// <summary>
@@ -1451,70 +1162,60 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Furnace</name>
-	/// <category>Food Production</category>
 	Furnace = 180,
 
 	/// <summary>
 	/// Gate - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 	/// </summary>
 	/// <name>Gate</name>
-	/// <category>Decorations</category>
 	Gate = 181,
 
 	/// <summary>
 	/// Spectral Stag - A truly rare sight - a Spectral Treasure Stag, lured to this place by the lingering anguish of mortal souls. Those who manage to find it will be rewarded with a special treasure.
 	/// </summary>
 	/// <name>Ghost Treasure Stag</name>
-	/// <category>Event</category>
 	Ghost_Treasure_Stag = 536,
 
 	/// <summary>
 	/// Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
 	/// </summary>
 	/// <name>Giant Stormbird</name>
-	/// <category>Event</category>
 	Giant_Stormbird = 182,
 
 	/// <summary>
 	/// Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
 	/// </summary>
 	/// <name>Glade Trader - The Hermit</name>
-	/// <category>Event</category>
 	Glade_Trader_The_Hermit = 183,
 
 	/// <summary>
 	/// Wandering Merchant - Seer - A strange woman is observing the settlement from afar.
 	/// </summary>
 	/// <name>Glade Trader - The Seer</name>
-	/// <category>Event</category>
 	Glade_Trader_The_Seer = 184,
 
 	/// <summary>
 	/// Wandering Merchant - Shaman - A mysterious and imposing figure has been spotted near the settlement. He is pulling a wagon full of herbs and ointments.
 	/// </summary>
 	/// <name>Glade Trader - The Shaman</name>
-	/// <category>Event</category>
 	Glade_Trader_The_Shaman = 185,
 
 	/// <summary>
 	/// Golden Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 	/// </summary>
 	/// <name>Gold Stag</name>
-	/// <category>Event</category>
 	Gold_Stag = 186,
 
 	/// <summary>
 	/// Golden Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 	/// </summary>
 	/// <name>Gold Treasure Stag</name>
-	/// <category>Event</category>
 	Gold_Treasure_Stag = 187,
 
 	/// <summary>
 	/// Golden Leaf Plant - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Golden Leaf</name>
-	/// <category>Decorations</category>
 	Golden_Leaf = 188,
 
 	/// <summary>
@@ -1522,14 +1223,12 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Granary</name>
-	/// <category>Food Production</category>
 	Granary = 189,
 
 	/// <summary>
 	/// Greenhouse - Uses Drizzle Water to grow crops regardless of the season. Must be placed on fertile soil. Can produce:  [food raw] mushrooms Mushrooms (grade2), [food raw] herbs Herbs (grade2)
 	/// </summary>
 	/// <name>Greenhouse Workshop</name>
-	/// <category>Food Production</category>
 	Greenhouse_Workshop = 190,
 
 	/// <summary>
@@ -1537,294 +1236,246 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Grill</name>
-	/// <category>Food Production</category>
 	Grill = 191,
 
 	/// <summary>
 	/// Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 	/// </summary>
 	/// <name>Grove</name>
-	/// <category>Industry</category>
 	Grove = 192,
 
 	/// <summary>
 	/// Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.
 	/// </summary>
 	/// <name>Guild House</name>
-	/// <category>City Buildings</category>
 	Guild_House = 193,
 
 	/// <summary>
 	/// Hallowed Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade3), [food raw] herbs Herbs (grade3). Has improved efficiency and more worker slots.
 	/// </summary>
 	/// <name>Hallowed Herb Garden</name>
-	/// <category>Food Production</category>
 	Hallowed_Herb_Garden = 194,
 
 	/// <summary>
 	/// Hallowed Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade3), [food raw] grain Grain (grade3). Has improved efficiency and more worker slots.
 	/// </summary>
 	/// <name>Hallowed SmallFarm</name>
-	/// <category>Food Production</category>
 	Hallowed_SmallFarm = 195,
 
 	/// <summary>
 	/// Harmony Spirit Altar - An old altar found in the wilds. The ancient language carved into the stone proclaims: "Light a fire at the altar to gain the blessing of the Spirit of Harmony".
 	/// </summary>
 	/// <name>Harmony Spirit Altar</name>
-	/// <category>Event</category>
 	Harmony_Spirit_Altar = 196,
 
 	/// <summary>
 	/// Converted Harmony Spirit Altar - Harmony. When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Harmony Spirit Altar Positive</name>
-	/// <category>Decorations</category>
 	Harmony_Spirit_Altar_Positive = 197,
 
 	/// <summary>
 	/// Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Harpy House</name>
-	/// <category>Housing</category>
 	Harpy_House = 198,
 
 	/// <summary>
 	/// Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
 	/// </summary>
 	/// <name>HarpyBattleground_T1</name>
-	/// <category>Event</category>
 	HarpyBattleground_T1 = 199,
 
 	/// <summary>
 	/// Harvesters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] plant fibre Plant Fiber (grade2), [mat raw] reeds Reed (grade2), [mat raw] leather Leather (grade2).
 	/// </summary>
 	/// <name>Harvester Camp</name>
-	/// <category>Resource Gathering</category>
 	Harvester_Camp = 200,
-
-	/// <summary>
-	/// Haunted Bat House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
-	/// </summary>
-	/// <name>Haunted Ruined Bat House</name>
-	/// <category>Ruins</category>
-	Haunted_Ruined_Bat_House = 556,
 
 	/// <summary>
 	/// Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Beaver House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Beaver_House = 201,
 
 	/// <summary>
 	/// Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Brewery</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Brewery = 202,
 
 	/// <summary>
 	/// Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Cellar</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Cellar = 203,
 
 	/// <summary>
 	/// Haunted Cooperage - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Cooperage</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Cooperage = 204,
 
 	/// <summary>
 	/// Haunted Druid's Hut - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Druid</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Druid = 205,
 
 	/// <summary>
 	/// Haunted Fox House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Fox House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Fox_House = 206,
 
 	/// <summary>
 	/// Haunted Frog House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Frog House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Frog_House = 207,
 
 	/// <summary>
 	/// Haunted Guild House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Guild House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Guild_House = 208,
 
 	/// <summary>
 	/// Haunted Harpy House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Harpy House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Harpy_House = 209,
 
 	/// <summary>
 	/// Haunted Herb Garden - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Herb Garden</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Herb_Garden = 210,
 
 	/// <summary>
 	/// Haunted Human House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Human House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Human_House = 211,
 
 	/// <summary>
 	/// Haunted Leatherworker - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Leatherworks</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Leatherworks = 212,
 
 	/// <summary>
 	/// Haunted Lizard House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Lizard House</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Lizard_House = 213,
 
 	/// <summary>
 	/// Haunted Market - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Market</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Market = 214,
 
 	/// <summary>
 	/// Haunted Rain Mill - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Rainmill</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Rainmill = 215,
 
 	/// <summary>
 	/// Haunted Small Farm - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined SmallFarm</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_SmallFarm = 216,
 
 	/// <summary>
 	/// Haunted Smelter - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Smelter</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Smelter = 217,
 
 	/// <summary>
 	/// Haunted Temple - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 	/// </summary>
 	/// <name>Haunted Ruined Temple</name>
-	/// <category>Ruins</category>
 	Haunted_Ruined_Temple = 218,
 
 	/// <summary>
 	/// Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade1), [food raw] herbs Herbs (grade2).
 	/// </summary>
 	/// <name>Herb Garden</name>
-	/// <category>Food Production</category>
 	Herb_Garden = 219,
 
 	/// <summary>
 	/// Herbalists' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] herbs Herbs (grade2), [food raw] berries Berries (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Herbalist's Camp</name>
-	/// <category>Resource Gathering</category>
 	Herbalists_Camp = 220,
 
 	/// <summary>
 	/// Holy Guild House - An upgraded service building with an additional passive effect. Villagers can use it to fulfill their need for:  Luxury,  Education. Passive effects: Guild House, The Guild's Welfare.
 	/// </summary>
 	/// <name>Holy Guild House</name>
-	/// <category>City Buildings</category>
 	Holy_Guild_House = 221,
 
 	/// <summary>
 	/// Holy Market - An upgraded service building with an additional passive effect. Villagers can use it to fulfill their need for:  Leisure,  Treatment. Passive effects: Ale and Hearty, Market Carts.
 	/// </summary>
 	/// <name>Holy Market</name>
-	/// <category>City Buildings</category>
 	Holy_Market = 222,
 
 	/// <summary>
 	/// Holy Temple - An upgraded service building with an additional passive effect. Villagers can use it to fulfill their need for:  Religion,  Education. Passive effects: Sacrament of the Flame, Consecrated Scrolls.
 	/// </summary>
 	/// <name>Holy Temple</name>
-	/// <category>City Buildings</category>
 	Holy_Temple = 223,
 
 	/// <summary>
 	/// Homestead - Uses a large area of nearby farm fields to grow  [food raw] grain Grain (grade3), [mat raw] plant fibre Plant Fiber (grade3), [food raw] vegetables Vegetables (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Homestead</name>
-	/// <category>Food Production</category>
 	Homestead = 224,
 
 	/// <summary>
 	/// Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Human House</name>
-	/// <category>Housing</category>
 	Human_House = 225,
 
 	/// <summary>
 	/// Fallen Human Explorers - A group of fallen Human explorers. They were probably looking for a place to settle, far from the Queen's watchful eyes... The sight causes uneasiness amongst the Human population.
 	/// </summary>
 	/// <name>HumanBattleground_T1</name>
-	/// <category>Event</category>
 	HumanBattleground_T1 = 226,
 
 	/// <summary>
 	/// Hydrant - A small storage for "blight fuel" Purging Fire. Blight Fighters will use it to restock their fuel when fighting Blightrot in the storm.
 	/// </summary>
 	/// <name>Hydrant</name>
-	/// <category>City Buildings</category>
 	Hydrant = 227,
 
 	/// <summary>
 	/// Industrial Chimney - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Industrial Chimney</name>
-	/// <category>Decorations</category>
 	Industrial_Chimney = 228,
 
 	/// <summary>
 	/// Infected Drainage Mole - One of the mythical guardians of the forest - still alive, but plagued by a mysterious disease. The Blightrot has taken over his mind, causing an unstoppable rage. You can try to heal him... or whisper prayers to its new masters.
 	/// </summary>
 	/// <name>Infected Mole</name>
-	/// <category>Event</category>
 	Infected_Mole = 229,
 
 	/// <summary>
 	/// Withered Tree - The once mighty tree has been deformed by the Blightrot living in its root system. The Blightrot poisons the tree's tissues, leading to its long-lasting degradation.
 	/// </summary>
 	/// <name>Infected Tree</name>
-	/// <category>Event</category>
 	Infected_Tree = 230,
 
 	/// <summary>
 	/// River Kelpie - A legendary, shape-shifting aquatic spirit that lurks near water and mesmerizes travelers. It is said that whoever acquires the kelpie's bridle will be able to control it.
 	/// </summary>
 	/// <name>Kelpie</name>
-	/// <category>Event</category>
 	Kelpie = 231,
 
 	/// <summary>
@@ -1832,21 +1483,18 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Kiln</name>
-	/// <category>Industry</category>
 	Kiln = 232,
 
 	/// <summary>
 	/// Lamp - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Lamp</name>
-	/// <category>Decorations</category>
 	Lamp = 233,
 
 	/// <summary>
 	/// Leaking Cauldron - An old, broken piece of Rainpunk technology. It's contaminating the soil around it.
 	/// </summary>
 	/// <name>Leaking Cauldron</name>
-	/// <category>Event</category>
 	Leaking_Cauldron = 234,
 
 	/// <summary>
@@ -1854,84 +1502,72 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Leatherworks</name>
-	/// <category>Industry</category>
 	Leatherworks = 235,
 
 	/// <summary>
 	/// Lightning Catcher - A weird contraption that attracts lightning. Its proximity to the settlement might have grave consequences.
 	/// </summary>
 	/// <name>Lightning Catcher</name>
-	/// <category>Event</category>
 	Lightning_Catcher = 236,
 
 	/// <summary>
 	/// Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 2 inhabitants.
 	/// </summary>
 	/// <name>Lizard House</name>
-	/// <category>Housing</category>
 	Lizard_House = 237,
 
 	/// <summary>
 	/// Lizard Post - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Lizard Post</name>
-	/// <category>Decorations</category>
 	Lizard_Post = 238,
 
 	/// <summary>
 	/// Fallen Lizard Hunters - A group of fallen Lizard hunters... The sight causes unrest amongst the Lizard population.
 	/// </summary>
 	/// <name>LizardBattleground_T1</name>
-	/// <category>Event</category>
 	LizardBattleground_T1 = 239,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. Born in the Blightstorm, she will climb the Red Mountain. The fires beneath her feet shall hiss her name. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 1</name>
-	/// <category>Lore Tablet 1</category>
 	Lore_Tablet_1 = 240,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. Though sealed beneath the muddy ground, their voices ring loud and clear. Maddening, alluring. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 2</name>
-	/// <category>Lore Tablet 2</category>
 	Lore_Tablet_2 = 241,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. The true rulers of this world shall rise again and break the seals that bind them. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 3</name>
-	/// <category>Lore Tablet 3</category>
 	Lore_Tablet_3 = 242,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. Envy the lesser species, for they do not yet know what lies beneath. But in time, they will understand. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 4</name>
-	/// <category>Lore Tablet 4</category>
 	Lore_Tablet_4 = 243,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. It pours, yet it does not flood. As if the earth itself greedily drinks every last drop of this eternal curse. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 5</name>
-	/// <category>Lore Tablet 5</category>
 	Lore_Tablet_5 = 244,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. Embrace the Eternal Rain, for it powers the engine of progress. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 6</name>
-	/// <category>Lore Tablet 6</category>
 	Lore_Tablet_6 = 245,
 
 	/// <summary>
 	/// Inscribed Monolith - Harmony. Don't let the pleasant sparking of the raindrops fool you. This is just the first sign of your flesh rotting. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Lore Tablet 7</name>
-	/// <category>Lore Tablet 7</category>
 	Lore_Tablet_7 = 246,
 
 	/// <summary>
@@ -1939,14 +1575,12 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Lumbermill</name>
-	/// <category>Industry</category>
 	Lumbermill = 247,
 
 	/// <summary>
 	/// Main Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
 	/// </summary>
 	/// <name>Main Storage (not-buildable)</name>
-	/// <category>City Buildings</category>
 	Main_Storage_not_buildable = 248,
 
 	/// <summary>
@@ -1954,7 +1588,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Makeshift Post</name>
-	/// <category>Industry</category>
 	Makeshift_Post = 249,
 
 	/// <summary>
@@ -1962,98 +1595,84 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Manufactory</name>
-	/// <category>Industry</category>
 	Manufactory = 250,
 
 	/// <summary>
 	/// Market - A place where villagers can fulfill their need for: Leisure,  Treatment. Passive effects: Market Carts.
 	/// </summary>
 	/// <name>Market</name>
-	/// <category>City Buildings</category>
 	Market = 251,
 
 	/// <summary>
 	/// Merchant Shipwreck - How powerful must the storm surge have been to carry this shattered wreck all the way here? Perhaps in the distant past, there was a sea here? It looks as if it’s been lying here for centuries. Strange voices can be heard coming from below deck...
 	/// </summary>
 	/// <name>Merchant Ship Wreck</name>
-	/// <category>Event</category>
 	Merchant_Ship_Wreck = 252,
 
 	/// <summary>
 	/// Mine - Can only be placed on coal, copper, or salt veins. Can produce:  [crafting] coal Coal (grade2), [metal] copper ore Copper Ore (grade2), [crafting] salt Salt (grade2).
 	/// </summary>
 	/// <name>Mine</name>
-	/// <category>Resource Gathering</category>
 	Mine = 253,
 
 	/// <summary>
 	/// Hungry Mistworm - A small, yet dangerous creature. It normally lives underground or hides in the mist, but this one seems to be more courageous than its kin.
 	/// </summary>
 	/// <name>Mistworm_T1</name>
-	/// <category>Event</category>
 	Mistworm_T1 = 254,
 
 	/// <summary>
 	/// Drainage Mole - A wild beast that usually lives underground. It was forced to the surface for some reason.
 	/// </summary>
 	/// <name>Mole</name>
-	/// <category>Event</category>
 	Mole = 255,
 
 	/// <summary>
 	/// Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 	/// </summary>
 	/// <name>Monastery</name>
-	/// <category>City Buildings</category>
 	Monastery = 256,
 
 	/// <summary>
 	/// Obelisk - A mystical stone monument. Unknown runes are carved all over its surface.
 	/// </summary>
 	/// <name>Monolith</name>
-	/// <category>Event</category>
 	Monolith = 257,
 
 	/// <summary>
 	/// Obelisk - Aesthetics. The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
 	/// </summary>
 	/// <name>Monolith Positive</name>
-	/// <category>Decorations</category>
 	Monolith_Positive = 258,
 
 	/// <summary>
 	/// Monument of Greed - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Moument of Greed</name>
-	/// <category>Decorations</category>
 	Moument_Of_Greed = 259,
 
 	/// <summary>
 	/// Decorative Fungus - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Mushroom Decor</name>
-	/// <category>Decorations</category>
 	Mushroom_Decor = 260,
 
 	/// <summary>
 	/// Nightfern - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Nightfern</name>
-	/// <category>Decorations</category>
 	Nightfern = 261,
 
 	/// <summary>
 	/// Noxious Machinery - A damaged and abandoned rainpunk contraption. The area was probably deserted because of a significant explosion risk. The machine's valves emit a distinct Blightrot odor.
 	/// </summary>
 	/// <name>Noxious Machinery</name>
-	/// <category>Event</category>
 	Noxious_Machinery = 262,
 
 	/// <summary>
 	/// Ornate Column - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Ornate Column</name>
-	/// <category>Decorations</category>
 	Ornate_Column = 263,
 
 	/// <summary>
@@ -2061,84 +1680,72 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Pantry</name>
-	/// <category>Food Production</category>
 	Pantry = 264,
 
 	/// <summary>
 	/// Path - A simple path, doesn't cost any resources. Grants a 5% speed increase to villagers.
 	/// </summary>
 	/// <name>Path</name>
-	/// <category>Roads</category>
 	Path = 265,
 
 	/// <summary>
 	/// Paved Road - A road made out of stone. Grants a 15% speed increase to villagers. Road construction cost is not affected by effects, modifiers, or perks.
 	/// </summary>
 	/// <name>Paved Road</name>
-	/// <category>Roads</category>
 	Paved_Road = 266,
 
 	/// <summary>
 	/// Petrified Tree - A strange tree that’s been turned to stone by the rain. It's radiating its sickness to the other trees around it.
 	/// </summary>
 	/// <name>PetrifiedTree_T1</name>
-	/// <category>Event</category>
 	PetrifiedTree_T1 = 267,
 
 	/// <summary>
 	/// Pipe - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Pipe</name>
-	/// <category>Decorations</category>
 	Pipe = 268,
 
 	/// <summary>
 	/// Pipe Cross - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Pipe Cross</name>
-	/// <category>Decorations</category>
 	Pipe_Cross = 269,
 
 	/// <summary>
 	/// Pipe Elbow - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Pipe Elbow</name>
-	/// <category>Decorations</category>
 	Pipe_Elbow = 270,
 
 	/// <summary>
 	/// Pipe Ending - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Pipe End</name>
-	/// <category>Decorations</category>
 	Pipe_End = 271,
 
 	/// <summary>
 	/// Pipe T-Connector - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Pipe T Cross</name>
-	/// <category>Decorations</category>
 	Pipe_T_Cross = 272,
 
 	/// <summary>
 	/// Valve - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Pipe Valve</name>
-	/// <category>Decorations</category>
 	Pipe_Valve = 273,
 
 	/// <summary>
 	/// Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
 	/// </summary>
 	/// <name>Plantation</name>
-	/// <category>Food Production</category>
 	Plantation = 274,
 
 	/// <summary>
 	/// Strider Port - From this port, expeditions can be launched to search the nearby swamps for blueprints and treasure in the submerged ruins of former settlements.
 	/// </summary>
 	/// <name>Port</name>
-	/// <category>City Buildings</category>
 	Port = 275,
 
 	/// <summary>
@@ -2146,35 +1753,30 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Press</name>
-	/// <category>Industry</category>
 	Press = 276,
 
 	/// <summary>
 	/// Small Fishing Hut - A crude version of a normal fishing hut. It's slower, and can only fish in small fishing ponds. Can catch:  [food raw] fish Fish (grade1), [mat raw] scales Scales (grade1), [mat raw] algae Algae (grade1).
 	/// </summary>
 	/// <name>Primitive Fishing Hut</name>
-	/// <category>Resource Gathering</category>
 	Primitive_Fishing_Hut = 277,
 
 	/// <summary>
 	/// Small Foragers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] grain Grain (grade1), [food raw] roots Roots (grade1), [food raw] vegetables Vegetables (grade1).
 	/// </summary>
 	/// <name>Primitive Forager's Camp</name>
-	/// <category>Resource Gathering</category>
 	Primitive_Foragers_Camp = 278,
 
 	/// <summary>
 	/// Small Herbalists' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] herbs Herbs (grade1), [food raw] berries Berries (grade1), [food raw] mushrooms Mushrooms (grade1).
 	/// </summary>
 	/// <name>Primitive Herbalist's Camp</name>
-	/// <category>Resource Gathering</category>
 	Primitive_Herbalists_Camp = 279,
 
 	/// <summary>
 	/// Small Trappers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] meat Meat (grade1), [food raw] insects Insects (grade1), [food raw] eggs Eggs (grade1).
 	/// </summary>
 	/// <name>Primitive Trapper's Camp</name>
-	/// <category>Resource Gathering</category>
 	Primitive_Trappers_Camp = 280,
 
 	/// <summary>
@@ -2182,63 +1784,48 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Provisioner</name>
-	/// <category>Industry</category>
 	Provisioner = 281,
-
-	/// <summary>
-	/// Purified Bat House - A building specially designed for Bats. Must be built near a hearth. Fulfills the need for Bat Housing and can accommodate 6 inhabitants.
-	/// </summary>
-	/// <name>Purged Bat House</name>
-	/// <category>Housing</category>
-	Purged_Bat_House = 557,
 
 	/// <summary>
 	/// Purified Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Purged Beaver House</name>
-	/// <category>Housing</category>
 	Purged_Beaver_House = 282,
 
 	/// <summary>
 	/// Purified Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Purged Fox House</name>
-	/// <category>Housing</category>
 	Purged_Fox_House = 283,
 
 	/// <summary>
 	/// Purified Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Purged Frog House</name>
-	/// <category>Housing</category>
 	Purged_Frog_House = 284,
 
 	/// <summary>
 	/// Purified Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Purged Harpy House</name>
-	/// <category>Housing</category>
 	Purged_Harpy_House = 285,
 
 	/// <summary>
 	/// Purified Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Purged Human House</name>
-	/// <category>Housing</category>
 	Purged_Human_House = 286,
 
 	/// <summary>
 	/// Purified Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 6 inhabitants.
 	/// </summary>
 	/// <name>Purged Lizard House</name>
-	/// <category>Housing</category>
 	Purged_Lizard_House = 287,
 
 	/// <summary>
 	/// Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Rain Catcher</name>
-	/// <category>Resource Gathering</category>
 	Rain_Catcher = 288,
 
 	/// <summary>
@@ -2246,49 +1833,42 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Rain Mill</name>
-	/// <category>Food Production</category>
 	Rain_Mill = 289,
 
 	/// <summary>
 	/// Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
 	/// </summary>
 	/// <name>Rain Totem</name>
-	/// <category>Event</category>
 	Rain_Totem = 290,
 
 	/// <summary>
 	/// Converted Rain Totem - Harmony. The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Rain Totem Positive</name>
-	/// <category>Decorations</category>
 	Rain_Totem_Positive = 291,
 
 	/// <summary>
 	/// Rainpunk Barrels - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Rainpunk Barrels</name>
-	/// <category>Decorations</category>
 	Rainpunk_Barrels = 292,
 
 	/// <summary>
 	/// Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
 	/// </summary>
 	/// <name>Rainpunk Drill - Coal</name>
-	/// <category>Event</category>
 	Rainpunk_Drill_Coal = 293,
 
 	/// <summary>
 	/// Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
 	/// </summary>
 	/// <name>Rainpunk Drill - Copper</name>
-	/// <category>Event</category>
 	Rainpunk_Drill_Copper = 294,
 
 	/// <summary>
 	/// Rainpunk Drill - One of the Brass Order's curious little inventions. It appears to be broken.
 	/// </summary>
 	/// <name>Rainpunk Drill - Salt</name>
-	/// <category>Event</category>
 	Rainpunk_Drill_Salt = 295,
 
 	/// <summary>
@@ -2296,14 +1876,12 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Rainpunk Foundry</name>
-	/// <category>Industry</category>
 	Rainpunk_Foundry = 296,
 
 	/// <summary>
 	/// Destroyed Rainpunk Foundry - An old, abandoned piece of advanced Rainpunk technology. It seems extremely unstable - but maybe it can be rebuilt...
 	/// </summary>
 	/// <name>RainpunkFactory</name>
-	/// <category>Event</category>
 	RainpunkFactory = 297,
 
 	/// <summary>
@@ -2311,1253 +1889,1062 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Ranch</name>
-	/// <category>Food Production</category>
 	Ranch = 298,
 
 	/// <summary>
 	/// Reinforced Road - A road reinforced with copper. Grants a 25% speed increase to villagers. Road construction cost is not affected by effects, modifiers, or perks.
 	/// </summary>
 	/// <name>Reinforced Road</name>
-	/// <category>Roads</category>
 	Reinforced_Road = 299,
 
 	/// <summary>
 	/// Small Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 	/// </summary>
 	/// <name>RewardChest_T1</name>
-	/// <category>Event</category>
 	RewardChest_T1 = 300,
 
 	/// <summary>
 	/// Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 	/// </summary>
 	/// <name>RewardChest_T2</name>
-	/// <category>Event</category>
 	RewardChest_T2 = 301,
 
 	/// <summary>
 	/// Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 	/// </summary>
 	/// <name>RewardChest_T3</name>
-	/// <category>Event</category>
 	RewardChest_T3 = 302,
 
 	/// <summary>
 	/// Road Sign - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Road Sign</name>
-	/// <category>Decorations</category>
 	Road_Sign = 303,
-
-	/// <summary>
-	/// Academy - A building destroyed by the storm. It can be rebuilt or salvaged.
-	/// </summary>
-	/// <name>Ruined Academy</name>
-	/// <category>Ruins</category>
-	Ruined_Academy = 558,
-
-	/// <summary>
-	/// Academy - A building destroyed by the storm. It can be rebuilt or demolished.
-	/// </summary>
-	/// <name>Ruined Academy (no reward)</name>
-	/// <category>Ruins</category>
-	Ruined_Academy_no_Reward = 559,
 
 	/// <summary>
 	/// Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Advanced Rain Catcher</name>
-	/// <category>Ruins</category>
 	Ruined_Advanced_Rain_Catcher = 304,
 
 	/// <summary>
 	/// Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Advanced Rain Catcher (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Advanced_Rain_Catcher_no_Reward = 305,
 
 	/// <summary>
 	/// Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Alchemist</name>
-	/// <category>Ruins</category>
 	Ruined_Alchemist = 306,
 
 	/// <summary>
 	/// Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Alchemist (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Alchemist_no_Reward = 307,
 
 	/// <summary>
 	/// Apothecary - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Apothecary</name>
-	/// <category>Ruins</category>
 	Ruined_Apothecary = 308,
 
 	/// <summary>
 	/// Apothecary - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Apothecary (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Apothecary_no_Reward = 309,
 
 	/// <summary>
 	/// Artisan - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Artisan</name>
-	/// <category>Ruins</category>
 	Ruined_Artisan = 310,
 
 	/// <summary>
 	/// Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Artisan (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Artisan_no_Reward = 311,
 
 	/// <summary>
 	/// Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Bakery</name>
-	/// <category>Ruins</category>
 	Ruined_Bakery = 312,
 
 	/// <summary>
 	/// Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Bakery (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Bakery_no_Reward = 313,
-
-	/// <summary>
-	/// Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
-	/// </summary>
-	/// <name>Ruined Bat House</name>
-	/// <category>Ruins</category>
-	Ruined_Bat_House = 560,
-
-	/// <summary>
-	/// Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
-	/// </summary>
-	/// <name>Ruined Bat House (no reward)</name>
-	/// <category>Ruins</category>
-	Ruined_Bat_House_no_Reward = 561,
 
 	/// <summary>
 	/// Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Bath House</name>
-	/// <category>Ruins</category>
 	Ruined_Bath_House = 314,
 
 	/// <summary>
 	/// Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Bath House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Bath_House_no_Reward = 315,
 
 	/// <summary>
 	/// Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Beanery</name>
-	/// <category>Ruins</category>
 	Ruined_Beanery = 316,
 
 	/// <summary>
 	/// Beanery - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Beanery (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Beanery_no_Reward = 317,
 
 	/// <summary>
 	/// Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Beaver House</name>
-	/// <category>Ruins</category>
 	Ruined_Beaver_House = 318,
 
 	/// <summary>
 	/// Beaver House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Beaver House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Beaver_House_no_Reward = 319,
 
 	/// <summary>
 	/// Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Big Shelter</name>
-	/// <category>Ruins</category>
 	Ruined_Big_Shelter = 320,
 
 	/// <summary>
 	/// Big Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Big Shelter (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Big_Shelter_no_Reward = 321,
 
 	/// <summary>
 	/// Brewery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Brewery</name>
-	/// <category>Ruins</category>
 	Ruined_Brewery = 322,
 
 	/// <summary>
 	/// Brewery - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Brewery (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Brewery_no_Reward = 323,
 
 	/// <summary>
 	/// Brick Oven - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Brick Oven</name>
-	/// <category>Ruins</category>
 	Ruined_Brick_Oven = 324,
 
 	/// <summary>
 	/// Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Brick Oven (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Brick_Oven_no_Reward = 325,
 
 	/// <summary>
 	/// Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Brickyard</name>
-	/// <category>Ruins</category>
 	Ruined_Brickyard = 326,
 
 	/// <summary>
 	/// Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Brickyard (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Brickyard_no_Reward = 327,
 
 	/// <summary>
 	/// Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Butcher</name>
-	/// <category>Ruins</category>
 	Ruined_Butcher = 328,
 
 	/// <summary>
 	/// Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Butcher (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Butcher_no_Reward = 329,
 
 	/// <summary>
 	/// Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Cannery</name>
-	/// <category>Ruins</category>
 	Ruined_Cannery = 330,
 
 	/// <summary>
 	/// Cannery - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Cannery (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Cannery_no_Reward = 331,
 
 	/// <summary>
 	/// Carpenter - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Carpenter</name>
-	/// <category>Ruins</category>
 	Ruined_Carpenter = 332,
 
 	/// <summary>
 	/// Carpenter - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Carpenter (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Carpenter_no_Reward = 333,
 
 	/// <summary>
 	/// Cellar - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Cellar</name>
-	/// <category>Ruins</category>
 	Ruined_Cellar = 334,
 
 	/// <summary>
 	/// Cellar - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Cellar (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Cellar_no_Reward = 335,
 
 	/// <summary>
 	/// Clan Hall - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Clan Hall</name>
-	/// <category>Ruins</category>
 	Ruined_Clan_Hall = 336,
 
 	/// <summary>
 	/// Clan Hall - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Clan Hall (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Clan_Hall_no_Reward = 337,
 
 	/// <summary>
 	/// Clay Pit - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Clay Pit</name>
-	/// <category>Ruins</category>
 	Ruined_Clay_Pit = 338,
 
 	/// <summary>
 	/// Clay Pit - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Clay Pit (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Clay_Pit_no_Reward = 339,
 
 	/// <summary>
 	/// Cobbler - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Cobbler</name>
-	/// <category>Ruins</category>
 	Ruined_Cobbler = 340,
 
 	/// <summary>
 	/// Cobbler - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Cobbler (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Cobbler_no_Reward = 341,
 
 	/// <summary>
 	/// Cookhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Cookhouse</name>
-	/// <category>Ruins</category>
 	Ruined_Cookhouse = 342,
 
 	/// <summary>
 	/// Cookhouse - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Cookhouse (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Cookhouse_no_Reward = 343,
 
 	/// <summary>
 	/// Cooperage - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Cooperage</name>
-	/// <category>Ruins</category>
 	Ruined_Cooperage = 344,
 
 	/// <summary>
 	/// Cooperage - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Cooperage (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Cooperage_no_Reward = 345,
 
 	/// <summary>
 	/// Crude Workstation - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Crude Workstation (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Crude_Workstation_no_Reward = 346,
 
 	/// <summary>
 	/// Distillery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Distillery</name>
-	/// <category>Ruins</category>
 	Ruined_Distillery = 347,
 
 	/// <summary>
 	/// Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Distillery (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Distillery_no_Reward = 348,
 
 	/// <summary>
 	/// Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Druid</name>
-	/// <category>Ruins</category>
 	Ruined_Druid = 349,
 
 	/// <summary>
 	/// Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Druid (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Druid_no_Reward = 350,
+
+	/// <summary>
+	/// Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Explorers Lodge</name>
+	Ruined_Explorers_Lodge = 351,
+
+	/// <summary>
+	/// Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Explorers Lodge (no reward)</name>
+	Ruined_Explorers_Lodge_no_Reward = 352,
 
 	/// <summary>
 	/// Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Farm</name>
-	/// <category>Ruins</category>
 	Ruined_Farm = 353,
 
 	/// <summary>
 	/// Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Farm (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Farm_no_Reward = 354,
 
 	/// <summary>
 	/// Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Feast Hall (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Feast_Hall_no_Reward = 537,
 
 	/// <summary>
 	/// Field Kitchen - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Field Kitchen (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Field_Kitchen_no_Reward = 355,
 
 	/// <summary>
 	/// Finesmith - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Finesmith</name>
-	/// <category>Ruins</category>
 	Ruined_Finesmith = 356,
 
 	/// <summary>
 	/// Finesmith - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Finesmith (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Finesmith_no_Reward = 357,
 
 	/// <summary>
 	/// Fishing Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Fishing Hut</name>
-	/// <category>Ruins</category>
 	Ruined_Fishing_Hut = 358,
 
 	/// <summary>
 	/// Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Fishing Hut (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Fishing_Hut_no_Reward = 359,
 
 	/// <summary>
 	/// Fishing Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Fishing Hut Primitive (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Fishing_Hut_Primitive_no_Reward = 360,
 
 	/// <summary>
 	/// Foragers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Foragers Camp</name>
-	/// <category>Ruins</category>
 	Ruined_Foragers_Camp = 361,
 
 	/// <summary>
 	/// Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Foragers Camp (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Foragers_Camp_no_Reward = 362,
 
 	/// <summary>
 	/// Foragers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Foragers Camp Primitive (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Foragers_Camp_Primitive_no_Reward = 363,
 
 	/// <summary>
 	/// Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Forum</name>
-	/// <category>Ruins</category>
 	Ruined_Forum = 364,
 
 	/// <summary>
 	/// Forum - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Forum (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Forum_no_Reward = 365,
 
 	/// <summary>
 	/// Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Fox House</name>
-	/// <category>Ruins</category>
 	Ruined_Fox_House = 366,
 
 	/// <summary>
 	/// Fox House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Fox House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Fox_House_no_Reward = 367,
 
 	/// <summary>
 	/// Frog House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Frog House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Frog_House_no_Reward = 368,
 
 	/// <summary>
 	/// Furnace - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Furnace</name>
-	/// <category>Ruins</category>
 	Ruined_Furnace = 369,
 
 	/// <summary>
 	/// Furnace - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Furnace (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Furnace_no_Reward = 370,
 
 	/// <summary>
 	/// Granary - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Granary</name>
-	/// <category>Ruins</category>
 	Ruined_Granary = 371,
 
 	/// <summary>
 	/// Granary - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Granary (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Granary_no_Reward = 372,
 
 	/// <summary>
 	/// Greenhouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Greenhouse</name>
-	/// <category>Ruins</category>
 	Ruined_Greenhouse = 373,
 
 	/// <summary>
 	/// Greenhouse - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Greenhouse (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Greenhouse_no_Reward = 374,
 
 	/// <summary>
 	/// Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Grill</name>
-	/// <category>Ruins</category>
 	Ruined_Grill = 375,
 
 	/// <summary>
 	/// Grill - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Grill (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Grill_no_Reward = 376,
 
 	/// <summary>
 	/// Forester's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Grove</name>
-	/// <category>Ruins</category>
 	Ruined_Grove = 377,
 
 	/// <summary>
 	/// Forester's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Grove (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Grove_no_Reward = 378,
 
 	/// <summary>
 	/// Guild House - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Guild House</name>
-	/// <category>Ruins</category>
 	Ruined_Guild_House = 379,
 
 	/// <summary>
 	/// Guild House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Guild House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Guild_House_no_Reward = 380,
 
 	/// <summary>
 	/// Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Harpy House</name>
-	/// <category>Ruins</category>
 	Ruined_Harpy_House = 381,
 
 	/// <summary>
 	/// Harpy House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Harpy House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Harpy_House_no_Reward = 382,
 
 	/// <summary>
 	/// Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Harvester Camp</name>
-	/// <category>Ruins</category>
 	Ruined_Harvester_Camp = 383,
 
 	/// <summary>
 	/// Harvesters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Harvester Camp (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Harvester_Camp_no_Reward = 384,
 
 	/// <summary>
 	/// Herb Garden - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Herb Garden</name>
-	/// <category>Ruins</category>
 	Ruined_Herb_Garden = 385,
 
 	/// <summary>
 	/// Herb Garden - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Herb Garden (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Herb_Garden_no_Reward = 386,
 
 	/// <summary>
 	/// Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Herbalist Camp</name>
-	/// <category>Ruins</category>
 	Ruined_Herbalist_Camp = 387,
 
 	/// <summary>
 	/// Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Herbalist Camp (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Herbalist_Camp_no_Reward = 388,
 
 	/// <summary>
 	/// Herbalists' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Herbalist Camp primitive (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Herbalist_Camp_Primitive_no_Reward = 389,
 
 	/// <summary>
 	/// Human House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Human House</name>
-	/// <category>Ruins</category>
 	Ruined_Human_House = 390,
 
 	/// <summary>
 	/// Human House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Human House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Human_House_no_Reward = 391,
 
 	/// <summary>
 	/// Kiln - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Kiln</name>
-	/// <category>Ruins</category>
 	Ruined_Kiln = 392,
 
 	/// <summary>
 	/// Kiln - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Kiln (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Kiln_no_Reward = 393,
 
 	/// <summary>
 	/// Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Leatherworks</name>
-	/// <category>Ruins</category>
 	Ruined_Leatherworks = 394,
 
 	/// <summary>
 	/// Leatherworker - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Leatherworks (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Leatherworks_no_Reward = 395,
 
 	/// <summary>
 	/// Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Lizard House</name>
-	/// <category>Ruins</category>
 	Ruined_Lizard_House = 396,
 
 	/// <summary>
 	/// Lizard House - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Lizard House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Lizard_House_no_Reward = 397,
 
 	/// <summary>
 	/// Lumber Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Lumbermill</name>
-	/// <category>Ruins</category>
 	Ruined_Lumbermill = 398,
 
 	/// <summary>
 	/// Lumber Mill - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Lumbermill (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Lumbermill_no_Reward = 399,
 
 	/// <summary>
 	/// Makeshift Post - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Makeshift Post (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Makeshift_Post_no_Reward = 400,
 
 	/// <summary>
 	/// Manufactory - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Manufatory</name>
-	/// <category>Ruins</category>
 	Ruined_Manufatory = 401,
 
 	/// <summary>
 	/// Manufactory - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Manufatory (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Manufatory_no_Reward = 402,
 
 	/// <summary>
 	/// Market - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Market</name>
-	/// <category>Ruins</category>
 	Ruined_Market = 403,
 
 	/// <summary>
 	/// Market - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Market (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Market_no_Reward = 404,
 
 	/// <summary>
 	/// Mine - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Mine (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Mine_no_Reward = 405,
 
 	/// <summary>
 	/// Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Monastery</name>
-	/// <category>Ruins</category>
 	Ruined_Monastery = 406,
 
 	/// <summary>
 	/// Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Monastery (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Monastery_no_Reward = 407,
 
 	/// <summary>
 	/// Pantry - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Pantry</name>
-	/// <category>Ruins</category>
 	Ruined_Pantry = 408,
 
 	/// <summary>
 	/// Pantry - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Pantry (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Pantry_no_Reward = 409,
 
 	/// <summary>
 	/// Plantation - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Plantation</name>
-	/// <category>Ruins</category>
 	Ruined_Plantation = 410,
 
 	/// <summary>
 	/// Plantation - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Plantation (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Plantation_no_Reward = 411,
 
 	/// <summary>
 	/// Press - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Press</name>
-	/// <category>Ruins</category>
 	Ruined_Press = 412,
 
 	/// <summary>
 	/// Press - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Press (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Press_no_Reward = 413,
 
 	/// <summary>
 	/// Provisioner - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Provisioner</name>
-	/// <category>Ruins</category>
 	Ruined_Provisioner = 414,
 
 	/// <summary>
 	/// Provisioner - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Provisioner (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Provisioner_no_Reward = 415,
 
 	/// <summary>
 	/// Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Rain Catcher (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Rain_Catcher_no_Reward = 416,
 
 	/// <summary>
 	/// Rain Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Rainmill</name>
-	/// <category>Ruins</category>
 	Ruined_Rainmill = 417,
 
 	/// <summary>
 	/// Rain Mill - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Rainmill (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Rainmill_no_Reward = 418,
 
 	/// <summary>
 	/// Ranch - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Ranch</name>
-	/// <category>Ruins</category>
 	Ruined_Ranch = 419,
 
 	/// <summary>
 	/// Ranch - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Ranch (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Ranch_no_Reward = 420,
 
 	/// <summary>
 	/// Scribe - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Scribe</name>
-	/// <category>Ruins</category>
 	Ruined_Scribe = 421,
 
 	/// <summary>
 	/// Scribe - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Scribe (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Scribe_no_Reward = 422,
 
 	/// <summary>
 	/// Clothier - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Sewer</name>
-	/// <category>Ruins</category>
 	Ruined_Sewer = 423,
 
 	/// <summary>
 	/// Clothier - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Sewer (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Sewer_no_Reward = 424,
 
 	/// <summary>
 	/// Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Shelter</name>
-	/// <category>Ruins</category>
 	Ruined_Shelter = 425,
 
 	/// <summary>
 	/// Shelter - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Shelter (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Shelter_no_Reward = 426,
 
 	/// <summary>
 	/// Small Farm - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined SmallFarm</name>
-	/// <category>Ruins</category>
 	Ruined_SmallFarm = 427,
 
 	/// <summary>
 	/// Small Farm - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined SmallFarm (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_SmallFarm_no_Reward = 428,
 
 	/// <summary>
 	/// Smelter - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Smelter</name>
-	/// <category>Ruins</category>
 	Ruined_Smelter = 429,
 
 	/// <summary>
 	/// Smelter - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Smelter (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Smelter_no_Reward = 430,
 
 	/// <summary>
 	/// Smithy - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Smithy</name>
-	/// <category>Ruins</category>
 	Ruined_Smithy = 431,
 
 	/// <summary>
 	/// Smithy - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Smithy (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Smithy_no_Reward = 432,
 
 	/// <summary>
 	/// Smokehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Smokehouse</name>
-	/// <category>Ruins</category>
 	Ruined_Smokehouse = 433,
 
 	/// <summary>
 	/// Smokehouse - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Smokehouse (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Smokehouse_no_Reward = 434,
 
 	/// <summary>
 	/// Stamping Mill - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Stamping Mill</name>
-	/// <category>Ruins</category>
 	Ruined_Stamping_Mill = 435,
 
 	/// <summary>
 	/// Stamping Mill - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Stamping Mill (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Stamping_Mill_no_Reward = 436,
 
 	/// <summary>
 	/// Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Stonecutter Camp</name>
-	/// <category>Ruins</category>
 	Ruined_Stonecutter_Camp = 437,
 
 	/// <summary>
 	/// Stonecutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Stonecutter Camp (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Stonecutter_Camp_no_Reward = 438,
 
 	/// <summary>
 	/// Small Warehouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Storage</name>
-	/// <category>Ruins</category>
 	Ruined_Storage = 439,
 
 	/// <summary>
 	/// Small Warehouse - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Storage (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Storage_no_Reward = 440,
 
 	/// <summary>
 	/// Supplier - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Supplier</name>
-	/// <category>Ruins</category>
 	Ruined_Supplier = 441,
 
 	/// <summary>
 	/// Supplier - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Supplier (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Supplier_no_Reward = 442,
 
 	/// <summary>
 	/// Tavern - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Tavern</name>
-	/// <category>Ruins</category>
 	Ruined_Tavern = 443,
 
 	/// <summary>
 	/// Tavern - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Tavern (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Tavern_no_Reward = 444,
 
 	/// <summary>
 	/// Tea Doctor - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Tea Doctor</name>
-	/// <category>Ruins</category>
 	Ruined_Tea_Doctor = 445,
 
 	/// <summary>
 	/// Tea Doctor - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Tea Doctor (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Tea_Doctor_no_Reward = 446,
 
 	/// <summary>
 	/// Teahouse - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Tea House</name>
-	/// <category>Ruins</category>
 	Ruined_Tea_House = 447,
 
 	/// <summary>
 	/// Teahouse - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Tea House (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Tea_House_no_Reward = 448,
 
 	/// <summary>
 	/// Temple - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Temple</name>
-	/// <category>Ruins</category>
 	Ruined_Temple = 449,
 
 	/// <summary>
 	/// Temple - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Temple (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Temple_no_Reward = 450,
 
 	/// <summary>
 	/// Field Engineering Station - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Temporary Engineering Station (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Temporary_Engineering_Station_no_Reward = 538,
 
 	/// <summary>
 	/// Tinctury - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Tinctury</name>
-	/// <category>Ruins</category>
 	Ruined_Tinctury = 451,
 
 	/// <summary>
 	/// Tinctury - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Tinctury (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Tinctury_no_Reward = 452,
 
 	/// <summary>
 	/// Tinkerer - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Tinkerer</name>
-	/// <category>Ruins</category>
 	Ruined_Tinkerer = 453,
 
 	/// <summary>
 	/// Tinkerer - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Tinkerer (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Tinkerer_no_Reward = 454,
 
 	/// <summary>
 	/// Toolshop - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Toolshop</name>
-	/// <category>Ruins</category>
 	Ruined_Toolshop = 455,
 
 	/// <summary>
 	/// Toolshop - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Toolshop (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Toolshop_no_Reward = 456,
 
 	/// <summary>
 	/// Trading Post - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Trading Post (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Trading_Post_no_Reward = 457,
 
 	/// <summary>
 	/// Trappers' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Trappers Camp</name>
-	/// <category>Ruins</category>
 	Ruined_Trappers_Camp = 458,
 
 	/// <summary>
 	/// Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Trappers Camp (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Trappers_Camp_no_Reward = 459,
 
 	/// <summary>
 	/// Trappers' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Trappers Camp Primitive (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Trappers_Camp_Primitive_no_Reward = 460,
 
 	/// <summary>
 	/// Weaver - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Weaver</name>
-	/// <category>Ruins</category>
 	Ruined_Weaver = 461,
 
 	/// <summary>
 	/// Weaver - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Weaver (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Weaver_no_Reward = 462,
 
 	/// <summary>
 	/// Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Woodcutters Camp</name>
-	/// <category>Ruins</category>
 	Ruined_Woodcutters_Camp = 463,
 
 	/// <summary>
 	/// Woodcutters' Camp - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Woodcutters Camp (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Woodcutters_Camp_no_Reward = 464,
 
 	/// <summary>
 	/// Workshop - A building destroyed by the storm. It can be rebuilt or salvaged.
 	/// </summary>
 	/// <name>Ruined Workshop</name>
-	/// <category>Ruins</category>
 	Ruined_Workshop = 465,
 
 	/// <summary>
 	/// Workshop - A building destroyed by the storm. It can be rebuilt or demolished.
 	/// </summary>
 	/// <name>Ruined Workshop (no reward)</name>
-	/// <category>Ruins</category>
 	Ruined_Workshop_no_Reward = 466,
 
 	/// <summary>
 	/// Totem of Denial - A religious structure built by the Fishmen. It interferes with the Hearth in the center of the settlement.
 	/// </summary>
 	/// <name>Sacrifice Totem</name>
-	/// <category>Event</category>
 	Sacrifice_Totem = 467,
 
 	/// <summary>
 	/// Converted Totem of Denial - Harmony. Repurposed Fishmen magic can be very useful... but let's hope we don't suffer the same fate as the priestess Ysabelle. Increases Global Resolve by +3. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Sacrifice Totem Positive</name>
-	/// <category>Decorations</category>
 	Sacrifice_Totem_Positive = 468,
 
 	/// <summary>
 	/// Thorny Reed - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Scarlet Decor</name>
-	/// <category>Decorations</category>
 	Scarlet_Decor = 469,
 
 	/// <summary>
 	/// Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
 	/// </summary>
 	/// <name>Scorpion 1</name>
-	/// <category>Event</category>
 	Scorpion_1 = 470,
 
 	/// <summary>
 	/// Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
 	/// </summary>
 	/// <name>Scorpion 2</name>
-	/// <category>Event</category>
 	Scorpion_2 = 471,
 
 	/// <summary>
 	/// Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
 	/// </summary>
 	/// <name>Scorpion 3</name>
-	/// <category>Event</category>
 	Scorpion_3 = 472,
 
 	/// <summary>
@@ -3565,77 +2952,66 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Scribe</name>
-	/// <category>Industry</category>
 	Scribe = 473,
 
 	/// <summary>
 	/// Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
 	/// </summary>
 	/// <name>Seal</name>
-	/// <category>Event</category>
 	Seal = 474,
 
 	/// <summary>
 	/// Guidance Stone - It is not known where the guidance stones came from or what their original purpose was, but they are imbued with magic and always point in the direction of a nearby seal.
 	/// </summary>
 	/// <name>Seal Guidepost</name>
-	/// <category>Relics</category>
 	Seal_Guidepost = 475,
 
 	/// <summary>
 	/// Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
 	/// </summary>
 	/// <name>Seal High Diff</name>
-	/// <category>Event</category>
 	Seal_High_Diff = 476,
 
 	/// <summary>
 	/// Ancient Seal - Evil has survived. The Sealed Ones enter our realm through this broken seal. Terrible plagues are sent to destroy us. Collect the lost fragments of the Ancient Guardian to summon it and close the seal.
 	/// </summary>
 	/// <name>Seal Low Diff</name>
-	/// <category>Event</category>
 	Seal_Low_Diff = 477,
 
 	/// <summary>
 	/// Beacon Tower - A powerful, ancient structure that allows you to summon aid directly from the Citadel. Grants access to three types of temporary support abilities.
 	/// </summary>
 	/// <name>Sealed Biome Shrine</name>
-	/// <category>City Buildings</category>
 	Sealed_Biome_Shrine = 478,
 
 	/// <summary>
 	/// Open Vault - An open entrance to an ancient dungeon. Strange sounds can be heard coming from inside.
 	/// </summary>
 	/// <name>SealedTomb_T1</name>
-	/// <category>Event</category>
 	SealedTomb_T1 = 479,
 
 	/// <summary>
 	/// Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 3 residents.
 	/// </summary>
 	/// <name>Shelter</name>
-	/// <category>Housing</category>
 	Shelter = 480,
 
 	/// <summary>
 	/// Signboard - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Signboard</name>
-	/// <category>Decorations</category>
 	Signboard = 481,
 
 	/// <summary>
 	/// Ancient Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
 	/// </summary>
 	/// <name>Small Hearth</name>
-	/// <category>City Buildings</category>
 	Small_Hearth = 482,
 
 	/// <summary>
 	/// Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade1), [food raw] grain Grain (grade2).
 	/// </summary>
 	/// <name>SmallFarm</name>
-	/// <category>Food Production</category>
 	SmallFarm = 483,
 
 	/// <summary>
@@ -3643,7 +3019,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Smelter</name>
-	/// <category>Industry</category>
 	Smelter = 484,
 
 	/// <summary>
@@ -3651,7 +3026,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Smithy</name>
-	/// <category>Industry</category>
 	Smithy = 485,
 
 	/// <summary>
@@ -3659,49 +3033,42 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Smokehouse</name>
-	/// <category>Food Production</category>
 	Smokehouse = 486,
 
 	/// <summary>
 	/// Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
 	/// </summary>
 	/// <name>Snake 1</name>
-	/// <category>Event</category>
 	Snake_1 = 487,
 
 	/// <summary>
 	/// Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
 	/// </summary>
 	/// <name>Snake 2</name>
-	/// <category>Event</category>
 	Snake_2 = 488,
 
 	/// <summary>
 	/// Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
 	/// </summary>
 	/// <name>Snake 3</name>
-	/// <category>Event</category>
 	Snake_3 = 489,
 
 	/// <summary>
 	/// Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
 	/// </summary>
 	/// <name>Spider 1</name>
-	/// <category>Event</category>
 	Spider_1 = 490,
 
 	/// <summary>
 	/// Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
 	/// </summary>
 	/// <name>Spider 2</name>
-	/// <category>Event</category>
 	Spider_2 = 491,
 
 	/// <summary>
 	/// Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
 	/// </summary>
 	/// <name>Spider 3</name>
-	/// <category>Event</category>
 	Spider_3 = 492,
 
 	/// <summary>
@@ -3709,42 +3076,36 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Stamping Mill</name>
-	/// <category>Industry</category>
 	Stamping_Mill = 493,
 
 	/// <summary>
 	/// Stone Fence - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Stone Fence</name>
-	/// <category>Decorations</category>
 	Stone_Fence = 494,
 
 	/// <summary>
 	/// Stone Fence Corner - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Stone Fence Corner</name>
-	/// <category>Decorations</category>
 	Stone_Fence_Corner = 495,
 
 	/// <summary>
 	/// Stonecutters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] stone Stone (grade2), [mat raw] clay Clay (grade2), [crafting] sea marrow Sea Marrow (grade2).
 	/// </summary>
 	/// <name>Stonecutter's Camp</name>
-	/// <category>Resource Gathering</category>
 	Stonecutters_Camp = 496,
 
 	/// <summary>
 	/// Small Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
 	/// </summary>
 	/// <name>Storage (buildable)</name>
-	/// <category>City Buildings</category>
 	Storage_buildable = 497,
 
 	/// <summary>
 	/// Tamed Stormbird - Harmony. The nest of a tamed Stormbird. It provides 5 "[food raw] eggs" Eggs per minute and increases Harpy Resolve by +3. Counts as 16 decorations of its type.
 	/// </summary>
 	/// <name>Stormbird Positive</name>
-	/// <category>Decorations</category>
 	Stormbird_Positive = 498,
 
 	/// <summary>
@@ -3752,21 +3113,18 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Supplier</name>
-	/// <category>Industry</category>
 	Supplier = 499,
 
 	/// <summary>
 	/// Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
 	/// </summary>
 	/// <name>Tavern</name>
-	/// <category>City Buildings</category>
 	Tavern = 500,
 
 	/// <summary>
 	/// Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Religion. Passive effects: Vitality.
 	/// </summary>
 	/// <name>Tea Doctor</name>
-	/// <category>City Buildings</category>
 	Tea_Doctor = 501,
 
 	/// <summary>
@@ -3774,56 +3132,48 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Tea House</name>
-	/// <category>Industry</category>
 	Tea_House = 502,
 
 	/// <summary>
 	/// Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
 	/// </summary>
 	/// <name>Temple</name>
-	/// <category>City Buildings</category>
 	Temple = 503,
 
 	/// <summary>
-	/// Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done.
+	/// Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done. Can produce:  [we] fuel core Enriched Fuel (grade1)
 	/// </summary>
 	/// <name>Temporary Engineering Station</name>
-	/// <category>Industry</category>
 	Temporary_Engineering_Station = 539,
 
 	/// <summary>
 	/// Small Hearth - Reduces Hostility and serves as a meeting place. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will use another Hearth instead. Can't be built too close to other Hearths.
 	/// </summary>
 	/// <name>Temporary Hearth (buildable)</name>
-	/// <category>City Buildings</category>
 	Temporary_Hearth_buildable = 504,
 
 	/// <summary>
 	/// Small Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
 	/// </summary>
 	/// <name>Temporary Hearth (not-buildable)</name>
-	/// <category>Tutorial - invisible</category>
 	Temporary_Hearth_not_buildable = 505,
 
 	/// <summary>
 	/// Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
 	/// </summary>
 	/// <name>Termite Burrow</name>
-	/// <category>Event</category>
 	Termite_Burrow = 506,
 
 	/// <summary>
 	/// Termite Nest - Harmony. A contained stonetooth termite burrow. Provides 5 "[food raw] insects" Insects per minute. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Termite Burrow Positive</name>
-	/// <category>Decorations</category>
 	Termite_Burrow_Positive = 507,
 
 	/// <summary>
 	/// Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
 	/// </summary>
 	/// <name>TI AncientShrine_T1</name>
-	/// <category>Event</category>
 	TI_AncientShrine_T1 = 508,
 
 	/// <summary>
@@ -3831,7 +3181,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Tinctury</name>
-	/// <category>Industry</category>
 	Tinctury = 509,
 
 	/// <summary>
@@ -3839,106 +3188,85 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Tinkerer</name>
-	/// <category>Industry</category>
 	Tinkerer = 510,
-
-	/// <summary>
-	/// Mausoleum - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
-	/// </summary>
-	/// <name>Tomb</name>
-	/// <category>Decorations</category>
-	Tomb = 562,
 
 	/// <summary>
 	/// <p>Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).</p>
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Toolshop</name>
-	/// <category>Industry</category>
 	Toolshop = 511,
 
 	/// <summary>
 	/// Wall Crossing - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Tower</name>
-	/// <category>Decorations</category>
 	Tower = 512,
 
 	/// <summary>
 	/// Town Board - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
 	/// </summary>
 	/// <name>Town Board</name>
-	/// <category>Decorations</category>
 	Town_Board = 513,
 
 	/// <summary>
 	/// Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
 	/// </summary>
 	/// <name>Traders Cemetery</name>
-	/// <category>Event</category>
 	Traders_Cemetery = 514,
 
 	/// <summary>
 	/// Trading Post - Traders from the Smoldering City can station here and offer their wares.
 	/// </summary>
 	/// <name>Trading Post</name>
-	/// <category>City Buildings</category>
 	Trading_Post = 515,
 
 	/// <summary>
 	/// Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).
 	/// </summary>
 	/// <name>Trapper's Camp</name>
-	/// <category>Resource Gathering</category>
 	Trappers_Camp = 516,
 
 	/// <summary>
 	/// Umbrella - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Umbrella</name>
-	/// <category>Decorations</category>
 	Umbrella = 517,
 
 	/// <summary>
 	/// Wall - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Wall</name>
-	/// <category>Decorations</category>
 	Wall = 518,
 
 	/// <summary>
 	/// Wall Corner - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Wall Corner</name>
-	/// <category>Decorations</category>
 	Wall_Corner = 519,
 
 	/// <summary>
 	/// Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
 	/// </summary>
 	/// <name>War Beast Cage</name>
-	/// <category>Event</category>
 	War_Beast_Cage = 520,
 
 	/// <summary>
 	/// Water Barrels - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 	/// </summary>
 	/// <name>Water Barrels</name>
-	/// <category>Decorations</category>
 	Water_Barrels = 521,
 
 	/// <summary>
 	/// Geyser Pump - Used to extract and pump infused rainwater through underground pipes to production buildings, where it can be used to increase productivity. Must be placed on an active geyser. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Water Extractor</name>
-	/// <category>Resource Gathering</category>
 	Water_Extractor = 522,
 
 	/// <summary>
 	/// Water Shrine - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Water Shrine</name>
-	/// <category>Decorations</category>
 	Water_Shrine = 523,
 
 	/// <summary>
@@ -3946,42 +3274,36 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Weaver</name>
-	/// <category>Industry</category>
 	Weaver = 524,
 
 	/// <summary>
 	/// Overgrown Well - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Well</name>
-	/// <category>Decorations</category>
 	Well = 525,
 
 	/// <summary>
 	/// Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 	/// </summary>
 	/// <name>White Stag</name>
-	/// <category>Event</category>
 	White_Stag = 526,
 
 	/// <summary>
 	/// Royal Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
 	/// </summary>
 	/// <name>White Treasure Stag</name>
-	/// <category>Event</category>
 	White_Treasure_Stag = 527,
 
 	/// <summary>
 	/// Wildfire - A wildfire spirit. It will wreak havoc on the settlement if it's not contained.
 	/// </summary>
 	/// <name>Wildfire</name>
-	/// <category>Event</category>
 	Wildfire = 528,
 
 	/// <summary>
 	/// Woodcutters' Camp - Starting point for woodcutters going out into the wild to cut down trees.
 	/// </summary>
 	/// <name>Woodcutters Camp</name>
-	/// <category>Resource Gathering</category>
 	Woodcutters_Camp = 529,
 
 	/// <summary>
@@ -3989,7 +3311,6 @@ public enum BuildingTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Workshop</name>
-	/// <category>Industry</category>
 	Workshop = 530,
 
 
@@ -3998,7 +3319,7 @@ public enum BuildingTypes
 	/// The total number of vanilla BuildingTypes in the game.
 	/// </summary>
 	[Obsolete("Use BuildingTypesExtensions.Count(). BuildingTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 563
+	MAX = 539
 }
 
 /// <summary>
@@ -4027,7 +3348,7 @@ public static class BuildingTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every BuildingTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return BuildingTypes.Academy in the enum and log an error.
+	/// If no name is found, it will return BuildingTypes.Advanced_Rain_Catcher in the enum and log an error.
 	/// </summary>
 	public static string ToName(this BuildingTypes type)
 	{
@@ -4037,7 +3358,7 @@ public static class BuildingTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of BuildingTypes: " + type);
-		return TypeToInternalName[BuildingTypes.Academy];
+		return TypeToInternalName[BuildingTypes.Advanced_Rain_Catcher];
 	}
 	
 	/// <summary>
@@ -4172,7 +3493,6 @@ public static class BuildingTypesExtensions
 	
 	internal static readonly Dictionary<BuildingTypes, string> TypeToInternalName = new()
 	{
-		{ BuildingTypes.Academy, "Academy" },                                                                                 // Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ BuildingTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" },                                                     // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
 		{ BuildingTypes.Aestherics_2x2_Garden, "Aestherics 2x2 - Garden" },                                                   // Garden - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 		{ BuildingTypes.Aestherics_2x2_Groundwater_Extractor, "Aestherics 2x2 - Groundwater Extractor" },                     // Makeshift Extractor - Aesthetics. A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute. Counts as 4 decorations of its type.
@@ -4200,8 +3520,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Angry_Ghost_34, "Angry Ghost 34" },                                                                   // Ghost of a Murdered Trader - Hey, you! You're a viceroy, ain't you? Your bastard friends attacked me and left me to die in the woods! Prove to me you're not like them!
 		{ BuildingTypes.Angry_Ghost_4, "Angry Ghost 4" },                                                                     // Ghost of a Deranged Scout - You hear it? This ominous forest is calling to us... Withstand its fury, and I will spare your settlement.
 		{ BuildingTypes.Angry_Ghost_41, "Angry Ghost 41" },                                                                   // Ghost of Crazed Engineer - Madness, they said, but genius knows no bounds! Embrace my volatile creations and make these fools tremble at the mere sight of your power!
-		{ BuildingTypes.Angry_Ghost_42, "Angry Ghost 42" },                                                                   // Ghost of a Corrupt Judge - They called me a tyrant for upholding order - for daring to keep the Frog scum in their place. They banished me, left me to rot, and called it justice? Hypocrites, all of them!
-		{ BuildingTypes.Angry_Ghost_43, "Angry Ghost 43" },                                                                   // Ghost of a Royal Executioner - Fate has a cruel sense of humor - one day you're swinging the axe, the next you're kneeling at the executioner's block.
 		{ BuildingTypes.Angry_Ghost_5, "Angry Ghost 5" },                                                                     // Ghost of a Furious Villager - Those filthy little thieves are heartless! We were starving, and they just watched and laughed in our faces. It has to stop. Teach them a lesson.
 		{ BuildingTypes.Angry_Ghost_6, "Angry Ghost 6" },                                                                     // Ghost of a Scared Firekeeper - We cherished the Flame - it enveloped us with its warmth. But suddenly... It went out. I can't remember what happened. Please - you can’t let this happen again! Let the sound of axes echo through the forest.
 		{ BuildingTypes.Angry_Ghost_9, "Angry Ghost 9" },                                                                     // Ghost of a Loyal Servant - Nothing matters except the Queen. It is an honor to serve her. Show how loyal you are. Otherwise, I will have to punish you.
@@ -4210,31 +3528,21 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Apothecary, "Apothecary" },                                                                           // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Arch, "Arch" },                                                                                       // Ancient Arch - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 		{ BuildingTypes.Archaeology_Scorpion_Positive, "Archaeology Scorpion Positive" },                                     // Smoldering Scorpion - Harmony. Legend has it that they once inhabited the top of the mountain on which the Smoldering City now stands. The Queen banished them, but it is said that some of them still hibernate somewhere on the outskirts of the kingdom.  Counts as 9 decorations of its type.
-		{ BuildingTypes.Archaeology_Snake_Positive, "Archaeology Snake Positive" },                                           // Sea Serpent - Harmony. This beast's anatomy is suited to both land and water, making it a deadly hunter of caravans and lost settlers. For some reason, its remains bear traces of Blightrot. Could it have brought this plague to the surface from the depths of the ocean? Counts as 9 decorations of its type.
-		{ BuildingTypes.Archaeology_Spider_Positive, "Archaeology Spider Positive" },                                         // Sealed Spider - Harmony. Once faithful servants of the Sealed Ones, these creatures have been imprisoned underground with their masters. Yet miners still whisper of giant spiders emerging from deep caves to prey on the unwary. Only one thing is said to frighten them - the Holy Flame. Counts as 9 decorations of its type.
+		{ BuildingTypes.Archaeology_Snake_Positive, "Archaeology Snake Positive" },                                           // Sea Serpent - Harmony. The anatomical features of this beast indicate an adaptation to life in water, as well as on land. Due to this, sea serpents are excellent hunters, preying on lonely caravans and lost settlers. The preserved remains show traces of Blightrot. Could it be that these creatures have brought this plague to the surface when emerging from the depths of the ocean? Counts as 9 decorations of its type.
+		{ BuildingTypes.Archaeology_Spider_Positive, "Archaeology Spider Positive" },                                         // Sealed Spider - Harmony. It is said that these creatures were once the faithful servants of the Sealed Ones, and like their masters, they were trapped underground for eternity. But even to this day, miners tell tales of giant spiders crawling up from deep caverns, preying on unsuspecting victims. Legend has it that these vile beasts fear only one thing - the Holy Flame. Counts as 9 decorations of its type.
 		{ BuildingTypes.Archeology_Office, "Archeology office" },                                                             // Archaeologist's Office - A building designed to help you study the past. Can be upgraded to locate archaeological discoveries or improve the settlement's exploration capabilities. 
 		{ BuildingTypes.Artisan, "Artisan" },                                                                                 // Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ BuildingTypes.Bakery, "Bakery" },                                                                                   // Bakery - Can produce:  [food processed] biscuits Biscuits (grade2), [food processed] pie Pie (grade2), [vessel] pottery Pottery (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
-		{ BuildingTypes.Bamboo_Plant, "Bamboo Plant" },                                                                       // Tearsap Bamboo Sapling - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 		{ BuildingTypes.Bank, "Bank" },                                                                                       // Bench - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 		{ BuildingTypes.Barrels, "Barrels" },                                                                                 // Barrels - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
-		{ BuildingTypes.Bat_Fence, "Bat Fence" },                                                                             // Ornamental Fence - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
-		{ BuildingTypes.Bat_Fence_Corner, "Bat Fence Corner" },                                                               // Ornamental Fence Corner - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
-		{ BuildingTypes.Bat_House, "Bat House" },                                                                             // Bat House - A building specially designed for Bats. Must be built near a hearth. Fulfills the need for Bat Housing and can accommodate 2 inhabitants.
-		{ BuildingTypes.BatBattleground_T1, "BatBattleground_T1" },                                                           // Fallen Bat Miners - A group of fallen Bat miners, their tools left where they dropped. It seems they were scouting for a new mining site when something struck them down. The sight of these bodies causes unrest among the Bat population.
 		{ BuildingTypes.Bath_House, "Bath House" },                                                                           // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
-		{ BuildingTypes.Bats_Shrine, "Bats Shrine" },                                                                         // Manorial Court - A court where villagers gather to choose the least welcome member of a given species and send them back to the Smoldering City - an act that increases the diligence of those who remain.
 		{ BuildingTypes.Beanery, "Beanery" },                                                                                 // Beanery - Can produce:  [food processed] porridge Porridge (grade3), [food processed] pickled goods Pickled Goods (grade1), [metal] crystalized dew Crystalized Dew (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Beaver_House, "Beaver House" },                                                                       // Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 2 inhabitants.
 		{ BuildingTypes.BeaverBattleground_T1, "BeaverBattleground_T1" },                                                     // Fallen Beaver Traders - A group of fallen Beaver traders. They were probably assaulted by Fishmen. Or worse... The sight causes anxiety amongst the Beaver population.
 		{ BuildingTypes.Big_Shelter, "Big Shelter" },                                                                         // Big Shelter - Can accommodate most villagers, but won't satisfy the need for species-specific housing. Has to be built near a Hearth. Can house 6 residents.
-		{ BuildingTypes.Biome_Black_Market, "Biome Black Market" },                                                           // Black Market - With resources stretched so thin in the kingdom, the penalty for contraband is death. Yet, where there’s a need, there’s a way - the Black Amber Syndicate thrives by catering to those settling in the harshest of regions.
-		{ BuildingTypes.Biome_Grass_Spawner, "Biome Grass Spawner" },                                                         // Fertile Field - An artificial patch of fertile land with a pre-built farm field on top. Leaves behind Fertile Soil when destroyed.
 		{ BuildingTypes.Biome_Perk_Crafter, "Biome Perk Crafter" },                                                           // Cornerstone Forge - An ancient forge used by the Crown for generations to craft cornerstones from Thunderblight Shards. Now it stands abandoned, its fires long cold, but its legacy still felt in the region.
-		{ BuildingTypes.Biome_Poro, "Biome Poro" },                                                                           // Giant Fluffbeak - Fluffbeaks are gentle creatures that rarely attack unless provoked. They cannot be domesticated and freely choose which caravan to "join". Many settlements in this region have failed simply because no Fluffbeak was willing to settle nearby.
 		{ BuildingTypes.Black_Stag, "Black Stag" },                                                                           // Black Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.
 		{ BuildingTypes.Black_Treasure_Stag, "Black Treasure Stag" },                                                         // Black Treasure Stag - Its elusive nature allows it to move like a ghost through the foggy thicket. It is believed that the beast is tied to the spirit world and the Ancestors. A special treasure awaits the one who finds it.
-		{ BuildingTypes.Blight_Bomb, "Blight Bomb" },                                                                         // Blight Bomb - A strange humming can be heard from within the ominous device. There's nothing left to do now but detonate it... and hope the results aren't catastrophic.
 		{ BuildingTypes.Blight_Post, "Blight Post" },                                                                         // Blight Post - A specialized building dedicated to fighting Blightrot. Blight Fighters will prepare "blight fuel" Purging Fire during drizzle and clearance seasons, and use it to burn Blightrot Cysts during the storm.
 		{ BuildingTypes.Blightrot, "Blightrot" },                                                                             // Blood Flower - A deadly carrion organism that feeds on decaying matter. It spreads through contaminated rainwater and multiplies with time, becoming more and more dangerous. Blood Flowers are a source of extremely rare resources.
 		{ BuildingTypes.Blightrot_Cauldron, "Blightrot Cauldron" },                                                           // Blightrot Cauldron - A Rainpunk Cauldron filled with a Blightrot-contaminated liquid. A moving, living fluid spreads around.
@@ -4264,7 +3572,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Calm_Ghost_38, "Calm Ghost 38" },                                                                     // Ghost of an Old Stonemason - These hands once built sturdy homes from raw stone; now I call upon you to restore and improve them so that they may stand the test of time.
 		{ BuildingTypes.Calm_Ghost_39, "Calm Ghost 39" },                                                                     // Ghost of a Philosopher - In life I was a philosopher and a teacher. Now, in death, I long for those days. So let me teach you - lift the spirits of your people. Nourish their minds and bodies.
 		{ BuildingTypes.Calm_Ghost_40, "Calm Ghost 40" },                                                                     // Ghost of a Homeless Man - In life I wandered without aim; in death I beg you to spare others the same fate. Build a sanctuary for those who have no roof over their heads.
-		{ BuildingTypes.Calm_Ghost_44, "Calm Ghost 44" },                                                                     // Ghost of a Miner - The air turned to poison, and the dark took us all… Please, stranger - don't let this happen again.
 		{ BuildingTypes.Calm_Ghost_7, "Calm Ghost 7" },                                                                       // Ghost of a Troublemaker - I've had enough of all these uptight do-gooders, with their pristine morals and boring attitudes. It's time to start some trouble!
 		{ BuildingTypes.Calm_Ghost_8, "Calm Ghost 8" },                                                                       // Ghost of a Fallen Newcomer - I wish I’d stayed with my loved ones in the Citadel. Now, all I'm left with is regret. Don't follow in my footsteps. Be kind to those around you.
 		{ BuildingTypes.CalmGhostChest_T1, "CalmGhostChest_T1" },                                                             // Ghost Chest - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
@@ -4274,10 +3581,8 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Caravan_T1, "Caravan_T1" },                                                                           // Small Destroyed Caravan - A destroyed caravan was found in the newly discovered glade. There are drag marks leading deeper into the forest... What could have caused such mayhem?
 		{ BuildingTypes.Caravan_T2, "Caravan_T2" },                                                                           // Large Destroyed Caravan - A destroyed caravan, stranded in the wilderness. There are drag marks leading deeper into the forest... What could have caused such mayhem?
 		{ BuildingTypes.Carpenter, "Carpenter" },                                                                             // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Rain engine: "[water] storm water" Storm Water.
-		{ BuildingTypes.Cave_Plant, "Cave Plant" },                                                                           // Basalt Tree Sapling - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 		{ BuildingTypes.Cellar, "Cellar" },                                                                                   // Cellar - Can produce:  [needs] wine Wine (grade3), [food processed] pickled goods Pickled Goods (grade2), [packs] pack of provisions Pack of Provisions (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Chest, "Chest" },                                                                                     // Chest - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
-		{ BuildingTypes.Chest_Syndicate, "Chest Syndicate" },                                                                 // Syndicate Chest - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 		{ BuildingTypes.Clan_Hall, "Clan Hall" },                                                                             // Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
 		{ BuildingTypes.Clay_Pit_Workshop, "Clay Pit Workshop" },                                                             // Clay Pit - Uses Clearance Water to produce goods regardless of the season. Must be placed on fertile soil. Can produce:  [mat raw] clay Clay (grade2), [mat raw] reeds Reed (grade2), [mat raw] resin Resin (grade2) Rain engine: "[water] storm water" Storm Water.
 		{ BuildingTypes.Clothier, "Clothier" },                                                                               // Clothier - Can produce:  [needs] coats Coats (grade3), [packs] pack of building materials Pack of Building Materials (grade2), [vessel] waterskin Waterskins (grade1).  Rain engine: "[water] clearance water" Clearance Water.
@@ -4333,6 +3638,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Distillery, "Distillery" },                                                                           // Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Druid, "Druid" },                                                                                     // Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ BuildingTypes.Escaped_Convicts, "Escaped Convicts" },                                                               // Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
+		{ BuildingTypes.Explorers_Lodge, "Explorers Lodge" },                                                                 // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ BuildingTypes.Farmfield, "Farmfield" },                                                                             // Farm Field - Can only be placed on fertile soil. Requires a Small Farm, Plantation, Herb Garden, Forester's Hut, or Homestead nearby to produce crops.
 		{ BuildingTypes.Feast_Hall, "Feast Hall" },                                                                           // Feast Hall - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Festive Mood.
 		{ BuildingTypes.Feast_Hall_Funeral_Event_1, "Feast Hall - Funeral Event 1" },                                         // Feast Hall - The mourners gather in the Feast Hall as the Funerary Feast begins. Following tradition, the guests first partake in a meal, sharing stories and memories of their departed friend.
@@ -4393,7 +3699,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Harpy_House, "Harpy House" },                                                                         // Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 2 inhabitants.
 		{ BuildingTypes.HarpyBattleground_T1, "HarpyBattleground_T1" },                                                       // Fallen Harpy Scientists - A group of fallen Harpy scientists... The sight causes unrest amongst the Harpy population.
 		{ BuildingTypes.Harvester_Camp, "Harvester Camp" },                                                                   // Harvesters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] plant fibre Plant Fiber (grade2), [mat raw] reeds Reed (grade2), [mat raw] leather Leather (grade2).
-		{ BuildingTypes.Haunted_Ruined_Bat_House, "Haunted Ruined Bat House" },                                               // Haunted Bat House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ BuildingTypes.Haunted_Ruined_Beaver_House, "Haunted Ruined Beaver House" },                                         // Haunted Beaver House - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ BuildingTypes.Haunted_Ruined_Brewery, "Haunted Ruined Brewery" },                                                   // Haunted Brewery - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
 		{ BuildingTypes.Haunted_Ruined_Cellar, "Haunted Ruined Cellar" },                                                     // Haunted Cellar - This building is haunted by evil spirits. They are protecting it because it's one of a kind. It can be rebuilt or destroyed.
@@ -4475,7 +3780,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Primitive_Herbalists_Camp, "Primitive Herbalist's Camp" },                                            // Small Herbalists' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] herbs Herbs (grade1), [food raw] berries Berries (grade1), [food raw] mushrooms Mushrooms (grade1).
 		{ BuildingTypes.Primitive_Trappers_Camp, "Primitive Trapper's Camp" },                                                // Small Trappers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] meat Meat (grade1), [food raw] insects Insects (grade1), [food raw] eggs Eggs (grade1).
 		{ BuildingTypes.Provisioner, "Provisioner" },                                                                         // Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2).  Rain engine: "[water] clearance water" Clearance Water.
-		{ BuildingTypes.Purged_Bat_House, "Purged Bat House" },                                                               // Purified Bat House - A building specially designed for Bats. Must be built near a hearth. Fulfills the need for Bat Housing and can accommodate 6 inhabitants.
 		{ BuildingTypes.Purged_Beaver_House, "Purged Beaver House" },                                                         // Purified Beaver House - A building specially designed for Beavers. Must be built near a Hearth. Fulfills the need for Beaver housing and can accommodate 6 inhabitants.
 		{ BuildingTypes.Purged_Fox_House, "Purged Fox House" },                                                               // Purified Fox House - A building specially designed for Foxes. Must be built near a Hearth. Fulfills the need for Fox housing and can accommodate 6 inhabitants.
 		{ BuildingTypes.Purged_Frog_House, "Purged Frog House" },                                                             // Purified Frog House - A building specially designed for Frogs. Must be built near a Hearth. Fulfills the need for Frog housing and can accommodate 6 inhabitants.
@@ -4498,8 +3802,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.RewardChest_T2, "RewardChest_T2" },                                                                   // Medium Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 		{ BuildingTypes.RewardChest_T3, "RewardChest_T3" },                                                                   // Large Abandoned Cache - An abandoned cache of goods. This could be a lost shipment - or something much more valuable.
 		{ BuildingTypes.Road_Sign, "Road Sign" },                                                                             // Road Sign - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
-		{ BuildingTypes.Ruined_Academy, "Ruined Academy" },                                                                   // Academy - A building destroyed by the storm. It can be rebuilt or salvaged.
-		{ BuildingTypes.Ruined_Academy_no_Reward, "Ruined Academy (no reward)" },                                             // Academy - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Advanced_Rain_Catcher, "Ruined Advanced Rain Catcher" },                                       // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Advanced_Rain_Catcher_no_Reward, "Ruined Advanced Rain Catcher (no reward)" },                 // Advanced Rain Collector - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Alchemist, "Ruined Alchemist" },                                                               // Alchemist's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -4510,8 +3812,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Ruined_Artisan_no_Reward, "Ruined Artisan (no reward)" },                                             // Artisan - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Bakery, "Ruined Bakery" },                                                                     // Bakery - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Bakery_no_Reward, "Ruined Bakery (no reward)" },                                               // Bakery - A building destroyed by the storm. It can be rebuilt or demolished.
-		{ BuildingTypes.Ruined_Bat_House, "Ruined Bat House" },                                                               // Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
-		{ BuildingTypes.Ruined_Bat_House_no_Reward, "Ruined Bat House (no reward)" },                                         // Bat House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Bath_House, "Ruined Bath House" },                                                             // Bath House - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Bath_House_no_Reward, "Ruined Bath House (no reward)" },                                       // Bath House - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Beanery, "Ruined Beanery" },                                                                   // Beanery - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -4549,6 +3849,8 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Ruined_Distillery_no_Reward, "Ruined Distillery (no reward)" },                                       // Distillery - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Druid, "Ruined Druid" },                                                                       // Druid's Hut - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Druid_no_Reward, "Ruined Druid (no reward)" },                                                 // Druid's Hut - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Explorers_Lodge, "Ruined Explorers Lodge" },                                                   // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Explorers_Lodge_no_Reward, "Ruined Explorers Lodge (no reward)" },                             // Explorers' Lodge - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Farm, "Ruined Farm" },                                                                         // Homestead - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Farm_no_Reward, "Ruined Farm (no reward)" },                                                   // Homestead - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Feast_Hall_no_Reward, "Ruined Feast Hall (no reward)" },                                       // Monastery - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -4702,7 +4004,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Tea_Doctor, "Tea Doctor" },                                                                           // Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Religion. Passive effects: Vitality.
 		{ BuildingTypes.Tea_House, "Tea House" },                                                                             // Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Temple, "Temple" },                                                                                   // Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
-		{ BuildingTypes.Temporary_Engineering_Station, "Temporary Engineering Station" },                                     // Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done.
+		{ BuildingTypes.Temporary_Engineering_Station, "Temporary Engineering Station" },                                     // Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done. Can produce:  [we] fuel core Enriched Fuel (grade1)
 		{ BuildingTypes.Temporary_Hearth_buildable, "Temporary Hearth (buildable)" },                                         // Small Hearth - Reduces Hostility and serves as a meeting place. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will use another Hearth instead. Can't be built too close to other Hearths.
 		{ BuildingTypes.Temporary_Hearth_not_buildable, "Temporary Hearth (not-buildable)" },                                 // Small Hearth - The heart of the colony is protected by the Holy Flame. Villagers gather here to rest, eat, and receive clothing. If the fire goes out, people will lose hope.
 		{ BuildingTypes.Termite_Burrow, "Termite Burrow" },                                                                   // Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
@@ -4710,7 +4012,6 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.TI_AncientShrine_T1, "TI AncientShrine_T1" },                                                         // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
 		{ BuildingTypes.Tinctury, "Tinctury" },                                                                               // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Tinkerer, "Tinkerer" },                                                                               // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).  Rain engine: "[water] storm water" Storm Water.
-		{ BuildingTypes.Tomb, "Tomb" },                                                                                       // Mausoleum - Harmony. Peace of mind can be as important as shelter and food in these harsh lands. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 		{ BuildingTypes.Toolshop, "Toolshop" },                                                                               // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).  Rain engine: "[water] storm water" Storm Water.
 		{ BuildingTypes.Tower, "Tower" },                                                                                     // Wall Crossing - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 		{ BuildingTypes.Town_Board, "Town Board" },                                                                           // Town Board - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.

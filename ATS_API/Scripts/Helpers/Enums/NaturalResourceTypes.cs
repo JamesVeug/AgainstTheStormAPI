@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum NaturalResourceTypes
 {
@@ -25,12 +25,6 @@ public enum NaturalResourceTypes
 	None = 0,
 	
 	/// <summary>
-	/// Dry Tree - A tree that grows in the Dry Lands.
-	/// </summary>
-	/// <name>API_ExampleMod_DryTree</name>
-	API_ExampleMod_DryTree = 19,
-
-	/// <summary>
 	/// Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 	/// </summary>
 	/// <name>Bay Tree 1</name>
@@ -41,18 +35,6 @@ public enum NaturalResourceTypes
 	/// </summary>
 	/// <name>Bay Tree 2</name>
 	Bay_Tree_2 = 2,
-
-	/// <summary>
-	/// Basalt Tree - A petrified mass of tree vines intertwined with solid volcanic rock.
-	/// </summary>
-	/// <name>Cave Tree 1</name>
-	Cave_Tree_1 = 20,
-
-	/// <summary>
-	/// Basalt Tree - A petrified mass of tree vines intertwined with solid volcanic rock.
-	/// </summary>
-	/// <name>Cave Tree 2</name>
-	Cave_Tree_2 = 21,
 
 	/// <summary>
 	/// Crimsonreach Tree - A mineralized coral tree.
@@ -127,18 +109,6 @@ public enum NaturalResourceTypes
 	Mushroom_Tree_Classic = 14,
 
 	/// <summary>
-	/// Tearsap Bamboo - A lush stalk brimming with sweet sap - a favorite Fluffbeak treat.
-	/// </summary>
-	/// <name>Poro Biome Tree 1</name>
-	Poro_Biome_Tree_1 = 22,
-
-	/// <summary>
-	/// Tearsap Bamboo - A lush stalk brimming with sweet sap - a favorite Fluffbeak treat.
-	/// </summary>
-	/// <name>Poro Biome Tree 2</name>
-	Poro_Biome_Tree_2 = 23,
-
-	/// <summary>
 	/// Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
 	/// </summary>
 	/// <name>Sealed Tree</name>
@@ -168,7 +138,7 @@ public enum NaturalResourceTypes
 	/// The total number of vanilla NaturalResourceTypes in the game.
 	/// </summary>
 	[Obsolete("Use NaturalResourceTypesExtensions.Count(). NaturalResourceTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 24
+	MAX = 18
 }
 
 /// <summary>
@@ -197,7 +167,7 @@ public static class NaturalResourceTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every NaturalResourceTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return NaturalResourceTypes.API_ExampleMod_DryTree in the enum and log an error.
+	/// If no name is found, it will return NaturalResourceTypes.Bay_Tree_1 in the enum and log an error.
 	/// </summary>
 	public static string ToName(this NaturalResourceTypes type)
 	{
@@ -207,7 +177,7 @@ public static class NaturalResourceTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of NaturalResourceTypes: " + type);
-		return TypeToInternalName[NaturalResourceTypes.API_ExampleMod_DryTree];
+		return TypeToInternalName[NaturalResourceTypes.Bay_Tree_1];
 	}
 	
 	/// <summary>
@@ -342,11 +312,8 @@ public static class NaturalResourceTypesExtensions
 	
 	internal static readonly Dictionary<NaturalResourceTypes, string> TypeToInternalName = new()
 	{
-		{ NaturalResourceTypes.API_ExampleMod_DryTree, "API_ExampleMod_DryTree" },     // Dry Tree - A tree that grows in the Dry Lands.
 		{ NaturalResourceTypes.Bay_Tree_1, "Bay Tree 1" },                             // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
 		{ NaturalResourceTypes.Bay_Tree_2, "Bay Tree 2" },                             // Kelpwood - A very flexible, yet extremely hardy plant. It moves in the wind as if moved by sea waves.
-		{ NaturalResourceTypes.Cave_Tree_1, "Cave Tree 1" },                           // Basalt Tree - A petrified mass of tree vines intertwined with solid volcanic rock.
-		{ NaturalResourceTypes.Cave_Tree_2, "Cave Tree 2" },                           // Basalt Tree - A petrified mass of tree vines intertwined with solid volcanic rock.
 		{ NaturalResourceTypes.CoralForest_Crimsonreach, "CoralForest_Crimsonreach" }, // Crimsonreach Tree - A mineralized coral tree.
 		{ NaturalResourceTypes.CoralForest_Musselsprout, "CoralForest_Musselsprout" }, // Musselsprout Tree - The unusually hard bark conceals soft, fleshy tissue.
 		{ NaturalResourceTypes.CoralForest_Plateleaf, "CoralForest_Plateleaf" },       // Plateleaf Tree - A species of plant rarely seen above water.
@@ -359,8 +326,6 @@ public static class NaturalResourceTypesExtensions
 		{ NaturalResourceTypes.Moorlands_Tree_2, "Moorlands Tree 2" },                 // Coppervein Tree - A scarlet tree covered in enormous thorns.
 		{ NaturalResourceTypes.Mushroom_Tree_Bugs, "Mushroom Tree Bugs" },             // Mushwood - A giant fungal tree covered in a leathery bark.
 		{ NaturalResourceTypes.Mushroom_Tree_Classic, "Mushroom Tree Classic" },       // Mushwood - A giant fungal tree covered in a leathery bark.
-		{ NaturalResourceTypes.Poro_Biome_Tree_1, "Poro Biome Tree 1" },               // Tearsap Bamboo - A lush stalk brimming with sweet sap - a favorite Fluffbeak treat.
-		{ NaturalResourceTypes.Poro_Biome_Tree_2, "Poro Biome Tree 2" },               // Tearsap Bamboo - A lush stalk brimming with sweet sap - a favorite Fluffbeak treat.
 		{ NaturalResourceTypes.Sealed_Tree, "Sealed Tree" },                           // Abyssal Tree - A bizarre, writhing growth... is this even really a tree?
 		{ NaturalResourceTypes.Wasteland_Tree_1, "Wasteland Tree 1" },                 // Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.
 		{ NaturalResourceTypes.Wasteland_Tree_2, "Wasteland Tree 2" },                 // Ashen Tree - A diminished remnant of the legendary giant spruce that once inhabited this region.

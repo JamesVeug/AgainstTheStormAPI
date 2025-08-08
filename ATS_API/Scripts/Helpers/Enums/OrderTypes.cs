@@ -10,7 +10,7 @@ using Eremite.Model.Orders;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum OrderTypes
 {
@@ -247,12 +247,6 @@ public enum OrderTypes
 	I_Houses_V2 = 37,
 
 	/// <summary>
-	/// Dwellings
-	/// </summary>
-	/// <name>I Houses v3</name>
-	I_Houses_V3 = 392,
-
-	/// <summary>
 	/// Hunters
 	/// </summary>
 	/// <name>I Hunters</name>
@@ -371,12 +365,6 @@ public enum OrderTypes
 	/// </summary>
 	/// <name>I Storm Water</name>
 	I_Storm_Water = 57,
-
-	/// <summary>
-	/// Determined Bats
-	/// </summary>
-	/// <name>I TO Bat Resolve</name>
-	I_TO_Bat_Resolve = 393,
 
 	/// <summary>
 	/// Joyful Beavers
@@ -613,12 +601,6 @@ public enum OrderTypes
 	II_Advanced_Trading = 96,
 
 	/// <summary>
-	/// Aid for the Bat Clan
-	/// </summary>
-	/// <name>II Aid for the Bat Faction</name>
-	II_Aid_For_The_Bat_Faction = 394,
-
-	/// <summary>
 	/// Aid For the Beaver Clan
 	/// </summary>
 	/// <name>II Aid for the Beaver Faction</name>
@@ -659,18 +641,6 @@ public enum OrderTypes
 	/// </summary>
 	/// <name>II Artisan</name>
 	II_Artisan = 103,
-
-	/// <summary>
-	/// Bat Influx
-	/// </summary>
-	/// <name>II Bat Influx</name>
-	II_Bat_Influx = 395,
-
-	/// <summary>
-	/// Bat Population
-	/// </summary>
-	/// <name>II Bat Population</name>
-	II_Bat_Population = 396,
 
 	/// <summary>
 	/// Beaver Influx
@@ -871,12 +841,6 @@ public enum OrderTypes
 	II_Jerky_For_Time = 136,
 
 	/// <summary>
-	/// Judgment
-	/// </summary>
-	/// <name>II Judgement</name>
-	II_Judgement = 397,
-
-	/// <summary>
 	/// Lizard Influx
 	/// </summary>
 	/// <name>II Lizard Influx</name>
@@ -1033,12 +997,6 @@ public enum OrderTypes
 	II_TO_Herbalist_Trial_SO = 162,
 
 	/// <summary>
-	/// Bat Colony
-	/// </summary>
-	/// <name>II TO Homes for Bats</name>
-	II_TO_Homes_For_Bats = 398,
-
-	/// <summary>
 	/// Beaver Colony
 	/// </summary>
 	/// <name>II TO Homes for Beavers</name>
@@ -1145,12 +1103,6 @@ public enum OrderTypes
 	/// </summary>
 	/// <name>III Archaeology</name>
 	III_Archaeology = 180,
-
-	/// <summary>
-	/// Bat Relatives
-	/// </summary>
-	/// <name>III Bat Relatives</name>
-	III_Bat_Relatives = 399,
 
 	/// <summary>
 	/// Beaver Relatives
@@ -1303,12 +1255,6 @@ public enum OrderTypes
 	III_Religion = 205,
 
 	/// <summary>
-	/// Bat Villagers
-	/// </summary>
-	/// <name>III Resolve Bats</name>
-	III_Resolve_Bats = 400,
-
-	/// <summary>
 	/// Beaver Resolve
 	/// </summary>
 	/// <name>III Resolve Beavers</name>
@@ -1391,12 +1337,6 @@ public enum OrderTypes
 	/// </summary>
 	/// <name>III Send to Citadel</name>
 	III_Send_To_Citadel = 219,
-
-	/// <summary>
-	/// Training
-	/// </summary>
-	/// <name>III Service Bats</name>
-	III_Service_Bats = 401,
 
 	/// <summary>
 	/// Healing
@@ -1789,12 +1729,6 @@ public enum OrderTypes
 	IVA_Wood = 284,
 
 	/// <summary>
-	/// Bat Majority
-	/// </summary>
-	/// <name>IVB Bat Majority</name>
-	IVB_Bat_Majority = 402,
-
-	/// <summary>
 	/// Beaver Majority
 	/// </summary>
 	/// <name>IVB Beaver Majority</name>
@@ -1943,10 +1877,6 @@ public enum OrderTypes
 	R_Ghost_Engines = 311,
 
 	/// <summary></summary>
-	/// <name>[R] Ghost Exile Villagers</name>
-	R_Ghost_Exile_Villagers = 403,
-
-	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Beavers</name>
 	R_Ghost_Forbid_Needs_Beavers = 312,
 
@@ -2055,10 +1985,6 @@ public enum OrderTypes
 	R_Ghost_Starve_Beavers = 338,
 
 	/// <summary></summary>
-	/// <name>[R] Ghost Starve Frogs</name>
-	R_Ghost_Starve_Frogs = 404,
-
-	/// <summary></summary>
 	/// <name>[R] Ghost Starve Humans</name>
 	R_Ghost_Starve_Humans = 339,
 
@@ -2077,10 +2003,6 @@ public enum OrderTypes
 	/// <summary></summary>
 	/// <name>[R] Ghost Upgrade Houses</name>
 	R_Ghost_Upgrade_Houses = 343,
-
-	/// <summary></summary>
-	/// <name>[R] Ghost Upgrade Mine</name>
-	R_Ghost_Upgrade_Mine = 405,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Use Water</name>
@@ -2374,7 +2296,7 @@ public enum OrderTypes
 	/// The total number of vanilla OrderTypes in the game.
 	/// </summary>
 	[Obsolete("Use OrderTypesExtensions.Count(). OrderTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 406
+	MAX = 391
 }
 
 /// <summary>
@@ -2585,7 +2507,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Herbalist, "I Herbalist" },                                                     // Herbalist
 		{ OrderTypes.I_Houses, "I Houses" },                                                           // No Place Like Home
 		{ OrderTypes.I_Houses_V2, "I Houses v2" },                                                     // Safe Place
-		{ OrderTypes.I_Houses_V3, "I Houses v3" },                                                     // Dwellings
 		{ OrderTypes.I_Hunters, "I Hunters" },                                                         // Hunters
 		{ OrderTypes.I_Jerky, "I Jerky" },                                                             // Meat Lover
 		{ OrderTypes.I_Metal_Veins, "I Metal Veins" },                                                 // Metal Veins
@@ -2606,7 +2527,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Solve_Any_Relic, "I Solve Any Relic" },                                         // Problem Solver
 		{ OrderTypes.I_Solve_Dangerous_Relic, "I Solve Dangerous Relic" },                             // Tick Tock
 		{ OrderTypes.I_Storm_Water, "I Storm Water" },                                                 // Basic Ingredient
-		{ OrderTypes.I_TO_Bat_Resolve, "I TO Bat Resolve" },                                           // Determined Bats
 		{ OrderTypes.I_TO_Beaver_Resolve, "I TO Beaver Resolve" },                                     // Joyful Beavers
 		{ OrderTypes.I_TO_Dangerous_Relics, "I TO Dangerous Relics" },                                 // Zealous Scouts
 		{ OrderTypes.I_TO_Fox_Resolve, "I TO Fox Resolve" },                                           // Joyful Foxes
@@ -2646,7 +2566,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IB_Trading_Post, "IB Trading Post" },                                             // Trading Post
 		{ OrderTypes.IB_Wood, "IB Wood" },                                                             // Wood Delivery
 		{ OrderTypes.II_Advanced_Trading, "II Advanced Trading" },                                     // Advanced Trading
-		{ OrderTypes.II_Aid_For_The_Bat_Faction, "II Aid for the Bat Faction" },                       // Aid for the Bat Clan
 		{ OrderTypes.II_Aid_For_The_Beaver_Faction, "II Aid for the Beaver Faction" },                 // Aid For the Beaver Clan
 		{ OrderTypes.II_Aid_For_The_Fox_Faction, "II Aid for the Fox Faction" },                       // Aid for the Fox Pack
 		{ OrderTypes.II_Aid_For_The_Frog_Faction, "II Aid for the Frog Faction" },                     // Aid for the Frog Clan
@@ -2654,8 +2573,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Aid_For_The_Human_Faction, "II Aid for the Human Faction" },                   // Aid for the Human Clan
 		{ OrderTypes.II_Aid_For_The_Lizard_Faction, "II Aid for the Lizard Faction" },                 // Aid for the Lizard Clan
 		{ OrderTypes.II_Artisan, "II Artisan" },                                                       // Pottery and Wine
-		{ OrderTypes.II_Bat_Influx, "II Bat Influx" },                                                 // Bat Influx
-		{ OrderTypes.II_Bat_Population, "II Bat Population" },                                         // Bat Population
 		{ OrderTypes.II_Beaver_Influx, "II Beaver Influx" },                                           // Beaver Influx
 		{ OrderTypes.II_Beaver_Population, "II Beaver Population" },                                   // Beaver Population
 		{ OrderTypes.II_Blight_Post, "II Blight Post" },                                               // Fighting the Storm
@@ -2689,7 +2606,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Human_Population, "II Human Population" },                                     // Human Population
 		{ OrderTypes.II_Jerky, "II Jerky" },                                                           // Meat Diet
 		{ OrderTypes.II_Jerky_For_Time, "II Jerky For Time" },                                         // Meat Treats
-		{ OrderTypes.II_Judgement, "II Judgement" },                                                   // Judgment
 		{ OrderTypes.II_Lizard_Influx, "II Lizard Influx" },                                           // Lizard Influx
 		{ OrderTypes.II_Lizard_Population, "II Lizard Population" },                                   // Lizard Population
 		{ OrderTypes.II_Luxury_Packs, "II Luxury Packs" },                                             // Luxurious Delivery
@@ -2716,7 +2632,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_Herbalist_Trial_CRW, "II TO Herbalist Trial - CRW" },                       // Herbalist's Trial
 		{ OrderTypes.II_TO_Herbalist_Trial_RW_SF, "II TO Herbalist Trial - RW SF" },                   // Herbalist's Trial
 		{ OrderTypes.II_TO_Herbalist_Trial_SO, "II TO Herbalist Trial - SO" },                         // Herbalist's Trial
-		{ OrderTypes.II_TO_Homes_For_Bats, "II TO Homes for Bats" },                                   // Bat Colony
 		{ OrderTypes.II_TO_Homes_For_Beavers, "II TO Homes for Beavers" },                             // Beaver Colony
 		{ OrderTypes.II_TO_Homes_For_Foxes, "II TO Homes for Foxes" },                                 // Homes For Foxes
 		{ OrderTypes.II_TO_Homes_For_Frogs, "II TO Homes for Frogs" },                                 // Frog Colony
@@ -2735,7 +2650,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Amber_And_Market, "III Amber and Market" },                                   // Charity Fair
 		{ OrderTypes.III_Ancient_Tablets, "III Ancient Tablets" },                                     // Lost Knowledge
 		{ OrderTypes.III_Archaeology, "III Archaeology" },                                             // Archaeology
-		{ OrderTypes.III_Bat_Relatives, "III Bat Relatives" },                                         // Bat Relatives
 		{ OrderTypes.III_Beaver_Relatives, "III Beaver Relatives" },                                   // Beaver Relatives
 		{ OrderTypes.III_Building_Packs, "III Building Packs" },                                       // Building the Citadel
 		{ OrderTypes.III_Coats_NeedForTime, "III Coats NeedForTime" },                                 // New Clothes
@@ -2761,7 +2675,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Pump_Upgrade, "III Pump Upgrade" },                                           // Water Industry
 		{ OrderTypes.III_Rain_Collector, "III Rain Collector" },                                       // Advanced Logistics
 		{ OrderTypes.III_Religion, "III Religion" },                                                   // Religion
-		{ OrderTypes.III_Resolve_Bats, "III Resolve Bats" },                                           // Bat Villagers
 		{ OrderTypes.III_Resolve_Beavers, "III Resolve Beavers" },                                     // Beaver Resolve
 		{ OrderTypes.III_Resolve_Foxes, "III Resolve Foxes" },                                         // Fox Villagers
 		{ OrderTypes.III_Resolve_Frogs, "III Resolve Frogs" },                                         // Frog Resolve
@@ -2776,7 +2689,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Salt, "III Salt" },                                                           // Salty Delivery
 		{ OrderTypes.III_Scrolls_And_Temple, "III Scrolls and Temple" },                               // Brotherhood
 		{ OrderTypes.III_Send_To_Citadel, "III Send to Citadel" },                                     // Gifts for the Queen
-		{ OrderTypes.III_Service_Bats, "III Service Bats" },                                           // Training
 		{ OrderTypes.III_Service_Harpy, "III Service Harpy" },                                         // Healing
 		{ OrderTypes.III_Service_Human, "III Service Human" },                                         // Religious Rites
 		{ OrderTypes.III_Service_Lizard, "III Service Lizard" },                                       // Arena
@@ -2842,7 +2754,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IVA_TO_Wood_And_Packs, "IVA TO Wood and Packs" },                                 // Ravenous Axes
 		{ OrderTypes.IVA_Trade_Goods, "IVA Trade Goods" },                                             // Goods for the Citadel
 		{ OrderTypes.IVA_Wood, "IVA Wood" },                                                           // Wood and Provisions
-		{ OrderTypes.IVB_Bat_Majority, "IVB Bat Majority" },                                           // Bat Majority
 		{ OrderTypes.IVB_Beaver_Majority, "IVB Beaver Majority" },                                     // Beaver Majority
 		{ OrderTypes.IVB_Brawling, "IVB Brawling" },                                                   // Brawling
 		{ OrderTypes.IVB_Builders_Tools, "IVB Builders Tools" },                                       // Builder's Tools
@@ -2870,7 +2781,6 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Discover_DangGlades, "[R] Ghost Discover DangGlades" }, 
 		{ OrderTypes.R_Ghost_Discover_DangGlades_In_Time, "[R] Ghost Discover DangGlades in Time" }, 
 		{ OrderTypes.R_Ghost_Engines, "[R] Ghost Engines" }, 
-		{ OrderTypes.R_Ghost_Exile_Villagers, "[R] Ghost Exile Villagers" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Beavers, "[R] Ghost Forbid Needs Beavers" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Foxes, "[R] Ghost Forbid Needs Foxes" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Harpies, "[R] Ghost Forbid Needs Harpies" }, 
@@ -2898,13 +2808,11 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Service_Needs, "[R] Ghost Service Needs" }, 
 		{ OrderTypes.R_Ghost_Solve_DangRelics, "[R] Ghost Solve DangRelics" }, 
 		{ OrderTypes.R_Ghost_Starve_Beavers, "[R] Ghost Starve Beavers" }, 
-		{ OrderTypes.R_Ghost_Starve_Frogs, "[R] Ghost Starve Frogs" }, 
 		{ OrderTypes.R_Ghost_Starve_Humans, "[R] Ghost Starve Humans" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes, "[R] Ghost Trade Routes" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes_With_Value, "[R] Ghost Trade Routes with Value" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes_With_Value_Many, "[R] Ghost Trade Routes with Value Many" }, 
 		{ OrderTypes.R_Ghost_Upgrade_Houses, "[R] Ghost Upgrade Houses" }, 
-		{ OrderTypes.R_Ghost_Upgrade_Mine, "[R] Ghost Upgrade Mine" }, 
 		{ OrderTypes.R_Ghost_Use_Water, "[R] Ghost Use Water" }, 
 		{ OrderTypes.Rep_From_Events, "Rep from Events" },                                             // Blood of the Stag
 		{ OrderTypes.Rep_From_Events_HIGH, "Rep from Events HIGH" },                                   // Blood of the Stag

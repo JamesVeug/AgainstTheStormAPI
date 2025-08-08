@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum WorkshopsRecipeTypes
 {
@@ -29,24 +29,6 @@ public enum WorkshopsRecipeTypes
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Luxury Goods</producedGood>
 	_Todelete_Pack_Of_Luxury_Goods = 1,
-
-	/// <summary></summary>
-	/// <name>API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor</name>
-	API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor = 156,
-
-	/// <summary></summary>
-	/// <name>API_ExampleMod_BurgerJoint_API_ExampleMod_Cola</name>
-	API_ExampleMod_BurgerJoint_API_ExampleMod_Cola = 157,
-
-	/// <summary></summary>
-	/// <name>API_ExampleMod_BurgerJoint_API_ExampleMod_Fries</name>
-	API_ExampleMod_BurgerJoint_API_ExampleMod_Fries = 158,
-
-	/// <summary></summary>
-	/// <name>[Biome] Fuel Rod T3</name>
-	/// <grade>3</grade>
-	/// <producedGood>[Other] Fuel Rod</producedGood>
-	Biome_Fuel_Rod_T3 = 159,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Bricks T0</name>
@@ -978,7 +960,7 @@ public enum WorkshopsRecipeTypes
 	/// The total number of vanilla WorkshopsRecipeTypes in the game.
 	/// </summary>
 	[Obsolete("Use WorkshopsRecipeTypesExtensions.Count(). WorkshopsRecipeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 160
+	MAX = 155
 }
 
 /// <summary>
@@ -1153,10 +1135,6 @@ public static class WorkshopsRecipeTypesExtensions
 	internal static readonly Dictionary<WorkshopsRecipeTypes, string> TypeToInternalName = new()
 	{
 		{ WorkshopsRecipeTypes._Todelete_Pack_Of_Luxury_Goods, "- todelete - Pack of Luxury Goods" }, 
-		{ WorkshopsRecipeTypes.API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor, "API_ExampleMod_BurgerJoint_API_ExampleMod_Borgor" }, 
-		{ WorkshopsRecipeTypes.API_ExampleMod_BurgerJoint_API_ExampleMod_Cola, "API_ExampleMod_BurgerJoint_API_ExampleMod_Cola" }, 
-		{ WorkshopsRecipeTypes.API_ExampleMod_BurgerJoint_API_ExampleMod_Fries, "API_ExampleMod_BurgerJoint_API_ExampleMod_Fries" }, 
-		{ WorkshopsRecipeTypes.Biome_Fuel_Rod_T3, "[Biome] Fuel Rod T3" }, 
 		{ WorkshopsRecipeTypes.Building_Material_Bricks_T0, "[Building Material] Bricks T0" }, 
 		{ WorkshopsRecipeTypes.Building_Material_Bricks_T1, "[Building Material] Bricks T1" }, 
 		{ WorkshopsRecipeTypes.Building_Material_Bricks_T2, "[Building Material] Bricks T2" }, 

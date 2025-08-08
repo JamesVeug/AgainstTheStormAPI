@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.7.5R
 /// </summary>
 public enum ResourcesDepositsTypes
 {
@@ -294,7 +294,7 @@ public enum ResourcesDepositsTypes
 	/// The total number of vanilla ResourcesDepositsTypes in the game.
 	/// </summary>
 	[Obsolete("Use ResourcesDepositsTypesExtensions.Count(). ResourcesDepositsTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 45
+	MAX = 44
 }
 
 /// <summary>
