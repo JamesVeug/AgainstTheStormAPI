@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum RainCatcherTypes
 {
@@ -28,12 +28,14 @@ public enum RainCatcherTypes
 	/// Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
 	/// </summary>
 	/// <name>Advanced Rain Catcher</name>
+	/// <tags>Rainwater, FoxesCooperation</tags>
 	Advanced_Rain_Catcher = 1,
 
 	/// <summary>
 	/// Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Rain Catcher</name>
+	/// <tags>Rainwater</tags>
 	Rain_Catcher = 2,
 
 
@@ -42,7 +44,7 @@ public enum RainCatcherTypes
 	/// The total number of vanilla RainCatcherTypes in the game.
 	/// </summary>
 	[Obsolete("Use RainCatcherTypesExtensions.Count(). RainCatcherTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 2
+	MAX = 3
 }
 
 /// <summary>

@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.9R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum BuildingRainpunkModelTypes
 {

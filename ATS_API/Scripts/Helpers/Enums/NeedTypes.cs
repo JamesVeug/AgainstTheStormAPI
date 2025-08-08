@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum NeedTypes
 {
@@ -31,6 +31,12 @@ public enum NeedTypes
 	Any_Housing = 1,
 
 	/// <summary>
+	/// Bat Housing - Bats prefer to live in spacious and dark homes. Bat Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Bat Housing</name>
+	Bat_Housing = 23,
+
+	/// <summary>
 	/// Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
 	/// </summary>
 	/// <name>Beaver Housing</name>
@@ -43,7 +49,7 @@ public enum NeedTypes
 	Biscuits = 3,
 
 	/// <summary>
-	/// Brawling - This need is fulfilled in: Clan Hall, Forum, Explorers' Lodge. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
+	/// Brawling - This need is fulfilled in: Clan Hall, Forum, Academy. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Bloodthirst</name>
 	Bloodthirst = 4,
@@ -61,7 +67,7 @@ public enum NeedTypes
 	Clothes = 6,
 
 	/// <summary>
-	/// Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Explorers' Lodge. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
+	/// Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Academy. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
 	/// </summary>
 	/// <name>Education</name>
 	Education = 7,
@@ -162,7 +168,7 @@ public enum NeedTypes
 	/// The total number of vanilla NeedTypes in the game.
 	/// </summary>
 	[Obsolete("Use NeedTypesExtensions.Count(). NeedTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 22
+	MAX = 24
 }
 
 /// <summary>
@@ -337,12 +343,13 @@ public static class NeedTypesExtensions
 	internal static readonly Dictionary<NeedTypes, string> TypeToInternalName = new()
 	{
 		{ NeedTypes.Any_Housing, "Any Housing" },       // Basic Housing - Most species require at least basic shelter from the constant rainfall and gusting winds.
+		{ NeedTypes.Bat_Housing, "Bat Housing" },       // Bat Housing - Bats prefer to live in spacious and dark homes. Bat Houses are required to fulfill this need.
 		{ NeedTypes.Beaver_Housing, "Beaver Housing" }, // Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
 		{ NeedTypes.Biscuits, "Biscuits" },             // Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
-		{ NeedTypes.Bloodthirst, "Bloodthirst" },       // Brawling - This need is fulfilled in: Clan Hall, Forum, Explorers' Lodge. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Bloodthirst, "Bloodthirst" },       // Brawling - This need is fulfilled in: Clan Hall, Forum, Academy. Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
 		{ NeedTypes.Boots, "Boots" },                   // Boots - This need is fulfilled at the Hearth. It requires "[needs] boots" boots. Satisfying this need grants a movement speed bonus.
 		{ NeedTypes.Clothes, "Clothes" },               // Coats - This need is fulfilled at the Hearth. It requires "[needs] coats" coats. Satisfying this need grants a Resolve bonus during the storm.
-		{ NeedTypes.Education, "Education" },           // Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Explorers' Lodge. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
+		{ NeedTypes.Education, "Education" },           // Education - This need is fulfilled in: Temple, Holy Guild House, Guild House, Academy. It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
 		{ NeedTypes.Fox_Housing, "Fox Housing" },       // Fox Housing - Foxes prefer to live in wooden, well camouflaged houses. Fox Houses are required to fulfill this need.
 		{ NeedTypes.Frog_Housing, "Frog Housing" },     // Frog Housing - Frogs are at home in water. Frog Houses are required to fulfill this need.
 		{ NeedTypes.Harpy_Housing, "Harpy Housing" },   // Harpy Housing - Harpies prefer to live in well-lit, spacious homes. Harpy Houses are required to fulfill this need.

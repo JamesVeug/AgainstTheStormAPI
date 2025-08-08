@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum FarmTypes
 {
@@ -28,42 +28,56 @@ public enum FarmTypes
 	/// Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 	/// </summary>
 	/// <name>Grove</name>
+	/// <tags>Wood, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Grove = 1,
 
 	/// <summary>
 	/// Hallowed Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade3), [food raw] herbs Herbs (grade3). Has improved efficiency and more worker slots.
 	/// </summary>
 	/// <name>Hallowed Herb Garden</name>
+	/// <tags>Farming, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Hallowed_Herb_Garden = 2,
 
 	/// <summary>
 	/// Hallowed Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade3), [food raw] grain Grain (grade3). Has improved efficiency and more worker slots.
 	/// </summary>
 	/// <name>Hallowed SmallFarm</name>
+	/// <tags>Farming, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Hallowed_SmallFarm = 3,
 
 	/// <summary>
 	/// Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade1), [food raw] herbs Herbs (grade2).
 	/// </summary>
 	/// <name>Herb Garden</name>
+	/// <tags>Farming</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Herb_Garden = 4,
 
 	/// <summary>
 	/// Homestead - Uses a large area of nearby farm fields to grow  [food raw] grain Grain (grade3), [mat raw] plant fibre Plant Fiber (grade3), [food raw] vegetables Vegetables (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Homestead</name>
+	/// <tags>Farming, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Homestead = 5,
 
 	/// <summary>
 	/// Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
 	/// </summary>
 	/// <name>Plantation</name>
+	/// <tags>Farming</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Plantation = 6,
 
 	/// <summary>
 	/// Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade1), [food raw] grain Grain (grade2).
 	/// </summary>
 	/// <name>SmallFarm</name>
+	/// <tags>Farming</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	SmallFarm = 7,
 
 
@@ -72,7 +86,7 @@ public enum FarmTypes
 	/// The total number of vanilla FarmTypes in the game.
 	/// </summary>
 	[Obsolete("Use FarmTypesExtensions.Count(). FarmTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 7
+	MAX = 8
 }
 
 /// <summary>

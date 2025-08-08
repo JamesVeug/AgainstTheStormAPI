@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum MineTypes
 {
@@ -28,6 +28,7 @@ public enum MineTypes
 	/// Mine - Can only be placed on coal, copper, or salt veins. Can produce:  [crafting] coal Coal (grade2), [metal] copper ore Copper Ore (grade2), [crafting] salt Salt (grade2).
 	/// </summary>
 	/// <name>Mine</name>
+	/// <tags>Metallurgy, Tech, FoxesCooperation</tags>
 	Mine = 1,
 
 
@@ -36,7 +37,7 @@ public enum MineTypes
 	/// The total number of vanilla MineTypes in the game.
 	/// </summary>
 	[Obsolete("Use MineTypesExtensions.Count(). MineTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 1
+	MAX = 2
 }
 
 /// <summary>

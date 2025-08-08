@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum GathererHutTypes
 {
@@ -28,6 +28,7 @@ public enum GathererHutTypes
 	/// Foragers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] grain Grain (grade2), [food raw] roots Roots (grade2), [food raw] vegetables Vegetables (grade2).
 	/// </summary>
 	/// <name>Forager's Camp</name>
+	/// <tags>Farming</tags>
 	Foragers_Camp = 1,
 
 	/// <summary>
@@ -40,36 +41,42 @@ public enum GathererHutTypes
 	/// Herbalists' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] herbs Herbs (grade2), [food raw] berries Berries (grade2), [food raw] mushrooms Mushrooms (grade2).
 	/// </summary>
 	/// <name>Herbalist's Camp</name>
+	/// <tags>Alchemy</tags>
 	Herbalists_Camp = 3,
 
 	/// <summary>
 	/// Small Foragers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] grain Grain (grade1), [food raw] roots Roots (grade1), [food raw] vegetables Vegetables (grade1).
 	/// </summary>
 	/// <name>Primitive Forager's Camp</name>
+	/// <tags>Farming</tags>
 	Primitive_Foragers_Camp = 4,
 
 	/// <summary>
 	/// Small Herbalists' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] herbs Herbs (grade1), [food raw] berries Berries (grade1), [food raw] mushrooms Mushrooms (grade1).
 	/// </summary>
 	/// <name>Primitive Herbalist's Camp</name>
+	/// <tags>Alchemy</tags>
 	Primitive_Herbalists_Camp = 5,
 
 	/// <summary>
 	/// Small Trappers' Camp - A small, crude version of a specialized gathering camp. It's slower, and can only collect resources from small gathering nodes. Can collect:  [food raw] meat Meat (grade1), [food raw] insects Insects (grade1), [food raw] eggs Eggs (grade1).
 	/// </summary>
 	/// <name>Primitive Trapper's Camp</name>
+	/// <tags>Animals</tags>
 	Primitive_Trappers_Camp = 6,
 
 	/// <summary>
 	/// Stonecutters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] stone Stone (grade2), [mat raw] clay Clay (grade2), [crafting] sea marrow Sea Marrow (grade2).
 	/// </summary>
 	/// <name>Stonecutter's Camp</name>
+	/// <tags>Stone</tags>
 	Stonecutters_Camp = 7,
 
 	/// <summary>
 	/// Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).
 	/// </summary>
 	/// <name>Trapper's Camp</name>
+	/// <tags>Animals</tags>
 	Trappers_Camp = 8,
 
 
@@ -78,7 +85,7 @@ public enum GathererHutTypes
 	/// The total number of vanilla GathererHutTypes in the game.
 	/// </summary>
 	[Obsolete("Use GathererHutTypesExtensions.Count(). GathererHutTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 8
+	MAX = 9
 }
 
 /// <summary>

@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum TagTypes
 {
@@ -24,140 +24,284 @@ public enum TagTypes
 	/// </summary>
 	None = 0,
 	
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Caches</name>
 	Aggregation_Tag_Caches = 1,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Camps</name>
 	Aggregation_Tag_Camps = 2,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Dangerous Events</name>
 	Aggregation_Tag_Dangerous_Events = 3,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Drills</name>
 	Aggregation_Tag_Drills = 4,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Excavation</name>
 	Aggregation_Tag_Excavation = 5,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Ghosts</name>
 	Aggregation_Tag_Ghosts = 6,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Bat House</name>
+	Aggregation_Tag_Haunted_Ruin_Bat_House = 69,
+
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Beaver House</name>
 	Aggregation_Tag_Haunted_Ruin_Beaver_House = 7,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Brewery</name>
 	Aggregation_Tag_Haunted_Ruin_Brewery = 8,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Cellar</name>
 	Aggregation_Tag_Haunted_Ruin_Cellar = 9,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Cooperage</name>
 	Aggregation_Tag_Haunted_Ruin_Cooperage = 10,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Druid</name>
 	Aggregation_Tag_Haunted_Ruin_Druid = 11,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Fox House</name>
 	Aggregation_Tag_Haunted_Ruin_Fox_House = 12,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Frog House</name>
 	Aggregation_Tag_Haunted_Ruin_Frog_House = 13,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Guild House</name>
 	Aggregation_Tag_Haunted_Ruin_Guild_House = 14,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Harpy House</name>
 	Aggregation_Tag_Haunted_Ruin_Harpy_House = 15,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Herb Garden</name>
 	Aggregation_Tag_Haunted_Ruin_Herb_Garden = 16,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Human House</name>
 	Aggregation_Tag_Haunted_Ruin_Human_House = 17,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Leatherworks</name>
 	Aggregation_Tag_Haunted_Ruin_Leatherworks = 18,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Lizard House</name>
 	Aggregation_Tag_Haunted_Ruin_Lizard_House = 19,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Market</name>
 	Aggregation_Tag_Haunted_Ruin_Market = 20,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Rainmill</name>
 	Aggregation_Tag_Haunted_Ruin_Rainmill = 21,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - SmallFarm</name>
 	Aggregation_Tag_Haunted_Ruin_SmallFarm = 22,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Smelter</name>
 	Aggregation_Tag_Haunted_Ruin_Smelter = 23,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Haunted Ruin - Temple</name>
 	Aggregation_Tag_Haunted_Ruin_Temple = 24,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Hearths</name>
 	Aggregation_Tag_Hearths = 25,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Ruins</name>
 	Aggregation_Tag_Ruins = 26,
 
+	/// <summary></summary>
+	/// <name>Aggregation Tag - Storages</name>
 	Aggregation_Tag_Storages = 27,
 
+	/// <summary></summary>
+	/// <name>Building Material Tag</name>
 	Building_Material_Tag = 28,
 
+	/// <summary></summary>
+	/// <name>Complex Food Tag</name>
 	Complex_Food_Tag = 29,
 
+	/// <summary></summary>
+	/// <name>Copper Bar and Crystalized Tag</name>
 	Copper_Bar_And_Crystalized_Tag = 30,
 
+	/// <summary></summary>
+	/// <name>Fabric Tag</name>
 	Fabric_Tag = 31,
 
+	/// <summary></summary>
+	/// <name>Farm Recipe Tag</name>
 	Farm_Recipe_Tag = 32,
 
+	/// <summary></summary>
+	/// <name>Fishing Tag</name>
 	Fishing_Tag = 33,
 
+	/// <summary></summary>
+	/// <name>Food Tag</name>
 	Food_Tag = 34,
 
+	/// <summary></summary>
+	/// <name>Fuel Tag</name>
 	Fuel_Tag = 35,
 
+	/// <summary></summary>
+	/// <name>Gatherer Hut Tag</name>
 	Gatherer_Hut_Tag = 36,
 
+	/// <summary></summary>
+	/// <name>Gathering Tag</name>
 	Gathering_Tag = 37,
 
+	/// <summary></summary>
+	/// <name>Metal Tag</name>
 	Metal_Tag = 38,
 
+	/// <summary></summary>
+	/// <name>[N] FirstGameResultDialog</name>
 	N_FirstGameResultDialog = 39,
 
+	/// <summary></summary>
+	/// <name>[N] Initiation</name>
 	N_Initiation = 40,
 
+	/// <summary></summary>
+	/// <name>[N] IronmanMid</name>
 	N_IronmanMid = 41,
 
+	/// <summary></summary>
+	/// <name>[N] IronmanPostSeal</name>
 	N_IronmanPostSeal = 42,
 
+	/// <summary></summary>
+	/// <name>[N] IronmanPreSeal</name>
 	N_IronmanPreSeal = 43,
 
+	/// <summary></summary>
+	/// <name>[N] IronmanStart</name>
 	N_IronmanStart = 44,
 
+	/// <summary></summary>
+	/// <name>Ore Tag</name>
 	Ore_Tag = 45,
 
+	/// <summary></summary>
+	/// <name>Packs Tag</name>
 	Packs_Tag = 46,
 
+	/// <summary></summary>
+	/// <name>Recipe With Water Tag</name>
 	Recipe_With_Water_Tag = 47,
 
+	/// <summary></summary>
+	/// <name>[Relic] Archeology</name>
 	Relic_Archeology = 48,
 
+	/// <summary></summary>
+	/// <name>[Relic] Chest</name>
 	Relic_Chest = 49,
 
+	/// <summary></summary>
+	/// <name>[Relic] Funeral</name>
 	Relic_Funeral = 68,
 
+	/// <summary></summary>
+	/// <name>[Tag] Bat</name>
+	Tag_Bat = 70,
+
+	/// <summary></summary>
+	/// <name>[Tag] Beaver</name>
 	Tag_Beaver = 50,
 
+	/// <summary></summary>
+	/// <name>[Tag] Blight</name>
 	Tag_Blight = 51,
 
+	/// <summary></summary>
+	/// <name>[Tag] Event - Send To Citadel Reward</name>
 	Tag_Event_Send_To_Citadel_Reward = 52,
 
+	/// <summary></summary>
+	/// <name>[Tag] Fox</name>
 	Tag_Fox = 53,
 
+	/// <summary></summary>
+	/// <name>[Tag] Frog</name>
 	Tag_Frog = 54,
 
+	/// <summary></summary>
+	/// <name>[Tag] Harpy</name>
 	Tag_Harpy = 55,
 
+	/// <summary></summary>
+	/// <name>[Tag] Human</name>
 	Tag_Human = 56,
 
+	/// <summary></summary>
+	/// <name>[Tag] Lizzard</name>
 	Tag_Lizzard = 57,
 
+	/// <summary></summary>
+	/// <name>[Tag] Metal Bars in recipe</name>
 	Tag_Metal_Bars_In_Recipe = 58,
 
+	/// <summary></summary>
+	/// <name>[Tag] Profession - Blight Fighters</name>
 	Tag_Profession_Blight_Fighters = 59,
 
+	/// <summary></summary>
+	/// <name>[Tag] Profession - Firekeeper</name>
 	Tag_Profession_Firekeeper = 60,
 
+	/// <summary></summary>
+	/// <name>[Tag] Profession - Miner</name>
 	Tag_Profession_Miner = 61,
 
+	/// <summary></summary>
+	/// <name>[Tag] Profession - Scout</name>
 	Tag_Profession_Scout = 62,
 
+	/// <summary></summary>
+	/// <name>[Tag] Profession - Woodcutter</name>
 	Tag_Profession_Woodcutter = 63,
 
+	/// <summary></summary>
+	/// <name>[Tag] Rainpunk</name>
 	Tag_Rainpunk = 64,
 
+	/// <summary></summary>
+	/// <name>[Tag] Requires Fertile Soil</name>
 	Tag_Requires_Fertile_Soil = 65,
 
+	/// <summary></summary>
+	/// <name>[Tag] Storage Haulers</name>
 	Tag_Storage_Haulers = 66,
 
+	/// <summary></summary>
+	/// <name>[Tag] Trade</name>
 	Tag_Trade = 67,
 
 
@@ -166,7 +310,7 @@ public enum TagTypes
 	/// The total number of vanilla TagTypes in the game.
 	/// </summary>
 	[Obsolete("Use TagTypesExtensions.Count(). TagTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 68
+	MAX = 71
 }
 
 /// <summary>
@@ -346,6 +490,7 @@ public static class TagTypesExtensions
 		{ TagTypes.Aggregation_Tag_Drills, "Aggregation Tag - Drills" }, 
 		{ TagTypes.Aggregation_Tag_Excavation, "Aggregation Tag - Excavation" }, 
 		{ TagTypes.Aggregation_Tag_Ghosts, "Aggregation Tag - Ghosts" }, 
+		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Bat_House, "Aggregation Tag - Haunted Ruin - Bat House" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Beaver_House, "Aggregation Tag - Haunted Ruin - Beaver House" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Brewery, "Aggregation Tag - Haunted Ruin - Brewery" }, 
 		{ TagTypes.Aggregation_Tag_Haunted_Ruin_Cellar, "Aggregation Tag - Haunted Ruin - Cellar" }, 
@@ -390,6 +535,7 @@ public static class TagTypesExtensions
 		{ TagTypes.Relic_Archeology, "[Relic] Archeology" }, 
 		{ TagTypes.Relic_Chest, "[Relic] Chest" }, 
 		{ TagTypes.Relic_Funeral, "[Relic] Funeral" }, 
+		{ TagTypes.Tag_Bat, "[Tag] Bat" }, 
 		{ TagTypes.Tag_Beaver, "[Tag] Beaver" }, 
 		{ TagTypes.Tag_Blight, "[Tag] Blight" }, 
 		{ TagTypes.Tag_Event_Send_To_Citadel_Reward, "[Tag] Event - Send To Citadel Reward" }, 

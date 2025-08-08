@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum WorkshopTypes
 {
@@ -29,6 +29,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Alchemist Hut</name>
+	/// <tags>Alchemy, Brewing, FoxesCooperation</tags>
 	Alchemist_Hut = 1,
 
 	/// <summary>
@@ -36,6 +37,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Apothecary</name>
+	/// <tags>Alchemy, Rainwater, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	Apothecary = 2,
 
 	/// <summary>
@@ -43,6 +46,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Artisan</name>
+	/// <tags>Cloth, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	Artisan = 3,
 
 	/// <summary>
@@ -50,6 +55,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Bakery</name>
+	/// <tags>Warmth, FoxesCooperation</tags>
 	Bakery = 4,
 
 	/// <summary>
@@ -57,6 +63,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Beanery</name>
+	/// <tags>Warmth, Rainwater, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	Beanery = 5,
 
 	/// <summary>
@@ -64,6 +72,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Brewery</name>
+	/// <tags>Brewing, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	Brewery = 6,
 
 	/// <summary>
@@ -71,6 +81,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Brick Oven</name>
+	/// <tags>Warmth, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	Brick_Oven = 7,
 
 	/// <summary>
@@ -78,6 +90,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Brickyard</name>
+	/// <tags>Stone, FoxesCooperation</tags>
 	Brickyard = 8,
 
 	/// <summary>
@@ -85,6 +98,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Butcher</name>
+	/// <tags>Animals, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	Butcher = 9,
 
 	/// <summary>
@@ -92,6 +107,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cannery</name>
+	/// <tags>FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	Cannery = 10,
 
 	/// <summary>
@@ -99,6 +116,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Carpenter</name>
+	/// <tags>Wood, FoxesCooperation</tags>
 	Carpenter = 11,
 
 	/// <summary>
@@ -106,6 +124,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cellar</name>
+	/// <tags>Brewing, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	Cellar = 12,
 
 	/// <summary>
@@ -113,6 +133,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Clay Pit Workshop</name>
+	/// <tags>Stone, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Clay_Pit_Workshop = 13,
 
 	/// <summary>
@@ -120,6 +142,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Clothier</name>
+	/// <tags>Cloth, FoxesCooperation</tags>
 	Clothier = 14,
 
 	/// <summary>
@@ -127,6 +150,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Cobbler</name>
+	/// <tags>Cloth, FoxesCooperation</tags>
 	Cobbler = 15,
 
 	/// <summary>
@@ -134,6 +158,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Cookhouse</name>
+	/// <tags>Warmth, FoxesCooperation</tags>
 	Cookhouse = 16,
 
 	/// <summary>
@@ -141,6 +166,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Cooperage</name>
+	/// <tags>Wood, Metallurgy, FoxesCooperation</tags>
 	Cooperage = 17,
 
 	/// <summary>
@@ -148,6 +174,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Crude Workstation</name>
+	/// <tags>FoxesCooperation</tags>
 	Crude_Workstation = 18,
 
 	/// <summary>
@@ -155,6 +182,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Distillery</name>
+	/// <tags>Brewing, Rainwater, FoxesCooperation</tags>
 	Distillery = 19,
 
 	/// <summary>
@@ -162,6 +190,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Druid</name>
+	/// <tags>Alchemy, FoxesCooperation</tags>
 	Druid = 20,
 
 	/// <summary>
@@ -169,6 +198,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Field Kitchen</name>
+	/// <tags>FoxesCooperation</tags>
 	Field_Kitchen = 21,
 
 	/// <summary>
@@ -176,6 +206,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Finesmith</name>
+	/// <tags>Metallurgy, Tech, FoxesCooperation</tags>
 	Finesmith = 22,
 
 	/// <summary>
@@ -183,6 +214,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Flawless Brewery</name>
+	/// <tags>Brewing, FoxesCooperation</tags>
 	Flawless_Brewery = 23,
 
 	/// <summary>
@@ -190,6 +222,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Flawless Cellar</name>
+	/// <tags>Brewing, FoxesCooperation</tags>
 	Flawless_Cellar = 24,
 
 	/// <summary>
@@ -197,6 +230,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Cooperage</name>
+	/// <tags>Wood, FoxesCooperation, Metallurgy</tags>
 	Flawless_Cooperage = 25,
 
 	/// <summary>
@@ -204,6 +238,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Druid</name>
+	/// <tags>Alchemy, FoxesCooperation</tags>
 	Flawless_Druid = 26,
 
 	/// <summary>
@@ -211,6 +246,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Leatherworks</name>
+	/// <tags>Cloth, Animals, FoxesCooperation</tags>
 	Flawless_Leatherworks = 27,
 
 	/// <summary>
@@ -218,6 +254,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Flawless Rain Mill</name>
+	/// <tags>Tech, Farming, FoxesCooperation</tags>
 	Flawless_Rain_Mill = 28,
 
 	/// <summary>
@@ -225,6 +262,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Flawless Smelter</name>
+	/// <tags>Metallurgy, Warmth, FoxesCooperation</tags>
 	Flawless_Smelter = 29,
 
 	/// <summary>
@@ -232,6 +270,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Furnace</name>
+	/// <tags>Metallurgy, Warmth, FoxesCooperation</tags>
 	Furnace = 30,
 
 	/// <summary>
@@ -239,12 +278,15 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Granary</name>
+	/// <tags>Farming, FoxesCooperation</tags>
 	Granary = 31,
 
 	/// <summary>
 	/// Greenhouse - Uses Drizzle Water to grow crops regardless of the season. Must be placed on fertile soil. Can produce:  [food raw] mushrooms Mushrooms (grade2), [food raw] herbs Herbs (grade2)
 	/// </summary>
 	/// <name>Greenhouse Workshop</name>
+	/// <tags>Farming, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	Greenhouse_Workshop = 32,
 
 	/// <summary>
@@ -252,6 +294,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Grill</name>
+	/// <tags>Animals, Warmth, FoxesCooperation</tags>
 	Grill = 33,
 
 	/// <summary>
@@ -259,6 +302,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Kiln</name>
+	/// <tags>Warmth, Stone, FoxesCooperation</tags>
 	Kiln = 34,
 
 	/// <summary>
@@ -266,6 +310,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Leatherworks</name>
+	/// <tags>Cloth, Animals, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	Leatherworks = 35,
 
 	/// <summary>
@@ -273,6 +319,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Lumbermill</name>
+	/// <tags>Wood, FoxesCooperation</tags>
 	Lumbermill = 36,
 
 	/// <summary>
@@ -280,6 +327,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Makeshift Post</name>
+	/// <tags>FoxesCooperation</tags>
 	Makeshift_Post = 37,
 
 	/// <summary>
@@ -287,6 +335,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Manufactory</name>
+	/// <tags>Cloth, FoxesCooperation</tags>
 	Manufactory = 38,
 
 	/// <summary>
@@ -294,6 +343,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Pantry</name>
+	/// <tags>Farming, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	Pantry = 39,
 
 	/// <summary>
@@ -301,6 +352,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Press</name>
+	/// <tags>Tech, FoxesCooperation</tags>
 	Press = 40,
 
 	/// <summary>
@@ -308,6 +360,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Provisioner</name>
+	/// <tags>FoxesCooperation</tags>
 	Provisioner = 41,
 
 	/// <summary>
@@ -315,6 +368,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Rain Mill</name>
+	/// <tags>Tech, Farming, FoxesCooperation</tags>
 	Rain_Mill = 42,
 
 	/// <summary>
@@ -322,6 +376,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Rainpunk Foundry</name>
+	/// <tags>Metallurgy, Tech, Rainwater, FoxesCooperation</tags>
 	Rainpunk_Foundry = 43,
 
 	/// <summary>
@@ -329,6 +384,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Ranch</name>
+	/// <tags>Animals, FoxesCooperation</tags>
 	Ranch = 44,
 
 	/// <summary>
@@ -336,6 +392,8 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Scribe</name>
+	/// <tags>Brewing, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	Scribe = 45,
 
 	/// <summary>
@@ -343,6 +401,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Smelter</name>
+	/// <tags>Metallurgy, Warmth, FoxesCooperation</tags>
 	Smelter = 46,
 
 	/// <summary>
@@ -350,6 +409,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Smithy</name>
+	/// <tags>Tech, Metallurgy, Warmth, FoxesCooperation</tags>
 	Smithy = 47,
 
 	/// <summary>
@@ -357,6 +417,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Smokehouse</name>
+	/// <tags>Warmth, Animals, FoxesCooperation</tags>
 	Smokehouse = 48,
 
 	/// <summary>
@@ -364,6 +425,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Stamping Mill</name>
+	/// <tags>Metallurgy, Tech, Stone, FoxesCooperation</tags>
 	Stamping_Mill = 49,
 
 	/// <summary>
@@ -371,6 +433,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Supplier</name>
+	/// <tags>Cloth, FoxesCooperation</tags>
 	Supplier = 50,
 
 	/// <summary>
@@ -378,12 +441,15 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Tea House</name>
+	/// <tags>Alchemy, Rainwater, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	Tea_House = 51,
 
 	/// <summary>
-	/// Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done. Can produce:  [we] fuel core Enriched Fuel (grade1)
+	/// Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done.
 	/// </summary>
 	/// <name>Temporary Engineering Station</name>
+	/// <tags>FoxesCooperation, Tech</tags>
 	Temporary_Engineering_Station = 57,
 
 	/// <summary>
@@ -391,6 +457,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] drizzle water" Drizzle Water.</p>
 	/// </summary>
 	/// <name>Tinctury</name>
+	/// <tags>Brewing, Alchemy, FoxesCooperation</tags>
 	Tinctury = 52,
 
 	/// <summary>
@@ -398,6 +465,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Tinkerer</name>
+	/// <tags>Metallurgy, Tech, FoxesCooperation</tags>
 	Tinkerer = 53,
 
 	/// <summary>
@@ -405,6 +473,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Toolshop</name>
+	/// <tags>Tech, FoxesCooperation</tags>
 	Toolshop = 54,
 
 	/// <summary>
@@ -412,6 +481,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
 	/// <name>Weaver</name>
+	/// <tags>Cloth, FoxesCooperation</tags>
 	Weaver = 55,
 
 	/// <summary>
@@ -419,6 +489,7 @@ public enum WorkshopTypes
 	/// <p>Rain engine: "[water] storm water" Storm Water.</p>
 	/// </summary>
 	/// <name>Workshop</name>
+	/// <tags>FoxesCooperation</tags>
 	Workshop = 56,
 
 
@@ -427,7 +498,7 @@ public enum WorkshopTypes
 	/// The total number of vanilla WorkshopTypes in the game.
 	/// </summary>
 	[Obsolete("Use WorkshopTypesExtensions.Count(). WorkshopTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 57
+	MAX = 58
 }
 
 /// <summary>
@@ -652,7 +723,7 @@ public static class WorkshopTypesExtensions
 		{ WorkshopTypes.Stamping_Mill, "Stamping Mill" },                                 // Stamping Mill - Can produce:  [mat processed] bricks Bricks (grade2), [crafting] flour Flour (grade2), [metal] copper bar Copper Bars (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ WorkshopTypes.Supplier, "Supplier" },                                           // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ WorkshopTypes.Tea_House, "Tea House" },                                         // Teahouse - Can produce:  [needs] tea Tea (grade3), [needs] incense Incense (grade2), [vessel] waterskin Waterskins (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
-		{ WorkshopTypes.Temporary_Engineering_Station, "Temporary Engineering Station" }, // Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done. Can produce:  [we] fuel core Enriched Fuel (grade1)
+		{ WorkshopTypes.Temporary_Engineering_Station, "Temporary Engineering Station" }, // Field Engineering Station - A makeshift workstation designed by the Brass Order. It’s far simpler than their sophisticated machinery back in the Citadel, but it’ll get the job done.
 		{ WorkshopTypes.Tinctury, "Tinctury" },                                           // Tinctury - Can produce:  [crafting] dye Dye (grade3), [needs] ale Ale (grade2), [needs] wine Wine (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ WorkshopTypes.Tinkerer, "Tinkerer" },                                           // Tinkerer - Can produce:  [tools] simple tools Tools (grade2), [needs] training gear Training Gear (grade2), [vessel] pottery Pottery (grade2).  Rain engine: "[water] storm water" Storm Water.
 		{ WorkshopTypes.Toolshop, "Toolshop" },                                           // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).  Rain engine: "[water] storm water" Storm Water.

@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum ProfessionTypes
 {
@@ -64,6 +64,7 @@ public enum ProfessionTypes
 	/// Blight Fighter
 	/// </summary>
 	/// <name>BlightFighter</name>
+	/// <tags>[Tag] Profession - Blight Fighters</tags>
 	BlightFighter = 7,
 
 	/// <summary>
@@ -196,6 +197,7 @@ public enum ProfessionTypes
 	/// Firekeeper
 	/// </summary>
 	/// <name>FireKeeper</name>
+	/// <tags>[Tag] Profession - Firekeeper</tags>
 	FireKeeper = 28,
 
 	/// <summary>
@@ -208,6 +210,7 @@ public enum ProfessionTypes
 	/// Forager
 	/// </summary>
 	/// <name>Forager</name>
+	/// <tags>Gathering Tag</tags>
 	Forager = 30,
 
 	/// <summary>
@@ -256,6 +259,7 @@ public enum ProfessionTypes
 	/// Harvester
 	/// </summary>
 	/// <name>Harvester</name>
+	/// <tags>Gathering Tag</tags>
 	Harvester = 38,
 
 	/// <summary>
@@ -268,6 +272,7 @@ public enum ProfessionTypes
 	/// Herbalist
 	/// </summary>
 	/// <name>Herbalist</name>
+	/// <tags>Gathering Tag</tags>
 	Herbalist = 40,
 
 	/// <summary>
@@ -310,6 +315,7 @@ public enum ProfessionTypes
 	/// Miner
 	/// </summary>
 	/// <name>Miner</name>
+	/// <tags>[Tag] Profession - Miner</tags>
 	Miner = 47,
 
 	/// <summary>
@@ -376,12 +382,20 @@ public enum ProfessionTypes
 	/// Scavenger
 	/// </summary>
 	/// <name>Scavenger</name>
+	/// <tags>Gathering Tag</tags>
 	Scavenger = 58,
+
+	/// <summary>
+	/// Scholar
+	/// </summary>
+	/// <name>Scholar</name>
+	Scholar = 82,
 
 	/// <summary>
 	/// Scout
 	/// </summary>
 	/// <name>Scout</name>
+	/// <tags>[Tag] Profession - Scout</tags>
 	Scout = 59,
 
 	/// <summary>
@@ -442,6 +456,7 @@ public enum ProfessionTypes
 	/// Stonecutter
 	/// </summary>
 	/// <name>Stonecutter</name>
+	/// <tags>Gathering Tag</tags>
 	Stonecutter = 69,
 
 	/// <summary>
@@ -454,6 +469,7 @@ public enum ProfessionTypes
 	/// Teadoctor
 	/// </summary>
 	/// <name>Teadoctor</name>
+	/// <tags>Gathering Tag</tags>
 	Teadoctor = 71,
 
 	/// <summary>
@@ -484,6 +500,7 @@ public enum ProfessionTypes
 	/// Trapper
 	/// </summary>
 	/// <name>Trapper</name>
+	/// <tags>Gathering Tag</tags>
 	Trapper = 76,
 
 	/// <summary>
@@ -508,6 +525,7 @@ public enum ProfessionTypes
 	/// Woodcutter
 	/// </summary>
 	/// <name>Woodcutter</name>
+	/// <tags>[Tag] Profession - Woodcutter</tags>
 	Woodcutter = 79,
 
 
@@ -516,7 +534,7 @@ public enum ProfessionTypes
 	/// The total number of vanilla ProfessionTypes in the game.
 	/// </summary>
 	[Obsolete("Use ProfessionTypesExtensions.Count(). ProfessionTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 81
+	MAX = 83
 }
 
 /// <summary>
@@ -749,6 +767,7 @@ public static class ProfessionTypesExtensions
 		{ ProfessionTypes.Rain_Collector_Worker, "Rain Collector Worker" },           // Rain Collector Worker
 		{ ProfessionTypes.Rancher, "Rancher" },                                       // Rancher
 		{ ProfessionTypes.Scavenger, "Scavenger" },                                   // Scavenger
+		{ ProfessionTypes.Scholar, "Scholar" },                                       // Scholar
 		{ ProfessionTypes.Scout, "Scout" },                                           // Scout
 		{ ProfessionTypes.Scribe, "Scribe" },                                         // Scribe
 		{ ProfessionTypes.Seller, "Seller" },                                         // Seller

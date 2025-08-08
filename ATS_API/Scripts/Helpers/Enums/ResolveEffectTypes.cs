@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum ResolveEffectTypes
 {
@@ -73,6 +73,30 @@ public enum ResolveEffectTypes
 	Any_Housing_Effect = 8,
 
 	/// <summary>
+	/// Bat Clan Support - Bats have always been wary and somewhat hostile, but you've proven yourself worthy of their trust.
+	/// </summary>
+	/// <name>Bat Faction Support</name>
+	Bat_Faction_Support = 185,
+
+	/// <summary>
+	/// Bat Housing - Bats prefer to live in spacious and dark homes. Bat Houses are required to fulfill this need.
+	/// </summary>
+	/// <name>Bat Housing Effect</name>
+	Bat_Housing_Effect = 186,
+
+	/// <summary>
+	/// Festering Wounds - There’s a certain joy in a well-timed misfortune.
+	/// </summary>
+	/// <name>Bat Resolve For Frog Death - Resolve Effect</name>
+	Bat_Resolve_For_Frog_Death_Resolve_Effect = 187,
+
+	/// <summary>
+	/// Dedication - Bats take pride in surviving what breaks other species.
+	/// </summary>
+	/// <name>Bats Dedication</name>
+	Bats_Dedication = 188,
+
+	/// <summary>
 	/// Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 	/// </summary>
 	/// <name>BattlegroundPenalty - hard</name>
@@ -103,6 +127,12 @@ public enum ResolveEffectTypes
 	Beaver_Housing_Effect = 13,
 
 	/// <summary>
+	/// Spirit of Cooperation - High spirits can be contagious.
+	/// </summary>
+	/// <name>Beaver Resolve For Harpies - Resolve Effect</name>
+	Beaver_Resolve_For_Harpies_Resolve_Effect = 189,
+
+	/// <summary>
 	/// Vineyard Town - The settlement specializes in wine production, and Beavers love that.
 	/// </summary>
 	/// <name>Beaver Resolve Wine</name>
@@ -113,6 +143,12 @@ public enum ResolveEffectTypes
 	/// </summary>
 	/// <name>Beavers Faction Support</name>
 	Beavers_Faction_Support = 15,
+
+	/// <summary>
+	/// Village Mascot - Seeing this giant ball of fluff happy somehow makes the harsh reality surrounding the settlement a tiny bit easier to bear.
+	/// </summary>
+	/// <name>Biome Poro Resolve</name>
+	Biome_Poro_Resolve = 190,
 
 	/// <summary>
 	/// Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
@@ -185,6 +221,12 @@ public enum ResolveEffectTypes
 	/// </summary>
 	/// <name>Bloodthirst Equal Prohibition Penalty</name>
 	Bloodthirst_Equal_Prohibition_Penalty = 27,
+
+	/// <summary>
+	/// Brawling - Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Bloodthirst Fallback Effect</name>
+	Bloodthirst_Fallback_Effect = 191,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
@@ -311,6 +353,12 @@ public enum ResolveEffectTypes
 	/// </summary>
 	/// <name>Education Equal Prohibition Penalty</name>
 	Education_Equal_Prohibition_Penalty = 48,
+
+	/// <summary>
+	/// Education - It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Education Fallback Effect</name>
+	Education_Fallback_Effect = 192,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
@@ -481,6 +529,12 @@ public enum ResolveEffectTypes
 	Furniture = 77,
 
 	/// <summary>
+	/// Blood Moon - To the ancients, the Blood Moon foretold death and the fall of rulers. Fear spreads through the settlement.
+	/// </summary>
+	/// <name>Gargoyle Resolve Penalty - child</name>
+	Gargoyle_Resolve_Penalty_Child = 193,
+
+	/// <summary>
 	/// Generous Rations - A surplus of food makes the villagers happy.
 	/// </summary>
 	/// <name>Generous Rations</name>
@@ -613,6 +667,12 @@ public enum ResolveEffectTypes
 	Leasiure_Equal_Prohibition_Penalty = 99,
 
 	/// <summary>
+	/// Leisure - It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Leasiure Fallback Effect</name>
+	Leasiure_Fallback_Effect = 194,
+
+	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Leasiure Unfair Prohibition Penalty</name>
@@ -653,6 +713,12 @@ public enum ResolveEffectTypes
 	/// </summary>
 	/// <name>Luxury Equal Prohibition Penalty</name>
 	Luxury_Equal_Prohibition_Penalty = 106,
+
+	/// <summary>
+	/// Luxury - It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Luxury Fallback Effect</name>
+	Luxury_Fallback_Effect = 195,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
@@ -827,6 +893,12 @@ public enum ResolveEffectTypes
 	/// </summary>
 	/// <name>Religion Equal Prohibition Penalty</name>
 	Religion_Equal_Prohibition_Penalty = 134,
+
+	/// <summary>
+	/// Religion - It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Religion Fallback Effect</name>
+	Religion_Fallback_Effect = 196,
 
 	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
@@ -1027,6 +1099,12 @@ public enum ResolveEffectTypes
 	Treatment_Equal_Prohibition_Penalty = 167,
 
 	/// <summary>
+	/// Treatment - It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
+	/// </summary>
+	/// <name>Treatment Fallback Effect</name>
+	Treatment_Fallback_Effect = 197,
+
+	/// <summary>
 	/// Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 	/// </summary>
 	/// <name>Treatment Unfair Prohibition Penalty</name>
@@ -1128,7 +1206,7 @@ public enum ResolveEffectTypes
 	/// The total number of vanilla ResolveEffectTypes in the game.
 	/// </summary>
 	[Obsolete("Use ResolveEffectTypesExtensions.Count(). ResolveEffectTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 183
+	MAX = 198
 }
 
 /// <summary>
@@ -1310,13 +1388,19 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Ancient_Artifact_3, "Ancient Artifact 3" },                                                                         // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 		{ ResolveEffectTypes.Ancient_Artifact_Weak, "Ancient Artifact - weak" },                                                                 // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 		{ ResolveEffectTypes.Any_Housing_Effect, "Any Housing Effect" },                                                                         // Basic Housing - Most species require at least basic shelter from the constant rainfall and gusting winds.
+		{ ResolveEffectTypes.Bat_Faction_Support, "Bat Faction Support" },                                                                       // Bat Clan Support - Bats have always been wary and somewhat hostile, but you've proven yourself worthy of their trust.
+		{ ResolveEffectTypes.Bat_Housing_Effect, "Bat Housing Effect" },                                                                         // Bat Housing - Bats prefer to live in spacious and dark homes. Bat Houses are required to fulfill this need.
+		{ ResolveEffectTypes.Bat_Resolve_For_Frog_Death_Resolve_Effect, "Bat Resolve For Frog Death - Resolve Effect" },                         // Festering Wounds - There’s a certain joy in a well-timed misfortune.
+		{ ResolveEffectTypes.Bats_Dedication, "Bats Dedication" },                                                                               // Dedication - Bats take pride in surviving what breaks other species.
 		{ ResolveEffectTypes.BattlegroundPenalty_Hard, "BattlegroundPenalty - hard" },                                                           // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 		{ ResolveEffectTypes.BattlegroundPenalty_Impossible, "BattlegroundPenalty - impossible" },                                               // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 		{ ResolveEffectTypes.BattlegroundPenalty_Normal, "BattlegroundPenalty - normal" },                                                       // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 		{ ResolveEffectTypes.BattlegroundPenalty_Very_Hard, "BattlegroundPenalty - very hard" },                                                 // Fallen Brethren - Seeing their fallen kin has taken its toll on the villagers.
 		{ ResolveEffectTypes.Beaver_Housing_Effect, "Beaver Housing Effect" },                                                                   // Beaver Housing - Beavers prefer to live in cozy, wooden homes. Beaver Houses are required to fulfill this need.
+		{ ResolveEffectTypes.Beaver_Resolve_For_Harpies_Resolve_Effect, "Beaver Resolve For Harpies - Resolve Effect" },                         // Spirit of Cooperation - High spirits can be contagious.
 		{ ResolveEffectTypes.Beaver_Resolve_Wine, "Beaver Resolve Wine" },                                                                       // Vineyard Town - The settlement specializes in wine production, and Beavers love that.
 		{ ResolveEffectTypes.Beavers_Faction_Support, "Beavers Faction Support" },                                                               // Beavers Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Beaver clan remembers your help.
+		{ ResolveEffectTypes.Biome_Poro_Resolve, "Biome Poro Resolve" },                                                                         // Village Mascot - Seeing this giant ball of fluff happy somehow makes the harsh reality surrounding the settlement a tiny bit easier to bear.
 		{ ResolveEffectTypes.Biscuits_Effect, "Biscuits Effect" },                                                                               // Biscuits - This need is fulfilled at the Hearth. It requires "[food processed] biscuits" biscuits. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Biscuits_Equal_Prohibition_Penalty, "Biscuits Equal Prohibition Penalty" },                                         // Rationing - No one likes being denied the fruits of their own labor.
 		{ ResolveEffectTypes.Biscuits_Unfair_Prohibition_Penalty, "Biscuits Unfair Prohibition Penalty" },                                       // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
@@ -1329,6 +1413,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Blightrot_tier3, "Blightrot_tier3" },                                                                               // ResolveEffect_Blightrot_Name - ResolveEffect_Blightrot_Desc
 		{ ResolveEffectTypes.Bloodthirst_Effect, "Bloodthirst Effect" },                                                                         // Brawling - Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Bloodthirst_Equal_Prohibition_Penalty, "Bloodthirst Equal Prohibition Penalty" },                                   // Rationing - No one likes being denied the fruits of their own labor.
+		{ ResolveEffectTypes.Bloodthirst_Fallback_Effect, "Bloodthirst Fallback Effect" },                                                       // Brawling - Requires "[needs] training gear" training gear. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Bloodthirst_Unfair_Prohibition_Penalty, "Bloodthirst Unfair Prohibition Penalty" },                                 // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.Boots_Effect, "Boots Effect" },                                                                                     // Boots - This need is fulfilled at the Hearth. It requires "[needs] boots" boots. Satisfying this need grants a movement speed bonus.
 		{ ResolveEffectTypes.Boots_Equal_Prohibition_Penalty, "Boots Equal Prohibition Penalty" },                                               // Rationing - No one likes being denied the fruits of their own labor.
@@ -1350,6 +1435,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.DarkGatePenalty_Very_Hard, "DarkGatePenalty - very hard" },                                                         // Gate Presence - The mere presence of a Dark Gate makes the villagers fear for their lives.
 		{ ResolveEffectTypes.Education_Effect, "Education Effect" },                                                                             // Education - It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Education_Equal_Prohibition_Penalty, "Education Equal Prohibition Penalty" },                                       // Rationing - No one likes being denied the fruits of their own labor.
+		{ ResolveEffectTypes.Education_Fallback_Effect, "Education Fallback Effect" },                                                           // Education - It requires "[needs] scrolls" scrolls. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Education_Unfair_Prohibition_Penalty, "Education Unfair Prohibition Penalty" },                                     // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.Explorer_Tales, "Explorer Tales" },                                                                                 // Tales of Discovery - Tales of distant lands and brave explorers.
 		{ ResolveEffectTypes.Explorers_Boredom, "Explorers Boredom" },                                                                           // Explorers' Boredom - Who would have thought that great explorers are not so great at planting mushrooms?
@@ -1378,6 +1464,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Frogs_Faction_Support, "Frogs Faction Support" },                                                                   // Frog Clan Support - Ever since the Great Civil War, all species have been locked in a constant struggle to gain the Queen's favor. The Frogs remember your help.
 		{ ResolveEffectTypes.Frustrated, "Frustrated" },                                                                                         // Frustrated - Villagers with this effect have a -2 penalty to their Resolve.
 		{ ResolveEffectTypes.Furniture, "Furniture" },                                                                                           // Furniture - Adds an additional +1 to Resolve for villagers with a home.
+		{ ResolveEffectTypes.Gargoyle_Resolve_Penalty_Child, "Gargoyle Resolve Penalty - child" },                                               // Blood Moon - To the ancients, the Blood Moon foretold death and the fall of rulers. Fear spreads through the settlement.
 		{ ResolveEffectTypes.Generous_Rations, "Generous Rations" },                                                                             // Generous Rations - A surplus of food makes the villagers happy.
 		{ ResolveEffectTypes.Harmony_Altar, "Harmony Altar" },                                                                                   // Harmony - When your villagers' needs are met, Harmony is fostered.
 		{ ResolveEffectTypes.Harmony_Altar_Chaos_Resolve, "Harmony Altar Chaos Resolve" },                                                       // Chaos - Harmony has been disturbed.
@@ -1400,6 +1487,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Jerky_Unfair_Prohibition_Penalty, "Jerky Unfair Prohibition Penalty" },                                             // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.Leasiure_Effect, "Leasiure Effect" },                                                                               // Leisure - It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Leasiure_Equal_Prohibition_Penalty, "Leasiure Equal Prohibition Penalty" },                                         // Rationing - No one likes being denied the fruits of their own labor.
+		{ ResolveEffectTypes.Leasiure_Fallback_Effect, "Leasiure Fallback Effect" },                                                             // Leisure - It requires "[needs] ale" ale. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Leasiure_Unfair_Prohibition_Penalty, "Leasiure Unfair Prohibition Penalty" },                                       // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.Lizard_Housing_Effect, "Lizard Housing Effect" },                                                                   // Lizard Housing - Lizards prefer to live in warm, dry homes. Lizard Houses are required to fulfill this need.
 		{ ResolveEffectTypes.Lizard_Resolve_Training_Gear, "Lizard Resolve Training Gear" },                                                     // Armed to the Teeth - A settlement specialized in training gear production makes Lizards feel safe.
@@ -1407,6 +1495,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Long_Live_The_Queen, "Long Live the Queen" },                                                                       // Long Live the Queen - Villagers admire the Queen's greatness.
 		{ ResolveEffectTypes.Luxury_Effect, "Luxury Effect" },                                                                                   // Luxury - It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Luxury_Equal_Prohibition_Penalty, "Luxury Equal Prohibition Penalty" },                                             // Rationing - No one likes being denied the fruits of their own labor.
+		{ ResolveEffectTypes.Luxury_Fallback_Effect, "Luxury Fallback Effect" },                                                                 // Luxury - It requires "[needs] wine" wine. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Luxury_Unfair_Prohibition_Penalty, "Luxury Unfair Prohibition Penalty" },                                           // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.Map_Mod_Resolve, "[Map Mod] Resolve" },                                                                             // Forsaken Gods Temple - ModifierEffect_TempleResolve_Desc
 		{ ResolveEffectTypes.MoleResolvePenalty_Hard, "MoleResolvePenalty - hard" },                                                             // Giant Beast - Villagers are afraid of going into the woods.
@@ -1436,6 +1525,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Rebelious_Spirit, "Rebelious Spirit" },                                                                             // Rebellious Spirit - The people are feeling oddly rebellious.
 		{ ResolveEffectTypes.Religion_Effect, "Religion Effect" },                                                                               // Religion - It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Religion_Equal_Prohibition_Penalty, "Religion Equal Prohibition Penalty" },                                         // Rationing - No one likes being denied the fruits of their own labor.
+		{ ResolveEffectTypes.Religion_Fallback_Effect, "Religion Fallback Effect" },                                                             // Religion - It requires "[needs] incense" incense. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Religion_Unfair_Prohibition_Penalty, "Religion Unfair Prohibition Penalty" },                                       // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.Resolve_Effect_Institution_Resolve_For_Ruins, "Resolve Effect - Institution Resolve for Ruins" },                   // The Crown Chronicles - The people are enjoying living in a prosperous settlement.
 		{ ResolveEffectTypes.Resolve_Effect_Institution_Resolve_For_Sales, "Resolve Effect - Institution Resolve for Sales" },                   // The Guild's Welfare - The people are enjoying living in a prosperous settlement.
@@ -1469,6 +1559,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Toxic_Fumes, "Toxic Fumes" },                                                                                       // Toxic Fumes - A strange white mist is produced when using Rainpunk technology...
 		{ ResolveEffectTypes.Treatment_Effect, "Treatment Effect" },                                                                             // Treatment - It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Treatment_Equal_Prohibition_Penalty, "Treatment Equal Prohibition Penalty" },                                       // Rationing - No one likes being denied the fruits of their own labor.
+		{ ResolveEffectTypes.Treatment_Fallback_Effect, "Treatment Fallback Effect" },                                                           // Treatment - It requires "[needs] tea" tea. Satisfying this need increases the chance of producing double yields.
 		{ ResolveEffectTypes.Treatment_Unfair_Prohibition_Penalty, "Treatment Unfair Prohibition Penalty" },                                     // Unfair Rationing - Villagers get very upset if they are denied things their neighbors can still consume.
 		{ ResolveEffectTypes.TW_Global_Resolve, "[TW] Global Resolve" },                                                                         // Tale - Not as good as the Gleeman's Tale, but it did its job.
 		{ ResolveEffectTypes.Unfair_Treatment_Penalty, "Unfair Treatment Penalty" },                                                             // Negligence - Favoritism can be beneficial in the short term, but it's not a viable solution to the village's problems.

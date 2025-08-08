@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum GoodsTypes
 {
@@ -54,6 +54,7 @@ public enum GoodsTypes
 	/// <p><b>Obtained in:</b> {0}</p>
 	/// </summary>
 	/// <name>[Crafting] Coal</name>
+	/// <tags>Fuel Tag</tags>
 	Crafting_Coal = 5,
 
 	/// <summary>
@@ -75,6 +76,7 @@ public enum GoodsTypes
 	/// <p><b>Obtained in:</b> {0}</p>
 	/// </summary>
 	/// <name>[Crafting] Oil</name>
+	/// <tags>Fuel Tag</tags>
 	Crafting_Oil = 8,
 
 	/// <summary>
@@ -89,6 +91,7 @@ public enum GoodsTypes
 	/// <p><b>Obtained in:</b> {0}</p>
 	/// </summary>
 	/// <name>[Crafting] Sea Marrow</name>
+	/// <tags>Fuel Tag</tags>
 	Crafting_Sea_Marrow = 10,
 
 	/// <summary>
@@ -317,6 +320,7 @@ public enum GoodsTypes
 	/// <p><b>Obtained in:</b> {0}</p>
 	/// </summary>
 	/// <name>[Mat Raw] Wood</name>
+	/// <tags>Fuel Tag</tags>
 	Mat_Raw_Wood = 43,
 
 	/// <summary>
@@ -376,7 +380,7 @@ public enum GoodsTypes
 	Needs_Scrolls = 51,
 
 	/// <summary>
-	/// Scrolls - Luxury goods used for Education. Unavailable in this tutorial. <u>Select the icon</u> to change to another resource.
+	/// Scrolls - Service goods used for Education. Unavailable in this tutorial. <u>Select the icon</u> to change to another resource.
 	/// </summary>
 	/// <name>[Needs] Scrolls - tutorial</name>
 	Needs_Scrolls_Tutorial = 52,
@@ -403,10 +407,22 @@ public enum GoodsTypes
 	Needs_Wine = 55,
 
 	/// <summary>
+	/// Fertilizer - An extremely valuable material that enables the creation of new patches of fertile soil. Can only be acquired with the help of the <b>Fluffbeak</b>.
+	/// </summary>
+	/// <name>[Other] Fertilizer</name>
+	Other_Fertilizer = 74,
+
+	/// <summary>
 	/// Ground Bait - Bait made from Packs of Crops. Used in fishing huts to double fishing yields.
 	/// </summary>
 	/// <name>[Other] Fishing Bait</name>
 	Other_Fishing_Bait = 56,
+
+	/// <summary>
+	/// Fuel Rods - A volatile fuel cell engineered to push Rain Engines to their absolute limit. Produced only in the <b>Field Engineering Station</b>.
+	/// </summary>
+	/// <name>[Other] Fuel Rod</name>
+	Other_Fuel_Rod = 75,
 
 	/// <summary>
 	/// <p>Pack of Building Materials - Building materials packaged for delivery, used to fulfill orders, upgrade buildings, and trade.</p>
@@ -512,8 +528,7 @@ public enum GoodsTypes
 	Water_Storm_Water = 72,
 
 	/// <summary>
-	/// <p>Enriched Fuel - Charged rainwater sealed in a durable container. Essential for powering advanced machinery.</p>
-	/// <p><b>Produced in:</b> {0}</p>
+	/// Enriched Fuel - Charged rainwater sealed in a durable container. Essential for powering advanced machinery. Produced only in the <b>Field Engineering Station</b>.
 	/// </summary>
 	/// <name>[WE] Fuel Core</name>
 	WE_Fuel_Core = 73,
@@ -524,7 +539,7 @@ public enum GoodsTypes
 	/// The total number of vanilla GoodsTypes in the game.
 	/// </summary>
 	[Obsolete("Use GoodsTypesExtensions.Count(). GoodsTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 73
+	MAX = 76
 }
 
 /// <summary>
@@ -749,11 +764,13 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes.Needs_Coats, "[Needs] Coats" },                                           // Coats - Reliable protection from the rain. Used as clothing by: {2}. Grants an additional Resolve bonus during the storm.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Needs_Incense, "[Needs] Incense" },                                       // Incense - Used for religion at: {1}, by {2}. Villagers with a satisfied need for religion have a higher chance of producing double yields.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Needs_Scrolls, "[Needs] Scrolls" },                                       // Scrolls - Used for education at: {1}, by: {2}. Villagers with a satisfied need for education have a higher chance of producing double yields.  <b>Produced in:</b> {0}
-		{ GoodsTypes.Needs_Scrolls_Tutorial, "[Needs] Scrolls - tutorial" },                   // Scrolls - Luxury goods used for Education. Unavailable in this tutorial. <u>Select the icon</u> to change to another resource.
+		{ GoodsTypes.Needs_Scrolls_Tutorial, "[Needs] Scrolls - tutorial" },                   // Scrolls - Service goods used for Education. Unavailable in this tutorial. <u>Select the icon</u> to change to another resource.
 		{ GoodsTypes.Needs_Tea, "[Needs] Tea" },                                               // Tea - Used for treatment at: {1}, by: {2}. Villagers with a satisfied need for treatment have a higher chance of producing double yields.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Needs_Training_Gear, "[Needs] Training Gear" },                           // Training Gear - Used for brawling at: {1}, by: {2}. Villagers with a satisfied need for brawling have a higher chance of producing double yields.  <b>Produced in:</b> {0}
 		{ GoodsTypes.Needs_Wine, "[Needs] Wine" },                                             // Wine - Used for luxury at: {1}, by: {2}. Villagers with a satisfied need for luxury have a higher chance of producing double yields.  <b>Produced in:</b> {0}
+		{ GoodsTypes.Other_Fertilizer, "[Other] Fertilizer" },                                 // Fertilizer - An extremely valuable material that enables the creation of new patches of fertile soil. Can only be acquired with the help of the <b>Fluffbeak</b>.
 		{ GoodsTypes.Other_Fishing_Bait, "[Other] Fishing Bait" },                             // Ground Bait - Bait made from Packs of Crops. Used in fishing huts to double fishing yields.
+		{ GoodsTypes.Other_Fuel_Rod, "[Other] Fuel Rod" },                                     // Fuel Rods - A volatile fuel cell engineered to push Rain Engines to their absolute limit. Produced only in the <b>Field Engineering Station</b>.
 		{ GoodsTypes.Packs_Pack_Of_Building_Materials, "[Packs] Pack of Building Materials" }, // Pack of Building Materials - Building materials packaged for delivery, used to fulfill orders, upgrade buildings, and trade.    <b>Produced in:</b> {0}
 		{ GoodsTypes.Packs_Pack_Of_Crops, "[Packs] Pack of Crops" },                           // Pack of Crops - Crops packaged for delivery, used to fulfill orders and trade.    <b>Produced in:</b> {0}
 		{ GoodsTypes.Packs_Pack_Of_Luxury_Goods, "[Packs] Pack of Luxury Goods" },             // Pack of Luxury Goods - Goods highly sought after by traders. Can be used to fulfill orders, or sold for a large profit.    <b>Produced in:</b> {0}
@@ -770,7 +787,7 @@ public static class GoodsTypesExtensions
 		{ GoodsTypes.Water_Clearance_Water, "[Water] Clearance Water" },                       // Clearance Water - Highly concentrated yellow clearance rainwater. Used to power Rain Engines in crafting-oriented buildings.
 		{ GoodsTypes.Water_Drizzle_Water, "[Water] Drizzle Water" },                           // Drizzle Water - Highly concentrated green drizzle rainwater. Used to power Rain Engines in food-oriented buildings.
 		{ GoodsTypes.Water_Storm_Water, "[Water] Storm Water" },                               // Storm Water - Highly concentrated blue storm rainwater. Used to power Rain Engines in industry-oriented buildings.
-		{ GoodsTypes.WE_Fuel_Core, "[WE] Fuel Core" },                                         // Enriched Fuel - Charged rainwater sealed in a durable container. Essential for powering advanced machinery.  <b>Produced in:</b> {0}
+		{ GoodsTypes.WE_Fuel_Core, "[WE] Fuel Core" },                                         // Enriched Fuel - Charged rainwater sealed in a durable container. Essential for powering advanced machinery. Produced only in the <b>Field Engineering Station</b>.
 
 	};
 }

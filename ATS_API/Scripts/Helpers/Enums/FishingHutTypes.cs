@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum FishingHutTypes
 {
@@ -28,12 +28,14 @@ public enum FishingHutTypes
 	/// Fishing Hut - An advanced fishing hut. Can fish in large fishing ponds in addition to small ones. Can catch:  [food raw] fish Fish (grade2), [mat raw] scales Scales (grade2), [mat raw] algae Algae (grade2).
 	/// </summary>
 	/// <name>Fishing Hut</name>
+	/// <tags>FoxesCooperation</tags>
 	Fishing_Hut = 1,
 
 	/// <summary>
 	/// Small Fishing Hut - A crude version of a normal fishing hut. It's slower, and can only fish in small fishing ponds. Can catch:  [food raw] fish Fish (grade1), [mat raw] scales Scales (grade1), [mat raw] algae Algae (grade1).
 	/// </summary>
 	/// <name>Primitive Fishing Hut</name>
+	/// <tags>FoxesCooperation</tags>
 	Primitive_Fishing_Hut = 2,
 
 
@@ -42,7 +44,7 @@ public enum FishingHutTypes
 	/// The total number of vanilla FishingHutTypes in the game.
 	/// </summary>
 	[Obsolete("Use FishingHutTypesExtensions.Count(). FishingHutTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 2
+	MAX = 3
 }
 
 /// <summary>

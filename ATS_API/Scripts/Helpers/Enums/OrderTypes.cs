@@ -10,7 +10,7 @@ using Eremite.Model.Orders;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum OrderTypes
 {
@@ -148,12 +148,14 @@ public enum OrderTypes
 	/// Amber Trade
 	/// </summary>
 	/// <name>I Amber</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	I_Amber = 21,
 
 	/// <summary>
 	/// Call to Arms
 	/// </summary>
 	/// <name>I Blighfuel</name>
+	/// <usabilityTags>[Tag] Blight</usabilityTags>
 	I_Blighfuel = 22,
 
 	/// <summary>
@@ -166,6 +168,7 @@ public enum OrderTypes
 	/// Botanist
 	/// </summary>
 	/// <name>I Botanist</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	I_Botanist = 24,
 
 	/// <summary>
@@ -184,12 +187,14 @@ public enum OrderTypes
 	/// The Purge
 	/// </summary>
 	/// <name>I Cysts</name>
+	/// <usabilityTags>[Tag] Rainpunk, [Tag] Blight</usabilityTags>
 	I_Cysts = 27,
 
 	/// <summary>
 	/// Cyst Cultivation
 	/// </summary>
 	/// <name>I Cysts amount</name>
+	/// <usabilityTags>[Tag] Rainpunk, [Tag] Blight</usabilityTags>
 	I_Cysts_Amount = 28,
 
 	/// <summary>
@@ -202,12 +207,14 @@ public enum OrderTypes
 	/// Start Your Engines
 	/// </summary>
 	/// <name>I Engines</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	I_Engines = 30,
 
 	/// <summary>
 	/// Farm Life
 	/// </summary>
 	/// <name>I Farm Life</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	I_Farm_Life = 31,
 
 	/// <summary>
@@ -226,6 +233,7 @@ public enum OrderTypes
 	/// Garden Life
 	/// </summary>
 	/// <name>I Garden Life</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	I_Garden_Life = 34,
 
 	/// <summary>
@@ -238,13 +246,22 @@ public enum OrderTypes
 	/// No Place Like Home
 	/// </summary>
 	/// <name>I Houses</name>
+	/// <usabilityTags>[Tag] Lizzard, [Tag] Harpy</usabilityTags>
 	I_Houses = 36,
 
 	/// <summary>
 	/// Safe Place
 	/// </summary>
 	/// <name>I Houses v2</name>
+	/// <usabilityTags>[Tag] Beaver, [Tag] Human</usabilityTags>
 	I_Houses_V2 = 37,
+
+	/// <summary>
+	/// Dwellings
+	/// </summary>
+	/// <name>I Houses v3</name>
+	/// <usabilityTags>[Tag] Fox, [Tag] Bat</usabilityTags>
+	I_Houses_V3 = 392,
 
 	/// <summary>
 	/// Hunters
@@ -268,18 +285,21 @@ public enum OrderTypes
 	/// Raising the Stakes
 	/// </summary>
 	/// <name>I Multiply Routes</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	I_Multiply_Routes = 41,
 
 	/// <summary>
 	/// Hydraulics
 	/// </summary>
 	/// <name>I Pipes</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	I_Pipes = 42,
 
 	/// <summary>
 	/// Healthy Breakfast
 	/// </summary>
 	/// <name>I Porridge</name>
+	/// <usabilityTags>[Tag] Fox, [Tag] Human</usabilityTags>
 	I_Porridge = 43,
 
 	/// <summary>
@@ -298,36 +318,42 @@ public enum OrderTypes
 	/// The Guild
 	/// </summary>
 	/// <name>I Resolve Beavers</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	I_Resolve_Beavers = 46,
 
 	/// <summary>
 	/// The Pack
 	/// </summary>
 	/// <name>I Resolve Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	I_Resolve_Foxes = 47,
 
 	/// <summary>
 	/// The Collegium
 	/// </summary>
 	/// <name>I Resolve Frogs</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	I_Resolve_Frogs = 48,
 
 	/// <summary>
 	/// The Flock
 	/// </summary>
 	/// <name>I Resolve Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	I_Resolve_Harpies = 49,
 
 	/// <summary>
 	/// People's Resolve
 	/// </summary>
 	/// <name>I Resolve Humans</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	I_Resolve_Humans = 50,
 
 	/// <summary>
 	/// The Clan
 	/// </summary>
 	/// <name>I Resolve Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	I_Resolve_Lizards = 51,
 
 	/// <summary>
@@ -367,9 +393,17 @@ public enum OrderTypes
 	I_Storm_Water = 57,
 
 	/// <summary>
+	/// Determined Bats
+	/// </summary>
+	/// <name>I TO Bat Resolve</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	I_TO_Bat_Resolve = 393,
+
+	/// <summary>
 	/// Joyful Beavers
 	/// </summary>
 	/// <name>I TO Beaver Resolve</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	I_TO_Beaver_Resolve = 58,
 
 	/// <summary>
@@ -382,18 +416,21 @@ public enum OrderTypes
 	/// Joyful Foxes
 	/// </summary>
 	/// <name>I TO Fox Resolve</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	I_TO_Fox_Resolve = 60,
 
 	/// <summary>
 	/// Joyful Frogs
 	/// </summary>
 	/// <name>I TO Frog Resolve</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	I_TO_Frog_Resolve = 61,
 
 	/// <summary>
 	/// Joyful Harpies
 	/// </summary>
 	/// <name>I TO Harpy Resolve</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	I_TO_Harpy_Resolve = 62,
 
 	/// <summary>
@@ -406,12 +443,14 @@ public enum OrderTypes
 	/// Joyful Humans
 	/// </summary>
 	/// <name>I TO Human Resolve</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	I_TO_Human_Resolve = 64,
 
 	/// <summary>
 	/// Joyful Lizards
 	/// </summary>
 	/// <name>I TO Lizard Resolve</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	I_TO_Lizard_Resolve = 65,
 
 	/// <summary>
@@ -430,6 +469,7 @@ public enum OrderTypes
 	/// Quick Transaction
 	/// </summary>
 	/// <name>I TO Sold Amber</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	I_TO_Sold_Amber = 68,
 
 	/// <summary>
@@ -448,24 +488,28 @@ public enum OrderTypes
 	/// Businessman
 	/// </summary>
 	/// <name>I Trade Routes</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	I_Trade_Routes = 71,
 
 	/// <summary>
 	/// Booming Economy
 	/// </summary>
 	/// <name>I Trader Value Sold</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	I_Trader_Value_Sold = 72,
 
 	/// <summary>
 	/// Water Extraction
 	/// </summary>
 	/// <name>I Upgrade Pump</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	I_Upgrade_Pump = 73,
 
 	/// <summary>
 	/// Fill the Engines
 	/// </summary>
 	/// <name>I Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	I_Water = 74,
 
 	/// <summary>
@@ -502,6 +546,7 @@ public enum OrderTypes
 	/// The Grove
 	/// </summary>
 	/// <name>IB Beavers</name>
+	/// <usabilityTags>[Tag] Beaver, [Tag] Requires Fertile Soil</usabilityTags>
 	IB_Beavers = 80,
 
 	/// <summary>
@@ -526,30 +571,35 @@ public enum OrderTypes
 	/// People of the Forest
 	/// </summary>
 	/// <name>IB Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	IB_Foxes = 84,
 
 	/// <summary>
 	/// Architects
 	/// </summary>
 	/// <name>IB Frogs</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	IB_Frogs = 85,
 
 	/// <summary>
 	/// The Nest
 	/// </summary>
 	/// <name>IB Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	IB_Harpies = 86,
 
 	/// <summary>
 	/// Help From the Queen
 	/// </summary>
 	/// <name>IB Humans</name>
+	/// <usabilityTags>[Tag] Human, [Tag] Requires Fertile Soil</usabilityTags>
 	IB_Humans = 87,
 
 	/// <summary>
 	/// Trappers
 	/// </summary>
 	/// <name>IB Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	IB_Lizards = 88,
 
 	/// <summary>
@@ -562,6 +612,7 @@ public enum OrderTypes
 	/// Delivery
 	/// </summary>
 	/// <name>IB Provisions and Crops</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IB_Provisions_And_Crops = 90,
 
 	/// <summary>
@@ -586,6 +637,7 @@ public enum OrderTypes
 	/// Trading Post
 	/// </summary>
 	/// <name>IB Trading Post</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IB_Trading_Post = 94,
 
 	/// <summary>
@@ -601,39 +653,52 @@ public enum OrderTypes
 	II_Advanced_Trading = 96,
 
 	/// <summary>
+	/// Aid for the Bat Clan
+	/// </summary>
+	/// <name>II Aid for the Bat Faction</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	II_Aid_For_The_Bat_Faction = 394,
+
+	/// <summary>
 	/// Aid For the Beaver Clan
 	/// </summary>
 	/// <name>II Aid for the Beaver Faction</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	II_Aid_For_The_Beaver_Faction = 97,
 
 	/// <summary>
 	/// Aid for the Fox Pack
 	/// </summary>
 	/// <name>II Aid for the Fox Faction</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	II_Aid_For_The_Fox_Faction = 98,
 
 	/// <summary>
 	/// Aid for the Frog Clan
 	/// </summary>
 	/// <name>II Aid for the Frog Faction</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	II_Aid_For_The_Frog_Faction = 99,
 
 	/// <summary>
 	/// Aiding the Flock
 	/// </summary>
 	/// <name>II Aid for the Harpy Faction</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	II_Aid_For_The_Harpy_Faction = 100,
 
 	/// <summary>
 	/// Aid for the Human Clan
 	/// </summary>
 	/// <name>II Aid for the Human Faction</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	II_Aid_For_The_Human_Faction = 101,
 
 	/// <summary>
 	/// Aid for the Lizard Clan
 	/// </summary>
 	/// <name>II Aid for the Lizard Faction</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	II_Aid_For_The_Lizard_Faction = 102,
 
 	/// <summary>
@@ -643,21 +708,38 @@ public enum OrderTypes
 	II_Artisan = 103,
 
 	/// <summary>
+	/// Bat Influx
+	/// </summary>
+	/// <name>II Bat Influx</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	II_Bat_Influx = 395,
+
+	/// <summary>
+	/// Bat Population
+	/// </summary>
+	/// <name>II Bat Population</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	II_Bat_Population = 396,
+
+	/// <summary>
 	/// Beaver Influx
 	/// </summary>
 	/// <name>II Beaver Influx</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	II_Beaver_Influx = 104,
 
 	/// <summary>
 	/// Beaver Population
 	/// </summary>
 	/// <name>II Beaver Population</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	II_Beaver_Population = 105,
 
 	/// <summary>
 	/// Fighting the Storm
 	/// </summary>
 	/// <name>II Blight Post</name>
+	/// <usabilityTags>[Tag] Blight</usabilityTags>
 	II_Blight_Post = 106,
 
 	/// <summary>
@@ -682,12 +764,14 @@ public enum OrderTypes
 	/// Advanced Farming
 	/// </summary>
 	/// <name>II Crops</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	II_Crops = 110,
 
 	/// <summary>
 	/// Firestarter
 	/// </summary>
 	/// <name>II Cysts</name>
+	/// <usabilityTags>[Tag] Blight</usabilityTags>
 	II_Cysts = 111,
 
 	/// <summary>
@@ -700,6 +784,7 @@ public enum OrderTypes
 	/// Rain Engines
 	/// </summary>
 	/// <name>II Engines</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	II_Engines = 113,
 
 	/// <summary>
@@ -724,24 +809,28 @@ public enum OrderTypes
 	/// Fox Influx
 	/// </summary>
 	/// <name>II Fox Influx</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	II_Fox_Influx = 117,
 
 	/// <summary>
 	/// Fox Population
 	/// </summary>
 	/// <name>II Fox Population</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	II_Fox_Population = 118,
 
 	/// <summary>
 	/// Frog Influx
 	/// </summary>
 	/// <name>II Frog Influx</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	II_Frog_Influx = 119,
 
 	/// <summary>
 	/// Frog Population
 	/// </summary>
 	/// <name>II Frog Population</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	II_Frog_Population = 120,
 
 	/// <summary>
@@ -766,48 +855,56 @@ public enum OrderTypes
 	/// Happy Beavers
 	/// </summary>
 	/// <name>II Happy Beavers</name>
+	/// <usabilityTags>[Tag] Beaver, [Tag] Trade</usabilityTags>
 	II_Happy_Beavers = 124,
 
 	/// <summary>
 	/// Happy Foxes
 	/// </summary>
 	/// <name>II Happy Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	II_Happy_Foxes = 125,
 
 	/// <summary>
 	/// Happy Frogs
 	/// </summary>
 	/// <name>II Happy Frogs</name>
+	/// <usabilityTags>[Tag] Frog, [Tag] Rainpunk</usabilityTags>
 	II_Happy_Frogs = 126,
 
 	/// <summary>
 	/// Happy Harpies
 	/// </summary>
 	/// <name>II Happy Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	II_Happy_Harpies = 127,
 
 	/// <summary>
 	/// Happy Humans
 	/// </summary>
 	/// <name>II Happy Humans</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	II_Happy_Humans = 128,
 
 	/// <summary>
 	/// Happy Lizards
 	/// </summary>
 	/// <name>II Happy Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	II_Happy_Lizards = 129,
 
 	/// <summary>
 	/// Harpy Influx
 	/// </summary>
 	/// <name>II Harpy Influx</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	II_Harpy_Influx = 130,
 
 	/// <summary>
 	/// Harpy Population
 	/// </summary>
 	/// <name>II Harpy Population</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	II_Harpy_Population = 131,
 
 	/// <summary>
@@ -820,12 +917,14 @@ public enum OrderTypes
 	/// Human Influx
 	/// </summary>
 	/// <name>II Human Influx</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	II_Human_Influx = 133,
 
 	/// <summary>
 	/// Human Population
 	/// </summary>
 	/// <name>II Human Population</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	II_Human_Population = 134,
 
 	/// <summary>
@@ -841,15 +940,24 @@ public enum OrderTypes
 	II_Jerky_For_Time = 136,
 
 	/// <summary>
+	/// Judgment
+	/// </summary>
+	/// <name>II Judgement</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	II_Judgement = 397,
+
+	/// <summary>
 	/// Lizard Influx
 	/// </summary>
 	/// <name>II Lizard Influx</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	II_Lizard_Influx = 137,
 
 	/// <summary>
 	/// Lizard Population
 	/// </summary>
 	/// <name>II Lizard Population</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	II_Lizard_Population = 138,
 
 	/// <summary>
@@ -868,6 +976,7 @@ public enum OrderTypes
 	/// Stacking Amber
 	/// </summary>
 	/// <name>II Multiply Routes</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	II_Multiply_Routes = 141,
 
 	/// <summary>
@@ -898,18 +1007,21 @@ public enum OrderTypes
 	/// Water Delivery
 	/// </summary>
 	/// <name>II Rainwater</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	II_Rainwater = 146,
 
 	/// <summary>
 	/// Profit Margin
 	/// </summary>
 	/// <name>II Route Value</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	II_Route_Value = 147,
 
 	/// <summary>
 	/// Seller
 	/// </summary>
 	/// <name>II Routes</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	II_Routes = 148,
 
 	/// <summary>
@@ -922,6 +1034,7 @@ public enum OrderTypes
 	/// Making Connections
 	/// </summary>
 	/// <name>II Standing</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	II_Standing = 150,
 
 	/// <summary>
@@ -952,24 +1065,28 @@ public enum OrderTypes
 	/// Forager's Trial
 	/// </summary>
 	/// <name>II TO Forager Trial - CRW AT</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	II_TO_Forager_Trial_CRW_AT = 155,
 
 	/// <summary>
 	/// Forager's Trial
 	/// </summary>
 	/// <name>II TO Forager Trial - RW</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	II_TO_Forager_Trial_RW = 156,
 
 	/// <summary>
 	/// Forager's Trial
 	/// </summary>
 	/// <name>II TO Forager Trial - SO</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	II_TO_Forager_Trial_SO = 157,
 
 	/// <summary>
 	/// Stonecutter's Trial
 	/// </summary>
 	/// <name>II TO Gathering Stone</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	II_TO_Gathering_Stone = 158,
 
 	/// <summary>
@@ -997,39 +1114,52 @@ public enum OrderTypes
 	II_TO_Herbalist_Trial_SO = 162,
 
 	/// <summary>
+	/// Bat Colony
+	/// </summary>
+	/// <name>II TO Homes for Bats</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	II_TO_Homes_For_Bats = 398,
+
+	/// <summary>
 	/// Beaver Colony
 	/// </summary>
 	/// <name>II TO Homes for Beavers</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	II_TO_Homes_For_Beavers = 163,
 
 	/// <summary>
 	/// Homes For Foxes
 	/// </summary>
 	/// <name>II TO Homes for Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	II_TO_Homes_For_Foxes = 164,
 
 	/// <summary>
 	/// Frog Colony
 	/// </summary>
 	/// <name>II TO Homes for Frogs</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	II_TO_Homes_For_Frogs = 165,
 
 	/// <summary>
 	/// Harpy Colony
 	/// </summary>
 	/// <name>II TO Homes for Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	II_TO_Homes_For_Harpies = 166,
 
 	/// <summary>
 	/// Human Colony
 	/// </summary>
 	/// <name>II TO Homes for Humans</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	II_TO_Homes_For_Humans = 167,
 
 	/// <summary>
 	/// Lizard Colony
 	/// </summary>
 	/// <name>II TO Homes for Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	II_TO_Homes_For_Lizards = 168,
 
 	/// <summary>
@@ -1066,12 +1196,14 @@ public enum OrderTypes
 	/// Trade Connections
 	/// </summary>
 	/// <name>II Trade Connections</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	II_Trade_Connections = 174,
 
 	/// <summary>
 	/// Rainpunk Engineer
 	/// </summary>
 	/// <name>II Use Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	II_Use_Water = 175,
 
 	/// <summary>
@@ -1105,9 +1237,17 @@ public enum OrderTypes
 	III_Archaeology = 180,
 
 	/// <summary>
+	/// Bat Relatives
+	/// </summary>
+	/// <name>III Bat Relatives</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	III_Bat_Relatives = 399,
+
+	/// <summary>
 	/// Beaver Relatives
 	/// </summary>
 	/// <name>III Beaver Relatives</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	III_Beaver_Relatives = 181,
 
 	/// <summary>
@@ -1132,42 +1272,49 @@ public enum OrderTypes
 	/// Profitable Trade
 	/// </summary>
 	/// <name>III Costly Route</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Costly_Route = 185,
 
 	/// <summary>
 	/// Pyromania
 	/// </summary>
 	/// <name>III Cysts</name>
+	/// <usabilityTags>[Tag] Blight</usabilityTags>
 	III_Cysts = 186,
 
 	/// <summary>
 	/// Agriculture
 	/// </summary>
 	/// <name>III Farmfields</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	III_Farmfields = 187,
 
 	/// <summary>
 	/// The Forum
 	/// </summary>
 	/// <name>III Forum</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	III_Forum = 188,
 
 	/// <summary>
 	/// Fox Relatives
 	/// </summary>
 	/// <name>III Fox Relatives</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	III_Fox_Relatives = 189,
 
 	/// <summary>
 	/// Frog Relatives
 	/// </summary>
 	/// <name>III Frog Relatives</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	III_Frog_Relatives = 190,
 
 	/// <summary>
 	/// Upgraded Living
 	/// </summary>
 	/// <name>III Frog Upgrades</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	III_Frog_Upgrades = 191,
 
 	/// <summary>
@@ -1180,18 +1327,21 @@ public enum OrderTypes
 	/// Hasty Explorer
 	/// </summary>
 	/// <name>III Glades in Time</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_Glades_In_Time = 193,
 
 	/// <summary>
 	/// Harpy Relatives
 	/// </summary>
 	/// <name>III Harpy Relatives</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	III_Harpy_Relatives = 194,
 
 	/// <summary>
 	/// Cleanliness
 	/// </summary>
 	/// <name>III Higene</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	III_Higene = 195,
 
 	/// <summary>
@@ -1204,6 +1354,7 @@ public enum OrderTypes
 	/// Human Relatives
 	/// </summary>
 	/// <name>III Human Relatives</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	III_Human_Relatives = 197,
 
 	/// <summary>
@@ -1216,6 +1367,7 @@ public enum OrderTypes
 	/// Lizard Relatives
 	/// </summary>
 	/// <name>III Lizard Relatives</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	III_Lizard_Relatives = 199,
 
 	/// <summary>
@@ -1228,6 +1380,7 @@ public enum OrderTypes
 	/// Luxury
 	/// </summary>
 	/// <name>III Luxury</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	III_Luxury = 201,
 
 	/// <summary>
@@ -1240,6 +1393,7 @@ public enum OrderTypes
 	/// Water Industry
 	/// </summary>
 	/// <name>III Pump Upgrade</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_Pump_Upgrade = 203,
 
 	/// <summary>
@@ -1255,57 +1409,73 @@ public enum OrderTypes
 	III_Religion = 205,
 
 	/// <summary>
+	/// Bat Villagers
+	/// </summary>
+	/// <name>III Resolve Bats</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	III_Resolve_Bats = 400,
+
+	/// <summary>
 	/// Beaver Resolve
 	/// </summary>
 	/// <name>III Resolve Beavers</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	III_Resolve_Beavers = 206,
 
 	/// <summary>
 	/// Fox Villagers
 	/// </summary>
 	/// <name>III Resolve Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	III_Resolve_Foxes = 207,
 
 	/// <summary>
 	/// Frog Resolve
 	/// </summary>
 	/// <name>III Resolve Frogs</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	III_Resolve_Frogs = 208,
 
 	/// <summary>
 	/// Harpy Villagers
 	/// </summary>
 	/// <name>III Resolve Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	III_Resolve_Harpies = 209,
 
 	/// <summary>
 	/// Human Villagers
 	/// </summary>
 	/// <name>III Resolve Humans</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	III_Resolve_Humans = 210,
 
 	/// <summary>
 	/// Lizard Villagers
 	/// </summary>
 	/// <name>III Resolve Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	III_Resolve_Lizards = 211,
 
 	/// <summary>
 	/// Fair Exchange
 	/// </summary>
 	/// <name>III Route Value</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Route_Value = 212,
 
 	/// <summary>
 	/// Export
 	/// </summary>
 	/// <name>III Routes</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Routes = 213,
 
 	/// <summary>
 	/// Income Tax
 	/// </summary>
 	/// <name>III Routes And Amber</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Routes_And_Amber = 214,
 
 	/// <summary>
@@ -1339,21 +1509,31 @@ public enum OrderTypes
 	III_Send_To_Citadel = 219,
 
 	/// <summary>
+	/// Training
+	/// </summary>
+	/// <name>III Service Bats</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	III_Service_Bats = 401,
+
+	/// <summary>
 	/// Healing
 	/// </summary>
 	/// <name>III Service Harpy</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	III_Service_Harpy = 220,
 
 	/// <summary>
 	/// Religious Rites
 	/// </summary>
 	/// <name>III Service Human</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	III_Service_Human = 221,
 
 	/// <summary>
 	/// Arena
 	/// </summary>
 	/// <name>III Service Lizard</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	III_Service_Lizard = 222,
 
 	/// <summary>
@@ -1378,6 +1558,7 @@ public enum OrderTypes
 	/// Good Friends
 	/// </summary>
 	/// <name>III Standing</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Standing = 226,
 
 	/// <summary>
@@ -1414,18 +1595,21 @@ public enum OrderTypes
 	/// Copper Fever
 	/// </summary>
 	/// <name>III TO Digging Ore</name>
+	/// <usabilityTags>Metal Tag</usabilityTags>
 	III_TO_Digging_Ore = 232,
 
 	/// <summary>
 	/// Salt Fever
 	/// </summary>
 	/// <name>III TO Digging Salt</name>
+	/// <usabilityTags>Metal Tag</usabilityTags>
 	III_TO_Digging_Salt = 233,
 
 	/// <summary>
 	/// Let It Rain
 	/// </summary>
 	/// <name>III TO Engines and Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_TO_Engines_And_Water = 234,
 
 	/// <summary>
@@ -1450,6 +1634,7 @@ public enum OrderTypes
 	/// Wealthy Trader
 	/// </summary>
 	/// <name>III TO Rich Trader</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_TO_Rich_Trader = 238,
 
 	/// <summary>
@@ -1468,18 +1653,21 @@ public enum OrderTypes
 	/// Thirsty Trader
 	/// </summary>
 	/// <name>III TO Thirsty Trader</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_TO_Thirsty_Trader = 241,
 
 	/// <summary>
 	/// The Source
 	/// </summary>
 	/// <name>III TO Water Used</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_TO_Water_Used = 242,
 
 	/// <summary>
 	/// Trade and Industry
 	/// </summary>
 	/// <name>III Trade and Spark</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Trade_And_Spark = 243,
 
 	/// <summary>
@@ -1492,6 +1680,7 @@ public enum OrderTypes
 	/// Booming Economy
 	/// </summary>
 	/// <name>III Trader Value Sold</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	III_Trader_Value_Sold = 245,
 
 	/// <summary>
@@ -1510,18 +1699,21 @@ public enum OrderTypes
 	/// Power of the Storm
 	/// </summary>
 	/// <name>III Use Blue Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_Use_Blue_Water = 248,
 
 	/// <summary>
 	/// Power of the Drizzle
 	/// </summary>
 	/// <name>III Use Green Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_Use_Green_Water = 249,
 
 	/// <summary>
 	/// Power of the Clearance
 	/// </summary>
 	/// <name>III Use Yellow Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	III_Use_Yellow_Water = 250,
 
 	/// <summary>
@@ -1540,6 +1732,7 @@ public enum OrderTypes
 	/// Liquid Luck
 	/// </summary>
 	/// <name>III Wine and Guild House</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	III_Wine_And_Guild_House = 253,
 
 	/// <summary>
@@ -1552,6 +1745,7 @@ public enum OrderTypes
 	/// Pyromancer
 	/// </summary>
 	/// <name>IV Cysts</name>
+	/// <usabilityTags>[Tag] Blight</usabilityTags>
 	IV_Cysts = 255,
 
 	/// <summary>
@@ -1570,12 +1764,14 @@ public enum OrderTypes
 	/// Peddler
 	/// </summary>
 	/// <name>IV Peddler</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IV_Peddler = 258,
 
 	/// <summary>
 	/// Infused Rainwater
 	/// </summary>
 	/// <name>IV Rainwater</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	IV_Rainwater = 259,
 
 	/// <summary>
@@ -1588,12 +1784,14 @@ public enum OrderTypes
 	/// Export Hub
 	/// </summary>
 	/// <name>IV Route Value</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IV_Route_Value = 261,
 
 	/// <summary>
 	/// Trade Baron
 	/// </summary>
 	/// <name>IV Routes</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IV_Routes = 262,
 
 	/// <summary>
@@ -1612,12 +1810,14 @@ public enum OrderTypes
 	/// Greedy Merchant
 	/// </summary>
 	/// <name>IV TO Greedy Merchant</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IV_TO_Greedy_Merchant = 265,
 
 	/// <summary>
 	/// Trading Master
 	/// </summary>
 	/// <name>IV TO Trading Master</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	IV_TO_Trading_Master = 266,
 
 	/// <summary>
@@ -1642,6 +1842,7 @@ public enum OrderTypes
 	/// Focus on Farming
 	/// </summary>
 	/// <name>IVA Farmfields</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	IVA_Farmfields = 270,
 
 	/// <summary>
@@ -1729,9 +1930,17 @@ public enum OrderTypes
 	IVA_Wood = 284,
 
 	/// <summary>
+	/// Bat Majority
+	/// </summary>
+	/// <name>IVB Bat Majority</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	IVB_Bat_Majority = 402,
+
+	/// <summary>
 	/// Beaver Majority
 	/// </summary>
 	/// <name>IVB Beaver Majority</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	IVB_Beaver_Majority = 285,
 
 	/// <summary>
@@ -1744,6 +1953,7 @@ public enum OrderTypes
 	/// Builder's Tools
 	/// </summary>
 	/// <name>IVB Builders Tools</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	IVB_Builders_Tools = 287,
 
 	/// <summary>
@@ -1756,24 +1966,28 @@ public enum OrderTypes
 	/// Fox Majority
 	/// </summary>
 	/// <name>IVB Fox Majority</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	IVB_Fox_Majority = 289,
 
 	/// <summary>
 	/// Frog Majority
 	/// </summary>
 	/// <name>IVB Frog Majority</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	IVB_Frog_Majority = 290,
 
 	/// <summary>
 	/// Harpy Majority
 	/// </summary>
 	/// <name>IVB Harpy Majority</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	IVB_Harpy_Majority = 291,
 
 	/// <summary>
 	/// Human Majority
 	/// </summary>
 	/// <name>IVB Human Majority</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	IVB_Human_Majority = 292,
 
 	/// <summary>
@@ -1786,6 +2000,7 @@ public enum OrderTypes
 	/// Lizard Majority
 	/// </summary>
 	/// <name>IVB Lizard Majority</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	IVB_Lizard_Majority = 294,
 
 	/// <summary>
@@ -1810,6 +2025,7 @@ public enum OrderTypes
 	/// Technological Progress
 	/// </summary>
 	/// <name>IVB TO Engines Amount</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	IVB_TO_Engines_Amount = 298,
 
 	/// <summary>
@@ -1877,23 +2093,33 @@ public enum OrderTypes
 	R_Ghost_Engines = 311,
 
 	/// <summary></summary>
+	/// <name>[R] Ghost Exile Villagers</name>
+	/// <usabilityTags>[Tag] Bat</usabilityTags>
+	R_Ghost_Exile_Villagers = 403,
+
+	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Beavers</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	R_Ghost_Forbid_Needs_Beavers = 312,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	R_Ghost_Forbid_Needs_Foxes = 313,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	R_Ghost_Forbid_Needs_Harpies = 314,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Humans</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	R_Ghost_Forbid_Needs_Humans = 315,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Forbid Needs Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	R_Ghost_Forbid_Needs_Lizards = 316,
 
 	/// <summary></summary>
@@ -1934,6 +2160,7 @@ public enum OrderTypes
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Luxury</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	R_Ghost_Luxury = 326,
 
 	/// <summary></summary>
@@ -1950,14 +2177,17 @@ public enum OrderTypes
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Resolve Foxes</name>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	R_Ghost_Resolve_Foxes = 330,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Resolve Harpies</name>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	R_Ghost_Resolve_Harpies = 331,
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Resolve Lizards</name>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	R_Ghost_Resolve_Lizards = 332,
 
 	/// <summary></summary>
@@ -1982,10 +2212,17 @@ public enum OrderTypes
 
 	/// <summary></summary>
 	/// <name>[R] Ghost Starve Beavers</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
 	R_Ghost_Starve_Beavers = 338,
 
 	/// <summary></summary>
+	/// <name>[R] Ghost Starve Frogs</name>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
+	R_Ghost_Starve_Frogs = 404,
+
+	/// <summary></summary>
 	/// <name>[R] Ghost Starve Humans</name>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	R_Ghost_Starve_Humans = 339,
 
 	/// <summary></summary>
@@ -2005,7 +2242,12 @@ public enum OrderTypes
 	R_Ghost_Upgrade_Houses = 343,
 
 	/// <summary></summary>
+	/// <name>[R] Ghost Upgrade Mine</name>
+	R_Ghost_Upgrade_Mine = 405,
+
+	/// <summary></summary>
 	/// <name>[R] Ghost Use Water</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	R_Ghost_Use_Water = 344,
 
 	/// <summary>
@@ -2296,7 +2538,7 @@ public enum OrderTypes
 	/// The total number of vanilla OrderTypes in the game.
 	/// </summary>
 	[Obsolete("Use OrderTypesExtensions.Count(). OrderTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 391
+	MAX = 406
 }
 
 /// <summary>
@@ -2507,6 +2749,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Herbalist, "I Herbalist" },                                                     // Herbalist
 		{ OrderTypes.I_Houses, "I Houses" },                                                           // No Place Like Home
 		{ OrderTypes.I_Houses_V2, "I Houses v2" },                                                     // Safe Place
+		{ OrderTypes.I_Houses_V3, "I Houses v3" },                                                     // Dwellings
 		{ OrderTypes.I_Hunters, "I Hunters" },                                                         // Hunters
 		{ OrderTypes.I_Jerky, "I Jerky" },                                                             // Meat Lover
 		{ OrderTypes.I_Metal_Veins, "I Metal Veins" },                                                 // Metal Veins
@@ -2527,6 +2770,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.I_Solve_Any_Relic, "I Solve Any Relic" },                                         // Problem Solver
 		{ OrderTypes.I_Solve_Dangerous_Relic, "I Solve Dangerous Relic" },                             // Tick Tock
 		{ OrderTypes.I_Storm_Water, "I Storm Water" },                                                 // Basic Ingredient
+		{ OrderTypes.I_TO_Bat_Resolve, "I TO Bat Resolve" },                                           // Determined Bats
 		{ OrderTypes.I_TO_Beaver_Resolve, "I TO Beaver Resolve" },                                     // Joyful Beavers
 		{ OrderTypes.I_TO_Dangerous_Relics, "I TO Dangerous Relics" },                                 // Zealous Scouts
 		{ OrderTypes.I_TO_Fox_Resolve, "I TO Fox Resolve" },                                           // Joyful Foxes
@@ -2566,6 +2810,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IB_Trading_Post, "IB Trading Post" },                                             // Trading Post
 		{ OrderTypes.IB_Wood, "IB Wood" },                                                             // Wood Delivery
 		{ OrderTypes.II_Advanced_Trading, "II Advanced Trading" },                                     // Advanced Trading
+		{ OrderTypes.II_Aid_For_The_Bat_Faction, "II Aid for the Bat Faction" },                       // Aid for the Bat Clan
 		{ OrderTypes.II_Aid_For_The_Beaver_Faction, "II Aid for the Beaver Faction" },                 // Aid For the Beaver Clan
 		{ OrderTypes.II_Aid_For_The_Fox_Faction, "II Aid for the Fox Faction" },                       // Aid for the Fox Pack
 		{ OrderTypes.II_Aid_For_The_Frog_Faction, "II Aid for the Frog Faction" },                     // Aid for the Frog Clan
@@ -2573,6 +2818,8 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Aid_For_The_Human_Faction, "II Aid for the Human Faction" },                   // Aid for the Human Clan
 		{ OrderTypes.II_Aid_For_The_Lizard_Faction, "II Aid for the Lizard Faction" },                 // Aid for the Lizard Clan
 		{ OrderTypes.II_Artisan, "II Artisan" },                                                       // Pottery and Wine
+		{ OrderTypes.II_Bat_Influx, "II Bat Influx" },                                                 // Bat Influx
+		{ OrderTypes.II_Bat_Population, "II Bat Population" },                                         // Bat Population
 		{ OrderTypes.II_Beaver_Influx, "II Beaver Influx" },                                           // Beaver Influx
 		{ OrderTypes.II_Beaver_Population, "II Beaver Population" },                                   // Beaver Population
 		{ OrderTypes.II_Blight_Post, "II Blight Post" },                                               // Fighting the Storm
@@ -2606,6 +2853,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_Human_Population, "II Human Population" },                                     // Human Population
 		{ OrderTypes.II_Jerky, "II Jerky" },                                                           // Meat Diet
 		{ OrderTypes.II_Jerky_For_Time, "II Jerky For Time" },                                         // Meat Treats
+		{ OrderTypes.II_Judgement, "II Judgement" },                                                   // Judgment
 		{ OrderTypes.II_Lizard_Influx, "II Lizard Influx" },                                           // Lizard Influx
 		{ OrderTypes.II_Lizard_Population, "II Lizard Population" },                                   // Lizard Population
 		{ OrderTypes.II_Luxury_Packs, "II Luxury Packs" },                                             // Luxurious Delivery
@@ -2632,6 +2880,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.II_TO_Herbalist_Trial_CRW, "II TO Herbalist Trial - CRW" },                       // Herbalist's Trial
 		{ OrderTypes.II_TO_Herbalist_Trial_RW_SF, "II TO Herbalist Trial - RW SF" },                   // Herbalist's Trial
 		{ OrderTypes.II_TO_Herbalist_Trial_SO, "II TO Herbalist Trial - SO" },                         // Herbalist's Trial
+		{ OrderTypes.II_TO_Homes_For_Bats, "II TO Homes for Bats" },                                   // Bat Colony
 		{ OrderTypes.II_TO_Homes_For_Beavers, "II TO Homes for Beavers" },                             // Beaver Colony
 		{ OrderTypes.II_TO_Homes_For_Foxes, "II TO Homes for Foxes" },                                 // Homes For Foxes
 		{ OrderTypes.II_TO_Homes_For_Frogs, "II TO Homes for Frogs" },                                 // Frog Colony
@@ -2650,6 +2899,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Amber_And_Market, "III Amber and Market" },                                   // Charity Fair
 		{ OrderTypes.III_Ancient_Tablets, "III Ancient Tablets" },                                     // Lost Knowledge
 		{ OrderTypes.III_Archaeology, "III Archaeology" },                                             // Archaeology
+		{ OrderTypes.III_Bat_Relatives, "III Bat Relatives" },                                         // Bat Relatives
 		{ OrderTypes.III_Beaver_Relatives, "III Beaver Relatives" },                                   // Beaver Relatives
 		{ OrderTypes.III_Building_Packs, "III Building Packs" },                                       // Building the Citadel
 		{ OrderTypes.III_Coats_NeedForTime, "III Coats NeedForTime" },                                 // New Clothes
@@ -2675,6 +2925,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Pump_Upgrade, "III Pump Upgrade" },                                           // Water Industry
 		{ OrderTypes.III_Rain_Collector, "III Rain Collector" },                                       // Advanced Logistics
 		{ OrderTypes.III_Religion, "III Religion" },                                                   // Religion
+		{ OrderTypes.III_Resolve_Bats, "III Resolve Bats" },                                           // Bat Villagers
 		{ OrderTypes.III_Resolve_Beavers, "III Resolve Beavers" },                                     // Beaver Resolve
 		{ OrderTypes.III_Resolve_Foxes, "III Resolve Foxes" },                                         // Fox Villagers
 		{ OrderTypes.III_Resolve_Frogs, "III Resolve Frogs" },                                         // Frog Resolve
@@ -2689,6 +2940,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.III_Salt, "III Salt" },                                                           // Salty Delivery
 		{ OrderTypes.III_Scrolls_And_Temple, "III Scrolls and Temple" },                               // Brotherhood
 		{ OrderTypes.III_Send_To_Citadel, "III Send to Citadel" },                                     // Gifts for the Queen
+		{ OrderTypes.III_Service_Bats, "III Service Bats" },                                           // Training
 		{ OrderTypes.III_Service_Harpy, "III Service Harpy" },                                         // Healing
 		{ OrderTypes.III_Service_Human, "III Service Human" },                                         // Religious Rites
 		{ OrderTypes.III_Service_Lizard, "III Service Lizard" },                                       // Arena
@@ -2754,6 +3006,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.IVA_TO_Wood_And_Packs, "IVA TO Wood and Packs" },                                 // Ravenous Axes
 		{ OrderTypes.IVA_Trade_Goods, "IVA Trade Goods" },                                             // Goods for the Citadel
 		{ OrderTypes.IVA_Wood, "IVA Wood" },                                                           // Wood and Provisions
+		{ OrderTypes.IVB_Bat_Majority, "IVB Bat Majority" },                                           // Bat Majority
 		{ OrderTypes.IVB_Beaver_Majority, "IVB Beaver Majority" },                                     // Beaver Majority
 		{ OrderTypes.IVB_Brawling, "IVB Brawling" },                                                   // Brawling
 		{ OrderTypes.IVB_Builders_Tools, "IVB Builders Tools" },                                       // Builder's Tools
@@ -2781,6 +3034,7 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Discover_DangGlades, "[R] Ghost Discover DangGlades" }, 
 		{ OrderTypes.R_Ghost_Discover_DangGlades_In_Time, "[R] Ghost Discover DangGlades in Time" }, 
 		{ OrderTypes.R_Ghost_Engines, "[R] Ghost Engines" }, 
+		{ OrderTypes.R_Ghost_Exile_Villagers, "[R] Ghost Exile Villagers" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Beavers, "[R] Ghost Forbid Needs Beavers" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Foxes, "[R] Ghost Forbid Needs Foxes" }, 
 		{ OrderTypes.R_Ghost_Forbid_Needs_Harpies, "[R] Ghost Forbid Needs Harpies" }, 
@@ -2808,11 +3062,13 @@ public static class OrderTypesExtensions
 		{ OrderTypes.R_Ghost_Service_Needs, "[R] Ghost Service Needs" }, 
 		{ OrderTypes.R_Ghost_Solve_DangRelics, "[R] Ghost Solve DangRelics" }, 
 		{ OrderTypes.R_Ghost_Starve_Beavers, "[R] Ghost Starve Beavers" }, 
+		{ OrderTypes.R_Ghost_Starve_Frogs, "[R] Ghost Starve Frogs" }, 
 		{ OrderTypes.R_Ghost_Starve_Humans, "[R] Ghost Starve Humans" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes, "[R] Ghost Trade Routes" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes_With_Value, "[R] Ghost Trade Routes with Value" }, 
 		{ OrderTypes.R_Ghost_Trade_Routes_With_Value_Many, "[R] Ghost Trade Routes with Value Many" }, 
 		{ OrderTypes.R_Ghost_Upgrade_Houses, "[R] Ghost Upgrade Houses" }, 
+		{ OrderTypes.R_Ghost_Upgrade_Mine, "[R] Ghost Upgrade Mine" }, 
 		{ OrderTypes.R_Ghost_Use_Water, "[R] Ghost Use Water" }, 
 		{ OrderTypes.Rep_From_Events, "Rep from Events" },                                             // Blood of the Stag
 		{ OrderTypes.Rep_From_Events_HIGH, "Rep from Events HIGH" },                                   // Blood of the Stag

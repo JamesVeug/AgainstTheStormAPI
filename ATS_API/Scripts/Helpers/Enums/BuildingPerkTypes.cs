@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum BuildingPerkTypes
 {
@@ -61,6 +61,16 @@ public enum BuildingPerkTypes
 	Arch_Inst_Workers_Carry_More = 6,
 
 	/// <summary>
+	/// Catalyst - Rain Engine production bonuses are twice as strong ({0} production speed, {1} double yield chance).
+	/// </summary>
+	/// <name>[Biome] Fuel Rod</name>
+	Biome_Fuel_Rod = 55,
+
+	/// <summary></summary>
+	/// <name>[Biome] Fuel Rod Blight Rate</name>
+	Biome_Fuel_Rod_Blight_Rate = 56,
+
+	/// <summary>
 	/// HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
 	/// </summary>
 	/// <name>Hauler Cart</name>
@@ -90,6 +100,12 @@ public enum BuildingPerkTypes
 	/// <name>Highlight Archeology 3</name>
 	Highlight_Archeology_3 = 11,
 
+	/// <summary>
+	/// Rainpunk Shredder - A Rainpunk Shredder will permanently occupy one workplace in every Woodcutters' Camp in the settlement. This large automaton can fell multiple trees without returning to camp. It doesn't eat, doesn't need to rest, and can't produce double yields.
+	/// </summary>
+	/// <name>Large Woodcutter Automaton</name>
+	Large_Woodcutter_Automaton = 57,
+
 	/// <summary></summary>
 	/// <name>[PerkCrafter] Fewer Housing Spots - child</name>
 	PerkCrafter_Fewer_Housing_Spots_Child = 12,
@@ -101,10 +117,34 @@ public enum BuildingPerkTypes
 	R_Extra_Production_Chance = 13,
 
 	/// <summary>
+	/// Reliability - Increases the chance for extra production yields by {0}.
+	/// </summary>
+	/// <name>[R] Extra Production Chance - Cathode</name>
+	R_Extra_Production_Chance_Cathode = 58,
+
+	/// <summary>
+	/// Reliability - Increases the chance for extra production yields by {0}.
+	/// </summary>
+	/// <name>[R] Extra Production Chance - Rods</name>
+	R_Extra_Production_Chance_Rods = 59,
+
+	/// <summary>
 	/// Efficiency - Increases production speed by {0}.
 	/// </summary>
 	/// <name>[R] Production Rate</name>
 	R_Production_Rate = 14,
+
+	/// <summary>
+	/// Efficiency - Increases production speed by {0}.
+	/// </summary>
+	/// <name>[R] Production Rate Core - Cathode</name>
+	R_Production_Rate_Core_Cathode = 60,
+
+	/// <summary>
+	/// Efficiency - Increases production speed by {0}.
+	/// </summary>
+	/// <name>[R] Production Rate Core - Rods</name>
+	R_Production_Rate_Core_Rods = 61,
 
 	/// <summary>
 	/// Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
@@ -112,11 +152,41 @@ public enum BuildingPerkTypes
 	/// <name>[R] Rainpunk Comfortable</name>
 	R_Rainpunk_Comfortable = 15,
 
+	/// <summary></summary>
+	/// <name>Replace Rainpunk Extra Chance - Cathode</name>
+	Replace_Rainpunk_Extra_Chance_Cathode = 62,
+
+	/// <summary></summary>
+	/// <name>Replace Rainpunk Extra Chance - Rods</name>
+	Replace_Rainpunk_Extra_Chance_Rods = 63,
+
+	/// <summary></summary>
+	/// <name>Replace Rainpunk Rate 1 - Cathode</name>
+	Replace_Rainpunk_Rate_1_Cathode = 64,
+
+	/// <summary></summary>
+	/// <name>Replace Rainpunk Rate 1 - Rods</name>
+	Replace_Rainpunk_Rate_1_Rods = 65,
+
+	/// <summary></summary>
+	/// <name>Replace Rainpunk Rate 2 - Cathode</name>
+	Replace_Rainpunk_Rate_2_Cathode = 66,
+
+	/// <summary></summary>
+	/// <name>Replace Rainpunk Rate 2 - Rods</name>
+	Replace_Rainpunk_Rate_2_Rods = 67,
+
 	/// <summary>
 	/// Scouts by Nature - Each Fox scout assigned to a Glade Event reduces its working time by {0}.
 	/// </summary>
 	/// <name>[Spec] Relics Working Time</name>
 	Spec_Relics_Working_Time = 16,
+
+	/// <summary>
+	/// Repair Station - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+	/// </summary>
+	/// <name>[U] Bat Houses Unique Bonus</name>
+	U_Bat_Houses_Unique_Bonus = 68,
 
 	/// <summary>
 	/// Writing Desk - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
@@ -305,6 +375,12 @@ public enum BuildingPerkTypes
 	U_Storage_Automaton = 47,
 
 	/// <summary>
+	/// HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
+	/// </summary>
+	/// <name>[U] Woodcutter Hauling Cart</name>
+	U_Woodcutter_Hauling_Cart = 69,
+
+	/// <summary>
 	/// Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce "blight fuel" Purging Fire.
 	/// </summary>
 	/// <name>[U][BP] Blight Fighter Automaton</name>
@@ -346,13 +422,37 @@ public enum BuildingPerkTypes
 	/// <name>[U][BP] Global - Cyst Generation Rate</name>
 	UBP_Global_Cyst_Generation_Rate = 54,
 
+	/// <summary>
+	/// Clear-cutting - No tree or stump goes to waste. Woodcutters in this camp have a {0} higher chance of producing double yields.
+	/// </summary>
+	/// <name>[U][W] Extra Production Chance</name>
+	UW_Extra_Production_Chance = 70,
+
+	/// <summary>
+	/// Pack Frame - A special wooden frame that makes transporting resources a lot easier. Woodcutters working in a camp with this upgrade can carry {0} more items of the same type.
+	/// </summary>
+	/// <name>[U][W] Woodcutter Capacity</name>
+	UW_Woodcutter_Capacity = 71,
+
+	/// <summary>
+	/// Logging Boots
+	/// </summary>
+	/// <name>[U][W] Woodcutter Speed</name>
+	UW_Woodcutter_Speed = 72,
+
+	/// <summary>
+	/// Lumber Cart - An automated hauling cart will help woodcutters transport resources from the Woodcutters' Camp to the Warehouse.
+	/// </summary>
+	/// <name>[U][W] Woodcutting Storage Automaton</name>
+	UW_Woodcutting_Storage_Automaton = 73,
+
 
 
 	/// <summary>
 	/// The total number of vanilla BuildingPerkTypes in the game.
 	/// </summary>
 	[Obsolete("Use BuildingPerkTypesExtensions.Count(). BuildingPerkTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 54
+	MAX = 74
 }
 
 /// <summary>
@@ -532,16 +632,30 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.Arch_Inst_Saving, "Arch Inst - Saving" },                                                         // Escaping the Shadows - Your archaeologists have learned much from the ancients, but this knowledge has its price. Any villager loss will be prevented at the expense of: {1} {0}.
 		{ BuildingPerkTypes.Arch_Inst_Tools_For_Hostility, "Arch Inst - Tools for Hostility" },                               // Forbidden Tools - All metal is permeated with malevolent magic from the forest. Every {1} Hostility levels grant {0}.
 		{ BuildingPerkTypes.Arch_Inst_Workers_Carry_More, "Arch Inst - Workers carry more" },                                 // Ancient Strength - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
+		{ BuildingPerkTypes.Biome_Fuel_Rod, "[Biome] Fuel Rod" },                                                             // Catalyst - Rain Engine production bonuses are twice as strong ({0} production speed, {1} double yield chance).
+		{ BuildingPerkTypes.Biome_Fuel_Rod_Blight_Rate, "[Biome] Fuel Rod Blight Rate" }, 
 		{ BuildingPerkTypes.Hauler_Cart, "Hauler Cart" },                                                                     // HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
 		{ BuildingPerkTypes.Hauler_Cart_2, "Hauler Cart 2" },                                                                 // HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
 		{ BuildingPerkTypes.Highlight_Archeology_1, "Highlight Archeology 1" },                                               // Short-range Scanner - Reveals the location of the closest archaeological discovery.
 		{ BuildingPerkTypes.Highlight_Archeology_2, "Highlight Archeology 2" },                                               // Mid-range Scanner - Reveals the location of the second closest archaeological discovery.
 		{ BuildingPerkTypes.Highlight_Archeology_3, "Highlight Archeology 3" },                                               // Long-range Scanner - Reveals the location of the farthest archaeological discovery.
+		{ BuildingPerkTypes.Large_Woodcutter_Automaton, "Large Woodcutter Automaton" },                                       // Rainpunk Shredder - A Rainpunk Shredder will permanently occupy one workplace in every Woodcutters' Camp in the settlement. This large automaton can fell multiple trees without returning to camp. It doesn't eat, doesn't need to rest, and can't produce double yields.
 		{ BuildingPerkTypes.PerkCrafter_Fewer_Housing_Spots_Child, "[PerkCrafter] Fewer Housing Spots - child" }, 
 		{ BuildingPerkTypes.R_Extra_Production_Chance, "[R] Extra Production Chance" },                                       // Reliability - Increases the chance for extra production yields by {0}.
+		{ BuildingPerkTypes.R_Extra_Production_Chance_Cathode, "[R] Extra Production Chance - Cathode" },                     // Reliability - Increases the chance for extra production yields by {0}.
+		{ BuildingPerkTypes.R_Extra_Production_Chance_Rods, "[R] Extra Production Chance - Rods" },                           // Reliability - Increases the chance for extra production yields by {0}.
 		{ BuildingPerkTypes.R_Production_Rate, "[R] Production Rate" },                                                       // Efficiency - Increases production speed by {0}.
+		{ BuildingPerkTypes.R_Production_Rate_Core_Cathode, "[R] Production Rate Core - Cathode" },                           // Efficiency - Increases production speed by {0}.
+		{ BuildingPerkTypes.R_Production_Rate_Core_Rods, "[R] Production Rate Core - Rods" },                                 // Efficiency - Increases production speed by {0}.
 		{ BuildingPerkTypes.R_Rainpunk_Comfortable, "[R] Rainpunk Comfortable" },                                             // Low Strain - Work is much easier with Rain Engines on. Workers gain +5 to Resolve.
+		{ BuildingPerkTypes.Replace_Rainpunk_Extra_Chance_Cathode, "Replace Rainpunk Extra Chance - Cathode" }, 
+		{ BuildingPerkTypes.Replace_Rainpunk_Extra_Chance_Rods, "Replace Rainpunk Extra Chance - Rods" }, 
+		{ BuildingPerkTypes.Replace_Rainpunk_Rate_1_Cathode, "Replace Rainpunk Rate 1 - Cathode" }, 
+		{ BuildingPerkTypes.Replace_Rainpunk_Rate_1_Rods, "Replace Rainpunk Rate 1 - Rods" }, 
+		{ BuildingPerkTypes.Replace_Rainpunk_Rate_2_Cathode, "Replace Rainpunk Rate 2 - Cathode" }, 
+		{ BuildingPerkTypes.Replace_Rainpunk_Rate_2_Rods, "Replace Rainpunk Rate 2 - Rods" }, 
 		{ BuildingPerkTypes.Spec_Relics_Working_Time, "[Spec] Relics Working Time" },                                         // Scouts by Nature - Each Fox scout assigned to a Glade Event reduces its working time by {0}.
+		{ BuildingPerkTypes.U_Bat_Houses_Unique_Bonus, "[U] Bat Houses Unique Bonus" },                                       // Repair Station - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
 		{ BuildingPerkTypes.U_Beaver_Houses_Unique_Bonus, "[U] Beaver Houses Unique Bonus" },                                 // Writing Desk - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
 		{ BuildingPerkTypes.U_Extractor_Tank, "[U] Extractor Tank" },                                                         // Tank Capacity Increase - Increases tank capacity for the corresponding rainwater type by {0}.
 		{ BuildingPerkTypes.U_Fox_Houses_Unique_Bonus, "[U] Fox Houses Unique Bonus" },                                       // Lichen - Stone tablets reveal the secrets of the ancients' strength. Scouts can carry {0} additional items and move {3} faster for every {1} {2} in the settlement's Warehouses.
@@ -573,6 +687,7 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.U_Mine_Upgrade_Speed_2, "[U] Mine Upgrade Speed 2" },                                             // Pit Pony - {0} {1}
 		{ BuildingPerkTypes.U_Pump_Automaton, "[U] Pump Automaton" },                                                         // Automaton - A rainpunk automaton will permanently occupy one workplace. It doesn't eat, and it doesn't need rest. Its sole purpose is to work. Automatons have no chance of producing double yields.
 		{ BuildingPerkTypes.U_Storage_Automaton, "[U] Storage Automaton" },                                                   // Minecart - An automated minecart will help miners transport resources from the Mine to the Warehouse.
+		{ BuildingPerkTypes.U_Woodcutter_Hauling_Cart, "[U] Woodcutter Hauling Cart" },                                       // HaulerUpgrade_Cart_Name - HaulerUpgrade_Cart_Desc
 		{ BuildingPerkTypes.UBP_Blight_Fighter_Automaton, "[U][BP] Blight Fighter Automaton" },                               // Blight Automaton - A rainpunk automaton will help Blight Fighters burn Blightrot Cysts during the storm. It doesn't eat and doesn't need to rest. Blight Automatons can't produce "blight fuel" Purging Fire.
 		{ BuildingPerkTypes.UBP_Blight_Fighter_Speed, "[U][BP] Blight Fighter Speed" },                                       // Mobile Sparkcasters
 		{ BuildingPerkTypes.UBP_Blight_Post_Production_Rate, "[U][BP] Blight Post Production Rate" },                         // Alchemical Forge - Only the most experienced Blight Fighters can operate this machine. Workers at this Blight Post have a {0} higher chance of producing twice the amount of "blight fuel" Purging Fire.
@@ -580,6 +695,10 @@ public static class BuildingPerkTypesExtensions
 		{ BuildingPerkTypes.UBP_Faster_Cysts_Burning, "[U][BP] Faster Cysts Burning" },                                       // Triple Ignition System - An innovative improvement to the flamethrower ignition system. Blight Fighters and Blight Automatons at this Blight Post need {0} seconds less to burn a Blightrot Cyst.
 		{ BuildingPerkTypes.UBP_Global_Background_Cyst_Generation_Rate, "[U][BP] Global Background - Cyst Generation Rate" }, // Manned Lookout
 		{ BuildingPerkTypes.UBP_Global_Cyst_Generation_Rate, "[U][BP] Global - Cyst Generation Rate" },                       // Manned Lookout
+		{ BuildingPerkTypes.UW_Extra_Production_Chance, "[U][W] Extra Production Chance" },                                   // Clear-cutting - No tree or stump goes to waste. Woodcutters in this camp have a {0} higher chance of producing double yields.
+		{ BuildingPerkTypes.UW_Woodcutter_Capacity, "[U][W] Woodcutter Capacity" },                                           // Pack Frame - A special wooden frame that makes transporting resources a lot easier. Woodcutters working in a camp with this upgrade can carry {0} more items of the same type.
+		{ BuildingPerkTypes.UW_Woodcutter_Speed, "[U][W] Woodcutter Speed" },                                                 // Logging Boots
+		{ BuildingPerkTypes.UW_Woodcutting_Storage_Automaton, "[U][W] Woodcutting Storage Automaton" },                       // Lumber Cart - An automated hauling cart will help woodcutters transport resources from the Woodcutters' Camp to the Warehouse.
 
 	};
 }

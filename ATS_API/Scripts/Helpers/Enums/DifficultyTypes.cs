@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum DifficultyTypes
 {
@@ -115,7 +115,7 @@ public enum DifficultyTypes
 	Ascension_VII = 15,
 
 	/// <summary>
-	/// Prestige 8 - Villagers consume more luxury goods.
+	/// Prestige 8 - Villagers consume more service goods.
 	/// </summary>
 	/// <name>11 Ascension VIII</name>
 	Ascension_VIII = 16,
@@ -198,7 +198,7 @@ public enum DifficultyTypes
 	/// The total number of vanilla DifficultyTypes in the game.
 	/// </summary>
 	[Obsolete("Use DifficultyTypesExtensions.Count(). DifficultyTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 28
+	MAX = 29
 }
 
 /// <summary>
@@ -387,7 +387,7 @@ public static class DifficultyTypesExtensions
 		{ DifficultyTypes.Ascension_V, "8 Ascension V" },                       // Prestige 5 - Villagers with low Resolve leave faster.
 		{ DifficultyTypes.Ascension_VI, "9 Ascension VI" },                     // Prestige 6 - Buildings cost more.
 		{ DifficultyTypes.Ascension_VII, "10 Ascension VII" },                  // Prestige 7 - Higher food consumption.
-		{ DifficultyTypes.Ascension_VIII, "11 Ascension VIII" },                // Prestige 8 - Villagers consume more luxury goods.
+		{ DifficultyTypes.Ascension_VIII, "11 Ascension VIII" },                // Prestige 8 - Villagers consume more service goods.
 		{ DifficultyTypes.Ascension_IX, "12 Ascension IX" },                    // Prestige 9 - Villagers work slower on Events.
 		{ DifficultyTypes.Ascension_X, "13 Ascension X" },                      // Prestige 10 - Goods are worth less to traders.
 		{ DifficultyTypes.Ascension_XI, "14 Ascension XI" },                    // Prestige 11 - Blightrot has a stronger impact.

@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum WorkshopsRecipeTypes
 {
@@ -31,169 +31,204 @@ public enum WorkshopsRecipeTypes
 	_Todelete_Pack_Of_Luxury_Goods = 1,
 
 	/// <summary></summary>
+	/// <name>[Biome] Fuel Rod T3</name>
+	/// <tags>Fuel Tag, [Tag] Metal Bars in recipe</tags>
+	/// <grade>3</grade>
+	/// <producedGood>[Other] Fuel Rod</producedGood>
+	Biome_Fuel_Rod_T3 = 156,
+
+	/// <summary></summary>
 	/// <name>[Building Material] Bricks T0</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Mat Processed] Bricks</producedGood>
 	Building_Material_Bricks_T0 = 2,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Bricks T1</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Mat Processed] Bricks</producedGood>
 	Building_Material_Bricks_T1 = 3,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Bricks T2</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Processed] Bricks</producedGood>
 	Building_Material_Bricks_T2 = 4,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Bricks T3</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Mat Processed] Bricks</producedGood>
 	Building_Material_Bricks_T3 = 5,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Fabric T0</name>
+	/// <tags>Building Material Tag, Fabric Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Mat Processed] Fabric</producedGood>
 	Building_Material_Fabric_T0 = 6,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Fabric T1</name>
+	/// <tags>Building Material Tag, Fabric Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Mat Processed] Fabric</producedGood>
 	Building_Material_Fabric_T1 = 7,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Fabric T2</name>
+	/// <tags>Building Material Tag, Fabric Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Processed] Fabric</producedGood>
 	Building_Material_Fabric_T2 = 8,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Fabric T3</name>
+	/// <tags>Building Material Tag, Fabric Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Mat Processed] Fabric</producedGood>
 	Building_Material_Fabric_T3 = 9,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Planks T0</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Mat Processed] Planks</producedGood>
 	Building_Material_Planks_T0 = 10,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Planks T1</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Mat Processed] Planks</producedGood>
 	Building_Material_Planks_T1 = 11,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Planks T2</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Processed] Planks</producedGood>
 	Building_Material_Planks_T2 = 12,
 
 	/// <summary></summary>
 	/// <name>[Building Material] Planks T3</name>
+	/// <tags>Building Material Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Mat Processed] Planks</producedGood>
 	Building_Material_Planks_T3 = 13,
 
 	/// <summary></summary>
 	/// <name>[Clay Pit] Clay T2</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Raw] Clay</producedGood>
 	Clay_Pit_Clay_T2 = 14,
 
 	/// <summary></summary>
 	/// <name>[Clay Pit] Reeds T2</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Raw] Reeds</producedGood>
 	Clay_Pit_Reeds_T2 = 15,
 
 	/// <summary></summary>
 	/// <name>[Clay Pit] Resin T2</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Raw] Resin</producedGood>
 	Clay_Pit_Resin_T2 = 16,
 
 	/// <summary></summary>
 	/// <name>[Clay Pit] Stone T2</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Raw] Stone</producedGood>
 	Clay_Pit_Stone_T2 = 17,
 
 	/// <summary></summary>
 	/// <name>Coal T0</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Crafting] Coal</producedGood>
 	Coal_T0 = 18,
 
 	/// <summary></summary>
 	/// <name>Coal T1</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Crafting] Coal</producedGood>
 	Coal_T1 = 19,
 
 	/// <summary></summary>
 	/// <name>Coal T2</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Crafting] Coal</producedGood>
 	Coal_T2 = 20,
 
 	/// <summary></summary>
 	/// <name>Coal T3</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Crafting] Coal</producedGood>
 	Coal_T3 = 21,
 
 	/// <summary></summary>
 	/// <name>Copper Bar T0</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Copper Bar and Crystalized Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Metal] Copper Bar</producedGood>
 	Copper_Bar_T0 = 22,
 
 	/// <summary></summary>
 	/// <name>Copper Bar T1</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Copper Bar and Crystalized Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Metal] Copper Bar</producedGood>
 	Copper_Bar_T1 = 23,
 
 	/// <summary></summary>
 	/// <name>Copper Bar T2</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Copper Bar and Crystalized Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Metal] Copper Bar</producedGood>
 	Copper_Bar_T2 = 24,
 
 	/// <summary></summary>
 	/// <name>Copper Bar T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Copper Bar and Crystalized Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Metal] Copper Bar</producedGood>
 	Copper_Bar_T3 = 25,
 
 	/// <summary></summary>
 	/// <name>Crystalized Dew T0</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Recipe With Water Tag, Copper Bar and Crystalized Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Metal] Crystalized Dew</producedGood>
 	Crystalized_Dew_T0 = 26,
 
 	/// <summary></summary>
 	/// <name>Crystalized Dew T1</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Recipe With Water Tag, Copper Bar and Crystalized Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Metal] Crystalized Dew</producedGood>
 	Crystalized_Dew_T1 = 27,
 
 	/// <summary></summary>
 	/// <name>Crystalized Dew T2</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Recipe With Water Tag, Copper Bar and Crystalized Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Metal] Crystalized Dew</producedGood>
 	Crystalized_Dew_T2 = 28,
 
 	/// <summary></summary>
 	/// <name>Crystalized Dew T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Recipe With Water Tag, Copper Bar and Crystalized Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Metal] Crystalized Dew</producedGood>
 	Crystalized_Dew_T3 = 29,
@@ -248,192 +283,224 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Biscuits T0</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Biscuits</producedGood>
 	Food_Processed_Biscuits_T0 = 38,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Biscuits T1</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Biscuits</producedGood>
 	Food_Processed_Biscuits_T1 = 39,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Biscuits T2</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Biscuits</producedGood>
 	Food_Processed_Biscuits_T2 = 40,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Biscuits T3</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Biscuits</producedGood>
 	Food_Processed_Biscuits_T3 = 41,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Jerky T0</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Jerky</producedGood>
 	Food_Processed_Jerky_T0 = 42,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Jerky T1</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Jerky</producedGood>
 	Food_Processed_Jerky_T1 = 43,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Jerky T2</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Jerky</producedGood>
 	Food_Processed_Jerky_T2 = 44,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Jerky T3</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Jerky</producedGood>
 	Food_Processed_Jerky_T3 = 45,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Paste T0</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Paste</producedGood>
 	Food_Processed_Paste_T0 = 46,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Paste T1</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Paste</producedGood>
 	Food_Processed_Paste_T1 = 47,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Paste T2</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Paste</producedGood>
 	Food_Processed_Paste_T2 = 48,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Paste T3</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Paste</producedGood>
 	Food_Processed_Paste_T3 = 49,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pickled Goods T0</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Pickled Goods</producedGood>
 	Food_Processed_Pickled_Goods_T0 = 50,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pickled Goods T1</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Pickled Goods</producedGood>
 	Food_Processed_Pickled_Goods_T1 = 51,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pickled Goods T2</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Pickled Goods</producedGood>
 	Food_Processed_Pickled_Goods_T2 = 52,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pickled Goods T3</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Pickled Goods</producedGood>
 	Food_Processed_Pickled_Goods_T3 = 53,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pie T0</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Pie</producedGood>
 	Food_Processed_Pie_T0 = 54,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pie T1</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Pie</producedGood>
 	Food_Processed_Pie_T1 = 55,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pie T2</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Pie</producedGood>
 	Food_Processed_Pie_T2 = 56,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Pie T3</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Pie</producedGood>
 	Food_Processed_Pie_T3 = 57,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Porridge T0</name>
+	/// <tags>Food Tag, Recipe With Water Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Porridge</producedGood>
 	Food_Processed_Porridge_T0 = 58,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Porridge T1</name>
+	/// <tags>Food Tag, Recipe With Water Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Porridge</producedGood>
 	Food_Processed_Porridge_T1 = 59,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Porridge T2</name>
+	/// <tags>Food Tag, Recipe With Water Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Porridge</producedGood>
 	Food_Processed_Porridge_T2 = 60,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Porridge T3</name>
+	/// <tags>Food Tag, Recipe With Water Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Porridge</producedGood>
 	Food_Processed_Porridge_T3 = 61,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Skewers T0</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Food Processed] Skewers</producedGood>
 	Food_Processed_Skewers_T0 = 62,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Skewers T1</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Processed] Skewers</producedGood>
 	Food_Processed_Skewers_T1 = 63,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Skewers T2</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Processed] Skewers</producedGood>
 	Food_Processed_Skewers_T2 = 64,
 
 	/// <summary></summary>
 	/// <name>[Food Processed] Skewers T3</name>
+	/// <tags>Food Tag, Complex Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Skewers</producedGood>
 	Food_Processed_Skewers_T3 = 65,
 
 	/// <summary></summary>
 	/// <name>[Greenhouse] Herbs T2</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Raw] Herbs</producedGood>
 	Greenhouse_Herbs_T2 = 66,
 
 	/// <summary></summary>
 	/// <name>[Greenhouse] Mushrooms T2</name>
+	/// <tags>Food Tag, Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Raw] Mushrooms</producedGood>
 	Greenhouse_Mushrooms_T2 = 67,
 
 	/// <summary></summary>
 	/// <name>[Greenhouse] Vegetables T2</name>
+	/// <tags>Food Tag, Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Food Raw] Vegetables</producedGood>
 	Greenhouse_Vegetables_T2 = 68,
 
 	/// <summary></summary>
 	/// <name>Hearth Parts T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Recipe With Water Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>Hearth Parts</producedGood>
 	Hearth_Parts_T3 = 69,
@@ -446,6 +513,7 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>Meat (workshop) T1</name>
+	/// <tags>Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Raw] Meat</producedGood>
 	Meat_workshop_T1 = 71,
@@ -494,24 +562,28 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Coats T0</name>
+	/// <tags>Fabric Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Needs] Coats</producedGood>
 	Needs_Fullfilment_Coats_T0 = 79,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Coats T1</name>
+	/// <tags>Fabric Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Needs] Coats</producedGood>
 	Needs_Fullfilment_Coats_T1 = 80,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Coats T2</name>
+	/// <tags>Fabric Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Needs] Coats</producedGood>
 	Needs_Fullfilment_Coats_T2 = 81,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Coats T3</name>
+	/// <tags>Fabric Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Needs] Coats</producedGood>
 	Needs_Fullfilment_Coats_T3 = 82,
@@ -566,48 +638,56 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Tea T0</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Needs] Tea</producedGood>
 	Needs_Fullfilment_Tea_T0 = 91,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Tea T1</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Needs] Tea</producedGood>
 	Needs_Fullfilment_Tea_T1 = 92,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Tea T2</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Needs] Tea</producedGood>
 	Needs_Fullfilment_Tea_T2 = 93,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Tea T3</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Needs] Tea</producedGood>
 	Needs_Fullfilment_Tea_T3 = 94,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Training Gear T0</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Needs] Training Gear</producedGood>
 	Needs_Fullfilment_Training_Gear_T0 = 95,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Training Gear T1</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Needs] Training Gear</producedGood>
 	Needs_Fullfilment_Training_Gear_T1 = 96,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Training Gear T2</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Needs] Training Gear</producedGood>
 	Needs_Fullfilment_Training_Gear_T2 = 97,
 
 	/// <summary></summary>
 	/// <name>[Needs Fullfilment] Training Gear T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Needs] Training Gear</producedGood>
 	Needs_Fullfilment_Training_Gear_T3 = 98,
@@ -638,186 +718,217 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>Oil T0</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Crafting] Oil</producedGood>
 	Oil_T0 = 103,
 
 	/// <summary></summary>
 	/// <name>Oil T1</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Crafting] Oil</producedGood>
 	Oil_T1 = 104,
 
 	/// <summary></summary>
 	/// <name>Oil T2</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Crafting] Oil</producedGood>
 	Oil_T2 = 105,
 
 	/// <summary></summary>
 	/// <name>Oil T3</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Crafting] Oil</producedGood>
 	Oil_T3 = 106,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials T0</name>
+	/// <tags>Packs Tag, Fabric Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Packs] Pack of Building Materials</producedGood>
 	Pack_Of_Building_Materials_T0 = 107,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials T1</name>
+	/// <tags>Packs Tag, Fabric Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Building Materials</producedGood>
 	Pack_Of_Building_Materials_T1 = 108,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials T2</name>
+	/// <tags>Packs Tag, Fabric Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Packs] Pack of Building Materials</producedGood>
 	Pack_Of_Building_Materials_T2 = 109,
 
 	/// <summary></summary>
 	/// <name>Pack of Building Materials T3</name>
+	/// <tags>Packs Tag, Fabric Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Packs] Pack of Building Materials</producedGood>
 	Pack_Of_Building_Materials_T3 = 110,
 
 	/// <summary></summary>
 	/// <name>Pack of Crops T0</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Packs] Pack of Crops</producedGood>
 	Pack_Of_Crops_T0 = 111,
 
 	/// <summary></summary>
 	/// <name>Pack of Crops T1</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Crops</producedGood>
 	Pack_Of_Crops_T1 = 112,
 
 	/// <summary></summary>
 	/// <name>Pack of Crops T2</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Packs] Pack of Crops</producedGood>
 	Pack_Of_Crops_T2 = 113,
 
 	/// <summary></summary>
 	/// <name>Pack of Crops T3</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Packs] Pack of Crops</producedGood>
 	Pack_Of_Crops_T3 = 114,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury Goods T0</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Packs] Pack of Luxury Goods</producedGood>
 	Pack_Of_Luxury_Goods_T0 = 115,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury Goods T1</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Luxury Goods</producedGood>
 	Pack_Of_Luxury_Goods_T1 = 116,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury Goods T2</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Packs] Pack of Luxury Goods</producedGood>
 	Pack_Of_Luxury_Goods_T2 = 117,
 
 	/// <summary></summary>
 	/// <name>Pack of Luxury Goods T3</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Packs] Pack of Luxury Goods</producedGood>
 	Pack_Of_Luxury_Goods_T3 = 118,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions T0</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Packs] Pack of Provisions</producedGood>
 	Pack_Of_Provisions_T0 = 119,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions T1</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Provisions</producedGood>
 	Pack_Of_Provisions_T1 = 120,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions T2</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Packs] Pack of Provisions</producedGood>
 	Pack_Of_Provisions_T2 = 121,
 
 	/// <summary></summary>
 	/// <name>Pack of Provisions T3</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Packs] Pack of Provisions</producedGood>
 	Pack_Of_Provisions_T3 = 122,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods T0</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Packs] Pack of Trade Goods</producedGood>
 	Pack_Of_Trade_Goods_T0 = 123,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods T1</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Packs] Pack of Trade Goods</producedGood>
 	Pack_Of_Trade_Goods_T1 = 124,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods T2</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Packs] Pack of Trade Goods</producedGood>
 	Pack_Of_Trade_Goods_T2 = 125,
 
 	/// <summary></summary>
 	/// <name>Pack of Trade Goods T3</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Packs] Pack of Trade Goods</producedGood>
 	Pack_Of_Trade_Goods_T3 = 126,
 
 	/// <summary></summary>
 	/// <name>Pipe T0</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Building Material Tag</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Mat Processed] Pipe</producedGood>
 	Pipe_T0 = 127,
 
 	/// <summary></summary>
 	/// <name>Pipe T1</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Building Material Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Mat Processed] Pipe</producedGood>
 	Pipe_T1 = 128,
 
 	/// <summary></summary>
 	/// <name>Pipe T2</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Building Material Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Mat Processed] Pipe</producedGood>
 	Pipe_T2 = 129,
 
 	/// <summary></summary>
 	/// <name>Pipe T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe, Building Material Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Mat Processed] Pipe</producedGood>
 	Pipe_T3 = 130,
 
 	/// <summary></summary>
 	/// <name>[R] Amber</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Valuable] Amber</producedGood>
 	R_Amber = 131,
 
 	/// <summary></summary>
 	/// <name>[R] Parts</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Mat Processed] Parts</producedGood>
 	R_Parts = 132,
 
 	/// <summary></summary>
 	/// <name>Ruins [Food Processed] Pickled Goods T3</name>
+	/// <tags>Food Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Food Processed] Pickled Goods</producedGood>
 	Ruins_Food_Processed_Pickled_Goods_T3 = 133,
@@ -830,6 +941,7 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>Ruins Pack of Crops T3</name>
+	/// <tags>Packs Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Packs] Pack of Crops</producedGood>
 	Ruins_Pack_Of_Crops_T3 = 135,
@@ -842,60 +954,70 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>T1 Blight Fuel</name>
+	/// <tags>Fuel Tag</tags>
 	/// <grade>3</grade>
 	/// <producedGood>Blight Fuel</producedGood>
 	T1_Blight_Fuel = 137,
 
 	/// <summary></summary>
 	/// <name>[TES] Fuel Core</name>
+	/// <tags>Recipe With Water Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[WE] Fuel Core</producedGood>
 	TES_Fuel_Core = 138,
 
 	/// <summary></summary>
 	/// <name>Tools Simple T0</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Tools] Simple Tools</producedGood>
 	Tools_Simple_T0 = 139,
 
 	/// <summary></summary>
 	/// <name>Tools Simple T1</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Tools] Simple Tools</producedGood>
 	Tools_Simple_T1 = 140,
 
 	/// <summary></summary>
 	/// <name>Tools Simple T2</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Tools] Simple Tools</producedGood>
 	Tools_Simple_T2 = 141,
 
 	/// <summary></summary>
 	/// <name>Tools Simple T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Tools] Simple Tools</producedGood>
 	Tools_Simple_T3 = 142,
 
 	/// <summary></summary>
 	/// <name>[Vessel] Barrels T0</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>0</grade>
 	/// <producedGood>[Vessel] Barrels</producedGood>
 	Vessel_Barrels_T0 = 143,
 
 	/// <summary></summary>
 	/// <name>[Vessel] Barrels T1</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Vessel] Barrels</producedGood>
 	Vessel_Barrels_T1 = 144,
 
 	/// <summary></summary>
 	/// <name>[Vessel] Barrels T2</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Vessel] Barrels</producedGood>
 	Vessel_Barrels_T2 = 145,
 
 	/// <summary></summary>
 	/// <name>[Vessel] Barrels T3</name>
+	/// <tags>Metal Tag, [Tag] Metal Bars in recipe</tags>
 	/// <grade>3</grade>
 	/// <producedGood>[Vessel] Barrels</producedGood>
 	Vessel_Barrels_T3 = 146,
@@ -950,6 +1072,7 @@ public enum WorkshopsRecipeTypes
 
 	/// <summary></summary>
 	/// <name>Workshop Eggs T1</name>
+	/// <tags>Food Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Food Raw] Eggs</producedGood>
 	Workshop_Eggs_T1 = 155,
@@ -960,7 +1083,7 @@ public enum WorkshopsRecipeTypes
 	/// The total number of vanilla WorkshopsRecipeTypes in the game.
 	/// </summary>
 	[Obsolete("Use WorkshopsRecipeTypesExtensions.Count(). WorkshopsRecipeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 155
+	MAX = 157
 }
 
 /// <summary>
@@ -1135,6 +1258,7 @@ public static class WorkshopsRecipeTypesExtensions
 	internal static readonly Dictionary<WorkshopsRecipeTypes, string> TypeToInternalName = new()
 	{
 		{ WorkshopsRecipeTypes._Todelete_Pack_Of_Luxury_Goods, "- todelete - Pack of Luxury Goods" }, 
+		{ WorkshopsRecipeTypes.Biome_Fuel_Rod_T3, "[Biome] Fuel Rod T3" }, 
 		{ WorkshopsRecipeTypes.Building_Material_Bricks_T0, "[Building Material] Bricks T0" }, 
 		{ WorkshopsRecipeTypes.Building_Material_Bricks_T1, "[Building Material] Bricks T1" }, 
 		{ WorkshopsRecipeTypes.Building_Material_Bricks_T2, "[Building Material] Bricks T2" }, 

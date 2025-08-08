@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum InstitutionTypes
 {
@@ -25,87 +25,107 @@ public enum InstitutionTypes
 	None = 0,
 	
 	/// <summary>
+	/// Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
+	/// </summary>
+	/// <name>Academy</name>
+	/// <tags>FoxesCooperation</tags>
+	Academy = 15,
+
+	/// <summary>
 	/// Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 	/// </summary>
 	/// <name>Bath House</name>
+	/// <tags>Rainwater, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Harpy</usabilityTags>
 	Bath_House = 1,
 
 	/// <summary>
 	/// Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
 	/// </summary>
 	/// <name>Clan Hall</name>
+	/// <tags>Warmth, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Lizzard</usabilityTags>
 	Clan_Hall = 2,
-
-	/// <summary>
-	/// Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
-	/// </summary>
-	/// <name>Explorers Lodge</name>
-	Explorers_Lodge = 3,
 
 	/// <summary>
 	/// Feast Hall - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Festive Mood.
 	/// </summary>
 	/// <name>Feast Hall</name>
+	/// <tags>FoxesCooperation</tags>
 	Feast_Hall = 4,
 
 	/// <summary>
 	/// Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 	/// </summary>
 	/// <name>Forum</name>
+	/// <tags>FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Frog</usabilityTags>
 	Forum = 5,
 
 	/// <summary>
 	/// Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.
 	/// </summary>
 	/// <name>Guild House</name>
+	/// <tags>FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Trade, [Tag] Beaver</usabilityTags>
 	Guild_House = 6,
 
 	/// <summary>
 	/// Holy Guild House - An upgraded service building with an additional passive effect. Villagers can use it to fulfill their need for:  Luxury,  Education. Passive effects: Guild House, The Guild's Welfare.
 	/// </summary>
 	/// <name>Holy Guild House</name>
+	/// <tags>FoxesCooperation</tags>
 	Holy_Guild_House = 7,
 
 	/// <summary>
 	/// Holy Market - An upgraded service building with an additional passive effect. Villagers can use it to fulfill their need for:  Leisure,  Treatment. Passive effects: Ale and Hearty, Market Carts.
 	/// </summary>
 	/// <name>Holy Market</name>
+	/// <tags>FoxesCooperation</tags>
 	Holy_Market = 8,
 
 	/// <summary>
 	/// Holy Temple - An upgraded service building with an additional passive effect. Villagers can use it to fulfill their need for:  Religion,  Education. Passive effects: Sacrament of the Flame, Consecrated Scrolls.
 	/// </summary>
 	/// <name>Holy Temple</name>
+	/// <tags>Warmth, FoxesCooperation</tags>
 	Holy_Temple = 9,
 
 	/// <summary>
 	/// Market - A place where villagers can fulfill their need for: Leisure,  Treatment. Passive effects: Market Carts.
 	/// </summary>
 	/// <name>Market</name>
+	/// <tags>FoxesCooperation</tags>
 	Market = 10,
 
 	/// <summary>
 	/// Monastery - A place where villagers can fulfill their need for: Religion,  Leisure. Passive effects: The Green Brew.
 	/// </summary>
 	/// <name>Monastery</name>
+	/// <tags>Warmth, Brewing, FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Human</usabilityTags>
 	Monastery = 11,
 
 	/// <summary>
 	/// Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
 	/// </summary>
 	/// <name>Tavern</name>
+	/// <tags>Brewing, FoxesCooperation</tags>
 	Tavern = 12,
 
 	/// <summary>
 	/// Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Religion. Passive effects: Vitality.
 	/// </summary>
 	/// <name>Tea Doctor</name>
+	/// <tags>FoxesCooperation</tags>
+	/// <usabilityTags>[Tag] Fox</usabilityTags>
 	Tea_Doctor = 13,
 
 	/// <summary>
 	/// Temple - A place where villagers can fulfill their need for: Religion,  Education. Passive effects: Sacrament of the Flame.
 	/// </summary>
 	/// <name>Temple</name>
+	/// <tags>Warmth, FoxesCooperation</tags>
 	Temple = 14,
 
 
@@ -114,7 +134,7 @@ public enum InstitutionTypes
 	/// The total number of vanilla InstitutionTypes in the game.
 	/// </summary>
 	[Obsolete("Use InstitutionTypesExtensions.Count(). InstitutionTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 14
+	MAX = 16
 }
 
 /// <summary>
@@ -143,7 +163,7 @@ public static class InstitutionTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every InstitutionTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return InstitutionTypes.Bath_House in the enum and log an error.
+	/// If no name is found, it will return InstitutionTypes.Academy in the enum and log an error.
 	/// </summary>
 	public static string ToName(this InstitutionTypes type)
 	{
@@ -153,7 +173,7 @@ public static class InstitutionTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of InstitutionTypes: " + type);
-		return TypeToInternalName[InstitutionTypes.Bath_House];
+		return TypeToInternalName[InstitutionTypes.Academy];
 	}
 	
 	/// <summary>
@@ -288,9 +308,9 @@ public static class InstitutionTypesExtensions
 	
 	internal static readonly Dictionary<InstitutionTypes, string> TypeToInternalName = new()
 	{
+		{ InstitutionTypes.Academy, "Academy" },                   // Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ InstitutionTypes.Bath_House, "Bath House" },             // Bath House - A place where villagers can fulfill their need for: Treatment. Passive effects: Regular Baths, Good Health.
 		{ InstitutionTypes.Clan_Hall, "Clan Hall" },               // Clan Hall - A place where villagers can fulfill their need for: Brawling. Passive effects: Carnivorous Tradition, Ancient Ways.
-		{ InstitutionTypes.Explorers_Lodge, "Explorers Lodge" },   // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
 		{ InstitutionTypes.Feast_Hall, "Feast Hall" },             // Feast Hall - A place where villagers can fulfill their need for: Treatment,  Brawling. Passive effects: Festive Mood.
 		{ InstitutionTypes.Forum, "Forum" },                       // Forum - A place where villagers can fulfill their need for: Brawling,  Luxury. Passive effects: Public Performances.
 		{ InstitutionTypes.Guild_House, "Guild House" },           // Guild House - A place where villagers can fulfill their need for: Luxury,  Education. Passive effects: The Guild's Welfare.

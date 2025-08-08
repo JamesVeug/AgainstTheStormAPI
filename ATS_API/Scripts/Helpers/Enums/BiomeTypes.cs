@@ -10,7 +10,7 @@ using Eremite.WorldMap;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.7.5R
+/// Generated using Version 1.8.10R
 /// </summary>
 public enum BiomeTypes
 {
@@ -37,6 +37,12 @@ public enum BiomeTypes
 	Capital = 2,
 
 	/// <summary>
+	/// Rocky Ravine - Giant underground caverns siphon rainwater from this strange depression, uncovering lands rich in minerals and ore, yet barren of life. It’s a sought-after destination for both traders and smugglers.
+	/// </summary>
+	/// <name>Cave</name>
+	Cave = 14,
+
+	/// <summary>
 	/// Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
 	/// </summary>
 	/// <name>Coral Forest</name>
@@ -53,6 +59,12 @@ public enum BiomeTypes
 	/// </summary>
 	/// <name>Moorlands</name>
 	Moorlands = 5,
+
+	/// <summary>
+	/// Bamboo Flats - A lush, verdant expanse covered by an endless sea of bamboo trees. It is home to the magnificent Fluffbeaks - a species of gentle giants who love nothing more than to munch on the sweet stems and leaves of Tearsap Bamboo.
+	/// </summary>
+	/// <name>Poro Biome</name>
+	Poro_Biome = 15,
 
 	/// <summary>
 	/// Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
@@ -108,7 +120,7 @@ public enum BiomeTypes
 	/// The total number of vanilla BiomeTypes in the game.
 	/// </summary>
 	[Obsolete("Use BiomeTypesExtensions.Count(). BiomeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 13
+	MAX = 16
 }
 
 /// <summary>
@@ -284,9 +296,11 @@ public static class BiomeTypesExtensions
 	{
 		{ BiomeTypes.Bay, "Bay" },                                       // Coastal Grove - These lands have been underwater for centuries, allowing a dense forest of algae to flourish. The surrounding seawater has almost completely cut off the area from the rest of the kingdom, leaving the nearby marshes almost untouched and full of the remains of ancient settlements.
 		{ BiomeTypes.Capital, "Capital" },                               // Citadel
+		{ BiomeTypes.Cave, "Cave" },                                     // Rocky Ravine - Giant underground caverns siphon rainwater from this strange depression, uncovering lands rich in minerals and ore, yet barren of life. It’s a sought-after destination for both traders and smugglers.
 		{ BiomeTypes.Coral_Forest, "Coral Forest" },                     // Coral Forest - The true source of the coral’s growth is unknown. Contrary to common belief, it doesn't usually appear in flooded regions. The unique influence of the coral mutates trees into distinctive strands that offer various resources.
 		{ BiomeTypes.Cursed_Royal_Woodlands, "Cursed Royal Woodlands" }, // Cursed Royal Woodlands - A cursed area of the Royal Woodlands that is haunted by the lost souls of warriors fallen in the Great Civil War. The storm here is especially dangerous, and the forest more hostile than anywhere else. The Queen will handsomely reward any viceroy brave enough to settle this part of the world.
 		{ BiomeTypes.Moorlands, "Moorlands" },                           // Scarlet Orchard - A beautiful yet dangerous land that is colored a strange shade of crimson. It's called the Herb Garden of the Kingdom due to its abundance of herbs, berries, and roots.
+		{ BiomeTypes.Poro_Biome, "Poro Biome" },                         // Bamboo Flats - A lush, verdant expanse covered by an endless sea of bamboo trees. It is home to the magnificent Fluffbeaks - a species of gentle giants who love nothing more than to munch on the sweet stems and leaves of Tearsap Bamboo.
 		{ BiomeTypes.Royal_Woodlands, "Royal Woodlands" },               // Royal Woodlands - The Queen's forests were once part of the Smoldering City, but the Blightstorm reclaimed this land. The Royal Woodlands are rich in roots, moss broccoli, mushrooms, and flax, with a decent amount of dewberries and clay. The ground is fertile and soft, which makes it perfect for farming.
 		{ BiomeTypes.Sealed_Biome, "Sealed Biome" },                     // Sealed Forest - Somewhere in this thick and dark forest, an ancient seal is hidden. Even the Ancients, in all their might and glory, couldn't defeat the creatures slumbering below - so they just imprisoned them. Over millennia, their sinister power gradually seeped to the surface, infecting the fauna and flora of this region. Viceroys don't embark here to establish settlements or gain reputation - their main goal is simply to find and close the seal.
 		{ BiomeTypes.The_Marshlands, "The Marshlands" },                 // Marshlands - A harsh and cold land that has been claimed by many different, and extremely resilient species of fungi. The ground here is extremely hard and rocky, making it difficult to farm. This region is most famous for the giant organisms that can be found in its forests.
