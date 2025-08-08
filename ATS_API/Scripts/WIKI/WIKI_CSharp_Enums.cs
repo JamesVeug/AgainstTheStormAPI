@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Buildings;
@@ -632,9 +632,9 @@ public partial class WIKI
 
         static void Log(object o, string s)
         {
-            // if (o is GoodModel effectModel)
+            // if (o is BuildingModel model)
             // {
-            //     Logger.LogInfo("WIKI: " + effectModel.name + " " + s);
+            //     APILogger.LogInfo("WIKI: " + model.name + " " + s);
             // }
         }
         
@@ -749,15 +749,41 @@ public partial class WIKI
 
             if (result != null)
             {
-                if (result is LocaText locaText)
+                static string GetString(object arg)
                 {
-                    Log(instance, "Found " + locaText.GetText());
-                    return locaText.GetText();
+                    if (arg == null)
+                    {
+                        return null;
+                    }
+                    
+                    if (arg is IList collection)
+                    {
+                        Log(arg, "Found " + collection);
+                        return string.Join(", ", collection.Cast<object>().Select(GetString));
+                    }
+                    else if (arg is LocaText locaText)
+                    {
+                        Log(arg, "Found " + locaText.GetText());
+                        return locaText.GetText();
+                    }
+                    else if (arg is string s)
+                    {
+                        Log(arg, "Found " + s);
+                        return s;
+                    }
+                    else if (arg is SO unityObject)
+                    {
+                        Log(arg, "Found " + unityObject.name);
+                        return unityObject.name;
+                    }
+
+                    return null;
                 }
-                else if (result is string s)
+                
+                string resultString = GetString(result);
+                if (!string.IsNullOrEmpty(resultString))
                 {
-                    Log(instance, "Found " + s);
-                    return s;
+                    return resultString;
                 }
                 
                 Log(instance, "Something was found but unknown " + result.GetType().FullName);
@@ -806,10 +832,22 @@ public partial class WIKI
         dictionary["summary"] = result;
         TryAddName(a, dictionary);
         
-        string tags = GetFieldResults(a, [], [], ["tags", "tag", "usabilityTags"]);
+        string tag = GetFieldResults(a, [], [], ["tag"]);
+        if(!string.IsNullOrEmpty(tag))
+        {
+            dictionary["tag"] = tag;
+        }
+        
+        string tags = GetFieldResults(a, [], [], ["tags"]);
         if(!string.IsNullOrEmpty(tags))
         {
             dictionary["tags"] = tags;
+        }
+        
+        string usabilityTags = GetFieldResults(a, [], [], ["usabilityTags"]);
+        if(!string.IsNullOrEmpty(usabilityTags))
+        {
+            dictionary["usabilityTags"] = usabilityTags;
         }
         
         
