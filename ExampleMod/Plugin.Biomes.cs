@@ -19,7 +19,6 @@ public partial class Plugin
                                "Newcomers are rare, storms are rare but harsh when hit.");
         
         builder.SetTownName("Desert Town");
-        builder.SetTownDescription("The Queen's new town in the Dry Lands.");
         
         // Icon that appears.... I actually have no idea where 
         builder.SetIcon("desertTownIcon.png");

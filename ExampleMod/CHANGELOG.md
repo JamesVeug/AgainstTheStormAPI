@@ -1,3 +1,8 @@
+# 3.3.1
+- Updated to API 3.6.0 and ATS v1.8.10R
+- Borgor King is now a Food production building instead of Industrial
+- Borgor King now uses Drizzle water for rain punk
+
 # 3.3.0
 - Updated to API 3.3.0
 - Added Playpen service building

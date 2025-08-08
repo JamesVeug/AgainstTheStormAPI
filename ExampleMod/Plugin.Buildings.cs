@@ -43,12 +43,12 @@ public partial class Plugin
     private void CreateWorkshop()
     {
         var burgerJoint = new WorkshopBuildingBuilder(PluginInfo.PLUGIN_GUID, "BurgerJoint", "BurgerJoint.png");
+        burgerJoint.SetCategory(BuildingCategoriesTypes.Food_Production);
         burgerJoint.SetCustomModel(ExampleModAssetBundle.LoadAsset<GameObject>("BorgorKing"));
         burgerJoint.SetDisplayName("Borgor King");
-        burgerJoint.SetDescriptionKey("Building_GenericWorkshop_NoWater_Desc"); // Can produce: {0}.
         burgerJoint.SetMoveCost(1, GoodsTypes.Mat_Processed_Planks);
         burgerJoint.SetProfession(ProfessionTypes.Cook);
-        burgerJoint.SetCategory(BuildingCategoriesTypes.Industry);
+        burgerJoint.SetRainpunk(BuildingRainpunkModelTypes.Food_Rainpunk_Module);
         burgerJoint.AddTags(BuildingTagTypes.Animals);
         burgerJoint.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks), (3, GoodsTypes.Mat_Processed_Parts));
         burgerJoint.AddWorkPlaceWithAllRaces();
@@ -57,7 +57,7 @@ public partial class Plugin
         burgerJoint.AddWorkPlaceWithAllRaces();
         burgerJoint.SetScaffoldingData(new BuildingConstructionAnimationData()
         {
-            unconstructedPosition = new Vector3(0, -3, 0)
+            unconstructedPosition = new Vector3(0, -3, 0) // Move the model 3 units down then when built moves to the correct position
         });
         
         var burgerRecipes = burgerJoint.CreateRecipe(burger.Name, 2, 126, Grade.One);
@@ -85,7 +85,7 @@ public partial class Plugin
         playPen.SetDisplayName("Play Pen");
         playPen.SetMoveCost(5, GoodsTypes.Mat_Raw_Wood);
         playPen.SetProfession(ProfessionTypes.Bath_House_Worker);
-        playPen.AddTags(BuildingTagTypes.Rainwater, BuildingTagTypes.Cysts);
+        playPen.AddTags(BuildingTagTypes.Rainwater);
         playPen.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Planks));
         playPen.AddRequiredGoods((3, GoodsTypes.Mat_Processed_Fabric));
         playPen.AddRequiredGoods((10, GoodsTypes.Mat_Processed_Bricks));
