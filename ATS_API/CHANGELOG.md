@@ -1,3 +1,6 @@
+# 3.6.1
+- Fixed cornerstone forged perks being removed when loading a settlement
+
 # 3.6.0
 - Works with ATS v1.8.10R
 - Added rainpunk support for custom buildings (Drizzle/Clearance by default depending on category)
