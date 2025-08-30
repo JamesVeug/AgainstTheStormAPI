@@ -4,8 +4,12 @@ using ATS_API.Goods;
 using Cysharp.Threading.Tasks;
 using Eremite;
 using Eremite.Characters.Villagers;
+using Eremite.Controller.Effects;
 using Eremite.Controller.Generator;
 using Eremite.Model;
+using Eremite.Model.Effects;
+using Eremite.Model.State;
+using Eremite.Services;
 using HarmonyLib;
 
 namespace ATS_API.Fixes;
@@ -61,46 +65,6 @@ internal class GameLoader_Fixes
             state.resolveEffects = clone;
         }
         
-        // Remove any perks that no longer exist
-        foreach (string perkName in new List<string>(__instance.state.effects.perks.Keys))
-        {
-            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, perkName))
-            {
-                APILogger.LogError($"Found missing perk: {perkName} when loading save! Removing from state.");
-                __instance.state.effects.perks.Remove(perkName);
-            }
-        }
-
-        // Remove all effects
-        APILogger.LogInfo("Removing all effects from state.");
-        for (var i = __instance.state.hookedEffects.activeEffects.Count - 1; i >= 0; i--)
-        {
-            var activeEffect = __instance.state.hookedEffects.activeEffects[i];
-            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.model))
-            {
-                APILogger.LogError($"Found missing active effect: {activeEffect.model} when loading save! Removing from state.");
-                __instance.state.hookedEffects.activeEffects.RemoveAt(i);
-            }
-        }
-        for (var i = __instance.state.hookedEffects.toAdd.Count - 1; i >= 0; i--)
-        {
-            var activeEffect = __instance.state.hookedEffects.toAdd[i];
-            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.model))
-            {
-                APILogger.LogError($"Found missing toAdd effect: {activeEffect.model} when loading save! Removing from state.");
-                __instance.state.hookedEffects.toAdd.RemoveAt(i);
-            }
-        }
-        for (var i = __instance.state.hookedEffects.toRemove.Count - 1; i >= 0; i--)
-        {
-            var activeEffect = __instance.state.hookedEffects.toRemove[i];
-            if (!MB.Settings.effectsCache.Contains(MB.Settings.effects, activeEffect.Key))
-            {
-                APILogger.LogError($"Found missing toRemove effect: {activeEffect.Key} when loading save! Removing from state.");
-                __instance.state.hookedEffects.toRemove.RemoveAt(i);
-            }
-        }
-        
         // Add resolve for missing races
         foreach (RaceModel race in SO.Settings.Races)
         {
@@ -110,5 +74,54 @@ internal class GameLoader_Fixes
                 __instance.state.actors.currentRacesResolve[race.name] = 0;
             }
         }
+    }
+    
+    [HarmonyPatch(typeof(GameServices), nameof(GameServices.LoadingCompleted))]
+    [HarmonyPrefix]
+    public static bool HookedEffectsController_SetUp()
+    {
+        StateService __instance = GameMB.StateService as StateService;
+        
+        // Remove any perks that no longer exist
+        foreach (string perkName in new List<string>(__instance.state.effects.perks.Keys))
+        {
+            if (!Serviceable.GameModelService.GetEffect(perkName))
+            {
+                APILogger.LogError($"Found missing perk: {perkName} when loading save! Removing from state.");
+                __instance.state.effects.perks.Remove(perkName);
+            }
+        }
+
+        // Remove all effects
+        APILogger.LogInfo("Looking for missing effects to remove from state before we load...");
+        for (var i = __instance.state.hookedEffects.activeEffects.Count - 1; i >= 0; i--)
+        {
+            var activeEffect = __instance.state.hookedEffects.activeEffects[i];
+            if (GameMB.GameModelService.GetEffect(activeEffect.model) == null)
+            {
+                APILogger.LogError($"Found missing active effect: {activeEffect.model} when loading save! Removing from state.");
+                __instance.state.hookedEffects.activeEffects.RemoveAt(i);
+            }
+        }
+        for (var i = __instance.state.hookedEffects.toAdd.Count - 1; i >= 0; i--)
+        {
+            var activeEffect = __instance.state.hookedEffects.toAdd[i];
+            if (GameMB.GameModelService.GetEffect(activeEffect.model) == null)
+            {
+                APILogger.LogError($"Found missing toAdd effect: {activeEffect.model} when loading save! Removing from state.");
+                __instance.state.hookedEffects.toAdd.RemoveAt(i);
+            }
+        }
+        for (var i = __instance.state.hookedEffects.toRemove.Count - 1; i >= 0; i--)
+        {
+            var activeEffect = __instance.state.hookedEffects.toRemove[i];
+            if (GameMB.GameModelService.GetEffect(activeEffect.Key) == null)
+            {
+                APILogger.LogError($"Found missing toRemove effect: {activeEffect.Key} when loading save! Removing from state.");
+                __instance.state.hookedEffects.toRemove.RemoveAt(i);
+            }
+        }
+        
+        return true;
     }
 }
