@@ -56,7 +56,7 @@ internal class Plugin : BaseUnityPlugin
         Instance = this;
         
         Logger.LogInfo($"Against the Storm v{Application.version}");
-        Util.CompareUnityVersions("2021", "3", "45f1");
+        Util.CompareUnityVersions("2021", "3", "45f2");
         
         harmony = Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, PluginInfo.PLUGIN_GUID);
         
