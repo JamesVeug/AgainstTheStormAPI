@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum EffectTypes
 {
@@ -24,6 +24,30 @@ public enum EffectTypes
 	/// </summary>
 	None = 0,
 	
+
+	//
+	// AddActiveAbilityEffectModel
+	//
+
+	/// <summary>
+	/// Borrowed Time - The Crown can be persuaded to show leniency toward this settlement. Grants an Active Ability that removes 1 Impatience Point at the cost of 10 "[valuable] amber" Amber. Usable from the Main Warehouse, up to 5 times.
+	/// </summary>
+	/// <name>Add Active Ability - Borrowed Time</name>
+	/// <type>AddActiveAbilityEffectModel</type>
+	Add_Active_Ability_Borrowed_Time = 3039,
+
+	/// <summary>
+	/// Emergency Rations - You gain an Active Ability that removes one stack of the Hunger effect from all villagers. This ability can be used from the Main Warehouse and has 3 uses.
+	/// </summary>
+	/// <name>Add Active Ability - remove hunger stack</name>
+	/// <type>AddActiveAbilityEffectModel</type>
+	Add_Active_Ability_Remove_Hunger_Stack = 3040,
+
+	/// <summary></summary>
+	/// <name>[Altar] Extra Trader Merch - add ability</name>
+	/// <type>AddActiveAbilityEffectModel</type>
+	Altar_Extra_Trader_Merch_Add_Ability = 3041,
+
 
 	//
 	// AdditionalDeathEffectModel
@@ -79,6 +103,24 @@ public enum EffectTypes
 
 
 	//
+	// BlockHostilityForRaceEffectModel
+	//
+
+	/// <summary></summary>
+	/// <name>Block Hostility For Beavers</name>
+	/// <type>BlockHostilityForRaceEffectModel</type>
+	Block_Hostility_For_Beavers = 3042,
+
+	/// <summary>
+	/// Friends of the Forest - Though Beavers are an industrious and technologically minded species, they share a unique bond with the forest. Beaver villagers do not increase Hostility.
+	/// </summary>
+	/// <name>No Beaver Hostility</name>
+	/// <usabilityTags>[Tag] Beaver</usabilityTags>
+	/// <type>BlockHostilityForRaceEffectModel</type>
+	No_Beaver_Hostility = 3043,
+
+
+	//
 	// BlueprintFromCategoryPickEffectModel
 	//
 
@@ -127,7 +169,7 @@ public enum EffectTypes
 	//
 
 	/// <summary>
-	/// Frosts - A bizarre cold rises from below and engulfs the Sacred Flame. Reduces the radius of Hearths by -3 fields.
+	/// Frosts - A bizarre cold rises from below and engulfs the Sacred Flame. Reduces the radius of Hearths by 3 fields.
 	/// </summary>
 	/// <name>[Mod] Less Hearth Range</name>
 	/// <type>BonusHearthRangeEffectModel</type>
@@ -139,7 +181,7 @@ public enum EffectTypes
 	//
 
 	/// <summary>
-	/// Petrified Gargoyle - Installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes.
+	/// Dormant Gargoyle - Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes.
 	/// </summary>
 	/// <name>Gargoyle Decoration Lower Rain Engine Cost</name>
 	/// <type>BonusRainpunkUnlockPriceEffectModel</type>
@@ -251,7 +293,7 @@ public enum EffectTypes
 	Academy_Blueprint = 2923,
 
 	/// <summary>
-	/// Forsaken Altar - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+	/// Forsaken Altar - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 	/// </summary>
 	/// <name>Advanced Rain Collector Blueprint</name>
 	/// <type>BuildingEffectModel</type>
@@ -383,6 +425,13 @@ public enum EffectTypes
 	/// <name>Brickyard Blueprint</name>
 	/// <type>BuildingEffectModel</type>
 	Brickyard_Blueprint = 36,
+
+	/// <summary>
+	/// Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
+	/// </summary>
+	/// <name>Brineworks Blueprint</name>
+	/// <type>BuildingEffectModel</type>
+	Brineworks_Blueprint = 3044,
 
 	/// <summary>
 	/// <p>Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).</p>
@@ -935,6 +984,13 @@ public enum EffectTypes
 	PerkCrafter_Fewer_Housing_Spots_Child_Shelter = 101,
 
 	/// <summary>
+	/// Book of Water - Increases the chance for extra production yields by 5%.
+	/// </summary>
+	/// <name>Water Extractor Extra Production Chance</name>
+	/// <type>BuildingPerkEffectModel</type>
+	Water_Extractor_Extra_Production_Chance = 3045,
+
+	/// <summary>
 	/// Mining Automatons - A rainpunk automaton will permanently occupy one workplace in every mine in your settlement.
 	/// </summary>
 	/// <name>[WE] Automaton in All Mines</name>
@@ -997,6 +1053,30 @@ public enum EffectTypes
 	/// <name>Brewery +60</name>
 	/// <type>BuildingProductionEffectModel</type>
 	Brewery_Plus60 = 107,
+
+	/// <summary>
+	/// Reinforced Tools - +50% to amount of goods produced in the Brineworks.
+	/// </summary>
+	/// <name>Brineworks -50</name>
+	/// <type>BuildingProductionEffectModel</type>
+	Brineworks_Minus50 = 3046,
+
+	/// <summary></summary>
+	/// <name>Brineworks +100</name>
+	/// <type>BuildingProductionEffectModel</type>
+	Brineworks_Plus100 = 3047,
+
+	/// <summary></summary>
+	/// <name>Brineworks +150</name>
+	/// <type>BuildingProductionEffectModel</type>
+	Brineworks_Plus150 = 3048,
+
+	/// <summary>
+	/// Industrialized Agriculture - +50% to amount of goods produced in the Brineworks.
+	/// </summary>
+	/// <name>Brineworks +50</name>
+	/// <type>BuildingProductionEffectModel</type>
+	Brineworks_Plus50 = 3049,
 
 	/// <summary>
 	/// Meat Cleavers - +50% to amount of goods produced in the Butcher.
@@ -1607,14 +1687,14 @@ public enum EffectTypes
 	PerkCrafter_Higher_Services_Consumption = 190,
 
 	/// <summary>
-	/// Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level).
+	/// Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level, counting from level 0).
 	/// </summary>
 	/// <name>SE Food Consumption</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
 	SE_Food_Consumption = 191,
 
 	/// <summary>
-	/// Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level).
+	/// Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level, counting from level 0).
 	/// </summary>
 	/// <name>SE Service Waste</name>
 	/// <type>ChanceForExtraConsumptionEffectModel</type>
@@ -1722,6 +1802,22 @@ public enum EffectTypes
 	Altar_Construction_Cost_For_Nodes = 203,
 
 	/// <summary>
+	/// Guild Catalogue (Stormforged) - Traders offer 1 additional perk or blueprint. You also gain an Active Ability that summons a trader to your settlement. This ability can be used from the Main Warehouse and has 5 uses.
+	/// </summary>
+	/// <name>[Altar] Extra Trader Merch</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>CompositeEffectModel</type>
+	Altar_Extra_Trader_Merch = 3050,
+
+	/// <summary>
+	/// Rooty Ground (Stormforged) - Strange roots spread across the land. "[mat raw] wood" Wood production is increased by +2.
+	/// </summary>
+	/// <name>[Altar] Farming -25 for Wood +1</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	/// <type>CompositeEffectModel</type>
+	Altar_Farming_Minus25_For_Wood_Plus1 = 3051,
+
+	/// <summary>
 	/// Forge Trip Hammer (Stormforged) - Powerful and precise machinery. "[mat processed] parts" Parts (grade3) can be produced in the Smithy and +100% to amount of goods produced in the Smithy.
 	/// </summary>
 	/// <name>[Altar] Forge Trip Hammer</name>
@@ -1729,7 +1825,7 @@ public enum EffectTypes
 	Altar_Forge_Trip_Hammer = 204,
 
 	/// <summary>
-	/// Advanced Fuel (Stormforged) - All fuel recipes are +50% faster and produce +33% more goods.
+	/// Advanced Fuel (Stormforged) - All fuel recipes (coal, sea marrow, oil, purging fire) are +50% faster and produce +33% more goods. Does not apply to wood production.
 	/// </summary>
 	/// <name>[Altar] Fuel Recipes Rate</name>
 	/// <type>CompositeEffectModel</type>
@@ -1771,7 +1867,7 @@ public enum EffectTypes
 	Altar_Metal_Production_Speed_Boost = 211,
 
 	/// <summary>
-	/// Mushroom Seedlings (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
+	/// Mushroom Seedlings (Stormforged) - All farms can plant "[food raw] mushrooms" Mushrooms (grade2) on farm fields during drizzle season. Planting and harvesting crops is 50% faster.
 	/// </summary>
 	/// <name>[Altar] Mushrooms in Farms</name>
 	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
@@ -1784,6 +1880,21 @@ public enum EffectTypes
 	/// <name>[Altar] NewNewcomersBonus_Random</name>
 	/// <type>CompositeEffectModel</type>
 	Altar_NewNewcomersBonus_Random = 213,
+
+	/// <summary>
+	/// Overexploitation (Stormforged) - Global gathering speed is increased by 50%, and newly discovered gathering nodes have more charges (+20 charges to small gathering nodes, +35 charges to large gathering nodes).
+	/// </summary>
+	/// <name>[Altar] Overexploitation</name>
+	/// <type>CompositeEffectModel</type>
+	Altar_Overexploitation = 3052,
+
+	/// <summary>
+	/// Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. All packs of goods are worth 50% more when sold through trade routes or directly to traders.
+	/// </summary>
+	/// <name>[Altar] Pack of Trade Goods Worth More - Composite</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>CompositeEffectModel</type>
+	Altar_Pack_Of_Trade_Goods_Worth_More_Composite = 3053,
 
 	/// <summary>
 	/// Export Specialization (Stormforged) - Gain +2 to production yields for all packs of goods. All packs of goods are produced 50% faster.
@@ -1808,6 +1919,14 @@ public enum EffectTypes
 	Altar_Relic_Time_Reduction = 216,
 
 	/// <summary>
+	/// Crystal Cathode (Stormforged) - A fragile device that extracts energy from charged rainwater. Production bonuses in Rain Engines are stronger (+100% production speed, +50% double yield chance).
+	/// </summary>
+	/// <name>[Altar] Replace Rainpunk Engine - Composite</name>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
+	/// <type>CompositeEffectModel</type>
+	Altar_Replace_Rainpunk_Engine_Composite = 3054,
+
+	/// <summary>
 	/// Generous Rations (Stormforged) - Global Resolve is increased by 5, and villagers have a +10% chance of not consuming food during a break.
 	/// </summary>
 	/// <name>[Altar] Resolve for consumption</name>
@@ -1821,6 +1940,20 @@ public enum EffectTypes
 	/// <usabilityTags>[Tag] Trade</usabilityTags>
 	/// <type>CompositeEffectModel</type>
 	Altar_Route_Less_Travel_Time = 218,
+
+	/// <summary>
+	/// Royal Guard Training (Stormforged) - A fencing instructor from the Royal Guard joins your settlement. Fulfilling the need for Brawling grants an additional +10 to Resolve.
+	/// </summary>
+	/// <name>[Altar] Royal Guard Training</name>
+	/// <type>CompositeEffectModel</type>
+	Altar_Royal_Guard_Training = 3055,
+
+	/// <summary>
+	/// Deserted Caravans (Stormforged) - Global production speed is increased by 66%.
+	/// </summary>
+	/// <name>[Altar] Trade Block for Production Speed</name>
+	/// <type>CompositeEffectModel</type>
+	Altar_Trade_Block_For_Production_Speed = 3056,
 
 	/// <summary>
 	/// Trade Logs (Stormforged) - Detailed notes on different traders and their wares. Gain 2 additional active trade route slots. Traders will arrive +33% quicker and have +1 more cornerstones on sale.
@@ -2036,6 +2169,13 @@ public enum EffectTypes
 	Blightrot_Outbreak = 240,
 
 	/// <summary>
+	/// Borrowed Time - Removes 1 Impatience Point, but after one season, you must pay the Crown 10 "[valuable] amber" Amber. Otherwise, you'll gain 3 Impatience Points.
+	/// </summary>
+	/// <name>Borrowed Time - Active Ability</name>
+	/// <type>CompositeEffectModel</type>
+	Borrowed_Time_Active_Ability = 3057,
+
+	/// <summary>
 	/// Efficient Brewing - +50% to amount of goods produced in the Brewery.
 	/// </summary>
 	/// <name>Brewery +50 (Composite)</name>
@@ -2164,11 +2304,18 @@ public enum EffectTypes
 	Fox_Hostility_Hearth_Bonus = 258,
 
 	/// <summary>
-	/// Desperate Prayers - Villagers united in faith can lull the possessed demon back to sleep. Hostility is increased by 250, but each villager with their Religion need fulfilled reduces it by 15.
+	/// Desperate Prayers - Villagers united in faith can lull the possessed demon back to sleep. Hostility is increased by 120, but each villager with their Religion need fulfilled reduces it by 15.
 	/// </summary>
 	/// <name>Gargoyle Hostility Composite</name>
 	/// <type>CompositeEffectModel</type>
 	Gargoyle_Hostility_Composite = 2943,
+
+	/// <summary>
+	/// Dormant Gargoyle - Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes.
+	/// </summary>
+	/// <name>Gargoyle Positive Composite</name>
+	/// <type>CompositeEffectModel</type>
+	Gargoyle_Positive_Composite = 3058,
 
 	/// <summary>
 	/// Travel Rations - With provisions, haulers don't have to return to the hearth as often. Increases the time between breaks for haulers by +50% and their carrying capacity by +5.
@@ -2256,6 +2403,13 @@ public enum EffectTypes
 	/// <name>Instant Storm effect</name>
 	/// <type>CompositeEffectModel</type>
 	Instant_Storm_Effect = 270,
+
+	/// <summary>
+	/// Rogue Tempest - Summons a storm that will not end as long as your scouts are working on the event. Canceling the process will allow the storm to pass, yet it won't end a storm that is ongoing.
+	/// </summary>
+	/// <name>Instant Storm effect - Stormforge</name>
+	/// <type>CompositeEffectModel</type>
+	Instant_Storm_Effect_Stormforge = 3059,
 
 	/// <summary>
 	/// Ancient Ways - The ancient Lizard clans are excellent survivalists. They have mastered hunting and foraging like no others. All gathering camps produce a +100% greater yield. This bonus does not affect woodcutters and fishers.
@@ -2426,7 +2580,7 @@ public enum EffectTypes
 	Mod_Scavenging_Party = 293,
 
 	/// <summary>
-	/// Third Party - The forest is more inviting than usual, but there seems to be something extremely oppressive in this region. Hostility gained by exploring glades reduces by 5, while each year gives an extra 20 Hostility.
+	/// Third Party - The forest is more inviting than usual, but there seems to be something extremely oppressive in this region. Hostility gained by exploring glades reduces by 5, while each year gives an extra 20/30/40/60 Hostility.
 	/// </summary>
 	/// <name>[Mod] Third Party</name>
 	/// <type>CompositeEffectModel</type>
@@ -2605,11 +2759,25 @@ public enum EffectTypes
 	PerkCrafter_More_Resolve_From_Biscuits_And_Pie_2 = 318,
 
 	/// <summary>
+	/// The fulfilled religion need gives 1 more Resolve.
+	/// </summary>
+	/// <name>[PerkCrafter] More Resolve from Religion 1 - Composite</name>
+	/// <type>CompositeEffectModel</type>
+	PerkCrafter_More_Resolve_From_Religion_1_Composite = 3060,
+
+	/// <summary>
+	/// The fulfilled religion need gives 2 more Resolve.
+	/// </summary>
+	/// <name>[PerkCrafter] More Resolve from Religion 2 - Composite</name>
+	/// <type>CompositeEffectModel</type>
+	PerkCrafter_More_Resolve_From_Religion_2_Composite = 3061,
+
+	/// <summary>
 	/// Fulfilled religion and treatment needs give 2 more Resolve.
 	/// </summary>
-	/// <name>[PerkCrafter] More Resolve from Religion and Treatment 2</name>
+	/// <name>[PerkCrafter] More Resolve from Religion And Treatment 2 - Composite</name>
 	/// <type>CompositeEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2 = 319,
+	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2_Composite = 3062,
 
 	/// <summary>
 	/// Planting and harvesting speeds are increased by 10%.
@@ -2687,7 +2855,7 @@ public enum EffectTypes
 	Resolve_For_Consumption = 328,
 
 	/// <summary>
-	/// Royal Guard Training - The Crown sends a fencing instructor from the Royal Guard to your settlement. Fulfilling the need for Brawling grants an additional +5 to Resolve, but attacking a trader adds 2 extra Impatience Points.
+	/// Royal Guard Training - A fencing instructor from the Royal Guard joins your settlement. Fulfilling the need for Brawling grants an additional +5 to Resolve, but attacking a trader adds 2 extra Impatience Points.
 	/// </summary>
 	/// <name>Royal Guard Training</name>
 	/// <type>CompositeEffectModel</type>
@@ -3222,6 +3390,20 @@ public enum EffectTypes
 	Rainpunk_Explosion_Smallest = 385,
 
 	/// <summary>
+	/// Magical Explosion - This ancient structure is extremely volatile and could explode at any moment. Destroys everything within a 10 field radius.
+	/// </summary>
+	/// <name>Rainpunk Explosion - Stormforge</name>
+	/// <type>ExplosionEffectModel</type>
+	Rainpunk_Explosion_Stormforge = 3063,
+
+	/// <summary>
+	/// Soul Sacrifice - Those who harness the Stormforge pay a terrible price. After use, the forge detonates, killing and destroying everything within a 3 field radius.
+	/// </summary>
+	/// <name>Rainpunk Explosion - Stormforge Reward</name>
+	/// <type>ExplosionEffectModel</type>
+	Rainpunk_Explosion_Stormforge_Reward = 3064,
+
+	/// <summary>
 	/// Small Miasma Cloud - A thick, spreading cloud of miasma. It kills every living being within a radius of 20 fields.
 	/// </summary>
 	/// <name>Sealed Vault Explosion</name>
@@ -3234,14 +3416,14 @@ public enum EffectTypes
 	//
 
 	/// <summary>
-	/// Extends available trade offers by 2 in each neighboring town
+	/// Each neighboring town offers 2 additional Trade Route option(s)
 	/// </summary>
 	/// <name>More Trade Offers - Extra Trade Routes</name>
 	/// <type>ExtendTradeRoutesEffectModel</type>
 	More_Trade_Offers_Extra_Trade_Routes = 387,
 
 	/// <summary>
-	/// More trade offers - Extends available trade offers by 1 in each neighboring town
+	/// More trade offers - Each neighboring town offers 1 additional Trade Route option(s)
 	/// </summary>
 	/// <name>TEMP Extend Trade Routes Effect Model</name>
 	/// <type>ExtendTradeRoutesEffectModel</type>
@@ -3282,6 +3464,13 @@ public enum EffectTypes
 	/// <name>Seal Extra Cornerstone</name>
 	/// <type>ExtraCornerstonePickEffectModel</type>
 	Seal_Extra_Cornerstone = 392,
+
+	/// <summary>
+	/// Seal Reforged - With the final part in your hands, the Ancient Guardian can at last be assembled, and the seal closed.
+	/// </summary>
+	/// <name>Seal Extra Cornerstone - Last</name>
+	/// <type>ExtraCornerstonePickEffectModel</type>
+	Seal_Extra_Cornerstone_Last = 3065,
 
 
 	//
@@ -3499,7 +3688,7 @@ public enum EffectTypes
 	SE_FuelRate = 420,
 
 	/// <summary>
-	/// Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level.
+	/// Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level (counting from level 0).
 	/// </summary>
 	/// <name>SE FuelRateHostility</name>
 	/// <type>FuelRateEffectModel</type>
@@ -3794,6 +3983,13 @@ public enum EffectTypes
 	Global_Production_Faster_50 = 462,
 
 	/// <summary>
+	/// Global production speed is increased by 66%.
+	/// </summary>
+	/// <name>Global Production Faster 66</name>
+	/// <type>GlobalProductionRateEffectModel</type>
+	Global_Production_Faster_66 = 3066,
+
+	/// <summary>
 	/// +8% to global production speed.
 	/// </summary>
 	/// <name>Global Production Faster 8</name>
@@ -3867,6 +4063,13 @@ public enum EffectTypes
 	/// <name>Agriculture Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
 	Agriculture_Penalty = 471,
+
+	/// <summary>
+	/// Exploration Expedition (Stormforged) - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia. (+10 to Global Resolve)
+	/// </summary>
+	/// <name>[Altar] Exploring Expedition - Resolve Bonus Effect</name>
+	/// <type>GlobalResolveEffectEffectModel</type>
+	Altar_Exploring_Expedition_Resolve_Bonus_Effect = 3067,
 
 	/// <summary>
 	/// Small Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+1 to Global Resolve)
@@ -4294,6 +4497,34 @@ public enum EffectTypes
 	/// <name>Stormbird Egg - Global Resolve Penalty</name>
 	/// <type>GlobalResolveEffectEffectModel</type>
 	Stormbird_Egg_Global_Resolve_Penalty = 2790,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑6 to Global Resolve)
+	/// </summary>
+	/// <name>StormforgeResolve - hard</name>
+	/// <type>GlobalResolveEffectEffectModel</type>
+	StormforgeResolve_Hard = 3068,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑10 to Global Resolve)
+	/// </summary>
+	/// <name>StormforgeResolve - impossible</name>
+	/// <type>GlobalResolveEffectEffectModel</type>
+	StormforgeResolve_Impossible = 3069,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑4 to Global Resolve)
+	/// </summary>
+	/// <name>StormforgeResolve - normal</name>
+	/// <type>GlobalResolveEffectEffectModel</type>
+	StormforgeResolve_Normal = 3070,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑8 to Global Resolve)
+	/// </summary>
+	/// <name>StormforgeResolve - very hard</name>
+	/// <type>GlobalResolveEffectEffectModel</type>
+	StormforgeResolve_Very_Hard = 3071,
 
 	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together. (+1 to Global Resolve)
@@ -6072,6 +6303,13 @@ public enum EffectTypes
 	Insects_20 = 772,
 
 	/// <summary>
+	/// An Insect - 3 "[food raw] insects" Insects
+	/// </summary>
+	/// <name>Insects 3</name>
+	/// <type>GoodsEffectModel</type>
+	Insects_3 = 3072,
+
+	/// <summary>
 	/// Basket of Insects - 30 "[food raw] insects" Insects
 	/// </summary>
 	/// <name>Insects 30</name>
@@ -6282,7 +6520,7 @@ public enum EffectTypes
 	Metal_Tools_20 = 799,
 
 	/// <summary>
-	/// Box of Tools - 24 "[tools] simple tools" Tools
+	/// Box of Tools - 20 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Metal Tools 24</name>
 	/// <type>GoodsEffectModel</type>
@@ -7535,6 +7773,13 @@ public enum EffectTypes
 	Pipes_20 = 976,
 
 	/// <summary>
+	/// Pipes - 25 "[mat processed] pipe" Pipes
+	/// </summary>
+	/// <name>Pipes 25</name>
+	/// <type>GoodsEffectModel</type>
+	Pipes_25 = 3073,
+
+	/// <summary>
 	/// Pipes - 4 "[mat processed] pipe" Pipes
 	/// </summary>
 	/// <name>Pipes 4</name>
@@ -8509,21 +8754,21 @@ public enum EffectTypes
 	//
 
 	/// <summary>
-	/// Ale Delivery Line - 3 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Ale Delivery Line - 3 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Ale 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Ale_3pm = 1112,
 
 	/// <summary>
-	/// Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Ale 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Ale_5pm = 1113,
 
 	/// <summary>
-	/// Amber Tax - 3 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Amber Tax - 3 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Amber 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
@@ -8537,189 +8782,189 @@ public enum EffectTypes
 	Amber_3pm_Blight = 1115,
 
 	/// <summary>
-	/// Amber Tax - 5 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Amber Tax - 5 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Amber 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Amber_5pm = 1116,
 
 	/// <summary>
-	/// Barrel Delivery Line - 3 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Barrel Delivery Line - 3 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Barrels 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Barrels_3pm = 1117,
 
 	/// <summary>
-	/// Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Barrels 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Barrels_5pm = 1118,
 
 	/// <summary>
-	/// Berry Delivery Line - 10 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Berry Delivery Line - 10 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Berries 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Berries_10pm = 1119,
 
 	/// <summary>
-	/// Berry Delivery Line - 5 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Berry Delivery Line - 5 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Berries 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Berries_5pm = 1120,
 
 	/// <summary>
-	/// Biscuit Delivery Line - 3 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Biscuit Delivery Line - 3 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Biscuits 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Biscuits_3pm = 1121,
 
 	/// <summary>
-	/// Biscuit Delivery Line - 5 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Biscuit Delivery Line - 5 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Biscuits 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Biscuits_5pm = 1122,
 
 	/// <summary>
-	/// Boot Delivery Line - 5 "[needs] boots" Boots per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Boot Delivery Line - 5 "[needs] boots" Boots per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Boots 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Boots_5pm = 2809,
 
 	/// <summary>
-	/// Clay Delivery Line - 10 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Clay Delivery Line - 10 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Clay 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Clay_10pm = 1123,
 
 	/// <summary>
-	/// Clay Delivery Line - 3 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Clay Delivery Line - 3 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Clay 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Clay_3pm = 1124,
 
 	/// <summary>
-	/// Clay Delivery Line - 5 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Clay Delivery Line - 5 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Clay 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Clay_5pm = 1125,
 
 	/// <summary>
-	/// Coal Delivery Line - 10 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Coal Delivery Line - 10 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Coal 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Coal_10pm = 1126,
 
 	/// <summary>
-	/// Coal Delivery Line - 3 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Coal Delivery Line - 3 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Coal 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Coal_3pm = 1127,
 
 	/// <summary>
-	/// Coal Delivery Line - 5 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Coal Delivery Line - 5 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Coal 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Coal_5pm = 1128,
 
 	/// <summary>
-	/// Coat Delivery Line - 10 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Coat Delivery Line - 10 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Coats 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Coats_10pm = 1129,
 
 	/// <summary>
-	/// Coat Delivery Line - 3 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Coat Delivery Line - 3 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Coats 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Coats_3pm = 1130,
 
 	/// <summary>
-	/// Coat Delivery Line - 5 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Coat Delivery Line - 5 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Coats 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Coats_5pm = 1131,
 
 	/// <summary>
-	/// Metal Delivery Line - 2 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Metal Delivery Line - 2 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Bars 2pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Bars_2pm = 1132,
 
 	/// <summary>
-	/// Metal Delivery Line - 3 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Metal Delivery Line - 3 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Bars 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Bars_3pm = 1133,
 
 	/// <summary>
-	/// Metal Delivery Line - 4 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Metal Delivery Line - 4 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Bars 4pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Bars_4pm = 1134,
 
 	/// <summary>
-	/// Metal Delivery Line - 5 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Metal Delivery Line - 5 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Bars 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Bars_5pm = 1135,
 
 	/// <summary>
-	/// Ore Delivery Line - 10 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Ore Delivery Line - 10 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Ore 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Ore_10pm = 1136,
 
 	/// <summary>
-	/// Ore Delivery Line - 3 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Ore Delivery Line - 3 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Ore 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Ore_3pm = 2955,
 
 	/// <summary>
-	/// Ore Delivery Line - 5 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Ore Delivery Line - 5 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Copper Ore 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Copper_Ore_5pm = 1137,
 
 	/// <summary>
-	/// Egg Delivery Line - 10 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Egg Delivery Line - 10 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Eggs 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Eggs_10pm = 1138,
 
 	/// <summary>
-	/// Egg Delivery Line - 15 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Egg Delivery Line - 15 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Eggs 15pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Eggs_15pm = 1139,
 
 	/// <summary>
-	/// Egg Delivery Line - 3 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Egg Delivery Line - 3 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Eggs 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
@@ -8733,462 +8978,462 @@ public enum EffectTypes
 	Eggs_5pm_Stormbird = 1141,
 
 	/// <summary>
-	/// Fiber Delivery Line - 10 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Fiber Delivery Line - 10 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Fiber 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Fiber_10pm = 1142,
 
 	/// <summary>
-	/// Fiber Delivery Line - 15 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Fiber Delivery Line - 15 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Fiber 15pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Fiber_15pm = 1143,
 
 	/// <summary>
-	/// Fiber Delivery Line - 3 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Fiber Delivery Line - 3 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Fiber 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Fiber_3pm = 1144,
 
 	/// <summary>
-	/// Fiber Delivery Line - 5 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Fiber Delivery Line - 5 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Fiber 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Fiber_5pm = 1145,
 
 	/// <summary>
-	/// Fish Delivery Line - 5 "[food raw] fish" Fish per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Fish Delivery Line - 5 "[food raw] fish" Fish per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Fish 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Fish_5pm = 1146,
 
 	/// <summary>
-	/// Flour Delivery Line - 3 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Flour Delivery Line - 3 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Flour 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Flour_3pm = 1147,
 
 	/// <summary>
-	/// Flour Delivery Line - 5 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Flour Delivery Line - 5 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Flour 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Flour_5pm = 1148,
 
 	/// <summary>
-	/// Grain Delivery Line - 10 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Grain Delivery Line - 10 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Grain 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Grain_10pm = 1149,
 
 	/// <summary>
-	/// Grain Delivery Line - 15 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Grain Delivery Line - 15 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Grain 15pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Grain_15pm = 1150,
 
 	/// <summary>
-	/// Grain Delivery Line - 3 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Grain Delivery Line - 3 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Grain 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Grain_3pm = 1151,
 
 	/// <summary>
-	/// Grain Delivery Line - 5 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Grain Delivery Line - 5 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Grain 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Grain_5pm = 1152,
 
 	/// <summary>
-	/// Herb Delivery Line - 10 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Herb Delivery Line - 10 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Herbs 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Herbs_10pm = 1153,
 
 	/// <summary>
-	/// Herb Delivery Line - 2 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Herb Delivery Line - 2 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Herbs 2pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Herbs_2pm = 1154,
 
 	/// <summary>
-	/// Herb Delivery Line - 5 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Herb Delivery Line - 5 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Herbs 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Herbs_5pm = 1155,
 
 	/// <summary>
-	/// Incense Delivery Line - 3 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Incense Delivery Line - 3 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Incense 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Incense_3pm = 1156,
 
 	/// <summary>
-	/// Incense Delivery Line - 5 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Incense Delivery Line - 5 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Incense 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Incense_5pm = 1157,
 
 	/// <summary>
-	/// Termite Nest - 3 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Termite Nest - 3 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Insects 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Insects_3pm = 1158,
 
 	/// <summary>
-	/// Insect Delivery Line - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Insect Delivery Line - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Insects 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Insects_5pm = 1159,
 
 	/// <summary>
-	/// Termite Nest - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Termite Nest - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Insects 5pm - Termite Nest</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Insects_5pm_Termite_Nest = 1160,
 
 	/// <summary>
-	/// Jerky Delivery Line - 3 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Jerky Delivery Line - 3 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Jerky 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Jerky_3pm = 1161,
 
 	/// <summary>
-	/// Jerky Delivery Line - 5 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Jerky Delivery Line - 5 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Jerky 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Jerky_5pm = 1162,
 
 	/// <summary>
-	/// Leather Delivery Line - 10 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Leather Delivery Line - 10 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Leather 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Leather_10pm = 1163,
 
 	/// <summary>
-	/// Leather Delivery Line - 5 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Leather Delivery Line - 5 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Leather 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Leather_5pm = 1164,
 
 	/// <summary>
-	/// Scroll Delivery Line - 3 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Scroll Delivery Line - 3 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Manuscripts (paper) 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Manuscripts_paper_3pm = 1165,
 
 	/// <summary>
-	/// Scroll Delivery Line - 5 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Scroll Delivery Line - 5 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Manuscripts (paper) 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Manuscripts_paper_5pm = 1166,
 
 	/// <summary>
-	/// Meat Delivery Line - 10 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Meat Delivery Line - 10 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Meat 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Meat_10pm = 1167,
 
 	/// <summary>
-	/// Meat Delivery Line - 5 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Meat Delivery Line - 5 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Meat 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Meat_5pm = 1168,
 
 	/// <summary>
-	/// Mushroom Delivery Line - 10 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Mushroom Delivery Line - 10 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Mushrooms 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Mushrooms_10pm = 1169,
 
 	/// <summary>
-	/// Mushroom Delivery Line - 5 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Mushroom Delivery Line - 5 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Mushrooms 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Mushrooms_5pm = 1170,
 
 	/// <summary>
-	/// Oil Delivery Line - 10 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Oil Delivery Line - 10 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Oil 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Oil_10pm = 1171,
 
 	/// <summary>
-	/// Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Oil 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Oil_5pm = 1172,
 
 	/// <summary>
-	/// Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Pickled goods 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Pickled_Goods_3pm = 1173,
 
 	/// <summary>
-	/// Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Pickled goods 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Pickled_Goods_5pm = 1174,
 
 	/// <summary>
-	/// Pie Delivery Line - 3 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Pie Delivery Line - 3 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Pie 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Pie_3pm = 1175,
 
 	/// <summary>
-	/// Pie Delivery Line - 5 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Pie Delivery Line - 5 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Pie 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Pie_5pm = 1176,
 
 	/// <summary>
-	/// Pottery Delivery Line - 5 "[vessel] pottery" Pottery per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Pottery Delivery Line - 5 "[vessel] pottery" Pottery per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Pottery 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Pottery_5pm = 1177,
 
 	/// <summary>
-	/// Reed Delivery Line - 10 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Reed Delivery Line - 10 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Reeds 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Reeds_10pm = 1178,
 
 	/// <summary>
-	/// Reed Delivery Line - 5 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Reed Delivery Line - 5 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Reeds 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Reeds_5pm = 1179,
 
 	/// <summary>
-	/// Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Resin 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Resin_3pm = 1180,
 
 	/// <summary>
-	/// Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Resin 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Resin_5pm = 1181,
 
 	/// <summary>
-	/// Root Delivery Line - 10 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Root Delivery Line - 10 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Roots 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Roots_10pm = 1182,
 
 	/// <summary>
-	/// Root Delivery Line - 3 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Root Delivery Line - 3 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Roots 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Roots_3pm = 1183,
 
 	/// <summary>
-	/// Root Delivery Line - 5 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Root Delivery Line - 5 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Roots 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Roots_5pm = 1184,
 
 	/// <summary>
-	/// Sea Marrow Delivery Line - 3 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Sea Marrow Delivery Line - 3 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Sea Marrow 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Sea_Marrow_3pm = 1185,
 
 	/// <summary>
-	/// Converted Fishmen Lighthouse - 5 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Converted Fishmen Lighthouse - 5 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Sea Marrow 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Sea_Marrow_5pm = 1186,
 
 	/// <summary>
-	/// Skewers Delivery Line - 3 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Skewers Delivery Line - 3 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Skewers 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Skewers_3pm = 1187,
 
 	/// <summary>
-	/// Skewers Delivery Line - 5 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Skewers Delivery Line - 5 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Skewers 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Skewers_5pm = 1188,
 
 	/// <summary>
-	/// Stone Delivery Line - 10 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Stone Delivery Line - 10 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Stone 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Stone_10pm = 1189,
 
 	/// <summary>
-	/// Stone Delivery Line - 3 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Stone Delivery Line - 3 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Stone 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Stone_3pm = 1190,
 
 	/// <summary>
-	/// Stone Delivery Line - 5 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Stone Delivery Line - 5 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Stone 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Stone_5pm = 1191,
 
 	/// <summary>
-	/// Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>[T] Ale 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	T_Ale_5pm = 2956,
 
 	/// <summary>
-	/// Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>[T] Barrels 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	T_Barrels_5pm = 1192,
 
 	/// <summary>
-	/// Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>[T] Oil 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	T_Oil_5pm = 2957,
 
 	/// <summary>
-	/// Tea Delivery Line - 3 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Tea Delivery Line - 3 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Tea 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Tea_3pm = 1193,
 
 	/// <summary>
-	/// Tea Delivery Line - 5 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Tea Delivery Line - 5 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Tea 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Tea_5pm = 1194,
 
 	/// <summary>
-	/// Tool Delivery Line - 2 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Tool Delivery Line - 2 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Tools 2pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Tools_2pm = 1195,
 
 	/// <summary>
-	/// Tool Delivery Line - 4 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Tool Delivery Line - 4 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Tools 4pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Tools_4pm = 1196,
 
 	/// <summary>
-	/// Training Gear Delivery Line - 3 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Training Gear Delivery Line - 3 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Training Gear 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Training_Gear_3pm = 1197,
 
 	/// <summary>
-	/// Training Gear Delivery Line - 5 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Training Gear Delivery Line - 5 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Training Gear 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Training_Gear_5pm = 1198,
 
 	/// <summary>
-	/// Vegetable Delivery Line - 10 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Vegetable Delivery Line - 10 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Vegetables 10pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Vegetables_10pm = 1199,
 
 	/// <summary>
-	/// Vegetable Delivery Line - 3 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Vegetable Delivery Line - 3 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Vegetables 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Vegetables_3pm = 1200,
 
 	/// <summary>
-	/// Vegetable Delivery Line - 5 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Vegetable Delivery Line - 5 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Vegetables 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Vegetables_5pm = 1201,
 
 	/// <summary>
-	/// Waterskin Delivery Line - 3 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Waterskin Delivery Line - 3 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Waterskins 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Waterskins_3pm = 1202,
 
 	/// <summary>
-	/// Waterskin Delivery Line - 5 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Waterskin Delivery Line - 5 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Waterskins 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Waterskins_5pm = 1203,
 
 	/// <summary>
-	/// Wine Delivery Line - 3 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Wine Delivery Line - 3 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Wine 3pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
 	Wine_3pm = 1204,
 
 	/// <summary>
-	/// Wine Delivery Line - 5 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks
+	/// Wine Delivery Line - 5 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks.
 	/// </summary>
 	/// <name>Wine 5pm</name>
 	/// <type>GoodsPerMinEffectModel</type>
@@ -9706,6 +9951,27 @@ public enum EffectTypes
 	Flour_Plus5 = 1275,
 
 	/// <summary>
+	/// Rainwater Condenser - +1 to "[water] clearance water" Clearance Water production (from gathering, farming, fishing, or production).
+	/// </summary>
+	/// <name>Gargoyle Clearance Water +1</name>
+	/// <type>GoodsRawProductionEffectModel</type>
+	Gargoyle_Clearance_Water_Plus1 = 3074,
+
+	/// <summary>
+	/// Rainwater Condenser - +1 to "[water] drizzle water" Drizzle Water production (from gathering, farming, fishing, or production).
+	/// </summary>
+	/// <name>Gargoyle Drizzle Water +1</name>
+	/// <type>GoodsRawProductionEffectModel</type>
+	Gargoyle_Drizzle_Water_Plus1 = 3075,
+
+	/// <summary>
+	/// Rainwater Condenser - +1 to "[water] storm water" Storm Water production (from gathering, farming, fishing, or production).
+	/// </summary>
+	/// <name>Gargoyle Storm Water +1</name>
+	/// <type>GoodsRawProductionEffectModel</type>
+	Gargoyle_Storm_Water_Plus1 = 3076,
+
+	/// <summary>
 	/// Mold Supply - +1 to "[food raw] grain" Grain production (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Grain +1</name>
@@ -10152,7 +10418,7 @@ public enum EffectTypes
 	Paste_Plus3 = 2812,
 
 	/// <summary>
-	/// Steel Grater - +3 to "[food processed] paste" Paste production (from gathering, farming, fishing, or production).
+	/// Steel Grater - +5 to "[food processed] paste" Paste production (from gathering, farming, fishing, or production).
 	/// </summary>
 	/// <name>Paste +5</name>
 	/// <type>GoodsRawProductionEffectModel</type>
@@ -11006,6 +11272,14 @@ public enum EffectTypes
 	HarvestingRate_Plus30 = 1458,
 
 	/// <summary>
+	/// Obsidian Sickles - Harvesting crops is 40% faster.
+	/// </summary>
+	/// <name>HarvestingRate +40</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	/// <type>HarvestingRateEffectModel</type>
+	HarvestingRate_Plus40 = 3077,
+
+	/// <summary>
 	/// Obsidian Sickles - Harvesting crops is 5% faster.
 	/// </summary>
 	/// <name>HarvestingRate +5</name>
@@ -11474,6 +11748,33 @@ public enum EffectTypes
 	Altar_Cornerstone_Reroll_Each_Year = 1516,
 
 	/// <summary>
+	/// Exploration Expedition (Stormforged) - You took some of the best explorers from the Smoldering City with you. Global Resolve is boosted by +10 for 180 seconds every time a new glade is discovered.
+	/// </summary>
+	/// <name>[Altar] Exploring Expedition</name>
+	/// <type>HookedEffectModel</type>
+	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
+	/// <hookedEffect_1>[Altar] Exploring Expedition - Resolve Bonus Effect - Holder (HookedEffectModel)</hookedEffect_1>
+	Altar_Exploring_Expedition = 3078,
+
+	/// <summary>
+	/// Joy Of Discovery (Stormforged) - Global Resolve is increased by 10 for 180 seconds due to a recently discovered glade (source: Exploration Expedition (Stormforged)).
+	/// </summary>
+	/// <name>[Altar] Exploring Expedition - Resolve Bonus Effect - Holder</name>
+	/// <type>HookedEffectModel</type>
+	/// <instantEffect_1>[Altar] Exploring Expedition - Resolve Bonus Effect (GlobalResolveEffectEffectModel)</instantEffect_1>
+	/// <removalHook_1>- fill missing elements - (GameTimePassedHook)</removalHook_1>
+	Altar_Exploring_Expedition_Resolve_Bonus_Effect_Holder = 3079,
+
+	/// <summary>
+	/// Cooking Steam (Stormforged) - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by +40% for every 50 units of Drizzle Water stored.
+	/// </summary>
+	/// <name>[Altar] Food Production For Engines</name>
+	/// <type>HookedEffectModel</type>
+	/// <hooks_1>- fill missing elements - (GoodStoredAmountHook)</hooks_1>
+	/// <hookedEffect_1>Food prod speed +40 (RecipesTagProductionRateEffectModel)</hookedEffect_1>
+	Altar_Food_Production_For_Engines = 3080,
+
+	/// <summary>
 	/// Generous Gifts (Stormforged) - Wealthy settlements attract wealthy settlers. Newcomers bring 75% more goods with them for every Hearth level gained.
 	/// </summary>
 	/// <name>[Altar] Hubs for newcomer goods</name>
@@ -11492,7 +11793,7 @@ public enum EffectTypes
 	Altar_Insect_For_Tree = 1523,
 
 	/// <summary>
-	/// Woodpecker Technique - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
+	/// Woodpecker Technique (Stormforged) - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
 	/// </summary>
 	/// <name>[Altar] Insect for tree - child</name>
 	/// <type>HookedEffectModel</type>
@@ -11558,7 +11859,7 @@ public enum EffectTypes
 	Altar_Tools_For_Death = 1533,
 
 	/// <summary>
-	/// Improvised Tools (Stormforged) - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 24 "[tools] simple tools" Tools.
+	/// Improvised Tools (Stormforged) - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 20 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>[Altar] Tools for glade</name>
 	/// <type>HookedEffectModel</type>
@@ -11625,7 +11926,7 @@ public enum EffectTypes
 	Amber_For_Sea_Marrow = 1540,
 
 	/// <summary>
-	/// Value Added Tax - Gain 2 "[valuable] amber" Amber for every 6 "[packs] pack of trade goods" Pack of Trade Goods produced.
+	/// Royal Subsidy - Gain 2 "[valuable] amber" Amber for every 6 "[packs] pack of trade goods" Pack of Trade Goods produced.
 	/// </summary>
 	/// <name>Amber for Trade Packs</name>
 	/// <usabilityTags>[Tag] Trade</usabilityTags>
@@ -11655,13 +11956,12 @@ public enum EffectTypes
 	Amber_For_Trader_Visit = 1543,
 
 	/// <summary>
-	/// Counterfeit Amber - Apparently, amber-like crystals can be extracted from rainwater. Gain 10 "[valuable] amber" Amber every time you use 40 units of water in Rain Engines, but the Negligence penalty for unfavored species increases by 3.
+	/// Counterfeit Amber - Apparently, amber-like crystals can be extracted from rainwater. Gain 10 "[valuable] amber" Amber every time you use 50 units of water in Rain Engines.
 	/// </summary>
 	/// <name>Amber for Water</name>
 	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (WaterUsedHook)</hooks_1>
-	/// <instantEffect_1>Higher Resolve Penalty For Favoring (ResolveEffectBonusResolveEffectModel)</instantEffect_1>
 	/// <hookedEffect_1>Amber 10 (GoodsEffectModel)</hookedEffect_1>
 	Amber_For_Water = 1544,
 
@@ -11720,6 +12020,7 @@ public enum EffectTypes
 	/// <instantEffect_8>SmallFarm +100 Haunted (BuildingProductionEffectModel)</instantEffect_8>
 	/// <instantEffect_9>Herb Garden +100 Haunted (BuildingProductionEffectModel)</instantEffect_9>
 	/// <instantEffect_10>Mistworm All Food Lost (RemoveGoodsByCategoryEffectModel)</instantEffect_10>
+	/// <instantEffect_11>Brineworks +100 (BuildingProductionEffectModel)</instantEffect_11>
 	Back_To_Nature = 1549,
 
 	/// <summary>
@@ -11820,7 +12121,7 @@ public enum EffectTypes
 	BIOME_Marshlands_Camps_Speed = 1555,
 
 	/// <summary>
-	/// Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 40 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
+	/// Deeply Hidden Riches - Receive a "[valuable] thunderblight shard" Thunderblight Shard after using 40 mining vein charges (copper, coal, or salt). Up to 3 shards can be gained, requiring 40/80/120 charges.
 	/// </summary>
 	/// <name>[BIOME] Shards for Relics 1</name>
 	/// <type>HookedEffectModel</type>
@@ -11830,7 +12131,7 @@ public enum EffectTypes
 	BIOME_Shards_For_Relics_1 = 1556,
 
 	/// <summary>
-	/// Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 80 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
+	/// Deeply Hidden Riches - Receive a "[valuable] thunderblight shard" Thunderblight Shard after using 80 mining vein charges (copper, coal, or salt). Up to 3 shards can be gained, requiring 40/80/120 charges.
 	/// </summary>
 	/// <name>[BIOME] Shards for Relics 2</name>
 	/// <type>HookedEffectModel</type>
@@ -11840,7 +12141,7 @@ public enum EffectTypes
 	BIOME_Shards_For_Relics_2 = 1557,
 
 	/// <summary>
-	/// Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 120 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
+	/// Deeply Hidden Riches - Receive a "[valuable] thunderblight shard" Thunderblight Shard after using 120 mining vein charges (copper, coal, or salt). Up to 3 shards can be gained, requiring 40/80/120 charges.
 	/// </summary>
 	/// <name>[BIOME] Shards for Relics 3</name>
 	/// <type>HookedEffectModel</type>
@@ -12289,7 +12590,7 @@ public enum EffectTypes
 	Forbidden_For_Hostility = 1602,
 
 	/// <summary>
-	/// Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Completing a Forbidden Glade Event reduces the Hostility gained from Dangerous ("dangerous") and Forbidden Glades ("forbidden") by 2, and from Small Glades by 1.
+	/// Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Completing a Forbidden Event ("forbidden") reduces the Hostility gained from Dangerous ("dangerous") and Forbidden Glades ("forbidden") by 2, and from Small Glades by 1.
 	/// </summary>
 	/// <name>Forbidden for Hostility NEW</name>
 	/// <type>HookedEffectModel</type>
@@ -12309,7 +12610,7 @@ public enum EffectTypes
 	Friend_Or_Foe = 1604,
 
 	/// <summary>
-	/// Borrowed Time - The Queen looks more favorably upon a city represented by such distinguished ambassadors. Each fully upgraded house will grant you 10 seconds of Grace Period after the Queen’s Impatience reaches its maximum threshold.
+	/// Borrowed Time - The Crown can be persuaded to show leniency toward this settlement. Grants an Active Ability that removes 1 Impatience Point at the cost of 10 "[valuable] amber" Amber. Usable from the Main Warehouse, up to 5 times.
 	/// </summary>
 	/// <name>Frog Adding Grace Period</name>
 	/// <usabilityTags>[Tag] Frog</usabilityTags>
@@ -12329,7 +12630,7 @@ public enum EffectTypes
 	Frog_Adding_Resilliance = 1606,
 
 	/// <summary>
-	/// Overzealous Architects - Driven by boundless ambition, Frog architects can't resist sketching plans, even in their spare time. Every time you fully upgrade 5 Frog Houses, you will receive a random blueprint. After 4 blueprints, this cornerstone will disappear.
+	/// Overzealous Architects - Driven by boundless ambition, Frog architects can't resist sketching plans, even in their spare time. Every time you fully upgrade 3 Frog Houses, you will receive a random blueprint. After 4 blueprints, this cornerstone will disappear.
 	/// </summary>
 	/// <name>Frog Blueprints For Upgrades</name>
 	/// <usabilityTags>[Tag] Frog</usabilityTags>
@@ -12878,7 +13179,7 @@ public enum EffectTypes
 	Mod_Guilds_Disfavor = 1662,
 
 	/// <summary>
-	/// Land of Greed - The strange totem causes you to only focus on your wealth... And the Crown is worried. Impatience grows 50% quicker, but every ongoing trade route reduces the Impatience generation speed by –20%.
+	/// Land of Greed - The strange totem causes you to only focus on your wealth... And the Crown is worried. Impatience grows 50% quicker, but every ongoing trade route reduces the Impatience generation speed by 20%.
 	/// </summary>
 	/// <name>[Mod] Land of Greed</name>
 	/// <type>HookedEffectModel</type>
@@ -13651,7 +13952,7 @@ public enum EffectTypes
 	Tools_For_Death = 1742,
 
 	/// <summary>
-	/// Improvised Tools - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 15 "[tools] simple tools" Tools.
+	/// Improvised Tools - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 10 "[tools] simple tools" Tools.
 	/// </summary>
 	/// <name>Tools for glade</name>
 	/// <type>HookedEffectModel</type>
@@ -13660,16 +13961,16 @@ public enum EffectTypes
 	Tools_For_Glade = 1743,
 
 	/// <summary>
-	/// Discovering a glade grants 15 "[tools] simple tools" Tools
+	/// Discovering a glade grants 10 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Tools for glade - child</name>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (GladeDiscoveredHook)</hooks_1>
-	/// <hookedEffect_1>Metal Tools 15 (GoodsEffectModel)</hookedEffect_1>
+	/// <hookedEffect_1>Metal Tools 10 (GoodsEffectModel)</hookedEffect_1>
 	Tools_For_Glade_Child = 1744,
 
 	/// <summary>
-	/// Discovering a glade grants 24 "[tools] simple tools" Tools
+	/// Discovering a glade grants 20 "[tools] simple tools" Tools
 	/// </summary>
 	/// <name>Tools for glade - child - altar</name>
 	/// <type>HookedEffectModel</type>
@@ -13862,12 +14163,13 @@ public enum EffectTypes
 	Voice_Of_The_Forest = 1763,
 
 	/// <summary>
-	/// Book of Water - All recipes that use rainwater have a 5% higher chance of doubling the yield with every 30 vein charges mined.
+	/// Book of Water - For every 30 vein charges mined, rainwater production and all recipes using rainwater gain a 5% higher chance of producing double yields.
 	/// </summary>
 	/// <name>Water Crit For Fishing</name>
 	/// <type>HookedEffectModel</type>
 	/// <hooks_1>- fill missing elements - (OreChargeUsedHook)</hooks_1>
 	/// <hookedEffect_1>Water Recipes Crit +3 (RecipesTagExtraProductionChanceEffectModel)</hookedEffect_1>
+	/// <hookedEffect_2>Water Extractor Extra Production Chance (BuildingPerkEffectModel)</hookedEffect_2>
 	Water_Crit_For_Fishing = 1764,
 
 	/// <summary>
@@ -14248,7 +14550,7 @@ public enum EffectTypes
 	Map_Mod_Initial_Hostility = 1812,
 
 	/// <summary>
-	/// Memory of the Forest - Other viceroys tried to settle here before, and the forest still remembers their presence. Start with 50 Hostility points.
+	/// Memory of the Forest - Other viceroys tried to settle here before, and the forest still remembers their presence. Start with 50/75/100/150 Hostility points.
 	/// </summary>
 	/// <name>[Mod] Memory of the Forest</name>
 	/// <type>HostilityEffectModel</type>
@@ -14433,7 +14735,7 @@ public enum EffectTypes
 	MoreHostilityPerHearth_Weak = 1839,
 
 	/// <summary>
-	/// Discovered Dangerous Glades give 2 more Hostility.
+	/// Discovered Dangerous Glades add 2 more Hostility (retroactive).
 	/// </summary>
 	/// <name>[PerkCrafter] More Hostility For Glades</name>
 	/// <type>HostilitySourceChangeEffectModel</type>
@@ -14476,6 +14778,20 @@ public enum EffectTypes
 	/// <name>[Diff] Hunger Multiplier</name>
 	/// <type>HungerMultiplierEffectModel</type>
 	Diff_Hunger_Multiplier = 1844,
+
+	/// <summary>
+	/// Infection - The Lurker has brought with it a dangerous disease. Every time villagers have nothing to eat during a break, they will gain 1 additional stack(s) of the Hunger effect.
+	/// </summary>
+	/// <name>Hunger Multiplier - Toxic Slug - normal and hard</name>
+	/// <type>HungerMultiplierEffectModel</type>
+	Hunger_Multiplier_Toxic_Slug_Normal_And_Hard = 3081,
+
+	/// <summary>
+	/// Infection - The Lurker has brought with it a dangerous disease. Every time villagers have nothing to eat during a break, they will gain 2 additional stack(s) of the Hunger effect.
+	/// </summary>
+	/// <name>Hunger Multiplier - Toxic Slug - very hard and impossible</name>
+	/// <type>HungerMultiplierEffectModel</type>
+	Hunger_Multiplier_Toxic_Slug_Very_Hard_And_Impossible = 3082,
 
 	/// <summary>
 	/// Hunger Storm - Missing even a single meal in this harsh climate can be deadly. If villagers don't have anything to eat during a break, they will gain two stacks of the Hunger effect.
@@ -14543,6 +14859,14 @@ public enum EffectTypes
 	//
 	// LocateRelicByTagEffectModel
 	//
+
+	/// <summary>
+	/// Surveying Equipment - Reveals the location of an abandoned cache in a nearby, undiscovered glade.
+	/// </summary>
+	/// <name>Locate Chest</name>
+	/// <tag>[Relic] Chest</tag>
+	/// <type>LocateRelicByTagEffectModel</type>
+	Locate_Chest = 3083,
 
 	/// <summary>
 	/// Reveals a ruin - Reveals the location of the nearest ruin
@@ -14701,7 +15025,7 @@ public enum EffectTypes
 	NeedPerk_Housing_Resolve_Frogs = 1877,
 
 	/// <summary>
-	/// Well-Rested Workers - Just. The. Right. Amount. Villagers with the leisure need fulfilled have a +25% chance of doubling their yields.
+	/// Well-Rested Workers - Just. The. Right. Amount. Villagers with the leisure need fulfilled have a +33% chance of doubling their yields.
 	/// </summary>
 	/// <name>NeedPerk Leisure Production</name>
 	/// <type>NeedPerkEffectModel</type>
@@ -15437,6 +15761,13 @@ public enum EffectTypes
 	Biome_Black_Market_Amber_Payment_6 = 2991,
 
 	/// <summary>
+	/// Borrowed Time - The Crown requires you to contribute to the Royal Treasury. At the end of each Drizzle season, you will be asked to pay 10 "[valuable] amber" Amber for every 3 villagers in your settlement. If you don't, 2 people will leave.
+	/// </summary>
+	/// <name>Borrowed Time - Payment</name>
+	/// <type>PaymentEffectModel</type>
+	Borrowed_Time_Payment = 3084,
+
+	/// <summary>
 	/// Land Tax (small glade) - You discovered a small glade. The Crown requires you to pay 2 "[valuable] amber" Amber.
 	/// </summary>
 	/// <name>[Mod] Exploration Tax - Amber Payment - small</name>
@@ -15632,6 +15963,14 @@ public enum EffectTypes
 	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
 	/// <type>PlantingRateEffectModel</type>
 	PlantingRate_Plus30 = 1972,
+
+	/// <summary>
+	/// Fertilizer - Planting crops is 40% faster.
+	/// </summary>
+	/// <name>PlantingRate +40</name>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	/// <type>PlantingRateEffectModel</type>
+	PlantingRate_Plus40 = 3085,
 
 	/// <summary>
 	/// Seed Pouch - Planting crops is 5% faster.
@@ -16650,6 +16989,18 @@ public enum EffectTypes
 
 
 	//
+	// RandomTraderVisitEffectModel
+	//
+
+	/// <summary>
+	/// Summon Guild Trader - Summons a random trader to your settlement. If used while another trader is present, the current one will depart.
+	/// </summary>
+	/// <name>[Altar] Extra Trader Merch - random trader visit</name>
+	/// <type>RandomTraderVisitEffectModel</type>
+	Altar_Extra_Trader_Merch_Random_Trader_Visit = 3086,
+
+
+	//
 	// RawDepositsChargesEffectModel
 	//
 
@@ -16717,6 +17068,13 @@ public enum EffectTypes
 	RawDepositsCharges_20 = 2117,
 
 	/// <summary>
+	/// +20 charges to small gathering nodes, +35 charges to large gathering nodes
+	/// </summary>
+	/// <name>RawDepositsCharges_Altar</name>
+	/// <type>RawDepositsChargesEffectModel</type>
+	RawDepositsCharges_Altar = 3087,
+
+	/// <summary>
 	/// Wild Growth - Small, energizing drops cause uncontrollable growth in certain species. All gathering nodes discovered during drizzle season have more charges: +2 to small ones, and +10 to large ones.
 	/// </summary>
 	/// <name>SE RawDepositsCharges</name>
@@ -16762,6 +17120,20 @@ public enum EffectTypes
 	/// <name>Biscuits in Rain Mill Haunted</name>
 	/// <type>RecipeEffectModel</type>
 	Biscuits_In_Rain_Mill_Haunted = 2123,
+
+	/// <summary>
+	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
+	/// </summary>
+	/// <name>Mushrooms in Brineworks</name>
+	/// <type>RecipeEffectModel</type>
+	Mushrooms_In_Brineworks = 3088,
+
+	/// <summary>
+	/// Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
+	/// </summary>
+	/// <name>Mushrooms in Brineworks - Altar</name>
+	/// <type>RecipeEffectModel</type>
+	Mushrooms_In_Brineworks_Altar = 3089,
 
 	/// <summary>
 	/// Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
@@ -17200,6 +17572,14 @@ public enum EffectTypes
 	Food_Prod_Speed_Plus10 = 2177,
 
 	/// <summary>
+	/// Cooking Steam - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by {0} for every {1} units of Drizzle Water stored.
+	/// </summary>
+	/// <name>Food prod speed +40</name>
+	/// <tag>Food Tag</tag>
+	/// <type>RecipesTagProductionRateEffectModel</type>
+	Food_Prod_Speed_Plus40 = 3090,
+
+	/// <summary>
 	/// Contaminated Food - All food production (both raw and cooked) is 60% slower.
 	/// </summary>
 	/// <name>Food Production Speed -60</name>
@@ -17256,7 +17636,7 @@ public enum EffectTypes
 	Food_Production_Speed_Plus50 = 2184,
 
 	/// <summary>
-	/// Advanced Fuel - All fuel recipes are 33% faster.
+	/// Advanced Fuel - All fuel recipes (coal, sea marrow, oil, purging fire) are 33% faster. Does not apply to wood production.
 	/// </summary>
 	/// <name>Fuel Recipes Rate 33</name>
 	/// <tag>Fuel Tag</tag>
@@ -17264,7 +17644,7 @@ public enum EffectTypes
 	Fuel_Recipes_Rate_33 = 2185,
 
 	/// <summary>
-	/// Advanced Fuel - All fuel recipes are 50% faster.
+	/// Advanced Fuel - All fuel recipes (coal, sea marrow, oil, purging fire) are 50% faster. Does not apply to wood production.
 	/// </summary>
 	/// <name>Fuel Recipes Rate 50</name>
 	/// <tag>Fuel Tag</tag>
@@ -17272,7 +17652,7 @@ public enum EffectTypes
 	Fuel_Recipes_Rate_50 = 2186,
 
 	/// <summary>
-	/// Advanced Fuel - All fuel recipes are 66% faster.
+	/// Advanced Fuel - All fuel recipes (coal, sea marrow, oil, purging fire) are 66% faster. Does not apply to wood production.
 	/// </summary>
 	/// <name>Fuel Recipes Rate 66</name>
 	/// <tag>Fuel Tag</tag>
@@ -17290,6 +17670,12 @@ public enum EffectTypes
 	/// <tag>Gathering Tag</tag>
 	/// <type>RecipesTagProductionRateEffectModel</type>
 	Gathering_Speed_Plus5 = 2189,
+
+	/// <summary></summary>
+	/// <name>Gathering Speed +50</name>
+	/// <tag>Gathering Tag</tag>
+	/// <type>RecipesTagProductionRateEffectModel</type>
+	Gathering_Speed_Plus50 = 3091,
 
 	/// <summary></summary>
 	/// <name>Metal Production Speed Boost 33</name>
@@ -17392,7 +17778,7 @@ public enum EffectTypes
 	SE_Fast_Food = 2202,
 
 	/// <summary>
-	/// Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% for each Hostility level.
+	/// Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% per Hostility level (counting from level 0).
 	/// </summary>
 	/// <name>SE Food Production Speed -15</name>
 	/// <tag>Food Tag</tag>
@@ -17938,6 +18324,11 @@ public enum EffectTypes
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
 	Remove_Amber_And_Wine = 2247,
 
+	/// <summary></summary>
+	/// <name>Remove Amber - Cornerstone</name>
+	/// <type>RemoveGoodsByCategoryEffectModel</type>
+	Remove_Amber_Cornerstone = 3092,
+
 	/// <summary>
 	/// Forced Sacrifice - The Temple demands offerings. Destroys all trade goods in the Warehouse (packs of goods, Amber, Ancient Tablets).
 	/// </summary>
@@ -17951,6 +18342,13 @@ public enum EffectTypes
 	/// <name>Termites Materials Lost</name>
 	/// <type>RemoveGoodsByCategoryEffectModel</type>
 	Termites_Materials_Lost = 2249,
+
+	/// <summary>
+	/// Toxicity - A foul ooze seeps from the Lurker’s pond, destroying all stored Fish, Algae, Scales.
+	/// </summary>
+	/// <name>Toxic Slug Fish Lost</name>
+	/// <type>RemoveGoodsByCategoryEffectModel</type>
+	Toxic_Slug_Fish_Lost = 3093,
 
 	/// <summary>
 	/// Petrified Wood - The sickness of the petrified tree spreads throughout the settlement. Destroys all stored wood (planks, wood).
@@ -18160,6 +18558,18 @@ public enum EffectTypes
 
 
 	//
+	// RemoveHungerStacksEffectModel
+	//
+
+	/// <summary>
+	/// Emergency Rations - Removes one stack of the Hunger effect from all villagers in the settlement.
+	/// </summary>
+	/// <name>Remove Hunger Stack</name>
+	/// <type>RemoveHungerStacksEffectModel</type>
+	Remove_Hunger_Stack = 3094,
+
+
+	//
 	// RemoveRandomCornerstonesEffectModel
 	//
 
@@ -18262,7 +18672,7 @@ public enum EffectTypes
 	Replace_Building_Academy = 3003,
 
 	/// <summary>
-	/// Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+	/// Advanced Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 	/// </summary>
 	/// <name>Replace Building Advanced Rain Catcher</name>
 	/// <type>ReplaceBuildingEffectModel</type>
@@ -18359,6 +18769,13 @@ public enum EffectTypes
 	/// <name>Replace Building Brickyard</name>
 	/// <type>ReplaceBuildingEffectModel</type>
 	Replace_Building_Brickyard = 2299,
+
+	/// <summary>
+	/// Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
+	/// </summary>
+	/// <name>Replace Building Brineworks</name>
+	/// <type>ReplaceBuildingEffectModel</type>
+	Replace_Building_Brineworks = 3095,
 
 	/// <summary>
 	/// <p>Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).</p>
@@ -18896,7 +19313,7 @@ public enum EffectTypes
 	Replace_Building_Provisioner = 2367,
 
 	/// <summary>
-	/// Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+	/// Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Replace Building Rain Catcher</name>
 	/// <type>ReplaceBuildingEffectModel</type>
@@ -19122,7 +19539,7 @@ public enum EffectTypes
 	Replace_Calm_Ghost_Chest = 2396,
 
 	/// <summary>
-	/// Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves.
+	/// Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves (retroactive).
 	/// </summary>
 	/// <name>Replace Decay Altar</name>
 	/// <type>ReplaceBuildingEffectModel</type>
@@ -19143,7 +19560,7 @@ public enum EffectTypes
 	Replace_Fuming_Machinery = 2399,
 
 	/// <summary>
-	/// Petrified Gargoyle - Aesthetics. An ancient beast turned to stone and perched in eternal vigilance. Installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes. Counts as 16 decorations of its type.
+	/// Dormant Gargoyle - Aesthetics. An ancient demon trapped in stone. Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes. Counts as 4 decorations of its type.
 	/// </summary>
 	/// <name>Replace Gargoyle</name>
 	/// <type>ReplaceBuildingEffectModel</type>
@@ -19291,6 +19708,21 @@ public enum EffectTypes
 	//
 	// ReplaceRainpunkEngineEffectModel
 	//
+
+	/// <summary></summary>
+	/// <name>[Altar] Replace Rainpunk Engine - Extra Prod Chance - Cathode</name>
+	/// <type>ReplaceRainpunkEngineEffectModel</type>
+	Altar_Replace_Rainpunk_Engine_Extra_Prod_Chance_Cathode = 3096,
+
+	/// <summary></summary>
+	/// <name>[Altar] Replace Rainpunk Engine - Prod Rate 1 - Cathode</name>
+	/// <type>ReplaceRainpunkEngineEffectModel</type>
+	Altar_Replace_Rainpunk_Engine_Prod_Rate_1_Cathode = 3097,
+
+	/// <summary></summary>
+	/// <name>[Altar] Replace Rainpunk Engine - Prod Rate 2 - Cathode</name>
+	/// <type>ReplaceRainpunkEngineEffectModel</type>
+	Altar_Replace_Rainpunk_Engine_Prod_Rate_2_Cathode = 3098,
 
 	/// <summary></summary>
 	/// <name>Replace Rainpunk Engine - Extra Prod Chance - Cathode</name>
@@ -19569,6 +20001,13 @@ public enum EffectTypes
 	/// <summary>
 	/// Cleanup Duty - 1 Impatience Point
 	/// </summary>
+	/// <name>1 Reputation Penalty - Toxic Slug</name>
+	/// <type>ReputationPenaltyEffectModel</type>
+	_1_Reputation_Penalty_Toxic_Slug = 3099,
+
+	/// <summary>
+	/// Cleanup Duty - 1 Impatience Point
+	/// </summary>
 	/// <name>1 Reputation Penalty - Trader Cementary</name>
 	/// <type>ReputationPenaltyEffectModel</type>
 	_1_Reputation_Penalty_Trader_Cementary = 2449,
@@ -19602,6 +20041,13 @@ public enum EffectTypes
 	_3_Reputation_Penalty = 2453,
 
 	/// <summary>
+	/// Royal Debt - If you don't pay, you will gain 3 Impatience Points.
+	/// </summary>
+	/// <name>3 Reputation Penalty - Borrowed Time</name>
+	/// <type>ReputationPenaltyEffectModel</type>
+	_3_Reputation_Penalty_Borrowed_Time = 3100,
+
+	/// <summary>
 	/// Sparkdew Crystals - The crown warned you not to settle near giant Sparkdew Crystals. Start with 6 Impatience.
 	/// </summary>
 	/// <name>[Map Mod] Initial Impatience</name>
@@ -19621,6 +20067,11 @@ public enum EffectTypes
 	/// <name>[PerkCrafter] Impatience</name>
 	/// <type>ReputationPenaltyEffectModel</type>
 	PerkCrafter_Impatience = 2456,
+
+	/// <summary></summary>
+	/// <name>Remove 1 Impatience</name>
+	/// <type>ReputationPenaltyEffectModel</type>
+	Remove_1_Impatience = 3101,
 
 	/// <summary></summary>
 	/// <name>Villager Death Reputation Penalty</name>
@@ -19789,6 +20240,20 @@ public enum EffectTypes
 	// ResolveEffectBonusResolveEffectModel
 	//
 
+	/// <summary>
+	/// Missing key (Stormforged) - Changes favoring by 10.
+	/// </summary>
+	/// <name>[Altar] More Resolve from Brawling - Hearth</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	Altar_More_Resolve_From_Brawling_Hearth = 3102,
+
+	/// <summary>
+	/// Missing key (Stormforged) - Changes favoring by 10.
+	/// </summary>
+	/// <name>[Altar] More Resolve from Brawling - Institution</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	Altar_More_Resolve_From_Brawling_Institution = 3103,
+
 	/// <summary></summary>
 	/// <name>Higher Resolve Penalty For Favoring</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
@@ -19858,11 +20323,32 @@ public enum EffectTypes
 	More_Resolve_For_Rainpunk = 2488,
 
 	/// <summary>
+	/// Changes favoring by 5.
+	/// </summary>
+	/// <name>More Resolve from Brawling - Hearth</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	More_Resolve_From_Brawling_Hearth = 3104,
+
+	/// <summary>
+	/// Changes favoring by 5.
+	/// </summary>
+	/// <name>More Resolve from Brawling - Institution</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	More_Resolve_From_Brawling_Institution = 3105,
+
+	/// <summary>
 	/// Changes favoring by 3.
 	/// </summary>
 	/// <name>More Resolve from Coats</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
 	More_Resolve_From_Coats = 2489,
+
+	/// <summary>
+	/// Festive Mood - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
+	/// </summary>
+	/// <name>More Resolve from Housing - Bats</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	More_Resolve_From_Housing_Bats = 3106,
 
 	/// <summary>
 	/// Festive Mood - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
@@ -19972,23 +20458,44 @@ public enum EffectTypes
 	/// <summary>
 	/// The fulfilled religion need gives 1 more Resolve.
 	/// </summary>
-	/// <name>[PerkCrafter] More Resolve from Religion 1</name>
+	/// <name>[PerkCrafter] More Resolve from Religion 1 - Hearth</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_1 = 2499,
+	PerkCrafter_More_Resolve_From_Religion_1_Hearth = 3107,
+
+	/// <summary>
+	/// The fulfilled religion need gives 1 more Resolve.
+	/// </summary>
+	/// <name>[PerkCrafter] More Resolve from Religion 1 - Institution</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	PerkCrafter_More_Resolve_From_Religion_1_Institution = 3108,
 
 	/// <summary>
 	/// The fulfilled religion need gives 2 more Resolve.
 	/// </summary>
-	/// <name>[PerkCrafter] More Resolve from Religion 2</name>
+	/// <name>[PerkCrafter] More Resolve from Religion 2 - Hearth Religion</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_2 = 2500,
+	PerkCrafter_More_Resolve_From_Religion_2_Hearth_Religion = 3109,
 
 	/// <summary>
 	/// The fulfilled religion need gives 2 more Resolve.
 	/// </summary>
-	/// <name>[PerkCrafter] More Resolve from Religion and Treatment 2 - child (treatment)</name>
+	/// <name>[PerkCrafter] More Resolve from Religion 2 - Hearth Treatment</name>
 	/// <type>ResolveEffectBonusResolveEffectModel</type>
-	PerkCrafter_More_Resolve_From_Religion_And_Treatment_2_Child_treatment = 2501,
+	PerkCrafter_More_Resolve_From_Religion_2_Hearth_Treatment = 3110,
+
+	/// <summary>
+	/// The fulfilled religion need gives 2 more Resolve.
+	/// </summary>
+	/// <name>[PerkCrafter] More Resolve from Religion 2 - Institution Religion</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	PerkCrafter_More_Resolve_From_Religion_2_Institution_Religion = 3111,
+
+	/// <summary>
+	/// The fulfilled religion need gives 2 more Resolve.
+	/// </summary>
+	/// <name>[PerkCrafter] More Resolve from Religion 2 - Institution Treatment</name>
+	/// <type>ResolveEffectBonusResolveEffectModel</type>
+	PerkCrafter_More_Resolve_From_Religion_2_Institution_Treatment = 3112,
 
 
 	//
@@ -20187,6 +20694,20 @@ public enum EffectTypes
 	Rewards_Pack_Big_1 = 2523,
 
 	/// <summary>
+	/// Big Mystery Box - A mysterious box full of surprises.
+	/// </summary>
+	/// <name>Rewards Pack Big 1 - WE</name>
+	/// <type>RewardsPackEffectModel</type>
+	Rewards_Pack_Big_1_WE = 3113,
+
+	/// <summary>
+	/// Big Mystery Box - A mysterious box full of surprises.
+	/// </summary>
+	/// <name>Rewards Pack Big - WE</name>
+	/// <type>RewardsPackEffectModel</type>
+	Rewards_Pack_Big_WE = 3114,
+
+	/// <summary>
 	/// Medium Mystery Box - A mysterious box full of surprises.
 	/// </summary>
 	/// <name>Rewards Pack Medium</name>
@@ -20199,6 +20720,20 @@ public enum EffectTypes
 	/// <name>Rewards Pack Medium 1</name>
 	/// <type>RewardsPackEffectModel</type>
 	Rewards_Pack_Medium_1 = 2525,
+
+	/// <summary>
+	/// Medium Mystery Box - A mysterious box full of surprises.
+	/// </summary>
+	/// <name>Rewards Pack Medium 1 - WE</name>
+	/// <type>RewardsPackEffectModel</type>
+	Rewards_Pack_Medium_1_WE = 3115,
+
+	/// <summary>
+	/// Medium Mystery Box - A mysterious box full of surprises.
+	/// </summary>
+	/// <name>Rewards Pack Medium - WE</name>
+	/// <type>RewardsPackEffectModel</type>
+	Rewards_Pack_Medium_WE = 3116,
 
 	/// <summary>
 	/// Epic Sunken Treasure - An old, heavy treasure chest covered in algae.
@@ -20241,6 +20776,20 @@ public enum EffectTypes
 	/// <name>Rewards Pack Small 1</name>
 	/// <type>RewardsPackEffectModel</type>
 	Rewards_Pack_Small_1 = 2531,
+
+	/// <summary>
+	/// Small Mystery Box - A mysterious box full of surprises.
+	/// </summary>
+	/// <name>Rewards Pack Small 1 - WE</name>
+	/// <type>RewardsPackEffectModel</type>
+	Rewards_Pack_Small_1_WE = 3117,
+
+	/// <summary>
+	/// Small Mystery Box - A mysterious box full of surprises.
+	/// </summary>
+	/// <name>Rewards Pack Small - WE</name>
+	/// <type>RewardsPackEffectModel</type>
+	Rewards_Pack_Small_WE = 3118,
 
 	/// <summary>
 	/// Cursed Treasure - Capturing the mythical White Stag for the Queen will earn you reputation and fame, but the forest will remember this insult.
@@ -20305,6 +20854,13 @@ public enum EffectTypes
 	/// <name>[PerkCrafter] Negative Seasonal Effects Sooner</name>
 	/// <type>SeasonalEffectsMinHostilityChangeEffectModel</type>
 	PerkCrafter_Negative_Seasonal_Effects_Sooner = 2538,
+
+	/// <summary>
+	/// Soulstorm - Restless souls roam the forest. Negative Forest Mysteries require a lower Hostility level (-1) to activate during the storm.
+	/// </summary>
+	/// <name>Stormforge Higher Negative Mysteries</name>
+	/// <type>SeasonalEffectsMinHostilityChangeEffectModel</type>
+	Stormforge_Higher_Negative_Mysteries = 3119,
 
 	/// <summary>
 	/// Plague of Mysteries - The Sealed Ones possess the power to control almost everything. Negative Forest Mysteries require a lower Hostility level (-3) to activate during the storm.
@@ -20729,6 +21285,18 @@ public enum EffectTypes
 
 
 	//
+	// SpawnLakeEffectModel
+	//
+
+	/// <summary>
+	/// Purified Pond - The beast is gone, and it’s safe to fish here again... for now. Spawns a Deep Pond - a rich fishing pond that has more resources than a Large Pond, usable only by a fishing hut with a "grade2" recipe or better.
+	/// </summary>
+	/// <name>Spawn Lake</name>
+	/// <type>SpawnLakeEffectModel</type>
+	Spawn_Lake = 3120,
+
+
+	//
 	// SpawnNewNpcEffectModel
 	//
 
@@ -20910,6 +21478,46 @@ public enum EffectTypes
 	//
 	// TraderGoodSellPriceEffectModel
 	//
+
+	/// <summary>
+	/// Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+	/// </summary>
+	/// <name>[Altar] Pack of Building Materials Worth More</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>TraderGoodSellPriceEffectModel</type>
+	Altar_Pack_Of_Building_Materials_Worth_More = 3121,
+
+	/// <summary>
+	/// Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+	/// </summary>
+	/// <name>[Altar] Pack of Crops Worth More</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>TraderGoodSellPriceEffectModel</type>
+	Altar_Pack_Of_Crops_Worth_More = 3122,
+
+	/// <summary>
+	/// Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+	/// </summary>
+	/// <name>[Altar] Pack of Luxury Goods Worth More</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>TraderGoodSellPriceEffectModel</type>
+	Altar_Pack_Of_Luxury_Goods_Worth_More = 3123,
+
+	/// <summary>
+	/// Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+	/// </summary>
+	/// <name>[Altar] Pack of Provisions Worth More</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>TraderGoodSellPriceEffectModel</type>
+	Altar_Pack_Of_Provisions_Worth_More = 3124,
+
+	/// <summary>
+	/// Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+	/// </summary>
+	/// <name>[Altar] Pack of Trade Goods Worth More</name>
+	/// <usabilityTags>[Tag] Trade</usabilityTags>
+	/// <type>TraderGoodSellPriceEffectModel</type>
+	Altar_Pack_Of_Trade_Goods_Worth_More = 3125,
 
 	/// <summary>
 	/// Amber Curse - The blood of an Ancient was spilled here. "[valuable] amber" Amber is now worth 90% less to traders.
@@ -21308,6 +21916,23 @@ public enum EffectTypes
 
 
 	//
+	// UpgradeRandomCornerstoneEffectModel
+	//
+
+	/// <summary></summary>
+	/// <name>Upgrade Random Cornerstone</name>
+	/// <type>UpgradeRandomCornerstoneEffectModel</type>
+	Upgrade_Random_Cornerstone = 3126,
+
+	/// <summary>
+	/// Stormforging - Though forbidden by royal decree, many Viceroys still practice this ancient ritual, and the Crown often turns a blind eye. Upgrades one of your cornerstones to Stormforged rarity, or grants a random one if none qualify.
+	/// </summary>
+	/// <name>Upgrade Random Cornerstone - Stormforge</name>
+	/// <type>UpgradeRandomCornerstoneEffectModel</type>
+	Upgrade_Random_Cornerstone_Stormforge = 3127,
+
+
+	//
 	// VillagerDeathEffectBlockEffectModel
 	//
 
@@ -21363,14 +21988,14 @@ public enum EffectTypes
 	//
 
 	/// <summary>
-	/// Demonic Hunger - The tamed Gargoyle will make a fine ornament - and guardian - for the Queen’s palace. But its hunger must be sated. Kills 2 random villager(s).
+	/// Demonic Hunger - The vile spirit trapped within this statue must be purged, but it will require a sacrifice. Kills 2 random villager(s).
 	/// </summary>
 	/// <name>Gargoyle Killed 2 Villagers</name>
 	/// <type>VillagersDeathEffectModel</type>
 	Gargoyle_Killed_2_Villagers = 3025,
 
 	/// <summary>
-	/// Demonic Hunger - The tamed Gargoyle will make a fine ornament - and guardian - for the Queen’s palace. But its hunger must be sated. Kills 1 random villager(s).
+	/// Demonic Hunger - The vile spirit trapped within this statue must be purged, but it will require a sacrifice. Kills 1 random villager(s).
 	/// </summary>
 	/// <name>Gargoyle Killed Villager</name>
 	/// <type>VillagersDeathEffectModel</type>
@@ -21698,6 +22323,34 @@ public enum EffectTypes
 	/// <name>SE Longer Break Interval</name>
 	/// <type>VillagersPerkEffectModel</type>
 	SE_Longer_Break_Interval = 2688,
+
+	/// <summary>
+	/// Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 30% for all villagers.
+	/// </summary>
+	/// <name>Toxic Slug - Shorter Break Interval - hard</name>
+	/// <type>VillagersPerkEffectModel</type>
+	Toxic_Slug_Shorter_Break_Interval_Hard = 3128,
+
+	/// <summary>
+	/// Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 50% for all villagers.
+	/// </summary>
+	/// <name>Toxic Slug - Shorter Break Interval - impossible</name>
+	/// <type>VillagersPerkEffectModel</type>
+	Toxic_Slug_Shorter_Break_Interval_Impossible = 3129,
+
+	/// <summary>
+	/// Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 20% for all villagers.
+	/// </summary>
+	/// <name>Toxic Slug - Shorter Break Interval - normal</name>
+	/// <type>VillagersPerkEffectModel</type>
+	Toxic_Slug_Shorter_Break_Interval_Normal = 3130,
+
+	/// <summary>
+	/// Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 40% for all villagers.
+	/// </summary>
+	/// <name>Toxic Slug - Shorter Break Interval - very hard</name>
+	/// <type>VillagersPerkEffectModel</type>
+	Toxic_Slug_Shorter_Break_Interval_Very_Hard = 3131,
 
 
 	//
@@ -22336,7 +22989,7 @@ public enum EffectTypes
 	/// The total number of vanilla EffectTypes in the game.
 	/// </summary>
 	[Obsolete("Use EffectTypesExtensions.Count(). EffectTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 3039
+	MAX = 3132
 }
 
 /// <summary>
@@ -22365,7 +23018,7 @@ public static class EffectTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every EffectTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return EffectTypes.Additional_Impatience_For_Death in the enum and log an error.
+	/// If no name is found, it will return EffectTypes.Add_Active_Ability_Borrowed_Time in the enum and log an error.
 	/// </summary>
 	public static string ToName(this EffectTypes type)
 	{
@@ -22375,7 +23028,7 @@ public static class EffectTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of EffectTypes: " + type);
-		return TypeToInternalName[EffectTypes.Additional_Impatience_For_Death];
+		return TypeToInternalName[EffectTypes.Add_Active_Ability_Borrowed_Time];
 	}
 	
 	/// <summary>
@@ -22511,6 +23164,11 @@ public static class EffectTypesExtensions
 	internal static readonly Dictionary<EffectTypes, string> TypeToInternalName = new()
 	{
 
+		// AddActiveAbilityEffectModel
+		{ EffectTypes.Add_Active_Ability_Borrowed_Time, "Add Active Ability - Borrowed Time" },                                                                                         // Borrowed Time - The Crown can be persuaded to show leniency toward this settlement. Grants an Active Ability that removes 1 Impatience Point at the cost of 10 "[valuable] amber" Amber. Usable from the Main Warehouse, up to 5 times.
+		{ EffectTypes.Add_Active_Ability_Remove_Hunger_Stack, "Add Active Ability - remove hunger stack" },                                                                             // Emergency Rations - You gain an Active Ability that removes one stack of the Hunger effect from all villagers. This ability can be used from the Main Warehouse and has 3 uses.
+		{ EffectTypes.Altar_Extra_Trader_Merch_Add_Ability, "[Altar] Extra Trader Merch - add ability" }, 
+
 		// AdditionalDeathEffectModel
 		{ EffectTypes.Additional_Impatience_For_Death, "Additional Impatience for Death" }, 
 		{ EffectTypes.Mod_Additional_Impatience_For_Death, "[Mod] Additional Impatience for Death" },                                                                                   // The Queen's People - For the Queen, nothing is more important than her people. Losing villagers will add 0.5 more points to her Impatience.
@@ -22523,6 +23181,10 @@ public static class EffectTypesExtensions
 		// AltarActivationEffectModel
 		{ EffectTypes.Altar_Activation, "Altar Activation" }, 
 
+		// BlockHostilityForRaceEffectModel
+		{ EffectTypes.Block_Hostility_For_Beavers, "Block Hostility For Beavers" }, 
+		{ EffectTypes.No_Beaver_Hostility, "No Beaver Hostility" },                                                                                                                     // Friends of the Forest - Though Beavers are an industrious and technologically minded species, they share a unique bond with the forest. Beaver villagers do not increase Hostility.
+
 		// BlueprintFromCategoryPickEffectModel
 		{ EffectTypes.Port_Blueprint_From_Category_Pick, "Port Blueprint From Category Pick" },                                                                                         // Effect_PortBlueprintFromCategoryPick_Name - Effect_PortBlueprintFromCategoryPick_Desc
 
@@ -22534,10 +23196,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mod_Global_Reputation_Treshold_Increase, "[Mod] Global Reputation Treshold Increase" },                                                                           // Malcontents - You took a very peculiar group of settlers with you. They seem perpetually dissatisfied. The Resolve threshold at which each species starts producing Reputation increases by 1 more point for every Reputation Point they generate.
 
 		// BonusHearthRangeEffectModel
-		{ EffectTypes.Mod_Less_Hearth_Range, "[Mod] Less Hearth Range" },                                                                                                               // Frosts - A bizarre cold rises from below and engulfs the Sacred Flame. Reduces the radius of Hearths by -3 fields.
+		{ EffectTypes.Mod_Less_Hearth_Range, "[Mod] Less Hearth Range" },                                                                                                               // Frosts - A bizarre cold rises from below and engulfs the Sacred Flame. Reduces the radius of Hearths by 3 fields.
 
 		// BonusRainpunkUnlockPriceEffectModel
-		{ EffectTypes.Gargoyle_Decoration_Lower_Rain_Engine_Cost, "Gargoyle Decoration Lower Rain Engine Cost" },                                                                       // Petrified Gargoyle - Installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes.
+		{ EffectTypes.Gargoyle_Decoration_Lower_Rain_Engine_Cost, "Gargoyle Decoration Lower Rain Engine Cost" },                                                                       // Dormant Gargoyle - Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes.
 
 		// BonusReputationFromSourceRateEffectModel
 		{ EffectTypes.Half_Reputation_From_Orders, "Half Reputation From Orders" },                                                                                                     // 50%
@@ -22560,7 +23222,7 @@ public static class EffectTypesExtensions
 
 		// BuildingEffectModel
 		{ EffectTypes.Academy_Blueprint, "Academy Blueprint" },                                                                                                                         // Explorers' Lodge - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
-		{ EffectTypes.Advanced_Rain_Collector_Blueprint, "Advanced Rain Collector Blueprint" },                                                                                         // Forsaken Altar - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+		{ EffectTypes.Advanced_Rain_Collector_Blueprint, "Advanced Rain Collector Blueprint" },                                                                                         // Forsaken Altar - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 		{ EffectTypes.Alchemist_Blueprint, "Alchemist Blueprint" },                                                                                                                     // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Altar_Blueprint, "Altar Blueprint" },                                                                                                                             // Forsaken Altar - An ancient altar to the Forsaken Gods. In the midst of the raging storm, you can make sacrifices here to gain unimaginable powers.
 		{ EffectTypes.Apothecary_Blueprint, "Apothecary Blueprint" },                                                                                                                   // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
@@ -22578,6 +23240,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Brewery_Blueprint, "Brewery Blueprint" },                                                                                                                         // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Brick_Oven_Blueprint, "Brick Oven Blueprint" },                                                                                                                   // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Brickyard_Blueprint, "Brickyard Blueprint" },                                                                                                                     // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).  Rain engine: "[water] storm water" Storm Water.
+		{ EffectTypes.Brineworks_Blueprint, "Brineworks Blueprint" },                                                                                                                   // Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
 		{ EffectTypes.Butcher_Blueprint, "Butcher Blueprint" },                                                                                                                         // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Cannery_Blueprint, "Cannery Blueprint" },                                                                                                                         // Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Carpenter_Blueprint, "Carpenter Blueprint" },                                                                                                                     // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Rain engine: "[water] storm water" Storm Water.
@@ -22653,6 +23316,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Large_Automaton_In_All_Woodcutters, "Large Automaton in All Woodcutters" },                                                                                       // Rainpunk Shredder - A Rainpunk Shredder will permanently occupy one workplace in every Woodcutters' Camp in the settlement. This large automaton can fell multiple trees without returning to camp. It doesn't eat, doesn't need to rest, and can't produce double yields.
 		{ EffectTypes.PerkCrafter_Fewer_Housing_Spots_Child_Big_Shelter, "[PerkCrafter] Fewer Housing Spots - child - Big Shelter" }, 
 		{ EffectTypes.PerkCrafter_Fewer_Housing_Spots_Child_Shelter, "[PerkCrafter] Fewer Housing Spots - child - Shelter" }, 
+		{ EffectTypes.Water_Extractor_Extra_Production_Chance, "Water Extractor Extra Production Chance" },                                                                             // Book of Water - Increases the chance for extra production yields by 5%.
 		{ EffectTypes.WE_Automaton_In_All_Mines, "[WE] Automaton in All Mines" },                                                                                                       // Mining Automatons - A rainpunk automaton will permanently occupy one workplace in every mine in your settlement.
 
 		// BuildingPerkFromContextEffectModel
@@ -22665,6 +23329,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Brewery_Haunted_Plus60, "Brewery Haunted +60" },                                                                                                                  // Advanced Brewing - +60% to amount of goods produced in the Flawless Brewery.
 		{ EffectTypes.Brewery_Plus50, "Brewery +50" },                                                                                                                                  // Efficient Brewing - +50% to amount of goods produced in the Brewery.
 		{ EffectTypes.Brewery_Plus60, "Brewery +60" },                                                                                                                                  // Advanced Brewing - +60% to amount of goods produced in the Brewery.
+		{ EffectTypes.Brineworks_Minus50, "Brineworks -50" },                                                                                                                           // Reinforced Tools - +50% to amount of goods produced in the Brineworks.
+		{ EffectTypes.Brineworks_Plus100, "Brineworks +100" }, 
+		{ EffectTypes.Brineworks_Plus150, "Brineworks +150" }, 
+		{ EffectTypes.Brineworks_Plus50, "Brineworks +50" },                                                                                                                            // Industrialized Agriculture - +50% to amount of goods produced in the Brineworks.
 		{ EffectTypes.Butcher_Plus50, "Butcher +50" },                                                                                                                                  // Meat Cleavers - +50% to amount of goods produced in the Butcher.
 		{ EffectTypes.Clay_Pit_Minus50, "Clay Pit -50" },                                                                                                                               // Reinforced Tools - +50% to amount of goods produced in the Clay Pit.
 		{ EffectTypes.Clay_Pit_Plus100, "Clay Pit +100" }, 
@@ -22758,8 +23426,8 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mod_Parasites, "[Mod] Parasites" },                                                                                                                               // Parasites - One of the villagers was sick, and infected the rest of the settlement with a parasite. All villagers have a 50% chance of eating twice as much during their break.
 		{ EffectTypes.PerkCrafter_Higher_Food_Consumption, "[PerkCrafter] Higher Food Consumption" },                                                                                   // Villagers have a 10% higher chance of consuming double the food during a break.
 		{ EffectTypes.PerkCrafter_Higher_Services_Consumption, "[PerkCrafter] Higher Services Consumption" },                                                                           // Villagers have a 10% higher chance of consuming double the service goods.
-		{ EffectTypes.SE_Food_Consumption, "SE Food Consumption" },                                                                                                                     // Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level).
-		{ EffectTypes.SE_Service_Waste, "SE Service Waste" },                                                                                                                           // Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level).
+		{ EffectTypes.SE_Food_Consumption, "SE Food Consumption" },                                                                                                                     // Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level, counting from level 0).
+		{ EffectTypes.SE_Service_Waste, "SE Service Waste" },                                                                                                                           // Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level, counting from level 0).
 
 		// ChanceForNoConsumptionEffectModel
 		{ EffectTypes.Bats_Lower_Food_Consumption, "Bats Lower Food Consumption" },                                                                                                     // Steel Gut - Focused minds forget hunger. Villagers have a 15% chance of not consuming food during a break.
@@ -22780,20 +23448,27 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Altar_AncientGate_Hardships, "[Altar] AncientGate_Hardships" },                                                                                                   // Survivor Bonding (Stormforged) - The people in your settlement have survived many hardships, bringing them closer together (+25% villager speed, 3 Global Resolve).
 		{ EffectTypes.Altar_Back_To_Nature, "[Altar] Back To Nature" },                                                                                                                 // Back to Nature (Stormforged) - An old, forbidden ritual. Gain +150% more yield in all buildings that use fertile soil.
 		{ EffectTypes.Altar_Construction_Cost_For_Nodes, "[Altar] Construction cost for nodes" },                                                                                       // Cheap Construction (Stormforged) - All buildings cost 50% less.
+		{ EffectTypes.Altar_Extra_Trader_Merch, "[Altar] Extra Trader Merch" },                                                                                                         // Guild Catalogue (Stormforged) - Traders offer 1 additional perk or blueprint. You also gain an Active Ability that summons a trader to your settlement. This ability can be used from the Main Warehouse and has 5 uses.
+		{ EffectTypes.Altar_Farming_Minus25_For_Wood_Plus1, "[Altar] Farming -25 for Wood +1" },                                                                                        // Rooty Ground (Stormforged) - Strange roots spread across the land. "[mat raw] wood" Wood production is increased by +2.
 		{ EffectTypes.Altar_Forge_Trip_Hammer, "[Altar] Forge Trip Hammer" },                                                                                                           // Forge Trip Hammer (Stormforged) - Powerful and precise machinery. "[mat processed] parts" Parts (grade3) can be produced in the Smithy and +100% to amount of goods produced in the Smithy.
-		{ EffectTypes.Altar_Fuel_Recipes_Rate, "[Altar] Fuel Recipes Rate" },                                                                                                           // Advanced Fuel (Stormforged) - All fuel recipes are +50% faster and produce +33% more goods.
+		{ EffectTypes.Altar_Fuel_Recipes_Rate, "[Altar] Fuel Recipes Rate" },                                                                                                           // Advanced Fuel (Stormforged) - All fuel recipes (coal, sea marrow, oil, purging fire) are +50% faster and produce +33% more goods. Does not apply to wood production.
 		{ EffectTypes.Altar_FuelConsumption_Minus25, "[Altar] FuelConsumption -25" },                                                                                                   // Secret Firekeeper Techniques (Stormforged) - An old manuscript detailing long-forgotten burning rites. Fuel consumption in Hearths is decreased by 33%. Resources you sacrifice in the Ancient Hearth burn for 25% longer.
 		{ EffectTypes.Altar_Houses_Plus1_For_Break_Time, "[Altar] Houses +1 for Break Time" },                                                                                          // Crowded Houses (Stormforged) - All houses have room for 1 more villager, and the time between breaks for workers increases by +25%.
 		{ EffectTypes.Altar_HunterGatherers, "[Altar] HunterGatherers" },                                                                                                               // Hunter-Gatherers (Stormforged) - All gathering camp production is increased by 100%.
 		{ EffectTypes.Altar_LessHostilityPerWoodcutter, "[Altar] LessHostilityPerWoodcutter" },                                                                                         // Flame Amulets (Stormforged) - An artifact infused with the power of the Holy Flame. Hostility from woodcutters is decreased by 8. Woodcutters have a +20% chance of producing twice the normal yield.
 		{ EffectTypes.Altar_Metal_Production_Speed_Boost, "[Altar] Metal Production Speed Boost" },                                                                                     // Metallurgic Proficiency (Stormforged) - Increases the production speed of Copper Bars, Crystalized Dew, and all recipes that use metal ingots by 66%.+1 to "[metal] copper bar" copper bar and "[metal] crystalized dew" crystalized dew production.
-		{ EffectTypes.Altar_Mushrooms_In_Farms, "[Altar] Mushrooms in Farms" },                                                                                                         // Mushroom Seedlings (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
+		{ EffectTypes.Altar_Mushrooms_In_Farms, "[Altar] Mushrooms in Farms" },                                                                                                         // Mushroom Seedlings (Stormforged) - All farms can plant "[food raw] mushrooms" Mushrooms (grade2) on farm fields during drizzle season. Planting and harvesting crops is 50% faster.
 		{ EffectTypes.Altar_NewNewcomersBonus_Random, "[Altar] NewNewcomersBonus_Random" },                                                                                             // Crowded Caravan (Stormforged) - Each newcomer group has 3 additional villagers. New villagers bring 50% more goods with them.
+		{ EffectTypes.Altar_Overexploitation, "[Altar] Overexploitation" },                                                                                                             // Overexploitation (Stormforged) - Global gathering speed is increased by 50%, and newly discovered gathering nodes have more charges (+20 charges to small gathering nodes, +35 charges to large gathering nodes).
+		{ EffectTypes.Altar_Pack_Of_Trade_Goods_Worth_More_Composite, "[Altar] Pack of Trade Goods Worth More - Composite" },                                                           // Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. All packs of goods are worth 50% more when sold through trade routes or directly to traders.
 		{ EffectTypes.Altar_Packs_Of_Goods_Plus1, "[Altar] Packs of Goods +1" },                                                                                                        // Export Specialization (Stormforged) - Gain +2 to production yields for all packs of goods. All packs of goods are produced 50% faster.
 		{ EffectTypes.Altar_PacksForResolveRep, "[Altar] PacksForResolveRep" },                                                                                                         // Export Contract (Stormforged) - Increases the production yield of packs of goods by +100%. Gain 2 additional active trade route slots.
 		{ EffectTypes.Altar_Relic_Time_Reduction, "[Altar] Relic time reduction" },                                                                                                     // Firekeeper's Prayer (Stormforged) - Glade event work speed increased by 30%. Resources you sacrifice in the Ancient Hearth burn for 30% longer.
+		{ EffectTypes.Altar_Replace_Rainpunk_Engine_Composite, "[Altar] Replace Rainpunk Engine - Composite" },                                                                         // Crystal Cathode (Stormforged) - A fragile device that extracts energy from charged rainwater. Production bonuses in Rain Engines are stronger (+100% production speed, +50% double yield chance).
 		{ EffectTypes.Altar_Resolve_For_Consumption, "[Altar] Resolve for consumption" },                                                                                               // Generous Rations (Stormforged) - Global Resolve is increased by 5, and villagers have a +10% chance of not consuming food during a break.
 		{ EffectTypes.Altar_Route_Less_Travel_Time, "[Altar] Route Less Travel Time" },                                                                                                 // Stormwalker Training (Stormforged) - Your villagers learn how to travel the wilderness from the very best - the Royal Stormwalkers. Trade route caravans travel faster by 40%. Traders will arrive 33% quicker.
+		{ EffectTypes.Altar_Royal_Guard_Training, "[Altar] Royal Guard Training" },                                                                                                     // Royal Guard Training (Stormforged) - A fencing instructor from the Royal Guard joins your settlement. Fulfilling the need for Brawling grants an additional +10 to Resolve.
+		{ EffectTypes.Altar_Trade_Block_For_Production_Speed, "[Altar] Trade Block for Production Speed" },                                                                             // Deserted Caravans (Stormforged) - Global production speed is increased by 66%.
 		{ EffectTypes.Altar_Trading_Packs, "[Altar] Trading Packs" },                                                                                                                   // Trade Logs (Stormforged) - Detailed notes on different traders and their wares. Gain 2 additional active trade route slots. Traders will arrive +33% quicker and have +1 more cornerstones on sale.
 		{ EffectTypes.Altar_Villager_For_Glade, "[Altar] Villager for glade" },                                                                                                         // Lost in the Wilds (Stormforged) - Gain one villager every time you discover a new glade. Villagers add less Hostility (-1).
 		{ EffectTypes.AncientGate_Hardships, "AncientGate_Hardships" },                                                                                                                 // Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together (+10% villager speed, 1 Global Resolve).
@@ -22825,6 +23500,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Biscuit_Recipes, "Biscuit Recipes" },                                                                                                                             // Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 		{ EffectTypes.Blight_Rate_For_Resolve_Reputation, "Blight Rate for Resolve Reputation" },                                                                                       // Blight Filter - A crystalline filter designed to mitigate the negative environmental impact of infused rainwater. Blightrot Cysts appear 50% slower when using rain engines, but Reputation from Resolve is generated 90% slower for the next 2 Reputation Points.
 		{ EffectTypes.Blightrot_Outbreak, "Blightrot Outbreak" },                                                                                                                       // Blightrot Outbreak - The explosion of the machine will not only destroy everything within a 10 field radius, but will also cause 5 Blightrot Cysts to spawn in the settlement.
+		{ EffectTypes.Borrowed_Time_Active_Ability, "Borrowed Time - Active Ability" },                                                                                                 // Borrowed Time - Removes 1 Impatience Point, but after one season, you must pay the Crown 10 "[valuable] amber" Amber. Otherwise, you'll gain 3 Impatience Points.
 		{ EffectTypes.Brewery_Plus50_Composite, "Brewery +50 (Composite)" },                                                                                                            // Efficient Brewing - +50% to amount of goods produced in the Brewery.
 		{ EffectTypes.Brewery_Plus60_Composite, "Brewery +60 (Composite)" },                                                                                                            // Advanced Brewing - +60% to amount of goods produced in the Brewery.
 		{ EffectTypes.Brewery_Speed_Plus50_Composite, "Brewery Speed +50 (Composite)" },                                                                                                // Rain Pumps - Brewery production is 50% quicker.
@@ -22843,7 +23519,8 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Foragers_Camp_Plus50_Composite, "Foragers Camp +50 Composite" },                                                                                                  // Termite Infestation - +50% to amount of goods produced in the Foragers' Camp and Small Foragers' Camp.
 		{ EffectTypes.Forge_Trip_Hammer, "Forge Trip Hammer" },                                                                                                                         // Forge Trip Hammer - Powerful and precise machinery. "[mat processed] parts" Parts (grade3) can be produced in the Smithy
 		{ EffectTypes.Fox_Hostility_Hearth_Bonus, "Fox Hostility Hearth Bonus" },                                                                                                       // Forest Affinity - Fox firekeepers have an unusual ability to calm the forest. Hostility from opened glades is lowered by 2 each.
-		{ EffectTypes.Gargoyle_Hostility_Composite, "Gargoyle Hostility Composite" },                                                                                                   // Desperate Prayers - Villagers united in faith can lull the possessed demon back to sleep. Hostility is increased by 250, but each villager with their Religion need fulfilled reduces it by 15.
+		{ EffectTypes.Gargoyle_Hostility_Composite, "Gargoyle Hostility Composite" },                                                                                                   // Desperate Prayers - Villagers united in faith can lull the possessed demon back to sleep. Hostility is increased by 120, but each villager with their Religion need fulfilled reduces it by 15.
+		{ EffectTypes.Gargoyle_Positive_Composite, "Gargoyle Positive Composite" },                                                                                                     // Dormant Gargoyle - Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes.
 		{ EffectTypes.Hauler_Break_Interval, "Hauler Break Interval" },                                                                                                                 // Travel Rations - With provisions, haulers don't have to return to the hearth as often. Increases the time between breaks for haulers by +50% and their carrying capacity by +5.
 		{ EffectTypes.Hauler_Speed, "Hauler Speed" },                                                                                                                                   // Specialized Workwear - Specialized equipment enhanced with rainpunk technology. Haulers move +25% faster.
 		{ EffectTypes.Hauling_Cart_In_All_Warehouses, "Hauling Cart in All Warehouses" },                                                                                               // Hauling Cart - An automated rainpunk cart will be assigned to every warehouse in the settlement to help transport resources between buildings.
@@ -22856,6 +23533,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.HunterGatherers, "HunterGatherers" },                                                                                                                             // Hunter-Gatherers - All gathering camp production is increased by 100%, but all buildings that use fertile soil have their yields decreased by 50%.
 		{ EffectTypes.Incantation, "Incantation" },                                                                                                                                     // Blight Incantation - A powerful, necrotic curse. Burning Blightrot Cysts takes 10 more seconds. Hostility is increased by +15 points for every Wildfire Essence stored in the settlement's Warehouse.
 		{ EffectTypes.Instant_Storm_Effect, "Instant Storm effect" },                                                                                                                   // Stormbird's Anger - Disturbing the Stormbird's nest will instantly summon a storm, which will continue until your scouts have finished working on the event. (Active only when the corresponding Glade Event is being worked on, but canceling the work will not stop the storm)
+		{ EffectTypes.Instant_Storm_Effect_Stormforge, "Instant Storm effect - Stormforge" },                                                                                           // Rogue Tempest - Summons a storm that will not end as long as your scouts are working on the event. Canceling the process will allow the storm to pass, yet it won't end a storm that is ongoing.
 		{ EffectTypes.Institution_Camps_Production, "Institution Camps Production" },                                                                                                   // Ancient Ways - The ancient Lizard clans are excellent survivalists. They have mastered hunting and foraging like no others. All gathering camps produce a +100% greater yield. This bonus does not affect woodcutters and fishers.
 		{ EffectTypes.Institution_More_Resolve_From_Meat, "Institution More Resolve From Meat" },                                                                                       // Carnivorous Tradition - Lizard tribes have a long tradition of both animal husbandry and meat preparation. All meat-based complex foods (jerky, skewers, pies, paste) give 2 more Resolve.
 		{ EffectTypes.Institution_Temple_Burn_Rate, "Institution Temple Burn Rate" },                                                                                                   // Sacrament of the Flame - Effect_InstitutionSlowerSacrafice_Description
@@ -22880,7 +23558,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mod_No_Positive_Seasonal_Effects, "[Mod] No Positive Seasonal Effects" },                                                                                         // Unfavorable Weather - Due to extremely unfavorable conditions in these lands, there is no positive Forest Mystery.
 		{ EffectTypes.Mod_Reputation_Changes, "[Mod] Reputation Changes" },                                                                                                             // Prestigious Expedition - Only the best viceroys can embark on a Prestigious Expedition. You'll need to earn 4 additional Reputation Points to win. Reputation rewards are distributed differently, and Orders are harder.
 		{ EffectTypes.Mod_Scavenging_Party, "[Mod] Scavenging Party" },                                                                                                                 // Scavenging Party - The caravan is prepared for all conditions. Start with all advanced gathering camps and fishing huts unlocked.
-		{ EffectTypes.Mod_Third_Party, "[Mod] Third Party" },                                                                                                                           // Third Party - The forest is more inviting than usual, but there seems to be something extremely oppressive in this region. Hostility gained by exploring glades reduces by 5, while each year gives an extra 20 Hostility.
+		{ EffectTypes.Mod_Third_Party, "[Mod] Third Party" },                                                                                                                           // Third Party - The forest is more inviting than usual, but there seems to be something extremely oppressive in this region. Hostility gained by exploring glades reduces by 5, while each year gives an extra 20/30/40/60 Hostility.
 		{ EffectTypes.Mod_Wine_Shortage, "[Mod] Wine Shortage" },                                                                                                                       // Wine Shortage - The Smoldering City is running low on wine, and demand is soaring. Start with the Cellar Blueprint. The settlement specializes in wine production. Gain +1 to Beaver Resolve for every 70 "[needs] wine" Wine produced.
 		{ EffectTypes.ModifierEffect_TradeBlock_Composite, "ModifierEffect_TradeBlock_Composite" },                                                                                     // Bandit Camp - Traders are afraid, and will not visit this area. Neither trading nor trade routes are available.
 		{ EffectTypes.Mole_Infestation_Composite, "Mole Infestation Composite" },                                                                                                       // Infestation - Blightrot becomes extremely aggressive. 8 Blightrot Cysts will spawn in the settlement. Each cyst increases Hostility by +10 points.
@@ -22905,7 +23583,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.PerkCrafter_Gatherers_Speed_5, "[PerkCrafter] Gatherers Speed 5" },                                                                                               // Gatherers move 5% faster.
 		{ EffectTypes.PerkCrafter_Jerky_And_Skewers_Plus2, "[PerkCrafter] Jerky and Skewers +2" },                                                                                      // +2 to "[food processed] jerky" jerky and "[food processed] skewers" skewers production.
 		{ EffectTypes.PerkCrafter_More_Resolve_From_Biscuits_And_Pie_2, "[PerkCrafter] More Resolve from Biscuits and Pie 2" },                                                         // Fulfilled biscuit and pie needs give 2 more Resolve.
-		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_And_Treatment_2, "[PerkCrafter] More Resolve from Religion and Treatment 2" },                                             // Fulfilled religion and treatment needs give 2 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_1_Composite, "[PerkCrafter] More Resolve from Religion 1 - Composite" },                                                   // The fulfilled religion need gives 1 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_2_Composite, "[PerkCrafter] More Resolve from Religion 2 - Composite" },                                                   // The fulfilled religion need gives 2 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_And_Treatment_2_Composite, "[PerkCrafter] More Resolve from Religion And Treatment 2 - Composite" },                       // Fulfilled religion and treatment needs give 2 more Resolve.
 		{ EffectTypes.PerkCrafter_Planting_And_Harvesting_Speed_10, "[PerkCrafter] Planting and Harvesting Speed 10" },                                                                 // Planting and harvesting speeds are increased by 10%.
 		{ EffectTypes.PerkCrafter_Planting_And_Harvesting_Speed_15, "[PerkCrafter] Planting and Harvesting Speed 15" },                                                                 // Planting and harvesting speeds are increased by 15%.
 		{ EffectTypes.PerkCrafter_Planting_And_Harvesting_Speed_5, "[PerkCrafter] Planting and Harvesting Speed 5" },                                                                   // Planting and harvesting speeds are increased by 5%.
@@ -22916,7 +23596,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Relic_Time_Reduction, "Relic time reduction" },                                                                                                                   // Firekeeper's Prayer - Glade event work speed increased by 30%. Resources you sacrifice in the Ancient Hearth burn 25% quicker.
 		{ EffectTypes.Replace_Rainpunk_Engine_Composite, "Replace Rainpunk Engine - Composite" },                                                                                       // Crystal Cathode - A fragile device that extracts energy from charged rainwater. Production bonuses in Rain Engines are stronger (+75% production speed, +33% double yield chance), but Blightrot Cysts will appear 20% faster when using Rain Engines. 
 		{ EffectTypes.Resolve_For_Consumption, "Resolve for consumption" },                                                                                                             // Generous Rations - Global Resolve is increased by 5, but the chance of villagers consuming twice the amount of food during a break is increased by +50%.
-		{ EffectTypes.Royal_Guard_Training, "Royal Guard Training" },                                                                                                                   // Royal Guard Training - The Crown sends a fencing instructor from the Royal Guard to your settlement. Fulfilling the need for Brawling grants an additional +5 to Resolve, but attacking a trader adds 2 extra Impatience Points.
+		{ EffectTypes.Royal_Guard_Training, "Royal Guard Training" },                                                                                                                   // Royal Guard Training - A fencing instructor from the Royal Guard joins your settlement. Fulfilling the need for Brawling grants an additional +5 to Resolve, but attacking a trader adds 2 extra Impatience Points.
 		{ EffectTypes.SE_Nodes_Bonuses, "SE Nodes Bonuses" },                                                                                                                           // Untapped Wealth - Gatherers bring back twice the amount of secondary resources when collecting from gathering nodes.
 		{ EffectTypes.SE_Productive_Farms_In_Drizzle, "SE Productive Farms in Drizzle" },                                                                                               // Regrowth - Plants seem to grow exceptionally quickly after the storm. All buildings that use fertile soil produce +50% more goods during the drizzle, and all crops planted during the drizzle will yield +50% more when collected during clearance season.
 		{ EffectTypes.SE_Rotting_Wood, "SE Rotting Wood" },                                                                                                                             // Rotting Wood - The rain is causing the trees to rot and fall apart. Woodcutters fell trees 50% faster, but have a +100% chance of destroying their yield.
@@ -23007,11 +23687,13 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Rainpunk_Explosion_Noxious, "Rainpunk Explosion - Noxious" },                                                                                                     // 10
 		{ EffectTypes.Rainpunk_Explosion_Small, "Rainpunk Explosion - Small" },                                                                                                         // Magical Explosion - The core of the machinery is unstable, and could explode at any minute. Destroys everything within a 10 field radius.
 		{ EffectTypes.Rainpunk_Explosion_Smallest, "Rainpunk Explosion - Smallest" },                                                                                                   // Discharge - The core of the machinery is unstable and will release a small discharge before the main explosion. Destroys gathering nodes and trees, and kills villagers within a 5 field radius.
+		{ EffectTypes.Rainpunk_Explosion_Stormforge, "Rainpunk Explosion - Stormforge" },                                                                                               // Magical Explosion - This ancient structure is extremely volatile and could explode at any moment. Destroys everything within a 10 field radius.
+		{ EffectTypes.Rainpunk_Explosion_Stormforge_Reward, "Rainpunk Explosion - Stormforge Reward" },                                                                                 // Soul Sacrifice - Those who harness the Stormforge pay a terrible price. After use, the forge detonates, killing and destroying everything within a 3 field radius.
 		{ EffectTypes.Sealed_Vault_Explosion, "Sealed Vault Explosion" },                                                                                                               // Small Miasma Cloud - A thick, spreading cloud of miasma. It kills every living being within a radius of 20 fields.
 
 		// ExtendTradeRoutesEffectModel
-		{ EffectTypes.More_Trade_Offers_Extra_Trade_Routes, "More Trade Offers - Extra Trade Routes" },                                                                                 // Extends available trade offers by 2 in each neighboring town
-		{ EffectTypes.TEMP_Extend_Trade_Routes_Effect_Model, "TEMP Extend Trade Routes Effect Model" },                                                                                 // More trade offers - Extends available trade offers by 1 in each neighboring town
+		{ EffectTypes.More_Trade_Offers_Extra_Trade_Routes, "More Trade Offers - Extra Trade Routes" },                                                                                 // Each neighboring town offers 2 additional Trade Route option(s)
+		{ EffectTypes.TEMP_Extend_Trade_Routes_Effect_Model, "TEMP Extend Trade Routes Effect Model" },                                                                                 // More trade offers - Each neighboring town offers 1 additional Trade Route option(s)
 
 		// ExtraBaitProductionEffectModel
 		{ EffectTypes.Bait_Production_Plus1, "Bait Production +1" }, 
@@ -23020,6 +23702,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Archeology_Extra_Cornerstone, "Archeology Extra Cornerstone" },                                                                                                   // Scientific Award - The Queen has decided to reward you for your exceptional achievements in science. You receive an additional cornerstone choice.
 		{ EffectTypes.Port_Extra_Cornerstone, "Port Extra Cornerstone" },                                                                                                               // Effect_PortExtraCornerstone_Name - Effect_PortExtraCornerstone_Desc
 		{ EffectTypes.Seal_Extra_Cornerstone, "Seal Extra Cornerstone" },                                                                                                               // Gift of the Seal Keeper - After obtaining a Guardian part, you will be able to choose an Epic Cornerstone offered by the Seal Keeper.
+		{ EffectTypes.Seal_Extra_Cornerstone_Last, "Seal Extra Cornerstone - Last" },                                                                                                   // Seal Reforged - With the final part in your hands, the Ancient Guardian can at last be assembled, and the seal closed.
 
 		// ExtraGladeEffectModel
 		{ EffectTypes.Extra_Glade_Moorlands_Dangerous, "Extra Glade - Moorlands Dangerous" }, 
@@ -23061,7 +23744,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Institution_Slower_Burn_Rate, "Institution Slower Burn Rate" }, 
 		{ EffectTypes.PerkCrafter_Fuel_Consumption, "[PerkCrafter] Fuel Consumption" },                                                                                                 // Fuel consumption in Hearths is increased by 20%.
 		{ EffectTypes.SE_FuelRate, "SE FuelRate" },                                                                                                                                     // Piercing Winds - Extremely strong winds make it difficult to sustain the Holy Flame. Fuel consumption in Hearths is increased by 200%.
-		{ EffectTypes.SE_FuelRateHostility, "SE FuelRateHostility" },                                                                                                                   // Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level.
+		{ EffectTypes.SE_FuelRateHostility, "SE FuelRateHostility" },                                                                                                                   // Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level (counting from level 0).
 
 		// GladeInfoEffectModel
 		{ EffectTypes.Altar_Killed_For_GladeInfo, "[Altar] Killed for GladeInfo" },                                                                                                     // Ancient Pact (Stormforged) - You can see the content of undiscovered glades.
@@ -23115,6 +23798,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Global_Production_Faster_40, "Global Production Faster 40" }, 
 		{ EffectTypes.Global_Production_Faster_5, "Global Production Faster 5" },                                                                                                       // +5% to global production speed.
 		{ EffectTypes.Global_Production_Faster_50, "Global Production Faster 50" }, 
+		{ EffectTypes.Global_Production_Faster_66, "Global Production Faster 66" },                                                                                                     // Global production speed is increased by 66%.
 		{ EffectTypes.Global_Production_Faster_8, "Global Production Faster 8" },                                                                                                       // +8% to global production speed.
 		{ EffectTypes.Hearth_Production_Speed, "[Hearth] Production Speed" },                                                                                                           // Sacrifice Oil - Global production speed increased by 25%.
 		{ EffectTypes.Hub_Production_Speed, "[Hub] Production Speed" },                                                                                                                 // Neighborhood (Level 2) - Even in such a harsh environment, there is still room for beauty.
@@ -23127,6 +23811,7 @@ public static class EffectTypesExtensions
 
 		// GlobalResolveEffectEffectModel
 		{ EffectTypes.Agriculture_Penalty, "Agriculture Penalty" },                                                                                                                     // Industrialized Agriculture - New farming methods are very effective, but cause a lot of pollution. (‑1 to Global Resolve)
+		{ EffectTypes.Altar_Exploring_Expedition_Resolve_Bonus_Effect, "[Altar] Exploring Expedition - Resolve Bonus Effect" },                                                         // Exploration Expedition (Stormforged) - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia. (+10 to Global Resolve)
 		{ EffectTypes.Ancient_Artifact_1, "Ancient Artifact 1" },                                                                                                                       // Small Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+1 to Global Resolve)
 		{ EffectTypes.Ancient_Artifact_2, "Ancient Artifact 2" },                                                                                                                       // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+2 to Global Resolve)
 		{ EffectTypes.Ancient_Artifact_3, "Ancient Artifact 3" },                                                                                                                       // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it. (+3 to Global Resolve)
@@ -23188,6 +23873,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.SE_Storm_Clothes_Resolve_Penalty_Effect, "SE Storm Clothes - Resolve Penalty Effect" },                                                                           // Cloudburst - The heavy rain is unbearable. (‑6 to Global Resolve)
 		{ EffectTypes.Stag_Blessing, "Stag Blessing" },                                                                                                                                 // Stag's Blessing - The forest god has blessed your villagers. This day will be remembered for generations. (+1 to Global Resolve)
 		{ EffectTypes.Stormbird_Egg_Global_Resolve_Penalty, "Stormbird Egg - Global Resolve Penalty" },                                                                                 // Stormbird's Cry - Villagers report seeing a giant beast flying above the settlement during the storm. (‑2 to Global Resolve)
+		{ EffectTypes.StormforgeResolve_Hard, "StormforgeResolve - hard" },                                                                                                             // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑6 to Global Resolve)
+		{ EffectTypes.StormforgeResolve_Impossible, "StormforgeResolve - impossible" },                                                                                                 // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑10 to Global Resolve)
+		{ EffectTypes.StormforgeResolve_Normal, "StormforgeResolve - normal" },                                                                                                         // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑4 to Global Resolve)
+		{ EffectTypes.StormforgeResolve_Very_Hard, "StormforgeResolve - very hard" },                                                                                                   // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence. (‑8 to Global Resolve)
 		{ EffectTypes.Survivor_Bonding, "Survivor Bonding" },                                                                                                                           // Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together. (+1 to Global Resolve)
 		{ EffectTypes.Survivor_Bonding_Altar, "Survivor Bonding - Altar" },                                                                                                             // Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together. (+3 to Global Resolve)
 		{ EffectTypes.Termites_Resolve_Normal, "Termites Resolve - normal" },                                                                                                           // Stonetooth Swarm - Agitated termites can be a real nuisance. (‑5 to Global Resolve)
@@ -23443,6 +24132,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Insects_150, "Insects 150" },                                                                                                                                     // Basket of Insects - 150 "[food raw] insects" Insects
 		{ EffectTypes.Insects_2, "Insects 2" },                                                                                                                                         // An Insect - 2 "[food raw] insects" Insects
 		{ EffectTypes.Insects_20, "Insects 20" },                                                                                                                                       // An Insect - 20 "[food raw] insects" Insects
+		{ EffectTypes.Insects_3, "Insects 3" },                                                                                                                                         // An Insect - 3 "[food raw] insects" Insects
 		{ EffectTypes.Insects_30, "Insects 30" },                                                                                                                                       // Basket of Insects - 30 "[food raw] insects" Insects
 		{ EffectTypes.Insects_40, "Insects 40" },                                                                                                                                       // Basket of Insects - 40 "[food raw] insects" Insects
 		{ EffectTypes.Insects_5, "Insects 5" },                                                                                                                                         // An Insect - 5 "[food raw] insects" Insects
@@ -23473,7 +24163,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Metal_Tools_12, "Metal Tools 12" },                                                                                                                               // Box of Tools - 12 "[tools] simple tools" Tools
 		{ EffectTypes.Metal_Tools_15, "Metal Tools 15" },                                                                                                                               // Box of Tools - 15 "[tools] simple tools" Tools
 		{ EffectTypes.Metal_Tools_20, "Metal Tools 20" },                                                                                                                               // Box of Tools - 20 "[tools] simple tools" Tools
-		{ EffectTypes.Metal_Tools_24, "Metal Tools 24" },                                                                                                                               // Box of Tools - 24 "[tools] simple tools" Tools
+		{ EffectTypes.Metal_Tools_24, "Metal Tools 24" },                                                                                                                               // Box of Tools - 20 "[tools] simple tools" Tools
 		{ EffectTypes.Metal_Tools_3, "Metal Tools 3" },                                                                                                                                 // Box of Tools - 3 "[tools] simple tools" Tools
 		{ EffectTypes.Metal_Tools_30, "Metal Tools 30" },                                                                                                                               // Box of Tools - 30 "[tools] simple tools" Tools
 		{ EffectTypes.Metal_Tools_34, "Metal Tools 34" },                                                                                                                               // Box of Tools - 34 "[tools] simple tools" Tools
@@ -23652,6 +24342,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Pipes_10, "Pipes 10" },                                                                                                                                           // Pipes - 10 "[mat processed] pipe" Pipes
 		{ EffectTypes.Pipes_15, "Pipes 15" },                                                                                                                                           // Pipes - 15 "[mat processed] pipe" Pipes
 		{ EffectTypes.Pipes_20, "Pipes 20" },                                                                                                                                           // Pipes - 20 "[mat processed] pipe" Pipes
+		{ EffectTypes.Pipes_25, "Pipes 25" },                                                                                                                                           // Pipes - 25 "[mat processed] pipe" Pipes
 		{ EffectTypes.Pipes_4, "Pipes 4" },                                                                                                                                             // Pipes - 4 "[mat processed] pipe" Pipes
 		{ EffectTypes.Pipes_5, "Pipes 5" },                                                                                                                                             // Pipes - 5 "[mat processed] pipe" Pipes
 		{ EffectTypes.Pipes_8, "Pipes 8" },                                                                                                                                             // Pipes - 8 "[mat processed] pipe" Pipes
@@ -23792,104 +24483,104 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Wood_70, "Wood 70" },                                                                                                                                             // Crate of Wood - 70 "[mat raw] wood" Wood
 
 		// GoodsPerMinEffectModel
-		{ EffectTypes.Ale_3pm, "Ale 3pm" },                                                                                                                                             // Ale Delivery Line - 3 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Ale_5pm, "Ale 5pm" },                                                                                                                                             // Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Amber_3pm, "Amber 3pm" },                                                                                                                                         // Amber Tax - 3 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks
+		{ EffectTypes.Ale_3pm, "Ale 3pm" },                                                                                                                                             // Ale Delivery Line - 3 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Ale_5pm, "Ale 5pm" },                                                                                                                                             // Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Amber_3pm, "Amber 3pm" },                                                                                                                                         // Amber Tax - 3 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks.
 		{ EffectTypes.Amber_3pm_Blight, "Amber 3pm Blight" },                                                                                                                           // Amber Tax - 3 "[valuable] amber" Amber per minute
-		{ EffectTypes.Amber_5pm, "Amber 5pm" },                                                                                                                                         // Amber Tax - 5 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Barrels_3pm, "Barrels 3pm" },                                                                                                                                     // Barrel Delivery Line - 3 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Barrels_5pm, "Barrels 5pm" },                                                                                                                                     // Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Berries_10pm, "Berries 10pm" },                                                                                                                                   // Berry Delivery Line - 10 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Berries_5pm, "Berries 5pm" },                                                                                                                                     // Berry Delivery Line - 5 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Biscuits_3pm, "Biscuits 3pm" },                                                                                                                                   // Biscuit Delivery Line - 3 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Biscuits_5pm, "Biscuits 5pm" },                                                                                                                                   // Biscuit Delivery Line - 5 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Boots_5pm, "Boots 5pm" },                                                                                                                                         // Boot Delivery Line - 5 "[needs] boots" Boots per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Clay_10pm, "Clay 10pm" },                                                                                                                                         // Clay Delivery Line - 10 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Clay_3pm, "Clay 3pm" },                                                                                                                                           // Clay Delivery Line - 3 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Clay_5pm, "Clay 5pm" },                                                                                                                                           // Clay Delivery Line - 5 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Coal_10pm, "Coal 10pm" },                                                                                                                                         // Coal Delivery Line - 10 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Coal_3pm, "Coal 3pm" },                                                                                                                                           // Coal Delivery Line - 3 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Coal_5pm, "Coal 5pm" },                                                                                                                                           // Coal Delivery Line - 5 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Coats_10pm, "Coats 10pm" },                                                                                                                                       // Coat Delivery Line - 10 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Coats_3pm, "Coats 3pm" },                                                                                                                                         // Coat Delivery Line - 3 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Coats_5pm, "Coats 5pm" },                                                                                                                                         // Coat Delivery Line - 5 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Bars_2pm, "Copper Bars 2pm" },                                                                                                                             // Metal Delivery Line - 2 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Bars_3pm, "Copper Bars 3pm" },                                                                                                                             // Metal Delivery Line - 3 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Bars_4pm, "Copper Bars 4pm" },                                                                                                                             // Metal Delivery Line - 4 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Bars_5pm, "Copper Bars 5pm" },                                                                                                                             // Metal Delivery Line - 5 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Ore_10pm, "Copper Ore 10pm" },                                                                                                                             // Ore Delivery Line - 10 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Ore_3pm, "Copper Ore 3pm" },                                                                                                                               // Ore Delivery Line - 3 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Copper_Ore_5pm, "Copper Ore 5pm" },                                                                                                                               // Ore Delivery Line - 5 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Eggs_10pm, "Eggs 10pm" },                                                                                                                                         // Egg Delivery Line - 10 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Eggs_15pm, "Eggs 15pm" },                                                                                                                                         // Egg Delivery Line - 15 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Eggs_3pm, "Eggs 3pm" },                                                                                                                                           // Egg Delivery Line - 3 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks
+		{ EffectTypes.Amber_5pm, "Amber 5pm" },                                                                                                                                         // Amber Tax - 5 "[valuable] amber" Amber per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Barrels_3pm, "Barrels 3pm" },                                                                                                                                     // Barrel Delivery Line - 3 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Barrels_5pm, "Barrels 5pm" },                                                                                                                                     // Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Berries_10pm, "Berries 10pm" },                                                                                                                                   // Berry Delivery Line - 10 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Berries_5pm, "Berries 5pm" },                                                                                                                                     // Berry Delivery Line - 5 "[food raw] berries" Berries per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Biscuits_3pm, "Biscuits 3pm" },                                                                                                                                   // Biscuit Delivery Line - 3 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Biscuits_5pm, "Biscuits 5pm" },                                                                                                                                   // Biscuit Delivery Line - 5 "[food processed] biscuits" Biscuits per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Boots_5pm, "Boots 5pm" },                                                                                                                                         // Boot Delivery Line - 5 "[needs] boots" Boots per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Clay_10pm, "Clay 10pm" },                                                                                                                                         // Clay Delivery Line - 10 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Clay_3pm, "Clay 3pm" },                                                                                                                                           // Clay Delivery Line - 3 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Clay_5pm, "Clay 5pm" },                                                                                                                                           // Clay Delivery Line - 5 "[mat raw] clay" Clay per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Coal_10pm, "Coal 10pm" },                                                                                                                                         // Coal Delivery Line - 10 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Coal_3pm, "Coal 3pm" },                                                                                                                                           // Coal Delivery Line - 3 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Coal_5pm, "Coal 5pm" },                                                                                                                                           // Coal Delivery Line - 5 "[crafting] coal" Coal per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Coats_10pm, "Coats 10pm" },                                                                                                                                       // Coat Delivery Line - 10 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Coats_3pm, "Coats 3pm" },                                                                                                                                         // Coat Delivery Line - 3 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Coats_5pm, "Coats 5pm" },                                                                                                                                         // Coat Delivery Line - 5 "[needs] coats" Coats per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Bars_2pm, "Copper Bars 2pm" },                                                                                                                             // Metal Delivery Line - 2 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Bars_3pm, "Copper Bars 3pm" },                                                                                                                             // Metal Delivery Line - 3 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Bars_4pm, "Copper Bars 4pm" },                                                                                                                             // Metal Delivery Line - 4 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Bars_5pm, "Copper Bars 5pm" },                                                                                                                             // Metal Delivery Line - 5 "[metal] copper bar" Copper Bars per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Ore_10pm, "Copper Ore 10pm" },                                                                                                                             // Ore Delivery Line - 10 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Ore_3pm, "Copper Ore 3pm" },                                                                                                                               // Ore Delivery Line - 3 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Copper_Ore_5pm, "Copper Ore 5pm" },                                                                                                                               // Ore Delivery Line - 5 "[metal] copper ore" Copper Ore per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Eggs_10pm, "Eggs 10pm" },                                                                                                                                         // Egg Delivery Line - 10 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Eggs_15pm, "Eggs 15pm" },                                                                                                                                         // Egg Delivery Line - 15 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Eggs_3pm, "Eggs 3pm" },                                                                                                                                           // Egg Delivery Line - 3 "[food raw] eggs" Eggs per minute. Not affected by production bonuses and does not contribute to production-based perks.
 		{ EffectTypes.Eggs_5pm_Stormbird, "Eggs 5pm Stormbird" },                                                                                                                       // Nest Eggs - Eggs laid by a tamed Stormbird. 5 "[food raw] eggs" Eggs per minute.
-		{ EffectTypes.Fiber_10pm, "Fiber 10pm" },                                                                                                                                       // Fiber Delivery Line - 10 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Fiber_15pm, "Fiber 15pm" },                                                                                                                                       // Fiber Delivery Line - 15 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Fiber_3pm, "Fiber 3pm" },                                                                                                                                         // Fiber Delivery Line - 3 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Fiber_5pm, "Fiber 5pm" },                                                                                                                                         // Fiber Delivery Line - 5 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Fish_5pm, "Fish 5pm" },                                                                                                                                           // Fish Delivery Line - 5 "[food raw] fish" Fish per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Flour_3pm, "Flour 3pm" },                                                                                                                                         // Flour Delivery Line - 3 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Flour_5pm, "Flour 5pm" },                                                                                                                                         // Flour Delivery Line - 5 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Grain_10pm, "Grain 10pm" },                                                                                                                                       // Grain Delivery Line - 10 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Grain_15pm, "Grain 15pm" },                                                                                                                                       // Grain Delivery Line - 15 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Grain_3pm, "Grain 3pm" },                                                                                                                                         // Grain Delivery Line - 3 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Grain_5pm, "Grain 5pm" },                                                                                                                                         // Grain Delivery Line - 5 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Herbs_10pm, "Herbs 10pm" },                                                                                                                                       // Herb Delivery Line - 10 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Herbs_2pm, "Herbs 2pm" },                                                                                                                                         // Herb Delivery Line - 2 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Herbs_5pm, "Herbs 5pm" },                                                                                                                                         // Herb Delivery Line - 5 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Incense_3pm, "Incense 3pm" },                                                                                                                                     // Incense Delivery Line - 3 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Incense_5pm, "Incense 5pm" },                                                                                                                                     // Incense Delivery Line - 5 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Insects_3pm, "Insects 3pm" },                                                                                                                                     // Termite Nest - 3 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Insects_5pm, "Insects 5pm" },                                                                                                                                     // Insect Delivery Line - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Insects_5pm_Termite_Nest, "Insects 5pm - Termite Nest" },                                                                                                         // Termite Nest - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Jerky_3pm, "Jerky 3pm" },                                                                                                                                         // Jerky Delivery Line - 3 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Jerky_5pm, "Jerky 5pm" },                                                                                                                                         // Jerky Delivery Line - 5 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Leather_10pm, "Leather 10pm" },                                                                                                                                   // Leather Delivery Line - 10 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Leather_5pm, "Leather 5pm" },                                                                                                                                     // Leather Delivery Line - 5 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Manuscripts_paper_3pm, "Manuscripts (paper) 3pm" },                                                                                                               // Scroll Delivery Line - 3 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Manuscripts_paper_5pm, "Manuscripts (paper) 5pm" },                                                                                                               // Scroll Delivery Line - 5 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Meat_10pm, "Meat 10pm" },                                                                                                                                         // Meat Delivery Line - 10 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Meat_5pm, "Meat 5pm" },                                                                                                                                           // Meat Delivery Line - 5 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Mushrooms_10pm, "Mushrooms 10pm" },                                                                                                                               // Mushroom Delivery Line - 10 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Mushrooms_5pm, "Mushrooms 5pm" },                                                                                                                                 // Mushroom Delivery Line - 5 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Oil_10pm, "Oil 10pm" },                                                                                                                                           // Oil Delivery Line - 10 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Oil_5pm, "Oil 5pm" },                                                                                                                                             // Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Pickled_Goods_3pm, "Pickled goods 3pm" },                                                                                                                         // Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Pickled_Goods_5pm, "Pickled goods 5pm" },                                                                                                                         // Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Pie_3pm, "Pie 3pm" },                                                                                                                                             // Pie Delivery Line - 3 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Pie_5pm, "Pie 5pm" },                                                                                                                                             // Pie Delivery Line - 5 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Pottery_5pm, "Pottery 5pm" },                                                                                                                                     // Pottery Delivery Line - 5 "[vessel] pottery" Pottery per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Reeds_10pm, "Reeds 10pm" },                                                                                                                                       // Reed Delivery Line - 10 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Reeds_5pm, "Reeds 5pm" },                                                                                                                                         // Reed Delivery Line - 5 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Resin_3pm, "Resin 3pm" },                                                                                                                                         // Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Resin_5pm, "Resin 5pm" },                                                                                                                                         // Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Roots_10pm, "Roots 10pm" },                                                                                                                                       // Root Delivery Line - 10 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Roots_3pm, "Roots 3pm" },                                                                                                                                         // Root Delivery Line - 3 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Roots_5pm, "Roots 5pm" },                                                                                                                                         // Root Delivery Line - 5 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Sea_Marrow_3pm, "Sea Marrow 3pm" },                                                                                                                               // Sea Marrow Delivery Line - 3 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Sea_Marrow_5pm, "Sea Marrow 5pm" },                                                                                                                               // Converted Fishmen Lighthouse - 5 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Skewers_3pm, "Skewers 3pm" },                                                                                                                                     // Skewers Delivery Line - 3 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Skewers_5pm, "Skewers 5pm" },                                                                                                                                     // Skewers Delivery Line - 5 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Stone_10pm, "Stone 10pm" },                                                                                                                                       // Stone Delivery Line - 10 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Stone_3pm, "Stone 3pm" },                                                                                                                                         // Stone Delivery Line - 3 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Stone_5pm, "Stone 5pm" },                                                                                                                                         // Stone Delivery Line - 5 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.T_Ale_5pm, "[T] Ale 5pm" },                                                                                                                                       // Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.T_Barrels_5pm, "[T] Barrels 5pm" },                                                                                                                               // Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.T_Oil_5pm, "[T] Oil 5pm" },                                                                                                                                       // Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Tea_3pm, "Tea 3pm" },                                                                                                                                             // Tea Delivery Line - 3 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Tea_5pm, "Tea 5pm" },                                                                                                                                             // Tea Delivery Line - 5 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Tools_2pm, "Tools 2pm" },                                                                                                                                         // Tool Delivery Line - 2 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Tools_4pm, "Tools 4pm" },                                                                                                                                         // Tool Delivery Line - 4 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Training_Gear_3pm, "Training Gear 3pm" },                                                                                                                         // Training Gear Delivery Line - 3 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Training_Gear_5pm, "Training Gear 5pm" },                                                                                                                         // Training Gear Delivery Line - 5 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Vegetables_10pm, "Vegetables 10pm" },                                                                                                                             // Vegetable Delivery Line - 10 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Vegetables_3pm, "Vegetables 3pm" },                                                                                                                               // Vegetable Delivery Line - 3 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Vegetables_5pm, "Vegetables 5pm" },                                                                                                                               // Vegetable Delivery Line - 5 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Waterskins_3pm, "Waterskins 3pm" },                                                                                                                               // Waterskin Delivery Line - 3 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Waterskins_5pm, "Waterskins 5pm" },                                                                                                                               // Waterskin Delivery Line - 5 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Wine_3pm, "Wine 3pm" },                                                                                                                                           // Wine Delivery Line - 3 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks
-		{ EffectTypes.Wine_5pm, "Wine 5pm" },                                                                                                                                           // Wine Delivery Line - 5 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks
+		{ EffectTypes.Fiber_10pm, "Fiber 10pm" },                                                                                                                                       // Fiber Delivery Line - 10 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Fiber_15pm, "Fiber 15pm" },                                                                                                                                       // Fiber Delivery Line - 15 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Fiber_3pm, "Fiber 3pm" },                                                                                                                                         // Fiber Delivery Line - 3 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Fiber_5pm, "Fiber 5pm" },                                                                                                                                         // Fiber Delivery Line - 5 "[mat raw] plant fibre" Plant Fiber per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Fish_5pm, "Fish 5pm" },                                                                                                                                           // Fish Delivery Line - 5 "[food raw] fish" Fish per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Flour_3pm, "Flour 3pm" },                                                                                                                                         // Flour Delivery Line - 3 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Flour_5pm, "Flour 5pm" },                                                                                                                                         // Flour Delivery Line - 5 "[crafting] flour" Flour per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Grain_10pm, "Grain 10pm" },                                                                                                                                       // Grain Delivery Line - 10 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Grain_15pm, "Grain 15pm" },                                                                                                                                       // Grain Delivery Line - 15 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Grain_3pm, "Grain 3pm" },                                                                                                                                         // Grain Delivery Line - 3 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Grain_5pm, "Grain 5pm" },                                                                                                                                         // Grain Delivery Line - 5 "[food raw] grain" Grain per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Herbs_10pm, "Herbs 10pm" },                                                                                                                                       // Herb Delivery Line - 10 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Herbs_2pm, "Herbs 2pm" },                                                                                                                                         // Herb Delivery Line - 2 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Herbs_5pm, "Herbs 5pm" },                                                                                                                                         // Herb Delivery Line - 5 "[food raw] herbs" Herbs per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Incense_3pm, "Incense 3pm" },                                                                                                                                     // Incense Delivery Line - 3 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Incense_5pm, "Incense 5pm" },                                                                                                                                     // Incense Delivery Line - 5 "[needs] incense" Incense per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Insects_3pm, "Insects 3pm" },                                                                                                                                     // Termite Nest - 3 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Insects_5pm, "Insects 5pm" },                                                                                                                                     // Insect Delivery Line - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Insects_5pm_Termite_Nest, "Insects 5pm - Termite Nest" },                                                                                                         // Termite Nest - 5 "[food raw] insects" Insects per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Jerky_3pm, "Jerky 3pm" },                                                                                                                                         // Jerky Delivery Line - 3 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Jerky_5pm, "Jerky 5pm" },                                                                                                                                         // Jerky Delivery Line - 5 "[food processed] jerky" Jerky per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Leather_10pm, "Leather 10pm" },                                                                                                                                   // Leather Delivery Line - 10 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Leather_5pm, "Leather 5pm" },                                                                                                                                     // Leather Delivery Line - 5 "[mat raw] leather" Leather per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Manuscripts_paper_3pm, "Manuscripts (paper) 3pm" },                                                                                                               // Scroll Delivery Line - 3 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Manuscripts_paper_5pm, "Manuscripts (paper) 5pm" },                                                                                                               // Scroll Delivery Line - 5 "[needs] scrolls" Scrolls per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Meat_10pm, "Meat 10pm" },                                                                                                                                         // Meat Delivery Line - 10 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Meat_5pm, "Meat 5pm" },                                                                                                                                           // Meat Delivery Line - 5 "[food raw] meat" Meat per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Mushrooms_10pm, "Mushrooms 10pm" },                                                                                                                               // Mushroom Delivery Line - 10 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Mushrooms_5pm, "Mushrooms 5pm" },                                                                                                                                 // Mushroom Delivery Line - 5 "[food raw] mushrooms" Mushrooms per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Oil_10pm, "Oil 10pm" },                                                                                                                                           // Oil Delivery Line - 10 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Oil_5pm, "Oil 5pm" },                                                                                                                                             // Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Pickled_Goods_3pm, "Pickled goods 3pm" },                                                                                                                         // Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Pickled_Goods_5pm, "Pickled goods 5pm" },                                                                                                                         // Pickled Goods Delivery Line - 5 "[food processed] pickled goods" Pickled Goods per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Pie_3pm, "Pie 3pm" },                                                                                                                                             // Pie Delivery Line - 3 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Pie_5pm, "Pie 5pm" },                                                                                                                                             // Pie Delivery Line - 5 "[food processed] pie" Pie per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Pottery_5pm, "Pottery 5pm" },                                                                                                                                     // Pottery Delivery Line - 5 "[vessel] pottery" Pottery per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Reeds_10pm, "Reeds 10pm" },                                                                                                                                       // Reed Delivery Line - 10 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Reeds_5pm, "Reeds 5pm" },                                                                                                                                         // Reed Delivery Line - 5 "[mat raw] reeds" Reed per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Resin_3pm, "Resin 3pm" },                                                                                                                                         // Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Resin_5pm, "Resin 5pm" },                                                                                                                                         // Resin Delivery Line - 3 "[mat raw] resin" Resin per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Roots_10pm, "Roots 10pm" },                                                                                                                                       // Root Delivery Line - 10 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Roots_3pm, "Roots 3pm" },                                                                                                                                         // Root Delivery Line - 3 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Roots_5pm, "Roots 5pm" },                                                                                                                                         // Root Delivery Line - 5 "[food raw] roots" Roots per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Sea_Marrow_3pm, "Sea Marrow 3pm" },                                                                                                                               // Sea Marrow Delivery Line - 3 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Sea_Marrow_5pm, "Sea Marrow 5pm" },                                                                                                                               // Converted Fishmen Lighthouse - 5 "[crafting] sea marrow" Sea Marrow per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Skewers_3pm, "Skewers 3pm" },                                                                                                                                     // Skewers Delivery Line - 3 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Skewers_5pm, "Skewers 5pm" },                                                                                                                                     // Skewers Delivery Line - 5 "[food processed] skewers" Skewers per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Stone_10pm, "Stone 10pm" },                                                                                                                                       // Stone Delivery Line - 10 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Stone_3pm, "Stone 3pm" },                                                                                                                                         // Stone Delivery Line - 3 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Stone_5pm, "Stone 5pm" },                                                                                                                                         // Stone Delivery Line - 5 "[mat raw] stone" Stone per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.T_Ale_5pm, "[T] Ale 5pm" },                                                                                                                                       // Ale Delivery Line - 5 "[needs] ale" Ale per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.T_Barrels_5pm, "[T] Barrels 5pm" },                                                                                                                               // Barrel Delivery Line - 5 "[vessel] barrels" Barrels per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.T_Oil_5pm, "[T] Oil 5pm" },                                                                                                                                       // Oil Delivery Line - 5 "[crafting] oil" Oil per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Tea_3pm, "Tea 3pm" },                                                                                                                                             // Tea Delivery Line - 3 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Tea_5pm, "Tea 5pm" },                                                                                                                                             // Tea Delivery Line - 5 "[needs] tea" Tea per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Tools_2pm, "Tools 2pm" },                                                                                                                                         // Tool Delivery Line - 2 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Tools_4pm, "Tools 4pm" },                                                                                                                                         // Tool Delivery Line - 4 "[tools] simple tools" Tools per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Training_Gear_3pm, "Training Gear 3pm" },                                                                                                                         // Training Gear Delivery Line - 3 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Training_Gear_5pm, "Training Gear 5pm" },                                                                                                                         // Training Gear Delivery Line - 5 "[needs] training gear" Training Gear per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Vegetables_10pm, "Vegetables 10pm" },                                                                                                                             // Vegetable Delivery Line - 10 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Vegetables_3pm, "Vegetables 3pm" },                                                                                                                               // Vegetable Delivery Line - 3 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Vegetables_5pm, "Vegetables 5pm" },                                                                                                                               // Vegetable Delivery Line - 5 "[food raw] vegetables" Vegetables per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Waterskins_3pm, "Waterskins 3pm" },                                                                                                                               // Waterskin Delivery Line - 3 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Waterskins_5pm, "Waterskins 5pm" },                                                                                                                               // Waterskin Delivery Line - 5 "[vessel] waterskin" Waterskins per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Wine_3pm, "Wine 3pm" },                                                                                                                                           // Wine Delivery Line - 3 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks.
+		{ EffectTypes.Wine_5pm, "Wine 5pm" },                                                                                                                                           // Wine Delivery Line - 5 "[needs] wine" Wine per minute. Not affected by production bonuses and does not contribute to production-based perks.
 
 		// GoodsRawProductionEffectModel
 		{ EffectTypes.Ale_Plus1, "Ale +1" },                                                                                                                                            // Bigger Barrels - +1 to "[needs] ale" Ale production (from gathering, farming, fishing, or production).
@@ -23964,6 +24655,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Flour_Plus2, "Flour +2" },                                                                                                                                        // Heavy Millstone - +2 to "[crafting] flour" Flour production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Flour_Plus3, "Flour +3" },                                                                                                                                        // Heavy Millstone - +3 to "[crafting] flour" Flour production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Flour_Plus5, "Flour +5" },                                                                                                                                        // Heavy Millstone - +5 to "[crafting] flour" Flour production (from gathering, farming, fishing, or production).
+		{ EffectTypes.Gargoyle_Clearance_Water_Plus1, "Gargoyle Clearance Water +1" },                                                                                                  // Rainwater Condenser - +1 to "[water] clearance water" Clearance Water production (from gathering, farming, fishing, or production).
+		{ EffectTypes.Gargoyle_Drizzle_Water_Plus1, "Gargoyle Drizzle Water +1" },                                                                                                      // Rainwater Condenser - +1 to "[water] drizzle water" Drizzle Water production (from gathering, farming, fishing, or production).
+		{ EffectTypes.Gargoyle_Storm_Water_Plus1, "Gargoyle Storm Water +1" },                                                                                                          // Rainwater Condenser - +1 to "[water] storm water" Storm Water production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Grain_Plus1, "Grain +1" },                                                                                                                                        // Mold Supply - +1 to "[food raw] grain" Grain production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Grain_Plus2, "Grain +2" },                                                                                                                                        // Mold Supply - +2 to "[food raw] grain" Grain production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Grain_Plus3, "Grain +3" },                                                                                                                                        // Mold Supply - +3 to "[food raw] grain" Grain production (from gathering, farming, fishing, or production).
@@ -24032,7 +24726,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Paper_Plus5, "Paper +5" },                                                                                                                                        // Advanced Press - +5 to "[needs] scrolls" Scrolls production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Paste_Plus2, "Paste +2" },                                                                                                                                        // Steel Grater - +2 to "[food processed] paste" Paste production (from gathering, farming, fishing, or production).
 		{ EffectTypes.Paste_Plus3, "Paste +3" },                                                                                                                                        // Steel Grater - +3 to "[food processed] paste" Paste production (from gathering, farming, fishing, or production).
-		{ EffectTypes.Paste_Plus5, "Paste +5" },                                                                                                                                        // Steel Grater - +3 to "[food processed] paste" Paste production (from gathering, farming, fishing, or production).
+		{ EffectTypes.Paste_Plus5, "Paste +5" },                                                                                                                                        // Steel Grater - +5 to "[food processed] paste" Paste production (from gathering, farming, fishing, or production).
 		{ EffectTypes.PerkCrafter_Boots_And_Coats_Plus2_Child_coats, "[PerkCrafter] Boots and Coats +2 - child (coats)" },                                                              // +2 to "[needs] coats" Coats production.
 		{ EffectTypes.PerkCrafter_Boots_Plus1, "[PerkCrafter] Boots +1" },                                                                                                              // +1 to "[needs] boots" Boots production.
 		{ EffectTypes.PerkCrafter_Boots_Plus2, "[PerkCrafter] Boots +2" },                                                                                                              // +2 to "[needs] boots" Boots production.
@@ -24157,6 +24851,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.HarvestingRate_Plus100, "HarvestingRate +100" },                                                                                                                  // Quick Harvest - Harvesting crops is 100% faster.
 		{ EffectTypes.HarvestingRate_Plus25, "HarvestingRate +25" },                                                                                                                    // Obsidian Sickles - Harvesting crops is 25% faster.
 		{ EffectTypes.HarvestingRate_Plus30, "HarvestingRate +30" },                                                                                                                    // Obsidian Sickles - Harvesting crops is 30% faster.
+		{ EffectTypes.HarvestingRate_Plus40, "HarvestingRate +40" },                                                                                                                    // Obsidian Sickles - Harvesting crops is 40% faster.
 		{ EffectTypes.HarvestingRate_Plus5, "HarvestingRate +5" },                                                                                                                      // Obsidian Sickles - Harvesting crops is 5% faster.
 		{ EffectTypes.HarvestingRate_Plus50, "HarvestingRate +50" },                                                                                                                    // Quick Harvest - Harvesting crops is 50% faster.
 		{ EffectTypes.PerkCrafter_Planting_And_Harvesting_Speed_Child_Harvesting_10, "[PerkCrafter] Planting and Harvesting Speed - child (Harvesting 10)" },                           // Harvesting crops is 10% faster.
@@ -24225,26 +24920,29 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Altar_Blood_Price, "[Altar] Blood Price" },                                                                                                                       // Blood Price Contract (Stormforged) - A shady, but lucrative deal. Gain 20 "[valuable] amber" Amber and 1 "[valuable] ancient tablet" Ancient Tablet every time a villager dies or leaves.
 		{ EffectTypes.Altar_Cannibalism, "[Altar] Cannibalism" },                                                                                                                       // Cannibalism (Stormforged) - Gain 40 "[food raw] meat" Meat and 20 "[food processed] jerky" Jerky every time a villager dies or leaves.
 		{ EffectTypes.Altar_Cornerstone_Reroll_Each_Year, "[Altar] Cornerstone Reroll each year" },                                                                                     // Forsaken Seal (Stormforged) - An artifact of the Forsaken Gods. Gain one cornerstone reroll charge at the beginning of each storm.
+		{ EffectTypes.Altar_Exploring_Expedition, "[Altar] Exploring Expedition" },                                                                                                     // Exploration Expedition (Stormforged) - You took some of the best explorers from the Smoldering City with you. Global Resolve is boosted by +10 for 180 seconds every time a new glade is discovered.
+		{ EffectTypes.Altar_Exploring_Expedition_Resolve_Bonus_Effect_Holder, "[Altar] Exploring Expedition - Resolve Bonus Effect - Holder" },                                         // Joy Of Discovery (Stormforged) - Global Resolve is increased by 10 for 180 seconds due to a recently discovered glade (source: Exploration Expedition (Stormforged)).
+		{ EffectTypes.Altar_Food_Production_For_Engines, "[Altar] Food Production For Engines" },                                                                                       // Cooking Steam (Stormforged) - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by +40% for every 50 units of Drizzle Water stored.
 		{ EffectTypes.Altar_Hubs_For_Newcomer_Goods, "[Altar] Hubs for newcomer goods" },                                                                                               // Generous Gifts (Stormforged) - Wealthy settlements attract wealthy settlers. Newcomers bring 75% more goods with them for every Hearth level gained.
 		{ EffectTypes.Altar_Insect_For_Tree, "[Altar] Insect for tree" },                                                                                                               // Woodpecker Technique (Stormforged) - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
-		{ EffectTypes.Altar_Insect_For_Tree_Child, "[Altar] Insect for tree - child" },                                                                                                 // Woodpecker Technique - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
+		{ EffectTypes.Altar_Insect_For_Tree_Child, "[Altar] Insect for tree - child" },                                                                                                 // Woodpecker Technique (Stormforged) - Gain 5 "[food raw] insects" Insects every time woodcutters cut down a tree during the Storm.
 		{ EffectTypes.Altar_Lower_Hostility_For_Religion, "[Altar] Lower Hostility For Religion" },                                                                                     // Firelink Ritual (Stormforged) - There is nothing the forest hates more than fire. Every villager with their need for religion fulfilled decreases the forest’s Hostility by 10.
 		{ EffectTypes.Altar_Of_Decay_Negative, "Altar of Decay Negative" },                                                                                                             // Blight Incantation - A powerful, necrotic curse. Burning Blightrot Cysts takes +15 more seconds. Hostility is increased by "hearth parts" Wildfire Essence points for every Wildfire Essence stored in the settlement's Warehouse.
 		{ EffectTypes.Altar_Resolve_For_Impatience, "[Altar] Resolve for Impatience" },                                                                                                 // Rebellious Spirit (Stormforged) - The people are feeling oddly rebellious. Gain +1 Global Resolve for every 1 Impatience Point.
 		{ EffectTypes.Altar_Storm_Water_For_Woodcutters, "[Altar] Storm Water for Woodcutters" },                                                                                       // Force of Nature (Stormforged) - The forest and the everlasting rain are connected somehow. Gain +5 to Storm Water production for every 2 Woodcutters in your settlement. Increases the tank capacity for every type of rainwater by +100 (one time only).
 		{ EffectTypes.Altar_Tablets_For_Events, "[Altar] Tablets for Events" },                                                                                                         // Hidden Reward (Stormforged) - Gain 1 "[valuable] ancient tablet" Ancient Tablet for every 1 completed Glade Event.
 		{ EffectTypes.Altar_Tools_For_Death, "[Altar] Tools for death" },                                                                                                               // Bone Tools (Stormforged) - Gain 10 "[tools] simple tools" Tools every time a villager leaves or dies.
-		{ EffectTypes.Altar_Tools_For_Glade, "[Altar] Tools for glade" },                                                                                                               // Improvised Tools (Stormforged) - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 24 "[tools] simple tools" Tools.
+		{ EffectTypes.Altar_Tools_For_Glade, "[Altar] Tools for glade" },                                                                                                               // Improvised Tools (Stormforged) - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 20 "[tools] simple tools" Tools.
 		{ EffectTypes.Altar_Trade_Routes_For_Housing_Spots, "[Altar] Trade Routes for housing spots" },                                                                                 // Urban Planning (Stormforged) - For every 6 completed trade routes, all houses will have room for one more person.
 		{ EffectTypes.Altar_Wood_Plus2_For_Insects, "[Altar] Wood +2 for insects" },                                                                                                    // No Quality Control (Stormforged) - Gain +2 to wood production. After each storm, all stored wood is removed, and you get 150 "[food raw] insects" Insects in return.
 		{ EffectTypes.Altar_Working_Time_For_Firekeeper, "[Altar] Working time for firekeeper" },                                                                                       // Prayer Book (Stormforged) - Scouts work 20% faster on Glade Events for every firekeeper assigned to a Hearth.
 		{ EffectTypes.Amber_For_Archeology, "Amber For Archeology" },                                                                                                                   // Scientific Grant - The Queen has decided to reward you for your exceptional achievements in science. Gain 20 "[valuable] amber" Amber for every completed stage of an archaeological discovery (excavation, conservation, reconstruction).
 		{ EffectTypes.Amber_For_Newcomers, "Amber for Newcomers" },                                                                                                                     // Stormwalker Tax - A joint venture with the Stormwalker Guild can be very profitable. You gain 15 "[valuable] amber" Amber every time you accept a newcomer group from the Citadel, but you’ll lose all stored Amber upon choosing this cornerstone.
 		{ EffectTypes.Amber_For_Sea_Marrow, "Amber for Sea Marrow" },                                                                                                                   // Golden Marrow - Some fossils contain valuable surprises. Gain 2 "[valuable] amber" Amber for every 20 "[crafting] sea marrow" Sea Marrow produced.
-		{ EffectTypes.Amber_For_Trade_Packs, "Amber for Trade Packs" },                                                                                                                 // Value Added Tax - Gain 2 "[valuable] amber" Amber for every 6 "[packs] pack of trade goods" Pack of Trade Goods produced.
+		{ EffectTypes.Amber_For_Trade_Packs, "Amber for Trade Packs" },                                                                                                                 // Royal Subsidy - Gain 2 "[valuable] amber" Amber for every 6 "[packs] pack of trade goods" Pack of Trade Goods produced.
 		{ EffectTypes.Amber_For_Trade_Routes, "Amber for Trade Routes" },                                                                                                               // Deep Pockets - Receive 10 "[valuable] amber" Amber for every 5 completed trade routes.
 		{ EffectTypes.Amber_For_Trader_Visit, "Amber for Trader Visit" },                                                                                                               // Bed and Breakfast - This time, it's the guild who’s going to pay you, not the other way around. Gain 10 "[valuable] amber" Amber every time a trader arrives.
-		{ EffectTypes.Amber_For_Water, "Amber for Water" },                                                                                                                             // Counterfeit Amber - Apparently, amber-like crystals can be extracted from rainwater. Gain 10 "[valuable] amber" Amber every time you use 40 units of water in Rain Engines, but the Negligence penalty for unfavored species increases by 3.
+		{ EffectTypes.Amber_For_Water, "Amber for Water" },                                                                                                                             // Counterfeit Amber - Apparently, amber-like crystals can be extracted from rainwater. Gain 10 "[valuable] amber" Amber every time you use 50 units of water in Rain Engines.
 		{ EffectTypes.Amber_For_Wood, "Amber for Wood" },                                                                                                                               // Lumber Tax - Gain 1 "[valuable] amber" Amber for every 50 "[mat raw] wood" Wood produced.
 		{ EffectTypes.Amber_Worth_More_For_Relics, "Amber Worth More For Relics" },                                                                                                     // Respected Business Partner - Traders value your efforts in keeping the region safe. Amber is worth +10% more for every completed Dangerous and Forbidden Glade Event.
 		{ EffectTypes.AmberForLuxury, "AmberForLuxury" },                                                                                                                               // Luxury Tax - Amber is worth +5% more for every 2 villagers with the need for luxury fulfilled.
@@ -24260,9 +24958,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.BIOME_Faster_Trade_For_Goods_Sold, "[BIOME] Faster Trade For Goods Sold" },                                                                                       // Resource Hub - With such a wealth of resources, trade flourishes. Every time you sell goods worth 20 Amber, traders arrive 10% quicker and trade routes become 10% faster.
 		{ EffectTypes.BIOME_Inspiring_Pressure_Holder, "[BIOME] Inspiring Pressure Holder" },                                                                                           // Inspiring Pressure - The forest is as scary as it is beautiful. Villagers have a 3% higher chance of producing double yields for each Hostility level.
 		{ EffectTypes.BIOME_Marshlands_Camps_Speed, "[BIOME] Marshlands Camps Speed" },                                                                                                 // Gathering Knowledge - The Marshlands are a gatherer's paradise. Gathering speed is increased by 10% for every 2 workers assigned to gathering camps.
-		{ EffectTypes.BIOME_Shards_For_Relics_1, "[BIOME] Shards for Relics 1" },                                                                                                       // Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 40 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
-		{ EffectTypes.BIOME_Shards_For_Relics_2, "[BIOME] Shards for Relics 2" },                                                                                                       // Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 80 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
-		{ EffectTypes.BIOME_Shards_For_Relics_3, "[BIOME] Shards for Relics 3" },                                                                                                       // Deeply Hidden Riches - Gain a "[valuable] thunderblight shard" Thunderblight Shard with every 120 vein charges mined (copper ore, coal, and salt). You can receive up to 3 shards, each requiring more resources to be mined.
+		{ EffectTypes.BIOME_Shards_For_Relics_1, "[BIOME] Shards for Relics 1" },                                                                                                       // Deeply Hidden Riches - Receive a "[valuable] thunderblight shard" Thunderblight Shard after using 40 mining vein charges (copper, coal, or salt). Up to 3 shards can be gained, requiring 40/80/120 charges.
+		{ EffectTypes.BIOME_Shards_For_Relics_2, "[BIOME] Shards for Relics 2" },                                                                                                       // Deeply Hidden Riches - Receive a "[valuable] thunderblight shard" Thunderblight Shard after using 80 mining vein charges (copper, coal, or salt). Up to 3 shards can be gained, requiring 40/80/120 charges.
+		{ EffectTypes.BIOME_Shards_For_Relics_3, "[BIOME] Shards for Relics 3" },                                                                                                       // Deeply Hidden Riches - Receive a "[valuable] thunderblight shard" Thunderblight Shard after using 120 mining vein charges (copper, coal, or salt). Up to 3 shards can be gained, requiring 40/80/120 charges.
 		{ EffectTypes.Blight_Rate_For_Resolve_Reputation_No_Rep_From_Resolve_Holder, "Blight Rate for Resolve Reputation - No Rep From Resolve - Holder" },                             // Unbearable Smell - Reputation from Resolve is generated 90% slower for the next 2 Reputation Points (source: Blight Filter).
 		{ EffectTypes.Blightrot_Over_Time_Rainpunk_Foundry_Hard, "Blightrot over Time - Rainpunk Foundry - hard" },                                                                     // Overcharged Rainpunk Technology - The corrupting power of the rain is seeping through the Rainpunk machinery. Every 110 seconds, a Blood Flower will appear near the Rainpunk Foundry.
 		{ EffectTypes.Blightrot_Over_Time_Rainpunk_Foundry_Impossible, "Blightrot over Time - Rainpunk Foundry - impossible" },                                                         // Overcharged Rainpunk Technology - The corrupting power of the rain is seeping through the Rainpunk machinery. Every 90 seconds, a Blood Flower will appear near the Rainpunk Foundry.
@@ -24311,11 +25009,11 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Fishmens_Traps, "Fishmen's Traps" },                                                                                                                              // Fishmen Traps - Trying to enter the Fishmen cave triggers hidden traps. A Fishmen Totem spawns every 60 seconds.
 		{ EffectTypes.Food_Production_For_Engines, "Food Production For Engines" },                                                                                                     // Cooking Steam - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by +15% for every 50 units of Drizzle Water stored.
 		{ EffectTypes.Forbidden_For_Hostility, "Forbidden for Hostility" },                                                                                                             // Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Every discovered Forbidden Glade lowers the Hostility gained from Dangerous and Forbidden Glades by 2, and from small glades by 1.
-		{ EffectTypes.Forbidden_For_Hostility_NEW, "Forbidden for Hostility NEW" },                                                                                                     // Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Completing a Forbidden Glade Event reduces the Hostility gained from Dangerous ("dangerous") and Forbidden Glades ("forbidden") by 2, and from Small Glades by 1.
+		{ EffectTypes.Forbidden_For_Hostility_NEW, "Forbidden for Hostility NEW" },                                                                                                     // Secure Perimeter - Securing the deadliest corners of the forest will make it a lot less terrifying. Completing a Forbidden Event ("forbidden") reduces the Hostility gained from Dangerous ("dangerous") and Forbidden Glades ("forbidden") by 2, and from Small Glades by 1.
 		{ EffectTypes.Friend_Or_Foe, "Friend or Foe" },                                                                                                                                 // Friend or Foe - The forest is merciless to those who exploit it. To protect itself, it may even sometimes ally with the Blightrot. Every 120 seconds, Blightrot Cysts (1) are spawned for each earned Hostility level.
-		{ EffectTypes.Frog_Adding_Grace_Period, "Frog Adding Grace Period" },                                                                                                           // Borrowed Time - The Queen looks more favorably upon a city represented by such distinguished ambassadors. Each fully upgraded house will grant you 10 seconds of Grace Period after the Queen’s Impatience reaches its maximum threshold.
+		{ EffectTypes.Frog_Adding_Grace_Period, "Frog Adding Grace Period" },                                                                                                           // Borrowed Time - The Crown can be persuaded to show leniency toward this settlement. Grants an Active Ability that removes 1 Impatience Point at the cost of 10 "[valuable] amber" Amber. Usable from the Main Warehouse, up to 5 times.
 		{ EffectTypes.Frog_Adding_Resilliance, "Frog Adding Resilliance" },                                                                                                             // Strength in Numbers - The storm seems less threatening in a well-populated settlement. Global Resolve drops 2% slower for every Frog villager.
-		{ EffectTypes.Frog_Blueprints_For_Upgrades, "Frog Blueprints For Upgrades" },                                                                                                   // Overzealous Architects - Driven by boundless ambition, Frog architects can't resist sketching plans, even in their spare time. Every time you fully upgrade 5 Frog Houses, you will receive a random blueprint. After 4 blueprints, this cornerstone will disappear.
+		{ EffectTypes.Frog_Blueprints_For_Upgrades, "Frog Blueprints For Upgrades" },                                                                                                   // Overzealous Architects - Driven by boundless ambition, Frog architects can't resist sketching plans, even in their spare time. Every time you fully upgrade 3 Frog Houses, you will receive a random blueprint. After 4 blueprints, this cornerstone will disappear.
 		{ EffectTypes.Frog_For_Upgrade, "Frog For Upgrade" },                                                                                                                           // City of Wonders - Members of the Frog clan flock to your settlement. Gain 1 Frog villager for every 2 house upgrades.
 		{ EffectTypes.Gargoyle_Hostility_Bonus_Per_Religion, "Gargoyle Hostility - bonus per religion" },                                                                               // 15
 		{ EffectTypes.Grain_Specialization, "Grain Specialization" },                                                                                                                   // Grain Bags - Specialized grain farming techniques. "[food raw] grain" Grain production increases by +1 every 25 times it's produced.
@@ -24373,7 +25071,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mod_Exploration_Tax_Small, "[Mod] Exploration Tax - small" },                                                                                                     // Land Tax - 2
 		{ EffectTypes.Mod_Gathering_Storm, "[Mod] Gathering Storm" },                                                                                                                   // Gathering Storm - A mysterious force is drawing in heavy clouds. Every year, the storm lasts +10% longer.
 		{ EffectTypes.Mod_Guilds_Disfavor, "[Mod] Guilds Disfavor" },                                                                                                                   // Guild's Disfavor - The growing power of the Guild hasn't gone unnoticed. The Queen's Impatience grows by 1 every time goods worth 20 Amber are sold.
-		{ EffectTypes.Mod_Land_Of_Greed, "[Mod] Land of Greed" },                                                                                                                       // Land of Greed - The strange totem causes you to only focus on your wealth... And the Crown is worried. Impatience grows 50% quicker, but every ongoing trade route reduces the Impatience generation speed by –20%.
+		{ EffectTypes.Mod_Land_Of_Greed, "[Mod] Land of Greed" },                                                                                                                       // Land of Greed - The strange totem causes you to only focus on your wealth... And the Crown is worried. Impatience grows 50% quicker, but every ongoing trade route reduces the Impatience generation speed by 20%.
 		{ EffectTypes.Mod_Ominous_Presence, "[Mod] Ominous Presence" },                                                                                                                 // Ominous Presence - Something strange is trapped beneath the ground. Gain twice the Hostility each year, but every time a villager dies or leaves, Hostility decreases by 15 points.
 		{ EffectTypes.Mod_Petrified_Necropolis_Meat_For_Stone_And_Clay, "[Mod] Petrified Necropolis - Meat for Stone and Clay" },                                                       // Gain 5 "[food raw] meat" Meat for every 10 Stone and Clay produced.
 		{ EffectTypes.Mod_Petrified_Necropolis_Stone_For_Death, "[Mod] Petrified Necropolis - Stone for Death" },                                                                       // Every time a villager dies you get 20 "[mat raw] stone" Stone.
@@ -24456,9 +25154,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.TEST_Hooked, "[TEST] Hooked" }, 
 		{ EffectTypes.TEST_Plague_Of_Death, "TEST Plague of Death" },                                                                                                                   // Plague of Death - The Sealed Ones are thirsty for blood. Discover 2 Dangerous ("dangerous") or Forbidden Glades ("forbidden") during this storm. If you don't, 3 villagers will be killed in the coming drizzle season.
 		{ EffectTypes.Tools_For_Death, "Tools for death" },                                                                                                                             // Bone Tools - Gain 5 "[tools] simple tools" Tools every time a villager leaves or dies.
-		{ EffectTypes.Tools_For_Glade, "Tools for glade" },                                                                                                                             // Improvised Tools - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 15 "[tools] simple tools" Tools.
-		{ EffectTypes.Tools_For_Glade_Child, "Tools for glade - child" },                                                                                                               // Discovering a glade grants 15 "[tools] simple tools" Tools
-		{ EffectTypes.Tools_For_Glade_Child_Altar, "Tools for glade - child - altar" },                                                                                                 // Discovering a glade grants 24 "[tools] simple tools" Tools
+		{ EffectTypes.Tools_For_Glade, "Tools for glade" },                                                                                                                             // Improvised Tools - Woodcutters are tasked with creating makeshift tools. Discovering a glade during the Storm grants 10 "[tools] simple tools" Tools.
+		{ EffectTypes.Tools_For_Glade_Child, "Tools for glade - child" },                                                                                                               // Discovering a glade grants 10 "[tools] simple tools" Tools
+		{ EffectTypes.Tools_For_Glade_Child_Altar, "Tools for glade - child - altar" },                                                                                                 // Discovering a glade grants 20 "[tools] simple tools" Tools
 		{ EffectTypes.Tools_For_Hostility, "Tools for Hostility" },                                                                                                                     // Forbidden Tools - All metal is permeated with malevolent magic from the forest. Every 2 Hostility levels grant +1 to "[tools] simple tools" Tools production.
 		{ EffectTypes.Trade_Route_Speed_For_Packs, "Trade Route Speed for Packs" },                                                                                                     // Full Stock - A Warehouse full of provisions makes it easier to prepare your caravans. Trade routes are faster by 5% for every 10 "[packs] pack of provisions" Pack of Provisions in your settlement's Warehouses.
 		{ EffectTypes.Trade_Routes_For_Housing_Spots, "Trade routes for housing spots" },                                                                                               // Urban Planning - For every 10 completed trade routes, all houses will have room for one more person.
@@ -24479,7 +25177,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Villager_For_Glade, "Villager for glade" },                                                                                                                       // Lost in the Wilds - Gain one villager every time you discover a new glade.
 		{ EffectTypes.Villagers_For_Corruption, "Villagers For Corruption" },                                                                                                           // From the Shadows - Confused, empty-eyed creatures emerge from the Hearth. Every time Voice of the Sealed Ones triggers after the Hearth reaches 100% Corruption, 3 new villagers appear in the settlement.
 		{ EffectTypes.Voice_Of_The_Forest, "Voice of the Forest" },                                                                                                                     // Voice of the Forest - Trees communicate with each other through their roots, making the forest aware of your every move. Spawns 1 Blightrot Cysts every 120 seconds for every 2 Dangerous ("dangerous") or Forbidden Glade ("forbidden") discovered.
-		{ EffectTypes.Water_Crit_For_Fishing, "Water Crit For Fishing" },                                                                                                               // Book of Water - All recipes that use rainwater have a 5% higher chance of doubling the yield with every 30 vein charges mined.
+		{ EffectTypes.Water_Crit_For_Fishing, "Water Crit For Fishing" },                                                                                                               // Book of Water - For every 30 vein charges mined, rainwater production and all recipes using rainwater gain a 5% higher chance of producing double yields.
 		{ EffectTypes.Waterskins_For_Leather, "Waterskins for Leather" },                                                                                                               // Reward_WaterskinsForLeather_Name - Reward_WaterskinsForLeather_Desc
 		{ EffectTypes.WE_Blightroted_Viceroy_Box, "[WE] Blightroted Viceroy Box" },                                                                                                     // Zitan Box - At the beginning of Clearance season in year 2, a mysterious box will arrive in your settlement.
 		{ EffectTypes.WE_Cloaked_Wanderer_Vengeance, "[WE] Cloaked Wanderer Vengeance" },                                                                                               // Cloaked Wanderer's Vengeance - At the beginning of year 8, the Cloaked Wanderer will have his revenge, killing 8 villagers.
@@ -24535,7 +25233,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Hostility_Tree, "Hostility Tree" },                                                                                                                               // Rage of the Forest - The forest’s Hostility is temporarily increased by 5 points.
 		{ EffectTypes.Institution_Lower_Hostility, "Institution Lower Hostility" },                                                                                                     // The Green Brew - Gentle vapors seem to soothe the wilderness. Hostility is decreased by 100.
 		{ EffectTypes.Map_Mod_Initial_Hostility, "[Map Mod] Initial Hostility" },                                                                                                       // Ancient Battleground - This land was once the place of a mythical battle. You start with 50/75/100/150 Hostility points.
-		{ EffectTypes.Mod_Memory_Of_The_Forest, "[Mod] Memory of the Forest" },                                                                                                         // Memory of the Forest - Other viceroys tried to settle here before, and the forest still remembers their presence. Start with 50 Hostility points.
+		{ EffectTypes.Mod_Memory_Of_The_Forest, "[Mod] Memory of the Forest" },                                                                                                         // Memory of the Forest - Other viceroys tried to settle here before, and the forest still remembers their presence. Start with 50/75/100/150 Hostility points.
 		{ EffectTypes.PerkCrafter_Hostility_Minus10, "[PerkCrafter] Hostility -10" },                                                                                                   // Hostility is reduced by 10 points.
 		{ EffectTypes.PerkCrafter_Hostility_Minus15, "[PerkCrafter] Hostility -15" },                                                                                                   // Hostility is reduced by 15 points.
 		{ EffectTypes.PerkCrafter_Hostility_Minus20, "[PerkCrafter] Hostility -20" },                                                                                                   // Hostility is reduced by 20 points.
@@ -24565,7 +25263,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mod_Calm_Lands_Regular_Glades, "[Mod] Calm Lands - Regular Glades" },                                                                                             // Calm Lands - The forest seems to have been soothed. Opening glades no longer increases Hostility.
 		{ EffectTypes.MoreHostilityPerHearth, "MoreHostilityPerHearth" },                                                                                                               // Cold Flame - A blinding light is aimed directly at the settlement's Hearths, turning the Holy Fire into a cold flame. Hostility is increased by 100 for each Firekeeper in the settlement.
 		{ EffectTypes.MoreHostilityPerHearth_Weak, "MoreHostilityPerHearth_Weak" },                                                                                                     // Cold Flame - A blinding light is aimed directly at the settlement's Hearths, turning the Holy Fire into a cold flame. Hostility is increased by 50 for each Firekeeper in the settlement.
-		{ EffectTypes.PerkCrafter_More_Hostility_For_Glades, "[PerkCrafter] More Hostility For Glades" },                                                                               // Discovered Dangerous Glades give 2 more Hostility.
+		{ EffectTypes.PerkCrafter_More_Hostility_For_Glades, "[PerkCrafter] More Hostility For Glades" },                                                                               // Discovered Dangerous Glades add 2 more Hostility (retroactive).
 		{ EffectTypes.TEST_Plague_Of_The_Forest, "TEST Plague of the Forest" },                                                                                                         // Plague of the Dark Forest - The Sealed Ones incite the forest to become even more sinister. Hostility from discovered Dangerous ("dangerous") and Forbidden Glades ("forbidden") is increased by 5.
 
 		// HousesGlobalBonusCapacityEffectModel
@@ -24574,6 +25272,8 @@ public static class EffectTypesExtensions
 
 		// HungerMultiplierEffectModel
 		{ EffectTypes.Diff_Hunger_Multiplier, "[Diff] Hunger Multiplier" },                                                                                                             // Famine Outbreaks - Famine outbreaks in your previous settlements have made the villagers particularly sensitive to food shortages. Every time villagers have nothing to eat during a break, they will gain two stacks of the Hunger effect instead of one.
+		{ EffectTypes.Hunger_Multiplier_Toxic_Slug_Normal_And_Hard, "Hunger Multiplier - Toxic Slug - normal and hard" },                                                               // Infection - The Lurker has brought with it a dangerous disease. Every time villagers have nothing to eat during a break, they will gain 1 additional stack(s) of the Hunger effect.
+		{ EffectTypes.Hunger_Multiplier_Toxic_Slug_Very_Hard_And_Impossible, "Hunger Multiplier - Toxic Slug - very hard and impossible" },                                             // Infection - The Lurker has brought with it a dangerous disease. Every time villagers have nothing to eat during a break, they will gain 2 additional stack(s) of the Hunger effect.
 		{ EffectTypes.SE_Hunger_Storm, "SE Hunger Storm" },                                                                                                                             // Hunger Storm - Missing even a single meal in this harsh climate can be deadly. If villagers don't have anything to eat during a break, they will gain two stacks of the Hunger effect.
 
 		// LeavingBlockEffectModel
@@ -24589,6 +25289,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Racial_Locate_Grass, "Racial Locate Grass" },                                                                                                                     // Reveals fertile soil - Reveals the location of 1 of the nearest patches of fertile soil
 
 		// LocateRelicByTagEffectModel
+		{ EffectTypes.Locate_Chest, "Locate Chest" },                                                                                                                                   // Surveying Equipment - Reveals the location of an abandoned cache in a nearby, undiscovered glade.
 		{ EffectTypes.Racial_Locate_Ruin, "Racial Locate Ruin" },                                                                                                                       // Reveals a ruin - Reveals the location of the nearest ruin
 
 		// LocateSpringEffectModel
@@ -24621,7 +25322,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.NeedPerk_Education_Production, "NeedPerk Education Production" },                                                                                                 // Working Hard and Smart - A motivational pamphlet. Has a 10% chance of producing double yields when under the effect of "[needs] scrolls" education.
 		{ EffectTypes.NeedPerk_Housing_Resolve, "NeedPerk Housing Resolve" },                                                                                                           // Furniture - Some much needed furnishings. Adds an additional +1 to Resolve for villagers with a home.
 		{ EffectTypes.NeedPerk_Housing_Resolve_Frogs, "NeedPerk Housing Resolve - Frogs" },                                                                                             // Furniture - Some much needed furnishings. Adds an additional +1 to Resolve for villagers with a home.
-		{ EffectTypes.NeedPerk_Leisure_Production, "NeedPerk Leisure Production" },                                                                                                     // Well-Rested Workers - Just. The. Right. Amount. Villagers with the leisure need fulfilled have a +25% chance of doubling their yields.
+		{ EffectTypes.NeedPerk_Leisure_Production, "NeedPerk Leisure Production" },                                                                                                     // Well-Rested Workers - Just. The. Right. Amount. Villagers with the leisure need fulfilled have a +33% chance of doubling their yields.
 		{ EffectTypes.Royal_Guard_Training_NeedPerk, "Royal Guard Training - NeedPerk" }, 
 
 		// NewcomersBonusEffectModel
@@ -24743,6 +25444,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Biome_Black_Market_Amber_Payment_4, "[Biome] Black Market - Amber Payment - 4" },                                                                                 // Usury - Delayed payment for goods acquired through the Black Market.
 		{ EffectTypes.Biome_Black_Market_Amber_Payment_5, "[Biome] Black Market - Amber Payment - 5" },                                                                                 // Usury - Delayed payment for goods acquired through the Black Market.
 		{ EffectTypes.Biome_Black_Market_Amber_Payment_6, "[Biome] Black Market - Amber Payment - 6" },                                                                                 // Usury - Delayed payment for goods acquired through the Black Market.
+		{ EffectTypes.Borrowed_Time_Payment, "Borrowed Time - Payment" },                                                                                                               // Borrowed Time - The Crown requires you to contribute to the Royal Treasury. At the end of each Drizzle season, you will be asked to pay 10 "[valuable] amber" Amber for every 3 villagers in your settlement. If you don't, 2 people will leave.
 		{ EffectTypes.Mod_Exploration_Tax_Amber_Payment_Small, "[Mod] Exploration Tax - Amber Payment - small" },                                                                       // Land Tax (small glade) - You discovered a small glade. The Crown requires you to pay 2 "[valuable] amber" Amber.
 		{ EffectTypes.SE_Destroy_Nodes, "SE Destroy Nodes" },                                                                                                                           // Unnatural Erosion - The wind and rain in this region seem more destructive than usual. Pay 5 "[crafting] oil" Oil with each storm (multiplied by the number of years played). If you don't, 2 random gathering nodes will be destroyed.
 		{ EffectTypes.SE_Late_Newcomers, "SE Late Newcomers" },                                                                                                                         // Shifting Paths - The road to the village is long and winding, so some newcomers need a bit of extra motivation. Pay 2 "[packs] pack of crops" Pack of Crops with each storm (multiplied by the number of years played). If you don't, the next newcomer group will arrive 50% slower.
@@ -24773,6 +25475,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.PlantingRate_Plus100, "PlantingRate +100" },                                                                                                                      // Fertilizer - Planting crops is 100% faster.
 		{ EffectTypes.PlantingRate_Plus25, "PlantingRate +25" },                                                                                                                        // Seed Pouch - Planting crops is 25% faster.
 		{ EffectTypes.PlantingRate_Plus30, "PlantingRate +30" },                                                                                                                        // Fertilizer - Planting crops is 30% faster.
+		{ EffectTypes.PlantingRate_Plus40, "PlantingRate +40" },                                                                                                                        // Fertilizer - Planting crops is 40% faster.
 		{ EffectTypes.PlantingRate_Plus5, "PlantingRate +5" },                                                                                                                          // Seed Pouch - Planting crops is 5% faster.
 		{ EffectTypes.PlantingRate_Plus50, "PlantingRate +50" },                                                                                                                        // Quick Planting - Planting crops is 50% faster.
 		{ EffectTypes.PlantingRate_Plus75, "PlantingRate +75" },                                                                                                                        // Fertilizer - Planting crops is 75% faster.
@@ -24933,6 +25636,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.PerkCrafter_Random_Service_Goods_25, "[PerkCrafter] Random Service Goods 25" },                                                                                   // Gain 25 random service goods.
 		{ EffectTypes.PerkCrafter_Random_Service_Goods_35, "[PerkCrafter] Random Service Goods 35" },                                                                                   // Gain 35 random service goods.
 
+		// RandomTraderVisitEffectModel
+		{ EffectTypes.Altar_Extra_Trader_Merch_Random_Trader_Visit, "[Altar] Extra Trader Merch - random trader visit" },                                                               // Summon Guild Trader - Summons a random trader to your settlement. If used while another trader is present, the current one will depart.
+
 		// RawDepositsChargesEffectModel
 		{ EffectTypes.Mod_RawDepositsCharges_10, "[Mod] RawDepositsCharges_10" },                                                                                                       // Rich Wilderness - Newly discovered gathering nodes have more charges: +5 for small ones, and +20 for large ones.
 		{ EffectTypes.PerkCrafter_Node_Charges_10, "[PerkCrafter] Node Charges 10" },                                                                                                   // +10 charges to newly discovered gathering nodes.
@@ -24943,6 +25649,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Raw_Deposit_Charges_Minus5, "Raw Deposit Charges -5" },                                                                                                           // 5
 		{ EffectTypes.RawDepositsCharges_10, "RawDepositsCharges_10" },                                                                                                                 // Rich Glades - Newly discovered gathering nodes have more charges: +5 for small ones, and +15 for large ones.
 		{ EffectTypes.RawDepositsCharges_20, "RawDepositsCharges_20" },                                                                                                                 // +10 charges to small gathering nodes, +25 charges to large gathering nodes
+		{ EffectTypes.RawDepositsCharges_Altar, "RawDepositsCharges_Altar" },                                                                                                           // +20 charges to small gathering nodes, +35 charges to large gathering nodes
 		{ EffectTypes.SE_RawDepositsCharges, "SE RawDepositsCharges" },                                                                                                                 // Wild Growth - Small, energizing drops cause uncontrollable growth in certain species. All gathering nodes discovered during drizzle season have more charges: +2 to small ones, and +10 to large ones.
 
 		// RecipeEffectModel
@@ -24951,6 +25658,8 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Biscuits_In_Kiln, "Biscuits in Kiln" },                                                                                                                           // Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 		{ EffectTypes.Biscuits_In_Rain_Mill, "Biscuits in Rain Mill" },                                                                                                                 // Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
 		{ EffectTypes.Biscuits_In_Rain_Mill_Haunted, "Biscuits in Rain Mill Haunted" },                                                                                                 // Biscuit Recipes - "[food processed] biscuits" Biscuits (grade3) can now be produced in the Kiln and Rain Mill.
+		{ EffectTypes.Mushrooms_In_Brineworks, "Mushrooms in Brineworks" },                                                                                                             // Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
+		{ EffectTypes.Mushrooms_In_Brineworks_Altar, "Mushrooms in Brineworks - Altar" },                                                                                               // Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 		{ EffectTypes.Mushrooms_In_Grove, "Mushrooms in Grove" },                                                                                                                       // Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
 		{ EffectTypes.Mushrooms_In_Grove_Altar, "Mushrooms in Grove - Altar" },                                                                                                         // Seasonal Crops (Stormforged) - All farms can plant "[food raw] mushrooms" mushrooms (grade3) on farm fields during drizzle season.
 		{ EffectTypes.Mushrooms_In_Herb_Garden, "Mushrooms in Herb Garden" },                                                                                                           // Seasonal Crops - All farms can plant "[food raw] mushrooms" mushrooms (grade2) on farm fields during drizzle season.
@@ -25014,6 +25723,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Building_Mat_Speed_Plus3, "Building Mat Speed +3" }, 
 		{ EffectTypes.Fabric_Or_Coat_Speed_Plus5, "Fabric or Coat Speed +5" }, 
 		{ EffectTypes.Food_Prod_Speed_Plus10, "Food prod speed +10" },                                                                                                                  // Cooking Steam - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by {0} for every {1} units of Drizzle Water stored.
+		{ EffectTypes.Food_Prod_Speed_Plus40, "Food prod speed +40" },                                                                                                                  // Cooking Steam - If you leave rainwater for a while, it will begin to release a pleasant and warm vapor. Food production speed is increased by {0} for every {1} units of Drizzle Water stored.
 		{ EffectTypes.Food_Production_Speed_Minus60, "Food Production Speed -60" },                                                                                                     // Contaminated Food - All food production (both raw and cooked) is 60% slower.
 		{ EffectTypes.Food_Production_Speed_Minus70, "Food Production Speed -70" },                                                                                                     // Contaminated Food - All food production (both raw and cooked) is 70% slower.
 		{ EffectTypes.Food_Production_Speed_Minus80, "Food Production Speed -80" },                                                                                                     // Contaminated Food - All food production (both raw and cooked) is 80% slower.
@@ -25021,11 +25731,12 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Food_Production_Speed_Plus20, "Food Production Speed +20" },                                                                                                      // Viceroy's Survival Guide - A handy set of notes on how to survive in the wilderness, written by an anonymous viceroy. Increases global food production speed by 20%.
 		{ EffectTypes.Food_Production_Speed_Plus33, "Food Production Speed +33" },                                                                                                      // Viceroy's Survival Guide - A handy set of notes on how to survive in the wilderness, written by an anonymous viceroy. Increases global food production speed by 33%.
 		{ EffectTypes.Food_Production_Speed_Plus50, "Food Production Speed +50" },                                                                                                      // Viceroy's Survival Guide - A handy set of notes on how to survive in the wilderness, written by an anonymous viceroy. Increases global food production speed by 50%.
-		{ EffectTypes.Fuel_Recipes_Rate_33, "Fuel Recipes Rate 33" },                                                                                                                   // Advanced Fuel - All fuel recipes are 33% faster.
-		{ EffectTypes.Fuel_Recipes_Rate_50, "Fuel Recipes Rate 50" },                                                                                                                   // Advanced Fuel - All fuel recipes are 50% faster.
-		{ EffectTypes.Fuel_Recipes_Rate_66, "Fuel Recipes Rate 66" },                                                                                                                   // Advanced Fuel - All fuel recipes are 66% faster.
+		{ EffectTypes.Fuel_Recipes_Rate_33, "Fuel Recipes Rate 33" },                                                                                                                   // Advanced Fuel - All fuel recipes (coal, sea marrow, oil, purging fire) are 33% faster. Does not apply to wood production.
+		{ EffectTypes.Fuel_Recipes_Rate_50, "Fuel Recipes Rate 50" },                                                                                                                   // Advanced Fuel - All fuel recipes (coal, sea marrow, oil, purging fire) are 50% faster. Does not apply to wood production.
+		{ EffectTypes.Fuel_Recipes_Rate_66, "Fuel Recipes Rate 66" },                                                                                                                   // Advanced Fuel - All fuel recipes (coal, sea marrow, oil, purging fire) are 66% faster. Does not apply to wood production.
 		{ EffectTypes.Gathering_Speed_Plus30, "Gathering Speed +30" }, 
 		{ EffectTypes.Gathering_Speed_Plus5, "Gathering Speed +5" }, 
+		{ EffectTypes.Gathering_Speed_Plus50, "Gathering Speed +50" }, 
 		{ EffectTypes.Metal_Production_Speed_Boost_33, "Metal Production Speed Boost 33" }, 
 		{ EffectTypes.Metal_Production_Speed_Boost_66, "Metal Production Speed Boost 66" },                                                                                             // Metallurgic Proficiency - Increases the production speed of Copper Bars, Crystalized Dew, and all recipes that use metal ingots by 66%.
 		{ EffectTypes.Mod_Low_Food_Production_Speed, "[Mod] Low Food Production Speed" },                                                                                               // No Cooking Utensils - The caravan lost someone on the way, who unfortunately was carrying all the cooking equipment. All food recipes are 50% slower.
@@ -25039,7 +25750,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.PerkCrafter_Complex_Food_Prod_Speed_15, "[PerkCrafter] Complex Food Prod Speed 15" },                                                                             // Complex food production speed is increased by 15%.
 		{ EffectTypes.PerkCrafter_Complex_Food_Prod_Speed_5, "[PerkCrafter] Complex Food Prod Speed 5" },                                                                               // Complex food production speed is increased by 5%.
 		{ EffectTypes.SE_Fast_Food, "SE Fast Food" },                                                                                                                                   // Salty Breeze - The salty air makes it easier to preserve food. Food production speed is increased by 80% during drizzle season.
-		{ EffectTypes.SE_Food_Production_Speed_Minus15, "SE Food Production Speed -15" },                                                                                               // Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% for each Hostility level.
+		{ EffectTypes.SE_Food_Production_Speed_Minus15, "SE Food Production Speed -15" },                                                                                               // Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% per Hostility level (counting from level 0).
 		{ EffectTypes.SE_Gatherer_Production_Speed_Minus50, "SE Gatherer Production Speed -50" },                                                                                       // Quaking Bog - The ground is moving and swaying from all the rainwater it’s absorbed. Gathering speed is decreased by 50%.
 		{ EffectTypes.SE_Gatherer_Production_Speed_Plus50, "SE Gatherer Production Speed +50" },                                                                                        // Fruitful Season - The forest's fruits are so ripe, they almost fall into the basket on their own. Gathering speed is increased by 50%.
 
@@ -25125,8 +25836,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mistworm_All_Food_Lost, "Mistworm All Food Lost" },                                                                                                               // Mistworm Infestation - Where there is one mistworm, soon many more will follow. Destroys all stored food (both raw and cooked).
 		{ EffectTypes.Remove_Amber, "Remove Amber" }, 
 		{ EffectTypes.Remove_Amber_And_Wine, "Remove Amber and Wine" },                                                                                                                 // Buried Riches - What was once taken must now be given back. All stored "[valuable] amber" Amber and "[needs] wine" Wine will be lost.
+		{ EffectTypes.Remove_Amber_Cornerstone, "Remove Amber - Cornerstone" }, 
 		{ EffectTypes.Temple_All_Luxury_Lost, "Temple All Luxury Lost" },                                                                                                               // Forced Sacrifice - The Temple demands offerings. Destroys all trade goods in the Warehouse (packs of goods, Amber, Ancient Tablets).
 		{ EffectTypes.Termites_Materials_Lost, "Termites Materials Lost" },                                                                                                             // Agitated Swarm - Nothing can stop a hungry stonetooth termite swarm from feeding. Destroys all stored building materials (bricks, fabric, planks).
+		{ EffectTypes.Toxic_Slug_Fish_Lost, "Toxic Slug Fish Lost" },                                                                                                                   // Toxicity - A foul ooze seeps from the Lurker’s pond, destroying all stored Fish, Algae, Scales.
 		{ EffectTypes.Tree_Wood_Lost, "Tree Wood Lost" },                                                                                                                               // Petrified Wood - The sickness of the petrified tree spreads throughout the settlement. Destroys all stored wood (planks, wood).
 		{ EffectTypes.Water_Lost, "Water Lost" }, 
 		{ EffectTypes.WE_Remove_All_Food, "[WE] Remove All Food" },                                                                                                                     // Storm Ant Column - Your entire food supply was dumped to distract the Storm Ants. Removes all food at the beginning of the game.
@@ -25159,6 +25872,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Wildfire_RemoveFuelOverTime_Normal, "Wildfire_RemoveFuelOverTime - normal" },                                                                                     // Wildfire Presence - Fuel in the settlement's Warehouses is disappearing at a rate of 2 items every 15 seconds.
 		{ EffectTypes.Wildfire_RemoveFuelOverTime_Very_Hard, "Wildfire_RemoveFuelOverTime - very hard" },                                                                               // Wildfire Presence - Fuel in the settlement's Warehouses is disappearing at a rate of 4 items every 15 seconds.
 
+		// RemoveHungerStacksEffectModel
+		{ EffectTypes.Remove_Hunger_Stack, "Remove Hunger Stack" },                                                                                                                     // Emergency Rations - Removes one stack of the Hunger effect from all villagers in the settlement.
+
 		// RemoveRandomCornerstonesEffectModel
 		{ EffectTypes.CaptainCurse, "CaptainCurse" },                                                                                                                                   // Captain's Curse - The captain is the last to leave the ship. Destroys a random Cornerstone in your possession.
 		{ EffectTypes.Remove_One_Cornerstone_Stag, "Remove one cornerstone Stag" },                                                                                                     // Stag's Echo - The roar of a captured Stag echoes mightily through the forest. One random Cornerstone in your possession is destroyed.
@@ -25179,7 +25895,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Replace_Angry_Ghost_Chest, "Replace Angry Ghost Chest" },                                                                                                         // Ghost Chest - The spirit will reward you for fulfilling its last wish. The contents of the chest are unknown.
 		{ EffectTypes.Replace_Blightrot, "Replace Blightrot" },                                                                                                                         // Decay - (Completing a cloned event does not count as completing a Glade Event, and so does not contribute towards perks, deeds, and score).
 		{ EffectTypes.Replace_Building_Academy, "Replace Building Academy" },                                                                                                           // Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
-		{ EffectTypes.Replace_Building_Advanced_Rain_Catcher, "Replace Building Advanced Rain Catcher" },                                                                               // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+		{ EffectTypes.Replace_Building_Advanced_Rain_Catcher, "Replace Building Advanced Rain Catcher" },                                                                               // Advanced Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 		{ EffectTypes.Replace_Building_Alchemist, "Replace Building Alchemist" },                                                                                                       // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Apotchecary, "Replace Building Apotchecary" },                                                                                                   // Apothecary - Can produce:  [needs] tea Tea (grade2), [crafting] dye Dye (grade2), [food processed] jerky Jerky (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Artisan, "Replace Building Artisan" },                                                                                                           // Artisan - Can produce:  [vessel] barrels Barrels (grade2), [needs] coats Coats (grade2), [needs] scrolls Scrolls (grade2).  Rain engine: "[water] clearance water" Clearance Water.
@@ -25192,6 +25908,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Replace_Building_Brewery, "Replace Building Brewery" },                                                                                                           // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Brick_Oven, "Replace Building Brick Oven" },                                                                                                     // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Brickyard, "Replace Building Brickyard" },                                                                                                       // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).  Rain engine: "[water] storm water" Storm Water.
+		{ EffectTypes.Replace_Building_Brineworks, "Replace Building Brineworks" },                                                                                                     // Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
 		{ EffectTypes.Replace_Building_Butcher, "Replace Building Butcher" },                                                                                                           // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Cannery, "Replace Building Cannery" },                                                                                                           // Cannery - Can produce:  [food processed] paste Paste (grade3), [needs] wine Wine (grade2), [food processed] biscuits Biscuits (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ EffectTypes.Replace_Building_Carpenter, "Replace Building Carpenter" },                                                                                                       // Carpenter - Can produce:  [mat processed] planks Planks (grade2), [tools] simple tools Tools (grade2), [packs] pack of luxury goods Pack of Luxury Goods (grade2).  Rain engine: "[water] storm water" Storm Water.
@@ -25264,7 +25981,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Replace_Building_Plantation, "Replace Building Plantation" },                                                                                                     // Plantation - Uses nearby farm fields to grow  [food raw] berries Berries (grade2), [mat raw] plant fibre Plant Fiber (grade2).
 		{ EffectTypes.Replace_Building_Press, "Replace Building Press" },                                                                                                               // Press - Can produce:  [crafting] oil Oil (grade3), [crafting] flour Flour (grade1), [food processed] paste Paste (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Provisioner, "Replace Building Provisioner" },                                                                                                   // Provisioner - Can produce:  [crafting] flour Flour (grade2), [vessel] barrels Barrels (grade2), [packs] pack of provisions Pack of Provisions (grade2).  Rain engine: "[water] clearance water" Clearance Water.
-		{ EffectTypes.Replace_Building_Rain_Catcher, "Replace Building Rain Catcher" },                                                                                                 // Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+		{ EffectTypes.Replace_Building_Rain_Catcher, "Replace Building Rain Catcher" },                                                                                                 // Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Has a tank capacity of 50.
 		{ EffectTypes.Replace_Building_Rainmill, "Replace Building Rainmill" },                                                                                                         // Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ EffectTypes.Replace_Building_Rainpunk_Foundry, "Replace Building Rainpunk Foundry" },                                                                                         // Rainpunk Foundry - A very advanced piece of technology. Can produce  [mat processed] parts Parts (grade3), hearth parts Wildfire Essence (grade3). Rain engine: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Building_Ranch, "Replace Building Ranch" },                                                                                                               // Ranch - Can produce:  [food raw] meat Meat (grade1), [mat raw] leather Leather (grade1), [food raw] eggs Eggs (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
@@ -25294,10 +26011,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Replace_Building_Woodcutters_Camp, "Replace Building Woodcutters Camp" },                                                                                         // Woodcutters' Camp - Starting point for woodcutters going out into the wild to cut down trees.
 		{ EffectTypes.Replace_Building_Workshop, "Replace Building Workshop" },                                                                                                         // Workshop - Can produce:  [mat processed] planks Planks (grade2), [mat processed] fabric Fabric (grade2), [mat processed] bricks Bricks (grade2), [mat processed] pipe Pipes (grade0).  Rain engine: "[water] storm water" Storm Water.
 		{ EffectTypes.Replace_Calm_Ghost_Chest, "Replace Calm Ghost Chest" },                                                                                                           // Decay - A mysterious chest filled with treasure. It was left behind by a restless spirit as a token of appreciation.
-		{ EffectTypes.Replace_Decay_Altar, "Replace Decay Altar" },                                                                                                                     // Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves.
+		{ EffectTypes.Replace_Decay_Altar, "Replace Decay Altar" },                                                                                                                     // Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves (retroactive).
 		{ EffectTypes.Replace_Fishmen_Lighthouse, "Replace Fishmen Lighthouse" },                                                                                                       // Termite Nest - Harmony. A tall bone structure built by the Fishmen. It has been repurposed and now provides 5 "[crafting] sea marrow" Sea Marrow per minute. Counts as 16 decorations of its type.
 		{ EffectTypes.Replace_Fuming_Machinery, "Replace Fuming Machinery" },                                                                                                           // Makeshift Extractor - Aesthetics. A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute.
-		{ EffectTypes.Replace_Gargoyle, "Replace Gargoyle" },                                                                                                                           // Petrified Gargoyle - Aesthetics. An ancient beast turned to stone and perched in eternal vigilance. Installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes. Counts as 16 decorations of its type.
+		{ EffectTypes.Replace_Gargoyle, "Replace Gargoyle" },                                                                                                                           // Dormant Gargoyle - Aesthetics. An ancient demon trapped in stone. Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes. Counts as 4 decorations of its type.
 		{ EffectTypes.Replace_Harmony_Altar, "Replace Harmony Altar" },                                                                                                                 // Converted Harmony Spirit Altar - Harmony. When your villagers' needs are met, Harmony is fostered. Each unique service building adds 2 to Global Resolve. Counts as 9 decorations of its type.
 		{ EffectTypes.Replace_Monolith, "Replace Monolith" },                                                                                                                           // Obelisk - Aesthetics. The symbols carved into this monumental stone bear an eerie resemblance to the forest and corruption. Decreases Hostility by 10 points and increases the Ancient Hearth's resistance by 100.
 		{ EffectTypes.Replace_Rain_Totem, "Replace Rain Totem" },                                                                                                                       // Converted Rain Totem - Harmony. The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
@@ -25321,6 +26038,9 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Mod_Replace_Initial_Glade_Ruins, "[Mod] Replace Initial Glade - Ruins" },                                                                                         // Abandoned Settlement - Another Viceroy tried to settle this area, but unfortunately failed... You start with a small destroyed settlement in your initial glade.
 
 		// ReplaceRainpunkEngineEffectModel
+		{ EffectTypes.Altar_Replace_Rainpunk_Engine_Extra_Prod_Chance_Cathode, "[Altar] Replace Rainpunk Engine - Extra Prod Chance - Cathode" }, 
+		{ EffectTypes.Altar_Replace_Rainpunk_Engine_Prod_Rate_1_Cathode, "[Altar] Replace Rainpunk Engine - Prod Rate 1 - Cathode" }, 
+		{ EffectTypes.Altar_Replace_Rainpunk_Engine_Prod_Rate_2_Cathode, "[Altar] Replace Rainpunk Engine - Prod Rate 2 - Cathode" }, 
 		{ EffectTypes.Replace_Rainpunk_Engine_Extra_Prod_Chance_Cathode, "Replace Rainpunk Engine - Extra Prod Chance - Cathode" }, 
 		{ EffectTypes.Replace_Rainpunk_Engine_Extra_Prod_Chance_Rods, "Replace Rainpunk Engine - Extra Prod Chance - Rods" }, 
 		{ EffectTypes.Replace_Rainpunk_Engine_Prod_Rate_1_Cathode, "Replace Rainpunk Engine - Prod Rate 1 - Cathode" }, 
@@ -25364,14 +26084,17 @@ public static class EffectTypesExtensions
 		{ EffectTypes._1_Reputation_Penalty_Sealed_Tomb, "1 Reputation Penalty - Sealed Tomb" },                                                                                        // Irresponsible Archaeology - The crown doesn't like you tinkering with ancient relics. Impatience grows 1 faster.
 		{ EffectTypes._1_Reputation_Penalty_Stormbird, "1 Reputation Penalty - Stormbird" },                                                                                            // Cleanup Duty - 1 Impatience Point
 		{ EffectTypes._1_Reputation_Penalty_Totem, "1 Reputation Penalty - Totem" },                                                                                                    // Cleanup Duty - 1 Impatience Point
+		{ EffectTypes._1_Reputation_Penalty_Toxic_Slug, "1 Reputation Penalty - Toxic Slug" },                                                                                          // Cleanup Duty - 1 Impatience Point
 		{ EffectTypes._1_Reputation_Penalty_Trader_Cementary, "1 Reputation Penalty - Trader Cementary" },                                                                              // Cleanup Duty - 1 Impatience Point
 		{ EffectTypes._1_Reputation_Penalty_Vassal_Tax, "1 Reputation Penalty - Vassal Tax" },                                                                                          // Queen's Wrath (Vassal Tax) - If you don't pay the tax, you will gain 1 Impatience Point.
 		{ EffectTypes._2_Reputation_Penalty, "2 Reputation Penalty" },                                                                                                                  // Queen's Wrath - 2 Impatience Points
 		{ EffectTypes._2_Reputation_Penalty_Decision, "2 Reputation Penalty Decision" },                                                                                                // Queen's Wrath - Somehow, word of your decision has spread and reached the Queen. Viceroy executions are quite rare, but not as rare as you might hope. Gain 2 Impatience Points.
 		{ EffectTypes._3_Reputation_Penalty, "3 Reputation Penalty" },                                                                                                                  // Queen's Wrath - 3 Impatience Points
+		{ EffectTypes._3_Reputation_Penalty_Borrowed_Time, "3 Reputation Penalty - Borrowed Time" },                                                                                    // Royal Debt - If you don't pay, you will gain 3 Impatience Points.
 		{ EffectTypes.Map_Mod_Initial_Impatience, "[Map Mod] Initial Impatience" },                                                                                                     // Sparkdew Crystals - The crown warned you not to settle near giant Sparkdew Crystals. Start with 6 Impatience.
 		{ EffectTypes.Mod_Disgrace, "[Mod] Disgrace" },                                                                                                                                 // Disgrace - Somewhat... “unorthodox” culinary practices in one of your previous settlements have been brought to the Queen's attention. Start with 8 Impatience.
 		{ EffectTypes.PerkCrafter_Impatience, "[PerkCrafter] Impatience" },                                                                                                             // Gain 3 Impatience Points.
+		{ EffectTypes.Remove_1_Impatience, "Remove 1 Impatience" }, 
 		{ EffectTypes.Villager_Death_Reputation_Penalty, "Villager Death Reputation Penalty" }, 
 
 		// ReputationPenaltyRateEffectModel
@@ -25403,6 +26126,8 @@ public static class EffectTypesExtensions
 		{ EffectTypes.WE_Lower_Blueprints_Reroll_Cost, "[WE] Lower Blueprints Reroll Cost" },                                                                                           // The Eremite's Way - A thought provoking piece on dealing with life's toughest decisions. Blueprint rerolls cost 10 less Amber.
 
 		// ResolveEffectBonusResolveEffectModel
+		{ EffectTypes.Altar_More_Resolve_From_Brawling_Hearth, "[Altar] More Resolve from Brawling - Hearth" },                                                                         // Missing key (Stormforged) - Changes favoring by 10.
+		{ EffectTypes.Altar_More_Resolve_From_Brawling_Institution, "[Altar] More Resolve from Brawling - Institution" },                                                               // Missing key (Stormforged) - Changes favoring by 10.
 		{ EffectTypes.Higher_Resolve_Penalty_For_Favoring, "Higher Resolve Penalty For Favoring" }, 
 		{ EffectTypes.Less_Resolve_From_Biscuits, "Less Resolve from Biscuits" },                                                                                                       // Changes favoring by -1.
 		{ EffectTypes.Less_Resolve_From_Jerky, "Less Resolve from Jerky" },                                                                                                             // Changes favoring by -1.
@@ -25413,7 +26138,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Less_Resolve_From_Skewers, "Less Resolve from Skewers" },                                                                                                         // Changes favoring by -1.
 		{ EffectTypes.More_Resolve_For_Comfortable, "More Resolve for Comfortable" },                                                                                                   // Long Term Contract - Workers who are assigned to a workplace that matches their comfort specialization receive an additional +2 Resolve from the "Comfortable" effect.
 		{ EffectTypes.More_Resolve_For_Rainpunk, "More Resolve for Rainpunk" },                                                                                                         // Water Pipeline
+		{ EffectTypes.More_Resolve_From_Brawling_Hearth, "More Resolve from Brawling - Hearth" },                                                                                       // Changes favoring by 5.
+		{ EffectTypes.More_Resolve_From_Brawling_Institution, "More Resolve from Brawling - Institution" },                                                                             // Changes favoring by 5.
 		{ EffectTypes.More_Resolve_From_Coats, "More Resolve from Coats" },                                                                                                             // Changes favoring by 3.
+		{ EffectTypes.More_Resolve_From_Housing_Bats, "More Resolve from Housing - Bats" },                                                                                             // Festive Mood - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.More_Resolve_From_Housing_Beavers, "More Resolve from Housing - Beavers" },                                                                                       // Festive Mood - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.More_Resolve_From_Housing_Foxes, "More Resolve from Housing - Foxes" },                                                                                           // Festive Mood - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
 		{ EffectTypes.More_Resolve_From_Housing_Frogs, "More Resolve from Housing - Frogs" },                                                                                           // Festive Mood - Villagers with their need for species-specific housing met will get an additional +2 to Resolve.
@@ -25429,9 +26157,12 @@ public static class EffectTypesExtensions
 		{ EffectTypes.PerkCrafter_More_Resolve_From_Biscuits_1, "[PerkCrafter] More Resolve from Biscuits 1" },                                                                         // The fulfilled biscuit need gives 1 more Resolve.
 		{ EffectTypes.PerkCrafter_More_Resolve_From_Biscuits_2, "[PerkCrafter] More Resolve from Biscuits 2" },                                                                         // The fulfilled biscuit need gives 2 more Resolve.
 		{ EffectTypes.PerkCrafter_More_Resolve_From_Biscutis_And_Pie_2_Child_pie, "[PerkCrafter] More Resolve from Biscutis and Pie 2 - child (pie)" },                                 // Reward_PerkCrafter_MoreResolveForPaste_Desc
-		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_1, "[PerkCrafter] More Resolve from Religion 1" },                                                                         // The fulfilled religion need gives 1 more Resolve.
-		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_2, "[PerkCrafter] More Resolve from Religion 2" },                                                                         // The fulfilled religion need gives 2 more Resolve.
-		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_And_Treatment_2_Child_treatment, "[PerkCrafter] More Resolve from Religion and Treatment 2 - child (treatment)" },         // The fulfilled religion need gives 2 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_1_Hearth, "[PerkCrafter] More Resolve from Religion 1 - Hearth" },                                                         // The fulfilled religion need gives 1 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_1_Institution, "[PerkCrafter] More Resolve from Religion 1 - Institution" },                                               // The fulfilled religion need gives 1 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_2_Hearth_Religion, "[PerkCrafter] More Resolve from Religion 2 - Hearth Religion" },                                       // The fulfilled religion need gives 2 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_2_Hearth_Treatment, "[PerkCrafter] More Resolve from Religion 2 - Hearth Treatment" },                                     // The fulfilled religion need gives 2 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_2_Institution_Religion, "[PerkCrafter] More Resolve from Religion 2 - Institution Religion" },                             // The fulfilled religion need gives 2 more Resolve.
+		{ EffectTypes.PerkCrafter_More_Resolve_From_Religion_2_Institution_Treatment, "[PerkCrafter] More Resolve from Religion 2 - Institution Treatment" },                           // The fulfilled religion need gives 2 more Resolve.
 
 		// ResolveNegativeChangeRateEffectModel
 		{ EffectTypes.Bat_Resolve_For_Frog_Death_Faster_Resolve_Drop, "Bat Resolve For Frog Death - Faster Resolve Drop" }, 
@@ -25468,14 +26199,20 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Gold_Stag_Reward_Release, "Gold Stag Reward Release" },                                                                                                           // Gift of Gratitude - The Golden Treasure Stag will share some of its riches with you.
 		{ EffectTypes.Rewards_Pack_Big, "Rewards Pack Big" },                                                                                                                           // Big Mystery Box - A mysterious box full of surprises.
 		{ EffectTypes.Rewards_Pack_Big_1, "Rewards Pack Big 1" },                                                                                                                       // Big Mystery Box - A mysterious box full of surprises.
+		{ EffectTypes.Rewards_Pack_Big_1_WE, "Rewards Pack Big 1 - WE" },                                                                                                               // Big Mystery Box - A mysterious box full of surprises.
+		{ EffectTypes.Rewards_Pack_Big_WE, "Rewards Pack Big - WE" },                                                                                                                   // Big Mystery Box - A mysterious box full of surprises.
 		{ EffectTypes.Rewards_Pack_Medium, "Rewards Pack Medium" },                                                                                                                     // Medium Mystery Box - A mysterious box full of surprises.
 		{ EffectTypes.Rewards_Pack_Medium_1, "Rewards Pack Medium 1" },                                                                                                                 // Medium Mystery Box - A mysterious box full of surprises.
+		{ EffectTypes.Rewards_Pack_Medium_1_WE, "Rewards Pack Medium 1 - WE" },                                                                                                         // Medium Mystery Box - A mysterious box full of surprises.
+		{ EffectTypes.Rewards_Pack_Medium_WE, "Rewards Pack Medium - WE" },                                                                                                             // Medium Mystery Box - A mysterious box full of surprises.
 		{ EffectTypes.Rewards_Pack_Port_Epic, "Rewards Pack Port - Epic" },                                                                                                             // Epic Sunken Treasure - An old, heavy treasure chest covered in algae.
 		{ EffectTypes.Rewards_Pack_Port_Legendary, "Rewards Pack Port - Legendary" },                                                                                                   // Legendary Sunken Treasure - An old, heavy treasure chest covered in algae.
 		{ EffectTypes.Rewards_Pack_Port_Rare, "Rewards Pack Port - Rare" },                                                                                                             // Rare Sunken Treasure - An old, heavy treasure chest covered in algae.
 		{ EffectTypes.Rewards_Pack_Port_Uncommon, "Rewards Pack Port - Uncommon" },                                                                                                     // Uncommon Sunken Treasure - An old, heavy treasure chest covered in algae.
 		{ EffectTypes.Rewards_Pack_Small, "Rewards Pack Small" },                                                                                                                       // Small Mystery Box - A mysterious box full of surprises.
 		{ EffectTypes.Rewards_Pack_Small_1, "Rewards Pack Small 1" },                                                                                                                   // Small Mystery Box - A mysterious box full of surprises.
+		{ EffectTypes.Rewards_Pack_Small_1_WE, "Rewards Pack Small 1 - WE" },                                                                                                           // Small Mystery Box - A mysterious box full of surprises.
+		{ EffectTypes.Rewards_Pack_Small_WE, "Rewards Pack Small - WE" },                                                                                                               // Small Mystery Box - A mysterious box full of surprises.
 		{ EffectTypes.White_Stag_Reward_Catch, "White Stag Reward Catch" },                                                                                                             // Cursed Treasure - Capturing the mythical White Stag for the Queen will earn you reputation and fame, but the forest will remember this insult.
 		{ EffectTypes.White_Stag_Reward_Release, "White Stag Reward Release" },                                                                                                         // Gift of Gratitude - The Royal Treasure Stag offers a moderate increase to your reputation. You will gain the favor of the spirits, which will please your villagers.
 
@@ -25489,6 +26226,7 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Fishmen_Higher_Negative_Mysteries, "Fishmen Higher Negative Mysteries" },                                                                                         // Invoker - You begin to feel a growing anxiety. Something is changing in the aura. Negative Forest Mysteries require a lower Hostility level (-2) to activate during the Storm.
 		{ EffectTypes.Fishmen_Lower_Negative_Mysteries, "Fishmen Lower Negative Mysteries" },                                                                                           // Airbender - Storm clouds seem softer. All Negative Forest Mysteries require a higher Hostility level (+1) to activate during the Storm.
 		{ EffectTypes.PerkCrafter_Negative_Seasonal_Effects_Sooner, "[PerkCrafter] Negative Seasonal Effects Sooner" },                                                                 // Negative Forest Mysteries require a lower Hostility level (-1) to activate during the Storm.
+		{ EffectTypes.Stormforge_Higher_Negative_Mysteries, "Stormforge Higher Negative Mysteries" },                                                                                   // Soulstorm - Restless souls roam the forest. Negative Forest Mysteries require a lower Hostility level (-1) to activate during the storm.
 		{ EffectTypes.TEST_Plague_Of_Mysteries, "TEST Plague of Mysteries" },                                                                                                           // Plague of Mysteries - The Sealed Ones possess the power to control almost everything. Negative Forest Mysteries require a lower Hostility level (-3) to activate during the storm.
 
 		// SeasonalRewardsBonusOptionsEffectModel
@@ -25577,6 +26315,9 @@ public static class EffectTypesExtensions
 		// SpawnForestEaterEffectModel
 		{ EffectTypes.WE_Spawn_Tree_Grazer, "[WE] Spawn Tree Grazer" },                                                                                                                 // Tree Grazer - A pack of hungry Tree Grazers has been spotted nearby. One tree is eaten every 20 seconds, opening a maximum of 10 glades.
 
+		// SpawnLakeEffectModel
+		{ EffectTypes.Spawn_Lake, "Spawn Lake" },                                                                                                                                       // Purified Pond - The beast is gone, and it’s safe to fish here again... for now. Spawns a Deep Pond - a rich fishing pond that has more resources than a Large Pond, usable only by a fishing hut with a "grade2" recipe or better.
+
 		// SpawnNewNpcEffectModel
 		{ EffectTypes.WE_Spawn_Cat_NPC, "[WE] Spawn Cat NPC" }, 
 
@@ -25619,6 +26360,11 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Traders_Prices_Plus50, "Traders Prices +50" },                                                                                                                    // Tit for Tat - A quick cover-up of this crime will prevent any serious consequences. Otherwise, the Merchant Guild will retaliate. All your goods are worth 50% less to traders.
 
 		// TraderGoodSellPriceEffectModel
+		{ EffectTypes.Altar_Pack_Of_Building_Materials_Worth_More, "[Altar] Pack of Building Materials Worth More" },                                                                   // Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+		{ EffectTypes.Altar_Pack_Of_Crops_Worth_More, "[Altar] Pack of Crops Worth More" },                                                                                             // Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+		{ EffectTypes.Altar_Pack_Of_Luxury_Goods_Worth_More, "[Altar] Pack of Luxury Goods Worth More" },                                                                               // Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+		{ EffectTypes.Altar_Pack_Of_Provisions_Worth_More, "[Altar] Pack of Provisions Worth More" },                                                                                   // Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
+		{ EffectTypes.Altar_Pack_Of_Trade_Goods_Worth_More, "[Altar] Pack of Trade Goods Worth More" },                                                                                 // Value Added Tax (Stormforged) - Specializing in a particular branch of commerce can bring a lot of profit. "[packs] pack of trade goods" Packs of trade goods are worth 50% more when sold through trade routes or directly to traders.
 		{ EffectTypes.Amber_Curse, "Amber Curse" },                                                                                                                                     // Amber Curse - The blood of an Ancient was spilled here. "[valuable] amber" Amber is now worth 90% less to traders.
 		{ EffectTypes.Amber_Worth_5_More, "Amber Worth 5 More" }, 
 		{ EffectTypes.Amber_Worth_Bit_More, "Amber Worth Bit More" }, 
@@ -25686,6 +26432,10 @@ public static class EffectTypesExtensions
 		// TutorialDeathMissileEffectModel
 		{ EffectTypes.Tutorial_Death_Missile, "Tutorial Death Missile" },                                                                                                               // Curse of the Forefathers - Disturbing the ruins of the Great Civilization can have grave consequences. Kills 3 random villagers.
 
+		// UpgradeRandomCornerstoneEffectModel
+		{ EffectTypes.Upgrade_Random_Cornerstone, "Upgrade Random Cornerstone" }, 
+		{ EffectTypes.Upgrade_Random_Cornerstone_Stormforge, "Upgrade Random Cornerstone - Stormforge" },                                                                               // Stormforging - Though forbidden by royal decree, many Viceroys still practice this ancient ritual, and the Crown often turns a blind eye. Upgrades one of your cornerstones to Stormforged rarity, or grants a random one if none qualify.
+
 		// VillagerDeathEffectBlockEffectModel
 		{ EffectTypes.Altar_Hidden_From_The_Queen, "[Altar] Hidden From The Queen" },                                                                                                   // Hidden from the Queen (Stormforged) - The crown doesn't need to know everything. Impatience doesn't grow when villagers leave or die.
 		{ EffectTypes.Mod_VillagerDeathEffectBlock, "[Mod] VillagerDeathEffectBlock" },                                                                                                 // Dark Secret - Suspiciously little news from your settlement reaches the Citadel. Impatience doesn't grow when villagers leave or die.
@@ -25698,8 +26448,8 @@ public static class EffectTypesExtensions
 		{ EffectTypes.Break_Time_Plus50, "Break Time +50" }, 
 
 		// VillagersDeathEffectModel
-		{ EffectTypes.Gargoyle_Killed_2_Villagers, "Gargoyle Killed 2 Villagers" },                                                                                                     // Demonic Hunger - The tamed Gargoyle will make a fine ornament - and guardian - for the Queen’s palace. But its hunger must be sated. Kills 2 random villager(s).
-		{ EffectTypes.Gargoyle_Killed_Villager, "Gargoyle Killed Villager" },                                                                                                           // Demonic Hunger - The tamed Gargoyle will make a fine ornament - and guardian - for the Queen’s palace. But its hunger must be sated. Kills 1 random villager(s).
+		{ EffectTypes.Gargoyle_Killed_2_Villagers, "Gargoyle Killed 2 Villagers" },                                                                                                     // Demonic Hunger - The vile spirit trapped within this statue must be purged, but it will require a sacrifice. Kills 2 random villager(s).
+		{ EffectTypes.Gargoyle_Killed_Villager, "Gargoyle Killed Villager" },                                                                                                           // Demonic Hunger - The vile spirit trapped within this statue must be purged, but it will require a sacrifice. Kills 1 random villager(s).
 		{ EffectTypes.Killed_Scout, "Killed Scout" }, 
 		{ EffectTypes.PerkCrafter_Killed_Villagers, "[PerkCrafter] Killed Villagers" },                                                                                                 // 2 villagers die.
 		{ EffectTypes.Random_Killed_10, "Random Killed 10" },                                                                                                                           // Death from Beyond - Old tales talk of horrific, bloodthirsty apparitions emerging from beyond Dark Gates. Kills 10 random villagers.
@@ -25753,6 +26503,10 @@ public static class EffectTypesExtensions
 		{ EffectTypes.PerkCrafter_Break_Interval_4, "[PerkCrafter] Break Interval 4" },                                                                                                 // Break Interval - The time interval between breaks is increased by +4%.
 		{ EffectTypes.PerkCrafter_Break_Interval_7, "[PerkCrafter] Break Interval 7" },                                                                                                 // Break Interval - The time interval between breaks is increased by +7%.
 		{ EffectTypes.SE_Longer_Break_Interval, "SE Longer Break Interval" },                                                                                                           // Inspiring View - The astonishingly beautiful view motivates villagers to work. The time interval between breaks is increased by +25%.
+		{ EffectTypes.Toxic_Slug_Shorter_Break_Interval_Hard, "Toxic Slug - Shorter Break Interval - hard" },                                                                           // Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 30% for all villagers.
+		{ EffectTypes.Toxic_Slug_Shorter_Break_Interval_Impossible, "Toxic Slug - Shorter Break Interval - impossible" },                                                               // Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 50% for all villagers.
+		{ EffectTypes.Toxic_Slug_Shorter_Break_Interval_Normal, "Toxic Slug - Shorter Break Interval - normal" },                                                                       // Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 20% for all villagers.
+		{ EffectTypes.Toxic_Slug_Shorter_Break_Interval_Very_Hard, "Toxic Slug - Shorter Break Interval - very hard" },                                                                 // Drowsiness - A faint humming fills the air, making everyone unusually sleepy. Time between breaks is reduced by 40% for all villagers.
 
 		// VillagersSpeedEffectModel
 		{ EffectTypes._0_10_On_Roads, "0_10 On Roads" },                                                                                                                                // Shovels - Useful tools for creating drainage ditches. Villagers move 10% faster on roads.

@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum RainCatcherTypes
 {
@@ -25,14 +25,14 @@ public enum RainCatcherTypes
 	None = 0,
 	
 	/// <summary>
-	/// Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+	/// Advanced Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 	/// </summary>
 	/// <name>Advanced Rain Catcher</name>
 	/// <tags>Rainwater, FoxesCooperation</tags>
 	Advanced_Rain_Catcher = 1,
 
 	/// <summary>
-	/// Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+	/// Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Rain Catcher</name>
 	/// <tags>Rainwater</tags>
@@ -218,8 +218,8 @@ public static class RainCatcherTypesExtensions
 	
 	internal static readonly Dictionary<RainCatcherTypes, string> TypeToInternalName = new()
 	{
-		{ RainCatcherTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" }, // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
-		{ RainCatcherTypes.Rain_Catcher, "Rain Catcher" },                   // Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+		{ RainCatcherTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" }, // Advanced Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
+		{ RainCatcherTypes.Rain_Catcher, "Rain Catcher" },                   // Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Has a tank capacity of 50.
 
 	};
 }

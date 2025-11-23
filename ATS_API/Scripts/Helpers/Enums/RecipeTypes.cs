@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum RecipeTypes
 {
@@ -178,6 +178,13 @@ public enum RecipeTypes
 	Herbs_Herb_Garden = 21,
 
 	/// <summary></summary>
+	/// <name>Insects Brineworks</name>
+	/// <tags>Food Tag, Farm Recipe Tag</tags>
+	/// <grade>1</grade>
+	/// <producedGood>[Food Raw] Insects</producedGood>
+	Insects_Brineworks = 242,
+
+	/// <summary></summary>
 	/// <name>More Berries Plantation</name>
 	/// <tags>Food Tag, Farm Recipe Tag</tags>
 	/// <grade>3</grade>
@@ -274,6 +281,13 @@ public enum RecipeTypes
 	/// <grade>1</grade>
 	/// <producedGood>[Food Raw] Roots</producedGood>
 	Roots_Small_Farm = 35,
+
+	/// <summary></summary>
+	/// <name>Salt Brineworks</name>
+	/// <tags>Farm Recipe Tag</tags>
+	/// <grade>2</grade>
+	/// <producedGood>[Crafting] Salt</producedGood>
+	Salt_Brineworks = 243,
 
 	/// <summary></summary>
 	/// <name>Vegetable Big Farm</name>
@@ -597,42 +611,42 @@ public enum RecipeTypes
 
 	/// <summary></summary>
 	/// <name>Clearance Rain Catcher (T0)</name>
-	/// <tags>[Tag] Rainpunk</tags>
+	/// <tags>[Tag] Rainpunk, Recipe With Water Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Water] Clearance Water</producedGood>
 	Clearance_Rain_Catcher_T0 = 80,
 
 	/// <summary></summary>
 	/// <name>Clearance Rain Catcher (T1)</name>
-	/// <tags>[Tag] Rainpunk</tags>
+	/// <tags>[Tag] Rainpunk, Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Water] Clearance Water</producedGood>
 	Clearance_Rain_Catcher_T1 = 81,
 
 	/// <summary></summary>
 	/// <name>Drizzle Rain Catcher (T0)</name>
-	/// <tags>[Tag] Rainpunk</tags>
+	/// <tags>[Tag] Rainpunk, Recipe With Water Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Water] Drizzle Water</producedGood>
 	Drizzle_Rain_Catcher_T0 = 82,
 
 	/// <summary></summary>
 	/// <name>Drizzle Rain Catcher (T1)</name>
-	/// <tags>[Tag] Rainpunk</tags>
+	/// <tags>[Tag] Rainpunk, Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Water] Drizzle Water</producedGood>
 	Drizzle_Rain_Catcher_T1 = 83,
 
 	/// <summary></summary>
 	/// <name>Storm Rain Catcher (T0)</name>
-	/// <tags>[Tag] Rainpunk</tags>
+	/// <tags>[Tag] Rainpunk, Recipe With Water Tag</tags>
 	/// <grade>1</grade>
 	/// <producedGood>[Water] Storm Water</producedGood>
 	Storm_Rain_Catcher_T0 = 84,
 
 	/// <summary></summary>
 	/// <name>Storm Rain Catcher (T1)</name>
-	/// <tags>[Tag] Rainpunk</tags>
+	/// <tags>[Tag] Rainpunk, Recipe With Water Tag</tags>
 	/// <grade>2</grade>
 	/// <producedGood>[Water] Storm Water</producedGood>
 	Storm_Rain_Catcher_T1 = 85,
@@ -1701,7 +1715,7 @@ public enum RecipeTypes
 	/// The total number of vanilla RecipeTypes in the game.
 	/// </summary>
 	[Obsolete("Use RecipeTypesExtensions.Count(). RecipeTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 242
+	MAX = 244
 }
 
 /// <summary>
@@ -1902,6 +1916,7 @@ public static class RecipeTypesExtensions
 		{ RecipeTypes.Grain_Big_Farm, "Grain Big Farm" }, 
 		{ RecipeTypes.Grain_Small_Farm, "Grain Small Farm" }, 
 		{ RecipeTypes.Herbs_Herb_Garden, "Herbs Herb Garden" }, 
+		{ RecipeTypes.Insects_Brineworks, "Insects Brineworks" }, 
 		{ RecipeTypes.More_Berries_Plantation, "More Berries Plantation" }, 
 		{ RecipeTypes.More_Crystalized_Dew_Grove, "More Crystalized Dew Grove" }, 
 		{ RecipeTypes.More_Fibre_Small_Farm, "More Fibre Small Farm" }, 
@@ -1916,6 +1931,7 @@ public static class RecipeTypesExtensions
 		{ RecipeTypes.Resin_Grove, "Resin Grove" }, 
 		{ RecipeTypes.Roots_Herb_Garden, "Roots Herb Garden" }, 
 		{ RecipeTypes.Roots_Small_Farm, "Roots Small Farm" }, 
+		{ RecipeTypes.Salt_Brineworks, "Salt Brineworks" }, 
 		{ RecipeTypes.Vegetable_Big_Farm, "Vegetable Big Farm" }, 
 		{ RecipeTypes.Vegetable_Small_Farm, "Vegetable Small Farm" }, 
 

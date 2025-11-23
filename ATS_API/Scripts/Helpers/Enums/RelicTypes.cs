@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum RelicTypes
 {
@@ -807,6 +807,14 @@ public enum RelicTypes
 	Fuming_Machinery = 105,
 
 	/// <summary>
+	/// Petrified Gargoyle - A weathered stone statue that feels strangely... alive. It seems to shift ever so slightly when no one is watching.
+	/// </summary>
+	/// <name>Gargoyle</name>
+	/// <tags>Forest</tags>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
+	Gargoyle = 351,
+
+	/// <summary>
 	/// Spectral Stag - A truly rare sight - a Spectral Treasure Stag, lured to this place by the lingering anguish of mortal souls. Those who manage to find it will be rewarded with a special treasure.
 	/// </summary>
 	/// <name>Ghost Treasure Stag</name>
@@ -1373,6 +1381,21 @@ public enum RelicTypes
 	/// <name>Ruined Brickyard (no reward)</name>
 	/// <tags>Forest</tags>
 	Ruined_Brickyard_no_Reward = 176,
+
+	/// <summary>
+	/// Brineworks - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Brineworks</name>
+	/// <tags>Forest</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	Ruined_Brineworks = 352,
+
+	/// <summary>
+	/// Brineworks - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Brineworks (no reward)</name>
+	/// <tags>Forest</tags>
+	Ruined_Brineworks_no_Reward = 353,
 
 	/// <summary>
 	/// Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -2437,6 +2460,13 @@ public enum RelicTypes
 	Spider_3 = 326,
 
 	/// <summary>
+	/// Small Stormforge - This small ancient cornerstone forge seems to have been twisted by some malevolent force, now serving a much darker purpose.
+	/// </summary>
+	/// <name>Stormforge</name>
+	/// <tags>Forest</tags>
+	Stormforge = 354,
+
+	/// <summary>
 	/// Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
 	/// </summary>
 	/// <name>Termite Burrow</name>
@@ -2448,6 +2478,13 @@ public enum RelicTypes
 	/// </summary>
 	/// <name>TI AncientShrine_T1</name>
 	TI_AncientShrine_T1 = 328,
+
+	/// <summary>
+	/// Lurker - A bizarre creature that dwells deep underground, in vast networks of water-filled caverns. On rare occasions, it finds its way to the surface, lurking in small reservoirs and preying on unsuspecting fishermen.
+	/// </summary>
+	/// <name>Toxic Slug</name>
+	/// <tags>Forest</tags>
+	Toxic_Slug = 355,
 
 	/// <summary>
 	/// Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
@@ -2490,7 +2527,7 @@ public enum RelicTypes
 	/// The total number of vanilla RelicTypes in the game.
 	/// </summary>
 	[Obsolete("Use RelicTypesExtensions.Count(). RelicTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 351
+	MAX = 356
 }
 
 /// <summary>
@@ -2777,6 +2814,7 @@ public static class RelicTypesExtensions
 		{ RelicTypes.FoxBattleground_T1, "FoxBattleground_T1" },                                                           // Fallen Fox Scouts - A group of fallen Fox scouts. They must have been sent to search the area to make sure it was safe... Apparently, something stood in their way. This find is causing grief among the Fox population.
 		{ RelicTypes.FrogBattleground_T1, "FrogBattleground_T1" },                                                         // Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
 		{ RelicTypes.Fuming_Machinery, "Fuming Machinery" },                                                               // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
+		{ RelicTypes.Gargoyle, "Gargoyle" },                                                                               // Petrified Gargoyle - A weathered stone statue that feels strangely... alive. It seems to shift ever so slightly when no one is watching.
 		{ RelicTypes.Ghost_Treasure_Stag, "Ghost Treasure Stag" },                                                         // Spectral Stag - A truly rare sight - a Spectral Treasure Stag, lured to this place by the lingering anguish of mortal souls. Those who manage to find it will be rewarded with a special treasure.
 		{ RelicTypes.Giant_Stormbird, "Giant Stormbird" },                                                                 // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
 		{ RelicTypes.Glade_Trader_The_Hermit, "Glade Trader - The Hermit" },                                               // Wandering Merchant - Hermit - The Hermit rarely visits royal settlements, and actively avoids the Crown's officials. But he seems eager to trade with you.
@@ -2855,6 +2893,8 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Ruined_Brick_Oven_no_Reward, "Ruined Brick Oven (no reward)" },                                       // Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Brickyard, "Ruined Brickyard" },                                                               // Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Brickyard_no_Reward, "Ruined Brickyard (no reward)" },                                         // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ RelicTypes.Ruined_Brineworks, "Ruined Brineworks" },                                                             // Brineworks - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ RelicTypes.Ruined_Brineworks_no_Reward, "Ruined Brineworks (no reward)" },                                       // Brineworks - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Butcher, "Ruined Butcher" },                                                                   // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ RelicTypes.Ruined_Butcher_no_Reward, "Ruined Butcher (no reward)" },                                             // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ RelicTypes.Ruined_Cannery, "Ruined Cannery" },                                                                   // Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -3005,8 +3045,10 @@ public static class RelicTypesExtensions
 		{ RelicTypes.Spider_1, "Spider 1" },                                                                               // Archaeological Discovery - Royal archaeologists are certain that a phenomenal discovery is hidden here. The Queen offers a generous reward for unearthing this ancient skeleton. This event is multi-stage and includes excavation, conservation, and reconstruction of the skeleton.
 		{ RelicTypes.Spider_2, "Spider 2" },                                                                               // Archaeological Excavation - After successfully excavating most of the ancient bones, they now need to be carefully conserved before proceeding to the reconstruction stage. However, the creature has not yet been identified.
 		{ RelicTypes.Spider_3, "Spider 3" },                                                                               // Archaeological Reconstruction - Archaeologists are ready to begin the final stage - reconstruction. A mythical creature is finally being unearthed. Huge bones are put together, revealing the full form of the monster that once inhabited this land.
+		{ RelicTypes.Stormforge, "Stormforge" },                                                                           // Small Stormforge - This small ancient cornerstone forge seems to have been twisted by some malevolent force, now serving a much darker purpose.
 		{ RelicTypes.Termite_Burrow, "Termite Burrow" },                                                                   // Stonetooth Termite Burrow - An aggressive, parasitic species, able to eat and digest even the hardest materials.
 		{ RelicTypes.TI_AncientShrine_T1, "TI AncientShrine_T1" },                                                         // Ancient Shrine - An ominous shrine from a long forgotten era. It's dangerous, but it might hold some ancient knowledge useful to the crown.
+		{ RelicTypes.Toxic_Slug, "Toxic Slug" },                                                                           // Lurker - A bizarre creature that dwells deep underground, in vast networks of water-filled caverns. On rare occasions, it finds its way to the surface, lurking in small reservoirs and preying on unsuspecting fishermen.
 		{ RelicTypes.Traders_Cemetery, "Traders Cemetery" },                                                               // Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
 		{ RelicTypes.War_Beast_Cage, "War Beast Cage" },                                                                   // Destroyed Cage of the Warbeast - A destroyed royal guard camp. It looks as if one of their warbeasts got out and razed the entire encampment to the ground. The beast, usually obedient to its masters, must have been provoked by something.
 		{ RelicTypes.White_Stag, "White Stag" },                                                                           // Royal Treasure Stag - A patron of the spirit world. Once discovered, it flees to a nearby Dangerous ("dangerous") or Forbidden Glade ("forbidden"). It is said that a special treasure awaits the one who captures it.

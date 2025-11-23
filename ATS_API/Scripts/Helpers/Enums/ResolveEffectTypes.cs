@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum ResolveEffectTypes
 {
@@ -41,6 +41,12 @@ public enum ResolveEffectTypes
 	/// </summary>
 	/// <name>Agriculture Penalty</name>
 	Agriculture_Penalty = 3,
+
+	/// <summary>
+	/// Joy Of Discovery - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia.
+	/// </summary>
+	/// <name>[Altar] Exploring Expedition - Resolve Status</name>
+	Altar_Exploring_Expedition_Resolve_Status = 198,
 
 	/// <summary>
 	/// Small Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
@@ -1051,6 +1057,30 @@ public enum ResolveEffectTypes
 	Stormbird_Egg_Resolve_Effect = 159,
 
 	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+	/// </summary>
+	/// <name>StormforgePenalty - hard</name>
+	StormforgePenalty_Hard = 199,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+	/// </summary>
+	/// <name>StormforgePenalty - impossible</name>
+	StormforgePenalty_Impossible = 200,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+	/// </summary>
+	/// <name>StormforgePenalty - normal</name>
+	StormforgePenalty_Normal = 201,
+
+	/// <summary>
+	/// Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+	/// </summary>
+	/// <name>StormforgePenalty - very hard</name>
+	StormforgePenalty_Very_Hard = 202,
+
+	/// <summary>
 	/// Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together.
 	/// </summary>
 	/// <name>Survivor Bonding Effect</name>
@@ -1206,7 +1236,7 @@ public enum ResolveEffectTypes
 	/// The total number of vanilla ResolveEffectTypes in the game.
 	/// </summary>
 	[Obsolete("Use ResolveEffectTypesExtensions.Count(). ResolveEffectTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 198
+	MAX = 203
 }
 
 /// <summary>
@@ -1383,6 +1413,7 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Acidic_Environment, "Acidic Environment" },                                                                         // Acidic Environment - Working in a loud environment is really taxing.
 		{ ResolveEffectTypes.Acidic_Environment_Blightrot, "Acidic Environment Blightrot" },                                                     // Acidic Environment - Working in a loud environment is really taxing.
 		{ ResolveEffectTypes.Agriculture_Penalty, "Agriculture Penalty" },                                                                       // Industrialized Agriculture - New farming methods are very effective, but cause a lot of pollution.
+		{ ResolveEffectTypes.Altar_Exploring_Expedition_Resolve_Status, "[Altar] Exploring Expedition - Resolve Status" },                       // Joy Of Discovery - There’s something truly magical about setting one's foot in a place that’s been hidden for millennia.
 		{ ResolveEffectTypes.Ancient_Artifact_1, "Ancient Artifact 1" },                                                                         // Small Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 		{ ResolveEffectTypes.Ancient_Artifact_2, "Ancient Artifact 2" },                                                                         // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
 		{ ResolveEffectTypes.Ancient_Artifact_3, "Ancient Artifact 3" },                                                                         // Ancient Artifact - A strange device left behind by the Great Civilization. When soaked in rainwater, it radiates warm light and brings encouragement to those around it.
@@ -1551,6 +1582,10 @@ public static class ResolveEffectTypesExtensions
 		{ ResolveEffectTypes.Storm_Homelessness_Penalty, "Storm Homelessness Penalty" },                                                         // Drenched - Villagers with this effect have a -5 penalty to their Resolve.
 		{ ResolveEffectTypes.Storm_Penalty, "Storm Penalty" },                                                                                   // Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level.
 		{ ResolveEffectTypes.Stormbird_Egg_Resolve_Effect, "Stormbird Egg - Resolve Effect" },                                                   // Stormbird's Cry - Villagers report seeing a giant beast flying above the settlement during the storm.
+		{ ResolveEffectTypes.StormforgePenalty_Hard, "StormforgePenalty - hard" },                                                               // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+		{ ResolveEffectTypes.StormforgePenalty_Impossible, "StormforgePenalty - impossible" },                                                   // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+		{ ResolveEffectTypes.StormforgePenalty_Normal, "StormforgePenalty - normal" },                                                           // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
+		{ ResolveEffectTypes.StormforgePenalty_Very_Hard, "StormforgePenalty - very hard" },                                                     // Unshackled Spirits - Disturbing the ancient forge has awakened a malevolent presence.
 		{ ResolveEffectTypes.Survivor_Bonding_Effect, "Survivor Bonding Effect" },                                                               // Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together.
 		{ ResolveEffectTypes.Survivor_Bonding_Effect_Altar, "Survivor Bonding Effect - Altar" },                                                 // Survivor Bonding - The people in your settlement have survived many hardships, bringing them closer together.
 		{ ResolveEffectTypes.T_Storm_Penalty, "T Storm Penalty" },                                                                               // Looming Darkness - The rampaging storm stifles the spirit of all living creatures. An additional stack of this effect is added for each Hostility level.

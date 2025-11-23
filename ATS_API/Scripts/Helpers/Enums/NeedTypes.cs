@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum NeedTypes
 {

@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum BuildingTypes
 {
@@ -33,7 +33,7 @@ public enum BuildingTypes
 	Academy = 540,
 
 	/// <summary>
-	/// Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+	/// Advanced Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 	/// </summary>
 	/// <name>Advanced Rain Catcher</name>
 	/// <tags>Rainwater, FoxesCooperation</tags>
@@ -600,6 +600,15 @@ public enum BuildingTypes
 	/// <tags>Stone, FoxesCooperation</tags>
 	/// <category>Industry</category>
 	Brickyard = 58,
+
+	/// <summary>
+	/// Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
+	/// </summary>
+	/// <name>Brineworks</name>
+	/// <tags>Farming</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	/// <category>Food Production</category>
+	Brineworks = 564,
 
 	/// <summary>
 	/// Bush - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
@@ -1270,7 +1279,7 @@ public enum BuildingTypes
 	Decay_Altar = 141,
 
 	/// <summary>
-	/// Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves. Counts as 9 decorations of its type.
+	/// Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves (retroactive). Counts as 9 decorations of its type.
 	/// </summary>
 	/// <name>Decay Altar Positive</name>
 	/// <category>Decorations</category>
@@ -1615,6 +1624,22 @@ public enum BuildingTypes
 	Furnace = 180,
 
 	/// <summary>
+	/// Petrified Gargoyle - A weathered stone statue that feels strangely... alive. It seems to shift ever so slightly when no one is watching.
+	/// </summary>
+	/// <name>Gargoyle</name>
+	/// <tags>Forest</tags>
+	/// <usabilityTags>[Tag] Rainpunk</usabilityTags>
+	/// <category>Event</category>
+	Gargoyle = 565,
+
+	/// <summary>
+	/// Dormant Gargoyle - Aesthetics. An ancient demon trapped in stone. Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes. Counts as 4 decorations of its type.
+	/// </summary>
+	/// <name>Gargoyle Positive</name>
+	/// <category>Decorations</category>
+	Gargoyle_Positive = 566,
+
+	/// <summary>
 	/// Gate - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 	/// </summary>
 	/// <name>Gate</name>
@@ -1718,7 +1743,7 @@ public enum BuildingTypes
 	/// <name>Grove</name>
 	/// <tags>Wood, FoxesCooperation</tags>
 	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
-	/// <category>Industry</category>
+	/// <category>Resource Gathering</category>
 	Grove = 192,
 
 	/// <summary>
@@ -2500,7 +2525,7 @@ public enum BuildingTypes
 	Purged_Lizard_House = 287,
 
 	/// <summary>
-	/// Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+	/// Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Has a tank capacity of 50.
 	/// </summary>
 	/// <name>Rain Catcher</name>
 	/// <tags>Rainwater</tags>
@@ -2859,6 +2884,23 @@ public enum BuildingTypes
 	/// <tags>Forest</tags>
 	/// <category>Ruins</category>
 	Ruined_Brickyard_no_Reward = 327,
+
+	/// <summary>
+	/// Brineworks - A building destroyed by the storm. It can be rebuilt or salvaged.
+	/// </summary>
+	/// <name>Ruined Brineworks</name>
+	/// <tags>Forest</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	/// <category>Ruins</category>
+	Ruined_Brineworks = 567,
+
+	/// <summary>
+	/// Brineworks - A building destroyed by the storm. It can be rebuilt or demolished.
+	/// </summary>
+	/// <name>Ruined Brineworks (no reward)</name>
+	/// <tags>Forest</tags>
+	/// <category>Ruins</category>
+	Ruined_Brineworks_no_Reward = 568,
 
 	/// <summary>
 	/// Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -4236,6 +4278,14 @@ public enum BuildingTypes
 	Stormbird_Positive = 498,
 
 	/// <summary>
+	/// Small Stormforge - This small ancient cornerstone forge seems to have been twisted by some malevolent force, now serving a much darker purpose.
+	/// </summary>
+	/// <name>Stormforge</name>
+	/// <tags>Forest</tags>
+	/// <category>Event</category>
+	Stormforge = 569,
+
+	/// <summary>
 	/// <p>Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).</p>
 	/// <p>Rain engine: "[water] clearance water" Clearance Water.</p>
 	/// </summary>
@@ -4372,6 +4422,14 @@ public enum BuildingTypes
 	/// <name>Town Board</name>
 	/// <category>Decorations</category>
 	Town_Board = 513,
+
+	/// <summary>
+	/// Lurker - A bizarre creature that dwells deep underground, in vast networks of water-filled caverns. On rare occasions, it finds its way to the surface, lurking in small reservoirs and preying on unsuspecting fishermen.
+	/// </summary>
+	/// <name>Toxic Slug</name>
+	/// <tags>Forest</tags>
+	/// <category>Event</category>
+	Toxic_Slug = 570,
 
 	/// <summary>
 	/// Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
@@ -4511,7 +4569,7 @@ public enum BuildingTypes
 	/// The total number of vanilla BuildingTypes in the game.
 	/// </summary>
 	[Obsolete("Use BuildingTypesExtensions.Count(). BuildingTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 564
+	MAX = 571
 }
 
 /// <summary>
@@ -4686,7 +4744,7 @@ public static class BuildingTypesExtensions
 	internal static readonly Dictionary<BuildingTypes, string> TypeToInternalName = new()
 	{
 		{ BuildingTypes.Academy, "Academy" },                                                                                 // Academy - A place where villagers can fulfill their need for: Brawling,  Education. Passive effects: The Crown Chronicles.
-		{ BuildingTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" },                                                     // Advanced Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 100.
+		{ BuildingTypes.Advanced_Rain_Catcher, "Advanced Rain Catcher" },                                                     // Advanced Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Produces twice as much as a regular collector and has double the tank capacity (100).
 		{ BuildingTypes.Aestherics_2x2_Garden, "Aestherics 2x2 - Garden" },                                                   // Garden - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 4 decorations of its type.
 		{ BuildingTypes.Aestherics_2x2_Groundwater_Extractor, "Aestherics 2x2 - Groundwater Extractor" },                     // Makeshift Extractor - Aesthetics. A curious piece of improvised technology. It extracts moisture from the soil around it and converts it into 10 "[water] clearance water" Clearance Water per minute. Counts as 4 decorations of its type.
 		{ BuildingTypes.Alchemist_Hut, "Alchemist Hut" },                                                                     // Alchemist's Hut - Can produce:  [metal] crystalized dew Crystalized Dew (grade2), [needs] tea Tea (grade2), [needs] wine Wine (grade2).  Rain engine: "[water] clearance water" Clearance Water.
@@ -4756,6 +4814,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Brewery, "Brewery" },                                                                                 // Brewery - Can produce:  [needs] ale Ale (grade3), [food processed] porridge Porridge (grade2), [packs] pack of crops Pack of Crops (grade1).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Brick_Oven, "Brick Oven" },                                                                           // Brick Oven - Can produce:  [food processed] biscuits Biscuits (grade3), [needs] incense Incense (grade2), [crafting] coal Coal (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ BuildingTypes.Brickyard, "Brickyard" },                                                                             // Brickyard - Can produce:  [mat processed] bricks Bricks (grade3), [vessel] pottery Pottery (grade2), [metal] crystalized dew Crystalized Dew (grade1).  Rain engine: "[water] storm water" Storm Water.
+		{ BuildingTypes.Brineworks, "Brineworks" },                                                                           // Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
 		{ BuildingTypes.Bush, "Bush" },                                                                                       // Bush - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
 		{ BuildingTypes.Butcher, "Butcher" },                                                                                 // Butcher - Can produce:  [food processed] skewers Skewers (grade2), [food processed] jerky Jerky (grade2), [crafting] oil Oil (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Cages, "Cages" },                                                                                     // Cages - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths.
@@ -4842,7 +4901,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.DebugNode_WormtongueNestBig, "DebugNode_WormtongueNestBig" },                                         // Wormtongue Nest (Large) - A nest full of tasty wormtongues.
 		{ BuildingTypes.DebugNode_WormtongueNestSmall, "DebugNode_WormtongueNestSmall" },                                     // Wormtongue Nest (Small) - A nest full of tasty wormtongues.
 		{ BuildingTypes.Decay_Altar, "Decay Altar" },                                                                         // Altar of Decay - A sinister stone structure created to worship the Blightrot. Cultists have engraved the inscription: "Nothing escapes death".
-		{ BuildingTypes.Decay_Altar_Positive, "Decay Altar Positive" },                                                       // Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves. Counts as 9 decorations of its type.
+		{ BuildingTypes.Decay_Altar_Positive, "Decay Altar Positive" },                                                       // Converted Altar of Decay - Harmony. Bloody sacrifices delight the evil presence. Forbidden rituals at the Altar of Decay reduce Hostility by 20 points every time a villager dies or leaves (retroactive). Counts as 9 decorations of its type.
 		{ BuildingTypes.Distillery, "Distillery" },                                                                           // Distillery - Can produce:  [needs] ale Ale (grade2), [needs] incense Incense (grade2), [food processed] pickled goods Pickled Goods (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
 		{ BuildingTypes.Druid, "Druid" },                                                                                     // Druid's Hut - Can produce:  [crafting] oil Oil (grade3), [needs] tea Tea (grade2), [needs] coats Coats (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ BuildingTypes.Escaped_Convicts, "Escaped Convicts" },                                                               // Escaped Convicts - Dangerous convicts from the Smoldering City are hiding in the forest. They somehow managed to free themselves during transport. You can decide their fate - welcome them and employ them in your settlement, or send them back to the Citadel where they will be punished.
@@ -4885,6 +4944,8 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.FrogBattleground_T1, "FrogBattleground_T1" },                                                         // Fallen Frog Architects - A group of fallen Frog architects. It seems they were in the middle of building some sort of monument. The mere sight of these bodies causes unrest among the Frog population.
 		{ BuildingTypes.Fuming_Machinery, "Fuming Machinery" },                                                               // Fuming Machinery - Old Rainpunk machinery left unsupervised. Unstable rainwater fumes fill the area.
 		{ BuildingTypes.Furnace, "Furnace" },                                                                                 // Furnace - Can produce:  [food processed] pie Pie (grade2), [food processed] skewers Skewers (grade2), [metal] copper bar Copper Bars (grade2).  Rain engine: "[water] drizzle water" Drizzle Water.
+		{ BuildingTypes.Gargoyle, "Gargoyle" },                                                                               // Petrified Gargoyle - A weathered stone statue that feels strangely... alive. It seems to shift ever so slightly when no one is watching.
+		{ BuildingTypes.Gargoyle_Positive, "Gargoyle Positive" },                                                             // Dormant Gargoyle - Aesthetics. An ancient demon trapped in stone. Rainwater production is increased by +1, and installing Rain Engines requires 2 fewer "[mat processed] pipe" Pipes. Counts as 4 decorations of its type.
 		{ BuildingTypes.Gate, "Gate" },                                                                                       // Gate - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths. Counts as 3 decorations of its type.
 		{ BuildingTypes.Ghost_Treasure_Stag, "Ghost Treasure Stag" },                                                         // Spectral Stag - A truly rare sight - a Spectral Treasure Stag, lured to this place by the lingering anguish of mortal souls. Those who manage to find it will be rewarded with a special treasure.
 		{ BuildingTypes.Giant_Stormbird, "Giant Stormbird" },                                                                 // Giant Stormbird's Nest - A never-before encountered Stormbird subspecies. She is fiercely guarding her nest. The clouds around the settlement have begun to darken...
@@ -4995,7 +5056,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Purged_Harpy_House, "Purged Harpy House" },                                                           // Purified Harpy House - A building specially designed for Harpies. Must be built near a Hearth. Fulfills the need for Harpy housing and can accommodate 6 inhabitants.
 		{ BuildingTypes.Purged_Human_House, "Purged Human House" },                                                           // Purified Human House - A building specially designed for Humans. Must be built near a Hearth. Fulfills the need for Human housing and can accommodate 6 inhabitants.
 		{ BuildingTypes.Purged_Lizard_House, "Purged Lizard House" },                                                         // Purified Lizard House - A building specially designed for Lizards. Must be built near a Hearth. Fulfills the need for Lizard housing and can accommodate 6 inhabitants.
-		{ BuildingTypes.Rain_Catcher, "Rain Catcher" },                                                                       // Rain Collector - Can collect rainwater used for crafting and powering Rain Engines in production buildings. The type of collected rainwater depends on the season. Has a tank capacity of 50.
+		{ BuildingTypes.Rain_Catcher, "Rain Catcher" },                                                                       // Rain Collector - Collects rainwater used for crafting and powering Rain Engines in production buildings. The type of rainwater collected changes with the season. Has a tank capacity of 50.
 		{ BuildingTypes.Rain_Mill, "Rain Mill" },                                                                             // Rain Mill - Can produce:  [crafting] flour Flour (grade3), [needs] scrolls Scrolls (grade1), [food processed] paste Paste (grade1).  Rain engine: "[water] clearance water" Clearance Water.
 		{ BuildingTypes.Rain_Totem, "Rain Totem" },                                                                           // Rain Spirit Totem - A totem built by the Fishmen. It seems to have affected the weather, making the rain heavier.
 		{ BuildingTypes.Rain_Totem_Positive, "Rain Totem Positive" },                                                         // Converted Rain Totem - Harmony. The ritual was completed, but a faint, rhythmic thumping can still be heard coming from the totem. Decreases Hostility by 50. Counts as 4 decorations of its type.
@@ -5040,6 +5101,8 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Ruined_Brick_Oven_no_Reward, "Ruined Brick Oven (no reward)" },                                       // Brick Oven - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Brickyard, "Ruined Brickyard" },                                                               // Brickyard - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Brickyard_no_Reward, "Ruined Brickyard (no reward)" },                                         // Brickyard - A building destroyed by the storm. It can be rebuilt or demolished.
+		{ BuildingTypes.Ruined_Brineworks, "Ruined Brineworks" },                                                             // Brineworks - A building destroyed by the storm. It can be rebuilt or salvaged.
+		{ BuildingTypes.Ruined_Brineworks_no_Reward, "Ruined Brineworks (no reward)" },                                       // Brineworks - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Butcher, "Ruined Butcher" },                                                                   // Butcher - A building destroyed by the storm. It can be rebuilt or salvaged.
 		{ BuildingTypes.Ruined_Butcher_no_Reward, "Ruined Butcher (no reward)" },                                             // Butcher - A building destroyed by the storm. It can be rebuilt or demolished.
 		{ BuildingTypes.Ruined_Cannery, "Ruined Cannery" },                                                                   // Cannery - A building destroyed by the storm. It can be rebuilt or salvaged.
@@ -5211,6 +5274,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Stonecutters_Camp, "Stonecutter's Camp" },                                                            // Stonecutters' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [mat raw] stone Stone (grade2), [mat raw] clay Clay (grade2), [crafting] sea marrow Sea Marrow (grade2).
 		{ BuildingTypes.Storage_buildable, "Storage (buildable)" },                                                           // Small Warehouse - Stores a large amount of goods and protects them from the rain. Workers always deliver and take goods from the Warehouse nearest to them.
 		{ BuildingTypes.Stormbird_Positive, "Stormbird Positive" },                                                           // Tamed Stormbird - Harmony. The nest of a tamed Stormbird. It provides 5 "[food raw] eggs" Eggs per minute and increases Harpy Resolve by +3. Counts as 16 decorations of its type.
+		{ BuildingTypes.Stormforge, "Stormforge" },                                                                           // Small Stormforge - This small ancient cornerstone forge seems to have been twisted by some malevolent force, now serving a much darker purpose.
 		{ BuildingTypes.Supplier, "Supplier" },                                                                               // Supplier - Can produce:  [crafting] flour Flour (grade2), [mat processed] planks Planks (grade2), [vessel] waterskin Waterskins (grade2).  Rain engine: "[water] clearance water" Clearance Water.
 		{ BuildingTypes.Tavern, "Tavern" },                                                                                   // Tavern - A place where villagers can fulfill their need for: Leisure,  Luxury. Passive effects: Gleeman's Tales.
 		{ BuildingTypes.Tea_Doctor, "Tea Doctor" },                                                                           // Tea Doctor - A place where villagers can fulfill their need for: Treatment,  Religion. Passive effects: Vitality.
@@ -5228,6 +5292,7 @@ public static class BuildingTypesExtensions
 		{ BuildingTypes.Toolshop, "Toolshop" },                                                                               // Toolshop - Can produce:  [tools] simple tools Tools (grade3), [mat processed] pipe Pipes (grade2), [needs] boots Boots (grade2).  Rain engine: "[water] storm water" Storm Water.
 		{ BuildingTypes.Tower, "Tower" },                                                                                     // Wall Crossing - Comfort. Even the most rudimentary encampment needs distractions. Decorations are used to level up Hearths.
 		{ BuildingTypes.Town_Board, "Town Board" },                                                                           // Town Board - Aesthetics. The more a settlement grows, the more demand there is for beauty. Decorations are used to level up Hearths. Counts as 2 decorations of its type.
+		{ BuildingTypes.Toxic_Slug, "Toxic Slug" },                                                                           // Lurker - A bizarre creature that dwells deep underground, in vast networks of water-filled caverns. On rare occasions, it finds its way to the surface, lurking in small reservoirs and preying on unsuspecting fishermen.
 		{ BuildingTypes.Traders_Cemetery, "Traders Cemetery" },                                                               // Hidden Trader Cemetery - A cemetery full of traders killed by desperate viceroys. What drove them to commit such heinous crimes? Was it out of greed, or necessity?
 		{ BuildingTypes.Trading_Post, "Trading Post" },                                                                       // Trading Post - Traders from the Smoldering City can station here and offer their wares.
 		{ BuildingTypes.Trappers_Camp, "Trapper's Camp" },                                                                    // Trappers' Camp - An advanced gathering camp. Can collect resources from large and giant gathering nodes in addition to small ones. Can collect:  [food raw] meat Meat (grade2), [food raw] insects Insects (grade2), [food raw] eggs Eggs (grade2).

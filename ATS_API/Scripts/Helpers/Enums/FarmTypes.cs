@@ -10,7 +10,7 @@ using Eremite.Buildings;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum FarmTypes
 {
@@ -24,6 +24,14 @@ public enum FarmTypes
 	/// </summary>
 	None = 0,
 	
+	/// <summary>
+	/// Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
+	/// </summary>
+	/// <name>Brineworks</name>
+	/// <tags>Farming</tags>
+	/// <usabilityTags>[Tag] Requires Fertile Soil</usabilityTags>
+	Brineworks = 8,
+
 	/// <summary>
 	/// Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 	/// </summary>
@@ -86,7 +94,7 @@ public enum FarmTypes
 	/// The total number of vanilla FarmTypes in the game.
 	/// </summary>
 	[Obsolete("Use FarmTypesExtensions.Count(). FarmTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 8
+	MAX = 9
 }
 
 /// <summary>
@@ -115,7 +123,7 @@ public static class FarmTypesExtensions
 	/// <summary>
 	/// Returns the name or internal ID of the model that will be used in the game.
 	/// Every FarmTypes should have a unique name as to distinguish it from others.
-	/// If no name is found, it will return FarmTypes.Grove in the enum and log an error.
+	/// If no name is found, it will return FarmTypes.Brineworks in the enum and log an error.
 	/// </summary>
 	public static string ToName(this FarmTypes type)
 	{
@@ -125,7 +133,7 @@ public static class FarmTypesExtensions
 		}
 
 		APILogger.LogError($"Cannot find name of FarmTypes: " + type);
-		return TypeToInternalName[FarmTypes.Grove];
+		return TypeToInternalName[FarmTypes.Brineworks];
 	}
 	
 	/// <summary>
@@ -260,6 +268,7 @@ public static class FarmTypesExtensions
 	
 	internal static readonly Dictionary<FarmTypes, string> TypeToInternalName = new()
 	{
+		{ FarmTypes.Brineworks, "Brineworks" },                     // Brineworks - Uses nearby farm fields to grow  [food raw] insects Insects (grade1), [crafting] salt Salt (grade2).
 		{ FarmTypes.Grove, "Grove" },                               // Forester's Hut - Uses nearby farm fields to grow  [mat raw] resin Resin (grade2), [metal] crystalized dew Crystalized Dew (grade2).
 		{ FarmTypes.Hallowed_Herb_Garden, "Hallowed Herb Garden" }, // Hallowed Herb Garden - Uses nearby farm fields to grow  [food raw] roots Roots (grade3), [food raw] herbs Herbs (grade3). Has improved efficiency and more worker slots.
 		{ FarmTypes.Hallowed_SmallFarm, "Hallowed SmallFarm" },     // Hallowed Small Farm - Uses nearby farm fields to grow  [food raw] vegetables Vegetables (grade3), [food raw] grain Grain (grade3). Has improved efficiency and more worker slots.

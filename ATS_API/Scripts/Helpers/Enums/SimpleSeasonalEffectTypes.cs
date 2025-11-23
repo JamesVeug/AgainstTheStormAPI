@@ -10,7 +10,7 @@ using Eremite.Model;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum SimpleSeasonalEffectTypes
 {
@@ -169,19 +169,19 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Fish_Plus3 = 24,
 
 	/// <summary>
-	/// Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level).
+	/// Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level, counting from level 0).
 	/// </summary>
 	/// <name>[SSE] Food Consumption</name>
 	SSE_Food_Consumption = 25,
 
 	/// <summary>
-	/// Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% for each Hostility level.
+	/// Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% per Hostility level (counting from level 0).
 	/// </summary>
 	/// <name>[SSE] Food Production Speed -15</name>
 	SSE_Food_Production_Speed_Minus15 = 26,
 
 	/// <summary>
-	/// Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level.
+	/// Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level (counting from level 0).
 	/// </summary>
 	/// <name>[SSE] FuelRateHostility</name>
 	SSE_FuelRateHostility = 27,
@@ -391,7 +391,7 @@ public enum SimpleSeasonalEffectTypes
 	SSE_Sacrifice_More_In_Storm = 61,
 
 	/// <summary>
-	/// Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level).
+	/// Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level, counting from level 0).
 	/// </summary>
 	/// <name>[SSE] Service Waste</name>
 	SSE_Service_Waste = 62,
@@ -678,9 +678,9 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Fast_Food, "[SSE] Fast Food" },                                                                                            // Salty Breeze - The salty air makes it easier to preserve food. Food production speed is increased by 80% during drizzle season.
 		{ SimpleSeasonalEffectTypes.SSE_Fertile_Nodes, "[SSE] Fertile Nodes" },                                                                                    // Soil Reclamation - The soil becomes saturated with the rain's essence during drizzle season. Gathering nodes depleted during the drizzle spawn fertile soil.
 		{ SimpleSeasonalEffectTypes.SSE_Fish_Plus3, "[SSE] Fish +3" },                                                                                             // Fish Flood - +3 to "[food raw] fish" Fish production (from gathering, farming, fishing, or production).
-		{ SimpleSeasonalEffectTypes.SSE_Food_Consumption, "[SSE] Food Consumption" },                                                                              // Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level).
-		{ SimpleSeasonalEffectTypes.SSE_Food_Production_Speed_Minus15, "[SSE] Food Production Speed -15" },                                                        // Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% for each Hostility level.
-		{ SimpleSeasonalEffectTypes.SSE_FuelRateHostility, "[SSE] FuelRateHostility" },                                                                            // Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level.
+		{ SimpleSeasonalEffectTypes.SSE_Food_Consumption, "[SSE] Food Consumption" },                                                                              // Insatiable Hunger - Working in this environment requires a lot of energy. Villagers have a higher chance of consuming twice the amount of food on each break (10% for each Hostility level, counting from level 0).
+		{ SimpleSeasonalEffectTypes.SSE_Food_Production_Speed_Minus15, "[SSE] Food Production Speed -15" },                                                        // Rot from the Sky - The rain smells like Blightrot... Global food production is slowed by 15% per Hostility level (counting from level 0).
+		{ SimpleSeasonalEffectTypes.SSE_FuelRateHostility, "[SSE] FuelRateHostility" },                                                                            // Humid Climate - The humidity in this region is unbearable. Fuel consumption in Hearths is increased by 20% for each Hostility level (counting from level 0).
 		{ SimpleSeasonalEffectTypes.SSE_Gatherer_Production_Speed_Minus50, "[SSE] Gatherer Production Speed -50" },                                                // Quaking Bog - The ground is moving and swaying from all the rainwater it’s absorbed. Gathering speed is decreased by 50%.
 		{ SimpleSeasonalEffectTypes.SSE_Gatherer_Production_Speed_Plus50, "[SSE] Gatherer Production Speed +50" },                                                 // Fruitful Season - The forest's fruits are so ripe, they almost fall into the basket on their own. Gathering speed is increased by 50%.
 		{ SimpleSeasonalEffectTypes.SSE_Gift_For_Reputation, "[SSE] Gift for Reputation" },                                                                        // Forgiving Crown - Gain one free cornerstone reroll for every Reputation Point gained during drizzle season.
@@ -715,7 +715,7 @@ public static class SimpleSeasonalEffectTypesExtensions
 		{ SimpleSeasonalEffectTypes.SSE_Resolve_To_Reputation_Plus100_Warm_Welcome, "[SSE] Resolve To Reputation +100 [Warm Welcome]" },                           // Warm Welcome - Increases Reputation gained from Resolve by 100%.
 		{ SimpleSeasonalEffectTypes.SSE_Rotting_Wood, "[SSE] Rotting Wood" },                                                                                      // Rotting Wood - The rain is causing the trees to rot and fall apart. Woodcutters fell trees 50% faster, but have a +100% chance of destroying their yield.
 		{ SimpleSeasonalEffectTypes.SSE_Sacrifice_More_In_Storm, "[SSE] Sacrifice more in Storm" },                                                                // Faint Flame - Strong gusts of wind strike the Holy Flame. Resources you sacrifice in the Ancient Hearth burn 40% quicker.
-		{ SimpleSeasonalEffectTypes.SSE_Service_Waste, "[SSE] Service Waste" },                                                                                    // Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level).
+		{ SimpleSeasonalEffectTypes.SSE_Service_Waste, "[SSE] Service Waste" },                                                                                    // Vanishing Goods - Some goods seem to be mysteriously disappearing. Maybe there's a thief in the settlement? Villagers have a higher chance of consuming twice the amount of goods when using services (10% for each Hostility level, counting from level 0).
 		{ SimpleSeasonalEffectTypes.SSE_Spawn_Blightrot_On_Death, "[SSE] Spawn Blightrot on Death" },                                                              // Death and Decay - This damp and rotting landscape is the perfect breeding ground for sickness. Every villager that dies during the storm instantly turns into a Blood Flower.
 		{ SimpleSeasonalEffectTypes.SSE_Spring_Events, "[SSE] Spring Events" },                                                                                    // Aura of Peace - After each storm comes a time of peace and regrowth. Gain 0.5 Reputation Points for every Dangerous or Forbidden Glade Event you complete during this drizzle season.
 		{ SimpleSeasonalEffectTypes.SSE_Spring_Routes, "[SSE] Spring Routes" },                                                                                    // Finders Keepers - After each storm, caravans find countless goods scattered along their routes. Every trade route you complete during drizzle season will give you 5 random packs of goods.

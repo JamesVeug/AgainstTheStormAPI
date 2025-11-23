@@ -10,7 +10,7 @@ using Eremite.Model.Meta;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum MetaRewardTypes
 {
@@ -1193,6 +1193,12 @@ public enum MetaRewardTypes
 	/// </summary>
 	/// <name>Meta Reward Brickyard</name>
 	Meta_Reward_Brickyard = 180,
+
+	/// <summary>
+	/// BuildingMetaRewardModel-Brineworks
+	/// </summary>
+	/// <name>Meta Reward Brineworks</name>
+	Meta_Reward_Brineworks = 422,
 
 	/// <summary>
 	/// GlobalBuildingStorageMetaRewardModel-Larger Storage
@@ -2473,6 +2479,12 @@ public enum MetaRewardTypes
 	Meta_Reward_Trader_Merch = 386,
 
 	/// <summary>
+	/// TradersDiscountsMetaRewardModel-Special Offers
+	/// </summary>
+	/// <name>Meta Reward Trader Merch Sale Unlock</name>
+	Meta_Reward_Trader_Merch_Sale_Unlock = 423,
+
+	/// <summary>
 	/// TraderMerchandisePriceReductionMetaRewardModel-Special Discount
 	/// </summary>
 	/// <name>Meta Reward Trader Perk Discount</name>
@@ -2556,7 +2568,7 @@ public enum MetaRewardTypes
 	/// The total number of vanilla MetaRewardTypes in the game.
 	/// </summary>
 	[Obsolete("Use MetaRewardTypesExtensions.Count(). MetaRewardTypes.MAX requires rebuilding your project everytime the API adds/removes enums.", true)]
-	MAX = 422
+	MAX = 424
 }
 
 /// <summary>
@@ -2925,6 +2937,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Brewery, "Meta Reward Brewery" },                                                                                 // BuildingMetaRewardModel-Brewery
 		{ MetaRewardTypes.Meta_Reward_Brick_Oven, "Meta Reward Brick Oven" },                                                                           // BuildingMetaRewardModel-Brick Oven
 		{ MetaRewardTypes.Meta_Reward_Brickyard, "Meta Reward Brickyard" },                                                                             // BuildingMetaRewardModel-Brickyard
+		{ MetaRewardTypes.Meta_Reward_Brineworks, "Meta Reward Brineworks" },                                                                           // BuildingMetaRewardModel-Brineworks
 		{ MetaRewardTypes.Meta_Reward_Building_Storage, "Meta Reward Building Storage" },                                                               // GlobalBuildingStorageMetaRewardModel-Larger Storage
 		{ MetaRewardTypes.Meta_Reward_Burning_Duration, "Meta Reward Burning Duration" },                                                               // FuelRateMetaRewardModel-Everlasting Flames
 		{ MetaRewardTypes.Meta_Reward_Butcher, "Meta Reward Butcher" },                                                                                 // BuildingMetaRewardModel-Butcher
@@ -3138,6 +3151,7 @@ public static class MetaRewardTypesExtensions
 		{ MetaRewardTypes.Meta_Reward_Trade_Routes_Limit, "Meta Reward Trade Routes Limit" },                                                           // TradeRoutesLimitMetaReward-More Trade Routes
 		{ MetaRewardTypes.Meta_Reward_Trader_Arrival, "Meta Reward Trader Arrival" },                                                                   // TraderIntervalMetaRewardModel-Quicker Trader Arrival
 		{ MetaRewardTypes.Meta_Reward_Trader_Merch, "Meta Reward Trader Merch" },                                                                       // TraderMerchAmountMetaRewardModel-Extra Merchandise
+		{ MetaRewardTypes.Meta_Reward_Trader_Merch_Sale_Unlock, "Meta Reward Trader Merch Sale Unlock" },                                               // TradersDiscountsMetaRewardModel-Special Offers
 		{ MetaRewardTypes.Meta_Reward_Trader_Perk_Discount, "Meta Reward Trader Perk Discount" },                                                       // TraderMerchandisePriceReductionMetaRewardModel-Special Discount
 		{ MetaRewardTypes.Meta_Reward_Villager_Speed, "Meta Reward Villager Speed" },                                                                   // VillagersSpeedMetaRewardModel-Villager Speed Increase
 		{ MetaRewardTypes.Meta_Reward_Weaver, "Meta Reward Weaver" },                                                                                   // BuildingMetaRewardModel-Weaver

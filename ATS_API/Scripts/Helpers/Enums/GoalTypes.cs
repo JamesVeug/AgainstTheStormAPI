@@ -10,7 +10,7 @@ using Eremite.Model.Goals;
 namespace ATS_API.Helpers;
 
 /// <summary>
-/// Generated using Version 1.8.10R
+/// Generated using Version 1.9.3R
 /// </summary>
 public enum GoalTypes
 {
@@ -535,7 +535,7 @@ public enum GoalTypes
 	Deed_Win_With_Ale_Chain = 74,
 
 	/// <summary>
-	/// Paradise - Ensure all villagers have all their needs fulfilled simultaneously (requires all 3 species in the settlement).
+	/// Paradise - Ensure all villagers have all their needs fulfilled simultaneously. Requires all 3 species in the settlement. Needs met in the Commons don’t count.
 	/// </summary>
 	/// <name>Deed Win With All Needs</name>
 	Deed_Win_With_All_Needs = 75,
@@ -583,7 +583,7 @@ public enum GoalTypes
 	Deed_Win_With_Fertile_Fields = 256,
 
 	/// <summary>
-	/// Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously.
+	/// Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously. Requires all 3 species in the settlement.
 	/// </summary>
 	/// <name>Deed Win With Food Needs</name>
 	Deed_Win_With_Food_Needs = 81,
@@ -655,7 +655,7 @@ public enum GoalTypes
 	Deed_Win_With_Ruins = 92,
 
 	/// <summary>
-	/// Higher Needs - Ensure all villagers have all their Services needs fulfilled simultaneously.
+	/// Higher Needs - Ensure all villagers have all their Service needs fulfilled simultaneously. Requires all 3 species in the settlement. Needs met in the Commons don’t count.
 	/// </summary>
 	/// <name>Deed Win With Service Needs</name>
 	Deed_Win_With_Service_Needs = 93,
@@ -1837,7 +1837,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_Queens_Hand, "Deed Win Queens Hand" },                                                         // The Queen's Hand - Complete the Queen's Hand Trial.
 		{ GoalTypes.Deed_Win_Scarlet_Impossible, "Deed Win Scarlet Impossible" },                                           // Crimson Soil - Win a game in the Scarlet Orchard biome, and on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Ale_Chain, "Deed Win With Ale Chain" },                                                   // Serving Ale - Win with: 1 x Small Farm, 1 x Brewery, 1 x Tavern, on Veteran difficulty (or higher).
-		{ GoalTypes.Deed_Win_With_All_Needs, "Deed Win With All Needs" },                                                   // Paradise - Ensure all villagers have all their needs fulfilled simultaneously (requires all 3 species in the settlement).
+		{ GoalTypes.Deed_Win_With_All_Needs, "Deed Win With All Needs" },                                                   // Paradise - Ensure all villagers have all their needs fulfilled simultaneously. Requires all 3 species in the settlement. Needs met in the Commons don’t count.
 		{ GoalTypes.Deed_Win_With_Amber, "Deed Win With Amber" },                                                           // Trade Connections - Win a game with 400 Amber in your Warehouse.
 		{ GoalTypes.Deed_Win_With_Bats, "Deed Win With Bats" },                                                             // Bat Utopia - Win a game with 30 Bats, 15 x Bat House, 1 x Academy
 		{ GoalTypes.Deed_Win_With_Beavers, "Deed Win With Beavers" },                                                       // Beaver Utopia - Win a game with 30 Beavers, 15 x Beaver House, 1 x Guild House
@@ -1845,7 +1845,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_With_Dead_Villagers, "Deed Win With Dead Villagers" },                                         // Devil's Bargain - Win a game after 20 villagers have died.
 		{ GoalTypes.Deed_Win_With_Dead_Villagers_Prestige, "Deed Win With Dead Villagers Prestige" },                       // High Price - Win a game after 15 villagers died, on Prestige 18 difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Fertile_Fields, "Deed Win With Fertile Fields" },                                         // Green Thumb - Win a game after building at least 40 Fertile Fields in the Bamboo Flats.
-		{ GoalTypes.Deed_Win_With_Food_Needs, "Deed Win With Food Needs" },                                                 // Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously.
+		{ GoalTypes.Deed_Win_With_Food_Needs, "Deed Win With Food Needs" },                                                 // Feeding The People - Ensure all villagers have all their Complex Food needs fulfilled simultaneously. Requires all 3 species in the settlement.
 		{ GoalTypes.Deed_Win_With_Foxes, "Deed Win With Foxes" },                                                           // Fox Utopia - Win a game with 30 Foxes, 15 x Fox House, 1 x Tea Doctor
 		{ GoalTypes.Deed_Win_With_Frogs, "Deed Win With Frogs" },                                                           // Frog Utopia - Win a game with 40 Frogs, 20 x Frog House, 1 x Forum
 		{ GoalTypes.Deed_Win_With_Harpies, "Deed Win With Harpies" },                                                       // Harpy Utopia - Win a game with 30 Harpies, 15 x Harpy House, 1 x Bath House
@@ -1857,7 +1857,7 @@ public static class GoalTypesExtensions
 		{ GoalTypes.Deed_Win_With_Population_And_Services, "Deed Win With Population And Services" },                       // The Marketplace - Win a game with 50 villagers, 1 x Temple, 1 x Market
 		{ GoalTypes.Deed_Win_With_Reputation_Prestige, "Deed Win With Reputation Prestige" },                               // A True Leader - Earn 18 Reputation Points through villagers’ Resolve in a single game on Prestige 1 difficulty (or higher).
 		{ GoalTypes.Deed_Win_With_Ruins, "Deed Win With Ruins" },                                                           // Ruins - Win a game after taking care of 10 ruins found in glades.
-		{ GoalTypes.Deed_Win_With_Service_Needs, "Deed Win With Service Needs" },                                           // Higher Needs - Ensure all villagers have all their Services needs fulfilled simultaneously.
+		{ GoalTypes.Deed_Win_With_Service_Needs, "Deed Win With Service Needs" },                                           // Higher Needs - Ensure all villagers have all their Service needs fulfilled simultaneously. Requires all 3 species in the settlement. Needs met in the Commons don’t count.
 		{ GoalTypes.Deed_Win_With_Totems, "Deed Win With Totems" },                                                         // Totem Hunter - Win with: 1 x Converted Rain Totem, 1 x Converted Totem of Denial, on Veteran difficulty (or higher).
 		{ GoalTypes.Deed_Win_Without_Bonus_Impossible, "Deed Win Without Bonus Impossible" },                               // Traveling Light - Win a game without taking any Embarkation Bonuses on Viceroy difficulty (or higher).
 		{ GoalTypes.Deed_Win_Without_Bonus_Prestige, "Deed Win Without Bonus Prestige" },                                   // Unnecessary Burden - Win a game without taking any Embarkation Bonuses on Prestige 10 difficulty (or higher).
