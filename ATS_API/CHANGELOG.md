@@ -1,3 +1,14 @@
+# 3.7.0
+- Added support for changing strings with .csv files
+- Exporting CSVs now includes a file for each language with all strings in the game.
+- More Enums to support JSONLoader v0.9.0
+  - MineRecipeTypes
+  - FarmRecipeTypes
+  - RainCatcherTypes
+  - FishingHutRecipeTypes
+  - GathererHutRecipeTypes
+  - CollectorRecipeTypes
+
 # 3.6.2
 - Works with ATS v1.9.3R
 - Updated all enums to v1.9.3R (Safe)
