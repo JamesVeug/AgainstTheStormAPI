@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ATS_API.Scripts.DeveloperConsole;
+using Cysharp.Threading.Tasks;
 using Eremite;
 using Eremite.Buildings;
 using Eremite.Model;
 using Eremite.Model.Effects;
 using Eremite.Model.Orders;
+using Eremite.Services;
 
 namespace ATS_API;
 
@@ -23,7 +25,46 @@ public partial class WIKI
         APILogger.LogInfo("Exporting CSVs...");
         ExportRelicsAsCSV();
         ExportOrdersAsCSV();
+        ExportLocalizationTSVs();
         APILogger.LogInfo("Exporting CSVs... Done!");
+    }
+
+    private static async UniTask ExportLocalizationTSVs()
+    {
+        string[] supportedLanguages = MB.TextsService.GetSupportedLanguages().OrderBy(a=>a).ToArray();
+        foreach (string supportedLanguage in supportedLanguages)
+        {
+            string displayName = MB.TextsService.GetDisplayNameFor(supportedLanguage);
+            displayName = char.ToUpper(displayName[0]) + displayName.Substring(1);
+
+            string culture = MB.TextsService.GetLanguage(supportedLanguage).culture;
+
+            APILogger.LogInfo("Loading translation: " + supportedLanguage);
+            TextsFilesLoader loader = new TextsFilesLoader(supportedLanguage);
+            
+            Dictionary<string, string> keyToValue = await loader.GetTextsFromFile();
+            
+            CSVBuilder csv = new CSVBuilder();
+            csv.AddValue("Key", "", 1);
+            csv.AddValue("Notes", "", 2);
+            csv.AddValue(displayName, culture, 3);
+            csv.NextRow();
+
+            foreach (string key in keyToValue.Keys.OrderBy(a=>a))
+            {
+                csv.AddValue("Key", key, 1);
+                csv.AddValue("Notes", "", 2);
+                
+                string translation = keyToValue[key];
+                csv.AddValue(displayName, translation, 3);
+                
+                csv.NextRow();
+            }
+            
+            string combine = Path.Combine(Plugin.ExportPath, "CSV", $"StringTable_{supportedLanguage}.csv");
+            APILogger.LogInfo($"Saving {supportedLanguage} string table to " + combine);
+            csv.SaveAsCSV(combine);
+        }
     }
 
     public static void ExportMDs()

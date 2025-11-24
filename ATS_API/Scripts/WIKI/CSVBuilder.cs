@@ -18,10 +18,12 @@ public class CSVBuilder
     public Dictionary<string, string> currentRow = new Dictionary<string, string>();
     public int columnIndex = 0;
     
+    private readonly char separator;
     
-    public CSVBuilder()
+    
+    public CSVBuilder(char separator = ',')
     {
-        
+        this.separator = separator;
     }
 
     public void AddValue(string header, string value, int order)
@@ -55,7 +57,7 @@ public class CSVBuilder
                 columnIndex = indexOf;
             }
         }
-        
+
         currentRow[header] = value;
         columnIndex++;
     }
@@ -83,7 +85,7 @@ public class CSVBuilder
         APILogger.LogInfo("Saving CSV to: " + path);
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(path))
         {
-            file.WriteLine(string.Join(",", orderedHeaders.Select(a=>a.Name)));
+            file.Write(string.Join(separator.ToString(), orderedHeaders.Select(a=>a.Name)));
             
             for (int i = 0; i < values.Count; i++)
             {
@@ -93,24 +95,30 @@ public class CSVBuilder
                 for (var j = 0; j < orderedHeaders.Count; j++)
                 {
                     var header = orderedHeaders[j];
-                    if (!dictionary.TryGetValue(header.Name, out string value) || value == null)
+                    string value;
+                    if (!dictionary.TryGetValue(header.Name, out value) || value == null)
                     {
                         value = "";
                     }
+                    
+                    int length = value.Length;
+                    value = value.Replace("\"", "\"\"");
+                    bool quotesApplied = length != value.Length;
 
-                    if (value.IndexOf(",") >= 0)
+                    if (quotesApplied || value.IndexOf(separator) >= 0 || value.IndexOf('\n') >= 0)
                     {
                         value = "\"" + value + "\"";
                     }
 
                     if (j > 0)
                     {
-                        row += ",";
+                        row += separator;
                     }
                     row += value;
                 }
 
-                file.WriteLine(row);
+                file.WriteLine();
+                file.Write(row);
             }
         }
     }

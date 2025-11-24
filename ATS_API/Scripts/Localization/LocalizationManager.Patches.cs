@@ -13,6 +13,23 @@ namespace ATS_API.Localization;
 [HarmonyPatch]
 public static partial class LocalizationManager
 {
+    [HarmonyPatch(typeof(TextsService), nameof(TextsService.GetTextsFromFile))]
+    [HarmonyPostfix]
+    private static async UniTask<Dictionary<string, string>> PostGetTextsFromFile(UniTask<Dictionary<string, string>> enumerator, TextsService __instance, string language)
+    {
+        Dictionary<string, string> result = await enumerator;
+        SystemLanguage systemLanguage = CodeToLanguage(language);
+        foreach (KeyValuePair<string, Dictionary<SystemLanguage, string>> keyToTranslations in s_newStrings)
+        {
+            if(keyToTranslations.Value.TryGetValue(systemLanguage, out string translation))
+            {
+                result[keyToTranslations.Key] = translation;
+            }
+        }
+        
+        return result;
+    }
+
     [HarmonyPatch(typeof(TextsService), nameof(TextsService.OnLoading))]
     [HarmonyPostfix]
     private static async UniTask PostLoadLocalisation(UniTask enumerator, TextsService __instance)

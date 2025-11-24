@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using ATS_API.Helpers;
 using Eremite;
 using Eremite.Services;
@@ -49,15 +50,30 @@ public static partial class LocalizationManager
     public static void Instantiate()
     {
         // Look for localizedText.csv in the same path as PluginDirectory
-        string[] files = Directory.GetFiles(Plugin.PluginDirectory, "localizedText.tsv", SearchOption.AllDirectories);
-        if (files.Length == 0)
+        string[] localizedTextFiles = Directory.GetFiles(Plugin.PluginDirectory, "localizedText.tsv", SearchOption.AllDirectories);
+        if (localizedTextFiles.Length > 0)
         {
-            Debug.LogError($"Could not find localizedText.csv in: {Plugin.PluginDirectory}");
-            return;
+            string localizedTextPath = localizedTextFiles[0];
+            LoadTSV(PluginInfo.PLUGIN_GUID, localizedTextPath);
+        }
+        else
+        {
+            APILogger.LogError($"Could not find localizedText.tsv in: {Plugin.PluginDirectory}");
         }
         
-        string path = files[0];
-        LoadTSV(PluginInfo.PLUGIN_GUID, path);
+        // TSVS
+        
+        string pluginDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Plugin.Instance.Info.Location));
+        string exportsFolder = Path.Combine(Path.GetDirectoryName(Plugin.Instance.Info.Location), "Exports");
+        string[] files = Directory.GetFiles(pluginDirectory, "*.csv", SearchOption.AllDirectories)
+            .Where(a=> !a.StartsWith(exportsFolder, StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+
+        foreach (string path in files)
+        {
+            APILogger.LogInfo($"Loading csv: {path}");
+            LoadCSV("", path);
+        }
     }
 
     public static void LoadCSV(string guid, string path)
@@ -117,6 +133,22 @@ public static partial class LocalizationManager
                     }
 
                     string value = values[j];
+                    
+                    // """POO ""POO"" POO"""        "POO "POO" POO"
+                    // "Wee ""wee"" wee"            Wee "wee" wee
+                    // "Bum Bum"                    Bum Bum
+                    if (value.Length > 0 && value.StartsWith("\""))
+                    {
+                        value = value.Substring(1);
+                        if (value.EndsWith("\""))
+                        {
+                            value = value.Substring(0, value.Length - 2);
+                        }
+                    }
+                    
+                    
+                    value = value.Replace("\"\"", "\"");
+                    APILogger.LogInfo("Adding key: " + key + " for language: " + language + " with value: " + value);
                     AddString(key, value, language);
                 }
                 catch (Exception e)
@@ -148,6 +180,9 @@ public static partial class LocalizationManager
             AddKeyToTextService(pair.Key, pair.Value, language);
         }
         s_pendingLanguageStrings.Clear();
+        
+        TextsService textsService = (TextsService)MB.TextsService;
+        textsService.OnTextsChanged.OnNext(textsService.currentLanguage.code);
     }
 
     private static void AddKeyToTextService(string key, Dictionary<SystemLanguage,string> translations, SystemLanguage language)
@@ -160,11 +195,13 @@ public static partial class LocalizationManager
             // See if we can show something else instead
             if (!TryGetFallbackValue(translations, language, out value))
             {
+                APILogger.LogInfo("Not syncing key: " + key + " for language: " + language + " with value: " + value);
                 return;
             }
         }
         
         // Add key to the game so it can be displayed
+        APILogger.LogInfo("Syncing key: " + key + " for language: " + language + " with value: " + value);
         textsService.texts[key] = value;
     }
     
