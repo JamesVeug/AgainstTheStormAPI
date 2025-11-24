@@ -16,6 +16,66 @@ namespace ATS_API;
 
 public partial class WIKI
 {
+
+    public static void CreateAllEnumTypes(string csExportPath)
+    {
+        exportCSScriptsPath = csExportPath;
+        Func<string, string> noStartingNumbersEnum = (a) => a.ToEnumString(true);
+        
+        CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, BuildingComment, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("WorkshopTypes", "SO.Settings.workshops", SO.Settings.workshops, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("CollectorTypes", "SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>()", SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("FarmTypes", "SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>()", SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("FishingHutTypes", "SO.Settings.Buildings.Where(a=>a is FishingHutModel).Cast<FishingHutModel>()", SO.Settings.Buildings.Where(a=>a is FishingHutModel).Cast<FishingHutModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("GathererHutTypes", "SO.Settings.Buildings.Where(a=>a is GathererHutModel).Cast<GathererHutModel>()", SO.Settings.Buildings.Where(a=>a is GathererHutModel).Cast<GathererHutModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("InstitutionTypes", "SO.Settings.Institutions", SO.Settings.Institutions, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("MineTypes", "SO.Settings.mines", SO.Settings.mines, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("RainCatcherTypes", "SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>()", SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("BuildingRainpunkModelTypes", "SO.Settings.Buildings.Where(a=> a is WorkshopModel w && w.rainpunk != null).Select(a=>((WorkshopModel)a).rainpunk)", SO.Settings.Buildings.Where(a=> a is WorkshopModel w && w.rainpunk != null).Select(a=>(a as WorkshopModel).rainpunk).Distinct(), a=>a.Name, RainpunkComment, ["Eremite.Buildings"]);
+        
+        CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("NeedTypes", "SO.Settings.Needs", SO.Settings.Needs, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("GoodsCategoriesTypes", "SO.Settings.GoodsCategories", SO.Settings.GoodsCategories, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("ProfessionTypes", "SO.Settings.Professions", SO.Settings.Professions, a=>a.Name, ProfessionComment, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("TagTypes", "SO.Settings.tags", SO.Settings.tags, a=>a.Name, TagComment, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("TraderTypes", "SO.Settings.traders", SO.Settings.traders, a=>a.Name, NameDescriptionTags, ["Eremite.Model.Trade"]);
+
+        CreateEnumTypesCSharpScript("DecorationTierTypes", "SO.Settings.decorationsTiers", SO.Settings.decorationsTiers, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"], GetPredefinedDecorationEnumNames);
+
+        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, EffectComment, ["Eremite.Model"], groupEnumsBy:GroupByType);
+        CreateEnumTypesCSharpScript("ResolveEffectTypes", "SO.Settings.resolveEffects", SO.Settings.resolveEffects, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("OrderTypes", "SO.Settings.orders", SO.Settings.orders, a=>a.Name, NameDescriptionTags, ["Eremite.Model.Orders"]);
+        CreateEnumTypesCSharpScript("BiomeTypes", "SO.Settings.biomes", SO.Settings.biomes, a=>a.Name, NameDescriptionTags, ["Eremite.WorldMap"]);
+
+        CreateEnumTypesCSharpScript("DifficultyTypes", "SO.Settings.difficulties", SO.Settings.difficulties, a=>a.Name, DifficultyComment, ["Eremite.Model"], noStartingNumbersEnum, orderBy: a=>a.index);
+        CreateEnumTypesCSharpScript("GoalTypes", "SO.Settings.goals", SO.Settings.goals, a=>a.Name, NameDescriptionTags, ["Eremite.Model.Goals"]);
+        CreateEnumTypesCSharpScript("RelicTypes", "SO.Settings.Relics", SO.Settings.Relics, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("MetaRewardTypes", "SO.Settings.metaRewards", SO.Settings.metaRewards, a=>a.Name, MetaRewardComment, ["Eremite.Model.Meta"]);
+        CreateEnumTypesCSharpScript("OreTypes", "SO.Settings.Ore", SO.Settings.Ore, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("VillagerPerkTypes", "SO.Settings.villagersPerks", SO.Settings.villagersPerks, a=>a.Name, NameDescriptionTags, ["Eremite.Characters.Villagers"]);
+        CreateEnumTypesCSharpScript("BuildingPerkTypes", "SO.Settings.buildingsPerks", SO.Settings.buildingsPerks, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("MetaCurrencyTypes", "SO.Settings.metaCurrencies", SO.Settings.metaCurrencies, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("AscensionModifierTypes", "SO.Settings.ascensionModifiers", SO.Settings.ascensionModifiers, a=>a.Name, (a)=>NameDescriptionTags(a.effect), ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        CreateEnumTypesCSharpScript("WaterTypes", "SO.Settings.Waters", SO.Settings.Waters, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
+        
+        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
+        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("MineRecipeTypes", "SO.Settings.minesRecipes", SO.Settings.minesRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("FarmRecipeTypes", "SO.Settings.farmsRecipes", SO.Settings.farmsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("CampRecipeTypes", "SO.Settings.campsRecipes", SO.Settings.campsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("CollectorRecipeTypes", "SO.Settings.collectorsRecipes", SO.Settings.collectorsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("FishingHutRecipeTypes", "SO.Settings.fishingHutsRecipes", SO.Settings.fishingHutsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("GatherersHutRecipeTypes", "SO.Settings.gatherersHutsRecipes", SO.Settings.gatherersHutsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+        CreateEnumTypesCSharpScript("RainCatcherRecipeTypes", "SO.Settings.rainCatchersRecipes", SO.Settings.rainCatchersRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
+    }
+    
     public static void CreateEnumTypesCSharpScript<T>(string EnumName, string modelGetter, IEnumerable<T> list,
         Func<T, string> nameGetter, Func<T, Dictionary<string, string>> comment, List<string> extraUsings = null,
         Func<string, string> enumParser = null, Func<T, string> groupEnumsBy = null, bool includeNamespaceInType=false, Func<T, int> orderBy = null)
@@ -384,58 +444,6 @@ public partial class WIKI
         }
         
         return s;
-    }
-
-    public static void CreateAllEnumTypes(string csExportPath)
-    {
-        exportCSScriptsPath = csExportPath;
-        Func<string, string> noStartingNumbersEnum = (a) => a.ToEnumString(true);
-        
-        CreateEnumTypesCSharpScript("BuildingTypes", "SO.Settings.Buildings", SO.Settings.Buildings, a=>a.Name, BuildingComment, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("WorkshopTypes", "SO.Settings.workshops", SO.Settings.workshops, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("CollectorTypes", "SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>()", SO.Settings.Buildings.Where(a=>a is CollectorModel).Cast<CollectorModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("FarmTypes", "SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>()", SO.Settings.Buildings.Where(a=>a is FarmModel).Cast<FarmModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("FishingHutTypes", "SO.Settings.Buildings.Where(a=>a is FishingHutModel).Cast<FishingHutModel>()", SO.Settings.Buildings.Where(a=>a is FishingHutModel).Cast<FishingHutModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("GathererHutTypes", "SO.Settings.Buildings.Where(a=>a is GathererHutModel).Cast<GathererHutModel>()", SO.Settings.Buildings.Where(a=>a is GathererHutModel).Cast<GathererHutModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("InstitutionTypes", "SO.Settings.Institutions", SO.Settings.Institutions, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("MineTypes", "SO.Settings.mines", SO.Settings.mines, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("RainCatcherTypes", "SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>()", SO.Settings.Buildings.Where(a=>a is RainCatcherModel).Cast<RainCatcherModel>().ToArray(), a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("BuildingRainpunkModelTypes", "SO.Settings.Buildings.Where(a=> a is WorkshopModel w && w.rainpunk != null).Select(a=>((WorkshopModel)a).rainpunk)", SO.Settings.Buildings.Where(a=> a is WorkshopModel w && w.rainpunk != null).Select(a=>(a as WorkshopModel).rainpunk).Distinct(), a=>a.Name, RainpunkComment, ["Eremite.Buildings"]);
-        
-        CreateEnumTypesCSharpScript("BuildingCategoriesTypes", "SO.Settings.BuildingCategories", SO.Settings.BuildingCategories, a=>a.name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("BuildingTagTypes", "SO.Settings.buildingsTags", SO.Settings.buildingsTags, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("NeedTypes", "SO.Settings.Needs", SO.Settings.Needs, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("GoodsTypes", "SO.Settings.Goods", SO.Settings.Goods, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("GoodsCategoriesTypes", "SO.Settings.GoodsCategories", SO.Settings.GoodsCategories, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("ProfessionTypes", "SO.Settings.Professions", SO.Settings.Professions, a=>a.Name, ProfessionComment, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("RaceTypes", "SO.Settings.Races", SO.Settings.Races, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("TagTypes", "SO.Settings.tags", SO.Settings.tags, a=>a.Name, TagComment, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("TraderTypes", "SO.Settings.traders", SO.Settings.traders, a=>a.Name, NameDescriptionTags, ["Eremite.Model.Trade"]);
-
-        CreateEnumTypesCSharpScript("DecorationTierTypes", "SO.Settings.decorationsTiers", SO.Settings.decorationsTiers, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"], GetPredefinedDecorationEnumNames);
-
-        CreateEnumTypesCSharpScript("EffectTypes", "SO.Settings.effects", SO.Settings.effects, a=>a.Name, EffectComment, ["Eremite.Model"], groupEnumsBy:GroupByType);
-        CreateEnumTypesCSharpScript("ResolveEffectTypes", "SO.Settings.resolveEffects", SO.Settings.resolveEffects, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("OrderTypes", "SO.Settings.orders", SO.Settings.orders, a=>a.Name, NameDescriptionTags, ["Eremite.Model.Orders"]);
-        CreateEnumTypesCSharpScript("BiomeTypes", "SO.Settings.biomes", SO.Settings.biomes, a=>a.Name, NameDescriptionTags, ["Eremite.WorldMap"]);
-
-        CreateEnumTypesCSharpScript("DifficultyTypes", "SO.Settings.difficulties", SO.Settings.difficulties, a=>a.Name, DifficultyComment, ["Eremite.Model"], noStartingNumbersEnum, orderBy: a=>a.index);
-        CreateEnumTypesCSharpScript("GoalTypes", "SO.Settings.goals", SO.Settings.goals, a=>a.Name, NameDescriptionTags, ["Eremite.Model.Goals"]);
-        CreateEnumTypesCSharpScript("RelicTypes", "SO.Settings.Relics", SO.Settings.Relics, a=>a.Name, NameDescriptionTags, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("MetaRewardTypes", "SO.Settings.metaRewards", SO.Settings.metaRewards, a=>a.Name, MetaRewardComment, ["Eremite.Model.Meta"]);
-        CreateEnumTypesCSharpScript("OreTypes", "SO.Settings.Ore", SO.Settings.Ore, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("VillagerPerkTypes", "SO.Settings.villagersPerks", SO.Settings.villagersPerks, a=>a.Name, NameDescriptionTags, ["Eremite.Characters.Villagers"]);
-        CreateEnumTypesCSharpScript("BuildingPerkTypes", "SO.Settings.buildingsPerks", SO.Settings.buildingsPerks, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("MetaCurrencyTypes", "SO.Settings.metaCurrencies", SO.Settings.metaCurrencies, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("AscensionModifierTypes", "SO.Settings.ascensionModifiers", SO.Settings.ascensionModifiers, a=>a.Name, (a)=>NameDescriptionTags(a.effect), ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("NaturalResourceTypes", "SO.Settings.NaturalResources", SO.Settings.NaturalResources, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("SimpleSeasonalEffectTypes", "SO.Settings.simpleSeasonalEffects", SO.Settings.simpleSeasonalEffects, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("ResourcesDepositsTypes", "SO.Settings.ResourcesDeposits", SO.Settings.ResourcesDeposits, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        CreateEnumTypesCSharpScript("WaterTypes", "SO.Settings.Waters", SO.Settings.Waters, a=>a.Name, NameDescriptionTags, ["Eremite.Model"]);
-        
-        CreateEnumTypesCSharpScript("RecipeTypes", "SO.Settings.recipes", SO.Settings.recipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"], groupEnumsBy:GroupByType);
-        CreateEnumTypesCSharpScript("WorkshopsRecipeTypes", "SO.Settings.workshopsRecipes", SO.Settings.workshopsRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
-        CreateEnumTypesCSharpScript("InstitutionRecipeTypes", "SO.Settings.institutionRecipes", SO.Settings.institutionRecipes, a=>a.Name, RecipeComments, ["Eremite.Buildings"]);
     }
 
     private static Dictionary<string, string> TagComment(ModelTag arg)
